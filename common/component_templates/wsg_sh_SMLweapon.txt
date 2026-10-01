@@ -1,0 +1,235 @@
+
+weapon_component_template = {
+	key = "SMALL_sh_weapen_SML_mki"
+	size = small
+	type = instant
+	
+	icon = "GFX_sh_weapen_SML_mki"
+	icon_frame = 1
+	
+	damage = { min = 20 max = 45 }
+	windup = { min = 1 max = 5 }
+	total_fire_time = 45
+	range = 60.0
+	accuracy = 0.65
+	shield_penetration = 0.5
+	armor_penetration = 0.5
+	tracking = 0.55
+	power = -10
+	
+	prerequisites = { "tech_sh_weapon" }
+	component_set = "sh_weapen_SML_mki"
+	projectile_gfx = "coilgun_m"
+	tags = { weapon_type_kinetic }
+	ai_tags = { weapon_role_anti_armor s_slot }
+	ai_tag_weight = 3
+	upgrades_to = "SMALL_sh_weapen_SML_mkii"
+	inline_script = {
+		script = component/wsg_component_weapon_cost/wsg_component_weapon_cost_alloys
+		wsg_component_weapon_tier = 1
+		wsg_component_weapon_size = S
+	}
+	ai_weight = {
+		weight = 50
+		modifier = {
+			factor = 0
+			has_wg_authority = no
+		}
+	}
+}
+
+weapon_component_template = {
+	key = "MEDIUM_sh_weapen_SML_mki"
+	size = medium
+	type = instant
+	
+	icon = "GFX_sh_weapen_SML_mki"
+	icon_frame = 1
+	
+	damage = { min = 40 max = 90 }
+	windup = { min = 1 max = 5 }
+	total_fire_time = 45
+	range = 85.0
+	accuracy = 0.65
+	shield_penetration = 0.5
+	armor_penetration = 0.5
+	tracking = 0.50
+	power = -15
+	
+	prerequisites = { "tech_sh_weapon" }
+	component_set = "sh_weapen_SML_mki"
+	projectile_gfx = "coilgun_m"
+	tags = { weapon_type_kinetic m_slot }
+	ai_tags = { weapon_role_anti_armor weapon_role_anti_shield }
+	ai_tag_weight = 3
+	upgrades_to = "MEDIUM_sh_weapen_SML_mkii"
+	inline_script = {
+		script = component/wsg_component_weapon_cost/wsg_component_weapon_cost_alloys
+		wsg_component_weapon_tier = 1
+		wsg_component_weapon_size = M
+	}
+	ai_weight = {
+		weight = 50
+		modifier = {
+			factor = 0
+			has_wg_authority = no
+		}
+	}
+}
+
+
+weapon_component_template = {
+	key = "LARGE_sh_weapen_SML_mki"
+	size = large
+	type = instant
+	
+	icon = "GFX_sh_weapen_SML_mki"
+	icon_frame = 1
+		
+	damage = { min = 80 max = 180 }
+	windup = { min = 1 max = 5 }
+	total_fire_time = 45
+	range = 110.0
+	accuracy = 0.65
+	shield_penetration = 0.5
+	armor_penetration = 0.5
+	tracking = 0.40
+	power = -20
+	
+	prerequisites = { "tech_sh_weapon" }
+	component_set = "sh_weapen_SML_mki"
+	projectile_gfx = "coilgun_m"
+	tags = { weapon_type_kinetic l_slot }
+	ai_tags = { weapon_role_anti_armor weapon_role_anti_shield }
+	ai_tag_weight = 3
+	upgrades_to = "LARGE_sh_weapen_SML_mkii"
+	inline_script = {
+		script = component/wsg_component_weapon_cost/wsg_component_weapon_cost_alloys
+		wsg_component_weapon_tier = 1
+		wsg_component_weapon_size = L
+	}
+	ai_weight = {
+		weight = 50
+		modifier = {
+			factor = 0
+			has_wg_authority = no
+		}
+	}
+}
+
+################
+weapon_component_template = {
+	key = "SMALL_sh_weapen_SML_mkii"
+	size = small
+	type = instant
+	
+	icon = "GFX_sh_weapen_SML_mkii"
+	icon_frame = 1
+	
+	damage = { min = 40 max = 80 }
+	windup = { min = 1 max = 5 }
+	total_fire_time = 45
+	range = 65.0
+	accuracy = 0.65
+	shield_penetration = 0.5
+	armor_penetration = 0.5
+	tracking = 0.55
+	power = -20
+	
+	prerequisites = { "tech_sh_mkii" }
+	component_set = "sh_weapen_SML_mkii"
+	projectile_gfx = "coilgun_m"
+	tags = { weapon_type_kinetic s_slot }
+	ai_tags = { weapon_role_anti_armor weapon_role_anti_shield }
+	ai_tag_weight = 3
+	inline_script = {
+		script = component/wsg_component_weapon_cost/wsg_component_weapon_cost_alloys
+		wsg_component_weapon_tier = 2
+		wsg_component_weapon_size = S
+	}
+	ai_weight = {
+		weight = 100
+		modifier = {
+			factor = 0
+			has_wg_authority = no
+		}
+	}
+}
+
+weapon_component_template = {
+	key = "MEDIUM_sh_weapen_SML_mkii"
+	size = medium
+	type = instant
+	
+	icon = "GFX_sh_weapen_SML_mkii"
+	icon_frame = 1
+	
+	damage = { min = 75 max = 170 }
+	windup = { min = 1 max = 5 }
+	total_fire_time = 45
+	range = 85.0
+	accuracy = 0.65
+	shield_penetration = 0.5
+	armor_penetration = 0.5
+	tracking = 0.50
+	power = -25
+	
+	prerequisites = { "tech_sh_mkii" }
+	component_set = "sh_weapen_SML_mkii"
+	projectile_gfx = "coilgun_m"
+	tags = { weapon_type_kinetic m_slot }
+	ai_tags = { weapon_role_anti_armor weapon_role_anti_shield }
+	ai_tag_weight = 3
+	inline_script = {
+		script = component/wsg_component_weapon_cost/wsg_component_weapon_cost_alloys
+		wsg_component_weapon_tier = 2
+		wsg_component_weapon_size = M
+	}
+	ai_weight = {
+		weight = 100
+		modifier = {
+			factor = 0
+			has_wg_authority = no
+		}
+	}
+}
+
+
+weapon_component_template = {
+	key = "LARGE_sh_weapen_SML_mkii"
+	size = large
+	type = instant
+	
+	icon = "GFX_sh_weapen_SML_mkii"
+	icon_frame = 1
+	
+	min_range = 25.0
+	damage = { min = 150 max = 340 }
+	windup = { min = 1 max = 5 }
+	total_fire_time = 45
+	range = 110.0
+	accuracy = 0.65
+	shield_penetration = 0.5
+	armor_penetration = 0.5
+	tracking = 0.40
+	power = -45
+	
+	prerequisites = { "tech_sh_mkii" }
+	component_set = "sh_weapen_SML_mkii"
+	projectile_gfx = "coilgun_l"
+	tags = { weapon_type_kinetic l_slot }
+	ai_tags = { weapon_role_anti_armor weapon_role_anti_shield }
+	ai_tag_weight = 3
+	inline_script = {
+		script = component/wsg_component_weapon_cost/wsg_component_weapon_cost_alloys
+		wsg_component_weapon_tier = 2
+		wsg_component_weapon_size = L
+	}
+	ai_weight = {
+		weight = 100
+		modifier = {
+			factor = 0
+			has_wg_authority = no
+		}
+	}
+}

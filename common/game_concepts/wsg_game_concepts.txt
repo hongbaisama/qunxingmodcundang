@@ -1,0 +1,9 @@
+
+# If no icon/texture is specified it will use NDefines::NInterface::GAME_CONCEPT_ICON_DEFAULT
+
+concept_wg_super_protect = {
+}
+
+
+concept_wg_UF_shipset = {
+}

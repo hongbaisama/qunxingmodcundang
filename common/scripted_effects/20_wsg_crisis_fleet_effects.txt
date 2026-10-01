@@ -1,0 +1,365 @@
+create_wg_crisis_fleet_and_admiral = {
+	optimize_memory
+    random_list = {
+        65 = {
+            modifier = {
+                add = -15
+                OR = {
+                    has_global_flag = wg_crisis_hard
+                    has_global_flag = wg_crisis_insane
+                }
+            }
+            modifier = {
+                add = -10
+                has_global_flag = wg_crisis_insane
+            }
+            create_$THIS$_exterminate_fleet = yes
+        }
+        30 = {
+            modifier = {
+                add = 15
+                OR = {
+                    has_global_flag = wg_crisis_hard
+                    has_global_flag = wg_crisis_insane
+                }
+            }
+            modifier = {
+                add = 5
+                has_global_flag = wg_crisis_insane
+            }
+            create_$THIS$_main_fleet = yes
+        }
+        5 = {
+            modifier = {
+                add = -4
+                has_global_flag = wg_crisis_normal
+            }
+            modifier = {
+                add = 5
+                has_global_flag = wg_crisis_insane
+            }
+            modifier = {
+                add = -1
+                event_target:$THIS$_country = {
+                    check_variable = { which = "flagship_count" value > 0 }
+                }
+            }
+            modifier = {
+                add = -4
+                event_target:$THIS$_country = {
+                    check_variable = { which = "flagship_count" value > 1 }
+                }
+            }
+            modifier = {
+                add = -4
+                event_target:$THIS$_country = {
+                    check_variable = { which = "flagship_count" value > 2 }
+                }
+            }
+            modifier = {
+                add = -1
+                event_target:$THIS$_country = {
+                    check_variable = { which = "flagship_count" value > 3 }
+                }
+            }
+            create_$THIS$_flagship_fleet = yes
+        }
+    }
+}
+
+# 参数：（所有选项皆可选填）
+# NAME：舰队名字
+# NUM_flagship：联合旗舰数量
+# NUM_juggernaut：联合主宰数量
+# NUM_carrier：联合无人机航母数量
+# NUM_titan：联合泰坦数量
+# NUM_bb：联合战列数量
+# NUM_bc：联合战巡数量
+# NUM_ca：联合重巡数量
+# NUM_dd：联合驱逐数量
+# NUM_uf_buffer：联合电子战数量
+# NUM_uf_buffer_portal：联合守门电子战数量
+# DISTANCE：距生成点的距离
+# IS_BOSS：标识是否为boss，不填则为否
+# add_trait_no_notify_EFFECT：额外事件id
+###########################################
+#       以下参数只能三选一，或者不填        #
+###########################################
+# GUARD_FLEET：执行守门舰队相关效果
+# ATTACK_FLEET：执行进攻舰队相关效果
+# RAIDER_FLEET：执行掠夺舰队相关效果
+create_uf_fleet = {
+	optimize_memory
+    create_fleet = {
+        [[NAME] name = $NAME$ ]
+        effect = {
+            set_owner = event_target:$TARGET|wg_crisis_country$
+
+            [[NUM_flagship] 
+                set_variable = { which = num_flagship value = $NUM_flagship$ }
+                change_variable = { which = num_ships value = num_flagship }
+                set_variable = { which = num_flagship_exist value = $NUM_flagship$ }
+                create_uf_flagship = { NUM = $NUM_flagship$ }
+            ]
+            [[NUM_juggernaut] 
+                set_variable = { which = num_juggernaut value = $NUM_juggernaut$ }
+                change_variable = { which = num_ships value = num_juggernaut }
+                set_variable = { which = num_juggernaut_exist value = $NUM_juggernaut$ }
+                create_uf_juggernaut = { NUM = $NUM_juggernaut$ }
+            ]
+            [[NUM_carrier] 
+                set_variable = { which = num_carrier value = $NUM_carrier$ }
+                change_variable = { which = num_ships value = num_carrier }
+                set_variable = { which = num_carrier_exist value = $NUM_carrier$ }
+                create_uf_carrier = { NUM = $NUM_carrier$ }
+            ]
+            [[NUM_titan] 
+                set_variable = { which = num_titan value = $NUM_titan$ }
+                change_variable = { which = num_ships value = num_titan }
+                set_variable = { which = num_titan_exist value = $NUM_titan$ }
+                create_uf_titan = { NUM = $NUM_titan$ }
+            ]
+            [[NUM_bb] 
+                switch = {
+                    trigger = has_global_flag
+                    wsg_any_player_origin_wg_warhammer = {
+                        set_variable = { which = num_bb value = $NUM_bb$ }
+                        change_variable = { which = num_ships value = num_bb }
+                        set_variable = { which = num_bb_exist value = $NUM_bb$ }
+                        create_uf_wh_hlc_hc = { NUM = $NUM_bb$ }
+                    }
+                    default = {
+                        set_variable = { which = num_bb value = $NUM_bb$ }
+                        change_variable = { which = num_ships value = num_bb }
+                        set_variable = { which = num_bb_exist value = $NUM_bb$ }
+                        create_uf_bb = { NUM = $NUM_bb$ }
+                    }
+                }
+            ]
+            [[NUM_bc] 
+                set_variable = { which = num_bc value = $NUM_bc$ }
+                change_variable = { which = num_ships value = num_bc }
+                set_variable = { which = num_bc_exist value = $NUM_bc$ }
+                create_uf_bc = { NUM = $NUM_bc$ }
+            ]
+            [[NUM_ca] 
+                set_variable = { which = num_ca value = $NUM_ca$ }
+                change_variable = { which = num_ships value = num_ca }
+                set_variable = { which = num_ca_exist value = $NUM_ca$ }
+                create_uf_ca = { NUM = $NUM_ca$ }
+            ]
+            [[NUM_dd] 
+                set_variable = { which = num_dd value = $NUM_dd$ }
+                change_variable = { which = num_ships value = num_dd }
+                set_variable = { which = num_dd_exist value = $NUM_dd$ }
+                create_uf_dd = { NUM = $NUM_dd$ }
+            ]
+            [[NUM_uf_buffer] 
+                set_variable = { which = num_bf value = $NUM_uf_buffer$ }
+                change_variable = { which = num_ships value = num_bf }
+                set_variable = { which = num_bf_exist value = $NUM_uf_buffer$ }
+                create_uf_buffer = { NUM = $NUM_uf_buffer$ }
+            ]
+            [[NUM_uf_buffer_portal] 
+                set_variable = { which = num_bf_portal value = $NUM_uf_buffer_portal$ }
+                change_variable = { which = num_ships value = num_bf_portal }
+                set_variable = { which = num_bf_portal_exist value = $NUM_uf_buffer_portal$ }
+                create_uf_buffer_portal = { NUM = $NUM_uf_buffer_portal$ }
+            ]
+            [[NUM_dreadnought]
+                switch = {
+                    trigger = has_global_flag
+                    wsg_any_player_civic_wsg_super_harbor = {
+                        set_variable = { which = num_dreadnought value = $NUM_dreadnought$ }
+                        change_variable = { which = num_ships value = num_dreadnought }
+                        set_variable = { which = num_dreadnought_exist value = $NUM_dreadnought$ }
+                        create_uf_automaton_bc = { NUM = $NUM_dreadnought$ }
+                    }
+                    wsg_any_player_origin_wg_warhammer = {
+                        set_variable = { which = num_dreadnought value = $NUM_dreadnought$ }
+                        change_variable = { which = num_ships value = num_dreadnought }
+                        set_variable = { which = num_dreadnought_exist value = $NUM_dreadnought$ }
+                        create_uf_wh_dcc_dc = { NUM = $NUM_dreadnought$ }
+                    }
+                    default = {
+                        set_variable = { which = num_dreadnought value = $NUM_dreadnought$ }
+                        change_variable = { which = num_ships value = num_dreadnought }
+                        set_variable = { which = num_dreadnought_exist value = $NUM_dreadnought$ }
+                        create_uf_dreadnought = { NUM = $NUM_dreadnought$ }
+                    }
+                }
+            ]
+            set_location = { target = PREV distance = $DISTANCE|5$ angle = random }
+            set_fleet_stance = aggressive
+            set_fleet_bombardment_stance = wg_doom2
+            set_aggro_range_measure_from = self
+            set_aggro_range = 500
+            assign_leader = last_created_leader
+
+            [[GUARD_FLEET] 
+                if = { 
+                    limit = { always = $GUARD_FLEET$ } 
+                    set_fleet_flag = defence_fleet 
+                    set_formation_scale = 2
+                    auto_move_to_planet = { target = star clear_auto_move_on_arrival = yes } 
+                } 
+            ]
+
+            [[ATTACK_FLEET] 
+                if = { limit = { always = $ATTACK_FLEET$ } set_fleet_flag = attack_fleet } 
+                fleet_event = { id = wg_crisis.96 } 
+            ]
+
+            [[RAIDER_FLEET] 
+                if = { limit = { always = $RAIDER_FLEET$ } set_fleet_flag = raider_fleet } 
+                fleet_event = { id = wg_crisis.96 } add_modifier = { modifier = uf_raider_buff days = -1 } 
+            ]
+        }
+        settings = {
+            [[IS_BOSS] is_boss = $IS_BOSS$ ]
+            can_upgrade = no 
+            uses_naval_capacity = no
+            can_change_leader = no
+            can_change_composition = no
+            can_disband = no
+            spawn_debris = no
+            ai_ignore_strength = yes
+        }
+    }
+}
+
+# scope = fleet
+# use inside create_fleet effect when creating portal
+create_portal = {
+    create_ship = {
+        name = random
+        design = "NAME_WG_Portal"
+        effect = { 
+            set_ship_flag = wg_portal
+        }
+    }
+}
+
+uf_fleet_destory_planet_action = {
+    queue_actions = {
+        repeat = {
+            effect = {
+                id = wg_crisis.97.e0
+                if = {
+                    limit = { 
+                        any_system = { NOR = {
+                            check_variable = { which = fleet_id value < 1 }
+                            # 打架后留下的星系
+                            check_variable = { which = fleet_id value = root.uf_fleet_id }
+                        }}
+                    }
+                    solar_system? = { clear_variable = fleet_id }
+                }
+                # 等候一段时间后仍然找不到可通行路径，折跃
+                if = {
+                    limit = {
+                        has_fleet_flag = cannot_find_path
+                        NOT = {
+                            any_system = {
+                                NOT = { has_star_flag = uf_destroyed_system }
+                                ROOT? = { can_access_system = PREV }
+                                OR = {
+                                    exists = starbase
+                                    any_system_planet = {
+                                        has_owner = yes
+                                    }
+                                }
+                            }
+                        }
+                    }
+                    queue_actions = {
+                        find_random_system = {
+                            trigger = {
+                                id = wg_crisis.97.t01
+                                NOT = { has_star_flag = uf_destroyed_system }
+                                any_system_planet = { is_colony = no }
+                                closest_system = {
+                                    min_steps = 1
+                                    any_system_planet = {
+                                        has_owner = no
+                                    }
+                                }
+                            }
+                            found_system = { 
+                                effect = {
+                                    id = wg_crisis.97.e02
+                                    root? = {
+                                        set_location = prev.star
+                                    }
+                                }
+                                wait = 100
+                            }
+                        }
+                    }
+                }
+            }
+            find_closest_system = {
+                trigger = {
+                    id = wg_crisis.97.t1
+                    NOT = { has_star_flag = uf_destroyed_system }
+                    ROOT? = { can_access_system = prev }
+                    any_system_planet = {  
+                        exists = owner
+                        owner? = { is_hostile = root.owner }
+                    }
+                }
+                found_system = {
+                    effect = {
+                        id = wg_crisis.97.e1
+                        set_variable = { which = fleet_id value = root.uf_fleet_id }
+                    }
+                    move_to = this
+                    find_closest_planet = {
+                        trigger = {
+                            id = wg_crisis.97.t3
+                            is_primary_star = yes
+                            NOT = { has_carrier_flag = uf_destroyed_planet }
+                        }
+                        found_planet = {
+                            effect = {
+                                id = wg_crisis.97.e2
+                                # 提醒玩家
+                                if = {
+                                    limit = { solar_system? = { any_system_planet = {
+                                        has_owner = yes
+                                        owner? = { is_ai = no }
+                                    }}}
+                                    solar_system? = { 
+                                        save_event_target_as = uf_colossus_arrived_system
+                                        random_system_planet = {
+                                            limit = {
+                                                has_owner = yes
+                                                owner? = { is_ai = no }
+                                            }
+                                            owner? = { country_event = { id = wg_crisis.89 }}
+                                        }
+                                    }
+                                }
+                            }
+                            destroy_planet = { target = THIS skip_rules = yes }
+                        }
+                    }			
+                    wait = 15
+                }					
+                failed = {
+                    # 找不到路
+                    effect = {
+                        id = wg_crisis.97.e13
+                        ROOT? = { 
+                            set_fleet_flag = cannot_find_path
+                            set_timed_fleet_flag = {
+                                flag = orders_cooldown days = 200
+                            }
+                        }
+                    }
+                    wait = 200
+                }
+            }
+        }
+    }
+}

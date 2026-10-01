@@ -1,0 +1,417 @@
+utility_component_template = {
+	key = "SMALL_wsg_ship_part_wsg_ia"
+	size = small
+	icon = "GFX_wsg_ship_part_wsg_ia"
+	icon_frame = 1
+	power = -35
+
+	inline_script = {
+		script = component/wsg_defender_utility_coponent
+		SIZE = 1 TIER = 1 ARMOR = yes HULL = yes SHIELD = yes
+	}
+	
+	prerequisites = { "tech_wsg_ia" }
+	component_set = "wsg_ship_part_wsg_ia"
+	upgrades_to = "SMALL_wsg_ship_part_wsg_ia2"	
+	inline_script = {
+		script = component/wsg_component_weapon_cost/wsg_component_weapon_cost_sr_alpha
+		wsg_component_weapon_tier = 4
+		wsg_component_weapon_size = S
+	}
+	ai_weight = {
+		weight = 100
+		modifier = {
+			factor = 5
+			has_wg_authority = yes
+		}
+		modifier = {
+			factor = 0.0
+			OR = {
+				component_no_resource = { RESOURCE = sr_alpha MIN_REQUIREMENT = 100 }
+				component_no_resource = { RESOURCE = sr_neo MIN_REQUIREMENT = 250 }
+			}
+		}
+	}
+}
+
+utility_component_template = {
+	key = "MEDIUM_wsg_ship_part_wsg_ia"
+	size = medium
+	icon = "GFX_wsg_ship_part_wsg_ia"
+	icon_frame = 1
+	power = -80
+
+	inline_script = {
+		script = component/wsg_defender_utility_coponent
+		SIZE = 3 TIER = 1 ARMOR = yes HULL = yes SHIELD = yes
+	}
+	
+	prerequisites = { "tech_wsg_ia" }
+	component_set = "wsg_ship_part_wsg_ia"
+	upgrades_to = "MEDIUM_wsg_ship_part_wsg_ia2"	
+	inline_script = {
+		script = component/wsg_component_weapon_cost/wsg_component_weapon_cost_sr_alpha
+		wsg_component_weapon_tier = 4
+		wsg_component_weapon_size = M
+	}
+	ai_weight = {
+		weight = 100
+		modifier = {
+			factor = 5
+			has_wg_authority = yes
+		}
+		modifier = {
+			factor = 0.0
+			OR = {
+				component_no_resource = { RESOURCE = sr_alpha MIN_REQUIREMENT = 100 }
+				component_no_resource = { RESOURCE = sr_neo MIN_REQUIREMENT = 250 }
+			}
+		}
+	}
+}
+
+utility_component_template = {
+	key = "LARGE_wsg_ship_part_wsg_ia"
+	size = large
+	icon = "GFX_wsg_ship_part_wsg_ia"
+	icon_frame = 1
+	power = -150
+	inline_script = {
+		script = component/wsg_defender_utility_coponent
+		SIZE = 9 TIER = 1 ARMOR = yes HULL = yes SHIELD = yes
+	}
+	
+	prerequisites = { "tech_wsg_ia" }
+	component_set = "wsg_ship_part_wsg_ia"
+	upgrades_to = "LARGE_wsg_ship_part_wsg_ia2"
+	inline_script = {
+		script = component/wsg_component_weapon_cost/wsg_component_weapon_cost_sr_alpha
+		wsg_component_weapon_tier = 4
+		wsg_component_weapon_size = L
+	}
+	ai_weight = {
+		weight = 100
+		modifier = {
+			factor = 5
+			has_wg_authority = yes
+		}
+		modifier = {
+			factor = 0.0
+			OR = {
+				component_no_resource = { RESOURCE = sr_alpha MIN_REQUIREMENT = 100 }
+				component_no_resource = { RESOURCE = sr_neo MIN_REQUIREMENT = 250 }
+			}
+		}
+	}
+}
+###
+utility_component_template = {
+	key = "SMALL_wsg_ship_part_wsg_ia2"
+	size = small
+	icon = "GFX_wsg_ship_part_wsg_ia2"
+	icon_frame = 1
+	power = -45
+	inline_script = {
+		script = component/wsg_defender_utility_coponent
+		SIZE = 1 TIER = 2 ARMOR = yes HULL = yes SHIELD = yes
+	}
+	
+	prerequisites = { "tech_wsg_ia2" }
+	component_set = "wsg_ship_part_wsg_ia2"
+	inline_script = {
+		script = component/wsg_component_weapon_cost/wsg_component_weapon_cost_sr_alpha
+		wsg_component_weapon_tier = 5
+		wsg_component_weapon_size = S
+	}
+	ai_weight = {
+		weight = 200
+		modifier = {
+			factor = 5
+			has_wg_authority = yes
+		}
+		modifier = {
+			factor = 0.0
+			OR = {
+				component_no_resource = { RESOURCE = sr_alpha MIN_REQUIREMENT = 100 }
+				component_no_resource = { RESOURCE = sr_neo MIN_REQUIREMENT = 250 }
+			}
+		}
+	}
+}
+
+utility_component_template = {
+	key = "MEDIUM_wsg_ship_part_wsg_ia2"
+	size = medium
+	icon = "GFX_wsg_ship_part_wsg_ia2"
+	icon_frame = 1
+	power = -100
+	inline_script = {
+		script = component/wsg_defender_utility_coponent
+		SIZE = 3 TIER = 2 ARMOR = yes HULL = yes SHIELD = yes
+	}
+	
+	prerequisites = { "tech_wsg_ia2" }
+	component_set = "wsg_ship_part_wsg_ia2"
+	inline_script = {
+		script = component/wsg_component_weapon_cost/wsg_component_weapon_cost_sr_alpha
+		wsg_component_weapon_tier = 5
+		wsg_component_weapon_size = M
+	}
+	ai_weight = {
+		weight = 200
+		modifier = {
+			factor = 5
+			has_wg_authority = yes
+		}
+		modifier = {
+			factor = 0.0
+			OR = {
+				component_no_resource = { RESOURCE = sr_alpha MIN_REQUIREMENT = 100 }
+				component_no_resource = { RESOURCE = sr_neo MIN_REQUIREMENT = 250 }
+			}
+		}
+	}
+}
+
+utility_component_template = {
+	key = "LARGE_wsg_ship_part_wsg_ia2"
+	size = large
+	icon = "GFX_wsg_ship_part_wsg_ia2"
+	icon_frame = 1
+	power = -180
+	inline_script = {
+		script = component/wsg_defender_utility_coponent
+		SIZE = 9 TIER = 2 ARMOR = yes HULL = yes SHIELD = yes
+	}
+	
+	prerequisites = { "tech_wsg_ia2" }
+	component_set = "wsg_ship_part_wsg_ia2"
+	inline_script = {
+		script = component/wsg_component_weapon_cost/wsg_component_weapon_cost_sr_alpha
+		wsg_component_weapon_tier = 5
+		wsg_component_weapon_size = L
+	}
+	ai_weight = {
+		weight = 200
+		modifier = {
+			factor = 5
+			has_wg_authority = yes
+		}
+		modifier = {
+			factor = 0.0
+			OR = {
+				component_no_resource = { RESOURCE = sr_alpha MIN_REQUIREMENT = 100 }
+				component_no_resource = { RESOURCE = sr_neo MIN_REQUIREMENT = 250 }
+			}
+		}
+	}
+}
+
+
+###
+utility_component_template = {
+	key = "SMALL_wsg_ship_part_wsg_ha"
+	size = small
+	icon = "GFX_wsg_ship_part_wsg_ha"
+	icon_frame = 1
+
+	inline_script = {
+		script = component/wsg_defender_utility_coponent
+		SIZE = 1 TIER = 3 ARMOR = yes HULL = yes SHIELD = no
+	}
+	
+	prerequisites = { "tech_wsg_ha" }
+	component_set = "wsg_ship_part_wsg_ha"
+	inline_script = {
+		script = component/wsg_component_weapon_cost/wsg_component_weapon_cost_sr_alpha
+		wsg_component_weapon_tier = 5
+		wsg_component_weapon_size = S
+	}
+	ai_weight = {
+		weight = 8
+		modifier = {
+			factor = 5
+			has_wg_authority = yes
+		}
+		modifier = {
+			factor = 0.0
+			OR = {
+				component_no_resource = { RESOURCE = sr_alpha MIN_REQUIREMENT = 100 }
+				component_no_resource = { RESOURCE = sr_neo MIN_REQUIREMENT = 250 }
+			}
+		}
+	}
+}
+
+utility_component_template = {
+	key = "MEDIUM_wsg_ship_part_wsg_ha"
+	size = medium
+	icon = "GFX_wsg_ship_part_wsg_ha"
+	icon_frame = 1
+
+	inline_script = {
+		script = component/wsg_defender_utility_coponent
+		SIZE = 3 TIER = 3 ARMOR = yes HULL = yes SHIELD = no
+	}
+	
+	prerequisites = { "tech_wsg_ha" }
+	component_set = "wsg_ship_part_wsg_ha"
+	inline_script = {
+		script = component/wsg_component_weapon_cost/wsg_component_weapon_cost_sr_alpha
+		wsg_component_weapon_tier = 5
+		wsg_component_weapon_size = M
+	}
+	ai_weight = {
+		weight = 8
+		modifier = {
+			factor = 5
+			has_wg_authority = yes
+		}
+		modifier = {
+			factor = 0.0
+			OR = {
+				component_no_resource = { RESOURCE = sr_alpha MIN_REQUIREMENT = 100 }
+				component_no_resource = { RESOURCE = sr_neo MIN_REQUIREMENT = 250 }
+			}
+		}
+	}
+}
+
+utility_component_template = {
+	key = "LARGE_wsg_ship_part_wsg_ha"
+	size = large
+	icon = "GFX_wsg_ship_part_wsg_ha"
+	icon_frame = 1
+
+	inline_script = {
+		script = component/wsg_defender_utility_coponent
+		SIZE = 9 TIER = 2 ARMOR = yes HULL = yes SHIELD = no
+	}
+	
+	prerequisites = { "tech_wsg_ha" }
+	component_set = "wsg_ship_part_wsg_ha"
+	inline_script = {
+		script = component/wsg_component_weapon_cost/wsg_component_weapon_cost_sr_alpha
+		wsg_component_weapon_tier = 5
+		wsg_component_weapon_size = L
+	}
+	ai_weight = {
+		weight = 8
+		modifier = {
+			factor = 5
+			has_wg_authority = yes
+		}
+		modifier = {
+			factor = 0.0
+			OR = {
+				component_no_resource = { RESOURCE = sr_alpha MIN_REQUIREMENT = 100 }
+				component_no_resource = { RESOURCE = sr_neo MIN_REQUIREMENT = 250 }
+			}
+		}
+	}
+}
+###
+utility_component_template = {
+	key = "SMALL_wsg_ship_part_wsg_es"
+	size = small
+	icon = "GFX_wsg_ship_part_wsg_es"
+	icon_frame = 1
+	power = -65
+
+	inline_script = {
+		script = component/wsg_defender_utility_coponent
+		SIZE = 1 TIER = 3 ARMOR = no HULL = yes SHIELD = yes
+	}
+	
+	prerequisites = { "tech_wsg_es" }
+	component_set = "wsg_ship_part_wsg_es"
+	inline_script = {
+		script = component/wsg_component_weapon_cost/wsg_component_weapon_cost_sr_alpha
+		wsg_component_weapon_tier = 5
+		wsg_component_weapon_size = S
+	}
+	ai_weight = {
+		weight = 8
+		modifier = {
+			factor = 5
+			has_wg_authority = yes
+		}
+		modifier = {
+			factor = 0.0
+			OR = {
+				component_no_resource = { RESOURCE = sr_alpha MIN_REQUIREMENT = 100 }
+				component_no_resource = { RESOURCE = sr_neo MIN_REQUIREMENT = 250 }
+			}
+		}
+	}
+}
+
+utility_component_template = {
+	key = "MEDIUM_wsg_ship_part_wsg_es"
+	size = medium
+	icon = "GFX_wsg_ship_part_wsg_es"
+	icon_frame = 1
+	power = -170
+	
+	inline_script = {
+		script = component/wsg_defender_utility_coponent
+		SIZE = 3 TIER = 3 ARMOR = no HULL = yes SHIELD = yes
+	}
+	
+	prerequisites = { "tech_wsg_es" }
+	component_set = "wsg_ship_part_wsg_es"
+	inline_script = {
+		script = component/wsg_component_weapon_cost/wsg_component_weapon_cost_sr_alpha
+		wsg_component_weapon_tier = 5
+		wsg_component_weapon_size = M
+	}
+	ai_weight = {
+		weight = 8
+		modifier = {
+			factor = 5
+			has_wg_authority = yes
+		}
+		modifier = {
+			factor = 0.0
+			OR = {
+				component_no_resource = { RESOURCE = sr_alpha MIN_REQUIREMENT = 100 }
+				component_no_resource = { RESOURCE = sr_neo MIN_REQUIREMENT = 250 }
+			}
+		}
+	}
+}
+
+utility_component_template = {
+	key = "LARGE_wsg_ship_part_wsg_es"
+	size = large
+	icon = "GFX_wsg_ship_part_wsg_es"
+	icon_frame = 1
+	power = -280
+
+	inline_script = {
+		script = component/wsg_defender_utility_coponent
+		SIZE = 9 TIER = 3 ARMOR = no HULL = yes SHIELD = yes
+	}
+	
+	prerequisites = { "tech_wsg_es" }
+	component_set = "wsg_ship_part_wsg_es"
+	inline_script = {
+		script = component/wsg_component_weapon_cost/wsg_component_weapon_cost_sr_alpha
+		wsg_component_weapon_tier = 5
+		wsg_component_weapon_size = L
+	}
+	ai_weight = {
+		weight = 8
+		modifier = {
+			factor = 5
+			has_wg_authority = yes
+		}
+		modifier = {
+			factor = 0.0
+			OR = {
+				component_no_resource = { RESOURCE = sr_alpha MIN_REQUIREMENT = 100 }
+				component_no_resource = { RESOURCE = sr_neo MIN_REQUIREMENT = 250 }
+			}
+		}
+	}
+}

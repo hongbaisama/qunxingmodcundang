@@ -1,0 +1,27 @@
+is_finished_megastructure = {
+    OR = {
+		is_megastructure_type = think_tank_3
+		is_megastructure_type = think_tank_restored
+		is_megastructure_type = dyson_sphere_5
+		is_megastructure_type = dyson_sphere_restored
+		is_megastructure_type = ring_world_3_intermediate
+		is_megastructure_type = ring_world_restored
+		is_megastructure_type = spy_orb_4
+		is_megastructure_type = spy_orb_restored
+		is_megastructure_type = interstellar_assembly_4
+		is_megastructure_type = interstellar_assembly_restored
+		is_megastructure_type = mega_art_installation_4
+		is_megastructure_type = mega_art_installation_restored_2
+		is_megastructure_type = strategic_coordination_center_3
+		is_megastructure_type = strategic_coordination_center_restored
+		is_megastructure_type = mega_shipyard_3
+		is_megastructure_type = mega_shipyard_restored
+		is_megastructure_type = matter_decompressor_4
+		is_megastructure_type = matter_decompressor_restored
+		is_megastructure_type = dyson_yamato
+		is_megastructure_type = wsg_hidden_capital
+		is_megastructure_type = wsg_mining_station
+		is_megastructure_type = wsg_station
+		is_megastructure_type = wsg_mining_station
+	}
+}

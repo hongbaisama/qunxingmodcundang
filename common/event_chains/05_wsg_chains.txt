@@ -1,0 +1,90 @@
+ovo_chain = {
+	icon = "gfx/interface/icons/situation_log/situation_log_main_quest.dds"
+	picture = GFX_evt_wsg_ovo_watching
+	situation_log_category = anomalies
+}
+wg_precursors = {
+	icon = "gfx/interface/icons/situation_log/situation_log_main_quest.dds"
+	picture = GFX_evt_wg_precursors
+	counter = {
+		wg_precursors_clues = {
+			max = 4
+		}
+	}
+	situation_log_category = precursors
+}
+lex_sol_chain = {
+	icon = "gfx/interface/icons/situation_log/situation_log_main_quest.dds"
+	picture = GFX_evt_wsg_moon
+	situation_log_category = anomalies
+}
+find_bubbles_chain = {
+	icon = "gfx/interface/icons/situation_log/situation_log_main_quest.dds"
+	picture = GFX_evt_friendly_amoeba
+	situation_log_category = anomalies
+}
+
+parit_chain = {
+	icon = "gfx/interface/icons/situation_log/situation_log_main_quest.dds"
+	picture = GFX_evt_wg_parit
+	counter = {
+		wg_parit_home_porject_counter = {
+			max = 4
+		}
+	}
+	situation_log_category = precursors
+}
+
+wg_psi_chain = {
+	icon = "gfx/interface/icons/situation_log/situation_log_main_quest.dds"
+	picture = GFX_evt_zro_3
+	counter = {
+		wg_shrouded_planet_counter = {
+			max = 4
+		}
+	}
+	situation_log_category = developments
+}
+
+wsg_project_s = {
+	icon = "gfx/interface/icons/situation_log/situation_log_main_quest.dds"
+	picture = GFX_evt_wsg_project_s
+	counter = {
+		sr_se_cost_counter = { }
+	}
+	situation_log_category = developments
+}
+
+wsg_dark_alpha_chain = {
+	icon = "gfx/interface/icons/situation_log/situation_log_main_quest.dds"
+	picture = GFX_evt_alpha
+	situation_log_category = ambitions
+}
+
+wg_heyed_chain = {
+	icon = "gfx/interface/icons/situation_log/situation_log_main_quest.dds"
+	picture = GFX_evt_wg_heyed
+	situation_log_category = anomalies
+}
+
+warhammer_holy_harbor_chain = {
+	icon = "gfx/interface/icons/situation_log/situation_log_main_quest.dds"
+	picture = GFX_evt_wg_40k_holy_harbor
+	counter = {
+		warhammer_holy_harbor_planet_counter = {
+			max = 4
+		}
+	}
+	situation_log_category = ambitions
+}
+warhammer_stc_chain = {
+	icon = "gfx/interface/icons/situation_log/situation_log_main_quest.dds"
+	picture = GFX_evt_wg_40k_mechanicum
+	situation_log_category = ambitions
+}
+
+warhammer_great_expedition = {
+	icon = "gfx/interface/icons/situation_log/situation_log_main_quest.dds"
+	picture = GFX_evt_wg_40k_imperium_fleet
+	situation_log_category = ambitions
+}

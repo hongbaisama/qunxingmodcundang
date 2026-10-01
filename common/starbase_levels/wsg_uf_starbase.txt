@@ -1,0 +1,30 @@
+starbase_level_uf_star_fortress = {
+	ship_size = uf_star_fortress_2
+	potential_home_base = yes
+	show_in_outliner = no
+	collects_trade = no
+}
+
+starbase_level_uf_glory = {
+	ship_size = uf_glory_o
+	level_weight = 5
+	picture = "GFX_arkship_blueprint_military_uf_glory" 
+	potential_home_base = yes
+	display_shipyard_button = no
+	show_in_outliner = no
+	ai_weight = { weight = 0 }
+	portrait = "GFX_orbital_ring_background"
+	downgrade_potential = { always = no }
+	module_slots = { 1 2 3 4 5 6 }
+	building_slots = { 1 2 3 4 5 6 7 8 }
+}
+
+starbase_level_monolith_crisis = {
+	ship_size = monolith_crisis_starbase
+	display_map_icon = yes
+	display_empire_shield = yes
+	collects_trade = no
+	level_weight = 5
+	ai_weight = { weight = 5 }
+}
+

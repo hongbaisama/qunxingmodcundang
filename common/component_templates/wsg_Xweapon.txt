@@ -1,0 +1,311 @@
+weapon_component_template = {
+	key = "wsg_weapen_X_356"
+	size = extra_large
+	type = instant
+	icon = "GFX_wsg_weapen_X_356"
+	icon_frame = 1
+	firing_arc = 70
+	min_range = 25
+	##use_ship_kill_target  = no
+	damage = {
+		min = 800
+		max = 1600
+	}
+	windup = {
+		min = 30
+		max = 45
+	}
+	total_fire_time = 110
+	range = 160
+	accuracy = 0.8
+	shield_penetration = 1
+	armor_penetration = 1
+	tracking = 0.1
+	power = -280
+	size_damage_factor = 0.01
+	prerequisites = {
+		"tech_wsg_alpha_uav"
+	}
+	size_restriction = {
+		scout_UAV
+	}
+	component_set = "wsg_weapen_X_356"
+	projectile_gfx = "gatebuilder_wsg_weapon"
+	tags = {
+		weapon_type_energy
+		weapon_type_kinetic
+		weapon_role_artillery
+		x_slot
+	}
+	ai_tags = {
+		weapon_role_artillery
+	}
+	inline_script = {
+		script = component/wsg_component_weapon_cost/wsg_component_weapon_cost_alloys
+		wsg_component_weapon_tier = 3
+		wsg_component_weapon_size = X
+	}
+	ai_weight = {
+		weight = 500
+		modifier = {
+			factor = 0
+			has_wg_authority = no
+		}
+	}
+}
+
+weapon_component_template = {
+	key = "wsg_weapen_X_381"
+	size = extra_large
+	type = instant
+	icon = "GFX_wsg_weapen_X_381"
+	icon_frame = 1
+	firing_arc = 25
+	min_range = 25
+	##use_ship_kill_target  = no
+	damage = {
+		min = 900
+		max = 2400
+	}
+	windup = {
+		min = 30
+		max = 40
+	}
+	total_fire_time = 100
+	range = 170
+	accuracy = 0.9
+	shield_penetration = 0.3
+	armor_damage = 2
+	hull_damage = 1.8
+	tracking = 0.2
+	power = -400
+	prerequisites = {
+		"tech_wsg_381"
+	}
+	component_set = "wsg_weapen_X_381"
+	projectile_gfx = "gatebuilder_wsg_weapon"
+	upgrades_to = "wsg_weapen_X_406"
+	tags = {
+		weapon_type_energy
+		weapon_role_artillery
+		x_slot
+	}
+	ai_tags = {
+		weapon_role_artillery
+	}
+	inline_script = {
+		script = component/wsg_component_weapon_cost/wsg_component_weapon_cost_sr_alpha
+		wsg_component_weapon_tier = 4
+		wsg_component_weapon_size = X
+	}
+	ai_weight = {
+		weight = 1000
+		modifier = {
+			factor = 0
+			OR = {
+				component_no_resource = {
+					RESOURCE = sr_neo
+					MIN_REQUIREMENT = 500
+				}
+				component_no_resource = {
+					RESOURCE = sr_alpha
+					MIN_REQUIREMENT = 150
+				}
+			}
+		}
+	}
+}
+
+weapon_component_template = {
+	key = "wsg_weapen_X_P381"
+	size = extra_large
+	type = instant
+	icon = "GFX_wsg_weapen_X_P381"
+	icon_frame = 1
+	firing_arc = 25
+	min_range = 25
+	##use_ship_kill_target  = no
+	damage = {
+		min = 1000
+		max = 2500
+	}
+	windup = {
+		min = 30
+		max = 40
+	}
+	total_fire_time = 100
+	range = 175
+	accuracy = 1
+	shield_penetration = 1.5
+	armor_damage = 2
+	hull_damage = 2
+	tracking = 0.35
+	power = -450
+	prerequisites = {
+		"tech_wsg_P381"
+	}
+	component_set = "wsg_weapen_X_P381"
+	projectile_gfx = "wsg_lance_p381"
+	tags = {
+		weapon_type_energy
+		weapon_role_artillery
+		x_slot
+	}
+	ai_tags = {
+		weapon_role_artillery
+	}
+	ai_tag_weight = 0
+	inline_script = {
+		script = component/wsg_component_weapon_cost/wsg_component_weapon_cost_sr_alpha
+		wsg_component_weapon_tier = 4
+		wsg_component_weapon_size = X
+	}
+	ai_weight = {
+		weight = 1500
+		modifier = {
+			factor = 0
+			OR = {
+				component_no_resource = {
+					RESOURCE = sr_neo
+					MIN_REQUIREMENT = 500
+				}
+				component_no_resource = {
+					RESOURCE = sr_alpha
+					MIN_REQUIREMENT = 150
+				}
+			}
+		}
+	}
+}
+
+weapon_component_template = {
+	key = "wsg_weapen_X_406"
+	size = extra_large
+	type = instant
+	icon = "GFX_wsg_weapen_X_406"
+	icon_frame = 1
+	firing_arc = 20
+	min_range = 30
+	##use_ship_kill_target  = no
+	damage = {
+		min = 2000
+		max = 4000
+	}
+	windup = {
+		min = 30
+		max = 40
+	}
+	total_fire_time = 120
+	range = 185
+	accuracy = 0.9
+	shield_penetration = 1
+	armor_penetration = 1
+	tracking = 0.15
+	power = -600
+	size_damage_factor = 0.01
+	prerequisites = {
+		"tech_wsg_406"
+	}
+	component_set = "wsg_weapen_X_406"
+	projectile_gfx = "wsg_lance_406"
+	tags = {
+		weapon_type_energy
+		weapon_type_kinetic
+		weapon_role_artillery
+		x_slot
+	}
+	ai_tags = {
+		weapon_role_artillery
+	}
+	ai_tag_weight = 0
+	inline_script = {
+		script = component/wsg_component_weapon_cost/wsg_component_weapon_cost_sr_alpha
+		wsg_component_weapon_tier = 4
+		wsg_component_weapon_size = X
+	}
+	ai_weight = {
+		weight = 2000
+		modifier = {
+			factor = 0
+			OR = {
+				component_no_resource = {
+					RESOURCE = sr_neo
+					MIN_REQUIREMENT = 500
+				}
+				component_no_resource = {
+					RESOURCE = sr_alpha
+					MIN_REQUIREMENT = 150
+				}
+			}
+		}
+	}
+}
+
+weapon_component_template = {
+	key = "wsg_weapon_X_S406"
+	size = extra_large
+	type = instant
+	icon = "GFX_wsg_weapon_X_S406"
+	icon_frame = 1
+	firing_arc = 20
+	min_range = 30
+	##use_ship_kill_target  = no
+	damage = {
+		min = 1000
+		max = 4000
+	}
+	windup = {
+		min = 30
+		max = 45
+	}
+	total_fire_time = 110
+	range = 180
+	accuracy = 0.9
+	shield_penetration = 0.6
+	armor_penetration = 0.6
+	shield_damage = 1.8
+	armor_damage = 1.8
+	hull_damage = 1.35
+	tracking = 0.15
+	power = -600
+	prerequisites = {
+		"tech_wsg_s_406"
+	}
+	component_set = "wsg_weapon_X_S406"
+	projectile_gfx = "wsg_lance_406"
+	tags = {
+		weapon_type_energy
+		weapon_type_kinetic
+		weapon_role_artillery
+		x_slot
+	}
+	ai_tags = {
+		weapon_role_artillery
+	}
+	ai_tag_weight = 0
+	inline_script = {
+		script = component/wsg_component_weapon_cost/wsg_component_weapon_cost_sr_alpha
+		wsg_component_weapon_tier = 4
+		wsg_component_weapon_size = X
+	}
+	ai_weight = {
+		weight = 2000
+		modifier = {
+			factor = 0
+			OR = {
+				component_no_resource = {
+					RESOURCE = sr_neo
+					MIN_REQUIREMENT = 400
+				}
+				component_no_resource = {
+					RESOURCE = sr_alpha
+					MIN_REQUIREMENT = 150
+				}
+				component_no_resource = {
+					RESOURCE = sr_dark_matter
+					MIN_REQUIREMENT = 100
+				}
+			}
+		}
+	}
+}

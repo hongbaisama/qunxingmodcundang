@@ -1,0 +1,329 @@
+#集群
+utility_component_template = {
+	key = "COMBAT_COMPUTER_SWARM_WSG"
+	size = small
+	icon = "GFX_ship_part_computer_role_swarm_wsg"
+	icon_frame = 1
+	power = -15
+	inline_script = {
+		script = component/wsg_component_weapon_cost/wsg_component_weapon_cost_alloys
+		wsg_component_weapon_tier = 2
+		wsg_component_weapon_size = P
+	}
+	class_restriction = {
+		shipclass_military
+	}
+	potential = {
+		OR = {
+			ship_size_multiplier <= 10
+			is_ship_size = wsg_lady_warship
+		}
+	}
+	component_set = "combat_computers"
+	ship_behavior = "swarm"
+	prerequisites = {
+		"tech_wsg_ovo"
+	}
+	modifier = {
+		ship_evasion_mult = 0.2
+		ship_speed_mult = 0.25
+	}
+	ship_modifier = {
+		ship_fire_rate_mult = 0.2
+	}
+	ai_weight = {
+		weight = 100
+		modifier = {
+			factor = 5
+			has_wg_authority = yes
+		}
+		modifier = {
+			factor = 0
+			component_no_resource = {
+				RESOURCE = sr_neo
+				MIN_REQUIREMENT = 100
+			}
+		}
+	}
+}
+
+#哨戒
+utility_component_template = {
+	key = "COMBAT_COMPUTER_PICKET_WSG"
+	size = small
+	icon = "GFX_ship_part_computer_role_picket_wsg"
+	icon_frame = 1
+	power = -15
+	inline_script = {
+		script = component/wsg_component_weapon_cost/wsg_component_weapon_cost_alloys
+		wsg_component_weapon_tier = 2
+		wsg_component_weapon_size = P
+	}
+	class_restriction = {
+		shipclass_military
+	}
+	potential = {
+		OR = {
+			ship_size_multiplier <= 20
+			is_ship_size = wsg_lady_warship
+		}
+	}	
+	component_set = "combat_computers"
+	ship_behavior = "picket"
+	prerequisites = {
+		"tech_wsg_ovo"
+	}
+	ship_modifier = {
+		ship_fire_rate_mult = 0.2
+		ship_tracking_add = 40
+	}
+	ai_weight = {
+		weight = 150
+		modifier = {
+			factor = 5
+			has_wg_authority = yes
+		}
+		modifier = {
+			factor = 0
+			component_no_resource = {
+				RESOURCE = sr_neo
+				MIN_REQUIREMENT = 100
+			}
+		}
+	}
+}
+
+#雷击
+utility_component_template = {
+	key = "COMBAT_COMPUTER_TORPEDO_WSG"
+	size = small
+	icon = "GFX_ship_part_computer_role_picket_wsg"
+	icon_frame = 1
+	power = -15
+	inline_script = {
+		script = component/wsg_component_weapon_cost/wsg_component_weapon_cost_alloys
+		wsg_component_weapon_tier = 2
+		wsg_component_weapon_size = P
+	}
+	class_restriction = {
+		shipclass_military
+	}
+	potential = {
+		OR = {
+			ship_size_multiplier <= 20
+			is_ship_size = wsg_lady_warship
+		}
+	}		
+	component_set = "combat_computers"
+	ship_behavior = "torpedo"
+	prerequisites = {
+		"tech_wsg_ovo"
+	}
+	ship_modifier = {
+		ship_fire_rate_mult = 0.15
+		weapon_type_explosive_weapon_damage_mult = 0.2
+		ship_accuracy_add = 10
+	}
+	ai_weight = {
+		weight = 150
+		modifier = {
+			factor = 5
+			has_wg_authority = yes
+		}
+		modifier = {
+			factor = 0
+			component_no_resource = {
+				RESOURCE = sr_neo
+				MIN_REQUIREMENT = 100
+			}
+		}
+	}
+}
+
+#战列
+utility_component_template = {
+	key = "COMBAT_COMPUTER_LINE_WSG"
+	size = small
+	icon = "GFX_ship_part_computer_role_line_wsg"
+	icon_frame = 1
+	power = -25
+	inline_script = {
+		script = component/wsg_component_weapon_cost/wsg_component_weapon_cost_alloys
+		wsg_component_weapon_tier = 2
+		wsg_component_weapon_size = P
+	}
+	class_restriction = {
+		shipclass_military
+	}
+	potential = {
+		OR = {
+			AND = {
+				ship_size_multiplier >= 10
+				ship_size_multiplier <= 40
+			}
+			is_ship_size = wsg_lady_warship
+		}
+	}		
+	component_set = "combat_computers"
+	ship_behavior = "WSGline"
+	prerequisites = {
+		"tech_wsg_ovo"
+	}
+	ship_modifier = {
+		ship_fire_rate_mult = 0.2
+		ship_accuracy_add = 15
+		ship_tracking_add = 10
+	}
+	ai_weight = {
+		weight = 200
+		modifier = {
+			factor = 5
+			has_wg_authority = yes
+		}
+		modifier = {
+			factor = 0
+			component_no_resource = {
+				RESOURCE = sr_neo
+				MIN_REQUIREMENT = 100
+			}
+		}
+	}
+}
+
+#火炮
+utility_component_template = {
+	key = "COMBAT_COMPUTER_ARTILLERY_WSG"
+	size = small
+	icon = "GFX_ship_part_computer_role_artillery_wsg"
+	icon_frame = 1
+	power = -25
+	inline_script = {
+		script = component/wsg_component_weapon_cost/wsg_component_weapon_cost_alloys
+		wsg_component_weapon_tier = 2
+		wsg_component_weapon_size = P
+	}
+	class_restriction = {
+		shipclass_military
+		shipclass_starbase
+	}
+	potential = {
+		OR = {
+			AND = {
+				ship_size_multiplier >= 10
+				ship_size_multiplier <= 160
+			}
+			is_ship_size = wsg_lady_warship
+		}
+	}		
+	component_set = "combat_computers"
+	ship_behavior = "WSGartillery"
+	prerequisites = {
+		"tech_wsg_ovo"
+	}
+	ship_modifier = {
+		ship_fire_rate_mult = 0.2
+		ship_weapon_range_mult = 0.25
+		ship_tracking_add = 10
+		ship_engagement_range_mult = 0.75
+	}
+	ai_weight = {
+		weight = 250
+		modifier = {
+			factor = 5
+			has_wg_authority = yes
+		}
+		modifier = {
+			factor = 0
+			component_no_resource = {
+				RESOURCE = sr_neo
+				MIN_REQUIREMENT = 100
+			}
+		}
+	}
+}
+
+#航母
+utility_component_template = {
+	key = "COMBAT_COMPUTER_CARRIER_WSG"
+	size = small
+	icon = "GFX_ship_part_computer_role_artillery_wsg"
+	icon_frame = 1
+	power = -35
+	inline_script = {
+		script = component/wsg_component_weapon_cost/wsg_component_weapon_cost_alloys
+		wsg_component_weapon_tier = 2
+		wsg_component_weapon_size = P
+	}
+	class_restriction = {
+		shipclass_military
+		shipclass_starbase
+	}
+	potential = {
+		ship_size_multiplier >= 40
+		ship_size_multiplier <= 160
+	}	
+	component_set = "combat_computers"
+	ship_behavior = "WGcarrier"
+	prerequisites = {
+		"tech_wsg_ovo"
+	}
+	ship_modifier = {
+		ship_fire_rate_mult = 0.1
+		ship_engagement_range_mult = 1.5
+	}
+	ai_weight = {
+		weight = 100
+		modifier = {
+			factor = 5
+			has_wg_authority = yes
+		}
+		modifier = {
+			factor = 0
+			component_no_resource = {
+				RESOURCE = sr_neo
+				MIN_REQUIREMENT = 100
+			}
+		}
+	}
+}
+
+#平台
+utility_component_template = {
+	key = "COMBAT_COMPUTER_PLATFORM_WSG"
+	size = small
+	icon = "GFX_ship_part_computer_role_platform_wsg"
+	icon_frame = 1
+	power = -20
+	inline_script = {
+		script = component/wsg_component_weapon_cost/wsg_component_weapon_cost_alloys
+		wsg_component_weapon_tier = 2
+		wsg_component_weapon_size = P
+	}
+	class_restriction = {
+		shipclass_military_station
+	}
+	component_set = "combat_computers"
+	ship_behavior = "platform"
+	prerequisites = {
+		"tech_wsg_ovo"
+	}
+	ship_modifier = {
+		ship_fire_rate_mult = 0.2
+		ship_tracking_add = 25
+		ship_engagement_range_mult = 0.75
+	}
+	ai_weight = {
+		weight = 100
+		modifier = {
+			factor = 5
+			has_wg_authority = yes
+		}
+		modifier = {
+			factor = 0
+			component_no_resource = {
+				RESOURCE = sr_neo
+				MIN_REQUIREMENT = 100
+			}
+		}
+	}
+}

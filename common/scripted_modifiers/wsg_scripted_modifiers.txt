@@ -1,0 +1,19 @@
+wg_planet_pop_assembly_average_mult = {
+	icon = mod_logistic_growth_mult
+	category = planet
+	good = yes
+	percentage = yes
+}
+wsg_overflow_weapon_symbol = { icon = mod_ship_weapon_damage category = ship good = yes hidden = yes }
+uf_ship_damage_reduction_mult = { icon = mod_ship_damage_reduction_mult category = ship good = yes hidden = yes }
+# 神秘飞升天赋屏蔽功能兼容方案
+#block_ap_the_flesh_is_weak = { icon = mod_planetary_ascension_effect_mult neutral = yes category = country localize_with_value_key = yes }
+#block_ap_engineered_evolution = { icon = mod_planetary_ascension_effect_mult neutral = yes category = country localize_with_value_key = yes }
+block_ap_synthetic_evolution = { icon = mod_planetary_ascension_effect_mult neutral = yes category = country localize_with_value_key = yes }
+#block_ap_mind_over_matter = { icon = mod_planetary_ascension_effect_mult neutral = yes category = country localize_with_value_key = yes }
+block_ap_become_the_crisis = { icon = mod_planetary_ascension_effect_mult neutral = yes category = country localize_with_value_key = yes }
+block_ap_cosmogenesis = { icon = mod_planetary_ascension_effect_mult neutral = yes category = country localize_with_value_key = yes }
+block_ap_behemoths = { icon = mod_planetary_ascension_effect_mult neutral = yes category = country localize_with_value_key = yes }
+#block_ap_defender_of_the_galaxy = { icon = mod_planetary_ascension_effect_mult neutral = yes category = country localize_with_value_key = yes }
+block_any_other_crisis_path = { icon = mod_planetary_ascension_effect_mult neutral = yes category = country localize_with_value_key = yes }
+can_add_negative_traits_organic = { icon = mod_species_trait_picks_add good = yes category = country percentage = no localize_with_value_key = yes }

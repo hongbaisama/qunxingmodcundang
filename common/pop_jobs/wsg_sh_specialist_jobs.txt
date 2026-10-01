@@ -1,0 +1,644 @@
+sh_researcher = {
+	category = specialist
+	swappable_data = {
+		default = {
+			condition_string = SPECIALIST_JOB_TRIGGER
+			building_icon = building_sh_research
+		}
+	}
+	possible_pre_triggers = {
+		has_owner = yes
+		is_enslaved = no
+		is_being_purged = no
+		is_being_assimilated = no
+	}
+
+	possible_precalc = can_fill_specialist_job
+	possible = {
+	}
+
+	resources = {
+		category = planet_researchers
+		produces = {
+			physics_research = 6
+			society_research = 6
+			engineering_research = 8
+		}
+		produces = {
+			trigger = { 
+				exists = owner
+				owner = { has_tradition = tr_sh_icebreaking_4 }
+			}
+			physics_research = 3
+			engineering_research = 3
+			society_research = 3
+		}
+		produces = {
+			trigger = { 
+				exists = owner
+				owner = { has_valid_civic = civic_technocracy }
+			}
+			unity = 1
+		}
+		upkeep = {
+			consumer_goods = 3
+		}		
+	}	
+	planet_modifier = {
+		planet_amenities_add = 200
+		planet_researchers_engineering_research_produces_mult = 0.01
+	}
+	
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = {
+				OR = {
+					has_trait = trait_robot_domestic_protocols
+					has_trait = trait_charismatic
+				}
+			}
+		}
+		modifier = {
+			planet_amenities_add = 16000
+		}
+	}
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { has_trait = trait_repugnant }
+		}
+		modifier = {
+			planet_amenities_add = -1.6
+		}
+	}	
+	 
+	weight = {
+		weight = @specialist_job_weight
+		#mult = value:scripted_modifier_job_weight_mult|JOB|sh_researcher|
+		modifier = {
+			factor = 0.2
+			has_citizenship_rights = no
+			NOT = { has_trait = trait_mechanical }
+		}
+		modifier = {
+			factor = 2
+			has_living_standard = { type = living_standard_academic_privilege }
+		}
+		modifier = {
+			factor = 0.1
+			can_take_servant_job = yes
+		}
+		modifier = {
+			factor = 0.8
+			is_enslaved = yes
+			has_slavery_type = { type = slavery_indentured }
+		}
+	}
+}
+
+
+
+sh_pantsu_maker = {
+	category = specialist
+	swappable_data = {
+		default = {
+			condition_string = SPECIALIST_JOB_TRIGGER
+			building_icon = building_sh_pantsu
+		}
+	}
+	possible_pre_triggers = {
+		has_owner = yes
+		#is_enslaved = no
+		is_being_purged = no
+		is_being_assimilated = no
+	}
+
+	possible_precalc = can_fill_specialist_job
+	possible = {
+	}
+
+	resources = {
+		category = planet_translucers
+		produces = {
+			sr_pantsu = 2.5
+		}
+		upkeep = {
+			minerals = 7
+			food = 3
+		}
+		upkeep = {
+			trigger = {
+				exists = colony
+				colony = { has_designation = col_wg_pantsu }
+			}
+			minerals = -1
+		}
+	}
+	weight = {
+		weight = @specialist_job_weight # Fairly important job
+		##mult = value:job_weights_modifier|JOB|sh_pantsu_maker|RESOURCE|sr_pantsu|
+		modifier = {
+			factor = 2
+			is_enslaved = yes
+			can_take_servant_job = no
+		}
+	}
+}
+
+
+sh_foundry = {
+	category = specialist
+	swappable_data = {
+		default = {
+			condition_string = SPECIALIST_JOB_TRIGGER
+			building_icon = building_sh_foundry
+		}
+	}
+	possible_pre_triggers = {
+		has_owner = yes
+		#is_enslaved = no
+		is_being_purged = no
+		is_being_assimilated = no
+	}
+
+	possible_precalc = can_fill_specialist_job
+	possible = {
+	}
+	
+	resources = {
+		category = planet_metallurgists
+		produces = {
+			alloys = 20
+		}
+		produces = {
+			trigger = { 
+				exists = owner
+				owner = { has_technology = tech_sh_toy }
+			}
+			consumer_goods = 1
+			alloys = 0.5
+		}
+		upkeep = {
+			minerals = 15
+		}
+	}
+	
+	weight = {
+		weight = @specialist_job_weight
+		modifier = {
+			factor = 2
+			is_enslaved = yes
+			can_take_servant_job = no
+		}
+	}
+}
+
+sh_foundry_shpc = {
+	category = specialist
+	swappable_data = {
+		default = {
+			condition_string = SPECIALIST_JOB_TRIGGER
+			building_icon = building_sh_foundry
+			icon = foundry
+		}
+	}
+	possible_pre_triggers = {
+		has_owner = yes
+		#is_enslaved = no
+		is_being_purged = no
+		is_being_assimilated = no
+	}
+
+	possible_precalc = can_fill_specialist_job
+	possible = {
+	}
+	
+	resources = {
+		category = planet_metallurgists
+		produces = {
+			alloys = 10
+			consumer_goods = 1
+		}
+		upkeep = {
+			minerals = 7
+		}
+		produces = {
+			trigger = {
+				colony = {
+					has_carrier_flag = shpc_alloys_flag
+				}
+			}
+			alloys = 5
+			consumer_goods = 1
+		}
+		upkeep = {
+			trigger = {
+				colony = {
+					has_carrier_flag = shpc_alloys_flag
+				}
+			}
+			minerals = 3
+		}
+	}
+	
+	weight = {
+		weight = @specialist_job_weight # Fairly important job
+		##mult = value:job_weights_modifier|JOB|sh_foundry_shpc|RESOURCE|alloys|
+		modifier = {
+			factor = 2
+			is_enslaved = yes
+			can_take_servant_job = no
+		}
+	}
+}
+
+sh_senergy = {
+	category = specialist
+	swappable_data = {
+		default = {
+			condition_string = SPECIALIST_JOB_TRIGGER
+			building_icon = building_sh_senergy
+		}
+	}
+	possible_pre_triggers = {
+		has_owner = yes
+		#is_enslaved = no
+		is_being_purged = no
+		is_being_assimilated = no
+	}
+
+	possible_precalc = can_fill_specialist_job
+	possible = {
+	}
+	
+	resources = {
+		category = planet_translucers
+		produces = {
+			sr_se = 2.5
+		}
+		upkeep = {
+			energy = 15
+			sr_pantsu = 1
+		}
+		upkeep = {
+			sr_pantsu = -0.2
+			trigger = {
+				owner = {
+					any_owned_megastructure = {
+						is_megastructure_type = shenhai_energy_core_4
+					}
+				}
+			}
+		}
+		upkeep = {
+			trigger = {
+				exists = colony
+				colony = { has_designation = col_sh_srse }
+			}
+			energy = -1
+		}
+		produces = {
+			trigger = {
+				owner = { has_technology = tech_wsg_senergy2 }
+			}
+			sr_se = 0.25
+		}
+		upkeep = {
+			trigger = {
+				owner = { has_technology = tech_wsg_senergy2 }
+			}
+			energy = 2
+		}
+	}	
+	weight = {
+		weight = @specialist_job_weight # Fairly important job
+		##mult = value:job_weights_modifier|JOB|sh_senergy|RESOURCE|sr_se|
+		modifier = {
+			factor = 2
+			is_enslaved = yes
+			can_take_servant_job = no
+		}
+		modifier = {
+			factor = 5
+			has_trait = wsg_trait_senergy_producer
+		}
+	}
+}
+
+sh_soldier = {
+	category = specialist
+	swappable_data = {
+		default = {
+			condition_string = SPECIALIST_JOB_TRIGGER
+			building_icon = building_stronghold
+		}
+	}
+	triggered_country_modifier = {
+		potential = {
+			colony = {
+				exists = owner 
+				owner = { 
+					NOR = {
+						has_policy_flag = wg_soldier_military_flag 
+						has_policy_flag = wg_soldier_bureaucratic_flag
+					}
+				}	
+			}
+		}
+		modifier = {
+			country_naval_cap_add = 4
+			empire_size_add = -8
+		}
+	}	
+	triggered_country_modifier = {
+		potential = {
+			colony = {
+				exists = owner 
+				owner = { has_policy_flag = wg_soldier_military_flag }
+			}
+		}
+		modifier = {
+			country_naval_cap_add = 8
+			empire_size_add = -2
+		}
+	}
+	triggered_country_modifier = {
+		potential = {
+			colony = {
+				exists = owner 
+				owner = { has_policy_flag = wg_soldier_bureaucratic_flag }
+			}
+		}
+		modifier = {
+			country_naval_cap_add = 2
+			empire_size_add = -10
+		}
+	}
+	triggered_country_modifier = {
+		potential = {
+			exists = colony
+			colony = { OR = {
+				has_designation = col_sh_ring_soldier 
+				has_designation = col_graygoo_military
+				has_designation = col_sh_military
+			}}
+		}
+		modifier = {
+			empire_size_add = -2
+			country_naval_cap_add = 2
+		}
+	}
+	triggered_country_modifier = {
+		potential = {
+			exists = colony
+			colony = { has_designation = col_bureau }
+		}
+		modifier = {
+			empire_size_add = -2
+		}
+	}
+	planet_modifier = {
+		planet_defense_armies_add = 1
+	}	
+	
+	resources = {
+		category = planet_soldiers
+		upkeep = {
+			energy = 2
+			consumer_goods = 1
+		}
+	}	
+	
+	triggered_planet_modifier = {
+		potential = {
+			has_modifier = martial_law
+		}
+		modifier = {
+			planet_stability_add = 5
+		}
+	}
+	
+	possible_pre_triggers = {
+		has_owner = yes
+		is_being_purged = no
+		#is_enslaved = no
+		is_being_assimilated = no
+	}
+
+	possible = {
+		soldier_job_check_trigger = yes
+		owner = { is_gestalt = no }
+	}
+	
+	weight = {
+		weight = 15
+	}
+}
+
+sh_bureaucrat = {
+	category = specialist
+	swappable_data = {
+		default = {
+			condition_string = SPECIALIST_JOB_TRIGGER
+			building_icon = building_sh_unity_1
+		}
+	}
+	possible_pre_triggers = {
+		has_owner = yes
+		is_being_purged = no
+		is_being_assimilated = no
+		is_sapient = yes
+	}
+	possible_precalc = can_fill_specialist_job
+	possible = {
+		complex_specialist_job_check_trigger = yes
+	}
+	resources = {
+		category = planet_bureaucrats
+		produces = {
+			unity = 6
+		}
+		upkeep = {
+			consumer_goods = 3
+			energy = 3
+		}
+	}
+
+	planet_modifier = {
+		planet_bureaucrats_unity_produces_add = 2
+	}
+
+	weight = {
+		weight = 50
+		modifier = {
+			factor = 0.02
+			has_citizenship_rights = no
+		}
+		modifier = {
+			factor = 2
+			has_trait = trait_robot_propaganda_machines
+			OR = {
+				is_non_sapient_robot = yes
+				is_shackled_robot = yes
+			}
+		}
+		modifier = {
+			factor = 1.5
+			OR = {
+				has_trait = trait_robot_propaganda_machines
+				has_trait = trait_traditional
+			}
+		}
+		modifier = {
+			factor = 0.5
+			has_trait = trait_quarrelsome
+		}
+		modifier = {
+			factor = 0.1
+			can_take_servant_job = yes
+		}
+	}
+}
+
+sh_pool = {
+	category = specialist
+	swappable_data = {
+		default = {
+			condition_string = SPECIALIST_JOB_TRIGGER
+			building_icon = building_sh_unity_1
+		}
+	}
+	possible_pre_triggers = {
+		has_owner = yes
+		is_being_purged = no
+		is_being_assimilated = no
+		is_sapient = yes
+	}
+
+	possible_precalc = can_fill_specialist_job
+	possible = {
+		complex_specialist_job_check_trigger = yes
+	}
+
+	resources = {
+		category = planet_culture_workers
+		produces = {
+			unity = 12
+			society_research = 3
+		}
+		upkeep = {
+			consumer_goods = 5
+		}
+	}
+
+	planet_modifier = {
+		planet_amenities_add = 1000
+	}
+
+	weight = {
+		weight = @specialist_job_weight # Fairly important job
+		##mult = value:job_weights_modifier|JOB|sh_pool|RESOURCE|unity|
+		modifier = {
+			factor = 2
+			is_enslaved = yes
+			can_take_servant_job = no
+		}
+	}
+}
+
+
+
+sh_AP_NET_manager = {
+	category = specialist
+	swappable_data = {
+		default = {
+			condition_string = SPECIALIST_JOB_TRIGGER
+			building_icon = building_sh_pantsu
+		}
+	}
+	possible_pre_triggers = {
+		has_owner = yes
+		#is_enslaved = no
+		is_being_purged = no
+		is_being_assimilated = no
+	}
+
+	possible_precalc = can_fill_specialist_job
+	possible = {
+	}
+
+	resources = {
+		category = planet_translucers
+		produces = {
+			sr_pantsu = 1
+			consumer_goods = 10
+			exotic_gases = 0.1
+			volatile_motes = 0.1
+			rare_crystals = 0.1
+		}
+		produces = {
+			trigger = {
+				owner = { has_technology = tech_sh_senergy }
+			}
+			sr_se = 0.25
+		}
+		upkeep = {
+			food = 8
+		}
+	}
+	weight = {
+		weight = @specialist_job_weight # Fairly important job
+		##mult = value:job_weights_modifier|JOB|sh_AP_NET_manager|RESOURCE|consumer_goods|
+		modifier = {
+			factor = 2
+			is_enslaved = yes
+			can_take_servant_job = no
+		}
+	}
+}
+
+
+
+sh_enforcer = {
+	category = specialist
+	swappable_data = {
+		default = {
+			condition_string = SPECIALIST_JOB_TRIGGER
+			building_icon = building_sh_precinct_house
+			icon = manager
+		}
+	}
+	planet_modifier = {
+		planet_jobs_produces_mult = 0.02
+		planet_crime_add = -80
+	}	
+	
+	resources = {
+		category = planet_enforcers
+		upkeep = {
+			energy = 2
+			consumer_goods = 1
+		}
+	}
+	
+	
+	possible_pre_triggers = {
+		has_owner = yes
+		is_being_purged = no
+		#is_enslaved = no
+		is_being_assimilated = no
+	}
+
+	possible = {
+	}
+	
+	weight = {
+		weight = @specialist_job_weight
+
+		modifier = {
+			factor = 50
+		}
+	}
+
+}

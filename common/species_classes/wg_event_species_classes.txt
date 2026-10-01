@@ -1,0 +1,393 @@
+WG_SWARM = {
+	archetype = OTHER
+	playable = {
+		always = no
+	}
+	randomized = no
+	gender = no
+	graphical_culture = swarm_01
+	move_pop_sound_effect = "moving_pop_confirmation"
+	use_climate_preference = no
+}
+
+WG_WARMMER_LEX = {
+	archetype = OTHER
+	playable = {
+		always = no
+	}
+	randomized = no
+	gender = yes
+	move_pop_sound_effect = "moving_pop_confirmation"
+	use_climate_preference = no
+}
+
+WG_WARMMER_YAMATO = {
+	archetype = OTHER
+	playable = {
+		always = no
+	}
+	randomized = no
+	gender = yes
+	move_pop_sound_effect = "moving_pop_confirmation"
+	use_climate_preference = no
+}
+
+WG_WARMMER_WSG_SANGUINIUS = {
+	archetype = OTHER
+	playable = {
+		always = no
+	}
+	randomized = no
+	gender = yes
+	move_pop_sound_effect = "moving_pop_confirmation"
+	use_climate_preference = no
+}
+
+WG_WARMMER_SH_SANGUINIUS = {
+	archetype = OTHER
+	playable = {
+		always = no
+	}
+	randomized = no
+	gender = yes
+	move_pop_sound_effect = "moving_pop_confirmation"
+	use_climate_preference = no
+}
+
+WG_WARMMER_WSG_LION = {
+	archetype = OTHER
+	playable = {
+		always = no
+	}
+	randomized = no
+	gender = yes
+	move_pop_sound_effect = "moving_pop_confirmation"
+	use_climate_preference = no
+}
+
+# TODO
+# WG_WARMMER_SH_LION = {
+# 	archetype = OTHER
+# 	playable = {
+# 		always = no
+# 	}
+# 	randomized = no
+# 	gender = yes
+# 	move_pop_sound_effect = "moving_pop_confirmation"
+# 	use_climate_preference = no
+# }
+
+WG_NAILA = {
+	archetype = OTHER
+	playable = {
+		always = no
+	}
+	randomized = no
+	gender = yes
+	move_pop_sound_effect = "moving_pop_confirmation"
+	use_climate_preference = no
+}
+
+WG_uf_24 = {
+	archetype = OTHER
+	playable = {
+		always = no
+	}
+	randomized = no
+	gender = yes
+	move_pop_sound_effect = "moving_pop_confirmation"
+	use_climate_preference = no
+}
+
+WG_Rodney = {
+	archetype = OTHER
+	playable = {
+		always = no
+	}
+	randomized = no
+	gender = yes
+	move_pop_sound_effect = "moving_pop_confirmation"
+	use_climate_preference = no
+}
+
+OVERTIMEMAN = {
+	archetype = OTHER
+	playable = {
+		always = no
+	}
+	randomized = no
+	gender = yes
+	move_pop_sound_effect = "moving_pop_confirmation"
+	use_climate_preference = no
+}
+
+Bismark_sh = {
+	archetype = OTHER
+	playable = {
+		always = no
+	}
+	randomized = no
+	gender = yes
+	move_pop_sound_effect = "moving_pop_confirmation"
+	use_climate_preference = no
+}
+
+WG_Missouri = {
+	archetype = OTHER
+	playable = {
+		always = no
+	}
+	randomized = no
+	gender = yes
+	move_pop_sound_effect = "moving_pop_confirmation"
+	use_climate_preference = no
+}
+
+WG_Repulse = {
+	archetype = OTHER
+	playable = {
+		always = no
+	}
+	randomized = no
+	gender = yes
+	move_pop_sound_effect = "moving_pop_confirmation"
+	use_climate_preference = no
+}
+
+WG_Renown = {
+	archetype = OTHER
+	playable = {
+		always = no
+	}
+	randomized = no
+	gender = yes
+	move_pop_sound_effect = "moving_pop_confirmation"
+	use_climate_preference = no
+}
+
+WG_Washington = {
+	archetype = OTHER
+	playable = {
+		always = no
+	}
+	randomized = no
+	gender = yes
+	move_pop_sound_effect = "moving_pop_confirmation"
+	use_climate_preference = no
+}
+
+WG_Redgalo = {
+	archetype = OTHER
+	playable = {
+		always = no
+	}
+	randomized = no
+	gender = yes
+	move_pop_sound_effect = "moving_pop_confirmation"
+	use_climate_preference = no
+}
+
+CAPITALISMMAN = {
+	archetype = OTHER
+	playable = {
+		always = no
+	}
+	randomized = no
+	gender = yes
+	move_pop_sound_effect = "moving_pop_confirmation"
+	use_climate_preference = no
+}
+
+WG_QUINCY = {
+	archetype = OTHER
+	playable = {
+		always = no
+	}
+	randomized = no
+	gender = yes
+	move_pop_sound_effect = "moving_pop_confirmation"
+	use_climate_preference = no
+}
+
+WG_CA62 = {
+	archetype = OTHER
+	playable = {
+		always = no
+	}
+	randomized = no
+	gender = yes
+	move_pop_sound_effect = "moving_pop_confirmation"
+	use_climate_preference = no
+}
+
+WG_VESTA = {
+	archetype = OTHER
+	playable = {
+		always = no
+	}
+	randomized = no
+	gender = yes
+	move_pop_sound_effect = "moving_pop_confirmation"
+	use_climate_preference = no
+}
+
+WG_INVINCIBLE = {
+	archetype = OTHER
+	playable = {
+		always = no
+	}
+	randomized = no
+	gender = yes
+	move_pop_sound_effect = "moving_pop_confirmation"
+	use_climate_preference = no
+}
+
+LEX_SPECIES = {
+	archetype = OTHER
+	playable = {
+		always = no
+	}
+	randomized = no
+	gender = yes
+	move_pop_sound_effect = "moving_pop_confirmation"
+	use_climate_preference = no
+}
+
+WG_PARADOX_LEADER = {
+	archetype = OTHER
+	playable = {
+		always = no
+	}
+	randomized = no
+	gender = yes
+	move_pop_sound_effect = "moving_pop_confirmation"
+	use_climate_preference = no
+}
+
+WG_U1405 = {
+	archetype = OTHER
+	playable = {
+		always = no
+	}
+	randomized = no
+	gender = yes
+	move_pop_sound_effect = "moving_pop_confirmation"
+	use_climate_preference = no
+}
+
+SH_AP = {
+	archetype = OTHER
+	playable = {
+		always = no
+	}
+	randomized = no
+	gender = yes
+	move_pop_sound_effect = "moving_pop_confirmation"
+	use_climate_preference = no
+}
+
+WG_FORMIDABLE = {
+	archetype = OTHER
+	playable = {
+		always = no
+	}
+	randomized = no
+	gender = yes
+	move_pop_sound_effect = "moving_pop_confirmation"
+	use_climate_preference = no
+}
+
+WG_A150 = {
+	archetype = OTHER
+	playable = {
+		always = no
+	}
+	randomized = no
+	gender = yes
+	move_pop_sound_effect = "moving_pop_confirmation"
+	use_climate_preference = no
+}
+
+WG_CV16 = {
+	archetype = OTHER
+	playable = {
+		always = no
+	}
+	randomized = no
+	gender = yes
+	move_pop_sound_effect = "moving_pop_confirmation"
+	use_climate_preference = no
+}
+
+WG_IMPAVIDO = {
+	archetype = OTHER
+	playable = {
+		always = no
+	}
+	randomized = no
+	gender = yes
+	move_pop_sound_effect = "moving_pop_confirmation"
+	use_climate_preference = no
+}
+
+WG_NORTH_CAROLINA = {
+	archetype = OTHER
+	playable = {
+		always = no
+	}
+	randomized = no
+	gender = yes
+	move_pop_sound_effect = "moving_pop_confirmation"
+	use_climate_preference = no
+}
+
+WG_MONTANA = {
+	archetype = OTHER
+	playable = {
+		always = no
+	}
+	randomized = no
+	gender = yes
+	move_pop_sound_effect = "moving_pop_confirmation"
+	use_climate_preference = no
+}
+WG_MIDWAY = {
+	archetype = OTHER
+	playable = {
+		always = no
+	}
+	randomized = no
+	gender = yes
+	move_pop_sound_effect = "moving_pop_confirmation"
+	use_climate_preference = no
+}
+WG_SH_LEXINGTON = {
+	archetype = OTHER
+	playable = {
+		always = no
+	}
+	randomized = no
+	gender = yes
+	move_pop_sound_effect = "moving_pop_confirmation"
+	use_climate_preference = no
+}
+SH_SchleswigHolstein = {
+	archetype = OTHER
+	playable = {
+		always = no
+	}
+	randomized = no
+	gender = yes
+	move_pop_sound_effect = "moving_pop_confirmation"
+	use_climate_preference = no
+}
+SH_Vector = {
+	archetype = OTHER
+	playable = {
+		always = no
+	}
+	randomized = no
+	gender = yes
+	move_pop_sound_effect = "moving_pop_confirmation"
+	use_climate_preference = no
+}

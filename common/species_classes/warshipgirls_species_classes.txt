@@ -1,0 +1,81 @@
+"Warship_Girls" = {
+	archetype = WARSHIPGIRL
+	randomized = yes
+	possible = { always = yes }
+	graphical_culture = wsg_02
+	use_climate_preference = no
+	move_pop_sound_effect = "moving_pop_confirmation"
+}
+
+"ShenHai" = {
+	archetype = SHENHAI
+	randomized = yes
+	possible = { always = yes }
+	graphical_culture = wsg_03
+	use_climate_preference = no
+	move_pop_sound_effect = "moving_pop_confirmation"
+}
+
+"United_fleet" = {
+	archetype = UNITED_FLEET
+	randomized = no
+	gender = no
+	possible = { always = yes }
+	leader_age_min = 25
+	leader_age_max = 50
+	graphical_culture = wsg_01
+	use_climate_preference = no
+	move_pop_sound_effect = "moving_pop_confirmation"
+}
+
+"United_fleet_White" = {
+	randomized = no
+	graphical_culture = wsg_05
+}
+
+"United_fleet_MECHINE" = {
+	randomized = no
+	graphical_culture = wsg_06
+}
+
+"United_fleet_White_MECHINE" = {
+	randomized = no
+	graphical_culture = wsg_07
+}
+
+"Ancient_China" = {
+	randomized = no
+	graphical_culture = china_01
+}
+
+"kdc_cat" = {
+	playable = {
+		always = no
+	}
+	randomized = no
+	gender = no
+	graphical_culture = wsg_05
+	use_climate_preference = no
+	move_pop_sound_effect = "moving_pop_confirmation"
+}
+
+#用于调用
+"ACOT_WSG" = {
+	playable = {
+		always = no
+	}
+	randomized = no
+	gender = no
+	graphical_culture = ai_01
+	use_climate_preference = no
+	move_pop_sound_effect = "moving_pop_confirmation"
+}
+
+# Star_wars_girls = {
+# 	archetype = BIOLOGICAL
+# 	randomized = no
+# 	gender = no
+# 	playable = { always = no }
+# 	graphical_culture = mammalian_01
+# 	move_pop_sound_effect = "moving_pop_confirmation"
+# }	

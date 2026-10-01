@@ -1,0 +1,148 @@
+weapon_component_template = {
+	key = "wsg_weapon_T_S_460"
+	size = titanic
+	#entity = "invisible_turret_entity"
+	type = instant
+	
+	icon = "GFX_wsg_weapon_T_S_460"
+	icon_frame = 1
+	
+	firing_arc = 25.0
+	min_range = 30.0
+	
+	
+	damage = { min = 2500 max = 7000 }
+	collateral_damage = {
+		min = 125
+		max = 300
+	}
+	collateral_range = 26
+	windup = { min = 15 max = 25 }
+	total_fire_time = 90
+	range = 265.0
+	accuracy = 0.8
+	shield_penetration = 1.0
+	armor_penetration = 1.0
+	shield_damage = 1.5
+	tracking = 0.1
+	power = -800
+	
+	prerequisites = { "tech_wsg_weapon_S_460" }
+	component_set = "wsg_weapon_T_S_460"
+	projectile_gfx = "titan_laser"
+	upgrades_to = "wsg_weapon_T_ES_460"
+	tags = { weapon_type_energy t_slot weapon_role_artillery }
+	ai_tags = { weapon_role_artillery }
+	inline_script = {
+		script = component/wsg_component_weapon_cost/wsg_component_weapon_cost_sr_se
+		wsg_component_weapon_tier = 4
+		wsg_component_weapon_size = T
+	}
+	ai_weight = {
+		weight = 1000
+		modifier = {
+			factor = 0.0
+			component_no_resource = { RESOURCE = sr_se MIN_REQUIREMENT = 500 }
+		}
+	}
+}
+weapon_component_template = {
+	key = "wsg_weapon_T_ES_460"
+	size = titanic
+	#entity = "invisible_turret_entity"
+	type = instant
+	
+	icon = "GFX_wsg_weapon_T_ES_460"
+	icon_frame = 1
+	
+	firing_arc = 20.0
+	min_range = 40.0
+	
+	damage = { min = 5000 max = 10000 }
+	collateral_damage = {
+		min = 250
+		max = 500
+	}
+	collateral_range = 28
+	windup = { min = 15 max = 25 }
+	total_fire_time = 170
+	range = 285.0
+	accuracy = 0.9
+	shield_penetration = 1.0
+	armor_penetration = 1.0
+	shield_damage = 2.25
+	tracking = 0.2
+	power = -1200
+	
+	prerequisites = { "tech_wsg_weapon_ES_460" }
+	component_set = "wsg_weapon_T_ES_460"
+	projectile_gfx = "uf_lance_406"
+	tags = { weapon_type_energy weapon_type_kinetic t_slot weapon_role_artillery }
+	ai_tags = { weapon_role_artillery }
+	inline_script = {
+		script = component/wsg_component_weapon_cost/wsg_component_weapon_cost_sr_se_with_sr_dark_matter
+		wsg_component_weapon_tier = 5
+		wsg_component_weapon_size = T
+	}
+	ai_weight = {
+		weight = 1000
+		modifier = {
+			factor = 0.0
+			OR = {
+				component_no_resource = { RESOURCE = sr_se MIN_REQUIREMENT = 500 }
+				component_no_resource = { RESOURCE = sr_dark_matter MIN_REQUIREMENT = 150 }
+			}
+		}
+	}
+}
+# 胖次商店特供版 
+weapon_component_template = {
+	key = "wsg_weapon_T_S510"
+	size = titanic
+	#entity = "invisible_turret_entity"
+	type = instant
+	
+	icon = "GFX_wsg_weapon_T_S510"
+	icon_frame = 1
+	
+	firing_arc = 20.0
+	min_range = 40.0
+	
+	damage = { min = 8000 max = 12000 }
+	collateral_damage = {
+		min = 400
+		max = 600
+	}
+	collateral_range = 28
+	windup = { min = 35 max = 50 }
+	total_fire_time = 290
+	range = 285.0
+	accuracy = 0.8
+	shield_damage = 3.5
+	armor_damage = 3.5
+	hull_damage = 1.5
+	tracking = 0.1
+	power = -1200
+	
+	prerequisites = { "tech_wsg_weapon_T_S510" }
+	component_set = "wsg_weapon_T_S510"
+	projectile_gfx = "uf_lance_406"
+	tags = { weapon_type_energy weapon_type_kinetic weapon_type_wsg_pantsu t_slot weapon_role_artillery }
+	ai_tags = { weapon_role_artillery }
+	ai_tag_weight = 0
+	inline_script = {
+		script = component/wsg_component_weapon_cost/wsg_component_weapon_cost_sr_se_with_sr_dark_matter
+		wsg_component_weapon_tier = 5
+		wsg_component_weapon_size = T
+	}
+	ai_weight = {
+		weight = 2000
+		modifier = {
+			factor = 0.0
+			OR = {
+				component_no_resource = { RESOURCE = sr_se MIN_REQUIREMENT = 500 }
+				component_no_resource = { RESOURCE = sr_dark_matter MIN_REQUIREMENT = 150 }
+			}
+		}
+	}
+}

@@ -1,0 +1,183 @@
+#深海建造器
+building_sh_assembly_plant = {
+	base_buildtime = 240
+	planet_limit = 1
+
+	category = pop_assembly
+	
+	potential = {
+		exists = owner
+		owner = { 
+			has_authority = auth_shenhai	
+			NOT = { has_ascension_perk = ap_become_the_gray }
+		}
+	}
+
+	building_sets = {
+		government
+		urban
+	}
+
+	convert_to = {
+		"building_sh_nano_assembly_plant"
+	}
+	custom_tooltip = wg_planet_pop_assembly_average_int_tooltip_1
+	triggered_planet_modifier = {
+		bonus_pop_growth = 1
+		multiplier = planet.value:wg_planet_pop_assembly_average_int
+	}
+	resources = {
+		category = planet_buildings
+		cost = {
+			minerals = 250
+		}
+		upkeep = {
+			minerals = 2
+			energy = 2
+		}
+		upkeep = {
+			trigger = {
+				exists = assembling_species
+				assembling_species = {
+					OR = {
+						has_trait = sh_trait_building2E
+						has_trait = sh_trait_building22E
+					}
+				}
+			}
+			sr_se = 5
+		}
+	}	
+	
+	prerequisites = {
+		"tech_sh_assembly"
+	}
+	
+	upgrades = {
+		building_sh_assembly_plantU
+	}
+}
+
+#深海建造器MK2
+building_sh_assembly_plantU = {
+	base_buildtime = 240
+	can_build = no
+
+	category = pop_assembly
+	building_sets = {
+		government
+		urban
+	}
+	potential = {
+		exists = owner
+		owner = { 
+			has_authority = auth_shenhai	
+			NOT = { has_ascension_perk = ap_become_the_gray }
+		}
+	}
+	allow = {
+		pop_amount >= 1000
+	}	
+
+	convert_to = {
+		"building_sh_nano_assembly_plantU"
+	}
+	custom_tooltip = wg_planet_pop_assembly_average_int_tooltip_2
+	triggered_planet_modifier = {
+		bonus_pop_growth = 2
+		multiplier = planet.value:wg_planet_pop_assembly_average_int
+	}
+	resources = {
+		category = planet_buildings
+		cost = {
+			minerals = 500
+		}
+		upkeep = {
+			minerals = 10
+			energy = 10
+			sr_pantsu = 1
+		}
+		upkeep = {
+			trigger = {
+				exists = assembling_species
+				assembling_species = {
+					OR = {
+						has_trait = sh_trait_building2E
+						has_trait = sh_trait_building22E
+					}
+				}
+			}
+			sr_se = 5
+		}
+	}	
+
+	upgrades = {
+		building_sh_assembly_plantF
+	}
+	
+	prerequisites = {
+		"tech_sh_assembly2"
+	}	
+}
+
+#深海建造器MK3
+building_sh_assembly_plantF = {
+	base_buildtime = 400
+	can_build = no
+	building_sets = {
+		government
+		urban
+	}
+	category = pop_assembly
+	
+	potential = {
+		exists = owner
+		owner = { 
+			has_authority = auth_shenhai	
+			NOT = { has_ascension_perk = ap_become_the_gray }
+		}
+	}
+	allow = {
+		pop_amount >= 2000
+	}	
+
+	convert_to = {
+		"building_sh_nano_assembly_plantF"
+	}
+
+	custom_tooltip = wg_planet_pop_assembly_average_int_tooltip_4
+	triggered_planet_modifier = {
+		bonus_pop_growth = 3
+		multiplier = planet.value:wg_planet_pop_assembly_average_int
+	}
+
+	resources = {
+		category = planet_buildings
+		cost = {
+			minerals = 800
+			sr_se = 40
+		}
+		upkeep = {
+			minerals = 15
+			energy = 15
+			sr_pantsu = 1
+			sr_se = 1
+		}
+		upkeep = {
+			trigger = {
+				exists = assembling_species
+				assembling_species = {
+					OR = {
+						has_trait = sh_trait_building2E
+						has_trait = sh_trait_building22E
+					}
+				}
+			}
+			sr_se = 5
+		}
+	}	
+	
+	prerequisites = {
+		"tech_sh_assembly3"
+	}	
+}

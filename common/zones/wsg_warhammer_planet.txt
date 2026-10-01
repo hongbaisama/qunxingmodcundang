@@ -1,0 +1,76 @@
+zone_wsg_wg_hive_world_admin = {
+	icon = GFX_district_specialization_bureaucrat
+	base_buildtime = @zone_buildtime
+	potential = {
+		uses_district_set = wg_hive_city_world
+	}
+	unlock = {
+		uses_district_set = wg_hive_city_world
+	}
+	resources = {
+		category = planet_zones
+		cost = {
+			minerals = @zone_cost
+		}
+	}
+	#uses_district_set = wg_hive_city_world
+	triggered_district_planet_modifier = {
+		potential = {
+			uses_district_set = wg_hive_city_world
+		}
+		job_wg_hive_city_soldier_add = 500
+		planet_housing_add = 500
+	}
+	planet_modifier = {
+		zone_building_slots_add = 3
+	}
+	max_buildings = 3
+	include = {
+		all
+	}
+	excluded_building_sets = {
+		
+		generator_automation
+		mining_automation
+		farming_automation
+	}
+}
+
+zone_wsg_wg_forge_research = {
+	icon = GFX_district_specialization_research
+	base_buildtime = @zone_buildtime
+	potential = {
+		uses_district_set = wg_forge_world
+	}
+	unlock = {
+		uses_district_set = wg_forge_world
+	}
+	resources = {
+		category = planet_zones
+		cost = {
+			minerals = @zone_cost
+		}
+	}
+	#uses_district_set = wg_forge_world
+	triggered_district_planet_modifier = {
+		potential = {
+			uses_district_set = wg_forge_world
+		}
+		job_wg_forge_research_add = 1000
+		job_wg_forge_head_research_add = 500
+		planet_housing_add = 1500
+	}
+	planet_modifier = {
+		zone_building_slots_add = 3
+	}
+	max_buildings = 3
+	include = {
+		all
+	}
+	excluded_building_sets = {
+		
+		generator_automation
+		mining_automation
+		farming_automation
+	}
+}

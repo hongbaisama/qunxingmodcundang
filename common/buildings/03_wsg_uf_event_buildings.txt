@@ -1,0 +1,24 @@
+building_uf_farmland = {
+	icon = building_uf_farmland
+	can_build = no
+	category = government
+	building_sets = {
+		government
+	}
+	potential = {
+		has_carrier_flag = uf_can_building_uf_farmland
+	}
+	destroy_trigger = {
+		always = no
+	}		
+	resources = {
+		category = planet_buildings
+		produces = {
+			food = 100
+		}
+		upkeep = {
+			energy = 15
+			minerals = 5
+		}
+	}	
+}

@@ -1,0 +1,79 @@
+wg_fe_gamer = {
+	category = worker
+	is_capped_by_modifier = no
+
+	swappable_data = {
+		default = {
+			building_icon = building_residence
+			icon = manager
+		}
+	}
+	possible = {
+		hidden_trigger = { exists = owner }
+		owner = { 
+			has_authority = auth_wg_fe
+			has_country_flag = wg_fallen_empire
+			is_country_type = wg_fallen_empire
+		}
+		NOT = {is_same_species = owner }
+	}
+	resources = {
+		category = planet_jobs
+		produces = {
+			unity = 1
+		}
+		upkeep = {
+			consumer_goods = 3
+		}		
+	}	
+
+	#removes negative ammenities
+	planet_modifier = {
+		pop_housing_usage_add = -0.01
+		planet_amenities_add = 500
+	}
+	#cancels out food need for slaves
+	weight = { weight = 10 }
+}
+
+wg_fe_war_factorer = {
+	category = worker
+	is_capped_by_modifier = no
+
+	swappable_data = {
+		default = {
+			building_icon = building_residence
+			icon = foundry
+		}
+	}
+	possible = {
+		hidden_trigger = { exists = owner }
+		owner = { 
+			has_authority = auth_wg_fe
+			has_country_flag = wg_fallen_empire
+			is_country_type = wg_awakened_fallen_empire
+		}
+		NOT = {is_same_species = owner }
+	}
+	
+	resources = {
+		category = planet_jobs
+		upkeep = {
+			minerals = 3
+			energy = 3
+		}
+		produces = {
+			food = 2
+			alloys = 2
+			consumer_goods = 2
+			sr_pantsu = 1
+		}
+	}	
+	#removes negative ammenities
+	planet_modifier = {
+		pop_housing_usage_add = -0.01
+		planet_amenities_add = 500
+	}
+	#cancels out food need for slaves
+	weight = { weight = 10 }
+}

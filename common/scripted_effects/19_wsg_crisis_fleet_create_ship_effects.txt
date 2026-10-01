@@ -1,0 +1,155 @@
+create_wg_crisis_platform = {
+    optimize_memory
+	if = {
+		limit = {
+			owner? = { is_country_type = wg_crisis_country }
+		}
+		create_ship = {
+			name = random fleet_cache_recalc = no
+			design = "NAME_WG_EG_ION_CANNON"
+			graphical_culture = "wsg_01"
+		}						
+	}					
+}
+
+create_uf_carrier = {
+    optimize_memory
+    while = { count = $NUM|1$
+        create_ship = {
+            name = random fleet_cache_recalc = no
+            design = "NAME_WG_CARRIER"
+            graphical_culture = "wsg_01"
+            upgradable = no
+        }
+    }
+}
+create_uf_titan = {
+    optimize_memory
+    while = { count = $NUM|1$
+        create_ship = {
+            name = random fleet_cache_recalc = no
+            design = "NAME_WG_EG_TITAN"
+            graphical_culture = "wsg_01"
+            upgradable = no
+        }
+    }
+}
+create_uf_bb = {
+    optimize_memory
+    while = { count = $NUM|1$
+        create_ship = {
+            name = random fleet_cache_recalc = no
+            design = "NAME_WG_EG_BB"
+            graphical_culture = "wsg_01"
+            upgradable = no
+        }
+    }
+}
+create_uf_bc = {
+    optimize_memory
+    while = { count = $NUM|1$
+        create_ship = {
+            name = random fleet_cache_recalc = no
+            design = "NAME_WG_EG_BC"
+            upgradable = no
+        }
+    }
+}
+create_uf_ca = {
+    optimize_memory
+    while = { count = $NUM|1$
+        create_ship = {
+            name = random fleet_cache_recalc = no
+            design = "NAME_WG_EG_CA"
+            graphical_culture = "wsg_01"
+            upgradable = no
+        }
+    }
+}
+create_uf_dd = {
+    optimize_memory
+    while = { count = $NUM|1$
+        create_ship = {
+            name = random fleet_cache_recalc = no
+            design = "NAME_WG_EG_DD"
+            graphical_culture = "wsg_01"
+            upgradable = no
+        }
+    }
+}
+create_uf_dreadnought = {
+    optimize_memory
+    while = { count = $NUM|1$
+        create_ship = {
+            name = random fleet_cache_recalc = no
+            design = "NAME_WG_EG_DREADNOUGHT"
+            graphical_culture = "wsg_01"
+        }
+    }
+}
+create_uf_buffer_portal = {
+    optimize_memory
+    while = { count = $NUM|1$
+        create_ship = {
+            name = random fleet_cache_recalc = no
+            design = "NAME_uf_buffer_portal"  
+            effect = { set_ship_flag = bf_portal }
+        }
+    }
+}
+create_uf_buffer = {
+    optimize_memory
+    while = { count = $NUM|1$
+        create_ship = {
+            name = random fleet_cache_recalc = no
+            design = "NAME_uf_buffer"
+        }
+    }
+}
+create_uf_juggernaut = {
+    optimize_memory
+    while = { count = $NUM|1$
+        create_ship = {
+            name = random fleet_cache_recalc = no
+            design = "NAME_uf_Juggernaut"
+            graphical_culture = "wsg_01"
+        }
+    }
+}
+create_uf_flagship = {
+    optimize_memory
+    while = { count = $NUM|1$
+        create_ship = {
+            name = random fleet_cache_recalc = no
+            design = "NAME_UF_Flagship"
+            graphical_culture = "wsg_01"
+        }
+    }
+}
+create_uf_automaton_bc = {
+    optimize_memory
+    while = { count = $NUM|1$
+        create_ship = {
+            name = random fleet_cache_recalc = no
+            design = "NAME_wg_automanton_battleship_design"
+        }
+    }
+}
+create_uf_wh_hlc_hc = {
+    optimize_memory
+    while = { count = $NUM|1$
+        create_ship = {
+            name = random fleet_cache_recalc = no
+            design = "NAME_WG_WH_HLC_HC"
+        }
+    }
+}
+create_uf_wh_dcc_dc = {
+    optimize_memory
+    while = { count = $NUM|1$
+        create_ship = {
+            name = random fleet_cache_recalc = no
+            design = "NAME_WG_WH_DCC_DC"
+        }
+    }
+}

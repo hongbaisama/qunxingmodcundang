@@ -1,0 +1,796 @@
+#反重力电梯
+building_wsg_elevator = {
+	base_buildtime = 480	
+	planet_limit = 1
+	building_sets = {
+		government
+		trade
+	}
+	category = trade
+	
+	potential = {
+		exists = owner
+		owner = { 
+			has_authority = auth_warshipgirls				
+		}
+		NOT = { has_modifier = resort_colony }	
+		NOT = { has_modifier = slave_colony }
+	}
+	
+	allow = {
+		has_major_upgraded_capital = yes
+	}
+	
+	planet_modifier = {
+		job_clerk_add = 500
+		planet_buildings_upkeep_mult = -0.05
+		planet_districts_upkeep_mult = -0.05
+		planet_jobs_trade_produces_mult = 0.20
+		pop_resettlement_cost_mult = -0.25
+	}
+
+	resources = {
+		category = planet_buildings
+		cost = {
+			minerals = 500
+			sr_pantsu = 20
+		}
+		upkeep = {
+			energy = 10
+			sr_pantsu = 1
+		}
+	}
+	
+	prerequisites = {
+		"tech_building_wsg_elevator"
+	}
+	
+	triggered_desc = {
+		text = job_clerk_effect_desc
+	}
+
+	ai_resource_production = {
+		energy = 1
+		trigger = {
+			always = yes
+		}
+	}
+}
+
+#消费品工厂
+building_sep_factory = {
+	base_buildtime = 720
+	category = manufacturing
+	building_sets = {
+		government
+		industrial
+		factory
+		foundry
+	}
+	potential = {
+		exists = owner
+		owner = { 
+			has_authority = auth_warshipgirls				
+		}
+		NOT = { has_modifier = resort_colony }
+		NOT = { has_modifier = slave_colony }
+	}
+
+	allow = {
+	}
+
+	planet_modifier = {
+		job_sep_artisan_add = 200
+		planet_artisans_consumer_goods_produces_add = 0.75
+	}
+
+	resources = {
+		category = planet_buildings
+		cost = {
+			minerals = 2500
+			sr_se = 120
+		}
+		upkeep = {
+			energy = 30
+			sr_se = 5
+		}
+	}
+
+	prerequisites = {
+		tech_building_sep_factory
+	}
+
+    triggered_desc = {
+		trigger = {
+			is_planet_class = pc_wsg_port
+		}
+		text = sep_factory_pc_port_effect
+	}
+	triggered_desc = {
+		trigger = {
+			is_planet_class = pc_ringworld_habitable_wsg
+		}
+		text = sep_factory_pc_rw_wsg_effect
+	}
+	triggered_desc = {
+		text = job_sep_artisan_effect_desc
+	}
+
+	ai_resource_production = {
+		consumer_goods = 10
+		trigger = {
+			always = yes
+		}
+	}
+}
+
+#合金厂1
+building_sep_foundry = {
+	base_buildtime = 360
+	category = manufacturing	
+	potential = {
+		exists = owner
+		owner = { 
+			has_authority = auth_warshipgirls				
+		}
+		NOT = { has_modifier = slave_colony }
+	}
+	building_sets = {
+		government
+		industrial
+		factory
+		foundry
+	}
+	allow = {
+	}
+	
+	planet_modifier = {
+		job_sep_foundry_add = 100
+		planet_metallurgists_alloys_produces_add = 0.25
+	}
+
+	
+	resources = {
+		category = planet_buildings
+		cost = {
+			minerals = 2500
+			sr_se = 150
+		}	
+		upkeep = {
+			energy = 30
+			sr_se = 5
+		}
+	}	
+	
+	prerequisites = {
+		"tech_building_sep_foundry"
+	}
+	upgrades = {
+		building_sep_foundry2
+	}
+	
+	triggered_desc = {
+		trigger = {
+			is_planet_class = pc_wsg_port
+		}
+		text = sep_foundry_pc_port_effect
+	}
+	triggered_desc = {
+		trigger = {
+			is_planet_class = pc_ringworld_habitable_wsg
+		}
+		text = sep_foundry_pc_rw_wsg_effect_desc
+	}
+	triggered_desc = {
+		text = job_sep_foundry_effect_desc
+	}
+
+	ai_resource_production = {
+		alloys = 5
+		trigger = {
+			always = yes
+		}
+	}
+}
+building_sep_foundry2 = {
+	base_buildtime = 480
+	category = manufacturing
+	can_build = no
+	building_sets = {
+		government
+		industrial
+		factory
+		foundry
+	}
+	potential = {
+		exists = owner
+		owner = { 
+			has_authority = auth_warshipgirls				
+		}
+		NOT = { has_modifier = slave_colony }
+	}
+	allow = {
+		has_upgraded_capital = yes
+	}
+	
+	planet_modifier = {
+		job_sep_foundry_add = 200
+		planet_metallurgists_alloys_produces_add = 0.5
+	}
+
+	resources = {
+		category = planet_buildings
+		cost = {
+			minerals = 2000
+			sr_se = 180
+		}	
+		upkeep = {
+			energy = 40
+			sr_se = 8
+		}
+	}	
+	
+	prerequisites = {
+		"tech_building_sep_foundry2"
+	}
+	
+	triggered_desc = {
+		trigger = {
+			is_planet_class = pc_wsg_port
+		}
+		text = sep_foundry_pc_port_effect
+	}
+	triggered_desc = {
+		trigger = {
+			is_planet_class = pc_ringworld_habitable_wsg
+		}
+		text = sep_foundry_pc_rw_wsg_effect_desc
+	}
+	triggered_desc = {
+		text = job_sep_foundry_effect_desc
+	}
+
+	ai_resource_production = {
+		alloys = 10
+		trigger = {
+			always = yes
+		}
+	}
+}
+
+#一级科研
+building_sep_research = {
+	base_buildtime = 300
+	category = research
+	building_sets = {
+		government
+		research
+	}
+	potential = {
+		exists = owner
+		owner = { 
+			has_authority = auth_warshipgirls	
+			OR = {
+				has_ascension_perk = ap_project_s
+				has_country_flag = wg_ascension_path_project_s
+			}
+			NOT = { has_ascension_perk = ap_become_the_gray }
+		}
+		NOT = { has_modifier = slave_colony }
+	}		
+
+	planet_modifier = {
+		planet_jobs_physics_research_produces_mult = 0.01
+		planet_jobs_society_research_produces_mult = 0.01
+		planet_jobs_engineering_research_produces_mult = 0.01
+		planet_researchers_upkeep_mult = -0.01
+	}	
+
+	triggered_planet_modifier = {
+		potential = {
+			always = yes
+		}
+		job_wsg_researcher_add = 200
+		job_physicist_add = 200 
+        job_biologist_add = 200 
+        job_engineer_add = 200
+		multiplier = 1
+	}
+	
+	resources = {
+		category = planet_buildings
+		cost = {
+			minerals = 350
+		}	
+		upkeep = {
+			energy = 5
+		}
+	}
+	prerequisites = {
+		"tech_building_wsg_research"
+	}
+	convert_to = {
+		"building_gray_nano_research"
+	}	
+			
+	upgrades = {
+		"building_sep_research2"
+	}	
+	
+	triggered_desc = {
+		text = job_researcher_effect_desc
+	}
+	triggered_desc = {
+		text = job_wsg_researcher_effect_desc
+	}
+	ai_resource_production = {
+		physics_research = 2
+		society_research = 2
+		engineering_research = 2
+		trigger = { always = yes }
+	}
+}
+building_sep_research2 = {
+	base_buildtime = 360
+	category = research
+	can_build = no
+	building_sets = {
+		government
+		research
+	}
+	potential = {
+		exists = owner
+		owner = { 
+			has_authority = auth_warshipgirls	
+			NOT = { has_ascension_perk = ap_become_the_gray }
+		}
+		NOT = { has_modifier = slave_colony }
+	}		
+	allow = {
+		pop_amount >= 1900
+	}
+
+	planet_modifier = {
+		planet_jobs_physics_research_produces_mult = 0.02
+		planet_jobs_society_research_produces_mult = 0.02
+		planet_jobs_engineering_research_produces_mult = 0.02
+		planet_researchers_upkeep_mult = -0.02
+	}	
+
+	triggered_planet_modifier = {
+		potential = {
+			always = yes
+		}
+		job_wsg_researcher_add = 200
+		job_physicist_add = 200 
+        job_biologist_add = 200 
+        job_engineer_add = 200
+		multiplier = 2
+	}
+
+	resources = {
+		category = planet_buildings
+		cost = {
+			minerals = 400
+			sr_pantsu = 50
+			sr_se = 20
+		}	
+		upkeep = {
+			energy = 9
+			sr_pantsu = 1
+			sr_se = 0.5
+		}
+	}
+	prerequisites = {
+		"tech_building_sep_research2"
+	}	
+			
+	upgrades = {
+		"building_sep_research3"
+	}	
+	convert_to = {
+		"building_gray_nano_research2"
+	}
+	
+
+	triggered_desc = {
+		text = job_wsg_researcher_effect_desc
+	}
+	ai_resource_production = {
+		physics_research = 4
+		society_research = 4
+		engineering_research = 4
+		trigger = { always = yes }
+	}
+}
+building_sep_research3 = {
+	base_buildtime = 360
+	category = research
+	can_build = no
+	building_sets = {
+		government
+		research
+	}
+	potential = {
+		exists = owner
+		owner = { 
+			has_authority = auth_warshipgirls	
+			NOT = { has_ascension_perk = ap_become_the_gray }
+		}
+		NOT = { has_modifier = slave_colony }
+	}		
+	allow = {
+		has_upgraded_capital = yes
+	}
+
+	planet_modifier = {
+		planet_jobs_physics_research_produces_mult = 0.025
+		planet_jobs_society_research_produces_mult = 0.025
+		planet_jobs_engineering_research_produces_mult = 0.025
+		planet_researchers_upkeep_mult = -0.025
+	}	
+
+	triggered_planet_modifier = {
+		potential = {
+			always = yes
+		}
+		job_wsg_researcher_add = 200
+		job_physicist_add = 200 
+        job_biologist_add = 200 
+        job_engineer_add = 200
+		multiplier = 3
+	}
+
+	resources = {
+		category = planet_buildings
+		cost = {
+			minerals = 400
+			sr_pantsu = 50
+			sr_se = 50
+		}	
+		upkeep = {
+			energy = 15
+			sr_pantsu = 1.5
+			sr_se = 0.75
+		}
+	}
+	prerequisites = {
+		"tech_building_sep_research3"
+	}	
+	convert_to = {
+		"building_gray_nano_research3"
+	}
+			
+	triggered_desc = {
+		text = job_wsg_researcher_effect_desc
+	}
+	ai_resource_production = {
+		physics_research = 6
+		society_research = 6
+		engineering_research = 6
+		trigger = { always = yes }
+	}
+}
+
+building_wsg_senergy_1 = {
+	base_buildtime = 800
+
+	category = manufacturing
+	building_sets = {
+		government
+		industrial
+		factory
+		foundry
+	}
+	potential = {
+		exists = owner
+		owner = { 
+			has_authority = auth_warshipgirls
+		}
+		NOT = { has_modifier = slave_colony }
+	}
+
+	upgrades = {
+		building_wsg_senergy_2
+	}	
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner			
+		}
+		modifier = {
+			job_wsg_senergy_add = 200
+		}
+	}
+	
+	resources = {
+		category = planet_buildings
+		cost = {
+			alloys = 200
+			minerals = 600
+		}		
+		upkeep = {
+			energy = 15
+			sr_pantsu = 1
+		}
+		upkeep = {
+			energy = 15
+			sr_pantsu = 3
+			trigger = {
+				owner = { has_country_flag = senergy_produce_tradition_adopted }
+			}
+		}
+		produces = {
+			trigger = {
+				owner = { has_country_flag = senergy_produce_tradition_adopted }
+			}
+			sr_se = 3
+		}
+	}	
+	
+	prerequisites = {
+		"tech_wsg_senergy"
+	}
+	
+	triggered_desc = {
+		text = job_wsg_senergy_effect_desc
+	}
+
+	ai_resource_production = {
+		energy = 5
+		sr_se = 4
+		trigger = {
+			always = yes
+		}
+	}
+}
+building_wsg_senergy_2 = {
+	base_buildtime = 600
+	can_build = no
+
+	category = manufacturing
+	building_sets = {
+		government
+		industrial
+		factory
+		foundry
+	}
+	potential = {
+		exists = owner
+		owner = { 
+			has_authority = auth_warshipgirls
+			has_ascension_perk = ap_project_s
+		}
+		NOT = { has_modifier = slave_colony }
+	}
+	
+	allow = {
+		has_upgraded_capital = yes
+	}
+	upgrades = {
+		building_wsg_senergy_3
+	}
+	
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner			
+		}
+		modifier = {
+			job_wsg_senergy_add = 400
+		}
+	}
+	
+	resources = {
+		category = planet_buildings
+		cost = {
+			alloys = 300
+		}
+		upkeep = {
+			sr_pantsu = 1
+			energy = 25
+		}		
+		upkeep = {
+			energy = 15
+			sr_pantsu = 3
+			trigger = {
+				owner = { has_country_flag = senergy_produce_tradition_adopted }
+			}
+		}
+		produces = {
+			trigger = {
+				owner = { has_country_flag = senergy_produce_tradition_adopted }
+			}
+			sr_se = 3
+		}
+	}	
+	
+	triggered_desc = {
+		text = job_wsg_senergy_effect_desc
+	}
+
+	ai_resource_production = {
+		energy = 5
+		sr_se = 6
+		trigger = {
+			always = yes
+		}
+	}
+}
+building_wsg_senergy_3 = {
+	base_buildtime = 600
+	can_build = no
+	building_sets = {
+		government
+		industrial
+		factory
+		foundry
+	}
+	category = manufacturing
+	
+	potential = {
+		exists = owner
+		owner = { 
+			has_authority = auth_warshipgirls
+			has_ascension_perk = ap_project_s
+		}
+		NOT = { has_modifier = slave_colony }
+	}
+	
+	allow = {
+		has_upgraded_capital = yes
+	}
+	
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner				
+		}
+		modifier = {
+			job_wsg_senergy_add = 700
+		}
+	}
+	
+	resources = {
+		category = planet_buildings
+		cost = {
+			alloys = 400
+		}
+		upkeep = {
+			sr_pantsu = 1
+			energy = 40
+		}		
+		upkeep = {
+			energy = 15
+			sr_pantsu = 3
+			trigger = {
+				owner = { has_country_flag = senergy_produce_tradition_adopted }
+			}
+		}
+		produces = {
+			trigger = {
+				owner = { has_country_flag = senergy_produce_tradition_adopted }
+			}
+			sr_se = 3
+		}
+	}	
+	
+	triggered_desc = {
+		text = job_wsg_senergy_effect_desc
+	}
+
+	ai_resource_production = {
+		energy = 5
+		sr_se = 8
+		trigger = {
+			always = yes
+		}
+	}
+
+}
+
+building_wsg_senergy_distributor = {
+	base_buildtime = 1500
+	building_sets = {
+		government
+		unity
+	}
+	category = unity
+
+	empire_limit = {
+	 	base = 1
+	}
+	potential = {
+		exists = planet
+		owner = { 
+			has_authority = auth_warshipgirls	
+			has_tradition = tr_wg_projects_1
+		}
+		NOT = { has_modifier = slave_colony }
+	}
+
+	allow = {
+		has_major_upgraded_capital = yes 
+	}
+	planet_modifier = {
+		pop_happiness = 0.2
+	}
+	country_modifier = {
+		planet_pops_sr_se_upkeep_mult = -0.3
+	}
+	resources = {
+		category = planet_buildings
+		cost = {
+			influence = 100
+			minerals = 2000
+			alloys = 1000
+			sr_se = 150
+		}
+		upkeep = {
+			sr_se = 5
+			energy = 20
+		}
+	}	
+
+	ai_resource_production = {
+		sr_se = 20
+		trigger = { always = yes }
+	}
+}
+
+building_wsg_rare_resource_factory = {
+	base_buildtime = 550
+
+	category = manufacturing
+	building_sets = {
+		government
+		industrial
+		factory
+		foundry
+	}
+	potential = {
+		exists = owner
+		owner = { 
+			has_authority = auth_warshipgirls
+		}
+		NOT = { has_modifier = slave_colony }
+	}
+	
+	allow = {
+		has_upgraded_capital = yes
+	}
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner			
+		}
+		modifier = {
+			job_wsg_rare_resource_manufacturer_add = 200
+		}
+	}
+	
+	resources = {
+		category = planet_buildings
+		cost = {
+			minerals = 800
+			sr_se = 50
+		}		
+		upkeep = {
+			energy = 15
+			sr_se = 1
+		}
+	}	
+	
+	prerequisites = {
+		"tech_building_wsg_rare_resource_factory"
+	}
+	
+	triggered_desc = {
+		text = wsg_rare_resource_manufacturer_effect_desc
+	}
+
+	ai_resource_production = {
+		rare_crystals = 5
+		exotic_gases = 5
+		volatile_motes = 5
+		trigger = {
+			owner = { buildings_no_sr_se = no }
+		}
+	}
+}

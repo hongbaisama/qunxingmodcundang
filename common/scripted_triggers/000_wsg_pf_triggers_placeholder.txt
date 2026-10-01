@@ -1,0 +1,124 @@
+###_wsg pf triggers	######################################################################################
+#_在每个职位的possible模块加入		z_pop_job_trigger = yes
+
+###_工作检测	########################################
+z_pop_job_trigger = { always = yes }
+
+###灰飞
+gray_origin_ascension_perk_trigger = { always = no }
+###涅槃
+is_nirvana_empire = { always = no }
+is_nirvana_empire_council = { always = no }
+is_nirvana_empire_dragon = { always = no }
+is_invisable_faction = { always = no }
+is_kuat_fallen_empire = { always = no }
+
+is_eternal_crisis = { always = no }
+
+is_eternal_faction = { always = no }
+
+is_infinite_faction = { always = no }
+
+is_kuat_contractor_faction = { always = no }
+
+kuat_is_kuat_system = { always = no }
+
+kuat_is_enable_apocalyptic_origin = { always = no }
+kuat_is_enable_shadow_origin = { always = no }
+kuat_is_enable_eternal_origin = { always = no }
+kuat_is_enable_post_apocalyptic_origin = { always = no }
+
+###_MOD trigger placeholder	######################################################################
+#_[z_fw][z_lctr][ugrc]
+
+#_[z_pf]
+#_[z_pr]
+#_[aup]			非官方补丁
+#_[wsg_swg]
+#_[hfe]
+#_[sofe]
+#_[giga]
+#_[ehof]
+#_[ws]			荒野空间
+#_[pd]			√
+#_[aot]		√
+
+###_[z_pf]	####################################################################
+#_cntr	[z_fw]
+z_pf_trgr_cntr_valid = { always = no }
+
+
+###_[z_pr]	####################################################################
+z_pr_trgr_cntr_valid = { always = no }	#_用于开局设定
+
+
+
+
+###_[aup]	####################################################################
+#_pop	[z_fw]
+ariphaos_patch_slaves_expel = { always = no }
+
+
+###_[wsg_swg]	####################################################################
+# #_spcs
+# has_wg_traits = { always = no }
+# #_cntr	[ugrc]
+# has_wg_special_authority = {
+# #	always = no
+# 	OR = {
+# 		has_authority = auth_warshipgirls
+# 		has_authority = auth_shenhai
+# 		has_authority = auth_starshipgirls
+# 	}
+# }
+# #_cntr	[ugrc]
+# is_khan_country_type = { always = no }
+
+
+###_[hfe]	####################################################################
+#_plnt	[z_fw]
+hfe_trigger_is_psionic = { always = no }
+#_spcs	[ugrc]
+hfe_trigger_population_procreate_housing_block_enabled = { always = no }
+#_pop	[ugrc]
+hfe_trigger_unemployed_auto_migrate = { always = no }
+#_cntr	[ugrc]
+hfe_trigger_is_human_fallen = { always = no }
+
+
+###_[sofe]	####################################################################
+#_cntr	[ugrc]
+is_progenitor_empires = { always = no }
+
+
+###_[giga]	####################################################################
+#_sys	[ugrc]
+cohesive_system = { always = no }
+urmazin_system = { always = no }
+everchanging_system = { always = no }
+katzen_jump_blocked_system = { always = no }
+
+
+###_[ehof]	####################################################################
+#_sys	[ugrc]
+ehof_cohesive_system = { always = no }
+ehof_trader_system = { always = no }
+ehof_creator_system = { always = no }
+
+
+###_[ws]	####################################################################
+#_sstm	[ugrc]
+is_ws_system = { always = no }
+
+
+###_[pd]	####################################################################
+is_pd_exotic = { always = no }
+is_pd_unique = { always = no }
+
+
+###_[aot]	####################################################################
+is_crackable_celestial_object = { always = no }
+
+### 宇宙狡猾少年####################################################################
+
+has_nanite_upkeep_trait = { always = no }

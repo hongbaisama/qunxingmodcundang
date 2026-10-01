@@ -1,0 +1,180 @@
+# 创造舰队通用触发
+# scope = planet / system
+# 输入：NAME = 舰队名字
+# SMALL_SHIP_NUM = 小船数量
+# LARGE_SHIP_NUM = 大船数量
+# TITAN_NUM = 泰坦数量
+
+common_monolith_crisis_fleet_create_effect = {
+    optimize_memory
+    create_fleet = {
+        [[NAME] name = $NAME$]
+        effect = {
+            set_owner = event_target:monolith_crisis_country
+            [[SMALL_SHIP_NUM] create_monolith_crisis_ship_small = { NUM = $SMALL_SHIP_NUM$ }]
+            [[LARGE_SHIP_NUM] create_monolith_crisis_ship_large = { NUM = $LARGE_SHIP_NUM$ }]
+            [[TITAN_NUM] create_monolith_crisis_titan = { NUM = $TITAN_NUM$ }]
+            set_location = {
+                target = PREV
+                distance = 5
+                angle = random
+            }
+            set_fleet_stance = aggressive
+            set_fleet_bombardment_stance = indiscriminate
+            set_fleet_flag = monolith_attack_fleet
+            fleet_event = { id = monolith_crisis.121 }
+        }	
+        settings = { 
+            can_upgrade = no 
+            uses_naval_capacity = yes
+            spawn_debris = no
+            is_ultra_boss = yes
+        }
+    }	
+}
+
+create_monolith_crisis_fleet = {#小石碑舰队
+    optimize_memory
+    common_monolith_crisis_fleet_create_effect = {
+        NAME = "NAME_monolith_crisis_fleet"
+        SMALL_SHIP_NUM = 8
+        LARGE_SHIP_NUM = 3
+    }
+}
+
+create_monolith_crisis_large_fleet = {#大石碑舰队
+    optimize_memory
+    common_monolith_crisis_fleet_create_effect = {
+        NAME = "NAME_monolith_crisis_large_fleet"
+        SMALL_SHIP_NUM = 5
+        LARGE_SHIP_NUM = 3
+        TITAN_NUM = 1
+    }
+}
+
+create_monolith_crisis_huge_fleet = {#超大大石碑舰队
+    optimize_memory
+    common_monolith_crisis_fleet_create_effect = {
+        NAME = "NAME_monolith_crisis_large_fleet"
+        SMALL_SHIP_NUM = 4
+        LARGE_SHIP_NUM = 3
+        TITAN_NUM = 1
+    }			
+}
+create_monolith_crisis_defence_fleet = {#防守舰队
+    optimize_memory
+    create_fleet = {
+        name = "NAME_monolith_crisis_defence_fleet"
+        effect = {
+            set_owner = event_target:monolith_crisis_country
+            create_monolith_crisis_ship_small = { NUM = 3 }
+            create_monolith_crisis_ship_large = { NUM = 5 }
+            create_monolith_crisis_titan = { NUM = 1 }
+            set_location = {
+                target = PREV
+                distance = 5
+                angle = random
+            }
+            set_fleet_stance = aggressive
+            set_fleet_bombardment_stance = Galo
+            #assign_leader = last_created_leader
+            set_aggro_range_measure_from = self
+            set_aggro_range = 500
+        }	
+        settings = { 
+            can_upgrade = no 
+            uses_naval_capacity = yes
+            spawn_debris = no
+            is_ultra_boss = yes
+        }
+    }			
+}
+create_monolith_crisis_starbase = {
+    optimize_memory
+	create_starbase = {
+		size = "monolith_crisis_starbase"
+		owner = event_target:monolith_crisis_country
+		effect = {
+			while = {
+				count = 1
+				create_monolith_crisis_cannon = yes
+			}
+		}
+	}
+}
+
+create_monolith_crisis_cannon = {
+    optimize_memory
+	create_ship = {
+        fleet_cache_recalc = no
+		name = random
+		design = "NAME_monolith_crisis_cannon"
+		graphical_culture = owner
+	}
+}
+
+# scope = fleet
+# 输入：NUM = 数量（整数） 
+create_monolith_crisis_ship_small = {
+    optimize_memory
+    while = {
+        count = $NUM$
+        create_ship = {
+            fleet_cache_recalc = no
+            name = random
+            design = "NAME_monolith_crisis_small"
+            upgradable = no
+        }
+    }
+}
+# scope = fleet
+# 输入：NUM = 数量（整数） 
+create_monolith_crisis_ship_large = {
+    optimize_memory
+    while = {
+        count = $NUM$
+        create_ship = {
+            fleet_cache_recalc = no
+            name = random
+            design = "NAME_monolith_crisis_large"
+            upgradable = no
+        }
+    }
+}
+# scope = fleet
+# 输入：NUM = 数量（整数） 
+create_monolith_crisis_titan = {
+    optimize_memory
+    while = {
+        count = $NUM$
+        create_ship = {
+            fleet_cache_recalc = no
+            name = random
+            design = "NAME_monolith_crisis_titan"
+            upgradable = no
+        }
+    }
+}
+
+# scope  from : planet
+monilith_crisis_destroy_planet = {
+	set_timed_fleet_flag = { flag = monolith_crisis_ordered days = 90 }
+	from? = { 
+		if = {
+			limit = { NOT = { has_carrier_flag = monolith_crisis_bombarmenting } }
+			carrier_event = { id = monolith_crisis.201 days = 90 scopes = { from = prev } } 
+            set_timed_carrier_flag = { flag = monolith_crisis_bombarmenting days = 90 }
+		}
+	}
+}
+
+monilith_crisis_building_the_starbase = {
+	set_timed_fleet_flag = { flag = monolith_crisis_ordered days = 30 }
+	solar_system? = {
+		if = {
+			limit = { NOT = { has_star_flag = monolith_crisis_building_temple } }
+			system_event = { id = monolith_crisis.200 days = 30 scopes = { from = prev } }
+           	set_timed_star_flag = { flag = monolith_crisis_building_temple days = 30 } 
+		}
+	}
+}

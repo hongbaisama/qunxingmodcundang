@@ -1,0 +1,36 @@
+is_wg_initial_ringworld = {
+	is_planet_class = pc_ringworld_habitable
+}
+
+is_wg_upgraded_ringworld = {
+	OR = { 
+		is_planet_class = pc_ringworld_habitable_sh
+		is_planet_class = pc_ringworld_habitable_wsg
+		is_planet_class = pc_ringworld_habitable_uf
+		is_planet_class = pc_ringworld_habitable_swim
+	}
+}
+
+is_wg_habitat = {
+	OR = {
+		uses_district_set = habitat
+		is_planet_class = pc_habitat
+	}
+}
+
+is_waterable_planet = {
+	is_colony = no
+	is_colonizable = no
+	is_star = no
+	is_asteroid = no
+	is_artificial = no
+	NOR = {
+		is_planet_class = pc_gas_giant
+		is_planet_class = pc_broken
+		is_planet_class = pc_shielded
+		is_planet_class = pc_shattered
+		is_planet_class = pc_shattered_2
+		is_planet_class = pc_wg_poke
+		is_planet_class = pc_astral_scar
+	}
+}

@@ -1,0 +1,430 @@
+remove_wg_crisis_global_flags = {
+	optimize_memory
+	remove_global_flag = wg_crisis_very_easy
+	remove_global_flag = wg_crisis_easy
+	remove_global_flag = wg_crisis_normal
+	remove_global_flag = wg_crisis_hard
+	remove_global_flag = wg_crisis_insane
+	remove_global_flag = wg_crisis_disabled
+}
+
+# 过滤不能生成联合门的星系
+initialize_crisis_system_select = {
+	optimize_memory
+	every_system = {
+		limit = { 
+			any_country = {
+				OR = {
+					is_country_type = fallen_empire
+					is_wg_fallen_empire = yes
+					is_sh_fallen_empire = yes
+					is_country_type = awakened_fallen_empire
+					is_country_type = wg_awakened_fallen_empire
+				}
+				any_system_within_border = {
+					is_same_value = PREVPREV
+				}
+			}
+		}
+		set_timed_star_flag = { flag = forbit_spawn_system days = 1 }
+	}
+	every_system = {
+		limit = {
+			NOT = { has_star_flag = forbit_spawn_system }
+			OR = { 
+				closest_system = {
+					max_steps = 3
+					limit = { has_star_flag = forbit_spawn_system }
+				}
+				has_star_flag = wg_box_system_flag # 箱子星系
+				kuat_is_kuat_system = yes #狡猾人老家
+			}
+		}
+		set_timed_star_flag = { flag = forbit_spawn_system days = 1 }
+	}
+}
+
+initialize_second_portal_system_select = {
+	optimize_memory
+	every_system = {
+		limit = {
+			NOT = { has_star_flag = forbit_spawn_system }
+			OR = {
+				AND = {
+					count_system = { count > 400 }
+					distance = {
+						source = event_target:first_portal_system
+						type = hyperlane
+						max_jumps = 8
+					}
+				}
+				AND = {
+					count_system = { count <= 400 }
+					distance = {
+						source = event_target:first_portal_system
+						type = hyperlane
+						max_jumps = 4
+					}
+				}
+			}
+		}
+		set_timed_star_flag = { flag = forbit_spawn_system2 days = 1 }
+		set_timed_star_flag = { flag = forbit_spawn_system days = 1 }
+	}
+	# 检查是否没有地方生成门
+	if = {
+		limit = { NOT = { any_system = {
+			NOT = { has_star_flag = forbit_spawn_system }
+		}}}
+		# 只取门8距离范围外生成其他门
+		every_system = {
+			remove_star_flag = forbit_spawn_system
+		}
+		every_system = {
+			limit = { 
+				has_star_flag = forbit_spawn_system2 
+				NOR = {
+					has_star_flag = wg_box_system_flag # 箱子星系
+					kuat_is_kuat_system = yes #狡猾人老家
+				}
+			}
+			set_star_flag = forbit_spawn_system
+		}
+	}
+	every_system = {
+		limit = { has_star_flag = forbit_spawn_system2 }
+		remove_star_flag = forbit_spawn_system2
+	}
+}
+
+initialize_third_portal_system_select = {
+	optimize_memory
+	every_system = {
+		limit = {
+			NOT = { has_star_flag = forbit_spawn_system }
+			OR = {
+				AND = {
+					count_system = { count > 400 }
+					distance = {
+						source = event_target:first_portal_system
+						type = hyperlane
+						max_jumps = 8
+					}
+				}
+				AND = {
+					count_system = { count <= 400 }
+					distance = {
+						source = event_target:first_portal_system
+						type = hyperlane
+						max_jumps = 4
+					}
+				}
+			}
+			OR = {
+				AND = {
+					count_system = { count > 400 }
+					distance = {
+						source = event_target:second_portal_system
+						type = hyperlane
+						max_jumps = 8
+					}
+				}
+				AND = {
+					count_system = { count <= 400 }
+					distance = {
+						source = event_target:second_portal_system
+						type = hyperlane
+						max_jumps = 4
+					}
+				}
+			}
+		}
+		set_timed_star_flag = { flag = forbit_spawn_system3 days = 1 }
+		set_timed_star_flag = { flag = forbit_spawn_system days = 1 }
+	}
+	# 检查是否没有地方生成门
+	if = {
+		limit = { NOT = { any_system = {
+			NOT = { has_star_flag = forbit_spawn_system }
+		}}}
+		# 只取门8距离范围外生成其他门
+		every_system = {
+			remove_star_flag = forbit_spawn_system
+		}
+		every_system = {
+			limit = { 
+				has_star_flag = forbit_spawn_system3
+				NOR = {
+					has_star_flag = wg_box_system_flag # 箱子星系
+					kuat_is_kuat_system = yes #狡猾人老家
+				}
+			}
+			set_star_flag = forbit_spawn_system
+		}
+	}
+	every_system = {
+		limit = { has_star_flag = forbit_spawn_system3 }
+		remove_star_flag = forbit_spawn_system3
+	}
+}
+
+# scope: system
+create_UF_ambient_object = {
+	optimize_memory
+	random_system_planet = {
+		limit = { is_star = yes }
+		create_ambient_object = {
+			type = unitedfleet_1
+			location = this
+		}
+		last_created_ambient_object = {
+			set_location = {
+				target = prev
+				distance = 0
+				angle = random
+			}
+		}		
+		create_ambient_object = {
+			type = unitedfleet_2
+			location = this
+		}
+		last_created_ambient_object = {
+			set_location = {
+				target = prev
+				distance = 0
+				angle = random
+			}
+		}
+	}
+}
+
+create_UF_ambient_object2 = {
+	optimize_memory
+	random_system_planet = {
+		limit = { is_star = yes }
+		create_ambient_object = {
+			type = UF_extradimensional_1
+			entity_offset_angle = { min = 0 max = 360 }
+			entity_offset = { min = 30 max = 200 }
+			location = this
+			use_3d_location = no
+			entity_face_object = this
+		}
+		create_ambient_object = {
+			type = UF_extradimensional_2
+			entity_offset_angle = { min = 0 max = 360 }
+			entity_offset = { min = 30 max = 200 }
+			location = this
+			use_3d_location = no
+			entity_face_object = this
+		}
+	}
+}
+
+# scope: ship
+add_many_hp = {
+	optimize_memory
+	add_modifier = { modifier = wg_timeline_invisable days = $DAYS$ }
+}
+
+uf_clear_ship_modifier = {
+	optimize_memory
+	set_variable = { which = $modifier$_value_iep value = modifier:$modifier$  }
+	[[subtract] subtract_variable = { which = $modifier$_value_iep value = $subtract$ }]
+	[[change] change_variable = { which = $modifier$_value_iep value = $change$ }]
+	[[divide] divide_variable = { which = $modifier$_value_iep value = $divide$ }]
+	[[multiply] multiply_variable = { which = $modifier$_value_iep value = $multiply$ }]
+	add_modifier = { modifier = wg_uf_skill_$modifier$ multiplier = $modifier$_value_iep days = $DAYS$ } 
+	clear_variable = $modifier$_value_iep set_timed_ship_flag = { flag = uf_clear_ship_modifier_flag days = $DAYS$ } 
+}
+
+uf_steal_modifier_on_hit = {
+	optimize_memory
+	set_variable = { which = $VARIABLE$ value = $AMOUNT$ }
+	change_variable = { which = $VARIABLE$ value = modifier:$UF_MODIFIER$ }
+	add_modifier = { modifier = $MODIFIER$ multiplier = $VARIABLE$ days = $DAYS$ }
+	clear_variable = $VARIABLE$
+}
+
+uf_place_holder_effect = {
+	optimize_memory
+	save_global_event_target_as = wg_crisis_2_country 
+	save_global_event_target_as = wg_crisis_3_country 
+	save_global_event_target_as = wg_crisis_country 
+	set_country_flag = wg_crisis_country
+	set_country_flag = wg_crisis_2_country
+	set_country_flag = wg_crisis_3_country
+	set_global_flag = all_portal_2_destroyed
+	set_fleet_flag = counting_data
+}
+
+initial_uf_crisis_country = {
+	optimize_memory
+	create_species = {
+		name = "NAME_WG_crisis_species"
+		class = "Warship_Girls"
+		portrait = "wsg"
+		traits = random
+		immortal = yes
+		effect = { save_global_event_target_as = wg_crisis_species }
+		allow_negative_traits = no
+	}
+	create_species = {
+		name = "NAME_WG_crisis_species_sh"
+		class = "ShenHai"
+		portrait = "sh"
+		traits = random
+		immortal = yes
+		effect = { save_global_event_target_as = wg_crisis_species_sh }
+		allow_negative_traits = no
+	}
+	create_country = {
+		name = $UF_COUNTRY_NAME$
+		type = "wg_crisis_country"
+		species = event_target:wg_crisis_species
+		name_list = "WSG"
+		inline_script = {
+			script = "flag_color/wg_flag_color"
+			FLAG_COLOR = $FLAG_COLOR$
+		}
+		effect = {
+			[[PLACEHOLDER] uf_place_holder_effect = yes ]
+			set_country_flag = UGRC_flg_cntr_RULE_can_bomb
+			set_country_flag = UGRC_flg_cntr_RULE_can_be_bombed
+			set_country_flag = protected_from_queen_storm
+			if = {
+				limit = { has_global_flag = activated_uf_hidden_diff }
+				add_modifier = { modifier = uf_hidden_buff days = -1 } 
+			}
+			set_country_flag = $THIS$_country
+			save_global_event_target_as = $THIS$_country
+			every_country = {
+				limit = {
+					is_country_type = wg_crisis_country
+					NOT = { is_same_value = root }
+				}
+				prev? = {
+					set_faction_hostility = { 
+						target = prev 
+						set_hostile = no 
+						set_friendly = yes 
+					}
+				}
+			}
+			set_faction_hostility = {
+				target = event_target:pantsu_shop_country
+				set_hostile = no
+				set_friendly = yes
+			}
+			set_graphical_culture = wsg_01
+			create_ship_design = { design = "NAME_WG_Starbase" }
+			add_ship_design = last_created_design
+			switch = {
+				trigger = has_global_flag
+				wg_crisis_very_easy = { add_modifier = { modifier = uf_very_easy_debuff days = -1 } }
+				wg_crisis_easy = { add_modifier = { modifier = uf_easy_buff days = -1 } }
+				wg_crisis_normal = { add_modifier = { modifier = uf_normal_buff days = -1 } }
+				wg_crisis_hard = { add_modifier = { modifier = uf_hard_buff days = -1 } }
+				wg_crisis_insane = { add_modifier = { modifier = uf_insane_buff days = -1 } }
+			}
+			country_event = { id = wg_crisis.200 }
+			country_event = { id = $THIS$.90 days = 1800 random = 1800 } # for test, should be 1080 days
+			country_event = { id = $THIS$.84 days = 360 random = 1800 } # 联合摧星者
+			country_event = { id = $THIS$.99 days = 30 }
+			set_country_flag = creating_small_portal
+			set_country_flag = checked_all_fleet_once
+			if = {
+				limit = {
+					has_global_flag = install_kuat_mod
+					any_country = { OR = {
+						is_eternal_crisis = yes
+						is_infinite_faction = yes
+						is_kuat_contractor_faction = yes
+					} }
+				}
+				every_country = {
+					limit = { OR = {
+						is_eternal_crisis = yes
+						is_infinite_faction = yes
+						is_kuat_contractor_faction = yes
+					} }
+					prev? = {
+						set_faction_hostility = { 
+							target = prev 
+							set_hostile = no 
+							set_friendly = yes 
+						}
+					}
+				}
+				set_global_flag = is_allied_ag_kuat
+			}
+			country_event = { id = $THIS$.15 days = 180 random = 360 }
+		}
+	}
+}
+
+initial_count_all_fleet_ship = {
+	optimize_memory
+	set_variable = { which = num_carrier_exist value = 0 }
+	set_variable = { which = num_titan_exist value = 0 }
+	set_variable = { which = num_bb_exist value = 0 }
+	set_variable = { which = num_bc_exist value = 0 }
+	set_variable = { which = num_ca_exist value = 0 }
+	set_variable = { which = num_dd_exist value = 0 }
+	set_variable = { which = num_dreadnought_exist value = 0 }
+	set_variable = { which = num_bf_portal_exist value = 0 }
+	set_variable = { which = num_bf_exist value = 0 }
+	set_variable = { which = num_juggernaut_exist value = 0 }
+	set_variable = { which = num_flagship_exist value = 0 }
+	every_owned_ship = {
+		limit = { 
+			NOR = {  
+				is_ship_size = scout_UAV
+				is_ship_size = wg_corvette
+			}
+			OR = {
+				AND = {
+					fleet? = { has_fleet_flag = counting_data }
+					NOR = {
+						is_ship_size = uf_Juggernaut 
+						is_ship_size = UF_Flagship
+					}
+				}
+				NOT = { fleet? = { has_fleet_flag = counting_data }}
+			}
+			fleet? = { NOT = { has_fleet_flag = drones }}
+		}
+		switch = {
+			trigger = is_ship_size
+			wg_carrier = { fleet? = { change_variable = { which = num_carrier_exist value = 1 }}}
+			wg_titan = { fleet? = { change_variable = { which = num_titan_exist value = 1 }}}
+			wg_battleship = { fleet? = { change_variable = { which = num_bb_exist value = 1 }}}
+			wg_battlecrusier = { fleet? = { change_variable = { which = num_bc_exist value = 1 }}}
+			wg_cruiser = { fleet? = { change_variable = { which = num_ca_exist value = 1 }}}
+			wg_destroyer = { fleet? = { change_variable = { which = num_dd_exist value = 1 }}}
+			wg_dreadnought = { fleet? = { change_variable = { which = num_dreadnought_exist value = 1 }}}
+			uf_buffer = {
+				if = {
+					limit = { has_ship_flag = bf_portal }
+					fleet? = { change_variable = { which = num_bf_portal_exist value = 1 }}
+				}
+				else = {
+					fleet? = { change_variable = { which = num_bf_exist value = 1 }}
+				}
+			}
+			# 补船触发不会数以下类型的船
+			uf_Juggernaut = { fleet? = { change_variable = { which = num_juggernaut_exist value = 1 }}}
+			UF_Flagship = { fleet? = { change_variable = { which = num_flagship_exist value = 1 }}}
+		}
+	}
+	remove_fleet_flag = counting_data
+}
+
+initial_wg_crisis_2_remove_effect = {
+	optimize_memory
+	every_country = {
+		remove_point_of_interest = wg_invasion_2_false_uf_galaxy_gun_poi.1
+		remove_point_of_interest = wg_invasion_2_kind_omega_poi.1
+		remove_point_of_interest = wg_invasion_2_false_uf_ews_poi.1
+	}
+}

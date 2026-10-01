@@ -1,0 +1,262 @@
+@triumph_duration = 3600
+r_eddy = {
+	activation_duration = @triumph_duration
+	portrait = "GFX_relic_eddy"
+	sound = "relic_activation_ether_drake_trophy"
+
+	resources = {
+		category = relics
+		# Activation cost
+		cost = {
+			influence = 200
+		}
+	}
+	
+	ai_weight = {
+		weight = 100
+	}
+	
+	triggered_country_modifier = {
+		potential = {
+			always = yes
+		}
+		starbase_shipyard_build_speed_mult = 0.75
+	}
+
+	score = 1000
+
+	active_effect = {
+		add_modifier = {
+			modifier = "wg_eddy_maya" 
+			days = 3600
+		}
+		custom_tooltip = relic_triumph_cooldown
+		hidden_effect = {
+			add_modifier = {
+				modifier = "relic_activation_cooldown" 
+				days = 3600
+			}		
+		}
+	}
+
+	possible = {
+		inline_script = {
+			script = relics/activation_checks
+			RELIC = r_eddy
+		}
+	}
+}
+
+
+r_early_rush = {
+	activation_duration = @triumph_duration
+	portrait = "GFX_relic_early_rush"
+	sound = "relic_activation_ether_drake_trophy"
+
+	resources = {
+		category = relics
+		# Activation cost
+		cost = {
+			food = 200
+		}
+	}
+	
+	ai_weight = {
+		weight = 100
+	}
+	
+	triggered_country_modifier = {
+		potential = {
+			always = yes
+		}
+		country_claim_influence_cost_mult = -0.1
+		country_war_exhaustion_mult = -0.1
+	}
+
+	score = 1000
+
+	active_effect = {
+		add_modifier = {
+			modifier = "early_rush" 
+			days = 3600
+		}
+		custom_tooltip = relic_triumph_cooldown
+		hidden_effect = {
+			add_modifier = {
+				modifier = "relic_activation_cooldown" 
+				days = 3600
+			}		
+		}
+	}
+
+	possible = {
+		inline_script = {
+			script = relics/activation_checks
+			RELIC = r_early_rush
+		}
+	}
+}
+
+r_wg_psionic_gem = {
+	activation_duration = @triumph_duration
+	portrait = "GFX_relic_wg_psi"
+	sound = "relic_activation_ether_drake_trophy"
+
+	resources = {
+		category = relics
+		# Activation cost
+		cost = {
+			energy = 1000
+		}
+	}
+
+	ai_weight = {
+		weight = 100
+	}
+	
+	triggered_country_modifier = {
+		potential = {
+			always = yes
+		}
+		country_unity_produces_mult = 0.2
+	}
+
+	score = 1000
+
+	active_effect = {
+		custom_tooltip = r_wg_psionic_gem_active
+		custom_tooltip = relic_triumph_cooldown_wsg
+		hidden_effect = {
+			add_modifier = {
+				modifier = "relic_activation_cooldown" 
+				days = 1800
+			}
+			country_event = { id = wg_boss.167 }
+		}
+	}
+
+	possible = {
+		inline_script = {
+			script = relics/activation_checks
+			RELIC = r_wg_psionic_gem
+		}
+	}
+}
+
+r_wg_great_ming_old_tree = {
+	activation_duration = @triumph_duration
+	portrait = "GFX_relic_great_ming_old_tree"
+	sound = "relic_activation_ether_drake_trophy"
+
+	resources = {
+		category = relics
+		# Activation cost
+		cost = {
+			influence = 50
+		}
+	}
+
+	ai_weight = {
+		weight = 100
+	}
+	
+	triggered_country_modifier = {
+		potential = {
+			always = yes
+		}
+		country_base_minor_artifacts_produces_add = 30
+		ship_armor_mult = 0.10
+		ship_armor_hardening_add = 0.10
+	}
+
+	score = 1000
+
+	active_effect = {
+		custom_tooltip = relic_triumph_cooldown_wsg
+		add_modifier = {
+			modifier = "wg_great_ming_old_tree_modifider" 
+			days = 3600
+		}
+		hidden_effect = {
+			add_modifier = {
+				modifier = "relic_activation_cooldown" 
+				days = 3600
+			}		
+		}
+	}
+
+	possible = {
+		inline_script = {
+			script = relics/activation_checks
+			RELIC = r_wg_great_ming_old_tree
+		}
+	}
+}
+
+r_wg_Deep_Eyes_White_Dragon_Card = {
+	activation_duration = @triumph_duration
+	portrait = "GFX_relic_wg_Deep_Eyes_White_Dragon_Card"
+	sound = "relic_activation_ether_drake_trophy"
+
+	resources = {
+		category = relics
+		# Activation cost
+		cost = {
+			influence = 300
+		}
+	}
+	possible = {
+		always = yes
+	}
+
+	ai_weight = {
+		weight = 100
+	}
+	triggered_country_modifier = {
+		potential = {
+			always = yes
+		}
+		custom_tooltip = r_wg_Deep_Eyes_White_Dragon_Card_modifier
+	}
+
+	score = 1000
+
+	active_effect = {
+		custom_tooltip = r_wg_Deep_Eyes_White_Dragon_Card_active
+		if = {
+			limit = { 
+				count_owned_ship = {
+					limit = { is_ship_size = wg_Deep_Eyes_White_Dragon_Ship }
+					count < 1
+				}
+			}
+			create_fleet = {
+				name = "NAME_wg_Deep_Eyes_White_Dragon_Ship_design"
+				settings = {
+					spawn_debris = no
+				}
+				effect = {
+					set_owner = prev
+					create_ship = {
+						name = "NAME_wg_Deep_Eyes_White_Dragon_Ship_design"
+						design = "NAME_wg_Deep_Eyes_White_Dragon_Ship_design"
+						effect = {
+							set_disable_at_health = 0.01
+						}
+					}
+					set_location = {
+						target = prev.capital_scope
+						distance = 0
+						angle = 0
+					}
+					set_fleet_stance = passive
+					set_aggro_range_measure_from = self
+					set_aggro_range = 100
+				}
+			}
+			hidden_effect = {
+				change_variable = { which = wg_Deep_Eyes_White_Dragon_count value = 1 }
+			}
+		}
+	}
+}

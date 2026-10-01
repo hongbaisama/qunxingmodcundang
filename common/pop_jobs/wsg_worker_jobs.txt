@@ -1,0 +1,137 @@
+wsg_moyu = {
+	category = worker
+	swappable_data = {
+		default = {
+			condition_string = WORKER_JOB_TRIGGER
+			building_icon = building_wsg_moyu
+		}
+	}
+	possible_pre_triggers = {
+		has_owner = yes
+		is_enslaved = no
+		is_being_purged = no
+		is_being_assimilated = no
+	}
+
+	possible_precalc = can_fill_worker_job
+	possible = {
+	}
+
+	planet_modifier = {
+		planet_amenities_add = 400
+	}
+	resources = {
+		category = planet_merchants
+		produces = {
+			unity = 4
+			trade = 4
+		}
+		produces = {
+			trigger = {
+				exists = owner_main_species
+				owner_main_species = {
+					has_living_standard = { type = living_standard_utopian }	
+				}
+			}
+			unity = 1.5
+			physics_research = 3
+			engineering_research = 3
+			society_research = 3
+		}		
+		upkeep = {
+			consumer_goods = 0.75
+			food = 0.75
+		}
+	}
+
+	weight = {
+		weight = 2	
+	}
+}
+
+barthroom_worker = {	
+	category = worker
+	swappable_data = {
+		default = {
+			condition_string = WORKER_JOB_TRIGGER
+			building_icon = building_wsg_bathhouse
+		}
+	}
+	possible_pre_triggers = {
+		has_owner = yes
+		#is_enslaved = no
+		is_being_purged = no
+		is_being_assimilated = no
+	}
+
+	possible_precalc = can_fill_specialist_job
+	possible = {
+	}
+	
+	planet_modifier = {
+		planet_amenities_add = 1000
+	}
+	
+	resources = {
+		category = planet_culture_workers
+		produces = {
+			unity = 3
+			society_research = 1
+		}	
+		upkeep = {
+			consumer_goods = 0.5
+			energy = 1
+		}	
+	}
+	
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { OR = {
+				has_trait = trait_robot_domestic_protocols
+				has_trait = trait_charismatic
+			} }
+		}
+		modifier = {
+			planet_amenities_add = 100
+		}
+	}
+		
+	weight = {
+		weight = 3
+	}
+}
+
+
+hot_seal = {
+	category = worker
+	swappable_data = {
+		default = {
+			condition_string = WORKER_JOB_TRIGGER
+			building_icon = building_wsg_moyu
+		}
+	}
+	possible_pre_triggers = {
+		has_owner = yes
+		is_being_purged = no
+		is_being_assimilated = no
+	}
+	
+	possible_precalc = can_fill_worker_job
+	possible = {
+	}
+
+	planet_modifier = {
+		planet_amenities_add = 100
+	}
+	resources = {
+		category = planet_farmers
+		produces = {
+			food = 10
+		}		
+	}
+
+	weight = {
+		weight = 1	
+	}
+}

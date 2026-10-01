@@ -1,0 +1,1137 @@
+namespace = wg_crisis_2
+#海宅整活模块
+country_event = {
+	id = wg_crisis_2.2000
+	hide_window = yes
+	is_triggered_only = yes
+	trigger = {
+		NOT = { has_global_flag = all_portal_2_destroyed }
+	}
+	immediate = {
+		if = {
+			limit = { exists = event_target:first_dimensional_portal_2 }
+			event_target:first_dimensional_portal_2 = {
+				solar_system = {
+					set_star_class = sc_wsg_uf2
+				}
+			}
+		}
+		#联合之剑
+		country_event = {
+			id = wg_crisis_2.2001 days = 180 random = 90
+		}
+		country_event = {
+			id = wg_crisis_2.2010 days = 180 random = 180
+		}
+		country_event = {
+			id = wg_crisis_2.2011 days = 180 random = 180
+		}
+		#终结仪
+		country_event = {
+			id = wg_crisis_2.2012 days = 360 random = 180
+		}
+		#预警站
+		country_event = {
+			id = wg_crisis_2.2024 days = 720 random = 90
+		}
+		#星穹之矛
+		country_event = {
+			id = wg_crisis_2.2028 days = 90 random = 90
+		}
+	}
+}
+
+country_event = {
+	id = wg_crisis_2.2001
+	hide_window = yes
+	is_triggered_only = yes
+	trigger = {
+		NOT = { has_global_flag = all_portal_2_destroyed }
+	}
+	immediate = {
+		initialize_crisis_system_select = yes
+		random_system = {
+			limit = {
+				NOR = {
+					has_star_flag = forbit_spawn_system
+					has_star_flag = has_wg_crisis_2_megastructure
+					is_star_class = sc_wsg_uf
+					is_star_class = sc_wsg_uf2
+				}
+			}
+			save_global_event_target_as = wg_invasion_2_false_uf_galaxy_gun_system
+			every_fleet_in_system = {
+				destroy_fleet = this
+			}
+			random_system_planet = {
+				create_wg_crisis_2_guard_fleet = yes
+			}
+			create_starbase = {
+				size = wg_crisis_starbase
+				owner = event_target:wg_crisis_2_country
+				effect = {
+					while = {
+						count = 5
+						create_wg_crisis_platform = yes
+					}
+				}
+			}
+			set_star_flag = has_wg_crisis_2_megastructure
+			set_star_class = sc_black_hole
+			star? = {
+				every_country = {
+					create_point_of_interest = {
+						id = wg_invasion_2_false_uf_galaxy_gun_poi.1
+						name = "wg_invasion_2_false_uf_galaxy_gun_poi"
+						desc = "wg_invasion_2_false_uf_galaxy_gun_poi_desc"
+						event_chain = "wg_invasion_chain"
+						location = event_target:wg_invasion_2_false_uf_galaxy_gun_system
+					}
+				}
+				set_planet_size = 1
+				create_fleet = {
+					name = "NAME_wg_crisis_2_false_uf_galaxy_gun"
+					effect = {
+						set_fleet_flag = wg_crisis_2_false_uf_galaxy_gun
+						save_global_event_target_as = wg_crisis_2_false_uf_galaxy_gun
+						set_owner = event_target:wg_crisis_2_country
+						create_ship = {
+							name = "NAME_wg_crisis_2_false_uf_galaxy_gun"
+							design = "NAME_wg_crisis_2_false_uf_galaxy_gun"
+							prefix = no
+						}
+						set_location = {
+							target = prev
+							distance = -1
+							angle = 0
+						}
+						every_country = {
+							limit = {
+								is_ai = no
+							}
+							country_event = {
+								id = wg_crisis_2.2002
+							}
+						}
+					}
+					settings = { 
+						can_upgrade = no 
+						uses_naval_capacity = no
+						can_change_composition = no
+						spawn_debris = no
+					}
+				}
+			}
+		}
+	}
+}
+
+country_event = {
+	id = wg_crisis_2.2002
+	title = "wg_crisis_2_title"
+	is_triggered_only = yes
+	diplomatic = yes
+	force_open = yes
+	picture_event_data = {
+		room = "uf_tirpitz_room"
+	}
+	desc = wg_crisis_2.2002.desc
+	trigger = {
+		NOT = { has_global_flag = all_portal_2_destroyed }
+	}
+    option = {
+        name = wg_crisis_2.2002.a
+		hidden_effect = {
+			country_event = {
+				id = wg_crisis_2.2003
+			}
+		}
+    }
+}
+
+country_event = {
+	id = wg_crisis_2.2003
+	title = "wg_crisis_2_title"
+	is_triggered_only = yes
+	diplomatic = yes
+	force_open = yes
+	picture_event_data = {
+		room = "uf_tirpitz_room"
+	}
+	desc = wg_crisis_2.2003.desc
+	trigger = {
+		NOT = { has_global_flag = all_portal_2_destroyed }
+	}
+	immediate = {
+		country_event = {
+			id = wg_crisis_2.2004 days = 360
+		}
+	}
+
+    option = {
+        name = wg_crisis_2.2003.a
+    }
+}
+country_event = {
+	id = wg_crisis_2.2004
+	title = "wg_crisis_2_title"
+	is_triggered_only = yes
+	diplomatic = yes
+	force_open = yes
+	picture_event_data = {
+		room = "uf_tirpitz_room"
+	}
+	desc = wg_crisis_2.2004.desc
+	trigger = {
+		NOR = {
+			has_country_flag = wg_crisis_2_2009
+			has_global_flag = all_portal_2_destroyed
+		}
+	}
+	immediate = {
+		country_event = {
+			id = wg_crisis_2.2005 days = 360
+		}
+	}
+
+    option = {
+        name = wg_crisis_2.2004.a
+    }
+}
+country_event = {
+	id = wg_crisis_2.2005
+	title = "wg_crisis_2_title"
+	is_triggered_only = yes
+	diplomatic = yes
+	force_open = yes
+	picture_event_data = {
+		room = "uf_tirpitz_room"
+	}
+	desc = wg_crisis_2.2005.desc
+	trigger = {
+		NOR = {
+			has_country_flag = wg_crisis_2_2009
+			has_global_flag = all_portal_2_destroyed
+		}
+	}
+	immediate = {
+		country_event = {
+			id = wg_crisis_2.2006 days = 360
+		}
+	}
+
+    option = {
+        name = wg_crisis_2.2005.a
+    }
+}
+country_event = {
+	id = wg_crisis_2.2006
+	title = "wg_crisis_2_title"
+	is_triggered_only = yes
+	diplomatic = yes
+	force_open = yes
+	picture_event_data = {
+		room = "uf_tirpitz_room"
+	}
+	desc = wg_crisis_2.2006.desc
+	trigger = {
+		NOR = {
+			has_country_flag = wg_crisis_2_2009
+			has_global_flag = all_portal_2_destroyed
+		}
+	}
+	immediate = {
+		country_event = {
+			id = wg_crisis_2.2007 days = 360
+		}
+	}
+
+    option = {
+        name = wg_crisis_2.2006.a
+    }
+}
+country_event = {
+	id = wg_crisis_2.2007
+	title = "wg_crisis_2_title"
+	is_triggered_only = yes
+	diplomatic = yes
+	force_open = yes
+	picture_event_data = {
+		room = "uf_tirpitz_room"
+	}
+	desc = wg_crisis_2.2007.desc
+	trigger = {
+		NOR = {
+			has_country_flag = wg_crisis_2_2009
+			has_global_flag = all_portal_2_destroyed
+		}
+	}
+	immediate = {
+		country_event = {
+			id = wg_crisis_2.2008 days = 360
+		}
+	}
+
+    option = {
+        name = wg_crisis_2.2007.a
+    }
+}
+country_event = {
+	id = wg_crisis_2.2008
+	title = "wg_crisis_2_title"
+	is_triggered_only = yes
+	diplomatic = yes
+	force_open = yes
+	picture_event_data = {
+		room = "uf_tirpitz_room"
+	}
+	desc = wg_crisis_2.2008.desc
+	trigger = {
+		NOR = {
+			has_country_flag = wg_crisis_2_2009
+			has_global_flag = all_portal_2_destroyed
+		}
+	}
+	immediate = {
+		delete_fleet = event_target:wg_crisis_2_false_uf_galaxy_gun
+	}
+
+    option = {
+        name = wg_crisis_2.2008.a
+    }
+}
+country_event = {
+	id = wg_crisis_2.2009
+	title = "wg_crisis_2_title"
+	is_triggered_only = yes
+	diplomatic = yes
+	force_open = yes
+	picture_event_data = {
+		room = "uf_tirpitz_room"
+	}
+	desc = wg_crisis_2.2009.desc
+	immediate = {
+		set_country_flag = wg_crisis_2_2009
+	}
+	trigger = {
+		NOR = {
+			has_country_flag = wg_crisis_2_2009
+			has_global_flag = all_portal_2_destroyed
+		}
+	}
+
+    option = {
+        name = wg_crisis_2.2009.a
+    }
+}
+
+country_event = {
+	id = wg_crisis_2.2010
+	hide_window = yes
+	is_triggered_only = yes
+	trigger = {
+		NOT = { has_global_flag = all_portal_2_destroyed }
+	}
+	immediate = {
+		if = {
+			limit = {
+				has_global_flag = wg_crisis_insane
+			}
+			every_country = {
+				limit =  { is_ai = no }
+				capital_scope? = { closest_system = {
+					max_steps = 2
+					create_wg_crisis_fleet_and_admiral = { THIS = wg_crisis_2 }
+					create_wg_crisis_fleet_and_admiral = { THIS = wg_crisis_2 }
+				} }
+			}
+			country_event = { id = wg_crisis_2.2010 days = 720 random = 720 }
+		}
+		else = {
+			every_country = {
+				limit =  { is_ai = no }
+				capital_scope? = { closest_system = {
+					max_steps = 2
+					create_wg_crisis_fleet_and_admiral = { THIS = wg_crisis_2 }
+				} }
+			}
+			country_event = { id = wg_crisis_2.2010 days = 720 random = 360 }
+		}
+	}
+}
+
+country_event = {
+	id = wg_crisis_2.2011
+	hide_window = yes
+	is_triggered_only = yes
+	trigger = {
+		NOT = { has_global_flag = all_portal_2_destroyed }
+	}
+	immediate = {
+		random_system = {
+			star? = {
+				create_fleet = {
+					name = "NAME_uf_glory_Fleet"
+					effect = {
+						set_owner = event_target:wg_crisis_2_country
+						create_ship = {
+							name = random
+							design = "NAME_uf_glory_false"
+							upgradable = no
+						}
+						set_location = {
+							target = PREV
+							distance = 100
+							angle = random
+						}
+						set_fleet_stance = aggressive
+						set_fleet_bombardment_stance = wg_doom2
+						set_aggro_range_measure_from = self
+						set_aggro_range = 500
+						assign_leader = last_created_leader
+					}
+					settings = { 
+						spawn_debris = no
+						is_ultra_boss = yes
+						can_upgrade = no 
+						uses_naval_capacity = yes
+					}
+				}
+			}
+		}
+		country_event = {
+			id = wg_crisis_2.2011 days = 720
+		}
+	}
+}
+
+country_event = {
+	id = wg_crisis_2.2012
+	hide_window = yes
+	is_triggered_only = yes
+	trigger = {
+		NOT = { has_global_flag = all_portal_2_destroyed }
+	}
+	immediate = {
+		set_update_modifiers_batch = begin
+		initialize_crisis_system_select = yes
+		random_system = {
+			limit = {
+				NOR = {
+					has_star_flag = forbit_spawn_system
+					has_star_flag = has_wg_crisis_2_megastructure
+					is_star_class = sc_wsg_uf
+					is_star_class = sc_wsg_uf2
+				}
+			}
+			save_global_event_target_as = wg_invasion_2_kind_omega_system
+			every_fleet_in_system = {
+				limit = { owner? = { NOT = { is_same_value = event_target:wg_crisis_2_country } } }
+				destroy_fleet = this
+			}
+			set_star_flag = has_wg_crisis_2_megastructure
+			set_star_class = sc_uf_hm_kind
+			while = {
+				count = 2
+				random_system_planet = { create_wg_crisis_2_guard_fleet = yes }
+			}
+			create_starbase = {
+				size = wg_crisis_starbase
+				owner = event_target:wg_crisis_2_country
+				effect = {
+					while = {
+						count = 5
+						create_wg_crisis_platform = yes
+					}
+				}
+			}
+			star? = {
+				set_planet_size = 50
+				change_pc = pc_uf_hm
+				every_country = {
+					create_point_of_interest = {
+						id = wg_invasion_2_kind_omega_poi.1
+						name = "wg_invasion_2_kind_omega_poi"
+						desc = "wg_invasion_2_kind_omega_poi_desc"
+						event_chain = "wg_invasion_chain"
+						location = event_target:wg_invasion_2_kind_omega_system
+					}
+				}
+				create_fleet = {
+					name = "NAME_wg_crisis_2_kind_omega"
+					effect = {
+						set_fleet_flag = wg_crisis_2_kind_omega
+						save_global_event_target_as = wg_crisis_2_kind_omega
+						set_owner = event_target:wg_crisis_2_country
+						set_event_locked = yes
+						create_ship = {
+							name = "NAME_wg_crisis_2_kind_omega"
+							design = "NAME_wg_crisis_2_kind_omega"
+							prefix = no
+						}
+						set_location = {
+							target = PREV
+							distance = -1
+							angle = 0
+						}
+						every_country = {
+							limit = {
+								is_ai = no
+							}
+							country_event = {
+								id = wg_crisis_2.2013 days = 5
+							}
+						}
+					}
+					settings = { 
+						can_upgrade = no 
+						uses_naval_capacity = no
+						can_change_composition = no
+						spawn_debris = no
+					}
+				}
+			}
+		}
+		set_update_modifiers_batch = end
+	}
+}
+
+country_event = {
+	id = wg_crisis_2.2013
+	title = "wg_resistant_army_title"
+	is_triggered_only = yes
+	diplomatic = yes
+	force_open = yes
+	picture_event_data = {
+		room = "resistant_army_room"
+	}
+	desc = wg_crisis_2.2013.desc
+	trigger = {
+		NOT = { has_global_flag = all_portal_2_destroyed }
+	}
+	immediate = {
+		country_event = {
+			id = wg_crisis_2.2014 days = 30
+		}
+	}
+    option = {
+        name = wg_crisis_2.2013.a
+    }
+}
+country_event = {
+	id = wg_crisis_2.2014
+	title = "wg_resistant_army_title"
+	is_triggered_only = yes
+	diplomatic = yes
+	force_open = yes
+	picture_event_data = {
+		room = "resistant_army_room"
+	}
+	desc = wg_crisis_2.2014.desc
+	trigger = {
+		NOT = { has_global_flag = all_portal_2_destroyed }
+	}
+	immediate = {
+		country_event = {
+			id = wg_crisis_2.2015 days = 150
+		}
+		country_event = {
+			id = wg_crisis_2.2022 days = 1800
+		}
+	}
+    option = {
+        name = wg_crisis_2.2014.a
+    }
+}
+country_event = {
+	id = wg_crisis_2.2015
+	title = "pantsu_shop_name"
+	is_triggered_only = yes
+	diplomatic = yes
+	force_open = yes
+	picture_event_data = {
+		room = "Ella_room"
+	}
+	desc = wg_crisis_2.2015.desc
+	trigger = {
+		exists = event_target:pantsu_shop_country
+		NOT = { has_global_flag = all_portal_2_destroyed }
+	}
+	immediate = {
+	}
+    option = {
+        name = wg_crisis_2.2015.a
+        allow = {
+            resource_stockpile_compare = { resource = sr_pantsu value >= 50000 }
+            resource_stockpile_compare = { resource = energy value >= 50000 }
+            resource_stockpile_compare = { resource = alloys value >= 50000 }
+        }
+        add_resource = {
+            sr_pantsu = -50000
+            energy = -50000
+			alloys = -50000
+        }
+		hidden_effect = {
+			country_event = {
+				id = wg_crisis_2.2016
+			}
+		}
+    }
+    option = {
+        name = wg_crisis_2.2015.b
+		hidden_effect = {
+			country_event = {
+				id = wg_crisis_2.2017
+			}
+		}
+    }
+}
+country_event = {
+	id = wg_crisis_2.2016
+	title = "pantsu_shop_name"
+	is_triggered_only = yes
+	diplomatic = yes
+	force_open = yes
+	picture_event_data = {
+		room = "Ella_room"
+	}
+	desc = wg_crisis_2.2016.desc
+	trigger = {
+		NOT = { has_global_flag = all_portal_2_destroyed }
+	}
+	immediate = {
+		add_modifier = {
+			modifier = wg_crisis_2_2016 days = 3600
+		}
+		country_event = {
+			id = wg_crisis_2.2018 days = 360
+		}
+	}
+    option = {
+        name = wg_crisis_2.2016.a
+    }
+}
+country_event = {
+	id = wg_crisis_2.2017
+	title = "pantsu_shop_name"
+	is_triggered_only = yes
+	diplomatic = yes
+	force_open = yes
+	picture_event_data = {
+		room = "Ella_room"
+	}
+	desc = wg_crisis_2.2017.desc
+	trigger = {
+		NOT = { has_global_flag = all_portal_2_destroyed }
+	}
+    option = {
+        name = wg_crisis_2.2017.a
+    }
+}
+country_event = {
+	id = wg_crisis_2.2018
+	title = "TRANSMISSION"
+	is_triggered_only = yes
+	diplomatic = yes
+	force_open = yes
+	picture_event_data = {
+		portrait = root
+		planet_background = root
+		graphical_culture = root
+		city_level = root
+		room = root.ruler
+	}
+	desc = wg_crisis_2.2018.desc
+	trigger = {
+		NOT = { has_global_flag = all_portal_2_destroyed }
+	}
+	immediate = {
+		add_modifier = {
+			modifier = wg_crisis_2_2018 days = 3600
+		}
+		country_event = {
+			id = wg_crisis_2.2019 days = 360
+		}
+	}
+    option = {
+        name = wg_crisis_2.2018.a
+    }
+}
+country_event = {
+	id = wg_crisis_2.2019
+	title = "TRANSMISSION"
+	is_triggered_only = yes
+	diplomatic = yes
+	force_open = yes
+	picture_event_data = {
+		portrait = root
+		planet_background = root
+		graphical_culture = root
+		city_level = root
+		room = root.ruler
+	}
+	desc = wg_crisis_2.2018.desc
+	trigger = {
+		NOT = { has_global_flag = all_portal_2_destroyed }
+	}
+	immediate = {
+		add_modifier = {
+			modifier = wg_crisis_2_2019 days = 3600
+		}
+		country_event = {
+			id = wg_crisis_2.2020 days = 360
+		}
+	}
+    option = {
+        name = wg_crisis_2.2019.a
+    }
+}
+country_event = {
+	id = wg_crisis_2.2020
+	title = "TRANSMISSION"
+	is_triggered_only = yes
+	diplomatic = yes
+	force_open = yes
+	picture_event_data = {
+		portrait = root
+		planet_background = root
+		graphical_culture = root
+		city_level = root
+		room = root.ruler
+	}
+	desc = wg_crisis_2.2020.desc
+	trigger = {
+		NOT = { has_global_flag = all_portal_2_destroyed }
+	}
+	immediate = {
+		add_modifier = {
+			modifier = wg_crisis_2_2020 days = 3600
+		}
+	}
+    option = {
+        name = wg_crisis_2.2020.a
+    }
+}
+country_event = {
+	id = wg_crisis_2.2022
+	title = "wg_resistant_army_title"
+	is_triggered_only = yes
+	diplomatic = yes
+	force_open = yes
+	picture_event_data = {
+		room = "resistant_army_room"
+	}
+	desc = wg_crisis_2.2022.desc
+	trigger = {
+		NOT = { has_global_flag = all_portal_2_destroyed }
+	}
+	immediate = {
+		event_target:wg_crisis_2_kind_omega? = {
+			set_event_locked = no
+		}
+	}
+    option = {
+        name = wg_crisis_2.2022.a
+    }
+}
+country_event = {
+	id = wg_crisis_2.2023
+	title = "wg_crisis_2_title"
+	is_triggered_only = yes
+	diplomatic = yes
+	force_open = yes
+	picture_event_data = {
+		room = "uf_tirpitz_room"
+	}
+	desc = wg_crisis_2.2023.desc
+	trigger = {
+		NOT = { has_global_flag = all_portal_2_destroyed }
+	}
+	immediate = {
+	}
+    option = {
+        name = wg_crisis_2.2023.a
+		add_modifier = {
+			modifier = wg_crisis_2_2023 days = 1800
+		}
+    }
+}
+
+country_event = {
+	id = wg_crisis_2.2024
+	hide_window = yes
+	is_triggered_only = yes
+	trigger = {
+		NOT = { has_global_flag = all_portal_2_destroyed }
+	}
+	immediate = {
+		random_owned_fleet = {
+			solar_system? = {
+				save_global_event_target_as = wg_invasion_2_false_uf_ews_system
+				create_starbase = {
+					size = wg_crisis_starbase
+					owner = event_target:wg_crisis_2_country
+					effect = {
+						while = {
+							count = 5
+							create_wg_crisis_platform = yes
+						}
+					}
+				}
+				random_system_planet = {
+					every_country = {
+						create_point_of_interest = {
+							id = wg_invasion_2_false_uf_ews_poi.1
+							name = "wg_invasion_2_false_uf_ews_poi"
+							desc = "wg_invasion_2_false_uf_ews_poi_desc"
+							event_chain = "wg_invasion_chain"
+							location = event_target:wg_invasion_2_false_uf_ews_system
+						}
+					}
+					create_fleet = {
+						name = "NAME_wg_crisis_2_false_uf_ews"
+						effect = {
+							set_fleet_flag = wg_crisis_2_false_uf_ews
+							save_global_event_target_as = wg_crisis_2_false_uf_ews
+							set_owner = event_target:wg_crisis_2_country
+							create_ship = {
+								name = "NAME_wg_crisis_2_false_uf_ews"
+								design = "NAME_wg_crisis_2_false_uf_ews"
+								prefix = no
+							}
+							set_location = {
+								target = prev
+								distance = -1
+								angle = 0
+							}
+							every_country = {
+								limit = {
+									is_ai = no
+								}
+								country_event = {
+									id = wg_crisis_2.2025
+								}
+							}
+						}
+						settings = { 
+							can_upgrade = no 
+							uses_naval_capacity = no
+							can_change_composition = no
+							spawn_debris = no
+						}
+					}
+				}
+			}
+		}
+	}
+}
+country_event = {
+	id = wg_crisis_2.2025
+	title = "wg_crisis_2_title"
+	is_triggered_only = yes
+	diplomatic = yes
+	force_open = yes
+	picture_event_data = {
+		room = "uf_tirpitz_room"
+	}
+	desc = wg_crisis_2.2025.desc
+	trigger = {
+		exists = event_target:wg_crisis_2_false_uf_ews
+		NOT = { has_global_flag = all_portal_2_destroyed }
+	}
+	immediate = {
+		country_event = {
+			id = wg_crisis_2.2026 days = 180
+		}
+	}
+
+    option = {
+        name = wg_crisis_2.2025.a
+    }
+}
+country_event = {
+	id = wg_crisis_2.2026
+	title = "wg_crisis_2_title"
+	is_triggered_only = yes
+	diplomatic = yes
+	force_open = yes
+	picture_event_data = {
+		room = "uf_tirpitz_room"
+	}
+	desc = wg_crisis_2.2026.desc.a
+	desc = wg_crisis_2.2026.desc.b
+	desc = wg_crisis_2.2026.desc.c
+	desc = wg_crisis_2.2026.desc.d
+	trigger = {
+		exists = event_target:wg_crisis_2_false_uf_ews
+		NOT = { has_global_flag = all_portal_2_destroyed }
+	}
+	immediate = {
+		country_event = {
+			id = wg_crisis_2.2026 days = 1080 random = 360
+		}
+		random_system = {
+			star? = {
+				create_ambient_object = {
+					type = "space_storm_1"
+					location = this
+				}
+				last_created_ambient_object = {
+					set_location = {
+						target = prev
+						distance = 0
+						angle = random
+					}
+				}
+			}
+			save_event_target_as = uf_storm_system
+		}
+	}
+    option = {
+        name = wg_crisis_2.2026.a
+		custom_tooltip = wg_crisis_2.2026.a.tooltip
+    }
+}
+country_event = {
+	id = wg_crisis_2.2027
+	title = "wg_crisis_2_title"
+	is_triggered_only = yes
+	diplomatic = yes
+	force_open = yes
+	picture_event_data = {
+		room = "uf_tirpitz_room"
+	}
+	desc = wg_crisis_2.2027.desc
+	trigger = {
+		NOT = { has_global_flag = all_portal_2_destroyed }
+	}
+	immediate = {
+	}
+    option = {
+        name = wg_crisis_2.2027.a
+		add_modifier = {
+			modifier = wg_crisis_2_2027 days = 1800
+		}
+    }
+}
+country_event = {
+	id = wg_crisis_2.2028
+	hide_window = yes
+	is_triggered_only = yes
+	trigger = {
+		NOR = {
+			has_global_flag = all_portal_2_destroyed
+			has_global_flag = wg_crisis_very_easy
+			has_global_flag = wg_crisis_easy
+			has_global_flag = wg_crisis_normal
+		}
+	}
+	immediate = {
+		if = {
+			limit = { 
+				NOT = {
+					exists = event_target:wg_crisis_2_SRA_SOGZ_UF
+				}
+			}
+			if = {
+				limit = { exists = event_target:first_dimensional_portal_2 }
+				create_fleet = {
+					name = "NAME_SRA_SOGZ_UF"
+					effect = {
+						set_fleet_flag = wg_crisis_2_SRA_SOGZ_UF
+						save_global_event_target_as = wg_crisis_2_SRA_SOGZ_UF
+						set_owner = event_target:wg_crisis_2_country
+						create_ship = {
+							name = "NAME_SRA_SOGZ_UF"
+							design = "NAME_SRA_SOGZ_UF_design_2"
+							prefix = no
+						}
+						set_location = {
+							target = event_target:first_dimensional_portal_2
+							distance = -1
+							angle = 0
+						}
+						set_fleet_stance = aggressive
+						set_fleet_bombardment_stance = wg_doom2
+						set_aggro_range_measure_from = self
+						set_aggro_range = 500
+						set_fleet_flag = attack_fleet
+						fleet_event = { id = wg_crisis.96 }
+					}
+					settings = { 
+						is_ultra_boss = yes
+						can_upgrade = no 
+						uses_naval_capacity = no
+						can_change_leader = no
+						can_change_composition = no
+						can_disband = no
+						spawn_debris = no
+						ai_ignore_strength = yes
+					}
+				}
+			}
+			else_if = {
+				limit = { exists = event_target:second_dimensional_portal_2 }
+				create_fleet = {
+					name = "NAME_SRA_SOGZ_UF"
+					effect = {
+						set_fleet_flag = wg_crisis_2_SRA_SOGZ_UF
+						save_global_event_target_as = wg_crisis_2_SRA_SOGZ_UF
+						set_owner = event_target:wg_crisis_2_country
+						create_ship = {
+							name = "NAME_SRA_SOGZ_UF"
+							design = "NAME_SRA_SOGZ_UF_design_2"
+							prefix = no
+						}
+						set_location = {
+							target = event_target:second_dimensional_portal_2
+							distance = -1
+							angle = 0
+						}
+						set_fleet_stance = aggressive
+						set_fleet_bombardment_stance = wg_doom2
+						set_aggro_range_measure_from = self
+						set_aggro_range = 500
+						set_fleet_flag = attack_fleet
+						fleet_event = { id = wg_crisis.96 }
+					}
+					settings = { 
+						is_ultra_boss = yes
+						can_upgrade = no 
+						uses_naval_capacity = no
+						can_change_leader = no
+						can_change_composition = no
+						can_disband = no
+						spawn_debris = no
+						ai_ignore_strength = yes
+					}
+				}
+			}
+			else_if = {
+				limit = { exists = event_target:third_dimensional_portal_2 }
+				create_fleet = {
+					name = "NAME_SRA_SOGZ_UF"
+					effect = {
+						set_fleet_flag = wg_crisis_2_SRA_SOGZ_UF
+						save_global_event_target_as = wg_crisis_2_SRA_SOGZ_UF
+						set_owner = event_target:wg_crisis_2_country
+						create_ship = {
+							name = "NAME_SRA_SOGZ_UF"
+							design = "NAME_SRA_SOGZ_UF_design_2"
+							prefix = no
+						}
+						set_location = {
+							target = event_target:third_dimensional_portal_2
+							distance = -1
+							angle = 0
+						}
+						set_fleet_stance = aggressive
+						set_fleet_bombardment_stance = wg_doom2
+						set_aggro_range_measure_from = self
+						set_aggro_range = 500
+						set_fleet_flag = attack_fleet
+						fleet_event = { id = wg_crisis.96 }
+					}
+					settings = { 
+						is_ultra_boss = yes
+						can_upgrade = no 
+						uses_naval_capacity = no
+						can_change_leader = no
+						can_change_composition = no
+						can_disband = no
+						spawn_debris = no
+						ai_ignore_strength = yes
+					}
+				}
+			}
+		}
+		country_event = {
+			id = wg_crisis_2.2028 days = 720
+		}
+	}
+}
+
+#随机触发事件
+# This = owner of fleet 1 (destroyed)
+# From = owner of fleet 2 (combatant)
+# FromFrom = fleet 1
+# FromFromFrom = fleet 2
+country_event = {
+	id = wg_crisis_2.3000
+	hide_window = yes
+	is_triggered_only = yes
+	trigger = {
+		NOT = { has_global_flag = all_portal_2_destroyed }
+		has_country_flag = wg_crisis_2_country
+		from? = { is_ai = no }
+	}
+	immediate = {
+		if = {
+			limit = { NOT = { has_global_flag = wg_crisis_2_3001_happened } }
+			random = {
+				chance = 1
+				set_global_flag = wg_crisis_2_3001_happened
+				from? = {
+					country_event = {
+						id = wg_crisis_2.3001 random = 360
+					}
+				}
+			}
+		}
+		if = {
+			limit = { FromFrom? = { has_fleet_flag = wg_crisis_2_false_uf_galaxy_gun } }
+			From? = {
+				country_event = {
+					id = wg_crisis_2.2009
+				}
+			}
+			every_country = {
+				remove_point_of_interest = wg_invasion_2_false_uf_galaxy_gun_poi.1
+			}
+			while = {
+				count = 4
+				create_wg_crisis_fleet_and_admiral = { THIS = wg_crisis_2 }
+			}
+		}
+		if = {
+			limit = { FromFrom? = { has_fleet_flag = wg_crisis_2_kind_omega } }
+			From? = {
+				country_event = {
+					id = wg_crisis_2.2023
+				}
+			}
+			every_country = {
+				remove_point_of_interest = wg_invasion_2_kind_omega_poi.1
+			}
+		}
+		if = {
+			limit = { FromFrom? = { has_fleet_flag = wg_crisis_2_false_uf_ews } }
+			From? = {
+				country_event = {
+					id = wg_crisis_2.2027
+				}
+			}
+			every_country = {
+				remove_point_of_interest = wg_invasion_2_false_uf_ews_poi.1
+			}
+		}
+	}
+}
+country_event = {
+	id = wg_crisis_2.3001
+	title = "wg_crisis_2_title"
+	is_triggered_only = yes
+	diplomatic = yes
+	force_open = yes
+	picture_event_data = {
+		room = "uf_tirpitz_room"
+	}
+	desc = wg_crisis_2.3001.desc
+
+    option = {
+        name = wg_crisis_2.3001.a
+		add_modifier = {
+			modifier = wg_crisis_2_3001 days = 1800
+		}
+    }
+}

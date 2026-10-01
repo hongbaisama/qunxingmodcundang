@@ -1,0 +1,81 @@
+inline_script = {
+	script = "scripted_effect/wg_crisis_se_template"
+	CURRENT = "_3"
+}
+
+inline_script = {
+	script = "scripted_effect/wg_crisis_se_template"
+	CURRENT = "_2"
+}
+
+inline_script = {
+	script = "scripted_effect/wg_crisis_se_template"
+	CURRENT = ""
+}
+# 创建一队联合无人机（护卫舰）（无人机航母用）
+# $NUM$:正常数量
+# $EZ_NUM$:简单难度数量
+create_uf_drones = {
+	optimize_memory
+	create_fleet = {
+		[[NAME] name = $NAME$ ]
+		settings = {
+			spawn_debris = no
+			can_upgrade = no
+			can_change_composition = no
+			can_change_leader = no
+		}
+		effect = {
+			set_owner = PREVPREV
+			set_fleet_flag = drones
+			set_fleet_flag = normal_drones
+			if = {
+				limit = {
+					OR = {
+						has_global_flag = wg_crisis_easy
+						has_global_flag = wg_crisis_very_easy
+					}
+				}
+				while = {
+					count = $EZ_NUM$
+					create_ship = {
+						name = "NAME_WG_EG_Corvette"
+						design = "NAME_WG_EG_Corvette"
+					}
+				}
+			}
+			else = {
+				while = {
+					count = $NUM$
+					create_ship = {
+						name = "NAME_WG_EG_Corvette"
+						design = "NAME_WG_EG_Corvette"
+					}
+				}
+			}
+			set_location = {
+				target = PREV
+				distance = 1
+				angle = random
+			}
+			set_fleet_stance = aggressive
+			set_aggro_range_measure_from = self
+			set_aggro_range = 500
+			if = {
+				limit = {
+					has_global_flag = wg_crisis_easy
+				}
+				fleet_event = {
+					id = mwsge_drone.4
+					days = 20
+				}
+			}
+			else = {
+				fleet_event = {
+					id = mwsge_drone.4
+					days = 40
+				}
+			}
+		}
+	}
+}

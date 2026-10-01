@@ -1,0 +1,64 @@
+namespace = wg_traits
+
+# 延后触发移除buff，在月结之前移除
+event = {
+	id = wg_traits.1
+	hide_window = yes
+	is_triggered_only = yes
+
+	trigger = {
+		any_playable_country = {
+			has_wg_authority = yes
+			OR = {
+				any_owned_leader = {
+					leader_class = scientist
+					NOT = { has_trait = leader_trait_scientist_warshipgirls_materialist }
+				}
+				any_owned_leader = {
+					leader_class = scientist
+					NOT = { has_trait = leader_trait_scientist_shenhai_materialist }
+				}
+			}	
+		}
+	}
+
+	immediate = {
+		every_playable_country = {
+			limit = { has_wg_authority = yes }
+			if = {
+				limit = { 
+					has_authority = auth_shenhai 
+					any_owned_leader = {
+						leader_class = scientist
+						NOT = { has_trait = leader_trait_scientist_shenhai_materialist }
+					}
+				}
+				every_owned_leader = {
+					limit = {
+						leader_class = scientist
+						NOT = { has_trait = leader_trait_scientist_shenhai_materialist }
+					}
+					add_trait = { trait = leader_trait_scientist_shenhai_materialist show_message = no }
+					add_experience = 180
+				}
+			} 
+			else_if = {
+				limit = {
+					has_authority = auth_warshipgirls
+					any_owned_leader = {
+						leader_class = scientist
+						NOT = { has_trait = leader_trait_scientist_warshipgirls_materialist }
+					}
+				}
+				every_owned_leader = {
+					limit = {
+						leader_class = scientist
+						NOT = { has_trait = leader_trait_scientist_warshipgirls_materialist }
+					}
+					add_trait = { trait = leader_trait_scientist_warshipgirls_materialist show_message = no }
+					add_experience = 180
+				}
+			}
+		}
+	}
+}

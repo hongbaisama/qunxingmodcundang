@@ -1,0 +1,257 @@
+zone_wsg_uf_glory_military = {
+	icon = GFX_district_specialization_fortress
+	base_buildtime = @zone_buildtime
+	potential = {
+		uses_district_set = uf_glory_world
+	}
+	unlock = {
+		uses_district_set = uf_glory_world
+	}
+	resources = {
+		category = planet_zones
+		cost = {
+			minerals = @zone_cost
+		}
+	}
+	#uses_district_set = uf_glory_world
+	triggered_district_planet_modifier = {
+		potential = {
+			uses_district_set = uf_glory_world
+		}
+		job_uf_hm_soldier_add = 5000
+		job_uf_admin_add = 4000
+		planet_housing_add = 9000
+	}
+	planet_modifier = {
+		zone_building_slots_add = 3
+	}
+	max_buildings = 3
+	include = {
+		all
+	}
+	excluded_building_sets = {
+		
+		generator_automation
+		mining_automation
+		farming_automation
+	}
+}
+
+zone_wsg_uf_glory_base_resources = {
+	icon = GFX_district_specialization_energy
+	base_buildtime = @zone_buildtime
+	potential = {
+		uses_district_set = uf_glory_world
+	}
+	unlock = {
+		uses_district_set = uf_glory_world
+	}
+	planet_modifier = {
+		zone_building_slots_add = 3
+	}
+	resources = {
+		category = planet_zones
+		cost = {
+			minerals = @zone_cost
+		}
+	}
+	triggered_district_planet_modifier = {
+		potential = {
+			uses_district_set = uf_glory_world
+		}
+		planet_max_districts_add = 0.5
+	}
+	max_buildings = 3
+	include = {
+		all
+	}
+	excluded_building_sets = {
+		
+		generator_automation
+		mining_automation
+		farming_automation
+	}
+}
+
+zone_wsg_uf_glory_base_resources_2 = {
+	icon = GFX_district_specialization_food
+	base_buildtime = @zone_buildtime
+	potential = {
+		uses_district_set = uf_glory_world
+	}
+	unlock = {
+		uses_district_set = uf_glory_world
+	}
+	planet_modifier = {
+		zone_building_slots_add = 3
+	}
+	resources = {
+		category = planet_zones
+		cost = {
+			minerals = @zone_cost
+		}
+	}
+	triggered_district_planet_modifier = {
+		potential = {
+			uses_district_set = uf_glory_world
+		}
+		job_uf_food_writer_add = 3000
+		planet_housing_add = 3000
+	}
+	max_buildings = 3
+	include = {
+		all
+	}
+	excluded_building_sets = {
+		
+		generator_automation
+		mining_automation
+		farming_automation
+	}
+}
+
+zone_wsg_uf_glory_auto_industry = {
+	icon = GFX_district_specialization_factory
+	base_buildtime = @zone_buildtime
+	potential = {
+		uses_district_set = uf_glory_world
+	}
+	unlock = {
+		uses_district_set = uf_glory_world
+	}
+	resources = {
+		category = planet_zones
+		cost = {
+			sr_uf = 1000
+		}
+	}
+	planet_modifier = {
+		zone_building_slots_add = 3
+	}
+	triggered_district_planet_modifier = {
+		potential = {
+			uses_district_set = uf_glory_world
+		}
+		pop_bonus_workforce_mult = 0.35
+	}
+	max_buildings = 3
+	include = {
+		all
+	}
+	excluded_building_sets = {
+		
+		generator_automation
+		mining_automation
+		farming_automation
+	}
+}
+
+zone_wsg_uf_glory_auto_science = {
+	icon = GFX_district_specialization_research
+	base_buildtime = @zone_buildtime
+	potential = {
+		uses_district_set = uf_glory_world
+	}
+	unlock = {
+		uses_district_set = uf_glory_world
+	}
+	resources = {
+		category = planet_zones
+		cost = {
+			sr_uf = 1000
+		}
+	}
+	max_buildings = 3
+	include = {
+		all
+	}
+	#uses_district_set = uf_glory_world
+	triggered_district_planet_modifier = {
+		potential = {
+			uses_district_set = uf_glory_world
+		}
+		pop_bonus_workforce_mult = 0.35
+		planet_jobs_physics_research_produces_mult = 0.05
+		planet_jobs_society_research_produces_mult = 0.05
+		planet_jobs_engineering_research_produces_mult = 0.05
+	}
+	planet_modifier = {
+		zone_building_slots_add = 3
+	}
+	excluded_building_sets = {
+		
+		generator_automation
+		mining_automation
+		farming_automation
+	}
+}
+
+zone_wsg_uf_glory_auto_rare_resource = {
+	icon = GFX_district_specialization_industrial
+	base_buildtime = @zone_buildtime
+	potential = {
+		uses_district_set = uf_glory_world
+	}
+	unlock = {
+		uses_district_set = uf_glory_world
+	}
+	resources = {
+		category = planet_zones
+		cost = {
+			sr_uf = 1000
+		}
+	}
+	#uses_district_set = uf_glory_world
+	triggered_district_planet_modifier = {
+		potential = {
+			uses_district_set = uf_glory_world
+		}
+		pop_bonus_workforce_mult = 0.35
+	}
+	max_buildings = 3
+	include = {
+		all
+	}
+	planet_modifier = {
+		zone_building_slots_add = 3
+	}
+	excluded_building_sets = {
+	}
+}
+
+zone_wsg_uf_glory_auto_hyperdimensional_matter = {
+	icon = GFX_district_specialization_industrial
+	base_buildtime = @zone_buildtime
+	potential = {
+		uses_district_set = uf_glory_world
+	}
+	unlock = {
+		uses_district_set = uf_glory_world
+	}
+	resources = {
+		category = planet_zones
+		cost = {
+			sr_uf = 500
+		}
+	}
+	max_buildings = 3
+	include = {
+		all
+	}
+	#uses_district_set = uf_glory_world
+	triggered_district_planet_modifier = {
+		potential = {
+			uses_district_set = uf_glory_world
+		}
+		pop_bonus_workforce_mult = 0.35
+	}
+	planet_modifier = {
+		zone_building_slots_add = 3
+	}
+	excluded_building_sets = {
+		
+		generator_automation
+		mining_automation
+		farming_automation
+	}
+}

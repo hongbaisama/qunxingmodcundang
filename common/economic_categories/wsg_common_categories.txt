@@ -1,0 +1,239 @@
+# Base income of country
+country_base = {
+	parent = country
+	generate_add_modifiers = {
+		produces
+		upkeep
+	}
+	generate_mult_modifiers = {
+		produces
+		upkeep
+	}
+	modifier_category = country
+}
+
+planet_structures = {
+	parent = planets
+	hidden = yes
+	generate_mult_modifiers = {
+		produces
+		cost
+		upkeep
+	}
+	modifier_category = colony
+}
+
+pop_category_slave = {
+	parent = planet_pops
+	generate_add_modifiers = {
+		produces
+		upkeep
+	}
+    generate_mult_modifiers = {
+        produces
+		upkeep
+	}
+	modifier_category = pop_group
+}
+
+pop_category_workers = {
+	parent = planet_pops
+    generate_add_modifiers = {
+		produces
+		upkeep
+	}
+    generate_mult_modifiers = {
+        produces
+		upkeep
+	}
+	modifier_category = pop_group
+}
+
+pop_category_specialists = {
+	parent = planet_pops
+    generate_add_modifiers = {
+		produces
+		upkeep
+	}
+    generate_mult_modifiers = {
+        produces
+		upkeep
+	}
+	modifier_category = pop_group
+}
+
+planet_uf_evolver = {
+	icon = "job_uf_evolver"
+	parent = planet_jobs_specialist
+	generate_mult_modifiers = {
+		produces
+		upkeep
+	}
+	generate_add_modifiers = {
+		produces
+		upkeep
+	}
+	modifier_category = colony
+}
+wg_knights_category = {
+    parent = planet_jobs
+	generate_add_modifiers = {
+		produces
+		upkeep
+	}
+    generate_mult_modifiers = {
+        produces
+		upkeep
+	}
+	modifier_category = colony
+}
+wg_knights_lord_category = {
+    parent = planet_jobs
+	generate_add_modifiers = {
+		produces
+		upkeep
+	}
+    generate_mult_modifiers = {
+        produces
+		upkeep
+	}
+	modifier_category = colony
+}
+
+planet_wg_knight_lord = {
+	parent = planet_jobs_ruler
+	generate_mult_modifiers = {
+		produces
+		upkeep
+	}
+	generate_add_modifiers = {
+		produces
+		upkeep
+	}
+	modifier_category = colony
+}
+planet_wg_knight = {
+	parent = planet_jobs_specialist
+	generate_mult_modifiers = {
+		produces
+		upkeep
+	}
+	generate_add_modifiers = {
+		produces
+		upkeep
+	}
+	modifier_category = colony
+}
+planet_wg_squire = {
+	parent = planet_jobs_worker
+	generate_mult_modifiers = {
+		produces
+		upkeep
+	}
+	generate_add_modifiers = {
+		produces
+		upkeep
+	}
+	modifier_category = colony
+}
+
+planet_districts = {
+	parent = planet_structures
+
+	generate_add_modifiers = {
+		cost
+		upkeep
+		produces
+	}
+	
+	generate_mult_modifiers = {
+		cost
+        upkeep
+		produces
+	}
+	modifier_category = colony
+}
+
+megastructures = {
+	use_for_ai_budget = yes
+	ai_use_parent_for_resources_upkeep = {
+		energy
+		consumer_goods
+	}
+	parent = country
+	generate_mult_modifiers = {
+		cost
+		produces
+		upkeep
+	}
+	generate_add_modifiers = {
+		cost
+		produces
+		upkeep
+	}
+	modifier_category = megastructure
+}
+
+planet_technician = {
+	icon = "job_technician"
+	parent = planet_jobs_worker
+	generate_add_modifiers = {
+		produces
+        upkeep
+	}
+	generate_mult_modifiers = {
+		produces
+		upkeep
+	}
+	modifier_category = colony
+}
+
+planet_farmers = {
+	icon = "job_farmer"
+	parent = planet_jobs_worker
+	generate_add_modifiers = {
+		produces
+        upkeep
+	}
+	generate_mult_modifiers = {
+		produces
+		upkeep
+	}
+	modifier_category = colony
+}
+planet_miners = {
+	parent = planet_jobs_worker
+	generate_add_modifiers = {
+		produces
+        upkeep
+	}
+	generate_mult_modifiers = {
+		produces
+		upkeep
+	}
+	modifier_category = colony
+}
+planet_researchers = {
+	icon = "job_researcher"
+	parent = planet_jobs_specialist
+	generate_add_modifiers = {
+		produces
+        upkeep
+	}
+	generate_mult_modifiers = {
+		produces
+		upkeep
+	}
+	modifier_category = colony
+}
+
+planet_culture_workers = {
+	parent = planet_bureaucrats
+	generate_add_modifiers = {
+		produces
+	}
+	generate_mult_modifiers = {
+		produces
+	}
+	modifier_category = colony
+}

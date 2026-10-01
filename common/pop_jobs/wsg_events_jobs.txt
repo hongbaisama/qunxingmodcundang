@@ -1,0 +1,427 @@
+wg_knight_lord = {
+	category = ruler
+
+	swappable_data = {
+		default = {
+			condition_string = RULER_JOB_TRIGGER
+			building_icon = building_order_keep
+			icon = knight_commander
+		}
+	}
+	possible_pre_triggers = {
+		has_owner = yes
+		is_enslaved = no
+		is_being_purged = no
+		is_being_assimilated = no
+		is_sapient = yes
+	}
+
+	possible_precalc = can_fill_ruler_job
+	possible = {
+		has_wg_traits = yes
+	}
+
+	resources = {
+		category = wg_knights_lord_category
+		produces = {
+			unity = 5
+			physics_research = 6
+			engineering_research = 6
+			society_research = 6
+		}
+		produces = {
+			trigger = { exists = owner }
+			unity = 1.5
+			multiplier = owner.trigger:num_ascension_perks
+		}
+		produces = {
+			trigger = { exists = owner }
+			physics_research = 1
+			engineering_research = 1
+			society_research = 1
+			multiplier = owner.trigger:num_ascension_perks
+		}
+		produces = {
+			trigger = { 
+				exists = colony
+				colony = { has_modifier = wg_knight_modifier_alloys } 
+			}
+			alloys = 4
+		}
+		produces = {
+			trigger = { 
+				exists = colony
+				colony = { has_modifier = wg_knight_modifier_consumer_goods } 
+			}
+			consumer_goods = 4
+			trade = 4
+		}
+		produces = {
+			trigger = { 
+				exists = colony
+				colony = { has_modifier = wg_knight_modifier_pantsu } 
+			}
+			sr_pantsu = 1
+		}
+		produces = {
+			trigger = { 
+				exists = colony
+				colony = { has_modifier = wg_knight_modifier_fish } 
+			}
+			unity = 4
+		}
+		produces = {
+			trigger = { 
+				exists = colony
+				colony = { has_modifier = wg_knight_modifier_hospital } 
+			}
+			society_research = 10
+		}
+		upkeep = {
+			alloys = 2
+		}
+	}
+	planet_modifier = {
+		planet_amenities_add = 1200
+		country_naval_cap_add = 4
+	}
+	planet_modifier = {
+		planet_defense_armies_add = 8
+	}
+	triggered_planet_modifier = {
+		potential = {
+			always = yes
+		}
+		planet_amenities_add = 100
+		multiplier = owner.trigger:num_ascension_perks
+	}
+
+	triggered_country_modifier = {
+		country_naval_cap_add = 2
+		multiplier = owner.trigger:num_ascension_perks
+	}
+	
+	triggered_country_modifier = {
+		potential = {
+			exists = colony
+			colony = { has_modifier = wg_knight_modifier_keyboard }
+		}
+		empire_size_add = -2
+	}
+	triggered_planet_modifier = {
+		potential = {
+			exists = colony
+			colony = { has_modifier = wg_knight_modifier_alloys }
+		}
+		planet_jobs_alloys_produces_mult = 0.02
+	}
+	triggered_planet_modifier = {
+		potential = {
+			exists = colony
+			colony = { has_modifier = wg_knight_modifier_consumer_goods }
+		}
+		planet_jobs_consumer_goods_produces_mult = 0.02
+	}
+	triggered_planet_modifier = {
+		potential = {
+			exists = colony
+			colony = { has_modifier = wg_knight_modifier_fish }
+		}
+		planet_stability_add = 1
+		planet_amenities_add = 200
+	}
+	triggered_planet_modifier = {
+		potential = {
+			exists = colony
+			colony = { has_modifier = wg_knight_modifier_hospital }
+		}
+		planet_amenities_add = 200
+		logistic_growth_mult = 0.45
+	}
+	triggered_planet_modifier = {
+		potential = {
+			exists = colony
+			colony = { has_modifier = wg_knight_modifier_dc }
+		}
+		logistic_growth_mult = 0.55
+	}
+
+	weight = {
+		weight = 10000
+	}
+}
+
+wg_knight = {
+	category = specialist
+
+	swappable_data = {
+		default = {
+			condition_string = SPECIALIST_JOB_TRIGGER
+			building_icon = building_order_keep
+			icon = knight
+		}
+	}
+	possible_pre_triggers = {
+		has_owner = yes
+		is_being_purged = no
+		is_being_assimilated = no
+		is_enslaved = no
+	}
+
+	possible_precalc = can_fill_specialist_job
+	possible = {
+		has_wg_traits = yes
+	}
+	resources = {
+		category = wg_knights_category
+		produces = {
+			trigger = { exists = owner }
+			unity = 4
+		}
+		produces = {
+			trigger = { exists = owner }
+			physics_research = 4
+			engineering_research = 4
+			society_research = 4
+		}
+		produces = {
+			trigger = { 
+				exists = colony
+				colony = { has_modifier = wg_knight_modifier_pantsu } 
+			}
+			sr_pantsu = 1
+		}
+		produces = {
+			trigger = { 
+				exists = colony
+				colony = { has_modifier = wg_knight_modifier_alloys } 
+			}
+			alloys = 4
+		}
+		produces = {
+			trigger = { 
+				exists = colony
+				colony = { has_modifier = wg_knight_modifier_consumer_goods } 
+			}
+			consumer_goods = 4
+			trade = 4
+		}
+		produces = {
+			trigger = { 
+				exists = colony
+				colony = { has_modifier = wg_knight_modifier_fish } 
+			}
+			unity = 4
+		}
+		produces = {
+			trigger = { 
+				exists = colony
+				colony = { has_modifier = wg_knight_modifier_hospital } 
+			}
+			society_research = 10
+		}
+		upkeep = {
+			alloys = 1
+		}
+	}
+    
+	triggered_country_modifier = {
+		country_naval_cap_add = 3
+	}
+	triggered_country_modifier = {
+		potential = {
+			exists = colony
+			colony = { has_modifier = wg_knight_modifier_keyboard }
+		}
+		empire_size_add = -2
+	}
+	triggered_planet_modifier = {
+		potential = {
+			exists = colony
+			colony = { has_modifier = wg_knight_modifier_dc }
+		}
+		logistic_growth_mult = 0.02
+	}
+	triggered_planet_modifier = {
+		potential = {
+			exists = colony
+			colony = { has_modifier = wg_knight_modifier_hospital }
+		}
+		planet_amenities_add = 200
+		logistic_growth_mult = 0.01
+	}
+	triggered_planet_modifier = {
+		potential = {
+			exists = colony
+			colony = { has_modifier = wg_knight_modifier_alloys }
+		}
+		planet_jobs_alloys_produces_mult = 0.02
+	}
+	triggered_planet_modifier = {
+		potential = {
+			exists = colony
+			colony = { has_modifier = wg_knight_modifier_consumer_goods }
+		}
+		planet_jobs_consumer_goods_produces_mult = 0.02
+	}
+	triggered_planet_modifier = {
+		potential = {
+			exists = colony
+			colony = { has_modifier = wg_knight_modifier_fish }
+		}
+		planet_stability_add = 1
+		planet_amenities_add = 200
+	}
+
+	weight = {
+		weight = 1200
+	}
+}
+
+wg_squire = {
+	category = worker
+
+	swappable_data = {
+		default = {
+			condition_string = WORKER_JOB_TRIGGER
+			building_icon = building_order_keep
+			icon = squire
+		}
+	}
+	possible_pre_triggers = {
+		has_owner = yes
+		is_being_purged = no
+		is_being_assimilated = no
+		is_sapient = yes
+	}
+
+	possible_precalc = can_fill_worker_job #deliberate, they are baby knights
+
+	possible = {
+		hidden_trigger = { exists = owner }
+		owner = {
+			is_gestalt = no
+		}
+	}
+
+	planet_modifier = {
+		wg_knights_category_produces_mult = 0.04
+		wg_knights_lord_category_produces_mult = 0.06
+	}
+
+	triggered_planet_modifier = {
+		potential = {
+			always = yes
+		}
+		planet_amenities_add = 300
+	}
+
+
+	resources = {
+		category = planet_squires
+		upkeep = {
+			food = 0.5
+		}
+	}
+
+	weight = {
+		weight = 2
+		modifier = {
+			factor = 10
+			is_enslaved = yes
+			can_take_servant_job = no
+			NOT = { has_slavery_type = { type = slavery_indentured } }
+		}
+	}
+}
+
+
+wg_great_ming_hedonist = {
+	category = worker
+	is_capped_by_modifier = yes
+
+	swappable_data = {
+		default = {
+			building_icon = building_wg_great_ming_residential
+			icon = fe_hedonist
+		}
+	}
+	possible_pre_triggers = {
+		has_owner = yes
+	}
+
+	possible = {
+		owner = {
+			is_primitive = yes
+			OR = {
+				has_country_flag = wg_great_ming_age
+			}
+		}
+	}
+
+	resources = {
+		category = planet_jobs
+		produces = {
+			unity = 2
+		}
+		upkeep = {
+			food = 1
+			consumer_goods = 1
+		}		
+	}
+	weight = {
+		weight = 2
+		modifier = {
+			factor = 6
+			is_spiritualist = yes
+		}
+		modifier = {
+			factor = 0
+			is_materialist = yes
+		}
+	}
+}
+
+wg_great_ming_slave = {
+	category = worker
+	is_capped_by_modifier = yes
+
+	swappable_data = {
+		default = {
+			building_icon = building_wg_great_ming_house
+			icon = broken_shackles_scavenger
+		}
+	}
+	possible_pre_triggers = {
+		has_owner = yes
+	}
+
+	possible = {
+		owner = {
+			is_primitive = yes
+			OR = {
+				has_country_flag = wg_great_ming_age
+			}
+		}
+	}
+
+	resources = {
+		category = planet_jobs
+		produces = {
+			food = 2
+			minerals = 2
+			energy = 2
+		}	
+	}
+	weight = {
+		weight = 2
+		modifier = {
+			factor = 6
+			is_spiritualist = yes
+		}
+		modifier = {
+			factor = 0
+			is_materialist = yes
+		}
+	}
+}

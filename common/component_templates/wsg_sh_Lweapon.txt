@@ -1,0 +1,87 @@
+weapon_component_template = {
+	key = "sh_weapen_L"
+	size = large
+	type = instant
+	
+	icon = "GFX_sh_weapen_L"
+	icon_frame = 1
+	
+	min_range = 35.0
+	damage = { min = 400 max = 600 }
+	windup = { min = 15 max = 25 }
+	total_fire_time = 75
+	range = 130.0
+	accuracy = 0.70
+	shield_penetration = 1.0
+	armor_penetration = 1.0
+	tracking = 0.30
+	power = -120
+	upgrades_to = "sh_weapen_L2"	
+	prerequisites = { "tech_sh_Lweapon" }
+	component_set = "sh_weapen_L"
+	projectile_gfx = "sh_kinetic_artillery"
+	tags = { weapon_type_kinetic l_slot }
+	ai_tags = { weapon_role_anti_armor }
+	ai_tag_weight = 3
+	inline_script = {
+		script = component/wsg_component_weapon_cost/wsg_component_weapon_cost_sr_se
+		wsg_component_weapon_tier = 4
+		wsg_component_weapon_size = L_ONLY
+	}
+	ai_weight = {
+		weight = 100
+		modifier = {
+			factor = 5
+			has_wg_authority = yes
+		}
+		modifier = {
+			factor = 0.0
+			component_no_resource = { RESOURCE = sr_se MIN_REQUIREMENT = 200 }
+		}
+	}
+}
+weapon_component_template = {
+	key = "sh_weapen_L2"
+	size = large
+	type = instant
+	
+	icon = "GFX_sh_weapen_L2"
+	icon_frame = 1
+	
+	min_range = 35.0
+	damage = { min = 500 max = 750 }
+	windup = { min = 15 max = 20 }
+	total_fire_time = 75
+	range = 135.0
+	accuracy = 0.80
+	shield_damage = 1.5
+	armor_damage = 1.5
+	shield_penetration = 1.0
+	armor_penetration = 1.0		
+	tracking = 0.35
+	power = -160
+	
+	prerequisites = { "tech_sh_Lweapon2" }
+	component_set = "sh_weapen_L2"
+	projectile_gfx = "wsg_medium_turbolaser_l_y"
+	tags = { weapon_type_kinetic weapon_type_energy l_slot }
+	ai_tags = { weapon_role_anti_armor }
+	ai_tag_weight = 3
+	inline_script = {
+		script = component/wsg_component_weapon_cost/wsg_component_weapon_cost_sr_se
+		wsg_component_weapon_tier = 5
+		wsg_component_weapon_size = L_ONLY
+	}
+	ai_weight = {
+		weight = 200
+		modifier = {
+			factor = 5
+			has_wg_authority = yes
+		}
+		modifier = {
+			factor = 0.0
+			component_no_resource = { RESOURCE = sr_se MIN_REQUIREMENT = 200 }
+		}
+	}
+
+}

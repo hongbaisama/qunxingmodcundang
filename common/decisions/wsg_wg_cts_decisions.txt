@@ -1,0 +1,49 @@
+decision_planet_join_cts = {
+	owned_planets_only = yes
+	sound = event_administrative_work
+	icon = P_join_cts
+	
+	resources = {
+		category = decisions
+		cost = {
+			food = 1
+		}
+	}	
+	potential = {
+		exists = owner
+		owner = { 
+			is_regular_empire = yes 
+			has_country_flag = wg_cheat_join_cts
+		}
+	}
+	allow = {
+		any_owned_pop_group = {
+			has_wg_traits = no
+			NOR = {
+				is_same_species = root.owner.owner_main_species
+				species_portrait = wsggalo
+				has_trait = trait_wg_sunflower
+			}
+		}
+	}	
+	effect = {
+		custom_tooltip = decision_planet_join_cts_desc2
+		hidden_effect = {	
+			random_owned_pop_group = {
+				limit = {
+					has_wg_traits = no
+					NOR = {
+						is_same_species = root.owner.owner_main_species
+						species_portrait = wsggalo
+						has_trait = trait_wg_sunflower
+					}
+				}
+				prev = { create_pop_group = {
+					size = prev.trigger:pop_group_size
+					species = owner_main_species
+				} }
+				kill_pop_group = { pop_group = this percentage = 1 }
+			}
+		}
+	}
+}

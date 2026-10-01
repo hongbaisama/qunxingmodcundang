@@ -1,0 +1,214 @@
+##############
+weapon_component_template = {
+	key = "UF_subject_weapon_L"
+	size = large
+	type = instant
+	
+	icon = "GFX_UF_weapon_L"
+	icon_frame = 1
+	
+	damage = { min = 1000 max = 2500 }
+	windup = { min = 6 max = 10 }
+	total_fire_time = 100
+	range = 150.0
+	accuracy = 1.0
+	shield_penetration = 1.0
+	armor_penetration = 1.0
+	tracking = 0.4
+	power = -100
+	inline_script = {
+		script = component/wsg_component_weapon_cost/wsg_component_weapon_cost_alloys
+		wsg_component_weapon_tier = 5
+		wsg_component_weapon_size = L
+	}
+	prerequisites = {
+		"tech_uf_subject_weapon"
+	}
+	component_set = "UF_subject_weapon_L"
+	projectile_gfx = "wsg_heavy_turbo_l_y"
+	tags = { weapon_type_energy weapon_type_kinetic weapon_role_artillery l_slot }
+	ai_tags = { weapon_role_artillery }
+	ai_tag_weight = 0
+	ai_weight = {
+		weight = 0
+		modifier = {
+			set = 1000
+			is_specialist_subject_type = { TYPE = uf }
+		}
+	}
+}
+
+weapon_component_template = {
+	key = "UF_subject_weapon_X"
+	size = extra_large
+	type = instant
+	color = { 2.0 1.0 1.0 1 }
+	
+	icon = "GFX_UF_weapon_X"
+	icon_frame = 1
+	
+	firing_arc = 90.0
+	
+	damage = { min = 5000 max = 10000 }
+	windup = { min = 10 max = 16 }
+	total_fire_time = 90
+	range = 200.0
+	accuracy = 1.0
+	shield_penetration = 1.0
+	armor_penetration = 1.0
+	tracking = 0.20
+	power = -350
+	inline_script = {
+		script = component/wsg_component_weapon_cost/wsg_component_weapon_cost_alloys
+		wsg_component_weapon_tier = 5
+		wsg_component_weapon_size = X
+	}
+	prerequisites = {
+		"tech_uf_subject_weapon"
+	}
+	component_set = "UF_subject_weapon_X"
+	projectile_gfx = "uf_lance_406"
+	tags = { weapon_type_energy weapon_type_kinetic weapon_role_artillery x_slot }
+	ai_tags = { weapon_role_artillery }
+	ai_tag_weight = 0
+	ai_weight = {
+		weight = 0
+		modifier = {
+			set = 1000
+			is_specialist_subject_type = { TYPE = uf }
+		}
+	}
+}
+
+weapon_component_template = {
+	key = "UF_subject_weapon_T"
+	size = titanic
+	type = instant
+	
+	icon = "GFX_UF_weapon_T"
+	icon_frame = 1
+	
+	firing_arc = 60.0
+	min_range = 10.0
+	
+	damage = { min = 50000 max = 100000 }
+	windup = { min = 10 max = 20 }
+	total_fire_time = 350
+	range = 350.0
+	accuracy = 1.00
+	shield_penetration = 1.0
+	armor_penetration = 1.0
+	tracking = 0.35
+	power = -700
+	
+	component_set = "UF_subject_weapon_T"
+	projectile_gfx = "uf_lance_533"
+	tags = { weapon_type_energy weapon_type_kinetic weapon_role_artillery t_slot }
+	ai_tags = { weapon_role_artillery }
+	inline_script = {
+		script = component/wsg_component_weapon_cost/wsg_component_weapon_cost_alloys
+		wsg_component_weapon_tier = 5
+		wsg_component_weapon_size = T
+	}
+	prerequisites = {
+		"tech_uf_subject_weapon"
+	}
+	ai_weight = {
+		weight = 0
+		modifier = {
+			set = 1000
+			is_specialist_subject_type = { TYPE = uf }
+		}
+	}
+}
+
+utility_component_template = {
+	key = "UF_subject_weapon_IA_S"
+	size = small
+	icon = "GFX_UF_weapon_IA"
+	icon_frame = 1
+	power = -80
+	
+	inline_script = {
+		script = component/wsg_defender_utility_coponent
+		SIZE = 1 TIER = 1 ARMOR = yes HULL = yes SHIELD = yes
+	}
+	
+	component_set = "UF_subject_weapon_IA"
+	inline_script = {
+		script = component/wsg_component_weapon_cost/wsg_component_weapon_cost_alloys
+		wsg_component_weapon_tier = 5
+		wsg_component_weapon_size = S
+	}
+	prerequisites = {
+		"tech_uf_subject_weapon"
+	}
+	ai_weight = {
+		weight = 0
+		modifier = {
+			set = 1000
+			is_specialist_subject_type = { TYPE = uf }
+		}
+	}
+}
+
+utility_component_template = {
+	key = "UF_subject_weapon_IA_M"
+	size = medium
+	icon = "GFX_UF_weapon_IA"
+	icon_frame = 1
+	power = -150
+	
+	inline_script = {
+		script = component/wsg_defender_utility_coponent
+		SIZE = 3 TIER = 1 ARMOR = yes HULL = yes SHIELD = yes
+	}
+
+	component_set = "UF_subject_weapon_IA"
+	inline_script = {
+		script = component/wsg_component_weapon_cost/wsg_component_weapon_cost_alloys
+		wsg_component_weapon_tier = 5
+		wsg_component_weapon_size = M
+	}
+	prerequisites = {
+		"tech_uf_subject_weapon"
+	}
+
+	ai_weight = {
+		weight = 0
+		modifier = {
+			set = 1000
+			is_specialist_subject_type = { TYPE = uf }
+		}
+	}
+}
+utility_component_template = {
+	key = "UF_subject_weapon_IA_L"
+	size = large
+	icon = "GFX_UF_weapon_IA"
+	icon_frame = 1
+	power = -250
+	
+	inline_script = {
+		script = component/wsg_defender_utility_coponent
+		SIZE = 9 TIER = 1 ARMOR = yes HULL = yes SHIELD = yes
+	}
+	
+	component_set = "UF_subject_weapon_IA"
+	inline_script = {
+		script = component/wsg_component_weapon_cost/wsg_component_weapon_cost_alloys
+		wsg_component_weapon_tier = 5
+		wsg_component_weapon_size = L
+	}
+	prerequisites = {
+		"tech_uf_subject_weapon"
+	}
+	upgrades_to = "UF_weapon_IA2_L"
+	ai_weight = {
+		weight = 0
+		modifier = {
+			set = 1000
+			is_specialist_subject_type = { TYPE = uf }
+		}
+	}
+}

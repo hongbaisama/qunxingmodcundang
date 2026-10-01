@@ -1,0 +1,720 @@
+uf_evolver = {
+	category = specialist
+	swappable_data = {
+		default = {
+			condition_string = SPECIALIST_JOB_TRIGGER
+			building_icon = building_capital
+		}
+	}
+	possible_pre_triggers = {
+		has_owner = yes
+		is_being_purged = no
+		is_being_assimilated = no
+		is_sapient = yes
+	}
+
+	possible = {
+		species = {
+			OR = {
+				has_trait = uf_trait_united_fleet
+				has_trait = uf_trait_united_fleet_1
+				has_trait = uf_trait_united_fleet_2
+			}
+		}
+	}
+
+	resources = {
+		category = planet_uf_evolver
+		produces = {
+			minerals = 3
+			energy = 3
+			unity = 3
+			physics_research = 3
+			engineering_research = 3
+			society_research = 3
+			consumer_goods = 1
+			alloys = 1
+			trade = 5
+		}
+	}
+
+	planet_modifier = {
+		planet_amenities_add = 500
+		pop_happiness = 0.01
+		planet_uf_evolver_produces_mult = 0.01
+	}
+	weight = {
+		weight = @specialist_job_weight # Fairly important job
+		#mult = value:job_weights_modifier|JOB|uf_evolver|RESOURCE|minerals|
+		#mult = value:scripted_modifier_job_weight_mult|JOB|uf_evolver|
+		modifier = {
+			factor = 2
+			is_enslaved = yes
+			can_take_servant_job = no
+		}
+	}
+}
+
+uf_entertainer = {
+	category = specialist
+	swappable_data = {
+		default = {
+			condition_string = SPECIALIST_JOB_TRIGGER
+			building_icon = building_uf_entertainment_center
+			icon = entertainer
+		}
+	}
+	possible_pre_triggers = {
+		has_owner = yes
+		is_being_purged = no
+		is_being_assimilated = no
+		is_sapient = yes
+	}
+
+	possible = {
+		entertainer_job_check_trigger = yes
+	}
+
+	resources = {
+		category = planet_entertainers
+		produces = {
+			unity = 2
+			trade = 5
+		}
+		upkeep = {
+			consumer_goods = 1
+			energy = 1
+		}
+	}
+
+	planet_modifier = {
+		planet_amenities_add = 2000
+		pop_happiness = 0.01
+	}
+    weight = {
+		weight = 50		
+	}
+}
+uf_food_writer = {
+	category = specialist
+	swappable_data = {
+		default = {
+			condition_string = SPECIALIST_JOB_TRIGGER
+			building_icon = building_uf_entertainment_center
+			icon = bio_trophy
+		}
+	}
+	possible_pre_triggers = {
+		has_owner = yes
+		is_being_purged = no
+		is_being_assimilated = no
+		is_sapient = yes
+	}
+
+	possible = {
+		entertainer_job_check_trigger = yes
+	}
+    
+	resources = {
+		category = planet_entertainers
+		produces = {
+			unity = 10
+		}
+		produces = {
+			trigger = {
+				exists = owner
+				owner = { has_megastructure = uf_star_city }
+			}
+			unity = 5
+		}
+		upkeep = {
+			food = 4
+		}
+		upkeep = {
+			trigger = {
+				exists = owner
+				owner = { has_megastructure = uf_star_city }
+			}
+			food = 1
+		}
+	}
+
+	weight = {
+		weight = @specialist_job_weight # Fairly important job
+		#mult = value:job_weights_modifier|JOB|uf_food_writer|RESOURCE|unity|
+		modifier = {
+			factor = 2
+			is_enslaved = yes
+			can_take_servant_job = no
+		}
+	}
+}
+
+
+uf_researcher = {
+	category = specialist
+	swappable_data = {
+		default = {
+			condition_string = SPECIALIST_JOB_TRIGGER
+			building_icon = building_uf_research
+		}
+	}
+	possible_pre_triggers = {
+		has_owner = yes
+		is_enslaved = no
+		is_being_purged = no
+		is_being_assimilated = no
+	}
+
+	possible_precalc = can_fill_specialist_job
+	possible = {
+		species = {
+			OR = {
+				has_trait = uf_trait_united_fleet
+				has_trait = uf_trait_united_fleet_1
+				has_trait = uf_trait_united_fleet_2
+			}
+		}
+	}
+	
+	resources = {
+		category = planet_researchers
+		produces = {
+			physics_research = 15
+			engineering_research = 15
+			society_research = 15
+		}
+		# 特质：联合科研协议
+		produces = {
+			physics_research = 5
+			engineering_research = 5
+			society_research = 5
+			trigger = {
+				exists = owner_main_species
+				owner_main_species = {
+					has_trait = uf_trait_knowledgeable
+				}
+			}
+		}
+		# 特质：联合科研协议
+		upkeep = {
+			consumer_goods = 1
+			trigger = {
+				exists = owner_main_species
+				owner_main_species = {
+					has_trait = uf_trait_knowledgeable
+				}
+			}
+		}
+		# 特质：超维科研
+		produces = {
+			physics_research = 10
+			engineering_research = 10
+			society_research = 10
+			trigger = {
+				exists = owner_main_species
+				owner_main_species = {
+					has_trait = uf_trait_knowledgeable_2
+				}
+			}
+		}
+		# 特质：超维科研
+		upkeep = {
+			consumer_goods = 3
+			energy = 3
+			trigger = {
+				exists = owner_main_species
+				owner_main_species = {
+					has_trait = uf_trait_knowledgeable_2
+				}
+			}
+		}
+		produces = {
+			trigger = { 
+				exists = owner
+				owner = { has_technology = tech_uf_research_upgrade_1 }
+			}
+			physics_research = 5
+			engineering_research = 5
+			society_research = 5
+		}
+
+		produces = {
+			trigger = { 
+				exists = owner
+				owner = { has_valid_civic = civic_technocracy }
+			}
+			unity = 1
+		}
+		upkeep = {
+			consumer_goods = 3.5
+		}	
+	}
+	weight = {
+		weight = @specialist_job_weight
+		#mult = value:scripted_modifier_job_weight_mult|JOB|uf_researcher|
+		modifier = {
+			factor = 0.2
+			has_citizenship_rights = no
+			NOT = { has_trait = trait_mechanical }
+		}
+		modifier = {
+			factor = 2
+			has_living_standard = { type = living_standard_academic_privilege }
+		}
+		modifier = {
+			factor = 0.1
+			can_take_servant_job = yes
+		}
+		modifier = {
+			factor = 0.8
+			is_enslaved = yes
+			has_slavery_type = { type = slavery_indentured }
+		}
+	}
+	inline_script = "jobs/automodding_priority_research"
+}
+
+uf_hm = {
+	category = specialist
+	swappable_data = {
+		default = {
+			condition_string = SPECIALIST_JOB_TRIGGER
+			building_icon = building_uf_hyperdimensional_matter_2
+		}
+	}
+	possible_pre_triggers = {
+		has_owner = yes
+		is_enslaved = no
+		is_being_purged = no
+		is_being_assimilated = no
+	}
+
+	possible_precalc = can_fill_specialist_job
+	possible = {
+		species = {
+			OR = {
+				has_trait = uf_trait_united_fleet
+				has_trait = uf_trait_united_fleet_1
+				has_trait = uf_trait_united_fleet_2
+			}
+		}
+	}
+	
+	resources = {
+		category = planet_translucers
+		produces = {
+			sr_uf = 3
+		}
+		upkeep = {
+			energy = 20
+			alloys = 6
+		}
+		produces = {
+			sr_uf = 2
+			trigger = {
+				owner = { 
+					has_technology = tech_uf_hyperdimensional_matter_upgrade_1	
+				}
+			}
+		}
+		produces = {
+			sr_uf = 2
+			trigger = {
+				owner = { 
+					has_technology = tech_uf_hyperdimensional_matter_upgrade_2
+				}
+			}
+		}
+		upkeep = {
+			energy = 15
+			alloys = 6
+			trigger = {
+				owner = { 
+					has_technology = tech_uf_hyperdimensional_matter_upgrade_2
+				}
+			}
+		}
+		produces = {
+			sr_uf = 4
+			trigger = {
+				exists = owner_main_species
+				owner_main_species = { has_trait = uf_trait_hm_produces }
+			}
+		}
+		upkeep = {
+			energy = 15
+			alloys = 8
+			trigger = {
+				exists = owner_main_species
+				owner_main_species = { has_trait = uf_trait_hm_produces }
+			}
+		}
+
+	}	
+	weight = {
+		weight = @specialist_job_weight # Fairly important job
+		#mult = value:job_weights_modifier|JOB|uf_hm|RESOURCE|sr_uf|
+		modifier = {
+			factor = 2
+			is_enslaved = yes
+			can_take_servant_job = no
+		}
+	}
+}
+
+
+
+uf_hm_alloys = {
+	category = specialist
+	swappable_data = {
+		default = {
+			condition_string = SPECIALIST_JOB_TRIGGER
+			building_icon = building_uf_hm_foundry
+		}
+	}
+	possible_pre_triggers = {
+		has_owner = yes
+		#is_enslaved = no
+		is_being_purged = no
+		is_being_assimilated = no
+	}
+
+	possible_precalc = can_fill_specialist_job
+	possible = {
+		species = {
+			OR = {
+				has_trait = uf_trait_united_fleet
+				has_trait = uf_trait_united_fleet_1
+				has_trait = uf_trait_united_fleet_2
+			}
+		}
+	}
+	
+	resources = {
+		category = planet_metallurgists
+		produces = {
+			alloys = 15
+			consumer_goods = 5
+		}
+		upkeep = {
+			minerals = 8
+		}
+		produces = {
+			alloys = 5
+			consumer_goods = 5
+			trigger = {
+				owner = { 
+					has_technology = tech_uf_hm_foundry_upgrade_1	
+				}
+			}
+		}
+		upkeep = {
+			minerals = 5
+			trigger = {
+				owner = { 
+					has_technology = tech_uf_hm_foundry_upgrade_1	
+				}
+			}
+		}
+		produces = {
+			alloys = 5
+			consumer_goods = 5
+			trigger = {
+				owner = { 
+					has_technology = tech_uf_hm_foundry_upgrade_2	
+				}
+			}
+		}
+		upkeep = {
+			minerals = 5
+			trigger = {
+				owner = { 
+					has_technology = tech_uf_hm_foundry_upgrade_2	
+				}
+			}
+		}
+		produces = {
+			alloys = 10
+			consumer_goods = 10
+			trigger = {
+				owner = { 
+					has_technology = tech_uf_hm_foundry_upgrade_3	
+				}
+			}
+		}
+		upkeep = {
+			minerals = 10
+			trigger = {
+				owner = { 
+					has_technology = tech_uf_hm_foundry_upgrade_3	
+				}
+			}
+		}
+	}
+	
+	weight = {
+		weight = @specialist_job_weight # Fairly important job
+		#mult = value:job_weights_modifier|JOB|uf_hm_alloys|RESOURCE|alloys|
+		modifier = {
+			factor = 2
+			is_enslaved = yes
+			can_take_servant_job = no
+		}
+	}
+}
+
+uf_rare_resource = {
+	category = specialist
+	swappable_data = {
+		default = {
+			condition_string = SPECIALIST_JOB_TRIGGER
+			building_icon = building_uf_rare_resource
+		}
+	}
+	possible_pre_triggers = {
+		has_owner = yes
+		#is_enslaved = no
+		is_being_purged = no
+		is_being_assimilated = no
+	}
+
+	possible_precalc = can_fill_specialist_job
+	possible = {
+		species = {
+			OR = {
+				has_trait = uf_trait_united_fleet
+				has_trait = uf_trait_united_fleet_1
+				has_trait = uf_trait_united_fleet_2
+			}
+		}
+	}
+	
+	resources = {
+		category = planet_translucers
+		produces = {
+			trigger = {
+				owner = { 
+					OR = {
+						has_technology = tech_exotic_gases
+						has_technology = tech_mine_exotic_gases
+					}	
+				}
+			}
+			exotic_gases = 5
+		} 
+		produces = {
+			trigger = {
+				owner = { 
+					OR = {
+						has_technology = tech_volatile_motes
+						has_technology = tech_mine_volatile_motes
+					}	
+				}
+			}
+			volatile_motes = 5
+		} 
+		produces = {
+			trigger = {
+				owner = { 
+					OR = {
+						has_technology = tech_rare_crystals
+						has_technology = tech_mine_rare_crystals
+					}	
+				}
+			}
+			rare_crystals = 5
+		}
+		produces = {
+			trigger = {
+				owner = { has_technology = tech_mine_dark_matter }
+			}
+			sr_dark_matter = 5
+		}
+		produces = {
+			trigger = {
+				owner = { has_technology = tech_mine_living_metal }
+			}
+			sr_living_metal = 5
+		}
+		produces = {
+			trigger = { owner = { has_technology = tech_mine_zro } }
+			sr_zro = 5
+		}
+		upkeep = {
+			energy = 5
+			sr_uf = 1
+		}
+	}
+	
+	weight = {
+		weight = 50
+	}
+}
+
+uf_admin = {
+	category = specialist
+	swappable_data = {
+		default = {
+			condition_string = SPECIALIST_JOB_TRIGGER
+			building_icon = building_uf_admin
+		}
+	}
+	possible = {
+		species = {
+			OR = {
+				has_trait = uf_trait_united_fleet
+				has_trait = uf_trait_united_fleet_1
+				has_trait = uf_trait_united_fleet_2
+			}
+		}
+	}
+	country_modifier = {
+		country_naval_cap_add = 15
+		empire_size_add = -2
+	}	
+    resources = {
+		category = planet_bureaucrats
+		produces = {
+			unity = 6
+		}
+		upkeep = {
+			energy = 3
+			consumer_goods = 3
+		}
+	}
+	planet_modifier = {
+		planet_crime_add = -10
+		planet_defense_armies_add = 1
+	}
+	triggered_country_modifier = {
+		potential = {
+			exists = colony
+			colony = { has_designation = col_uf_pc_military }
+		}
+		modifier = {
+			empire_size_add = -5
+			country_naval_cap_add = 5
+		}
+	}
+	triggered_country_modifier = {
+		potential = {
+			exists = colony
+			colony = { has_designation = col_rw_uf_pc_military }
+		}
+		modifier = {
+			empire_size_add = -5
+			country_naval_cap_add = 5
+		}
+	}
+	possible_pre_triggers = {
+		has_owner = yes
+		is_being_purged = no
+		#is_enslaved = no
+		is_being_assimilated = no
+	}
+
+	possible_precalc = can_fill_specialist_job
+	
+	weight = {
+		weight = 50
+	}
+}
+
+uf_hm_soldier = {
+	category = specialist
+	swappable_data = {
+		default = {
+			condition_string = SPECIALIST_JOB_TRIGGER
+			building_icon = building_uf_fortress
+		}
+	}
+	possible = {
+		species = {
+			OR = {
+				has_trait = uf_trait_united_fleet
+				has_trait = uf_trait_united_fleet_1
+				has_trait = uf_trait_united_fleet_2
+			}
+		}
+	}
+	country_modifier = {
+		country_naval_cap_add = 25
+	}	
+    resources = {
+		category = planet_soldiers
+		produces = {
+			trigger = {
+				exists = owner
+				owner = { has_valid_civic = civic_citizen_service }
+			}
+			unity = 2
+		}
+	}
+	planet_modifier = {
+		planet_crime_add = -25
+		planet_defense_armies_add = 1
+	}
+	
+	possible_pre_triggers = {
+		has_owner = yes
+		is_being_purged = no
+		#is_enslaved = no
+		is_being_assimilated = no
+	}
+
+	possible_precalc = can_fill_specialist_job
+	
+	weight = {
+		weight = 50
+	}
+}
+
+uf_archaeologist = {
+	category = specialist
+	swappable_data = {
+		default = {
+			condition_string = SPECIALIST_JOB_TRIGGER
+			building_icon = building_uf_rare_resource
+		}
+	}
+	possible_pre_triggers = {
+		has_owner = yes
+		#is_enslaved = no
+		is_being_purged = no
+		is_being_assimilated = no
+	}
+
+	possible_precalc = can_fill_specialist_job
+	possible = {
+		species = {
+			OR = {
+				has_trait = uf_trait_united_fleet
+				has_trait = uf_trait_united_fleet_1
+				has_trait = uf_trait_united_fleet_2
+			}
+		}
+	}
+	
+	resources = {
+		category = planet_culture_workers
+		produces = {
+			minor_artifacts = 5
+			unity = 25
+		} 
+		upkeep = {
+			energy = 5
+			consumer_goods = 5
+		}
+	}
+	
+	weight = {
+		weight = @specialist_job_weight # Fairly important job
+		#mult = value:job_weights_modifier|JOB|uf_archaeologist|RESOURCE|minor_artifacts|
+		modifier = {
+			factor = 2
+			is_enslaved = yes
+			can_take_servant_job = no
+		}
+	}
+}

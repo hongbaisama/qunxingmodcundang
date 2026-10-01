@@ -1,0 +1,92 @@
+building_wg_knight_castle = {
+	base_buildtime = 360
+	category = government
+    planet_limit = 3
+	inline_script = "buildings/wg_building_sets_all"
+	potential = {
+		exists = owner
+		owner = { 
+			has_valid_civic = civic_wg_knight
+		}
+		NOT = { has_modifier = slave_colony }
+	}
+	allow = {
+		has_modifier = wg_knight_modifier
+	}
+
+	planet_modifier = {
+		job_wg_squire_per_pop = 0.08
+		job_wg_knight_per_pop = 0.04
+		job_wg_knight_add = 100
+		job_wg_squire_add = 300
+		planet_max_districts_add = -1
+		wg_knights_category_produces_mult = 0.10
+		wg_knights_lord_category_produces_mult = 0.15
+	}
+	triggered_desc = {
+		text = job_wg_squire_effect_desc
+	}
+	triggered_desc = {
+		text = job_wg_knight_effect_desc
+	}
+
+	resources = {
+		category = planet_buildings
+		cost = {
+			minerals = 800
+		}	
+		upkeep = {
+			energy = 5
+			alloys = 2
+		}
+	}
+	upgrades = {
+		building_wg_knight_castle_2
+	}
+}
+
+building_wg_knight_castle_2 = {
+	base_buildtime = 720
+	category = government
+    can_build = no
+	inline_script = "buildings/wg_building_sets_all"
+	potential = {
+		exists = owner
+		owner = { 
+			has_valid_civic = civic_wg_knight
+		}
+		NOT = { has_modifier = slave_colony }
+		has_modifier = wg_knight_modifier
+	}
+	allow = {
+		exists = owner
+		has_upgraded_capital = yes
+	}
+
+	planet_modifier = {
+		job_wg_squire_per_pop = 0.10
+		job_wg_knight_per_pop = 0.05
+		job_wg_knight_add = 300
+		job_wg_squire_add = 500
+		planet_max_districts_add = -2
+		wg_knights_category_produces_mult = 0.15
+		wg_knights_lord_category_produces_mult = 0.30
+	}
+	triggered_desc = {
+		text = job_wg_squire_effect_desc
+	}
+	triggered_desc = {
+		text = job_wg_knight_effect_desc
+	}
+
+	resources = {
+		category = planet_buildings
+		cost = {
+			minerals = 1500
+		}	
+		upkeep = {
+			energy = 15
+			alloys = 5
+		}
+	}
+}

@@ -1,0 +1,1647 @@
+##############
+#联合机炮
+weapon_component_template = {
+	key = "UF_weapon_AC_P"
+	size = point_defence
+	type = instant
+	icon = "GFX_UF_weapon_AC"
+	icon_frame = 1
+	#color = { 1.0 1.0 1.0 1 }
+	damage = {
+		min = 20
+		max = 45
+	}
+	windup = {
+		min = 0.2
+		max = 3
+	}
+	total_fire_time = 3
+	range = 60
+	accuracy = 1
+	shield_damage = 1.5
+	tracking = 0.6
+	power = -5
+	inline_script = {
+		script = component/wsg_component_weapon_cost/wsg_component_weapon_cost_alloys
+		wsg_component_weapon_tier = 1
+		wsg_component_weapon_size = P
+	}
+	prerequisites = {
+		"tech_uf_start"
+	}
+	component_set = "UF_weapon_AC"
+	projectile_gfx = "wsg_small_turbolaser_l_y"
+	tags = {
+		weapon_type_point_defense
+		weapon_type_energy
+		weapon_type_kinetic
+		s_slot
+	}
+	ai_tags = {
+		weapon_role_anti_armor
+	}
+	point_defence_targets = { "missile" "strike_craft" }
+	upgrades_to = "UF_weapon_P"
+	ai_tag_weight = 3
+	ai_weight = {
+		weight = 5000
+		modifier = {
+			factor = 0
+			has_monthly_income = {
+				resource = sr_uf
+				value <= 0
+			}
+		}
+	}
+}
+
+weapon_component_template = {
+	key = "UF_weapon_AC_S"
+	size = small
+	type = instant
+	icon = "GFX_UF_weapon_AC"
+	icon_frame = 1
+	#color = { 1.0 1.0 1.0 1 }
+	damage = {
+		min = 20
+		max = 45
+	}
+	windup = {
+		min = 0.2
+		max = 3
+	}
+	total_fire_time = 3
+	range = 60
+	accuracy = 0.8
+	shield_penetration = 1
+	armor_penetration = 1
+	tracking = 0.5
+	power = -10
+	inline_script = {
+		script = component/wsg_component_weapon_cost/wsg_component_weapon_cost_alloys
+		wsg_component_weapon_tier = 1
+		wsg_component_weapon_size = S
+	}
+	prerequisites = {
+		"tech_uf_start"
+	}
+	component_set = "UF_weapon_AC"
+	projectile_gfx = "wsg_small_turbolaser_l_y"
+	tags = {
+		weapon_type_energy
+		weapon_type_kinetic
+		s_slot
+	}
+	ai_tags = {
+		weapon_role_anti_armor
+	}
+	upgrades_to = "UF_weapon_S"
+	ai_tag_weight = 3
+	ai_weight = {
+		weight = 5000
+		modifier = {
+			factor = 0
+			has_monthly_income = {
+				resource = sr_uf
+				value <= 0
+			}
+		}
+	}
+}
+
+weapon_component_template = {
+	key = "UF_weapon_AC_M"
+	size = medium
+	type = instant
+	icon = "GFX_UF_weapon_AC"
+	icon_frame = 1
+	#color = { 1.0 1.0 1.0 1 }
+	##use_ship_kill_target  = no
+	damage = {
+		min = 40
+		max = 80
+	}
+	windup = {
+		min = 0.2
+		max = 3
+	}
+	total_fire_time = 3
+	range = 90
+	accuracy = 0.75
+	shield_penetration = 1
+	armor_penetration = 1
+	tracking = 0.3
+	power = -20
+	inline_script = {
+		script = component/wsg_component_weapon_cost/wsg_component_weapon_cost_alloys
+		wsg_component_weapon_tier = 1
+		wsg_component_weapon_size = M
+	}
+	prerequisites = {
+		"tech_uf_start"
+	}
+	component_set = "UF_weapon_AC"
+	projectile_gfx = "wsg_small_turbolaser_l_y"
+	tags = {
+		weapon_type_energy
+		weapon_type_kinetic
+		m_slot
+	}
+	ai_tags = {
+		weapon_role_anti_armor
+	}
+	upgrades_to = "UF_weapon_M"
+	ai_tag_weight = 3
+	ai_weight = {
+		weight = 5000
+		modifier = {
+			factor = 0
+			has_monthly_income = {
+				resource = sr_uf
+				value <= 0
+			}
+		}
+	}
+}
+
+weapon_component_template = {
+	key = "UF_weapon_AC_L"
+	size = large
+	type = instant
+	icon = "GFX_UF_weapon_AC"
+	icon_frame = 1
+	#color = { 1.0 1.0 1.0 1 }
+	##use_ship_kill_target  = no
+	damage = {
+		min = 50
+		max = 150
+	}
+	windup = {
+		min = 0.2
+		max = 3
+	}
+	total_fire_time = 3
+	range = 130
+	accuracy = 0.7
+	shield_penetration = 1
+	armor_penetration = 1
+	tracking = 0.1
+	power = -35
+	inline_script = {
+		script = component/wsg_component_weapon_cost/wsg_component_weapon_cost_alloys
+		wsg_component_weapon_tier = 1
+		wsg_component_weapon_size = L
+	}
+	prerequisites = {
+		"tech_uf_start"
+	}
+	component_set = "UF_weapon_AC"
+	projectile_gfx = "wsg_small_turbolaser_l_y"
+	tags = {
+		weapon_type_energy
+		weapon_type_kinetic
+		l_slot
+	}
+	upgrades_to = "UF_weapon_L"
+	ai_tags = {
+		weapon_role_anti_armor
+	}
+	ai_tag_weight = 3
+	ai_weight = {
+		weight = 5000
+		modifier = {
+			factor = 0
+			has_monthly_income = {
+				resource = sr_uf
+				value <= 0
+			}
+		}
+	}
+}
+
+weapon_component_template = {
+	type = point_defence
+	key = "UF_weapon_P"
+	windup = {
+		min = 1.2
+		max = 3
+	}
+	size = point_defence
+	damage = {
+		min = 35
+		max = 60
+	}
+	total_fire_time = 2
+	range = 70
+	shield_penetration = 1
+	armor_penetration = 1
+	accuracy = 1
+	tracking = 1
+	power = -60
+	icon = "GFX_UF_weapon_P"
+	icon_frame = 1
+	inline_script = {
+		script = component/wsg_component_weapon_cost/wsg_component_weapon_cost_sr_uf
+		wsg_component_weapon_tier = 1
+		wsg_component_weapon_size = P
+	}
+	prerequisites = {
+		"tech_weapon_uf_small"
+	}
+	component_set = "UF_weapon_P"
+	projectile_gfx = "stormfire_auto_cannons_s"
+	tags = {
+		weapon_type_point_defense
+		weapon_type_kinetic
+		weapon_type_energy
+		weapon_type_sr_uf
+	}
+	ai_tags = {
+		weapon_role_point_defense
+	}
+	point_defence_targets = { "missile" "strike_craft" }
+	ai_weight = {
+		weight = 10000
+		modifier = {
+			factor = 0
+			has_monthly_income = {
+				resource = sr_uf
+				value <= 0
+			}
+		}
+	}
+}
+
+weapon_component_template = {
+	key = "UF_weapon_S"
+	size = small
+	type = instant
+	icon = "GFX_UF_weapon_S"
+	icon_frame = 1
+	#color = { 1.0 1.0 1.0 1 }
+	##use_ship_kill_target  = no
+	damage = {
+		min = 350
+		max = 350
+	}
+	windup = {
+		min = 0.6
+		max = 3
+	}
+	total_fire_time = 17
+	range = 120
+	accuracy = 1
+	shield_penetration = 1
+	armor_penetration = 1
+	tracking = 1
+	power = -120
+	inline_script = {
+		script = component/wsg_component_weapon_cost/wsg_component_weapon_cost_sr_uf
+		wsg_component_weapon_tier = 1
+		wsg_component_weapon_size = S
+	}
+	prerequisites = {
+		"tech_weapon_uf_small"
+	}
+	component_set = "UF_weapon_S"
+	projectile_gfx = "wsg_small_turbolaser_l_y"
+	tags = {
+		weapon_type_energy
+		weapon_type_kinetic
+		weapon_type_sr_uf
+		s_slot
+	}
+	ai_tags = {
+		weapon_role_anti_armor
+	}
+	ai_tag_weight = 3
+	ai_weight = {
+		weight = 10000
+		modifier = {
+			factor = 0
+			has_monthly_income = {
+				resource = sr_uf
+				value <= 0
+			}
+		}
+	}
+}
+
+weapon_component_template = {
+	key = "UF_weapon_S2"
+	size = small
+	type = instant
+	icon = "GFX_UF_weapon_S2"
+	icon_frame = 1
+	#color = { 1.0 1.0 1.0 1 }
+	##use_ship_kill_target  = no
+	damage = {
+		min = 200
+		max = 250
+	}
+	windup = {
+		min = 0.6
+		max = 2
+	}
+	total_fire_time = 10
+	range = 60
+	accuracy = 1
+	shield_penetration = 2.5
+	armor_penetration = 2.5
+	shield_damage = 2.5
+	armor_damage = 2.5
+	hull_damage = 2
+	tracking = 1
+	power = -80
+	inline_script = {
+		script = component/wsg_component_weapon_cost/wsg_component_weapon_cost_sr_uf
+		wsg_component_weapon_tier = 2
+		wsg_component_weapon_size = S
+	}
+	prerequisites = {
+		"tech_weapon_uf_small"
+	}
+	component_set = "UF_weapon_S2"
+	projectile_gfx = "uf_lance_127"
+	tags = {
+		weapon_type_energy
+		weapon_type_kinetic
+		weapon_type_sr_uf
+	}
+	ai_tags = {
+		weapon_role_anti_armor
+	}
+	ai_tag_weight = 3
+	ai_weight = {
+		weight = 10000
+		modifier = {
+			factor = 0
+			has_monthly_income = {
+				resource = sr_uf
+				value <= 0
+			}
+		}
+	}
+}
+
+weapon_component_template = {
+	key = "UF_weapon_M"
+	size = medium
+	type = instant
+	icon = "GFX_UF_weapon_M"
+	icon_frame = 1
+	#color = { 1.0 1.0 1.0 1 }
+	##use_ship_kill_target  = no
+	damage = {
+		min = 500
+		max = 1000
+	}
+	windup = {
+		min = 0.6
+		max = 3
+	}
+	total_fire_time = 26
+	range = 170
+	accuracy = 1
+	shield_penetration = 1
+	armor_penetration = 1
+	tracking = 0.7
+	power = -150
+	inline_script = {
+		script = component/wsg_component_weapon_cost/wsg_component_weapon_cost_sr_uf
+		wsg_component_weapon_tier = 1
+		wsg_component_weapon_size = M
+	}
+	prerequisites = {
+		"tech_uf_weapon_med_large"
+	}
+	component_set = "UF_weapon_M"
+	projectile_gfx = "wsg_medium_turbolaser_l_y"
+	tags = {
+		weapon_type_energy
+		weapon_type_kinetic
+		weapon_type_sr_uf
+		m_slot
+	}
+	ai_tags = {
+		weapon_role_anti_armor
+	}
+	ai_tag_weight = 3
+	ai_weight = {
+		weight = 10000
+		modifier = {
+			factor = 0
+			has_monthly_income = {
+				resource = sr_uf
+				value <= 0
+			}
+		}
+	}
+}
+
+weapon_component_template = {
+	key = "UF_weapon_L"
+	size = large
+	type = instant
+	icon = "GFX_UF_weapon_L"
+	icon_frame = 1
+	##use_ship_kill_target  = no
+	damage = {
+		min = 1000
+		max = 3000
+	}
+	windup = {
+		min = 1
+		max = 7
+	}
+	total_fire_time = 60
+	range = 220
+	accuracy = 1
+	shield_penetration = 1
+	armor_penetration = 1
+	tracking = 0.5
+	power = -350
+	inline_script = {
+		script = component/wsg_component_weapon_cost/wsg_component_weapon_cost_sr_uf
+		wsg_component_weapon_tier = 1
+		wsg_component_weapon_size = L
+	}
+	prerequisites = {
+		"tech_uf_weapon_med_large"
+	}
+	upgrades_to = "UF_weapon_L2"
+	component_set = "UF_weapon_L"
+	projectile_gfx = "wsg_heavy_turbo_l_y"
+	tags = {
+		weapon_type_energy
+		weapon_type_kinetic
+		weapon_type_sr_uf
+		weapon_role_artillery
+		l_slot
+	}
+	ai_tags = {
+		weapon_role_artillery
+	}
+	ai_tag_weight = 0
+	ai_weight = {
+		weight = 9000
+		modifier = {
+			factor = 0
+			has_monthly_income = {
+				resource = sr_uf
+				value <= 0
+			}
+		}
+	}
+}
+
+#黑石L
+weapon_component_template = {
+	key = "UF_weapon_L2"
+	size = large
+	type = instant
+	icon = "GFX_UF_weapon_L2"
+	icon_frame = 1
+	ship_modifier = {
+		damage_vs_country_type_monolith_crisis_country_mult = 0.01
+	}
+	##use_ship_kill_target  = no
+	damage = {
+		min = 2000
+		max = 6000
+	}
+	windup = {
+		min = 1
+		max = 7
+	}
+	total_fire_time = 70
+	range = 350
+	accuracy = 1
+	shield_penetration = 1.01
+	armor_penetration = 1.01
+	hull_damage = 1.5
+	tracking = 1
+	power = -800
+	inline_script = {
+		script = component/wsg_component_weapon_cost/wsg_component_weapon_cost_sr_uf
+		wsg_component_weapon_tier = 9
+		wsg_component_weapon_size = L
+	}
+	prerequisites = {
+		"tech_uf_weapon_monolith_large"
+	}
+	component_set = "UF_weapon_L2"
+	projectile_gfx = "wsg_heavy_turbo_l_y"
+	tags = {
+		weapon_type_energy
+		weapon_type_kinetic
+		weapon_role_artillery
+		weapon_type_sr_uf
+		l_slot
+	}
+	ai_tags = {
+		weapon_role_artillery
+	}
+	ai_tag_weight = 0
+	ai_weight = {
+		weight = 10000
+		modifier = {
+			factor = 0
+			has_monthly_income = {
+				resource = sr_uf
+				value <= 0
+			}
+		}
+	}
+}
+
+weapon_component_template = {
+	key = "UF_weapon_X"
+	size = extra_large
+	type = instant
+	color = { 2 1 1 1 }
+	icon = "GFX_UF_weapon_X"
+	icon_frame = 1
+	firing_arc = 90
+	##use_ship_kill_target  = no
+	damage = {
+		min = 10000
+		max = 20000
+	}
+	windup = {
+		min = 5
+		max = 16
+	}
+	total_fire_time = 86
+	range = 300
+	accuracy = 1
+	shield_penetration = 1
+	armor_penetration = 1
+	tracking = 0.3
+	power = -800
+	inline_script = {
+		script = component/wsg_component_weapon_cost/wsg_component_weapon_cost_sr_uf
+		wsg_component_weapon_tier = 9
+		wsg_component_weapon_size = X
+	}
+	prerequisites = {
+		"tech_uf_weapon_extra_large"
+	}
+	upgrades_to = "UF_weapon_X3"
+	component_set = "UF_weapon_X"
+	projectile_gfx = "uf_lance_406"
+	tags = {
+		weapon_type_energy
+		weapon_type_kinetic
+		weapon_role_artillery
+		weapon_type_sr_uf
+		x_slot
+	}
+	ai_tags = {
+		weapon_role_artillery
+	}
+	ai_tag_weight = 0
+	ai_weight = {
+		weight = 9000
+		modifier = {
+			factor = 0
+			has_monthly_income = {
+				resource = sr_uf
+				value <= 0
+			}
+		}
+	}
+}
+
+weapon_component_template = {
+	key = "UF_weapon_X_2"
+	size = extra_large
+	type = instant
+	color = { 2 1 1 1 }
+	icon = "GFX_UF_weapon_X"
+	icon_frame = 1
+	##use_ship_kill_target  = no
+	damage = {
+		min = 10000
+		max = 20000
+	}
+	windup = {
+		min = 5
+		max = 16
+	}
+	total_fire_time = 86
+	range = 300
+	accuracy = 1
+	shield_penetration = 1
+	armor_penetration = 1
+	tracking = 0.3
+	power = -800
+	inline_script = {
+		script = component/wsg_component_weapon_cost/wsg_component_weapon_cost_sr_uf
+		wsg_component_weapon_tier = 9
+		wsg_component_weapon_size = X
+	}
+	prerequisites = {
+		"tech_uf_weapon_extra_large"
+	}
+	upgrades_to = "UF_weapon_X3_2"
+	component_set = "UF_weapon_X_2"
+	projectile_gfx = "uf_lance_406"
+	size_restriction = {
+		uf_star_fortress_2
+		uf_star_fortress
+	}
+	tags = {
+		weapon_type_energy
+		weapon_role_artillery
+		weapon_type_kinetic
+		weapon_type_sr_uf
+		x_slot
+	}
+	ai_tags = {
+		weapon_role_artillery
+	}
+	ai_tag_weight = 0
+	ai_weight = {
+		weight = 9000
+		modifier = {
+			factor = 0
+			has_monthly_income = {
+				resource = sr_uf
+				value <= 0
+			}
+		}
+	}
+}
+
+##黑石X
+weapon_component_template = {
+	key = "UF_weapon_X3"
+	size = extra_large
+	type = instant
+	color = { 2 1 1 1 }
+	icon = "GFX_UF_weapon_X3"
+	icon_frame = 1
+	firing_arc = 90
+	##use_ship_kill_target  = no
+	ship_modifier = {
+		damage_vs_country_type_monolith_crisis_country_mult = 0.02
+	}
+	damage = {
+		min = 20000
+		max = 50000
+	}
+	windup = {
+		min = 5
+		max = 16
+	}
+	total_fire_time = 90
+	range = 400
+	accuracy = 1
+	shield_penetration = 1.01
+	armor_penetration = 1.01
+	hull_damage = 1.5
+	tracking = 0.9
+	power = -2000
+	inline_script = {
+		script = component/wsg_component_weapon_cost/wsg_component_weapon_cost_sr_uf
+		wsg_component_weapon_tier = 13
+		wsg_component_weapon_size = X
+	}
+	prerequisites = {
+		"tech_uf_weapon_extra_large2"
+	}
+	component_set = "UF_weapon_X3"
+	projectile_gfx = "uf_lance_406"
+	tags = {
+		weapon_type_energy
+		weapon_type_kinetic
+		weapon_type_sr_uf
+		x_slot
+		weapon_role_artillery
+	}
+	ai_tags = {
+		weapon_role_artillery
+	}
+	ai_tag_weight = 0
+	ai_weight = {
+		weight = 10000
+		modifier = {
+			factor = 0
+			has_monthly_income = {
+				resource = sr_uf
+				value <= 0
+			}
+		}
+	}
+}
+
+weapon_component_template = {
+	key = "UF_weapon_X3_2"
+	size = extra_large
+	type = instant
+	color = { 2 1 1 1 }
+	icon = "GFX_UF_weapon_X3"
+	icon_frame = 1
+	ship_modifier = {
+		damage_vs_country_type_monolith_crisis_country_mult = 0.02
+	}
+	##use_ship_kill_target  = no
+	damage = {
+		min = 20000
+		max = 50000
+	}
+	windup = {
+		min = 5
+		max = 16
+	}
+	total_fire_time = 90
+	range = 400
+	accuracy = 1
+	shield_penetration = 1.01
+	armor_penetration = 1.01
+	hull_damage = 1.5
+	tracking = 0.9
+	power = -2000
+	inline_script = {
+		script = component/wsg_component_weapon_cost/wsg_component_weapon_cost_sr_uf
+		wsg_component_weapon_tier = 13
+		wsg_component_weapon_size = X
+	}
+	prerequisites = {
+		"tech_uf_weapon_extra_large2"
+	}
+	component_set = "UF_weapon_X3_2"
+	projectile_gfx = "uf_lance_406"
+	size_restriction = {
+		uf_star_fortress_2
+		uf_star_fortress
+	}
+	tags = {
+		weapon_type_energy
+		weapon_type_kinetic
+		weapon_type_sr_uf
+		weapon_role_artillery
+		x_slot
+	}
+	ai_tags = {
+		weapon_role_artillery
+	}
+	ai_tag_weight = 0
+	ai_weight = {
+		weight = 10000
+		modifier = {
+			factor = 0
+			has_monthly_income = {
+				resource = sr_uf
+				value <= 0
+			}
+		}
+	}
+}
+
+##
+weapon_component_template = {
+	key = "UF_weapon_T"
+	size = titanic
+	type = instant
+	icon = "GFX_UF_weapon_T"
+	icon_frame = 1
+	firing_arc = 60
+	min_range = 10
+	##use_ship_kill_target  = no
+	damage = {
+		min = 50000
+		max = 100000
+	}
+	collateral_damage = {
+		min = 2500
+		max = 5000
+	}
+	collateral_range = 22
+	windup = {
+		min = 7
+		max = 16
+	}
+	total_fire_time = 210
+	range = 450
+	accuracy = 1
+	shield_penetration = 1
+	armor_penetration = 1
+	tracking = 0.2
+	power = -4000
+	component_set = "UF_weapon_T"
+	projectile_gfx = "uf_lance_533"
+	tags = {
+		weapon_type_energy
+		weapon_type_sr_uf
+		t_slot
+		weapon_role_artillery
+	}
+	ai_tags = {
+		weapon_role_artillery
+	}
+	ai_tag_weight = 0
+	inline_script = {
+		script = component/wsg_component_weapon_cost/wsg_component_weapon_cost_sr_uf
+		wsg_component_weapon_tier = 9
+		wsg_component_weapon_size = T
+	}
+	prerequisites = {
+		"tech_uf_weapon_titanic"
+	}
+	upgrades_to = "UF_weapon_T3"
+	ai_weight = {
+		weight = 9000
+		modifier = {
+			factor = 0
+			has_monthly_income = {
+				resource = sr_uf
+				value <= 0
+			}
+		}
+	}
+}
+
+weapon_component_template = {
+	key = "UF_weapon_T_2"
+	size = titanic
+	type = instant
+	icon = "GFX_UF_weapon_T"
+	icon_frame = 1
+	min_range = 10
+	##use_ship_kill_target  = no
+	damage = {
+		min = 50000
+		max = 100000
+	}
+	windup = {
+		min = 7
+		max = 16
+	}
+	total_fire_time = 130
+	range = 450
+	accuracy = 1
+	shield_penetration = 1
+	armor_penetration = 1
+	tracking = 0.6
+	power = -4000
+	component_set = "UF_weapon_T_2"
+	projectile_gfx = "uf_lance_533"
+	tags = {
+		weapon_type_energy
+		weapon_type_sr_uf
+		weapon_role_artillery
+		t_slot
+	}
+	ai_tags = {
+		weapon_role_artillery
+	}
+	ai_tag_weight = 0
+	inline_script = {
+		script = component/wsg_component_weapon_cost/wsg_component_weapon_cost_sr_uf
+		wsg_component_weapon_tier = 9
+		wsg_component_weapon_size = T
+	}
+	prerequisites = {
+		"tech_uf_weapon_titanic"
+	}
+	size_restriction = {
+		uf_star_fortress_2
+		uf_star_fortress
+	}
+	upgrades_to = "UF_weapon_T3_2"
+	ai_weight = {
+		weight = 9000
+		modifier = {
+			factor = 0
+			has_monthly_income = {
+				resource = sr_uf
+				value <= 0
+			}
+		}
+	}
+}
+
+#黑石T
+weapon_component_template = {
+	key = "UF_weapon_T3"
+	size = titanic
+	type = instant
+	icon = "GFX_UF_weapon_T3"
+	icon_frame = 1
+	firing_arc = 60
+	min_range = 10
+	##use_ship_kill_target  = no
+	damage = {
+		min = 100000
+		max = 200000
+	}
+	collateral_damage = {
+		min = 5000
+		max = 10000
+	}
+	collateral_range = 30
+	windup = {
+		min = 7
+		max = 16
+	}
+	total_fire_time = 240
+	range = 600
+	accuracy = 1
+	shield_penetration = 1.01
+	armor_penetration = 1.01
+	hull_damage = 1.5
+	tracking = 0.7
+	power = -10000
+	component_set = "UF_weapon_T3"
+	projectile_gfx = "uf_lance_533"
+	tags = {
+		weapon_type_energy
+		weapon_type_sr_uf
+		t_slot
+		weapon_role_artillery
+	}
+	ai_tags = {
+		weapon_role_artillery
+	}
+	ai_tag_weight = 0
+	inline_script = {
+		script = component/wsg_component_weapon_cost/wsg_component_weapon_cost_sr_uf
+		wsg_component_weapon_tier = 13
+		wsg_component_weapon_size = T
+	}
+	prerequisites = {
+		"tech_uf_weapon_titanic2"
+	}
+	ai_weight = {
+		weight = 10000
+		modifier = {
+			factor = 0
+			has_monthly_income = {
+				resource = sr_uf
+				value <= 0
+			}
+		}
+	}
+}
+
+weapon_component_template = {
+	key = "UF_weapon_T3_2"
+	size = titanic
+	type = instant
+	icon = "GFX_UF_weapon_T3"
+	icon_frame = 1
+	min_range = 10
+	##use_ship_kill_target  = no
+	damage = {
+		min = 100000
+		max = 200000
+	}
+	windup = {
+		min = 7
+		max = 16
+	}
+	total_fire_time = 140
+	range = 600
+	accuracy = 1
+	shield_penetration = 1.01
+	armor_penetration = 1.01
+	hull_damage = 1.5
+	tracking = 0.7
+	power = -10000
+	component_set = "UF_weapon_T3_2"
+	projectile_gfx = "uf_lance_533"
+	tags = {
+		weapon_type_energy
+		weapon_type_sr_uf
+		t_slot
+		weapon_role_artillery
+	}
+	ai_tags = {
+		weapon_role_artillery
+	}
+	ai_tag_weight = 0
+	inline_script = {
+		script = component/wsg_component_weapon_cost/wsg_component_weapon_cost_sr_uf
+		wsg_component_weapon_tier = 13
+		wsg_component_weapon_size = T
+	}
+	prerequisites = {
+		"tech_uf_weapon_titanic2"
+	}
+	size_restriction = {
+		uf_star_fortress_2
+		uf_star_fortress
+	}
+	ai_weight = {
+		weight = 10000
+		modifier = {
+			factor = 0
+			has_monthly_income = {
+				resource = sr_uf
+				value <= 0
+			}
+		}
+	}
+}
+
+weapon_component_template = {
+	key = "UF_weapon_T_Glory"
+	size = titanic
+	type = instant
+	icon = "GFX_UF_weapon_T2"
+	icon_frame = 1
+	firing_arc = 60
+	min_range = 20
+	prio_projectile = yes
+	damage = {
+		min = 8000000
+		max = 15000000
+	}
+	collateral_damage = {
+		min = 400000
+		max = 750000
+	}
+	collateral_range = 40
+	windup = {
+		min = 10
+		max = 45
+	}
+	inline_script = {  
+		script = component/wsg_uf_mult_on_hit
+		uf_weapon_erase_value = 2
+		uf_weapon_erase_days = 8
+	}
+	total_fire_time = 360
+	range = 800
+	accuracy = 1
+	shield_penetration = 1.5
+	armor_penetration = 1.5
+	tracking = 1
+	power = -800000000
+	ship_limit = 1
+	prerequisites = {
+		"tech_uf_weapon_glory"
+	}
+	component_set = "UF_weapon_T_Glory"
+	projectile_gfx = "uf_lance_glory_3"
+	tags = {
+		weapon_type_kinetic
+		weapon_type_sr_uf
+		t_slot
+		weapon_role_artillery
+	}
+	size_restriction = {
+		uf_juggernaut_o
+		uf_flagship_o
+		planetary_ship_1
+		planetary_ship_2
+	}
+	ai_tags = {
+		weapon_role_artillery
+	}
+	ai_tag_weight = 0
+	inline_script = {
+		script = component/wsg_component_weapon_cost/wsg_component_weapon_cost_sr_uf
+		wsg_component_weapon_tier = Planet
+		wsg_component_weapon_size = T
+	}
+	ai_weight = {
+		weight = 10000
+		modifier = {
+			factor = 0
+			has_monthly_income = {
+				resource = sr_uf
+				value <= 0
+			}
+		}
+	}
+}
+
+weapon_component_template = {
+	key = "UF_weapon_T_Glory_2"
+	size = titanic
+	type = instant
+	icon = "GFX_UF_weapon_T2"
+	icon_frame = 1
+	min_range = 20
+	prio_projectile = yes
+	ship_limit = 1
+	damage = {
+		min = 8000000
+		max = 15000000
+	}
+	windup = {
+		min = 10
+		max = 45
+	}
+	inline_script = {  
+		script = component/wsg_uf_mult_on_hit
+		uf_weapon_erase_value = 2
+		uf_weapon_erase_days = 8
+	}
+	total_fire_time = 180
+	range = 800
+	accuracy = 1
+	shield_penetration = 1.5
+	armor_penetration = 1.5
+	tracking = 1
+	power = -800000000
+	prerequisites = {
+		"tech_uf_weapon_glory"
+	}
+	component_set = "UF_weapon_T_Glory_2"
+	projectile_gfx = "uf_lance_glory_2"
+	tags = {
+		weapon_type_kinetic
+		weapon_type_sr_uf
+		t_slot
+		weapon_role_artillery
+	}
+	size_restriction = {
+		uf_star_fortress_2
+		uf_star_fortress
+		uf_star_eater
+	}
+	ai_tags = {
+		weapon_role_artillery
+	}
+	ai_tag_weight = 0
+	inline_script = {
+		script = component/wsg_component_weapon_cost/wsg_component_weapon_cost_sr_uf
+		wsg_component_weapon_tier = Planet
+		wsg_component_weapon_size = T
+	}
+	ai_weight = {
+		weight = 10000
+	}
+}
+
+weapon_component_template = {
+	key = "UF_weapon_T_Glory_3"
+	size = titanic
+	type = instant
+	icon = "GFX_UF_weapon_T2"
+	icon_frame = 1
+	firing_arc = 60
+	min_range = 30
+	ship_limit = 1
+	prio_projectile = yes
+	damage = {
+		min = 10000000
+		max = 10000000
+	}
+	collateral_damage = 1
+	collateral_range = 50
+	inline_script = { 
+		script = component/weapon_modifier/wsg_overflow_weapon_modifier
+		wsg_damage_base = 10000000
+		wsg_damage_max = 92000000000000
+		wsg_weapon_damage_buff = 1
+		wsg_slot = t
+		wsg_energy = no
+		wsg_kinetic = yes
+		wsg_explosive = no
+		wsg_point_defense = no
+		wsg_strike_craft = no
+		wsg_sr_uf_weapon = yes
+	}
+	windup = {
+		min = 10
+		max = 45
+	}
+	inline_script = {  
+		script = component/wsg_uf_mult_on_hit
+		uf_weapon_erase_value = 2
+		uf_weapon_erase_days = 8
+	}
+	total_fire_time = 800
+	range = 1000
+	accuracy = 1
+	shield_penetration = 2
+	armor_penetration = 2
+	tracking = 1
+	power = -800000000
+	prerequisites = {
+		"tech_uf_weapon_glory"
+	}
+	component_set = "UF_weapon_T_Glory_3"
+	projectile_gfx = "uf_lance_glory"
+	tags = {
+		weapon_type_kinetic
+		weapon_type_sr_uf
+		t_slot
+		weapon_type_wsg_overflow_weapon
+	}
+	size_restriction = {
+		uf_glory_o
+	}
+	ai_tags = {
+		weapon_role_artillery
+	}
+	ai_tag_weight = 0
+	inline_script = {
+		script = component/wsg_component_weapon_cost/wsg_component_weapon_cost_sr_uf
+		wsg_component_weapon_tier = Planet
+		wsg_component_weapon_size = T
+	}
+	ai_weight = {
+		weight = 10000
+		modifier = {
+			factor = 0
+			has_monthly_income = {
+				resource = sr_uf
+				value <= 0
+			}
+		}
+	}
+}
+
+weapon_component_template = {
+	key = "UF_weapon_T_Glory_4"
+	size = titanic
+	type = instant
+	icon = "GFX_UF_weapon_T2"
+	icon_frame = 1
+	min_range = 20
+	firing_arc = 30
+	ship_limit = 1
+	prio_projectile = yes
+	damage = {
+		min = 5000000
+		max = 8000000
+	}
+	collateral_damage = {
+		min = 250000
+		max = 400000
+	}
+	collateral_range = 25
+	windup = {
+		min = 10
+		max = 45
+	}
+	inline_script = {  
+		script = component/wsg_uf_mult_on_hit
+		uf_weapon_erase_value = 2
+		uf_weapon_erase_days = 8
+	}
+	total_fire_time = 270
+	range = 500
+	accuracy = 1
+	shield_penetration = 1.5
+	armor_penetration = 1.5
+	tracking = 1
+	power = -800000000
+	prerequisites = {
+		"tech_uf_weapon_glory_2"
+	}
+	component_set = "UF_weapon_T_Glory_4"
+	projectile_gfx = "uf_lance_glory_4"
+	tags = {
+		weapon_type_sr_uf
+		weapon_type_kinetic
+		t_slot
+		weapon_role_artillery
+	}
+	size_restriction = {
+		uf_dreadnought
+		uf_arsenal
+	}
+	ai_tags = {
+		weapon_role_artillery
+	}
+	ai_tag_weight = 0
+	inline_script = {
+		script = component/wsg_component_weapon_cost/wsg_component_weapon_cost_sr_uf
+		wsg_component_weapon_tier = Planet
+		wsg_component_weapon_size = T
+	}
+	ai_weight = {
+		weight = 10000
+	}
+}
+
+#舰载机
+strike_craft_component_template = {
+	key = "UF_weapon_H"
+	size = LARGE
+	entity = "bomber_entity"
+	power = -100
+	inline_script = {
+		script = component/wsg_component_weapon_cost/wsg_component_weapon_cost_sr_uf
+		wsg_component_weapon_tier = 1
+		wsg_component_weapon_size = H
+	}
+	prerequisites = {
+		"tech_uf_weapon_craft"
+	}
+	ship_modifier = {
+		ship_orbital_bombardment_mult = 0.3
+	}
+	count = 1
+	regeneration_per_day = 0.2
+	launch_time = 2
+	damage = {
+		min = 200
+		max = 500
+	}
+	cooldown = 1.33
+	range = 150
+	engagement_range = 300
+	accuracy = 1
+	tracking = 1
+	health = 250
+	armor = 200
+	shield = 200
+	evasion = 0.7
+	speed = 1700
+	rotation_speed = 0.25
+	acceleration = 0.8
+	shield_penetration = 3
+	armor_penetration = 3
+	hull_damage = 3
+	ship_behavior = "bombers_behavior"
+	weapon_type = instant
+	projectile_gfx = "small_space_amoeba_weapon"
+	component_set = "UF_weapon_H"
+	icon = "GFX_UF_weapon_H"
+	icon_frame = 1
+	tags = {
+		weapon_type_strike_craft
+		weapon_type_energy
+		weapon_type_kinetic
+		weapon_type_sr_uf
+	}
+	ai_tags = {
+		weapon_role_anti_shield
+	}
+	upgrades_to = "UF_weapon_HX"
+	ai_weight = {
+		weight = 9000
+		modifier = {
+			factor = 0
+			has_monthly_income = {
+				resource = sr_uf
+				value <= 0
+			}
+		}
+	}
+}
+
+strike_craft_component_template = {
+	key = "UF_weapon_H2"
+	size = LARGE
+	entity = "bomber_entity"
+	power = -80
+	inline_script = {
+		script = component/wsg_component_weapon_cost/wsg_component_weapon_cost_sr_uf
+		wsg_component_weapon_tier = 1
+		wsg_component_weapon_size = H
+	}
+	prerequisites = {
+		"tech_uf_weapon_craft"
+	}
+	ship_modifier = {
+		ship_orbital_bombardment_mult = 0.1
+	}
+	count = 1
+	#regeneration_per_day = 0.2
+	regeneration_per_day = 0.3
+	launch_time = 1
+	damage = {
+		min = 180
+		max = 300
+	}
+	cooldown = 1
+	range = 70
+	engagement_range = 300
+	accuracy = 1
+	tracking = 1
+	health = 100
+	armor = 50
+	shield = 50
+	evasion = 0.9
+	speed = 1300
+	rotation_speed = 0.8
+	acceleration = 1
+	shield_penetration = 3.5
+	armor_penetration = 3.5
+	hull_damage = 3.5
+	ship_behavior = "fighters_behavior"
+	weapon_type = point_defence
+	#weapon_type = strike_craft
+	projectile_gfx = "white_laser_pd"
+	component_set = "UF_weapon_H2"
+	icon = "GFX_UF_weapon_H2"
+	icon_frame = 1
+	tags = {
+		weapon_type_strike_craft
+		weapon_type_energy
+		weapon_type_kinetic
+		weapon_type_sr_uf
+	}
+	ai_tags = {
+		weapon_role_point_defense
+	}
+	point_defence_targets = { "missile" "strike_craft" }
+	ai_weight = {
+		weight = 10000
+		modifier = {
+			factor = 0
+			has_monthly_income = {
+				resource = sr_uf
+				value <= 0
+			}
+		}
+	}
+}
+
+#舰载机
+strike_craft_component_template = {
+	key = "UF_weapon_HX"
+	size = LARGE
+	entity = "bomber_entity"
+	power = -150
+	inline_script = {
+		script = component/wsg_component_weapon_cost/wsg_component_weapon_cost_sr_uf
+		wsg_component_weapon_tier = 1
+		wsg_component_weapon_size = H
+	}
+	prerequisites = {
+		"tech_uf_weapon_craft_2"
+	}
+	ship_modifier = {
+		ship_orbital_bombardment_mult = 0.35
+	}
+	count = 1
+	regeneration_per_day = 0.1
+	launch_time = 1
+	damage = {
+		min = 500
+		max = 1200
+	}
+	cooldown = 1
+	range = 150
+	engagement_range = 300
+	accuracy = 1
+	tracking = 1
+	health = 1000
+	armor = 1000
+	shield = 1000
+	evasion = 0.9
+	speed = 1500
+	rotation_speed = 0.8
+	acceleration = 1
+	shield_penetration = 3.5
+	armor_penetration = 3.5
+	hull_damage = 3.5
+	ship_behavior = "bombers_behavior"
+	weapon_type = instant
+	projectile_gfx = "small_space_amoeba_weapon"
+	component_set = "UF_weapon_HX"
+	icon = "GFX_UF_weapon_HX"
+	icon_frame = 1
+	tags = {
+		weapon_type_strike_craft
+		weapon_type_energy
+		weapon_type_kinetic
+		weapon_type_sr_uf
+	}
+	ai_tags = {
+		weapon_role_anti_shield
+	}
+	ai_weight = {
+		weight = 10000
+		modifier = {
+			factor = 0
+			has_monthly_income = {
+				resource = sr_uf
+				value <= 0
+			}
+		}
+	}
+}
+
+weapon_component_template = {
+	key = "UF_weapon_G"
+	size = torpedo
+	icon = "GFX_UF_weapon_G"
+	icon_frame = 1
+	type = missile
+	component_set = "UF_weapon_G"
+	projectile_gfx = "swarmer_missiles"
+	tags = {
+		weapon_type_explosive
+		weapon_type_energy
+		weapon_type_sr_uf
+		g_slot
+	}
+	ai_tags = {
+		weapon_role_anti_shield
+	}
+	damage = {
+		min = 2500
+		max = 4000
+	}
+	windup = {
+		min = 1
+		max = 2
+	}
+	total_fire_time = 100
+	range = 250
+	accuracy = 1
+	tracking = 0.8
+	power = -150
+	size_damage_factor = 0.2
+	inline_script = {
+		script = component/wsg_component_weapon_cost/wsg_component_weapon_cost_sr_uf
+		wsg_component_weapon_tier = 1
+		wsg_component_weapon_size = G
+	}
+	ai_weight = {
+		weight = 10000
+		modifier = {
+			factor = 0
+			has_monthly_income = {
+				resource = sr_uf
+				value <= 0
+			}
+		}
+	}
+	missile_speed = 45
+	missile_evasion = 0.2
+	missile_shield = 50
+	missile_armor = 10
+	missile_health = 80
+	missile_retarget_range = 100
+	shield_penetration = 1.5
+	armor_penetration = 1.5
+	hull_damage = 1.5
+	prerequisites = {
+		"tech_uf_weapon_missile"
+	}
+}
+
+weapon_component_template = {
+	key = "UF_weapon_ARSENAL"
+	size = extra_large
+	icon = "GFX_UF_weapon_G2"
+	icon_frame = 1
+	type = missile
+	firing_arc = 25
+	min_range = 20
+	component_set = "UF_weapon_G2"
+	projectile_gfx = "uf_mega_torpedo"
+	tags = {
+		weapon_type_explosive
+		weapon_type_energy
+		weapon_type_sr_uf
+		x_slot
+	}
+	ai_tags = {
+		weapon_role_anti_shield
+	}
+	size_restriction = {
+		uf_arsenal
+	}
+	size_damage_factor = 0.4
+	damage = {
+		min = 50000
+		max = 150000
+	}
+	windup = {
+		min = 10
+		max = 25
+	}
+	total_fire_time = 110
+	range = 500
+	accuracy = 1
+	tracking = 1
+	power = -1500
+	inline_script = {
+		script = component/wsg_component_weapon_cost/wsg_component_weapon_cost_sr_uf
+		wsg_component_weapon_tier = 9
+		wsg_component_weapon_size = X
+	}
+	ai_weight = {
+		weight = 10000
+		modifier = {
+			factor = 0
+			has_monthly_income = {
+				resource = sr_uf
+				value <= 0
+			}
+		}
+	}
+	missile_speed = 35
+	missile_evasion = 0.25
+	missile_shield = 1000
+	missile_armor = 1000
+	missile_health = 1000
+	missile_retarget_range = 350
+	shield_penetration = 3
+	armor_penetration = 3
+	armor_damage = 3
+	hull_damage = 3
+}

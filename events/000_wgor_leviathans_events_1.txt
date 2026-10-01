@@ -1,0 +1,168 @@
+namespace = leviathans
+
+country_event = {
+	id = leviathans.662
+	hide_window = yes
+	is_triggered_only = yes
+
+	trigger = {
+		exists = event_target:guardian_dragon_planet
+		from = {
+			has_star_flag = guardians_dragon_system
+			any_system_planet = {
+				is_same_value = event_target:guardian_dragon_planet
+				has_mining_station = yes
+				exists = controller
+				controller = {
+					is_same_value = root
+				}
+			}
+		}
+	}
+
+	immediate = {
+		country_event = { id = leviathans.661 days = 1 random = 18000 } # 50 years
+		if = {
+			limit = { NOT = { has_global_flag = wg_dragon_spawned } }
+			country_event = { id = leviathans.663 days = 1 random = 18000 } # 50 years
+		}
+	}
+}
+
+# Dragon Hoard event - Egg
+country_event = {
+	id = leviathans.663
+	title = "leviathans.661.name"
+	desc = "leviathans.661.desc"
+	picture = GFX_evt_archaeological_dig
+	location = event_target:guardian_dragon_planet
+	show_sound = event_mystic_reveal
+	trackable = yes
+
+	is_triggered_only = yes
+
+	trigger = {
+		exists = event_target:guardian_dragon_planet
+		event_target:guardian_dragon_planet = {
+			NOT = { has_carrier_flag = deegged }
+			has_mining_station = yes
+			exists = controller
+			controller = {
+				is_same_value = root
+			}
+		}
+	}
+
+	immediate = {
+		event_target:guardian_dragon_planet = {
+			set_carrier_flag = deegged
+		}
+	}
+
+	option = {
+		name = leviathans.661.a
+		custom_tooltip = leviathans.661.a.tooltip
+		capital_scope = {
+			enable_special_project = {
+				name = "DRAGON_INCUBATION_PROJECT"
+				location = this
+				owner = root
+			}
+		}
+	}
+	option = {
+		name = leviathans.661.c
+		custom_tooltip = leviathans.661.c.tooltip
+		allow = {
+			has_technology = tech_gene_tailoring
+		}
+		capital_scope = {
+			enable_special_project = {
+				name = "WG_DRAGON_INCUBATION_PROJECT"
+				location = this
+				owner = root
+			}
+		}
+	}
+	option = {
+		name = leviathans.661.b
+		custom_tooltip = leviathans.661.b.tooltip
+		add_resource = { influence = 300 }
+	}
+}
+
+
+# Dreadnought Disabled
+country_event = {
+	id = leviathans.3102
+	title = "leviathans.3102"
+	desc = "leviathans.3102.desc"
+	picture = GFX_evt_automated_dreadnought
+	show_sound = event_ship_bridge
+	location = event_target:guardians_dreadnought_system
+	trackable = yes
+
+	is_triggered_only = yes
+
+	option = {
+		name = "leviathans.3102.a"
+		event_target:disabled_dreadnought_object = {
+			enable_special_project = {
+				name = "DISABLED_DREADNOUGHT_PROJECT"
+				location = THIS
+				owner = ROOT
+			}
+		}
+	}
+	option = {
+		name = "leviathans.3102.b"
+		add_resource = {
+			alloys = 1000
+			energy = 5000
+		}
+		add_monthly_resource_mult = {
+			resource = engineering_research
+			value = 30
+			min = 1000
+			max = 5000
+		}
+	}
+	option = {
+		name = "leviathans.3102.c"
+
+		trigger = {
+			can_harvest_parts = yes
+		}
+
+		set_country_flag = harvested_dreadnought_parts
+		add_research_option = tech_leviathan_techgenesis
+	}
+	option = {
+		name = "leviathans.3102.wg"
+		trigger = {
+			has_wg_special_authority = yes
+		}
+		set_country_flag = harvested_dreadnought_parts
+		add_research_option = tech_leviathan_techgenesis
+		event_target:disabled_dreadnought_object = {
+			create_archaeological_site = site_wsg_automated_dreadnought
+			save_global_event_target_as = site_wsg_automated_dreadnought
+		}
+	}
+	after = {
+		if = {
+			limit = {
+				num_owned_planets > 0
+			}
+			generate_parade_city = yes
+			start_situation = {
+				type = leviathan_celebration_opportunity
+				target = event_target:parade_city
+				effect = {
+					set_situation_flag = celebration_automated_dreadnought
+					set_situation_flag = standard_unity_reward
+				}
+			}
+		}
+	}
+}

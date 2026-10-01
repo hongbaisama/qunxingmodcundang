@@ -1,0 +1,342 @@
+building_sh_nerve = {
+	base_buildtime = 180
+	planet_limit = 1
+
+	category = unity
+	building_sets = {
+		government
+		unity
+	}
+	potential = {
+		exists = owner
+		owner = { 
+			has_authority = auth_shenhai	
+		}
+		NOT = { has_modifier = slave_colony }
+	}
+	
+	planet_modifier = {
+		planet_jobs_produces_mult = 0.20
+		planet_amenities_add = -1000
+	}
+	
+	resources = {
+		category = planet_buildings
+		cost = {
+			minerals = 500
+		}
+		upkeep = {
+			sr_pantsu = 2
+			energy = 8
+		}
+	}	
+	
+	prerequisites = {
+		"tech_sh_nerve"
+	}	
+	ai_resource_production = {
+		minerals = 20
+		energy = 20
+		food = 20
+		trigger = { always = yes }
+	}
+}
+
+building_sh_unity_1 = {
+	base_buildtime = @b3_time
+	planet_limit = 1
+
+	category = unity
+	building_sets = {
+		government
+		unity
+	}
+	potential = {
+		exists = owner
+		owner = { 
+			has_authority = auth_shenhai	
+			NOT = { has_civic = civic_CM }
+		}
+		NOT = { has_modifier = slave_colony }
+	}
+
+	allow = {
+		has_upgraded_capital = yes
+	}
+
+	prerequisites = {
+		"tech_building_sh_unity_1"
+	}
+
+	triggered_desc = {
+		text = job_sh_bureaucrat_effect_desc
+	}
+
+	planet_modifier = {
+		job_sh_bureaucrat_add = 200
+	}
+
+	upgrades = {
+		"building_sh_unity_2"
+	}
+
+	resources = {
+		category = planet_buildings
+		cost = {
+			minerals = 800
+			sr_pantsu = 100
+		}
+		upkeep = {
+			energy = 8
+			sr_pantsu = 1
+		}
+	}
+}
+
+building_sh_unity_2 = {
+	base_buildtime = @b4_time
+	can_build = no
+
+	category = unity
+	building_sets = {
+		government
+		unity
+	}
+	potential = {
+		exists = owner
+		owner = { 
+			has_authority = auth_shenhai 
+			has_ascension_perk = ap_shenhai_icebreaking
+		}
+		NOT = { has_modifier = slave_colony }
+	}
+
+	allow = {
+		has_major_upgraded_capital = yes
+	}
+
+	prerequisites = {
+		"tech_building_sh_unity_2"
+	}
+
+	planet_modifier = {
+		job_sh_bureaucrat_add = 200
+		job_sh_pool_add = 400
+		pop_happiness = 0.02
+		planet_civilians_unity_produces_add = 0.2
+	}
+
+	triggered_desc = {
+		text = job_sh_bureaucrat_effect_desc
+	}
+	triggered_desc = {
+		text = job_sh_pool_effect_desc
+	}
+
+	resources = {
+		category = planet_buildings
+		cost = {
+			minerals = 1300
+			sr_pantsu = 200
+		}
+		upkeep = {
+			energy = 12
+			sr_pantsu = 2
+		}
+	}
+}
+
+building_sh_unity_3 = {
+	base_buildtime = 540
+	planet_limit = 1
+	building_sets = {
+		government
+		unity
+	}
+	category = unity
+	country_modifier = {
+		empire_size_add = -5
+	}
+
+	potential = {
+		exists = owner
+		owner = { 
+			has_authority = auth_shenhai	
+			has_civic = civic_CM
+		}
+		NOT = { has_modifier = slave_colony }
+	}
+
+	allow = {
+		has_upgraded_capital = yes
+	}
+
+
+	triggered_desc = {
+		text = job_sh_bureaucrat_effect_desc
+	}
+
+	planet_modifier = {
+		job_sh_bureaucrat_add = 300
+		planet_jobs_unity_produces_mult = 0.05
+	}
+
+	resources = {
+		category = planet_buildings
+		cost = {
+			minerals = 800
+			sr_pantsu = 100
+		}
+		upkeep = {
+			energy = 10
+		}
+	}
+}
+
+building_sh_base_resources_department = {
+	base_buildtime = 480
+	planet_limit = 1
+	building_sets = {
+		generator
+		mining
+		farming
+		urban
+	}
+	category = resource
+	
+	potential = {
+		NOT = { has_modifier = slave_colony }
+	}
+
+	resources = {
+		category = planet_buildings
+		cost = {
+			minerals = 800
+		}
+		upkeep = {
+			energy = 10
+		}
+	}
+	
+	planet_modifier = {
+		planet_technician_energy_produces_add = 1
+		planet_miners_minerals_produces_add = 1
+		planet_farmers_food_produces_add = 1
+		district_generator_max_add = 2
+		district_mining_max_add = 2
+		district_farming_max_add = 2
+		planet_max_districts_add = 1
+	}
+	#轨道
+	triggered_planet_modifier = {
+		potential = { uses_district_set = habitat }
+		district_generator_max = -2
+		district_mining_max = -2
+		district_farming_max = -2
+	}
+	triggered_planet_modifier = {
+		potential = { 
+			OR = {
+				colony_type = col_generator 
+				colony_type = col_habitat_energy 
+			}	
+		}
+		planet_technician_energy_produces_add = 1
+	}
+	triggered_planet_modifier = {
+		potential = { 
+			OR = {
+				colony_type = col_mining 
+				colony_type = col_habitat_mining
+			}	
+		}
+		planet_miners_minerals_produces_add = 1
+	}
+	triggered_planet_modifier = {
+		potential = { colony_type = col_farming }
+		planet_farmers_food_produces_add = 1
+	}
+	triggered_desc = {
+		text = sh_col_notice
+	}
+	
+	prerequisites = {
+		"tech_building_sh_base_resources_department"
+	}
+	upgrades = {
+		building_sh_base_resources_department_2
+	}
+}
+
+building_sh_base_resources_department_2 = {
+	base_buildtime = 720
+	can_build = no
+	building_sets = {
+		generator
+		mining
+		farming
+		urban
+	}
+	category = resource
+	
+	potential = {
+		NOT = { has_modifier = slave_colony }
+	}
+
+	resources = {
+		category = planet_buildings
+		cost = {
+			minerals = 1500
+		}
+		upkeep = {
+			energy = 20
+			sr_pantsu = 2
+		}
+	}
+	
+	planet_modifier = {
+		planet_technician_energy_produces_add = 3
+		planet_miners_minerals_produces_add = 3
+		planet_farmers_food_produces_add = 3
+		district_generator_max_add = 5
+		district_mining_max_add = 5
+		district_farming_max_add = 5
+		planet_max_districts_add = 3
+	}
+	#轨道
+	triggered_planet_modifier = {
+		potential = { uses_district_set = habitat }
+		district_generator_max = -5
+		district_mining_max = -5
+		district_farming_max = -5
+	}
+	triggered_planet_modifier = {
+		potential = { 
+			OR = {
+				colony_type = col_generator 
+				colony_type = col_habitat_energy 
+			}	
+		}
+		planet_technician_energy_produces_add = 2
+	}
+	triggered_planet_modifier = {
+		potential = { 
+			OR = {
+				colony_type = col_mining 
+				colony_type = col_habitat_mining
+			}	
+		}
+		planet_miners_minerals_produces_add = 2
+	}
+	triggered_planet_modifier = {
+		potential = { colony_type = col_farming }
+		planet_farmers_food_produces_add = 2
+	}
+	triggered_desc = {
+		text = sh_col_notice_2
+	}
+	
+	prerequisites = {
+		"tech_building_sh_base_resources_department_2"
+	}	
+}

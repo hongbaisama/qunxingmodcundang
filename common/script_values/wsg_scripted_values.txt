@@ -1,0 +1,149 @@
+# （苏可汗专用）函数式自增长资源扣除函数
+# formula = BASE + BASE * ( SQE_COF * years of being subject ^ 2 * ( 1 - MINUS_COF )) * ( SQE_COF - MINUS_COF )
+wg_khan_tribute_values_p1 = {
+	base = 1
+	subtract = $MINUS_COF$
+	mult = this.years_be_khan_subject
+	mult = this.years_be_khan_subject
+	mult = $SQE_COF$
+}
+
+wg_khan_tribute_values = {
+	base = $SQE_COF$
+	subtract = $MINUS_COF$
+	multiply = value:wg_khan_tribute_values_p1|MINUS_COF|$MINUS_COF$|SQE_COF|$SQE_COF$|
+	add = $BASE$
+}
+
+# value = @\[ ( $BASE$ + ( $BASE$ * ( $SQE_COF$ * $YEARS$ * $YEARS$ * ( 1 - $MINUS_COF$ )) * ( $SQE_COF$ - $MINUS_COF$ )))]
+wg_Deep_Eyes_White_Dragon_Ship_death = {
+	base = 0
+	add = wg_Deep_Eyes_White_Dragon_count
+	min = 0
+}
+
+wg_modifier = {
+	base = 0
+	add = 1
+	add = modifier:$MODIFIER$
+}
+
+wg_pop_amount = {
+	base = 0
+	add = trigger:pop_amount
+	mult = 0.01
+	min = 0
+}
+
+wg_pop_free_house = {
+	base = 0
+	add = trigger:free_housing
+	mult = 0.01
+	min = 0
+}
+
+wg_pop_free_job = {
+	base = 0
+	add = trigger:free_jobs
+	mult = 0.01
+	min = 0
+}
+
+wg_attendant_city_function_mult = {
+	base = 0
+	add = value:wg_pop_free_job
+	divide = value:wg_pop_amount
+}
+
+wg_attendant_city_function = {
+	base = 0
+	complex_trigger_modifier = {
+		trigger = num_districts
+		parameters = { type = any }
+		mode = add
+	}
+	mult = value:wg_attendant_city_function_mult
+	min = 1
+}
+
+wg_attendant_growth = {
+	base = 1
+	add = value:wg_attendant_city_function
+	complex_trigger_modifier = {
+		trigger = count_owned_pop_group
+		potential = { is_scope_type = planet }
+		trigger_scope = this
+		mode = divide
+	}
+	modifier = {
+		OR = {
+			has_modifier = planet_population_control
+			has_modifier = planet_uf_population_control
+		}
+		set = 0
+	}
+}
+
+wg_planet_pop_assembly_average_int = {
+	base = 0	
+	add = value:wg_attendant_growth
+	mult = value:wg_modifier|MODIFIER|wg_planet_pop_assembly_average_mult|
+	max = value:wg_pop_free_house
+}
+
+wsg_modifier_mult_add = {
+	base = 0
+	add = 1
+	add = modifier:$wsg_modifier$
+	[[wsg_min] min = $wsg_min$ ]
+	[[wsg_max] max = $wsg_max$ ]	
+}
+wsg_modifier_mult_subtract = {
+	base = 0
+	add = 1
+	subtract = modifier:$wsg_modifier$
+	[[wsg_min] min = $wsg_min$ ]
+	[[wsg_max] max = $wsg_max$ ]
+}
+
+wsg_base_weapon_damage = {
+	base = 0
+	add = $wsg_damage_max$
+	divide = $wsg_damage_base$
+}
+
+wsg_damage_modifier_multiplier = {
+	base = 0
+	add = 1
+	add = modifier:ship_weapon_damage
+	add = modifier:$wsg_slot$_slot_weapon_damage_mult
+	add = modifier:shipclass_military_damage_mult
+	modifier = { add = modifier:weapon_type_energy_weapon_damage_mult always = $wsg_energy$ }
+	modifier = { add = modifier:weapon_type_kinetic_weapon_damage_mult always = $wsg_kinetic$ }
+	modifier = { add = modifier:weapon_type_explosive_weapon_damage_mult always = $wsg_explosive$ }
+	modifier = { add = modifier:weapon_type_point_defense_weapon_damage_mult always = $wsg_point_defense$ }
+	modifier = { add = modifier:weapon_type_strike_craft_weapon_damage_mult always = $wsg_strike_craft$ }
+	modifier = { add = modifier:weapon_type_sr_uf_weapon_damage_mult always = $wsg_sr_uf_weapon$ }
+	min = 0
+}
+
+wsg_overflow_weapon_damage_multiplier = {
+	base = 0
+	add = value:wsg_base_weapon_damage|wsg_damage_max|$wsg_damage_max$|wsg_damage_base|$wsg_damage_base$|
+	divide = $wsg_weapon_damage_buff$
+	divide = value:wsg_modifier_mult_add|wsg_modifier|ship_hull_damage_mult|wsg_min|1|
+	subtract = value:wsg_damage_modifier_multiplier|wsg_slot|$wsg_slot$|wsg_energy|$wsg_energy$|wsg_kinetic|$wsg_kinetic$|wsg_explosive|$wsg_explosive$|wsg_point_defense|$wsg_point_defense$|wsg_strike_craft|$wsg_strike_craft$|wsg_sr_uf_weapon|$wsg_sr_uf_weapon$|
+	divide = modifier:wsg_overflow_weapon_symbol
+	min = 0
+	max = value:wsg_base_weapon_damage|wsg_damage_max|$wsg_damage_max$|wsg_damage_base|$wsg_damage_base$|
+}
+
+wsg_overflow_weapon_rate_multiplier = {
+	base = 0
+	modifier = { add = modifier:weapon_type_energy_weapon_damage_mult always = $wsg_energy$ }
+	modifier = { add = modifier:weapon_type_kinetic_weapon_damage_mult always = $wsg_kinetic$ }
+	modifier = { add = modifier:weapon_type_explosive_weapon_damage_mult always = $wsg_explosive$ }
+	modifier = { add = modifier:weapon_type_point_defense_weapon_damage_mult always = $wsg_point_defense$ }
+	modifier = { add = modifier:weapon_type_strike_craft_weapon_damage_mult always = $wsg_strike_craft$ }
+	modifier = { add = modifier:weapon_type_sr_uf_weapon_damage_mult always = $wsg_sr_uf_weapon$ }
+}

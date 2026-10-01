@@ -1,0 +1,104 @@
+wsg_people_scientist = {	
+	category = specialist
+	swappable_data = {
+		default = {
+			condition_string = SPECIALIST_JOB_TRIGGER
+			building_icon = building_research_lab_1
+			icon = researcher
+		}
+	}
+	possible_pre_triggers = {
+		has_owner = yes
+		#is_enslaved = no
+		is_being_purged = no
+		is_being_assimilated = no
+	}
+
+	possible_precalc = can_fill_specialist_job
+	possible = {
+	}
+
+	resources = {
+		category = planet_researchers
+		produces = {
+			physics_research = 4
+			engineering_research = 4
+            society_research = 4
+            unity = 3
+		}	
+	}
+	planet_modifier = {
+		planet_amenities_add = 100
+    }
+    
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { has_trait = trait_repugnant }
+		}
+		modifier = {
+			planet_amenities_add = -100
+		}
+	}	
+		
+	weight = {
+		weight = @specialist_job_weight
+		#mult = value:scripted_modifier_job_weight_mult|JOB|wsg_people_scientist|
+		modifier = {
+			factor = 0.2
+			has_citizenship_rights = no
+			NOT = { has_trait = trait_mechanical }
+		}
+		modifier = {
+			factor = 2
+			has_living_standard = { type = living_standard_academic_privilege }
+		}
+		modifier = {
+			factor = 0.1
+			can_take_servant_job = yes
+		}
+		modifier = {
+			factor = 0.8
+			is_enslaved = yes
+			has_slavery_type = { type = slavery_indentured }
+		}
+	}
+}
+
+wsg_blueprinting_dog = {
+    category = specialist
+	swappable_data = {
+		default = {
+			condition_string = SPECIALIST_JOB_TRIGGER
+			building_icon = building_research_lab_1
+		}
+	}
+
+	possible_pre_triggers = {
+		has_owner = yes
+		is_being_purged = no
+		is_being_assimilated = no
+	}
+
+	possible_precalc = can_fill_specialist_job
+	possible = {
+	}
+	
+	resources = {
+		category = planet_researchers
+		produces = {
+            engineering_research = 9
+			unity = 4
+		}	
+	}
+	
+		
+	planet_modifier = {
+		planet_building_build_speed_mult = 0.10
+		planet_decision_enact_speed_mult = 0.10
+	}
+
+	weight = {
+		weight = 20		
+	}
+}

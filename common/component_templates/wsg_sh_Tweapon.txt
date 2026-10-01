@@ -1,0 +1,90 @@
+weapon_component_template = {
+	key = "sh_weapen_T"
+	size = titanic
+	type = instant
+	
+	icon = "GFX_sh_weapen_T"
+	icon_frame = 1
+	
+	firing_arc = 25.0
+	min_range = 30.0
+	
+	damage = { min = 5860 max = 10285 }
+	windup = { min = 25 max = 45 }
+	total_fire_time = 170
+	range = 300.0
+	accuracy = 0.50
+	shield_penetration = 1.0
+	armor_penetration = 1.0
+	hull_damage = 1.5
+	tracking = 0.0
+	power = -1000
+	upgrades_to = "sh_weapen_T2"	
+	prerequisites = { "tech_sh_Tweapon" }
+	component_set = "sh_weapen_T"
+	projectile_gfx = "scavenger_bot_main_weapon"
+	tags = { weapon_type_kinetic weapon_role_artillery t_slot }
+	ai_tags = { weapon_role_artillery }
+	inline_script = {
+		script = component/wsg_component_weapon_cost/wsg_component_weapon_cost_sr_se
+		wsg_component_weapon_tier = 4
+		wsg_component_weapon_size = T
+	}
+	ai_weight = {
+		weight = 1000
+		modifier = {
+			factor = 0.0
+			component_no_resource = { RESOURCE = sr_se MIN_REQUIREMENT = 500 }
+		}
+	}
+}
+
+
+weapon_component_template = {
+	key = "sh_weapen_T2"
+	size = titanic
+	type = instant
+	
+	icon = "GFX_sh_weapen_T2"
+	icon_frame = 1
+	
+	firing_arc = 25.0
+	min_range = 30.0
+	
+	damage = { min = 8000 max = 10000 }
+	collateral_damage = { min = 400 max = 500 }
+	collateral_range = 30
+	windup = { min = 25 max = 45 }
+	total_fire_time = 170
+	range = 300.0
+	accuracy = 0.70
+	shield_damage = 1.5
+	armor_damage = 1.5
+	shield_penetration = 1.0
+	armor_penetration = 1.0
+	hull_damage = 1.5
+	tracking = 0.05
+	power = -1300
+	
+	prerequisites = { "tech_sh_Tweapon2" }
+	component_set = "sh_weapen_T2"
+	projectile_gfx = "uf_lance_406"
+	tags = { weapon_type_energy weapon_type_kinetic weapon_role_artillery t_slot }		
+	ai_tags = { weapon_role_artillery }
+	inline_script = {
+		script = component/wsg_component_weapon_cost/wsg_component_weapon_cost_sr_se_with_sr_dark_matter
+		wsg_component_weapon_tier = 5
+		wsg_component_weapon_size = T
+	}
+	ai_weight = {
+		weight = 2000
+		modifier = {
+			factor = 0.0
+			OR = {
+				component_no_resource = { RESOURCE = sr_se MIN_REQUIREMENT = 500 }
+				component_no_resource = { RESOURCE = sr_dark_matter MIN_REQUIREMENT = 150 }
+			}
+		}
+	}
+}
+

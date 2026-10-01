@@ -1,0 +1,25 @@
+# scope: faction country / leviathan country
+wg_boss_default_initial_effect = {
+	optimize_memory
+	every_playable_country = {
+		establish_communications_no_message = PREV
+	}
+	every_country = {
+		limit = { 
+			OR = {
+				is_country_type = fallen_empire 
+				is_country_type = wg_fallen_empire
+			}
+		}
+		set_faction_hostility = {
+			target = PREV
+			set_neutral = yes
+			set_hostile = no
+		}
+		PREV? = { set_faction_hostility = {
+			target = PREV
+			set_neutral = yes
+			set_hostile = no
+		}}
+	}
+}

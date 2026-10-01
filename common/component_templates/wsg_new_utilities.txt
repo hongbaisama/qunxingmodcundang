@@ -1,0 +1,67 @@
+utility_component_template = {
+	key = "MEDIUM_living_metal_bulge"
+	size = medium
+	icon = "GFX_ship_part_living_metal_bulge"
+	icon_frame = 1
+	power = -100
+	modifier = {
+		ship_hull_add = 1600
+	}
+	
+	prerequisites = { "tech_living_metal_bulge" }
+	component_set = "wsg_ship_part_living_metal_bulge"
+	resources = {
+		category = ship_components
+		cost = {
+			sr_living_metal = 6.25
+		}
+		upkeep = {
+			alloys = 0.0625
+		}
+	}
+	ai_weight = {
+		weight = 1
+		modifier = {
+			factor = 5
+			has_wg_authority = yes
+		}
+		modifier = {
+			factor = 0.0
+			component_no_resource = { RESOURCE = sr_living_metal MIN_REQUIREMENT = 200 }
+		}
+	}
+}
+
+utility_component_template = {
+	key = "LARGE_living_metal_bulge"
+	size = large
+	icon = "GFX_ship_part_living_metal_bulge"
+	icon_frame = 1
+	power = -180
+	modifier = {
+		ship_hull_add = 3200
+	}
+	
+	prerequisites = { "tech_living_metal_bulge" }
+	component_set = "wsg_ship_part_living_metal_bulge"
+	resources = {
+		category = ship_components
+		cost = {
+			sr_living_metal = 15.625
+		}
+		upkeep = {
+			alloys = 0.15625
+		}
+	}
+	ai_weight = {
+		weight = 1
+		modifier = {
+			factor = 5
+			has_wg_authority = yes
+		}
+		modifier = {
+			factor = 0.0
+			component_no_resource = { RESOURCE = sr_living_metal MIN_REQUIREMENT = 200 }
+		}
+	}
+}

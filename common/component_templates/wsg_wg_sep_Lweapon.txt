@@ -1,0 +1,92 @@
+weapon_component_template = {
+	key = "wsg_weapon_L_S_300"
+	size = large
+	#entity = "large_kinetic_gun_entity"
+	type = instant
+	
+	icon = "GFX_wsg_weapon_L_S300"
+	icon_frame = 1
+	
+	
+	min_range = 30.0
+	damage = { min = 350 max = 350 }
+	windup = { min = 8 max = 20 }
+	total_fire_time = 50
+	range = 135.0
+	accuracy = 0.9
+	shield_penetration = 0.65
+	armor_penetration = 0.65
+	tracking = 0.20
+	power = -130
+	
+	prerequisites = { "tech_wsg_weapon_S_300" }
+	component_set = "wsg_weapon_L_S_300"
+	projectile_gfx = "wsg_heavy_turbo_l_y"
+	upgrades_to = "wsg_weapon_L_ES_300"
+	tags = { weapon_type_energy l_slot weapon_role_artillery }
+	ai_tags = { weapon_role_artillery }
+	inline_script = {
+		script = component/wsg_component_weapon_cost/wsg_component_weapon_cost_sr_se
+		wsg_component_weapon_tier = 4
+		wsg_component_weapon_size = L_ONLY
+	}
+	ai_weight = {
+		weight = 100
+		modifier = {
+			factor = 5
+			has_wg_authority = yes
+		}
+		modifier = {
+			factor = 0.0
+			component_no_resource = { RESOURCE = sr_se MIN_REQUIREMENT = 250 }
+		}
+	}
+}
+weapon_component_template = {
+	key = "wsg_weapon_L_ES_300"
+	size = large
+	#entity = "large_kinetic_gun_entity"
+	type = instant
+	
+	icon = "GFX_wsg_weapon_L_ES_300"
+	icon_frame = 1
+	
+	min_range = 30.0
+	
+	
+	damage = { min = 450 max = 600 }
+	windup = { min = 8 max = 20 }
+	total_fire_time = 55
+	range = 135.0
+	accuracy = 0.90
+	shield_damage = 1.5
+	shield_penetration = 1.0
+	armor_penetration = 1.0
+	tracking = 0.25
+	power = -200
+	
+	prerequisites = { "tech_wsg_weapon_ES_300" }
+	component_set = "wsg_weapon_L_ES_300"
+	projectile_gfx = "wsg_heavy_turbo_l_y"
+	tags = { weapon_type_kinetic weapon_type_energy l_slot weapon_role_artillery }
+	ai_tags = { weapon_role_artillery }
+	inline_script = {
+		script = component/wsg_component_weapon_cost/wsg_component_weapon_cost_sr_se_with_sr_dark_matter
+		wsg_component_weapon_tier = 5
+		wsg_component_weapon_size = L_ONLY
+	}
+	ai_weight = {
+		weight = 200
+		modifier = {
+			factor = 5
+			has_wg_authority = yes
+		}
+		modifier = {
+			factor = 0.0
+			OR = {
+				component_no_resource = { RESOURCE = sr_se MIN_REQUIREMENT = 250 }
+				component_no_resource = { RESOURCE = sr_dark_matter MIN_REQUIREMENT = 100 }
+			}
+		}
+	}
+}

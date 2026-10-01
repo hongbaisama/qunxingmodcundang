@@ -1,0 +1,78 @@
+weapon_component_template = {
+	type = point_defence
+	
+	key = "sh_weapen_flak1"
+	size = point_defence
+	
+	damage = { min = 3 max = 8 }
+	windup = { min = 2 max = 5 }
+	total_fire_time = 2
+	range = 35.0
+	shield_damage = 1.20
+	armor_damage = 0.70
+	accuracy = 0.8
+	tracking = 0.7
+	power = -10
+	
+	icon = "GFX_sh_weapen_flak1"
+	icon_frame = 1
+	
+	prerequisites = { "tech_sh_weapon2" }
+	component_set = "sh_weapen_flak1"
+	projectile_gfx = "sh_pd_01"
+	tags = { weapon_type_point_defense weapon_type_kinetic }
+	ai_tags = { weapon_role_point_defense }
+	point_defence_targets = { "missile" "strike_craft" }
+	upgrades_to = "sh_weapen_flak2"
+	inline_script = {
+		script = component/wsg_component_weapon_cost/wsg_component_weapon_cost_alloys
+		wsg_component_weapon_tier = 1
+		wsg_component_weapon_size = P
+	}
+	ai_weight = {
+		weight = 20
+		modifier = {
+			factor = 0
+			has_wg_authority = no
+		}
+	}
+}
+
+weapon_component_template = {
+	type = point_defence
+	
+	key = "sh_weapen_flak2"
+	size = point_defence
+	
+	damage = { min = 7 max = 18 }
+	windup = { min = 2 max = 5 }
+	total_fire_time = 2
+	range = 55.0
+	shield_damage = 1.20
+	armor_damage = 0.70
+	accuracy = 0.9
+	tracking = 0.7
+	power = -25
+	
+	icon = "GFX_sh_weapen_flak2"
+	icon_frame = 1
+	
+	prerequisites = { "tech_sh_flak2" }
+	component_set = "sh_weapen_flak2"
+	projectile_gfx = "sh_pd_02"
+	tags = { weapon_type_point_defense weapon_type_kinetic }
+	ai_tags = { weapon_role_point_defense }
+	point_defence_targets = { "missile" "strike_craft" }
+	inline_script = {
+		script = component/wsg_component_weapon_cost/wsg_component_weapon_cost_alloys
+		wsg_component_weapon_tier = 2
+		wsg_component_weapon_size = P
+	}
+	ai_weight = {
+		weight = 50
+		modifier = {
+			factor = 0
+			has_wg_authority = no
+		}
+	}
+}

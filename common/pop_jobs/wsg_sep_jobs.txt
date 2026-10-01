@@ -1,0 +1,233 @@
+sep_artisan = {
+	category = specialist
+	swappable_data = {
+		default = {
+			condition_string = SPECIALIST_JOB_TRIGGER
+			building_icon = building_sep_factory
+			icon = artisan
+		}
+	}
+	possible_pre_triggers = {
+		has_owner = yes
+		is_being_purged = no
+		is_being_assimilated = no
+	}
+	possible_precalc = can_fill_specialist_job
+	possible = {
+	}
+
+
+	resources = {
+		category = planet_artisans
+		produces = {
+			consumer_goods = 25
+		}
+		produces = {
+			trigger = { 
+				exists = owner
+				owner = { has_tradition = tr_wg_projects_4 }
+			}
+			consumer_goods = 5
+		}
+		upkeep = {
+			trigger = { 
+				exists = owner
+				owner = { has_tradition = tr_wg_projects_4 }
+			}
+			minerals = 3
+		}
+		upkeep = {
+			minerals = 15
+			sr_pantsu = 1.5
+		}
+		upkeep = {
+			trigger = {
+				exists = owner
+				owner = {
+					has_edict = industrial_subsidies
+				}
+			}
+			energy = 1
+		}
+	}
+
+	weight = {
+		weight = @specialist_job_weight # Fairly important job
+		#mult = value:job_weights_modifier|JOB|sep_artisan|RESOURCE|consumer_goods|
+		modifier = {
+			factor = 2
+			is_enslaved = yes
+			can_take_servant_job = no
+		}
+	}
+}
+wsg_senergy = {
+	category = specialist
+	swappable_data = {
+		default = {
+			condition_string = SPECIALIST_JOB_TRIGGER
+			building_icon = building_sh_senergy
+			icon = sh_senergy
+		}
+	}
+	possible_pre_triggers = {
+		has_owner = yes
+		#is_enslaved = no
+		is_being_purged = no
+		is_being_assimilated = no
+	}
+
+	possible_precalc = can_fill_specialist_job
+	possible = {
+	}
+	
+	resources = {
+		category = planet_translucers
+		produces = {
+			sr_se = 2
+		}
+		upkeep = {
+			energy = 15
+			sr_pantsu = 1
+		}
+		upkeep = {
+			sr_pantsu = -0.2
+			trigger = {
+				owner = {
+					any_owned_megastructure = {
+						is_megastructure_type = shenhai_energy_core_4
+					}
+				}
+			}
+		}
+		produces = {
+			trigger = {
+				owner = { has_technology = tech_wsg_senergy2 }
+			}
+			sr_se = 0.25
+		}
+		upkeep = {
+			trigger = {
+				owner = { has_technology = tech_wsg_senergy2 }
+			}
+			energy = 2
+		}
+	}
+	
+	weight = {
+		weight = @specialist_job_weight # Fairly important job
+		#mult = value:job_weights_modifier|JOB|wsg_senergy|RESOURCE|sr_se|
+		modifier = {
+			factor = 2
+			is_enslaved = yes
+			can_take_servant_job = no
+		}
+		modifier = {
+			factor = 5
+			has_trait = wsg_trait_senergy_producer
+		}
+	}
+}
+sep_foundry = {
+	category = specialist
+	swappable_data = {
+		default = {
+			condition_string = SPECIALIST_JOB_TRIGGER
+			building_icon = building_sep_foundry
+			icon = foundry
+		}
+	}
+	possible_pre_triggers = {
+		has_owner = yes
+		is_being_purged = no
+		is_being_assimilated = no
+	}
+
+	possible_precalc = can_fill_specialist_job
+	possible = {
+	}
+
+	resources = {
+		category = planet_metallurgists
+		produces = {
+			alloys = 20
+		}
+		produces = {
+			trigger = { 
+				exists = owner
+				owner = { has_tradition = tr_wg_projects_4 }
+			}
+			alloys = 5
+		}
+		upkeep = {
+			trigger = { 
+				exists = owner
+				owner = { has_tradition = tr_wg_projects_4 }
+			}
+			minerals = 3
+		}
+		upkeep = {
+			minerals = 12
+		}
+		upkeep = {
+			trigger = {
+				exists = owner
+				owner = {
+					has_edict = forge_subsidies
+				}
+			}
+			energy = 1
+		}
+	}
+
+	weight = {
+		weight = @specialist_job_weight # Fairly important job
+		#mult = value:job_weights_modifier|JOB|sep_foundry|RESOURCE|alloys|
+		modifier = {
+			factor = 2
+			is_enslaved = yes
+			can_take_servant_job = no
+		}
+	}
+}
+wsg_rare_resource_manufacturer = {
+	category = specialist
+	swappable_data = {
+		default = {
+			condition_string = SPECIALIST_JOB_TRIGGER
+			building_icon = building_wsg_rare_resource_factory
+		}
+	}
+	possible_pre_triggers = {
+		has_owner = yes
+		#is_enslaved = no
+		is_being_purged = no
+		is_being_assimilated = no
+	}
+
+	possible_precalc = can_fill_specialist_job
+	possible = {
+	}
+	
+	resources = {
+		category = planet_translucers
+		produces = {
+			rare_crystals = 2
+			volatile_motes = 2
+			exotic_gases = 3
+		}
+		upkeep = {
+			minerals = 25
+		}
+	}
+	
+	weight = {
+		weight = @specialist_job_weight # Fairly important job
+		#mult = value:job_weights_modifier|JOB|wsg_rare_resource_manufacturer|RESOURCE|rare_crystals|
+		modifier = {
+			factor = 2
+			is_enslaved = yes
+			can_take_servant_job = no
+		}
+	}
+}

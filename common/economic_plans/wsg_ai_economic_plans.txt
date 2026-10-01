@@ -1,0 +1,100 @@
+basic_economy_plan = {
+	subplan = {
+		optional = yes
+		set_name = "Rare wg resources"
+		potential = {
+			OR = {
+				has_authority = auth_warshipgirls
+				has_authority = auth_shenhai
+			} 
+		}
+
+		income = {
+			sr_pantsu = @economic_plan_scaling_rare_resource_target
+			sr_se = @economic_plan_scaling_rare_resource_target
+		}
+	}			
+
+	subplan = {
+		optional = yes
+		set_name = "Rare wg resources"
+		potential = {
+			has_authority = auth_warshipgirls
+		}
+
+		income = {
+			sr_neo = @economic_plan_scaling_rare_resource_target
+			sr_alpha = @economic_plan_scaling_rare_resource_target
+		}
+	}	
+
+	subplan = {
+		optional = yes
+		scaling = yes
+		set_name = "Scaling sr pantsu wg"
+
+		potential = {
+			OR = {
+				has_authority = auth_warshipgirls
+				has_authority = auth_shenhai
+			} 
+			has_monthly_income = { resource = sr_pantsu value < @economic_plan_rare_resource_limit }
+		}
+
+		income = {
+			sr_pantsu = @economic_plan_scaling_rare_resource_target
+		}
+	}
+
+	subplan = {
+		optional = yes
+		scaling = yes
+		set_name = "Scaling sr neo wg"
+
+		potential = {
+			has_authority = auth_warshipgirls
+			has_monthly_income = { resource = sr_neo value < @economic_plan_rare_resource_limit }
+		}
+
+		income = {
+			sr_neo = @economic_plan_scaling_rare_resource_target
+		}
+	}
+
+	subplan = {
+		optional = yes
+		scaling = yes
+		set_name = "Scaling sr alpha wg"
+
+		potential = {
+			has_authority = auth_warshipgirls 
+			has_monthly_income = { resource = sr_alpha value < @economic_plan_rare_resource_limit }
+		}
+
+		income = {
+			sr_alpha = @economic_plan_scaling_rare_resource_target
+		}
+	}
+
+	subplan = {
+		optional = yes
+		scaling = yes
+		set_name = "Scaling sr se wg"
+
+		potential = {
+			OR = {
+				has_authority = auth_warshipgirls
+				has_authority = auth_shenhai
+			} 
+			has_monthly_income = { resource = sr_se value < @economic_plan_rare_resource_limit }
+		}
+
+		income = {
+			sr_se = @economic_plan_scaling_rare_resource_target
+		}
+	}
+
+	ai_weight = {
+		weight = 1
+	}
+}
