@@ -1,0 +1,624 @@
+# 用于覆盖原版或其它模组的script trigger
+TIME_RULE_trgr_spcs_CAN_live_on_planet = {
+	custom_tooltip = {
+		fail_text = "can_only_live_on_pc_hive"
+		if = {
+			limit = {
+				has_trait = trait_hive_mind
+				root.owner_or_space_owner = { has_origin = origin_pc_hive }
+			}
+			root = { uses_district_set = hive_world }
+		}
+	}
+	custom_tooltip = {
+		fail_text = "can_not_live_on_pc_time"
+		if = {
+			limit = {
+				root = { is_origin_time_planet_class = yes }
+			}
+			is_origin_time_species = yes
+		}
+	}
+	custom_tooltip = {
+		fail_text = "can_only_live_on_pc_time"
+		if = {
+			limit = {
+				has_trait = trait_time_soul_virtuality
+			}
+			root = { can_time_soul_virtuality_live_on = yes }
+		}
+	}
+	custom_tooltip = {
+		fail_text = "can_not_live_on_pc_gas_colony"
+		if = {
+			limit = {
+				root = { is_planet_class = pc_gas_colony }
+			}
+			has_trait = trait_origin_gas_colony
+		}
+	}
+	custom_tooltip = {
+		fail_text = "can_only_live_on_pc_gas_colony"
+		if = {
+			limit = {
+				has_trait = trait_origin_gas_colony
+			}
+			root = { is_planet_class = pc_gas_colony }
+		}
+	}
+	custom_tooltip = {
+		fail_text = "can_not_live_on_pc_psionic"
+		if = {
+			limit = {
+				root = { is_planet_class = pc_psionic }
+			}
+			has_trait = trait_origin_psionic
+		}
+	}
+	custom_tooltip = {
+		fail_text = "can_only_live_on_pc_psionic"
+		if = {
+			limit = {
+				has_trait = trait_origin_psionic
+			}
+			root = { is_planet_class = pc_psionic }
+		}
+	}
+	custom_tooltip = {
+		fail_text = "can_not_live_on_pc_nanites"
+		if = {
+			limit = {
+				root = { is_planet_class = pc_nanites }
+			}
+			has_trait = trait_origin_nanites
+		}
+	}
+	custom_tooltip = {
+		fail_text = "can_only_live_on_pc_nanites"
+		if = {
+			limit = {
+				has_trait = trait_origin_nanites
+			}
+			root = {
+				OR = {
+					is_planet_class = pc_nanites
+					is_planet_class = pc_nanotech
+				}
+			}
+		}
+	}
+	custom_tooltip = {
+		fail_text = "can_only_live_on_pc_volcanic"
+		if = {
+			limit = {
+				has_trait = trait_wonder_country_96
+			}
+			root = { is_planet_class = pc_volcanic }
+		}
+	}
+	custom_tooltip = {
+		fail_text = "can_not_live_on_pc_time_notofthisworld"
+		if = {
+			limit = {
+				root = { is_planet_class = pc_time_notofthisworld }
+			}
+			has_trait_notofthisworld = yes
+		}
+	}
+	custom_tooltip = {
+		fail_text = "building_blessed_by_god_reject_robot"
+		if = {
+			limit = {
+				root = { has_building = building_blessed_by_god }
+			}
+			is_robotic = no
+		}
+	}
+	custom_tooltip = {
+		fail_text = "circle_nexus_is_defective"
+		if = {
+			limit = {
+				OR = {
+					has_global_flag = greatest_dimensional_horror_crisis
+					has_global_flag = circle_nexus_is_defective
+				}
+			}
+			if = {
+				limit = {
+					has_trait = trait_time_1
+				}
+				root = {
+					OR = {
+						is_homeworld = yes
+						has_modifier = time_1_planet_modifier
+					}
+				}
+			}
+			else_if = {
+				limit = {
+					has_trait = trait_time_2
+				}
+				root = {
+					OR = {
+						is_homeworld = yes
+						has_modifier = time_2_planet_modifier
+					}
+				}
+			}
+			else = {
+				root = { is_homeworld = yes }
+			}
+		}
+	}
+	# 以防万一
+	custom_tooltip = {
+		fail_text = "can_not_live_on_any_planet"
+		if = {
+			limit = {
+				has_trait = trait_dimension_traveler
+			}
+			always = no
+		}
+	}
+}
+
+TIME_RULE_trgr_spcs_CAN_live_on_ship = {
+	TIME_RULE_trgr_spcs_CAN_live_on_planet = yes
+}
+
+TIME_RULE_trgr_CAN_spcs_be_assembled = {
+	if = {
+		limit = {
+			has_trait = trait_reassembler
+		}
+		root = { can_planet_reassembly = yes }
+	}
+	if = {
+		limit = {
+			root = { can_planet_reassembly = yes }
+		}
+		has_trait = trait_reassembler
+	}
+}
+
+TIME_RULE_trgr_CAN_orbital_bombard = {
+	From = {
+		NOR = {
+			is_time_black_hole_or_white_hole_planet_class = yes
+			is_planet_class = pc_time_notofthisworld
+		}
+	}
+}
+
+TIME_RULE_trgr_CAN_fill_drone_job = {
+	hidden_trigger = {
+		if = {
+			limit = {
+				has_trait = trait_time_soul_virtuality
+			}
+			colony = { can_time_soul_virtuality_live_on = yes }
+		}
+	}
+}
+
+TIME_RULE_trgr_CAN_fill_ruler_job = {
+	hidden_trigger = {
+		NOT = { has_citizenship_type = { type = citizenship_adeptus_mechanicus country = owner } }
+		if = {
+			limit = {
+				has_trait = trait_time_soul_virtuality
+			}
+			colony = { can_time_soul_virtuality_live_on = yes }
+		}
+	}
+}
+
+TIME_RULE_trgr_CAN_fill_specialist_job = {
+	hidden_trigger = {
+		NOT = { has_citizenship_type = { type = citizenship_adeptus_mechanicus country = owner } }
+		if = {
+			limit = {
+				has_trait = trait_time_soul_virtuality
+			}
+			colony = { can_time_soul_virtuality_live_on = yes }
+		}
+	}
+}
+
+TIME_RULE_trgr_CAN_fill_worker_job = {
+	hidden_trigger = {
+		NOT = { has_citizenship_type = { type = citizenship_adeptus_mechanicus country = owner } }
+		if = {
+			limit = {
+				has_trait = trait_time_soul_virtuality
+			}
+			colony = { can_time_soul_virtuality_live_on = yes }
+		}
+	}
+}
+
+TIME_RULE_trgr_Has_random_ethics = {
+	NOT = { has_citizenship_type = { type = citizenship_adeptus_mechanicus country = from } }
+}
+
+TIME_RULE_trgr_Force_has_happiness = {
+	exists = from
+	has_citizenship_type = { type = citizenship_adeptus_mechanicus country = from }
+}
+
+TIME_RULE_trgr_Can_explore_astral_rift = {
+	if = {
+		limit = {
+			from = {
+				OR = {
+					has_astral_rift_flag = akx_horror
+					has_astral_rift_flag = akx_time
+				}
+			}
+		}
+		custom_tooltip = {
+			fail_text = "is_horror_astral_rift"
+			has_country_flag = worm_tomb_ending
+		}
+	}
+	if = {
+		limit = {
+			from = { has_astral_rift_flag = equinox_seal }
+		}
+		custom_tooltip = {
+			fail_text = "is_horror_astral_rift"
+			OR = {
+				has_origin = origin_equinox_seal
+				has_origin = origin_equinox_glimpse
+				has_country_flag = worm_tomb_ending
+			}
+		}
+	}
+}
+
+TIME_RULE_trgr_Can_planet_auto_migrate = {
+	custom_tooltip = {
+		fail_text = AUTO_MIGRATE_PC_TIME
+		is_origin_time_planet_class = no
+	}
+}
+
+TIME_RULE_trgr_Can_planet_receive_auto_migrate = {
+	is_origin_time_planet_class = no
+}
+
+is_tm_black_hole = {
+	OR = {
+		is_planet_class = pc_time
+		is_planet_class = pc_time_replace
+		is_planet_class = pc_endless_time
+		is_planet_class = pc_time_white_hole
+		is_planet_class = pc_core_of_truth
+	}
+}
+
+is_tm_gas_colony = {
+	is_planet_class = pc_gas_colony
+}
+
+is_tm_psionic_world = {
+	is_planet_class = pc_psionic
+}
+
+is_tm_nanites_world = {
+	is_planet_class = pc_nanites
+}
+
+is_tm_reassembler = {
+	has_trait = trait_reassembler
+}
+
+time_decision_arcology_project_allow = {
+	# 仅在有修正/地块时显示不能有该修正/地块
+	if = {
+		limit = {
+			has_modifier = time_haze
+		}
+		NOT = { has_modifier = time_haze }
+	}
+	if = {
+		limit = {
+			has_modifier = time_wormhole
+		}
+		NOT = { has_modifier = time_wormhole }
+	}
+	if = {
+		limit = {
+			has_deposit = d_parallel_sky
+		}
+		NOT = { has_deposit = d_parallel_sky }
+	}
+}
+
+
+
+species_rights_robot_full_rights_check = {
+	exists = from
+	if = {
+		limit = {
+			from = { has_origin = origin_adeptus_mechanicus }
+		}
+		OR = {
+			has_citizenship_type = { type = citizenship_adeptus_mechanicus country = from }
+			from = { has_policy_flag = ai_full_rights }
+		}
+	}
+	else = {
+		from = {
+			OR = {
+				has_policy_flag = ai_full_rights
+				is_mechanical_empire = yes
+				has_origin = origin_synthetic_fertility
+			}
+		}
+	}
+}
+
+is_free_robot = { # The pop is a free robot with citizen rights
+	has_trait = trait_mechanical
+	exists = owner
+	if = {
+		limit = {
+			owner = { has_origin = origin_adeptus_mechanicus }
+		}
+		OR = {
+			has_citizenship_type = { type = citizenship_adeptus_mechanicus country = owner }
+			owner = {
+				has_technology = tech_synthetic_workers
+				has_policy_flag = ai_full_rights
+			}
+		}
+	}
+	else = {
+		owner = {
+			has_technology = tech_synthetic_workers
+			OR = {
+				has_policy_flag = ai_full_rights
+				is_mechanical_empire = yes
+			}
+		}
+	}
+}
+
+
+
+has_cybernetic_ascension = {
+	OR = {
+		has_ascension_perk = ap_the_flesh_is_weak						# Regular
+		has_ascension_perk = ap_organo_machine_interfacing				# Hive-Mind
+		has_ascension_perk = ap_organo_machine_interfacing_assimilator	# Driven Assimilator
+		force_cybernetics_ascension = yes								# 锁义飞
+		auto_cybernetics_ascension = yes								# 自带义飞
+		auto_cybernetics_ascension_hive = yes							# 自带义飞
+		auto_cybernetics_ascension_machine = yes						# 自带义飞
+	}
+}
+
+has_genetic_ascension = {
+	OR = {
+		has_ascension_perk = ap_engineered_evolution					# Regular & Hive-Mind
+		force_genetics_ascension = yes									# 锁基飞
+		auto_genetics_ascension = yes									# 自带基飞
+	}
+}
+
+has_psionic_ascension = {
+	OR = {
+		has_ascension_perk = ap_mind_over_matter						# Regular
+		force_psionics_ascension = yes									# 锁灵飞
+		auto_psionics_ascension = yes									# 自带灵飞
+	}
+}
+
+has_synthetic_ascension = {
+	OR = {
+		has_ascension_perk = ap_synthetic_evolution						# Regular
+		has_ascension_perk = ap_synthetic_age							# Machine Intelligence
+		force_synthetics_ascension = yes								# 锁机飞
+		auto_synthetics_ascension = yes									# 自带机飞
+		auto_synthetics_ascension_machine = yes							# 自带机飞
+	}
+}
+
+is_head_of_research = {
+	OR = {
+		is_councilor_type = councilor_research
+        is_councilor_type = councilor_gestalt_cognitive
+        is_councilor_type = councilor_research_nomadic
+        is_councilor_type = councilor_KZ_VOY_onimaru_heavy_machinery
+        is_councilor_type = councilor_KZ_VOY_daystrom_institute
+        is_councilor_type = councilor_KZ_VOY_shion_biotech
+        is_councilor_type = councilor_KZ_VOY_shenlong_republic
+        is_councilor_type = councilor_KZ_VOY_shenlong_republic_setup
+        is_councilor_type = ag_ancient_ai_councilor_sci
+        is_councilor_type = councilor_th_moon_science
+        is_councilor_type = councilor_th_river_child
+        is_councilor_type = councilor_spth_eirin
+        is_councilor_type = councilor_th_research_little_devil
+        is_councilor_type = councilor_youkai_mountain_researcher
+        is_councilor_type = councilor_akx_coils_god
+        is_councilor_type = councilor_direct_democratic_scientist
+        is_councilor_type = councilor_chief_executive
+	}
+}
+
+# 殖民地规划
+has_foundry_designation = {
+	OR = {
+		has_designation = col_capital_foundry
+		has_designation = col_foundry
+		has_designation = col_ecu_foundry
+		has_designation = col_habitat_foundry
+		has_designation = col_mac_foundry
+		has_designation = col_hiv_foundry
+		has_designation = col_nomad_foundry
+		has_designation = col_capital_nomad_foundry
+		# 时与空
+		has_designation = col_nanites_capital_machine_manufacturing
+	}
+}
+
+has_industrial_designation = {
+	OR = {
+		has_designation = col_industrial
+		has_designation = col_habitat_industrial
+		has_designation = col_ecu_industrial
+		has_designation = col_nomad_industrial
+		# 时与空
+		is_col_origin_time_capital_manufacturing = yes
+		has_designation = col_psionic_best_capital_manufacturing
+		has_designation = col_psionic_capital_manufacturing
+	}
+}
+
+has_research_designation = {
+	OR = {
+		has_designation = col_research
+		has_designation = col_ring_research
+		has_designation = col_habitat_research
+		has_designation = col_ecu_research
+		has_designation = col_nomad_research
+		# 时与空
+		is_col_origin_time_capital_research = yes
+		has_designation = col_psionic_best_capital_research
+		has_designation = col_psionic_capital_research
+		has_designation = col_nanites_capital_machine_research
+	}
+}
+
+has_unity_designation = {
+	OR = {
+		has_designation = col_bureau
+		has_designation = col_habitat_bureau
+		has_designation = col_bureau_machine
+		has_designation = col_trophy_machine
+		has_designation = col_habitat_bureau_machine
+		has_designation = col_bureau_hive
+		has_designation = col_habitat_bureau_hive
+		has_designation = col_bureau_spiritualist
+		has_designation = col_habitat_bureau_spiritualist
+		has_designation = col_nomad_bureau
+		has_designation = col_nomad_bureau_spiritualist
+		has_designation = col_nomad_bureau_machine
+		has_designation = col_nomad_bureau_hive
+		has_designation = col_nomad_trophy_machine
+		# 时与空
+		is_col_origin_time_capital_unity = yes
+		has_designation = col_psionic_best_capital_unity
+		has_designation = col_psionic_capital_unity
+		has_designation = col_nanites_capital_machine_unity
+		has_designation = col_adeptus_mechanicus
+	}
+}
+
+has_rural_designation = {
+	OR = {
+		has_designation = col_capital_extraction
+		has_designation = col_hiv
+		# 时与空
+		is_col_origin_time_capital_resource = yes
+		has_designation = col_gas_colony_capital_resource
+		has_designation = col_gas_colony_capital_hive_resource
+	}
+}
+# 殖民地规划
+
+colonizable_planet = {
+	OR = {
+		is_planet_class = pc_city
+		is_planet_class = pc_relic
+		is_planet_class = pc_nuked
+		is_planet_class = pc_hive
+		is_planet_class = pc_machine
+		is_time_mod_normal_origin_planet = yes
+		habitable_structure = yes
+		habitable_planet = yes
+	}
+}
+
+can_destroy_planet_with_PLANET_KILLER_HORROR = {
+	always = no
+}
+
+can_destroy_planet_with_PLANET_KILLER_STAR_CRACKER = {
+	custom_tooltip = {
+		fail_text = is_your_megastructure_system
+		NOT = {
+			solar_system = {
+				has_star_flag = crisis_sphere_system@from.owner
+				any_system_megastructure = { has_megastructure_flag = crisis_sphere }
+			}
+		}
+	}
+	custom_tooltip = {
+		fail_text = is_not_star
+		is_star = yes
+	}
+	custom_tooltip = {
+		fail_text = is_black_hole
+		is_time_black_hole_or_white_hole_planet_class = no
+	}
+	custom_tooltip = {
+		fail_text = is_sc_black_hole
+		solar_system = {
+			is_time_black_hole_or_white_hole_star_class = no
+		}
+	}
+	custom_tooltip = {
+		fail_text = star_owner_is_not_hostile
+		OR = {
+			NOT = { exists = space_owner }
+			space_owner = { is_hostile = from.owner }
+			space_owner = { is_same_value = from.owner }
+		}
+	}
+}
+
+is_crisis_faction = {
+	OR = {
+		is_country_type = swarm
+		is_country_type = extradimensional
+		is_country_type = extradimensional_2
+		is_country_type = extradimensional_3
+		is_country_type = ai_empire
+		is_country_type = gray_goo
+		is_country_type = awakened_marauders
+		is_country_type = synth_queen
+		is_country_type = awakened_synth_queen
+		is_country_type = synth_queen_storm
+		is_country_type = voidworms_crisis
+		is_country_type = dimensional_horror_crisis # 终焉宣告
+	}
+}
+
+can_embark_no_tradition_check_trigger = {
+	has_nomads_dlc = yes
+	is_nomadic = no
+	is_wilderness_empire = no
+	is_homicidal = no
+	NOR = {
+		has_ascension_perk = ap_cosmogenesis
+		has_origin = origin_legendary_leader
+		has_origin = origin_legendary_leader_death
+		has_origin = origin_legendary_leader_imperial
+		has_origin = origin_legendary_leader_dictatorial
+		has_origin = origin_endbringers
+		has_origin = origin_fear_of_the_dark
+		has_origin = origin_toxic_knights
+		has_origin = origin_tree_of_life
+		has_origin = origin_fruitful
+		has_country_flag = horizonsignal_trigger
+		has_country_flag = forbid_embark # 模组兼容
+		any_situation = {
+			OR = {
+				is_situation_type = situation_red_giant_expansion #After these situation ends it's fine to embark
+				is_situation_type = situation_cosmic_dawn
+			}
+		}
+	}
+}

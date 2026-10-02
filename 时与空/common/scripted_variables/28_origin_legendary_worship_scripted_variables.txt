@@ -1,0 +1,4 @@
+@inborn_legendary_modifier = 0.03
+@inborn_legendary_modifier_council = 0.015
+@inborn_renowned_modifier = 0.02
+@inborn_renowned_modifier_council = 0.01

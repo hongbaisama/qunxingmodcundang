@@ -1,0 +1,67 @@
+blessed_by_god_value = {
+	base = @blessed_by_god_base
+	add = value:blessed_by_god_tradition_value|MULT|@blessed_by_god_tradition_mult|
+	add = value:blessed_by_god_ascension_value|MULT|@blessed_by_god_ascension_mult|
+	add = value:blessed_by_god_decision_value_special
+	floor = yes
+}
+
+blessed_by_god_tradition_value = {
+	base = 0
+	add = blessed_by_god_tradition_count
+	[[MULT]
+		multiply = $MULT$
+	]
+}
+
+blessed_by_god_ascension_value = {
+	base = 0
+	add = trigger:num_ascension_perks
+	[[MULT]
+		multiply = $MULT$
+	]
+}
+
+blessed_by_god_decision_value_special = {
+	base = 10
+	multiply = blessed_by_god_decision_count
+	square_root = yes # 大幅减少大祭祀次数产生的影响
+}
+
+blessed_by_god_decision_value = {
+	base = 0
+	add = blessed_by_god_decision_count
+	[[MULT]
+		multiply = $MULT$
+	]
+	add = $BASE|0$
+}
+
+blessed_by_god_building_value = {
+	base = 1
+	multiply = value:num_time_normal_resources_value
+	multiply = owner.value:blessed_by_god_decision_value|MULT|0.05|BASE|1|
+}
+
+blessed_by_god_decision_cost_high = {
+	base = 2
+	add = value:blessed_by_god_decision_value|MULT|0.1|
+	pow = 3
+}
+
+blessed_by_god_decision_cost_low = {
+	base = 1
+	add = value:blessed_by_god_decision_value|MULT|0.1|
+}
+
+# 增长快
+blessed_by_god_decision_unity_cost = {
+	base = @blessed_by_god_decision_unity_cost
+	multiply = value:blessed_by_god_decision_cost_high
+}
+
+# 增长慢
+blessed_by_god_decision_sr_zro_cost = {
+	base = @blessed_by_god_decision_sr_zro_cost
+	multiply = value:blessed_by_god_decision_cost_low
+}

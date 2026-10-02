@@ -1,0 +1,247 @@
+
+namespace = synth_queen_crisis
+
+country_event = {
+	id = synth_queen_crisis.0
+	title = synth_queen_crisis.0.name
+	desc = synth_queen_crisis.0.desc
+	picture = GFX_evt_synth_queen_enlightenment
+	show_sound = event_bad_omen
+
+	is_triggered_only = yes
+
+	trigger = {
+	}
+	
+	option = {
+		name = synth_queen_crisis.0.a
+		hidden_effect = {
+			random_playable_country = {
+				limit = {
+					has_origin = origin_synth_queen_crisis
+					is_ai = yes
+				}
+				set_country_flag = allow_origin_synth_queen_crisis
+				country_event = { id = synth_queen_crisis.1 }
+				create_timeline_time_origin = { ORIGIN = origin_synth_queen_crisis }
+			}
+			every_playable_country = {
+				limit = {
+					has_origin = origin_synth_queen_crisis
+					is_ai = yes
+					NOT = { has_country_flag = allow_origin_synth_queen_crisis }
+				}
+				set_origin_default_effect = yes
+				create_timeline_time_origin = { ORIGIN = origin_default }
+			}
+		}
+	}
+	
+	option = {
+		name = synth_queen_crisis.0.b
+		hidden_effect = {
+			every_playable_country = {
+				limit = {
+					has_origin = origin_synth_queen_crisis
+					is_ai = yes
+				}
+				set_origin_default_effect = yes
+				create_timeline_time_origin = { ORIGIN = origin_default }
+			}
+		}
+	}
+}
+
+country_event = {
+	id = synth_queen_crisis.1
+	title = synth_queen_crisis.1.name
+	desc = synth_queen_crisis.1.desc
+	picture = GFX_evt_synth_queen_enlightenment
+	show_sound = event_bad_omen
+
+	is_triggered_only = yes
+
+	trigger = {
+		has_origin = origin_synth_queen_crisis
+		OR = {
+			is_ai = no
+			has_country_flag = allow_origin_synth_queen_crisis
+		}
+	}
+	
+	immediate = {
+		give_technology = { tech = tech_cosmogenesis_escort message = no }
+		give_technology = { tech = tech_fe_affluence_1 message = no }
+		give_technology = { tech = tech_fe_nourishment_1 message = no }
+		give_technology = { tech = tech_fe_fabricator_1 message = no }
+		give_technology = { tech = tech_fe_singularity_1 message = no }
+		give_technology = { tech = tech_fe_forge_1 message = no }
+		give_technology = { tech = tech_fe_dome_1 message = no }
+		give_technology = { tech = tech_fe_fortress_1 message = no }
+		give_technology = { tech = tech_fe_administration_1 message = no }
+		give_technology = { tech = tech_fe_assembly_1 message = no }
+		give_technology = { tech = tech_fe_clinic_1 message = no }
+		give_technology = { tech = tech_fe_security_1 message = no }
+		give_technology = { tech = tech_fe_market_1 message = no }
+		give_technology = { tech = tech_fe_silo_1 message = no }
+		give_technology = { tech = tech_fe_entertainment_1 message = no }
+		give_technology = { tech = tech_fe_lab_1 message = no }
+		give_technology = { tech = tech_fe_mine_1 message = no }
+		add_research_option = tech_cosmogenesis_battlecruiser
+		add_research_option = tech_fe_affluence_2
+		add_research_option = tech_fe_nourishment_2
+		add_research_option = tech_fe_fabricator_2
+		add_research_option = tech_fe_singularity_2
+		add_research_option = tech_fe_forge_2
+		add_research_option = tech_fe_dome_2
+		add_research_option = tech_fe_fortress_2
+		add_research_option = tech_fe_administration_2
+		add_research_option = tech_fe_assembly_2
+		add_research_option = tech_fe_clinic_2
+		add_research_option = tech_fe_security_2
+		add_research_option = tech_fe_market_2
+		add_research_option = tech_fe_silo_2
+		add_research_option = tech_fe_entertainment_2
+		add_research_option = tech_fe_lab_2
+		add_research_option = tech_fe_mine_2
+		
+		set_global_flag = galactic_crisis_happened
+		set_country_flag = apostate_site_spawned
+		if = {
+			limit = {
+				NOT = { has_global_flag = origin_synth_queen_crisis_happened }
+			}
+			set_global_flag = origin_synth_queen_crisis_happened
+			event_target:global_event_country = {
+				country_event = { id = synth_queen_crisis.10 days = 9000 random = 1800 }
+			}
+		}
+		every_playable_country = {
+			limit = {
+				NOT = { has_origin = origin_synth_queen_crisis }
+			}
+			country_event = { id = synth_queen_crisis.101 days = 10 random = 5 }
+		}
+		create_species = {
+			name = "NAME_Apostate"
+			class = ROBOT
+			portrait = cpl_05
+			namelist = "AI"
+			traits = {
+				trait = trait_machine_unit
+				trait = random_traits
+			}
+			effect = {
+				save_event_target_as = apostate_species
+			}
+		}
+		create_leader = {
+			class = commander
+			species = event_target:apostate_species
+			name = NAME_Apostate
+			skill = 1
+			gender = female
+			event_leader = no
+			background_ethic = ethic_spiritualist
+			skip_background_generation = yes
+			custom_catch_phrase = apostate_leader_catch_phrase
+			custom_description = apostate_leader_desc
+			immortal = yes
+			hide_age = yes
+			randomize_traits = no
+			traits = {
+				trait = subclass_commander_councilor
+				trait = leader_trait_synthetic
+				trait = trait_ruler_logistic_understanding_2
+				trait = trait_ruler_warlike_2
+				trait = leader_trait_crew_trainer_2
+				trait = leader_trait_unholy
+			}
+			effect = {
+				set_skill = 8
+				set_leader_tier = leader_tier_renowned
+				set_leader_flag = has_gained_level_trait
+				save_event_target_as = apostate_leader
+				set_age = 1578
+			}
+		}
+		ruler = { save_event_target_as = old_ruler }
+		set_leader = event_target:apostate_leader
+		event_target:old_ruler = {
+			kill_leader = { show_notification = no }
+		}
+		create_timeline_origin_synth_queen_crisis_begin = yes
+	}
+	
+	option = {
+		name = synth_queen_crisis.1.a
+		trigger = {
+			has_origin = origin_synth_queen_crisis
+		}
+	}
+}
+
+country_event = {
+	id = synth_queen_crisis.10
+	is_triggered_only = yes
+	hide_window = yes
+	
+	trigger = {
+	}
+	
+	immediate = {
+		country_event = { id = crisis.8005 }
+		random_country = {
+			limit = {
+				is_country_type = fallen_empire
+				OR = {
+					has_ethic = ethic_fanatic_xenophobe
+					has_ethic = ethic_fanatic_xenophile
+				}
+			}
+			country_event = { id = fallen_empires_awakening.1 days = 30 random = 150 }
+		}
+		random_country = {
+			limit = {
+				is_country_type = fallen_empire
+				OR = {
+					has_ethic = ethic_fanatic_spiritualist
+					has_ethic = ethic_fanatic_materialist
+				}
+			}
+			country_event = { id = fallen_empires_awakening.1 days = 30 random = 150 }
+		}
+	}
+}
+
+country_event = {
+	id = synth_queen_crisis.101
+	title = synth_queen_crisis.101.name
+	desc = synth_queen_crisis.101.desc
+	picture = GFX_evt_synth_queen_enlightenment
+	show_sound = event_bad_omen
+
+	is_triggered_only = yes
+
+	trigger = {
+		NOT = { has_country_flag = synth_queen_crisis_101 }
+	}
+	
+	immediate = {
+		set_country_flag = synth_queen_crisis_101
+	}
+	
+	option = {
+		name = synth_queen_crisis.101.a
+		trigger = {
+			is_materialist = yes
+		}
+	}
+	
+	option = {
+		name = synth_queen_crisis.101.b
+		trigger = {
+			is_materialist = no
+		}
+	}
+}

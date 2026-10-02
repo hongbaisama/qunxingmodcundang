@@ -1,0 +1,33 @@
+slot_time_notofthisworld_rift_sphere = {
+	included_zone_sets = {
+		zone_time_notofthisworld_rift_sphere
+	}
+	
+	exclude = {
+	}
+	
+	unlock = {
+		custom_tooltip = {
+			fail_text = slot_time_notofthisworld_rift_sphere_prereq
+			exists = owner
+			owner = { has_technology = tech_rift_sphere }
+		}
+	}
+}
+
+slot_time_notofthisworld_astral_harvesting = {
+	included_zone_sets = {
+		zone_time_notofthisworld_astral_harvesting
+	}
+	
+	exclude = {
+	}
+	
+	unlock = {
+		custom_tooltip = {
+			fail_text = slot_time_notofthisworld_astral_harvesting_prereq
+			exists = owner
+			owner = { has_technology = tech_astral_harvesting }
+		}
+	}
+}

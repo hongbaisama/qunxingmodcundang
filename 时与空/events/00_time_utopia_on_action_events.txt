@@ -1,0 +1,192 @@
+
+namespace = utopia
+
+# Mind over Matter
+country_event = {
+	id = utopia.2600
+	title = "utopia.2600.name"
+	desc = {
+		text = utopia.2600.desc
+		trigger = {
+			NOR = {
+				has_origin = origin_unplugged
+				has_origin = origin_psionic
+			}
+		}
+	}
+	desc = {
+		text = utopia.2600.desc.unplugged
+		trigger = {
+			has_origin = origin_unplugged
+		}
+	}
+	desc = {
+		text = utopia.2600.desc.psionic
+		trigger = {
+			has_origin = origin_psionic
+		}
+	}
+	picture = GFX_evt_psionics
+	show_sound = event_mind_over_matter
+	is_triggered_only = yes
+
+	trigger = {
+		is_psionic = yes
+	}
+
+	immediate = {
+		mind_over_matter_immediate = yes
+	}
+
+	option = {
+		name = "utopia.2600.a"
+		trigger = {
+			NOR = {
+				has_origin = origin_shroudwalker_apprentice
+				has_origin = origin_psionic
+			}
+		}
+		tooltip = {
+			add_latent_psionic_trait = yes
+		}
+	}
+
+	option = {
+		name = "utopia.2600.a"
+		trigger = {
+			has_origin = origin_shroudwalker_apprentice
+		}
+	}
+	
+	option = {
+		name = "utopia.2600.psionic"
+		trigger = {
+			has_origin = origin_psionic
+		}
+		custom_tooltip = unlock_decision_psionic_1
+		set_country_flag = unlock_decision_psionic_1
+		tooltip = {
+			add_latent_psionic_trait = yes
+		}
+	}
+}
+
+# Transcendence
+country_event = {
+	id = utopia.2650
+	title = "utopia.2650.name"
+	desc = {
+		text = utopia.2650.desc
+		trigger = {
+			NOT = { has_origin = origin_psionic }
+		}
+	}
+	desc = {
+		text = utopia.2650.desc.psionic
+		trigger = {
+			has_origin = origin_psionic
+		}
+	}
+	picture = GFX_evt_psionics
+	show_sound = event_the_great_awakening
+
+	is_triggered_only = yes
+
+	trigger = {
+		has_tradition = tr_psionics_psionic_assimilation
+	}
+
+	immediate = {
+		turn_main_species_to_psionic = yes
+		update_every_leader_from_psionic_countries = yes
+		refresh_portraits = character
+	}
+	
+	option = {
+		name = "utopia.2650.a"
+		trigger = {
+			NOT = { has_origin = origin_psionic }
+		}
+	}
+	
+	option = {
+		name = "utopia.2650.psionic"
+		trigger = {
+			has_origin = origin_psionic
+		}
+		custom_tooltip = unlock_decision_psionic_2
+		set_country_flag = unlock_decision_psionic_2
+	}
+}
+
+# The Shroud
+country_event = {
+	id = utopia.2655
+	title = "utopia.2655.name"
+	desc = {
+		text = utopia.2655.desc
+		trigger = {
+			NOT = { has_origin = origin_psionic }
+		}
+	}
+	desc = {
+		text = utopia.2655.desc.psionic
+		trigger = {
+			has_origin = origin_psionic
+		}
+	}
+	picture = GFX_evt_psionics
+	show_sound = {
+		trigger = {
+			has_shroud_dlc = yes
+			is_robot_empire = yes
+		}
+		sound = event_psionic_robot
+	}
+	show_sound = {
+		trigger = {
+			OR = {
+				has_shroud_dlc = no
+				is_robot_empire = no
+			}
+		}
+		sound = event_psionic
+	}
+	trackable = yes
+
+	is_triggered_only = yes
+
+	trigger = {
+		has_tradition = tr_psionics_breach_shroud
+	}
+
+	option = {
+		name = "utopia.2655.a"
+		trigger = {
+			NOT = { has_origin = origin_psionic }
+		}
+		hidden_effect = { save_event_target_as = breach_shroud_owner }
+		capital_scope = {
+			enable_special_project = {
+				name = "BREACHING_SHROUD_PROJECT"
+				location = this
+				owner = root
+			}
+		}
+	}
+	
+	option = {
+		name = "utopia.2655.psionic"
+		trigger = {
+			has_origin = origin_psionic
+		}
+		hidden_effect = { save_event_target_as = breach_shroud_owner }
+		capital_scope = {
+			enable_special_project = {
+				name = "BREACHING_SHROUD_PSIONIC_PROJECT"
+				location = this
+				owner = root
+			}
+		}
+	}
+}

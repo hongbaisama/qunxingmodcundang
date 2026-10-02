@@ -1,0 +1,1024 @@
+# 时空机器
+
+building_ruin_time_machine = {
+	can_build = no
+	can_demolish = no
+	can_be_ruined = no
+	can_be_disabled = no
+	planet_limit = 1
+	position_priority = 1
+	
+	category = research
+	
+	building_sets = { government }
+
+	potential = {
+		owner = { unlock_building_time_machine = yes }
+	}
+	
+	destroy_trigger = {
+		always = no
+	}
+	
+	upgrades = {
+		building_time_machine
+	}
+
+	resources = {
+		category = planet_buildings
+	}
+}
+
+building_defective_time_machine = {
+	can_build = no
+	can_demolish = no
+	can_be_ruined = no
+	can_be_disabled = no
+	planet_limit = 1
+	position_priority = 1
+	
+	category = research
+	
+	building_sets = { government }
+
+	potential = {
+		owner = { unlock_building_time_machine = yes }
+	}
+	
+	destroy_trigger = {
+		always = no
+	}
+	
+	country_modifier = {
+		building_time_mult = 0.5
+		starbase_upgrade_time_mult = 0.5
+		starbase_module_build_time_mult = 0.5
+		starbase_building_build_time_mult = 0.5
+	}
+	
+	upgrades = {
+		building_time_machine
+	}
+
+	resources = {
+		category = planet_buildings
+		upkeep = {
+			energy = 10
+		}
+	}
+	
+	triggered_desc = {
+		text = building_defective_time_machine_effect
+	}
+}
+
+building_time_machine = {
+	base_buildtime = 1800
+	can_build = no
+	can_demolish = no
+	can_be_ruined = no
+	can_be_disabled = no
+	position_priority = 1
+	
+	category = research
+	
+	building_sets = { government }
+
+	potential = {
+		owner = { unlock_building_time_machine = yes }
+	}
+	
+	destroy_trigger = {
+		always = no
+	}
+	
+	inline_script = {
+		script = buildings/building_beyond_infinity_end_modifiers
+		TYPE = time_machine
+		JOB = time_traveler
+		LEVEL = 1
+	}
+	
+	upgrades = {
+		building_infinity_time_machine
+	}
+
+	resources = {
+		category = planet_buildings
+		cost = {
+			sr_dark_matter = 1000
+		}
+		upkeep = {
+			sr_dark_matter = 10
+		}
+	}
+	
+	prerequisites = {
+		"tech_akx_worm_3"
+	}
+	
+	show_tech_unlock_if = {
+		unlock_building_time_machine = yes
+	}
+	
+	triggered_desc = {
+		trigger = {
+			has_global_flag = time_machine_is_defective
+		}
+		text = repair_defective_time_machine_effect
+	}
+	
+	on_built = {
+		set_variable = {
+			which = exists_building_time_machine
+			value = 3
+		}
+		if = {
+			limit = {
+				has_global_flag = time_machine_is_defective
+			}
+			carrier_event = { id = beyond_infinity.2 }
+		}
+	}
+}
+
+building_infinity_time_machine = {
+	base_buildtime = 3600
+	can_build = no
+	can_demolish = no
+	can_be_ruined = no
+	can_be_disabled = no
+	position_priority = 1
+	
+	category = research
+	
+	building_sets = { government }
+
+	potential = {
+		owner = {
+			unlock_building_time_machine = yes
+			has_country_flag = unlock_beyond_infinity_end_building
+		}
+	}
+	
+	destroy_trigger = {
+		always = no
+	}
+	
+	allow = {
+		is_capital = yes
+	}
+	
+	inline_script = {
+		script = buildings/building_beyond_infinity_end_modifiers
+		TYPE = time_machine
+		JOB = time_traveler
+		LEVEL = 2
+	}
+
+	resources = {
+		category = planet_buildings
+		cost = {
+			sr_dark_matter = 2000
+			astral_threads = 1000
+		}
+		upkeep = {
+			sr_dark_matter = 20
+			astral_threads = 10
+		}
+	}
+	
+	on_built = {
+		set_variable = {
+			which = exists_building_time_machine
+			value = 4
+		}
+		carrier_event = { id = beyond_infinity.5100 }
+	}
+}
+
+# 圆环枢纽
+
+building_ruin_circle_nexus = {
+	can_build = no
+	can_demolish = no
+	can_be_ruined = no
+	can_be_disabled = no
+	planet_limit = 1
+	position_priority = 1
+	
+	category = research
+	
+	building_sets = { government }
+
+	potential = {
+		owner = { unlock_building_circle_nexus = yes }
+	}
+	
+	destroy_trigger = {
+		always = no
+	}
+	
+	upgrades = {
+		building_circle_nexus
+	}
+
+	resources = {
+		category = planet_buildings
+	}
+}
+
+building_defective_circle_nexus = {
+	can_build = no
+	can_demolish = no
+	can_be_ruined = no
+	can_be_disabled = no
+	planet_limit = 1
+	position_priority = 1
+	
+	category = research
+	
+	building_sets = { government }
+
+	potential = {
+		owner = { unlock_building_circle_nexus = yes }
+	}
+	
+	destroy_trigger = {
+		always = no
+	}
+	
+	country_modifier = {
+		logistic_growth_mult = -0.5
+		bonus_pop_growth_mult = -0.5
+		planet_pop_assembly_mult = -0.5
+		pop_environment_tolerance = -0.5
+	}
+	
+	upgrades = {
+		building_circle_nexus
+	}
+
+	resources = {
+		category = planet_buildings
+		upkeep = {
+			energy = 10
+		}
+	}
+	
+	triggered_desc = {
+		text = building_defective_circle_nexus_effect
+	}
+}
+
+building_circle_nexus = {
+	base_buildtime = 1800
+	can_build = no
+	can_demolish = no
+	can_be_ruined = no
+	can_be_disabled = no
+	position_priority = 1
+	
+	category = research
+	
+	building_sets = { government }
+
+	potential = {
+		owner = { unlock_building_circle_nexus = yes }
+	}
+	
+	destroy_trigger = {
+		always = no
+	}
+	
+	inline_script = {
+		script = buildings/building_beyond_infinity_end_modifiers
+		TYPE = circle_nexus
+		JOB = circle_bender
+		LEVEL = 1
+	}
+	
+	upgrades = {
+		building_infinity_circle_nexus
+	}
+
+	resources = {
+		category = planet_buildings
+		cost = {
+			sr_zro = 1000
+		}
+		upkeep = {
+			sr_zro = 10
+		}
+	}
+	
+	prerequisites = {
+		"tech_akx_worm_3"
+	}
+	
+	show_tech_unlock_if = {
+		unlock_building_circle_nexus = yes
+	}
+	
+	triggered_desc = {
+		trigger = {
+			has_global_flag = circle_nexus_is_defective
+		}
+		text = repair_defective_circle_nexus_effect
+	}
+	
+	on_built = {
+		set_variable = {
+			which = exists_building_circle_nexus
+			value = 3
+		}
+		if = {
+			limit = {
+				has_global_flag = circle_nexus_is_defective
+			}
+			carrier_event = { id = beyond_infinity.3 }
+		}
+	}
+}
+
+building_infinity_circle_nexus = {
+	base_buildtime = 3600
+	can_build = no
+	can_demolish = no
+	can_be_ruined = no
+	can_be_disabled = no
+	position_priority = 1
+	
+	category = research
+	
+	building_sets = { government }
+
+	potential = {
+		owner = {
+			unlock_building_circle_nexus = yes
+			has_country_flag = unlock_beyond_infinity_end_building
+		}
+	}
+	
+	destroy_trigger = {
+		always = no
+	}
+	
+	allow = {
+		is_capital = yes
+	}
+	
+	inline_script = {
+		script = buildings/building_beyond_infinity_end_modifiers
+		TYPE = circle_nexus
+		JOB = circle_bender
+		LEVEL = 2
+	}
+
+	resources = {
+		category = planet_buildings
+		cost = {
+			sr_zro = 2000
+			astral_threads = 1000
+		}
+		upkeep = {
+			sr_zro = 20
+			astral_threads = 10
+		}
+	}
+	
+	on_built = {
+		set_variable = {
+			which = exists_building_circle_nexus
+			value = 4
+		}
+		carrier_event = { id = beyond_infinity.5200 }
+	}
+}
+
+# 位面引擎
+
+building_ruin_dimension_engine = {
+	can_build = no
+	can_demolish = no
+	can_be_ruined = no
+	can_be_disabled = no
+	planet_limit = 1
+	position_priority = 1
+	
+	category = research
+	
+	building_sets = { government }
+
+	potential = {
+		owner = { unlock_building_dimension_engine = yes }
+	}
+	
+	destroy_trigger = {
+		always = no
+	}
+	
+	upgrades = {
+		building_dimension_engine
+	}
+
+	resources = {
+		category = planet_buildings
+	}
+}
+
+building_defective_dimension_engine = {
+	can_build = no
+	can_demolish = no
+	can_be_ruined = no
+	can_be_disabled = no
+	planet_limit = 1
+	position_priority = 1
+	
+	category = research
+	
+	building_sets = { government }
+
+	potential = {
+		owner = { unlock_building_dimension_engine = yes }
+	}
+	
+	destroy_trigger = {
+		always = no
+	}
+	
+	country_modifier = {
+		starbase_shipyard_build_speed_mult = -0.5
+		megastructure_build_speed_mult = -0.5
+		ship_base_speed_mult = -0.5
+		ship_ftl_jumpdrive_range_mult = -0.5
+	}
+	
+	upgrades = {
+		building_dimension_engine
+	}
+
+	resources = {
+		category = planet_buildings
+		upkeep = {
+			energy = 10
+		}
+	}
+	
+	triggered_desc = {
+		text = building_defective_dimension_engine_effect
+	}
+}
+
+building_dimension_engine = {
+	base_buildtime = 1800
+	can_build = no
+	can_demolish = no
+	can_be_ruined = no
+	can_be_disabled = no
+	position_priority = 1
+	
+	category = research
+	
+	building_sets = { government }
+
+	potential = {
+		owner = { unlock_building_dimension_engine = yes }
+	}
+	
+	destroy_trigger = {
+		always = no
+	}
+	
+	inline_script = {
+		script = buildings/building_beyond_infinity_end_modifiers
+		TYPE = dimension_engine
+		JOB = dimension_anchor
+		LEVEL = 1
+	}
+	
+	upgrades = {
+		building_infinity_dimension_engine
+	}
+
+	resources = {
+		category = planet_buildings
+		cost = {
+			sr_living_metal = 1000
+		}
+		upkeep = {
+			sr_living_metal = 10
+		}
+	}
+	
+	prerequisites = {
+		"tech_akx_worm_3"
+	}
+	
+	show_tech_unlock_if = {
+		unlock_building_dimension_engine = yes
+	}
+	
+	triggered_desc = {
+		trigger = {
+			has_global_flag = dimension_engine_is_defective
+		}
+		text = repair_defective_dimension_engine_effect
+	}
+	
+	on_built = {
+		set_variable = {
+			which = exists_building_dimension_engine
+			value = 3
+		}
+		if = {
+			limit = {
+				has_global_flag = dimension_engine_is_defective
+			}
+			carrier_event = { id = beyond_infinity.4 }
+		}
+	}
+}
+
+building_infinity_dimension_engine = {
+	base_buildtime = 3600
+	can_build = no
+	can_demolish = no
+	can_be_ruined = no
+	can_be_disabled = no
+	position_priority = 1
+	
+	category = research
+	
+	building_sets = { government }
+
+	potential = {
+		owner = {
+			unlock_building_dimension_engine = yes
+			has_country_flag = unlock_beyond_infinity_end_building
+		}
+	}
+	
+	destroy_trigger = {
+		always = no
+	}
+	
+	allow = {
+		is_capital = yes
+	}
+	
+	inline_script = {
+		script = buildings/building_beyond_infinity_end_modifiers
+		TYPE = dimension_engine
+		JOB = dimension_anchor
+		LEVEL = 2
+	}
+
+	resources = {
+		category = planet_buildings
+		cost = {
+			sr_living_metal = 2000
+			astral_threads = 1000
+		}
+		upkeep = {
+			sr_living_metal = 20
+			astral_threads = 10
+		}
+	}
+	
+	on_built = {
+		set_variable = {
+			which = exists_building_dimension_engine
+			value = 4
+		}
+		carrier_event = { id = beyond_infinity.5300 }
+	}
+}
+
+# 无限之塔
+building_tower_of_infinity = {
+	base_buildtime = 0
+
+	category = amenity
+	
+	building_sets = {
+		government
+		urban
+		industrial
+		foundry
+		factory
+		fortress
+		trade
+		entertainment
+		resort
+	}
+	
+	potential = {
+		is_special_colony_type = no
+		owner = { has_ascension_perk = ap_beyond_infinity }
+	}
+	
+	destroy_trigger = {
+		OR = {
+			is_special_colony_type = yes
+			owner = {
+				NOT = { has_ascension_perk = ap_beyond_infinity }
+			}
+		}
+	}
+	
+	allow = {
+		has_major_upgraded_capital = yes
+	}
+	
+	triggered_planet_modifier = {
+		infinity_spectrum = 0.1
+	}
+	
+	triggered_planet_modifier = {
+		planet_stability_add = 2.5
+		planet_amenities_add = 500
+		planet_housing_add = 500
+		planet_crime_add = -5
+		mult = value:num_time_modifier|BASE|0.9|MODIFIER|infinity_spectrum|MIN|1| # 不包括本身
+	}
+	
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { has_crisis_perk = menp_beyond_infinity_building_4 }
+		}
+		planet_stability_mult = 0.025
+		planet_amenities_mult = 0.05
+		planet_housing_mult = 0.05
+		planet_crime_mult = -0.05
+		mult = value:num_time_modifier|BASE|0.9|MODIFIER|infinity_spectrum|MIN|1| # 不包括本身
+	}
+	
+	resources = {
+		category = planet_buildings
+		cost = {
+			unity = 10000
+			astral_threads = 100
+		}
+		upkeep = {
+			unity = 100
+			astral_threads = 1
+		}
+	}
+	
+	upgrades = {
+		building_tower_of_infinity_foundry
+		building_tower_of_infinity_artisan
+		building_tower_of_infinity_chemist
+		building_tower_of_infinity_refiner
+		building_tower_of_infinity_translucer
+	}
+}
+
+building_tower_of_infinity_resource = {
+	icon = building_tower_of_infinity
+	base_buildtime = 0
+
+	category = amenity
+	
+	# 一产building_sets处于政府区域与城市区域的黑名单
+	building_sets = {
+		generator
+		mining
+		farming
+	}
+	
+	potential = {
+		is_special_colony_type = no
+		owner = { has_ascension_perk = ap_beyond_infinity }
+	}
+	
+	destroy_trigger = {
+		OR = {
+			is_special_colony_type = yes
+			owner = {
+				NOT = { has_ascension_perk = ap_beyond_infinity }
+			}
+		}
+	}
+	
+	allow = {
+		has_major_upgraded_capital = yes
+	}
+	
+	triggered_planet_modifier = {
+		infinity_spectrum = 0.1
+	}
+	
+	triggered_planet_modifier = {
+		planet_stability_add = 2.5
+		planet_amenities_add = 500
+		planet_housing_add = 500
+		planet_crime_add = -5
+		mult = value:num_time_modifier|BASE|0.9|MODIFIER|infinity_spectrum|MIN|1| # 不包括本身
+	}
+	
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { has_crisis_perk = menp_beyond_infinity_building_4 }
+		}
+		planet_stability_mult = 0.025
+		planet_amenities_mult = 0.05
+		planet_housing_mult = 0.05
+		planet_crime_mult = -0.05
+		mult = value:num_time_modifier|BASE|0.9|MODIFIER|infinity_spectrum|MIN|1| # 不包括本身
+	}
+	
+	resources = {
+		category = planet_buildings
+		cost = {
+			unity = 10000
+			astral_threads = 100
+		}
+		upkeep = {
+			unity = 100
+			astral_threads = 1
+		}
+	}
+	
+	upgrades = {
+		building_tower_of_infinity_technician
+		building_tower_of_infinity_miner
+		building_tower_of_infinity_farmer
+	}
+}
+
+building_tower_of_infinity_technician = {
+	inline_script = {
+		script = buildings/building_tower_of_infinity_basic
+		CATEGORY = resource
+		LEVEL = 1
+		TYPE = technician
+	}
+	
+	building_sets = {
+		generator
+	}
+	
+	inline_script = {
+		script = buildings/building_tower_of_infinity_modifiers
+		JOB_1 = technician
+		JOB_2 = technician_drone
+	}
+	
+	triggered_planet_modifier = {
+		planet_technician_minerals_produces_add = 2
+		planet_technician_food_produces_add = 3
+		mult = value:num_time_modifier|MODIFIER|infinity_spectrum|
+	}
+	
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { has_crisis_perk = menp_beyond_infinity_building_4 }
+		}
+		planet_technician_energy_produces_add = 6
+		mult = value:num_time_modifier|MODIFIER|infinity_spectrum|
+	}
+}
+
+building_tower_of_infinity_miner = {
+	inline_script = {
+		script = buildings/building_tower_of_infinity_basic
+		CATEGORY = resource
+		LEVEL = 1
+		TYPE = miner
+	}
+	
+	building_sets = {
+		mining
+	}
+	
+	inline_script = {
+		script = buildings/building_tower_of_infinity_modifiers
+		JOB_1 = miner
+		JOB_2 = mining_drone
+	}
+	
+	triggered_planet_modifier = {
+		planet_miners_energy_produces_add = 3
+		planet_miners_food_produces_add = 3
+		mult = value:num_time_modifier|MODIFIER|infinity_spectrum|
+	}
+	
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { has_crisis_perk = menp_beyond_infinity_building_4 }
+		}
+		planet_miners_minerals_produces_add = 4
+		mult = value:num_time_modifier|MODIFIER|infinity_spectrum|
+	}
+}
+
+building_tower_of_infinity_farmer = {
+	inline_script = {
+		script = buildings/building_tower_of_infinity_basic
+		CATEGORY = resource
+		LEVEL = 1
+		TYPE = farmer
+	}
+	
+	building_sets = {
+		farming
+	}
+	
+	inline_script = {
+		script = buildings/building_tower_of_infinity_modifiers
+		JOB_1 = farmer
+		JOB_2 = agri_drone
+	}
+	
+	triggered_planet_modifier = {
+		planet_farmers_energy_produces_add = 3
+		planet_farmers_minerals_produces_add = 2
+		mult = value:num_time_modifier|MODIFIER|infinity_spectrum|
+	}
+	
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { has_crisis_perk = menp_beyond_infinity_building_4 }
+		}
+		planet_farmers_food_produces_add = 6
+		mult = value:num_time_modifier|MODIFIER|infinity_spectrum|
+	}
+}
+
+building_tower_of_infinity_foundry = {
+	inline_script = {
+		script = buildings/building_tower_of_infinity_basic
+		CATEGORY = manufacturing
+		LEVEL = 2
+		TYPE = foundry
+	}
+	
+	building_sets = {
+		government
+		urban
+		industrial
+		foundry
+	}
+	
+	inline_script = {
+		script = buildings/building_tower_of_infinity_modifiers
+		JOB_1 = foundry
+		JOB_2 = fabricator
+	}
+	
+	triggered_planet_modifier = {
+		planet_metallurgists_consumer_goods_produces_add = 3
+		mult = value:num_time_modifier|MODIFIER|infinity_spectrum|
+	}
+	
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { has_crisis_perk = menp_beyond_infinity_building_4 }
+		}
+		planet_metallurgists_alloys_produces_add = 3
+		mult = value:num_time_modifier|MODIFIER|infinity_spectrum|
+	}
+}
+
+building_tower_of_infinity_artisan = {
+	inline_script = {
+		script = buildings/building_tower_of_infinity_basic
+		CATEGORY = manufacturing
+		LEVEL = 2
+		TYPE = artisan
+	}
+	
+	building_sets = {
+		government
+		urban
+		industrial
+		factory
+	}
+	
+	inline_script = {
+		script = buildings/building_tower_of_infinity_modifiers
+		JOB_1 = artisan
+		JOB_2 = artisan_drone
+	}
+	
+	triggered_planet_modifier = {
+		planet_artisans_alloys_produces_add = 1.5
+		mult = value:num_time_modifier|MODIFIER|infinity_spectrum|
+	}
+	
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { has_crisis_perk = menp_beyond_infinity_building_4 }
+		}
+		planet_artisans_consumer_goods_produces_add = 6
+		mult = value:num_time_modifier|MODIFIER|infinity_spectrum|
+	}
+}
+
+building_tower_of_infinity_chemist = {
+	inline_script = {
+		script = buildings/building_tower_of_infinity_basic
+		CATEGORY = manufacturing
+		LEVEL = 3
+		TYPE = chemist
+	}
+	
+	building_sets = {
+		government
+		urban
+		industrial
+		foundry
+		factory
+	}
+	
+	triggered_planet_modifier = {
+		planet_metallurgists_volatile_motes_produces_add = 0.1
+		planet_artisans_volatile_motes_produces_add = 0.1
+		mult = value:num_time_modifier|MODIFIER|infinity_spectrum|
+	}
+	
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { has_crisis_perk = menp_beyond_infinity_building_4 }
+		}
+		planet_metallurgists_sr_living_metal_produces_add = 0.05
+		planet_artisans_sr_living_metal_produces_add = 0.05
+		mult = value:num_time_modifier|MODIFIER|infinity_spectrum|
+	}
+}
+
+building_tower_of_infinity_refiner = {
+	inline_script = {
+		script = buildings/building_tower_of_infinity_basic
+		CATEGORY = manufacturing
+		LEVEL = 3
+		TYPE = refiner
+	}
+	
+	building_sets = {
+		government
+		urban
+		industrial
+		foundry
+		factory
+	}
+	
+	triggered_planet_modifier = {
+		planet_metallurgists_exotic_gases_produces_add = 0.1
+		planet_artisans_exotic_gases_produces_add = 0.1
+		mult = value:num_time_modifier|MODIFIER|infinity_spectrum|
+	}
+	
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { has_crisis_perk = menp_beyond_infinity_building_4 }
+		}
+		planet_metallurgists_sr_zro_produces_add = 0.05
+		planet_artisans_sr_zro_produces_add = 0.05
+		mult = value:num_time_modifier|MODIFIER|infinity_spectrum|
+	}
+}
+
+building_tower_of_infinity_translucer = {
+	inline_script = {
+		script = buildings/building_tower_of_infinity_basic
+		CATEGORY = manufacturing
+		LEVEL = 3
+		TYPE = translucer
+	}
+	
+	building_sets = {
+		government
+		urban
+		industrial
+		foundry
+		factory
+	}
+	
+	triggered_planet_modifier = {
+		planet_metallurgists_rare_crystals_produces_add = 0.1
+		planet_artisans_rare_crystals_produces_add = 0.1
+		mult = value:num_time_modifier|MODIFIER|infinity_spectrum|
+	}
+	
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { has_crisis_perk = menp_beyond_infinity_building_4 }
+		}
+		planet_metallurgists_nanites_produces_add = 0.05
+		planet_artisans_nanites_produces_add = 0.05
+		mult = value:num_time_modifier|MODIFIER|infinity_spectrum|
+	}
+}

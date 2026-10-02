@@ -1,0 +1,35 @@
+modifier = {
+	factor = 0
+	has_technology = $TECH$
+}
+modifier = {
+	factor = 0.5
+	has_tech_option = $TECH$
+}
+if = {
+	limit = {
+		has_tech_option = $TECH$
+	}
+	add_tech_progress = {
+		tech = $TECH$
+		progress = 0.2
+	}
+	create_message = {
+		type = GAIN_DIMENSIONAL_HORROR_CRISIS_STORM_INSIGHT
+		localization = GAIN_DIMENSIONAL_HORROR_CRISIS_STORM_INSIGHT_$MISSION$_PROGRESS_DESC
+		days = @toast_important_message_days
+		target = this
+		custom_message_text = gain_$TECH$_progress_desc
+	}
+}
+else = {
+	set_country_flag = $TECH$
+	add_research_option = $TECH$
+	create_message = {
+		type = GAIN_DIMENSIONAL_HORROR_CRISIS_STORM_INSIGHT
+		localization = GAIN_DIMENSIONAL_HORROR_CRISIS_STORM_INSIGHT_$MISSION$_OPTION_DESC
+		days = @toast_important_message_days
+		target = this
+		custom_message_text = gain_$TECH$_option_desc
+	}
+}

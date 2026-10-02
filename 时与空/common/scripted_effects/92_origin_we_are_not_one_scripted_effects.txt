@@ -1,0 +1,202 @@
+# 星系（root为国家）
+generate_we_are_not_one_bonus = {
+	set_surveyed = {
+		surveyed = yes
+		surveyor = root
+	}
+	create_starbase = {
+		size = starbase_starport
+		module = shipyard
+		owner = root
+	}
+	root = {
+		change_variable = {
+			which = we_are_not_one_bonus_count
+			value = 1
+		}
+	}
+	set_star_flag = has_we_are_not_one_bonus
+	set_star_flag = has_habitat
+	star = {
+		save_event_target_as = target_planet
+		create_fleet = {
+			effect = {
+				set_owner = root
+				create_ship = {
+					name = random
+					random_existing_design = science
+				}
+				set_fleet_stance = evasive
+				set_location = prev
+			}
+		}
+		create_fleet = {
+			effect = {
+				set_owner = root
+				create_ship = {
+					name = random
+					random_existing_design = constructor
+				}
+				set_fleet_stance = evasive
+				set_location = prev
+			}
+		}
+		create_fleet = {
+			effect = {
+				set_owner = root
+				create_ship = {
+					name = random
+					random_existing_design = corvette
+				}
+				set_fleet_stance = passive
+				set_location = prev
+			}
+		}
+	}
+	spawn_planet = {
+		class = "pc_habitat"
+		location = event_target:target_planet
+		orbit_location = yes
+		orbit_angle_offset = 135
+		orbit_distance_offset = 19.798
+		size = 6
+		has_ring = no
+
+		init_effect = {
+			set_name = {
+				key = WE_ARE_NOT_ONE_HABITAT_PLANET_NAME
+				variable_string = "\\[solar_system.GetName]"
+			}
+			set_planet_entity = {
+				entity = "habitat_phase_03_entity"
+				graphical_culture = root
+			}
+			set_surveyed = {
+				surveyed = yes
+				surveyor = root
+			}
+			set_all_comms_surveyed = yes
+			clear_blockers = yes
+
+			set_carrier_flag = megastructure
+			set_carrier_flag = habitat
+			set_carrier_flag = habitat_level_1
+			save_event_target_as = target_habitat
+			event_target:target_planet = {
+				set_carrier_flag = habitat@PREV
+			}
+		}
+	}
+	solar_system = {
+		spawn_orbital_effect = {
+			TYPE = major
+			HABITAT_OWNER = root
+			TARGET_PLANET = event_target:target_planet
+		}
+	}
+	event_target:target_habitat = {
+		set_owner = root
+		if = {
+			limit = {
+				solar_system = {
+					any_system_planet = {
+						has_deposit_for = shipclass_research_station
+					}
+				}
+			}
+			add_district = district_hab_science
+			carrier_event = { id = megastructures.220 }
+		}
+		else_if = {
+			limit = {
+				solar_system = {
+					any_system_planet = {
+						has_orbital_mining_deposit = yes
+					}
+				}
+			}
+			add_district = district_hab_mining
+			carrier_event = { id = megastructures.210 }
+		}
+		else_if = {
+			limit = {
+				solar_system = {
+					any_system_planet = {
+						has_orbital_energy_deposit = yes
+					}
+				}
+			}
+			add_district = district_hab_energy
+			carrier_event = { id = megastructures.200 }
+		}
+		else = {
+			add_district = district_hab_housing
+		}
+		while = {
+			limit = { pop_amount < 300 }
+			create_pop_group = {
+				species = root.species
+			}
+		}
+	}
+}
+
+create_we_are_not_one_orbital = {
+	set_carrier_flag = has_megastructure
+	create_fleet = {
+		effect = {
+			set_owner = root
+			create_ship = {
+				random_existing_design = $BODY$_orbital_$TYPE$
+				effect = {
+					set_disable_at_health = 0.05
+					set_name = {
+						key = WE_ARE_NOT_ONE_TARGET_ORBITAL_NAME
+						variable_string = "\\[target_planet.GetName]"
+					}
+				}
+			}
+			set_name = {
+				key = WE_ARE_NOT_ONE_TARGET_ORBITAL_NAME
+				variable_string = "\\[target_planet.GetName]"
+			}
+			set_location = {
+				target = event_target:target_planet
+			}
+			save_event_target_as = target_orbital
+		}
+	}
+	
+	set_habitat_planetary_features_effect = yes
+	
+	if = {
+		limit = {
+			event_target:target_planet = {
+				has_deposit_for = shipclass_research_station
+			}
+		}
+		event_target:target_orbital = {
+			set_fleet_flag = science_orbital
+		}
+	}
+	if = {
+		limit = {
+			event_target:target_planet = {
+				has_orbital_mining_deposit = yes
+			}
+		}
+		event_target:target_orbital = {
+			set_fleet_flag = mining_orbital
+		}
+	}
+	if = {
+		limit = {
+			event_target:target_planet = {
+				has_orbital_energy_deposit = yes
+			}
+		}
+		event_target:target_orbital = {
+			set_fleet_flag = energy_orbital
+		}
+	}
+}

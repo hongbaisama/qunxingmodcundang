@@ -1,0 +1,2792 @@
+
+namespace = time
+
+situation_event = {
+	id = time.110
+	title = time.110.name
+	desc = time.110.desc
+	picture = GFX_evt_astral_rift_microverse
+	show_sound = event_alien_signal
+	location = target
+	situation = this
+	
+	is_triggered_only = yes
+	
+	immediate = {
+		set_situation_locked = yes
+		target = {
+			set_variable = {
+				which = district_time_level_up
+				value = 0
+			}
+		}
+	}
+	
+	after = {
+		owner = {
+			add_research_option = tech_time_blocker_1
+		}
+		set_situation_locked = no
+	}
+	
+	option = {
+		name = time.110.a
+		icon = {
+			icon = GFX_situation_approach_influence
+			icon_background = GFX_situation_approach_bg_red
+			text = set_situation_approach_icon_text
+		}
+		set_situation_approach = approach_pc_time_encourage
+	}
+	
+	option = {
+		name = time.110.b
+		icon = {
+			icon = GFX_situation_approach_research
+			icon_background = GFX_situation_approach_bg_yellow
+			text = set_situation_approach_icon_text
+		}
+		set_situation_approach = approach_pc_time_default
+	}
+	
+	option = {
+		name = time.110.c
+		icon = {
+			icon = GFX_situation_approach_amenities
+			icon_background = GFX_situation_approach_bg_green
+			text = set_situation_approach_icon_text
+		}
+		set_situation_approach = approach_pc_time_discourage
+	}
+}
+
+situation_event = {
+	id = time.120
+	is_triggered_only = yes
+	hide_window = yes
+	
+	immediate = {
+		random_list = {
+			1 = {
+				modifier = {
+					factor = 0
+					has_situation_flag = time_121_triggered
+				}
+				situation_event = { id = time.121 }
+			}
+			1 = {
+				modifier = {
+					factor = 0
+					has_situation_flag = time_122_triggered
+				}
+				situation_event = { id = time.122 }
+			}
+			1 = {
+				modifier = {
+					factor = 0
+					has_situation_flag = time_123_triggered
+				}
+				situation_event = { id = time.123 }
+			}
+			1 = {
+				modifier = {
+					factor = 0
+					has_situation_flag = time_124_triggered
+				}
+				situation_event = { id = time.124 }
+			}
+			1 = {
+				modifier = {
+					factor = 0
+					has_situation_flag = time_125_triggered
+				}
+				situation_event = { id = time.125 }
+			}
+			1 = {
+				modifier = {
+					factor = 0
+					has_situation_flag = time_126_triggered
+				}
+				situation_event = { id = time.126 }
+			}
+		}
+	}
+}
+
+situation_event = {
+	id = time.121
+	title = time.121.name
+	desc = time.121.desc
+	picture = GFX_evt_clocks
+	show_sound = event_alien_signal
+	location = target
+	situation = this
+	
+	is_triggered_only = yes
+	
+	immediate = {
+		set_situation_locked = yes
+		save_situation_pc_time_approach = yes
+		set_situation_flag = time_121_triggered
+	}
+	
+	option = {
+		name = time.121.a
+		target = {
+			enable_special_project = {
+				name = PC_TIME_PROJECT_1
+				location = this
+				owner = root.owner
+			}
+		}
+	}
+}
+
+situation_event = {
+	id = time.111
+	title = time.111.name
+	desc = time.111.desc
+	picture = GFX_evt_clocks
+	show_sound = event_alien_signal
+	location = target
+	situation = this
+	
+	is_triggered_only = yes
+	
+	after = {
+		set_situation_locked = no
+		load_situation_pc_time_approach = yes
+	}
+	
+	option = {
+		name = time.111.a
+		target = {
+			set_time_blocker_0_can_be_cleared = yes
+		}
+		owner = {
+			give_situation_pc_time_reward = { LEVEL = 1 }
+			give_situation_pc_time_next_physics_tech = yes
+		}
+	}
+}
+
+situation_event = {
+	id = time.122
+	title = time.122.name
+	desc = time.122.desc
+	picture = GFX_evt_vortex
+	show_sound = event_alien_signal
+	location = target
+	situation = this
+	
+	is_triggered_only = yes
+	
+	immediate = {
+		set_situation_locked = yes
+		save_situation_pc_time_approach = yes
+		set_situation_flag = time_122_triggered
+	}
+	
+	option = {
+		name = time.122.a
+		target = {
+			enable_special_project = {
+				name = PC_TIME_PROJECT_2
+				location = this
+				owner = root.owner
+			}
+		}
+	}
+}
+
+situation_event = {
+	id = time.112
+	title = time.112.name
+	desc = time.112.desc
+	picture = GFX_evt_vortex
+	show_sound = event_alien_signal
+	location = target
+	situation = this
+	
+	is_triggered_only = yes
+	
+	after = {
+		set_situation_locked = no
+		load_situation_pc_time_approach = yes
+	}
+	
+	option = {
+		name = time.112.a
+		target = {
+			set_time_blocker_0_can_be_cleared = yes
+		}
+		owner = {
+			give_situation_pc_time_reward = { LEVEL = 1 }
+			give_situation_pc_time_next_society_tech = yes
+		}
+	}
+}
+
+situation_event = {
+	id = time.123
+	title = time.123.name
+	desc = time.123.desc
+	picture = GFX_evt_supernova
+	show_sound = event_alien_signal
+	location = target
+	situation = this
+	
+	is_triggered_only = yes
+	
+	immediate = {
+		set_situation_locked = yes
+		save_situation_pc_time_approach = yes
+		set_situation_flag = time_123_triggered
+	}
+	
+	option = {
+		name = time.123.a
+		target = {
+			enable_special_project = {
+				name = PC_TIME_PROJECT_3
+				location = this
+				owner = root.owner
+			}
+		}
+	}
+}
+
+situation_event = {
+	id = time.113
+	title = time.113.name
+	desc = time.113.desc
+	picture = GFX_evt_supernova
+	show_sound = event_alien_signal
+	location = target
+	situation = this
+	
+	is_triggered_only = yes
+	
+	after = {
+		set_situation_locked = no
+		load_situation_pc_time_approach = yes
+	}
+	
+	option = {
+		name = time.113.a
+		target = {
+			set_time_blocker_0_can_be_cleared = yes
+		}
+		owner = {
+			give_situation_pc_time_reward = { LEVEL = 1 }
+			give_situation_pc_time_next_engineering_tech = yes
+		}
+	}
+}
+
+situation_event = {
+	id = time.124
+	title = time.124.name
+	desc = time.124.desc
+	picture = GFX_evt_ongoing_disaster
+	show_sound = event_alien_signal
+	location = target
+	situation = this
+	
+	is_triggered_only = yes
+	
+	immediate = {
+		set_situation_locked = yes
+		save_situation_pc_time_approach = yes
+		set_situation_flag = time_124_triggered
+	}
+	
+	option = {
+		name = time.124.a
+		target = {
+			enable_special_project = {
+				name = PC_TIME_PROJECT_4
+				location = this
+				owner = root.owner
+			}
+		}
+	}
+}
+
+situation_event = {
+	id = time.114
+	title = time.114.name
+	desc = time.114.desc
+	picture = GFX_evt_ongoing_disaster
+	show_sound = event_alien_signal
+	location = target
+	situation = this
+	
+	is_triggered_only = yes
+	
+	after = {
+		set_situation_locked = no
+		load_situation_pc_time_approach = yes
+	}
+	
+	option = {
+		name = time.114.a
+		target = {
+			make_district_time_level_up = yes
+		}
+		owner = {
+			give_situation_pc_time_reward = { LEVEL = 1 }
+			add_tech_option_or_research_effect = {
+				TECH = tech_experimental_subspace_navigation
+				PROGRESS = 0.2
+				CATEGORY = physics_research
+			}
+		}
+	}
+}
+
+situation_event = {
+	id = time.125
+	title = time.125.name
+	desc = time.125.desc
+	picture = GFX_evt_surreal_visions
+	show_sound = event_alien_signal
+	location = target
+	situation = this
+	
+	is_triggered_only = yes
+	
+	immediate = {
+		set_situation_locked = yes
+		save_situation_pc_time_approach = yes
+		set_situation_flag = time_125_triggered
+	}
+	
+	option = {
+		name = time.125.a
+		target = {
+			enable_special_project = {
+				name = PC_TIME_PROJECT_5
+				location = this
+				owner = root.owner
+			}
+		}
+	}
+}
+
+situation_event = {
+	id = time.115
+	title = time.115.name
+	desc = time.115.desc
+	picture = GFX_evt_surreal_visions
+	show_sound = event_alien_signal
+	location = target
+	situation = this
+	
+	is_triggered_only = yes
+	
+	after = {
+		set_situation_locked = no
+		load_situation_pc_time_approach = yes
+	}
+	
+	option = {
+		name = time.115.a
+		owner = {
+			add_monthly_resource_mult = {
+				resource = energy
+				value = @tier2materialreward
+				min = @tier2materialmin
+				max = @tier2materialmax
+			}
+			add_monthly_resource_mult = {
+				resource = minerals
+				value = @tier2materialreward
+				min = @tier2materialmin
+				max = @tier2materialmax
+			}
+			add_monthly_resource_mult = {
+				resource = food
+				value = @tier2materialreward
+				min = @tier2materialmin
+				max = @tier2materialmax
+			}
+			# 特殊，最大值应为一产的一半
+			add_monthly_resource_mult = {
+				resource = consumer_goods
+				value = @tier2materialreward
+				min = @tier1materialmin
+				max = @tier1materialmax
+			}
+			add_monthly_resource_mult = {
+				resource = alloys
+				value = @tier2materialreward
+				min = @tier1materialmin
+				max = @tier1materialmax
+			}
+			give_situation_pc_time_reward = { LEVEL = 1 }
+			add_tech_option_or_research_effect = {
+				TECH = tech_extradimensional_weapon_1
+				PROGRESS = 0.2
+				CATEGORY = physics_research
+			}
+		}
+	}
+}
+
+situation_event = {
+	id = time.126
+	title = time.126.name
+	desc = time.126.desc
+	picture = GFX_evt_zro_1
+	show_sound = event_alien_signal
+	location = target
+	situation = this
+	
+	is_triggered_only = yes
+	
+	immediate = {
+		set_situation_locked = yes
+		save_situation_pc_time_approach = yes
+		set_situation_flag = time_126_triggered
+	}
+	
+	option = {
+		name = time.126.a
+		target = {
+			enable_special_project = {
+				name = PC_TIME_PROJECT_6
+				location = this
+				owner = root.owner
+			}
+		}
+	}
+}
+
+situation_event = {
+	id = time.116
+	title = time.116.name
+	desc = time.116.desc
+	picture = GFX_evt_zro_1
+	show_sound = event_alien_signal
+	location = target
+	situation = this
+	
+	is_triggered_only = yes
+	
+	after = {
+		set_situation_locked = no
+		load_situation_pc_time_approach = yes
+	}
+	
+	option = {
+		name = time.116.a
+		target = {
+			custom_tooltip = create_3_pop
+			hidden_effect = {
+				create_pop_group = {
+					species = owner.species
+					size = 30
+				}
+			}
+		}
+		owner = {
+			give_situation_pc_time_reward = { LEVEL = 1 }
+			add_tech_option_or_research_effect = {
+				TECH = tech_psionic_theory
+				PROGRESS = 0.2
+				CATEGORY = society_research
+			}
+		}
+	}
+}
+
+situation_event = {
+	id = time.130
+	title = time.130.name
+	desc = time.130.desc
+	picture = GFX_evt_rare_tech_cache
+	show_sound = event_alien_signal
+	location = target
+	situation = this
+	
+	is_triggered_only = yes
+	
+	immediate = {
+		set_situation_locked = yes
+		save_situation_pc_time_approach = yes
+	}
+	
+	after = {
+	}
+	
+	option = {
+		name = time.130.a
+		target = {
+			enable_special_project = {
+				name = PC_TIME_PROJECT_MIDDLE_1
+				location = this
+				owner = root.owner
+			}
+		}
+	}
+	
+	option = {
+		name = time.130.b
+		target = {
+			enable_special_project = {
+				name = PC_TIME_PROJECT_MIDDLE_2
+				location = this
+				owner = root.owner
+			}
+		}
+	}
+	
+	option = {
+		name = time.130.c
+		target = {
+			enable_special_project = {
+				name = PC_TIME_PROJECT_MIDDLE_3
+				location = this
+				owner = root.owner
+			}
+		}
+	}
+}
+
+situation_event = {
+	id = time.131
+	title = time.131.name
+	desc = time.131.desc
+	picture = GFX_evt_physics_cache
+	show_sound = event_alien_signal
+	location = target
+	situation = this
+	
+	is_triggered_only = yes
+	
+	immediate = {
+	}
+	
+	after = {
+		add_situation_progress = value:time_situation_progress_value|TARGET|1150|
+	}
+	
+	option = {
+		name = time.131.a
+		owner = {
+			add_monthly_resource_mult = {
+				resource = physics_research
+				value = @tier3researchreward
+				min = @tier3researchmin
+				max = @tier3researchmax
+			}
+		}
+		hidden_effect = {
+			situation_event = { id = time.134 days = 90 random = 270 }
+		}
+	}
+}
+
+situation_event = {
+	id = time.132
+	title = time.132.name
+	desc = time.132.desc
+	picture = GFX_evt_society_cache
+	show_sound = event_alien_signal
+	location = target
+	situation = this
+	
+	is_triggered_only = yes
+	
+	immediate = {
+	}
+	
+	after = {
+		add_situation_progress = value:time_situation_progress_value|TARGET|1150|
+	}
+	
+	option = {
+		name = time.132.a
+		owner = {
+			add_monthly_resource_mult = {
+				resource = society_research
+				value = @tier3researchreward
+				min = @tier3researchmin
+				max = @tier3researchmax
+			}
+		}
+		hidden_effect = {
+			situation_event = { id = time.135 days = 90 random = 270 }
+		}
+	}
+}
+
+situation_event = {
+	id = time.133
+	title = time.133.name
+	desc = time.133.desc
+	picture = GFX_evt_engineering_cache
+	show_sound = event_alien_signal
+	location = target
+	situation = this
+	
+	is_triggered_only = yes
+	
+	immediate = {
+	}
+	
+	after = {
+		add_situation_progress = value:time_situation_progress_value|TARGET|1150|
+	}
+	
+	option = {
+		name = time.133.a
+		owner = {
+			add_monthly_resource_mult = {
+				resource = engineering_research
+				value = @tier3researchreward
+				min = @tier3researchmin
+				max = @tier3researchmax
+			}
+		}
+		hidden_effect = {
+			situation_event = { id = time.136 days = 90 random = 270 }
+		}
+	}
+}
+
+situation_event = {
+	id = time.134
+	title = time.134.name
+	desc = time.134.desc
+	picture = GFX_evt_shroudwalker_enclave
+	show_sound = event_alien_signal
+	location = target
+	situation = this
+	
+	is_triggered_only = yes
+	
+	immediate = {
+	}
+	
+	after = {
+		owner = {
+			give_situation_pc_time_next_physics_tech = yes
+		}
+	}
+	
+	option = {
+		name = time.134.a
+		allow = {
+			owner = {
+				country_has_energy_or_minerals = {
+					TYPE = energy
+					AMOUNT = 1000
+				}
+				has_resource = {
+					type = consumer_goods
+					amount >= 500
+				}
+			}
+		}
+		owner = {
+			add_resource = { energy = -1000 }
+			add_resource = { consumer_goods = -500 }
+		}
+		target = {
+			set_time_blocker_0_can_be_cleared = yes
+		}
+		add_situation_progress = 100
+		hidden_effect = {
+			situation_event = { id = time.137 days = 90 random = 270 }
+		}
+	}
+	
+	option = {
+		name = time.134.b
+		add_situation_progress = 200
+		hidden_effect = {
+			situation_event = { id = time.137 days = 45 random = 135 }
+		}
+	}
+}
+
+situation_event = {
+	id = time.135
+	title = time.135.name
+	desc = time.135.desc
+	picture = GFX_evt_worrying_signal
+	show_sound = event_alien_signal
+	location = target
+	situation = this
+	
+	is_triggered_only = yes
+	
+	immediate = {
+	}
+	
+	after = {
+		owner = {
+			give_situation_pc_time_next_society_tech = yes
+		}
+	}
+	
+	option = {
+		name = time.135.a
+		allow = {
+			owner = {
+				has_resource = {
+					type = food
+					amount >= 1000
+				}
+				has_resource = {
+					type = unity
+					amount >= 500
+				}
+			}
+		}
+		owner = {
+			add_resource = { food = -1000 }
+			add_resource = { unity = -500 }
+		}
+		target = {
+			custom_tooltip = create_3_pop
+			hidden_effect = {
+				create_pop_group = {
+					species = owner.species
+					size = 30
+				}
+			}
+		}
+		add_situation_progress = 100
+		hidden_effect = {
+			situation_event = { id = time.137 days = 90 random = 270 }
+		}
+	}
+	
+	option = {
+		name = time.135.b
+		add_situation_progress = 200
+		hidden_effect = {
+			situation_event = { id = time.137 days = 45 random = 135 }
+		}
+	}
+}
+
+situation_event = {
+	id = time.136
+	title = time.136.name
+	desc = time.136.desc
+	picture = GFX_evt_ai_planet
+	show_sound = event_alien_signal
+	location = target
+	situation = this
+	
+	is_triggered_only = yes
+	
+	immediate = {
+	}
+	
+	after = {
+		owner = {
+			give_situation_pc_time_next_engineering_tech = yes
+		}
+	}
+	
+	option = {
+		name = time.136.a
+		allow = {
+			owner = {
+				country_has_energy_or_minerals = {
+					TYPE = minerals
+					AMOUNT = 1000
+				}
+				has_resource = {
+					type = alloys
+					amount >= 500
+				}
+			}
+		}
+		owner = {
+			add_resource = { minerals = -1000 }
+			add_resource = { alloys = -500 }
+		}
+		target = {
+			make_district_time_level_up = yes
+		}
+		add_situation_progress = 100
+		hidden_effect = {
+			situation_event = { id = time.137 days = 90 random = 270 }
+		}
+	}
+	
+	option = {
+		name = time.136.b
+		add_situation_progress = 200
+		hidden_effect = {
+			situation_event = { id = time.137 days = 45 random = 135 }
+		}
+	}
+}
+
+situation_event = {
+	id = time.137
+	title = time.137.name
+	desc = time.137.desc
+	picture = GFX_evt_communication_event
+	show_sound = event_alien_signal
+	location = target
+	situation = this
+	
+	is_triggered_only = yes
+	
+	immediate = {
+	}
+	
+	after = {
+		add_situation_progress = 100
+		set_situation_locked = no
+	}
+	
+	option = {
+		name = time.137.a
+		target = {
+			custom_tooltip = time_blocker_2_can_be_cleared
+			hidden_effect = {
+				set_carrier_flag = can_clear_d_time_blocker_2
+			}
+		}
+		owner = {
+			add_research_option = tech_time_blocker_2
+		}
+	}
+}
+
+situation_event = {
+	id = time.138
+	title = time.138.name
+	desc = time.138.desc
+	picture = GFX_evt_cosmic_storms_gravity_storm
+	show_sound = event_activating_unknown_technology
+	location = target
+	situation = this
+	
+	is_triggered_only = yes
+	
+	immediate = {
+		set_situation_locked = yes
+		owner = { create_timeline_situation_pc_time_middle = yes }
+	}
+	
+	after = {
+		set_situation_locked = no
+		load_situation_pc_time_approach = yes
+	}
+	
+	option = {
+		name = time.138.a
+		owner = {
+			add_monthly_resource_mult = {
+				resource = unity
+				value = @tier3unityreward
+				min = @tier3unitymin
+				max = @tier3unitymax
+			}
+		}
+	}
+}
+
+situation_event = {
+	id = time.139
+	is_triggered_only = yes
+	hide_window = yes
+	
+	immediate = {
+		load_situation_pc_time_approach = yes
+	}
+}
+
+situation_event = {
+	id = time.140
+	is_triggered_only = yes
+	hide_window = yes
+	
+	immediate = {
+		random_list = {
+			1 = {
+				modifier = {
+					factor = 0
+					has_situation_flag = time_141_triggered
+				}
+				situation_event = { id = time.141 }
+			}
+			1 = {
+				modifier = {
+					factor = 0
+					has_situation_flag = time_142_triggered
+				}
+				situation_event = { id = time.142 }
+			}
+			1 = {
+				modifier = {
+					factor = 0
+					has_situation_flag = time_143_triggered
+				}
+				situation_event = { id = time.143 }
+			}
+			1 = {
+				modifier = {
+					factor = 0
+					has_situation_flag = time_144_triggered
+				}
+				situation_event = { id = time.144 }
+			}
+			1 = {
+				modifier = {
+					factor = 0
+					has_situation_flag = time_145_triggered
+				}
+				situation_event = { id = time.145 }
+			}
+			1 = {
+				modifier = {
+					factor = 0
+					has_situation_flag = time_146_triggered
+				}
+				situation_event = { id = time.146 }
+			}
+			1 = {
+				modifier = {
+					factor = 0
+					has_situation_flag = time_147_triggered
+				}
+				situation_event = { id = time.147 }
+			}
+			1 = {
+				modifier = {
+					factor = 0
+					has_situation_flag = time_148_triggered
+				}
+				situation_event = { id = time.148 }
+			}
+			1 = {
+				modifier = {
+					factor = 0
+					has_situation_flag = time_149_triggered
+				}
+				situation_event = { id = time.149 }
+			}
+		}
+	}
+}
+
+situation_event = {
+	id = time.141
+	title = time.141.name
+	desc = time.141.desc
+	picture = GFX_evt_cosmic_storms_nexus_storm
+	show_sound = event_alien_signal
+	location = target
+	situation = this
+	
+	is_triggered_only = yes
+	
+	immediate = {
+		set_situation_locked = yes
+		set_situation_flag = time_141_triggered
+	}
+	
+	after = {
+		owner = {
+			give_situation_pc_time_reward = { LEVEL = 2 }
+		}
+		target = {
+			time_mod_kill_single_pop = yes
+		}
+		set_situation_locked = no
+	}
+	
+	option = {
+		name = time.141.a
+		target = {
+			set_time_blocker_0_can_be_cleared = yes
+			set_time_blocker_0_can_be_cleared = yes
+			add_modifier = {
+				modifier = pc_time_modifier_1
+				days = 1800
+			}
+		}
+	}
+	
+	option = {
+		name = time.141.b
+		owner = {
+			add_monthly_resource_mult = {
+				resource = unity
+				value = @tier3unityreward
+				min = @tier3unitymin
+				max = @tier3unitymax
+			}
+			add_tech_option_or_research_effect = {
+				TECH = tech_ascension_theory
+				PROGRESS = 0.2
+				CATEGORY = society_research
+			}
+		}
+	}
+}
+
+situation_event = {
+	id = time.142
+	title = time.142.name
+	desc = time.142.desc
+	picture = GFX_evt_the_last_stormshelter
+	show_sound = event_alien_signal
+	location = target
+	situation = this
+	
+	is_triggered_only = yes
+	
+	immediate = {
+		set_situation_locked = yes
+		set_situation_flag = time_142_triggered
+	}
+	
+	after = {
+		owner = {
+			give_situation_pc_time_reward = { LEVEL = 2 }
+		}
+		target = {
+			add_modifier = {
+				modifier = pc_time_modifier_2
+				days = 1800
+			}
+		}
+		set_situation_locked = no
+	}
+	
+	option = {
+		name = time.142.a
+		target = {
+			set_time_blocker_0_can_be_cleared = yes
+			set_time_blocker_0_can_be_cleared = yes
+		}
+		owner = {
+			add_modifier = {
+				modifier = pc_time_modifier_3
+				days = 1800
+			}
+		}
+	}
+	
+	option = {
+		name = time.142.b
+		owner = {
+			add_modifier = {
+				modifier = pc_time_modifier_4
+				days = 1800
+			}
+			add_tech_option_or_research_effect = {
+				TECH = tech_enigmatic_decoder
+				PROGRESS = 0.2
+				CATEGORY = physics_research
+			}
+		}
+	}
+}
+
+situation_event = {
+	id = time.143
+	title = time.143.name
+	desc = time.143.desc
+	picture = GFX_evt_cosmic_storms_stormbound
+	show_sound = event_alien_signal
+	location = target
+	situation = this
+	
+	is_triggered_only = yes
+	
+	immediate = {
+		set_situation_locked = yes
+		set_situation_flag = time_143_triggered
+	}
+	
+	after = {
+		owner = {
+			give_situation_pc_time_reward = { LEVEL = 2 }
+		}
+		target = {
+			locked_random_list = {
+				1 = {
+					modifier = {
+						factor = 0
+						NAND = {
+							has_district = district_time
+							has_district = district_time_physics
+						}
+					}
+					remove_district = district_time
+					remove_district = district_time_physics
+				}
+				1 = {
+					modifier = {
+						factor = 0
+						NAND = {
+							has_district = district_time
+							has_district = district_time_society
+						}
+					}
+					remove_district = district_time
+					remove_district = district_time_society
+				}
+				1 = {
+					modifier = {
+						factor = 0
+						NAND = {
+							has_district = district_time
+							has_district = district_time_engineering
+						}
+					}
+					remove_district = district_time
+					remove_district = district_time_engineering
+				}
+				1 = {
+					modifier = {
+						factor = 0
+						NAND = {
+							has_district = district_time_physics
+							has_district = district_time_society
+						}
+					}
+					remove_district = district_time_physics
+					remove_district = district_time_society
+				}
+				1 = {
+					modifier = {
+						factor = 0
+						NAND = {
+							has_district = district_time_physics
+							has_district = district_time_engineering
+						}
+					}
+					remove_district = district_time_physics
+					remove_district = district_time_engineering
+				}
+				1 = {
+					modifier = {
+						factor = 0
+						NAND = {
+							has_district = district_time_society
+							has_district = district_time_engineering
+						}
+					}
+					remove_district = district_time_society
+					remove_district = district_time_engineering
+				}
+			}
+		}
+		set_situation_locked = no
+	}
+	
+	option = {
+		name = time.143.a
+		target = {
+			set_time_blocker_0_can_be_cleared = yes
+			set_time_blocker_0_can_be_cleared = yes
+			add_modifier = {
+				modifier = pc_time_modifier_5
+				days = 1800
+			}
+		}
+	}
+	
+	option = {
+		name = time.143.b
+		owner = {
+			add_monthly_resource_mult = {
+				resource = physics_research
+				value = @tier3researchreward
+				min = @tier3researchmin
+				max = @tier3researchmax
+			}
+			add_monthly_resource_mult = {
+				resource = society_research
+				value = @tier3researchreward
+				min = @tier3researchmin
+				max = @tier3researchmax
+			}
+			add_monthly_resource_mult = {
+				resource = engineering_research
+				value = @tier3researchreward
+				min = @tier3researchmin
+				max = @tier3researchmax
+			}
+			add_tech_option_or_research_effect = {
+				TECH = tech_time_warp_drive_1
+				PROGRESS = 0.2
+				CATEGORY = physics_research
+			}
+		}
+	}
+}
+
+situation_event = {
+	id = time.144
+	title = time.144.name
+	desc = time.144.desc
+	picture = GFX_evt_cosmic_storms_electric_storm
+	show_sound = event_alien_signal
+	location = target
+	situation = this
+	
+	is_triggered_only = yes
+	
+	immediate = {
+		set_situation_locked = yes
+		set_situation_flag = time_144_triggered
+	}
+	
+	after = {
+		owner = {
+			give_situation_pc_time_reward = { LEVEL = 2 }
+		}
+		target = {
+			add_planet_devastation = 50
+		}
+		set_situation_locked = no
+	}
+	
+	option = {
+		name = time.144.a
+		target = {
+			set_time_blocker_0_can_be_cleared = yes
+			set_time_blocker_0_can_be_cleared = yes
+			add_modifier = {
+				modifier = pc_time_modifier_6
+				days = 1800
+			}
+		}
+	}
+	
+	option = {
+		name = time.144.b
+		target = {
+			add_modifier = {
+				modifier = pc_time_modifier_7
+				days = 1800
+			}
+		}
+		owner = {
+			add_tech_option_or_research_effect = {
+				TECH = tech_space_cloud_weapon_1
+				PROGRESS = 0.2
+				CATEGORY = physics_research
+			}
+		}
+	}
+}
+
+situation_event = {
+	id = time.145
+	title = time.145.name
+	desc = time.145.desc
+	picture = GFX_evt_cosmic_storms_calibration
+	show_sound = event_alien_signal
+	location = target
+	situation = this
+	
+	is_triggered_only = yes
+	
+	immediate = {
+		set_situation_locked = yes
+		set_situation_flag = time_145_triggered
+	}
+	
+	after = {
+		owner = {
+			give_situation_pc_time_reward = { LEVEL = 2 }
+		}
+		target = {
+			add_modifier = {
+				modifier = pc_time_modifier_8
+				days = 1800
+			}
+		}
+		set_situation_locked = no
+	}
+	
+	option = {
+		name = time.145.a
+		target = {
+			make_district_time_level_up = yes
+			add_modifier = {
+				modifier = pc_time_modifier_9
+				days = 1800
+			}
+		}
+	}
+	
+	option = {
+		name = time.145.b
+		owner = {
+			add_monthly_resource_mult = {
+				resource = influence
+				value = @tier3influencereward
+				min = @tier3influencemin
+				max = @tier3influencemax
+			}
+			add_tech_option_or_research_effect = {
+				TECH = tech_dark_matter_propulsion
+				PROGRESS = 0.2
+				CATEGORY = engineering_research
+			}
+		}
+	}
+}
+
+situation_event = {
+	id = time.146
+	title = time.146.name
+	desc = time.146.desc
+	picture = GFX_evt_cosmic_storms_particle_storm
+	show_sound = event_alien_signal
+	location = target
+	situation = this
+	
+	is_triggered_only = yes
+	
+	immediate = {
+		set_situation_locked = yes
+		set_situation_flag = time_146_triggered
+	}
+	
+	after = {
+		owner = {
+			give_situation_pc_time_reward = { LEVEL = 2 }
+		}
+		target = {
+			add_modifier = {
+				modifier = pc_time_modifier_10
+				days = 1800
+			}
+		}
+		set_situation_locked = no
+	}
+	
+	option = {
+		name = time.146.a
+		allow = {
+			owner = {
+				country_has_energy_or_minerals = {
+					TYPE = energy
+					AMOUNT = 1000
+				}
+				country_has_energy_or_minerals = {
+					TYPE = minerals
+					AMOUNT = 1000
+				}
+				has_resource = {
+					type = food
+					amount >= 1000
+				}
+				has_resource = {
+					type = alloys
+					amount >= 500
+				}
+				has_resource = {
+					type = consumer_goods
+					amount >= 500
+				}
+			}
+		}
+		target = {
+			make_district_time_level_up = yes
+		}
+		owner = {
+			add_resource = { energy = -1000 }
+			add_resource = { minerals = -1000 }
+			add_resource = { food = -1000 }
+			add_resource = { alloys = -500 }
+			add_resource = { consumer_goods = -500 }
+		}
+	}
+	
+	option = {
+		name = time.146.b
+		target = {
+			add_modifier = {
+				modifier = pc_time_modifier_11
+				days = 1800
+			}
+		}
+		owner = {
+			add_tech_option_or_research_effect = {
+				TECH = null_void_beam
+				PROGRESS = 0.2
+				CATEGORY = physics_research
+			}
+		}
+	}
+}
+
+situation_event = {
+	id = time.147
+	title = time.147.name
+	desc = time.147.desc
+	picture = GFX_evt_spy_network
+	show_sound = event_alien_signal
+	location = target
+	situation = this
+	
+	is_triggered_only = yes
+	
+	immediate = {
+		set_situation_locked = yes
+		set_situation_flag = time_147_triggered
+	}
+	
+	after = {
+		owner = {
+			give_situation_pc_time_reward = { LEVEL = 2 }
+		}
+		add_situation_progress = -200
+		set_situation_locked = no
+	}
+	
+	option = {
+		name = time.147.a
+		custom_tooltip = make_situation_pc_time_slow
+		target = {
+			custom_tooltip = create_6_pop
+			hidden_effect = {
+				create_pop_group = {
+					species = owner.species
+					size = 60
+				}
+			}
+		}
+		hidden_effect = {
+			set_timed_situation_flag = {
+				flag = situation_slow
+				days = 1800
+			}
+		}
+	}
+	
+	option = {
+		name = time.147.b
+		custom_tooltip = make_situation_pc_time_fast
+		owner = {
+			add_tech_option_or_research_effect = {
+				TECH = tech_enigmatic_encoder
+				PROGRESS = 0.2
+				CATEGORY = physics_research
+			}
+		}
+		hidden_effect = {
+			set_timed_situation_flag = {
+				flag = situation_fast
+				days = 1800
+			}
+		}
+	}
+}
+
+situation_event = {
+	id = time.148
+	title = time.148.name
+	desc = time.148.desc
+	picture = GFX_evt_cosmic_storms_the_storm_speaks
+	show_sound = event_alien_signal
+	location = target
+	situation = this
+	
+	is_triggered_only = yes
+	
+	immediate = {
+		set_situation_locked = yes
+		save_situation_pc_time_approach = yes
+		set_situation_flag = time_148_triggered
+	}
+	
+	after = {
+		owner = {
+			give_situation_pc_time_reward = { LEVEL = 2 }
+		}
+		custom_tooltip = make_situation_pc_time_stop
+		hidden_effect = {
+			set_timed_situation_flag = {
+				flag = situation_stop
+				days = 1800
+			}
+			situation_event = { id = time.139 days = 1800 }
+		}
+		set_situation_locked = no
+	}
+	
+	option = {
+		name = time.148.a
+		target = {
+			custom_tooltip = create_6_pop
+			hidden_effect = {
+				create_pop_group = {
+					species = owner.species
+					size = 60
+				}
+			}
+			add_modifier = {
+				modifier = pc_time_modifier_12
+				days = 1800
+			}
+		}
+	}
+	
+	option = {
+		name = time.148.b
+		target = {
+			add_modifier = {
+				modifier = pc_time_modifier_13
+				days = 1800
+			}
+		}
+		owner = {
+			add_tech_option_or_research_effect = {
+				TECH = tech_dark_matter_power_core
+				PROGRESS = 0.2
+				CATEGORY = physics_research
+			}
+		}
+	}
+}
+
+situation_event = {
+	id = time.149
+	title = time.149.name
+	desc = time.149.desc
+	picture = GFX_evt_gray_goo
+	show_sound = event_alien_signal
+	location = target
+	situation = this
+	
+	is_triggered_only = yes
+	
+	immediate = {
+		set_situation_locked = yes
+		set_situation_flag = time_149_triggered
+	}
+	
+	after = {
+		owner = {
+			give_situation_pc_time_reward = { LEVEL = 2 }
+		}
+		target = {
+			add_modifier = {
+				modifier = pc_time_modifier_14
+				days = 1800
+			}
+		}
+		set_situation_locked = no
+	}
+	
+	option = {
+		name = time.149.a
+		owner = {
+			add_resource = { nanites = 500 }
+			add_tech_option_or_research_effect = {
+				TECH = tech_dark_matter_deflector
+				PROGRESS = 0.2
+				CATEGORY = physics_research
+			}
+			add_tech_option_or_research_effect = {
+				TECH = tech_dragon_armor
+				PROGRESS = 0.2
+				CATEGORY = engineering_research
+			}
+			add_tech_option_or_research_effect = {
+				TECH = tech_crystal_armor_2
+				PROGRESS = 0.2
+				CATEGORY = engineering_research
+			}
+		}
+	}
+	
+	option = {
+		name = time.149.b
+		owner = {
+			add_resource = { nanites = 500 }
+			add_tech_option_or_research_effect = {
+				TECH = tech_nanite_repair_system
+				PROGRESS = 0.2
+				CATEGORY = engineering_research
+			}
+			add_tech_option_or_research_effect = {
+				TECH = tech_nanite_autocannon
+				PROGRESS = 0.2
+				CATEGORY = engineering_research
+			}
+			add_tech_option_or_research_effect = {
+				TECH = tech_nanite_flak_batteries
+				PROGRESS = 0.2
+				CATEGORY = engineering_research
+			}
+		}
+	}
+}
+
+situation_event = {
+	id = time.150
+	is_triggered_only = yes
+	hide_window = yes
+	
+	immediate = {
+		# 阶段a
+		if = {
+			limit = {
+				NOT = { has_situation_flag = time_150_a }
+			}
+			set_situation_flag = time_150_a
+			situation_event = { id = time.151 }
+		}
+		# 探索失败（特殊事件）
+		else_if = {
+			limit = {
+				has_situation_flag = situation_pc_time_fail
+			}
+			if = {
+				limit = {
+					exists = event_target:situation_pc_time_leader
+					event_target:situation_pc_time_leader = {
+						is_owned_by = root.owner
+						OR = {
+							has_trait = leader_trait_ruler_time_owner
+							has_trait = leader_trait_ruler_time_king
+						}
+					}
+				}
+				remove_situation_flag = situation_pc_time_fail
+				if = {
+					limit = {
+						has_situation_flag = situation_pc_time_no_dark_matter
+					}
+					situation_event = { id = time.150 days = 180 random = 180 }
+				}
+				else = {
+					situation_event = { id = time.150 days = 360 random = 360 }
+				}
+			}
+			else = {
+				situation_event = { id = time.159 }
+			}
+		}
+		# 探索失败
+		else_if = {
+			limit = {
+				NAND = {
+					exists = event_target:situation_pc_time_leader
+					event_target:situation_pc_time_leader = {
+						is_owned_by = root.owner
+					}
+				}
+			}
+			situation_event = { id = time.159 }
+		}
+		# 阶段b
+		else_if = {
+			limit = {
+				NOT = { has_situation_flag = time_150_b }
+			}
+			set_situation_flag = time_150_b
+			situation_event = { id = time.152 }
+		}
+		# 阶段c
+		else_if = {
+			limit = {
+				NOT = { has_situation_flag = time_150_c }
+			}
+			set_situation_flag = time_150_c
+			if = {
+				limit = {
+					event_target:situation_pc_time_leader = { is_origin_time_ruler = yes }
+				}
+				situation_event = { id = time.153 }
+			}
+			else = {
+				situation_event = { id = time.154 }
+			}
+		}
+		# 阶段d
+		else_if = {
+			limit = {
+				NOT = { has_situation_flag = time_150_d }
+			}
+			set_situation_flag = time_150_d
+			if = {
+				limit = {
+					event_target:situation_pc_time_leader = { is_origin_time_ruler = yes }
+				}
+				situation_event = { id = time.155 }
+			}
+			else = {
+				situation_event = { id = time.156 }
+			}
+		}
+		# 阶段e
+		else = {
+			set_situation_flag = time_150_e
+			if = {
+				limit = {
+					event_target:situation_pc_time_leader = { is_origin_time_ruler = yes }
+					NOT = { has_situation_flag = situation_pc_time_no_dark_matter }
+				}
+				situation_event = { id = time.157 }
+			}
+			else = {
+				situation_event = { id = time.158 }
+			}
+		}
+	}
+}
+
+situation_event = {
+	id = time.151
+	title = time.151.name
+	desc = time.151.desc
+	picture = GFX_evt_cosmic_storms_magnetic_storm
+	show_sound = event_alien_signal
+	location = target
+	situation = this
+	
+	is_triggered_only = yes
+	
+	event_window_type = leader_story
+	event_picture_background = "GFX_leader_recruitment_bg_legendary_pirate_king"
+	picture_event_data = {
+		portrait = event_target:situation_pc_time_leader
+	}
+	
+	immediate = {
+		set_situation_locked = yes
+		save_situation_pc_time_approach = yes
+		owner = {
+			ruler = {
+				save_global_event_target_as = situation_pc_time_leader
+			}
+		}
+	}
+	
+	after = {
+		add_situation_progress = value:time_situation_progress_value|TARGET|4750|
+		hidden_effect = {
+			situation_event = { id = time.150 days = 180 random = 180 }
+		}
+	}
+	
+	option = {
+		name = time.151.a
+		if = {
+			limit = {
+				event_target:situation_pc_time_leader = {
+					is_origin_time_ruler = yes
+				}
+			}
+			custom_tooltip = time.151.a.tooltip
+		}
+		hidden_effect = {
+			event_target:situation_pc_time_leader = {
+				set_leader_flag = trapped_in_situation_pc_time
+			}
+		}
+	}
+}
+
+situation_event = {
+	id = time.152
+	title = time.152.name
+	desc = time.152.desc
+	picture = GFX_evt_fear_of_the_dark
+	show_sound = event_alien_signal
+	location = target
+	situation = this
+	
+	is_triggered_only = yes
+	
+	event_window_type = leader_story
+	event_picture_background = "GFX_leader_recruitment_bg_legendary_pirate_king"
+	picture_event_data = {
+		portrait = event_target:situation_pc_time_leader
+	}
+	
+	immediate = {
+	}
+	
+	after = {
+		owner = {
+			give_situation_pc_time_reward = { LEVEL = 3 }
+		}
+		add_situation_progress = value:time_situation_progress_value|TARGET|4950|
+		hidden_effect = {
+			situation_event = { id = time.150 days = 180 random = 180 }
+		}
+	}
+	
+	option = {
+		name = time.152.a
+	}
+}
+
+situation_event = {
+	id = time.153
+	title = time.153.name
+	desc = time.153.desc
+	picture = GFX_evt_necromancy
+	show_sound = event_alien_signal
+	location = target
+	situation = this
+	
+	is_triggered_only = yes
+	
+	event_window_type = leader_story
+	event_picture_background = "GFX_leader_recruitment_bg_legendary_pirate_king"
+	picture_event_data = {
+		portrait = event_target:situation_pc_time_leader
+	}
+	
+	immediate = {
+	}
+	
+	after = {
+		add_situation_progress = value:time_situation_progress_value|TARGET|5150|
+		hidden_effect = {
+			situation_event = { id = time.150 days = 180 random = 180 }
+		}
+	}
+	
+	option = {
+		name = time.153.a
+		custom_tooltip = time.153.a.tooltip
+		hidden_effect = {
+			event_target:situation_pc_time_leader = {
+				set_leader_flag = ruler_time_trait_primary
+			}
+		}
+	}
+	
+	option = {
+		name = time.153.b
+		custom_tooltip = time.153.b.tooltip
+		hidden_effect = {
+			event_target:situation_pc_time_leader = {
+				set_leader_flag = ruler_time_trait_other
+			}
+		}
+	}
+	
+	option = {
+		name = time.153.c
+		target = {
+			set_time_blocker_0_can_be_cleared = yes
+			set_time_blocker_0_can_be_cleared = yes
+		}
+	}
+}
+
+situation_event = {
+	id = time.154
+	title = time.154.name
+	desc = time.154.desc
+	picture = GFX_evt_necromancy
+	show_sound = event_alien_signal
+	location = target
+	situation = this
+	
+	is_triggered_only = yes
+	
+	event_window_type = leader_story
+	event_picture_background = "GFX_leader_recruitment_bg_legendary_pirate_king"
+	picture_event_data = {
+		portrait = event_target:situation_pc_time_leader
+	}
+	
+	immediate = {
+	}
+	
+	after = {
+		add_situation_progress = value:time_situation_progress_value|TARGET|5150|
+		hidden_effect = {
+			situation_event = { id = time.150 days = 180 random = 180 }
+		}
+	}
+	
+	option = {
+		name = time.154.a
+		target = {
+			add_deposit = d_time_energy
+			add_deposit = d_time_energy
+			add_deposit = d_time_minerals
+			add_deposit = d_time_minerals
+			add_deposit = d_time_food
+			add_deposit = d_time_food
+		}
+	}
+	
+	option = {
+		name = time.154.b
+		target = {
+			add_deposit = d_time_alloys
+			add_deposit = d_time_alloys
+			add_deposit = d_time_consumer_goods
+			add_deposit = d_time_consumer_goods
+		}
+	}
+	
+	option = {
+		name = time.154.c
+		target = {
+			set_time_blocker_0_can_be_cleared = yes
+			set_time_blocker_0_can_be_cleared = yes
+		}
+	}
+}
+
+situation_event = {
+	id = time.155
+	title = time.155.name
+	desc = time.155.desc
+	picture = GFX_evt_spymaster
+	show_sound = event_alien_signal
+	location = target
+	situation = this
+	
+	is_triggered_only = yes
+	
+	event_window_type = leader_story
+	event_picture_background = "GFX_leader_recruitment_bg_legendary_pirate_king"
+	picture_event_data = {
+		portrait = event_target:situation_pc_time_leader
+	}
+	
+	immediate = {
+	}
+	
+	after = {
+		add_situation_progress = value:time_situation_progress_value|TARGET|5350|
+	}
+	
+	option = {
+		name = time.155.a
+		trigger = {
+			owner = {
+				is_dark_consortium_empire = yes
+			}
+		}
+		allow = {
+			owner = {
+				has_resource = {
+					type = sr_dark_matter
+					amount >= 200
+				}
+			}
+		}
+		custom_tooltip = time.155.a.tooltip
+		owner = {
+			add_resource = { sr_dark_matter = -200 }
+		}
+		hidden_effect = {
+			random_list = {
+				1 = {
+					situation_event = { id = time.150 days = 540 random = 540 }
+				}
+				1 = {
+					modifier = {
+						factor = 0
+						event_target:situation_pc_time_leader = {
+							OR = {
+								has_trait = leader_trait_ruler_time_owner
+								has_trait = leader_trait_ruler_time_king
+							}
+						}
+					}
+					set_situation_flag = situation_pc_time_fail
+					situation_event = { id = time.150 days = 180 random = 180 }
+				}
+			}
+		}
+	}
+	
+	option = {
+		name = time.155.b
+		allow = {
+			owner = {
+				has_resource = {
+					type = volatile_motes
+					amount >= 100
+				}
+				has_resource = {
+					type = rare_crystals
+					amount >= 100
+				}
+				has_resource = {
+					type = exotic_gases
+					amount >= 100
+				}
+			}
+		}
+		custom_tooltip = time.155.b.tooltip
+		owner = {
+			add_resource = { volatile_motes = -100 }
+			add_resource = { rare_crystals = -100 }
+			add_resource = { exotic_gases = -100 }
+		}
+		hidden_effect = {
+			set_situation_flag = situation_pc_time_no_dark_matter
+			random_list = {
+				2 = {
+					situation_event = { id = time.150 days = 360 random = 360 }
+				}
+				1 = {
+					modifier = {
+						factor = 0
+						event_target:situation_pc_time_leader = {
+							OR = {
+								has_trait = leader_trait_ruler_time_owner
+								has_trait = leader_trait_ruler_time_king
+							}
+						}
+					}
+					set_situation_flag = situation_pc_time_fail
+					situation_event = { id = time.150 days = 180 random = 180 }
+				}
+			}
+		}
+	}
+	
+	option = {
+		name = time.155.c
+		custom_tooltip = time.155.c.tooltip
+		set_situation_locked = no
+		load_situation_pc_time_approach = yes
+		hidden_effect = {
+			event_target:situation_pc_time_leader = {
+				remove_leader_flag = trapped_in_situation_pc_time
+			}
+		}
+	}
+}
+
+situation_event = {
+	id = time.156
+	title = time.156.name
+	desc = time.156.desc
+	picture = GFX_evt_spymaster
+	show_sound = event_alien_signal
+	location = target
+	situation = this
+	
+	is_triggered_only = yes
+	
+	event_window_type = leader_story
+	event_picture_background = "GFX_leader_recruitment_bg_legendary_pirate_king"
+	picture_event_data = {
+		portrait = event_target:situation_pc_time_leader
+	}
+	
+	immediate = {
+	}
+	
+	after = {
+		add_situation_progress = value:time_situation_progress_value|TARGET|5350|
+	}
+	
+	option = {
+		name = time.156.a
+		allow = {
+			owner = {
+				has_resource = {
+					type = volatile_motes
+					amount >= 100
+				}
+				has_resource = {
+					type = rare_crystals
+					amount >= 100
+				}
+				has_resource = {
+					type = exotic_gases
+					amount >= 100
+				}
+			}
+		}
+		custom_tooltip = time.156.a.tooltip
+		owner = {
+			add_resource = { volatile_motes = -100 }
+			add_resource = { rare_crystals = -100 }
+			add_resource = { exotic_gases = -100 }
+		}
+		hidden_effect = {
+			set_situation_flag = situation_pc_time_no_dark_matter
+			random_list = {
+				2 = {
+					situation_event = { id = time.150 days = 360 random = 360 }
+				}
+				1 = {
+					modifier = {
+						factor = 0
+						event_target:situation_pc_time_leader = {
+							OR = {
+								has_trait = leader_trait_ruler_time_owner
+								has_trait = leader_trait_ruler_time_king
+							}
+						}
+					}
+					set_situation_flag = situation_pc_time_fail
+					situation_event = { id = time.150 days = 180 random = 180 }
+				}
+			}
+		}
+	}
+	
+	option = {
+		name = time.156.b
+		custom_tooltip = time.156.b.tooltip
+		set_situation_locked = no
+		load_situation_pc_time_approach = yes
+		hidden_effect = {
+			event_target:situation_pc_time_leader = {
+				remove_leader_flag = trapped_in_situation_pc_time
+			}
+		}
+	}
+}
+
+situation_event = {
+	id = time.157
+	title = time.157.name
+	desc = time.157.desc
+	picture = GFX_evt_kaleidoscopic_lights
+	show_sound = event_alien_signal
+	location = target
+	situation = this
+	
+	is_triggered_only = yes
+	
+	event_window_type = leader_story
+	event_picture_background = "GFX_leader_recruitment_bg_legendary_pirate_king"
+	picture_event_data = {
+		portrait = event_target:situation_pc_time_leader
+	}
+	
+	immediate = {
+	}
+	
+	after = {
+		add_situation_progress = value:time_situation_progress_value|TARGET|5550|
+		set_situation_locked = no
+		load_situation_pc_time_approach = yes
+	}
+	
+	option = {
+		name = time.157.a
+		custom_tooltip = time.157.a.tooltip
+		hidden_effect = {
+			event_target:situation_pc_time_leader = {
+				set_leader_flag = ruler_time_trait_ruler
+			}
+		}
+	}
+	
+	option = {
+		name = time.157.b
+		custom_tooltip = time.157.b.tooltip
+		hidden_effect = {
+			event_target:situation_pc_time_leader = {
+				set_leader_flag = ruler_time_trait_resource
+			}
+		}
+	}
+	
+	option = {
+		name = time.157.c
+		target = {
+			make_district_time_level_up = yes
+		}
+	}
+}
+
+situation_event = {
+	id = time.158
+	title = time.158.name
+	desc = time.158.desc
+	picture = GFX_evt_kaleidoscopic_lights
+	show_sound = event_alien_signal
+	location = target
+	situation = this
+	
+	is_triggered_only = yes
+	
+	event_window_type = leader_story
+	event_picture_background = "GFX_leader_recruitment_bg_legendary_pirate_king"
+	picture_event_data = {
+		portrait = event_target:situation_pc_time_leader
+	}
+	
+	immediate = {
+	}
+	
+	after = {
+		add_situation_progress = value:time_situation_progress_value|TARGET|5550|
+		set_situation_locked = no
+		load_situation_pc_time_approach = yes
+	}
+	
+	option = {
+		name = time.158.a
+		target = {
+			add_deposit = d_time_physics_research
+			add_deposit = d_time_physics_research
+			add_deposit = d_time_society_research
+			add_deposit = d_time_society_research
+			add_deposit = d_time_engineering_research
+			add_deposit = d_time_engineering_research
+		}
+	}
+	
+	option = {
+		name = time.158.b
+		target = {
+			add_deposit = d_time_unity
+			add_deposit = d_time_unity
+		}
+	}
+	
+	option = {
+		name = time.158.c
+		target = {
+			make_district_time_level_up = yes
+		}
+	}
+}
+
+situation_event = {
+	id = time.159
+	title = time.159.name
+	desc = {
+		text = time.159.desc_1
+		trigger = {
+			AND = {
+				exists = event_target:situation_pc_time_leader
+				event_target:situation_pc_time_leader = {
+					is_owned_by = root.owner
+				}
+			}
+		}
+	}
+	desc = {
+		text = time.159.desc_2
+		trigger = {
+			NAND = {
+				exists = event_target:situation_pc_time_leader
+				event_target:situation_pc_time_leader = {
+					is_owned_by = root.owner
+				}
+			}
+		}
+	}
+	picture = GFX_evt_ship_travel
+	show_sound = event_alien_signal
+	location = target
+	situation = this
+	
+	is_triggered_only = yes
+	
+	event_window_type = leader_story
+	event_picture_background = "GFX_leader_recruitment_bg_legendary_pirate_king"
+	picture_event_data = {
+		portrait = event_target:situation_pc_time_leader
+	}
+	
+	immediate = {
+		if = {
+			limit = {
+				event_target:situation_pc_time_leader = {
+					is_origin_time_ruler = yes
+				}
+			}
+			owner = { set_country_flag = origin_time_ruler_killed_in_situation_pc_time }
+		}
+	}
+	
+	after = {
+		custom_tooltip = time.159.tooltip
+		if = {
+			limit = {
+				exists = event_target:situation_pc_time_leader
+				event_target:situation_pc_time_leader = {
+					is_owned_by = root.owner
+				}
+			}
+			event_target:situation_pc_time_leader = {
+				kill_leader = { show_notification = no }
+			}
+		}
+		owner = {
+			if = {
+				limit = {
+					has_country_flag = origin_time_ruler_killed_in_situation_pc_time
+					has_event_chain = TIME_BLACK_HOLE_CHAIN
+					NOT = { has_special_project = TIME_BLACK_HOLE_PROJECT }
+				}
+				set_country_flag = interrupt_time_black_hole_chain
+				end_event_chain = TIME_BLACK_HOLE_CHAIN
+				if = {
+					limit = {
+						exists = event_target:situation_time_black_hole_chain
+					}
+					event_target:situation_time_black_hole_chain = {
+						destroy_situation = this
+					}
+				}
+			}
+		}
+		set_situation_locked = no
+		load_situation_pc_time_approach = yes
+	}
+	
+	option = {
+		name = time.159.a
+		trigger = {
+			owner = {
+				is_materialist = yes
+			}
+		}
+	}
+	
+	option = {
+		name = time.159.b
+		trigger = {
+			owner = {
+				is_materialist = no
+			}
+		}
+	}
+}
+
+situation_event = {
+	id = time.160
+	title = time.160.name
+	desc = time.160.desc
+	picture = GFX_evt_astral_rift_microverse
+	show_sound = event_alien_signal
+	location = target
+	situation = this
+	
+	is_triggered_only = yes
+	
+	immediate = {
+		event_target:situation_pc_time_leader = {
+			remove_leader_flag = trapped_in_situation_pc_time
+		}
+		owner = {
+			set_country_flag = situation_pc_time_finished
+			create_timeline_situation_pc_time_end = yes
+			country_event = { id = time.161 days = 180 random = 540 }
+			if = {
+				limit = {
+					has_origin_time_ruler = yes
+				}
+				set_origin = origin_time_end
+			}
+			else = {
+				set_origin = origin_time_end_bad
+			}
+		}
+	}
+	
+	after = {
+		owner = {
+			give_situation_pc_time_reward = { LEVEL = 3 }
+			end_event_chain = PC_TIME_CHAIN
+		}
+		target = {
+			add_modifier = {
+				modifier = pc_time_modifier_end
+				days = -1
+			}
+		}
+		hidden_effect = {
+			destroy_situation = this
+		}
+	}
+	
+	option = {
+		name = time.160.a.materialist
+		trigger = {
+			owner = {
+				OR = {
+					has_ethic = ethic_fanatic_materialist
+					has_ethic = ethic_materialist
+				}
+			}
+		}
+		owner = {
+			add_modifier = {
+				modifier = origin_time_modifier_materialist
+				days = -1
+			}
+		}
+	}
+	
+	option = {
+		name = time.160.a.spiritualist
+		trigger = {
+			owner = {
+				OR = {
+					has_ethic = ethic_fanatic_spiritualist
+					has_ethic = ethic_spiritualist
+				}
+			}
+		}
+		owner = {
+			add_modifier = {
+				modifier = origin_time_modifier_spiritualist
+				days = -1
+			}
+		}
+	}
+	
+	option = {
+		name = time.160.a.militarist
+		trigger = {
+			owner = {
+				OR = {
+					has_ethic = ethic_fanatic_militarist
+					has_ethic = ethic_militarist
+				}
+			}
+		}
+		owner = {
+			add_modifier = {
+				modifier = origin_time_modifier_militarist
+				days = -1
+			}
+		}
+	}
+	
+	option = {
+		name = time.160.a.pacifist
+		trigger = {
+			owner = {
+				OR = {
+					has_ethic = ethic_fanatic_pacifist
+					has_ethic = ethic_pacifist
+				}
+			}
+		}
+		owner = {
+			add_modifier = {
+				modifier = origin_time_modifier_pacifist
+				days = -1
+			}
+		}
+	}
+	
+	option = {
+		name = time.160.a.xenophile
+		trigger = {
+			owner = {
+				OR = {
+					has_ethic = ethic_fanatic_xenophile
+					has_ethic = ethic_xenophile
+				}
+			}
+		}
+		owner = {
+			add_modifier = {
+				modifier = origin_time_modifier_xenophile
+				days = -1
+			}
+		}
+	}
+	
+	option = {
+		name = time.160.a.xenophobe
+		trigger = {
+			owner = {
+				OR = {
+					has_ethic = ethic_fanatic_xenophobe
+					has_ethic = ethic_xenophobe
+				}
+			}
+		}
+		owner = {
+			add_modifier = {
+				modifier = origin_time_modifier_xenophobe
+				days = -1
+			}
+		}
+	}
+	
+	option = {
+		name = time.160.a.egalitarian
+		trigger = {
+			owner = {
+				OR = {
+					has_ethic = ethic_fanatic_egalitarian
+					has_ethic = ethic_egalitarian
+				}
+			}
+		}
+		owner = {
+			add_modifier = {
+				modifier = origin_time_modifier_egalitarian
+				days = -1
+			}
+		}
+	}
+	
+	option = {
+		name = time.160.a.authoritarian
+		trigger = {
+			owner = {
+				OR = {
+					has_ethic = ethic_fanatic_authoritarian
+					has_ethic = ethic_authoritarian
+				}
+			}
+		}
+		owner = {
+			add_modifier = {
+				modifier = origin_time_modifier_authoritarian
+				days = -1
+			}
+		}
+	}
+	
+	option = {
+		name = time.160.b
+		target = {
+			set_time_blocker_0_can_be_cleared = yes
+			set_time_blocker_0_can_be_cleared = yes
+		}
+		owner = {
+			add_tech_option_or_research_effect = {
+				TECH = tech_sapient_ai
+				PROGRESS = 0.2
+				CATEGORY = physics_research
+			}
+		}
+	}
+	
+	option = {
+		name = time.160.c
+		target = {
+			make_district_time_level_up = yes
+		}
+		owner = {
+			add_tech_option_or_research_effect = {
+				TECH = tech_mega_engineering
+				PROGRESS = 0.2
+				CATEGORY = engineering_research
+			}
+		}
+	}
+	
+	option = {
+		name = time.160.d
+		target = {
+			custom_tooltip = create_6_pop
+			hidden_effect = {
+				create_pop_group = {
+					species = owner.species
+					size = 60
+				}
+			}
+		}
+		owner = {
+			add_tech_option_or_research_effect = {
+				TECH = tech_neuroregeneration
+				PROGRESS = 0.2
+				CATEGORY = society_research
+			}
+		}
+	}
+}
+
+country_event = {
+	id = time.161
+	title = time.161.name
+	desc = {
+		text = time.161.desc_1
+		trigger = {
+			NOT = {
+				has_global_flag = akx.9000.fired
+			}
+		}
+	}
+	desc = {
+		text = time.161.desc_2
+		trigger = {
+			has_global_flag = akx.9000.fired
+		}
+	}
+	picture = GFX_evt_black_hole
+	show_sound = event_alien_signal
+	
+	is_triggered_only = yes
+	
+	immediate = {
+	}
+	
+	option = {
+		name = time.161.a
+		custom_tooltip = gain_horizonsignal_spawn_system_point
+		trigger = {
+			NOT = {
+				has_global_flag = akx.9000.fired
+			}
+		}
+		hidden_effect = {
+			begin_event_chain = {
+				event_chain = PC_TIME_END_CHAIN
+				target = root
+			}
+			create_point_of_interest = {
+				id = horizonsignal_spawn_system_1
+				name = horizonsignal_spawn_system_point
+				desc = horizonsignal_spawn_system_point_desc
+				event_chain = PC_TIME_END_CHAIN
+				location = event_target:horizonsignal_spawn_system_1
+			}
+			create_point_of_interest = {
+				id = horizonsignal_spawn_system_2
+				name = horizonsignal_spawn_system_point
+				desc = horizonsignal_spawn_system_point_desc
+				event_chain = PC_TIME_END_CHAIN
+				location = event_target:horizonsignal_spawn_system_2
+			}
+			create_point_of_interest = {
+				id = horizonsignal_spawn_system_3
+				name = horizonsignal_spawn_system_point
+				desc = horizonsignal_spawn_system_point_desc
+				event_chain = PC_TIME_END_CHAIN
+				location = event_target:horizonsignal_spawn_system_3
+			}
+			create_point_of_interest = {
+				id = horizonsignal_spawn_system_4
+				name = horizonsignal_spawn_system_point
+				desc = horizonsignal_spawn_system_point_desc
+				event_chain = PC_TIME_END_CHAIN
+				location = event_target:horizonsignal_spawn_system_4
+			}
+			set_visited = event_target:horizonsignal_spawn_system_1
+			set_visited = event_target:horizonsignal_spawn_system_2
+			set_visited = event_target:horizonsignal_spawn_system_3
+			set_visited = event_target:horizonsignal_spawn_system_4
+		}
+	}
+	
+	option = {
+		name = time.161.b
+		trigger = {
+			has_global_flag = akx.9000.fired
+		}
+		if = {
+			limit = {
+				OR = {
+					has_technology = tech_akx_worm_1
+					NOT = { has_tech_option = tech_akx_worm_1 }
+				}
+			}
+			add_monthly_resource_mult = {
+				resource = physics_research
+				value = @tier2researchreward
+				min = @tier2researchmin
+				max = @tier2researchmax
+			}
+		}
+		else = {
+			add_tech_progress = {
+				tech = tech_akx_worm_1
+				progress = 0.20
+			}
+		}
+		if = {
+			limit = {
+				OR = {
+					has_technology = tech_akx_worm_2
+					NOT = { has_tech_option = tech_akx_worm_2 }
+				}
+			}
+			add_monthly_resource_mult = {
+				resource = society_research
+				value = @tier2researchreward
+				min = @tier2researchmin
+				max = @tier2researchmax
+			}
+		}
+		else = {
+			add_tech_progress = {
+				tech = tech_akx_worm_2
+				progress = 0.20
+			}
+		}
+		if = {
+			limit = {
+				OR = {
+					has_technology = tech_akx_worm_3
+					NOT = { has_tech_option = tech_akx_worm_3 }
+				}
+			}
+			add_monthly_resource_mult = {
+				resource = physics_research
+				value = @tier2researchreward
+				min = @tier2researchmin
+				max = @tier2researchmax
+			}
+		}
+		else = {
+			add_tech_progress = {
+				tech = tech_akx_worm_3
+				progress = 0.20
+			}
+		}
+	}
+}
+
+carrier_event = {
+	id = time.170
+	title = time.170.name
+	desc = time.170.desc
+	picture = GFX_evt_astral_rift_vortex
+	show_sound = event_activating_unknown_technology
+	location = this
+	
+	is_triggered_only = yes
+	
+	trigger = {
+		owner = { has_origin_time = yes }
+	}
+	
+	immediate = {
+		owner = {
+			if = {
+				limit = {
+					has_origin_time_ruler = yes
+				}
+				set_origin = origin_time_beginning
+			}
+			else = {
+				set_origin = origin_time_beginning_bad
+			}
+		}
+	}
+	
+	option = {
+		name = time.170.a
+		owner = {
+			custom_tooltip = unlock_tradition_origin_time
+			hidden_effect = {
+				set_country_flag = unlock_tradition_origin_time
+			}
+		}
+	}
+}

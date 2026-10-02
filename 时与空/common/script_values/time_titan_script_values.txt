@@ -1,0 +1,239 @@
+time_titan_max_level_for_battle = {
+	base = 5
+	modifier = {
+		add = 5
+		owner = { has_country_flag = upgrade_to_time_titan_finished }
+	}
+	modifier = {
+		add = 5
+		owner = { has_country_flag = upgrade_to_end_titan_finished }
+	}
+	modifier = {
+		add = 5
+		owner = { has_technology = tech_hope_time_titan }
+	}
+	max = 15
+	modifier = {
+		add = 5
+		owner = {
+			OR = {
+				has_country_flag = dimension_traveler_trait_foredoomed_to_a_rendezvous
+				has_country_flag = dimension_traveler_trait_foredoomed_to_a_rendezvous_end
+			}
+		}
+	}
+}
+
+time_titan_upgrade_levle = {
+	base = 0
+	add = time_titan_$TYPE$_level
+}
+
+time_titan_upgrade_modifier = {
+	base = $BASE$
+	multiply = time_titan_$TYPE$_level
+	modifier = {
+		multiply = event_target:time_titan_ship.value:time_titan_rarity_value
+		exists = event_target:time_titan_ship
+	}
+}
+
+time_titan_special_upgrade_cost = {
+	base = $BASE$
+	multiply = value:time_titan_upgrade_cost_mult
+}
+
+time_titan_upgrade_cost = {
+	base = $BASE|1$
+	add = event_target:time_titan_fleet.time_titan_$TYPE$_level
+	multiply = @time_titan_upgrade_for_$MODE$_base_cost
+	multiply = event_target:time_titan_fleet.owner.value:time_titan_upgrade_cost_mult
+}
+
+time_titan_upgrade_cost_mult = {
+	base = 1
+	add = modifier:country_cost_mult
+	add = modifier:country_sr_dark_matter_cost_mult
+	add = modifier:ships_cost_mult
+	add = modifier:ships_sr_dark_matter_cost_mult
+	add = modifier:starbase_shipyard_build_cost_mult
+	add = modifier:starbase_shipyard_build_sr_dark_matter_cost_mult
+	add = modifier:starbase_shipyard_artificial_build_cost_mult
+	add = modifier:starbase_shipyard_artificial_build_sr_dark_matter_cost_mult
+	add = modifier:ship_military_cost_mult
+	add = modifier:ship_military_sr_dark_matter_cost_mult
+	min = 0.1
+}
+
+time_titan_upgrade_requirement = {
+	base = 1
+	add = time_titan_$TYPE$_level
+	multiply = @time_titan_upgrade_for_$MODE$_base_time
+}
+
+time_titan_upgrade_requirement_loc = {
+	base = 0
+	add = time_titan_upgrade_requirement
+}
+
+time_titan_upgrade_process = {
+	base = 1
+	add = owner.modifier:starbase_shipyard_build_speed_mult
+	add = owner.modifier:starbase_shipyard_artificial_build_speed_mult
+	min = 0.1
+	multiply = @time_titan_process_update_time
+}
+
+time_titan_upgrade_process_loc = {
+	base = 0
+	add = time_titan_upgrade_process
+	floor = yes
+}
+
+time_titan_upgrade_percent = {
+	base = 100
+	multiply = time_titan_upgrade_process
+	divide = time_titan_upgrade_requirement
+	floor = yes
+	min = 0
+	max = 100
+}
+
+time_titan_rarity_value = {
+	base = 1
+	modifier = {
+		multiply = 2
+		has_ship_flag = exceptional_time_titan
+	}
+	modifier = {
+		multiply = 1.8
+		has_ship_flag = epic_time_titan
+	}
+	modifier = {
+		multiply = 1.4
+		has_ship_flag = rare_time_titan
+	}
+}
+
+time_titan_level = {
+	base = 0
+	add = fleet.time_titan_$TYPE$_level
+	multiply = value:time_titan_rarity_value
+	modifier = {
+		multiply = 0.5
+		leader = { is_syzygy_admiral = no }
+	}
+}
+
+syzygy_admiral_level = {
+	base = 0
+	add = value:num_time_leader_skill
+	modifier = {
+		multiply = value:dimension_traveler_modifier_mult_value
+		is_dimension_traveler = yes
+	}
+}
+
+time_titan_cloaking_cooldown_loc = {
+	base = 0
+	complex_trigger_modifier = {
+		trigger = timed_flag_days_left
+		parameters = {
+			flag = time_titan_cloaking_cooldown
+		}
+		mult = 1
+		mode = add
+	}
+	min = 0
+}
+
+time_titan_starbase_building_number = {
+	base = 0
+	complex_trigger_modifier = {
+		trigger = count_starbase_buildings
+		parameters = {
+			type = $BUILDING$
+		}
+		mult = 1
+		mode = add
+	}
+}
+
+time_titan_starbase_building_variation_value = {
+	base = 0
+	complex_trigger_modifier = {
+		trigger = count_starbase_buildings
+		parameters = {
+			type = $BUILDING$
+		}
+		mult = 1
+		mode = add
+	}
+	modifier = {
+		subtract = time_titan_starbase_building_number
+		is_variable_set = time_titan_starbase_building_number
+	}
+}
+
+# 彼岸庇护所
+time_shelter_maintenance_value = {
+	base = 0
+	add = colony.modifier:time_shelter_maintenance
+	min = 0
+	max = colony.modifier:time_shelter_maintenance_cap
+}
+
+time_shelter_maintenance_loc = {
+	base = 0
+	add = value:time_shelter_maintenance_value
+	multiply = 100
+}
+
+time_shelter_maintenance_cap_loc = {
+	base = 0
+	add = colony.modifier:time_shelter_maintenance_cap
+	min = 0
+	multiply = 100
+}
+
+# 仅用于副区划的岗位资源产出（不包括维护费）
+time_shelter_output_value = {
+	base = 0
+	add = value:time_shelter_maintenance_value
+	multiply = ship.value:time_titan_rarity_value
+}
+
+# 仅用于副区划的岗位修正产出（不受彼岸维系度影响）
+time_shelter_modifier_output_value = {
+	base = 0
+	add = colony.modifier:$MODIFIER$
+	# 提供script modifier时已经计算过了终末行舟稀有度
+}
+
+# 仅用于副区划的建筑国家修正产出
+time_shelter_building_modifier_output_value = {
+	base = 0
+	add = value:num_jobs_workforce_value|JOB|$JOB$|
+	add = value:num_jobs_workforce_value|JOB|$JOB$_drone|
+	multiply = value:time_shelter_maintenance_value
+	multiply = colony.modifier:$MODIFIER$
+}
+
+district_time_shelter_main_job_value = {
+	base = 1
+	add = colony.modifier:district_time_shelter_main_job_mult
+	min = 0
+}
+
+district_time_shelter_secondary_job_value = {
+	base = 1
+	add = colony.modifier:district_time_shelter_secondary_job_mult
+	add = colony.modifier:$MODIFIER$
+	min = 0
+}
+
+num_time_shelter_visitor = {
+	base = 0
+	add = value:num_jobs_workforce_value|JOB|time_shelter_visitor|
+	add = value:num_jobs_workforce_value|JOB|time_shelter_visitor_drone|
+}

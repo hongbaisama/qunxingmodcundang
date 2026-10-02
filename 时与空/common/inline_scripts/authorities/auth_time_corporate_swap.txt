@@ -1,0 +1,56 @@
+advanced_authority_swap	= {
+	name = "auth_time_corporate"
+	description = "auth_time_corporate_desc"
+	inherit_icon = no
+	inherit_effects = no
+	ruler_council_position = councilor_ruler_time_corporate
+	trigger = {
+		is_scope_valid = yes
+		has_origin_time = yes
+		has_country_flag = unlock_auth_time_corporate
+	}
+	modifier = {
+		custom_tooltip = auth_time_corporate_tt
+		show_only_custom_tooltip = no
+		d_time_energy_mult = 1
+		d_time_consumer_goods_mult = 1
+		d_time_engineering_research_mult = 1
+	}
+	tags = {
+		AUTHORITY_TIME_CORPORATE
+		AUTHORITY_SUCCESSION_TYPE
+		AUTHORITY_OLIGARCHIC_SUCCESSION
+	}
+	weight = {
+		base = 100
+	}
+}
+
+advanced_authority_swap	= {
+	name = "auth_endless_time_corporate"
+	description = "auth_endless_time_corporate_desc"
+	inherit_icon = no
+	inherit_effects = no
+	ruler_council_position = councilor_ruler_endless_time_corporate
+	trigger = {
+		is_scope_valid = yes
+		has_origin_time = yes
+		has_country_flag = unlock_auth_time_corporate
+		has_country_flag = unlock_auth_endless_time
+	}
+	modifier = {
+		custom_tooltip = auth_endless_time_corporate_tt
+		show_only_custom_tooltip = no
+		d_time_energy_mult = 2
+		d_time_consumer_goods_mult = 2
+		d_time_engineering_research_mult = 2
+	}
+	tags = {
+		AUTHORITY_TIME_CORPORATE
+		AUTHORITY_SUCCESSION_TYPE
+		AUTHORITY_OLIGARCHIC_SUCCESSION
+	}
+	weight = {
+		base = 200
+	}
+}

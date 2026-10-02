@@ -1,0 +1,86 @@
+tr_origin_time_adopt = {
+	unlocks_agenda = agenda_tradition_origin_time
+	custom_tooltip = tr_origin_time_adopt_desc
+}
+
+tr_origin_time_finish = {
+	custom_tooltip = tr_origin_time_finish_desc
+	modifier = {
+		district_time_usage_cap_mult = 0.25
+		time_researcher_max_weight = 0.5
+		ascension_perks_add = 1
+	}
+	
+	tradition_swap = {
+		name = tr_origin_time_finish_special
+		inherit_icon = yes
+		inherit_name = yes
+		trigger = {
+			any_owned_leader = {
+				is_origin_time_ruler = yes
+				can_ruler_time_trait_active = yes
+			}
+		}
+		custom_tooltip = tr_origin_time_finish_special_desc
+		modifier = {
+			ascension_perks_add = 1
+		}
+		weight = {
+			factor = 1
+		}
+	}
+}
+
+tr_origin_time_resource = {
+	custom_tooltip = tr_origin_time_resource_desc
+	possible = {
+		has_technology = tech_orbital_ring_tier_1
+	}
+	ai_weight = {
+		factor = 1000
+	}
+}
+
+tr_origin_time_manufacturing = {
+	custom_tooltip = tr_origin_time_manufacturing_desc
+	possible = {
+		has_technology = tech_orbital_ring_tier_1
+	}
+	ai_weight = {
+		factor = 1000
+	}
+}
+
+tr_origin_time_decisions = {
+	custom_tooltip = tr_origin_time_decisions_desc
+	possible = {
+		has_tradition = tr_origin_time_resource
+		has_tradition = tr_origin_time_manufacturing
+		has_tradition = tr_origin_time_unity
+		has_tradition = tr_origin_time_research
+		has_ascension_perk = ap_horror
+	}
+	ai_weight = {
+		factor = 1000
+	}
+}
+
+tr_origin_time_unity = {
+	custom_tooltip = tr_origin_time_unity_desc
+	possible = {
+		has_technology = tech_orbital_ring_tier_1
+	}
+	ai_weight = {
+		factor = 1000
+	}
+}
+
+tr_origin_time_research = {
+	custom_tooltip = tr_origin_time_research_desc
+	possible = {
+		has_technology = tech_orbital_ring_tier_1
+	}
+	ai_weight = {
+		factor = 1000
+	}
+}

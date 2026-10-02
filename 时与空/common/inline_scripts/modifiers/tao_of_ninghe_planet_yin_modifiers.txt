@@ -1,0 +1,11 @@
+planet_jobs_volatile_motes_produces_mult = $COUNT$
+planet_jobs_exotic_gases_produces_mult = $COUNT$
+planet_jobs_rare_crystals_produces_mult = $COUNT$
+planet_jobs_unity_produces_mult = $COUNT$
+planet_jobs_consumer_goods_produces_mult = $COUNT$
+planet_jobs_trade_produces_mult = $COUNT$
+planet_decision_enact_speed_mult = $COUNT$
+planet_structures_upkeep_mult = $SPECIAL_COUNT$
+pop_amenities_usage_mult = $SPECIAL_COUNT$
+species_empire_size_mult = $SPECIAL_COUNT$
+planet_storm_devastation_mult = $SPECIAL_COUNT$

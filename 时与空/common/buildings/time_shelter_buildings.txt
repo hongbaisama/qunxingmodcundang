@@ -1,0 +1,2642 @@
+################################################################
+# 首府
+################################################################
+
+building_time_shelter_capital_1 = {
+	icon = building_ancient_ward_1
+	planet_limit = 1
+	
+	inline_script = {
+		script = buildings/building_time_shelter_capital
+		CAPITAL_TIER = 2
+		LEVEL = 1
+	}
+	
+	potential = {
+		has_time_shelter_level = { LEVEL = 1 }
+	}
+
+	upgrades = {
+		building_time_shelter_capital_2
+	}
+
+	triggered_planet_modifier = {
+		pop_environment_tolerance = 0.25
+		time_shelter_maintenance_cap = 0.25
+	}
+}
+
+building_time_shelter_capital_2 = {
+	icon = building_ancient_ward_2
+	
+	inline_script = {
+		script = buildings/building_time_shelter_capital
+		CAPITAL_TIER = 3
+		LEVEL = 2
+	}
+	
+	potential = {
+		has_time_shelter_level = { LEVEL = 2 }
+	}
+
+	upgrades = {
+		building_time_shelter_capital_3
+	}
+
+	triggered_planet_modifier = {
+		potential = {
+			owner? = {
+				NOT = { has_technology = tech_hope_time_titan }
+			}
+		}
+		habitability_ceil_uncapped_add = 0.25
+		habitability_ceil_add = 0.25
+		habitability_floor_add = 0.5
+		pop_environment_tolerance = 0.5
+		time_shelter_maintenance_cap = 0.5
+		district_time_shelter_main_job_mult = 0.5
+	}
+
+	triggered_planet_modifier = {
+		potential = {
+			owner? = { has_technology = tech_hope_time_titan }
+		}
+		habitability_ceil_uncapped_add = 0.5
+		habitability_ceil_add = 0.5
+		habitability_floor_add = 1
+		pop_environment_tolerance = 1
+		time_shelter_maintenance_cap = 1
+		district_time_shelter_main_job_mult = 0.5
+	}
+}
+
+building_time_shelter_capital_3 = {
+	icon = building_psionic_suppressor
+	
+	inline_script = {
+		script = buildings/building_time_shelter_capital
+		CAPITAL_TIER = 4
+		LEVEL = 3
+	}
+	
+	potential = {
+		has_time_shelter_level = { LEVEL = 3_without_hope }
+	}
+
+	triggered_planet_modifier = {
+		habitability_ceil_uncapped_add = 0.5
+		habitability_ceil_add = 0.5
+		habitability_floor_add = 1
+		pop_environment_tolerance = 1
+		time_shelter_maintenance_cap = 1
+		district_time_shelter_main_job_mult = 1 # 终末使者专属
+	}
+}
+
+################################################################
+# 时空锚定器
+################################################################
+
+building_time_shelter_maintenance_1 = {
+	icon = building_shroud_observatory_1
+	position_priority = 200
+	
+	inline_script = {
+		script = buildings/building_time_shelter
+		CATEGORY = government
+		ZONE = zone_time_shelter_main
+		TIER = 1
+		LEVEL = 1
+	}
+
+	upgrades = {
+		building_time_shelter_maintenance_2
+	}
+	
+	prerequisites = {
+		tech_planetary_unification
+	}
+
+	triggered_planet_modifier = {
+		time_shelter_maintenance = 0.025
+	}
+}
+
+building_time_shelter_maintenance_2 = {
+	icon = building_shroud_observatory_2
+	can_build = no
+	position_priority = 200
+	
+	inline_script = {
+		script = buildings/building_time_shelter
+		CATEGORY = government
+		ZONE = zone_time_shelter_main
+		TIER = 1
+		LEVEL = 2
+	}
+
+	upgrades = {
+		building_time_shelter_maintenance_3
+	}
+	
+	prerequisites = {
+		tech_colonial_centralization
+	}
+
+	triggered_planet_modifier = {
+		time_shelter_maintenance = 0.05
+	}
+}
+
+building_time_shelter_maintenance_3 = {
+	icon = building_shroud_observatory_3
+	can_build = no
+	position_priority = 200
+	
+	inline_script = {
+		script = buildings/building_time_shelter
+		CATEGORY = government
+		ZONE = zone_time_shelter_main
+		TIER = 1
+		LEVEL = 3
+	}
+	
+	prerequisites = {
+		tech_galactic_administration
+	}
+
+	triggered_planet_modifier = {
+		time_shelter_maintenance = 0.1
+	}
+}
+
+
+
+building_time_shelter_maintenance_cap_1 = {
+	icon = building_lifecrypt_1
+	planet_limit = 5
+	position_priority = 150
+	
+	inline_script = {
+		script = buildings/building_time_shelter
+		CATEGORY = government
+		ZONE = zone_time_shelter_main
+		TIER = 2
+		LEVEL = 1
+	}
+
+	upgrades = {
+		building_time_shelter_maintenance_cap_2
+	}
+	
+	prerequisites = {
+		tech_planetary_unification
+	}
+
+	triggered_planet_modifier = {
+		time_shelter_maintenance_cap = 0.025
+	}
+}
+
+building_time_shelter_maintenance_cap_2 = {
+	icon = building_lifecrypt_2
+	can_build = no
+	position_priority = 150
+	
+	inline_script = {
+		script = buildings/building_time_shelter
+		CATEGORY = government
+		ZONE = zone_time_shelter_main
+		TIER = 2
+		LEVEL = 2
+	}
+
+	upgrades = {
+		building_time_shelter_maintenance_cap_3
+	}
+	
+	prerequisites = {
+		tech_colonial_centralization
+	}
+
+	triggered_planet_modifier = {
+		time_shelter_maintenance_cap = 0.05
+	}
+}
+
+building_time_shelter_maintenance_cap_3 = {
+	icon = building_lifecrypt_3
+	can_build = no
+	position_priority = 150
+	
+	inline_script = {
+		script = buildings/building_time_shelter
+		CATEGORY = government
+		ZONE = zone_time_shelter_main
+		TIER = 2
+		LEVEL = 3
+	}
+	
+	prerequisites = {
+		tech_galactic_administration
+	}
+
+	triggered_planet_modifier = {
+		time_shelter_maintenance_cap = 0.1
+	}
+}
+
+
+
+building_time_shelter_clone_1 = {
+	icon = building_medical_1
+	planet_limit = 1
+	position_priority = 10
+	
+	inline_script = {
+		script = buildings/building_time_shelter
+		CATEGORY = pop_assembly
+		ZONE = zone_time_shelter_main
+		TIER = 3
+		LEVEL = 1
+	}
+
+	upgrades = {
+		building_time_shelter_clone_2
+	}
+	
+	prerequisites = {
+		tech_genome_mapping
+	}
+
+	triggered_planet_pop_group_modifier_for_all = {
+		bonus_pop_growth = 1.25
+	}
+
+	triggered_planet_modifier = {
+		fake_pop_growth_mod = 1.25
+	}
+}
+
+building_time_shelter_clone_2 = {
+	icon = building_medical_2
+	can_build = no
+	position_priority = 10
+	
+	inline_script = {
+		script = buildings/building_time_shelter
+		CATEGORY = pop_assembly
+		ZONE = zone_time_shelter_main
+		TIER = 3
+		LEVEL = 2
+	}
+
+	upgrades = {
+		building_time_shelter_clone_3
+	}
+	
+	prerequisites = {
+		tech_cloning
+	}
+
+	triggered_planet_pop_group_modifier_for_all = {
+		bonus_pop_growth = 2.5
+	}
+
+	triggered_planet_modifier = {
+		fake_pop_growth_mod = 2.5
+	}
+}
+
+building_time_shelter_clone_3 = {
+	icon = building_medical_3
+	can_build = no
+	position_priority = 10
+	
+	inline_script = {
+		script = buildings/building_time_shelter
+		CATEGORY = pop_assembly
+		ZONE = zone_time_shelter_main
+		TIER = 3
+		LEVEL = 3
+	}
+	
+	prerequisites = {
+		tech_gene_banks
+	}
+
+	triggered_planet_pop_group_modifier_for_all = {
+		bonus_pop_growth = 5
+	}
+
+	triggered_planet_modifier = {
+		fake_pop_growth_mod = 5
+	}
+}
+
+
+
+building_time_shelter_assembly_1 = {
+	icon = building_robot_assembly_plant
+	planet_limit = 1
+	position_priority = 10
+	
+	inline_script = {
+		script = buildings/building_time_shelter
+		CATEGORY = pop_assembly
+		ZONE = zone_time_shelter_main
+		TIER = 3
+		LEVEL = 1
+	}
+
+	upgrades = {
+		building_time_shelter_assembly_2
+	}
+	
+	prerequisites = {
+		OR = {
+			tech_robotic_workers
+			tech_robomodding_m
+		}
+	}
+
+	triggered_planet_modifier = {
+		planet_pop_assembly_add = 1.25
+	}
+}
+
+building_time_shelter_assembly_2 = {
+	icon = building_machine_assembly_complex
+	can_build = no
+	position_priority = 10
+	
+	inline_script = {
+		script = buildings/building_time_shelter
+		CATEGORY = pop_assembly
+		ZONE = zone_time_shelter_main
+		TIER = 3
+		LEVEL = 2
+	}
+
+	upgrades = {
+		building_time_shelter_assembly_3
+	}
+	
+	prerequisites = {
+		OR = {
+			tech_droid_workers
+			tech_binary_motivators
+		}
+	}
+
+	triggered_planet_modifier = {
+		planet_pop_assembly_add = 2.5
+	}
+}
+
+building_time_shelter_assembly_3 = {
+	icon = building_fe_assembly_2
+	can_build = no
+	position_priority = 10
+	
+	inline_script = {
+		script = buildings/building_time_shelter
+		CATEGORY = pop_assembly
+		ZONE = zone_time_shelter_main
+		TIER = 3
+		LEVEL = 3
+	}
+	
+	prerequisites = {
+		OR = {
+			tech_synthetic_workers
+			tech_mega_assembly
+		}
+	}
+
+	triggered_planet_modifier = {
+		planet_pop_assembly_add = 5
+	}
+}
+
+
+
+building_time_shelter_resource_job_1 = {
+	icon = building_stronghold
+	planet_limit = 2
+	position_priority = 20
+	
+	inline_script = {
+		script = buildings/building_time_shelter
+		CATEGORY = resource
+		ZONE = zone_time_shelter_main
+		TIER = 3
+		LEVEL = 1
+	}
+	
+	allow = {
+		has_zone = { zone = zone_time_shelter_resource }
+	}
+	
+	destroy_trigger = {
+		NOT = { has_zone = { zone = zone_time_shelter_resource } }
+	}
+
+	upgrades = {
+		building_time_shelter_resource_job_2
+	}
+	
+	prerequisites = {
+		tech_planetary_defenses
+	}
+
+	triggered_planet_modifier = {
+		district_time_shelter_resource_job_mult = 0.0625
+	}
+}
+
+building_time_shelter_resource_job_2 = {
+	icon = building_fortress
+	can_build = no
+	position_priority = 20
+	
+	inline_script = {
+		script = buildings/building_time_shelter
+		CATEGORY = resource
+		ZONE = zone_time_shelter_main
+		TIER = 3
+		LEVEL = 2
+	}
+	
+	allow = {
+		has_zone = { zone = zone_time_shelter_resource }
+	}
+	
+	destroy_trigger = {
+		NOT = { has_zone = { zone = zone_time_shelter_resource } }
+	}
+
+	upgrades = {
+		building_time_shelter_resource_job_3
+	}
+	
+	prerequisites = {
+		tech_ground_defense_planning
+	}
+
+	triggered_planet_modifier = {
+		district_time_shelter_resource_job_mult = 0.125
+	}
+}
+
+building_time_shelter_resource_job_3 = {
+	icon = building_military_academy
+	can_build = no
+	position_priority = 20
+	
+	inline_script = {
+		script = buildings/building_time_shelter
+		CATEGORY = resource
+		ZONE = zone_time_shelter_main
+		TIER = 3
+		LEVEL = 3
+	}
+	
+	allow = {
+		has_zone = { zone = zone_time_shelter_resource }
+	}
+	
+	destroy_trigger = {
+		NOT = { has_zone = { zone = zone_time_shelter_resource } }
+	}
+	
+	prerequisites = {
+		tech_global_defense_grid
+	}
+
+	triggered_planet_modifier = {
+		district_time_shelter_resource_job_mult = 0.25
+	}
+}
+
+
+
+building_time_shelter_manufacturing_job_1 = {
+	icon = building_foundry_1
+	planet_limit = 2
+	position_priority = 30
+	
+	inline_script = {
+		script = buildings/building_time_shelter
+		CATEGORY = manufacturing
+		ZONE = zone_time_shelter_main
+		TIER = 3
+		LEVEL = 1
+	}
+	
+	allow = {
+		has_zone = { zone = zone_time_shelter_manufacturing }
+	}
+	
+	destroy_trigger = {
+		NOT = { has_zone = { zone = zone_time_shelter_manufacturing } }
+	}
+
+	upgrades = {
+		building_time_shelter_manufacturing_job_2
+	}
+	
+	prerequisites = {
+		tech_basic_industry
+	}
+
+	triggered_planet_modifier = {
+		district_time_shelter_manufacturing_job_mult = 0.0625
+	}
+}
+
+building_time_shelter_manufacturing_job_2 = {
+	icon = building_foundry_2
+	can_build = no
+	position_priority = 30
+	
+	inline_script = {
+		script = buildings/building_time_shelter
+		CATEGORY = manufacturing
+		ZONE = zone_time_shelter_main
+		TIER = 3
+		LEVEL = 2
+	}
+	
+	allow = {
+		has_zone = { zone = zone_time_shelter_manufacturing }
+	}
+	
+	destroy_trigger = {
+		NOT = { has_zone = { zone = zone_time_shelter_manufacturing } }
+	}
+
+	upgrades = {
+		building_time_shelter_manufacturing_job_3
+	}
+	
+	prerequisites = {
+		tech_alloys_1
+	}
+
+	triggered_planet_modifier = {
+		district_time_shelter_manufacturing_job_mult = 0.125
+	}
+}
+
+building_time_shelter_manufacturing_job_3 = {
+	icon = building_foundry_3
+	can_build = no
+	position_priority = 30
+	
+	inline_script = {
+		script = buildings/building_time_shelter
+		CATEGORY = manufacturing
+		ZONE = zone_time_shelter_main
+		TIER = 3
+		LEVEL = 3
+	}
+	
+	allow = {
+		has_zone = { zone = zone_time_shelter_manufacturing }
+	}
+	
+	destroy_trigger = {
+		NOT = { has_zone = { zone = zone_time_shelter_manufacturing } }
+	}
+	
+	prerequisites = {
+		tech_alloys_2
+	}
+
+	triggered_planet_modifier = {
+		district_time_shelter_manufacturing_job_mult = 0.25
+	}
+}
+
+
+
+building_time_shelter_unity_job_1 = {
+	icon = building_autochthon_monument
+	planet_limit = 2
+	position_priority = 40
+	
+	inline_script = {
+		script = buildings/building_time_shelter
+		CATEGORY = unity
+		ZONE = zone_time_shelter_main
+		TIER = 3
+		LEVEL = 1
+	}
+	
+	allow = {
+		has_zone = { zone = zone_time_shelter_unity }
+	}
+	
+	destroy_trigger = {
+		NOT = { has_zone = { zone = zone_time_shelter_unity } }
+	}
+
+	upgrades = {
+		building_time_shelter_unity_job_2
+	}
+	
+	prerequisites = {
+		tech_adaptive_bureaucracy
+	}
+
+	triggered_planet_modifier = {
+		district_time_shelter_unity_job_mult = 0.0625
+	}
+}
+
+building_time_shelter_unity_job_2 = {
+	icon = building_heritage_site
+	can_build = no
+	position_priority = 40
+	
+	inline_script = {
+		script = buildings/building_time_shelter
+		CATEGORY = unity
+		ZONE = zone_time_shelter_main
+		TIER = 3
+		LEVEL = 2
+	}
+	
+	allow = {
+		has_zone = { zone = zone_time_shelter_unity }
+	}
+	
+	destroy_trigger = {
+		NOT = { has_zone = { zone = zone_time_shelter_unity } }
+	}
+
+	upgrades = {
+		building_time_shelter_unity_job_3
+	}
+	
+	prerequisites = {
+		tech_colonial_bureaucracy
+	}
+
+	triggered_planet_modifier = {
+		district_time_shelter_unity_job_mult = 0.125
+	}
+}
+
+building_time_shelter_unity_job_3 = {
+	icon = building_hypercomms_forum
+	can_build = no
+	position_priority = 40
+	
+	inline_script = {
+		script = buildings/building_time_shelter
+		CATEGORY = unity
+		ZONE = zone_time_shelter_main
+		TIER = 3
+		LEVEL = 3
+	}
+	
+	allow = {
+		has_zone = { zone = zone_time_shelter_unity }
+	}
+	
+	destroy_trigger = {
+		NOT = { has_zone = { zone = zone_time_shelter_unity } }
+	}
+	
+	prerequisites = {
+		tech_galactic_bureaucracy
+	}
+
+	triggered_planet_modifier = {
+		district_time_shelter_unity_job_mult = 0.25
+	}
+}
+
+
+
+building_time_shelter_research_job_1 = {
+	icon = building_research_lab_1
+	planet_limit = 2
+	position_priority = 50
+	
+	inline_script = {
+		script = buildings/building_time_shelter
+		CATEGORY = research
+		ZONE = zone_time_shelter_main
+		TIER = 3
+		LEVEL = 1
+	}
+	
+	allow = {
+		has_zone = { zone = zone_time_shelter_research }
+	}
+	
+	destroy_trigger = {
+		NOT = { has_zone = { zone = zone_time_shelter_research } }
+	}
+
+	upgrades = {
+		building_time_shelter_research_job_2
+	}
+	
+	prerequisites = {
+		tech_basic_science_lab_1
+	}
+
+	triggered_planet_modifier = {
+		district_time_shelter_research_job_mult = 0.0625
+	}
+}
+
+building_time_shelter_research_job_2 = {
+	icon = building_research_lab_2
+	can_build = no
+	position_priority = 50
+	
+	inline_script = {
+		script = buildings/building_time_shelter
+		CATEGORY = research
+		ZONE = zone_time_shelter_main
+		TIER = 3
+		LEVEL = 2
+	}
+	
+	allow = {
+		has_zone = { zone = zone_time_shelter_research }
+	}
+	
+	destroy_trigger = {
+		NOT = { has_zone = { zone = zone_time_shelter_research } }
+	}
+
+	upgrades = {
+		building_time_shelter_research_job_3
+	}
+	
+	prerequisites = {
+		tech_basic_science_lab_2
+	}
+
+	triggered_planet_modifier = {
+		district_time_shelter_research_job_mult = 0.125
+	}
+}
+
+building_time_shelter_research_job_3 = {
+	icon = building_research_lab_3
+	can_build = no
+	position_priority = 50
+	
+	inline_script = {
+		script = buildings/building_time_shelter
+		CATEGORY = research
+		ZONE = zone_time_shelter_main
+		TIER = 3
+		LEVEL = 3
+	}
+	
+	allow = {
+		has_zone = { zone = zone_time_shelter_research }
+	}
+	
+	destroy_trigger = {
+		NOT = { has_zone = { zone = zone_time_shelter_research } }
+	}
+	
+	prerequisites = {
+		tech_basic_science_lab_3
+	}
+
+	triggered_planet_modifier = {
+		district_time_shelter_research_job_mult = 0.25
+	}
+}
+
+
+
+building_time_shelter_secondary_job_1 = {
+	icon = building_identity_complex
+	planet_limit = 5
+	position_priority = 60
+	
+	inline_script = {
+		script = buildings/building_time_shelter
+		CATEGORY = amenity
+		ZONE = zone_time_shelter_main
+		TIER = 2
+		LEVEL = 2
+	}
+
+	upgrades = {
+		building_time_shelter_secondary_job_2
+	}
+	
+	prerequisites = {
+		tech_colonization_3
+	}
+
+	triggered_planet_modifier = {
+		district_time_shelter_secondary_job_mult = 0.05
+	}
+}
+
+building_time_shelter_secondary_job_2 = {
+	icon = building_identity_repository
+	can_build = no
+	position_priority = 60
+	
+	inline_script = {
+		script = buildings/building_time_shelter
+		CATEGORY = amenity
+		ZONE = zone_time_shelter_main
+		TIER = 2
+		LEVEL = 3
+	}
+	
+	prerequisites = {
+		tech_colonization_5
+	}
+
+	triggered_planet_modifier = {
+		district_time_shelter_secondary_job_mult = 0.1
+	}
+}
+
+
+
+building_time_shelter_max_districts_1 = {
+	icon = building_order_holding
+	planet_limit = 5
+	position_priority = 70
+	
+	inline_script = {
+		script = buildings/building_time_shelter
+		CATEGORY = amenity
+		ZONE = zone_time_shelter_main
+		TIER = 2
+		LEVEL = 2
+	}
+
+	upgrades = {
+		building_time_shelter_max_districts_2
+	}
+	
+	prerequisites = {
+		tech_terrestrial_sculpting
+	}
+
+	triggered_planet_modifier = {
+		planet_max_districts_mult = 0.05
+	}
+}
+
+building_time_shelter_max_districts_2 = {
+	icon = building_order_keep
+	can_build = no
+	position_priority = 70
+	
+	inline_script = {
+		script = buildings/building_time_shelter
+		CATEGORY = amenity
+		ZONE = zone_time_shelter_main
+		TIER = 2
+		LEVEL = 3
+	}
+	
+	prerequisites = {
+		tech_climate_restoration
+	}
+
+	triggered_planet_modifier = {
+		planet_max_districts_mult = 0.1
+	}
+}
+
+################################################################
+# 彼岸前哨站
+################################################################
+
+building_time_shelter_sentinel_base_resource_1 = {
+	icon = building_fe_mine_1
+	planet_limit = 1
+	
+	inline_script = {
+		script = buildings/building_time_shelter
+		CATEGORY = resource
+		ZONE = zone_time_shelter_resource
+		TIER = 2
+		LEVEL = 1
+	}
+
+	upgrades = {
+		building_time_shelter_sentinel_base_resource_2
+	}
+	
+	prerequisites = {
+	}
+
+	triggered_planet_modifier = {
+		planet_time_shelter_sentinels_energy_produces_add = 1.5
+		planet_time_shelter_sentinels_minerals_produces_add = 1
+		planet_time_shelter_sentinels_food_produces_add = 1.5
+		mult = value:time_shelter_output_value
+	}
+
+	triggered_planet_modifier = {
+		planet_time_shelter_sentinels_alloys_upkeep_add = 0.3125
+		mult = ship.value:time_titan_rarity_value
+	}
+}
+
+building_time_shelter_sentinel_base_resource_2 = {
+	icon = building_fe_mine_2
+	can_build = no
+	
+	inline_script = {
+		script = buildings/building_time_shelter
+		CATEGORY = resource
+		ZONE = zone_time_shelter_resource
+		TIER = 2
+		LEVEL = 2
+	}
+
+	upgrades = {
+		building_time_shelter_sentinel_base_resource_3
+	}
+	
+	prerequisites = {
+	}
+
+	triggered_planet_modifier = {
+		planet_time_shelter_sentinels_energy_produces_add = 3
+		planet_time_shelter_sentinels_minerals_produces_add = 2
+		planet_time_shelter_sentinels_food_produces_add = 3		mult = value:time_shelter_output_value	}	triggered_planet_modifier = {
+		planet_time_shelter_sentinels_alloys_upkeep_add = 0.625
+		mult = ship.value:time_titan_rarity_value
+	}
+}
+
+building_time_shelter_sentinel_base_resource_3 = {
+	icon = building_pinniped_sanctuary
+	can_build = no
+	
+	inline_script = {
+		script = buildings/building_time_shelter
+		CATEGORY = resource
+		ZONE = zone_time_shelter_resource
+		TIER = 2
+		LEVEL = 3
+	}
+	
+	prerequisites = {
+	}
+
+	triggered_planet_modifier = {
+		planet_time_shelter_sentinels_energy_produces_add = 6
+		planet_time_shelter_sentinels_minerals_produces_add = 4
+		planet_time_shelter_sentinels_food_produces_add = 6		mult = value:time_shelter_output_value	}	triggered_planet_modifier = {
+		planet_time_shelter_sentinels_alloys_upkeep_add = 1.25
+		mult = ship.value:time_titan_rarity_value
+	}
+}
+
+
+
+building_time_shelter_sentinel_rare_resource_1 = {
+	icon = building_mining_districts_2
+	planet_limit = 1
+	
+	inline_script = {
+		script = buildings/building_time_shelter
+		CATEGORY = resource
+		ZONE = zone_time_shelter_resource
+		TIER = 2
+		LEVEL = 1
+	}
+
+	upgrades = {
+		building_time_shelter_sentinel_rare_resource_2
+	}
+	
+	prerequisites = {
+	}
+
+	triggered_planet_modifier = {
+		planet_time_shelter_sentinels_volatile_motes_produces_add = 0.25
+		planet_time_shelter_sentinels_exotic_gases_produces_add = 0.25
+		planet_time_shelter_sentinels_rare_crystals_produces_add = 0.25		mult = value:time_shelter_output_value	}	triggered_planet_modifier = {
+		planet_time_shelter_sentinels_alloys_upkeep_add = 0.3125
+		mult = ship.value:time_titan_rarity_value
+	}
+}
+
+building_time_shelter_sentinel_rare_resource_2 = {
+	icon = building_mining_districts_3
+	can_build = no
+	
+	inline_script = {
+		script = buildings/building_time_shelter
+		CATEGORY = resource
+		ZONE = zone_time_shelter_resource
+		TIER = 2
+		LEVEL = 2
+	}
+
+	upgrades = {
+		building_time_shelter_sentinel_rare_resource_3
+	}
+	
+	prerequisites = {
+	}
+
+	triggered_planet_modifier = {
+		planet_time_shelter_sentinels_volatile_motes_produces_add = 0.5
+		planet_time_shelter_sentinels_exotic_gases_produces_add = 0.5
+		planet_time_shelter_sentinels_rare_crystals_produces_add = 0.5		mult = value:time_shelter_output_value	}	triggered_planet_modifier = {
+		planet_time_shelter_sentinels_alloys_upkeep_add = 0.625
+		mult = ship.value:time_titan_rarity_value
+	}
+}
+
+building_time_shelter_sentinel_rare_resource_3 = {
+	icon = building_mining_districts_4
+	can_build = no
+	
+	inline_script = {
+		script = buildings/building_time_shelter
+		CATEGORY = resource
+		ZONE = zone_time_shelter_resource
+		TIER = 2
+		LEVEL = 3
+	}
+	
+	prerequisites = {
+	}
+
+	triggered_planet_modifier = {
+		planet_time_shelter_sentinels_volatile_motes_produces_add = 1
+		planet_time_shelter_sentinels_exotic_gases_produces_add = 1
+		planet_time_shelter_sentinels_rare_crystals_produces_add = 1		mult = value:time_shelter_output_value	}	triggered_planet_modifier = {
+		planet_time_shelter_sentinels_alloys_upkeep_add = 1.25
+		mult = ship.value:time_titan_rarity_value
+	}
+}
+
+
+
+building_time_shelter_sentinel_planet_modifier_a_1 = {
+	icon = building_baol_organic_plant
+	planet_limit = 1
+	
+	inline_script = {
+		script = buildings/building_time_shelter
+		CATEGORY = amenity
+		ZONE = zone_time_shelter_resource
+		TIER = 2
+		LEVEL = 2
+	}
+
+	upgrades = {
+		building_time_shelter_sentinel_planet_modifier_a_2
+	}
+	
+	prerequisites = {
+	}
+
+	triggered_planet_modifier = {
+		time_shelter_sentinel_produce_planet_pops_upkeep_mult = -0.0125
+		time_shelter_sentinel_produce_planet_structures_cost_mult = -0.0125
+		planet_time_shelter_sentinels_alloys_upkeep_add = 0.625
+		mult = ship.value:time_titan_rarity_value
+	}
+}
+
+building_time_shelter_sentinel_planet_modifier_a_2 = {
+	icon = holding_tree_of_life_sapling
+	can_build = no
+	
+	inline_script = {
+		script = buildings/building_time_shelter
+		CATEGORY = amenity
+		ZONE = zone_time_shelter_resource
+		TIER = 2
+		LEVEL = 3
+	}
+	
+	prerequisites = {
+	}
+
+	triggered_planet_modifier = {
+		time_shelter_sentinel_produce_planet_pops_upkeep_mult = -0.025
+		time_shelter_sentinel_produce_planet_structures_cost_mult = -0.025
+		planet_time_shelter_sentinels_alloys_upkeep_add = 1.25
+		mult = ship.value:time_titan_rarity_value
+	}
+}
+
+
+
+building_time_shelter_sentinel_planet_modifier_b_1 = {
+	planet_limit = 1
+	
+	inline_script = {
+		script = buildings/building_time_shelter
+		CATEGORY = pop_assembly
+		ZONE = zone_time_shelter_resource
+		TIER = 2
+		LEVEL = 2
+	}
+
+	upgrades = {
+		building_time_shelter_sentinel_planet_modifier_b_2
+	}
+	
+	prerequisites = {
+	}
+
+	triggered_planet_modifier = {
+		time_shelter_sentinel_produce_logistic_growth_mult = 0.025
+		time_shelter_sentinel_produce_bonus_pop_growth_mult = 0.025
+		planet_time_shelter_sentinels_alloys_upkeep_add = 0.625
+		mult = ship.value:time_titan_rarity_value
+	}
+}
+
+building_time_shelter_sentinel_planet_modifier_b_2 = {
+	can_build = no
+	
+	inline_script = {
+		script = buildings/building_time_shelter
+		CATEGORY = pop_assembly
+		ZONE = zone_time_shelter_resource
+		TIER = 2
+		LEVEL = 3
+	}
+	
+	prerequisites = {
+	}
+
+	triggered_planet_modifier = {
+		time_shelter_sentinel_produce_logistic_growth_mult = 0.05
+		time_shelter_sentinel_produce_bonus_pop_growth_mult = 0.05
+		planet_time_shelter_sentinels_alloys_upkeep_add = 1.25
+		mult = ship.value:time_titan_rarity_value
+	}
+}
+
+
+
+building_time_shelter_sentinel_country_modifier = {
+	icon = building_archaeostudies_faculty
+	planet_limit = 1
+	
+	inline_script = {
+		script = buildings/building_time_shelter
+		CATEGORY = army
+		ZONE = zone_time_shelter_resource
+		TIER = 3
+		LEVEL = 2
+	}
+	
+	prerequisites = {
+	}
+	
+	triggered_country_modifier = {
+		country_naval_cap_mult = 1
+		mult = value:time_shelter_building_modifier_output_value|JOB|time_shelter_sentinel|MODIFIER|time_shelter_sentinel_produce_country_naval_cap_mult|
+	}
+
+	triggered_planet_modifier = {
+		time_shelter_sentinel_produce_country_naval_cap_mult = 0.01
+		planet_time_shelter_sentinels_alloys_upkeep_add = 0.625
+		mult = ship.value:time_titan_rarity_value
+	}
+}
+
+################################################################
+# 次元制造厂
+################################################################
+
+building_time_shelter_artisan_base_resource_1 = {
+	icon = building_primitive_factory
+	planet_limit = 1
+	
+	inline_script = {
+		script = buildings/building_time_shelter
+		CATEGORY = manufacturing
+		ZONE = zone_time_shelter_manufacturing
+		TIER = 2
+		LEVEL = 1
+	}
+
+	upgrades = {
+		building_time_shelter_artisan_base_resource_2
+	}
+	
+	prerequisites = {
+	}
+
+	triggered_planet_modifier = {
+		planet_time_shelter_artisans_alloys_produces_add = 0.75
+		planet_time_shelter_artisans_consumer_goods_produces_add = 1.5
+		mult = value:time_shelter_output_value
+	}
+
+	triggered_planet_modifier = {
+		potential = {
+			industrial_jobs_are_catalytic_trigger = no
+		}
+		planet_time_shelter_artisans_energy_upkeep_add = 0.625
+		planet_time_shelter_artisans_minerals_upkeep_add = 0.625
+		mult = ship.value:time_titan_rarity_value
+	}
+
+	triggered_planet_modifier = {
+		potential = {
+			industrial_jobs_are_catalytic_trigger = yes
+		}
+		planet_time_shelter_artisans_energy_upkeep_add = 0.625
+		planet_time_shelter_artisans_food_upkeep_add = 0.625
+		mult = ship.value:time_titan_rarity_value
+	}
+}
+
+building_time_shelter_artisan_base_resource_2 = {
+	icon = building_genomic_facility
+	can_build = no
+	
+	inline_script = {
+		script = buildings/building_time_shelter
+		CATEGORY = manufacturing
+		ZONE = zone_time_shelter_manufacturing
+		TIER = 2
+		LEVEL = 2
+	}
+
+	upgrades = {
+		building_time_shelter_artisan_base_resource_3
+	}
+	
+	prerequisites = {
+	}
+
+	triggered_planet_modifier = {
+		planet_time_shelter_artisans_alloys_produces_add = 1.5
+		planet_time_shelter_artisans_consumer_goods_produces_add = 3
+		mult = value:time_shelter_output_value
+	}
+
+	triggered_planet_modifier = {
+		potential = {
+			industrial_jobs_are_catalytic_trigger = no
+		}
+		planet_time_shelter_artisans_energy_upkeep_add = 1.25
+		planet_time_shelter_artisans_minerals_upkeep_add = 1.25
+		mult = ship.value:time_titan_rarity_value
+	}
+
+	triggered_planet_modifier = {
+		potential = {
+			industrial_jobs_are_catalytic_trigger = yes
+		}
+		planet_time_shelter_artisans_energy_upkeep_add = 1.25
+		planet_time_shelter_artisans_food_upkeep_add = 1.25
+		mult = ship.value:time_titan_rarity_value
+	}
+}
+
+building_time_shelter_artisan_base_resource_3 = {
+	icon = building_junkheap
+	can_build = no
+	
+	inline_script = {
+		script = buildings/building_time_shelter
+		CATEGORY = manufacturing
+		ZONE = zone_time_shelter_manufacturing
+		TIER = 2
+		LEVEL = 3
+	}
+	
+	prerequisites = {
+	}
+
+	triggered_planet_modifier = {
+		planet_time_shelter_artisans_alloys_produces_add = 3
+		planet_time_shelter_artisans_consumer_goods_produces_add = 6
+		mult = value:time_shelter_output_value
+	}
+
+	triggered_planet_modifier = {
+		potential = {
+			industrial_jobs_are_catalytic_trigger = no
+		}
+		planet_time_shelter_artisans_energy_upkeep_add = 2.5
+		planet_time_shelter_artisans_minerals_upkeep_add = 2.5
+		mult = ship.value:time_titan_rarity_value
+	}
+
+	triggered_planet_modifier = {
+		potential = {
+			industrial_jobs_are_catalytic_trigger = yes
+		}
+		planet_time_shelter_artisans_energy_upkeep_add = 2.5
+		planet_time_shelter_artisans_food_upkeep_add = 2.5
+		mult = ship.value:time_titan_rarity_value
+	}
+}
+
+
+
+building_time_shelter_artisan_rare_resource_1 = {
+	icon = building_micro_forge
+	planet_limit = 1
+	
+	inline_script = {
+		script = buildings/building_time_shelter
+		CATEGORY = manufacturing
+		ZONE = zone_time_shelter_manufacturing
+		TIER = 2
+		LEVEL = 1
+	}
+
+	upgrades = {
+		building_time_shelter_artisan_rare_resource_2
+	}
+	
+	prerequisites = {
+	}
+
+	triggered_planet_modifier = {
+		planet_time_shelter_artisans_sr_living_metal_produces_add = 0.25
+		planet_time_shelter_artisans_nanites_produces_add = 0.25
+		mult = value:time_shelter_output_value
+	}
+
+	triggered_planet_modifier = {
+		potential = {
+			industrial_jobs_are_catalytic_trigger = no
+		}
+		planet_time_shelter_artisans_energy_upkeep_add = 0.625
+		planet_time_shelter_artisans_minerals_upkeep_add = 0.625
+		mult = ship.value:time_titan_rarity_value
+	}
+
+	triggered_planet_modifier = {
+		potential = {
+			industrial_jobs_are_catalytic_trigger = yes
+		}
+		planet_time_shelter_artisans_energy_upkeep_add = 0.625
+		planet_time_shelter_artisans_food_upkeep_add = 0.625
+		mult = ship.value:time_titan_rarity_value
+	}
+}
+
+building_time_shelter_artisan_rare_resource_2 = {
+	icon = building_nano_forge
+	can_build = no
+	
+	inline_script = {
+		script = buildings/building_time_shelter
+		CATEGORY = manufacturing
+		ZONE = zone_time_shelter_manufacturing
+		TIER = 2
+		LEVEL = 2
+	}
+
+	upgrades = {
+		building_time_shelter_artisan_rare_resource_3
+	}
+	
+	prerequisites = {
+	}
+
+	triggered_planet_modifier = {
+		planet_time_shelter_artisans_sr_living_metal_produces_add = 0.5
+		planet_time_shelter_artisans_nanites_produces_add = 0.5
+		mult = value:time_shelter_output_value
+	}
+
+	triggered_planet_modifier = {
+		potential = {
+			industrial_jobs_are_catalytic_trigger = no
+		}
+		planet_time_shelter_artisans_energy_upkeep_add = 1.25
+		planet_time_shelter_artisans_minerals_upkeep_add = 1.25
+		mult = ship.value:time_titan_rarity_value
+	}
+
+	triggered_planet_modifier = {
+		potential = {
+			industrial_jobs_are_catalytic_trigger = yes
+		}
+		planet_time_shelter_artisans_energy_upkeep_add = 1.25
+		planet_time_shelter_artisans_food_upkeep_add = 1.25
+		mult = ship.value:time_titan_rarity_value
+	}
+}
+
+building_time_shelter_artisan_rare_resource_3 = {
+	icon = building_nanite_transmuter
+	can_build = no
+	
+	inline_script = {
+		script = buildings/building_time_shelter
+		CATEGORY = manufacturing
+		ZONE = zone_time_shelter_manufacturing
+		TIER = 2
+		LEVEL = 3
+	}
+	
+	prerequisites = {
+	}
+
+	triggered_planet_modifier = {
+		planet_time_shelter_artisans_sr_living_metal_produces_add = 1
+		planet_time_shelter_artisans_nanites_produces_add = 1
+		mult = value:time_shelter_output_value
+	}
+
+	triggered_planet_modifier = {
+		potential = {
+			industrial_jobs_are_catalytic_trigger = no
+		}
+		planet_time_shelter_artisans_energy_upkeep_add = 2.5
+		planet_time_shelter_artisans_minerals_upkeep_add = 2.5
+		mult = ship.value:time_titan_rarity_value
+	}
+
+	triggered_planet_modifier = {
+		potential = {
+			industrial_jobs_are_catalytic_trigger = yes
+		}
+		planet_time_shelter_artisans_energy_upkeep_add = 2.5
+		planet_time_shelter_artisans_food_upkeep_add = 2.5
+		mult = ship.value:time_titan_rarity_value
+	}
+}
+
+
+
+building_time_shelter_artisan_planet_modifier_a_1 = {
+	icon = building_drone_storage
+	planet_limit = 1
+	
+	inline_script = {
+		script = buildings/building_time_shelter
+		CATEGORY = amenity
+		ZONE = zone_time_shelter_manufacturing
+		TIER = 2
+		LEVEL = 2
+	}
+
+	upgrades = {
+		building_time_shelter_artisan_planet_modifier_a_2
+	}
+	
+	prerequisites = {
+	}
+
+	triggered_planet_modifier = {
+		time_shelter_artisan_produce_pop_amenities_usage_mult = -0.0125
+		time_shelter_artisan_produce_planet_structures_upkeep_mult = -0.0125
+		mult = ship.value:time_titan_rarity_value
+	}
+
+	triggered_planet_modifier = {
+		potential = {
+			industrial_jobs_are_catalytic_trigger = no
+		}
+		planet_time_shelter_artisans_energy_upkeep_add = 1.25
+		planet_time_shelter_artisans_minerals_upkeep_add = 1.25
+		mult = ship.value:time_titan_rarity_value
+	}
+
+	triggered_planet_modifier = {
+		potential = {
+			industrial_jobs_are_catalytic_trigger = yes
+		}
+		planet_time_shelter_artisans_energy_upkeep_add = 1.25
+		planet_time_shelter_artisans_food_upkeep_add = 1.25
+		mult = ship.value:time_titan_rarity_value
+	}
+}
+
+building_time_shelter_artisan_planet_modifier_a_2 = {
+	icon = building_drone_megastorage
+	can_build = no
+	
+	inline_script = {
+		script = buildings/building_time_shelter
+		CATEGORY = amenity
+		ZONE = zone_time_shelter_manufacturing
+		TIER = 2
+		LEVEL = 3
+	}
+	
+	prerequisites = {
+	}
+
+	triggered_planet_modifier = {
+		time_shelter_artisan_produce_pop_amenities_usage_mult = -0.025
+		time_shelter_artisan_produce_planet_structures_upkeep_mult = -0.025
+		mult = ship.value:time_titan_rarity_value
+	}
+
+	triggered_planet_modifier = {
+		potential = {
+			industrial_jobs_are_catalytic_trigger = no
+		}
+		planet_time_shelter_artisans_energy_upkeep_add = 2.5
+		planet_time_shelter_artisans_minerals_upkeep_add = 2.5
+		mult = ship.value:time_titan_rarity_value
+	}
+
+	triggered_planet_modifier = {
+		potential = {
+			industrial_jobs_are_catalytic_trigger = yes
+		}
+		planet_time_shelter_artisans_energy_upkeep_add = 2.5
+		planet_time_shelter_artisans_food_upkeep_add = 2.5
+		mult = ship.value:time_titan_rarity_value
+	}
+}
+
+
+
+building_time_shelter_artisan_planet_modifier_b_1 = {
+	icon = building_dimensional_replicator
+	planet_limit = 1
+	
+	inline_script = {
+		script = buildings/building_time_shelter
+		CATEGORY = pop_assembly
+		ZONE = zone_time_shelter_manufacturing
+		TIER = 2
+		LEVEL = 2
+	}
+
+	upgrades = {
+		building_time_shelter_artisan_planet_modifier_b_2
+	}
+	
+	prerequisites = {
+	}
+
+	triggered_planet_modifier = {
+		time_shelter_artisan_produce_planet_pop_assembly_mult = 0.025
+		time_shelter_artisan_produce_planet_building_build_speed_mult = 0.025
+		mult = ship.value:time_titan_rarity_value
+	}
+
+	triggered_planet_modifier = {
+		potential = {
+			industrial_jobs_are_catalytic_trigger = no
+		}
+		planet_time_shelter_artisans_energy_upkeep_add = 1.25
+		planet_time_shelter_artisans_minerals_upkeep_add = 1.25
+		mult = ship.value:time_titan_rarity_value
+	}
+
+	triggered_planet_modifier = {
+		potential = {
+			industrial_jobs_are_catalytic_trigger = yes
+		}
+		planet_time_shelter_artisans_energy_upkeep_add = 1.25
+		planet_time_shelter_artisans_food_upkeep_add = 1.25
+		mult = ship.value:time_titan_rarity_value
+	}
+}
+
+building_time_shelter_artisan_planet_modifier_b_2 = {
+	icon = building_dimensional_fabricator
+	can_build = no
+	
+	inline_script = {
+		script = buildings/building_time_shelter
+		CATEGORY = pop_assembly
+		ZONE = zone_time_shelter_manufacturing
+		TIER = 2
+		LEVEL = 3
+	}
+	
+	prerequisites = {
+	}
+
+	triggered_planet_modifier = {
+		time_shelter_artisan_produce_planet_pop_assembly_mult = 0.05
+		time_shelter_artisan_produce_planet_building_build_speed_mult = 0.05
+		mult = ship.value:time_titan_rarity_value
+	}
+
+	triggered_planet_modifier = {
+		potential = {
+			industrial_jobs_are_catalytic_trigger = no
+		}
+		planet_time_shelter_artisans_energy_upkeep_add = 2.5
+		planet_time_shelter_artisans_minerals_upkeep_add = 2.5
+		mult = ship.value:time_titan_rarity_value
+	}
+
+	triggered_planet_modifier = {
+		potential = {
+			industrial_jobs_are_catalytic_trigger = yes
+		}
+		planet_time_shelter_artisans_energy_upkeep_add = 2.5
+		planet_time_shelter_artisans_food_upkeep_add = 2.5
+		mult = ship.value:time_titan_rarity_value
+	}
+}
+
+
+
+building_time_shelter_artisan_country_modifier = {
+	icon = building_materiality_engine
+	planet_limit = 1
+	
+	inline_script = {
+		script = buildings/building_time_shelter
+		CATEGORY = army
+		ZONE = zone_time_shelter_manufacturing
+		TIER = 3
+		LEVEL = 2
+	}
+	
+	prerequisites = {
+	}
+	
+	triggered_country_modifier = {
+		starbase_shipyard_build_speed_mult = 1
+		mult = value:time_shelter_building_modifier_output_value|JOB|time_shelter_artisan_produce_starbase_shipyard_build_speed_mult|MODIFIER|time_shelter_artisan_produce_country_naval_cap_mult|
+	}
+
+	triggered_planet_modifier = {
+		time_shelter_artisan_produce_starbase_shipyard_build_speed_mult = 0.01
+		mult = ship.value:time_titan_rarity_value
+	}
+
+	triggered_planet_modifier = {
+		potential = {
+			industrial_jobs_are_catalytic_trigger = no
+		}
+		planet_time_shelter_artisans_energy_upkeep_add = 1.25
+		planet_time_shelter_artisans_minerals_upkeep_add = 1.25
+		mult = ship.value:time_titan_rarity_value
+	}
+
+	triggered_planet_modifier = {
+		potential = {
+			industrial_jobs_are_catalytic_trigger = yes
+		}
+		planet_time_shelter_artisans_energy_upkeep_add = 1.25
+		planet_time_shelter_artisans_food_upkeep_add = 1.25
+		mult = ship.value:time_titan_rarity_value
+	}
+}
+
+################################################################
+# 位面引航标
+################################################################
+
+building_time_shelter_elder_base_resource_1 = {
+	icon = building_commercial_zone
+	planet_limit = 1
+	
+	inline_script = {
+		script = buildings/building_time_shelter
+		CATEGORY = trade
+		ZONE = zone_time_shelter_unity
+		TIER = 2
+		LEVEL = 1
+	}
+
+	upgrades = {
+		building_time_shelter_elder_base_resource_2
+	}
+	
+	prerequisites = {
+	}
+
+	triggered_planet_modifier = {
+		planet_time_shelter_elders_unity_produces_add = 0.75
+		planet_time_shelter_elders_trade_produces_add = 1.5
+		mult = value:time_shelter_output_value
+	}
+
+	triggered_planet_modifier = {
+		potential = {
+			owner = { is_gestalt = no }
+		}
+		planet_time_shelter_elders_consumer_goods_upkeep_add = 0.625
+		mult = ship.value:time_titan_rarity_value
+	}
+
+	triggered_planet_modifier = {
+		potential = {
+			owner = { is_gestalt = yes }
+		}
+		planet_time_shelter_elders_energy_upkeep_add = 0.625
+		planet_time_shelter_elders_minerals_upkeep_add = 0.625
+		mult = ship.value:time_titan_rarity_value
+	}
+}
+
+building_time_shelter_elder_base_resource_2 = {
+	icon = building_commercial_megaplex
+	can_build = no
+	
+	inline_script = {
+		script = buildings/building_time_shelter
+		CATEGORY = trade
+		ZONE = zone_time_shelter_unity
+		TIER = 2
+		LEVEL = 2
+	}
+
+	upgrades = {
+		building_time_shelter_elder_base_resource_3
+	}
+	
+	prerequisites = {
+	}
+
+	triggered_planet_modifier = {
+		planet_time_shelter_elders_unity_produces_add = 1.5
+		planet_time_shelter_elders_trade_produces_add = 3
+		mult = value:time_shelter_output_value
+	}
+
+	triggered_planet_modifier = {
+		potential = {
+			owner = { is_gestalt = no }
+		}
+		planet_time_shelter_elders_consumer_goods_upkeep_add = 1.25
+		mult = ship.value:time_titan_rarity_value
+	}
+
+	triggered_planet_modifier = {
+		potential = {
+			owner = { is_gestalt = yes }
+		}
+		planet_time_shelter_elders_energy_upkeep_add = 1.25
+		planet_time_shelter_elders_minerals_upkeep_add = 1.25
+		mult = ship.value:time_titan_rarity_value
+	}
+}
+
+building_time_shelter_elder_base_resource_3 = {
+	icon = building_galactic_stock_exchange
+	can_build = no
+	
+	inline_script = {
+		script = buildings/building_time_shelter
+		CATEGORY = trade
+		ZONE = zone_time_shelter_unity
+		TIER = 2
+		LEVEL = 3
+	}
+	
+	prerequisites = {
+	}
+
+	triggered_planet_modifier = {
+		planet_time_shelter_elders_unity_produces_add = 3
+		planet_time_shelter_elders_trade_produces_add = 6
+		mult = value:time_shelter_output_value
+	}
+
+	triggered_planet_modifier = {
+		potential = {
+			owner = { is_gestalt = no }
+		}
+		planet_time_shelter_elders_consumer_goods_upkeep_add = 2.5
+		mult = ship.value:time_titan_rarity_value
+	}
+
+	triggered_planet_modifier = {
+		potential = {
+			owner = { is_gestalt = yes }
+		}
+		planet_time_shelter_elders_energy_upkeep_add = 2.5
+		planet_time_shelter_elders_minerals_upkeep_add = 2.5
+		mult = ship.value:time_titan_rarity_value
+	}
+}
+
+
+
+building_time_shelter_elder_rare_resource_1 = {
+	icon = building_temple
+	planet_limit = 1
+	
+	inline_script = {
+		script = buildings/building_time_shelter
+		CATEGORY = unity
+		ZONE = zone_time_shelter_unity
+		TIER = 2
+		LEVEL = 1
+	}
+
+	upgrades = {
+		building_time_shelter_elder_rare_resource_2
+	}
+	
+	prerequisites = {
+	}
+
+	triggered_planet_modifier = {
+		planet_time_shelter_elders_sr_zro_produces_add = 0.5
+		planet_time_shelter_elders_minor_artifacts_produces_add = 0.125
+		mult = value:time_shelter_output_value
+	}
+
+	triggered_planet_modifier = {
+		potential = {
+			owner = { is_gestalt = no }
+		}
+		planet_time_shelter_elders_consumer_goods_upkeep_add = 0.625
+		mult = ship.value:time_titan_rarity_value
+	}
+
+	triggered_planet_modifier = {
+		potential = {
+			owner = { is_gestalt = yes }
+		}
+		planet_time_shelter_elders_energy_upkeep_add = 0.625
+		planet_time_shelter_elders_minerals_upkeep_add = 0.625
+		mult = ship.value:time_titan_rarity_value
+	}
+}
+
+building_time_shelter_elder_rare_resource_2 = {
+	icon = building_holotemple
+	can_build = no
+	
+	inline_script = {
+		script = buildings/building_time_shelter
+		CATEGORY = unity
+		ZONE = zone_time_shelter_unity
+		TIER = 2
+		LEVEL = 2
+	}
+
+	upgrades = {
+		building_time_shelter_elder_rare_resource_3
+	}
+	
+	prerequisites = {
+	}
+
+	triggered_planet_modifier = {
+		planet_time_shelter_elders_sr_zro_produces_add = 0.5
+		planet_time_shelter_elders_minor_artifacts_produces_add = 0.25
+		mult = value:time_shelter_output_value
+	}
+
+	triggered_planet_modifier = {
+		potential = {
+			owner = { is_gestalt = no }
+		}
+		planet_time_shelter_elders_consumer_goods_upkeep_add = 1.25
+		mult = ship.value:time_titan_rarity_value
+	}
+
+	triggered_planet_modifier = {
+		potential = {
+			owner = { is_gestalt = yes }
+		}
+		planet_time_shelter_elders_energy_upkeep_add = 1.25
+		planet_time_shelter_elders_minerals_upkeep_add = 1.25
+		mult = ship.value:time_titan_rarity_value
+	}
+}
+
+building_time_shelter_elder_rare_resource_3 = {
+	icon = building_sacred_nexus
+	can_build = no
+	
+	inline_script = {
+		script = buildings/building_time_shelter
+		CATEGORY = unity
+		ZONE = zone_time_shelter_unity
+		TIER = 2
+		LEVEL = 3
+	}
+	
+	prerequisites = {
+	}
+
+	triggered_planet_modifier = {
+		planet_time_shelter_elders_sr_zro_produces_add = 1
+		planet_time_shelter_elders_minor_artifacts_produces_add = 0.5
+		mult = value:time_shelter_output_value
+	}
+
+	triggered_planet_modifier = {
+		potential = {
+			owner = { is_gestalt = no }
+		}
+		planet_time_shelter_elders_consumer_goods_upkeep_add = 2.5
+		mult = ship.value:time_titan_rarity_value
+	}
+
+	triggered_planet_modifier = {
+		potential = {
+			owner = { is_gestalt = yes }
+		}
+		planet_time_shelter_elders_energy_upkeep_add = 2.5
+		planet_time_shelter_elders_minerals_upkeep_add = 2.5
+		mult = ship.value:time_titan_rarity_value
+	}
+}
+
+
+
+building_time_shelter_elder_planet_modifier_a_1 = {
+	icon = building_bureaucratic_2
+	planet_limit = 1
+	
+	inline_script = {
+		script = buildings/building_time_shelter
+		CATEGORY = government
+		ZONE = zone_time_shelter_unity
+		TIER = 2
+		LEVEL = 2
+	}
+
+	upgrades = {
+		building_time_shelter_elder_planet_modifier_a_2
+	}
+	
+	prerequisites = {
+	}
+
+	triggered_planet_modifier = {
+		time_shelter_elder_produce_species_empire_size_mult = -0.0125
+		time_shelter_elder_produce_empire_size_districts_mult = -0.0125
+		mult = ship.value:time_titan_rarity_value
+	}
+
+	triggered_planet_modifier = {
+		potential = {
+			owner = { is_gestalt = no }
+		}
+		planet_time_shelter_elders_consumer_goods_upkeep_add = 1.25
+		mult = ship.value:time_titan_rarity_value
+	}
+
+	triggered_planet_modifier = {
+		potential = {
+			owner = { is_gestalt = yes }
+		}
+		planet_time_shelter_elders_energy_upkeep_add = 1.25
+		planet_time_shelter_elders_minerals_upkeep_add = 1.25
+		mult = ship.value:time_titan_rarity_value
+	}
+}
+
+building_time_shelter_elder_planet_modifier_a_2 = {
+	icon = building_bureaucratic_3
+	can_build = no
+	
+	inline_script = {
+		script = buildings/building_time_shelter
+		CATEGORY = government
+		ZONE = zone_time_shelter_unity
+		TIER = 2
+		LEVEL = 3
+	}
+	
+	prerequisites = {
+	}
+
+	triggered_planet_modifier = {
+		time_shelter_elder_produce_species_empire_size_mult = -0.025
+		time_shelter_elder_produce_empire_size_districts_mult = -0.025
+		mult = ship.value:time_titan_rarity_value
+	}
+
+	triggered_planet_modifier = {
+		potential = {
+			owner = { is_gestalt = no }
+		}
+		planet_time_shelter_elders_consumer_goods_upkeep_add = 2.5
+		mult = ship.value:time_titan_rarity_value
+	}
+
+	triggered_planet_modifier = {
+		potential = {
+			owner = { is_gestalt = yes }
+		}
+		planet_time_shelter_elders_energy_upkeep_add = 2.5
+		planet_time_shelter_elders_minerals_upkeep_add = 2.5
+		mult = ship.value:time_titan_rarity_value
+	}
+}
+
+
+
+building_time_shelter_elder_planet_modifier_b_1 = {
+	icon = building_state_academy
+	planet_limit = 1
+	
+	inline_script = {
+		script = buildings/building_time_shelter
+		CATEGORY = amenity
+		ZONE = zone_time_shelter_unity
+		TIER = 2
+		LEVEL = 2
+	}
+
+	upgrades = {
+		building_time_shelter_elder_planet_modifier_b_2
+	}
+	
+	prerequisites = {
+	}
+
+	triggered_planet_modifier = {
+		time_shelter_elder_produce_planet_amenities_add = 250
+		time_shelter_elder_produce_planet_crime_add = -250
+		mult = ship.value:time_titan_rarity_value
+	}
+
+	triggered_planet_modifier = {
+		potential = {
+			owner = { is_gestalt = no }
+		}
+		planet_time_shelter_elders_consumer_goods_upkeep_add = 1.25
+		mult = ship.value:time_titan_rarity_value
+	}
+
+	triggered_planet_modifier = {
+		potential = {
+			owner = { is_gestalt = yes }
+		}
+		planet_time_shelter_elders_energy_upkeep_add = 1.25
+		planet_time_shelter_elders_minerals_upkeep_add = 1.25
+		mult = ship.value:time_titan_rarity_value
+	}
+}
+
+building_time_shelter_elder_planet_modifier_b_2 = {
+	icon = building_center_of_guidance
+	can_build = no
+	
+	inline_script = {
+		script = buildings/building_time_shelter
+		CATEGORY = amenity
+		ZONE = zone_time_shelter_unity
+		TIER = 2
+		LEVEL = 3
+	}
+	
+	prerequisites = {
+	}
+
+	triggered_planet_modifier = {
+		time_shelter_elder_produce_planet_amenities_add = 500
+		time_shelter_elder_produce_planet_crime_add = -500
+		mult = ship.value:time_titan_rarity_value
+	}
+
+	triggered_planet_modifier = {
+		potential = {
+			owner = { is_gestalt = no }
+		}
+		planet_time_shelter_elders_consumer_goods_upkeep_add = 2.5
+		mult = ship.value:time_titan_rarity_value
+	}
+
+	triggered_planet_modifier = {
+		potential = {
+			owner = { is_gestalt = yes }
+		}
+		planet_time_shelter_elders_energy_upkeep_add = 2.5
+		planet_time_shelter_elders_minerals_upkeep_add = 2.5
+		mult = ship.value:time_titan_rarity_value
+	}
+}
+
+
+
+building_time_shelter_elder_country_modifier = {
+	icon = building_empyrean_shrine
+	planet_limit = 1
+	
+	inline_script = {
+		script = buildings/building_time_shelter
+		CATEGORY = unity
+		ZONE = zone_time_shelter_unity
+		TIER = 3
+		LEVEL = 2
+	}
+	
+	prerequisites = {
+	}
+	
+	triggered_country_modifier = {
+		planetary_ascension_effect_mult = 1
+		mult = value:time_shelter_building_modifier_output_value|JOB|time_shelter_elder_produce_planetary_ascension_effect_mult|MODIFIER|time_shelter_elder_produce_country_naval_cap_mult|
+	}
+
+	triggered_planet_modifier = {
+		time_shelter_elder_produce_planetary_ascension_effect_mult = 0.01
+		mult = ship.value:time_titan_rarity_value
+	}
+
+	triggered_planet_modifier = {
+		potential = {
+			owner = { is_gestalt = no }
+		}
+		planet_time_shelter_elders_consumer_goods_upkeep_add = 1.25
+		mult = ship.value:time_titan_rarity_value
+	}
+
+	triggered_planet_modifier = {
+		potential = {
+			owner = { is_gestalt = yes }
+		}
+		planet_time_shelter_elders_energy_upkeep_add = 1.25
+		planet_time_shelter_elders_minerals_upkeep_add = 1.25
+		mult = ship.value:time_titan_rarity_value
+	}
+}
+
+################################################################
+# 维度观测台
+################################################################
+
+building_time_shelter_watcher_base_resource_1 = {
+	icon = building_experimentation_chambers_1
+	planet_limit = 1
+	
+	inline_script = {
+		script = buildings/building_time_shelter
+		CATEGORY = research
+		ZONE = zone_time_shelter_research
+		TIER = 2
+		LEVEL = 1
+	}
+
+	upgrades = {
+		building_time_shelter_watcher_base_resource_2
+	}
+	
+	prerequisites = {
+	}
+
+	triggered_planet_modifier = {
+		planet_time_shelter_watchers_physics_research_produces_add = 0.75
+		planet_time_shelter_watchers_society_research_produces_add = 0.75
+		planet_time_shelter_watchers_engineering_research_produces_add = 0.75
+		mult = value:time_shelter_output_value
+	}
+
+	triggered_planet_modifier = {
+		potential = {
+			owner = { is_gestalt = no }
+		}
+		planet_time_shelter_watchers_consumer_goods_upkeep_add = 0.625
+		mult = ship.value:time_titan_rarity_value
+	}
+
+	triggered_planet_modifier = {
+		potential = {
+			owner = { is_gestalt = yes }
+		}
+		planet_time_shelter_watchers_energy_upkeep_add = 0.625
+		planet_time_shelter_watchers_minerals_upkeep_add = 0.625
+		mult = ship.value:time_titan_rarity_value
+	}
+}
+
+building_time_shelter_watcher_base_resource_2 = {
+	icon = building_experimentation_chambers_2
+	can_build = no
+	
+	inline_script = {
+		script = buildings/building_time_shelter
+		CATEGORY = research
+		ZONE = zone_time_shelter_research
+		TIER = 2
+		LEVEL = 2
+	}
+
+	upgrades = {
+		building_time_shelter_watcher_base_resource_3
+	}
+	
+	prerequisites = {
+	}
+
+	triggered_planet_modifier = {
+		planet_time_shelter_watchers_physics_research_produces_add = 1.5
+		planet_time_shelter_watchers_society_research_produces_add = 1.5
+		planet_time_shelter_watchers_engineering_research_produces_add = 1.5
+		mult = value:time_shelter_output_value
+	}
+
+	triggered_planet_modifier = {
+		potential = {
+			owner = { is_gestalt = no }
+		}
+		planet_time_shelter_watchers_consumer_goods_upkeep_add = 1.25
+		mult = ship.value:time_titan_rarity_value
+	}
+
+	triggered_planet_modifier = {
+		potential = {
+			owner = { is_gestalt = yes }
+		}
+		planet_time_shelter_watchers_energy_upkeep_add = 1.25
+		planet_time_shelter_watchers_minerals_upkeep_add = 1.25
+		mult = ship.value:time_titan_rarity_value
+	}
+}
+
+building_time_shelter_watcher_base_resource_3 = {
+	icon = building_experimentation_chambers_3
+	can_build = no
+	
+	inline_script = {
+		script = buildings/building_time_shelter
+		CATEGORY = research
+		ZONE = zone_time_shelter_research
+		TIER = 2
+		LEVEL = 3
+	}
+	
+	prerequisites = {
+	}
+
+	triggered_planet_modifier = {
+		planet_time_shelter_watchers_physics_research_produces_add = 3
+		planet_time_shelter_watchers_society_research_produces_add = 3
+		planet_time_shelter_watchers_engineering_research_produces_add = 3
+		mult = value:time_shelter_output_value
+	}
+
+	triggered_planet_modifier = {
+		potential = {
+			owner = { is_gestalt = no }
+		}
+		planet_time_shelter_watchers_consumer_goods_upkeep_add = 2.5
+		mult = ship.value:time_titan_rarity_value
+	}
+
+	triggered_planet_modifier = {
+		potential = {
+			owner = { is_gestalt = yes }
+		}
+		planet_time_shelter_watchers_energy_upkeep_add = 2.5
+		planet_time_shelter_watchers_minerals_upkeep_add = 2.5
+		mult = ship.value:time_titan_rarity_value
+	}
+}
+
+
+
+building_time_shelter_watcher_rare_resource_1 = {
+	icon = building_resource_silo
+	planet_limit = 1
+	
+	inline_script = {
+		script = buildings/building_time_shelter
+		CATEGORY = research
+		ZONE = zone_time_shelter_research
+		TIER = 2
+		LEVEL = 1
+	}
+
+	upgrades = {
+		building_time_shelter_watcher_rare_resource_2
+	}
+	
+	prerequisites = {
+	}
+
+	triggered_planet_modifier = {
+		planet_time_shelter_watchers_sr_dark_matter_produces_add = 0.25
+		planet_time_shelter_watchers_astral_threads_produces_add = 0.125
+		mult = value:time_shelter_output_value
+	}
+
+	triggered_planet_modifier = {
+		potential = {
+			owner = { is_gestalt = no }
+		}
+		planet_time_shelter_watchers_consumer_goods_upkeep_add = 0.625
+		mult = ship.value:time_titan_rarity_value
+	}
+
+	triggered_planet_modifier = {
+		potential = {
+			owner = { is_gestalt = yes }
+		}
+		planet_time_shelter_watchers_energy_upkeep_add = 0.625
+		planet_time_shelter_watchers_minerals_upkeep_add = 0.625
+		mult = ship.value:time_titan_rarity_value
+	}
+}
+
+building_time_shelter_watcher_rare_resource_2 = {
+	icon = building_lathe_resonator
+	can_build = no
+	
+	inline_script = {
+		script = buildings/building_time_shelter
+		CATEGORY = research
+		ZONE = zone_time_shelter_research
+		TIER = 2
+		LEVEL = 2
+	}
+
+	upgrades = {
+		building_time_shelter_watcher_rare_resource_3
+	}
+	
+	prerequisites = {
+	}
+
+	triggered_planet_modifier = {
+		planet_time_shelter_watchers_sr_dark_matter_produces_add = 0.5
+		planet_time_shelter_watchers_astral_threads_produces_add = 0.25
+		mult = value:time_shelter_output_value
+	}
+
+	triggered_planet_modifier = {
+		potential = {
+			owner = { is_gestalt = no }
+		}
+		planet_time_shelter_watchers_consumer_goods_upkeep_add = 1.25
+		mult = ship.value:time_titan_rarity_value
+	}
+
+	triggered_planet_modifier = {
+		potential = {
+			owner = { is_gestalt = yes }
+		}
+		planet_time_shelter_watchers_energy_upkeep_add = 1.25
+		planet_time_shelter_watchers_minerals_upkeep_add = 1.25
+		mult = ship.value:time_titan_rarity_value
+	}
+}
+
+building_time_shelter_watcher_rare_resource_3 = {
+	icon = building_lathe_validator
+	can_build = no
+	
+	inline_script = {
+		script = buildings/building_time_shelter
+		CATEGORY = research
+		ZONE = zone_time_shelter_research
+		TIER = 2
+		LEVEL = 3
+	}
+	
+	prerequisites = {
+	}
+
+	triggered_planet_modifier = {
+		planet_time_shelter_watchers_sr_dark_matter_produces_add = 1
+		planet_time_shelter_watchers_astral_threads_produces_add = 0.5
+		mult = value:time_shelter_output_value
+	}
+
+	triggered_planet_modifier = {
+		potential = {
+			owner = { is_gestalt = no }
+		}
+		planet_time_shelter_watchers_consumer_goods_upkeep_add = 2.5
+		mult = ship.value:time_titan_rarity_value
+	}
+
+	triggered_planet_modifier = {
+		potential = {
+			owner = { is_gestalt = yes }
+		}
+		planet_time_shelter_watchers_energy_upkeep_add = 2.5
+		planet_time_shelter_watchers_minerals_upkeep_add = 2.5
+		mult = ship.value:time_titan_rarity_value
+	}
+}
+
+
+
+building_time_shelter_watcher_planet_modifier_a_1 = {
+	icon = building_affluence_emporium
+	planet_limit = 1
+	
+	inline_script = {
+		script = buildings/building_time_shelter
+		CATEGORY = amenity
+		ZONE = zone_time_shelter_research
+		TIER = 2
+		LEVEL = 2
+	}
+
+	upgrades = {
+		building_time_shelter_watcher_planet_modifier_a_2
+	}
+	
+	prerequisites = {
+	}
+
+	triggered_planet_modifier = {
+		time_shelter_watcher_produce_pop_housing_usage_mult = -0.0125
+		time_shelter_watcher_produce_deposit_blockers_cost_mult = -0.0125
+		mult = ship.value:time_titan_rarity_value
+	}
+
+	triggered_planet_modifier = {
+		potential = {
+			owner = { is_gestalt = no }
+		}
+		planet_time_shelter_watchers_consumer_goods_upkeep_add = 1.25
+		mult = ship.value:time_titan_rarity_value
+	}
+
+	triggered_planet_modifier = {
+		potential = {
+			owner = { is_gestalt = yes }
+		}
+		planet_time_shelter_watchers_energy_upkeep_add = 1.25
+		planet_time_shelter_watchers_minerals_upkeep_add = 1.25
+		mult = ship.value:time_titan_rarity_value
+	}
+}
+
+building_time_shelter_watcher_planet_modifier_a_2 = {
+	icon = building_affluence_center
+	can_build = no
+	
+	inline_script = {
+		script = buildings/building_time_shelter
+		CATEGORY = amenity
+		ZONE = zone_time_shelter_research
+		TIER = 2
+		LEVEL = 3
+	}
+	
+	prerequisites = {
+	}
+
+	triggered_planet_modifier = {
+		time_shelter_watcher_produce_pop_housing_usage_mult = -0.025
+		time_shelter_watcher_produce_deposit_blockers_cost_mult = -0.025
+		mult = ship.value:time_titan_rarity_value
+	}
+
+	triggered_planet_modifier = {
+		potential = {
+			owner = { is_gestalt = no }
+		}
+		planet_time_shelter_watchers_consumer_goods_upkeep_add = 2.5
+		mult = ship.value:time_titan_rarity_value
+	}
+
+	triggered_planet_modifier = {
+		potential = {
+			owner = { is_gestalt = yes }
+		}
+		planet_time_shelter_watchers_energy_upkeep_add = 2.5
+		planet_time_shelter_watchers_minerals_upkeep_add = 2.5
+		mult = ship.value:time_titan_rarity_value
+	}
+}
+
+
+
+building_time_shelter_watcher_planet_modifier_b_1 = {
+	icon = building_chamber_of_elevation_1
+	planet_limit = 1
+	
+	inline_script = {
+		script = buildings/building_time_shelter
+		CATEGORY = government
+		ZONE = zone_time_shelter_research
+		TIER = 2
+		LEVEL = 2
+	}
+
+	upgrades = {
+		building_time_shelter_watcher_planet_modifier_b_2
+	}
+	
+	prerequisites = {
+	}
+
+	triggered_planet_modifier = {
+		time_shelter_watcher_produce_planet_jobs_produces_mult = 0.025
+		time_shelter_watcher_produce_planet_jobs_upkeep_mult = -0.0125
+		mult = ship.value:time_titan_rarity_value
+	}
+
+	triggered_planet_modifier = {
+		potential = {
+			owner = { is_gestalt = no }
+		}
+		planet_time_shelter_watchers_consumer_goods_upkeep_add = 1.25
+		mult = ship.value:time_titan_rarity_value
+	}
+
+	triggered_planet_modifier = {
+		potential = {
+			owner = { is_gestalt = yes }
+		}
+		planet_time_shelter_watchers_energy_upkeep_add = 1.25
+		planet_time_shelter_watchers_minerals_upkeep_add = 1.25
+		mult = ship.value:time_titan_rarity_value
+	}
+}
+
+building_time_shelter_watcher_planet_modifier_b_2 = {
+	icon = building_chamber_of_elevation_2
+	can_build = no
+	
+	inline_script = {
+		script = buildings/building_time_shelter
+		CATEGORY = government
+		ZONE = zone_time_shelter_research
+		TIER = 2
+		LEVEL = 3
+	}
+	
+	prerequisites = {
+	}
+
+	triggered_planet_modifier = {
+		time_shelter_watcher_produce_planet_jobs_produces_mult = 0.05
+		time_shelter_watcher_produce_planet_jobs_upkeep_mult = -0.025
+		mult = ship.value:time_titan_rarity_value
+	}
+
+	triggered_planet_modifier = {
+		potential = {
+			owner = { is_gestalt = no }
+		}
+		planet_time_shelter_watchers_consumer_goods_upkeep_add = 2.5
+		mult = ship.value:time_titan_rarity_value
+	}
+
+	triggered_planet_modifier = {
+		potential = {
+			owner = { is_gestalt = yes }
+		}
+		planet_time_shelter_watchers_energy_upkeep_add = 2.5
+		planet_time_shelter_watchers_minerals_upkeep_add = 2.5
+		mult = ship.value:time_titan_rarity_value
+	}
+}
+
+
+
+building_time_shelter_watcher_country_modifier = {
+	icon = building_imperial_machine_capital
+	planet_limit = 1
+	
+	inline_script = {
+		script = buildings/building_time_shelter
+		CATEGORY = government
+		ZONE = zone_time_shelter_research
+		TIER = 3
+		LEVEL = 2
+	}
+	
+	prerequisites = {
+	}
+	
+	triggered_country_modifier = {
+		councilor_skill_add = 1
+		mult = value:time_shelter_building_modifier_output_value|JOB|time_shelter_watcher|MODIFIER|time_shelter_watcher_produce_councilor_skill_add|
+	}
+
+	triggered_planet_modifier = {
+		time_shelter_watcher_produce_councilor_skill_add = 0.1
+		mult = ship.value:time_titan_rarity_value
+	}
+
+	triggered_planet_modifier = {
+		potential = {
+			owner = { is_gestalt = no }
+		}
+		planet_time_shelter_watchers_consumer_goods_upkeep_add = 1.25
+		mult = ship.value:time_titan_rarity_value
+	}
+
+	triggered_planet_modifier = {
+		potential = {
+			owner = { is_gestalt = yes }
+		}
+		planet_time_shelter_watchers_energy_upkeep_add = 1.25
+		planet_time_shelter_watchers_minerals_upkeep_add = 1.25
+		mult = ship.value:time_titan_rarity_value
+	}
+}

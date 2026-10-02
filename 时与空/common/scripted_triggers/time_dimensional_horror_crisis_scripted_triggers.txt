@@ -1,0 +1,126 @@
+# 船只/舰队
+immune_to_dimensional_horror_crisis_storm = {
+	OR = {
+		is_time_titan_ship_size = yes
+		is_special_dimensional_horror = yes
+	}
+}
+
+# 国家
+has_all_dimensional_horror_crisis_storm_protection_tech = {
+	has_technology = tech_dimensional_horror_crisis_storm_protection_level_1
+	has_technology = tech_dimensional_horror_crisis_storm_protection_level_2
+	has_technology = tech_dimensional_horror_crisis_storm_protection_level_3
+	has_technology = tech_dimensional_horror_crisis_storm_protection_level_4
+	has_technology = tech_dimensional_horror_crisis_storm_protection_level_5
+	has_technology = tech_dimensional_horror_crisis_storm_protection_building_1
+	has_technology = tech_dimensional_horror_crisis_storm_protection_building_2
+	has_technology = tech_dimensional_horror_crisis_storm_protection_building_3
+	has_technology = tech_dimensional_horror_crisis_storm_protection_building_4
+	has_technology = tech_dimensional_horror_crisis_storm_protection_building_5
+	has_technology = tech_dimensional_horror_crisis_storm_protection_component_1
+	has_technology = tech_dimensional_horror_crisis_storm_protection_component_2
+	has_technology = tech_dimensional_horror_crisis_storm_protection_component_3
+	has_technology = tech_dimensional_horror_crisis_storm_protection_component_4
+	has_technology = tech_dimensional_horror_crisis_storm_protection_component_5
+}
+
+# 任意
+has_dimensional_horror_crisis_storm_black_hole_horror_count_threshold = {
+	event_target:global_event_country = {
+		is_variable_set = black_hole_horror_count
+		check_variable_arithmetic = {
+			which = value:dimensional_horror_crisis_storm_black_hole_horror_count_threshold
+			value >= $THRESHOLD$
+		}
+	}
+}
+
+# 任意
+can_dimensional_horror_crisis_erasured_system = {
+	OR = {
+		NOT = { has_global_flag = all_erasured_system_is_sealed }
+		has_global_flag = greatest_dimensional_horror_crisis
+	}
+}
+
+# 星系内任意
+is_time_erasure_system = {
+	solar_system = {
+		has_star_flag = time_erasure_system
+	}
+}
+
+# 星系内任意（被影响）
+is_dimensional_horror_crisis_affected_system = {
+	solar_system = {
+		has_star_flag = dimensional_horror_crisis_affected
+	}
+}
+
+# 星系内任意（被抹除）
+is_dimensional_horror_crisis_erasured_system = {
+	solar_system = {
+		has_star_flag = dimensional_horror_crisis_erasured
+	}
+}
+
+# 星系内任意（被无效）
+is_dimensional_horror_crisis_inactive_system = {
+	solar_system = {
+		has_star_flag = dimensional_horror_crisis_sealed
+		NOT = { has_global_flag = greatest_dimensional_horror_crisis } # “命运”出现时，风暴始终生效
+	}
+}
+
+# 星系内任意（被封印）
+is_dimensional_horror_crisis_sealed_system = {
+	solar_system = {
+		has_star_flag = dimensional_horror_crisis_sealed
+	}
+}
+
+# 星系内任意（风暴内）
+is_inside_dimensional_horror_crisis_storm = {
+	is_inside_dimensional_horror_crisis_storm_$TYPE|any$ = yes
+}
+
+# 星系内任意（风暴内）
+is_inside_dimensional_horror_crisis_storm_any = {
+	solar_system = {
+		OR = {
+			is_inside_storm = dimensional_horror_crisis_storm
+			is_inside_storm = dimensional_horror_crisis_levo_storm
+			is_inside_storm = dimensional_horror_crisis_dextro_storm
+		}
+	}
+}
+
+# 星系内任意（风暴内）
+is_inside_dimensional_horror_crisis_storm_levo = {
+	solar_system = {
+		OR = {
+			is_inside_storm = dimensional_horror_crisis_storm
+			is_inside_storm = dimensional_horror_crisis_levo_storm
+		}
+	}
+}
+
+# 星系内任意（风暴内）
+is_inside_dimensional_horror_crisis_storm_dextro = {
+	solar_system = {
+		OR = {
+			is_inside_storm = dimensional_horror_crisis_storm
+			is_inside_storm = dimensional_horror_crisis_dextro_storm
+		}
+	}
+}
+
+# 风暴
+is_dimensional_horror_crisis_storm = {
+	OR = {
+		is_storm_type = dimensional_horror_crisis_storm
+		is_storm_type = dimensional_horror_crisis_levo_storm
+		is_storm_type = dimensional_horror_crisis_dextro_storm
+	}
+}

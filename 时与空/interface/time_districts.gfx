@@ -1,0 +1,556 @@
+spriteTypes = {
+	
+	################################################################
+	# 神秘奇点
+	################################################################
+	
+	spriteType = {
+		name = "GFX_button_focus_on_black_hole_researcher"
+		texturefile = "gfx/interface/buttons/button_150_24_animated_highlight.dds"
+		effectFile = "gfx/FX/buttonstate_onlydisable.shader"
+		noOfFrames = 3
+		animation = {
+			animationmaskfile = "gfx/interface/buttons/button_150_24_mask.dds"
+			animationtexturefile = "gfx/interface/buttons/button_268_animated_texture.dds"
+			animationrotation = 180.0
+			animationlooping = yes
+			animationtime = 50.0
+			animationdelay = 0.0
+			animationblendmode = "overlay"       #add, multiply, overlay
+			animationtype = "scrolling"      #scrolling, rotating, pulsing
+			animationrotationoffset = { x = 0.0 y = 0.0 }
+			animationtexturescale = { x = 1.0 y = 1.0 }
+			animationframes = { 1 2 3 }
+		}
+		hitbox_margin = { x=10 y=10 }
+	}
+	
+	
+	
+	spriteType = {
+		name = "GFX_district_time_box_icon_rectangle"
+		texturefile = "gfx/interface/icons/districts/grid_box/district_time_rectangle.dds"
+		effectFile = "gfx/FX/buttonstate_onlydisable.shader"
+		noOfFrames = 3
+		animation = {
+			animationmaskfile = "gfx/interface/icons/districts/grid_box/default_animated_mask.dds"
+			animationtexturefile = "gfx/interface/icons/districts/grid_box/default_animated_texture.dds"
+			animationrotation = 90.0
+			animationlooping = yes
+			animationtime = 2.0
+			animationdelay = 0.0
+			animationblendmode = "add"       #add, multiply, overlay
+			animationtype = "pulsing"      #scrolling, rotating, pulsing
+			animationrotationoffset = { x = 0.0 y = 0.0 }
+			animationtexturescale = { x = 1.0 y = 1.0 }
+			#animationframes = { 1 2 3 }
+		}
+	}
+	
+	spriteType = {
+		name = "GFX_district_time_bg"
+		texturefile = "gfx/interface/planetview/district_backgrounds/district_time_bg.dds"
+	}
+	
+	
+	
+	spriteType = {
+		name = "GFX_district_time_physics_box_icon_rectangle"
+		texturefile = "gfx/interface/icons/districts/grid_box/district_city_rectangle.dds"
+		effectFile = "gfx/FX/buttonstate_onlydisable.shader"
+		noOfFrames = 3
+		animation = {
+			animationmaskfile = "gfx/interface/icons/districts/grid_box/default_animated_mask.dds"
+			animationtexturefile = "gfx/interface/icons/districts/grid_box/default_animated_texture.dds"
+			animationrotation = 90.0
+			animationlooping = yes
+			animationtime = 2.0
+			animationdelay = 0.0
+			animationblendmode = "add"       #add, multiply, overlay
+			animationtype = "pulsing"      #scrolling, rotating, pulsing
+			animationrotationoffset = { x = 0.0 y = 0.0 }
+			animationtexturescale = { x = 1.0 y = 1.0 }
+			#animationframes = { 1 2 3 }
+		}
+	}
+	
+	spriteType = {
+		name = "GFX_district_time_physics_bg"
+		texturefile = "gfx/interface/planetview/district_backgrounds/district_time_physics_bg.dds"
+	}
+	
+	
+	
+	spriteType = {
+		name = "GFX_district_time_society_box_icon_rectangle"
+		texturefile = "gfx/interface/icons/districts/grid_box/district_farming_rectangle.dds"
+		effectFile = "gfx/FX/buttonstate_onlydisable.shader"
+		noOfFrames = 3
+		animation = {
+			animationmaskfile = "gfx/interface/icons/districts/grid_box/default_animated_mask.dds"
+			animationtexturefile = "gfx/interface/icons/districts/grid_box/default_animated_texture.dds"
+			animationrotation = 90.0
+			animationlooping = yes
+			animationtime = 2.0
+			animationdelay = 0.0
+			animationblendmode = "add"       #add, multiply, overlay
+			animationtype = "pulsing"      #scrolling, rotating, pulsing
+			animationrotationoffset = { x = 0.0 y = 0.0 }
+			animationtexturescale = { x = 1.0 y = 1.0 }
+			#animationframes = { 1 2 3 }
+		}
+	}
+	
+	spriteType = {
+		name = "GFX_district_time_society_bg"
+		texturefile = "gfx/interface/planetview/district_backgrounds/district_time_society_bg.dds"
+	}
+	
+	
+	
+	spriteType = {
+		name = "GFX_district_time_engineering_box_icon_rectangle"
+		texturefile = "gfx/interface/icons/districts/grid_box/district_arcology_mixed_industry_rectangle.dds"
+		effectFile = "gfx/FX/buttonstate_onlydisable.shader"
+		noOfFrames = 3
+		animation = {
+			animationmaskfile = "gfx/interface/icons/districts/grid_box/default_animated_mask.dds"
+			animationtexturefile = "gfx/interface/icons/districts/grid_box/default_animated_texture.dds"
+			animationrotation = 90.0
+			animationlooping = yes
+			animationtime = 2.0
+			animationdelay = 0.0
+			animationblendmode = "add"       #add, multiply, overlay
+			animationtype = "pulsing"      #scrolling, rotating, pulsing
+			animationrotationoffset = { x = 0.0 y = 0.0 }
+			animationtexturescale = { x = 1.0 y = 1.0 }
+			#animationframes = { 1 2 3 }
+		}
+	}
+	
+	spriteType = {
+		name = "GFX_district_time_engineering_bg"
+		texturefile = "gfx/interface/planetview/district_backgrounds/district_time_engineering_bg.dds"
+	}
+	
+	
+	
+	spriteType = {
+		name = "GFX_district_endless_time_box_icon_rectangle"
+		texturefile = "gfx/interface/icons/districts/grid_box/district_time_rectangle.dds"
+		effectFile = "gfx/FX/buttonstate_onlydisable.shader"
+		noOfFrames = 3
+		animation = {
+			animationmaskfile = "gfx/interface/icons/districts/grid_box/default_animated_mask.dds"
+			animationtexturefile = "gfx/interface/icons/districts/grid_box/default_animated_texture.dds"
+			animationrotation = 90.0
+			animationlooping = yes
+			animationtime = 2.0
+			animationdelay = 0.0
+			animationblendmode = "add"       #add, multiply, overlay
+			animationtype = "pulsing"      #scrolling, rotating, pulsing
+			animationrotationoffset = { x = 0.0 y = 0.0 }
+			animationtexturescale = { x = 1.0 y = 1.0 }
+			#animationframes = { 1 2 3 }
+		}
+	}
+	
+	spriteType = {
+		name = "GFX_district_endless_time_bg"
+		texturefile = "gfx/interface/planetview/district_backgrounds/district_endless_time_bg.dds"
+	}
+	
+	################################################################
+	# 气态生物
+	################################################################
+	
+	spriteType = {
+		name = "GFX_district_gas_city_box_icon_rectangle"
+		texturefile = "gfx/interface/icons/districts/grid_box/district_arcology_mixed_industry_rectangle.dds"
+		effectFile = "gfx/FX/buttonstate_onlydisable.shader"
+		noOfFrames = 3
+		animation = {
+			animationmaskfile = "gfx/interface/icons/districts/grid_box/default_animated_mask.dds"
+			animationtexturefile = "gfx/interface/icons/districts/grid_box/default_animated_texture.dds"
+			animationrotation = 90.0
+			animationlooping = yes
+			animationtime = 2.0
+			animationdelay = 0.0
+			animationblendmode = "add"       #add, multiply, overlay
+			animationtype = "pulsing"      #scrolling, rotating, pulsing
+			animationrotationoffset = { x = 0.0 y = 0.0 }
+			animationtexturescale = { x = 1.0 y = 1.0 }
+			#animationframes = { 1 2 3 }
+		}
+	}
+	
+	spriteType = {
+		name = "GFX_district_gas_city_bg"
+		texturefile = "gfx/interface/planetview/district_backgrounds/district_gas_city_bg.dds"
+	}
+	
+	################################################################
+	# 虚境访客
+	################################################################
+	
+	spriteType = {
+		name = "GFX_district_psionic_city_box_icon_rectangle"
+		texturefile = "gfx/interface/icons/districts/grid_box/district_time_rectangle.dds"
+		effectFile = "gfx/FX/buttonstate_onlydisable.shader"
+		noOfFrames = 3
+		animation = {
+			animationmaskfile = "gfx/interface/icons/districts/grid_box/default_animated_mask.dds"
+			animationtexturefile = "gfx/interface/icons/districts/grid_box/default_animated_texture.dds"
+			animationrotation = 90.0
+			animationlooping = yes
+			animationtime = 2.0
+			animationdelay = 0.0
+			animationblendmode = "add"       #add, multiply, overlay
+			animationtype = "pulsing"      #scrolling, rotating, pulsing
+			animationrotationoffset = { x = 0.0 y = 0.0 }
+			animationtexturescale = { x = 1.0 y = 1.0 }
+			#animationframes = { 1 2 3 }
+		}
+	}
+	
+	spriteType = {
+		name = "GFX_district_psionic_city_bg"
+		texturefile = "gfx/interface/planetview/district_backgrounds/district_psionic_city_bg.dds"
+	}
+	
+	################################################################
+	# 纳米机器
+	################################################################
+	
+	spriteType = {
+		name = "GFX_district_nanites_city_box_icon_rectangle"
+		texturefile = "gfx/interface/icons/districts/grid_box/district_nanites_city_rectangle.dds"
+		effectFile = "gfx/FX/buttonstate_onlydisable.shader"
+		noOfFrames = 3
+		animation = {
+			animationmaskfile = "gfx/interface/icons/districts/grid_box/default_animated_mask.dds"
+			animationtexturefile = "gfx/interface/icons/districts/grid_box/default_animated_texture.dds"
+			animationrotation = 90.0
+			animationlooping = yes
+			animationtime = 2.0
+			animationdelay = 0.0
+			animationblendmode = "add"       #add, multiply, overlay
+			animationtype = "pulsing"      #scrolling, rotating, pulsing
+			animationrotationoffset = { x = 0.0 y = 0.0 }
+			animationtexturescale = { x = 1.0 y = 1.0 }
+			#animationframes = { 1 2 3 }
+		}
+	}
+	
+	spriteType = {
+		name = "GFX_district_nanites_city_bg"
+		texturefile = "gfx/interface/planetview/district_backgrounds/district_nanites_city_bg.dds"
+	}
+	
+	################################################################
+	# 机械神教
+	################################################################
+	
+	spriteType = {
+		name = "GFX_district_arcology_adeptus_mechanicus_box_icon_rectangle"
+		texturefile = "gfx/interface/icons/districts/grid_box/district_arcology_organic_housing_rectangle.dds"
+		effectFile = "gfx/FX/buttonstate_onlydisable.shader"
+		noOfFrames = 3
+		animation = {
+			animationmaskfile = "gfx/interface/icons/districts/grid_box/default_animated_mask.dds"
+			animationtexturefile = "gfx/interface/icons/districts/grid_box/default_animated_texture.dds"
+			animationrotation = 90.0
+			animationlooping = yes
+			animationtime = 2.0
+			animationdelay = 0.0
+			animationblendmode = "add"       #add, multiply, overlay
+			animationtype = "pulsing"      #scrolling, rotating, pulsing
+			animationrotationoffset = { x = 0.0 y = 0.0 }
+			animationtexturescale = { x = 1.0 y = 1.0 }
+			#animationframes = { 1 2 3 }
+		}
+	}
+	
+	spriteType = {
+		name = "GFX_district_arcology_adeptus_mechanicus_bg"
+		texturefile = "gfx/interface/planetview/district_backgrounds/district_arcology_administrative.dds"
+	}
+	
+	################################################################
+	# 怪物猎人
+	################################################################
+	
+	spriteType = {
+		name = "GFX_district_arcology_monster_hunter_box_icon_rectangle"
+		texturefile = "gfx/interface/icons/districts/grid_box/district_crashed_slaver_ship_rectangle.dds"
+		effectFile = "gfx/FX/buttonstate_onlydisable.shader"
+		noOfFrames = 3
+		animation = {
+			animationmaskfile = "gfx/interface/icons/districts/grid_box/default_animated_mask.dds"
+			animationtexturefile = "gfx/interface/icons/districts/grid_box/default_animated_texture.dds"
+			animationrotation = 90.0
+			animationlooping = yes
+			animationtime = 2.0
+			animationdelay = 0.0
+			animationblendmode = "add"       #add, multiply, overlay
+			animationtype = "pulsing"      #scrolling, rotating, pulsing
+			animationrotationoffset = { x = 0.0 y = 0.0 }
+			animationtexturescale = { x = 1.0 y = 1.0 }
+			#animationframes = { 1 2 3 }
+		}
+	}
+	
+	spriteType = {
+		name = "GFX_district_arcology_monster_hunter_bg"
+		texturefile = "gfx/interface/planetview/district_backgrounds/district_arcology_monster_hunter_bg.dds"
+	}
+	
+	################################################################
+	# 黑客帝国
+	################################################################
+	
+	spriteType = {
+		name = "GFX_district_time_ruin_cosmogenesis_world_main_box_icon_rectangle"
+		texturefile = "gfx/interface/icons/districts/grid_box/district_cosmogenesis_world_logic_rectangle.dds"
+		effectFile = "gfx/FX/buttonstate_onlydisable.shader"
+		noOfFrames = 3
+		animation = {
+			animationmaskfile = "gfx/interface/icons/districts/grid_box/default_animated_mask.dds"
+			animationtexturefile = "gfx/interface/icons/districts/grid_box/default_animated_texture.dds"
+			animationrotation = 90.0
+			animationlooping = yes
+			animationtime = 2.0
+			animationdelay = 0.0
+			animationblendmode = "add"       #add, multiply, overlay
+			animationtype = "pulsing"      #scrolling, rotating, pulsing
+			animationrotationoffset = { x = 0.0 y = 0.0 }
+			animationtexturescale = { x = 1.0 y = 1.0 }
+			#animationframes = { 1 2 3 }
+		}
+	}
+	
+	spriteType = {
+		name = "GFX_district_time_ruin_cosmogenesis_world_main_bg"
+		texturefile = "gfx/interface/planetview/district_backgrounds/district_time_ruin_cosmogenesis_world_main_bg.dds"
+	}
+	
+	
+	
+	spriteType = {
+		name = "GFX_district_time_ruin_cosmogenesis_world_secondary_box_icon_rectangle"
+		texturefile = "gfx/interface/icons/districts/grid_box/district_cosmogenesis_world_science_rectangle.dds"
+		effectFile = "gfx/FX/buttonstate_onlydisable.shader"
+		noOfFrames = 3
+		animation = {
+			animationmaskfile = "gfx/interface/icons/districts/grid_box/default_animated_mask.dds"
+			animationtexturefile = "gfx/interface/icons/districts/grid_box/default_animated_texture.dds"
+			animationrotation = 90.0
+			animationlooping = yes
+			animationtime = 2.0
+			animationdelay = 0.0
+			animationblendmode = "add"       #add, multiply, overlay
+			animationtype = "pulsing"      #scrolling, rotating, pulsing
+			animationrotationoffset = { x = 0.0 y = 0.0 }
+			animationtexturescale = { x = 1.0 y = 1.0 }
+			#animationframes = { 1 2 3 }
+		}
+	}
+	
+	spriteType = {
+		name = "GFX_district_time_ruin_cosmogenesis_world_secondary_bg"
+		texturefile = "gfx/interface/planetview/district_backgrounds/district_time_ruin_cosmogenesis_world_secondary_bg.dds"
+	}
+	
+	################################################################
+	# 位面之门
+	################################################################
+	
+	spriteType = {
+		name = "GFX_district_time_notofthisworld_box_icon_rectangle"
+		texturefile = "gfx/interface/icons/districts/grid_box/district_rw_science_rectangle.dds"
+		effectFile = "gfx/FX/buttonstate_onlydisable.shader"
+		noOfFrames = 3
+		animation = {
+			animationmaskfile = "gfx/interface/icons/districts/grid_box/default_animated_mask.dds"
+			animationtexturefile = "gfx/interface/icons/districts/grid_box/default_animated_texture.dds"
+			animationrotation = 90.0
+			animationlooping = yes
+			animationtime = 2.0
+			animationdelay = 0.0
+			animationblendmode = "add"       #add, multiply, overlay
+			animationtype = "pulsing"      #scrolling, rotating, pulsing
+			animationrotationoffset = { x = 0.0 y = 0.0 }
+			animationtexturescale = { x = 1.0 y = 1.0 }
+			#animationframes = { 1 2 3 }
+		}
+	}
+	
+	spriteType = {
+		name = "GFX_district_time_notofthisworld_bg"
+		texturefile = "gfx/interface/planetview/district_backgrounds/district_time_notofthisworld_bg.dds"
+	}
+	
+	################################################################
+	# 彼岸庇护所
+	################################################################
+	
+	spriteType = {
+		name = "GFX_district_time_shelter_main_box_icon_rectangle"
+		texturefile = "gfx/interface/icons/districts/grid_box/district_time_rectangle.dds"
+		effectFile = "gfx/FX/buttonstate_onlydisable.shader"
+		noOfFrames = 3
+		animation = {
+			animationmaskfile = "gfx/interface/icons/districts/grid_box/default_animated_mask.dds"
+			animationtexturefile = "gfx/interface/icons/districts/grid_box/default_animated_texture.dds"
+			animationrotation = 90.0
+			animationlooping = yes
+			animationtime = 2.0
+			animationdelay = 0.0
+			animationblendmode = "add"       #add, multiply, overlay
+			animationtype = "pulsing"      #scrolling, rotating, pulsing
+			animationrotationoffset = { x = 0.0 y = 0.0 }
+			animationtexturescale = { x = 1.0 y = 1.0 }
+			#animationframes = { 1 2 3 }
+		}
+	}
+	
+	spriteType = {
+		name = "GFX_district_time_shelter_main_bg"
+		texturefile = "gfx/interface/planetview/district_backgrounds/district_time_shelter_main_bg.dds"
+	}
+	
+	
+	
+	spriteType = {
+		name = "GFX_district_time_shelter_secondary_box_icon_rectangle"
+		texturefile = "gfx/interface/icons/districts/grid_box/district_rw_science_rectangle.dds"
+		effectFile = "gfx/FX/buttonstate_onlydisable.shader"
+		noOfFrames = 3
+		animation = {
+			animationmaskfile = "gfx/interface/icons/districts/grid_box/default_animated_mask.dds"
+			animationtexturefile = "gfx/interface/icons/districts/grid_box/default_animated_texture.dds"
+			animationrotation = 90.0
+			animationlooping = yes
+			animationtime = 2.0
+			animationdelay = 0.0
+			animationblendmode = "add"       #add, multiply, overlay
+			animationtype = "pulsing"      #scrolling, rotating, pulsing
+			animationrotationoffset = { x = 0.0 y = 0.0 }
+			animationtexturescale = { x = 1.0 y = 1.0 }
+			#animationframes = { 1 2 3 }
+		}
+	}
+	
+	spriteType = {
+		name = "GFX_district_time_shelter_secondary_bg"
+		texturefile = "gfx/interface/planetview/district_backgrounds/district_time_shelter_secondary_bg.dds"
+	}
+	
+	
+	
+	spriteType = {
+		name = "GFX_district_time_shelter_resource_box_icon_rectangle"
+		texturefile = "gfx/interface/icons/districts/grid_box/district_generator_rectangle.dds"
+		effectFile = "gfx/FX/buttonstate_onlydisable.shader"
+		noOfFrames = 3
+		animation = {
+			animationmaskfile = "gfx/interface/icons/districts/grid_box/default_animated_mask.dds"
+			animationtexturefile = "gfx/interface/icons/districts/grid_box/default_animated_texture.dds"
+			animationrotation = 90.0
+			animationlooping = yes
+			animationtime = 2.0
+			animationdelay = 0.0
+			animationblendmode = "add"       #add, multiply, overlay
+			animationtype = "pulsing"      #scrolling, rotating, pulsing
+			animationrotationoffset = { x = 0.0 y = 0.0 }
+			animationtexturescale = { x = 1.0 y = 1.0 }
+			#animationframes = { 1 2 3 }
+		}
+	}
+	
+	spriteType = {
+		name = "GFX_district_time_shelter_resource_bg"
+		texturefile = "gfx/interface/planetview/district_backgrounds/district_time_shelter_resource_bg.dds"
+	}
+	
+	
+	
+	spriteType = {
+		name = "GFX_district_time_shelter_manufacturing_box_icon_rectangle"
+		texturefile = "gfx/interface/icons/districts/grid_box/district_mining_rectangle.dds"
+		effectFile = "gfx/FX/buttonstate_onlydisable.shader"
+		noOfFrames = 3
+		animation = {
+			animationmaskfile = "gfx/interface/icons/districts/grid_box/default_animated_mask.dds"
+			animationtexturefile = "gfx/interface/icons/districts/grid_box/default_animated_texture.dds"
+			animationrotation = 90.0
+			animationlooping = yes
+			animationtime = 2.0
+			animationdelay = 0.0
+			animationblendmode = "add"       #add, multiply, overlay
+			animationtype = "pulsing"      #scrolling, rotating, pulsing
+			animationrotationoffset = { x = 0.0 y = 0.0 }
+			animationtexturescale = { x = 1.0 y = 1.0 }
+			#animationframes = { 1 2 3 }
+		}
+	}
+	
+	spriteType = {
+		name = "GFX_district_time_shelter_manufacturing_bg"
+		texturefile = "gfx/interface/planetview/district_backgrounds/district_time_shelter_manufacturing_bg.dds"
+	}
+	
+	
+	
+	spriteType = {
+		name = "GFX_district_time_shelter_unity_box_icon_rectangle"
+		texturefile = "gfx/interface/icons/districts/grid_box/district_farming_rectangle.dds"
+		effectFile = "gfx/FX/buttonstate_onlydisable.shader"
+		noOfFrames = 3
+		animation = {
+			animationmaskfile = "gfx/interface/icons/districts/grid_box/default_animated_mask.dds"
+			animationtexturefile = "gfx/interface/icons/districts/grid_box/default_animated_texture.dds"
+			animationrotation = 90.0
+			animationlooping = yes
+			animationtime = 2.0
+			animationdelay = 0.0
+			animationblendmode = "add"       #add, multiply, overlay
+			animationtype = "pulsing"      #scrolling, rotating, pulsing
+			animationrotationoffset = { x = 0.0 y = 0.0 }
+			animationtexturescale = { x = 1.0 y = 1.0 }
+			#animationframes = { 1 2 3 }
+		}
+	}
+	
+	spriteType = {
+		name = "GFX_district_time_shelter_unity_bg"
+		texturefile = "gfx/interface/planetview/district_backgrounds/district_time_shelter_unity_bg.dds"
+	}
+	
+	
+	
+	spriteType = {
+		name = "GFX_district_time_shelter_research_box_icon_rectangle"
+		texturefile = "gfx/interface/icons/districts/grid_box/district_city_rectangle.dds"
+		effectFile = "gfx/FX/buttonstate_onlydisable.shader"
+		noOfFrames = 3
+		animation = {
+			animationmaskfile = "gfx/interface/icons/districts/grid_box/default_animated_mask.dds"
+			animationtexturefile = "gfx/interface/icons/districts/grid_box/default_animated_texture.dds"
+			animationrotation = 90.0
+			animationlooping = yes
+			animationtime = 2.0
+			animationdelay = 0.0
+			animationblendmode = "add"       #add, multiply, overlay
+			animationtype = "pulsing"      #scrolling, rotating, pulsing
+			animationrotationoffset = { x = 0.0 y = 0.0 }
+			animationtexturescale = { x = 1.0 y = 1.0 }
+			#animationframes = { 1 2 3 }
+		}
+	}
+	
+	spriteType = {
+		name = "GFX_district_time_shelter_research_bg"
+		texturefile = "gfx/interface/planetview/district_backgrounds/district_time_shelter_research_bg.dds"
+	}
+}

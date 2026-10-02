@@ -1,0 +1,11 @@
+modifier = {
+	factor = 0
+	has_trait = $TRAIT$
+}
+modifier = {
+	factor = 0
+	has_$FORBID$_subclass = yes
+}
+add_trait = {
+	trait = $TRAIT$
+}

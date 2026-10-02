@@ -1,0 +1,122 @@
+# 时光监狱
+building_time_hotel = {
+	icon = holding_distributed_processing
+	base_buildtime = @b4_time
+	planet_limit = 1
+	
+	category = government
+	
+	building_sets = {
+		government
+		urban
+		fortress
+	}
+
+	potential = {
+		NOT = { has_modifier = resort_colony }
+	}
+	
+	destroy_trigger = {
+		has_modifier = resort_colony
+	}
+
+	allow = {
+		OR = {
+			has_major_upgraded_capital = yes
+			has_modifier = penal_colony
+		}
+	}
+	
+	triggered_country_modifier = {
+		planet_stability_add = 1
+		planet_crime_floor_add = -2
+		planet_crime_mult = -0.05
+		mult = value:building_time_hotel_value
+	}
+	
+	triggered_country_modifier = {
+		potential = {
+			exists = owner
+			owner = { has_ascension_perk = ap_archaeoengineers }
+		}
+		planet_jobs_produces_mult = 0.02
+		mult = value:building_time_hotel_value
+	}
+	
+	triggered_country_modifier = {
+		potential = {
+			exists = owner
+			owner = { has_ascension_perk = ap_horror }
+		}
+		country_unity_produces_mult = 0.02
+		mult = value:building_time_hotel_value
+	}
+	
+	triggered_country_modifier = {
+		potential = {
+			exists = owner
+			owner = { has_ascension_perk = ap_time }
+		}
+		country_physics_research_produces_mult = 0.02
+		country_society_research_produces_mult = 0.02
+		country_engineering_research_produces_mult = 0.02
+		mult = value:building_time_hotel_value
+	}
+	
+	triggered_planet_modifier = {
+		planet_building_capacity_add = 1
+		planet_stability_add = 5
+		planet_crime_floor_add = -10
+		planet_crime_mult = -0.25
+	}
+	
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { has_ascension_perk = ap_archaeoengineers }
+		}
+		planet_jobs_produces_mult = 0.1
+	}
+	
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { has_ascension_perk = ap_horror }
+		}
+		country_unity_produces_mult = 0.1
+	}
+	
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { has_ascension_perk = ap_time }
+		}
+		country_physics_research_produces_mult = 0.1
+		country_society_research_produces_mult = 0.1
+		country_engineering_research_produces_mult = 0.1
+	}
+	
+	custom_tooltip = building_time_hotel_extra_effect_for_sector_capital
+
+	prerequisites = {
+		"tech_building_time_hotel"
+	}
+
+	resources = {
+		category = planet_buildings
+		inline_script = {
+			script = buildings/nomadic_cost_switcher
+			REGULAR_RESOURCE = minerals
+			NOMADIC_RESOURCE = alloys
+			COST = @b4_minerals
+			NOMADIC_COST_MULT = @nomadic_minerals_to_strategic_ratio
+		}
+		cost = {
+			sr_dark_matter = 50
+			minor_artifacts = 30
+		}
+		upkeep = {
+			energy = @b3_upkeep
+		}
+	}
+}

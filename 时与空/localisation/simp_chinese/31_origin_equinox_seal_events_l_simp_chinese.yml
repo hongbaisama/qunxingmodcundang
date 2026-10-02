@@ -1,0 +1,62 @@
+﻿l_simp_chinese:
+ origin_equinox_glimpse:0 "彼岸一瞥"
+ origin_equinox_glimpse_desc:0 "['concept_story_origin_text']\n这一文明曾备受噩梦侵扰，但来自彼岸的梦魇已于封印中沉眠。"
+ 
+ astral_rift_equinox_seal:0 "彼岸封印"
+ add_equinox_seal_clue:0 "§Y$astral_rift_equinox_seal$§!线索获得：§G+1§!"
+ 
+ NAME_equinox_seal_sleeper:0 "§M清醒沉眠者§!"
+ 
+ origin_equinox_seal.3.name:0 "梦魇之陨"
+ origin_equinox_seal.3.desc.1:0 "我们没能成功封印§Y清醒沉眠者§!，并为之付出了惨痛的代价。可现如今，我们已经将其从这个位面驱逐，虽然不知道对祂造成了多大的伤害，但祂或许不会再将这片宇宙当成安逸的狩猎场。"
+ origin_equinox_seal.3.desc.2:0 "这只梦魇曾从松动的封印中解放，我们也因此付出了惨痛的代价。但我们英勇无畏的战斗还是成功地将其驱逐，现在已经不需要什么封印了。"
+ origin_equinox_seal.3.desc.3:0 "我们不知道这只位面之魇是什么来头，但我们英勇无畏的战斗成功将其驱逐，现在已经不需要什么封印了。"
+ origin_equinox_seal.3.a:0 "梦醒了。"
+ 
+ origin_equinox_seal.4.name:0 "梦境消散"
+ origin_equinox_seal.4.desc:0 "曾赐予我们伟力的§Y清醒沉眠者§!被§Y[From.GetName]§!的舰队驱逐了。无论对梦境有再多不舍，我们也只能面对冰冷的现实。"
+ origin_equinox_seal.4.a:0 "至少噩梦结束了。"
+ origin_equinox_seal.4.a.tooltip:0 "所有领袖失去['concept_leader_trait_equinox_seal']特质"
+ 
+ origin_equinox_seal.5.name:0 "噩梦初醒"
+ origin_equinox_seal.5.desc:0 "来不及了，封印已经彻底松动，彼岸的梦魇轻易地挣脱了束缚，噩梦降临在§Y[equinox_seal_system.GetName]§!之中。"
+ origin_equinox_seal.5.a:0 "噩梦就要来了……"
+ 
+ origin_equinox_seal.6.name:0 "梦魇降临"
+ origin_equinox_seal.6.desc:0 "不知为何，§Y[equinox_seal_system.GetName]§!突然被彻底毁灭，一只可怖的位面之魇从黑洞中现身。"
+ origin_equinox_seal.6.a:0 "真是一场灾难！"
+ 
+ origin_equinox_seal.9.name:0 "暗物质波动"
+ origin_equinox_seal.9.desc.1:0 "当我们的舰船进入§Y[equinox_seal_system.GetName]§!星系时，船员们就发现了一只古怪的位面之魇。\n\n这只位面之魇周围萦绕着难以预测的暗物质波动，并且祂显然并不是很友善。"
+ origin_equinox_seal.9.desc.2:0 "当我们的舰船进入§Y[equinox_seal_system.GetName]§!星系时，船员们就监控到了来自中央黑洞的暗物质波动。\n\n准确来说，这股波动来源于那道奇异的星界裂隙。有的船员认为这道裂隙通往地狱，也有的船员认为这是一条封印。"
+ origin_equinox_seal.9.a:0 "启动武器能源，准备迎战！"
+ origin_equinox_seal.9.b:0 "我有种不祥的预感。"
+ 
+ origin_equinox_seal.11.name:0 "彼岸"
+ origin_equinox_seal.11.desc.default:0 "我们的探球成功潜入了星界裂隙，但其内部的物理法则与外界大相径庭，我们的科学官付出了许多努力才勉强掌握新的操控方式。\n\n星界裂隙中似乎是一片虚空，没有任何参照物可以确定探球移动的方向，唯有探球传递的信息表明它仍在正常工作。我们的科学官认为，他们已身处视界之内。\n\n无论如何，这是我们踏上彼岸的第一步。"
+ origin_equinox_seal.11.a:0 "我们打开了彼岸的大门。"
+ 
+ origin_equinox_seal.12.name:0 "白日梦"
+ origin_equinox_seal.12.desc.default:0 "探球上所有的船员不约而同地获得了嗜睡症。\n\n他们会在任何时刻不受控制地陷入沉睡，甚至有几次险些酿成大祸。但是，一段时间后，沉睡的船员就会从梦境中惊醒，显然，这又是一场噩梦。为了避免在关键时刻陷入沉睡，船员们重新安排了时间表，每隔一小时便进行一次轮班，休息的成员无论是否困倦都必须睡觉。此外，每次轮班的成员数量都十分庞大，只要没有全员沉睡，清晰的人就有能够唤醒其它船员，从而确保任务进行。\n\n然而，混乱的作息时间令船员们难以适应，这并非长久之策。"
+ origin_equinox_seal.12.a:0 "不仅需要自身的意志力，还需要一些外界的帮助。"
+ 
+ origin_equinox_seal.13.name:0 "清醒梦"
+ origin_equinox_seal.13.desc.default:0 "船员们的嗜睡症突然全都治好了。准确来说，并不是治好，而是自发地消失。\n\n然而，科学官§Y[Leader.GetName]§!很快就发现了异常：嗜睡症实际上依然存在，只是沉睡的船员自以为清醒，表现的也与常态一致。\n\n在清醒梦的状态下，船员会无法区分现实与梦境，并误将对梦境的回应执行在现实的反馈中，轻则导致设备损坏，重则导致人员伤亡。更令人担忧的是，在船员做出怪异举动之前，没有人能确认他是否在沉睡，也无法将自认为清醒的船员唤醒。\n\n这一现象随着探球的深入而日益加剧，我们的研究人员已经开始担忧前方的未知。"
+ origin_equinox_seal.13.a:0 "没人能用梦里的事物证明自己在不在梦里。"
+ 
+ origin_equinox_seal.14.name:0 "梦魇"
+ origin_equinox_seal.14.desc.default:0 "所有船员都已永久地陷入了清醒梦，他们传来的回报难以确认真伪，甚至就连这件事情本身也是。\n\n不过，在科学官§Y[Leader.GetName]§!的胡言乱语中，我们还是分析出了一些可能有价值的信息：飞船抵达了彼岸的深处，周围的景象变化无常难以，而在这片扭曲的时空里，一只漆黑的巨大生物正欢迎着我们的到来。\n\n这只被船员们称作§Y清醒沉眠者§!的生物发话了：§C“很高兴，你们可以来到这里。这是梦境，亦是现实，这是属于我的领地。你们的梦境，很美味，你们的意志，很诱人。我对你们很感兴趣，从很久以前就很感兴趣。”§!\n\n§C“我喜欢你们，喜欢到恨不得立刻将你们吃干抹净。”§!位面之魇张开了祂硕大的肢体，将探球抱在怀中，§C“这道可恶又可悲的封印很快就会迎来终结，快，快将它解开，我会让你们明白什么是梦的真谛。”§!\n\n裂隙之外的我们被这段骇人的言辞震撼到无法思考，但探球中的船员们却面无惧色，微笑着等待我们的答复，似乎他们早有决定。\n\n§C“我太爱你们了，所以我承诺，我会与你们共享梦境，也会通过梦境赐予你们未曾掌握的奇特能力，而代价，仅仅是你们梦境的归属权。这是一笔完美的交易，你们没有理由拒绝。快，快，解除这道封印，拥抱梦境的真实！”§!"
+ origin_equinox_seal.14.desc.unseal:0 "$origin_equinox_seal.14.desc.default$\n\n我们遵循§Y清醒沉眠者§!的旨意，揭开了这道脆弱不堪的封印，并献上了我们的梦境。\n\n§R祂会为我们带来什么呢？§!"
+ origin_equinox_seal.14.desc.seal:0 "$origin_equinox_seal.14.desc.default$\n\n科学官§Y[Leader.GetName]§!和部分船员成功被我们唤醒了，然而仍有不少沉睡的船员阻碍着我们的行动。\n\n尽管我们甚至不清楚该如何加固封印，但我们必须尽快完成，§Y清醒沉眠者§!不会给我们太多时间。"
+ origin_equinox_seal.14.unseal:0 "真是……一笔……诱人的……交易……"
+ origin_equinox_seal.14.unseal.tooltip:0 "所有领袖获得['concept_leader_trait_equinox_seal']特质"
+ origin_equinox_seal.14.seal:0 "别做梦了，想办法加固封印！"
+ origin_equinox_seal.14.seal.tooltip:0 "解锁§Y$decision_equinox_seal$§!决议和§Y$tech_equinox_seal$§!科技，以获取§Y$astral_rift_equinox_seal$§!的线索\n§R我们没有太多试错的机会，过多的失败可能导致封印被彻底摧毁！§!"
+ 
+ origin_equinox_seal.15.name:0 "封印"
+ origin_equinox_seal.15.desc.default:0 "终于，在我们的不懈努力下，封印得到了加固，§Y清醒沉眠者§!恐怕在很长一段时间内都无法对我们施加任何影响。\n\n但诡异的是，在这漫长的封印过程中，祂未曾对我们施加任何直接的干扰，仅仅是用极具蛊惑性的话语劝说我们改变心意。我们不清楚§Y清醒沉眠者§!这么做的理由，或许祂的影响力并不如我们想象中那么强大，也或许祂真的爱着我们，希望用和平的方式令我们回心转意。\n\n不过无论如何，一切都结束了。科学官§Y[Leader.GetName]§!还趁机收集了一些梦境中的物质，这或许能让我们再次窥见彼岸的一角。"
+ origin_equinox_seal.15.a:0 "梦该醒了。"
+ 
+ origin_equinox_seal.20.name:0 "视界信号"
+ origin_equinox_seal.20.desc:0 "就在我们完成封印后不久，§Y[horizonsignal_system.GetName]§!星系的黑洞再一次向我们发来了信号。\n\n我们不清楚它是如何越过无数星系抵达我们的首都，但根据历史记录，自我们屏蔽这道信号以来，黑洞就一直在朝我们发出微弱的信号，直到今天。\n\n我们不知对方究竟有何意图，但祂或许就是下一个§Y清醒沉眠者§!。"
+ origin_equinox_seal.20.a:0 "分析视界信号。"

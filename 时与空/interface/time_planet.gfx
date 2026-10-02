@@ -1,0 +1,79 @@
+spriteTypes = {
+	
+	################################################################
+	# 星球类型
+	################################################################
+	
+	spriteType = {
+		name = "GFX_planet_type_time_white_hole"
+		alwaystransparent = yes
+		texturefile = "gfx/interface/icons/planet_types/time_white_hole.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_planet_type_time_white_hole_big"
+		alwaystransparent = yes
+		texturefile = "gfx/interface/icons/planet_types/time_white_hole_big.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_planet_type_endless_time"
+		alwaystransparent = yes
+		texturefile = "gfx/interface/icons/planet_types/endless_time.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_planet_type_endless_time_big"
+		alwaystransparent = yes
+		texturefile = "gfx/interface/icons/planet_types/endless_time_big.dds"
+	}
+	
+	################################################################
+	# 宜居特质背景
+	################################################################
+	
+	spriteType = {
+		name = "GFX_species_selected_background_trait_pc_time_preference"
+		texturefile = "gfx/portraits/species_preview_backgrounds/species_preview_bg_time.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_species_selected_background_trait_pc_time_replace_preference"
+		texturefile = "gfx/portraits/species_preview_backgrounds/species_preview_bg_time_replace.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_species_selected_background_trait_pc_endless_time_preference"
+		texturefile = "gfx/portraits/species_preview_backgrounds/species_preview_bg_endless_time.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_species_selected_background_trait_pc_gas_colony_preference"
+		texturefile = "gfx/portraits/species_preview_backgrounds/species_preview_bg_gas_colony.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_species_selected_background_trait_pc_psionic_preference"
+		texturefile = "gfx/portraits/species_preview_backgrounds/species_preview_bg_psionic.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_species_selected_background_trait_pc_nanites_preference"
+		texturefile = "gfx/portraits/species_preview_backgrounds/species_preview_bg_nanites.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_species_selected_background_trait_pc_time_ruin_cosmogenesis_world_preference"
+		texturefile = "gfx/portraits/species_preview_backgrounds/species_preview_bg_time_ruin_cosmogenesis_world.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_species_selected_background_trait_pc_time_notofthisworld_preference"
+		texturefile = "gfx/portraits/species_preview_backgrounds/species_preview_bg_time_notofthisworld.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_species_selected_background_trait_pc_time_shelter_preference"
+		texturefile = "gfx/portraits/species_preview_backgrounds/species_preview_bg_time_shelter.dds"
+	}
+}

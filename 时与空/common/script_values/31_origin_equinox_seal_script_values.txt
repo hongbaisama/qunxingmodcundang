@@ -1,0 +1,10 @@
+equinox_seal_relic_value = {
+	base = 1
+	modifier = {
+		multiply = 0.5
+		NOR = {
+			has_origin = origin_equinox_seal
+			has_origin = origin_equinox_glimpse
+		}
+	}
+}

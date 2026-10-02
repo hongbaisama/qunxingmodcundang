@@ -1,0 +1,254 @@
+################################################################
+# 黑洞穿行
+################################################################
+
+time_titan_pass_black_hole_effect = {
+	potential = {
+		exists = event_target:time_titan_fleet
+	}
+	
+	allow = {
+		custom_tooltip = {
+			fail_text = "time_titan_can_only_pass_black_hole"
+			is_scope_type = planet
+			is_time_black_hole_planet_class = yes
+		}
+		custom_tooltip = {
+			fail_text = "time_titan_is_here"
+			if = {
+				limit = {
+					NOT = { is_scope_type = country }
+					exists = solar_system
+					event_target:time_titan_fleet = {
+						exists = solar_system
+					}
+				}
+				solar_system = {
+					NOT = { is_same_value = event_target:time_titan_fleet.solar_system }
+				}
+			}
+			else = {
+				always = yes
+			}
+		}
+		custom_tooltip = {
+			fail_text = "time_titan_is_cursed"
+			event_target:time_titan_fleet = {
+				time_titan_is_fine = yes
+			}
+		}
+		time_titan_is_free_for_action = yes
+	}
+	
+	effect = {
+		custom_tooltip = time_titan_pass_black_hole
+		hidden_effect = {
+			event_target:time_titan_fleet = {
+				# 进行黑洞穿行
+				fire_on_action = {
+					on_action = on_entering_pass_black_hole
+					scopes = {
+						FROM = prev.solar_system
+						FROMFROM = this.solar_system
+					}
+				}
+				set_location = {
+					target = prev
+					distance = 0
+					direction = in_system
+				}
+			}
+		}
+	}
+}
+
+################################################################
+# 连续升级
+################################################################
+
+time_titan_auto_upgrade_off_effect = {
+	potential = {
+		exists = event_target:time_titan_fleet
+		event_target:time_titan_fleet = {
+			NOT = { has_fleet_flag = time_titan_auto_upgrade }
+		}
+	}
+	
+	effect = {
+		custom_tooltip = time_titan_auto_upgrade_is_off
+		hidden_effect = {
+			event_target:time_titan_fleet = {
+				set_fleet_flag = time_titan_auto_upgrade
+			}
+		}
+	}
+}
+
+time_titan_auto_upgrade_on_effect = {
+	potential = {
+		exists = event_target:time_titan_fleet
+		event_target:time_titan_fleet = {
+			has_fleet_flag = time_titan_auto_upgrade
+		}
+	}
+	
+	effect = {
+		custom_tooltip = time_titan_auto_upgrade_is_on
+		hidden_effect = {
+			event_target:time_titan_fleet = {
+				remove_fleet_flag = time_titan_auto_upgrade
+			}
+		}
+	}
+}
+
+################################################################
+# 改造升级
+################################################################
+
+time_titan_special_upgrade_effect = {
+	potential = {
+		exists = event_target:time_titan_fleet
+	}
+	
+	allow = {
+		custom_tooltip = time_titan_special_upgrade
+		if = {
+			limit = {
+				from = { has_country_flag = upgrade_to_end_titan_finished }
+			}
+			custom_tooltip = {
+				fail_text = time_titan_has_been_upgraded_to_end_titan
+				always = no
+			}
+		}
+		else_if = {
+			limit = {
+				from = { has_country_flag = upgrade_to_time_titan_finished }
+			}
+			if = {
+				limit = {
+					from = {
+						OR = {
+							has_tech_option = tech_end_titan_blueprint
+							has_technology = tech_end_titan_blueprint
+						}
+					}
+				}
+				custom_tooltip = {
+					fail_text = we_have_tech_end_titan_blueprint
+					always = no
+				}
+			}
+			else_if = {
+				limit = {
+					from = { has_tradition = tr_end_adopt }
+				}
+				custom_tooltip = gain_tech_end_titan_blueprint
+				custom_tooltip = {
+					fail_text = can_not_upgrade_to_end_titan
+					success_text = can_upgrade_to_end_titan
+					time_titan_has_all_upgrade = { LEVEL = 8 }
+				}
+				custom_tooltip = {
+					fail_text = require_syzygy_admiral
+					time_titan_exist_syzygy_admiral = yes
+				}
+				from = {
+					has_technology = tech_end_shield
+					has_technology = tech_end_armor
+					has_technology = tech_end_beam
+				}
+			}
+			else = {
+				custom_tooltip = {
+					fail_text = time_titan_has_been_upgraded_to_time_titan
+					always = no
+				}
+			}
+		}
+		else = {
+			if = {
+				limit = {
+					from = {
+						OR = {
+							has_tech_option = tech_time_titan_blueprint
+							has_technology = tech_time_titan_blueprint
+						}
+					}
+				}
+				custom_tooltip = {
+					fail_text = we_have_tech_time_titan_blueprint
+					always = no
+				}
+			}
+			else_if = {
+				limit = {
+					from = { has_tradition = tr_time_adopt }
+				}
+				custom_tooltip = gain_tech_time_titan_blueprint
+				custom_tooltip = {
+					fail_text = can_not_upgrade_to_time_titan
+					success_text = can_upgrade_to_time_titan
+					time_titan_has_all_upgrade = { LEVEL = 4 }
+				}
+				custom_tooltip = {
+					fail_text = require_syzygy_admiral
+					time_titan_exist_syzygy_admiral = yes
+				}
+				from = {
+					has_technology = tech_time_shield
+					has_technology = tech_time_armor
+					has_technology = tech_time_beam
+				}
+			}
+			else = {
+				custom_tooltip = {
+					fail_text = time_titan_has_been_upgraded_to_horror_titan
+					always = no
+				}
+			}
+		}
+	}
+	
+	effect = {
+		custom_tooltip = time_titan_special_upgrade
+		if = {
+			limit = {
+				from = {
+					has_country_flag = upgrade_to_time_titan_finished
+					NOR = {
+						has_tech_option = tech_end_titan_blueprint
+						has_technology = tech_end_titan_blueprint
+					}
+					has_tradition = tr_end_adopt
+				}
+			}
+			custom_tooltip = gain_tech_end_titan_blueprint
+			hidden_effect = {
+				from = {
+					set_country_flag = unlock_end_titan_blueprint
+					add_research_option = tech_end_titan_blueprint
+				}
+			}
+		}
+		else_if = {
+			limit = {
+				from = {
+					NOR = {
+						has_tech_option = tech_time_titan_blueprint
+						has_technology = tech_time_titan_blueprint
+					}
+					has_tradition = tr_time_adopt
+				}
+			}
+			custom_tooltip = gain_tech_time_titan_blueprint
+			hidden_effect = {
+				from = {
+					set_country_flag = unlock_time_titan_blueprint
+					add_research_option = tech_time_titan_blueprint
+				}
+			}
+		}
+	}
+}

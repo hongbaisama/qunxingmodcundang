@@ -1,0 +1,328 @@
+﻿l_simp_chinese:
+ # 通用
+ concept_function_origin_text: "§B(机制性起源)§!"
+ concept_function_origin: "机制性起源"
+ concept_function_origin_desc: "该类起源拥有专属机制，甚至整局游戏都是围绕着该机制进行。\n该类起源的游戏体验可能与原版迥然不同，不建议完全按照原版的思路游玩。"
+ 
+ concept_story_origin_text: "§G(剧情性起源)§!"
+ concept_story_origin: "剧情性起源"
+ concept_story_origin_desc: "该类起源初始便伴随着一定的剧情文本，适合代入体验。"
+ 
+ concept_diversity_origin_text: "§Y(多样性起源)§!"
+ concept_diversity_origin: "多样性起源"
+ concept_diversity_origin_desc: "该类起源适合AI使用，以展现银河的多样性。\n但该类起源可玩性不强，不推荐玩家使用。"
+ 
+ concept_multiplayer_origin_text: "§H(联机性起源)§!"
+ concept_multiplayer_origin: "联机性起源"
+ concept_multiplayer_origin_desc: "该类起源适合在§Y联机模式§!中使用，单人游玩则无法正常游戏或者没有乐趣。"
+ 
+ concept_global_origin_text: "§R(全局性起源)§!"
+ concept_global_origin: "全局性起源"
+ concept_global_origin_desc: "该类起源会对整个银河的局势或规则造成较大的影响，请谨慎选择。\n当AI随机到该类起源时，在游戏开始，玩家将收到一个提示，并选择是否允许AI启用全局性起源。"
+ 
+ # 理念
+ concept_building_civic_starry_yearning: "$building_civic_starry_yearning$"
+ concept_building_civic_starry_yearning_corporate: "$building_civic_starry_yearning_corporate$"
+ 
+ concept_building_civic_overclocking_art: "$building_civic_overclocking_art$"
+ concept_building_civic_overclocking_art_corporate: "$building_civic_overclocking_art_corporate$"
+ concept_building_civic_overclocking_art_machine: "$building_civic_overclocking_art_machine$"
+ 
+ # 协同进化
+ concept_syncretic_evolution_traits: "$trait_syncretic_proles$特质"
+ concept_syncretic_evolution_traits_desc: "只有具备['concept_trait_syncretic_proles']或['concept_trait_nerve_stapled']特质的物种才能使用的特质，可以提供类似于未开智物种特质的效果。\n\n§R若物种没有['concept_trait_syncretic_proles']或['concept_trait_nerve_stapled']特质，此类特质将自动替换为常规特质。§!"
+ 
+ concept_trait_syncretic_proles: "$trait_syncretic_proles$"
+ 
+ concept_trait_nerve_stapled: "$trait_nerve_stapled$"
+ 
+ # 生命之籽
+ concept_trait_pc_gaia_preference_terraforming: "$trait_pc_gaia_preference_terraforming$"
+ 
+ # 蜂巢天性
+ concept_d_pc_hive_blocker: "$d_pc_hive_blocker$"
+ concept_d_pc_hive_blocker_desc: "—清理时间:\n$tt$—£time 720§I天§!\n—清理花费:\n$tt$—1500$i_food$\n—$MOD_PLANET_MAX_DISTRICTS_MULT$：§R-50%§!\n—$MOD_SPECIES_EMPIRE_SIZE_MULT$：§R+20%§!\n—$MOD_POP_AMENITIES_USAGE_NO_HAPPINESS_MULT$：§R+20%§!\n—$mod_planet_pops_upkeep_mult$：§R+20%§!\n—$MOD_BONUS_POP_GROWTH_MULT$：§R-20%§!\n—$mod_planet_jobs_produces_mult$：§R-20%§!\n—$mod_planet_structures_upkeep_mult$：§R+20%§!\n—清理后:\n$tt$—§I解锁星球特征：§!['concept_d_pc_hive']\n$h_line$§L$d_pc_hive_blocker_desc$§!"
+ 
+ concept_d_pc_hive: "$d_pc_hive$"
+ concept_d_pc_hive_desc: "—$MOD_PLANET_MAX_DISTRICTS_MULT$：§R-25%§!\n—每个拥有['concept_d_pc_hive']或['concept_d_pc_hive_other']的星球导致:\n$tt$—$MOD_SPECIES_EMPIRE_SIZE_MULT$：§G-2.5%§!\n$tt$—$MOD_POP_AMENITIES_USAGE_NO_HAPPINESS_MULT$：§G-2.5%§!\n$tt$—$mod_planet_pops_upkeep_mult$：§G-2.5%§!\n$tt$—$MOD_BONUS_POP_GROWTH_MULT$：§G+2.5%§!\n$tt$—$mod_planet_jobs_produces_mult$：§G+2.5%§!\n$tt$—$mod_planet_structures_upkeep_mult$：§R+2.5%§!\n$tt$—每§Y10§!年有§G100%§!概率将星系内随机固态行星转变为伴随['concept_d_pc_hive_other']的['concept_pc_hive']\n$tt$ (有§Y33%§!概率改为扩散至相邻星系)\n—维护费:10$i_food$/£planet \n$h_line$§L$d_pc_hive_desc$§!"
+ 
+ concept_d_pc_hive_other: "$d_pc_hive_other$"
+ concept_d_pc_hive_other_desc: "—$MOD_PLANET_MAX_DISTRICTS_MULT$：§R-25%§!\n—每个拥有['concept_d_pc_hive']或['concept_d_pc_hive_other']的星球导致:\n$tt$—$MOD_SPECIES_EMPIRE_SIZE_MULT$：§G-1.25%§!\n$tt$—$MOD_POP_AMENITIES_USAGE_NO_HAPPINESS_MULT$：§G-1.25%§!\n$tt$—$mod_planet_pops_upkeep_mult$：§G-1.25%§!\n$tt$—$MOD_BONUS_POP_GROWTH_MULT$：§G+1.25%§!\n$tt$—$mod_planet_jobs_produces_mult$：§G+1.25%§!\n$tt$—$mod_planet_structures_upkeep_mult$：§R+1.25%§!\n$tt$—每§Y10§!年有§G50%§!概率将星系内随机固态行星转变为伴随['concept_d_pc_hive_other']的['concept_pc_hive']\n$tt$ (有§Y33%§!概率改为扩散至相邻星系)\n—维护费:5$i_food$/£planet \n$h_line$§L$d_pc_hive_other_desc$§!"
+ 
+ # 气态生物
+ concept_origin_gas_colony_species_trait: "$origin_gas_colony$物种特质"
+ concept_origin_gas_colony_species_trait_desc: "$concept_origin_gas_colony_species_trait$是§Y$origin_gas_colony$§!起源专属的物种特质。\n此类特质限定物种只能在['concept_pc_gas_colony']上生存，并且无法被添加或移除。"
+ 
+ concept_trait_origin_gas_colony: "$trait_origin_gas_colony$"
+ 
+ concept_gas_technician: "$job_gas_technician_plural$"
+ concept_gas_technician_desc: "[gas_technician.GetNamePlural]是一种产出$i_energy$和$i_volatile_motes$的复合岗位，并被视作§I$job_technician$§!岗位。\n\n§L$job_gas_technician_desc$§!"
+ 
+ concept_gas_miner: "$job_gas_miner_plural$"
+ concept_gas_miner_desc: "[gas_miner.GetNamePlural]是一种产出$i_minerals$和$i_rare_crystals$的复合岗位，并被视作§I$job_miner$§!岗位。\n\n§L$job_gas_miner_desc$§!"
+ 
+ concept_gas_farmer: "$job_gas_farmer_plural$"
+ concept_gas_farmer_desc: "[gas_farmer.GetNamePlural]是一种产出$i_food$和$i_exotic_gases$的复合岗位，并被视作§I$job_farmer$§!岗位。\n\n§L$job_gas_farmer_desc$§!"
+ 
+ concept_gas_technician_drone: "$job_gas_technician_drone_plural$"
+ concept_gas_technician_drone_desc: "[gas_technician_drone.GetNamePlural]是一种产出$i_energy$和$i_volatile_motes$的复合岗位，并被视作§I$job_technician_drone$§!岗位。\n\n§L$job_gas_technician_drone_desc$§!"
+ 
+ concept_gas_mining_drone: "$job_gas_mining_drone_plural$"
+ concept_gas_mining_drone_desc: "[gas_mining_drone.GetNamePlural]是一种产出$i_minerals$和$i_rare_crystals$的复合岗位，并被视作§I$job_mining_drone$§!岗位。\n\n§L$job_gas_mining_drone_desc$§!"
+ 
+ concept_gas_agri_drone: "$job_gas_agri_drone_plural$"
+ concept_gas_agri_drone_desc: "[gas_agri_drone.GetNamePlural]是一种产出$i_food$和$i_exotic_gases$的复合岗位，并被视作§I$job_agri_drone$§!岗位。\n\n§L$job_gas_agri_drone_desc$§!"
+ 
+ # 虚境访客
+ concept_origin_psionic_species_trait: "$origin_psionic$物种特质"
+ concept_origin_psionic_species_trait_desc: "$concept_origin_psionic_species_trait$是§Y$origin_psionic$§!起源专属的物种特质。\n此类特质限定物种只能在['concept_pc_psionic']上生存，并且无法被添加或移除。"
+ 
+ concept_trait_origin_psionic: "$trait_origin_psionic$"
+ 
+ concept_col_psionic_mult_white: "§W虚境裂隙飞升效果§!"
+ concept_col_psionic_mult: "虚境裂隙飞升效果"
+ concept_col_psionic_mult_desc: "这代表着§Y$pc_psionic$§!连接虚境的飞升程度，并影响专属§Y星球规划§!的基础效果。"
+ 
+ concept_district_psionic_modifier_mult_white: "§W$pc_psionic$区划效果§!"
+ concept_district_psionic_modifier_mult: "$pc_psionic$区划效果"
+ concept_district_psionic_modifier_mult_desc: "这代表着§Y$pc_psionic$§!与虚境的共鸣程度，并影响专属§Y星球区划§!提供的住房与岗位。"
+ 
+ concept_psionic_trader: "$job_psionic_trader_plural$"
+ concept_psionic_trader_desc: "[psionic_trader.GetNamePlural]是一种产出$i_trade_value$、$i_unity$和$i_zro$的复合岗位，并被同时视作§I$job_trader$§!与§I$job_bureaucrat$§!岗位。\n\n§L$job_psionic_trader_desc$§!"
+ 
+ concept_psionic_technician: "$job_psionic_technician_plural$"
+ concept_psionic_technician_desc: "[psionic_technician.GetNamePlural]是一种产出$i_energy$和$i_physics$的复合岗位，并被视作§I$job_technician$§!岗位。\n\n§L$job_psionic_technician_desc$§!"
+ 
+ concept_psionic_miner: "$job_psionic_miner_plural$"
+ concept_psionic_miner_desc: "[psionic_miner.GetNamePlural]是一种产出$i_minerals$和$i_engineering$的复合岗位，并被视作§I$job_miner$§!岗位。\n\n§L$job_psionic_miner_desc$§!"
+ 
+ concept_psionic_farmer: "$job_psionic_farmer_plural$"
+ concept_psionic_farmer_desc: "[psionic_farmer.GetNamePlural]是一种产出$i_food$和$i_society$的复合岗位，并被视作§I$job_farmer$§!岗位。\n\n§L$job_psionic_farmer_desc$§!"
+ 
+ # 纳米机器
+ concept_origin_nanites_species_trait: "$origin_nanites$物种特质"
+ concept_origin_nanites_species_trait_desc: "$concept_origin_nanites_species_trait$是§Y$origin_nanites$§!起源专属的物种特质。\n此类特质限定物种只能在['concept_pc_nanites']上生存，并且无法被添加或移除。"
+ 
+ concept_trait_origin_nanites: "$trait_origin_nanites$"
+ 
+ concept_district_nanites_modifier_mult_white: "§W$pc_nanites$区划效果§!"
+ concept_district_nanites_modifier_mult: "$pc_nanites$区划效果"
+ concept_district_nanites_modifier_mult_desc: "这代表着§Y$pc_nanites$§!上矩阵网络的建设程度，并影响专属§Y星球区划§!提供的住房与岗位。"
+ 
+ concept_nanites_logistics_drone: "$job_nanites_logistics_drone_plural$"
+ concept_nanites_logistics_drone_desc: "[nanites_logistics_drone.GetNamePlural]是一种产出$i_trade_value$、$i_research$和$i_amenities$的复合岗位，并被同时视作§I$job_logistics_drone$§!与§I演算者§!岗位。\n\n§L$job_nanites_logistics_drone_desc$§!"
+ 
+ # 赞美太阳
+ concept_building_origin_praise_the_sun: "$building_origin_praise_the_sun$"
+ 
+ # 宁和之道
+ databank_origin_tao_of_ninghe: "宁和之道"
+ 
+ concept_pure_yin_modifier: "§B£mod_consecrated_world_green 极阴之力§!"
+ concept_pure_yin: "§B极阴之力§!"
+ concept_pure_yin_desc: "§B极阴之力§!代表着对阴气的极致掌握，当['concept_ninghe_country']偏向时['concept_yang_country']，国家与星球的['concept_yin_country']之力都会因此得到增强。"
+ 
+ concept_pure_yang_modifier: "§Y£mod_consecrated_world_yellow 极阳之力§!"
+ concept_pure_yang: "§Y极阳之力§!"
+ concept_pure_yang_desc: "§Y极阳之力§!代表着对阳气的极致掌握，当['concept_ninghe_country']偏向时['concept_yin_country']，国家与星球的['concept_yang_country']之力都会因此得到增强。"
+ 
+ concept_ninghe_country: "§G宁和§!"
+ concept_ninghe_country_desc: "§G宁和§!代表着国家中的['concept_yin_country']['concept_yang_country']平衡，它将从社会制度、意识形态、地区文化等层面影响国家中全体公民的兴趣爱好与价值观侧重等。\n\n维持在§G宁和§!状态将给我们带来极大的收益，因此，我们需要注意国家的['concept_leader_yin']、['concept_planet_yin']和['concept_leader_yang']、['concept_planet_yang']对§G宁和§!的影响。"
+ 
+ concept_yin_country: "§B阴§!"
+ concept_yin_country_desc: "§B阴§!代表着国家中的阴气，是['concept_ninghe_country']的一部分，它将从社会制度、意识形态、地区文化等层面影响国家中全体公民的兴趣爱好与价值观侧重等。\n\n['concept_leader_yin']和['concept_planet_yin']是影响§B阴§!之力的主要因素。"
+ 
+ concept_trait_yin: "§B阴系特质§!"
+ concept_leader_yin: "§B阴系领袖§!"
+ concept_leader_yin_desc: "§B阴系领袖§!会影响国家中的['concept_yin_country']之力，并直接影响国家的['concept_ninghe_country']。\n\n§B阴系领袖§!的每个等级和每级特质将使局势向['concept_yin_country']偏移§G1§!。\n\n§B阴系领袖§!主要来自于§H£official $subclass_official_delegate$§!、§H£official $subclass_official_diplomacy_councilor$§!、§H£official $subclass_official_economy_councilor$§!、§H£official $subclass_official_governor$§!、§B£scientist $subclass_scientist_governor$§!、§R£commander $subclass_commander_governor$§!的等级与特质的影响。"
+ 
+ concept_planet_yin: "§B阴系星球§!"
+ concept_planet_yin_desc: "§B阴系星球§!会影响国家中的['concept_yin_country']之力，并直接影响国家的['concept_ninghe_country']。\n\n§B['concept_yin']盛阳衰§!的星球将使局势向['concept_yin_country']偏移§G2~10§!。"
+ 
+ concept_yang_country: "§Y阳§!"
+ concept_yang_country_desc: "§Y阳§!代表着国家中的阳气，是['concept_ninghe_country']的一部分，它将从社会制度、意识形态、地区文化等层面影响国家中全体公民的兴趣爱好与价值观侧重等。\n\n['concept_leader_yang']和['concept_planet_yang']是影响§Y阳§!之力的主要因素。"
+ 
+ concept_trait_yang: "§Y阳系特质§!"
+ concept_leader_yang: "§Y阳系领袖§!"
+ concept_leader_yang_desc: "§Y阳系领袖§!会影响国家中的['concept_yang_country']之力，并直接影响国家的['concept_ninghe_country']。\n\n§Y阳系领袖§!的每个等级和每级特质将使局势向['concept_yang_country']偏移§G1§!。\n\n§Y阳系领袖§!主要来自于§B£scientist $subclass_scientist_explorer$§!、§B£scientist $subclass_scientist_scholar$§!、§B£scientist $subclass_scientist_councilor$§!、§R£commander $subclass_commander_admiral$§!、§R£commander $subclass_commander_general$§!、§R£commander $subclass_commander_councilor$§!的等级与特质的影响。"
+ 
+ concept_planet_yang: "§Y阳系星球§!"
+ concept_planet_yang_desc: "§Y阳系星球§!会影响国家中的['concept_yang_country']之力，并直接影响国家的['concept_ninghe_country']。\n\n§Y['concept_yang']盛阴衰§!的星球将使局势向['concept_yang_country']偏移§G2~10§!。"
+ 
+ concept_ninghe: "§G宁和§!"
+ concept_ninghe_desc: "§G宁和§!代表着星球上的['concept_yin']['concept_yang']平衡，它将从温度、气候、环境变化等层面影响星球上生命的生存活动和思维方式等。\n\n维持在§G宁和§!状态将给我们带来极大的收益，因此，我们需要注意星球的['concept_building_yin']、['concept_building_yang']和['concept_ninghe_planet_class']对§G宁和§!的影响。"
+ 
+ concept_ninghe_planet_class: "§G星球类型§!"
+ concept_ninghe_planet_class_desc: "不同的§G星球类型§!会对星球的['concept_ninghe']造成不同的影响。\n\n炎热类星球、理想城、环世界、机械球、纳米球等会增强星球的['concept_yang']之力，寒冷类星球、遗落球、居住站、死寂球、蜂巢球等会增强星球的['concept_yin']之力，而盖亚球则拥有一定调节['concept_ninghe']的能力。\n此外，侧重['concept_building_yang']的§G星球规划§!和侧重['concept_building_yin']的§G星球规划§!同样会使['concept_ninghe']朝对应方向偏移。"
+ 
+ concept_yin: "§B阴§!"
+ concept_yin_desc: "§B阴§!代表着星球上的阴气，是['concept_ninghe']的一部分，它将从温度、气候、环境变化等层面影响星球上生命的生存活动和思维方式等。\n\n['concept_building_yin']和['concept_ninghe_planet_class']是影响§B阴§!之力的主要因素。"
+ 
+ concept_yin_mult_modifier: "§W£mod_consecrated_world_green §B阴系建筑§!对宁和的影响§!"
+ concept_building_yin: "§B阴系建筑§!"
+ concept_building_yin_desc: "§B阴系建筑§!会影响星球上的['concept_yin']之力，并直接影响星球的['concept_ninghe']。\n\n每个§B阴系建筑§!将使局势向['concept_yin']偏移§G5§!。\n\n§B阴系建筑§!包括：\n£job_priest 凝聚类建筑、£trade 贸易类建筑、£amenities 舒适类建筑、£job_artisan 工厂类建筑、£strategic 精炼类建筑与侧重此类的区划特化等。"
+ 
+ concept_yang: "§Y阳§!"
+ concept_yang_desc: "§Y阳§!代表着星球上的阳气，是['concept_ninghe']的一部分，它将从温度、气候、环境变化等层面影响星球上生命的生存活动和思维方式等。\n\n['concept_building_yang']和['concept_ninghe_planet_class']是影响§Y阳§!之力的主要因素。"
+ 
+ concept_yang_mult_modifier: "§W£mod_consecrated_world_yellow §Y阳系建筑§!对宁和的影响§!"
+ concept_building_yang: "§Y阳系建筑§!"
+ concept_building_yang_desc: "§Y阳系建筑§!会影响星球上的['concept_yang']之力，并直接影响星球的['concept_ninghe']。\n\n每个§Y阳系建筑§!将使局势向['concept_yang']偏移§G5§!。\n\n§Y阳系建筑§!包括：\n£job_researcher 科研类建筑、£job_enforcer 政府类建筑、£job_soldier 军事类建筑、£job_foundry 铸造类建筑、£job_miner 资源类建筑与侧重此类的区划特化等。"
+ 
+ concept_building_origin_tao_of_ninghe_yin: "$building_origin_tao_of_ninghe_yin$"
+ concept_building_origin_tao_of_ninghe_yang: "$building_origin_tao_of_ninghe_yang$"
+ 
+ # 黑客帝国
+ concept_d_the_matrix_blocker: "$d_the_matrix_blocker$"
+ concept_d_the_matrix_blocker_desc: "—清理时间:\n$tt$—£time 90§I天§!\n—清理花费:\n$tt$—200$i_energy$\n$tt$—100$i_food$/$i_minerals$（每过一年§G-1§!）\n—$MOD_PLANET_MAX_DISTRICTS_ADD$：§R-0.2§!\n—生产:\n$tt$—2$i_research$（每过一年§R-0.1§!）\n$tt$—2$i_unity$（每过一年§R-0.1§!）\n—维护费:\n$tt$—1$i_food$/$i_minerals$（每过一年§G-0.05§!）\n—清理后:\n$tt$—拯救100£pop 人口（每过一年§R-5§!）\n$h_line$§L$d_the_matrix_blocker_desc$§!"
+ 
+ # 再组装者
+ concept_reassembly_mode_red: "§R$concept_reassembly_mode$§!"
+ concept_reassembly_mode: "再组装"
+ concept_reassembly_mode_desc: "通过星球决议开启再组装模式，将会对现有§I$mechanical_pops$§!进行再组装。\n\n再组装模式下，机械组装完成时不会获得新的人口，而是会将不具备['concept_trait_reassembler']特质的$mechanical_pops$整合入具备['concept_trait_reassembler']特质的模板。\n\n当可再组装机械人口数低于§Y$@can_active_reassembly_pop_amount|*0$§!时，将无法进行再组装。"
+ 
+ concept_trait_reassembler: "$trait_reassembler$"
+ 
+ concept_reassembly_speed_white: "§W再组装效率§!"
+ concept_reassembly_speed: "再组装效率"
+ concept_reassembly_speed_desc: "这代表着我们进行['concept_reassembly_mode']的效率，当组装带有['concept_trait_reassembler']特质的模板时，£mod_planet_pop_assembly_mult §Y$MOD_PLANET_POP_ASSEMBLY_MULT$§!将获得更高的§G提升§!。"
+ 
+ # 江洋大盗
+ concept_trait_origin_pirate_king: "$trait_origin_pirate_king$"
+ 
+ concept_leader_trait_origin_pirate_king_official: "$leader_trait_origin_pirate_king_official$"
+ concept_leader_trait_origin_pirate_king_official_desc: "$official_trait$\n\n$PLANET_EFFECTS_TXT$:\n$t$$MOD_PLANET_ARMY_BUILD_SPEED_MULT$：§G+20%§!\n$t$$MOD_ARMY_STARTING_EXPERIENCE_ADD$：§G+200§!\n\n$SECTOR_EFFECTS_TXT$:\n$t$$MOD_PLANET_ARMY_BUILD_SPEED_MULT$：§G+10%§!\n$t$$MOD_ARMY_STARTING_EXPERIENCE_ADD$：§G+100§!\n$h_line$§L$leader_trait_origin_pirate_king_official_desc$§!"
+ concept_leader_trait_origin_pirate_king_scientist: "$leader_trait_origin_pirate_king_scientist$"
+ concept_leader_trait_origin_pirate_king_scientist_desc: "$scientist_trait$\n\n$SCIENCE_SHIP_EFFECTS_TXT$:\n$t$$MOD_SHIP_SENSOR_RANGE_ADD$：§G+1§!\n$t$$MOD_SHIP_HYPERLANE_RANGE_ADD$：§G+2§!\n$h_line$§L$leader_trait_origin_pirate_king_scientist_desc$§!"
+ concept_leader_trait_origin_pirate_king_commander: "$leader_trait_origin_pirate_king_commander$"
+ concept_leader_trait_origin_pirate_king_commander_desc: "$commander_trait$\n\n$FLEET_EFFECTS_TXT$:\n$t$$MOD_SHIP_SPEED_MULT$：§G+20%§!\n$t$$MOD_SHIP_DISENGAGE_OPPORTUNITIES_ADD$：§G+1§!\n$h_line$§L$leader_trait_origin_pirate_king_commander_desc$§!"
+ 
+ # 机械神教
+ concept_building_adeptus_mechanicus_1: "$building_adeptus_mechanicus_1$"
+ concept_building_adeptus_mechanicus_2: "$building_adeptus_mechanicus_2$"
+ 
+ # 伪善假面
+ concept_hypocritical_face_decay: "§G舆论的操控§!"
+ concept_hypocritical_face_decay_desc: "§G舆论的操控§!代表着我们对国际间言论的管控，降低其它国家发现我们真实面貌的可能。\n\n通过研究某些特定科技，我们可以增强舆论操控的能力：\n§Y$tech_interplanetary_commerce$§!、§Y$tech_space_trading$§!、§Y$tech_interstellar_economics$§!、§Y$tech_galactic_markets$§!、§Y$tech_xeno_diplomacy$§!、§Y$tech_xeno_relations$§!"
+ 
+ concept_hypocritical_face_country: "§R他国的流言§!"
+ concept_hypocritical_face_country_desc: "§R他国的流言§!主要来自于对我们§R情报过高§!的国家，他们会在国际间揭露我们的真实面貌。当然，我们对外会称之为流言。\n\n我们的§Y加密能力§!可以降低这一数值。"
+ 
+ concept_hypocritical_face_building_modifier: "§W£mod_add_base_country_intel 星球的蜚语§!"
+ concept_hypocritical_face_building: "§R星球的蜚语§!"
+ concept_hypocritical_face_building_desc: "§R星球的蜚语§!主要来自于我们在其它星球上建造的['concept_hypocritical_face_branch_office_buildings']，星球上的居民会见识到我们的真实面貌。蜚语虽小，但也烦人。\n\n我们的§Y加密能力§!可以降低这一数值。"
+ 
+ concept_hypocritical_face_branch_office_buildings: "伪善$BRANCH_OFFICE_BUILDINGS$"
+ concept_hypocritical_face_branch_office_buildings_desc: "$concept_hypocritical_face_branch_office_buildings$是效果更强的$BRANCH_OFFICE_BUILDINGS$，只能在签订了商业协议的国家中建造，它们能产生更高的收益，但也更容易使你暴露。\n\n$concept_hypocritical_face_branch_office_buildings$包括：\n['concept_building_time_private_mining_consortium']\n['concept_building_time_food_conglomerate']\n['concept_building_time_virtual_entertainment_studios']\n['concept_building_time_private_shipyards']\n['concept_building_time_military_contractors']\n['concept_building_time_industrial_subsidiary']\n['concept_building_time_public_relations_office']\n['concept_building_time_private_research_initiative']\n['concept_building_time_amusement_megaplex']\n['concept_building_time_commercial_forum']\n['concept_building_time_corporate_embassy']\n['concept_building_time_private_security']\n['concept_building_time_temple_of_prosperity']"
+ 
+ concept_building_time_private_mining_consortium: "$building_time_private_mining_consortium$"
+ concept_building_time_food_conglomerate: "$building_time_food_conglomerate$"
+ concept_building_time_virtual_entertainment_studios: "$building_time_virtual_entertainment_studios$"
+ concept_building_time_private_shipyards: "$building_time_private_shipyards$"
+ concept_building_time_military_contractors: "$building_time_military_contractors$"
+ concept_building_time_industrial_subsidiary: "$building_time_industrial_subsidiary$"
+ concept_building_time_public_relations_office: "$building_time_public_relations_office$"
+ concept_building_time_private_research_initiative: "$building_time_private_research_initiative$"
+ concept_building_time_amusement_megaplex: "$building_time_amusement_megaplex$"
+ concept_building_time_commercial_forum: "$building_time_commercial_forum$"
+ concept_building_time_corporate_embassy: "$building_time_corporate_embassy$"
+ concept_building_time_private_security: "$building_time_private_security$"
+ concept_building_time_temple_of_prosperity: "$building_time_temple_of_prosperity$"
+ 
+ # 怪物猎人
+ concept_origin_monster_hunter_species_trait: "$origin_monster_hunter$物种特质"
+ concept_origin_monster_hunter_species_trait_desc: "$concept_origin_monster_hunter_species_trait$是§Y$origin_monster_hunter$§!起源专属的物种特质。\n此类特质允许人口从事专门的§Y$job_monster_hunter_plural$§!岗位和训练为专属的§Y$origin_monster_hunter_defense_army_plural$§!与§Y$origin_monster_hunter_army_plural$§!陆军。"
+ 
+ concept_trait_origin_monster_hunter: "$trait_origin_monster_hunter$"
+ 
+ concept_building_origin_monster_hunter_1: "$building_origin_monster_hunter_1$"
+ concept_building_origin_monster_hunter_2: "$building_origin_monster_hunter_2$"
+ 
+ concept_job_monster_hunter: "$job_monster_hunter_plural$"
+ concept_job_monster_hunter_desc: "[monster_hunter.GetNamePlural]是一种产出$i_food$（或是$i_minerals$以及$i_energy$）、$i_unity$、$i_consumer_goods$、$i_amenities$和$i_naval_capacity$的复合岗位，并被同时视作§I$job_entertainer$§!与§I$job_soldier$§!岗位。\n\n$job_monster_hunter_effect$\n\n§L$job_monster_hunter_desc$§!"
+ 
+ # 传奇崇拜
+ concept_origin_legendary_worship: "$origin_legendary_worship$"
+ 
+ # 神眷之族
+ concept_building_blessed_by_god: "$building_blessed_by_god$"
+ 
+ # 神弃之族
+ concept_building_abandoned_by_god: "$building_abandoned_by_god$"
+ 
+ concept_leader_trait_abandoned_by_god: "$leader_trait_abandoned_by_god$"
+ concept_leader_trait_abandoned_by_god_desc: "§R负面特质§!\n\n$BACKGROUND_PLANET_EFFECTS_TXT$:\n$t$每级产生的$MOD_POP_HAPPINESS$：§R-1%§!\n\n$THIS_LEADER_TXT$:\n$t$$MOD_LEADER_LIFESPAN_MULT$：§R-50%§!\n$t$每级产出的$r_research$：§G+1.5§!\n$t$每级消耗的$r_consumer_goods$：§R+2§!\n$t$无需$r_unity$花费与维护费\n$h_line$§L$leader_trait_abandoned_by_god_desc$§!"
+ 
+ # 彼岸封印
+ concept_leader_trait_equinox_seal: "$leader_trait_equinox_seal$"
+ concept_leader_trait_equinox_seal_desc: "§R负面特质§!\n\n$THIS_LEADER_TXT$:\n$t$每级消耗的$r_dark_matter$：§R+0.25§!\n$t$$MOD_LEADER_LIFESPAN_MULT$：§R-25%§!\n$t$$MOD_LEADER_SPECIES_EXP_GAIN$：§G+50%§!\n\n$PLANET_EFFECTS_TXT$:\n$t$£job 岗位生产的$r_research$和$r_unity$：§G+5%/级§!\n\n$SECTOR_EFFECTS_TXT$:\n$t$£job 岗位生产的$r_research$和$r_unity$：§G+2.5%/级§!\n$h_line$§L$leader_trait_equinox_seal_desc$§!"
+ 
+ # 二手国度
+ concept_secondhand_country_traits_orange: "§H二手零件§!"
+ concept_secondhand_country_traits_yellow: "§Y二手零件§!"
+ concept_advanced_secondhand_country_traits: "高级二手零件"
+ concept_secondhand_country_traits: "二手零件"
+ concept_secondhand_country_traits_desc: "二手零件特质提供比通常机械特质更强大的增益，代价是领袖预期寿命的降低与机器维护频率的增加。"
+ 
+ concept_secondhand_country_edict: "$edict_secondhand_country_edict$"
+ concept_secondhand_country_edict_desc: "—['concept_secondhand_country_traits']特质的正面效果：§G+100%§!\n—$mod_planet_pops_robotics_upkeep_mult$：§R+100%§!\n\n§L$edict_secondhand_country_edict_desc$§!"
+ 
+ concept_d_secondhand_country: "$d_secondhand_country$"
+ concept_d_secondhand_country_desc: "—拥有者将§G解锁§!部分['concept_secondhand_country_traits_yellow']特质\n—$mod_planet_jobs_minerals_produces_mult$：§G+15%§!\n—$mod_planet_jobs_alloys_produces_mult$：§G+15%§!\n—$mod_planet_jobs_engineering_research_produces_mult$：§G+15%§!\n—$MOD_POP_ENVIRONMENT_TOLERANCE$：§R-30%§!\n—$MOD_PLANET_MAX_DISTRICTS_ADD$：§R-1§!\n$h_line$§L$d_secondhand_country_desc$§!"
+ 
+ # 许愿之井
+ concept_d_wishing_well: "$d_wishing_well$"
+ concept_d_wishing_well_desc: "—产出与维护费每§Y$@d_wishing_well_double_interval_year|0$§!年§G翻一倍§!\n—帝国每采用一个§Y飞升天赋§!就使产出与维护费$@d_wishing_well_resource_ascension_perks_factor|=+0%$\n—§R欲望将越来越难以满足！§!\n—$MOD_POP_HAPPINESS$：§G+50%§!\n—生产:\n$tt$—$@d_wishing_well_basic_resource_produce|1$$i_energy$\n$tt$—$@d_wishing_well_basic_resource_produce|1$$i_minerals$\n$tt$—$@d_wishing_well_basic_resource_produce|1$$i_food$\n$tt$—$@d_wishing_well_advanced_resource_produce|2$$i_alloys$\n$tt$—$@d_wishing_well_advanced_resource_produce|2$$i_consumer_goods$\n$tt$—$@d_wishing_well_advanced_resource_produce|2$$i_unity$\n$tt$—$@d_wishing_well_advanced_resource_produce|2$$i_research$\n—维护费:\n$tt$—$@d_wishing_well_trade_upkeep|0$$i_trade_value$\n$h_line$§L$d_wishing_well_desc$§!"
+ 
+ # 凝视深渊
+ concept_trait_origin_black_hole: "$trait_origin_black_hole$"
+ 
+ concept_building_civic_origin_black_hole: "$building_civic_origin_black_hole$"
+ 
+ # 精神脉冲
+ concept_trait_origin_pulsar: "$trait_origin_pulsar$"
+ 
+ concept_building_civic_origin_pulsar: "$building_civic_origin_pulsar$"
+ 
+ # 中子壁垒
+ concept_trait_origin_neutron_star: "$trait_origin_neutron_star$"
+ 
+ concept_building_civic_origin_neutron_star: "$building_civic_origin_neutron_star$"
+ 
+ # 叛教门徒
+ concept_origin_synth_queen_crisis_tech: "堕落帝国科技"
+ concept_origin_synth_queen_crisis_tech_desc: "['technology:tech_cosmogenesis_escort']\n['technology:tech_fe_affluence_1']\n['technology:tech_fe_nourishment_1']\n['technology:tech_fe_fabricator_1']\n['technology:tech_fe_singularity_1']\n['technology:tech_fe_forge_1']\n['technology:tech_fe_dome_1']\n['technology:tech_fe_fortress_1']\n['technology:tech_fe_administration_1']\n['technology:tech_fe_assembly_1']\n['technology:tech_fe_clinic_1']\n['technology:tech_fe_security_1']\n['technology:tech_fe_market_1']\n['technology:tech_fe_silo_1']\n['technology:tech_fe_entertainment_1']\n['technology:tech_fe_lab_1']\n['technology:tech_fe_mine_1']"
+ 
+ concept_origin_synth_queen_crisis_advanced_tech: "堕落帝国高级科技"
+ concept_origin_synth_queen_crisis_advanced_tech_desc: "['technology:tech_cosmogenesis_battlecruiser']\n['technology:tech_fe_affluence_2']\n['technology:tech_fe_nourishment_2']\n['technology:tech_fe_fabricator_2']\n['technology:tech_fe_singularity_2']\n['technology:tech_fe_forge_2']\n['technology:tech_fe_dome_2']\n['technology:tech_fe_fortress_2']\n['technology:tech_fe_administration_2']\n['technology:tech_fe_assembly_2']\n['technology:tech_fe_clinic_2']\n['technology:tech_fe_security_2']\n['technology:tech_fe_market_2']\n['technology:tech_fe_silo_2']\n['technology:tech_fe_entertainment_2']\n['technology:tech_fe_lab_2']\n['technology:tech_fe_mine_2']"
+ 
+ # 并非一体
+ concept_origin_we_are_not_one_job: "职能"
+ concept_origin_we_are_not_one_job_desc: "扮演不同种类领袖的玩家仅能做职能内的工作。\n\n$concept_origin_we_are_not_one_job$包括：\n['concept_origin_we_are_not_one_ruler']\n['concept_origin_we_are_not_one_state']\n['concept_origin_we_are_not_one_research']\n['concept_origin_we_are_not_one_defense']\n['concept_origin_we_are_not_one_official']\n['concept_origin_we_are_not_one_scientist']\n['concept_origin_we_are_not_one_commander']"
+ 
+ concept_origin_we_are_not_one_ruler: "£ruler $councilor_ruler$职能"
+ concept_origin_we_are_not_one_ruler_desc: "身为§G£ruler $councilor_ruler$§!，你可以：\n—§Y任命内阁§!\n—§Y选择议程§!\n—§Y调整政策§!\n—§Y开关法令§!\n—§Y市场贸易§!\n—§Y抉择事件§!\n—§Y调度领袖§!（§R不允许解雇！§!）\n\n你§R无法§!行使你的['concept_origin_we_are_not_one_official']、['concept_origin_we_are_not_one_scientist']或['concept_origin_we_are_not_one_commander']。"
+ 
+ concept_origin_we_are_not_one_state: "£growth_node $councilor_state$职能"
+ concept_origin_we_are_not_one_state_desc: "身为§G£growth_node $councilor_state$§!，你可以：\n—§Y进行外交§!（包括§R宣战§!）\n—§Y共同体行动§!（§R除非其它玩家任职共同体§!）\n—§Y联邦行动§!（§R除非其它玩家任职联邦§!）\n\n你同样§G可以§!行使你的['concept_origin_we_are_not_one_official']。"
+ 
+ concept_origin_we_are_not_one_research: "£cognitive_node $councilor_research$职能"
+ concept_origin_we_are_not_one_research_desc: "身为§G£cognitive_node $councilor_research$§!，你可以：\n—§Y决定科研§!\n—§Y采纳传统§!\n—§Y修饰物种§!\n—§Y研究日志项目§!\n\n你同样§G可以§!行使你的['concept_origin_we_are_not_one_scientist']。"
+ 
+ concept_origin_we_are_not_one_defense: "£legion_node $councilor_defense$职能"
+ concept_origin_we_are_not_one_defense_desc: "身为§G£legion_node $councilor_defense$§!，你可以：\n—§Y制造宣称§!\n—§Y谍报渗透§!\n—§Y全国范围建造舰船陆军§!\n—§Y全国范围指挥舰船陆军§!（§R除非其它玩家驾驶/指挥§!）\n\n你同样§G可以§!行使你的['concept_origin_we_are_not_one_commander']。"
+ 
+ concept_origin_we_are_not_one_official: "£official $official$职能"
+ concept_origin_we_are_not_one_official_desc: "身为§H£official $official$§!，你可以：\n—§Y共同体行动§!（任职共同体时）\n—§Y联邦行动§!（任职联邦时）\n—§Y行使['concept_origin_we_are_not_one_planet_governor']§!（督管殖民地时）\n—§Y行使['concept_origin_we_are_not_one_sector_governor']§!（督管星域首府时）"
+ 
+ concept_origin_we_are_not_one_scientist: "£scientist $scientist$职能"
+ concept_origin_we_are_not_one_scientist_desc: "身为§B£scientist $scientist$§!，你可以：\n—§Y指挥科研船§!（驾驶科研船时）\n—§Y行使['concept_origin_we_are_not_one_planet_governor']§!（督管殖民地时）\n—§Y行使['concept_origin_we_are_not_one_sector_governor']§!（督管星域首府时）"
+ 
+ concept_origin_we_are_not_one_commander: "£commander $commander$职能"
+ concept_origin_we_are_not_one_commander_desc: "身为§R£commander $commander$§!，你可以：\n—§Y指挥舰队§!（驾驶舰队时）\n—§Y指挥陆军§!（指挥陆军时）\n—§Y建造军用舰船与陆军§!（仅限所在星系）\n—§Y行使['concept_origin_we_are_not_one_planet_governor']§!（督管殖民地时）\n—§Y行使['concept_origin_we_are_not_one_sector_governor']§!（督管星域首府时）"
+ 
+ concept_origin_we_are_not_one_planet_governor: "£planet 星球总督职能"
+ concept_origin_we_are_not_one_planet_governor_desc: "身为§Y£planet 星球总督§!，你可以：\n—管理自身所在的§Y殖民地§!\n—管理自身所在星系的§Y工程船§!\n—管理自身所在星系的§Y恒星基地§!，并建造§Y任意舰船§!和§Y防御平台§!"
+ 
+ concept_origin_we_are_not_one_sector_governor: "£sector 星域总督职能"
+ concept_origin_we_are_not_one_sector_governor_desc: "身为§Y£sector 星域总督§!，你可以：\n—管理星域内的§Y殖民地§!（§R除非其它玩家督管该殖民地§!）\n—管理星域内的§Y工程船§!（§R除非其它玩家督管该星系内的殖民地§!）\n—管理星域内的§Y恒星基地§!，并建造§Y任意舰船§!和§Y防御平台§!（§R除非其它玩家督管该星系内的殖民地§!）"

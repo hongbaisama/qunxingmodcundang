@@ -1,0 +1,4225 @@
+
+namespace = time
+
+# MOD全局标识
+event = {
+	id = time.0
+	is_triggered_only = yes
+	hide_window = yes
+	
+	trigger = {
+		NOT = { has_global_flag = time_mod_active }
+	}
+	
+	immediate = {
+		set_global_flag = time_mod_active
+	}
+}
+
+country_event = {
+	id = time.1
+	is_triggered_only = yes
+	hide_window = yes
+
+	trigger = {
+		has_origin_time = yes
+		is_default_or_player = yes #原始文明不触发
+	}
+	
+	immediate = {
+		# 银心神秘奇点
+		if = {
+			limit = {
+				capital_scope = {
+					solar_system = { has_star_flag = time_core_system }
+				}
+			}
+			set_country_flag = time_core_country
+			capital_scope = {
+				solar_system = {
+					save_global_event_target_as = time_core_system
+					closest_system = {
+						use_bypasses = no
+						min_steps = 1
+						max_steps = 10
+						save_event_target_as = time_core_system_closest_system
+					}
+					# 以防万一
+					if = {
+						limit = {
+							NOT = { exists = event_target:time_core_system_closest_system }
+						}
+						random_system = {
+							limit = {
+								NOT = { is_same_value = event_target:time_core_system }
+							}
+							save_event_target_as = time_core_system_closest_system
+						}
+					}
+				}
+			}
+			
+			set_spawn_system_batch = begin
+			
+			no_scope = {
+				spawn_system = {
+					min_distance = 0
+					max_distance = 0
+					min_orientation_angle = 0
+					max_orientation_angle = 0
+					initializer = fake_time_core_init
+					hyperlane = no
+					authorize_spawn_on_galactic_core = yes
+					effect = {
+						save_event_target_as = fake_time_core_system
+					}
+				}
+			}
+			
+			event_target:time_core_system = {
+				move_system = {
+					target = event_target:fake_time_core_system
+					min_jumps = 0
+					max_jumps = 0
+					min_distance = 0
+					max_distance = 0
+					hyperlane = no
+					reset_terra_incognita = yes
+				}
+			}
+			
+			event_target:fake_time_core_system = {
+				move_system = {
+					target = event_target:time_core_system_closest_system
+					min_distance >= 1
+					max_distance <= 10
+					max_jumps = 0
+					hyperlane = yes
+					reset_terra_incognita = yes
+				}
+				every_neighbor_system_euclidean = {
+					limit = {
+						NOR = {
+							has_star_flag = surveillance_supercomputer_system
+							has_special_star_flag_trigger = yes
+							has_natural_wormhole = yes
+							any_system_planet = {
+								is_colonizable = yes
+							}
+						}
+						NOT = { has_hyperlane_to = prev }
+						distance = {
+							source = prev
+							max_distance < 30
+							type = euclidean
+						}
+					}
+					add_hyperlane = {
+						from = prev
+						to = this
+					}
+				}
+			}
+			
+			set_spawn_system_batch = end
+		}
+		
+		# 通用
+		set_country_flag = origin_time_empire
+		begin_event_chain = {
+			event_chain = PC_TIME_CHAIN
+			target = root
+		}
+		start_situation = {
+			type = situation_pc_time
+			target = capital_scope
+			effect = {
+				save_global_event_target_as = situation_pc_time
+			}
+		}
+		# 一些基础资源储量（恰好够造一个区划）
+		add_resource = {
+			energy = 300
+			minerals = 300
+			food = 300
+			consumer_goods = 150
+			alloys = 50
+			volatile_motes = 50
+			rare_crystals = 50
+			exotic_gases = 50
+			sr_dark_matter = 25
+		}
+		if = {
+			limit = {
+				is_ai = yes
+			}
+			country_event = { id = time.5 days = 1080 random = 1440 }
+		}
+		capital_scope = {
+			set_carrier_flag = time_home_planet_of@root
+			set_planet_size = 30
+			planet = { change_colony_foundation_date = -725888 } # 0.1.1
+			# 初始人口
+			every_owned_pop_group = {
+				limit = {
+					is_same_species = root.owner_main_species
+				}
+				kill_pop_group = {
+					pop_group = this
+					percentage = 0.9
+				}
+			}
+			# 初始人口取整
+			while = {
+				limit = {
+					check_variable_arithmetic = {
+						which = value:num_modulo_of_time_pop_amount_value|MODULO|10|
+						value > 0
+					}
+				}
+				if = {
+					limit = {
+						check_variable_arithmetic = {
+							which = value:num_modulo_of_time_pop_amount_value|MODULO|10|
+							value >= 8
+						}
+					}
+					create_pop_group = {
+						species = owner_main_species
+						size = 1
+					}
+				}
+				else = {
+					weighted_random_owned_pop_group = {
+						kill_pop_group = {
+							pop_group = this
+							amount = 1
+						}
+					}
+				}
+			}
+			# 设置地块
+			reroll_pc_time_deposits = yes
+			owner = { set_country_flag = hide_time_blocker_cleared_message }
+			while = {
+				count = trigger:num_guaranteed_colonies
+				d_time_blocker_0_cleared_effect = yes
+				add_deposit = d_time_blocker_1
+				random_deposit = {
+					limit = {
+						is_deposit_type = d_time_blocker_1
+					}
+					clear_blocker = yes
+				}
+			}
+			owner = { remove_country_flag = hide_time_blocker_cleared_message }
+			# 设置区划、区域与建筑
+			remove_all_districts = yes
+			add_district = district_time
+			add_district = district_time_physics
+			add_district = district_time_society
+			add_district = district_time_engineering
+			add_zone = {
+				district = district_time
+				zone = zone_time
+				zone_slot = 1
+			}
+			add_building = {
+				building = building_research_lab_1
+				zone = zone_time
+			}
+			add_building = {
+				building = building_foundry_1
+				zone = zone_time
+			}
+			add_building = {
+				building = building_factory_1
+				zone = zone_time
+			}
+			validate_and_repair_planet_buildings_and_districts = yes
+			
+			set_colony_type = col_time_capital
+			set_colony_type = none # 更新星球规划的同时改用自动规划
+			if = {
+				limit = {
+					root = { has_country_flag = generate_time_0_bonus }
+				}
+				generate_time_0_bonus = yes
+			}
+		}
+		ruler = {
+			save_global_event_target_as = origin_time_ruler
+			add_trait = {
+				trait = leader_trait_ruler_time
+				show_message = no
+			}
+		}
+	}
+}
+
+country_event = {
+	id = time.2
+	is_triggered_only = yes
+	hide_window = yes
+
+	trigger = {
+		is_wonder_country_time_0 = yes
+	}
+	
+	immediate = {
+		create_leader = {
+			class = scientist
+			species = root.species
+			name = PRESCRIPTED_ruler_name_time_0
+			gender = male
+			immortal = yes
+			randomize_traits = no
+			skill = 1
+			set_age = 200
+			custom_description = PRESCRIPTED_custom_biography_time_0
+			traits = {
+				trait = leader_trait_spark_of_genius_2
+			}
+			effect = {
+				set_skill = 2
+				save_event_target_as = new_ruler
+			}
+		}
+		ruler = { save_event_target_as = old_ruler }
+		set_leader = event_target:new_ruler
+		event_target:old_ruler = {
+			kill_leader = { show_notification = no }
+		}
+		set_male_ruler_title = "PRESCRIPTED_ruler_title_time_0"
+		set_female_ruler_title = "PRESCRIPTED_ruler_title_female_time_0"
+		set_male_heir_title = "PRESCRIPTED_heir_title_time_0"
+		set_female_heir_title = "PRESCRIPTED_heir_title_female_time_0"
+		room_name_override = crisis_room
+		set_graphical_culture = "necroid_01"
+		set_city_graphical_culture = "necroid_01"
+	}
+}
+
+country_event = {
+	id = time.3
+	is_triggered_only = yes
+	hide_window = yes
+
+	trigger = {
+		is_wonder_country_time_1 = yes
+	}
+	
+	immediate = {
+		create_leader = {
+			class = official
+			species = root.species
+			name = PRESCRIPTED_ruler_name_time_1
+			gender = female
+			immortal = yes
+			randomize_traits = no
+			skill = 1
+			set_age = 200
+			custom_description = PRESCRIPTED_custom_biography_time_1
+			traits = {
+				trait = leader_trait_principled_2
+			}
+			effect = {
+				set_skill = 2
+				save_event_target_as = new_ruler
+				change_background_job = high_priest
+			}
+		}
+		ruler = { save_event_target_as = old_ruler }
+		set_leader = event_target:new_ruler
+		event_target:old_ruler = {
+			kill_leader = { show_notification = no }
+		}
+		set_male_ruler_title = "PRESCRIPTED_ruler_title_time_1"
+		set_female_ruler_title = "PRESCRIPTED_ruler_title_female_time_1"
+		room_name_override = extradimensional_formless_room
+		set_graphical_culture = "psionic_01"
+		set_city_graphical_culture = "psionic_01"
+	}
+}
+
+country_event = {
+	id = time.4
+	is_triggered_only = yes
+	hide_window = yes
+
+	trigger = {
+		is_wonder_country_time_2 = yes
+	}
+	
+	immediate = {
+		create_leader = {
+			class = scientist
+			species = root.species
+			name = PRESCRIPTED_ruler_name_time_2
+			gender = male
+			immortal = yes
+			randomize_traits = no
+			skill = 1
+			set_age = 200
+			custom_description = PRESCRIPTED_custom_biography_time_2
+			traits = {
+				trait = trait_ruler_logistic_understanding_2
+			}
+			effect = {
+				set_skill = 2
+				save_event_target_as = new_ruler
+			}
+		}
+		ruler = { save_event_target_as = old_ruler }
+		set_leader = event_target:new_ruler
+		event_target:old_ruler = {
+			kill_leader = { show_notification = no }
+		}
+		set_male_ruler_title = "PRESCRIPTED_ruler_title_time_2"
+		set_female_ruler_title = "PRESCRIPTED_ruler_title_time_2"
+		room_name_override = shroudwalkers_room
+		set_graphical_culture = "mindwarden_01"
+		set_city_graphical_culture = "synthetics_01"
+	}
+}
+
+# 神秘奇点AI建设
+country_event = {
+	id = time.5
+	is_triggered_only = yes
+	hide_window = yes
+
+	trigger = {
+		has_origin_time = yes
+		is_ai = yes
+	}
+
+	immediate = {
+		country_event = { id = time.5 days = 1080 random = 1440 }
+		if = {
+			limit = {
+				any_owned_colony = {
+					is_planet_class = pc_time
+					has_deposit = d_time_blocker_1
+				}
+				country_has_energy_or_minerals = {
+					TYPE = energy
+					AMOUNT = 1000
+				}
+				country_has_energy_or_minerals = {
+					TYPE = minerals
+					AMOUNT = 1000
+				}
+				has_country_resource = {
+					type = food
+					amount >= 1000
+				}
+				has_country_resource = {
+					type = consumer_goods
+					amount >= 500
+				}
+				has_country_resource = {
+					type = alloys
+					amount >= 500
+				}
+				has_country_resource = {
+					type = sr_dark_matter
+					amount >= 50
+				}
+			}
+			random_owned_colony = {
+				limit = {
+					is_planet_class = pc_time
+					has_deposit = d_time_blocker_1
+				}
+				random_deposit = {
+					limit = {
+						is_deposit_type = d_time_blocker_1
+					}
+					clear_blocker = yes
+				}
+			}
+			add_resource = {
+				energy = -1000
+				minerals = -1000
+				food = -1000
+				consumer_goods = -500
+				alloys = -500
+				sr_dark_matter = -50
+			}
+		}
+		if = {
+			limit = {
+				any_owned_colony = {
+					is_planet_class = pc_time
+					free_district_slots >= 1
+				}
+				country_has_energy_or_minerals = {
+					TYPE = energy
+					AMOUNT = 500
+				}
+				country_has_energy_or_minerals = {
+					TYPE = minerals
+					AMOUNT = 500
+				}
+				has_country_resource = {
+					type = food
+					amount >= 500
+				}
+				has_country_resource = {
+					type = consumer_goods
+					amount >= 250
+				}
+				has_country_resource = {
+					type = alloys
+					amount >= 250
+				}
+				has_country_resource = {
+					type = sr_dark_matter
+					amount >= 25
+				}
+			}
+			random_owned_colony = {
+				limit = {
+					is_planet_class = pc_time
+					free_district_slots >= 1
+				}
+				random_list = {
+					1 = {
+						add_district = district_time
+					}
+					2 = {
+						add_district = district_time_physics
+					}
+					2 = {
+						add_district = district_time_society
+					}
+					2 = {
+						add_district = district_time_engineering
+					}
+				}
+			}
+			add_resource = {
+				energy = -500
+				minerals = -500
+				food = -500
+				consumer_goods = -250
+				alloys = -250
+				sr_dark_matter = -25
+			}
+		}
+	}
+}
+
+# 飞升事件
+country_event = {
+	id = time.10
+	title = time.10.name
+	desc = time.10.desc
+	picture = GFX_evt_dimensional_horror
+	show_sound = event_activating_unknown_technology
+	location = event_target:akx_star
+	event_chain = AP_HORROR_CHAIN
+	
+	is_triggered_only = yes
+
+	trigger = {
+	}
+	
+	immediate = {
+		begin_event_chain = {
+			event_chain = AP_HORROR_CHAIN
+			target = root
+		}
+		event_target:akx_star = {
+			if = {
+				limit = {
+					is_colonizable_or_colony = yes
+				}
+				remove_deposit = d_akx_dark_matter
+				remove_deposit = d_orbital_akx_dark_matter
+				add_time_special_deposit_keep_on_terraform = { DEPOSIT = d_akx_dark_matter_special }
+			}
+			else = {
+				remove_deposit = d_akx_dark_matter
+				remove_deposit = d_orbital_akx_dark_matter
+				add_time_special_deposit_keep_on_terraform = { DEPOSIT = d_orbital_akx_dark_matter_special }
+			}
+			solar_system = {
+				every_system_planet = {
+					limit = {
+						is_primary_star = no
+						is_planet_class = pc_black_hole
+					}
+					remove_deposit = d_dark_matter_deposit_5
+					add_deposit = d_dark_matter_deposit_10
+				}
+				starbase = {
+					remove_starbase_component = {
+						component = HORROR_AURA_1
+					}
+					add_starbase_component = {
+						component = HORROR_AURA_2
+					}
+				}
+			}
+		}
+		country_event = { id = time.500 }
+	}
+	
+	after = {
+		hidden_effect = {
+			event_target:astral_rift_akx_horror = {
+				clear_deposits_and_orbital_station = yes
+				destroy_astral_rift = this
+			}
+			event_target:akx_star.solar_system = {
+				spawn_astral_rift = {
+					id = akx_time
+					in_place_of = event_target:akx_star
+					graphics_entity_name = astral_rift_akx_time_entity
+					init_effect = {
+						save_global_event_target_as = astral_rift_akx_time
+						# 裂隙自带2星界丝缕野矿
+						add_deposit = d_astral_threads_deposit_2
+						add_deposit = d_astral_threads_deposit_3
+						add_deposit = d_astral_threads_deposit_3
+					}
+				}
+			}
+		}
+	}
+	
+	option = {
+		name = time.10.a
+		custom_tooltip = time.10.a.tooltip
+		tooltip = {
+			begin_event_chain = {
+				event_chain = AP_HORROR_CHAIN
+				target = root
+			}
+		}
+	}
+}
+
+# 时空奥秘
+country_event = {
+	id = time.11
+	title = time.11.name
+	desc = time.11.desc
+	picture = GFX_evt_clocks
+	show_sound = event_activating_unknown_technology
+	location = event_target:akx_star
+	event_chain = AP_HORROR_CHAIN
+	
+	is_triggered_only = yes
+
+	trigger = {
+	}
+
+	immediate = {
+		event_target:akx_star = {
+			create_ambient_object = {
+				type = "kaleidoscope_happy"
+				location = this
+			}
+		}
+		save_research_councilor_as = { TARGET = time_secret_researcher }
+		event_target:time_secret_researcher = {
+			leader_finish_ap_horror_project = { TYPE = time }
+		}
+	}
+
+	option = {
+		name = time.11.a
+		add_event_chain_counter = {
+			event_chain = AP_HORROR_CHAIN
+			counter = ap_horror_chain_time
+			amount = 1
+		}
+		custom_tooltip = "time.11.a.tooltip"
+		hidden_effect = {
+			country_event = { id = time.14 }
+		}
+	}
+}
+
+# 圆环奥秘
+country_event = {
+	id = time.12
+	title = time.12.name
+	desc = time.12.desc
+	picture = GFX_evt_vortex
+	show_sound = event_activating_unknown_technology
+	location = event_target:akx_star
+	event_chain = AP_HORROR_CHAIN
+	
+	is_triggered_only = yes
+
+	trigger = {
+	}
+
+	immediate = {
+		event_target:akx_star = {
+			create_ambient_object = {
+				type = "kaleidoscope_angry"
+				location = this
+			}
+			last_created_ambient_object = {
+				set_location = {
+					target = prev
+					angle = 90
+				}
+			}
+		}
+		save_research_councilor_as = { TARGET = circle_secret_researcher }
+		event_target:circle_secret_researcher = {
+			leader_finish_ap_horror_project = { TYPE = circle }
+		}
+	}
+
+	option = {
+		name = time.12.a
+		add_event_chain_counter = {
+			event_chain = AP_HORROR_CHAIN
+			counter = ap_horror_chain_circle
+			amount = 1
+		}
+		custom_tooltip = "time.12.a.tooltip"
+		hidden_effect = {
+			country_event = { id = time.14 }
+		}
+	}
+}
+
+# 位面奥秘
+country_event = {
+	id = time.13
+	title = time.13.name
+	desc = time.13.desc
+	picture = GFX_evt_supernova
+	show_sound = event_activating_unknown_technology
+	location = event_target:akx_star
+	event_chain = AP_HORROR_CHAIN
+	
+	is_triggered_only = yes
+
+	trigger = {
+	}
+
+	immediate = {
+		event_target:akx_star = {
+			create_ambient_object = {
+				type = "kaleidoscope_neutral"
+				location = this
+			}
+			last_created_ambient_object = {
+				set_location = {
+					target = prev
+					angle = 45
+				}
+			}
+		}
+		save_research_councilor_as = { TARGET = dimension_secret_researcher }
+		event_target:dimension_secret_researcher = {
+			leader_finish_ap_horror_project = { TYPE = dimension }
+		}
+	}
+
+	option = {
+		name = time.13.a
+		add_event_chain_counter = {
+			event_chain = AP_HORROR_CHAIN
+			counter = ap_horror_chain_dimension
+			amount = 1
+		}
+		custom_tooltip = "time.13.a.tooltip"
+		hidden_effect = {
+			country_event = { id = time.14 }
+		}
+	}
+}
+
+# 负相奥秘
+country_event = {
+	id = time.14
+	title = time.14.name
+	desc = {
+		text = time.14.desc_1
+		trigger = {
+			OR = {
+				has_country_flag = dimension_traveler_end
+				unlock_dimension_traveler_destiny_trait = no
+			}
+		}
+	}
+	desc = {
+		text = time.14.desc_2
+		trigger = {
+			NOT = { has_country_flag = dimension_traveler_end }
+			unlock_dimension_traveler_destiny_trait = yes
+		}
+	}
+	picture = GFX_evt_dimensional_horror
+	show_sound = event_activating_unknown_technology
+	location = event_target:akx_star
+	event_chain = AP_HORROR_CHAIN
+	
+	is_triggered_only = yes
+
+	trigger = {
+		has_completed_event_chain_counter = {
+			event_chain = AP_HORROR_CHAIN
+			counter = ap_horror_chain_time
+		}
+		has_completed_event_chain_counter = {
+			event_chain = AP_HORROR_CHAIN
+			counter = ap_horror_chain_circle
+		}
+		has_completed_event_chain_counter = {
+			event_chain = AP_HORROR_CHAIN
+			counter = ap_horror_chain_dimension
+		}
+	}
+
+	immediate = {
+	}
+	
+	after = {
+		end_event_chain = AP_HORROR_CHAIN
+	}
+
+	option = {
+		name = time.14.a
+		trigger = {
+			OR = {
+				has_country_flag = dimension_traveler_end
+				unlock_dimension_traveler_destiny_trait = no
+			}
+		}
+		unlock_tradition_time = yes
+	}
+	
+	option = {
+		name = time.14.b
+		trigger = {
+			NOT = { has_country_flag = dimension_traveler_end }
+			unlock_dimension_traveler_destiny_trait = yes
+		}
+		unlock_tradition_time = yes
+		custom_tooltip = time.14.b.tooltip
+		hidden_effect = {
+			country_event = { id = dimension_traveler.200 }
+		}
+	}
+}
+
+# 负相具象性
+carrier_event = {
+	id = time.15
+	title = time.15.name
+	desc = time.15.desc
+	picture = GFX_evt_dimensional_horror
+	show_sound = event_activating_unknown_technology
+	location = root
+	
+	is_triggered_only = yes
+
+	pre_triggers = {
+		has_owner = yes
+	}
+
+	trigger = {
+		if = {
+			limit = {
+				owner = { has_technology = tech_time_modifier }
+			}
+			NOT = { has_carrier_flag = time_gain_horror }
+			has_horror_trophy = no
+			is_under_colonization = no
+			is_scope_type = planet # 不会在方舟舰上扩散
+		}
+		else = {
+			always = no
+		}
+	}
+	
+	immediate = {
+		set_carrier_flag = time_gain_horror
+		if = {
+			limit = {
+				owner = { is_spiritualist = no }
+			}
+			add_modifier = { modifier = horror_study_trophy }
+			carrier_event = { id = situation.1085 days = 2340 random = 280 }
+		}
+		else = {
+			add_modifier = { modifier = horror_deify_trophy }
+			carrier_event = { id = situation.1085 days = 2340 random = 280 }
+		}
+	}
+	
+	option = {
+		name = time.15.a
+		tooltip = {
+			if = {
+				limit = {
+					owner = { is_spiritualist = no }
+				}
+				add_modifier = { modifier = horror_study_trophy }
+			}
+			else = {
+				add_modifier = { modifier = horror_deify_trophy }
+			}
+		}
+	}
+}
+
+# 时空奥秘（格式塔）
+fleet_event = {
+	id = time.16
+	title = time.11.name
+	desc = time.11.desc
+	picture = GFX_evt_clocks
+	show_sound = event_activating_unknown_technology
+	location = event_target:akx_star
+	event_chain = AP_HORROR_CHAIN
+	
+	is_triggered_only = yes
+
+	trigger = {
+	}
+	
+	immediate = {
+		event_target:akx_star = {
+			create_ambient_object = {
+				type = "kaleidoscope_happy"
+				location = this
+			}
+		}
+		leader = {
+			leader_finish_ap_horror_project_gestalt = { TYPE = time }
+		}
+	}
+	
+	option = {
+		name = time.11.a
+		owner = {
+			add_event_chain_counter = {
+				event_chain = AP_HORROR_CHAIN
+				counter = ap_horror_chain_time
+				amount = 1
+			}
+		}
+		custom_tooltip = "time.11.a.tooltip"
+		tooltip = {
+			leader = {
+				add_skill = 1
+				remove_all_negative_traits = yes
+			}
+		}
+		hidden_effect = {
+			owner = {
+				country_event = { id = time.19 }
+			}
+		}
+	}
+}
+
+# 圆环奥秘（格式塔）
+fleet_event = {
+	id = time.17
+	title = time.12.name
+	desc = time.12.desc
+	picture = GFX_evt_vortex
+	show_sound = event_activating_unknown_technology
+	location = event_target:akx_star
+	event_chain = AP_HORROR_CHAIN
+	
+	is_triggered_only = yes
+
+	trigger = {
+	}
+	
+	immediate = {
+		event_target:akx_star = {
+			create_ambient_object = {
+				type = "kaleidoscope_angry"
+				location = this
+			}
+			last_created_ambient_object = {
+				set_location = {
+					target = prev
+					angle = 90
+				}
+			}
+		}
+		leader = {
+			leader_finish_ap_horror_project_gestalt = { TYPE = circle }
+		}
+	}
+	
+	option = {
+		name = time.12.a
+		owner = {
+			add_event_chain_counter = {
+				event_chain = AP_HORROR_CHAIN
+				counter = ap_horror_chain_circle
+				amount = 1
+			}
+		}
+		custom_tooltip = "time.12.a.tooltip"
+		tooltip = {
+			leader = {
+				add_skill = 1
+				remove_all_negative_traits = yes
+			}
+		}
+		hidden_effect = {
+			owner = {
+				country_event = { id = time.19 }
+			}
+		}
+	}
+}
+
+# 位面奥秘（格式塔）
+fleet_event = {
+	id = time.18
+	title = time.13.name
+	desc = time.13.desc
+	picture = GFX_evt_supernova
+	show_sound = event_activating_unknown_technology
+	location = event_target:akx_star
+	event_chain = AP_HORROR_CHAIN
+	
+	is_triggered_only = yes
+
+	trigger = {
+	}
+	
+	immediate = {
+		event_target:akx_star = {
+			create_ambient_object = {
+				type = "kaleidoscope_neutral"
+				location = this
+			}
+			last_created_ambient_object = {
+				set_location = {
+					target = prev
+					angle = 45
+				}
+			}
+		}
+		leader = {
+			leader_finish_ap_horror_project_gestalt = { TYPE = dimension }
+		}
+	}
+	
+	option = {
+		name = time.13.a
+		owner = {
+			add_event_chain_counter = {
+				event_chain = AP_HORROR_CHAIN
+				counter = ap_horror_chain_dimension
+				amount = 1
+			}
+		}
+		custom_tooltip = "time.13.a.tooltip"
+		tooltip = {
+			leader = {
+				add_skill = 1
+				remove_all_negative_traits = yes
+			}
+		}
+		hidden_effect = {
+			owner = {
+				country_event = { id = time.19 }
+			}
+		}
+	}
+}
+
+# 负相奥秘（格式塔）
+country_event = {
+	id = time.19
+	title = time.14.name
+	desc = {
+		text = time.14.desc_1
+		trigger = {
+			OR = {
+				has_country_flag = dimension_traveler_end
+				unlock_dimension_traveler_destiny_trait = no
+			}
+		}
+	}
+	desc = {
+		text = time.14.desc_2
+		trigger = {
+			NOT = { has_country_flag = dimension_traveler_end }
+			unlock_dimension_traveler_destiny_trait = yes
+		}
+	}
+	picture = GFX_evt_dimensional_horror
+	show_sound = event_activating_unknown_technology
+	location = event_target:akx_star
+	event_chain = AP_HORROR_CHAIN
+	
+	is_triggered_only = yes
+
+	trigger = {
+		has_completed_event_chain_counter = {
+			event_chain = AP_HORROR_CHAIN
+			counter = ap_horror_chain_time
+		}
+		has_completed_event_chain_counter = {
+			event_chain = AP_HORROR_CHAIN
+			counter = ap_horror_chain_circle
+		}
+		has_completed_event_chain_counter = {
+			event_chain = AP_HORROR_CHAIN
+			counter = ap_horror_chain_dimension
+		}
+	}
+
+	immediate = {
+		if = {
+			limit = {
+				NOT = { has_country_flag = dimension_traveler_end }
+				unlock_dimension_traveler_destiny_trait = yes
+			}
+			every_owned_leader = {
+				limit = {
+					is_councilor = yes
+				}
+				add_trait = {
+					trait = leader_trait_dimension_traveler_horror_secret_gestalt
+				}
+			}
+		}
+	}
+	
+	after = {
+		end_event_chain = AP_HORROR_CHAIN
+	}
+
+	option = {
+		name = time.14.a
+		trigger = {
+			OR = {
+				has_country_flag = dimension_traveler_end
+				unlock_dimension_traveler_destiny_trait = no
+			}
+		}
+		unlock_tradition_time = yes
+	}
+	
+	option = {
+		name = time.14.b
+		trigger = {
+			NOT = { has_country_flag = dimension_traveler_end }
+			unlock_dimension_traveler_destiny_trait = yes
+		}
+		unlock_tradition_time = yes
+		custom_tooltip = time.14.b.tooltip
+		hidden_effect = {
+			country_event = { id = dimension_traveler.200 }
+		}
+	}
+}
+
+# 奇点压缩科技研究完成
+country_event = {
+	id = time.20
+	is_triggered_only = yes
+	hide_window = yes
+
+	trigger = {
+		if = {
+			limit = {
+				is_wonder_country_time_0 = yes
+			}
+			last_increased_tech = tech_change_pc_time_0
+		}
+		else_if = {
+			limit = {
+				has_origin_time = yes
+			}
+			last_increased_tech = tech_change_pc_time
+		}
+		else = {
+			always = no
+		}
+	}
+
+	immediate = {
+		country_event = { id = time.25 }
+	}
+}
+
+# 奇点递归
+carrier_event = {
+	id = time.21
+	is_triggered_only = yes
+	hide_window = yes
+
+	trigger = {
+		is_planet_class = pc_time
+	}
+
+	immediate = {
+		clear_deposits_and_orbital_station = yes
+		add_time_special_deposit_keep_on_terraform = { DEPOSIT = d_time_recursion }
+		while = {
+			count = value:new_pc_time_blocker_value
+			add_deposit = d_time_blocker_1
+		}
+		validate_planet_buildings_and_districts = yes
+	}
+}
+
+# 奇点放缩
+pop_group_event = {
+	id = time.22
+	is_triggered_only = yes
+	hide_window = yes
+	
+	trigger = {
+		is_origin_time_species = yes
+	}
+	
+	immediate = {
+		if = {
+			limit = {
+				colony = { is_time_black_hole_planet_class = yes }
+				from = { is_time_black_hole_planet_class = no }
+			}
+			# 迁入黑洞，数量减少80%
+			remove_pop_amount = {
+				amount = value:pc_time_pop_amount_scale_value|MULT|0.8|
+			}
+		}
+		else_if = {
+			limit = {
+				colony = { is_time_black_hole_planet_class = no }
+				from = { is_time_black_hole_planet_class = yes }
+			}
+			# 迁出黑洞，数量增加400%
+			add_pop_amount = {
+				amount = value:pc_time_pop_amount_scale_value|MULT|4|
+			}
+		}
+	}
+}
+
+# 黑洞封印/黑洞窥视
+carrier_event = {
+	id = time.23
+	is_triggered_only = yes
+	hide_window = yes
+
+	trigger = {
+		is_planet_class = pc_time_replace
+	}
+
+	immediate = {
+		time_destroy_colony = yes
+		change_pc = pc_black_hole
+		remove_modifier = timesingularity
+		add_deposit = d_dark_matter_deposit_10
+		add_deposit = d_dark_matter_deposit_10
+		add_deposit = d_dark_matter_deposit_10
+		if = {
+			limit = {
+				from = { has_technology = tech_change_pc_time_1 }
+			}
+			create_ambient_object = {
+				type = "psi_storm_1"
+				location = this
+				use_3d_location = yes
+			}
+			from = {
+				country_event = { id = time.24 }
+			}
+		}
+		else_if = {
+			limit = {
+				from = { has_technology = tech_change_pc_time_2 }
+			}
+			create_ambient_object = {
+				type = "contingency_2"
+				location = this
+			}
+			from = {
+				country_event = { id = time.24 }
+			}
+		}
+	}
+}
+
+# 黑洞封印/黑洞窥视完成提示
+country_event = {
+	id = time.24
+	title = time.24.name
+	desc = {
+		text = time.24.desc.1
+		trigger = {
+			has_technology = tech_change_pc_time_1
+		}
+	}
+	desc = {
+		text = time.24.desc.2
+		trigger = {
+			has_technology = tech_change_pc_time_2
+		}
+	}
+	picture = {
+		picture = GFX_evt_zro_3
+		trigger = {
+			has_technology = tech_change_pc_time_1
+		}
+	}
+	picture = {
+		picture = GFX_evt_technosphere
+		trigger = {
+			has_technology = tech_change_pc_time_2
+		}
+	}
+	show_sound = event_activating_unknown_technology
+	location = from
+	
+	is_triggered_only = yes
+
+	trigger = {
+	}
+
+	immediate = {
+	}
+
+	option = {
+		name = time.24.a.1
+		trigger = {
+			has_technology = tech_change_pc_time_1
+		}
+		custom_tooltip = time.24.a.1.tooltip
+		hidden_effect = {
+			add_modifier = {
+				modifier = change_pc_time_1
+				days = -1
+			}
+		}
+	}
+	
+	option = {
+		name = time.24.a.2
+		trigger = {
+			has_technology = tech_change_pc_time_2
+		}
+		custom_tooltip = time.24.a.2.tooltip
+		hidden_effect = {
+			add_modifier = {
+				modifier = change_pc_time_2
+				days = -1
+			}
+		}
+	}
+}
+
+# 开始奇点压缩局势
+country_event = {
+	id = time.25
+	is_triggered_only = yes
+	hide_window = yes
+
+	trigger = {
+	}
+
+	immediate = {
+		if = {
+			limit = {
+				any_owned_colony = {
+					is_planet_class = pc_time
+					has_carrier_flag = time_home_planet_of@root
+				}
+			}
+			random_owned_colony = {
+				limit = {
+					is_planet_class = pc_time
+					has_carrier_flag = time_home_planet_of@root
+				}
+				save_event_target_as = situation_origin_time_planet
+			}
+			start_situation = {
+				type = situation_origin_time
+				target = event_target:situation_origin_time_planet
+				effect = {
+					if = {
+						limit = {
+							owner = {
+								is_origin_time_authority = yes
+								if = {
+									limit = {
+										has_origin_time_ruler = yes
+									}
+									if = {
+										limit = {
+											is_auth_time_democratic = yes
+										}
+										event_target:origin_time_ruler = { is_councilor = yes }
+									}
+									else = {
+										event_target:origin_time_ruler = { is_ruler = yes }
+									}
+								}
+								else = {
+									always = no
+								}
+								has_country_flag = agenda_time_soul_finished
+								has_country_resource = {
+									type = sr_dark_matter
+									amount >= 20
+								}
+								has_country_resource = {
+									type = astral_threads
+									amount >= 10
+								}
+							}
+						}
+						set_situation_approach = approach_origin_time_default
+					}
+					else = {
+						set_situation_approach = approach_origin_time_discourage
+					}
+				}
+			}
+		}
+		else = {
+			country_event = { id = time.25 days = 30 }
+		}
+	}
+}
+
+# 奇点之心物种修饰
+country_event = {
+	id = time.26
+	is_triggered_only = yes
+	hide_window = yes
+
+	trigger = {
+		From = { is_time_soul_species = yes }
+	}
+	
+	immediate = {
+		every_owned_leader = {
+			gain_leader_trait_time_soul = yes
+		}
+		every_pool_leader = {
+			gain_leader_trait_time_soul = yes
+		}
+	}
+}
+
+# 奇点之心新生领袖
+country_event = {
+	id = time.27
+	is_triggered_only = yes
+	hide_window = yes
+
+	trigger = {
+		from = {
+			species = { is_time_soul_species = yes }
+		}
+	}
+	
+	immediate = {
+		from = {
+			add_trait = {
+				trait = leader_trait_time_soul
+				show_message = no
+			}
+		}
+	}
+}
+
+# 无尽区划保护机制
+carrier_event = {
+	id = time.28
+	is_triggered_only = yes
+	hide_window = yes
+
+	trigger = {
+		if = {
+			limit = {
+				is_planet_class = pc_endless_time
+			}
+			NAND = {
+				is_capital = yes
+				owner = {
+					has_menace_perk = menp_behemoth_mind_meld
+				}
+			}
+			NOT = { has_district = district_endless_time }
+		}
+		else = {
+			always = no
+		}
+	}
+	
+	immediate = {
+		add_district = district_endless_time
+	}
+}
+
+# 视界雾霭
+carrier_event = {
+	id = time.29
+	title = time.29.name
+	desc = {
+		text = time.29.desc.1
+		trigger = {
+			has_modifier = second_time_homeworld
+		}
+	}
+	desc = {
+		text = time.29.desc.2
+		trigger = {
+			has_modifier = time_wormhole
+		}
+	}
+	picture = GFX_evt_wormhole
+	show_sound = event_activating_unknown_technology
+	location = root
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = time.29.a
+		trigger = {
+			has_modifier = second_time_homeworld
+		}
+		tooltip = {
+			add_modifier = { modifier = second_time_homeworld }
+		}
+	}
+	
+	option = {
+		name = time.29.b
+		trigger = {
+			has_modifier = time_wormhole
+		}
+		tooltip = {
+			add_modifier = { modifier = time_wormhole }
+			star = {
+				add_modifier = { modifier = time_wormhole_core }
+			}
+		}
+	}
+}
+
+# 奇点压缩（局势完成）
+carrier_event = {
+	id = time.30
+	title = time.30.name
+	desc = time.30.desc
+	picture = GFX_pc_endless_time
+	show_sound = event_activating_unknown_technology
+	location = root
+	
+	is_triggered_only = yes
+	
+	trigger = {
+	}
+	
+	immediate = {
+		finish_pc_endless_time = yes
+	}
+	
+	option = {
+		name = time.30.a
+		custom_tooltip = time.30.a.tooltip
+		owner = {
+			if = {
+				limit = {
+					has_origin_time_ruler = yes
+					is_origin_time_authority = yes
+				}
+				switch = {
+					trigger = has_authority
+					auth_democratic = {
+						custom_tooltip = change_auth_endless_time_democratic
+					}
+					auth_imperial = {
+						custom_tooltip = change_auth_endless_time_imperial
+					}
+					auth_corporate = {
+						custom_tooltip = change_auth_endless_time_corporate
+					}
+				}
+			}
+		}
+	}
+}
+
+# 虚拟奇点之心人口删除（星球归属转变）
+carrier_event = {
+	id = time.35
+	title = cybernetics.5048.name
+	desc = cybernetics.5048.desc
+	picture = GFX_evt_black_hole
+	location = root
+	
+	is_triggered_only = yes
+	
+	trigger = {
+		from = {
+			is_virtual_empire = yes # 非虚拟国家占据有虚拟人口的星球本来就会触发事件
+			NOT = { has_country_flag = time_soul_virtuality_finished }
+		}
+		any_owned_pop_group = {
+			has_trait = trait_time_soul_virtuality
+		}
+	}
+	
+	immediate = {
+		create_pop_group = {
+			species = owner_main_species
+		}
+		every_owned_pop_group = {
+			limit = {
+				has_trait = trait_time_soul_virtuality
+			}
+			kill_all_pop = yes
+		}
+	}
+	
+	option = {
+		name = cybernetics.5048.a
+	}
+}
+
+# 过去宫殿
+carrier_event = {
+	id = time.50
+	title = time.50.name
+	desc = time.50.desc
+	picture = GFX_evt_medieval_alien_civilization
+	show_sound = event_alien_signal
+	location = root
+	
+	is_triggered_only = yes
+
+	trigger = {
+		is_planet_class = pc_endless_time
+		has_deposit = d_time_resources
+		NOT = { has_carrier_flag = time_50_triggered }
+		owner = {
+			has_origin_time = yes
+		}
+	}
+	
+	immediate = {
+		set_carrier_flag = time_50_triggered
+	}
+	
+	option = {
+		name = time.50.a
+		remove_deposit = d_time_resources
+		add_time_special_deposit_keep_on_terraform = { DEPOSIT = d_time_resources_end }
+		hidden_effect = {
+			owner = {
+				country_event = { id = time.51 }
+			}
+		}
+	}
+	
+	option = {
+		name = time.50.b
+	}
+}
+
+# 时空循环
+country_event = {
+	id = time.51
+	title = time.51.name
+	desc = time.51.desc
+	picture = GFX_evt_surreal_visions
+	show_sound = event_activating_unknown_technology
+	
+	is_triggered_only = yes
+
+	trigger = {
+	}
+
+	immediate = {
+	}
+
+	option = {
+		name = time.51.a
+		give_r_horror_matter = { FLAG = time_relic }
+		add_modifier = {
+			modifier = time_cycle_modifier
+			days = -1
+		}
+	}
+}
+
+# 时虫科技研发综合处理
+country_event = {
+	id = time.60
+	is_triggered_only = yes
+	hide_window = yes
+	
+	trigger = {
+		OR = {
+			has_country_flag = worm_events_available
+			has_country_flag = worm_tomb_ending
+			has_tradition = tr_horror_adopt
+		}
+	}
+	
+	immediate = {
+		# 时虫科技
+		if = {
+			limit = {
+				OR = {
+					has_country_flag = worm_events_available
+					has_country_flag = worm_tomb_ending
+				}
+			}
+			randomly_unlock_akx_tech = yes
+		}
+		# 负相科技
+		if = {
+			limit = {
+				has_tradition = tr_horror_adopt
+			}
+			randomly_unlock_horror_tech = yes
+			active_horror_tech = yes
+			if = {
+				limit = {
+					last_increased_tech_is_dangerous_horror_tech = yes
+				}
+				change_akx_dangerous_tech_count = {
+					PLAYER = 2
+					AI = 1
+				}
+			}
+		}
+		# 时空科技
+		if = {
+			limit = {
+				has_tradition = tr_time_adopt
+			}
+			randomly_unlock_time_tech = yes
+			active_time_tech = yes
+			if = {
+				limit = {
+					last_increased_tech_is_dangerous_time_tech = yes
+				}
+				change_akx_dangerous_tech_count = {
+					PLAYER = 3
+					AI = 1.5
+				}
+			}
+		}
+		# 终末科技
+		if = {
+			limit = {
+				has_tradition = tr_end_adopt
+			}
+			randomly_unlock_end_tech = yes
+			active_end_tech = yes
+			if = {
+				limit = {
+					last_increased_tech_is_dangerous_end_tech = yes
+				}
+				change_akx_dangerous_tech_count = {
+					PLAYER = 5
+					AI = 2.5
+				}
+			}
+		}
+		# 希望科技
+		if = {
+			limit = {
+				has_tradition = tr_hope_adopt
+			}
+			randomly_unlock_hope_tech = yes
+		}
+	}
+}
+
+# 负相相关特殊地块保护机制
+carrier_event = {
+	id = time.65
+	hide_window = yes
+	
+	is_triggered_only = yes
+	
+	trigger = {
+		OR = {
+			has_carrier_flag = d_worm_mine_and_farm_planet
+			has_carrier_flag = tech_horror_dimension_planet
+			has_carrier_flag = exists_d_time_horror
+			has_carrier_flag = exists_d_horror_dark_matter_blocker
+			has_carrier_flag = exists_d_horror_dark_matter_energy
+			has_carrier_flag = exists_d_horror_dark_matter_minerals
+			has_carrier_flag = exists_d_horror_dark_matter_food
+			has_carrier_flag = exists_d_horror_dark_matter_alloys
+			has_carrier_flag = exists_d_horror_dark_matter_consumer_goods
+			has_carrier_flag = exists_d_horror_dark_matter_physics_research
+			has_carrier_flag = exists_d_horror_dark_matter_society_research
+			has_carrier_flag = exists_d_horror_dark_matter_engineering_research
+			has_carrier_flag = exists_d_horror_dark_matter_unity
+		}
+	}
+	
+	immediate = {
+		carrier_event = { id = time.66 days = 1 } # 隔一天，因为有的事件是先改变星球类型，再删除地块
+	}
+}
+
+# 恢复负相相关特殊地块
+carrier_event = {
+	id = time.66
+	hide_window = yes
+	
+	is_triggered_only = yes
+	
+	trigger = {
+		is_colonizable_or_colony = yes
+	}
+	
+	immediate = {
+		if = {
+			limit = {
+				has_carrier_flag = d_worm_mine_and_farm_planet
+			}
+			if = {
+				limit = {
+					NOT = { has_deposit = d_worm_mine }
+				}
+				add_time_special_deposit_keep_on_terraform = { DEPOSIT = d_worm_mine }
+			}
+			if = {
+				limit = {
+					NOT = { has_deposit = d_worm_farm }
+				}
+				add_time_special_deposit_keep_on_terraform = { DEPOSIT = d_worm_farm }
+			}
+		}
+		if = {
+			limit = {
+				has_carrier_flag = tech_horror_dimension_planet
+				NOT = { has_deposit = d_portal_research_zone }
+			}
+			add_time_special_deposit_keep_on_terraform = { DEPOSIT = d_portal_research_zone }
+		}
+		if = {
+			limit = {
+				has_carrier_flag = exists_d_time_horror
+				NOT = { has_deposit = d_time_horror }
+			}
+			add_time_special_deposit_keep_on_terraform = { DEPOSIT = d_time_horror }
+		}
+		
+		if = {
+			limit = {
+				has_carrier_flag = exists_d_horror_dark_matter_blocker
+			}
+			if = {
+				limit = {
+					NOT = { has_deposit = d_horror_dark_matter_blocker }
+				}
+				add_time_special_deposit_keep_on_terraform = { DEPOSIT = d_horror_dark_matter_blocker }
+			}
+		}
+		# 因为会用以下flag判断障碍清除后获得的地块
+		else = {
+			if = {
+				limit = {
+					has_carrier_flag = exists_d_horror_dark_matter_energy
+					NOT = { has_deposit = d_horror_dark_matter_energy }
+				}
+				add_time_special_deposit_keep_on_terraform = { DEPOSIT = d_horror_dark_matter_energy }
+			}
+			if = {
+				limit = {
+					has_carrier_flag = exists_d_horror_dark_matter_minerals
+					NOT = { has_deposit = d_horror_dark_matter_minerals }
+				}
+				add_time_special_deposit_keep_on_terraform = { DEPOSIT = d_horror_dark_matter_minerals }
+			}
+			if = {
+				limit = {
+					has_carrier_flag = exists_d_horror_dark_matter_food
+					NOT = { has_deposit = d_horror_dark_matter_food }
+				}
+				add_time_special_deposit_keep_on_terraform = { DEPOSIT = d_horror_dark_matter_food }
+			}
+			if = {
+				limit = {
+					has_carrier_flag = exists_d_horror_dark_matter_alloys
+					NOT = { has_deposit = d_horror_dark_matter_alloys }
+				}
+				add_time_special_deposit_keep_on_terraform = { DEPOSIT = d_horror_dark_matter_alloys }
+			}
+			if = {
+				limit = {
+					has_carrier_flag = exists_d_horror_dark_matter_consumer_goods
+					NOT = { has_deposit = d_horror_dark_matter_consumer_goods }
+				}
+				add_time_special_deposit_keep_on_terraform = { DEPOSIT = d_horror_dark_matter_consumer_goods }
+			}
+			if = {
+				limit = {
+					has_carrier_flag = exists_d_horror_dark_matter_physics_research
+					NOT = { has_deposit = d_horror_dark_matter_physics_research }
+				}
+				add_time_special_deposit_keep_on_terraform = { DEPOSIT = d_horror_dark_matter_physics_research }
+			}
+			if = {
+				limit = {
+					has_carrier_flag = exists_d_horror_dark_matter_society_research
+					NOT = { has_deposit = d_horror_dark_matter_society_research }
+				}
+				add_time_special_deposit_keep_on_terraform = { DEPOSIT = d_horror_dark_matter_society_research }
+			}
+			if = {
+				limit = {
+					has_carrier_flag = exists_d_horror_dark_matter_engineering_research
+					NOT = { has_deposit = d_horror_dark_matter_engineering_research }
+				}
+				add_time_special_deposit_keep_on_terraform = { DEPOSIT = d_horror_dark_matter_engineering_research }
+			}
+			if = {
+				limit = {
+					has_carrier_flag = exists_d_horror_dark_matter_unity
+					NOT = { has_deposit = d_horror_dark_matter_unity }
+				}
+				add_time_special_deposit_keep_on_terraform = { DEPOSIT = d_horror_dark_matter_unity }
+			}
+		}
+	}
+}
+
+# 宇宙新生黑洞
+carrier_event = {
+	id = time.67
+	hide_window = yes
+	
+	is_triggered_only = yes
+	
+	trigger = {
+		is_time_black_hole_planet_class = yes
+	}
+	
+	immediate = {
+		# 终末扩散
+		if = {
+			limit = {
+				NOT = { has_carrier_flag = black_hole_horror_count_planet }
+			}
+			set_carrier_flag = black_hole_horror_count_planet
+			event_target:global_event_country = {
+				change_variable = {
+					which = black_hole_horror_count
+					value = 1
+				}
+			}
+			# 天灾计数
+			if = {
+				limit = {
+					has_global_flag = dimensional_horror_crisis_storm_has_occurred
+				}
+				add_dimensional_horror_crisis_chain_counter = { COUNTER = black_hole_horror_count }
+			}
+		}
+		# 延迟创建黑洞穿行
+		if = {
+			limit = {
+				has_global_flag = pass_black_hole_created
+				if = {
+					limit = {
+						solar_system = {
+							NOT = { has_star_flag = pass_black_hole_created }
+						}
+					}
+					always = yes
+				}
+				else = {
+					is_primary_star = yes
+					NOT = { has_carrier_flag = pass_black_hole_created_in_primary_star }
+				}
+			}
+			carrier_event = { id = time.68 days = 1 }
+		}
+	}
+}
+
+# 创建黑洞穿行
+carrier_event = {
+	id = time.68
+	hide_window = yes
+	
+	is_triggered_only = yes
+	
+	trigger = {
+		if = {
+			limit = {
+				solar_system = {
+					NOT = { has_star_flag = pass_black_hole_created }
+				}
+			}
+			always = yes
+		}
+		else = {
+			is_primary_star = yes
+			NOT = { has_carrier_flag = pass_black_hole_created_in_primary_star }
+		}
+	}
+	
+	immediate = {
+		clear_other_pass_black_hole_megastructure = yes
+		create_pass_black_hole_megastructure = yes
+	}
+}
+
+# 进行黑洞穿行
+fleet_event = {
+	id = time.69
+	hide_window = yes
+	
+	is_triggered_only = yes
+	
+	trigger = {
+	}
+	
+	immediate = {
+		fleet_pass_black_hole = yes
+	}
+}
+
+# 天灾青睐
+country_event = {
+	id = time.70
+	is_triggered_only = yes
+	hide_window = yes
+	
+	trigger = {
+		OR = {
+			is_country_type = swarm
+			is_country_type = extradimensional
+			is_country_type = extradimensional_2
+			is_country_type = extradimensional_3
+			is_country_type = ai_empire
+			is_country_type = synth_queen
+			is_country_type = awakened_synth_queen
+			is_country_type = synth_queen_storm
+		}
+	}
+	
+	immediate = {
+		add_akx_dangerous_tech_modifier = yes
+		if = {
+			limit = {
+				# 至少有一定的加成才进行提醒
+				event_target:global_event_country = {
+					check_variable = {
+						which = akx_dangerous_tech_count
+						value >= 25
+					}
+				}
+			}
+			if = {
+				limit = {
+					is_country_type = swarm
+					NOT = { has_global_flag = time_71_swarm }
+				}
+				set_global_flag = time_71_swarm
+				every_playable_country = {
+					limit = {
+						has_tradition = tr_horror_adopt
+					}
+					country_event = { id = time.71 }
+				}
+			}
+			else_if = {
+				limit = {
+					is_country_type = extradimensional
+					NOT = { has_global_flag = time_71_extradimensional }
+				}
+				set_global_flag = time_71_extradimensional
+				every_playable_country = {
+					limit = {
+						has_tradition = tr_horror_adopt
+					}
+					country_event = { id = time.71 }
+				}
+			}
+			else_if = {
+				limit = {
+					is_country_type = ai_empire
+					NOT = { has_global_flag = time_71_ai_empire }
+				}
+				set_global_flag = time_71_ai_empire
+				every_playable_country = {
+					limit = {
+						has_tradition = tr_horror_adopt
+					}
+					country_event = { id = time.71 }
+				}
+			}
+			else_if = {
+				limit = {
+					is_country_type = synth_queen_storm
+					NOT = { has_global_flag = time_71_synth_queen_storm }
+				}
+				set_global_flag = time_71_synth_queen_storm
+				every_playable_country = {
+					limit = {
+						has_tradition = tr_horror_adopt
+					}
+					country_event = { id = time.71 }
+				}
+			}
+		}
+	}
+}
+
+# 天灾青睐（玩家提醒）
+country_event = {
+	id = time.71
+	title = time.71.name
+	desc = {
+		text = time.71.desc.swarm
+		trigger = {
+			FROM = {
+				is_country_type = swarm
+			}
+		}
+	}
+	desc = {
+		text = time.71.desc.extradimensional
+		trigger = {
+			FROM = {
+				is_country_type = extradimensional
+			}
+		}
+	}
+	desc = {
+		text = time.71.desc.ai_empire
+		trigger = {
+			FROM = {
+				is_country_type = ai_empire
+			}
+		}
+	}
+	desc = {
+		text = time.71.desc.synth_queen_storm
+		trigger = {
+			FROM = {
+				is_country_type = synth_queen_storm
+			}
+		}
+	}
+	picture = GFX_evt_dimensional_horror
+	show_sound = event_activating_unknown_technology
+	
+	is_triggered_only = yes
+	
+	immediate = {
+	}
+	
+	option = {
+		name = time.71.a
+		custom_tooltip = time.71.a.tooltip
+	}
+}
+
+# 恐怖负相物质遗珍唯一
+country_event = {
+	id = time.72
+	is_triggered_only = yes
+	hide_window = yes
+	
+	trigger = {
+		last_received_relic = r_horror_matter
+	}
+	
+	immediate = {
+		if = {
+			limit = {
+				NOT = { has_country_flag = has_gain_r_horror_matter }
+			}
+			set_country_flag = has_gain_r_horror_matter
+		}
+		else = {
+			remove_relic = r_horror_matter
+			# 保留至少一个恐怖负相物质遗珍
+			if = {
+				limit = {
+					NOT = { has_relic = r_horror_matter }
+				}
+				remove_country_flag = has_gain_r_horror_matter
+				add_relic = r_horror_matter
+			}
+		}
+	}
+}
+
+# 研究时空黑洞
+carrier_event = {
+	id = time.100
+	title = time.100.name
+	desc = {
+		text = time.100.desc.1
+		trigger = {
+			owner = { has_origin_time_ruler = no }
+		}
+	}
+	desc = {
+		text = time.100.desc.2
+		trigger = {
+			owner = { has_origin_time_ruler = yes }
+		}
+	}
+	picture = GFX_evt_surreal_visions
+	show_sound = event_activating_unknown_technology
+	location = root
+
+	is_triggered_only = yes
+
+	trigger = {
+		is_planet_class = pc_time
+	}
+
+	immediate = {
+		add_modifier = {
+			modifier = timesingularity
+			days = -1
+		}
+		if = {
+			limit = {
+				is_capital = yes
+			}
+			set_colony_type = col_timesingularity_capital
+			set_colony_type = none # 更新星球规划的同时改用自动规划
+		}
+		set_planet_entity = {
+			picture = pc_timesingularity
+		}
+		owner = {
+			set_country_flag = decision_time_finished
+			create_timeline_decision_time_end = yes
+			if = {
+				limit = {
+					has_origin_time_ruler = yes
+				}
+				set_origin = origin_timesingularity
+				event_target:origin_time_ruler = {
+					add_trait = {
+						trait = leader_trait_ruler_time_king
+					}
+				}
+			}
+			else = {
+				set_origin = origin_timesingularity_bad
+			}
+		}
+	}
+
+	option = {
+		name = time.100.a
+		tooltip = {
+			add_modifier = {
+				modifier = timesingularity
+				days = -1
+			}
+		}
+		owner = {
+			if = {
+				limit = {
+					has_origin_time_ruler = yes
+				}
+				custom_tooltip = time.100.a.tooltip
+				custom_tooltip = unlock_ap_origin_time
+			}
+		}
+	}
+}
+
+carrier_event = {
+	id = time.200
+	title = time.200.name
+	desc = time.200.desc
+	picture = GFX_evt_dimensional_horror
+	show_sound = event_alien_signal
+	location = root
+	
+	is_triggered_only = yes
+
+	trigger = {
+	}
+	
+	immediate = {
+		event_target:time_dimensional_horror_country = {
+			set_faction_hostility = {
+				target = root.owner
+				set_hostile = no
+				set_neutral = no
+				set_friendly = yes
+			}
+		}
+		create_time_dimensional_horror_end_fleet = yes
+	}
+	
+	option = {
+		name = time.200.a
+	}
+}
+
+# 其它国家解锁负相传统（用every_country是为了包含堕落）
+country_event = {
+	id = time.500
+	is_triggered_only = yes
+	hide_window = yes
+
+	trigger = {
+	}
+	
+	immediate = {
+		country_event = { id = time.500 days = 1800 random = 1800 }
+		if = {
+			limit = {
+				NOT = { has_global_flag = gain_leader_trait_horror_ruler }
+			}
+			set_global_flag = gain_leader_trait_horror_ruler
+			# 已解锁负相传统的非时虫国家的统治者也要获得专属特质
+			every_country = {
+				limit = {
+					NOT = { has_country_flag = worm_tomb_ending }
+					OR = {
+						has_country_flag = unlock_tradition_horror
+						has_tradition = tr_horror_adopt
+					}
+				}
+				ruler = {
+					add_trait = {
+						trait = leader_trait_horror_ruler
+						show_message = no
+					}
+				}
+			}
+		}
+		every_country = {
+			limit = {
+				OR = {
+					is_ai = no #多人游戏的其它玩家必定解锁
+					is_country_type = fallen_empire #堕落帝国必定解锁
+					is_country_type = awakened_fallen_empire #觉醒帝国必定解锁
+				}
+				NOR = {
+					has_country_flag = worm_tomb_ending #触发时虫事件链的国家不可解锁
+					has_country_flag = unlock_tradition_horror #已解锁的国家不再重复解锁
+					has_tradition = tr_horror_adopt #已采纳的国家不再重复解锁（主要针对破损的大门）
+				}
+			}
+			country_event = { id = time.501 }
+		}
+		set_variable = {
+			which = unlock_tradition_horror_variable
+			value = 0
+		}
+		set_variable_to_random_value = {
+			which = unlock_tradition_horror_variable
+			min = 1
+			max = 5
+			rounded = yes
+		}
+		while = {
+			count = unlock_tradition_horror_variable
+			random_playable_country = {
+				limit = {
+					is_ai = yes
+					NOR = {
+						has_country_flag = worm_tomb_ending #触发时虫事件链的国家不可解锁
+						has_country_flag = unlock_tradition_horror #已解锁的国家不再重复解锁
+						has_tradition = tr_horror_adopt #已采纳的国家不再重复解锁（主要针对破损的大门）
+					}
+				}
+				country_event = { id = time.501 }
+			}
+		}
+		clear_variable = unlock_tradition_horror_variable
+	}
+}
+
+# 解锁负相传统
+country_event = {
+	id = time.501
+	title = time.501.name
+	desc = time.501.desc
+	picture = GFX_evt_dimensional_horror
+	show_sound = event_activating_unknown_technology
+	
+	is_triggered_only = yes
+
+	trigger = {
+	}
+
+	immediate = {
+		ruler = {
+			add_trait = {
+				trait = leader_trait_horror_ruler
+			}
+		}
+	}
+
+	option = {
+		name = time.501.a
+		unlock_tradition_horror = yes
+		tooltip = {
+			ruler = {
+				add_trait = {
+					trait = leader_trait_horror_ruler
+				}
+			}
+		}
+	}
+}
+
+# 完成负相传统
+country_event = {
+	id = time.502
+	title = time.502.name
+	desc = {
+		text = time.502.desc_1
+		trigger = {
+			NAND = {
+				has_country_flag = worm_tomb_ending
+				NOT = { has_country_flag = akx_off_cource }
+			}
+		}
+	}
+	desc = {
+		text = time.502.desc_2
+		trigger = {
+			has_country_flag = worm_tomb_ending
+			NOT = { has_country_flag = akx_off_cource }
+		}
+	}
+	picture = GFX_evt_dimensional_horror
+	show_sound = event_activating_unknown_technology
+	
+	is_triggered_only = yes
+
+	trigger = {
+	}
+
+	immediate = {
+		randomly_choose_horror_time_relic = yes
+	}
+
+	after = {
+		randomly_gain_horror_time_relic = yes
+	}
+	
+	option = {
+		name = time.502.a
+		trigger = {
+			NAND = {
+				has_country_flag = worm_tomb_ending
+				NOT = { has_country_flag = akx_off_cource }
+			}
+		}
+		if = {
+			limit = {
+				has_global_flag = unlock_tradition_time
+			}
+			unlock_tradition_time = yes
+		}
+	}
+	
+	option = {
+		name = time.502.b
+		custom_tooltip = time.502.b.tooltip
+		trigger = {
+			has_country_flag = worm_tomb_ending
+			NOT = { has_country_flag = akx_off_cource }
+		}
+	}
+}
+
+# 解锁时空传统
+country_event = {
+	id = time.503
+	title = time.503.name
+	desc = time.503.desc
+	picture = GFX_evt_dimensional_horror
+	show_sound = event_activating_unknown_technology
+	
+	is_triggered_only = yes
+
+	trigger = {
+	}
+
+	immediate = {
+	}
+
+	option = {
+		name = time.503.a
+		unlock_tradition_time = yes
+	}
+}
+
+# 完成时空传统
+country_event = {
+	id = time.504
+	title = time.504.name
+	desc = {
+		text = time.504.desc.a.1
+		trigger = {
+			has_country_flag = worm_tomb_ending
+			NOT = { has_relic = r_horror_matter }
+		}
+	}
+	desc = {
+		text = time.504.desc.a.2
+		trigger = {
+			NOT = { has_country_flag = worm_tomb_ending }
+			NOT = { has_relic = r_horror_matter }
+		}
+	}
+	desc = {
+		text = time.504.desc.b.1
+		trigger = {
+			has_country_flag = worm_tomb_ending
+			has_relic = r_horror_matter
+		}
+	}
+	desc = {
+		text = time.504.desc.b.2
+		trigger = {
+			NOT = { has_country_flag = worm_tomb_ending }
+			has_relic = r_horror_matter
+		}
+	}
+	picture = GFX_evt_dimensional_horror
+	show_sound = event_activating_unknown_technology
+	
+	is_triggered_only = yes
+
+	trigger = {
+	}
+
+	immediate = {
+		if = {
+			limit = {
+				NOT = { has_relic = r_horror_matter }
+			}
+			set_country_flag = gain_r_horror_matter_by_tradition
+		}
+	}
+
+	option = {
+		name = {
+			text = time.504.a.1
+			trigger = {
+				NOT = { has_relic = r_horror_matter }
+				has_country_flag = worm_tomb_ending
+			}
+		}
+		name = {
+			text = time.504.a.2
+			trigger = {
+				NOT = { has_relic = r_horror_matter }
+				NOT = { has_country_flag = worm_tomb_ending }
+			}
+		}
+		name = {
+			text = time.504.b.1
+			trigger = {
+				has_relic = r_horror_matter
+				has_country_flag = worm_tomb_ending
+			}
+		}
+		name = {
+			text = time.504.b.2
+			trigger = {
+				has_relic = r_horror_matter
+				NOT = { has_country_flag = worm_tomb_ending }
+			}
+		}
+		give_r_horror_matter = { FLAG = tradition_time_relic }
+	}
+}
+
+# 完成终末传统
+country_event = {
+	id = time.505
+	title = time.505.name
+	desc = time.505.desc
+	picture = GFX_evt_dimensional_horror
+	show_sound = event_activating_unknown_technology
+	
+	is_triggered_only = yes
+
+	trigger = {
+	}
+
+	immediate = {
+	}
+	
+	after = {
+		custom_tooltip = time.505.tooltip
+	}
+	
+	option = {
+		name = time.505.materialist
+		trigger = {
+			is_materialist = yes
+		}
+	}
+	
+	option = {
+		name = time.505.spiritualist
+		trigger = {
+			is_spiritualist = yes
+		}
+	}
+	
+	option = {
+		name = time.505.militarist
+		trigger = {
+			is_militarist = yes
+		}
+	}
+	
+	option = {
+		name = time.505.pacifist
+		trigger = {
+			is_pacifist = yes
+		}
+	}
+	
+	option = {
+		name = time.505.xenophile
+		trigger = {
+			is_xenophile = yes
+		}
+	}
+	
+	option = {
+		name = time.505.xenophobe
+		trigger = {
+			is_xenophobe = yes
+		}
+	}
+	
+	option = {
+		name = time.505.egalitarian
+		trigger = {
+			is_egalitarian = yes
+		}
+	}
+	
+	option = {
+		name = time.505.authoritarian
+		trigger = {
+			is_authoritarian = yes
+		}
+	}
+	
+	option = {
+		name = time.505.hive_mind
+		trigger = {
+			is_hive_empire = yes
+		}
+	}
+	
+	option = {
+		name = time.505.machine_intelligence
+		trigger = {
+			is_machine_empire = yes
+		}
+	}
+	
+	# 更多思潮类MOD兼容
+	option = {
+		name = time.505.a
+		trigger = {
+			NOR = {
+				is_materialist = yes
+				is_spiritualist = yes
+				is_militarist = yes
+				is_pacifist = yes
+				is_xenophile = yes
+				is_xenophobe = yes
+				is_egalitarian = yes
+				is_authoritarian = yes
+				is_hive_empire = yes
+				is_machine_empire = yes
+			}
+		}
+	}
+}
+
+# 负相生物标识切换
+leader_event = {
+	id = time.550
+	is_triggered_only = yes
+	hide_window = yes
+	
+	immediate = {
+		gain_timed_leader_trait_horror_secret = yes
+	}
+}
+
+# 采纳时空因果飞升
+country_event = {
+	id = time.600
+	title = time.600.name
+	desc = time.600.desc
+	picture = GFX_evt_surreal_visions
+	show_sound = event_activating_unknown_technology
+	
+	is_triggered_only = yes
+
+	trigger = {
+	}
+
+	immediate = {
+		set_global_flag = unlock_tradition_time
+		every_country = {
+			limit = {
+				NOT = { has_country_flag = worm_tomb_ending }
+				has_tradition = tr_horror_finish
+			}
+			country_event = { id = time.503 }
+		}
+	}
+
+	option = {
+		name = time.600.a
+		start_situation = {
+			type = situation_ap_time
+			target = root
+			effect = {
+				if = {
+					limit = {
+						can_finish_situation_ap_time = yes
+					}
+					set_situation_approach = approach_ap_time_up
+				}
+				else = {
+					set_situation_approach = approach_ap_time_down
+				}
+			}
+		}
+	}
+}
+
+situation_event = {
+	id = time.601
+	title = time.601.name
+	desc = time.601.desc
+	picture = GFX_evt_dimensional_horror
+	show_sound = event_alien_signal
+	location = target
+	situation = this
+	
+	is_triggered_only = yes
+
+	trigger = {
+	}
+
+	immediate = {
+		set_situation_locked = yes
+		set_situation_flag = situation_ap_time_delay_1
+	}
+	
+	after = {
+		set_situation_locked = no
+	}
+	
+	option = {
+		name = time.601.a
+		allow = {
+			can_stop_situation_ap_time = yes
+		}
+		owner = {
+			upgrade_r_time = { LEVEL = 1 }
+		}
+		hidden_effect = {
+			set_situation_flag = stop_situation_ap_time
+			set_situation_approach = approach_ap_time_down
+		}
+	}
+	
+	option = {
+		name = time.601.b
+		allow = {
+			can_finish_situation_ap_time = yes
+		}
+	}
+}
+
+situation_event = {
+	id = time.602
+	title = time.602.name
+	desc = time.602.desc
+	picture = GFX_evt_dimensional_horror
+	show_sound = event_alien_signal
+	location = target
+	situation = this
+	
+	is_triggered_only = yes
+
+	trigger = {
+	}
+
+	immediate = {
+		set_situation_locked = yes
+		remove_situation_flag = situation_ap_time_delay_1
+		set_situation_flag = situation_ap_time_delay_2
+	}
+	
+	after = {
+		set_situation_locked = no
+	}
+	
+	option = {
+		name = time.602.a
+		allow = {
+			can_stop_situation_ap_time = yes
+		}
+		owner = {
+			upgrade_r_time = { LEVEL = 2 }
+		}
+		hidden_effect = {
+			set_situation_flag = stop_situation_ap_time
+			set_situation_approach = approach_ap_time_down
+		}
+	}
+	
+	option = {
+		name = time.602.b
+		allow = {
+			can_finish_situation_ap_time = yes
+		}
+	}
+}
+
+situation_event = {
+	id = time.603
+	title = time.603.name
+	desc = time.603.desc
+	picture = GFX_evt_dimensional_horror
+	show_sound = event_alien_signal
+	location = target
+	situation = this
+	
+	is_triggered_only = yes
+
+	trigger = {
+	}
+
+	immediate = {
+		set_situation_locked = yes
+		remove_situation_flag = situation_ap_time_delay_2
+		set_situation_flag = situation_ap_time_delay_3
+	}
+	
+	after = {
+		set_situation_locked = no
+	}
+	
+	option = {
+		name = time.603.a
+		allow = {
+			can_stop_situation_ap_time = yes
+		}
+		owner = {
+			upgrade_r_time = { LEVEL = 3 }
+		}
+		hidden_effect = {
+			set_situation_flag = stop_situation_ap_time
+			set_situation_approach = approach_ap_time_down
+		}
+	}
+	
+	option = {
+		name = time.603.b
+		allow = {
+			can_finish_situation_ap_time = yes
+		}
+	}
+}
+
+situation_event = {
+	id = time.604
+	title = time.604.name
+	desc = time.604.desc
+	picture = GFX_evt_dimensional_horror
+	show_sound = event_alien_signal
+	location = target
+	situation = this
+	
+	is_triggered_only = yes
+
+	trigger = {
+	}
+
+	immediate = {
+		set_situation_locked = yes
+		remove_situation_flag = situation_ap_time_delay_3
+		set_situation_flag = situation_ap_time_delay_4
+	}
+	
+	after = {
+		set_situation_locked = no
+	}
+	
+	option = {
+		name = time.604.a
+		allow = {
+			can_stop_situation_ap_time = yes
+		}
+		owner = {
+			upgrade_r_time = { LEVEL = 4 }
+		}
+		hidden_effect = {
+			set_situation_flag = stop_situation_ap_time
+			set_situation_approach = approach_ap_time_down
+		}
+	}
+	
+	option = {
+		name = time.604.b
+		allow = {
+			can_finish_situation_ap_time = yes
+		}
+	}
+}
+
+situation_event = {
+	id = time.605
+	title = time.605.name
+	desc = time.605.desc
+	picture = GFX_evt_surreal_visions
+	show_sound = event_activating_unknown_technology
+	location = target
+	situation = this
+	
+	is_triggered_only = yes
+
+	trigger = {
+	}
+
+	immediate = {
+		set_situation_locked = yes
+	}
+	
+	after = {
+		hidden_effect = {
+			destroy_situation = this
+		}
+	}
+	
+	option = {
+		name = time.605.a
+		owner = {
+			unlock_tradition_end = yes
+		}
+	}
+}
+
+situation_event = {
+	id = time.606
+	title = time.606.name
+	desc = time.606.desc
+	picture = GFX_evt_dimensional_horror
+	show_sound = event_alien_signal
+	location = target
+	situation = this
+	
+	is_triggered_only = yes
+
+	trigger = {
+	}
+
+	immediate = {
+		set_situation_locked = yes
+	}
+	
+	after = {
+		hidden_effect = {
+			destroy_situation = this
+		}
+	}
+	
+	option = {
+		name = time.606.a
+		owner = {
+			unlock_tradition_hope = yes
+		}
+	}
+}
+
+# 虚空之魇
+country_event = {
+	id = time.1000
+	is_triggered_only = yes
+	hide_window = yes
+	
+	trigger = {
+		FromFrom = {
+			if = {
+				limit = {
+					is_ship_size = voidworms_titan
+				}
+				OR = {
+					has_component = HORROR_MUTATION_BEAM_EXTRA_LARGE
+					has_component = HORROR_MUTATION_ACCELERATOR_EXTRA_LARGE
+					has_component = HORROR_MUTATION_SHIELD_EXTRA_LARGE
+					has_component = HORROR_MUTATION_ARMOR_EXTRA_LARGE
+				}
+			}
+			else_if = {
+				limit = {
+					is_ship_size = voidworms_large
+				}
+				OR = {
+					has_component = HORROR_MUTATION_BEAM_LARGE
+					has_component = HORROR_MUTATION_ACCELERATOR_LARGE
+					has_component = HORROR_MUTATION_SHIELD_LARGE
+					has_component = HORROR_MUTATION_ARMOR_LARGE
+				}
+			}
+			else = {
+				always = no
+			}
+		}
+	}
+	
+	immediate = {
+		FromFrom = { save_event_target_as = dimensional_horror_voidworms_location }
+		if = {
+			limit = {
+				FromFrom = { is_ship_size = voidworms_titan }
+			}
+			random = {
+				chance = FromFrom.value:dimensional_horror_voidworms_created_chance|SIZE|EXTRA_LARGE|CHANCE|5|
+				create_dimensional_horror_voidworms = yes
+			}
+		}
+		else = {
+			random = {
+				chance = FromFrom.value:dimensional_horror_voidworms_created_chance|SIZE|LARGE|CHANCE|2|
+				create_dimensional_horror_voidworms = yes
+			}
+		}
+	}
+}
+
+country_event = {
+	id = time.1005
+	title = time.1005.name
+	desc = time.1005.desc
+	picture = GFX_evt_dimensional_horror
+	location = event_target:dimensional_horror_voidworms_fleet
+	
+	is_triggered_only = yes
+	
+	trigger = {
+		NOT = { has_country_flag = time_1005_triggered }
+	}
+	
+	immediate = {
+		set_country_flag = time_1005_triggered
+	}
+	
+	option = {
+		name = time.1005.a
+		add_monthly_resource_mult = {
+			resource = physics_research
+			value = @tier5researchreward
+			min = @tier5researchmin
+			max = @tier5researchmax
+		}
+	}
+}
+
+# 部分事件方舟舰不应受损自动禁用，而应该直接摧毁
+ship_event = {
+	id = time.1100
+	is_triggered_only = yes
+	hide_window = yes
+	
+	trigger = {
+		OR = {
+			has_ship_flag = noah_ark_ship
+			has_ship_flag = pirate_king_arkship
+			has_ship_flag = pirate_king_end_arkship
+		}
+		has_hp_percentage <= 0.01
+	}
+	
+	immediate = {
+		destroy_ship = this
+	}
+}
+
+# 机飞保留特殊特质
+country_event = {
+	id = time.1500
+	is_triggered_only = yes
+	hide_window = yes
+	
+	trigger = {
+	}
+	
+	immediate = {
+		# 神秘奇点专属特质
+		if = {
+			limit = {
+				OR = {
+					has_origin_time = yes
+					fromfrom = { has_trait = trait_time }
+				}
+			}
+			from = {
+				change_species_characteristics = { add_trait = trait_time }
+			}
+		}
+		# 逐光者特殊特质
+		if = {
+			limit = {
+				fromfrom = { has_trait = trait_time_1 }
+			}
+			from = {
+				change_species_characteristics = { add_trait = trait_time_1 }
+			}
+		}
+		# 凝视深渊专属特质
+		if = {
+			limit = {
+				OR = {
+					has_origin = origin_black_hole
+					fromfrom = { has_trait = trait_origin_black_hole }
+				}
+			}
+			from = {
+				change_species_characteristics = { add_trait = trait_origin_black_hole }
+			}
+		}
+		# 精神脉冲专属特质
+		if = {
+			limit = {
+				OR = {
+					has_origin = origin_pulsar
+					fromfrom = { has_trait = trait_origin_pulsar }
+				}
+			}
+			from = {
+				change_species_characteristics = { add_trait = trait_origin_pulsar }
+			}
+		}
+		# 中子壁垒专属特质
+		if = {
+			limit = {
+				OR = {
+					has_origin = origin_neutron_star
+					fromfrom = { has_trait = trait_origin_neutron_star }
+				}
+			}
+			from = {
+				change_species_characteristics = { add_trait = trait_origin_neutron_star }
+			}
+		}
+		# 信使
+		if = {
+			limit = {
+				fromfrom = { has_trait = trait_akx_messenger }
+			}
+			from = {
+				change_species_characteristics = { add_trait = trait_akx_messenger }
+			}
+		}
+		# 透明化
+		if = {
+			limit = {
+				fromfrom = { has_trait = trait_akx_waiting_world }
+			}
+			from = {
+				change_species_characteristics = { add_trait = trait_akx_waiting_world_robot }
+			}
+		}
+		# 来自异世
+		if = {
+			limit = {
+				fromfrom = {
+					OR = {
+						has_trait = trait_notofthisworld
+						has_trait = trait_exd
+					}
+				}
+			}
+			from = {
+				change_species_characteristics = { add_trait = trait_robot_notofthisworld }
+			}
+		}
+		# 星辰吐息
+		if = {
+			limit = {
+				fromfrom = { has_trait = trait_wonder_time }
+			}
+			from = {
+				change_species_characteristics = { add_trait = trait_wonder_time }
+			}
+		}
+		# 沃陶姆虚拟洞见
+		if = {
+			limit = {
+				fromfrom = { has_trait = trait_wonder_country_31 }
+			}
+			from = {
+				change_species_characteristics = { add_trait = trait_wonder_country_31 }
+			}
+		}
+		# 尤特冻龄技术
+		if = {
+			limit = {
+				fromfrom = { has_trait = trait_wonder_country_32 }
+			}
+			from = {
+				change_species_characteristics = { add_trait = trait_wonder_country_32 }
+			}
+		}
+		# 第一联盟遗志
+		if = {
+			limit = {
+				fromfrom = { has_trait = trait_wonder_country_33 }
+			}
+			from = {
+				change_species_characteristics = { add_trait = trait_wonder_country_33 }
+			}
+		}
+		# 贾沃疹后遗症
+		if = {
+			limit = {
+				fromfrom = { has_trait = trait_wonder_country_34 }
+			}
+			from = {
+				change_species_characteristics = { add_trait = trait_wonder_country_34 }
+			}
+		}
+		# 赛博勒克斯修正接口
+		if = {
+			limit = {
+				fromfrom = { has_trait = trait_wonder_country_35 }
+			}
+			from = {
+				change_species_characteristics = { add_trait = trait_wonder_country_35 }
+			}
+		}
+		# 巴奥突触连结
+		if = {
+			limit = {
+				fromfrom = { has_trait = trait_wonder_country_36 }
+			}
+			from = {
+				change_species_characteristics = { add_trait = trait_wonder_country_36 }
+			}
+		}
+		# 福音派回响
+		if = {
+			limit = {
+				fromfrom = { has_trait = trait_wonder_country_37 }
+			}
+			from = {
+				change_species_characteristics = { add_trait = trait_wonder_country_37 }
+			}
+		}
+		# 因内特贸易网络
+		if = {
+			limit = {
+				fromfrom = { has_trait = trait_wonder_country_inetian }
+			}
+			from = {
+				change_species_characteristics = { add_trait = trait_wonder_country_inetian }
+			}
+		}
+		# 阿达卡利亚风暴集群
+		if = {
+			limit = {
+				fromfrom = { has_trait = trait_wonder_country_adakkaria }
+			}
+			from = {
+				change_species_characteristics = { add_trait = trait_wonder_country_adakkaria }
+			}
+		}
+		# 永生诅咒
+		if = {
+			limit = {
+				fromfrom = { has_trait = trait_wonder_country_77 }
+			}
+			from = {
+				change_species_characteristics = { add_trait = trait_wonder_country_77 }
+			}
+		}
+		# 北极熊
+		if = {
+			limit = {
+				fromfrom = { has_trait = trait_wonder_country_91 }
+			}
+			from = {
+				change_species_characteristics = { add_trait = trait_wonder_country_91 }
+			}
+		}
+		# 艾瑞达巫术
+		if = {
+			limit = {
+				fromfrom = { has_trait = trait_wonder_country_96 }
+			}
+			from = {
+				change_species_characteristics = { add_trait = trait_wonder_country_96 }
+			}
+		}
+		# 脑蛞蝓
+		if = {
+			limit = {
+				OR = {
+					has_country_flag = finished_brainslug_chain
+					fromfrom = { has_trait = trait_brainslug }
+				}
+			}
+			from = {
+				change_species_characteristics = { add_trait = trait_brainslug_robot }
+			}
+		}
+		if = {
+			limit = {
+				any_situation = {
+					OR = {
+						is_situation_type = situation_synthetic_fertility_synthesization
+						is_situation_type = situation_digitization
+					}
+					OR = {
+						has_situation_flag = digitization_final
+						NOT = { has_situation_flag = synth_leaders_digitized }
+					}
+				}
+			}
+			every_owned_leader = {
+				limit = {
+					species = { is_same_species = owner_main_species }
+					has_trait = leader_trait_brainslug
+				}
+				remove_trait = leader_trait_brainslug
+				add_trait = {
+					trait = leader_trait_brainslug_robot
+					show_message = no
+				}
+			}
+			every_pool_leader = {
+				limit = {
+					species = { is_same_species = owner_main_species }
+					has_trait = leader_trait_brainslug
+				}
+				remove_trait = leader_trait_brainslug
+				add_trait = {
+					trait = leader_trait_brainslug_robot
+					show_message = no
+				}
+			}
+		}
+		# 生命之籽宜居特质
+		if = {
+			limit = {
+				fromfrom = { has_trait = trait_pc_gaia_preference_terraforming }
+			}
+			from = {
+				modify_species = {
+					remove_trait = trait_dry_planet_preference
+					remove_trait = trait_wet_planet_preference
+					remove_trait = trait_cold_planet_preference
+					remove_trait = trait_machine_pc_gaia_preference
+					add_trait = trait_pc_gaia_preference_terraforming
+				}
+			}
+		}
+	}
+}
+
+# 脑蛞蝓芯片
+country_event = {
+	id = time.1600
+	is_triggered_only = yes
+	hide_window = yes
+
+	trigger = {
+		if = {
+			limit = {
+				has_country_flag = finished_brainslug_chain
+			}
+			from = {
+				NOR = {
+					has_leader_flag = beholder
+					has_leader_flag = gray_leader
+					has_trait = leader_trait_governor_oracle
+				}
+				species = {
+					has_trait = trait_brainslug_robot
+				}
+			}
+		}
+		else = {
+			always = no
+		}
+	}
+
+	immediate = {
+		from = {
+			random_list = {
+				80 = {
+					#Nothing
+				}
+				20 = {
+					modifier = {
+						factor = 0.5
+						has_ethic = ethic_xenophobe
+					}
+					modifier = {
+						factor = 2
+						has_ethic = ethic_xenophile
+					}
+					add_trait = {
+						trait = leader_trait_brainslug_robot
+					}
+				}
+			}
+		}
+	}
+}
+
+# 星辰吐息
+country_event = {
+	id = time.1700
+	is_triggered_only = yes
+	hide_window = yes
+
+	trigger = {
+		from = {
+			species = { has_trait = trait_wonder_time }
+		}
+	}
+
+	immediate = {
+		from = {
+			add_trait = {
+				trait = leader_trait_wonder_time
+				show_message = no
+			}
+		}
+	}
+}
+
+# 特殊特质不允许通过同化获取
+event = {
+	id = time.2000
+	is_triggered_only = yes
+	hide_window = yes
+	
+	trigger = {
+	}
+	
+	immediate = {
+		every_playable_country = {
+			limit = {
+				OR = {
+					is_ai = no
+					has_origin_time = yes
+					has_country_flag = beyond_infinity_trait_time
+				}
+			}
+			country_event = { id = time.2001 }
+		}
+		every_playable_country = {
+			limit = {
+				OR = {
+					is_ai = no
+					has_origin = origin_reassembler
+				}
+			}
+			country_event = { id = time.2002 }
+		}
+	}
+}
+
+country_event = {
+	id = time.2001
+	is_triggered_only = yes
+	hide_window = yes
+	
+	trigger = {
+		OR = {
+			AND = {
+				is_machine_empire = yes
+				any_owned_species = {
+					has_psionic_assimilation_living_standard = {
+						COUNTRY = root
+					}
+				}
+			}
+			any_owned_species = {
+				has_synthetic_assimilation_living_standard = {
+					COUNTRY = root
+				}
+			}
+		}
+		any_owned_pop_group = {
+			has_pop_group_flag = already_assimilated
+			is_origin_time_species = yes
+		}
+	}
+	
+	immediate = {
+		every_owned_colony = {
+			limit = {
+				is_origin_time_planet_class = no
+				any_owned_pop_group = {
+					has_pop_group_flag = already_assimilated
+					is_origin_time_species = yes
+				}
+			}
+			every_owned_pop_group = {
+				limit = {
+					has_pop_group_flag = already_assimilated
+					is_origin_time_species = yes
+				}
+				species = {
+					modify_species = {
+						species = this
+						remove_trait = trait_time
+						remove_trait = trait_time_1
+						remove_trait = trait_time_2
+						remove_trait = trait_time_soul_virtuality
+						remove_trait = trait_time_soul_synthetic
+						remove_trait = trait_time_soul_cybernetic
+						remove_trait = trait_time_soul_genetic
+						remove_trait = trait_time_soul_psionic
+						change_scoped_species = no
+						effect = {
+							save_event_target_as = new_origin_time_species
+						}
+					}
+				}
+				change_species = event_target:new_origin_time_species
+			}
+		}
+	}
+}
+
+country_event = {
+	id = time.2002
+	is_triggered_only = yes
+	hide_window = yes
+	
+	trigger = {
+		OR = {
+			AND = {
+				is_machine_empire = yes
+				any_owned_species = {
+					has_psionic_assimilation_living_standard = {
+						COUNTRY = root
+					}
+				}
+			}
+			any_owned_species = {
+				has_synthetic_assimilation_living_standard = {
+					COUNTRY = root
+				}
+			}
+		}
+		any_owned_pop_group = {
+			has_pop_group_flag = already_assimilated
+			has_trait = trait_reassembler
+		}
+	}
+	
+	immediate = {
+		every_owned_colony = {
+			limit = {
+				any_owned_pop_group = {
+					has_pop_group_flag = already_assimilated
+					has_trait = trait_reassembler
+				}
+			}
+			every_owned_pop_group = {
+				limit = {
+					has_pop_group_flag = already_assimilated
+					has_trait = trait_reassembler
+				}
+				species = {
+					modify_species = {
+						species = this
+						remove_trait = trait_reassembler
+						change_scoped_species = no
+						effect = {
+							save_event_target_as = new_origin_reassembler_species
+						}
+					}
+				}
+				change_species = event_target:new_origin_reassembler_species
+			}
+		}
+	}
+}
+
+# 部分起源禁止获得部分理念
+country_event = {
+	id = time.3000
+	is_triggered_only = yes
+	hide_window = yes
+	
+	trigger = {
+		OR = {
+			has_origin_time = yes
+			has_origin = origin_pc_hive
+			has_origin = origin_gas_colony
+			has_origin = origin_psionic
+			has_origin = origin_nanites
+		}
+	}
+	
+	immediate = {
+		if = {
+			limit = {
+				has_origin_time = yes
+			}
+			force_remove_civic = civic_idyllic_bloom
+			force_remove_civic = civic_relentless_industrialists
+			force_remove_civic = civic_corporate_relentless_industrialists
+			force_remove_civic = civic_guided_sapience
+			force_remove_civic = civic_corporate_guided_sapience
+		}
+		else_if = {
+			limit = {
+				has_origin = origin_pc_hive
+			}
+			force_remove_civic = civic_hive_idyllic_bloom
+			force_remove_civic = civic_hive_guided_sapience
+		}
+		else_if = {
+			limit = {
+				has_origin = origin_gas_colony
+			}
+			force_remove_civic = civic_idyllic_bloom
+			force_remove_civic = civic_hive_idyllic_bloom
+			force_remove_civic = civic_relentless_industrialists
+			force_remove_civic = civic_corporate_relentless_industrialists
+			force_remove_civic = civic_guided_sapience
+			force_remove_civic = civic_corporate_guided_sapience
+			force_remove_civic = civic_hive_guided_sapience
+		}
+		else_if = {
+			limit = {
+				has_origin = origin_psionic
+			}
+			force_remove_civic = civic_idyllic_bloom
+			force_remove_civic = civic_relentless_industrialists
+			force_remove_civic = civic_corporate_relentless_industrialists
+			force_remove_civic = civic_natural_design
+			force_remove_civic = civic_augmentation_bazaars
+			force_remove_civic = civic_guided_sapience
+			force_remove_civic = civic_corporate_guided_sapience
+		}
+		else_if = {
+			limit = {
+				has_origin = origin_nanites
+			}
+			force_remove_civic = civic_machine_servitor
+			force_remove_civic = civic_machine_assimilator
+			force_remove_civic = civic_machine_guided_sapience
+		}
+	}
+}
+
+# 盖亚星球增强
+event = {
+	id = time.4000
+	is_triggered_only = yes
+	hide_window = yes
+	
+	trigger = {
+	}
+	
+	immediate = {
+		every_galaxy_planet = {
+			limit = {
+				is_planet_class = pc_gaia
+			}
+			if = {
+				limit = {
+					NOR = {
+						has_deposit = d_time_gaia_energy
+						has_deposit = d_time_gaia_minerals
+						has_deposit = d_time_gaia_food
+					}
+				}
+				gain_time_gaia_deposit = yes
+			}
+		}
+		every_country = {
+			limit = {
+				is_fallen_empire = yes
+			}
+			every_owned_colony = {
+				limit = {
+					is_planet_class = pc_ringworld_habitable
+					NOT = { has_deposit = d_time_ringworld_network }
+				}
+				add_deposit = d_time_ringworld_network
+			}
+		}
+	}
+}
+
+carrier_event = {
+	id = time.4001
+	is_triggered_only = yes
+	hide_window = yes
+	
+	trigger = {
+		is_planet_class = pc_gaia
+	}
+	
+	immediate = {
+		carrier_event = { id = time.4002 days = 1 } # 隔一天，因为有的事件是先改变星球类型，再删除地块
+	}
+}
+
+carrier_event = {
+	id = time.4002
+	is_triggered_only = yes
+	hide_window = yes
+	
+	trigger = {
+		is_planet_class = pc_gaia
+		NOR = {
+			has_deposit = d_time_gaia_energy
+			has_deposit = d_time_gaia_minerals
+			has_deposit = d_time_gaia_food
+		}
+	}
+	
+	immediate = {
+		gain_time_gaia_deposit = yes
+	}
+}
+
+# 位面之魇交战事件
+country_event = {
+	id = time.5000
+	is_triggered_only = yes
+	hide_window = yes
+	
+	trigger = {
+		FromFromFrom = {
+			is_dimensional_horror_ship_size = yes
+		}
+		FromFrom = {
+			is_dimensional_horror_ship_size = no
+			is_civilian = no
+			NOT = { is_ship_class = shipclass_starbase }
+		}
+	}
+	
+	immediate = {
+		if = {
+			limit = {
+				FromFrom = { ship_is_immune_to_confuse = no }
+			}
+			if = {
+				limit = {
+					FromFromFrom = { is_ultra_dimensional_horror = yes }
+				}
+				FromFrom = {
+					dimensional_horror_on_entering_battle_confuse_effect = {
+						DAYS = @end_beam_debuff_days
+					}
+				}
+			}
+			else_if = {
+				limit = {
+					FromFromFrom = { is_special_dimensional_horror = yes }
+				}
+				FromFrom = {
+					dimensional_horror_on_entering_battle_confuse_effect = {
+						DAYS = @time_beam_debuff_days
+					}
+				}
+			}
+			else = {
+				FromFrom = {
+					dimensional_horror_on_entering_battle_confuse_effect = {
+						DAYS = @horror_beam_debuff_days
+					}
+				}
+			}
+		}
+		if = {
+			limit = {
+				FromFrom = { ship_is_immune_to_terrify = no }
+			}
+			FromFromFrom = {
+				random_owned_ship = {
+					save_event_target_as = dimensional_horror_ship
+				}
+			}
+			if = {
+				limit = {
+					FromFromFrom = { is_ultra_dimensional_horror = yes }
+				}
+				FromFrom = {
+					dimensional_horror_on_entering_battle_terrify_effect = {
+						DAYS = @end_beam_debuff_days
+					}
+				}
+			}
+			else_if = {
+				limit = {
+					FromFromFrom = { is_special_dimensional_horror = yes }
+				}
+				FromFrom = {
+					dimensional_horror_on_entering_battle_terrify_effect = {
+						DAYS = @time_beam_debuff_days
+					}
+				}
+			}
+			else = {
+				FromFrom = {
+					dimensional_horror_on_entering_battle_terrify_effect = {
+						DAYS = @horror_beam_debuff_days
+					}
+				}
+			}
+		}
+	}
+}
+
+# 起源、理念全局唯一以及全局起源玩家审核，并添加起源时间线
+event = {
+	id = time.10000
+	is_triggered_only = yes
+	hide_window = yes
+	
+	trigger = {
+	}
+	
+	immediate = {
+		# 神秘奇点
+		make_time_mod_origin_unique = {
+			ORIGIN = origin_time
+			EVENT = time.1
+		}
+		every_playable_country = {
+			limit = {
+				capital_scope = { is_origin_time_planet_class = yes }
+				NOT = { has_country_flag = true_origin_time_country }
+			}
+			capital_scope = {
+				owner = {
+					every_owned_fleet = { delete_fleet = this }
+					destroy_country = yes
+				}
+				remove_modifier = prosp_uni_mod
+				time_destroy_colony = yes
+				change_pc = pc_black_hole
+				reroll_deposits = yes
+			}
+		}
+		
+		# 古老契约
+		make_time_mod_origin_unique = {
+			ORIGIN = origin_contract
+			EVENT = contract.1
+		}
+		
+		# 平行星空
+		make_time_mod_origin_unique = {
+			ORIGIN = origin_parallel_sky
+			EVENT = parallel_sky.1
+		}
+		
+		# 阴霾之下
+		make_time_mod_origin_unique = {
+			ORIGIN = origin_under_the_haze
+			EVENT = under_the_haze.1
+		}
+		
+		# 悬顶之剑
+		make_time_mod_origin_unique = {
+			ORIGIN = origin_colossus
+			EVENT = origin_colossus.1
+		}
+		
+		# 娱乐至死
+		make_time_mod_origin_unique = {
+			ORIGIN = origin_manifesti
+			EVENT = origin_manifesti.1
+		}
+		
+		# 生于黑夜
+		make_time_mod_origin_unique = {
+			ORIGIN = origin_voidspawn
+			EVENT = origin_voidspawn.1
+		}
+		
+		# 江洋大盗
+		make_time_mod_origin_unique = {
+			ORIGIN = origin_pirate_king
+			EVENT = origin_pirate_king.1
+		}
+		
+		# 清算已至
+		make_time_mod_origin_unique = {
+			ORIGIN = origin_reckoning_arrived
+			EVENT = origin_reckoning_arrived.1
+		}
+		
+		# 时空机器
+		make_beyond_infinity_civic_unique = {
+			CIVIC = time_machine
+			EVENT = beyond_infinity.1
+		}
+		
+		# 圆环枢纽
+		make_beyond_infinity_civic_unique = {
+			CIVIC = circle_nexus
+			EVENT = beyond_infinity.1
+		}
+		
+		# 位面引擎
+		make_beyond_infinity_civic_unique = {
+			CIVIC = dimension_engine
+			EVENT = beyond_infinity.1
+		}
+		
+		# 清算已至
+		make_time_mod_global_origin_checked = {
+			ORIGIN = origin_reckoning_arrived
+			EVENT = origin_reckoning_arrived.0
+		}
+		
+		# 虫灾预警
+		make_time_mod_global_origin_checked = {
+			ORIGIN = origin_swarm_crisis
+			EVENT = swarm_crisis.0
+		}
+		
+		# 幽灵信号
+		make_time_mod_global_origin_checked = {
+			ORIGIN = origin_ai_crisis
+			EVENT = ai_crisis.0
+		}
+		
+		# 维度通缉
+		make_time_mod_global_origin_checked = {
+			ORIGIN = origin_exd_crisis
+			EVENT = exd_crisis.0
+		}
+		
+		# 叛教门徒
+		make_time_mod_global_origin_checked = {
+			ORIGIN = origin_synth_queen_crisis
+			EVENT = synth_queen_crisis.0
+		}
+		
+		# 第四天灾
+		make_time_mod_global_origin_checked = {
+			ORIGIN = origin_fourth_crisis
+			EVENT = fourth_crisis.0
+		}
+		
+		# 新兴帝国
+		make_time_mod_global_origin_checked = {
+			ORIGIN = origin_new_country
+			EVENT = new_country.0
+		}
+		
+		# 黑暗森林
+		make_time_mod_global_origin_checked = {
+			ORIGIN = origin_dark_forest
+			EVENT = dark_forest.0
+		}
+		
+		# 并非一体
+		every_playable_country = {
+			limit = {
+				has_origin = origin_we_are_not_one
+			}
+			if = {
+				limit = {
+					is_ai = no
+				}
+				country_event = { id = origin_we_are_not_one.1 }
+			}
+			else = {
+				set_origin_default_effect = yes
+			}
+		}
+	}
+}
+
+# 起源时间线
+event = {
+	id = time.20000
+	is_triggered_only = yes
+	hide_window = yes
+	
+	trigger = {
+	}
+	
+	immediate = {
+		every_playable_country = {
+			limit = {
+				OR = {
+					is_wonder_country_time_0 = yes
+					is_wonder_country_time_1 = yes
+					is_wonder_country_time_2 = yes
+				}
+				NOT = { has_country_flag = created_timeline_wonder_country_time }
+			}
+			create_timeline_wonder_country_time = yes
+		}
+		
+		every_playable_country = {
+			switch = {
+				trigger = has_origin
+				origin_pc_hive = {
+					create_timeline_time_origin = { ORIGIN = origin_pc_hive }
+				}
+				origin_contract = {
+					create_timeline_time_origin = { ORIGIN = origin_contract }
+				}
+				origin_time = {
+					create_timeline_time_origin = { ORIGIN = origin_time }
+				}
+				origin_gas_colony = {
+					create_timeline_time_origin = { ORIGIN = origin_gas_colony }
+				}
+				origin_psionic = {
+					create_timeline_time_origin = { ORIGIN = origin_psionic }
+				}
+				origin_nanites = {
+					create_timeline_time_origin = { ORIGIN = origin_nanites }
+				}
+				origin_praise_the_sun = {
+					create_timeline_time_origin = { ORIGIN = origin_praise_the_sun }
+				}
+				origin_parallel_sky = {
+					create_timeline_time_origin = { ORIGIN = origin_parallel_sky }
+				}
+				origin_under_the_haze = {
+					create_timeline_time_origin = { ORIGIN = origin_under_the_haze }
+				}
+				origin_tao_of_ninghe = {
+					create_timeline_time_origin = { ORIGIN = origin_tao_of_ninghe }
+				}
+				origin_the_matrix = {
+					create_timeline_time_origin = { ORIGIN = origin_the_matrix }
+				}
+				origin_reassembler = {
+					create_timeline_time_origin = { ORIGIN = origin_reassembler }
+				}
+				origin_colossus = {
+					create_timeline_time_origin = { ORIGIN = origin_colossus }
+				}
+				origin_manifesti = {
+					create_timeline_time_origin = { ORIGIN = origin_manifesti }
+				}
+				origin_voidspawn = {
+					create_timeline_time_origin = { ORIGIN = origin_voidspawn }
+				}
+				origin_bright_pearl = {
+					create_timeline_time_origin = { ORIGIN = origin_bright_pearl }
+				}
+				origin_pirate_king = {
+					create_timeline_time_origin = { ORIGIN = origin_pirate_king }
+				}
+				origin_no_water_no_fish = {
+					create_timeline_time_origin = { ORIGIN = origin_no_water_no_fish }
+				}
+				origin_adeptus_mechanicus = {
+					create_timeline_time_origin = { ORIGIN = origin_adeptus_mechanicus }
+				}
+				origin_hypocritical_face = {
+					create_timeline_time_origin = { ORIGIN = origin_hypocritical_face }
+				}
+				origin_noah_ark = {
+					create_timeline_time_origin = { ORIGIN = origin_noah_ark }
+				}
+				origin_monster_hunter = {
+					create_timeline_time_origin = { ORIGIN = origin_monster_hunter }
+				}
+				origin_curator_artist_and_me = {
+					create_timeline_time_origin = { ORIGIN = origin_curator_artist_and_me }
+				}
+				origin_ever_changing = {
+					create_timeline_time_origin = { ORIGIN = origin_ever_changing }
+				}
+				origin_knowledge_from_alien = {
+					create_timeline_time_origin = { ORIGIN = origin_knowledge_from_alien }
+				}
+				origin_born_in_the_purple = {
+					create_timeline_time_origin = { ORIGIN = origin_born_in_the_purple }
+				}
+				origin_corrupt_brain = {
+					create_timeline_time_origin = { ORIGIN = origin_corrupt_brain }
+				}
+				origin_legendary_worship = {
+					create_timeline_time_origin = { ORIGIN = origin_legendary_worship }
+				}
+				origin_blessed_by_god = {
+					create_timeline_time_origin = { ORIGIN = origin_blessed_by_god }
+				}
+				origin_abandoned_by_god = {
+					create_timeline_time_origin = { ORIGIN = origin_abandoned_by_god }
+				}
+				origin_equinox_seal = {
+					create_timeline_time_origin = { ORIGIN = origin_equinox_seal }
+				}
+				origin_secondhand_country = {
+					create_timeline_time_origin = { ORIGIN = origin_secondhand_country }
+				}
+				origin_wishing_well = {
+					create_timeline_time_origin = { ORIGIN = origin_wishing_well }
+				}
+				origin_reckoning_arrived = {
+					if = {
+						limit = {
+							is_ai = no
+						}
+						create_timeline_origin_reckoning_arrived = yes
+					}
+				}
+				origin_black_hole = {
+					create_timeline_time_origin = { ORIGIN = origin_black_hole }
+				}
+				origin_pulsar = {
+					create_timeline_time_origin = { ORIGIN = origin_pulsar }
+				}
+				origin_neutron_star = {
+					create_timeline_time_origin = { ORIGIN = origin_neutron_star }
+				}
+				origin_white_hole = {
+					create_timeline_time_origin = { ORIGIN = origin_white_hole }
+				}
+				origin_dyson_sphere = {
+					create_timeline_time_origin = { ORIGIN = origin_dyson_sphere }
+				}
+				origin_matter_decompressor = {
+					create_timeline_time_origin = { ORIGIN = origin_matter_decompressor }
+				}
+				origin_strategic_coordination_center_1 = {
+					create_timeline_time_origin = { ORIGIN = origin_strategic_coordination_center }
+				}
+				origin_strategic_coordination_center_2 = {
+					create_timeline_time_origin = { ORIGIN = origin_strategic_coordination_center }
+				}
+				origin_spy_orb_1 = {
+					create_timeline_time_origin = { ORIGIN = origin_spy_orb }
+				}
+				origin_spy_orb_2 = {
+					create_timeline_time_origin = { ORIGIN = origin_spy_orb }
+				}
+				origin_mega_shipyard_1 = {
+					create_timeline_time_origin = { ORIGIN = origin_mega_shipyard }
+				}
+				origin_mega_shipyard_2 = {
+					create_timeline_time_origin = { ORIGIN = origin_mega_shipyard }
+				}
+				origin_think_tank_1 = {
+					create_timeline_time_origin = { ORIGIN = origin_think_tank }
+				}
+				origin_think_tank_2 = {
+					create_timeline_time_origin = { ORIGIN = origin_think_tank }
+				}
+				origin_interstellar_assembly_1 = {
+					create_timeline_time_origin = { ORIGIN = origin_interstellar_assembly }
+				}
+				origin_interstellar_assembly_2 = {
+					create_timeline_time_origin = { ORIGIN = origin_interstellar_assembly }
+				}
+				origin_mega_art_installation_1 = {
+					create_timeline_time_origin = { ORIGIN = origin_mega_art_installation }
+				}
+				origin_mega_art_installation_2 = {
+					create_timeline_time_origin = { ORIGIN = origin_mega_art_installation }
+				}
+				origin_we_are_not_one = {
+					create_timeline_time_origin = { ORIGIN = origin_we_are_not_one }
+				}
+				origin_swarm_crisis = {
+					if = {
+						limit = {
+							is_ai = no
+						}
+						create_timeline_time_origin = { ORIGIN = origin_swarm_crisis }
+					}
+				}
+				origin_ai_crisis = {
+					if = {
+						limit = {
+							is_ai = no
+						}
+						create_timeline_time_origin = { ORIGIN = origin_ai_crisis }
+					}
+				}
+				origin_exd_crisis = {
+					if = {
+						limit = {
+							is_ai = no
+						}
+						create_timeline_time_origin = { ORIGIN = origin_exd_crisis }
+					}
+				}
+				origin_synth_queen_crisis = {
+					if = {
+						limit = {
+							is_ai = no
+						}
+						create_timeline_time_origin = { ORIGIN = origin_synth_queen_crisis }
+					}
+				}
+				origin_fourth_crisis = {
+					if = {
+						limit = {
+							is_ai = no
+						}
+						create_timeline_time_origin = { ORIGIN = origin_fourth_crisis }
+					}
+				}
+				origin_new_country = {
+					if = {
+						limit = {
+							is_ai = no
+						}
+						create_timeline_time_origin = { ORIGIN = origin_new_country }
+					}
+				}
+				origin_dark_forest = {
+					if = {
+						limit = {
+							is_ai = no
+						}
+						create_timeline_time_origin = { ORIGIN = origin_dark_forest }
+					}
+				}
+			}
+		}
+	}
+}

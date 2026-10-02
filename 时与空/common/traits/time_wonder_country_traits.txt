@@ -1,0 +1,836 @@
+trait_wonder_time = {
+	cost = {
+		base = 0
+		modifier = {
+			add = 5
+			is_wonder_country_time_0 = no
+			is_wonder_country_time_1 = no
+			is_wonder_country_time_2 = no
+			is_wonder_country_time_3 = no
+		}
+	}
+	icon = "gfx/interface/icons/traits/trait_wonder_time.dds"
+	initial = yes
+	randomized = no
+	hidden = yes
+	improves_leaders = yes
+	inline_script = "trait/modification_condition/time_origin_basic_trait"
+	allowed_archetypes = {
+	}
+	archetype_override = {
+		hidden_trigger = {
+			from = {
+				OR = {
+					is_wonder_country_time_0 = yes
+					is_wonder_country_time_1 = yes
+					is_wonder_country_time_2 = yes
+					is_wonder_country_time_3 = yes
+				}
+			}
+			if = {
+				limit = {
+					is_archetype = MACHINE
+				}
+				species_portrait = sd_avi_robot
+			}
+			else = {
+				OR = {
+					species_portrait = rep17
+					is_archetype = ROBOT
+				}
+			}
+		}
+	}
+	localized_tags = {
+		SPECIES_TRAIT_WONDER_COUNTRY
+	}
+	tags = { organic positive alloys army leader upkeep special }
+	sorting_priority = 25
+	inline_script = {
+		script = traits/species_trait_leader_skill_mult
+		TYPE = leader
+		MULT = 0.1
+	}
+	modifier = {
+		foundry_jobs_bonus_workforce_mult = 0.1
+		soldier_jobs_bonus_workforce_mult = 0.25
+		army_damage_mult = 0.5
+		planet_pops_sr_dark_matter_upkeep_mult = 1
+	}
+	slave_cost = {
+		trade = 1000
+	}
+	assembly_score = {
+		modifier = {
+			add = 2
+		}
+	}
+}
+
+leader_trait_wonder_time = {
+	inline_script = {
+		script = trait/time_trait_icon
+		CLASS = leader
+		ICON = "GFX_trait_wonder_time"
+		RARITY = common
+		COUNCIL = triggered
+		TIER = none
+		PRIORITY = @trait_sorting_priority_common_triggered_none
+	}
+	triggered_councilor_modifier = {
+		potential = {
+			is_ruler = yes
+		}
+		weapon_type_energy_weapon_fire_rate_mult = 0.025
+		ship_armor_penetration_add = 0.025
+		ship_armor_penetration_mult = 0.025
+		ships_logistics_mult = 0.0125
+		mult = value:num_time_ruler_skill
+	}
+	triggered_sector_modifier = {
+		potential = {
+			is_ruler = no
+			OR = {
+				leader_class = official
+				leader_class = scientist
+			}
+		}
+		weapon_type_energy_weapon_damage_mult = 0.025
+		ship_armor_damage_mult = 0.025
+		ship_hull_damage_mult = 0.025
+		ships_upkeep_mult = 0.0125
+		mult = value:num_time_leader_skill
+	}
+	triggered_fleet_modifier = {
+		potential = {
+			is_ruler = no
+			leader_class = commander
+		}
+		weapon_type_energy_weapon_damage_mult = 0.025
+		ship_armor_damage_mult = 0.025
+		ship_hull_damage_mult = 0.025
+		ships_upkeep_mult = 0.0125
+		mult = value:num_time_leader_skill
+	}
+	leader_class = all
+	initial = no
+	randomized = no
+	notify_on_gained = no
+}
+
+trait_wonder_country_31 = {
+	cost = {
+		base = 0
+		modifier = {
+			add = 5
+			is_wonder_country_31 = no
+		}
+	}
+	icon = "gfx/interface/icons/traits/trait_wonder_country_31.dds"
+	initial = yes
+	randomized = no
+	hidden = yes
+	inline_script = "trait/modification_condition/time_origin_basic_trait"
+	allowed_archetypes = {
+	}
+	archetype_override = {
+		hidden_trigger = {
+			from = { is_wonder_country_31 = yes }
+		}
+	}
+	localized_tags = {
+		SPECIES_TRAIT_WONDER_COUNTRY
+	}
+	tags = { organic positive research pop_output leader special }
+	sorting_priority = 25
+	modifier = {
+		physicist_jobs_bonus_workforce_mult = 0.1
+		researcher_jobs_bonus_workforce_mult = 0.1
+		scientist_skill_add = 2
+	}
+	slave_cost = {
+		trade = 1000
+	}
+	assembly_score = {
+		modifier = {
+			add = 2
+		}
+	}
+}
+
+trait_wonder_country_32 = {
+	cost = {
+		base = 0
+		modifier = {
+			add = 5
+			is_wonder_country_32 = no
+		}
+	}
+	icon = "gfx/interface/icons/traits/trait_wonder_country_32.dds"
+	initial = yes
+	randomized = no
+	hidden = yes
+	inline_script = "trait/modification_condition/time_origin_basic_trait"
+	allowed_archetypes = {
+	}
+	archetype_override = {
+		hidden_trigger = {
+			from = { is_wonder_country_32 = yes }
+		}
+	}
+	localized_tags = {
+		SPECIES_TRAIT_WONDER_COUNTRY
+	}
+	tags = { organic positive research pop_output upkeep leader special }
+	sorting_priority = 25
+	modifier = {
+		biologist_jobs_bonus_workforce_mult = 0.1
+		leader_lifespan_mult = 0.1
+	}
+	triggered_pop_group_modifier = {
+		planet_pops_upkeep_mult = -0.1
+	}
+	triggered_pop_group_modifier = {
+		potential = {
+			OR = {
+				is_unemployed = yes
+				is_pop_category = civilian
+				is_pop_category = maintenance_drone
+			}
+		}
+		planet_pops_upkeep_mult = -0.4
+	}
+	custom_tooltip_with_modifiers = trait_wonder_country_32_effect
+	slave_cost = {
+		trade = 1000
+	}
+	assembly_score = {
+		modifier = {
+			add = 2
+		}
+	}
+}
+
+trait_wonder_country_33 = {
+	cost = {
+		base = 0
+		modifier = {
+			add = 5
+			is_wonder_country_33 = no
+		}
+	}
+	icon = "gfx/interface/icons/traits/trait_wonder_country_33.dds"
+	initial = yes
+	randomized = no
+	hidden = yes
+	inline_script = "trait/modification_condition/time_origin_basic_trait"
+	allowed_archetypes = {
+	}
+	archetype_override = {
+		hidden_trigger = {
+			from = { is_wonder_country_33 = yes }
+		}
+	}
+	localized_tags = {
+		SPECIES_TRAIT_WONDER_COUNTRY
+	}
+	tags = { organic positive unity pop_output amenities empire_size leader ethic_attraction special }
+	sorting_priority = 25
+	modifier = {
+		bureaucrat_jobs_bonus_workforce_mult = 0.2
+		pop_amenities_usage_mult = -0.1
+		species_empire_size_mult = -0.1
+		leaders_upkeep_mult = -0.1
+		pop_government_ethic_attraction = 0.3
+	}
+	slave_cost = {
+		trade = 1000
+	}
+	assembly_score = {
+		modifier = {
+			add = 2
+		}
+	}
+}
+
+trait_wonder_country_34 = {
+	cost = {
+		base = 0
+		modifier = {
+			add = 5
+			is_wonder_country_34 = no
+		}
+	}
+	icon = "gfx/interface/icons/traits/trait_wonder_country_34.dds"
+	initial = yes
+	randomized = no
+	hidden = yes
+	inline_script = "trait/modification_condition/time_origin_basic_trait"
+	allowed_archetypes = {
+	}
+	archetype_override = {
+		hidden_trigger = {
+			from = { is_wonder_country_34 = yes }
+		}
+	}
+	localized_tags = {
+		SPECIES_TRAIT_WONDER_COUNTRY
+	}
+	tags = { organic drawbacks research pop_output habitability pop_growth army leader special }
+	sorting_priority = 25
+	modifier = {
+		pop_environment_tolerance = 0.2
+		army_damage_mult = 0.2
+		army_damage_taken_mult = 0.1
+		logistic_growth_mult = -0.1
+		leader_lifespan_mult = -0.2
+		commander_skill_add = 1
+		biologist_jobs_bonus_workforce_mult = 0.15
+		soldier_jobs_bonus_workforce_mult = 0.15
+		worker_and_simple_drone_cat_bonus_workforce_mult = -0.1
+	}
+	slave_cost = {
+		trade = 1000
+	}
+	assembly_score = {
+		modifier = {
+			add = 2
+		}
+	}
+}
+
+trait_wonder_country_35 = {
+	cost = {
+		base = 0
+		modifier = {
+			add = 5
+			is_wonder_country_35 = no
+		}
+	}
+	icon = "gfx/interface/icons/traits/trait_wonder_country_35.dds"
+	initial = yes
+	randomized = no
+	hidden = yes
+	inline_script = "trait/modification_condition/time_origin_basic_trait"
+	allowed_archetypes = {
+	}
+	archetype_override = {
+		hidden_trigger = {
+			from = { is_wonder_country_35 = yes }
+		}
+	}
+	localized_tags = {
+		SPECIES_TRAIT_WONDER_COUNTRY
+	}
+	tags = { organic positive amenities leader special }
+	sorting_priority = 25
+	modifier = {
+		influential_jobs_bonus_workforce_mult = 0.2
+		enforcer_jobs_bonus_workforce_mult = 0.2
+		negative_leader_traits_species = -1
+	}
+	slave_cost = {
+		trade = 1000
+	}
+	assembly_score = {
+		modifier = {
+			add = 2
+		}
+	}
+}
+
+trait_wonder_country_36 = {
+	cost = {
+		base = 0
+		modifier = {
+			add = 5
+			is_wonder_country_36 = no
+		}
+	}
+	icon = "gfx/interface/icons/traits/trait_wonder_country_36.dds"
+	initial = yes
+	randomized = no
+	hidden = yes
+	inline_script = "trait/modification_condition/time_origin_basic_trait"
+	allowed_archetypes = {
+	}
+	archetype_override = {
+		hidden_trigger = {
+			from = { is_wonder_country_36 = yes }
+		}
+	}
+	localized_tags = {
+		SPECIES_TRAIT_WONDER_COUNTRY
+	}
+	tags = { organic positive unity pop_output happiness empire_size leader special }
+	sorting_priority = 25
+	modifier = {
+		ruler_skill_add = 1
+		councilor_skill_add = 1
+		official_skill_add = 1
+	}
+	triggered_pop_group_modifier = {
+		potential = {
+			colony? = {
+				exists = leader
+				leader = { leader_class = official }
+			}
+		}
+		bureaucrat_jobs_bonus_workforce_mult = 0.25
+		pop_happiness = 0.25
+		species_empire_size_mult = -0.25
+	}
+	triggered_pop_group_modifier = {
+		potential = {
+			colony? = {
+				exists = leader
+				leader = { NOT = { leader_class = official } }
+			}
+		}
+		bureaucrat_jobs_bonus_workforce_mult = 0.1
+		pop_happiness = 0.1
+		species_empire_size_mult = -0.1
+	}
+	triggered_pop_group_modifier = {
+		potential = {
+			colony? = {
+				NOT = { exists = leader }
+			}
+		}
+		bureaucrat_jobs_bonus_workforce_mult = -0.25
+		pop_happiness = -0.25
+		species_empire_size_mult = 0.25
+	}
+	custom_tooltip_with_modifiers = trait_wonder_country_36_effect
+	slave_cost = {
+		trade = 1000
+	}
+	assembly_score = {
+		modifier = {
+			add = 2
+		}
+	}
+}
+
+trait_wonder_country_36_delicious = {
+	cost = 0
+	icon = "gfx/interface/icons/traits/trait_delicious.dds"
+	initial = yes
+	randomized = no
+	hidden = yes
+	opposites = { "trait_delicious" }
+	inline_script = "trait/modification_condition/time_origin_basic_trait"
+	allowed_archetypes = {
+	}
+	archetype_override = {
+		hidden_trigger = {
+			from = { is_wonder_country_36 = yes }
+		}
+	}
+	localized_tags = {
+		SPECIES_TRAIT_WONDER_COUNTRY
+	}
+	tags = { organic positive food livestock genetic_ascension special }
+	modifier = {
+		pop_livestock_bonus_workforce_mult = 1
+	}
+	triggered_pop_group_modifier = {
+		potential = {
+			has_global_flag = active_better_ascension_traits
+			exists = owner
+			owner = { improve_advanced_traits_modifier = yes }
+		}
+		pop_livestock_bonus_workforce_mult = 0.5
+	}
+	triggered_species_modifier = {
+		potential = {
+			has_global_flag = active_better_ascension_traits
+			exists = from
+			from = { improve_advanced_traits_modifier = yes }
+		}
+		advanced_traits_improved_modifier = 0.5
+	}
+	slave_cost = {
+		trade = 1000
+	}
+}
+
+trait_wonder_country_37 = {
+	cost = {
+		base = 0
+		modifier = {
+			add = 5
+			is_wonder_country_37 = no
+		}
+	}
+	icon = "gfx/interface/icons/traits/trait_wonder_country_37.dds"
+	initial = yes
+	randomized = no
+	hidden = yes
+	inline_script = "trait/modification_condition/time_origin_basic_trait"
+	allowed_archetypes = {
+	}
+	archetype_override = {
+		hidden_trigger = {
+			from = { is_wonder_country_37 = yes }
+		}
+	}
+	localized_tags = {
+		SPECIES_TRAIT_WONDER_COUNTRY
+	}
+	tags = { organic drawbacks pop_output amenities upkeep leader special }
+	sorting_priority = 25
+	modifier = {
+		pop_bonus_workforce_mult = 0.25
+		habitability_floor_add = 0.25
+		species_leader_exp_gain = 0.25
+		leader_skill_add = 2
+	}
+	triggered_leader_modifier = {
+		leader_officials_sr_zro_upkeep_add = 0.2
+		leader_scientists_sr_zro_upkeep_add = 0.2
+		leader_commanders_sr_zro_upkeep_add = 0.2
+		mult = trigger:has_base_skill
+	}
+	triggered_leader_modifier = {
+		potential = {
+			exists = owner
+			owner = { has_deficit = sr_zro }
+			is_immortal = no
+		}
+		species_leader_exp_gain = -1.25
+		leader_lifespan_mult = -0.5
+		negative_traits_leader = 5
+	}
+	triggered_leader_modifier = {
+		potential = {
+			exists = owner
+			owner = { has_deficit = sr_zro }
+			is_immortal = yes
+		}
+		species_leader_exp_gain = -1.25
+		leaders_unity_upkeep_mult = 1
+		negative_traits_leader = 5
+	}
+	triggered_pop_group_modifier = {
+		potential = {
+			exists = owner
+			owner = { has_deficit = sr_zro }
+		}
+		pop_bonus_workforce_mult = -0.75
+	}
+	triggered_planet_growth_habitability_modifier = {
+		potential = {
+			exists = fromfrom
+			fromfrom = { has_deficit = sr_zro }
+		}
+		logistic_growth_mult = -1
+		bonus_pop_growth_mult = -1
+		planet_pop_assembly_mult = -1
+	}
+	resources = {
+		category = planet_pops
+		upkeep = {
+			sr_zro = 0.01
+		}
+	}
+	custom_tooltip_with_modifiers = trait_wonder_country_37_effect
+	slave_cost = {
+		trade = 1000
+	}
+	assembly_score = {
+		modifier = {
+			add = 2
+		}
+	}
+}
+
+trait_wonder_country_inetian = {
+	cost = {
+		base = 0
+		modifier = {
+			add = 5
+			is_wonder_country_inetian = no
+		}
+	}
+	icon = "gfx/interface/icons/traits/trait_wonder_country_inetian.dds"
+	initial = yes
+	randomized = no
+	hidden = yes
+	inline_script = "trait/modification_condition/time_origin_basic_trait"
+	allowed_archetypes = {
+	}
+	archetype_override = {
+		hidden_trigger = {
+			from = { is_wonder_country_inetian = yes }
+		}
+	}
+	localized_tags = {
+		SPECIES_TRAIT_WONDER_COUNTRY
+	}
+	tags = { organic positive trade upkeep special }
+	sorting_priority = 25
+	modifier = {
+		trader_jobs_bonus_workforce_mult = 0.25
+		planet_pops_consumer_goods_upkeep_mult = -0.25
+	}
+	slave_cost = {
+		trade = 1000
+	}
+	assembly_score = {
+		modifier = {
+			add = 2
+		}
+	}
+}
+
+trait_wonder_country_adakkaria = {
+	cost = {
+		base = 0
+		modifier = {
+			add = 5
+			is_wonder_country_adakkaria = no
+		}
+	}
+	icon = "gfx/interface/icons/traits/trait_wonder_country_adakkaria.dds"
+	initial = yes
+	randomized = no
+	hidden = yes
+	inline_script = "trait/modification_condition/time_origin_basic_trait"
+	allowed_archetypes = {
+	}
+	archetype_override = {
+		hidden_trigger = {
+			from = { is_wonder_country_adakkaria = yes }
+		}
+	}
+	localized_tags = {
+		SPECIES_TRAIT_WONDER_COUNTRY
+	}
+	tags = { organic drawbacks pop_output amenities happiness army special }
+	sorting_priority = 25
+	modifier = {
+		army_damage_taken_mult = -0.25
+	}
+	triggered_pop_group_modifier = {
+		potential = {
+			exists = colony
+			colony.solar_system = {
+				has_star_flag = storm_system
+			}
+		}
+		pop_bonus_workforce_mult = 0.2
+		pop_amenities_usage_mult = -0.2
+	}
+	triggered_pop_group_modifier = {
+		potential = {
+			exists = colony
+			colony.solar_system = {
+				NOT = { has_star_flag = storm_system }
+			}
+		}
+		pop_happiness = -0.2
+		pop_amenities_usage_mult = 0.2
+	}
+	custom_tooltip_with_modifiers = trait_wonder_country_adakkaria_effect
+	slave_cost = {
+		trade = 1000
+	}
+	assembly_score = {
+		modifier = {
+			add = 2
+		}
+	}
+}
+
+trait_wonder_country_77 = {
+	cost = {
+		base = 0
+		modifier = {
+			add = 5
+			is_wonder_country_77 = no
+		}
+	}
+	icon = "gfx/interface/icons/traits/trait_wonder_country_77.dds"
+	initial = yes
+	randomized = no
+	hidden = yes
+	immortal_leaders = yes
+	opposites = { "trait_venerable" "trait_enduring" "trait_fleeting" "trait_fleeting_lithoid" "trait_robot_immortality" }
+	inline_script = "trait/modification_condition/time_origin_basic_trait"
+	allowed_archetypes = {
+	}
+	archetype_override = {
+		hidden_trigger = {
+			from = { is_wonder_country_77 = yes }
+			OR = {
+				species_portrait = mindwarden_01
+				is_archetype = ROBOT
+			}
+		}
+	}
+	localized_tags = {
+		SPECIES_TRAIT_WONDER_COUNTRY
+	}
+	tags = { organic drawbacks army leader special }
+	sorting_priority = 25
+	modifier = {
+		soldier_jobs_bonus_workforce_mult = 0.5
+		army_damage_taken_mult = -0.5
+		army_morale_damage_taken_mult = -1
+		species_leader_exp_gain = -1
+		leaders_upkeep_mult = 2
+		negative_leader_traits_species = 5
+	}
+	slave_cost = {
+		trade = 1000
+	}
+	assembly_score = {
+		modifier = {
+			add = 2
+		}
+	}
+}
+
+trait_wonder_country_91 = {
+	cost = {
+		base = 0
+		modifier = {
+			add = 5
+			is_wonder_country_91 = no
+		}
+	}
+	icon = "gfx/interface/icons/traits/trait_wonder_country_91.dds"
+	initial = yes
+	randomized = no
+	hidden = yes
+	inline_script = "trait/modification_condition/time_origin_basic_trait"
+	allowed_archetypes = {
+	}
+	archetype_override = {
+		hidden_trigger = {
+			OR = {
+				from = { is_wonder_country_91 = yes }
+				AND = {
+					has_trait = trait_wonder_country_91
+					from = { has_country_flag = wonder_country_51 }
+				}
+			}
+			OR = {
+				species_portrait = mam15
+				is_archetype = ROBOT
+			}
+		}
+	}
+	localized_tags = {
+		SPECIES_TRAIT_WONDER_COUNTRY
+	}
+	tags = { organic positive pop_output army leader special }
+	sorting_priority = 25
+	custom_tooltip_with_modifiers = trait_wonder_country_91_effect
+	modifier = {
+		army_damage_mult = 1
+		army_health = 1
+		commander_skill_add = 1
+	}
+	triggered_pop_group_modifier = {
+		potential = {
+			colony? = { is_planet_class = pc_arctic }
+		}
+		worker_and_simple_drone_cat_bonus_workforce_mult = 0.5
+		soldier_jobs_bonus_workforce_mult = 0.5
+		enforcer_jobs_bonus_workforce_mult = 0.5
+	}
+	triggered_pop_group_modifier = {
+		potential = {
+			colony? = {
+				NOT = { is_planet_class = pc_arctic }
+				has_climate = cold
+			}
+		}
+		worker_and_simple_drone_cat_bonus_workforce_mult = 0.25
+		soldier_jobs_bonus_workforce_mult = 0.25
+		enforcer_jobs_bonus_workforce_mult = 0.25
+	}
+	triggered_pop_group_modifier = {
+		potential = {
+			colony? = {
+				OR = {
+					is_planet_class = pc_desert
+					is_planet_class = pc_tropical
+				}
+			}
+		}
+		worker_and_simple_drone_cat_bonus_workforce_mult = -0.25
+		soldier_jobs_bonus_workforce_mult = -0.25
+		enforcer_jobs_bonus_workforce_mult = -0.25
+	}
+	triggered_pop_group_modifier = {
+		potential = {
+			colony? = { is_planet_class = pc_volcanic }
+		}
+		worker_and_simple_drone_cat_bonus_workforce_mult = -0.5
+		soldier_jobs_bonus_workforce_mult = -0.5
+		enforcer_jobs_bonus_workforce_mult = -0.5
+	}
+	slave_cost = {
+		trade = 1000
+	}
+	assembly_score = {
+		modifier = {
+			add = 2
+		}
+	}
+}
+
+trait_wonder_country_96 = {
+	cost = {
+		base = 0
+		modifier = {
+			add = 5
+			is_wonder_country_96 = no
+		}
+	}
+	icon = "gfx/interface/icons/traits/trait_wonder_country_96.dds"
+	initial = yes
+	randomized = no
+	hidden = yes
+	inline_script = "trait/modification_condition/time_origin_basic_trait"
+	allowed_archetypes = {
+	}
+	archetype_override = {
+		hidden_trigger = {
+			from = { is_wonder_country_96 = yes }
+		}
+	}
+	localized_tags = {
+		SPECIES_TRAIT_WONDER_COUNTRY
+	}
+	tags = { organic positive pop_output army leader special }
+	sorting_priority = 25
+	custom_tooltip_with_modifiers = trait_wonder_country_96_effect
+	modifier = {
+		army_damage_mult = 1
+		army_morale_damage_mult = 1
+		army_health = 2
+		army_morale = 2
+		leader_skill_add = 2
+		leaders_cost_mult = 2
+		leaders_upkeep_mult = 4
+	}
+	triggered_pop_group_modifier = {
+		potential = {
+			colony? = { is_planet_class = pc_volcanic }
+		}
+		pop_bonus_workforce_mult = 1
+		planet_pops_upkeep_mult = 4
+	}
+	slave_cost = {
+		trade = 1000
+	}
+	assembly_score = {
+		modifier = {
+			add = 2
+		}
+	}
+}

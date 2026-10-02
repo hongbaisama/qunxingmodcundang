@@ -1,0 +1,448 @@
+# 行政官
+triggered_councilor_modifier = {
+	potential = {
+		owner = { has_country_flag = dimension_traveler_skill_official_5_1 }
+	}
+	show_if_not_potential = yes
+	not_potential_override_text_key = BLANK_STRING
+	society_tech_cost_mult = @dimension_traveler_class_modifier_negative
+	mult = value:dimension_traveler_trait_skill_value_for_class|CLASS|official|
+}
+triggered_councilor_modifier = {
+	potential = {
+		owner = { has_country_flag = dimension_traveler_skill_official_5_3 }
+	}
+	show_if_not_potential = yes
+	not_potential_override_text_key = BLANK_STRING
+	country_produces_mult = @dimension_traveler_class_modifier
+	mult = value:dimension_traveler_trait_skill_value_for_class|CLASS|official|
+}
+triggered_councilor_modifier = {
+	potential = {
+		owner = { has_country_flag = dimension_traveler_skill_official_5_7 }
+	}
+	show_if_not_potential = yes
+	not_potential_override_text_key = BLANK_STRING
+	monthly_loyalty_from_subjects = @dimension_traveler_class_modifier_subject
+	mult = value:dimension_traveler_trait_skill_value_for_class|CLASS|official|
+}
+triggered_councilor_modifier = {
+	potential = {
+		owner = { has_country_flag = dimension_traveler_skill_official_5_9 }
+	}
+	show_if_not_potential = yes
+	not_potential_override_text_key = BLANK_STRING
+	diplo_action_acceptance_add = @dimension_traveler_class_modifier_acceptance
+	mult = value:dimension_traveler_trait_skill_value_for_class|CLASS|official|
+}
+# 科学官
+triggered_councilor_modifier = {
+	potential = {
+		owner = { has_country_flag = dimension_traveler_skill_scientist_5_1 }
+	}
+	show_if_not_potential = yes
+	not_potential_override_text_key = BLANK_STRING
+	physics_tech_cost_mult = @dimension_traveler_class_modifier_negative
+	mult = value:dimension_traveler_trait_skill_value_for_class|CLASS|scientist|
+}
+triggered_councilor_modifier = {
+	potential = {
+		owner = { has_country_flag = dimension_traveler_skill_scientist_5_3 }
+	}
+	show_if_not_potential = yes
+	not_potential_override_text_key = BLANK_STRING
+	planetary_ascension_effect_mult = @dimension_traveler_class_modifier
+	mult = value:dimension_traveler_trait_skill_value_for_class|CLASS|scientist|
+}
+triggered_councilor_modifier = {
+	potential = {
+		owner = { has_country_flag = dimension_traveler_skill_scientist_5_7 }
+	}
+	show_if_not_potential = yes
+	not_potential_override_text_key = BLANK_STRING
+	country_upkeep_mult = @dimension_traveler_class_modifier_negative
+	mult = value:dimension_traveler_trait_skill_value_for_class|CLASS|scientist|
+}
+triggered_councilor_modifier = {
+	potential = {
+		owner = { has_country_flag = dimension_traveler_skill_scientist_5_9 }
+	}
+	show_if_not_potential = yes
+	not_potential_override_text_key = BLANK_STRING
+	pop_bonus_workforce_mult = @dimension_traveler_class_modifier
+	mult = value:dimension_traveler_trait_skill_value_for_class|CLASS|scientist|
+}
+# 指挥官
+triggered_councilor_modifier = {
+	potential = {
+		owner = { has_country_flag = dimension_traveler_skill_commander_5_1 }
+	}
+	show_if_not_potential = yes
+	not_potential_override_text_key = BLANK_STRING
+	engineering_tech_cost_mult = @dimension_traveler_class_modifier_negative
+	mult = value:dimension_traveler_trait_skill_value_for_class|CLASS|commander|
+}
+triggered_councilor_modifier = {
+	potential = {
+		owner = { has_country_flag = dimension_traveler_skill_commander_5_3 }
+	}
+	show_if_not_potential = yes
+	not_potential_override_text_key = BLANK_STRING
+	country_cost_mult = @dimension_traveler_class_modifier_negative
+	mult = value:dimension_traveler_trait_skill_value_for_class|CLASS|commander|
+}
+triggered_councilor_modifier = {
+	potential = {
+		owner = { has_country_flag = dimension_traveler_skill_commander_5_7 }
+	}
+	show_if_not_potential = yes
+	not_potential_override_text_key = BLANK_STRING
+	ship_weapon_range_mult = @dimension_traveler_class_modifier
+	mult = value:dimension_traveler_trait_skill_value_for_class|CLASS|commander|
+}
+triggered_councilor_modifier = {
+	potential = {
+		owner = { has_country_flag = dimension_traveler_skill_commander_5_9 }
+	}
+	show_if_not_potential = yes
+	not_potential_override_text_key = BLANK_STRING
+	ship_damage_reduction_mult = @dimension_traveler_class_modifier_reduction
+	mult = value:dimension_traveler_trait_skill_value_for_class|CLASS|commander|
+}
+# 神秘奇点
+triggered_councilor_modifier = {
+	potential = {
+		owner = { has_tradition = tr_origin_time_finish }
+	}
+	district_time_usage_cap_mult = @dimension_traveler_other_modifier
+	col_time_mult = @dimension_traveler_other_modifier
+	mult = value:dimension_traveler_trait_skill_value_for_other
+}
+# 四飞升
+triggered_councilor_modifier = {
+	potential = {
+		owner = {
+			has_tradition = tr_genetics_finish
+			has_wg_special_authority = no
+		}
+	}
+	BIOLOGICAL_species_trait_points_add = @dimension_traveler_ascension_modifier_trait
+	bonus_pop_growth_mult = @dimension_traveler_ascension_modifier
+	mult = value:dimension_traveler_trait_skill_value_for_other
+}
+triggered_councilor_modifier = {
+	potential = {
+		owner = {
+			has_tradition = tr_purity_finish
+			has_wg_special_authority = no
+		}
+	}
+	BIOLOGICAL_species_trait_points_add = @dimension_traveler_ascension_modifier_trait
+	organic_pop_bonus_workforce_mult = @dimension_traveler_ascension_modifier
+	mult = value:dimension_traveler_trait_skill_value_for_other
+}
+triggered_councilor_modifier = {
+	potential = {
+		owner = {
+			has_tradition = tr_cloning_finish
+			has_wg_special_authority = no
+		}
+	}
+	logistic_growth_mult = @dimension_traveler_ascension_modifier
+	bonus_pop_growth_mult = @dimension_traveler_ascension_modifier
+	mult = value:dimension_traveler_trait_skill_value_for_other
+}
+triggered_councilor_modifier = {
+	potential = {
+		owner = {
+			has_tradition = tr_mutation_finish
+			has_wg_special_authority = no
+		}
+	}
+	BIOLOGICAL_species_trait_picks_add = @dimension_traveler_ascension_modifier_trait
+	pop_environment_tolerance = @dimension_traveler_ascension_modifier
+	mult = value:dimension_traveler_trait_skill_value_for_other
+}
+triggered_councilor_modifier = {
+	potential = {
+		owner = {
+			has_tradition = tr_cybernetics_finish
+			has_wg_special_authority = no
+		}
+	}
+	BIOLOGICAL_species_trait_picks_add = @dimension_traveler_ascension_modifier_trait
+	cyborg_pop_bonus_workforce_mult = @dimension_traveler_ascension_modifier
+	mult = value:dimension_traveler_trait_skill_value_for_other
+}
+triggered_councilor_modifier = {
+	potential = {
+		owner = {
+			has_tradition = tr_psionics_finish
+			has_wg_special_authority = no
+		}
+	}
+	logistic_growth_mult = @dimension_traveler_ascension_modifier
+	psionic_pop_bonus_workforce_mult = @dimension_traveler_ascension_modifier
+	mult = value:dimension_traveler_trait_skill_value_for_other
+}
+triggered_councilor_modifier = {
+	potential = {
+		owner = {
+			has_tradition = tr_psionics_shroud_finish
+			has_wg_special_authority = no
+		}
+	}
+	psionic_aura_effectiveness_mult = @dimension_traveler_ascension_modifier
+	psionic_pop_bonus_workforce_mult = @dimension_traveler_ascension_modifier
+	mult = value:dimension_traveler_trait_skill_value_for_other
+}
+triggered_councilor_modifier = {
+	potential = {
+		owner = {
+			has_tradition = tr_synthetics_finish
+			NOT = { has_country_flag = synth_virtual }
+			has_wg_special_authority = no
+		}
+	}
+	ROBOT_species_trait_points_add = @dimension_traveler_ascension_modifier_trait
+	planet_pop_assembly_mult = @dimension_traveler_ascension_modifier
+	mult = value:dimension_traveler_trait_skill_value_for_other
+}
+triggered_councilor_modifier = {
+	potential = {
+		owner = {
+			has_tradition = tr_synthetics_finish
+			has_country_flag = synth_virtual
+			has_wg_special_authority = no
+		}
+	}
+	ROBOT_species_trait_picks_add = @dimension_traveler_ascension_modifier_trait
+	robotic_pop_bonus_workforce_mult = @dimension_traveler_ascension_modifier
+	mult = value:dimension_traveler_trait_skill_value_for_other
+}
+triggered_councilor_modifier = {
+	potential = {
+		owner = {
+			NOT = { has_tradition = tr_virtuality_finish }
+			OR = {
+				has_tradition = tr_nanotech_finish
+				has_tradition = tr_modularity_finish
+			}
+			has_wg_special_authority = no
+		}
+	}
+	MACHINE_species_trait_points_add = @dimension_traveler_ascension_modifier_trait
+	planet_pop_assembly_mult = @dimension_traveler_ascension_modifier
+	mult = value:dimension_traveler_trait_skill_value_for_other
+}
+triggered_councilor_modifier = {
+	potential = {
+		owner = {
+			has_tradition = tr_virtuality_finish
+			has_wg_special_authority = no
+		}
+	}
+	MACHINE_species_trait_picks_add = @dimension_traveler_ascension_modifier_trait
+	robotic_pop_bonus_workforce_mult = @dimension_traveler_ascension_modifier
+	mult = value:dimension_traveler_trait_skill_value_for_other
+}
+# 模组飞升
+triggered_councilor_modifier = {
+	potential = {
+		owner = {
+			has_tradition = tr_wg_mist_finish
+		}
+	}
+	WARSHIPGIRL_species_trait_picks_add = @dimension_traveler_ascension_modifier_trait
+	country_produces_mult = @dimension_traveler_ascension_modifier
+	logistic_growth_mult = @dimension_traveler_ascension_modifier
+	mult = value:dimension_traveler_trait_skill_value_for_other
+}
+triggered_councilor_modifier = {
+	potential = {
+		owner = {
+			has_tradition = tr_wg_projects_finish
+		}
+	}
+	WARSHIPGIRL_species_trait_picks_add = @dimension_traveler_ascension_modifier_trait
+	country_produces_mult = @dimension_traveler_ascension_modifier
+	ship_weapon_damage = @dimension_traveler_ascension_modifier
+	mult = value:dimension_traveler_trait_skill_value_for_other
+}
+triggered_councilor_modifier = {
+	potential = {
+		owner = {
+			has_tradition = tr_sh_icebreaking_finish
+		}
+	}
+	SHENHAI_species_trait_picks_add = @dimension_traveler_ascension_modifier_trait
+	country_produces_mult = @dimension_traveler_ascension_modifier
+	bonus_pop_growth_mult = @dimension_traveler_ascension_modifier
+	mult = value:dimension_traveler_trait_skill_value_for_other
+}
+triggered_councilor_modifier = {
+	potential = {
+		owner = {
+			has_tradition = tr_sh_silent_finish
+		}
+	}
+	SHENHAI_species_trait_picks_add = @dimension_traveler_ascension_modifier_trait
+	country_produces_mult = @dimension_traveler_ascension_modifier
+	country_naval_cap_mult = @dimension_traveler_ascension_modifier
+	mult = value:dimension_traveler_trait_skill_value_for_other
+}
+# 八思潮
+triggered_councilor_modifier = {
+	potential = {
+		owner = { has_ethic = ethic_pacifist }
+	}
+	dimension_traveler_base_food_produces_add = @dimension_traveler_base_1
+	mult = value:dimension_traveler_base_value|RESOURCE|food|
+}
+triggered_councilor_modifier = {
+	potential = {
+		owner = { has_ethic = ethic_fanatic_pacifist }
+	}
+	dimension_traveler_base_food_produces_add = @dimension_traveler_base_2
+	mult = value:dimension_traveler_base_value|RESOURCE|food|
+}
+triggered_councilor_modifier = {
+	potential = {
+		owner = { has_ethic = ethic_militarist }
+	}
+	dimension_traveler_base_alloys_produces_add = @dimension_traveler_base_1
+	mult = value:dimension_traveler_base_value|RESOURCE|alloys|
+}
+triggered_councilor_modifier = {
+	potential = {
+		owner = { has_ethic = ethic_fanatic_militarist }
+	}
+	dimension_traveler_base_alloys_produces_add = @dimension_traveler_base_2
+	mult = value:dimension_traveler_base_value|RESOURCE|alloys|
+}
+triggered_councilor_modifier = {
+	potential = {
+		owner = { has_ethic = ethic_materialist }
+	}
+	dimension_traveler_base_physics_research_produces_add = @dimension_traveler_base_1
+	mult = value:dimension_traveler_base_value|RESOURCE|physics_research|
+}
+triggered_councilor_modifier = {
+	potential = {
+		owner = { has_ethic = ethic_materialist }
+	}
+	dimension_traveler_base_society_research_produces_add = @dimension_traveler_base_1
+	mult = value:dimension_traveler_base_value|RESOURCE|society_research|
+}
+triggered_councilor_modifier = {
+	potential = {
+		owner = { has_ethic = ethic_materialist }
+	}
+	dimension_traveler_base_engineering_research_produces_add = @dimension_traveler_base_1
+	mult = value:dimension_traveler_base_value|RESOURCE|engineering_research|
+}
+triggered_councilor_modifier = {
+	potential = {
+		owner = { has_ethic = ethic_fanatic_materialist }
+	}
+	dimension_traveler_base_physics_research_produces_add = @dimension_traveler_base_2
+	mult = value:dimension_traveler_base_value|RESOURCE|physics_research|
+}
+triggered_councilor_modifier = {
+	potential = {
+		owner = { has_ethic = ethic_fanatic_materialist }
+	}
+	dimension_traveler_base_society_research_produces_add = @dimension_traveler_base_2
+	mult = value:dimension_traveler_base_value|RESOURCE|society_research|
+}
+triggered_councilor_modifier = {
+	potential = {
+		owner = { has_ethic = ethic_fanatic_materialist }
+	}
+	dimension_traveler_base_engineering_research_produces_add = @dimension_traveler_base_2
+	mult = value:dimension_traveler_base_value|RESOURCE|engineering_research|
+}
+triggered_councilor_modifier = {
+	potential = {
+		owner = { has_ethic = ethic_spiritualist }
+	}
+	dimension_traveler_base_unity_produces_add = @dimension_traveler_base_1
+	mult = value:dimension_traveler_base_value|RESOURCE|unity|
+}
+triggered_councilor_modifier = {
+	potential = {
+		owner = { has_ethic = ethic_fanatic_spiritualist }
+	}
+	dimension_traveler_base_unity_produces_add = @dimension_traveler_base_2
+	mult = value:dimension_traveler_base_value|RESOURCE|unity|
+}
+triggered_councilor_modifier = {
+	potential = {
+		owner = { has_ethic = ethic_egalitarian }
+	}
+	dimension_traveler_base_consumer_goods_produces_add = @dimension_traveler_base_1
+	mult = value:dimension_traveler_base_value|RESOURCE|consumer_goods|
+}
+triggered_councilor_modifier = {
+	potential = {
+		owner = { has_ethic = ethic_fanatic_egalitarian }
+	}
+	dimension_traveler_base_consumer_goods_produces_add = @dimension_traveler_base_2
+	mult = value:dimension_traveler_base_value|RESOURCE|consumer_goods|
+}
+triggered_councilor_modifier = {
+	potential = {
+		owner = { has_ethic = ethic_authoritarian }
+	}
+	dimension_traveler_base_influence_produces_add = @dimension_traveler_base_1
+	mult = value:dimension_traveler_base_value|RESOURCE|influence|
+}
+triggered_councilor_modifier = {
+	potential = {
+		owner = { has_ethic = ethic_fanatic_authoritarian }
+	}
+	dimension_traveler_base_influence_produces_add = @dimension_traveler_base_2
+	mult = value:dimension_traveler_base_value|RESOURCE|influence|
+}
+triggered_councilor_modifier = {
+	potential = {
+		owner = { has_ethic = ethic_xenophile }
+	}
+	dimension_traveler_base_energy_produces_add = @dimension_traveler_base_1
+	mult = value:dimension_traveler_base_value|RESOURCE|energy|
+}
+triggered_councilor_modifier = {
+	potential = {
+		owner = { has_ethic = ethic_fanatic_xenophile }
+	}
+	dimension_traveler_base_energy_produces_add = @dimension_traveler_base_2
+	mult = value:dimension_traveler_base_value|RESOURCE|energy|
+}
+triggered_councilor_modifier = {
+	potential = {
+		owner = { has_ethic = ethic_xenophobe }
+	}
+	dimension_traveler_base_minerals_produces_add = @dimension_traveler_base_1
+	mult = value:dimension_traveler_base_value|RESOURCE|minerals|
+}
+triggered_councilor_modifier = {
+	potential = {
+		owner = { has_ethic = ethic_fanatic_xenophobe }
+	}
+	dimension_traveler_base_minerals_produces_add = @dimension_traveler_base_2
+	mult = value:dimension_traveler_base_value|RESOURCE|minerals|
+}
+# 终焉宣告防护
+inline_script = {
+	script = traits/dimensional_horror_crisis_storm_protection_councilor_trait
+	COUNT = 5
+}
+# 因果爆发
+triggered_councilor_modifier = {
+	potential = {
+		owner = { has_policy_flag = horror_dimension_traveler }
+	}
+	show_if_not_potential = yes
+	not_potential_override_text_key = BLANK_STRING
+	custom_tooltip = leader_trait_dimension_traveler_horror_secret_effect
+}

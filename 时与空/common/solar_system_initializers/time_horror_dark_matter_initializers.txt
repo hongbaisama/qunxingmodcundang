@@ -1,0 +1,98 @@
+@distance = 50
+@jumps = 3
+@planet_min_size = 10
+@planet_max_size = 25
+@base_moon_distance = 10
+@moon_min_size = 6
+@moon_max_size = 10
+@homeworld_min_size = 18
+@homeworld_max_size = 21
+
+horror_dark_matter_init = {
+	class = sc_black_hole
+	
+	usage = misc_system_init
+
+	usage_odds = {
+		base = @spawn_system_slightlycommon
+		modifier = {
+			any_country = { has_origin = origin_post_apocalyptic }
+			factor = 2
+		}
+		modifier = {
+			factor = 0
+			is_fe_cluster = yes
+		}
+		modifier = {
+			factor = 0
+			has_star_flag = empire_cluster
+		}
+	}
+
+	max_instances = 10
+	scaled_spawn_chance = 10
+	
+	planet = {
+		class = star
+		orbit_distance = 0
+
+		init_effect = {
+			clear_deposits = yes
+			set_carrier_flag = starting_deposit
+			set_carrier_flag = ignore_startup_effect
+			set_carrier_flag = shroud_storm_changed
+			random_list = {
+				1 = {
+					add_deposit = d_dark_matter_deposit_1
+				}
+				1 = {
+					add_deposit = d_dark_matter_deposit_2
+				}
+				1 = {
+					add_deposit = d_dark_matter_deposit_3
+				}
+			}
+		}
+	}
+	
+	change_orbit = 60
+	
+	planet = {
+		class = "pc_nuked"
+		size = { min = 15 max = 25 }
+		
+		init_effect = {
+			set_carrier_flag = exists_d_horror_dark_matter_blocker
+			add_time_special_deposit_keep_on_terraform = { DEPOSIT = d_horror_dark_matter_blocker }
+			random_list = {
+				1 = {
+					set_carrier_flag = exists_d_horror_dark_matter_energy
+				}
+				1 = {
+					set_carrier_flag = exists_d_horror_dark_matter_minerals
+				}
+				1 = {
+					set_carrier_flag = exists_d_horror_dark_matter_food
+				}
+				1 = {
+					set_carrier_flag = exists_d_horror_dark_matter_alloys
+				}
+				1 = {
+					set_carrier_flag = exists_d_horror_dark_matter_consumer_goods
+				}
+				1 = {
+					set_carrier_flag = exists_d_horror_dark_matter_physics_research
+				}
+				1 = {
+					set_carrier_flag = exists_d_horror_dark_matter_society_research
+				}
+				1 = {
+					set_carrier_flag = exists_d_horror_dark_matter_engineering_research
+				}
+				1 = {
+					set_carrier_flag = exists_d_horror_dark_matter_unity
+				}
+			}
+		}
+	}
+}

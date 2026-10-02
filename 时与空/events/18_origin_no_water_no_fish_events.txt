@@ -1,0 +1,210 @@
+
+namespace = origin_no_water_no_fish
+
+carrier_event = {
+	id = origin_no_water_no_fish.0
+	is_triggered_only = yes
+	hide_window = yes
+
+	trigger = {
+	}
+	
+	immediate = {
+		if = {
+			limit = {
+				NOR = {
+					is_variable_set = no_water_no_fish_energy_count
+					is_variable_set = no_water_no_fish_minerals_count
+					is_variable_set = no_water_no_fish_food_count
+				}
+			}
+			set_variable = {
+				which = no_water_no_fish_energy_count
+				value = 0
+			}
+			set_variable = {
+				which = no_water_no_fish_minerals_count
+				value = 0
+			}
+			set_variable = {
+				which = no_water_no_fish_food_count
+				value = 0
+			}
+		}
+		else = {
+			remove_modifier = origin_no_water_no_fish_energy_modifier
+			remove_modifier = origin_no_water_no_fish_minerals_modifier
+			remove_modifier = origin_no_water_no_fish_food_modifier
+			change_variable = {
+				which = no_water_no_fish_energy_count
+				value = value:no_water_no_fish_energy_value
+			}
+			change_variable = {
+				which = no_water_no_fish_minerals_count
+				value = value:no_water_no_fish_minerals_value
+			}
+			change_variable = {
+				which = no_water_no_fish_food_count
+				value = value:no_water_no_fish_food_value
+			}
+			# AI保护
+			if = {
+				limit = {
+					owner = { is_ai = yes }
+				}
+				if = {
+					limit = {
+						check_variable = {
+							which = no_water_no_fish_energy_count
+							value > 2000
+						}
+					}
+					set_variable = {
+						which = no_water_no_fish_energy_count
+						value = 2000
+					}
+				}
+				if = {
+					limit = {
+						check_variable = {
+							which = no_water_no_fish_minerals_count
+							value > 2000
+						}
+					}
+					set_variable = {
+						which = no_water_no_fish_minerals_count
+						value = 2000
+					}
+				}
+				if = {
+					limit = {
+						check_variable = {
+							which = no_water_no_fish_food_count
+							value > 2000
+						}
+					}
+					set_variable = {
+						which = no_water_no_fish_food_count
+						value = 2000
+					}
+				}
+			}
+			add_modifier = {
+				modifier = origin_no_water_no_fish_energy_modifier
+				days = -1
+				multiplier = no_water_no_fish_energy_count
+			}
+			add_modifier = {
+				modifier = origin_no_water_no_fish_minerals_modifier
+				days = -1
+				multiplier = no_water_no_fish_minerals_count
+			}
+			add_modifier = {
+				modifier = origin_no_water_no_fish_food_modifier
+				days = -1
+				multiplier = no_water_no_fish_food_count
+			}
+		}
+	}
+}
+
+country_event = {
+	id = origin_no_water_no_fish.1
+	is_triggered_only = yes
+	hide_window = yes
+
+	trigger = {
+		has_origin = origin_no_water_no_fish
+	}
+
+	immediate = {
+		country_event = { id = origin_no_water_no_fish.2 days = 30 }
+		every_owned_colony = {
+			if = {
+				limit = {
+					OR = {
+						has_district = district_generator
+						has_district = district_mining
+						has_district = district_farming
+					}
+				}
+				validate_planet_buildings_and_districts = yes
+			}
+			# 设置变量
+			set_variable = {
+				which = no_water_no_fish_energy_count
+				value = 0
+			}
+			set_variable = {
+				which = no_water_no_fish_minerals_count
+				value = 0
+			}
+			set_variable = {
+				which = no_water_no_fish_food_count
+				value = 0
+			}
+		}
+	}
+}
+
+country_event = {
+	id = origin_no_water_no_fish.2
+	is_triggered_only = yes
+	hide_window = yes
+
+	trigger = {
+		has_origin = origin_no_water_no_fish
+	}
+
+	immediate = {
+		country_event = { id = origin_no_water_no_fish.2 days = 30 }
+		every_owned_colony = {
+			carrier_event = { id = origin_no_water_no_fish.0 }
+		}
+	}
+}
+
+carrier_event = {
+	id = origin_no_water_no_fish.3
+	is_triggered_only = yes
+	hide_window = yes
+	
+	trigger = {
+		From = { has_origin = origin_no_water_no_fish }
+	}
+	
+	immediate = {
+		if = {
+			limit = {
+				OR = {
+					has_district = district_generator
+					has_district = district_mining
+					has_district = district_farming
+				}
+			}
+			validate_planet_buildings_and_districts = yes
+		}
+		# 设置变量
+		if = {
+			limit = {
+				NOR = {
+					is_variable_set = no_water_no_fish_energy_count
+					is_variable_set = no_water_no_fish_minerals_count
+					is_variable_set = no_water_no_fish_food_count
+				}
+			}
+			set_variable = {
+				which = no_water_no_fish_energy_count
+				value = 0
+			}
+			set_variable = {
+				which = no_water_no_fish_minerals_count
+				value = 0
+			}
+			set_variable = {
+				which = no_water_no_fish_food_count
+				value = 0
+			}
+		}
+	}
+}

@@ -1,0 +1,32 @@
+category = ruler
+can_be_automated = no
+auto_generate_description = no
+
+possible_pre_triggers = {
+	has_owner = yes
+	is_enslaved = no
+	is_being_purged = no
+	is_being_assimilated = no
+	is_sapient = yes
+}
+
+possible_precalc = can_fill_ruler_job
+possible = {
+	is_origin_time_species = yes
+}
+
+triggered_planet_modifier = {
+	district_time_usage = 5
+	mult = value:time_order_generic_value|ETHIC|$ETHIC$|
+}
+
+triggered_planet_modifier = {
+	planet_stability_add = 1
+	col_time_mult = @time_order_modifier
+	mult = value:time_order_modifier_value|ETHIC|$ETHIC$|
+}
+
+weight = {
+	weight = @ruler_job_weight
+	mult = 1000
+}

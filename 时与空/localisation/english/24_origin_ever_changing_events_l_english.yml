@@ -1,0 +1,5 @@
+﻿l_english:
+ origin_ever_changing.2.name:0 "Ever-Changing"
+ origin_ever_changing.2.desc:0 "The environment on [root.GetName] has undergone drastic changes again. Everything is vastly different from what we knew."
+ origin_ever_changing.2.a:0 "What has it become this time?"
+ origin_ever_changing.2.tooltip:0 "Change planet type to: §Y[root.GetClassName]§!"

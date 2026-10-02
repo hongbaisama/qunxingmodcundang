@@ -1,0 +1,1627 @@
+# 星球
+time_horizonsignal_star_init_effect = {
+	prevent_anomaly = yes
+	clear_deposits = yes
+	set_carrier_flag = starting_deposit
+	set_carrier_flag = ignore_startup_effect
+	set_carrier_flag = shroud_storm_changed
+	add_deposit = d_dark_matter_deposit_5
+	create_time_horizonsignal_star_ambient_object = yes
+}
+
+# 星球
+create_time_horizonsignal_star_ambient_object = {
+	create_ambient_object = {
+		type = gravity_storm
+		scale = 0.25
+		location = this
+		use_3d_location = yes
+	}
+	last_created_ambient_object = {
+		set_ambient_object_flag = time_horizonsignal_star_ambient_object
+	}
+	create_ambient_object = {
+		type = magnetic_storm
+		scale = 0.5
+		location = this
+		use_3d_location = yes
+	}
+	last_created_ambient_object = {
+		set_ambient_object_flag = time_horizonsignal_star_ambient_object
+	}
+}
+
+# 星球
+white_hole_star_init_effect = {
+	prevent_anomaly = yes
+	clear_deposits = yes
+	set_carrier_flag = starting_deposit
+	set_carrier_flag = ignore_startup_effect
+	add_deposit = d_minerals_10
+	create_white_hole_star_ambient_object = yes
+}
+
+# 星球
+create_white_hole_star_ambient_object = {
+	create_ambient_object = {
+		type = gravity_storm
+		scale = 0.25
+		location = this
+		use_3d_location = yes
+	}
+	last_created_ambient_object = {
+		set_ambient_object_flag = white_hole_star_ambient_object
+	}
+	create_ambient_object = {
+		type = particle_storm
+		scale = 0.5
+		location = this
+		use_3d_location = yes
+	}
+	last_created_ambient_object = {
+		set_ambient_object_flag = white_hole_star_ambient_object
+	}
+}
+
+# 星球
+white_hole_become_black_hole_hidden_effect = {
+	clear_deposits_and_orbital_station = yes
+	create_ambient_object = {
+		type = star_explosion
+		play_animation_once = yes
+		location = this
+	}
+	solar_system = {
+		set_star_class = sc_black_hole
+		remove_white_hole_recycle_bin = yes
+		every_system_ambient_object = {
+			limit = {
+				has_ambient_object_flag = white_hole_star_ambient_object
+			}
+			destroy_ambient_object = this
+		}
+	}
+	create_time_horizonsignal_star_ambient_object = yes
+}
+
+# 星球
+akx_9101_option_effect = {
+	create_timeline_loop_temple = yes
+	owner = {
+		hidden_effect = {
+			set_country_flag = worm_events_available
+			if = {
+				limit = {
+					has_origin = origin_white_hole
+					any_system_within_border = { has_star_flag = time_white_hole_system }
+				}
+				random_system_within_border = {
+					limit = { has_star_flag = time_white_hole_system }
+					random_fleet_in_system = {
+						limit = { is_owned_by = prevprev }
+						fleet_event = {
+							id = dimension_traveler.2
+							days = 1
+							random = 4
+							scopes = { from = prev }
+						}
+					}
+				}
+			}
+		}
+		if = {
+			limit = {
+				NOT = { has_technology = tech_akx_worm_2 }
+			}
+			if = {
+				limit = {
+					NOT = {
+						has_tech_option = tech_akx_worm_2
+					}
+				}
+				add_research_option = tech_akx_worm_2
+			}
+			add_tech_progress = {
+				tech = tech_akx_worm_2
+				progress = 0.20
+			}
+		}
+		give_specimen = { key = akx_time_and_stone origin = akx.9101.name }
+	}
+}
+
+# 国家
+akx_9201_option_effect = {
+	if = {
+		limit = {
+			owner_main_species = { is_robotic = no }
+		}
+		if = {
+			limit = {
+				NOT = { has_technology = tech_genome_mapping }
+			}
+			if = {
+				limit = {
+					NOT = { has_tech_option = tech_genome_mapping }
+				}
+				add_research_option = tech_genome_mapping
+			}
+			add_tech_progress = {
+				tech = tech_genome_mapping
+				progress = $PROGRESS$
+			}
+		}
+	}
+	else_if = {
+		limit = {
+			is_machine_or_individual_machine_empire = no
+		}
+		if = {
+			limit = {
+				NOT = { has_technology = tech_robomodding }
+			}
+			if = {
+				limit = {
+					NOT = { has_tech_option = tech_robomodding }
+				}
+				add_research_option = tech_robomodding
+			}
+			add_tech_progress = {
+				tech = tech_robomodding
+				progress = $PROGRESS$
+			}
+		}
+	}
+	else = {
+		if = {
+			limit = {
+				NOT = { has_technology = tech_robomodding_m }
+			}
+			if = {
+				limit = {
+					NOT = { has_tech_option = tech_robomodding_m }
+				}
+				add_research_option = tech_robomodding_m
+			}
+			add_tech_progress = {
+				tech = tech_robomodding_m
+				progress = $PROGRESS$
+			}
+		}
+	}
+}
+
+# 国家
+akx_9210_or_9220_option_effect = {
+	if = {
+		limit = {
+			NOT = { has_technology = tech_akx_worm_2 }
+		}
+		if = {
+			limit = {
+				NOT = { has_tech_option = tech_akx_worm_2 }
+			}
+			add_research_option = tech_akx_worm_2
+		}
+		add_tech_progress = {
+			tech = tech_akx_worm_2
+			progress = 0.2
+		}
+	}
+}
+
+# 国家/星球
+make_messenger_dominant_species = {
+	# 避免虚拟bug
+	if = {
+		limit = {
+			root = { has_tradition = tr_virtuality_1 }
+		}
+		weighted_random_owned_pop_group = {
+			limit = {
+				has_pop_group_flag = messenger_changed_pop
+				has_trait = trait_robot_digital_2
+			}
+			root = { change_dominant_species = { species = prev } }
+		}
+	}
+	else_if = {
+		limit = {
+			root = {
+				OR = {
+					has_tradition = tr_virtuality_adopt
+					has_country_flag = synth_virtual
+				}
+			}
+		}
+		weighted_random_owned_pop_group = {
+			limit = {
+				has_pop_group_flag = messenger_changed_pop
+				has_trait = trait_robot_digital_1
+			}
+			root = { change_dominant_species = { species = prev } }
+		}
+	}
+	else = {
+		weighted_random_owned_pop_group = {
+			limit = { has_pop_group_flag = messenger_changed_pop }
+			root = { change_dominant_species = { species = prev } }
+		}
+	}
+}
+
+# 国家/星球
+make_owned_pop_unleashed_messenger = {
+	every_owned_pop_group = {
+		limit = {
+			is_same_species = root
+		}
+		make_intelligent = yes
+		make_akx_waiting_world = yes
+		make_unleashed_messenger = yes
+		if = {
+			limit = {
+				has_any_ethic = yes
+			}
+			pop_group_add_ethic_effect = {
+				POP_GROUP = this
+				ETHOS = ethic_pacifist
+				PERCENTAGE = 1 # 100%
+				RANDOM = 0
+			}
+		}
+		set_timed_pop_group_flag = { flag = messenger_changed_pop days = 2 }
+	}
+	make_messenger_dominant_species = yes
+}
+
+# 国家
+make_country_unleashed_messenger = {
+	if = {
+		limit = {
+			has_civic = civic_fanatic_purifiers
+			is_wonder_country_40 = no
+		}
+		custom_tooltip = akx.9211.c.tooltip.ethic
+		force_remove_civic = civic_fanatic_purifiers
+		force_add_civic = civic_inwards_perfection
+		hidden_effect = {
+			every_owned_species = {
+				limit = {
+					has_citizenship_type = { type = citizenship_purge country = prev }
+				}
+				set_citizenship_type = { type = citizenship_limited country = prev }
+			}
+		}
+	}
+	else_if = {
+		limit = {
+			has_civic = civic_scorched_earth
+		}
+		custom_tooltip = akx.9211.c.tooltip.ethic
+		force_remove_civic = civic_scorched_earth
+		force_add_civic = civic_inwards_perfection
+		hidden_effect = {
+			every_owned_species = {
+				limit = {
+					has_citizenship_type = { type = citizenship_purge country = prev }
+				}
+				set_citizenship_type = { type = citizenship_limited country = prev }
+			}
+		}
+	}
+	else_if = {
+		limit = {
+			is_hive_empire = yes
+		}
+		if = {
+			limit = {
+				has_civic = civic_hive_devouring_swarm
+				is_wonder_country_38 = no
+			}
+			custom_tooltip = akx.9211.c.tooltip.gestalt
+			force_remove_civic = civic_hive_devouring_swarm
+			force_add_civic = civic_hive_sovereign_guardianship
+			hidden_effect = {
+				every_owned_species = {
+					limit = {
+						has_citizenship_type = { type = citizenship_purge country = prev }
+					}
+					set_citizenship_type = { type = citizenship_slavery country = prev }
+				}
+			}
+		}
+		else_if = {
+			limit = {
+				has_civic = civic_hive_scorched_earth
+			}
+			custom_tooltip = akx.9211.c.tooltip.gestalt
+			force_remove_civic = civic_hive_scorched_earth
+			force_add_civic = civic_hive_sovereign_guardianship
+			hidden_effect = {
+				every_owned_species = {
+					limit = {
+						has_citizenship_type = { type = citizenship_purge country = prev }
+					}
+					set_citizenship_type = { type = citizenship_slavery country = prev }
+				}
+			}
+		}
+		else = {
+			custom_tooltip = akx.9211.c.tooltip.gestalt.no_change
+		}
+	}
+	else_if = {
+		limit = {
+			is_machine_empire = yes
+		}
+		if = {
+			limit = {
+				has_civic = civic_machine_terminator
+				is_wonder_country_39 = no
+			}
+			custom_tooltip = akx.9211.c.tooltip.gestalt
+			force_remove_civic = civic_machine_terminator
+			force_add_civic = civic_machine_sovereign_guardianship
+			hidden_effect = {
+				every_owned_species = {
+					limit = {
+						is_robotic = no
+					}
+					set_citizenship_type = { type = citizenship_full_machine country = prev }
+				}
+			}
+		}
+		else_if = {
+			limit = {
+				has_civic = civic_machine_assimilator
+			}
+			custom_tooltip = akx.9211.c.tooltip.gestalt
+			force_remove_civic = civic_machine_assimilator
+			force_add_civic = civic_machine_servitor
+			hidden_effect = {
+				every_owned_species = {
+					limit = {
+						is_robotic = no
+					}
+					set_citizenship_type = { type = citizenship_organic_trophy country = prev }
+				}
+				every_owned_colony = {
+					limit = {
+						OR = {
+							has_building = building_uplink_node
+							has_building = building_network_junction
+							has_building = building_system_conflux
+						}
+					}
+					validate_planet_buildings_and_districts = yes
+				}
+			}
+		}
+		else = {
+			custom_tooltip = akx.9211.c.tooltip.gestalt.no_change
+		}
+	}
+	else = {
+		custom_tooltip = akx.9211.c.tooltip
+	}
+}
+
+# 国家/星球
+make_owned_pop_leashed_messenger = {
+	every_owned_pop_group = {
+		limit = {
+			is_same_species = root
+		}
+		make_resilient = yes
+		make_akx_waiting_world = yes
+		make_leashed_messenger = yes
+		if = {
+			limit = {
+				has_any_ethic = yes
+			}
+			pop_group_add_ethic_effect = {
+				POP_GROUP = this
+				ETHOS = ethic_militarist
+				PERCENTAGE = 1 # 100%
+				RANDOM = 0
+			}
+		}
+		set_timed_pop_group_flag = { flag = messenger_changed_pop days = 2 }
+	}
+	make_messenger_dominant_species = yes
+}
+
+# 国家
+make_country_leashed_messenger = {
+	if = {
+		limit = {
+			has_civic = civic_inwards_perfection
+			NOT = { has_country_flag = worm_tomb_ending }
+		}
+		custom_tooltip = akx.9211.c.tooltip.ethic
+		force_remove_civic = civic_inwards_perfection
+		if = {
+			limit = {
+				is_species_class = INF
+			}
+			force_add_civic = civic_scorched_earth
+		}
+		else = {
+			force_add_civic = civic_fanatic_purifiers
+		}
+		hidden_effect = {
+			every_owned_species = {
+				limit = {
+					NOT = { is_same_species = prev }
+				}
+				set_citizenship_type = { type = citizenship_purge country = prev }
+			}
+		}
+	}
+	else_if = {
+		limit = {
+			is_hive_empire = yes
+		}
+		if = {
+			limit = {
+				has_civic = civic_hive_sovereign_guardianship
+				NOT = { has_country_flag = worm_tomb_ending }
+			}
+			custom_tooltip = akx.9211.c.tooltip.gestalt
+			force_remove_civic = civic_hive_sovereign_guardianship
+			if = {
+				limit = {
+					is_species_class = INF
+				}
+				force_add_civic = civic_hive_scorched_earth
+			}
+			else = {
+				force_add_civic = civic_hive_devouring_swarm
+			}
+			hidden_effect = {
+				every_owned_species = {
+					limit = {
+						NOT = { is_same_species = prev }
+					}
+					set_citizenship_type = { type = citizenship_purge country = prev }
+				}
+			}
+		}
+		else = {
+			custom_tooltip = akx.9211.c.tooltip.gestalt.no_change
+		}
+	}
+	else_if = {
+		limit = {
+			is_machine_empire = yes
+		}
+		if = {
+			limit = {
+				has_civic = civic_machine_sovereign_guardianship
+				is_wonder_country_35 = no
+				NOT = { has_country_flag = worm_tomb_ending }
+			}
+			custom_tooltip = akx.9211.c.tooltip.gestalt
+			force_remove_civic = civic_machine_sovereign_guardianship
+			force_add_civic = civic_machine_terminator
+			hidden_effect = {
+				every_owned_species = {
+					limit = {
+						is_robotic = no
+					}
+					set_citizenship_type = { type = citizenship_purge_machine country = prev }
+				}
+			}
+		}
+		else_if = {
+			limit = {
+				has_civic = civic_machine_servitor
+			}
+			custom_tooltip = akx.9211.c.tooltip.gestalt
+			force_remove_civic = civic_machine_servitor
+			force_add_civic = civic_machine_assimilator
+			hidden_effect = {
+				every_owned_species = {
+					limit = {
+						is_robotic = no
+					}
+					set_citizenship_type = { type = citizenship_assimilation country = prev }
+				}
+				every_owned_colony = {
+					limit = {
+						OR = {
+							has_building = building_organic_sanctuary
+							has_building = building_organic_paradise
+						}
+					}
+					validate_planet_buildings_and_districts = yes
+				}
+			}
+		}
+		else = {
+			custom_tooltip = akx.9211.c.tooltip.gestalt.no_change
+		}
+	}
+	else = {
+		custom_tooltip = akx.9211.c.tooltip
+	}
+}
+
+# 星球
+reroll_time_black_hole_deposits = {
+	clear_deposits_and_orbital_station = yes
+	random_list = {
+		4 = {
+			add_deposit = d_physics_3
+		}
+		3 = {
+			add_deposit = d_physics_4
+		}
+		2 = {
+			add_deposit = d_physics_5
+		}
+		1 = {
+			add_deposit = d_physics_6
+		}
+	}
+	random_list = {
+		4 = {
+			add_deposit = d_society_3
+		}
+		3 = {
+			add_deposit = d_society_4
+		}
+		2 = {
+			add_deposit = d_society_5
+		}
+		1 = {
+			add_deposit = d_society_6
+		}
+	}
+	random_list = {
+		4 = {
+			add_deposit = d_engineering_3
+		}
+		3 = {
+			add_deposit = d_engineering_4
+		}
+		2 = {
+			add_deposit = d_engineering_5
+		}
+		1 = {
+			add_deposit = d_engineering_6
+		}
+	}
+	random_list = {
+		4 = {
+			# 无事发生
+		}
+		3 = {
+			add_deposit = d_dark_matter_deposit_1
+		}
+		2 = {
+			add_deposit = d_dark_matter_deposit_2
+		}
+		1 = {
+			add_deposit = d_dark_matter_deposit_3
+		}
+	}
+}
+
+# 星球
+transfer_akx_waiting_world_pop_to_akx_messenger = {
+	set_variable = {
+		which = akx_waiting_world_pop_transfer_percentage
+		value = value:akx_waiting_world_pop_transfer_percentage|PERCENTAGE|$PERCENTAGE$|
+	}
+	every_owned_species = {
+		limit = {
+			has_akx_waiting_world = yes
+			has_akx_messenger = no
+		}
+		save_event_target_as = old_akx_waiting_world_species
+		modify_species = {
+			species = this
+			remove_trait = trait_akx_waiting_world
+			remove_trait = trait_akx_waiting_world_robot
+			add_trait = trait_akx_messenger
+			change_scoped_species = no
+			effect = {
+				save_event_target_as = new_akx_messenger_species
+			}
+		}
+		prev = {
+			create_pop_group = {
+				species = event_target:new_akx_messenger_species
+				size = 0
+				effect = {
+					save_event_target_as = new_akx_messenger_pop_group
+				}
+			}
+			every_owned_pop_group = {
+				limit = {
+					species = { is_same_value = event_target:old_akx_waiting_world_species }
+				}
+				transfer_pop_amount = {
+					source = this
+					target = event_target:new_akx_messenger_pop_group
+					percentage = prev.akx_waiting_world_pop_transfer_percentage
+				}
+			}
+		}
+	}
+	clear_variable = akx_waiting_world_pop_transfer_percentage
+}
+
+# 人口组（信使）
+make_akx_messenger = {
+	if = {
+		limit = {
+			has_trait = trait_akx_waiting_world
+		}
+		modify_species = {
+			species = this
+			remove_trait = trait_akx_waiting_world
+		}
+	}
+	else_if = {
+		limit = {
+			has_trait = trait_akx_waiting_world_robot
+		}
+		modify_species = {
+			species = this
+			remove_trait = trait_akx_waiting_world_robot
+		}
+	}
+	if = {
+		limit = {
+			has_akx_messenger = no
+		}
+		modify_species = {
+			species = this
+			add_trait = trait_akx_messenger
+		}
+	}
+}
+
+# 人口组（透明化）
+make_akx_waiting_world = {
+	if = {
+		limit = {
+			is_robot_pop_group = no
+			has_akx_waiting_world = no
+			has_akx_messenger = no
+		}
+		modify_species = {
+			species = this
+			add_trait = trait_akx_waiting_world
+		}
+	}
+	else_if = {
+		limit = {
+			is_robot_pop_group = yes
+			has_akx_waiting_world = no
+			has_akx_messenger = no
+		}
+		modify_species = {
+			species = this
+			add_trait = trait_akx_waiting_world_robot
+		}
+	}
+}
+
+# 人口组（来自异世）
+make_notofthisworld = {
+	if = {
+		limit = {
+			is_robot_pop_group = no
+			has_trait_notofthisworld = no
+		}
+		modify_species = {
+			species = this
+			add_trait = trait_notofthisworld
+		}
+	}
+	else_if = {
+		limit = {
+			is_robot_pop_group = yes
+			has_trait_notofthisworld = no
+		}
+		modify_species = {
+			species = this
+			add_trait = trait_robot_notofthisworld
+		}
+	}
+}
+
+# 星系（清除戴森云、戴森球、奇迹球并返还建造次数）
+worm_clear_dyson_sphere = {
+	every_system_megastructure = {
+		limit = {
+			if = {
+				limit = {
+					OR = {
+						is_time_dyson_swarm = yes
+						is_time_dyson_sphere = yes
+						is_time_dyson_sphere_ruined = yes
+						is_time_dyson_sphere_disco = yes
+					}
+				}
+				if = {
+					limit = {
+						exists = planet
+					}
+					planet = { is_time_black_hole_or_white_hole_planet_class = yes }
+				}
+			}
+			else = {
+				always = no
+			}
+		}
+		if = {
+			limit = {
+				is_time_dyson_swarm = yes
+			}
+			if = {
+				limit = { exists = owner }
+				owner = {
+					if = {
+						limit = {
+							check_variable = {
+								which = dyson_swarm_counter
+								value > 0
+							}
+						}
+						subtract_variable = {
+							which = dyson_swarm_counter
+							value = 1
+						}
+					}
+				}
+			}
+		}
+		else_if = {
+			limit = {
+				is_time_dyson_sphere = yes
+			}
+			if = {
+				limit = { exists = owner }
+				owner = { remove_country_flag = built_dyson_sphere }
+			}
+			solar_system = { remove_star_flag = dyson_sphere_built }
+		}
+		else_if = {
+			limit = {
+				is_time_dyson_sphere_ruined = yes
+			}
+			solar_system = { remove_star_flag = dyson_sphere_built }
+		}
+		else_if = {
+			limit = {
+				is_time_dyson_sphere_disco = yes
+			}
+			if = {
+				limit = { exists = owner }
+				owner = { set_country_flag = can_build_disco_sphere }
+			}
+		}
+		planet = { remove_carrier_flag = has_megastructure }
+		delete_megastructure = this
+	}
+	if = {
+		limit = {
+			any_system_megastructure = {
+				is_time_dyson_swarm = yes
+			}
+		}
+		every_system_planet = {
+			limit = {
+				is_time_black_hole_or_white_hole_planet_class = yes
+			}
+			remove_modifier = dyson_swarm_1_mod
+			remove_modifier = dyson_swarm_2_mod
+			remove_modifier = dyson_swarm_3_mod
+		}
+	}
+	else = {
+		every_system_planet = {
+			remove_modifier = dyson_swarm_1_mod
+			remove_modifier = dyson_swarm_2_mod
+			remove_modifier = dyson_swarm_3_mod
+		}
+	}
+}
+
+# 星球（时虫炸死寂给特质）
+make_pc_nuked_preference = {
+	every_owned_pop_group = {
+		limit = {
+			is_sapient = yes
+		}
+		# add planet class to organics
+		if = {
+			limit = { is_robot_pop_group = no }
+			modify_species = {
+				species = this
+				ideal_planet_class = pc_nuked
+			}
+		}
+		# add planet classes to basic machines
+		else = {
+			switch = {
+				trigger = has_trait
+				trait_dry_planet_preference = {
+					modify_species = {
+						species = this
+						remove_trait = trait_dry_planet_preference
+						add_trait = trait_machine_pc_nuked_preference
+					}
+				}
+				trait_wet_planet_preference = {
+					modify_species = {
+						species = this
+						remove_trait = trait_wet_planet_preference
+						add_trait = trait_machine_pc_nuked_preference
+					}
+				}
+				trait_cold_planet_preference = {
+					modify_species = {
+						species = this
+						remove_trait = trait_cold_planet_preference
+						add_trait = trait_machine_pc_nuked_preference
+					}
+				}
+				trait_machine_habitat_planet_preference = {
+					modify_species = {
+						species = this
+						remove_trait = trait_machine_habitat_planet_preference
+						add_trait = trait_machine_pc_nuked_preference
+					}
+				}
+				trait_pc_cosmogenesis_world_preference = {
+					modify_species = {
+						species = this
+						remove_trait = trait_pc_cosmogenesis_world_preference
+						add_trait = trait_machine_pc_nuked_preference
+					}
+				}
+				trait_machine_pc_gaia_preference = {
+					modify_species = {
+						species = this
+						remove_trait = trait_machine_pc_gaia_preference
+						add_trait = trait_machine_pc_nuked_preference
+					}
+				}
+				trait_machine_pc_machine_preference = {
+					modify_species = {
+						species = this
+						remove_trait = trait_machine_pc_machine_preference
+						add_trait = trait_machine_pc_nuked_preference
+					}
+				}
+				trait_machine_pc_shattered_ring_habitable_preference = {
+					modify_species = {
+						species = this
+						remove_trait = trait_machine_pc_shattered_ring_habitable_preference
+						add_trait = trait_machine_pc_nuked_preference
+					}
+				}
+				trait_machine_pc_ringworld_habitable_preference = {
+					modify_species = {
+						species = this
+						remove_trait = trait_machine_pc_ringworld_habitable_preference
+						add_trait = trait_machine_pc_nuked_preference
+					}
+				}
+				trait_machine_pc_relic_preference = {
+					modify_species = {
+						species = this
+						remove_trait = trait_machine_pc_relic_preference
+						add_trait = trait_machine_pc_nuked_preference
+					}
+				}
+				trait_machine_pc_nanotech_preference = {
+					modify_species = {
+						species = this
+						remove_trait = trait_machine_pc_nanotech_preference
+						add_trait = trait_machine_pc_nuked_preference
+					}
+				}
+				trait_pc_time_preference = {
+					modify_species = {
+						species = this
+						remove_trait = trait_pc_time_preference
+						add_trait = trait_machine_pc_nuked_preference
+					}
+				}
+			}
+		}
+		# add traits to organics
+		if = {
+			limit = { 
+				is_robot_pop_group = no
+			}
+			if = {
+				limit = {
+					NOT = { has_trait = trait_natural_physicists }
+				}
+				# remove opposite traits
+				if = {
+					limit = { has_trait = trait_natural_engineers }
+					modify_species = {
+						species = this
+						remove_trait = trait_natural_engineers
+					}
+				}
+				if = {
+					limit = { has_trait = trait_natural_sociologists }
+					modify_species = {
+						species = this
+						remove_trait = trait_natural_sociologists
+					}
+				}
+				if = {
+					limit = { has_trait = trait_nerve_stapled }
+					modify_species = {
+						species = this
+						remove_trait = trait_nerve_stapled
+					}
+				}
+				# add trait
+				modify_species = {
+					species = this
+					add_trait = trait_natural_physicists
+				}
+			}
+			if = {
+				limit = {
+					NOT = { has_trait = trait_repugnant }
+				}
+				# remove opposite traits
+				if = {
+					limit = { has_trait = trait_charismatic }
+					modify_species = {
+						species = this
+						remove_trait = trait_charismatic
+					}
+				}
+				modify_species = {
+					species = this
+					add_trait = trait_repugnant
+				}
+			}
+		}
+		else = {
+			if = {
+				limit = {
+					NOT = { has_trait = trait_robot_artificial_physicists }
+				}
+				# remove opposite traits
+				if = {
+					limit = { has_trait = trait_robot_artificial_engineers }
+					modify_species = {
+						species = this
+						remove_trait = trait_robot_artificial_engineers
+					}
+				}
+				if = {
+					limit = { has_trait = trait_robot_artificial_sociologists }
+					modify_species = {
+						species = this
+						remove_trait = trait_robot_artificial_sociologists
+					}
+				}
+				# add trait
+				modify_species = {
+					species = this
+					add_trait = trait_robot_artificial_physicists
+				}
+			}
+			if = {
+				limit = {
+					NOT = { has_trait = trait_robot_uncanny }
+				}
+				# remove opposite traits
+				if = {
+					limit = { has_trait = trait_robot_emotion_emulators }
+					modify_species = {
+						species = this
+						remove_trait = trait_robot_emotion_emulators
+					}
+				}
+				# add trait
+				modify_species = {
+					species = this
+					add_trait = trait_robot_uncanny
+				}
+			}
+		}
+	}
+}
+
+# 国家
+give_r_horror_matter = {
+	if = {
+		limit = {
+			NOT = { has_relic = r_horror_matter }
+		}
+		add_relic = r_horror_matter
+	}
+	else = {
+		add_resource = { sr_dark_matter = 2000 }
+		[[FLAG] custom_tooltip = r_horror_matter_become_powerful]
+	}
+	hidden_effect = {
+		[[FLAG] set_country_flag = $FLAG$]
+	}
+}
+
+# 国家
+upgrade_r_time = {
+	custom_tooltip = upgrade_r_time_$LEVEL$
+	hidden_effect = {
+		set_country_flag = r_time_level_$LEVEL$
+		if = {
+			limit = {
+				has_country_flag = reach_max_r_time_count
+			}
+			remove_country_flag = reach_max_r_time_count
+			change_variable = {
+				which = r_time_count
+				value = 1
+			}
+		}
+	}
+}
+
+# 国家
+active_r_time = {
+	if = {
+		limit = {
+			check_variable = {
+				which = r_time_count
+				value >= 10
+			}
+		}
+		add_r_time_modifier = { LEVEL = 10 }
+	}
+	else_if = {
+		limit = {
+			check_variable = {
+				which = r_time_count
+				value >= 9
+			}
+		}
+		add_r_time_modifier = { LEVEL = 9 }
+	}
+	else_if = {
+		limit = {
+			check_variable = {
+				which = r_time_count
+				value >= 8
+			}
+		}
+		add_r_time_modifier = { LEVEL = 8 }
+	}
+	else_if = {
+		limit = {
+			check_variable = {
+				which = r_time_count
+				value >= 7
+			}
+		}
+		add_r_time_modifier = { LEVEL = 7 }
+	}
+	else_if = {
+		limit = {
+			check_variable = {
+				which = r_time_count
+				value >= 6
+			}
+		}
+		add_r_time_modifier = { LEVEL = 6 }
+	}
+	else_if = {
+		limit = {
+			check_variable = {
+				which = r_time_count
+				value >= 5
+			}
+		}
+		add_r_time_modifier = { LEVEL = 5 }
+	}
+	else_if = {
+		limit = {
+			check_variable = {
+				which = r_time_count
+				value >= 4
+			}
+		}
+		add_r_time_modifier = { LEVEL = 4 }
+	}
+	else_if = {
+		limit = {
+			check_variable = {
+				which = r_time_count
+				value >= 3
+			}
+		}
+		add_r_time_modifier = { LEVEL = 3 }
+	}
+	else_if = {
+		limit = {
+			check_variable = {
+				which = r_time_count
+				value >= 2
+			}
+		}
+		add_r_time_modifier = { LEVEL = 2 }
+	}
+	else = {
+		add_r_time_modifier = { LEVEL = 1 }
+	}
+	custom_tooltip = r_time_effect
+	if = {
+		limit = {
+			has_edict = akx_shorten_r_time_cooldown
+		}
+		custom_tooltip = relic_triumph_cooldown_short
+	}
+	else = {
+		custom_tooltip = relic_triumph_cooldown
+	}
+	hidden_effect = {
+		if = {
+			limit = {
+				check_variable = {
+					which = r_time_count
+					value < value:max_r_time_count
+				}
+			}
+			change_variable = {
+				which = r_time_count
+				value = 1
+			}
+		}
+		else = {
+			# 激活次数已溢出，增加上限时立即增加1点变量
+			set_country_flag = reach_max_r_time_count
+		}
+		if = {
+			limit = {
+				has_edict = akx_shorten_r_time_cooldown
+			}
+			add_modifier = {
+				modifier = relic_activation_cooldown
+				days = 1800
+			}
+		}
+		else = {
+			add_modifier = {
+				modifier = relic_activation_cooldown
+				days = 3600
+			}
+		}
+	}
+}
+
+# 国家
+add_r_time_modifier = {
+	if = {
+		limit = {
+			has_edict = akx_shorten_r_time_cooldown
+		}
+		add_modifier = {
+			modifier = r_time_modifier_$LEVEL$
+			days = 1800
+		}
+	}
+	else = {
+		add_modifier = {
+			modifier = r_time_modifier_$LEVEL$
+			days = 3600
+		}
+	}
+}
+
+# 国家
+create_astral_rift_akx_horror_leader = {
+	create_leader = {
+		name = random
+		skill = 1
+		class = scientist
+		randomize_traits = no
+		traits = {
+			trait = subclass_scientist_scholar
+			trait = leader_trait_planar_theorist_2
+			trait = leader_trait_archaeologist
+		}
+		effect = {
+			set_leader_flag = has_gained_level_trait
+			set_skill = 4
+			save_event_target_as = new_time_akx_astral_rift_leader
+		}
+	}
+}
+
+# 国家
+create_astral_rift_akx_time_leader = {
+	if = {
+		limit = {
+			is_homicidal = yes
+			is_gestalt = no
+		}
+		create_leader = {
+			name = random
+			skill = 1
+			class = scientist
+			randomize_traits = no
+			background_planet = event_target:akx_star
+			traits = {
+				trait = subclass_scientist_scholar
+				trait = leader_trait_collective_wisdom
+				trait = leader_trait_academic_astral_rift_expert_3
+				trait = leader_trait_planar_theorist_2
+				trait = leader_trait_born_in_akx_rift
+			}
+			effect = {
+				set_leader_flag = has_gained_level_trait
+				set_skill = 8
+				save_event_target_as = new_time_akx_astral_rift_leader
+			}
+		}
+	}
+	else_if = {
+		limit = {
+			is_homicidal = yes
+		}
+		create_leader = {
+			name = random
+			skill = 1
+			class = scientist
+			randomize_traits = no
+			background_planet = event_target:akx_star
+			traits = {
+				trait = subclass_scientist_scholar
+				trait = leader_trait_academic_astral_rift_expert_3
+				trait = leader_trait_academic_dig_site_expert
+				trait = leader_trait_planar_theorist_2
+				trait = leader_trait_born_in_akx_rift
+			}
+			effect = {
+				set_leader_flag = has_gained_level_trait
+				set_skill = 8
+				save_event_target_as = new_time_akx_astral_rift_leader
+			}
+		}
+	}
+	else = {
+		create_leader = {
+			name = random
+			skill = 1
+			class = scientist
+			randomize_traits = no
+			background_planet = event_target:akx_star
+			traits = {
+				trait = subclass_scientist_scholar
+				trait = leader_trait_academic_astral_rift_expert_2
+				trait = leader_trait_planar_theorist_2
+				trait = leader_trait_born_in_akx_rift
+			}
+			effect = {
+				set_leader_flag = has_gained_level_trait
+				set_skill = 6
+				save_event_target_as = new_time_akx_astral_rift_leader
+			}
+		}
+	}
+}
+
+# 任意
+clear_akx_out_of_0_and_1_modifier = {
+	remove_global_flag = akx_out_of_0_and_1_a
+	remove_global_flag = akx_out_of_0_and_1_b
+	remove_global_flag = akx_out_of_0_and_1_c
+	remove_global_flag = akx_out_of_0_and_1_d
+	remove_global_flag = akx_out_of_0_and_1_e
+	remove_global_flag = akx_out_of_0_and_1_f
+}
+
+# 任意
+refresh_akx_out_of_0_and_1_modifier = {
+	random_list = {
+		1 = {
+			modifier = {
+				factor = 0
+				has_global_flag = akx_out_of_0_and_1_a
+			}
+			clear_akx_out_of_0_and_1_modifier = yes
+			set_global_flag = akx_out_of_0_and_1_a
+		}
+		1 = {
+			modifier = {
+				factor = 0
+				has_global_flag = akx_out_of_0_and_1_b
+			}
+			clear_akx_out_of_0_and_1_modifier = yes
+			set_global_flag = akx_out_of_0_and_1_b
+		}
+		1 = {
+			modifier = {
+				factor = 0
+				has_global_flag = akx_out_of_0_and_1_c
+			}
+			clear_akx_out_of_0_and_1_modifier = yes
+			set_global_flag = akx_out_of_0_and_1_c
+		}
+		1 = {
+			modifier = {
+				factor = 0
+				has_global_flag = akx_out_of_0_and_1_d
+			}
+			clear_akx_out_of_0_and_1_modifier = yes
+			set_global_flag = akx_out_of_0_and_1_d
+		}
+		1 = {
+			modifier = {
+				factor = 0
+				has_global_flag = akx_out_of_0_and_1_e
+			}
+			clear_akx_out_of_0_and_1_modifier = yes
+			set_global_flag = akx_out_of_0_and_1_e
+		}
+		1 = {
+			modifier = {
+				factor = 0
+				has_global_flag = akx_out_of_0_and_1_f
+			}
+			clear_akx_out_of_0_and_1_modifier = yes
+			set_global_flag = akx_out_of_0_and_1_f
+		}
+	}
+}
+
+# 星球
+setup_coils_god_planet = {
+	set_owner = event_target:coils_country
+	set_capital = yes
+
+	remove_building = building_colony_shelter
+	event_target:coils_country = {
+		switch = {
+			trigger = has_country_flag
+			stone_age = {
+				prev = {
+					add_building = building_crude_huts
+					remove_building = building_colony_shelter
+					create_pop_group = {
+						species = last_created_species
+						size = @stone_age_pops
+					}
+				}
+			}
+			bronze_age = {
+				prev = {
+					add_building = building_primitive_dwellings
+					add_building = building_stone_palace
+					remove_building = building_colony_shelter
+					create_pop_group = {
+						species = last_created_species
+						size = @bronze_age_pops
+					}
+				}
+			}
+			iron_age = {
+				prev = {
+					add_building = building_primitive_dwellings
+					add_building = building_stone_palace
+					remove_building = building_colony_shelter
+					create_pop_group = {
+						species = last_created_species
+						size = @iron_age_pops
+					}
+				}
+			}
+			late_medieval_age = {
+				prev = {
+					add_building = building_primitive_dwellings
+					add_building = building_primitive_dwellings
+					add_building = building_stone_palace
+					remove_building = building_colony_shelter
+					create_pop_group = {
+						species = last_created_species
+						size = @late_medieval_age_pops
+					}
+				}
+			}
+			renaissance_age = {
+				prev = {
+					add_building = building_primitive_dwellings
+					add_building = building_primitive_dwellings
+					add_building = building_stone_palace
+					remove_building = building_colony_shelter
+					create_pop_group = {
+						species = last_created_species
+						size = @renaissance_age_pops
+					}
+				}
+			}
+			steam_age = {
+				prev = {
+					add_building = building_urban_dwellings
+					add_building = building_primitive_factory
+					add_building = building_primitive_mine
+					add_building = building_stone_palace
+					remove_building = building_colony_shelter
+					create_pop_group = {
+						species = last_created_species
+						size = @steam_age_pops
+					}
+				}
+			}
+			industrial_age = {
+				prev = {
+					add_primitive_farm_or_mine = yes
+					add_building = building_primitive_factory
+					add_building = building_primitive_mine
+					add_building = building_primitive_power_plant
+					add_building = building_primitive_capital
+					add_building = building_urban_dwellings
+					remove_building = building_colony_shelter
+					create_pop_group = {
+						species = last_created_species
+						size = @industrial_age_pops
+					}
+				}
+				if = {
+					limit = {
+						has_origin = origin_mechanists
+					}
+					create_built_robot_species = yes
+					last_created_species = { save_global_event_target_as = pre_ftl_mechanist_robot }
+					set_country_flag = created_robots
+					prev = {
+						while = {
+							count = 2
+							random_owned_pop_group = {
+								limit = {
+									is_robotic_species = no
+								}
+								remove_pop_amount = 100
+							}
+							create_pop_group = {
+								species = event_target:pre_ftl_mechanist_robot
+							}
+						}
+					}
+				}
+			}
+			machine_age = {
+				prev = {
+					add_primitive_farm_or_mine = yes
+					add_building = building_primitive_factory
+
+					add_building = building_primitive_power_plant
+					add_building = building_primitive_capital
+					add_building = building_urban_dwellings
+					remove_building = building_colony_shelter
+
+					create_pop_group = {
+						species = last_created_species
+						size = @machine_age_pops
+					}
+				}
+				if = {
+					limit = {
+						has_origin = origin_mechanists
+					}
+					create_built_robot_species = yes
+					last_created_species = { save_global_event_target_as = pre_ftl_mechanist_robot }
+					set_country_flag = created_robots
+					prev = {
+						while = {
+							count = 4
+							random_owned_pop_group = {
+								limit = {
+									is_robotic_species = no
+								}
+								remove_pop_amount = 100
+							}
+							create_pop_group = {
+								species = event_target:pre_ftl_mechanist_robot
+							}
+						}
+					}
+				}
+			}
+			atomic_age = {
+				prev = {
+					add_primitive_farm_or_mine = yes
+					add_building = building_primitive_factory
+					add_building = building_primitive_mine
+					add_building = building_primitive_power_plant
+					add_building = building_primitive_capital
+					add_building = building_urban_dwellings
+					remove_building = building_colony_shelter
+					create_pop_group = {
+						species = last_created_species
+						size = @atomic_age_pops
+					}
+				}
+				if = {
+					limit = {
+						has_origin = origin_mechanists
+					}
+					create_built_robot_species = yes
+					last_created_species = { save_global_event_target_as = pre_ftl_mechanist_robot }
+					set_country_flag = created_robots
+					prev = {
+						while = {
+							count = 6
+							random_owned_pop_group = {
+								limit = {
+									is_robotic_species = no
+								}
+								remove_pop_amount = 100
+							}
+							create_pop_group = {
+								species = event_target:pre_ftl_mechanist_robot
+							}
+						}
+					}
+				}
+			}
+			early_space_age = {
+				prev = {
+					add_primitive_farm_or_mine = yes
+					add_building = building_primitive_factory
+					add_building = building_primitive_mine
+					add_building = building_primitive_power_plant
+					add_building = building_primitive_capital
+					add_building = building_urban_dwellings
+					remove_building = building_colony_shelter
+					create_pop_group = {
+						species = last_created_species
+						size = @early_space_age_pops
+					}
+				}
+				if = {
+					limit = {
+						has_origin = origin_mechanists
+					}
+					create_built_robot_species = yes
+					last_created_species = { save_global_event_target_as = pre_ftl_mechanist_robot }
+					set_country_flag = created_robots
+					prev = {
+						while = {
+							count = 8
+							random_owned_pop_group = {
+								limit = {
+									is_robotic_species = no
+								}
+								remove_pop_amount = 100
+							}
+							create_pop_group = {
+								species = event_target:pre_ftl_mechanist_robot
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+
+	if = {
+		limit = {
+			event_target:coils_country = {
+				OR = {
+					has_pre_ftl_age = machine_age
+					has_pre_ftl_age = atomic_age
+					has_pre_ftl_age = early_space_age
+				}
+			}
+		}
+		create_pre_ftl_blockers = yes
+	}
+}

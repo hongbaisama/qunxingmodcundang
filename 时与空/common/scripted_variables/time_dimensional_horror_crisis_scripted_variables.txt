@@ -1,0 +1,48 @@
+# 终焉宣告天灾倍率影响（天灾倍率还要开平方根）
+@dimensional_horror_crisis_min_strength = 1								# 终焉宣告风暴最低受1倍天灾倍率影响（1倍）
+@dimensional_horror_crisis_max_strength = 25							# 终焉宣告风暴最高受25倍天灾倍率影响（5倍）
+
+# 终焉宣告风暴冷却（基础冷却时间/天灾倍率影响）
+@dimensional_horror_crisis_storm_base_cooldown = 3600					# 风暴初始冷却，1倍天灾为10年，25倍天灾为2年
+@great_dimensional_horror_crisis_storm_cooldown_factor = 0.5			# 四段且未全部封印时，风暴冷却为0.5倍
+@greatest_dimensional_horror_crisis_storm_cooldown_factor = 0.25		# 命运出现时，风暴冷却为0.25倍
+@hope_dimensional_horror_crisis_storm_cooldown_factor = 2				# 希望传统下，风暴冷却为2倍（独立乘区）
+
+# 终焉宣告坍缩等级（新生黑洞占比达到阈值时使坍缩等级增加1级）
+@dimensional_horror_crisis_storm_base_level = 10						# 基础坍缩等级
+@dimensional_horror_crisis_storm_min_level = 5							# 最小坍缩等级（被抗干扰指数抵消后）
+@great_dimensional_horror_crisis_storm_level_factor = 5					# 四段且未全部封印时，坍缩等级增加5级
+@greatest_dimensional_horror_crisis_storm_level_factor = 10				# 命运出现时，坍缩等级增加10级
+@dimensional_horror_crisis_storm_level_black_hole_horror_count_threshold_1 = 0.1
+@dimensional_horror_crisis_storm_level_black_hole_horror_count_threshold_2 = 0.2
+@dimensional_horror_crisis_storm_level_black_hole_horror_count_threshold_3 = 0.4
+@dimensional_horror_crisis_storm_level_black_hole_horror_count_threshold_4 = 0.6
+@dimensional_horror_crisis_storm_level_black_hole_horror_count_threshold_5 = 0.8
+@dimensional_horror_crisis_storm_level_black_hole_horror_count_threshold_6 = 1
+@dimensional_horror_crisis_storm_level_black_hole_horror_count_threshold_7 = 1.25
+@dimensional_horror_crisis_storm_level_black_hole_horror_count_threshold_8 = 1.5
+@dimensional_horror_crisis_storm_level_black_hole_horror_count_threshold_9 = 2
+@dimensional_horror_crisis_storm_level_black_hole_horror_count_threshold_10 = 2.5
+@dimensional_horror_crisis_storm_level_modifier = 0.02					# 坍缩等级效果（1倍天灾下，每级提供2%效果；25倍天灾下，每级提供10%效果）
+@dimensional_horror_crisis_storm_level_ai_modifier_factor = 0.5			# 坍缩等级效果的AI修正（减轻AI压力）
+
+# 终焉宣告风暴殖民地影响（同时也受“终焉宣告坍缩等级”影响）
+@dimensional_horror_crisis_storm_min_planet_modifier = 0.1				# “终焉宣告对殖民地的影响”修正至多将影响下降至0.1倍
+@dimensional_horror_crisis_storm_planet_modifier_shield_factor = 0.75	# 星球护盾/护盾模块使风暴对殖民地的影响下降至0.75倍（独立乘区）
+
+# 终焉宣告每月吞噬人口（同时也受“终焉宣告风暴殖民地影响”的影响）
+@dimensional_horror_crisis_storm_pop_killed_base_percentage = 0.05		# 终焉宣告每月吞噬人口基础百分比
+@dimensional_horror_crisis_storm_pop_killed_max_percentage = 0.5		# 终焉宣告每月吞噬人口最大百分比
+@dimensional_horror_crisis_storm_pop_killed_min_percentage = 0			# 终焉宣告每月吞噬人口最小百分比
+@dimensional_horror_crisis_storm_pop_killed_pop_limit = 100				# 终焉宣告不会对非虚拟人口低于100的星球进行吞噬人口
+
+# 终焉宣告风暴舰船影响（同时也受“终焉宣告坍缩等级”影响）
+@dimensional_horror_crisis_storm_min_fleet_modifier = 0.1				# “终焉宣告对舰船的影响”修正至多将影响下降至0.1倍
+
+# 终焉宣告每月伤害舰船（同时也受“终焉宣告风暴舰船影响”的影响）
+@dimensional_horror_crisis_storm_ship_base_damage_received = 100		# 终焉宣告每月对舰船造成的基础伤害
+@dimensional_horror_crisis_storm_ship_damage_received_size_factor = 1	# 终焉宣告每月对舰船造成的伤害基于舰船大小的倍率（每1舰船大小增加100%的伤害）
+@dimensional_horror_crisis_storm_ship_damage_received_hp_limit = 0.25	# 终焉宣告仅对船体值高于25%的舰船造成伤害
+
+# 终焉之魇坍缩等级增益
+@dimensional_horror_crisis_ship_bonus_factor = 0.2						# 每个坍缩等级对终焉之魇的增幅为0.2倍（25倍天灾为1倍）

@@ -1,0 +1,1680 @@
+# 国家
+unlock_tradition_horror = {
+	if = {
+		limit = {
+			NOR = {
+				has_country_flag = unlock_tradition_horror
+				has_tradition = tr_horror_adopt
+			}
+		}
+		custom_tooltip = unlock_tradition_horror
+		set_country_flag = unlock_tradition_horror
+	}
+}
+
+# 国家
+unlock_tradition_time = {
+	if = {
+		limit = {
+			NOR = {
+				has_country_flag = unlock_tradition_time
+				has_tradition = tr_time_adopt
+			}
+		}
+		custom_tooltip = unlock_tradition_time
+		set_country_flag = unlock_tradition_time
+	}
+}
+
+# 国家
+unlock_tradition_end = {
+	if = {
+		limit = {
+			NOR = {
+				has_country_flag = unlock_tradition_end
+				has_tradition = tr_end_adopt
+			}
+		}
+		custom_tooltip = unlock_tradition_end
+		set_country_flag = unlock_tradition_end
+	}
+}
+
+# 国家
+unlock_tradition_hope = {
+	if = {
+		limit = {
+			NOR = {
+				has_country_flag = unlock_tradition_hope
+				has_tradition = tr_hope_adopt
+			}
+		}
+		custom_tooltip = unlock_tradition_hope
+		set_country_flag = unlock_tradition_hope
+	}
+}
+
+# 国家
+unlock_ap_horror = {
+	if = {
+		limit = {
+			has_country_flag = worm_tomb_ending
+			NOR = {
+				has_country_flag = unlock_ap_horror
+				has_ascension_perk = ap_horror
+			}
+		}
+		custom_tooltip = unlock_ap_horror
+		set_country_flag = unlock_ap_horror
+	}
+}
+
+# 国家
+unlock_ap_time = {
+	if = {
+		limit = {
+			has_country_flag = worm_tomb_ending
+			NOR = {
+				has_country_flag = unlock_ap_time
+				has_ascension_perk = ap_time
+			}
+		}
+		custom_tooltip = unlock_ap_time
+		set_country_flag = unlock_ap_time
+	}
+}
+
+# 国家
+randomly_add_horror_time_tech_option = {
+	if = {
+		limit = {
+			NOR = {
+				has_tech_option = $TECH$
+				has_technology = $TECH$
+			}
+		}
+		random = {
+			chance = value:horror_time_tech_weight|LEVEL|$LEVEL$|TYPE|$TYPE$|
+			add_research_option = $TECH$
+		}
+	}
+}
+
+# 国家（负相）
+randomly_unlock_horror_tech = {
+	if = {
+		limit = {
+			has_technology = tech_horror_1_a_1
+		}
+		randomly_add_horror_time_tech_option = {
+			TECH = tech_horror_1_a_2
+			LEVEL = horror
+			TYPE = rare
+		}
+	}
+	if = {
+		limit = {
+			has_technology = tech_horror_1_b_1
+		}
+		randomly_add_horror_time_tech_option = {
+			TECH = tech_horror_1_b_2
+			LEVEL = horror
+			TYPE = rare
+		}
+	}
+	if = {
+		limit = {
+			has_technology = tech_horror_1_a_2
+			has_technology = tech_horror_1_b_2
+		}
+		randomly_add_horror_time_tech_option = {
+			TECH = tech_horror_shield
+			LEVEL = horror
+			TYPE = dangerous
+		}
+	}
+	
+	if = {
+		limit = {
+			has_technology = tech_horror_2_a_1
+		}
+		randomly_add_horror_time_tech_option = {
+			TECH = tech_horror_2_a_2
+			LEVEL = horror
+			TYPE = rare
+		}
+	}
+	if = {
+		limit = {
+			has_technology = tech_horror_2_b_1
+		}
+		randomly_add_horror_time_tech_option = {
+			TECH = tech_horror_2_b_2
+			LEVEL = horror
+			TYPE = rare
+		}
+	}
+	if = {
+		limit = {
+			has_technology = tech_horror_2_a_2
+			has_technology = tech_horror_2_b_2
+		}
+		randomly_add_horror_time_tech_option = {
+			TECH = tech_horror_armor
+			LEVEL = horror
+			TYPE = dangerous
+		}
+	}
+	
+	if = {
+		limit = {
+			has_technology = tech_horror_3_a_1
+		}
+		randomly_add_horror_time_tech_option = {
+			TECH = tech_horror_3_a_2
+			LEVEL = horror
+			TYPE = rare
+		}
+	}
+	if = {
+		limit = {
+			has_technology = tech_horror_3_b_1
+		}
+		randomly_add_horror_time_tech_option = {
+			TECH = tech_horror_3_b_2
+			LEVEL = horror
+			TYPE = rare
+		}
+	}
+	if = {
+		limit = {
+			has_technology = tech_horror_3_a_2
+			has_technology = tech_horror_3_b_2
+		}
+		randomly_add_horror_time_tech_option = {
+			TECH = tech_horror_modifier
+			LEVEL = horror
+			TYPE = dangerous
+		}
+	}
+	
+	if = {
+		limit = {
+			has_technology = tech_horror_4_a_1
+		}
+		randomly_add_horror_time_tech_option = {
+			TECH = tech_horror_4_a_2
+			LEVEL = horror
+			TYPE = rare
+		}
+	}
+	if = {
+		limit = {
+			has_technology = tech_horror_4_b_1
+		}
+		randomly_add_horror_time_tech_option = {
+			TECH = tech_horror_4_b_2
+			LEVEL = horror
+			TYPE = rare
+		}
+	}
+	if = {
+		limit = {
+			has_technology = tech_horror_4_a_2
+			has_technology = tech_horror_4_b_2
+		}
+		randomly_add_horror_time_tech_option = {
+			TECH = tech_horror_beam
+			LEVEL = horror
+			TYPE = dangerous
+		}
+	}
+	
+	if = {
+		limit = {
+			has_technology = tech_horror_dimension
+		}
+		randomly_add_horror_time_tech_option = {
+			TECH = tech_horror_5_a_1
+			LEVEL = horror
+			TYPE = rare
+		}
+		randomly_add_horror_time_tech_option = {
+			TECH = tech_horror_5_b_1
+			LEVEL = horror
+			TYPE = rare
+		}
+	}
+	if = {
+		limit = {
+			has_technology = tech_horror_5_a_1
+		}
+		randomly_add_horror_time_tech_option = {
+			TECH = tech_horror_5_a_2
+			LEVEL = horror
+			TYPE = rare
+		}
+	}
+	if = {
+		limit = {
+			has_technology = tech_horror_5_b_1
+		}
+		randomly_add_horror_time_tech_option = {
+			TECH = tech_horror_5_b_2
+			LEVEL = horror
+			TYPE = rare
+		}
+	}
+	if = {
+		limit = {
+			has_technology = tech_horror_5_a_2
+			has_technology = tech_horror_5_b_2
+		}
+		randomly_add_horror_time_tech_option = {
+			TECH = tech_horror_trait
+			LEVEL = horror
+			TYPE = dangerous
+		}
+	}
+}
+
+# 国家（负相）
+active_horror_tech = {
+	if = {
+		limit = {
+			last_increased_tech = tech_horror_modifier
+		}
+		capital_scope = {
+			set_carrier_flag = time_gain_horror
+			remove_modifier = horror_study_trophy
+			remove_modifier = horror_deify_trophy
+			remove_modifier = horror_study_trophy2
+			remove_modifier = horror_deify_trophy2
+			remove_modifier = horror_too_late
+			remove_modifier = horror_stabilized
+			add_modifier = { modifier = horror_stabilized }
+		}
+	}
+	else_if = {
+		limit = {
+			last_increased_tech = tech_horror_dimension
+		}
+		if = {
+			limit = {
+				capital_scope = {
+					NOT = { has_deposit = d_portal_research_zone }
+				}
+			}
+			capital_scope = {
+				add_time_special_deposit_keep_on_terraform = { DEPOSIT = d_portal_research_zone }
+				set_carrier_flag = tech_horror_dimension_planet
+				save_global_event_target_as = tech_horror_dimension_planet_of@root
+			}
+		}
+	}
+	else_if = {
+		limit = {
+			last_increased_tech = tech_horror_5_a_1
+		}
+		event_target:tech_horror_dimension_planet_of@root = {
+			set_carrier_flag = dportal_energy
+		}
+	}
+	else_if = {
+		limit = {
+			last_increased_tech = tech_horror_5_a_2
+		}
+		event_target:tech_horror_dimension_planet_of@root = {
+			set_carrier_flag = dportal_trader
+			add_modifier = {
+				modifier = "dportal_trade_crisis"
+				days = -1
+			}
+		}
+	}
+	else_if = {
+		limit = {
+			last_increased_tech = tech_horror_5_b_1
+		}
+		event_target:tech_horror_dimension_planet_of@root = {
+			set_carrier_flag = dportal_hell #负面效果
+		}
+		add_tech_option_or_research_effect = {
+			TECH = tech_psionic_theory
+			PROGRESS = 0.5
+			CATEGORY = society_research
+		}
+		while = {
+			count = value:add_random_psionic_tech_option_count
+			random_list = {
+				1 = {
+					inline_script = {
+						script = weights/add_random_psionic_tech_option
+						TECH = tech_precognition_interface
+					}
+				}
+				1 = {
+					inline_script = {
+						script = weights/add_random_psionic_tech_option
+						TECH = tech_psi_jump_drive_1
+					}
+				}
+				1 = {
+					inline_script = {
+						script = weights/add_random_psionic_tech_option
+						TECH = tech_psionic_shield
+					}
+				}
+				1 = {
+					inline_script = {
+						script = weights/add_random_psionic_tech_option
+						TECH = tech_psionic_bombers
+					}
+				}
+				1 = {
+					inline_script = {
+						script = weights/add_random_psionic_tech_option
+						TECH = tech_psionic_lightning
+					}
+				}
+				1 = {
+					inline_script = {
+						script = weights/add_random_psionic_tech_option
+						TECH = tech_psionic_disruptor
+					}
+				}
+				1 = {
+					inline_script = {
+						script = weights/add_random_psionic_tech_option
+						TECH = tech_zro_launcher
+					}
+				}
+			}
+		}
+	}
+	else_if = {
+		limit = {
+			last_increased_tech = tech_horror_5_b_2
+		}
+		event_target:tech_horror_dimension_planet_of@root = {
+			set_carrier_flag = dportal_void
+			set_carrier_flag = dportal_void2
+		}
+	}
+	else_if = {
+		limit = {
+			last_increased_tech = tech_horror_trait
+		}
+		event_target:tech_horror_dimension_planet_of@root = {
+			every_owned_pop_group = {
+				make_notofthisworld = yes
+			}
+		}
+	}
+}
+
+# 国家（时空）
+randomly_unlock_time_tech = {
+	if = {
+		limit = {
+			has_technology = tech_time_1_a_1
+		}
+		randomly_add_horror_time_tech_option = {
+			TECH = tech_time_1_a_2
+			LEVEL = time
+			TYPE = rare
+		}
+	}
+	if = {
+		limit = {
+			has_technology = tech_time_1_b_1
+		}
+		randomly_add_horror_time_tech_option = {
+			TECH = tech_time_1_b_2
+			LEVEL = time
+			TYPE = rare
+		}
+	}
+	if = {
+		limit = {
+			has_technology = tech_time_1_a_2
+			has_technology = tech_time_1_b_2
+		}
+		randomly_add_horror_time_tech_option = {
+			TECH = tech_time_shield
+			LEVEL = time
+			TYPE = dangerous
+		}
+	}
+	
+	if = {
+		limit = {
+			has_technology = tech_time_2_a_1
+		}
+		randomly_add_horror_time_tech_option = {
+			TECH = tech_time_2_a_2
+			LEVEL = time
+			TYPE = rare
+		}
+	}
+	if = {
+		limit = {
+			has_technology = tech_time_2_b_1
+		}
+		randomly_add_horror_time_tech_option = {
+			TECH = tech_time_2_b_2
+			LEVEL = time
+			TYPE = rare
+		}
+	}
+	if = {
+		limit = {
+			has_technology = tech_time_2_a_2
+			has_technology = tech_time_2_b_2
+		}
+		randomly_add_horror_time_tech_option = {
+			TECH = tech_time_armor
+			LEVEL = time
+			TYPE = dangerous
+		}
+	}
+	
+	if = {
+		limit = {
+			has_technology = tech_time_3_a_1
+		}
+		randomly_add_horror_time_tech_option = {
+			TECH = tech_time_3_a_2
+			LEVEL = time
+			TYPE = rare
+		}
+	}
+	if = {
+		limit = {
+			has_technology = tech_time_3_b_1
+		}
+		randomly_add_horror_time_tech_option = {
+			TECH = tech_time_3_b_2
+			LEVEL = time
+			TYPE = rare
+		}
+	}
+	if = {
+		limit = {
+			has_technology = tech_time_3_a_2
+			has_technology = tech_time_3_b_2
+		}
+		randomly_add_horror_time_tech_option = {
+			TECH = tech_time_modifier
+			LEVEL = time
+			TYPE = dangerous
+		}
+	}
+	
+	if = {
+		limit = {
+			has_technology = tech_time_4_a_1
+		}
+		randomly_add_horror_time_tech_option = {
+			TECH = tech_time_4_a_2
+			LEVEL = time
+			TYPE = rare
+		}
+	}
+	if = {
+		limit = {
+			has_technology = tech_time_4_b_1
+		}
+		randomly_add_horror_time_tech_option = {
+			TECH = tech_time_4_b_2
+			LEVEL = time
+			TYPE = rare
+		}
+	}
+	if = {
+		limit = {
+			has_technology = tech_time_4_a_2
+			has_technology = tech_time_4_b_2
+		}
+		randomly_add_horror_time_tech_option = {
+			TECH = tech_time_beam
+			LEVEL = time
+			TYPE = dangerous
+		}
+	}
+	
+	if = {
+		limit = {
+			has_technology = tech_time_dimension
+		}
+		randomly_add_horror_time_tech_option = {
+			TECH = tech_time_5_a_1
+			LEVEL = time
+			TYPE = rare
+		}
+		randomly_add_horror_time_tech_option = {
+			TECH = tech_time_5_b_1
+			LEVEL = time
+			TYPE = rare
+		}
+	}
+	if = {
+		limit = {
+			has_technology = tech_time_5_a_1
+		}
+		randomly_add_horror_time_tech_option = {
+			TECH = tech_time_5_a_2
+			LEVEL = time
+			TYPE = rare
+		}
+	}
+	if = {
+		limit = {
+			has_technology = tech_time_5_b_1
+		}
+		randomly_add_horror_time_tech_option = {
+			TECH = tech_time_5_b_2
+			LEVEL = time
+			TYPE = rare
+		}
+	}
+	if = {
+		limit = {
+			has_technology = tech_time_5_a_2
+			has_technology = tech_time_5_b_2
+		}
+		randomly_add_horror_time_tech_option = {
+			TECH = tech_time_trait
+			LEVEL = time
+			TYPE = dangerous
+		}
+	}
+}
+
+# 国家（时空）
+active_time_tech = {
+	if = {
+		limit = {
+			last_increased_tech = tech_time_modifier
+		}
+		set_country_flag = horrific_celebration # 禁用恐怖负相物质游行
+		capital_scope = {
+			set_carrier_flag = time_gain_horror
+			set_carrier_flag = exists_d_time_horror
+			remove_modifier = horror_study_trophy
+			remove_modifier = horror_deify_trophy
+			remove_modifier = horror_study_trophy2
+			remove_modifier = horror_deify_trophy2
+			remove_modifier = horror_too_late
+			remove_modifier = horror_stabilized
+			add_time_special_deposit_keep_on_terraform = { DEPOSIT = d_time_horror }
+		}
+		if = {
+			limit = {
+				is_spiritualist = no
+			}
+			every_owned_colony = {
+				limit = {
+					NOT = { has_carrier_flag = time_gain_horror }
+					has_horror_trophy = no
+					is_under_colonization = no
+					carrier_is_type = planet # 不会在方舟舰上扩散
+				}
+				set_carrier_flag = time_gain_horror
+				add_modifier = { modifier = horror_study_trophy }
+				carrier_event = { id = situation.1085 days = 2340 random = 280 }
+			}
+		}
+		else = {
+			every_owned_colony = {
+				limit = {
+					NOT = { has_carrier_flag = time_gain_horror }
+					has_horror_trophy = no
+					is_under_colonization = no
+					carrier_is_type = planet # 不会在方舟舰上扩散
+				}
+				set_carrier_flag = time_gain_horror
+				add_modifier = { modifier = horror_deify_trophy }
+				carrier_event = { id = situation.1085 days = 2340 random = 280 }
+			}
+		}
+	}
+}
+
+# 国家（终末）
+randomly_unlock_end_tech = {
+	if = {
+		limit = {
+			has_technology = tech_end_1_a_1
+		}
+		randomly_add_horror_time_tech_option = {
+			TECH = tech_end_1_a_2
+			LEVEL = end
+			TYPE = rare
+		}
+	}
+	if = {
+		limit = {
+			has_technology = tech_end_1_b_1
+		}
+		randomly_add_horror_time_tech_option = {
+			TECH = tech_end_1_b_2
+			LEVEL = end
+			TYPE = rare
+		}
+	}
+	if = {
+		limit = {
+			has_technology = tech_end_1_a_2
+			has_technology = tech_end_1_b_2
+		}
+		randomly_add_horror_time_tech_option = {
+			TECH = tech_end_shield
+			LEVEL = end
+			TYPE = dangerous
+		}
+	}
+	
+	if = {
+		limit = {
+			has_technology = tech_end_2_a_1
+		}
+		randomly_add_horror_time_tech_option = {
+			TECH = tech_end_2_a_2
+			LEVEL = end
+			TYPE = rare
+		}
+	}
+	if = {
+		limit = {
+			has_technology = tech_end_2_b_1
+		}
+		randomly_add_horror_time_tech_option = {
+			TECH = tech_end_2_b_2
+			LEVEL = end
+			TYPE = rare
+		}
+	}
+	if = {
+		limit = {
+			has_technology = tech_end_2_a_2
+			has_technology = tech_end_2_b_2
+		}
+		randomly_add_horror_time_tech_option = {
+			TECH = tech_end_armor
+			LEVEL = end
+			TYPE = dangerous
+		}
+	}
+	
+	if = {
+		limit = {
+			has_technology = tech_end_3_a_1
+		}
+		randomly_add_horror_time_tech_option = {
+			TECH = tech_end_3_a_2
+			LEVEL = end
+			TYPE = rare
+		}
+	}
+	if = {
+		limit = {
+			has_technology = tech_end_3_b_1
+		}
+		randomly_add_horror_time_tech_option = {
+			TECH = tech_end_3_b_2
+			LEVEL = end
+			TYPE = rare
+		}
+	}
+	if = {
+		limit = {
+			has_technology = tech_end_3_a_2
+			has_technology = tech_end_3_b_2
+		}
+		randomly_add_horror_time_tech_option = {
+			TECH = tech_end_modifier
+			LEVEL = end
+			TYPE = dangerous
+		}
+	}
+	
+	if = {
+		limit = {
+			has_technology = tech_end_4_a_1
+		}
+		randomly_add_horror_time_tech_option = {
+			TECH = tech_end_4_a_2
+			LEVEL = end
+			TYPE = rare
+		}
+	}
+	if = {
+		limit = {
+			has_technology = tech_end_4_b_1
+		}
+		randomly_add_horror_time_tech_option = {
+			TECH = tech_end_4_b_2
+			LEVEL = end
+			TYPE = rare
+		}
+	}
+	if = {
+		limit = {
+			has_technology = tech_end_4_a_2
+			has_technology = tech_end_4_b_2
+		}
+		randomly_add_horror_time_tech_option = {
+			TECH = tech_end_beam
+			LEVEL = end
+			TYPE = dangerous
+		}
+	}
+	
+	if = {
+		limit = {
+			has_technology = tech_end_dimension
+		}
+		randomly_add_horror_time_tech_option = {
+			TECH = tech_end_5_a_1
+			LEVEL = end
+			TYPE = rare
+		}
+		randomly_add_horror_time_tech_option = {
+			TECH = tech_end_5_b_1
+			LEVEL = end
+			TYPE = rare
+		}
+	}
+	if = {
+		limit = {
+			has_technology = tech_end_5_a_1
+		}
+		randomly_add_horror_time_tech_option = {
+			TECH = tech_end_5_a_2
+			LEVEL = end
+			TYPE = rare
+		}
+	}
+	if = {
+		limit = {
+			has_technology = tech_end_5_b_1
+		}
+		randomly_add_horror_time_tech_option = {
+			TECH = tech_end_5_b_2
+			LEVEL = end
+			TYPE = rare
+		}
+	}
+	if = {
+		limit = {
+			has_technology = tech_end_5_a_2
+			has_technology = tech_end_5_b_2
+		}
+		randomly_add_horror_time_tech_option = {
+			TECH = tech_end_trait
+			LEVEL = end
+			TYPE = dangerous
+		}
+	}
+}
+
+# 国家（终末）
+active_end_tech = {
+	if = {
+		limit = {
+			last_increased_tech = tech_end_modifier
+		}
+		event_target:global_event_country = {
+			if = {
+				limit = {
+					NOT = { is_variable_set = black_hole_horror_count }
+				}
+				set_variable = {
+					which = black_hole_horror_count
+					value = 0
+				}
+			}
+		}
+	}
+	if = {
+		limit = {
+			last_increased_tech = tech_end_dimension
+		}
+		create_pass_black_hole = yes
+	}
+}
+
+# 国家（希望）
+randomly_unlock_hope_tech = {
+	if = {
+		limit = {
+			has_technology = tech_hope_coils_god
+			has_country_flag = time_akx_coils_god_end_1
+		}
+		randomly_add_horror_time_tech_option = {
+			TECH = tech_hope_coils_god_halted
+			LEVEL = hope
+			TYPE = rare
+		}
+	}
+	if = {
+		limit = {
+			has_technology = tech_hope_coils_god
+			has_country_flag = time_akx_coils_god_end_2
+		}
+		randomly_add_horror_time_tech_option = {
+			TECH = tech_hope_coils_god_end
+			LEVEL = hope
+			TYPE = rare
+		}
+	}
+	
+	if = {
+		limit = {
+			has_technology = tech_hope_hole_pets
+			NOT = { has_country_flag = dimension_traveler_research_brief }
+			OR = {
+				has_country_flag = time_akx_hole_pets_end_1
+				has_country_flag = time_akx_hole_pets_end_2
+				has_country_flag = time_akx_hole_pets_end_3
+			}
+		}
+		randomly_add_horror_time_tech_option = {
+			TECH = tech_hope_hole_pets_end
+			LEVEL = hope
+			TYPE = rare
+		}
+	}
+	if = {
+		limit = {
+			has_technology = tech_hope_hole_pets
+			has_country_flag = dimension_traveler_research_brief
+		}
+		randomly_add_horror_time_tech_option = {
+			TECH = tech_hope_dimension_traveler_brief
+			LEVEL = hope
+			TYPE = rare
+		}
+	}
+	
+	if = {
+		limit = {
+			has_technology = tech_hope_worm_mine
+			has_technology = tech_hope_worm_farm
+			has_country_flag = time_akx_waiting_world_end_1
+		}
+		randomly_add_horror_time_tech_option = {
+			TECH = tech_hope_waiting_world_1
+			LEVEL = hope
+			TYPE = rare
+		}
+	}
+	if = {
+		limit = {
+			has_technology = tech_hope_worm_mine
+			has_technology = tech_hope_worm_farm
+			has_country_flag = time_akx_waiting_world_end_2
+		}
+		randomly_add_horror_time_tech_option = {
+			TECH = tech_hope_waiting_world_2
+			LEVEL = hope
+			TYPE = rare
+		}
+	}
+	if = {
+		limit = {
+			has_technology = tech_hope_worm_mine
+			has_technology = tech_hope_worm_farm
+			has_country_flag = time_akx_waiting_world_end_3
+		}
+		randomly_add_horror_time_tech_option = {
+			TECH = tech_hope_waiting_world_3
+			LEVEL = hope
+			TYPE = rare
+		}
+	}
+	if = {
+		limit = {
+			has_technology = tech_hope_worm_mine
+			has_technology = tech_hope_worm_farm
+			has_country_flag = time_akx_waiting_world_end_4
+		}
+		randomly_add_horror_time_tech_option = {
+			TECH = tech_hope_waiting_world_4
+			LEVEL = hope
+			TYPE = rare
+		}
+	}
+	if = {
+		limit = {
+			has_technology = tech_hope_worm_mine
+			has_technology = tech_hope_worm_farm
+			has_country_flag = time_akx_waiting_world_end_5
+		}
+		randomly_add_horror_time_tech_option = {
+			TECH = tech_hope_waiting_world_5
+			LEVEL = hope
+			TYPE = rare
+		}
+	}
+	if = {
+		limit = {
+			has_technology = tech_hope_worm_mine
+			has_technology = tech_hope_worm_farm
+			has_country_flag = time_akx_waiting_world_end_6
+		}
+		randomly_add_horror_time_tech_option = {
+			TECH = tech_hope_waiting_world_6
+			LEVEL = hope
+			TYPE = rare
+		}
+	}
+	if = {
+		limit = {
+			has_technology = tech_hope_worm_mine
+			has_technology = tech_hope_worm_farm
+			has_country_flag = time_akx_waiting_world_end_7
+		}
+		randomly_add_horror_time_tech_option = {
+			TECH = tech_hope_waiting_world_7
+			LEVEL = hope
+			TYPE = rare
+		}
+	}
+	if = {
+		limit = {
+			has_technology = tech_hope_worm_mine
+			has_technology = tech_hope_worm_farm
+			has_country_flag = time_akx_waiting_world_end_8
+		}
+		randomly_add_horror_time_tech_option = {
+			TECH = tech_hope_waiting_world_8
+			LEVEL = hope
+			TYPE = rare
+		}
+	}
+	
+	if = {
+		limit = {
+			has_technology = tech_hope_mirrored_syzygy_admiral
+		}
+		randomly_add_horror_time_tech_option = {
+			TECH = tech_hope_hull
+			LEVEL = hope
+			TYPE = rare
+		}
+	}
+	if = {
+		limit = {
+			has_technology = tech_hope_mirrored_syzygy_admiral
+		}
+		randomly_add_horror_time_tech_option = {
+			TECH = tech_hope_beam
+			LEVEL = hope
+			TYPE = rare
+		}
+	}
+	if = {
+		limit = {
+			has_technology = tech_hope_hull
+			has_technology = tech_hope_beam
+			has_country_flag = upgrade_to_time_titan_finished
+		}
+		randomly_add_horror_time_tech_option = {
+			TECH = tech_hope_time_titan
+			LEVEL = hope
+			TYPE = rare
+		}
+	}
+	if = {
+		limit = {
+			has_technology = tech_hope_mirrored_syzygy_admiral
+			is_same_value = event_target:gray_owner
+		}
+		randomly_add_horror_time_tech_option = {
+			TECH = tech_dimensional_horror_strike_craft
+			LEVEL = hope
+			TYPE = rare
+		}
+	}
+	
+	if = {
+		limit = {
+			has_technology = tech_hope_messenger_pod
+			has_country_flag = time_akx_messenger_end_1
+		}
+		randomly_add_horror_time_tech_option = {
+			TECH = tech_hope_end_messenger
+			LEVEL = hope
+			TYPE = rare
+		}
+	}
+	if = {
+		limit = {
+			has_technology = tech_hope_messenger_pod
+			has_country_flag = time_akx_messenger_end_2
+		}
+		randomly_add_horror_time_tech_option = {
+			TECH = tech_hope_future_messenger
+			LEVEL = hope
+			TYPE = rare
+		}
+	}
+	if = {
+		limit = {
+			has_technology = tech_hope_messenger_pod
+			has_country_flag = time_akx_messenger_end_4
+		}
+		randomly_add_horror_time_tech_option = {
+			TECH = tech_hope_gestalt_messenger
+			LEVEL = hope
+			TYPE = rare
+		}
+	}
+}
+
+# 国家（时虫）
+randomly_unlock_akx_tech = {
+	# 欧米伽理论
+	if = {
+		limit = {
+			has_technology = tech_akx_worm_1
+			has_technology = tech_akx_worm_2
+		}
+		randomly_add_horror_time_tech_option = {
+			TECH = tech_akx_worm_3
+			LEVEL = horror
+			TYPE = dangerous
+		}
+	}
+	# 逐光者
+	if = {
+		limit = {
+			is_wonder_country_time_1 = yes
+		}
+		if = {
+			limit = {
+				has_ascension_perk = ap_time
+				any_planet_within_border = {
+					has_carrier_flag = time_0_planet
+					is_planet_class = pc_time
+				}
+			}
+			randomly_add_horror_time_tech_option = {
+				TECH = tech_change_pc_time_1
+				LEVEL = time
+				TYPE = rare
+			}
+		}
+	}
+	# 驱影者
+	if = {
+		limit = {
+			is_wonder_country_time_2 = yes
+		}
+		if = {
+			limit = {
+				has_ascension_perk = ap_time
+				any_planet_within_border = {
+					has_carrier_flag = time_0_planet
+					is_planet_class = pc_time
+				}
+			}
+			randomly_add_horror_time_tech_option = {
+				TECH = tech_change_pc_time_2
+				LEVEL = time
+				TYPE = rare
+			}
+		}
+	}
+}
+
+# 国家（选择遗珍）
+randomly_choose_horror_time_relic = {
+	random_list = {
+		1 = {
+			modifier = {
+				factor = 0
+				OR = {
+					has_country_flag = inetian_intro
+					has_relic = r_weather_manipulator
+				}
+			}
+			set_country_flag = horror_time_relic_inetian
+		}
+		1 = {
+			modifier = {
+				factor = 0
+				OR = {
+					has_country_flag = adakkaria_intro
+					has_relic = r_the_tempest_invocator
+				}
+			}
+			set_country_flag = horror_time_relic_adakkaria
+		}
+		1 = {
+			modifier = {
+				factor = 0
+				OR = {
+					has_country_flag = zroni_intro
+					has_relic = r_zro_crystal
+					has_tech_option = tech_secrets_zroni
+					has_technology = tech_secrets_zroni
+				}
+			}
+			set_country_flag = horror_time_relic_zro
+		}
+		1 = {
+			modifier = {
+				factor = 0
+				OR = {
+					has_country_flag = baol_intro
+					has_relic = r_the_last_baol
+					has_tech_option = tech_secrets_baol
+					has_technology = tech_secrets_baol
+				}
+			}
+			set_country_flag = horror_time_relic_baol
+		}
+		1 = {
+			modifier = {
+				factor = 0
+				OR = {
+					has_country_flag = vultaum_intro
+					has_relic = r_reality_perforator
+					has_tech_option = tech_secrets_vultaum
+					has_technology = tech_secrets_vultaum
+				}
+			}
+			set_country_flag = horror_time_relic_vultaum
+		}
+		1 = {
+			modifier = {
+				factor = 0
+				OR = {
+					has_country_flag = irassian_intro
+					has_relic = r_pox_sample
+					has_tech_option = tech_secrets_irassian
+					has_technology = tech_secrets_irassian
+				}
+			}
+			set_country_flag = horror_time_relic_irassian
+		}
+		1 = {
+			modifier = {
+				factor = 0
+				OR = {
+					has_country_flag = yuht_intro
+					has_relic = r_cryo_core
+					has_tech_option = tech_secrets_yuht
+					has_technology = tech_secrets_yuht
+				}
+			}
+			set_country_flag = horror_time_relic_yuht
+		}
+		1 = {
+			modifier = {
+				factor = 0
+				OR = {
+					has_country_flag = cybrex_intro
+					has_relic = r_war_forge
+					has_tech_option = tech_secrets_cybrex
+					has_technology = tech_secrets_cybrex
+				}
+			}
+			set_country_flag = horror_time_relic_cybrex
+		}
+		1 = {
+			modifier = {
+				factor = 0
+				OR = {
+					has_country_flag = first_league_intro
+					has_tech_option = tech_secrets_league
+					has_technology = tech_secrets_league
+				}
+			}
+			set_country_flag = horror_time_relic_league
+		}
+	}
+}
+
+# 国家（获得遗珍）
+randomly_gain_horror_time_relic = {
+	if = {
+		limit = {
+			has_country_flag = horror_time_relic_inetian
+		}
+		add_relic = r_weather_manipulator
+		if = {
+			limit = {
+				NOT = { has_technology = tech_advanced_storm_manipulation }
+			}
+			if = {
+				limit = {
+					NOT = { has_technology = tech_storm_manipulation }
+				}
+				give_technology = { tech = tech_storm_manipulation }
+			}
+			give_technology = { tech = tech_advanced_storm_manipulation }
+		}
+	}
+	else_if = {
+		limit = {
+			has_country_flag = horror_time_relic_adakkaria
+		}
+		add_relic = r_the_tempest_invocator
+		if = {
+			limit = {
+				NOT = { has_technology = tech_advanced_storm_manipulation }
+			}
+			if = {
+				limit = {
+					NOT = { has_technology = tech_storm_manipulation }
+				}
+				give_technology = { tech = tech_storm_manipulation }
+			}
+			give_technology = { tech = tech_advanced_storm_manipulation }
+		}
+	}
+	else_if = {
+		limit = {
+			has_country_flag = horror_time_relic_zro
+		}
+		add_relic = r_zro_crystal
+		add_tech_option_or_research_effect = {
+			TECH = tech_secrets_zroni
+			PROGRESS = 0.1
+			CATEGORY = society_research
+		}
+	}
+	else_if = {
+		limit = {
+			has_country_flag = horror_time_relic_baol
+		}
+		add_relic = r_the_last_baol
+		add_tech_option_or_research_effect = {
+			TECH = tech_secrets_baol
+			PROGRESS = 0.1
+			CATEGORY = society_research
+		}
+	}
+	else_if = {
+		limit = {
+			has_country_flag = horror_time_relic_vultaum
+		}
+		add_relic = r_reality_perforator
+		add_tech_option_or_research_effect = {
+			TECH = tech_secrets_vultaum
+			PROGRESS = 0.1
+			CATEGORY = society_research
+		}
+	}
+	else_if = {
+		limit = {
+			has_country_flag = horror_time_relic_irassian
+		}
+		add_relic = r_pox_sample
+		add_tech_option_or_research_effect = {
+			TECH = tech_secrets_irassian
+			PROGRESS = 0.1
+			CATEGORY = society_research
+		}
+	}
+	else_if = {
+		limit = {
+			has_country_flag = horror_time_relic_yuht
+		}
+		add_relic = r_cryo_core
+		add_tech_option_or_research_effect = {
+			TECH = tech_secrets_yuht
+			PROGRESS = 0.1
+			CATEGORY = society_research
+		}
+	}
+	else_if = {
+		limit = {
+			has_country_flag = horror_time_relic_cybrex
+		}
+		add_relic = r_war_forge
+		add_tech_option_or_research_effect = {
+			TECH = tech_secrets_cybrex
+			PROGRESS = 0.1
+			CATEGORY = society_research
+		}
+		hidden_effect = {
+			set_variable = {
+				which = cybrex_count
+				value = 1
+			}
+		}
+	}
+	else_if = {
+		limit = {
+			has_country_flag = horror_time_relic_league
+		}
+		add_resource = { sr_dark_matter = 2500 }
+		add_tech_option_or_research_effect = {
+			TECH = tech_secrets_league
+			PROGRESS = 0.1
+			CATEGORY = society_research
+		}
+	}
+	else = {
+		add_resource = { sr_dark_matter = 5000 }
+	}
+	hidden_effect = {
+		remove_country_flag = horror_time_relic_inetian
+		remove_country_flag = horror_time_relic_adakkaria
+		remove_country_flag = horror_time_relic_zro
+		remove_country_flag = horror_time_relic_baol
+		remove_country_flag = horror_time_relic_vultaum
+		remove_country_flag = horror_time_relic_irassian
+		remove_country_flag = horror_time_relic_yuht
+		remove_country_flag = horror_time_relic_cybrex
+		remove_country_flag = horror_time_relic_league
+	}
+}
+
+# 国家（开启黑洞穿行）
+create_pass_black_hole = {
+	set_global_flag = pass_black_hole_created
+	every_system = {
+		limit = {
+			OR = {
+				is_time_black_hole_star_class = yes
+				has_star_flag = has_black_hole_by_horror
+			}
+			NOT = { has_star_flag = pass_black_hole_created }
+		}
+		if = {
+			limit = {
+				star = {
+					is_time_black_hole_planet_class = yes
+				}
+			}
+			star = {
+				create_pass_black_hole_megastructure = yes
+			}
+		}
+		else = {
+			random_system_planet = {
+				limit = {
+					is_time_black_hole_planet_class = yes
+				}
+				create_pass_black_hole_megastructure = yes
+			}
+		}
+	}
+}
+
+# 星球
+create_pass_black_hole_megastructure = {
+	if = {
+		limit = {
+			is_primary_star = yes
+		}
+		set_carrier_flag = pass_black_hole_created_in_primary_star
+	}
+	solar_system = {
+		set_star_flag = pass_black_hole_created
+		spawn_megastructure = {
+			type = pass_black_hole
+			coords_from = prev
+		}
+		every_playable_country = {
+			limit = {
+				OR = {
+					has_technology = tech_end_dimension
+					has_country_flag = time_core_country
+					has_country_flag = pass_black_hole_test
+				}
+			}
+			set_visited = prev
+		}
+	}
+}
+
+# 星球
+clear_other_pass_black_hole_megastructure = {
+	solar_system = {
+		every_system_megastructure = {
+			limit = {
+				is_megastructure_type = pass_black_hole
+			}
+			remove_megastructure = this
+		}
+	}
+}
+
+# 舰队
+fleet_pass_black_hole = {
+	if = {
+		limit = {
+			owner = {
+				has_technology = tech_end_5_a_1
+			}
+		}
+		add_modifier = {
+			modifier = tech_end_5_a_1_modifier
+			days = 180
+		}
+	}
+	if = {
+		limit = {
+			owner = {
+				has_technology = tech_end_5_a_2
+			}
+		}
+		add_modifier = {
+			modifier = tech_end_5_a_2_modifier
+			days = 180
+		}
+	}
+	if = {
+		limit = {
+			owner = {
+				has_technology = tech_end_5_b_1
+			}
+		}
+		add_modifier = {
+			modifier = tech_end_5_b_1_modifier
+			days = 180
+		}
+	}
+	if = {
+		limit = {
+			owner = {
+				has_technology = tech_end_5_b_2
+			}
+		}
+		add_modifier = {
+			modifier = tech_end_5_b_2_modifier
+			days = 180
+		}
+	}
+	if = {
+		limit = {
+			owner = {
+				has_technology = tech_end_trait
+			}
+		}
+		add_modifier = {
+			modifier = tech_end_trait_modifier
+			days = 180
+		}
+		if = {
+			limit = {
+				exists = leader
+			}
+			leader = {
+				leader_pass_black_hole = yes
+			}
+		}
+	}
+}
+
+# 国家
+change_akx_dangerous_tech_count = {
+	if = {
+		limit = {
+			is_ai = no
+		}
+		event_target:global_event_country = {
+			change_variable = {
+				which = akx_dangerous_tech_count
+				value = $PLAYER$
+			}
+		}
+	}
+	# 来自AI的影响减半
+	else = {
+		event_target:global_event_country = {
+			change_variable = {
+				which = akx_dangerous_tech_count
+				value = $AI$
+			}
+		}
+	}
+	every_country = {
+		limit = {
+			OR = {
+				is_country_type = swarm
+				is_country_type = extradimensional
+				is_country_type = extradimensional_2
+				is_country_type = extradimensional_3
+				is_country_type = ai_empire
+				is_country_type = synth_queen
+				is_country_type = awakened_synth_queen
+				is_country_type = synth_queen_storm
+			}
+		}
+		refresh_akx_dangerous_tech_modifier = yes
+	}
+}
+
+# 国家
+add_akx_dangerous_tech_modifier = {
+	if = {
+		limit = {
+			is_country_type = swarm
+		}
+		add_modifier = {
+			modifier = akx_dangerous_tech_swarm
+			days = -1
+			multiplier = event_target:global_event_country.akx_dangerous_tech_count
+		}
+	}
+	else_if = {
+		limit = {
+			OR = {
+				is_country_type = extradimensional
+				is_country_type = extradimensional_2
+				is_country_type = extradimensional_3
+			}
+		}
+		add_modifier = {
+			modifier = akx_dangerous_tech_extradimensional
+			days = -1
+			multiplier = event_target:global_event_country.akx_dangerous_tech_count
+		}
+	}
+	else_if = {
+		limit = {
+			is_country_type = ai_empire
+		}
+		add_modifier = {
+			modifier = akx_dangerous_tech_ai_empire
+			days = -1
+			multiplier = event_target:global_event_country.akx_dangerous_tech_count
+		}
+	}
+	else_if = {
+		limit = {
+			OR = {
+				is_country_type = synth_queen
+				is_country_type = awakened_synth_queen
+				is_country_type = synth_queen_storm
+			}
+		}
+		add_modifier = {
+			modifier = akx_dangerous_tech_synth_queen
+			days = -1
+			multiplier = event_target:global_event_country.akx_dangerous_tech_count
+		}
+	}
+}
+
+# 国家
+refresh_akx_dangerous_tech_modifier = {
+	remove_modifier = akx_dangerous_tech_swarm
+	remove_modifier = akx_dangerous_tech_extradimensional
+	remove_modifier = akx_dangerous_tech_ai_empire
+	remove_modifier = akx_dangerous_tech_synth_queen
+	add_akx_dangerous_tech_modifier = yes
+}
+
+# 国家
+create_dimensional_horror_voidworms = {
+	create_country = {
+		name = NAME_Dimensional_Horror_Voidworms_Country
+		type = guardian_horror
+		flag={
+			icon={
+				category="zoological"
+				file="flag_zoological_1.dds"
+			}
+			background={
+				category="backgrounds"
+				file="circle.dds"
+			}
+			colors={
+				"black"
+				"dark_purple"
+				"null"
+				"null"
+			}
+		}
+		effect = {
+			save_event_target_as = dimensional_horror_voidworms_country
+			set_faction_hostility = {
+				target = prev
+				set_hostile = no
+				set_neutral = yes
+				set_friendly = no
+			}
+		}
+	}
+	create_fleet = {
+		name = NAME_Dimensional_Horror_Voidworms
+		settings = {
+			can_upgrade = no
+			can_change_composition = no
+			can_change_leader = no
+			uses_naval_capacity = no
+			spawn_debris = no
+		}
+		effect = {
+			set_owner = event_target:dimensional_horror_voidworms_country
+			create_ship = {
+				name = NAME_Dimensional_Horror_Voidworms
+				design = NAME_Dimensional_Horror_Voidworms
+				prefix = no
+				upgradable = no
+			}
+			set_location = {
+				target = event_target:dimensional_horror_voidworms_location
+				distance = 0
+				angle = random
+				direction = in_system
+			}
+			save_event_target_as = dimensional_horror_voidworms_fleet
+		}
+	}
+	if = {
+		limit = {
+			NOT = { has_country_flag = time_1005_triggered }
+		}
+		country_event = { id = time.1005 }
+	}
+}

@@ -1,0 +1,19 @@
+
+namespace = origin_secondhand_country
+
+country_event = {
+	id = origin_secondhand_country.1
+	is_triggered_only = yes
+	hide_window = yes
+
+	trigger = {
+		has_origin = origin_secondhand_country
+	}
+	
+	immediate = {
+		give_technology = { tech = tech_robomodding_m message = no }
+		capital_scope = {
+			add_time_special_deposit_keep_on_terraform = { DEPOSIT = d_secondhand_country }
+		}
+	}
+}

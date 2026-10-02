@@ -1,0 +1,1024 @@
+# 星系
+remove_white_hole_recycle_bin = {
+	starbase = {
+		if = {
+			limit = {
+				has_starbase_building = white_hole_recycle_bin
+			}
+			remove_starbase_building = { building = white_hole_recycle_bin }
+			solar_system = { remove_modifier = white_hole_recycle_bin_modifier }
+		}
+	}
+}
+
+# 国家
+time_active_nemesis = {
+	if = {
+		limit = {
+			is_crisis_country = no
+			NOT = { has_ascension_perk = ap_beyond_infinity }
+		}
+		add_ascension_perk = ap_become_the_crisis
+	}
+}
+
+# 国家
+time_active_cosmogenesis = {
+	if = {
+		limit = {
+			is_crisis_country = no
+			NOT = { has_ascension_perk = ap_beyond_infinity }
+		}
+		add_ascension_perk = ap_cosmogenesis
+	}
+}
+
+# 国家
+time_active_behemoths = {
+	if = {
+		limit = {
+			is_crisis_country = no
+			NOT = { has_ascension_perk = ap_beyond_infinity }
+		}
+		add_ascension_perk = ap_behemoths
+	}
+}
+
+# 国家
+time_active_infernals = {
+	if = {
+		limit = {
+			is_crisis_country = no
+			NOT = { has_ascension_perk = ap_galactic_hyperthermia }
+		}
+		add_ascension_perk = ap_galactic_hyperthermia
+	}
+}
+
+# 国家
+time_defender_of_the_galaxy = {
+	if = {
+		limit = {
+			has_nomads_dlc = yes
+		}
+		if = {
+			limit = {
+				NOT = { has_ascension_perk = ap_defender_of_the_galaxy_nomads }
+			}
+			add_ascension_perk = ap_defender_of_the_galaxy_nomads
+		}
+	}
+	else = {
+		if = {
+			limit = {
+				NOT = { has_ascension_perk = ap_defender_of_the_galaxy }
+			}
+			add_ascension_perk = ap_defender_of_the_galaxy
+		}
+	}
+}
+
+# 星球（特定情况下执行remove_all_districts会引发闪退）
+time_remove_all_districts = {
+	add_modifier = {
+		modifier = time_remove_all_districts_modifier
+		days = 1
+	}
+	validate_planet_buildings_and_districts = yes
+	remove_modifier = time_remove_all_districts_modifier
+}
+
+# 殖民地
+time_destroy_colony = {
+	every_owned_pop_group = {
+		kill_all_pop = yes
+	}
+	clear_planet_modifiers = yes
+	time_remove_all_districts = yes
+	remove_all_buildings = yes
+	destroy_colony = yes
+	ship? = { delete_ship = this }
+}
+
+# 星球
+set_dimensional_horrorling_planet = {
+	time_destroy_colony = yes
+	set_planet_size = 2
+	change_pc = pc_black_hole
+	reset_planet = yes
+	reroll_time_black_hole_deposits = yes
+	set_dimensional_horrorling_object = yes
+}
+
+# 星球
+set_dimensional_horrorling_object = {
+	set_carrier_flag = shroud_storm_changed # 防止被虚境风暴改变
+	set_carrier_flag = exist_dimensional_horrorling_object
+	create_ambient_object = {
+		type = "dimensional_horrorling_object"
+		scale = 0.2
+		location = this
+		use_3d_location = yes
+		entity_offset_height = 1
+	}
+	planet = {
+		set_planet_entity = {
+			picture = pc_horror_black_hole
+		}
+	}
+}
+
+# 星球
+add_time_special_deposit_keep_on_terraform = {
+	add_deposit = $DEPOSIT$
+	last_added_deposit = {
+		set_deposit_flag = keep_deposit_on_terraform
+	}
+}
+
+# 星球
+d_horror_dark_matter_blocker_cleared_effect = {
+	remove_carrier_flag = exists_d_horror_dark_matter_blocker
+	switch = {
+		trigger = has_carrier_flag
+		exists_d_horror_dark_matter_energy = {
+			add_time_special_deposit_keep_on_terraform = { DEPOSIT = d_horror_dark_matter_energy }
+		}
+		exists_d_horror_dark_matter_minerals = {
+			add_time_special_deposit_keep_on_terraform = { DEPOSIT = d_horror_dark_matter_minerals }
+		}
+		exists_d_horror_dark_matter_food = {
+			add_time_special_deposit_keep_on_terraform = { DEPOSIT = d_horror_dark_matter_food }
+		}
+		exists_d_horror_dark_matter_alloys = {
+			add_time_special_deposit_keep_on_terraform = { DEPOSIT = d_horror_dark_matter_alloys }
+		}
+		exists_d_horror_dark_matter_consumer_goods = {
+			add_time_special_deposit_keep_on_terraform = { DEPOSIT = d_horror_dark_matter_consumer_goods }
+		}
+		exists_d_horror_dark_matter_physics_research = {
+			add_time_special_deposit_keep_on_terraform = { DEPOSIT = d_horror_dark_matter_physics_research }
+		}
+		exists_d_horror_dark_matter_society_research = {
+			add_time_special_deposit_keep_on_terraform = { DEPOSIT = d_horror_dark_matter_society_research }
+		}
+		exists_d_horror_dark_matter_engineering_research = {
+			add_time_special_deposit_keep_on_terraform = { DEPOSIT = d_horror_dark_matter_engineering_research }
+		}
+		exists_d_horror_dark_matter_unity = {
+			add_time_special_deposit_keep_on_terraform = { DEPOSIT = d_horror_dark_matter_unity }
+		}
+		default = {
+			random_list = {
+				1 = {
+					set_carrier_flag = exists_d_horror_dark_matter_energy
+					add_time_special_deposit_keep_on_terraform = { DEPOSIT = d_horror_dark_matter_energy }
+				}
+				1 = {
+					set_carrier_flag = exists_d_horror_dark_matter_minerals
+					add_time_special_deposit_keep_on_terraform = { DEPOSIT = d_horror_dark_matter_minerals }
+				}
+				1 = {
+					set_carrier_flag = exists_d_horror_dark_matter_food
+					add_time_special_deposit_keep_on_terraform = { DEPOSIT = d_horror_dark_matter_food }
+				}
+				1 = {
+					set_carrier_flag = exists_d_horror_dark_matter_alloys
+					add_time_special_deposit_keep_on_terraform = { DEPOSIT = d_horror_dark_matter_alloys }
+				}
+				1 = {
+					set_carrier_flag = exists_d_horror_dark_matter_consumer_goods
+					add_time_special_deposit_keep_on_terraform = { DEPOSIT = d_horror_dark_matter_consumer_goods }
+				}
+				1 = {
+					set_carrier_flag = exists_d_horror_dark_matter_physics_research
+					add_time_special_deposit_keep_on_terraform = { DEPOSIT = d_horror_dark_matter_physics_research }
+				}
+				1 = {
+					set_carrier_flag = exists_d_horror_dark_matter_society_research
+					add_time_special_deposit_keep_on_terraform = { DEPOSIT = d_horror_dark_matter_society_research }
+				}
+				1 = {
+					set_carrier_flag = exists_d_horror_dark_matter_engineering_research
+					add_time_special_deposit_keep_on_terraform = { DEPOSIT = d_horror_dark_matter_engineering_research }
+				}
+				1 = {
+					set_carrier_flag = exists_d_horror_dark_matter_unity
+					add_time_special_deposit_keep_on_terraform = { DEPOSIT = d_horror_dark_matter_unity }
+				}
+			}
+		}
+	}
+}
+
+# 物种
+make_syncretic_evolution_traits_valid = {
+	# 仰望星空
+	if = {
+		limit = {
+			has_trait = trait_syncretic_evolution_starborn
+		}
+		change_species_characteristics = {
+			remove_trait = trait_syncretic_evolution_starborn
+		}
+		if = {
+			limit = {
+				NOR = {
+					has_trait = trait_nomadic
+					has_trait = trait_sedentary
+				}
+			}
+			change_species_characteristics = {
+				add_trait = trait_nomadic
+			}
+		}
+		else_if = {
+			limit = {
+				NOR = {
+					has_trait = trait_extremely_adaptive
+					has_trait = trait_adaptive
+					has_trait = trait_nonadaptive
+					is_lithoid = yes
+				}
+			}
+			change_species_characteristics = {
+				add_trait = trait_adaptive
+			}
+		}
+	}
+	# 故土情怀
+	if = {
+		limit = {
+			has_trait = trait_syncretic_evolution_earthbound
+		}
+		change_species_characteristics = {
+			remove_trait = trait_syncretic_evolution_earthbound
+		}
+		if = {
+			limit = {
+				NOR = {
+					has_trait = trait_ingenious
+					has_trait = trait_sedentary
+					has_trait = trait_nomadic
+				}
+			}
+			change_species_characteristics = {
+				add_trait = trait_sedentary
+				add_trait = trait_ingenious
+			}
+		}
+		else_if = {
+			limit = {
+				NOT = { has_trait = trait_resilient }
+			}
+			change_species_characteristics = {
+				add_trait = trait_resilient
+			}
+		}
+	}
+	# 无产者
+	if = {
+		limit = {
+			has_trait = trait_syncretic_evolution_proles
+		}
+		change_species_characteristics = {
+			remove_trait = trait_syncretic_evolution_proles
+		}
+		if = {
+			limit = {
+				NOT = { has_trait = trait_industrious }
+			}
+			change_species_characteristics = {
+				add_trait = trait_industrious
+			}
+		}
+		else_if = {
+			limit = {
+				NOT = { has_trait = trait_agrarian }
+			}
+			change_species_characteristics = {
+				add_trait = trait_agrarian
+			}
+		}
+		else_if = {
+			limit = {
+				NOR = {
+					has_trait = trait_very_strong
+					has_trait = trait_strong
+					has_trait = trait_weak
+				}
+			}
+			change_species_characteristics = {
+				add_trait = trait_strong
+			}
+		}
+	}
+	# 保守主义
+	if = {
+		limit = {
+			has_trait = trait_syncretic_evolution_conservative
+		}
+		change_species_characteristics = {
+			remove_trait = trait_syncretic_evolution_conservative
+		}
+		if = {
+			limit = {
+				NOR = {
+					has_trait = trait_conformists
+					has_trait = trait_deviants
+					has_trait = trait_quick_learners
+					has_trait = trait_slow_learners
+				}
+			}
+			change_species_characteristics = {
+				add_trait = trait_slow_learners
+				add_trait = trait_conformists
+			}
+		}
+	}
+	# 辐照化
+	if = {
+		limit = {
+			has_trait = trait_syncretic_evolution_irradiated
+		}
+		change_species_characteristics = {
+			remove_trait = trait_syncretic_evolution_irradiated
+		}
+		if = {
+			limit = {
+				NOR = {
+					has_trait = trait_extremely_adaptive
+					has_trait = trait_adaptive
+					has_trait = trait_nonadaptive
+					is_lithoid = yes
+				}
+			}
+			change_species_characteristics = {
+				add_trait = trait_adaptive
+			}
+		}
+		else_if = {
+			limit = {
+				NOR = {
+					has_trait = trait_venerable
+					has_trait = trait_enduring
+					has_trait = trait_fleeting
+					has_trait = trait_fleeting_lithoid
+				}
+			}
+			change_species_characteristics = {
+				add_trait = trait_enduring
+			}
+		}
+	}
+	# 温顺家畜
+	if = {
+		limit = {
+			has_trait = trait_syncretic_evolution_docile_livestock
+		}
+		change_species_characteristics = {
+			remove_trait = trait_syncretic_evolution_docile_livestock
+		}
+		if = {
+			limit = {
+				NOR = {
+					has_trait = trait_docile
+					has_trait = trait_unruly
+				}
+			}
+			change_species_characteristics = {
+				add_trait = trait_docile
+			}
+		}
+	}
+}
+
+# 任意
+make_time_mod_origin_unique = {
+	if = {
+		# 玩家优先
+		limit = {
+			any_playable_country = {
+				has_origin = $ORIGIN$
+				is_ai = no
+			}
+		}
+		random_playable_country = {
+			limit = {
+				has_origin = $ORIGIN$
+				is_ai = no
+			}
+			country_event = { id = $EVENT$ }
+			set_country_flag = true_$ORIGIN$_country
+		}
+	}
+	else_if = {
+		# 仅AI时
+		limit = {
+			any_playable_country = {
+				has_origin = $ORIGIN$
+			}
+		}
+		random_playable_country = {
+			limit = {
+				has_origin = $ORIGIN$
+			}
+			country_event = { id = $EVENT$ }
+			set_country_flag = true_$ORIGIN$_country
+		}
+	}
+	# 其它同起源改繁荣一统
+	every_playable_country = {
+		limit = {
+			has_origin = $ORIGIN$
+			NOT = { has_country_flag = true_$ORIGIN$_country }
+		}
+		set_origin_default_effect = yes
+	}
+}
+
+# 任意
+make_beyond_infinity_civic_unique = {
+	if = {
+		# 仅玩家可用
+		limit = {
+			any_playable_country = {
+				has_$CIVIC$_civic = yes
+				is_ai = no
+			}
+		}
+		random_playable_country = {
+			limit = {
+				has_$CIVIC$_civic = yes
+				is_ai = no
+			}
+			country_event = { id = $EVENT$ }
+			set_country_flag = true_$CIVIC$_country
+		}
+	}
+	# 其它同理念移除
+	every_playable_country = {
+		limit = {
+			has_$CIVIC$_civic = yes
+			NOT = { has_country_flag = true_$CIVIC$_country }
+		}
+		clear_$CIVIC$_civic = yes
+	}
+}
+
+# 任意
+make_time_mod_global_origin_checked = {
+	if = {
+		limit = {
+			any_playable_country = {
+				has_origin = $ORIGIN$
+				is_ai = yes
+			}
+		}
+		random_playable_country = {
+			limit = {
+				is_ai = no
+			}
+			country_event = { id = $EVENT$ }
+		}
+	}
+}
+
+# 星系
+akx_time_erasure_system = {
+	save_event_target_as = akx_time_eraser_system
+	fire_on_action = {
+		on_action = on_destroy_star_system
+		scopes = { from = event_target:akx_time_eraser }
+	}
+	set_star_flag = star_cracked
+	set_star_flag = lcluster
+	set_star_flag = time_erasure_system
+	set_star_flag = immune_to_dyson_gun
+	set_star_flag = cannot_be_hit_by_aow_starfall_spear
+	if = {
+		limit = {
+			is_time_black_hole_or_white_hole_star_class = no
+		}
+		set_star_class = sc_black_hole
+	}
+	if = {
+		limit = {
+			NOT = { is_same_value = event_target:dimensional_horror_crisis_destiny_system }
+		}
+		set_name = NAME_Akx_Time_Erasured
+	}
+	add_modifier = {
+		modifier = akx_time_erasure_system_modifier
+		days = -1
+	}
+	if = {
+		limit = {
+			num_asteroid_belts > 0
+		}
+		set_asteroid_belt = {
+			radius = 0
+		}
+	}
+	every_system_planet = {
+		limit = {
+			NOR = {
+				is_origin_time_planet_class = yes
+				is_time_white_hole_planet_class = yes
+				has_carrier_flag = dimensional_horror_crisis_changed
+			}
+		}
+		# 肃正
+		if = {
+			limit = {
+				is_planet_class = pc_ai
+			}
+			if = {
+				limit = {
+					NOT = { has_carrier_flag = machine_lair }
+				}
+				destroy_machine_world = yes
+			}
+			else = {
+				event_target:akx_time_eraser = { save_event_target_as = final_machine_world_destroyer }
+				stop_crisis_sound = yes
+				carrier_event = { id = crisis.2046 }
+			}
+		}
+		# 殖民地
+		if = {
+			limit = { is_colony = yes }
+			if = {
+				limit = { exists = orbital_defence }
+				destroy_fleet = orbital_defence
+			}
+		}
+		set_dimensional_horrorling_planet = yes
+		clear_deposits_and_orbital_station = yes
+		clear_planet_modifiers = yes
+		prevent_anomaly = yes
+		set_carrier_flag = shroud_storm_changed
+		set_carrier_flag = cannot_be_hit_by_aow_starfall_spear
+		set_name = NAME_Akx_Time_Erasured
+		add_modifier = {
+			modifier = akx_time_erasure_planet_modifier
+			days = -1
+		}
+	}
+	every_system_megastructure = {
+		limit = {
+			NOT = { is_megastructure_type = pass_black_hole }
+		}
+		if = {
+			limit = {
+				is_megastructure_type = grand_archive_0
+			}
+			solar_system = {
+				system_event = { id = grand_archive.4501 }
+			}
+		}
+		remove_megastructure = this
+	}
+	every_system_ambient_object = {
+		limit = {
+			NOT = { has_ambient_object_flag = space_storm_object }
+		}
+		destroy_ambient_object = this
+	}
+	if = {
+		limit = {
+			NOT = { exists = event_target:akx_time_eraser_ship }
+		}
+		event_target:akx_time_eraser = {
+			if = {
+				limit = {
+					exists = event_target:time_titan_fleet
+					event_target:time_titan_fleet = {
+						is_owned_by = event_target:akx_time_eraser
+					}
+				}
+				event_target:time_titan_fleet = {
+					random_owned_ship = {
+						save_event_target_as = akx_time_eraser_ship
+					}
+				}
+			}
+			else_if = {
+				limit = {
+					any_owned_fleet = {
+						is_ship_class = shipclass_military
+						solar_system = {
+							NOT = { is_same_value = event_target:akx_time_eraser_system }
+						}
+					}
+				}
+				random_owned_fleet = {
+					limit = {
+						is_ship_class = shipclass_military
+						solar_system = {
+							NOT = { is_same_value = event_target:akx_time_eraser_system }
+						}
+					}
+					random_owned_ship = {
+						save_event_target_as = akx_time_eraser_ship
+					}
+				}
+			}
+			else = {
+				random_owned_fleet = {
+					limit = {
+						solar_system = {
+							NOT = { is_same_value = event_target:akx_time_eraser_system }
+						}
+					}
+					random_owned_ship = {
+						save_event_target_as = akx_time_eraser_ship
+					}
+				}
+			}
+		}
+	}
+	every_fleet_in_system = {
+		limit = {
+			is_time_titan_fleet = no
+			is_dimensional_horror_ship_size = no
+		}
+		every_owned_ship = {
+			save_event_target_as = event_target:akx_time_eraser_target_ship
+			owner = {
+				fire_on_action = {
+					on_action = on_ship_destroyed_victim
+					scopes = {
+						From = event_target:akx_time_eraser
+						FromFrom = event_target:akx_time_eraser_target_ship
+						FromFromFrom = event_target:akx_time_eraser_ship
+					}
+				}
+			}
+			event_target:akx_time_eraser = {
+				fire_on_action = {
+					on_action = on_ship_destroyed_perp
+					scopes = {
+						From = event_target:akx_time_eraser_target_ship.owner
+						FromFrom = event_target:akx_time_eraser_ship
+						FromFromFrom = event_target:akx_time_eraser_target_ship
+					}
+				}
+			}
+		}
+		save_event_target_as = event_target:akx_time_eraser_target_fleet
+		owner = {
+			fire_on_action = {
+				on_action = on_fleet_destroyed_victim
+				scopes = {
+					From = event_target:akx_time_eraser
+					FromFrom = event_target:akx_time_eraser_target_fleet
+					FromFromFrom = event_target:akx_time_eraser_ship.fleet
+				}
+			}
+		}
+		event_target:akx_time_eraser = {
+			fire_on_action = {
+				on_action = on_fleet_destroyed_perp
+				scopes = {
+					From = event_target:akx_time_eraser_target_fleet.owner
+					FromFrom = event_target:akx_time_eraser_ship.fleet
+					FromFromFrom = event_target:akx_time_eraser_target_fleet
+				}
+			}
+		}
+		delete_fleet = this
+	}
+}
+
+# 星系
+time_remove_neighbor_hyperlane = {
+	if = {
+		limit = {
+			count_neighbor_system = {
+				count > 0
+			}
+		}
+		every_neighbor_system = {
+			remove_hyperlane = {
+				from = prev
+				to = this
+			}
+		}
+	}
+}
+
+# 任意
+create_nemesis_puppeteer = {
+	create_country = {
+		name = "NAME_Nemesis_Puppeteer"
+		type = guardian_horror
+		flag={
+			icon={
+				category="special"
+				file="the_shroud.dds"
+			}
+			background={
+				category="backgrounds"
+				file="circle.dds"
+			}
+			colors={
+				"red"
+				"dark_purple"
+				"null"
+				"null"
+			}
+		}
+		auto_delete = no
+		effect = {
+			save_global_event_target_as = nemesis_puppeteer_country
+		}
+	}
+	create_fleet = {
+		name = "NAME_Nemesis_Puppeteer"
+		settings = {
+			can_upgrade = no
+			can_change_composition = no
+			can_change_leader = no
+			uses_naval_capacity = no
+			spawn_debris = no
+			is_boss = yes
+		}
+		effect = {
+			set_owner = event_target:nemesis_puppeteer_country
+			create_ship = {
+				name = "NAME_Nemesis_Puppeteer"
+				design = "NAME_Nemesis_Puppeteer"
+				prefix = no
+				upgradable = no
+			}
+			set_location = {
+				target = event_target:nemesis_puppeteer_star
+				distance = 0
+				direction = in_system
+			}
+		}
+	}
+}
+
+################################################################
+# 考古随机事件（舰队）
+################################################################
+
+time_hotel_random_events = {
+	random_list = {
+		50 = {
+			fleet_event = { id = time_hotel.20 }
+			modifier = {
+				factor = 0
+				has_global_flag = time_hotel_20_triggered
+			}
+			modifier = {
+				factor = 0
+				leader = { has_trait = leader_trait_intemporal }
+			}
+		}
+		10 = { site_collapsed_roof = yes }
+		10 = { fleet_event = { id = ancrel.8040 } }
+		10 = { fleet_event = { id = ancrel.8045 } }
+		10 = { fleet_event = { id = ancrel.8050 } }
+		10 = { fleet_event = { id = ancrel.8055 } }
+		10 = { fleet_event = { id = ancrel.8060 } }
+		10 = {
+			modifier = {
+				factor = 0
+				owner = { is_machine_empire = yes }
+			}
+			fleet_event = { id = ancrel.8065 } # Organics only
+		}
+		10 = {
+			fleet_event = { id = ancrel.8070 }
+			modifier = {
+				factor = 2
+				leader = { has_trait = leader_trait_percussive_maintainer }
+			}
+		}
+		2 = { fleet_event = { id = ancrel.8075 } } # Scientist vanishes
+		10 = { fleet_event = { id = ancrel.8080 } }
+		10 = { fleet_event = { id = ancrel.8110 } }
+		5 = {
+			modifier = {
+				factor = 0
+				owner = {
+					OR = {
+						is_gestalt = yes
+						country_uses_food = no
+						has_country_flag = triggered_sentinels_random_event
+					}
+				}
+			}
+			fleet_event = { id = ancrel.4078 } # Fire (food shortages)
+		}
+		10 = {
+			modifier = {
+				factor = 0
+				owner = { is_gestalt = yes }
+			}
+			fleet_event = { id = ancrel.13030 } #Disturbing Vision
+		}
+	}
+}
+
+syzygy_admiral_digsite_random_events = {
+	random_list = {
+		40 = {
+			fleet_event = { id = time_akx.209 }
+			modifier = {
+				factor = 0
+				has_global_flag = time_akx_209_triggered
+			}
+			modifier = {
+				factor = 0
+				leader = { has_trait = leader_trait_foredoomed_to_a_rendezvous }
+			}
+			modifier = {
+				factor = 0
+				# 真正的明日船长应为最初获得该特质的舰队司令
+				leader = { is_dimension_traveler = yes }
+			}
+		}
+		10 = { site_traps = yes }
+		10 = { site_explosive_decompression = yes }
+		10 = { fleet_event = { id = ancrel.8050 } }
+		10 = { fleet_event = { id = ancrel.8055 } }
+		10 = { fleet_event = { id = ancrel.8060 } }
+		10 = {
+			fleet_event = { id = ancrel.8070 }
+			modifier = {
+				factor = 2
+				leader = { has_trait = leader_trait_percussive_maintainer }
+			}
+		}
+		2 = { fleet_event = { id = ancrel.8075 } } # Scientist vanishes
+		5 = {
+			modifier = {
+				factor = 0
+				owner = {
+					OR = {
+						is_gestalt = yes
+						country_uses_food = no
+						has_country_flag = triggered_sentinels_random_event
+					}
+				}
+			}
+			fleet_event = { id = ancrel.4078 } # Fire (food shortages)
+		}
+		10 = {
+			modifier = {
+				factor = 0
+				owner = { is_gestalt = yes }
+			}
+			fleet_event = { id = ancrel.13030 } #Disturbing Vision
+		}
+	}
+}
+
+noah_ark_1_random_events = {
+	random_list = {
+		10 = { site_collapsed_roof = yes }
+		10 = { fleet_event = { id = ancrel.8040 } }
+		10 = { fleet_event = { id = ancrel.8045 } }
+		10 = { fleet_event = { id = ancrel.8050 } }
+		10 = { fleet_event = { id = ancrel.8055 } }
+		10 = { fleet_event = { id = ancrel.8060 } }
+		10 = {
+			fleet_event = { id = ancrel.8070 }
+			modifier = {
+				factor = 2
+				leader = { has_trait = leader_trait_percussive_maintainer }
+			}
+		}
+		10 = { fleet_event = { id = ancrel.8080 } }
+		10 = { fleet_event = { id = ancrel.8110 } }
+		5 = {
+			modifier = {
+				factor = 0
+				owner = {
+					OR = {
+						is_gestalt = yes
+						country_uses_food = no
+						has_country_flag = triggered_sentinels_random_event
+					}
+				}
+			}
+			fleet_event = { id = ancrel.4078 } # Fire (food shortages)
+		}
+		10 = {
+			modifier = {
+				factor = 0
+				owner = { is_gestalt = yes }
+			}
+			fleet_event = { id = ancrel.13030 } #Disturbing Vision
+		}
+	}
+}
+
+noah_ark_2_random_events = {
+	random_list = {
+		10 = {
+			modifier = {
+				factor = 0
+				from = {
+					planet = { habitable_planet = no }
+				}
+			}
+			site_wildlife = yes
+		}
+		10 = { fleet_event = { id = ancrel.8040 } }
+		10 = { fleet_event = { id = ancrel.8045 } }
+		10 = { fleet_event = { id = ancrel.8050 } }
+		10 = { fleet_event = { id = ancrel.8055 } }
+		10 = { fleet_event = { id = ancrel.8060 } }
+		10 = {
+			modifier = {
+				factor = 0
+				owner = { is_machine_empire = yes }
+			}
+			fleet_event = { id = ancrel.8065 } # Organics only
+		}
+		10 = {
+			fleet_event = { id = ancrel.8070 }
+			modifier = {
+				factor = 2
+				leader = { has_trait = leader_trait_percussive_maintainer }
+			}
+		}
+		2 = { fleet_event = { id = ancrel.8075 } } # Scientist vanishes
+		10 = { fleet_event = { id = ancrel.8080 } }
+		10 = { fleet_event = { id = ancrel.8110 } }
+		5 = {
+			modifier = {
+				factor = 0
+				owner = {
+					OR = {
+						is_gestalt = yes
+						country_uses_food = no
+						has_country_flag = triggered_sentinels_random_event
+					}
+				}
+			}
+			fleet_event = { id = ancrel.4078 } # Fire (food shortages)
+		}
+		10 = {
+			modifier = {
+				factor = 0
+				owner = { is_gestalt = yes }
+			}
+			fleet_event = { id = ancrel.13030 } #Disturbing Vision
+		}
+	}
+}
+
+################################################################
+# 第一次接触随机事件（第一次接触）
+################################################################
+
+time_wanderer_random_events = {
+	random_list = {
+		10 = {
+			first_contact_event = { id = time_wanderer.21 }
+			set_first_contact_flag = time_wanderer_21
+			modifier = {
+				factor = 0
+				has_first_contact_flag = time_wanderer_21
+			}
+		}
+		10 = {
+			first_contact_event = { id = time_wanderer.22 }
+			set_first_contact_flag = time_wanderer_22
+			modifier = {
+				factor = 0
+				has_first_contact_flag = time_wanderer_22
+			}
+		}
+		10 = {
+			first_contact_event = { id = time_wanderer.23 }
+			set_first_contact_flag = time_wanderer_23
+			modifier = {
+				factor = 0
+				has_first_contact_flag = time_wanderer_23
+			}
+		}
+		10 = {
+			first_contact_event = { id = time_wanderer.24 }
+			set_first_contact_flag = time_wanderer_24
+			modifier = {
+				factor = 0
+				has_first_contact_flag = time_wanderer_24
+			}
+		}
+		10 = {
+			first_contact_event = { id = time_wanderer.25 }
+			set_first_contact_flag = time_wanderer_25
+			modifier = {
+				factor = 0
+				has_first_contact_flag = time_wanderer_25
+			}
+		}
+	}
+}

@@ -1,0 +1,189 @@
+# 国家
+clear_time_machine_civic = {
+	force_remove_civic = civic_time_machine
+	force_remove_civic = civic_time_machine_corporate
+	force_remove_civic = civic_time_machine_hive
+	force_remove_civic = civic_time_machine_machine
+}
+
+# 国家
+clear_circle_nexus_civic = {
+	force_remove_civic = civic_circle_nexus
+	force_remove_civic = civic_circle_nexus_corporate
+	force_remove_civic = civic_circle_nexus_hive
+	force_remove_civic = civic_circle_nexus_machine
+}
+
+# 国家
+clear_dimension_engine_civic = {
+	force_remove_civic = civic_dimension_engine
+	force_remove_civic = civic_dimension_engine_corporate
+	force_remove_civic = civic_dimension_engine_hive
+	force_remove_civic = civic_dimension_engine_machine
+}
+
+# 国家（超越无限国家）
+add_beyond_infinity_tech_modifier = {
+	change_variable = {
+		which = $VARIABLE$
+		value = 1
+	}
+	remove_modifier = $MODIFIER$
+	add_modifier = {
+		modifier = $MODIFIER$
+		days = -1
+		multiplier = value:beyond_infinity_tech_modifier_value|BASE|1|VARIABLE|$VARIABLE$|
+	}
+}
+
+# 国家（其它国家）
+add_beyond_infinity_tech_modifier_other = {
+	remove_modifier = $MODIFIER$
+	add_modifier = {
+		modifier = $MODIFIER$
+		days = -1
+		multiplier = value:beyond_infinity_tech_modifier_value|BASE|$VALUE$|VARIABLE|$VARIABLE$|
+	}
+}
+
+# 国家
+clear_beyond_infinity_tech_modifier = {
+	clear_variable = crisobj_beyond_infinity_resolution_variable
+	remove_modifier = beyond_infinity_physics_modifier
+	remove_modifier = beyond_infinity_society_modifier
+	remove_modifier = beyond_infinity_engineering_modifier
+}
+
+# 国家（其它国家）
+refresh_all_beyond_infinity_tech_modifier_other = {
+	add_beyond_infinity_tech_modifier_other = {
+		VARIABLE = beyond_infinity_physics_variable
+		MODIFIER = beyond_infinity_physics_modifier
+		VALUE = $VALUE$
+	}
+	add_beyond_infinity_tech_modifier_other = {
+		VARIABLE = beyond_infinity_society_variable
+		MODIFIER = beyond_infinity_society_modifier
+		VALUE = $VALUE$
+	}
+	add_beyond_infinity_tech_modifier_other = {
+		VARIABLE = beyond_infinity_engineering_variable
+		MODIFIER = beyond_infinity_engineering_modifier
+		VALUE = $VALUE$
+	}
+}
+
+# 国家（超越无限国家）
+refresh_galactic_beyond_infinity_tech_modifier = {
+	if = {
+		limit = {
+			OR = {
+				is_galactic_emperor = yes
+				is_galactic_custodian = yes
+			}
+			has_resolution_beyond_infinity_level = { LEVEL = 1 }
+		}
+		if = {
+			limit = {
+				has_resolution_beyond_infinity_level = { LEVEL = 3 }
+			}
+			every_playable_country = {
+				limit = {
+					NOT = { has_ascension_perk = ap_beyond_infinity }
+					is_galactic_community_member = no
+					has_beyond_infinity_tech_modifier = yes
+				}
+				clear_beyond_infinity_tech_modifier = yes
+			}
+			every_galcom_member = {
+				limit = {
+					NOT = { is_same_value = event_target:beyond_infinity_country }
+				}
+				refresh_all_beyond_infinity_tech_modifier_other = { VALUE = 1 }
+			}
+		}
+		else_if = {
+			limit = {
+				has_resolution_beyond_infinity_level = { LEVEL = 2 }
+			}
+			every_playable_country = {
+				limit = {
+					NOT = { has_ascension_perk = ap_beyond_infinity }
+					is_galactic_community_member = no
+					has_beyond_infinity_tech_modifier = yes
+				}
+				clear_beyond_infinity_tech_modifier = yes
+			}
+			every_council_member = {
+				limit = {
+					NOT = { is_same_value = event_target:beyond_infinity_country }
+				}
+				refresh_all_beyond_infinity_tech_modifier_other = { VALUE = 1 }
+			}
+			every_galcom_member = {
+				limit = {
+					NOT = { is_same_value = event_target:beyond_infinity_country }
+				}
+				refresh_all_beyond_infinity_tech_modifier_other = { VALUE = 0.5 }
+			}
+		}
+		else = {
+			every_playable_country = {
+				limit = {
+					NOT = { has_ascension_perk = ap_beyond_infinity }
+					is_part_of_galactic_council = no
+					has_beyond_infinity_tech_modifier = yes
+				}
+				clear_beyond_infinity_tech_modifier = yes
+			}
+			every_council_member = {
+				limit = {
+					NOT = { is_same_value = event_target:beyond_infinity_country }
+				}
+				refresh_all_beyond_infinity_tech_modifier_other = { VALUE = 0.5 }
+			}
+		}
+	}
+	else = {
+		every_playable_country = {
+			limit = {
+				NOT = { has_ascension_perk = ap_beyond_infinity }
+				has_beyond_infinity_tech_modifier = yes
+			}
+			clear_beyond_infinity_tech_modifier = yes
+		}
+	}
+}
+
+# 国家（其它国家）
+refresh_crisobj_beyond_infinity_resolution_variable = {
+	set_variable = {
+		which = crisobj_beyond_infinity_resolution_variable
+		value = 0
+	}
+	export_resource_income_to_variable = {
+		resource = beyond_infinity_time
+		variable = crisobj_beyond_infinity_resolution_variable
+	}
+	add_resource = {
+		beyond_infinity_time = -1
+		mult = crisobj_beyond_infinity_resolution_variable
+	}
+	event_target:beyond_infinity_country = {
+		change_variable = {
+			which = crisobj_beyond_infinity_resolution_variable
+			value = prev.crisobj_beyond_infinity_resolution_variable
+		}
+	}
+}
+
+# 国家
+resolution_time_keeper_transfer = {
+	if = {
+		limit = {
+			is_active_resolution = $OLD$
+		}
+		cancel_resolution = $OLD$
+		pass_resolution_no_cooldown = $NEW$
+	}
+}

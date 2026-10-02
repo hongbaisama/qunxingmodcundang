@@ -1,0 +1,20 @@
+﻿l_english:
+ citizenship_adeptus_mechanicus:0 "Machine God Creation"
+ citizenship_adeptus_mechanicus_tooltip:0 "Pops of this species are respected and cared for by Machine God believers and do not have to shoulder any responsibilities."
+ citizenship_adeptus_mechanicus_tooltip_delayed:0 "§LThe creations of the Machine God must be carefully watched!§!"
+ living_standard_adeptus_mechanicus:0 "Soul Indoctrination"
+ living_standard_adeptus_mechanicus_tooltip:0 "These poor machines have no souls and should be educated to realize the meaning of the soul.\n\n$ORGANIC_TROPHY_POP_EFFECTS$"
+ living_standard_adeptus_mechanicus_tooltip_delayed:0 "§LMay the Machine God grant you souls one day!§!"
+ 
+ ADEPTUS_MECHANICUS:0 "£pop_cat_bio_trophy£$pop_cat_adeptus_mechanicus_plural$"
+ pop_category_adeptus_mechanicus:0 "Machine God Creation"
+ pop_cat_adeptus_mechanicus:0 "Machine God Creation"
+ pop_cat_adeptus_mechanicus_plural:0 "Machine God Creations"
+ pop_cat_adeptus_mechanicus_desc:1 "Although they have no souls, Machine God believers who watch them will tirelessly educate them, so that robots can also realize the meaning of the soul."
+ pop_cat_adeptus_mechanicus_unemployment: "Neglected $pop_cat_adeptus_mechanicus$"
+ pop_cat_adeptus_mechanicus_unemployment_plural: "Neglected $pop_cat_adeptus_mechanicus_plural$"
+ pop_cat_adeptus_mechanicus_unemployment_desc: "These $pop_cat_adeptus_mechanicus_plural$ have been neglected for a long time, lacking our guidance and education, leaving them exposed to the unclean environment of the galaxy. Their situation is exactly the proof of our dereliction of duty."
+ mod_pop_cat_adeptus_mechanicus_political_power:1 "$pop_cat_adeptus_mechanicus_plural$ Political Power"
+ mod_pop_cat_adeptus_mechanicus_happiness:0 "$pop_cat_adeptus_mechanicus$ Happiness"
+ 
+ NAME_Adeptus_Mechanicus_Species:0 "Initiator"

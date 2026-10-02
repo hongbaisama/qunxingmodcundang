@@ -1,0 +1,325 @@
+# 领袖
+dimension_traveler_horror_modifier_chance = {
+	base = 1
+	multiply = value:dimension_traveler_modifier_mult_value
+	modifier = {
+		multiply = 2
+		# 行政官+长久和平
+		if = {
+			limit = {
+				leader_class = official
+			}
+			owner = {
+				years_of_peace = {
+					value > 9
+				}
+			}
+		}
+		else = {
+			always = no
+		}
+	}
+	modifier = {
+		multiply = 2
+		# 科学家+游戏中期
+		if = {
+			limit = {
+				leader_class = scientist
+			}
+			mid_game_years_passed >= 0
+		}
+		else = {
+			always = no
+		}
+	}
+	modifier = {
+		multiply = 2
+		# 指挥官+战争状态
+		if = {
+			limit = {
+				leader_class = commander
+			}
+			owner = {
+				OR = {
+					is_at_war = yes
+					any_country = {
+						NOT = { is_same_value = prev }
+						OR = {
+							has_crisis_level = crisis_level_5
+							is_crisis_faction = yes
+						}
+					}
+				}
+			}
+		}
+		else = {
+			always = no
+		}
+	}
+}
+
+# 国家
+dimension_traveler_horror_modifier_time = {
+	# good为60，bad为30
+	base = @dimension_traveler_horror_modifier_$TYPE$_time
+	modifier = {
+		multiply = 1.5
+		# 超越因果+负相奥秘+时空因果：3倍
+		has_country_flag = dimension_traveler_end
+		has_ascension_perk = ap_time
+	}
+	modifier = {
+		multiply = 2
+		# 超越因果+负相奥秘：2倍
+		has_country_flag = dimension_traveler_end
+		has_ascension_perk = ap_horror
+	}
+	modifier = {
+		multiply = 2
+		# 始终因果：2倍
+		NOT = { has_country_flag = dimension_traveler_end }
+	}
+}
+
+# 领袖
+dimension_traveler_horror_modifier_time_loc = {
+	base = 1
+	multiply = owner.value:dimension_traveler_horror_modifier_time|TYPE|$TYPE$|
+	divide = 30
+}
+
+# 领袖
+dimension_traveler_modifier_mult_value = {
+	base = 1
+	modifier = {
+		add = 0.25
+		owner = { has_policy_flag = horror_dimension_traveler }
+	}
+	modifier = {
+		add = value:messenger_network_value|BASE|0|MULT|0.25|
+		exists = owner
+	}
+	modifier = {
+		add = value:num_time_variable|BASE|0|VARIABLE|affection|MULT|0.0025|MAX|0.25|
+		is_variable_set = affection
+		NOT = { has_leader_flag = married }
+	}
+	modifier = {
+		add = value:num_time_variable|BASE|0|VARIABLE|affection|MULT|0.0025|MAX|0.5|
+		is_variable_set = affection
+		has_leader_flag = married
+	}
+	multiply = value:dimension_traveler_modifier_final_mult_value
+	min = 1
+}
+
+dimension_traveler_modifier_final_mult_value = {
+	base = 1
+	modifier = {
+		add = 0.25
+		has_global_flag = time_wanderer_end
+	}
+	modifier = {
+		add = 0.25
+		owner = { has_country_flag = dimensional_horror_crisis_end }
+	}
+}
+
+# 领袖
+dimension_traveler_level_value = {
+	base = 0
+	modifier = {
+		add = trigger:has_total_skill
+		OR = {
+			is_dimension_traveler = yes
+			is_dimension_traveler_portrait_leader = yes
+		}
+	}
+	modifier = {
+		add = event_target:dimension_traveler_leader.trigger:has_total_skill
+		exists = event_target:dimension_traveler_leader
+		NOR = {
+			is_dimension_traveler = yes
+			is_dimension_traveler_portrait_leader = yes
+		}
+	}
+	modifier = {
+		add = owner.dimension_traveler_level
+		NOR = {
+			exists = event_target:dimension_traveler_leader
+			is_dimension_traveler = yes
+			is_dimension_traveler_portrait_leader = yes
+		}
+	}
+}
+
+# 领袖
+dimension_traveler_trait_skill_value = {
+	base = 0
+	add = value:num_time_leader_level_value|VALUE|dimension_traveler_level_value|
+	[[CLASS]
+		modifier = {
+			multiply = @dimension_traveler_core_destiny_factor
+			owner = {
+				has_actived_dimension_traveler_core_skill = { CLASS = $CLASS$ }
+			}
+		}
+	]
+	multiply = value:dimension_traveler_modifier_mult_value
+}
+
+# 领袖
+dimension_traveler_trait_skill_value_for_class = {
+	base = 0
+	add = value:dimension_traveler_trait_skill_value|CLASS|$CLASS$|
+	modifier = {
+		multiply = 0.4
+		NOT = { leader_class = $CLASS$ }
+	}
+}
+
+# 领袖
+dimension_traveler_trait_skill_value_for_other = {
+	base = 0
+	add = value:dimension_traveler_trait_skill_value
+	modifier = {
+		multiply = @dimension_traveler_core_destiny_factor
+		owner = {
+			# 激活任意反演对称即可
+			has_actived_dimension_traveler_any_core_skill = yes
+		}
+	}
+}
+
+# 领袖
+dimension_traveler_subclass_skill_value = {
+	base = 0
+	add = value:num_time_leader_level_value|VALUE|dimension_traveler_level_value|
+	modifier = {
+		multiply = @dimension_traveler_core_subclass_factor
+		owner = {
+			has_actived_dimension_traveler_core_skill = { CLASS = $CLASS$ }
+		}
+	}
+	multiply = value:dimension_traveler_modifier_mult_value
+}
+
+# 领袖
+dimension_traveler_subclass_resource_value = {
+	base = 0
+	complex_trigger_modifier = {
+		trigger = resource_revenue_compare
+		trigger_scope = owner
+		parameters = {
+			resource = $RESOURCE$
+		}
+		mult = 1
+		mode = add
+	}
+	multiply = value:dimension_traveler_subclass_skill_value|CLASS|$CLASS$|
+	multiply = $MULT$
+	min = 0
+}
+
+# 领袖
+dimension_traveler_base_value = {
+	base = 0
+	add = owner.dimension_traveler_base_$RESOURCE$
+	multiply = value:dimension_traveler_trait_skill_value_for_other
+	min = 0
+}
+
+# 国家
+dimension_traveler_base_variable = {
+	base = 0
+	complex_trigger_modifier = {
+		trigger = resource_revenue_compare
+		parameters = {
+			resource = $RESOURCE$
+		}
+		mult = 1
+		mode = add
+	}
+	complex_trigger_modifier = {
+		trigger = check_modifier_value
+		parameters = {
+			modifier = dimension_traveler_base_$RESOURCE$_produces_add
+		}
+		mult = 1
+		mode = subtract
+	}
+	min = 0
+}
+
+# 领袖
+dimension_traveler_brief_value = {
+	base = 1
+	modifier = {
+		add = 1
+		owner = { has_technology = tech_hope_dimension_traveler_brief }
+	}
+	multiply = value:dimension_traveler_trait_skill_value|CLASS|$CLASS$|
+}
+
+# 领袖
+dimension_traveler_subclass_upkeep_value = {
+	base = 0
+	add = owner.used_dimension_traveler_skill_point_$CLASS$ # 最高50（读变量，减少计算量）
+	multiply = value:dimension_traveler_subclass_skill_value|CLASS|$CLASS$|
+}
+
+# 领袖
+dimension_traveler_destiny_upkeep_value = {
+	base = 0
+	# 来自异世资源加成
+	add = value:dimension_traveler_destiny_upkeep_base_value
+	# 激活的内阁技能
+	add = value:dimension_traveler_destiny_upkeep_class_value|CLASS|official|
+	add = value:dimension_traveler_destiny_upkeep_class_value|CLASS|scientist|
+	add = value:dimension_traveler_destiny_upkeep_class_value|CLASS|commander|
+	# 核心技能的倍数判定已经在各自的value中进行了
+	multiply = value:dimension_traveler_trait_skill_value
+}
+
+# 领袖
+dimension_traveler_destiny_upkeep_base_value = {
+	base = 2
+	modifier = {
+		multiply = @dimension_traveler_core_destiny_factor
+		owner = {
+			# 激活任意反演对称即可
+			has_actived_dimension_traveler_any_core_skill = yes
+		}
+	}
+}
+
+# 领袖
+dimension_traveler_destiny_upkeep_class_value = {
+	base = 0
+	# 最高16（读变量，减少计算量）
+	add = owner.used_dimension_traveler_skill_point_$CLASS$_councilor
+	modifier = {
+		multiply = @dimension_traveler_core_destiny_factor
+		owner = {
+			has_actived_dimension_traveler_core_skill = { CLASS = $CLASS$ }
+		}
+	}
+}
+
+# 任意
+messenger_network_value = {
+	base = 0
+	add = owner.modifier:messenger_network
+	max = 1
+	min = 0
+	add = $BASE|1$
+	[[MULT]
+		multiply = $MULT$
+	]
+}
+
+# 任意
+messenger_network_loc_value = {
+	base = 100
+	multiply = value:messenger_network_value|BASE|0|
+}

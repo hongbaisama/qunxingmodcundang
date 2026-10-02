@@ -1,0 +1,38 @@
+from = pc_time
+to = $CLASS$
+
+resources = {
+	category = terraforming
+
+	cost = {
+		sr_dark_matter = 2000
+	}
+}
+
+duration = 7200
+
+condition = {
+	if = {
+		limit = {
+			is_wonder_country_time_1 = yes
+		}
+		has_technology = tech_change_pc_time_1
+	}
+	else = {
+		has_technology = tech_change_pc_time_2
+	}
+}
+
+potential = {
+	OR = {
+		is_wonder_country_time_1 = yes
+		is_wonder_country_time_2 = yes
+	}
+	from = {
+		has_carrier_flag = time_0_planet
+	}
+}
+
+ai_weight = {
+	weight = 0
+}

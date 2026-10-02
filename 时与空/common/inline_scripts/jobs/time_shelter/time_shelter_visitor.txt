@@ -1,0 +1,59 @@
+category = $CATEGORY$
+can_be_automated = no
+
+swappable_data = {
+	default = {
+		building_icon = building_ancient_ward_1
+		icon = cruise_passenger
+	}
+	swap_type = {
+		trigger = {
+			colony? = { has_building = building_time_shelter_capital_2 }
+		}
+		building_icon = building_ancient_ward_2
+		weight = 5
+	}
+	swap_type = {
+		trigger = {
+			colony? = { has_building = building_time_shelter_capital_3 }
+		}
+		building_icon = building_psionic_suppressor
+		weight = 10
+	}
+}
+
+tags = { amenities }
+
+possible_pre_triggers = {
+	has_owner = yes
+	is_enslaved = no
+	is_being_purged = no
+	is_being_assimilated = no
+	is_sapient = yes
+}
+
+possible = {
+}
+
+resources = {
+	category = planet_time_shelter_visitors
+	upkeep = {
+		trade = 5
+	}
+}
+
+triggered_planet_modifier = {
+	planet_amenities_add = 500
+	mult = value:scripted_modifier_mult|MODIFIER|pop_job_amenities_mult|
+}
+
+triggered_planet_modifier = {
+	time_shelter_maintenance = 0.025
+}
+
+# 比较重要，优先级要高
+weight = {
+	weight = @colonist_job_weight
+	mult = 100
+	mult = value:scripted_modifier_job_weight_mult|MODIFIER|pop_job_amenities_mult|
+}

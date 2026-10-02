@@ -1,0 +1,48 @@
+crisobj_beyond_infinity_produced = {
+	reward = {
+		base = 0
+		add = crisobj_beyond_infinity_produced_variable
+	}
+	recurring = yes
+}
+
+crisobj_beyond_infinity_resolution = {
+	potential = {
+		is_variable_set = crisobj_beyond_infinity_resolution_variable
+	}
+	reward = {
+		base = 0
+		add = crisobj_beyond_infinity_resolution_variable
+	}
+	recurring = yes
+}
+
+crisobj_beyond_infinity_gambling = {
+	potential = {
+		has_country_flag = crisobj_beyond_infinity_gambling_active
+	}
+	reward = {
+		base = -864000
+	}
+}
+
+crisobj_beyond_infinity_circle = {
+	potential = {
+		is_variable_set = crisobj_beyond_infinity_circle_variable
+	}
+	reward = {
+		base = 0
+		add = crisobj_beyond_infinity_circle_variable
+	}
+}
+
+
+
+crisobj_beyond_infinity_end = {
+	potential = {
+		has_country_flag = crisobj_beyond_infinity_end_active
+	}
+	reward = {
+		base = -172800000
+	}
+}

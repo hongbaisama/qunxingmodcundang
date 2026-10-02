@@ -1,0 +1,16 @@
+triggered_pop_group_modifier = {
+	all_jobs_base_workforce_mult = 1
+	mult = value:trait_time_workforce_mult_value
+}
+triggered_pop_group_modifier = {
+	potential = {
+		NOR = {
+			is_unemployed = yes
+			is_pop_category = civilian
+			is_pop_category = maintenance_drone
+		}
+	}
+	pop_housing_usage_add = 1
+	pop_amenities_usage_add = 1
+	mult = value:trait_time_usage_add_value
+}

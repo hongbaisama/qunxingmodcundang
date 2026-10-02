@@ -1,0 +1,56 @@
+# 星球
+origin_pc_hive_spread = {
+	change_pc = pc_hive
+	clear_deposits = yes
+	clear_terraforming_candidate = yes
+	if = {
+		limit = {
+			NOR = {
+				has_deposit = d_pc_hive_blocker
+				has_deposit = d_dead_pc_hive # 不能救活枯萎的突触
+				has_deposit = d_pc_hive
+				has_deposit = d_pc_hive_other
+			}
+		}
+		remove_deposit = d_dead_pc_hive_other # 可以救活枯萎的枝桠
+		add_deposit = d_pc_hive_other
+	}
+	every_owned_pop_group = {
+		limit = {
+			NOT = { has_trait = trait_hive_mind }
+		}
+		kill_all_pop = yes
+	}
+	save_event_target_as = spread_planet
+	root.owner = {
+		create_message = {
+			type = ORIGIN_PC_HIVE_SPREAD
+			localization = ORIGIN_PC_HIVE_SPREAD_DESC
+			days = 30
+			target = event_target:spread_planet
+			variable = {
+				type = name
+				localization = PLANET
+				scope = event_target:spread_planet
+			}
+		}
+	}
+}
+
+# 星球
+origin_pc_hive_die = {
+	if = {
+		limit = {
+			has_deposit = d_pc_hive
+		}
+		remove_deposit = d_pc_hive
+		add_deposit = d_dead_pc_hive
+	}
+	else_if = {
+		limit = {
+			has_deposit = d_pc_hive_other
+		}
+		remove_deposit = d_pc_hive_other
+		add_deposit = d_dead_pc_hive_other
+	}
+}

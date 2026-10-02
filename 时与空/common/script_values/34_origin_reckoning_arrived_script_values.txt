@@ -1,0 +1,6 @@
+building_reckoning_arrived_sanctum_value = {
+	base = 0.1
+	multiply = trigger:has_planetary_ascension_tier
+	multiply = owner.value:num_time_modifier|MODIFIER|planetary_ascension_effect_mult|
+	add = 1
+}

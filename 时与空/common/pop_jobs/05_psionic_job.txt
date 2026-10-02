@@ -1,0 +1,643 @@
+psionic_trader = {
+	category = specialist
+	can_be_automated = no
+	
+	swappable_data = {
+		default = {
+			condition_string = SPECIALIST_JOB_TRIGGER
+			building_icon = building_temple
+			icon = evaluator
+		}
+		swap_type = {
+			trigger = {
+				psionic_trader_is_civic_origin_psionic_trader_trigger = yes
+			}
+			building_icon = building_citadel_of_faith
+			name = civic_origin_psionic_trader
+			desc = civic_origin_psionic_trader
+			icon = civic_origin_psionic_trader
+			weight = 5
+		}
+	}
+
+	tags = { trade unity }
+
+	possible_pre_triggers = {
+		has_owner = yes
+		is_being_purged = no
+		is_being_assimilated = no
+		is_sapient = yes
+	}
+
+	possible_precalc = can_fill_specialist_job
+	possible = {
+		has_trait = trait_origin_psionic
+	}
+	
+	resources = {
+		category = planet_psionic_traders
+		produces = {
+			trade = 8
+			unity = 3
+			sr_zro = 0.5
+		}
+		produces = {
+			trigger = {
+				psionic_trader_is_civic_origin_psionic_trader_trigger = yes
+			}
+			trade = -2
+		}
+		upkeep = {
+			consumer_goods = 3
+		}
+	}
+	
+	overlord_resources = {
+		category = planet_corporate_franchising_meddling
+		produces = {
+			trigger = {
+				colony = {
+					has_carrier_flag = has_franchise_headquarters
+				}
+			}
+			unity = 0.25
+		}
+	}
+	
+	triggered_country_modifier = {
+		potential = {
+			psionic_trader_is_civic_origin_psionic_trader_trigger = yes
+		}
+		shroud_delve_cost = -0.01
+		shroud_delve_cooldown = -0.01
+	}
+	
+	# 商贩部分
+	
+	inline_script = "jobs/vanilla/vanilla_trader_modifiers"
+	
+	# 官僚部分
+	
+	inline_script = "jobs/vanilla/vanilla_bureaucrat_modifiers"
+
+	weight = {
+		weight = @specialist_job_weight
+		mult = value:scripted_modifier_job_weight_mult|MODIFIER|pop_job_amenities_mult|
+		modifier = {
+			factor = 0.25
+			is_enslaved = yes
+			can_take_servant_job = no
+		}
+		modifier = {
+			factor = 2
+			OR = {
+				is_non_sapient_robot = yes
+				is_shackled_robot = yes
+			}
+			can_take_servant_job = no
+		}
+		modifier = {
+			factor = 10
+			OR = {
+				is_non_sapient_robot = yes
+				is_shackled_robot = yes
+			}
+			can_take_servant_job = no
+			can_fill_specialist_job_trigger = no
+		}
+		modifier = {
+			factor = 0.1
+			can_take_servant_job = yes
+		}
+		modifier = {
+			factor = 1.1
+			exists = owner
+			owner = { is_megacorp = yes }
+		}
+		modifier = {
+			factor = 0.5
+			exists = owner
+			owner = { is_fallen_empire = yes }
+		}
+	}
+	
+	inline_script = "jobs/automodding_priority_unity"
+}
+
+psionic_logistics_drone = {
+	category = complex_drone
+	can_be_automated = no
+	
+	swappable_data = {
+		default = {
+			condition_string = DRONE_JOB_TRIGGER
+			building_icon = building_temple
+			icon = evaluator
+		}
+	}
+
+	tags = { trade unity }
+
+	possible_pre_triggers = {
+		has_owner = yes
+		is_enslaved = no
+		is_being_purged = no
+		is_being_assimilated = no
+		is_sapient = yes
+	}
+
+	possible_precalc = can_fill_drone_job
+	possible = {
+		has_trait = trait_origin_psionic
+		can_think = yes
+	}
+
+	resources = {
+		category = planet_psionic_traders
+		produces = {
+			trade = 6
+			unity = 3
+			sr_zro = 0.5
+		}
+		upkeep = {
+			trigger = {
+				exists = owner
+				owner = {
+					is_hive_empire = yes
+					is_lithoid_or_infernal_empire = no
+				}
+			}
+			food = 2
+			minerals = 2
+			energy = 2
+		}
+		upkeep = {
+			trigger = {
+				exists = owner
+				owner = {
+					is_hive_empire = yes
+					is_lithoid_or_infernal_empire = yes
+				}
+			}
+			minerals = 4
+			energy = 2
+		}
+		upkeep = {
+			trigger = {
+				exists = owner
+				owner = {
+					is_hive_empire = no
+				}
+			}
+			energy = 6
+		}
+	}
+	
+	# 后勤工蜂部分
+	
+	inline_script = "jobs/vanilla/vanilla_logistics_drone_modifiers"
+	
+	# 官僚部分
+	
+	inline_script = "jobs/vanilla/vanilla_bureaucrat_modifiers"
+
+	weight = {
+		weight = @complex_drone_job_weight
+	}
+	
+	inline_script = "jobs/automodding_priority_unity"
+}
+
+psionic_technician = {
+	category = worker
+	
+	swappable_data = {
+		default = {
+			condition_string = WORKER_JOB_TRIGGER
+			building_icon = building_energy_grid
+			icon = mortal_initiate
+		}
+	}
+
+	tags = { energy }
+
+	possible_pre_triggers = {
+		has_owner = yes
+		is_being_purged = no
+		is_being_assimilated = no
+		is_sapient = yes
+	}
+
+	possible_precalc = can_fill_worker_job
+	possible = {
+		hidden_trigger = { exists = owner }
+		owner = {
+			is_gestalt = no
+		}
+		has_trait = trait_origin_psionic
+	}
+
+	resources = {
+		category = planet_technician
+		produces = {
+			energy = 6
+			physics_research = 1
+		}
+		produces = {
+			trigger = {
+				owner = {
+					is_robot_empire = yes
+				}
+			}
+			energy = 2
+		}
+		produces = {
+			trigger = {
+				colony = {
+					has_carrier_flag = has_energy_requisitorium
+				}
+			}
+			energy = @requisitorium_energy_reduction
+		}
+	}
+
+	overlord_resources = {
+		category = planet_requisitioned_energy
+		produces = {
+			trigger = {
+				colony = {
+					has_carrier_flag = has_energy_requisitorium
+				}
+			}
+			energy = @requisitorium_energy_overlord
+		}
+	}
+	
+	# 技工部分
+	
+	inline_script = "jobs/vanilla/vanilla_technician_modifiers"
+	
+	inline_script = {
+		script = jobs/vanilla_weight/vanilla_technician_weight
+	}
+	
+	inline_script = "jobs/automodding_priority_energy"
+}
+
+psionic_miner = {
+	category = worker
+	
+	swappable_data = {
+		default = {
+			condition_string = WORKER_JOB_TRIGGER
+			building_icon = building_mineral_purification_plant
+			icon = coordinator
+		}
+	}
+
+	tags = { minerals }
+
+	possible_pre_triggers = {
+		has_owner = yes
+		is_being_purged = no
+		is_being_assimilated = no
+		is_sapient = yes
+	}
+
+	possible_precalc = can_fill_worker_job
+	possible = {
+		hidden_trigger = { exists = owner }
+		owner = {
+			is_gestalt = no
+		}
+		has_trait = trait_origin_psionic
+	}
+
+	resources = {
+		category = planet_miners
+		produces = {
+			minerals = 4
+			engineering_research = 1
+		}
+		produces = {
+			trigger = {
+				colony = {
+					has_carrier_flag = has_material_requisitorium
+				}
+			}
+			minerals = @requisitorium_minerals_reduction
+		}
+	}
+
+	overlord_resources = {
+		category = planet_requisitioned_minerals
+		produces = {
+			trigger = {
+				colony = {
+					has_carrier_flag = has_material_requisitorium
+				}
+			}
+			minerals = @requisitorium_minerals_overlord
+		}
+	}
+	
+	# 矿工部分
+	
+	inline_script = "jobs/vanilla/vanilla_miner_modifiers"
+	
+	inline_script = {
+		script = jobs/vanilla_weight/vanilla_miner_weight
+	}
+	
+	inline_script = "jobs/automodding_priority_minerals"
+}
+
+psionic_farmer = {
+	category = worker
+	
+	swappable_data = {
+		default = {
+			condition_string = WORKER_JOB_TRIGGER
+			building_icon = building_food_processing_facility
+			icon = death_priest
+		}
+	}
+
+	tags = { food }
+
+	possible_pre_triggers = {
+		has_owner = yes
+		is_being_purged = no
+		is_being_assimilated = no
+		is_sapient = yes
+	}
+
+	possible_precalc = can_fill_worker_job
+	possible = {
+		hidden_trigger = { exists = owner }
+		owner = {
+			is_gestalt = no
+		}
+		has_trait = trait_origin_psionic
+	}
+
+	resources = {
+		category = planet_farmers
+		produces = {
+			food = 6
+			society_research = 1
+		}
+		produces = {
+			trigger = {
+				exists = owner
+				owner = {
+					is_robot_empire = yes
+				}
+			}
+			food = -1
+		}
+		produces = {
+			trigger = {
+				colony = {
+					has_carrier_flag = has_produce_requisitorium
+				}
+			}
+			food = @requisitorium_food_reduction
+		}
+	}
+
+	overlord_resources = {
+		category = planet_requisitioned_food
+		produces = {
+			trigger = {
+				colony = {
+					has_carrier_flag = has_produce_requisitorium
+				}
+			}
+			food = @requisitorium_food_overlord
+		}
+	}
+	
+	# 农夫部分
+	
+	inline_script = "jobs/vanilla/vanilla_farmer_modifiers"
+	
+	inline_script = {
+		script = jobs/vanilla_weight/vanilla_farmer_weight
+	}
+	
+	inline_script = "jobs/automodding_priority_food"
+}
+
+psionic_technician_drone = {
+	category = simple_drone
+	
+	swappable_data = {
+		default = {
+			condition_string = DRONE_JOB_TRIGGER
+			building_icon = building_energy_grid
+			icon = mortal_initiate
+		}
+	}
+
+	tags = { energy }
+
+	possible_pre_triggers = {
+		has_owner = yes
+		is_enslaved = no
+		is_being_purged = no
+		is_being_assimilated = no
+		is_sapient = yes
+	}
+
+	possible_precalc = can_fill_drone_job
+	possible = {
+		has_trait = trait_origin_psionic
+	}
+
+	resources = {
+		category = planet_technician
+		produces = {
+			energy = 6
+			physics_research = 1
+		}
+		produces = {
+			trigger = {
+				exists = owner
+				owner = {
+					is_robot_empire = yes
+				}
+			}
+			energy = 2
+		}
+		produces = {
+			trigger = {
+				colony = {
+					has_carrier_flag = has_energy_requisitorium
+				}
+			}
+			energy = @requisitorium_energy_reduction
+		}
+	}
+
+	overlord_resources = {
+		category = planet_requisitioned_energy
+		produces = {
+			trigger = {
+				colony = {
+					has_carrier_flag = has_energy_requisitorium
+				}
+			}
+			energy = @requisitorium_energy_overlord
+		}
+	}
+	
+	# 技工部分
+	
+	inline_script = "jobs/vanilla/vanilla_technician_modifiers"
+
+	inline_script = {
+		script = jobs/vanilla_weight/vanilla_technician_drone_weight
+	}
+	
+	inline_script = "jobs/automodding_priority_energy"
+}
+
+psionic_mining_drone = {
+	category = simple_drone
+	
+	swappable_data = {
+		default = {
+			condition_string = DRONE_JOB_TRIGGER
+			building_icon = building_mineral_purification_plant
+			icon = coordinator
+		}
+	}
+
+	tags = { minerals }
+
+	possible_pre_triggers = {
+		has_owner = yes
+		is_enslaved = no
+		is_being_purged = no
+		is_being_assimilated = no
+		is_sapient = yes
+	}
+
+	possible_precalc = can_fill_drone_job
+	possible = {
+		has_trait = trait_origin_psionic
+	}
+
+	resources = {
+		category = planet_miners
+		produces = {
+			minerals = 4
+			engineering_research = 1
+		}
+		produces = {
+			trigger = {
+				colony = {
+					has_carrier_flag = has_material_requisitorium
+				}
+			}
+			minerals = @requisitorium_minerals_reduction
+		}
+	}
+
+	overlord_resources = {
+		category = planet_requisitioned_minerals
+		produces = {
+			trigger = {
+				colony = {
+					has_carrier_flag = has_material_requisitorium
+				}
+			}
+			minerals = @requisitorium_minerals_overlord
+		}
+	}
+	
+	# 矿工部分
+	
+	inline_script = "jobs/vanilla/vanilla_miner_modifiers"
+
+	inline_script = {
+		script = jobs/vanilla_weight/vanilla_mining_drone_weight
+	}
+	
+	inline_script = "jobs/automodding_priority_minerals"
+}
+
+psionic_agri_drone = {
+	category = simple_drone
+	
+	swappable_data = {
+		default = {
+			condition_string = DRONE_JOB_TRIGGER
+			building_icon = building_food_processing_facility
+			icon = death_priest
+		}
+	}
+
+	tags = { food }
+
+	possible_pre_triggers = {
+		has_owner = yes
+		is_enslaved = no
+		is_being_purged = no
+		is_being_assimilated = no
+		is_sapient = yes
+	}
+
+	possible_precalc = can_fill_drone_job
+	possible = {
+		has_trait = trait_origin_psionic
+	}
+
+	resources = {
+		category = planet_farmers
+		produces = {
+			food = 6	
+			society_research = 1
+		}
+		produces = {
+			trigger = {
+				exists = owner
+				owner = {
+					is_robot_empire = yes
+				}
+			}
+			food = -1
+		}
+		produces = {
+			trigger = {
+				colony = {
+					has_carrier_flag = has_produce_requisitorium
+				}
+			}
+			food = @requisitorium_food_reduction
+		}
+	}
+
+	overlord_resources = {
+		category = planet_requisitioned_food
+		produces = {
+			trigger = {
+				colony = {
+					has_carrier_flag = has_produce_requisitorium
+				}
+			}
+			food = @requisitorium_food_overlord
+		}
+	}
+	
+	# 农夫部分
+	
+	inline_script = "jobs/vanilla/vanilla_farmer_modifiers"
+
+	inline_script = {
+		script = jobs/vanilla_weight/vanilla_agri_drone_weight
+	}
+	
+	inline_script = "jobs/automodding_priority_food"
+}

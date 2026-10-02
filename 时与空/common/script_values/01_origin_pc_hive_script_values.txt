@@ -1,0 +1,30 @@
+d_pc_hive_value = {
+	base = 0
+	complex_trigger_modifier = {
+		trigger = count_owned_colony
+		trigger_scope = owner
+		parameters = {
+			limit = {
+				is_planet_class = pc_hive
+				OR = {
+					has_deposit = d_pc_hive
+					has_deposit = d_pc_hive_other
+				}
+			}
+		}
+		mult = 1
+		mode = add
+	}
+	min = 1 # 在无主时也显示一定数值
+}
+
+origin_pc_hive_chance = {
+	base = $CHANCE$
+	# AI中期后，扩散概率降低，减少卡顿
+	modifier = {
+		multiply = 0.5
+		mid_game_years_passed > 0
+		exists = owner
+		owner = { is_ai = yes }
+	}
+}

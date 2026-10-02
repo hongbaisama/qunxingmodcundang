@@ -1,0 +1,53 @@
+triggered_planet_modifier = {
+	potential = {
+		exists = owner
+		owner = { is_gestalt = no }
+	}
+	job_black_hole_physicist_per_pop = $COUNT$
+	mult = value:num_time_modifier|MODIFIER|job_black_hole_physicist_mult|
+}
+
+triggered_planet_modifier = {
+	potential = {
+		exists = owner
+		owner = { is_gestalt = no }
+	}
+	job_black_hole_biologist_per_pop = $COUNT$
+	mult = value:num_time_modifier|MODIFIER|job_black_hole_biologist_mult|
+}
+
+triggered_planet_modifier = {
+	potential = {
+		exists = owner
+		owner = { is_gestalt = no }
+	}
+	job_black_hole_engineer_per_pop = $COUNT$
+	mult = value:num_time_modifier|MODIFIER|job_black_hole_engineer_mult|
+}
+
+triggered_planet_modifier = {
+	potential = {
+		exists = owner
+		owner = { is_gestalt = yes }
+	}
+	job_black_hole_physicist_drone_per_pop = $COUNT$
+	mult = value:num_time_modifier|MODIFIER|job_black_hole_physicist_mult|
+}
+
+triggered_planet_modifier = {
+	potential = {
+		exists = owner
+		owner = { is_gestalt = yes }
+	}
+	job_black_hole_biologist_drone_per_pop = $COUNT$
+	mult = value:num_time_modifier|MODIFIER|job_black_hole_biologist_mult|
+}
+
+triggered_planet_modifier = {
+	potential = {
+		exists = owner
+		owner = { is_gestalt = yes }
+	}
+	job_black_hole_engineer_drone_per_pop = $COUNT$
+	mult = value:num_time_modifier|MODIFIER|job_black_hole_engineer_mult|
+}

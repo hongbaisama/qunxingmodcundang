@@ -1,0 +1,156 @@
+namespace = origin_curator_artist_and_me
+
+country_event = {
+	id = origin_curator_artist_and_me.1
+	is_triggered_only = yes
+	hide_window = yes
+
+	trigger = {
+		has_origin = origin_curator_artist_and_me
+	}
+	
+	immediate = {
+		establish_communications_no_message = event_target:curator_enclave_country
+		establish_communications_no_message = event_target:artist_enclave_country
+		set_country_flag = curator_intro
+		set_country_flag = enclave_artist_encountered
+		capital_star = {
+			event_target:curator_enclave_country = {
+				add_trust = {
+					who = root
+					amount = 25
+				}
+				create_fleet = {
+					name = "NAME_Curator_Enclave_Time"
+					settings = { spawn_debris = no }
+					effect = {
+						set_owner = prev
+						create_ship = {
+							name = random
+							design = "NAME_Curator_Enclave_Station"
+							graphical_culture = prev
+						}
+						set_location = {
+							target = prevprev
+							distance = 120
+							angle = random
+						}
+					}
+				}
+			}
+			event_target:artist_enclave_country = {
+				add_trust = {
+					who = root
+					amount = 25
+				}
+				create_fleet = {
+					name = "NAME_Ars_Artem"
+					settings = { spawn_debris = no }
+					effect = {
+						set_owner = prev
+						create_ship = {
+							name = random
+							design = "NAME_Artist_Enclave_Station"
+							graphical_culture = prev
+						}
+						set_location = {
+							target = prevprev
+							distance = 90
+							angle = random
+						}
+						set_fleet_flag = artist_enclave_station
+					}
+				}
+			}
+			solar_system = {
+				set_star_flag = guardians_curators_system
+				set_star_flag = guardians_artists_system
+				set_star_flag = enclave
+			}
+		}
+		capital_scope = {
+			leader = {
+				kill_leader = { show_notification = no }
+			}
+		}
+		random_owned_leader = {
+			limit = {
+				is_ruler = no
+				is_gestalt_node = no
+				leader_class = scientist
+			}
+			kill_leader = { show_notification = no }
+		}
+		create_leader = {
+			class = scientist
+			species = event_target:curator_enclave_country.species
+			name = "NAME_Curator_Time"
+			gender = male
+			event_leader = yes
+			skip_background_generation = yes
+			background_ethic = ethic_materialist
+			custom_description = origin_curator_artist_and_me_curator_description
+			randomize_traits = no
+			skill = 1
+			leader_age_min = 35
+			leader_age_max = 40
+			traits = {
+				trait = leader_trait_scientist_time_curator
+				trait = subclass_scientist_governor
+				trait = leader_trait_architectural_interest
+				trait = leader_trait_collaborator
+			}
+			effect = {
+				set_leader_flag = has_gained_level_trait
+				set_skill = 5
+				save_event_target_as = explorer
+			}
+		}
+		create_leader = {
+			class = official
+			species = event_target:artist_enclave_country.species
+			name = "NAME_Artist_Time"
+			gender = female
+			event_leader = yes
+			skip_background_generation = yes
+			background_ethic = ethic_xenophile
+			custom_description = origin_curator_artist_and_me_artist_description
+			randomize_traits = no
+			skill = 1
+			leader_age_min = 35
+			leader_age_max = 40
+			traits = {
+				trait = leader_trait_official_time_artist
+				trait = subclass_official_governor
+				trait = leader_trait_bureaucrat
+				trait = leader_trait_pop_focused
+			}
+			effect = {
+				set_leader_flag = has_gained_level_trait
+				set_skill = 5
+				save_event_target_as = governor
+			}
+		}
+		random_owned_fleet = {
+			limit = {
+				is_ship_class = shipclass_science_ship
+				NOT = { exists = leader }
+			}
+			assign_leader = event_target:explorer
+		}
+		capital_scope = {
+			assign_leader = event_target:governor
+		}
+		if = {
+			limit = {
+				is_gestalt = no
+			}
+			event_target:explorer = {
+				set_council_position = councilor_research
+			}
+			event_target:governor = {
+				set_council_position = councilor_state
+			}
+		}
+	}
+}

@@ -1,0 +1,56 @@
+base_buildtime = @b2_time
+planet_limit = 1
+position_priority = 10
+
+potential = {
+	is_special_colony_type = no
+	owner = { has_origin = origin_contract }
+	NOR = {
+		has_building = building_origin_contract_$PATRON_1$
+		has_building = building_origin_contract_$PATRON_2$
+		has_building = building_origin_contract_$PATRON_3$
+	}
+}
+
+allow = {
+	has_upgraded_capital = yes
+}
+
+planet_modifier = {
+	job_origin_contract_$PATRON$_add = 10
+}
+
+triggered_planet_modifier = {
+	job_origin_contract_$PATRON$_max_workforce_mult = -1
+	mult = modifier:job_max_workforce_mult
+}
+
+resources = {
+	category = planet_buildings
+	inline_script = {
+		script = buildings/nomadic_cost_switcher
+		REGULAR_RESOURCE = minerals
+		NOMADIC_RESOURCE = rare_crystals
+		COST = @b2_minerals
+		NOMADIC_COST_MULT = @nomadic_minerals_to_strategic_ratio
+	}
+	cost = {
+		sr_zro = @b2_rare_cost
+	}
+	upkeep = {
+		energy = @b2_upkeep
+		sr_zro = @b2_rare_upkeep
+	}
+}
+
+prerequisites = {
+	"tech_covenant_whisperers"
+}
+
+show_tech_unlock_if = {
+	has_origin = origin_contract
+}
+
+triggered_desc = {
+	text = building_origin_contract_other_only_one
+}

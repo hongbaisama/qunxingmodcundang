@@ -1,0 +1,289 @@
+category = origin_time
+
+potential = {
+	use_time_researcher_weight = yes
+}
+
+option = {
+	name = policy_origin_time_none
+	
+	potential = {
+		OR = {
+			is_origin_time_authority = yes
+			has_country_flag = unlock_tradition_origin_time
+		}
+	}
+	
+	valid = {
+		has_tradition = tr_origin_time_adopt
+	}
+	
+	policy_flags = {
+		policy_origin_time_$TYPE$_none
+	}
+	
+	modifier = {
+		time_researcher_$TYPE$_weight = 0
+	}
+	
+	AI_weight = {
+		factor = 0
+	}
+}
+
+option = {
+	name = policy_origin_time_low_1
+	
+	potential = {
+		OR = {
+			is_origin_time_authority = yes
+			has_country_flag = unlock_tradition_origin_time
+		}
+	}
+	
+	valid = {
+		has_tradition = tr_origin_time_adopt
+	}
+	
+	policy_flags = {
+		policy_origin_time_$TYPE$_low
+	}
+	
+	modifier = {
+		time_researcher_$TYPE$_weight = 0.25
+	}
+	
+	AI_weight = {
+		factor = 0
+	}
+}
+
+option = {
+	name = policy_origin_time_low_2
+	
+	policy_flags = {
+		policy_origin_time_$TYPE$_low
+	}
+	
+	modifier = {
+		time_researcher_$TYPE$_weight = 0.5
+	}
+	
+	AI_weight = {
+		factor = 0
+	}
+}
+
+option = {
+	name = policy_origin_time_low_3
+	
+	policy_flags = {
+		policy_origin_time_$TYPE$_low
+	}
+	
+	modifier = {
+		time_researcher_$TYPE$_weight = 0.75
+	}
+	
+	AI_weight = {
+		factor = 0
+	}
+}
+
+option = {
+	name = policy_origin_time_middle
+	
+	policy_flags = {
+		policy_origin_time_$TYPE$_middle
+	}
+	
+	modifier = {
+		time_researcher_$TYPE$_weight = 1
+	}
+	
+	AI_weight = {
+		factor = 1
+	}
+}
+
+option = {
+	name = policy_origin_time_high_1
+	
+	policy_flags = {
+		policy_origin_time_$TYPE$_high
+	}
+	
+	modifier = {
+		time_researcher_$TYPE$_weight = 1.25
+	}
+	
+	AI_weight = {
+		factor = 0
+	}
+}
+
+option = {
+	name = policy_origin_time_high_2
+	
+	policy_flags = {
+		policy_origin_time_$TYPE$_high
+	}
+	
+	modifier = {
+		time_researcher_$TYPE$_weight = 1.5
+	}
+	
+	AI_weight = {
+		factor = 0
+	}
+}
+
+option = {
+	name = policy_origin_time_high_3
+	
+	potential = {
+		OR = {
+			is_origin_time_authority = yes
+			has_country_flag = unlock_tradition_origin_time
+		}
+	}
+	
+	valid = {
+		has_tradition = tr_origin_time_$TYPE$
+	}
+	
+	policy_flags = {
+		policy_origin_time_$TYPE$_high
+	}
+	
+	modifier = {
+		time_researcher_$TYPE$_weight = 1.75
+	}
+	
+	AI_weight = {
+		factor = 0
+	}
+}
+
+option = {
+	name = policy_origin_time_max
+	
+	potential = {
+		OR = {
+			is_origin_time_authority = yes
+			has_country_flag = unlock_tradition_origin_time
+		}
+	}
+	
+	valid = {
+		has_tradition = tr_origin_time_$TYPE$
+	}
+	
+	policy_flags = {
+		policy_origin_time_$TYPE$_max
+	}
+	
+	modifier = {
+		time_researcher_$TYPE$_weight = 2
+	}
+	
+	AI_weight = {
+		factor = 0
+	}
+}
+
+option = {
+	name = policy_origin_time_auth
+	
+	potential = {
+		is_origin_time_authority = yes
+	}
+	
+	valid = {
+		has_tradition = tr_origin_time_finish
+	}
+	
+	policy_flags = {
+		policy_origin_time_$TYPE$_auth
+	}
+	
+	modifier = {
+		time_researcher_$TYPE$_weight = 2.25
+	}
+	
+	AI_weight = {
+		factor = 0
+	}
+}
+
+option = {
+	name = policy_origin_time_auth_max
+	
+	potential = {
+		is_origin_time_authority = yes
+	}
+	
+	valid = {
+		has_tradition = tr_origin_time_finish
+	}
+	
+	policy_flags = {
+		policy_origin_time_$TYPE$_auth
+	}
+	
+	modifier = {
+		time_researcher_$TYPE$_weight = 2.5
+	}
+	
+	AI_weight = {
+		factor = 0
+	}
+}
+
+option = {
+	name = policy_origin_time_advanced_auth
+	
+	potential = {
+		is_advanced_origin_time_authority = yes
+	}
+	
+	valid = {
+		has_tradition = tr_origin_time_finish
+	}
+	
+	policy_flags = {
+		policy_origin_time_$TYPE$_advanced_auth
+	}
+	
+	modifier = {
+		time_researcher_$TYPE$_weight = 2.75
+	}
+	
+	AI_weight = {
+		factor = 0
+	}
+}
+
+option = {
+	name = policy_origin_time_advanced_auth_max
+	
+	potential = {
+		is_advanced_origin_time_authority = yes
+	}
+	
+	valid = {
+		has_tradition = tr_origin_time_finish
+	}
+	
+	policy_flags = {
+		policy_origin_time_$TYPE$_advanced_auth
+	}
+	
+	modifier = {
+		time_researcher_$TYPE$_weight = 3
+	}
+	
+	AI_weight = {
+		factor = 0
+	}
+}

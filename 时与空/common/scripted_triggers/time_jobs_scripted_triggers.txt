@@ -1,0 +1,48 @@
+# 任意
+time_researcher_is_advanced = {
+	exists = owner
+	owner = {
+		has_origin_time = yes
+		OR = {
+			has_valid_civic = civic_technocracy
+			has_valid_civic = civic_exalted_priesthood
+			has_valid_civic = civic_aristocratic_elite
+		}
+	}
+}
+
+# 存在殖民地域
+gas_colony_job_is_civic_origin_gas_colony_job_trigger = {
+	colony? = {
+		exists = owner
+		is_homeworld = yes
+		has_carrier_flag = original_gas_colony
+		owner = {
+			OR = {
+				has_valid_civic = civic_origin_gas_colony
+				has_valid_civic = civic_origin_gas_colony_corporate
+				has_valid_civic = civic_origin_gas_colony_gestalt
+			}
+		}
+	}
+}
+
+# 存在殖民地域
+psionic_trader_is_civic_origin_psionic_trader_trigger = {
+	colony? = {
+		exists = owner
+		is_homeworld = yes
+		has_carrier_flag = original_psionic_planet
+		owner = { has_valid_civic = civic_origin_psionic }
+	}
+}
+
+# 存在殖民地域
+nanites_logistics_drone_is_civic_origin_nanites_logistics_drone_trigger = {
+	colony? = {
+		exists = owner
+		is_homeworld = yes
+		has_carrier_flag = original_nanites_planet
+		owner = { has_valid_civic = civic_origin_nanites }
+	}
+}

@@ -1,0 +1,53 @@
+slot_time_shelter_main_government = {
+	start = zone_time_shelter_main_default
+	
+	included_zone_sets = {
+		time_shelter_main_government
+	}
+	
+	exclude = {
+	}
+	
+	unlock = {
+		is_planet_class = pc_time_shelter
+	}
+}
+
+slot_time_shelter_main_1 = {
+	included_zone_sets = {
+		time_shelter_main
+	}
+	
+	exclude = {
+	}
+	
+	unlock = {
+		is_planet_class = pc_time_shelter
+	}
+}
+
+slot_time_shelter_main_2 = {
+	included_zone_sets = {
+		time_shelter_main
+	}
+	
+	exclude = {
+	}
+	
+	unlock = {
+		is_planet_class = pc_time_shelter
+	}
+}
+
+slot_time_shelter_secondary = {
+	included_zone_sets = {
+		time_shelter_secondary
+	}
+	
+	exclude = {
+	}
+	
+	unlock = {
+		is_planet_class = pc_time_shelter
+	}
+}

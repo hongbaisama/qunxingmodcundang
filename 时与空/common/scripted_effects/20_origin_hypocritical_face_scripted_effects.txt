@@ -1,0 +1,19 @@
+# 国家
+refresh_origin_hypocritical_face_value = {
+	set_variable = {
+		which = num_hypocritical_face_upkeep_value
+		value = value:num_hypocritical_face_upkeep_value
+	}
+	set_variable = {
+		which = num_hypocritical_face_country_value
+		value = value:num_hypocritical_face_progress_value|TYPE|country|
+	}
+	set_variable = {
+		which = num_hypocritical_face_building_value
+		value = value:num_hypocritical_face_progress_value|TYPE|building|
+	}
+	set_variable = {
+		which = num_hypocritical_face_decay_value
+		value = value:num_hypocritical_face_decay_value
+	}
+}

@@ -1,0 +1,3 @@
+@can_active_reassembly_pop_amount = 200
+@enable_reassembly_mode_ai_weight_min_pop_amount = 300 # AI开启再组装模式的最低人数要求，避免反复开关
+@enable_reassembly_mode_ai_weight_high_pop_amount = 500 # AI高意愿开启再组装模式的人数要求

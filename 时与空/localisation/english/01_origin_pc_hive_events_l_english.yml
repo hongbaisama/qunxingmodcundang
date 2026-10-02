@@ -1,0 +1,22 @@
+﻿l_english:
+ origin_pc_hive.6.name:0 "Synapse Withered"
+ origin_pc_hive.6.desc:0 "§Y[Root.GetName]§! is no longer a $pc_hive$, and the original synapses on the planet have also withered."
+ origin_pc_hive.6.a:0 "We have to find a way to change it back."
+ 
+ origin_pc_hive.7.name:0 "Branch Withered"
+ origin_pc_hive.7.desc:0 "§Y[Root.GetName]§! is no longer a $pc_hive$, and the original branches on the planet have also withered."
+ origin_pc_hive.7.a:0 "We have to find a way to change it back."
+ 
+ origin_pc_hive.15.name:0 "Synapse Withered"
+ origin_pc_hive.15.desc:0 "After §Y[Root.GetName]§! was included in our bag, the original synapses on the planet withered, but we don't know how to clear them for the time being."
+ origin_pc_hive.15.a:0 "Damn it!"
+ 
+ origin_pc_hive.16.name:0 "Branch Withered"
+ origin_pc_hive.16.desc:0 "After §Y[Root.GetName]§! was included in our bag, the original branches on the planet withered, but we don't know how to clear them for the time being."
+ origin_pc_hive.16.a:0 "Damn it!"
+ 
+ origin_pc_hive.20.name:0 "Synapse Missing"
+ origin_pc_hive.20.desc.owned:0 "We lost our only Synapse of Love on §Y[From.GetName]§!.\nWithout the connection between the synapse and the homeworld, all Branches of Love are gradually withering."
+ origin_pc_hive.20.desc.not_owned:0 "We lost §Y[From.GetName]§! and our only Synapse of Love.\nWithout the connection between the synapse and the homeworld, all Branches of Love are gradually withering."
+ origin_pc_hive.20.a:0 "Bad news!"
+ origin_pc_hive.20.a.tooltip:0 "§R['concept_d_pc_hive_other'] on all planets will wither!§!"

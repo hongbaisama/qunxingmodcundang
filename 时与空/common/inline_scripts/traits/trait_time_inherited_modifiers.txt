@@ -1,0 +1,81 @@
+# 不能用static modifier，否则游戏内显示的是static modifier的名字而非key的名字（4.3搞出来的邪恶bug）
+triggered_pop_group_modifier = {
+	key = technician_jobs_bonus_workforce_mult
+	pop_black_hole_physicist_bonus_workforce_mult = 0.25
+	pop_black_hole_physicist_drone_bonus_workforce_mult = 0.25
+	pop_time_recursioner_bonus_workforce_mult = 0.125
+	pop_time_recursioner_drone_bonus_workforce_mult = 0.125
+	mult = value:scripted_modifier_add|MODIFIER|pop_technician_bonus_workforce_mult|
+}
+
+triggered_pop_group_modifier = {
+	key = miner_jobs_bonus_workforce_mult
+	pop_black_hole_engineer_bonus_workforce_mult = 0.25
+	pop_black_hole_engineer_drone_bonus_workforce_mult = 0.25
+	pop_time_recursioner_bonus_workforce_mult = 0.125
+	pop_time_recursioner_drone_bonus_workforce_mult = 0.125
+	mult = value:scripted_modifier_add|MODIFIER|pop_miner_bonus_workforce_mult|
+}
+
+triggered_pop_group_modifier = {
+	key = farmer_jobs_bonus_workforce_mult
+	pop_black_hole_biologist_bonus_workforce_mult = 0.25
+	pop_black_hole_biologist_drone_bonus_workforce_mult = 0.25
+	pop_time_recursioner_bonus_workforce_mult = 0.125
+	pop_time_recursioner_drone_bonus_workforce_mult = 0.125
+	mult = value:scripted_modifier_add|MODIFIER|pop_farmer_bonus_workforce_mult|
+}
+
+triggered_pop_group_modifier = {
+	key = artisan_jobs_bonus_workforce_mult
+	pop_black_hole_physicist_bonus_workforce_mult = 0.5
+	pop_black_hole_physicist_drone_bonus_workforce_mult = 0.5
+	pop_time_recursioner_bonus_workforce_mult = 0.25
+	pop_time_recursioner_drone_bonus_workforce_mult = 0.25
+	mult = value:scripted_modifier_add|MODIFIER|pop_artisan_bonus_workforce_mult|
+}
+
+triggered_pop_group_modifier = {
+	key = foundry_jobs_bonus_workforce_mult
+	pop_black_hole_engineer_bonus_workforce_mult = 0.5
+	pop_black_hole_engineer_drone_bonus_workforce_mult = 0.5
+	pop_time_recursioner_bonus_workforce_mult = 0.25
+	pop_time_recursioner_drone_bonus_workforce_mult = 0.25
+	mult = value:scripted_modifier_add|MODIFIER|pop_foundry_bonus_workforce_mult|
+}
+
+triggered_pop_group_modifier = {
+	key = bureaucrat_jobs_bonus_workforce_mult
+	pop_black_hole_biologist_bonus_workforce_mult = 0.5
+	pop_black_hole_biologist_drone_bonus_workforce_mult = 0.5
+	pop_time_recursioner_bonus_workforce_mult = 0.25
+	pop_time_recursioner_drone_bonus_workforce_mult = 0.25
+	mult = value:scripted_modifier_add|MODIFIER|pop_bureaucrat_bonus_workforce_mult|
+}
+
+triggered_pop_group_modifier = {
+	key = physicist_jobs_bonus_workforce_mult
+	pop_black_hole_physicist_bonus_workforce_mult = 0.5
+	pop_black_hole_physicist_drone_bonus_workforce_mult = 0.5
+	pop_time_recursioner_bonus_workforce_mult = 0.25
+	pop_time_recursioner_drone_bonus_workforce_mult = 0.25
+	mult = value:scripted_modifier_add|MODIFIER|pop_physicist_bonus_workforce_mult|
+}
+
+triggered_pop_group_modifier = {
+	key = biologist_jobs_bonus_workforce_mult
+	pop_black_hole_biologist_bonus_workforce_mult = 0.5
+	pop_black_hole_biologist_drone_bonus_workforce_mult = 0.5
+	pop_time_recursioner_bonus_workforce_mult = 0.25
+	pop_time_recursioner_drone_bonus_workforce_mult = 0.25
+	mult = value:scripted_modifier_add|MODIFIER|pop_biologist_bonus_workforce_mult|
+}
+
+triggered_pop_group_modifier = {
+	key = engineer_jobs_bonus_workforce_mult
+	pop_black_hole_engineer_bonus_workforce_mult = 0.5
+	pop_black_hole_engineer_drone_bonus_workforce_mult = 0.5
+	pop_time_recursioner_bonus_workforce_mult = 0.25
+	pop_time_recursioner_drone_bonus_workforce_mult = 0.25
+	mult = value:scripted_modifier_add|MODIFIER|pop_engineer_bonus_workforce_mult|
+}

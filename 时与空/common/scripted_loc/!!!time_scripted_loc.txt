@@ -1,0 +1,95 @@
+defined_text = {
+	name = GetEntertainerPluralWithIcon
+	random = no
+	text = {
+		trigger = {
+			has_origin = origin_monster_hunter
+			has_valid_civic = civic_warrior_culture
+		}
+		localization_key = job_monster_hunter_plural_with_icon
+	}
+	text = {
+		trigger = {
+			has_valid_civic = civic_warrior_culture
+		}
+		localization_key = job_duelist_name_plural_with_icon
+	}
+	default = job_entertainer_plural_with_icon
+}
+
+# 原版优化
+
+defined_text = {
+	name = NegativeTriggeredClass
+	random = no
+	text = {
+		trigger = {
+			is_ruler = yes
+		}
+		localization_key = negative_yes_trait
+	}
+	default = negative_no_trait
+}
+
+defined_text = {
+	name = FreeOrVeteranClass
+	random = no
+	text = {
+		trigger = {
+			has_paragon_dlc = yes
+		}
+		localization_key = veteran_triggered_class_trait
+	}
+	default = triggered_class_trait
+}
+
+defined_text = {
+	name = FreeOrVeteranTriggeredClass
+	random = no
+	text = {
+		trigger = {
+			is_ruler = yes
+			has_paragon_dlc = yes
+		}
+		localization_key = veteran_councilor_trait
+	}
+	text = {
+		trigger = {
+			is_ruler = yes
+			has_paragon_dlc = no
+		}
+		localization_key = common_councilor_trait
+	}
+	text = {
+		trigger = {
+			is_ruler = no
+			has_paragon_dlc = yes
+		}
+		localization_key = veteran_triggered_class_trait
+	}
+	default = triggered_class_trait
+}
+
+defined_text = {
+	name = VeteranTriggeredClass
+	random = no
+	text = {
+		trigger = {
+			is_ruler = yes
+		}
+		localization_key = veteran_councilor_trait
+	}
+	default = veteran_triggered_class_trait
+}
+
+defined_text = {
+	name = ParagonTriggeredClass
+	random = no
+	text = {
+		trigger = {
+			is_ruler = yes
+		}
+		localization_key = paragon_councilor_trait
+	}
+	default = paragon_triggered_class_trait
+}

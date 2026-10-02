@@ -1,0 +1,276 @@
+situation_origin_manifesti = {
+	complete_icon_frame = GFX_situation_outcome_frame_blue
+	complete_icon = GFX_situation_outcome_unknown
+	fail_icon_frame = GFX_situation_outcome_frame_blue
+	fail_icon = GFX_situation_outcome_unknown
+	picture = GFX_evt_crisis_defeated
+	situation_log_category = empire_concerns
+	
+	category = neutral
+	progress_direction = bidirectional
+	complete_category = negative
+	fail_category = negative
+	
+	initial_progress = 50
+	
+	stages = {
+		stage_manifesti = {
+			icon = GFX_situation_stage_1
+			icon_background = GFX_situation_stage_frame_blue
+			custom_tooltip = stage_unknown_effects
+			end = 100
+			triggered_modifier = {
+				potential = {
+					owner = {
+						check_variable = {
+							which = origin_manifesti_count
+							value <= -5
+						}
+					}
+				}
+				modifier = {
+					bonus_automated_workforce_mult = -1
+					influential_jobs_bonus_workforce_mult = -1
+					pop_cat_civilian_bonus_workforce_mult = -1
+					pop_bonus_workforce_mult = 1
+				}
+			}
+			triggered_modifier = {
+				potential = {
+					owner = {
+						check_variable = {
+							which = origin_manifesti_count
+							value = -4
+						}
+					}
+				}
+				modifier = {
+					bonus_automated_workforce_mult = -0.8
+					influential_jobs_bonus_workforce_mult = -0.8
+					pop_cat_civilian_bonus_workforce_mult = -0.8
+					pop_bonus_workforce_mult = 0.8
+				}
+			}
+			triggered_modifier = {
+				potential = {
+					owner = {
+						check_variable = {
+							which = origin_manifesti_count
+							value = -3
+						}
+					}
+				}
+				modifier = {
+					bonus_automated_workforce_mult = -0.6
+					influential_jobs_bonus_workforce_mult = -0.6
+					pop_cat_civilian_bonus_workforce_mult = -0.6
+					pop_bonus_workforce_mult = 0.6
+				}
+			}
+			triggered_modifier = {
+				potential = {
+					owner = {
+						check_variable = {
+							which = origin_manifesti_count
+							value = -2
+						}
+					}
+				}
+				modifier = {
+					bonus_automated_workforce_mult = -0.4
+					influential_jobs_bonus_workforce_mult = -0.4
+					pop_cat_civilian_bonus_workforce_mult = -0.4
+					pop_bonus_workforce_mult = 0.4
+				}
+			}
+			triggered_modifier = {
+				potential = {
+					owner = {
+						check_variable = {
+							which = origin_manifesti_count
+							value = -1
+						}
+					}
+				}
+				modifier = {
+					bonus_automated_workforce_mult = -0.2
+					influential_jobs_bonus_workforce_mult = -0.2
+					pop_cat_civilian_bonus_workforce_mult = -0.2
+					pop_bonus_workforce_mult = 0.2
+				}
+			}
+			triggered_modifier = {
+				potential = {
+					owner = {
+						check_variable = {
+							which = origin_manifesti_count
+							value = 1
+						}
+					}
+				}
+				modifier = {
+					bonus_automated_workforce_mult = 0.2
+					influential_jobs_bonus_workforce_mult = 0.2
+					pop_cat_civilian_bonus_workforce_mult = 0.2
+					pop_bonus_workforce_mult = -0.2
+				}
+			}
+			triggered_modifier = {
+				potential = {
+					owner = {
+						check_variable = {
+							which = origin_manifesti_count
+							value = 2
+						}
+					}
+				}
+				modifier = {
+					bonus_automated_workforce_mult = 0.4
+					influential_jobs_bonus_workforce_mult = 0.4
+					pop_cat_civilian_bonus_workforce_mult = 0.4
+					pop_bonus_workforce_mult = -0.4
+				}
+			}
+			triggered_modifier = {
+				potential = {
+					owner = {
+						check_variable = {
+							which = origin_manifesti_count
+							value = 3
+						}
+					}
+				}
+				modifier = {
+					bonus_automated_workforce_mult = 0.6
+					influential_jobs_bonus_workforce_mult = 0.6
+					pop_cat_civilian_bonus_workforce_mult = 0.6
+					pop_bonus_workforce_mult = -0.6
+				}
+			}
+			triggered_modifier = {
+				potential = {
+					owner = {
+						check_variable = {
+							which = origin_manifesti_count
+							value = 4
+						}
+					}
+				}
+				modifier = {
+					bonus_automated_workforce_mult = 0.8
+					influential_jobs_bonus_workforce_mult = 0.8
+					pop_cat_civilian_bonus_workforce_mult = 0.8
+					pop_bonus_workforce_mult = -0.8
+				}
+			}
+			triggered_modifier = {
+				potential = {
+					owner = {
+						check_variable = {
+							which = origin_manifesti_count
+							value >= 5
+						}
+					}
+				}
+				modifier = {
+					bonus_automated_workforce_mult = 1
+					influential_jobs_bonus_workforce_mult = 1
+					pop_cat_civilian_bonus_workforce_mult = 1
+					pop_bonus_workforce_mult = -1
+				}
+			}
+		}
+	}
+	
+	on_progress_complete = {
+		custom_tooltip = situation_origin_manifesti_complete_effect
+		hidden_effect = {
+			situation_event = { id = origin_manifesti.2 }
+		}
+	}
+	
+	on_fail = {
+		custom_tooltip = situation_origin_manifesti_fail_effect
+		hidden_effect = {
+			situation_event = { id = origin_manifesti.3 }
+		}
+	}
+	
+	approach = {
+		name = approach_origin_manifesti_default
+		icon = GFX_situation_approach_balance_sheet
+		icon_background = GFX_situation_approach_bg_green
+		default = yes
+		on_select = {
+			custom_tooltip = situation_origin_manifesti_default_effect
+		}
+	}
+	
+	approach = {
+		name = approach_origin_manifesti_interfere
+		icon = GFX_situation_approach_this_is_fine
+		icon_background = GFX_situation_approach_bg_red
+		on_select = {
+			custom_tooltip = situation_origin_manifesti_interfere_effect
+		}
+		resources = {
+			category = situations
+			upkeep = {
+				society_research = 10
+			}
+		}
+	}
+	
+	monthly_progress = {
+		base = 0
+		modifier = {
+			subtract = value:num_manifesti_living_standard_value
+			desc = string_living_standard
+			owner_main_species = {
+				NOR = {
+					has_living_standard = { type = living_standard_decadent country = prev.owner }
+					has_living_standard = { type = living_standard_chemical_bliss country = prev.owner }
+				}
+			}
+		}
+		modifier = {
+			add = 0
+			desc = string_living_standard
+			owner_main_species = {
+				has_living_standard = { type = living_standard_decadent country = prev.owner }
+			}
+		}
+		modifier = {
+			add = value:num_manifesti_living_standard_value
+			desc = string_living_standard
+			owner_main_species = {
+				has_living_standard = { type = living_standard_chemical_bliss country = prev.owner }
+			}
+		}
+		modifier = {
+			factor = 2
+			desc = approach_origin_manifesti_interfere
+			current_situation_approach = approach_origin_manifesti_interfere
+		}
+		modifier = {
+			subtract = value:num_manifesti_years_passed_value
+			desc = string_dream_broken
+			owner = {
+				check_variable = {
+					which = origin_manifesti_count
+					value >= 0
+				}
+			}
+		}
+		modifier = {
+			subtract = value:num_manifesti_years_passed_value
+			desc = string_dream_broken
+			owner = {
+				check_variable = {
+					which = origin_manifesti_count
+					value < 0
+				}
+			}
+		}
+	}
+}

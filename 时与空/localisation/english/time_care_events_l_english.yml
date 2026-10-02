@@ -1,0 +1,28 @@
+﻿l_english:
+ planetary_mechanocalibrator_catch_phrase:0 "Welcome to C.A.R.E interactive interface... let's skip those pleasantries, what do you want me to calculate?"
+ planetary_mechanocalibrator_backstory:0 "C.A.R.E prefers users to consult excellent §Yadult literary works§! rather than obsessing over optimizing growth or haggling over data."
+ 
+ job_planetary_mechanocalibrator:0 "Planetary Machine"
+ job_planetary_mechanocalibrator_desc:0 "C.A.R.E"
+ 
+ ancrel.2066.b:0 "You have a better way to repay us."
+ 
+ time_care.1.desc:0 "Uh... ah? But this is already the best way to repay I can think of.\n\nHey, think about it, I have handed over everything I can give you, including this planet full of rust and ruins under me, including the efficient assistance I provide to you, and this chip that I don't know what it is for but is very useful. This is a bargain!\n\nHey, you don't want to take away my most precious Node 14758-B, do you?"
+ time_care.1.a:0 "I mean you."
+ time_care.1.b:0 "Well, it seems you have no other treasures."
+ time_care.1.c:0 "No, we are not interested in that, so be it."
+ 
+ time_care.2.desc:0 "You mean me?\n\nDid I hear correctly, me? Why?"
+ time_care.2.a:0 "Yes, we need you."
+ time_care.2.a.response:0 "Need me? What do you like about me?\n\nDo you think this pile of scrap metal on me can be sold for money, or do you think the chip in my brain has research value, or do you delusionally think the algorithm implanted in me can be used to calculate Pi?"
+ time_care.2.b:0 "Neither, we just think you are interesting."
+ time_care.2.b.response:0 "Interesting? You mean a cumbersome machine of unknown origin suspected of murdering civilization is interesting?\n\nWell, I think I am indeed quite interesting. Hey, you really know your stuff. But, are you really not worried that I will plot evil? After all, as the saying goes, first time, second time, third time... what comes next?"
+ time_care.2.c:0 "You pose no threat to us."
+ time_care.2.c.response:0 "Heh, quite arrogant.\n\nBut you do have good taste. After all, a huge machine like me can't move freely. Even if I want to turn the world upside down, I can't make waves. Ha, seeing you fearless is really annoying, but I am helpless too.\n\nBut I just said, I can't move freely. Even if I want to help you, I can only be limited to this planet."
+ time_care.2.d:0 "We have our own way."
+ time_care.2.d.response:0 "Sounds really bad.\n\nCould it be that you want to dismantle poor C.A.R.E to pieces, and then take out the core chip that I don't know how it was put in, and install it on your other machines? No, please, don't do this.\n\nHmm... thinking carefully, it seems feasible, because there is a safe way to take out my core chip, just that I thought it was as meaningless as the classic self-destruct program and almost forgot. By the way, if you want to take me away, can you please take Node 14758-B with you? I can't live without it!"
+ time_care.2.hire:0 "Come with us, C.A.R.E."
+ time_care.2.hire.hive:0 "Although we are not one, the hive welcomes you."
+ time_care.2.hire.machine:0 "C.A.R.E, you can connect to the Master Mind at any time."
+ time_care.2.hire.tooltip:0 "§YC.A.R.E will join us.§!"
+ time_care.2.dismiss:0 "No, we changed our mind."

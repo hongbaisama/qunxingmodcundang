@@ -1,0 +1,1612 @@
+situation_pc_time = {
+	complete_icon_frame = GFX_situation_outcome_frame_blue
+	complete_icon = GFX_situation_outcome_pc_time
+	picture = GFX_evt_astral_rift_microverse
+	situation_log_category = empire_concerns
+	
+	category = neutral
+	
+	stages = {
+		stage_pc_time_0 = {
+			icon = GFX_situation_stage_pc_time_1
+			icon_background = GFX_situation_stage_frame_blue
+			custom_tooltip = stage_unknown_effects
+			on_first_enter = {
+				situation_event = { id = time.110 }
+			}
+			end = 50
+			target_modifier = {
+				planet_structures_upkeep_mult = -0.5
+				planet_time_researchers_upkeep_mult = -0.5
+			}
+		}
+		stage_pc_time_1 = {
+			icon = GFX_situation_stage_pc_time_2
+			icon_background = GFX_situation_stage_frame_blue
+			custom_tooltip = stage_unknown_effects
+			on_first_enter = {
+				situation_event = { id = time.120 }
+			}
+			end = 150
+			target_modifier = {
+				time_researcher_produces_mult = 0.05
+				planet_structures_upkeep_mult = -0.4
+				planet_time_researchers_upkeep_mult = -0.4
+			}
+		}
+		stage_pc_time_2 = {
+			icon = GFX_situation_stage_pc_time_2
+			icon_background = GFX_situation_stage_frame_blue
+			custom_tooltip = stage_unknown_effects
+			on_first_enter = {
+				situation_event = { id = time.120 }
+			}
+			end = 350
+			target_modifier = {
+				time_researcher_produces_mult = 0.05
+				planet_structures_upkeep_mult = -0.4
+				planet_time_researchers_upkeep_mult = -0.4
+			}
+		}
+		stage_pc_time_3 = {
+			icon = GFX_situation_stage_pc_time_2
+			icon_background = GFX_situation_stage_frame_blue
+			custom_tooltip = stage_unknown_effects
+			on_first_enter = {
+				situation_event = { id = time.120 }
+			}
+			end = 650
+			target_modifier = {
+				time_researcher_produces_mult = 0.10
+				planet_structures_upkeep_mult = -0.4
+				planet_time_researchers_upkeep_mult = -0.4
+			}
+		}
+		stage_pc_time_4 = {
+			icon = GFX_situation_stage_pc_time_2
+			icon_background = GFX_situation_stage_frame_blue
+			custom_tooltip = stage_unknown_effects
+			on_first_enter = {
+				situation_event = { id = time.120 }
+			}
+			end = 1050
+			target_modifier = {
+				time_researcher_produces_mult = 0.10
+				planet_structures_upkeep_mult = -0.4
+				planet_time_researchers_upkeep_mult = -0.4
+			}
+		}
+		stage_pc_time_5 = {
+			icon = GFX_situation_stage_pc_time_3
+			icon_background = GFX_situation_stage_frame_blue
+			custom_tooltip = stage_unknown_effects
+			on_first_enter = {
+				situation_event = { id = time.130 }
+			}
+			end = 1550
+			target_modifier = {
+				time_researcher_produces_mult = 0.15
+				planet_structures_upkeep_mult = -0.3
+				planet_time_researchers_upkeep_mult = -0.3
+			}
+		}
+		stage_pc_time_6 = {
+			icon = GFX_situation_stage_pc_time_4
+			icon_background = GFX_situation_stage_frame_blue
+			custom_tooltip = stage_unknown_effects
+			on_first_enter = {
+				situation_event = { id = time.140 }
+			}
+			end = 2150
+			target_modifier = {
+				time_researcher_produces_mult = 0.20
+				planet_structures_upkeep_mult = -0.2
+				planet_time_researchers_upkeep_mult = -0.2
+			}
+		}
+		stage_pc_time_7 = {
+			icon = GFX_situation_stage_pc_time_4
+			icon_background = GFX_situation_stage_frame_blue
+			custom_tooltip = stage_unknown_effects
+			on_first_enter = {
+				situation_event = { id = time.140 }
+			}
+			end = 2850
+			target_modifier = {
+				time_researcher_produces_mult = 0.20
+				planet_structures_upkeep_mult = -0.2
+				planet_time_researchers_upkeep_mult = -0.2
+			}
+		}
+		stage_pc_time_8 = {
+			icon = GFX_situation_stage_pc_time_4
+			icon_background = GFX_situation_stage_frame_blue
+			custom_tooltip = stage_unknown_effects
+			on_first_enter = {
+				situation_event = { id = time.140 }
+			}
+			end = 3650
+			target_modifier = {
+				time_researcher_produces_mult = 0.25
+				planet_structures_upkeep_mult = -0.2
+				planet_time_researchers_upkeep_mult = -0.2
+			}
+		}
+		stage_pc_time_9 = {
+			icon = GFX_situation_stage_pc_time_4
+			icon_background = GFX_situation_stage_frame_blue
+			custom_tooltip = stage_unknown_effects
+			on_first_enter = {
+				situation_event = { id = time.140 }
+			}
+			end = 4550
+			target_modifier = {
+				time_researcher_produces_mult = 0.25
+				planet_structures_upkeep_mult = -0.2
+				planet_time_researchers_upkeep_mult = -0.2
+			}
+		}
+		stage_pc_time_10 = {
+			icon = GFX_situation_stage_pc_time_5
+			icon_background = GFX_situation_stage_frame_blue
+			custom_tooltip = stage_unknown_effects
+			on_first_enter = {
+				situation_event = { id = time.150 }
+			}
+			end = 5550
+			target_modifier = {
+				time_researcher_produces_mult = 0.30
+				planet_structures_upkeep_mult = -0.1
+				planet_time_researchers_upkeep_mult = -0.1
+			}
+		}
+	}
+	
+	on_progress_complete = {
+		custom_tooltip = situation_pc_time_complete_effect
+		hidden_effect = {
+			situation_event = { id = time.160 }
+		}
+	}
+	
+	approach = {
+		name = approach_pc_time_encourage
+		icon = GFX_situation_approach_influence
+		icon_background = GFX_situation_approach_bg_red
+		on_select = {
+			custom_tooltip = situation_pc_time_encourage_effect
+		}
+		target_modifier = {
+			time_researcher_produces_mult = -0.25
+		}
+		resources = {
+			category = situations
+			upkeep = {
+				trigger = {
+					current_stage = stage_pc_time_0
+				}
+				sr_dark_matter = 1
+			}
+			upkeep = {
+				trigger = {
+					OR = {
+						current_stage = stage_pc_time_1
+						current_stage = stage_pc_time_2
+						current_stage = stage_pc_time_3
+						current_stage = stage_pc_time_4
+					}
+				}
+				sr_dark_matter = 2
+			}
+			upkeep = {
+				trigger = {
+					current_stage = stage_pc_time_5
+				}
+				sr_dark_matter = 3
+			}
+			upkeep = {
+				trigger = {
+					OR = {
+						current_stage = stage_pc_time_6
+						current_stage = stage_pc_time_7
+						current_stage = stage_pc_time_8
+						current_stage = stage_pc_time_9
+					}
+				}
+				sr_dark_matter = 4
+			}
+			upkeep = {
+				trigger = {
+					current_stage = stage_pc_time_10
+				}
+				sr_dark_matter = 5
+			}
+		}
+	}
+	
+	approach = {
+		name = approach_pc_time_default
+		icon = GFX_situation_approach_research
+		icon_background = GFX_situation_approach_bg_yellow
+		on_select = {
+			custom_tooltip = situation_pc_time_default_effect
+		}
+		resources = {
+			category = situations
+			upkeep = {
+				trigger = {
+					current_stage = stage_pc_time_0
+				}
+				sr_dark_matter = 0.5
+			}
+			upkeep = {
+				trigger = {
+					OR = {
+						current_stage = stage_pc_time_1
+						current_stage = stage_pc_time_2
+						current_stage = stage_pc_time_3
+						current_stage = stage_pc_time_4
+					}
+				}
+				sr_dark_matter = 1
+			}
+			upkeep = {
+				trigger = {
+					current_stage = stage_pc_time_5
+				}
+				sr_dark_matter = 1.5
+			}
+			upkeep = {
+				trigger = {
+					OR = {
+						current_stage = stage_pc_time_6
+						current_stage = stage_pc_time_7
+						current_stage = stage_pc_time_8
+						current_stage = stage_pc_time_9
+					}
+				}
+				sr_dark_matter = 2
+			}
+			upkeep = {
+				trigger = {
+					current_stage = stage_pc_time_10
+				}
+				sr_dark_matter = 2.5
+			}
+		}
+	}
+	
+	approach = {
+		name = approach_pc_time_discourage
+		icon = GFX_situation_approach_amenities
+		icon_background = GFX_situation_approach_bg_green
+		on_select = {
+			custom_tooltip = situation_pc_time_discourage_effect
+		}
+		target_modifier = {
+			time_researcher_produces_mult = 0.25
+		}
+		resources = {
+			category = situations
+			upkeep = {
+				trigger = {
+					current_stage = stage_pc_time_0
+				}
+				sr_dark_matter = 0.25
+			}
+			upkeep = {
+				trigger = {
+					OR = {
+						current_stage = stage_pc_time_1
+						current_stage = stage_pc_time_2
+						current_stage = stage_pc_time_3
+						current_stage = stage_pc_time_4
+					}
+				}
+				sr_dark_matter = 0.5
+			}
+			upkeep = {
+				trigger = {
+					current_stage = stage_pc_time_5
+				}
+				sr_dark_matter = 0.75
+			}
+			upkeep = {
+				trigger = {
+					OR = {
+						current_stage = stage_pc_time_6
+						current_stage = stage_pc_time_7
+						current_stage = stage_pc_time_8
+						current_stage = stage_pc_time_9
+					}
+				}
+				sr_dark_matter = 1
+			}
+			upkeep = {
+				trigger = {
+					current_stage = stage_pc_time_10
+				}
+				sr_dark_matter = 1.25
+			}
+		}
+	}
+	
+	monthly_progress = {
+		modifier = {
+			desc = string_explore_pc_time
+			add = owner.modifier:situation_pc_time_progress_add
+		}
+		modifier = {
+			desc = string_current_approach
+			current_situation_approach = approach_pc_time_default
+			factor = 1
+		}
+		modifier = {
+			desc = string_current_approach
+			current_situation_approach = approach_pc_time_encourage
+			factor = 1.5
+		}
+		modifier = {
+			desc = string_current_approach
+			current_situation_approach = approach_pc_time_discourage
+			factor = 0.5
+		}
+		modifier = {
+			desc = string_need_pc_time
+			NOT = {
+				owner = {
+					any_owned_colony = {
+						is_same_value = root.target
+						is_colony = yes
+					}
+				}
+			}
+			factor = 0
+		}
+		modifier = {
+			desc = string_need_clear_time_blocker
+			target = {
+				has_carrier_flag = can_clear_d_time_blocker_2
+				has_deposit = d_time_blocker_2
+			}
+			factor = 0
+		}
+		modifier = {
+			desc = string_pc_time_stop
+			has_situation_flag = situation_stop
+			factor = 0
+		}
+		modifier = {
+			desc = string_pc_time_slow
+			has_situation_flag = situation_slow
+			factor = 0.5
+		}
+		modifier = {
+			desc = string_pc_time_fast
+			has_situation_flag = situation_fast
+			factor = 2
+		}
+		modifier = {
+			desc = string_stage_pc_time_10
+			current_stage = stage_pc_time_10
+			factor = 0.1
+		}
+		modifier = {
+			desc = new_country_others_modifier
+			owner = { has_modifier = new_country_others_modifier }
+			factor = 10
+		}
+	}
+	
+	triggered_blocked_desc = {
+		trigger = {
+			target = {
+				has_carrier_flag = can_clear_d_time_blocker_2
+				has_deposit = d_time_blocker_2
+			}
+		}
+		text = string_need_clear_time_blocker
+	}
+}
+
+situation_time_black_hole_chain = {
+	complete_icon_frame = GFX_situation_outcome_frame_blue
+	complete_icon = GFX_situation_outcome_pc_timesingularity
+	picture = GFX_evt_black_hole
+	situation_log_category = horizonsignal
+	
+	category = neutral
+	
+	abort_trigger = {
+		NOT = {
+			target = {
+				is_colony = yes
+				is_owned_by = root.owner
+			}
+		}
+	}
+	
+	on_abort = {
+		hidden_effect = {
+			situation_event = { id = time.294 }
+		}
+	}
+	
+	on_monthly = {
+		events = {
+			time.291
+		}
+	}
+	
+	# 阶段修正仅在抵达阶段后显示，不提前显示，避免剧透
+	stages = {
+		stage_time_black_hole_1 = {
+			icon = GFX_situation_stage_1
+			icon_background = GFX_situation_stage_frame_blue
+			custom_tooltip = stage_unknown_effects
+			end = 10
+		}
+		stage_time_black_hole_2 = {
+			icon = GFX_situation_stage_2
+			icon_background = GFX_situation_stage_frame_blue
+			custom_tooltip = stage_unknown_effects
+			on_first_enter = {
+				situation_event = { id = time.206 } # 威权VS平等
+			}
+			triggered_target_modifier = {
+				potential = {
+					has_situation_flag = situation_time_life
+					situation_progress >= 10
+				}
+				pop_ethics_shift_speed_mult = 0.5
+				pop_ethic_egalitarian_attraction_mult = 0.25
+			}
+			triggered_target_modifier = {
+				potential = {
+					has_situation_flag = situation_time_death
+					situation_progress >= 10
+				}
+				pop_ethics_shift_speed_mult = 0.5
+				pop_ethic_authoritarian_attraction_mult = 0.25
+			}
+			end = 30
+		}
+		stage_time_black_hole_3 = {
+			icon = GFX_situation_stage_3
+			icon_background = GFX_situation_stage_frame_blue
+			custom_tooltip = stage_unknown_effects
+			on_first_enter = {
+				situation_event = { id = time.207 } # 唯心VS唯物
+			}
+			triggered_target_modifier = {
+				potential = {
+					has_situation_flag = situation_time_life
+					situation_progress >= 30
+				}
+				pop_ethics_shift_speed_mult = 1
+				pop_ethic_egalitarian_attraction_mult = 0.5
+				pop_ethic_materialist_attraction_mult = 0.25
+			}
+			triggered_target_modifier = {
+				potential = {
+					has_situation_flag = situation_time_death
+					situation_progress >= 30
+				}
+				pop_ethics_shift_speed_mult = 1
+				pop_ethic_authoritarian_attraction_mult = 0.5
+				pop_ethic_spiritualist_attraction_mult = 0.25
+			}
+			end = 60
+		}
+		stage_time_black_hole_4 = {
+			icon = GFX_situation_stage_4
+			icon_background = GFX_situation_stage_frame_blue
+			custom_tooltip = stage_unknown_effects
+			on_first_enter = {
+				situation_event = { id = time.208 } # 军国VS和平
+			}
+			triggered_target_modifier = {
+				potential = {
+					has_situation_flag = situation_time_life
+					situation_progress >= 60
+				}
+				pop_ethics_shift_speed_mult = 1.5
+				pop_ethic_egalitarian_attraction_mult = 0.75
+				pop_ethic_materialist_attraction_mult = 0.5
+				pop_ethic_pacifist_attraction_mult = 0.25
+			}
+			triggered_target_modifier = {
+				potential = {
+					has_situation_flag = situation_time_death
+					situation_progress >= 60
+				}
+				pop_ethics_shift_speed_mult = 1.5
+				pop_ethic_authoritarian_attraction_mult = 0.75
+				pop_ethic_spiritualist_attraction_mult = 0.5
+				pop_ethic_militarist_attraction_mult = 0.25
+			}
+			end = 100
+		}
+		stage_time_black_hole_5 = {
+			icon = GFX_situation_stage_5
+			icon_background = GFX_situation_stage_frame_blue
+			custom_tooltip = stage_unknown_effects
+			on_first_enter = {
+				situation_event = { id = time.209 } # 排外VS亲外
+			}
+			triggered_target_modifier = {
+				potential = {
+					has_situation_flag = situation_time_life
+					situation_progress >= 100
+				}
+				pop_ethics_shift_speed_mult = 2
+				pop_ethic_egalitarian_attraction_mult = 1
+				pop_ethic_materialist_attraction_mult = 0.75
+				pop_ethic_pacifist_attraction_mult = 0.5
+				pop_ethic_xenophile_attraction_mult = 0.25
+			}
+			triggered_target_modifier = {
+				potential = {
+					has_situation_flag = situation_time_death
+					situation_progress >= 100
+				}
+				pop_ethics_shift_speed_mult = 2
+				pop_ethic_authoritarian_attraction_mult = 1
+				pop_ethic_spiritualist_attraction_mult = 0.75
+				pop_ethic_militarist_attraction_mult = 0.5
+				pop_ethic_xenophobe_attraction_mult = 0.25
+			}
+			end = 150
+		}
+	}
+	
+	on_progress_complete = {
+		custom_tooltip = situation_time_black_hole_chain_complete_effect
+		hidden_effect = {
+			situation_event = { id = time.292 }
+		}
+	}
+	
+	approach = {
+		name = approach_discourage
+		icon = GFX_situation_approach_shrug
+		icon_background = GFX_situation_approach_bg_red
+		on_select = {
+			custom_tooltip = situation_time_black_hole_chain_discourage_effect
+		}
+		ai_weight = {
+			base = 1
+		}
+		resources = {
+			category = situations
+			upkeep = {
+				trigger = {
+					situation_time_black_hole_chain_is_paused = no
+				}
+				influence = 1
+			}
+		}
+	}
+	
+	approach = {
+		name = approach_default
+		icon = GFX_situation_approach_balance_sheet
+		icon_background = GFX_situation_approach_bg_yellow
+		on_select = {
+			custom_tooltip = situation_time_black_hole_chain_default_effect
+		}
+		ai_weight = {
+			base = 5
+		}
+		resources = {
+			category = situations
+			upkeep = {
+				trigger = {
+					situation_time_black_hole_chain_is_paused = no
+				}
+				unity = 5
+			}
+		}
+	}
+	
+	approach = {
+		name = approach_encourage
+		icon = GFX_situation_approach_amenities
+		icon_background = GFX_situation_approach_bg_green
+		on_select = {
+			custom_tooltip = situation_time_black_hole_chain_encourage_effect
+		}
+		ai_weight = {
+			base = 10
+		}
+		resources = {
+			category = situations
+			upkeep = {
+				trigger = {
+					situation_time_black_hole_chain_is_paused = no
+				}
+				unity = 10
+			}
+		}
+	}
+	
+	monthly_progress = {
+		base = 4
+		modifier = {
+			desc = string_current_approach
+			current_situation_approach = approach_encourage
+			factor = 1.5
+		}
+		modifier = {
+			desc = string_current_approach
+			current_situation_approach = approach_discourage
+			factor = 0.5
+		}
+		modifier = {
+			desc = string_exists_situation_pc_time
+			situation_time_black_hole_chain_is_paused = yes
+			factor = 0
+		}
+	}
+}
+
+# 威权VS平等
+situation_time_authoritarian_vs_egalitarian = {
+	fail_icon_frame = GFX_situation_outcome_frame_red
+	fail_icon = GFX_situation_outcome_authoritarian
+	complete_icon_frame = GFX_situation_outcome_frame_green
+	complete_icon = GFX_situation_outcome_egalitarian
+	picture = {
+		trigger = {
+			current_stage = stage_time_authoritarian_2
+		}
+		picture = GFX_time_vs_red_full
+	}
+	picture = {
+		trigger = {
+			current_stage = stage_time_authoritarian_1
+		}
+		picture = GFX_time_vs_red
+	}
+	picture = {
+		trigger = {
+			current_stage = stage_time_nature
+		}
+		picture = GFX_time_vs_nature
+	}
+	picture = {
+		trigger = {
+			current_stage = stage_time_egalitarian_1
+		}
+		picture = GFX_time_vs_blue
+	}
+	picture = {
+		trigger = {
+			current_stage = stage_time_egalitarian_2
+		}
+		picture = GFX_time_vs_blue_full
+	}
+	situation_log_category = empire_concerns
+	
+	category = neutral
+	progress_direction = bidirectional
+	complete_category = positive
+	fail_category = negative
+	
+	abort_trigger = {
+		NOT = {
+			target = {
+				is_colony = yes
+				is_owned_by = root.owner
+			}
+		}
+	}
+	
+	on_abort = {
+		hidden_effect = {
+			destroy_situation = this
+		}
+	}
+	
+	initial_progress = 500
+	
+	stages = {
+		stage_time_authoritarian_2 = {
+			icon = GFX_situation_stage_3
+			icon_background = GFX_situation_stage_frame_blue
+			custom_tooltip = stage_time_authoritarian_2_effects
+			end = 200
+		}
+		stage_time_authoritarian_1 = {
+			icon = GFX_situation_stage_2
+			icon_background = GFX_situation_stage_frame_blue
+			custom_tooltip = stage_time_authoritarian_1_effects
+			end = 400
+		}
+		stage_time_nature = {
+			icon = GFX_situation_stage_1
+			icon_background = GFX_situation_stage_frame_blue
+			custom_tooltip = stage_time_nature_effects
+			end = 600
+		}
+		stage_time_egalitarian_1 = {
+			icon = GFX_situation_stage_2
+			icon_background = GFX_situation_stage_frame_blue
+			custom_tooltip = stage_time_egalitarian_1_effects
+			end = 800
+		}
+		stage_time_egalitarian_2 = {
+			icon = GFX_situation_stage_3
+			icon_background = GFX_situation_stage_frame_blue
+			custom_tooltip = stage_time_egalitarian_2_effects
+			end = 1000
+		}
+	}
+	
+	on_fail = {
+		custom_tooltip = situation_time_authoritarian_win
+		hidden_effect = {
+			situation_event = { id = time.210 }
+		}
+	}
+	
+	on_progress_complete = {
+		custom_tooltip = situation_time_egalitarian_win
+		hidden_effect = {
+			situation_event = { id = time.220 }
+		}
+	}
+	
+	approach = {
+		name = approach_time_authoritarian
+		icon = GFX_situation_approach_influence
+		icon_background = GFX_situation_approach_bg_red
+		target_modifier = {
+			pop_ethic_authoritarian_attraction_mult = 0.5
+		}
+		resources = {
+			category = situations
+			upkeep = {
+				influence = 1
+			}
+		}
+	}
+	
+	approach = {
+		name = approach_time_nature
+		icon = GFX_situation_approach_shrug
+		icon_background = GFX_situation_approach_bg_yellow
+		resources = {
+			category = situations
+			produces = {
+				society_research = 5
+			}
+		}
+	}
+	
+	approach = {
+		name = approach_time_egalitarian
+		icon = GFX_situation_approach_balance_sheet
+		icon_background = GFX_situation_approach_bg_green
+		target_modifier = {
+			pop_ethic_egalitarian_attraction_mult = 0.5
+		}
+		resources = {
+			category = situations
+			upkeep = {
+				influence = 1
+			}
+		}
+	}
+	
+	monthly_progress = {
+		base = 0
+		modifier = {
+			desc = time_authoritarian_power
+			subtract = event_target:situation_time_black_hole_chain.time_authoritarian_power
+		}
+		modifier = {
+			desc = time_egalitarian_power
+			add = event_target:situation_time_black_hole_chain.time_egalitarian_power
+		}
+		
+		modifier = {
+			desc = string_current_approach
+			current_situation_approach = approach_time_authoritarian
+			situation_monthly_progress > 0
+			factor = 0.8
+		}
+		modifier = {
+			desc = string_current_approach
+			current_situation_approach = approach_time_authoritarian
+			situation_monthly_progress < 0
+			factor = 1.2
+		}
+		
+		modifier = {
+			desc = string_current_approach
+			current_situation_approach = approach_time_egalitarian
+			situation_monthly_progress < 0
+			factor = 0.8
+		}
+		modifier = {
+			desc = string_current_approach
+			current_situation_approach = approach_time_egalitarian
+			situation_monthly_progress > 0
+			factor = 1.2
+		}
+	}
+}
+
+# 唯心VS唯物
+situation_time_spiritualist_vs_materialist = {
+	fail_icon_frame = GFX_situation_outcome_frame_red
+	fail_icon = GFX_situation_outcome_spiritualist
+	complete_icon_frame = GFX_situation_outcome_frame_green
+	complete_icon = GFX_situation_outcome_materialist
+	picture = {
+		trigger = {
+			current_stage = stage_time_spiritualist_2
+		}
+		picture = GFX_time_vs_red_full
+	}
+	picture = {
+		trigger = {
+			current_stage = stage_time_spiritualist_1
+		}
+		picture = GFX_time_vs_red
+	}
+	picture = {
+		trigger = {
+			current_stage = stage_time_nature
+		}
+		picture = GFX_time_vs_nature
+	}
+	picture = {
+		trigger = {
+			current_stage = stage_time_materialist_1
+		}
+		picture = GFX_time_vs_blue
+	}
+	picture = {
+		trigger = {
+			current_stage = stage_time_materialist_2
+		}
+		picture = GFX_time_vs_blue_full
+	}
+	situation_log_category = empire_concerns
+	
+	category = neutral
+	progress_direction = bidirectional
+	complete_category = positive
+	fail_category = negative
+	
+	abort_trigger = {
+		NOT = {
+			target = {
+				is_colony = yes
+				is_owned_by = root.owner
+			}
+		}
+	}
+	
+	on_abort = {
+		hidden_effect = {
+			destroy_situation = this
+		}
+	}
+	
+	initial_progress = 500
+	
+	stages = {
+		stage_time_spiritualist_2 = {
+			icon = GFX_situation_stage_3
+			icon_background = GFX_situation_stage_frame_blue
+			custom_tooltip = stage_time_spiritualist_2_effects
+			end = 200
+		}
+		stage_time_spiritualist_1 = {
+			icon = GFX_situation_stage_2
+			icon_background = GFX_situation_stage_frame_blue
+			custom_tooltip = stage_time_spiritualist_1_effects
+			end = 400
+		}
+		stage_time_nature = {
+			icon = GFX_situation_stage_1
+			icon_background = GFX_situation_stage_frame_blue
+			custom_tooltip = stage_time_nature_effects
+			end = 600
+		}
+		stage_time_materialist_1 = {
+			icon = GFX_situation_stage_2
+			icon_background = GFX_situation_stage_frame_blue
+			custom_tooltip = stage_time_materialist_1_effects
+			end = 800
+		}
+		stage_time_materialist_2 = {
+			icon = GFX_situation_stage_3
+			icon_background = GFX_situation_stage_frame_blue
+			custom_tooltip = stage_time_materialist_2_effects
+			end = 1000
+		}
+	}
+	
+	on_fail = {
+		custom_tooltip = situation_time_spiritualist_win
+		hidden_effect = {
+			situation_event = { id = time.230 }
+		}
+	}
+	
+	on_progress_complete = {
+		custom_tooltip = situation_time_materialist_win
+		hidden_effect = {
+			situation_event = { id = time.240 }
+		}
+	}
+	
+	approach = {
+		name = approach_time_spiritualist
+		icon = GFX_situation_approach_unity
+		icon_background = GFX_situation_approach_bg_red
+		target_modifier = {
+			pop_ethic_spiritualist_attraction_mult = 0.5
+		}
+		resources = {
+			category = situations
+			upkeep = {
+				influence = 1
+			}
+		}
+	}
+	
+	approach = {
+		name = approach_time_nature
+		icon = GFX_situation_approach_shrug
+		icon_background = GFX_situation_approach_bg_yellow
+		resources = {
+			category = situations
+			produces = {
+				society_research = 5
+			}
+		}
+	}
+	
+	approach = {
+		name = approach_time_materialist
+		icon = GFX_situation_approach_research
+		icon_background = GFX_situation_approach_bg_green
+		target_modifier = {
+			pop_ethic_materialist_attraction_mult = 0.5
+		}
+		resources = {
+			category = situations
+			upkeep = {
+				influence = 1
+			}
+		}
+	}
+	
+	monthly_progress = {
+		base = 0
+		modifier = {
+			desc = time_spiritualist_power
+			subtract = event_target:situation_time_black_hole_chain.time_spiritualist_power
+		}
+		modifier = {
+			desc = time_materialist_power
+			add = event_target:situation_time_black_hole_chain.time_materialist_power
+		}
+		
+		modifier = {
+			desc = string_current_approach
+			current_situation_approach = approach_time_spiritualist
+			situation_monthly_progress > 0
+			factor = 0.8
+		}
+		modifier = {
+			desc = string_current_approach
+			current_situation_approach = approach_time_spiritualist
+			situation_monthly_progress < 0
+			factor = 1.2
+		}
+		
+		modifier = {
+			desc = string_current_approach
+			current_situation_approach = approach_time_materialist
+			situation_monthly_progress < 0
+			factor = 0.8
+		}
+		modifier = {
+			desc = string_current_approach
+			current_situation_approach = approach_time_materialist
+			situation_monthly_progress > 0
+			factor = 1.2
+		}
+	}
+}
+
+# 军国VS和平
+situation_time_militarist_vs_pacifist = {
+	fail_icon_frame = GFX_situation_outcome_frame_red
+	fail_icon = GFX_situation_outcome_militarist
+	complete_icon_frame = GFX_situation_outcome_frame_green
+	complete_icon = GFX_situation_outcome_pacifist
+	picture = {
+		trigger = {
+			current_stage = stage_time_militarist_2
+		}
+		picture = GFX_time_vs_red_full
+	}
+	picture = {
+		trigger = {
+			current_stage = stage_time_militarist_1
+		}
+		picture = GFX_time_vs_red
+	}
+	picture = {
+		trigger = {
+			current_stage = stage_time_nature
+		}
+		picture = GFX_time_vs_nature
+	}
+	picture = {
+		trigger = {
+			current_stage = stage_time_pacifist_1
+		}
+		picture = GFX_time_vs_blue
+	}
+	picture = {
+		trigger = {
+			current_stage = stage_time_pacifist_2
+		}
+		picture = GFX_time_vs_blue_full
+	}
+	situation_log_category = empire_concerns
+	
+	category = neutral
+	progress_direction = bidirectional
+	complete_category = positive
+	fail_category = negative
+	
+	abort_trigger = {
+		NOT = {
+			target = {
+				is_colony = yes
+				is_owned_by = root.owner
+			}
+		}
+	}
+	
+	on_abort = {
+		hidden_effect = {
+			destroy_situation = this
+		}
+	}
+	
+	initial_progress = 500
+	
+	stages = {
+		stage_time_militarist_2 = {
+			icon = GFX_situation_stage_3
+			icon_background = GFX_situation_stage_frame_blue
+			custom_tooltip = stage_time_militarist_2_effects
+			end = 200
+		}
+		stage_time_militarist_1 = {
+			icon = GFX_situation_stage_2
+			icon_background = GFX_situation_stage_frame_blue
+			custom_tooltip = stage_time_militarist_1_effects
+			end = 400
+		}
+		stage_time_nature = {
+			icon = GFX_situation_stage_1
+			icon_background = GFX_situation_stage_frame_blue
+			custom_tooltip = stage_time_nature_effects
+			end = 600
+		}
+		stage_time_pacifist_1 = {
+			icon = GFX_situation_stage_2
+			icon_background = GFX_situation_stage_frame_blue
+			custom_tooltip = stage_time_pacifist_1_effects
+			end = 800
+		}
+		stage_time_pacifist_2 = {
+			icon = GFX_situation_stage_3
+			icon_background = GFX_situation_stage_frame_blue
+			custom_tooltip = stage_time_pacifist_2_effects
+			end = 1000
+		}
+	}
+	
+	on_fail = {
+		custom_tooltip = situation_time_militarist_win
+		hidden_effect = {
+			situation_event = { id = time.250 }
+		}
+	}
+	
+	on_progress_complete = {
+		custom_tooltip = situation_time_pacifist_win
+		hidden_effect = {
+			situation_event = { id = time.260 }
+		}
+	}
+	
+	approach = {
+		name = approach_time_militarist
+		icon = GFX_situation_approach_sword
+		icon_background = GFX_situation_approach_bg_red
+		target_modifier = {
+			pop_ethic_militarist_attraction_mult = 0.5
+		}
+		resources = {
+			category = situations
+			upkeep = {
+				influence = 1
+			}
+		}
+	}
+	
+	approach = {
+		name = approach_time_nature
+		icon = GFX_situation_approach_shrug
+		icon_background = GFX_situation_approach_bg_yellow
+		resources = {
+			category = situations
+			produces = {
+				society_research = 5
+			}
+		}
+	}
+	
+	approach = {
+		name = approach_time_pacifist
+		icon = GFX_situation_approach_gift
+		icon_background = GFX_situation_approach_bg_green
+		target_modifier = {
+			pop_ethic_pacifist_attraction_mult = 0.5
+		}
+		resources = {
+			category = situations
+			upkeep = {
+				influence = 1
+			}
+		}
+	}
+	
+	monthly_progress = {
+		base = 0
+		modifier = {
+			desc = time_militarist_power
+			subtract = event_target:situation_time_black_hole_chain.time_militarist_power
+		}
+		modifier = {
+			desc = time_pacifist_power
+			add = event_target:situation_time_black_hole_chain.time_pacifist_power
+		}
+		
+		modifier = {
+			desc = string_current_approach
+			current_situation_approach = approach_time_militarist
+			situation_monthly_progress > 0
+			factor = 0.8
+		}
+		modifier = {
+			desc = string_current_approach
+			current_situation_approach = approach_time_militarist
+			situation_monthly_progress < 0
+			factor = 1.2
+		}
+		
+		modifier = {
+			desc = string_current_approach
+			current_situation_approach = approach_time_pacifist
+			situation_monthly_progress < 0
+			factor = 0.8
+		}
+		modifier = {
+			desc = string_current_approach
+			current_situation_approach = approach_time_pacifist
+			situation_monthly_progress > 0
+			factor = 1.2
+		}
+	}
+}
+
+# 排外VS亲外
+situation_time_xenophobe_vs_xenophile = {
+	fail_icon_frame = GFX_situation_outcome_frame_red
+	fail_icon = GFX_situation_outcome_xenophobe
+	complete_icon_frame = GFX_situation_outcome_frame_green
+	complete_icon = GFX_situation_outcome_xenophile
+	picture = {
+		trigger = {
+			current_stage = stage_time_xenophobe_2
+		}
+		picture = GFX_time_vs_red_full
+	}
+	picture = {
+		trigger = {
+			current_stage = stage_time_xenophobe_1
+		}
+		picture = GFX_time_vs_red
+	}
+	picture = {
+		trigger = {
+			current_stage = stage_time_nature
+		}
+		picture = GFX_time_vs_nature
+	}
+	picture = {
+		trigger = {
+			current_stage = stage_time_xenophile_1
+		}
+		picture = GFX_time_vs_blue
+	}
+	picture = {
+		trigger = {
+			current_stage = stage_time_xenophile_2
+		}
+		picture = GFX_time_vs_blue_full
+	}
+	situation_log_category = empire_concerns
+	
+	category = neutral
+	progress_direction = bidirectional
+	complete_category = positive
+	fail_category = negative
+	
+	abort_trigger = {
+		NOT = {
+			target = {
+				is_colony = yes
+				is_owned_by = root.owner
+			}
+		}
+	}
+	
+	on_abort = {
+		hidden_effect = {
+			destroy_situation = this
+		}
+	}
+	
+	initial_progress = 500
+	
+	stages = {
+		stage_time_xenophobe_2 = {
+			icon = GFX_situation_stage_3
+			icon_background = GFX_situation_stage_frame_blue
+			custom_tooltip = stage_time_xenophobe_2_effects
+			end = 200
+		}
+		stage_time_xenophobe_1 = {
+			icon = GFX_situation_stage_2
+			icon_background = GFX_situation_stage_frame_blue
+			custom_tooltip = stage_time_xenophobe_1_effects
+			end = 400
+		}
+		stage_time_nature = {
+			icon = GFX_situation_stage_1
+			icon_background = GFX_situation_stage_frame_blue
+			custom_tooltip = stage_time_nature_effects
+			end = 600
+		}
+		stage_time_xenophile_1 = {
+			icon = GFX_situation_stage_2
+			icon_background = GFX_situation_stage_frame_blue
+			custom_tooltip = stage_time_xenophile_1_effects
+			end = 800
+		}
+		stage_time_xenophile_2 = {
+			icon = GFX_situation_stage_3
+			icon_background = GFX_situation_stage_frame_blue
+			custom_tooltip = stage_time_xenophile_2_effects
+			end = 1000
+		}
+	}
+	
+	on_fail = {
+		custom_tooltip = situation_time_xenophobe_win
+		hidden_effect = {
+			situation_event = { id = time.270 }
+		}
+	}
+	
+	on_progress_complete = {
+		custom_tooltip = situation_time_xenophile_win
+		hidden_effect = {
+			situation_event = { id = time.280 }
+		}
+	}
+	
+	approach = {
+		name = approach_time_xenophobe
+		icon = GFX_situation_approach_fist
+		icon_background = GFX_situation_approach_bg_red
+		target_modifier = {
+			pop_ethic_xenophobe_attraction_mult = 0.5
+		}
+		resources = {
+			category = situations
+			upkeep = {
+				influence = 1
+			}
+		}
+	}
+	
+	approach = {
+		name = approach_time_nature
+		icon = GFX_situation_approach_shrug
+		icon_background = GFX_situation_approach_bg_yellow
+		resources = {
+			category = situations
+			produces = {
+				society_research = 5
+			}
+		}
+	}
+	
+	approach = {
+		name = approach_time_xenophile
+		icon = GFX_situation_approach_amenities
+		icon_background = GFX_situation_approach_bg_green
+		target_modifier = {
+			pop_ethic_xenophile_attraction_mult = 0.5
+		}
+		resources = {
+			category = situations
+			upkeep = {
+				influence = 1
+			}
+		}
+	}
+	
+	monthly_progress = {
+		base = 0
+		modifier = {
+			desc = time_xenophobe_power
+			subtract = event_target:situation_time_black_hole_chain.time_xenophobe_power
+		}
+		modifier = {
+			desc = time_xenophile_power
+			add = event_target:situation_time_black_hole_chain.time_xenophile_power
+		}
+		
+		modifier = {
+			desc = string_current_approach
+			current_situation_approach = approach_time_xenophobe
+			situation_monthly_progress > 0
+			factor = 0.8
+		}
+		modifier = {
+			desc = string_current_approach
+			current_situation_approach = approach_time_xenophobe
+			situation_monthly_progress < 0
+			factor = 1.2
+		}
+		
+		modifier = {
+			desc = string_current_approach
+			current_situation_approach = approach_time_xenophile
+			situation_monthly_progress < 0
+			factor = 0.8
+		}
+		modifier = {
+			desc = string_current_approach
+			current_situation_approach = approach_time_xenophile
+			situation_monthly_progress > 0
+			factor = 1.2
+		}
+	}
+}
+
+situation_origin_time = {
+	complete_icon_frame = GFX_situation_outcome_frame_blue
+	complete_icon = GFX_situation_outcome_pc_endless_time
+	picture = GFX_pc_endless_time
+	situation_log_category = horizonsignal
+	
+	category = positive
+	
+	stages = {
+		stage_origin_time = {
+			icon = GFX_situation_stage_pc_time_5
+			icon_background = GFX_situation_stage_frame_blue
+			custom_tooltip = stage_unknown_effects
+			end = 500
+		}
+	}
+	
+	on_progress_complete = {
+		custom_tooltip = situation_origin_time_complete_effect
+		hidden_effect = {
+			target = {
+				carrier_event = { id = time.30 }
+			}
+			destroy_situation = this
+		}
+	}
+	
+	approach = {
+		name = approach_origin_time_discourage
+		icon = GFX_situation_approach_shrug
+		icon_background = GFX_situation_approach_bg_red
+		default = yes
+		on_select = {
+			custom_tooltip = situation_time_black_hole_chain_discourage_effect
+		}
+	}
+	
+	approach = {
+		name = approach_origin_time_default
+		icon = GFX_situation_approach_balance_sheet
+		icon_background = GFX_situation_approach_bg_yellow
+		allow = {
+			owner = {
+				requires_origin_time_authority = yes
+				if = {
+					limit = {
+						has_origin_time_ruler = yes
+					}
+					if = {
+						limit = {
+							is_auth_time_democratic = yes
+						}
+						event_target:origin_time_ruler = { is_councilor = yes }
+					}
+					else = {
+						event_target:origin_time_ruler = { is_ruler = yes }
+					}
+				}
+				else = {
+					custom_tooltip = {
+						fail_text = requires_origin_time_ruler
+						always = no
+					}
+				}
+				custom_tooltip = {
+					fail_text = requires_agenda_time_soul_finished
+					has_country_flag = agenda_time_soul_finished
+				}
+				has_country_resource = {
+					type = sr_dark_matter
+					amount >= 20
+				}
+				has_country_resource = {
+					type = astral_threads
+					amount >= 10
+				}
+			}
+		}
+		on_select = {
+			custom_tooltip = situation_time_black_hole_chain_default_effect
+		}
+		resources = {
+			category = terraforming
+			upkeep = {
+				sr_dark_matter = 20
+				astral_threads = 10
+			}
+		}
+	}
+	
+	approach = {
+		name = approach_origin_time_encourage
+		icon = GFX_situation_approach_amenities
+		icon_background = GFX_situation_approach_bg_green
+		allow = {
+			owner = {
+				requires_origin_time_authority = yes
+				if = {
+					limit = {
+						has_origin_time_ruler = yes
+					}
+					if = {
+						limit = {
+							is_auth_time_democratic = yes
+						}
+						event_target:origin_time_ruler = { is_councilor = yes }
+					}
+					else = {
+						event_target:origin_time_ruler = { is_ruler = yes }
+					}
+				}
+				else = {
+					custom_tooltip = {
+						fail_text = requires_origin_time_ruler
+						always = no
+					}
+				}
+				custom_tooltip = {
+					fail_text = requires_agenda_time_soul_finished
+					has_country_flag = agenda_time_soul_finished
+				}
+				has_country_resource = {
+					type = sr_dark_matter
+					amount >= 50
+				}
+				has_country_resource = {
+					type = astral_threads
+					amount >= 25
+				}
+			}
+		}
+		on_select = {
+			custom_tooltip = situation_time_black_hole_chain_encourage_effect
+		}
+		resources = {
+			category = terraforming
+			upkeep = {
+				sr_dark_matter = 50
+				astral_threads = 25
+			}
+		}
+	}
+	
+	monthly_progress = {
+		modifier = {
+			desc = string_current_approach
+			current_situation_approach = approach_origin_time_default
+			add = 1
+		}
+		modifier = {
+			desc = string_current_approach
+			current_situation_approach = approach_origin_time_encourage
+			add = 2
+		}
+		modifier = {
+			desc = string_current_approach
+			current_situation_approach = approach_origin_time_discourage
+			factor = 0
+		}
+		modifier = {
+			desc = string_situation_origin_time_faster
+			owner = { has_country_flag = situation_origin_time_faster }
+			factor = 2
+		}
+		modifier = {
+			desc = string_terraform_speed
+			factor = target.value:num_time_modifier|MODIFIER|terraform_speed_mult|
+		}
+		modifier = {
+			desc = string_need_pc_time_to_compress
+			NOT = {
+				target = {
+					is_colony = yes
+					is_owned_by = root.owner
+				}
+			}
+			factor = 0
+		}
+	}
+	
+	triggered_blocked_desc = {
+		trigger = {
+			owner = {
+				is_origin_time_authority = yes
+				has_country_flag = agenda_time_soul_finished
+				has_country_resource = {
+					type = sr_dark_matter
+					amount < 20
+				}
+			}
+		}
+		text = string_situation_origin_time_requires_sr_dark_matter
+	}
+	
+	triggered_blocked_desc = {
+		trigger = {
+			owner = {
+				is_origin_time_authority = yes
+				has_country_flag = agenda_time_soul_finished
+				has_country_resource = {
+					type = astral_threads
+					amount < 10
+				}
+			}
+		}
+		text = string_situation_origin_time_requires_astral_threads
+	}
+}

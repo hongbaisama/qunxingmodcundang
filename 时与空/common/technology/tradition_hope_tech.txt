@@ -1,0 +1,581 @@
+tech_hope_coils_god = {
+	cost = @base_hope_tech_cost
+	area = society
+	tier = 5
+	category = { horror_time }
+	is_rare = yes
+	is_reverse_engineerable = no
+	weight = 0
+
+	gateway = horror_time
+	
+	potential = {
+		has_tradition = tr_hope_1
+	}
+	
+	modifier = {
+		station_observers_produces_mult = 1
+	}
+}
+
+tech_hope_coils_god_halted = {
+	cost = @base_hope_tech_cost
+	area = society
+	tier = 5
+	category = { horror_time }
+	is_rare = yes
+	is_reverse_engineerable = no
+	weight = 0
+
+	gateway = horror_time
+	
+	potential = {
+		has_tradition = tr_hope_1
+		has_country_flag = time_akx_coils_god_end_1
+	}
+	
+	modifier = {
+		leader_lifespan_mult = 0.314
+	}
+}
+
+tech_hope_coils_god_end = {
+	icon = tech_hope_coils_god_halted
+	cost = @base_hope_tech_cost
+	area = society
+	tier = 5
+	category = { horror_time }
+	is_rare = yes
+	is_reverse_engineerable = no
+	weight = 0
+
+	gateway = horror_time
+	
+	potential = {
+		has_tradition = tr_hope_1
+		has_country_flag = time_akx_coils_god_end_2
+	}
+	
+	modifier = {
+		habitability_floor_add = 0.314
+	}
+}
+
+
+
+tech_hope_hole_pets = {
+	cost = @base_hope_tech_cost
+	area = physics
+	tier = 5
+	category = { horror_time }
+	is_rare = yes
+	is_reverse_engineerable = no
+	weight = 0
+
+	gateway = horror_time
+	
+	potential = {
+		has_tradition = tr_hope_2
+	}
+	
+	modifier = {
+		station_researchers_produces_mult = 1
+	}
+}
+
+tech_hope_hole_pets_end = {
+	cost = @base_hope_tech_cost
+	area = society
+	tier = 5
+	category = { horror_time }
+	is_rare = yes
+	is_reverse_engineerable = no
+	weight = 0
+
+	gateway = horror_time
+	
+	potential = {
+		has_tradition = tr_hope_2
+		NOT = { has_country_flag = dimension_traveler_research_brief }
+		OR = {
+			has_country_flag = time_akx_hole_pets_end_1
+			has_country_flag = time_akx_hole_pets_end_2
+			has_country_flag = time_akx_hole_pets_end_3
+		}
+	}
+	
+	modifier = {
+		logistic_growth_mult = 0.25
+		bonus_pop_growth_mult = 0.25
+		planet_pop_assembly_mult = 0.25
+	}
+}
+
+tech_hope_dimension_traveler_brief = {
+	cost = @base_hope_tech_cost
+	area = society
+	tier = 5
+	category = { horror_time }
+	is_rare = yes
+	is_reverse_engineerable = no
+	weight = 0
+
+	gateway = horror_time
+	
+	potential = {
+		has_tradition = tr_hope_2
+		has_country_flag = dimension_traveler_research_brief
+	}
+	
+	prereqfor_desc = {
+		custom = {
+			title = "tech_hope_dimension_traveler_brief_custom"
+			desc = "tech_hope_dimension_traveler_brief_custom_desc"
+		}
+	}
+}
+
+
+
+tech_hope_worm_mine = {
+	cost = @base_hope_tech_cost
+	area = engineering
+	tier = 5
+	category = { horror_time }
+	is_rare = yes
+	is_reverse_engineerable = no
+	weight = 0
+
+	gateway = horror_time
+	
+	potential = {
+		has_tradition = tr_hope_3
+	}
+	
+	modifier = {
+		planet_miners_minerals_produces_add = 2
+		planet_miners_alloys_produces_add = 1.5
+	}
+}
+
+tech_hope_worm_farm = {
+	cost = @base_hope_tech_cost
+	area = society
+	tier = 5
+	category = { horror_time }
+	is_rare = yes
+	is_reverse_engineerable = no
+	weight = 0
+
+	gateway = horror_time
+	
+	potential = {
+		has_tradition = tr_hope_3
+	}
+	
+	modifier = {
+		planet_farmers_food_produces_add = 3
+		planet_farmers_consumer_goods_produces_add = 3
+	}
+}
+
+tech_hope_waiting_world_1 = {
+	cost = @base_hope_tech_cost
+	area = physics
+	tier = 5
+	category = { horror_time }
+	is_rare = yes
+	is_reverse_engineerable = no
+	weight = 0
+
+	gateway = horror_time
+	
+	potential = {
+		has_tradition = tr_hope_3
+		has_country_flag = time_akx_waiting_world_end_1
+	}
+	
+	modifier = {
+		planet_physicists_physics_research_produces_add = 0.75
+		planet_biologists_society_research_produces_add = 0.75
+		planet_engineers_engineering_research_produces_add = 0.75
+		planet_technician_energy_produces_add = -3
+	}
+}
+
+tech_hope_waiting_world_2 = {
+	icon = tech_hope_waiting_world_1
+	cost = @base_hope_tech_cost
+	area = physics
+	tier = 5
+	category = { horror_time }
+	is_rare = yes
+	is_reverse_engineerable = no
+	weight = 0
+
+	gateway = horror_time
+	
+	potential = {
+		has_tradition = tr_hope_3
+		has_country_flag = time_akx_waiting_world_end_2
+	}
+	
+	modifier = {
+		planet_physicists_sr_dark_matter_produces_add = 0.1
+		planet_biologists_sr_dark_matter_produces_add = 0.1
+		planet_engineers_sr_dark_matter_produces_add = 0.1
+	}
+}
+
+tech_hope_waiting_world_3 = {
+	cost = @base_hope_tech_cost
+	area = society
+	tier = 5
+	category = { horror_time }
+	is_rare = yes
+	is_reverse_engineerable = no
+	weight = 0
+
+	gateway = horror_time
+	
+	potential = {
+		has_tradition = tr_hope_3
+		has_country_flag = time_akx_waiting_world_end_3
+	}
+	
+	modifier = {
+		planet_bureaucrats_unity_produces_add = 1
+		country_unity_produces_mult = 0.25
+		pop_happiness = -0.25
+		planet_amenities_mult = -0.25
+	}
+}
+
+tech_hope_waiting_world_4 = {
+	cost = @base_hope_tech_cost
+	area = physics
+	tier = 5
+	category = { horror_time }
+	is_rare = yes
+	is_reverse_engineerable = no
+	weight = 0
+
+	gateway = horror_time
+	
+	potential = {
+		has_tradition = tr_hope_3
+		has_country_flag = time_akx_waiting_world_end_4
+	}
+	
+	modifier = {
+		description = tech_hope_waiting_world_4_effect
+	}
+}
+
+tech_hope_waiting_world_5 = {
+	icon = tech_hope_waiting_world_4
+	cost = @base_hope_tech_cost
+	area = engineering
+	tier = 5
+	category = { horror_time }
+	is_rare = yes
+	is_reverse_engineerable = no
+	weight = 0
+
+	gateway = horror_time
+	
+	potential = {
+		has_tradition = tr_hope_3
+		has_country_flag = time_akx_waiting_world_end_5
+	}
+	
+	modifier = {
+		description = tech_hope_waiting_world_5_effect
+	}
+}
+
+tech_hope_waiting_world_6 = {
+	icon = tech_hope_waiting_world_4
+	cost = @base_hope_tech_cost
+	area = society
+	tier = 5
+	category = { horror_time }
+	is_rare = yes
+	is_reverse_engineerable = no
+	weight = 0
+
+	gateway = horror_time
+	
+	potential = {
+		has_tradition = tr_hope_3
+		has_country_flag = time_akx_waiting_world_end_6
+	}
+	
+	modifier = {
+		pop_housing_usage_add = -0.15
+		pop_amenities_usage_add = -0.15
+	}
+}
+
+tech_hope_waiting_world_7 = {
+	cost = @base_hope_tech_cost
+	area = society
+	tier = 5
+	category = { horror_time }
+	is_rare = yes
+	is_reverse_engineerable = no
+	weight = 0
+
+	gateway = horror_time
+	
+	potential = {
+		has_tradition = tr_hope_3
+		has_country_flag = time_akx_waiting_world_end_7
+	}
+	
+	modifier = {
+		planetary_ascension_effect_mult = 0.25
+		planetary_ascension_cost_mult = -0.1
+	}
+}
+
+tech_hope_waiting_world_8 = {
+	icon = tech_hope_waiting_world_7
+	cost = @base_hope_tech_cost
+	area = physics
+	tier = 5
+	category = { horror_time }
+	is_rare = yes
+	is_reverse_engineerable = no
+	weight = 0
+
+	gateway = horror_time
+	
+	potential = {
+		has_tradition = tr_hope_3
+		has_country_flag = time_akx_waiting_world_end_8
+	}
+	
+	modifier = {
+		country_sr_dark_matter_produces_mult = 0.25
+	}
+}
+
+
+
+tech_hope_mirrored_syzygy_admiral = {
+	cost = @base_hope_tech_cost
+	area = physics
+	tier = 5
+	category = { horror_time }
+	is_rare = yes
+	is_reverse_engineerable = no
+	weight = 0
+
+	gateway = horror_time
+	
+	potential = {
+		has_tradition = tr_hope_4
+	}
+	
+	prereqfor_desc = {
+		custom = {
+			title = "tech_hope_mirrored_syzygy_admiral_custom"
+			desc = "tech_hope_mirrored_syzygy_admiral_custom_desc"
+		}
+	}
+}
+
+tech_hope_hull = {
+	cost = @base_hope_tech_cost
+	area = engineering
+	tier = 5
+	category = { horror_time }
+	is_rare = yes
+	is_reverse_engineerable = no
+	weight = 0
+
+	gateway = horror_time
+	
+	potential = {
+		has_tradition = tr_hope_4
+	}
+	
+	prereqfor_desc = {
+		custom = {
+			title = "tech_hope_hull_custom_1"
+			desc = "tech_hope_hull_custom_desc_1"
+		}
+		custom = {
+			title = "tech_hope_hull_custom_2"
+			desc = "tech_hope_hull_custom_desc_2"
+		}
+	}
+}
+
+tech_hope_beam = {
+	cost = @base_hope_tech_cost
+	area = physics
+	tier = 5
+	category = { horror_time }
+	is_rare = yes
+	is_reverse_engineerable = no
+	weight = 0
+
+	gateway = horror_time
+	
+	potential = {
+		has_tradition = tr_hope_4
+	}
+	
+	technology_swap = {
+		name = tech_bio_hope_beam
+		inherit_icon = no
+		inherit_effects = yes
+		trigger = {
+			country_uses_bio_ships = yes
+		}
+		weight = {
+			factor = 1
+		}
+	}
+	
+	prereqfor_desc = {
+		custom = {
+			title = "tech_hope_beam_custom_1"
+			desc = "tech_hope_beam_custom_desc_1"
+		}
+		custom = {
+			title = "tech_hope_beam_custom_2"
+			desc = "tech_hope_beam_custom_desc_2"
+		}
+	}
+}
+
+tech_hope_time_titan = {
+	cost = @base_hope_tech_cost
+	area = engineering
+	tier = 5
+	category = { horror_time }
+	is_rare = yes
+	is_reverse_engineerable = no
+	weight = 0
+
+	gateway = horror_time
+	
+	potential = {
+		has_tradition = tr_hope_4
+		has_country_flag = gain_time_titan
+	}
+	
+	modifier = {
+		description = tech_hope_time_titan_effect
+	}
+}
+
+tech_dimensional_horror_strike_craft = {
+	cost = @base_hope_tech_cost
+	area = engineering
+	tier = 5
+	category = { horror_time }
+	is_rare = yes
+	is_reverse_engineerable = no
+	weight = 0
+
+	gateway = horror_time
+	
+	potential = {
+		has_tradition = tr_hope_4
+		is_same_value = event_target:gray_owner
+	}
+}
+
+
+
+tech_hope_messenger_pod = {
+	cost = @base_hope_tech_cost
+	area = society
+	tier = 5
+	category = { horror_time }
+	is_rare = yes
+	is_reverse_engineerable = no
+	weight = 0
+
+	gateway = horror_time
+	
+	potential = {
+		has_tradition = tr_hope_5
+	}
+	
+	prereqfor_desc = {
+		custom = {
+			title = "tech_hope_messenger_pod_custom"
+			desc = "tech_hope_messenger_pod_custom_desc"
+		}
+	}
+}
+
+tech_hope_end_messenger = {
+	cost = @base_hope_tech_cost
+	area = physics
+	tier = 5
+	category = { horror_time }
+	is_rare = yes
+	is_reverse_engineerable = no
+	weight = 0
+
+	gateway = horror_time
+	
+	potential = {
+		has_tradition = tr_hope_5
+		has_country_flag = time_akx_messenger_end_1
+	}
+	
+	modifier = {
+		description = tech_hope_end_messenger_effect
+	}
+}
+
+tech_hope_future_messenger = {
+	icon = tech_hope_end_messenger
+	cost = @base_hope_tech_cost
+	area = society
+	tier = 5
+	category = { horror_time }
+	is_rare = yes
+	is_reverse_engineerable = no
+	weight = 0
+
+	gateway = horror_time
+	
+	potential = {
+		has_tradition = tr_hope_5
+		has_country_flag = time_akx_messenger_end_2
+	}
+	
+	modifier = {
+		description = tech_hope_future_messenger_effect
+	}
+}
+
+tech_hope_gestalt_messenger = {
+	icon = tech_hope_end_messenger
+	cost = @base_hope_tech_cost
+	area = engineering
+	tier = 5
+	category = { horror_time }
+	is_rare = yes
+	is_reverse_engineerable = no
+	weight = 0
+
+	gateway = horror_time
+	
+	potential = {
+		has_tradition = tr_hope_5
+		has_country_flag = time_akx_messenger_end_4
+	}
+	
+	modifier = {
+		description = tech_hope_gestalt_messenger_effect
+	}
+}

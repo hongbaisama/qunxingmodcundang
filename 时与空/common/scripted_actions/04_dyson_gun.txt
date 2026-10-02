@@ -1,0 +1,157 @@
+dyson_shoot = {
+	user_scope = megastructure
+	scope = galactic_object
+
+	possible = {
+		custom_tooltip = {
+			fail_text = "no_targeting_own_colonies"
+			solar_system = {
+				NOT = {
+					any_system_planet = {
+						is_colony = yes
+						is_owned_by = fromfrom
+					}
+				}
+			}
+		}
+		time_dyson_gun_additianal_trigger = yes
+	}
+	# This - Target System
+	# From - Firing Megastructure
+	ai = {
+		ai_minister = military
+		weight = {
+			base = 0
+			# Shoot at hostile fleets if our own fleets aren't already in the system
+			modifier = {
+				weight = 10
+				any_fleet_in_system = {
+					owner? = {
+						OR = {
+							is_at_war_with = from.owner
+							is_crisis_faction = yes
+						}
+					}
+					fleet_power > 1000 #don't shoot at single reinforcement corvettes or non-military ships
+				}
+				NOT = {
+					any_fleet_in_system = {
+						is_owned_by = from.owner
+					}
+				}
+			}
+			# Extra incentive to retaliate against an empire that insulted us
+			modifier = {
+				weight = 2
+				space_owner? = {
+					has_opinion_modifier = {
+						who = from.owner
+						modifier = opinion_insult
+						is_reverse = yes
+					}
+				}
+			}
+			# Even more so if they rubbed it in with a Satisfying Insult
+			modifier = {
+				weight = 3
+				space_owner? = {
+					has_opinion_modifier = {
+						who = from.owner
+						modifier = opinion_insult
+						is_reverse = yes
+					}
+					has_modifier = satisfying_insult_recently
+				}
+			}
+			# Cannon charges slowly and misses mobile fleets, so favor static targets
+			modifier = {
+				weight = 5
+				space_owner? = { is_at_war_with = from.owner }
+				starbase? = {
+					has_starbase_size >= starbase_starhold
+				}
+			}
+			modifier = {
+				weight = 5
+				space_owner? = { is_at_war_with = from.owner }
+				starbase? = {
+					used_defense_platform_capacity_percent > 0
+				}
+			}
+			#Don't shoot yourself
+			modifier = {
+				factor = 0
+				space_owner? = { is_same_value = from.owner }
+			}
+			# Fire only on hostiles, unless they insulted us
+			modifier = {
+				factor = 0
+				space_owner? = {
+					NOR = {
+						is_hostile = from.owner
+						has_opinion_modifier = {
+							who = from.owner
+							modifier = opinion_insult
+							is_reverse = yes
+						}
+					}
+				}
+			}
+			# Only occasionally fire on a rival we are not at war with
+			modifier = {
+				factor = 0.15
+				space_owner? = {
+					NOR = {
+						is_hostile = from.owner
+						has_opinion_modifier = {
+							who = from.owner
+							modifier = opinion_insult
+							is_reverse = yes
+						}
+					}
+				}
+			}
+
+			# Have enough energy for a meaningful shot
+			modifier = {
+				factor = 0
+				from.owner = {
+					NOT = {
+						resource_stockpile_compare = {
+							resource = energy
+							value >= 10000
+						}
+					}
+				}
+			}
+			# Don't ruin your economy
+			modifier = {
+				factor = 0
+				from.owner = {
+					resource_income_compare = {
+						resource = energy
+						value <= 0
+					}
+				}
+			}
+			modifier = {
+				factor = 0
+				has_star_flag = ai_dyson_gun_limit
+			}
+		}
+	}
+
+	icon = GFX_ship_class_conduit
+	icon_selected = GFX_ship_class_conduit
+
+	on_completed = on_dyson_shoot
+	on_started = on_dyson_shoot_started
+	context_menu_name = "dyson_shot_action"
+	activity_key = "dyson_shot_activity_key"
+	tooltip = dyson_gun_ship_button
+	cooldown = 20
+	required_progress = 140.5
+
+	begin_anim_state = "working"
+	progress_anim_state = "working_looping"
+}

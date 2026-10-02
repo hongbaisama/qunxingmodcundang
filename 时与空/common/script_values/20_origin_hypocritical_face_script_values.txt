@@ -1,0 +1,161 @@
+num_hypocritical_face_upkeep_value = {
+	base = 0
+	add = value:num_hypocritical_face_country_original_value
+	add = value:num_hypocritical_face_building_original_value
+	modifier = {
+		multiply = 2
+		is_galactic_community_member = yes
+	}
+}
+
+num_hypocritical_face_decay_value = {
+	base = 0
+	modifier = {
+		add = 5
+		has_technology = tech_interplanetary_commerce
+	}
+	modifier = {
+		add = 5
+		has_technology = tech_space_trading
+	}
+	modifier = {
+		add = 5
+		has_technology = tech_interstellar_economics
+	}
+	modifier = {
+		add = 5
+		has_technology = tech_galactic_markets
+	}
+	modifier = {
+		add = 5
+		has_technology = tech_xeno_diplomacy
+	}
+	modifier = {
+		add = 5
+		has_technology = tech_xeno_relations
+	}
+	max = value:num_hypocritical_face_decay_max_value
+}
+
+num_hypocritical_face_decay_max_value = {
+	base = 0
+	complex_trigger_modifier = {
+		trigger = situation_progress
+		trigger_scope = event_target:situation_origin_hypocritical_face_of@root
+		mult = 1
+		mode = add
+	}
+	add = root.num_hypocritical_face_country_value
+	add = root.num_hypocritical_face_building_value
+}
+
+# 5/(加密+5)
+num_hypocritical_face_encryption_mult_value = {
+	base = @hypocritical_face_encryption_base
+	divide = value:num_hypocritical_face_encryption_value
+}
+
+num_hypocritical_face_encryption_value = {
+	base = 0
+	add = modifier:intel_encryption_add
+	multiply = value:num_time_modifier|MODIFIER|intel_encryption_mult|
+	add = @hypocritical_face_encryption_base
+	min = 1
+}
+
+num_hypocritical_face_country_original_value = {
+	base = 0
+	complex_trigger_modifier = {
+		trigger = count_playable_country
+		parameters = {
+			limit = {
+				intel = {
+					who = root
+					value >= 20
+				}
+				intel = {
+					who = root
+					value < 40
+				}
+			}
+		}
+		mult = @hypocritical_face_country_factor_low
+		mode = add
+	}
+	complex_trigger_modifier = {
+		trigger = count_playable_country
+		parameters = {
+			limit = {
+				intel = {
+					who = root
+					value >= 40
+				}
+				intel = {
+					who = root
+					value < 60
+				}
+			}
+		}
+		mult = @hypocritical_face_country_factor_middle
+		mode = add
+	}
+	complex_trigger_modifier = {
+		trigger = count_playable_country
+		parameters = {
+			limit = {
+				intel = {
+					who = root
+					value >= 60
+				}
+				intel = {
+					who = root
+					value < 80
+				}
+			}
+		}
+		mult = @hypocritical_face_country_factor_high
+		mode = add
+	}
+	complex_trigger_modifier = {
+		trigger = count_playable_country
+		parameters = {
+			limit = {
+				intel = {
+					who = root
+					value >= 80
+				}
+			}
+		}
+		mult = @hypocritical_face_country_factor_max
+		mode = add
+	}
+}
+
+num_hypocritical_face_building_original_value = {
+	base = 0
+	complex_trigger_modifier = {
+		trigger = check_modifier_value
+		parameters = {
+			modifier = hypocritical_face_building_modifier
+		}
+		mult = 1
+		mode = add
+	}
+}
+
+num_hypocritical_face_progress_value = {
+	base = 0
+	add = value:num_hypocritical_face_$TYPE$_original_value
+	modifier = {
+		multiply = 2
+		is_galactic_community_member = yes
+	}
+	modifier = {
+		multiply = 0.5
+		any_situation = {
+			is_situation_type = situation_origin_hypocritical_face
+			current_situation_approach = approach_origin_hypocritical_face_bribery
+		}
+	}
+	multiply = value:num_hypocritical_face_encryption_mult_value
+}

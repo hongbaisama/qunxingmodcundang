@@ -1,0 +1,681 @@
+# 调零者
+black_hole_physicist = {
+	category = specialist
+	can_be_automated = no
+	
+	swappable_data = {
+		default = {
+			condition_string = SPECIALIST_JOB_TRIGGER
+			building_icon = building_physics_lab_3
+		}
+		inline_script = "jobs/origin_time/black_hole_physicist_swap_types"
+	}
+
+	tags = { energy consumer_goods industry research }
+
+	possible_pre_triggers = {
+		has_owner = yes
+		is_being_purged = no
+		is_being_assimilated = no
+		is_sapient = yes
+	}
+
+	possible_precalc = can_fill_specialist_job
+	possible = {
+		complex_specialist_job_check_trigger = yes
+		is_origin_time_species = yes
+	}
+	
+	resources = {
+		category = planet_black_hole_physicists
+		inline_script = "jobs/origin_time/black_hole_physicist_resources"
+	}
+	
+	inline_script = "jobs/origin_time/black_hole_physicist_overlord_resources"
+	
+	inline_script = "jobs/origin_time/black_hole_physicist_modifiers"
+	
+	weight = {
+		weight = @specialist_job_weight
+		mult = 100
+		modifier = {
+			factor = 2
+			has_living_standard = { type = living_standard_academic_privilege }
+		}
+	}
+	
+	inline_script = "jobs/automodding_priority_research"
+}
+
+black_hole_physicist_drone = {
+	category = complex_drone
+	can_be_automated = no
+	
+	swappable_data = {
+		default = {
+			condition_string = DRONE_JOB_TRIGGER
+			building_icon = building_physics_lab_3
+			icon = black_hole_physicist
+		}
+		inline_script = "jobs/origin_time/black_hole_physicist_swap_types"
+	}
+
+	tags = { energy consumer_goods industry research }
+
+	possible_pre_triggers = {
+		has_owner = yes
+		is_enslaved = no
+		is_being_purged = no
+		is_being_assimilated = no
+		is_sapient = yes
+	}
+
+	possible_precalc = can_fill_drone_job
+	possible = {
+		can_think = yes
+		is_origin_time_species = yes
+	}
+	
+	resources = {
+		category = planet_black_hole_physicists
+		inline_script = "jobs/origin_time/black_hole_physicist_resources"
+	}
+	
+	inline_script = "jobs/origin_time/black_hole_physicist_overlord_resources"
+	
+	inline_script = "jobs/origin_time/black_hole_physicist_modifiers"
+	
+	weight = {
+		weight = @complex_drone_job_weight
+		mult = 100
+	}
+	
+	inline_script = "jobs/automodding_priority_research"
+}
+
+# 逐光者
+black_hole_biologist = {
+	category = specialist
+	can_be_automated = no
+	
+	swappable_data = {
+		default = {
+			condition_string = SPECIALIST_JOB_TRIGGER
+			building_icon = building_biolab_3
+		}
+		inline_script = "jobs/origin_time/black_hole_biologist_swap_types"
+	}
+
+	tags = { food unity research }
+
+	possible_pre_triggers = {
+		has_owner = yes
+		is_being_purged = no
+		is_being_assimilated = no
+		is_sapient = yes
+	}
+
+	possible_precalc = can_fill_specialist_job
+	possible = {
+		complex_specialist_job_check_trigger = yes
+		is_origin_time_species = yes
+	}
+	
+	resources = {
+		category = planet_black_hole_biologists
+		inline_script = "jobs/origin_time/black_hole_biologist_resources"
+	}
+	
+	inline_script = "jobs/origin_time/black_hole_biologist_overlord_resources"
+	
+	inline_script = "jobs/origin_time/black_hole_biologist_modifiers"
+	
+	weight = {
+		weight = @specialist_job_weight
+		mult = 100
+		modifier = {
+			factor = 2
+			has_living_standard = { type = living_standard_academic_privilege }
+		}
+	}
+	
+	inline_script = "jobs/automodding_priority_research"
+}
+
+black_hole_biologist_drone = {
+	category = complex_drone
+	can_be_automated = no
+	
+	swappable_data = {
+		default = {
+			condition_string = DRONE_JOB_TRIGGER
+			building_icon = building_biolab_3
+			icon = black_hole_biologist
+		}
+		inline_script = "jobs/origin_time/black_hole_biologist_swap_types"
+	}
+
+	tags = { food unity research }
+
+	possible_pre_triggers = {
+		has_owner = yes
+		is_enslaved = no
+		is_being_purged = no
+		is_being_assimilated = no
+		is_sapient = yes
+	}
+
+	possible_precalc = can_fill_drone_job
+	possible = {
+		can_think = yes
+		is_origin_time_species = yes
+	}
+	
+	resources = {
+		category = planet_black_hole_biologists
+		inline_script = "jobs/origin_time/black_hole_biologist_resources"
+	}
+	
+	inline_script = "jobs/origin_time/black_hole_biologist_overlord_resources"
+	
+	inline_script = "jobs/origin_time/black_hole_biologist_modifiers"
+	
+	weight = {
+		weight = @complex_drone_job_weight
+		mult = 100
+	}
+	
+	inline_script = "jobs/automodding_priority_research"
+}
+
+# 驱影者
+black_hole_engineer = {
+	category = specialist
+	can_be_automated = no
+	
+	swappable_data = {
+		default = {
+			condition_string = SPECIALIST_JOB_TRIGGER
+			building_icon = building_engineering_facility_3
+		}
+		inline_script = "jobs/origin_time/black_hole_engineer_swap_types"
+	}
+
+	tags = { minerals alloys industry research }
+
+	possible_pre_triggers = {
+		has_owner = yes
+		is_being_purged = no
+		is_being_assimilated = no
+		is_sapient = yes
+	}
+
+	possible_precalc = can_fill_specialist_job
+	possible = {
+		complex_specialist_job_check_trigger = yes
+		is_origin_time_species = yes
+	}
+	
+	resources = {
+		category = planet_black_hole_engineers
+		inline_script = "jobs/origin_time/black_hole_engineer_resources"
+	}
+	
+	inline_script = "jobs/origin_time/black_hole_engineer_overlord_resources"
+	
+	inline_script = "jobs/origin_time/black_hole_engineer_modifiers"
+	
+	weight = {
+		weight = @specialist_job_weight
+		mult = 100
+		modifier = {
+			factor = 2
+			has_living_standard = { type = living_standard_academic_privilege }
+		}
+	}
+	
+	inline_script = "jobs/automodding_priority_research"
+}
+
+black_hole_engineer_drone = {
+	category = complex_drone
+	can_be_automated = no
+	
+	swappable_data = {
+		default = {
+			condition_string = DRONE_JOB_TRIGGER
+			building_icon = building_engineering_facility_3
+			icon = black_hole_engineer
+		}
+		inline_script = "jobs/origin_time/black_hole_engineer_swap_types"
+	}
+
+	tags = { minerals alloys industry research }
+
+	possible_pre_triggers = {
+		has_owner = yes
+		is_enslaved = no
+		is_being_purged = no
+		is_being_assimilated = no
+		is_sapient = yes
+	}
+
+	possible_precalc = can_fill_drone_job
+	possible = {
+		can_think = yes
+		is_origin_time_species = yes
+	}
+	
+	resources = {
+		category = planet_black_hole_engineers
+		inline_script = "jobs/origin_time/black_hole_engineer_resources"
+	}
+	
+	inline_script = "jobs/origin_time/black_hole_engineer_overlord_resources"
+	
+	inline_script = "jobs/origin_time/black_hole_engineer_modifiers"
+	
+	weight = {
+		weight = @complex_drone_job_weight
+		mult = 100
+	}
+	
+	inline_script = "jobs/automodding_priority_research"
+}
+
+# 递归者
+time_recursioner = {
+	category = specialist
+	is_capped_by_modifier = no
+	can_be_automated = no
+	
+	swappable_data = {
+		default = {
+			condition_string = SPECIALIST_JOB_TRIGGER
+			building_icon = building_akx_worm_3
+		}
+		swap_type = {
+			trigger = {
+				time_researcher_is_advanced = yes
+			}
+			name = advanced_time_recursioner
+			weight = 10
+		}
+	}
+
+	tags = { energy minerals food alloys consumer_goods industry unity research }
+
+	possible_pre_triggers = {
+		has_owner = yes
+		is_being_purged = no
+		is_being_assimilated = no
+		is_sapient = yes
+	}
+
+	possible_precalc = can_fill_specialist_job
+	possible = {
+		if = {
+			limit = {
+				colony = { has_district = district_endless_time }
+			}
+			complex_specialist_job_check_trigger = yes
+			is_time_soul_species = yes
+		}
+		else = {
+			always = no
+		}
+	}
+	
+	resources = {
+		category = planet_time_recursioners
+		inline_script = "jobs/origin_time/time_recursioner_resources"
+	}
+	
+	inline_script = "jobs/origin_time/time_recursioner_overlord_resources"
+	
+	inline_script = "jobs/origin_time/time_recursioner_modifiers"
+	
+	weight = {
+		weight = @specialist_job_weight
+		mult = 100
+		modifier = {
+			factor = 2
+			has_living_standard = { type = living_standard_academic_privilege }
+		}
+	}
+	
+	inline_script = "jobs/automodding_priority_research"
+}
+
+time_recursioner_drone = {
+	category = complex_drone
+	is_capped_by_modifier = no
+	can_be_automated = no
+	
+	swappable_data = {
+		default = {
+			condition_string = DRONE_JOB_TRIGGER
+			building_icon = building_akx_worm_3
+			icon = time_recursioner
+		}
+		swap_type = {
+			trigger = {
+				time_researcher_is_advanced = yes
+			}
+			name = advanced_time_recursioner
+			weight = 10
+		}
+	}
+
+	tags = { energy minerals food alloys consumer_goods industry unity research }
+
+	possible_pre_triggers = {
+		has_owner = yes
+		is_enslaved = no
+		is_being_purged = no
+		is_being_assimilated = no
+		is_sapient = yes
+	}
+
+	possible_precalc = can_fill_drone_job
+	possible = {
+		if = {
+			limit = {
+				colony = { has_district = district_endless_time }
+			}
+			can_think = yes
+			is_time_soul_species = yes
+		}
+		else = {
+			always = no
+		}
+	}
+	
+	resources = {
+		category = planet_time_recursioners
+		inline_script = "jobs/origin_time/time_recursioner_resources"
+	}
+	
+	inline_script = "jobs/origin_time/time_recursioner_overlord_resources"
+	
+	inline_script = "jobs/origin_time/time_recursioner_modifiers"
+	
+	weight = {
+		weight = @complex_drone_job_weight
+		mult = 100
+	}
+	
+	inline_script = "jobs/automodding_priority_research"
+}
+
+# 希望监护者
+
+hope_guardian = {
+	swappable_data = {
+		default = {
+			condition_string = RULER_JOB_TRIGGER
+			building_icon = building_sanctuary_of_toil
+			icon = fe_archivist
+		}
+		swap_type = {
+			trigger = {
+				exists = carrier
+				colony = { has_building = building_hope_institution }
+			}
+			building_icon = building_grand_cathedral_of_toil
+			weight = 5
+		}
+	}
+
+	tags = { consumer_goods industry }
+	
+	inline_script = {
+		script = jobs/origin_time/time_order
+		JOB = hope_guardian
+		ETHIC = egalitarian
+		RESOURCE = consumer_goods
+		WEIGHT = manufacturing
+		AMONT = 10
+		MODIFIER_1 = planet_stability_mult
+		MODIFIER_2 = ship_shield_hardening_add
+	}
+
+	inline_script = "jobs/automodding_priority_consumer_goods"
+}
+
+# 希望传播者
+
+hope_disseminator = {
+	swappable_data = {
+		default = {
+			condition_string = RULER_JOB_TRIGGER
+			building_icon = building_sanctuary_of_toil
+			icon = telepath
+		}
+		swap_type = {
+			trigger = {
+				exists = carrier
+				colony = { has_building = building_hope_institution }
+			}
+			building_icon = building_grand_cathedral_of_toil
+			weight = 5
+		}
+	}
+
+	tags = { energy }
+	
+	inline_script = {
+		script = jobs/origin_time/time_order
+		JOB = hope_disseminator
+		ETHIC = xenophile
+		RESOURCE = energy
+		WEIGHT = resource
+		AMONT = 20
+		MODIFIER_1 = diplo_weight_mult
+		MODIFIER_2 = ship_evasion_mult
+	}
+	
+	inline_script = "jobs/automodding_priority_energy"
+}
+
+# 永恒观测者
+
+eternal_observer = {
+	swappable_data = {
+		default = {
+			condition_string = RULER_JOB_TRIGGER
+			building_icon = building_amphitheater_of_the_mind
+			icon = evaluator
+		}
+		swap_type = {
+			trigger = {
+				exists = carrier
+				colony = { has_building = building_eternal_matrix }
+			}
+			building_icon = building_grand_concert_hall_of_the_mind
+			weight = 5
+		}
+	}
+
+	tags = { research }
+	
+	inline_script = {
+		script = jobs/origin_time/time_order_materialist
+		JOB = eternal_observer
+		ETHIC = materialist
+		AMONT = 2.5
+		MODIFIER_1 = all_technology_research_speed
+		MODIFIER_2 = ship_armor_penetration_add
+	}
+	
+	inline_script = "jobs/automodding_priority_research"
+}
+
+# 永恒缔造者
+
+eternal_creator = {
+	swappable_data = {
+		default = {
+			condition_string = RULER_JOB_TRIGGER
+			building_icon = building_amphitheater_of_the_mind
+			icon = healthcare
+		}
+		swap_type = {
+			trigger = {
+				exists = carrier
+				colony = { has_building = building_eternal_matrix }
+			}
+			building_icon = building_grand_concert_hall_of_the_mind
+			weight = 5
+		}
+	}
+
+	tags = { food }
+	
+	inline_script = {
+		script = jobs/origin_time/time_order_pacifist
+		JOB = eternal_creator
+		ETHIC = pacifist
+		RESOURCE = food
+		WEIGHT = resource
+		AMONT = 20
+		MODIFIER = ship_hull_mult
+	}
+	
+	inline_script = "jobs/automodding_priority_food"
+}
+
+# 维度统治者
+
+dimensional_ruler = {
+	swappable_data = {
+		default = {
+			condition_string = RULER_JOB_TRIGGER
+			building_icon = building_battlement_of_steel
+			icon = noble
+		}
+		swap_type = {
+			trigger = {
+				exists = carrier
+				colony = { has_building = building_dimensional_metropolis }
+			}
+			building_icon = building_grand_battlements_of_steel
+			weight = 5
+		}
+	}
+
+	tags = { }
+	
+	inline_script = {
+		script = jobs/origin_time/time_order_authoritarian
+		JOB = dimensional_ruler
+		ETHIC = authoritarian
+		AMONT = 1
+		MODIFIER_1 = planet_max_districts_mult
+		MODIFIER_2 = ship_armor_hardening_add
+	}
+}
+
+# 维度征服者
+
+dimensional_conqueror = {
+	swappable_data = {
+		default = {
+			condition_string = RULER_JOB_TRIGGER
+			building_icon = building_battlement_of_steel
+			icon = knight_commander
+		}
+		swap_type = {
+			trigger = {
+				exists = carrier
+				colony = { has_building = building_dimensional_metropolis }
+			}
+			building_icon = building_grand_battlements_of_steel
+			weight = 5
+		}
+	}
+
+	tags = { alloys industry }
+	
+	inline_script = {
+		script = jobs/origin_time/time_order
+		JOB = dimensional_conqueror
+		ETHIC = militarist
+		RESOURCE = alloys
+		WEIGHT = manufacturing
+		AMONT = 10
+		MODIFIER_1 = country_naval_cap_mult
+		MODIFIER_2 = ship_hull_damage_mult
+	}
+
+	inline_script = "jobs/automodding_priority_alloys"
+}
+
+# 本源冥想者
+
+original_meditator = {
+	swappable_data = {
+		default = {
+			condition_string = RULER_JOB_TRIGGER
+			building_icon = building_the_sanctum_of_augmentation
+			icon = death_priest
+		}
+		swap_type = {
+			trigger = {
+				exists = carrier
+				colony = { has_building = building_original_palace }
+			}
+			building_icon = building_the_united_sanctum_of_augmentation
+			weight = 5
+		}
+	}
+
+	tags = { unity }
+	
+	inline_script = {
+		script = jobs/origin_time/time_order
+		JOB = original_meditator
+		ETHIC = spiritualist
+		RESOURCE = unity
+		WEIGHT = unity
+		AMONT = 5
+		MODIFIER_1 = leader_lifespan_mult
+		MODIFIER_2 = ship_shield_penetration_add
+	}
+	
+	inline_script = "jobs/automodding_priority_unity"
+}
+
+# 本源净化者
+
+original_purifier = {
+	swappable_data = {
+		default = {
+			condition_string = RULER_JOB_TRIGGER
+			building_icon = building_the_sanctum_of_augmentation
+			icon = mortal_initiate
+		}
+		swap_type = {
+			trigger = {
+				exists = carrier
+				colony = { has_building = building_original_palace }
+			}
+			building_icon = building_the_united_sanctum_of_augmentation
+			weight = 5
+		}
+	}
+
+	tags = { minerals }
+	
+	inline_script = {
+		script = jobs/origin_time/time_order_xenophobe
+		JOB = original_purifier
+		ETHIC = xenophobe
+		RESOURCE = minerals
+		WEIGHT = resource
+		AMONT = 20
+		MODIFIER = ship_tracking_mult
+	}
+	
+	inline_script = "jobs/automodding_priority_minerals"
+}

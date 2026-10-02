@@ -1,0 +1,592 @@
+# 舰船
+clear_time_titan_rarity = {
+	remove_ship_flag = exceptional_time_titan
+	remove_ship_flag = epic_time_titan
+	remove_ship_flag = rare_time_titan
+	remove_ship_flag = common_time_titan
+}
+
+# 舰船
+set_time_titan_rarity = {
+	clear_time_titan_rarity = yes
+	set_ship_flag = $RARITY$_time_titan
+}
+
+# 舰船
+set_time_titan_rarity_name = {
+	switch = {
+		trigger = has_ship_flag
+		exceptional_time_titan = {
+			set_name = NAME_$TYPE$_Exceptional
+		}
+		epic_time_titan = {
+			set_name = NAME_$TYPE$_Epic
+		}
+		rare_time_titan = {
+			set_name = NAME_$TYPE$_Rare
+		}
+		default = {
+			set_name = NAME_$TYPE$_Common
+		}
+	}
+}
+
+# 舰船
+choose_time_titan_rarity = {
+	switch = {
+		trigger = has_global_flag
+		exceptional_time_titan = {
+			set_time_titan_rarity = {
+				RARITY = exceptional
+			}
+		}
+		epic_time_titan = {
+			set_time_titan_rarity = {
+				RARITY = epic
+			}
+		}
+		rare_time_titan = {
+			set_time_titan_rarity = {
+				RARITY = rare
+			}
+		}
+		default = {
+			set_time_titan_rarity = {
+				RARITY = common
+			}
+		}
+	}
+}
+
+# 任意
+global_clear_time_titan_rarity = {
+	remove_global_flag = exceptional_time_titan
+	remove_global_flag = epic_time_titan
+	remove_global_flag = rare_time_titan
+	remove_global_flag = common_time_titan
+}
+
+# 国家
+global_choose_time_titan_rarity = {
+	if = {
+		limit = {
+			NOR = {
+				has_global_flag = exceptional_time_titan
+				has_global_flag = epic_time_titan
+				has_global_flag = rare_time_titan
+				has_global_flag = common_time_titan
+			}
+		}
+		random_list = {
+			1 = {
+				set_global_flag = exceptional_time_titan
+			}
+			3 = {
+				set_global_flag = epic_time_titan
+			}
+			6 = {
+				modifier = {
+					factor = 0
+					# 明日船长是界旅者/传奇英杰及以上
+					OR = {
+						has_country_flag = dimension_traveler_trait_foredoomed_to_a_rendezvous
+						any_owned_leader = {
+							is_syzygy_admiral = yes
+							is_leader_tier_or_higher = { TIER = legendary }
+						}
+					}
+				}
+				set_global_flag = rare_time_titan
+			}
+			10 = {
+				modifier = {
+					factor = 0
+					# 明日船长是界旅者/著名英杰及以上
+					OR = {
+						has_country_flag = dimension_traveler_trait_foredoomed_to_a_rendezvous
+						any_owned_leader = {
+							is_syzygy_admiral = yes
+							is_leader_tier_or_higher = { TIER = renowned }
+						}
+					}
+				}
+				set_global_flag = common_time_titan
+			}
+		}
+	}
+}
+
+# 舰船
+refresh_time_titan_design = {
+	switch = {
+		trigger = is_ship_size
+		horror_titan = {
+			set_ship_design = { design = NAME_Horror_Titan }
+		}
+		time_titan = {
+			set_ship_design = { design = NAME_Time_Titan }
+		}
+		end_titan = {
+			set_ship_design = { design = NAME_End_Titan }
+		}
+	}
+}
+
+# 舰队
+refresh_time_titan_state = {
+	every_owned_ship = {
+		set_confused = no
+		remove_ship_flag = is_confused
+		remove_terrified = yes
+		remove_ship_flag = is_terrified
+	}
+}
+
+# 星系
+create_time_warp_drive_horror_storm = {
+	# 清除原有效果
+	remove_modifier = time_warp_drive_horror_storm
+	every_system_planet = {
+		remove_modifier = time_warp_drive_horror_storm_planet
+	}
+	every_system_ambient_object = {
+		limit = { has_ambient_object_flag = time_warp_drive_horror_storm }
+		destroy_ambient_object = this
+	}
+	# 增加新效果
+	add_modifier = {
+		modifier = time_warp_drive_horror_storm
+		days = -1
+	}
+	every_system_planet = {
+		add_modifier = {
+			modifier = time_warp_drive_horror_storm_planet
+			days = -1
+		}
+	}
+	while = {
+		count = 5
+		star = {
+			create_ambient_object = {
+				type = "extradimensional_1"
+				location = this
+			}
+		}
+		last_created_ambient_object = {
+			set_ambient_object_flag = time_warp_drive_horror_storm
+		}
+	}
+	# 持续时间取最长
+	change_variable = {
+		which = time_warp_drive_horror_storm_count
+		value = 1
+	}
+	system_event = { id = time_akx.211 days = 30 random = 60 }
+	system_event = { id = time_akx.212 }
+}
+
+# 任意
+show_time_titan_upgrade = {
+	custom_tooltip = time_titan_$TYPE$
+	if = {
+		limit = {
+			# 升级未达上限
+			time_titan_has_upgrade_less_than_max = {
+				TYPE = $TYPE$
+				MODE = $MODE$
+			}
+		}
+		if = {
+			limit = {
+				# 没在升级当前
+				NOT = {
+					time_titan_is_upgrading_specific_type = { TYPE = $TYPE$ }
+				}
+			}
+			custom_tooltip = time_titan_upgrade_$TYPE$_require
+			if = {
+				limit = {
+					# 没在升级其它+没在交战状态+没在失踪状态+明日船长存活+国家资源充足
+					can_upgrade_time_titan = {
+						TYPE = $TYPE$
+						MODE = $MODE$
+					}
+				}
+				hidden_effect = {
+					play_sound = event_activating_unknown_technology # 不用clicksound是为了避免升级期间点击按键也会播放音效
+					start_time_titan_upgrade = {
+						TYPE = $TYPE$
+						MODE = $MODE$
+					}
+				}
+			}
+			else = {
+				if = {
+					limit = {
+						# 没在升级其它
+						time_titan_is_upgrading = yes
+					}
+					custom_tooltip = time_titan_is_upgrading
+				}
+				if = {
+					limit = {
+						# 没在交战状态
+						time_titan_is_in_combat = yes
+					}
+					custom_tooltip = time_titan_is_in_combat
+				}
+				if = {
+					limit = {
+						# 没在失踪状态
+						time_titan_is_not_mia = no
+					}
+					custom_tooltip = time_titan_is_mia
+				}
+				if = {
+					limit = {
+						# 没在终末庇护
+						time_titan_is_in_time_titan_end_shelter_progress = yes
+					}
+					custom_tooltip = time_titan_is_in_time_titan_end_shelter_progress
+				}
+				if = {
+					limit = {
+						# 明日船长存活
+						time_titan_exist_syzygy_admiral = no
+					}
+					custom_tooltip = require_syzygy_admiral
+				}
+				if = {
+					limit = {
+						# 国家资源充足
+						from = {
+							has_country_resource = {
+								type = sr_dark_matter
+								amount < value:time_titan_upgrade_cost|TYPE|$TYPE$|MODE|$MODE$|
+							}
+						}
+					}
+					custom_tooltip = time_titan_require_dark_matter
+				}
+			}
+		}
+		else = {
+			custom_tooltip = time_titan_is_upgrading_this
+		}
+	}
+	else = {
+		custom_tooltip = time_titan_has_max_upgrade
+	}
+}
+
+# 任意
+start_time_titan_upgrade = {
+	event_target:time_titan_fleet = {
+		set_event_locked = yes
+		clear_orders = yes
+		remove_time_titan_upgrade_flag = yes
+		set_fleet_flag = time_titan_upgrade_$TYPE$
+		set_variable = {
+			which = time_titan_upgrade_requirement
+			value = value:time_titan_upgrade_requirement|TYPE|$TYPE$|MODE|$MODE$|
+		}
+		set_variable = {
+			which = time_titan_upgrade_process
+			value = 0
+		}
+		fleet_event = { id = time_akx.20100 days = @time_titan_process_update_time }
+		owner = {
+			add_resource = {
+				sr_dark_matter = -1
+				mult = value:time_titan_upgrade_cost|TYPE|$TYPE$|MODE|$MODE$|
+			}
+		}
+	}
+}
+
+# 舰队
+finish_time_titan_upgrade = {
+	switch = {
+		trigger = has_fleet_flag
+		time_titan_upgrade_primary = {
+			finish_time_titan_upgrade_specific_type = {
+				TYPE = primary
+				MODE = battle
+			}
+		}
+		time_titan_upgrade_normal = {
+			finish_time_titan_upgrade_specific_type = {
+				TYPE = normal
+				MODE = battle
+			}
+		}
+		time_titan_upgrade_subsidiary = {
+			finish_time_titan_upgrade_specific_type = {
+				TYPE = subsidiary
+				MODE = battle
+			}
+		}
+		time_titan_upgrade_power = {
+			finish_time_titan_upgrade_specific_type = {
+				TYPE = power
+				MODE = battle
+			}
+		}
+		time_titan_upgrade_sapient = {
+			finish_time_titan_upgrade_specific_type = {
+				TYPE = sapient
+				MODE = battle
+			}
+		}
+		time_titan_upgrade_drive = {
+			finish_time_titan_upgrade_specific_type = {
+				TYPE = drive
+				MODE = battle
+			}
+		}
+		time_titan_upgrade_hull = {
+			finish_time_titan_upgrade_specific_type = {
+				TYPE = hull
+				MODE = battle
+			}
+		}
+		time_titan_upgrade_armor = {
+			finish_time_titan_upgrade_specific_type = {
+				TYPE = armor
+				MODE = battle
+			}
+		}
+		time_titan_upgrade_shield = {
+			finish_time_titan_upgrade_specific_type = {
+				TYPE = shield
+				MODE = battle
+			}
+		}
+	}
+	if = {
+		limit = {
+			NOT = { has_fleet_flag = checked_time_titan_auto_upgrade } # 临时使用的标识符
+		}
+		remove_time_titan_upgrade_flag = yes
+		clear_variable = time_titan_upgrade_requirement
+		clear_variable = time_titan_upgrade_process
+		set_event_locked = no
+	}
+	else = {
+		remove_fleet_flag = checked_time_titan_auto_upgrade # 临时使用的标识符
+	}
+}
+
+# 舰队
+remove_time_titan_upgrade_flag = {
+	remove_fleet_flag = time_titan_upgrade_primary
+	remove_fleet_flag = time_titan_upgrade_normal
+	remove_fleet_flag = time_titan_upgrade_subsidiary
+	remove_fleet_flag = time_titan_upgrade_power
+	remove_fleet_flag = time_titan_upgrade_sapient
+	remove_fleet_flag = time_titan_upgrade_drive
+	remove_fleet_flag = time_titan_upgrade_hull
+	remove_fleet_flag = time_titan_upgrade_armor
+	remove_fleet_flag = time_titan_upgrade_shield
+}
+
+# 舰队
+finish_time_titan_upgrade_specific_type = {
+	change_variable = {
+		which = time_titan_$TYPE$_level
+		value = 1
+	}
+	owner = {
+		create_message = {
+			type = FINISH_TIME_TITAN_UPGRADE
+			localization = FINISH_TIME_TITAN_UPGRADE_$TYPE$_DESC
+			days = 30
+			target = prev
+			variable = {
+				type = name
+				localization = FLEET
+				scope = prev
+			}
+		}
+	}
+	# 连续升级
+	if = {
+		limit = {
+			# 启用连续升级（持续性flag，注意和临时使用的checked_time_titan_auto_upgrade区分）
+			has_fleet_flag = time_titan_auto_upgrade
+			# 明日船长存活
+			time_titan_exist_syzygy_admiral = yes
+		}
+		if = {
+			limit = {
+				# 升级未达上限
+				time_titan_has_upgrade_less_than_max = {
+					TYPE = $TYPE$
+					MODE = $MODE$
+				}
+				# 国家资源充足
+				owner = {
+					has_country_resource = {
+						type = sr_dark_matter
+						amount >= value:time_titan_upgrade_cost|TYPE|$TYPE$|MODE|$MODE$|
+					}
+				}
+			}
+			set_fleet_flag = checked_time_titan_auto_upgrade # 临时使用的标识符
+			clear_variable = time_titan_upgrade_requirement
+			clear_variable = time_titan_upgrade_process
+			start_time_titan_upgrade = {
+				TYPE = $TYPE$
+				MODE = $MODE$
+			}
+		}
+		else = {
+			owner = {
+				create_message = {
+					type = CAN_NOT_AUTO_TIME_TITAN_UPGRADE
+					localization = CAN_NOT_AUTO_TIME_TITAN_UPGRADE_DESC
+					days = 30
+					target = prev
+					variable = {
+						type = name
+						localization = FLEET
+						scope = prev
+					}
+				}
+			}
+		}
+	}
+}
+
+# 舰队
+set_time_titan_upgrade_variable = {
+	set_variable = {
+		which = time_titan_primary_level
+		value = $LEVEL$
+	}
+	set_variable = {
+		which = time_titan_normal_level
+		value = $LEVEL$
+	}
+	set_variable = {
+		which = time_titan_subsidiary_level
+		value = $LEVEL$
+	}
+	set_variable = {
+		which = time_titan_power_level
+		value = $LEVEL$
+	}
+	set_variable = {
+		which = time_titan_sapient_level
+		value = $LEVEL$
+	}
+	set_variable = {
+		which = time_titan_drive_level
+		value = $LEVEL$
+	}
+	set_variable = {
+		which = time_titan_hull_level
+		value = $LEVEL$
+	}
+	set_variable = {
+		which = time_titan_armor_level
+		value = $LEVEL$
+	}
+	set_variable = {
+		which = time_titan_shield_level
+		value = $LEVEL$
+	}
+}
+
+# 国家
+create_time_titan_end_shelter_message = {
+	create_message = {
+		type = FINISH_TIME_TITAN_END_SHELTER
+		localization = FINISH_TIME_TITAN_END_SHELTER_$TYPE$_DESC
+		days = 30
+		target = prev
+		variable = {
+			type = name
+			localization = PLANET
+			scope = prev
+		}
+	}
+}
+
+# 恒星基地
+time_titan_starbase_building_upgrade = {
+	set_variable = {
+		which = time_titan_starbase_building_number
+		value = value:time_titan_starbase_building_number|BUILDING|$BUILDING$|
+	}
+	time_titan_starbase_building_upgrade_slot = {
+		SLOT = 1
+		BUILDING = $BUILDING$
+		NEW_BUILDING = $NEW_BUILDING$
+	}
+	time_titan_starbase_building_upgrade_slot = {
+		SLOT = 2
+		BUILDING = $BUILDING$
+		NEW_BUILDING = $NEW_BUILDING$
+	}
+	time_titan_starbase_building_upgrade_slot = {
+		SLOT = 3
+		BUILDING = $BUILDING$
+		NEW_BUILDING = $NEW_BUILDING$
+	}
+	time_titan_starbase_building_upgrade_slot = {
+		SLOT = 4
+		BUILDING = $BUILDING$
+		NEW_BUILDING = $NEW_BUILDING$
+	}
+	if = {
+		limit = {
+			has_starbase_size = end_titan
+		}
+		time_titan_starbase_building_upgrade_slot = {
+			SLOT = 5
+			BUILDING = $BUILDING$
+			NEW_BUILDING = $NEW_BUILDING$
+		}
+		time_titan_starbase_building_upgrade_slot = {
+			SLOT = 6
+			BUILDING = $BUILDING$
+			NEW_BUILDING = $NEW_BUILDING$
+		}
+		time_titan_starbase_building_upgrade_slot = {
+			SLOT = 7
+			BUILDING = $BUILDING$
+			NEW_BUILDING = $NEW_BUILDING$
+		}
+		time_titan_starbase_building_upgrade_slot = {
+			SLOT = 8
+			BUILDING = $BUILDING$
+			NEW_BUILDING = $NEW_BUILDING$
+		}
+	}
+	clear_variable = time_titan_starbase_building_number
+}
+
+# 恒星基地
+time_titan_starbase_building_upgrade_slot = {
+	remove_starbase_building = {
+		slot = $SLOT$
+		building = $BUILDING$
+	}
+	if = {
+		limit = {
+			check_variable_arithmetic = {
+				which = value:time_titan_starbase_building_variation_value|BUILDING|$BUILDING$|
+				value < 0
+			}
+		}
+		set_starbase_building = {
+			slot = $SLOT$
+			building = $NEW_BUILDING$
+		}
+		subtract_variable = {
+			which = time_titan_starbase_building_number
+			value = 1
+		}
+	}
+}

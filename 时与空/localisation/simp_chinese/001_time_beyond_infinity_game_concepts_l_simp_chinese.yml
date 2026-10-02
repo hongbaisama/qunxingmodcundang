@@ -1,0 +1,59 @@
+﻿l_simp_chinese:
+ # 时空机器
+ concept_time_machine_civics: "时空机器"
+ concept_time_machine_civics_desc: "$concept_time_machine_civics$类国民理念包括\n—['concept_civic_time_machine']$NEW_LINE$—['concept_civic_time_machine_corporate']$NEW_LINE$—['concept_civic_time_machine_hive']$NEW_LINE$—['concept_civic_time_machine_machine']"
+ concept_civic_time_machine: "$civic_time_machine$"
+ concept_civic_time_machine_corporate: "$civic_time_machine_corporate$"
+ concept_civic_time_machine_hive: "$civic_time_machine_hive$"
+ concept_civic_time_machine_machine: "$civic_time_machine_machine$"
+ 
+ concept_building_defective_time_machine: "$building_defective_time_machine$"
+ concept_building_time_machine: "$building_time_machine$"
+ 
+ # 圆环枢纽
+ concept_circle_nexus_civics: "圆环枢纽"
+ concept_circle_nexus_civics_desc: "$concept_circle_nexus_civics$类国民理念包括\n—['concept_civic_circle_nexus']$NEW_LINE$—['concept_civic_circle_nexus_corporate']$NEW_LINE$—['concept_civic_circle_nexus_hive']$NEW_LINE$—['concept_civic_circle_nexus_machine']"
+ concept_civic_circle_nexus: "$civic_circle_nexus$"
+ concept_civic_circle_nexus_corporate: "$civic_circle_nexus_corporate$"
+ concept_civic_circle_nexus_hive: "$civic_circle_nexus_hive$"
+ concept_civic_circle_nexus_machine: "$civic_circle_nexus_machine$"
+ 
+ concept_building_defective_circle_nexus: "$building_defective_circle_nexus$"
+ concept_building_circle_nexus: "$building_circle_nexus$"
+ 
+ # 位面引擎
+ concept_dimension_engine_civics: "位面引擎"
+ concept_dimension_engine_civics_desc: "$concept_dimension_engine_civics$类国民理念包括\n—['concept_civic_dimension_engine']$NEW_LINE$—['concept_civic_dimension_engine_corporate']$NEW_LINE$—['concept_civic_dimension_engine_hive']$NEW_LINE$—['concept_civic_dimension_engine_machine']"
+ concept_civic_dimension_engine: "$civic_dimension_engine$"
+ concept_civic_dimension_engine_corporate: "$civic_dimension_engine_corporate$"
+ concept_civic_dimension_engine_hive: "$civic_dimension_engine_hive$"
+ concept_civic_dimension_engine_machine: "$civic_dimension_engine_machine$"
+ 
+ concept_building_defective_dimension_engine: "$building_defective_dimension_engine$"
+ concept_building_dimension_engine: "$building_dimension_engine$"
+ 
+ # 无限光谱
+ concept_infinity_spectrum_white: "§W$concept_infinity_spectrum$§!"
+ concept_infinity_spectrum: "无限光谱"
+ concept_infinity_spectrum_desc: "无限之塔本身不会发光，但能增强与之相连的其它无限之塔的亮度。\n\n§G增强§!星球上其它['concept_tower_of_infinity']的效果。"
+ 
+ concept_tower_of_infinity: "无限之塔"
+ concept_tower_of_infinity_desc: "$concept_tower_of_infinity$：\n—['concept_building_tower_of_infinity']\n—['concept_building_tower_of_infinity_technician']\n—['concept_building_tower_of_infinity_miner']\n—['concept_building_tower_of_infinity_farmer']\n—['concept_building_tower_of_infinity_foundry']\n—['concept_building_tower_of_infinity_artisan']\n—['concept_building_tower_of_infinity_chemist']\n—['concept_building_tower_of_infinity_refiner']\n—['concept_building_tower_of_infinity_translucer']"
+ 
+ concept_building_tower_of_infinity: "$building_tower_of_infinity$"
+ concept_building_tower_of_infinity_technician: "$building_tower_of_infinity_technician$"
+ concept_building_tower_of_infinity_miner: "$building_tower_of_infinity_miner$"
+ concept_building_tower_of_infinity_farmer: "$building_tower_of_infinity_farmer$"
+ concept_building_tower_of_infinity_foundry: "$building_tower_of_infinity_foundry$"
+ concept_building_tower_of_infinity_artisan: "$building_tower_of_infinity_artisan$"
+ concept_building_tower_of_infinity_chemist: "$building_tower_of_infinity_chemist$"
+ concept_building_tower_of_infinity_refiner: "$building_tower_of_infinity_refiner$"
+ concept_building_tower_of_infinity_translucer: "$building_tower_of_infinity_translucer$"
+ 
+ # 循环科技
+ concept_tech_beyond_infinity_repeatable: "无限科技"
+ concept_tech_beyond_infinity_repeatable_desc: "$concept_tech_beyond_infinity_repeatable$：\n—['concept_tech_beyond_infinity_physics',£physics $concept_tech_beyond_infinity_physics$]\n—['concept_tech_beyond_infinity_society',£society $concept_tech_beyond_infinity_society$]\n—['concept_tech_beyond_infinity_engineering',£engineering $concept_tech_beyond_infinity_engineering$]"
+ 
+ concept_tech_beyond_infinity_physics: "$tech_beyond_infinity_physics$"
+ concept_tech_beyond_infinity_society: "$tech_beyond_infinity_society$"
+ concept_tech_beyond_infinity_engineering: "$tech_beyond_infinity_engineering$"

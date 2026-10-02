@@ -1,0 +1,97 @@
+overclock_time_core_matter_decompressor_default = {
+    icon = GFX_overclock_time_core_matter_decompressor_default
+    potential = {
+    }
+    resources = {
+		category = megastructures_overclock
+    }
+    country_modifier = {}
+}
+
+overclock_time_core_matter_decompressor_resource = {
+    icon = GFX_overclock_time_core_matter_decompressor_resource
+    potential = {
+        exists = owner
+        owner = { has_origin_time = yes }
+    }
+    resources = {
+		category = megastructures_overclock
+        produces = {
+			energy = 1000
+			minerals = 1000
+			food = 1000
+			consumer_goods = 500
+			alloys = 500
+			unity = 500
+			physics_research = 500
+			society_research = 500
+			engineering_research = 500
+			sr_dark_matter = 50
+		}
+		upkeep = {
+			astral_threads = 25
+		}
+    }
+    country_modifier = {}
+}
+
+overclock_time_core_matter_decompressor_usage_cap = {
+    icon = GFX_overclock_time_core_matter_decompressor_usage_cap
+    potential = {
+        exists = owner
+        owner = { has_origin_time = yes }
+    }
+    resources = {
+		category = megastructures_overclock
+		upkeep = {
+			astral_threads = 25
+		}
+    }
+    country_modifier = {
+		district_time_usage_cap_mult = 0.25
+	}
+}
+
+overclock_time_core_matter_decompressor_col_time = {
+    icon = GFX_overclock_time_core_matter_decompressor_col_time
+    potential = {
+        exists = owner
+        owner = { has_origin_time = yes }
+    }
+    resources = {
+		category = megastructures_overclock
+		upkeep = {
+			astral_threads = 25
+		}
+    }
+    country_modifier = {
+		col_time_mult = 0.25
+	}
+}
+
+overclock_time_core_matter_decompressor_stop = {
+    icon = GFX_overclock_time_core_matter_decompressor_stop
+    potential = {
+    }
+    resources = {
+		category = megastructures_overclock
+		produces = {
+			energy = -1000
+			minerals = -1000
+			food = -1000
+			consumer_goods = -500
+			alloys = -500
+			unity = -500
+			physics_research = -500
+			society_research = -500
+			engineering_research = -500
+			sr_dark_matter = -50
+		}
+		upkeep = {
+			astral_threads = -25
+		}
+    }
+    country_modifier = {
+		leader_lifespan_mult = 0.25
+	}
+}

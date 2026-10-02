@@ -1,0 +1,437 @@
+# 位面之门
+zone_time_notofthisworld_rift_sphere = {
+	icon = GFX_district_specialization_time_notofthisworld_rift_sphere
+	
+	planet_limit = { base = 1 }
+
+	base_buildtime = 360
+	
+	potential = {
+		is_planet_class = pc_time_notofthisworld
+	}
+
+	unlock = {
+		is_planet_class = pc_time_notofthisworld
+		exists = owner
+		owner = { has_technology = tech_rift_sphere }
+	}
+
+	resources = {
+		category = planet_zones
+		cost = {
+			astral_threads = 100
+		}
+	}
+
+	planet_modifier = {
+		zone_building_slots_add = @time_mod_zone_max_buildings
+	}
+	
+	district_planet_modifier = {
+		planet_housing_add = 300
+	}
+	
+	inline_script = {
+		script = jobs/zone_physicists_add
+		LARGE_AMOUNT = 300
+	}
+	
+	zone_sets = {
+		zone_time_notofthisworld_rift_sphere
+	}
+	
+	included_building_sets = {
+		research
+		physics
+		urban
+	}
+	
+	excluded_building_sets = {
+		generator
+		mining
+		farming
+		knights
+		betharian
+		urban_automation
+		generator_automation
+		mining_automation
+		farming_automation
+	}
+	
+	ai_weight_coefficient = 10
+	ai_priority = 100
+}
+
+zone_time_notofthisworld_astral_harvesting = {
+	icon = GFX_district_specialization_time_notofthisworld_astral_harvesting
+	
+	planet_limit = { base = 1 }
+
+	base_buildtime = 360
+	
+	potential = {
+		is_planet_class = pc_time_notofthisworld
+	}
+
+	unlock = {
+		is_planet_class = pc_time_notofthisworld
+		exists = owner
+		owner = { has_technology = tech_astral_harvesting }
+	}
+
+	resources = {
+		category = planet_zones
+		cost = {
+			astral_threads = 100
+		}
+	}
+
+	planet_modifier = {
+		zone_building_slots_add = @time_mod_zone_max_buildings
+	}
+	
+	district_planet_modifier = {
+		planet_physicists_astral_threads_produces_add = 0.025
+		planet_physicists_physics_research_produces_add = 0.125
+	}
+	
+	zone_sets = {
+		zone_time_notofthisworld_astral_harvesting
+	}
+	
+	included_building_sets = {
+		research
+		physics
+		urban_automation
+	}
+	
+	excluded_building_sets = {
+		generator
+		mining
+		farming
+		knights
+		betharian
+		generator_automation
+		mining_automation
+		farming_automation
+	}
+	
+	ai_weight_coefficient = 10
+	ai_priority = 100
+}
+
+# 前遗落星球
+zone_ancient_reactor_pits_arcology = {
+	icon = GFX_district_specialization_energy
+	base_buildtime = @zone_buildtime
+	
+	planet_limit = { base = 1 }
+
+	resources = {
+		category = planet_zones
+		inline_script = {
+			script = buildings/nomadic_cost_switcher
+			REGULAR_RESOURCE = minerals
+			NOMADIC_RESOURCE = alloys
+			COST = @zone_cost
+			NOMADIC_COST_MULT = 0.5
+		}
+	}
+
+	potential = { # planet scope
+		hidden_trigger = {
+			has_deposit = d_former_relic_world
+			is_planet_class = pc_city
+			exists = owner
+			owner = {
+				is_wilderness_empire = no
+			}
+		}
+	}
+
+	unlock = { # planet scope
+		hidden_trigger = {
+			has_deposit = d_former_relic_world
+			is_planet_class = pc_city
+			exists = owner
+			owner = {
+				is_wilderness_empire = no
+			}
+		}
+	}
+
+	included_building_sets = {
+		generator
+		fallen_empire_generator
+		generator_automation
+	}
+
+	convert_to = {
+		zone_energy
+		zone_energy_nexus
+		zone_energy_hive
+	}
+
+	inline_script = {
+		script = jobs/zone_technicians_add
+		AMOUNT = @doubled_scaling_district_1_job
+	}
+
+	planet_modifier = {
+		zone_building_slots_add = @time_mod_zone_max_buildings
+		planet_technician_energy_produces_add = 1.5
+	}
+
+	ai_priority = 5
+	
+	swap_type = district_arcology_ancient_reactor_pits
+	swap_type_weight = 5
+
+	zone_sets = {
+		arcology
+	}
+
+	inline_script = {
+		script = zones/shared_arcology_zone_modifiers
+	}
+}
+
+zone_abandoned_mining_tunnels_arcology = {
+	icon = GFX_district_specialization_minerals
+	base_buildtime = @zone_buildtime
+	
+	planet_limit = { base = 1 }
+
+	potential = { # planet scope
+		hidden_trigger = {
+			has_deposit = d_former_relic_world
+			is_planet_class = pc_city
+			exists = owner
+			owner = {
+				is_wilderness_empire = no
+			}
+		}
+	}
+
+	unlock = { # planet scope
+		hidden_trigger = {
+			has_deposit = d_former_relic_world
+			is_planet_class = pc_city
+			exists = owner
+			owner = {
+				is_wilderness_empire = no
+			}
+		}
+	}
+
+	resources = {
+		category = planet_zones
+		inline_script = {
+			script = buildings/nomadic_cost_switcher
+			REGULAR_RESOURCE = minerals
+			NOMADIC_RESOURCE = alloys
+			COST = @zone_cost
+			NOMADIC_COST_MULT = 0.5
+		}
+	}
+
+	inline_script = {
+		script = jobs/zone_miner_add
+		AMOUNT = @doubled_scaling_district_1_job
+	}
+
+	included_building_sets = {
+		mining
+		fallen_empire_mining
+		mining_automation
+	}
+
+	convert_to = {
+		zone_minerals
+		zone_minerals_nexus
+		zone_minerals_hive
+	}
+
+	planet_modifier = {
+		zone_building_slots_add = @time_mod_zone_max_buildings
+		planet_miners_minerals_produces_add = 1
+	}
+
+	ai_priority = 5
+	
+	swap_type = district_arcology_abandoned_mining_tunnels
+	swap_type_weight = 5
+
+	zone_sets = {
+		arcology
+	}
+
+	inline_script = {
+		script = zones/shared_arcology_zone_modifiers
+	}
+}
+
+zone_industrial_sector_arcology = {
+	icon = GFX_district_specialization_industrial
+	base_buildtime = @zone_buildtime
+	
+	planet_limit = { base = 1 }
+	
+	potential = { # planet scope
+		hidden_trigger = {
+			has_deposit = d_former_relic_world
+			is_planet_class = pc_city
+			exists = owner
+			owner = {
+				is_wilderness_empire = no
+			}
+		}
+	}
+
+	unlock = { # planet scope
+		hidden_trigger = {
+			has_deposit = d_former_relic_world
+			is_planet_class = pc_city
+			exists = owner
+			owner = {
+				is_wilderness_empire = no
+			}
+		}
+	}
+
+	resources = {
+		category = planet_zones
+		inline_script = {
+			script = buildings/nomadic_cost_switcher
+			REGULAR_RESOURCE = minerals
+			NOMADIC_RESOURCE = alloys
+			COST = @zone_cost
+			NOMADIC_COST_MULT = 0.5
+		}
+	}
+
+	included_building_sets = {
+		industrial
+		urban_automation_arcology
+		origin
+	}
+
+	inline_script = {
+		script = jobs/zone_foundry_add
+		AMOUNT = @doubled_scaling_district_2_jobs
+	}
+
+	inline_script = {
+		script = jobs/zone_factory_add
+		AMOUNT = @doubled_scaling_district_2_jobs
+	}
+
+	planet_modifier = {
+		zone_building_slots_add = @time_mod_zone_max_buildings
+		industrial_jobs_exotic_gases_produces_add = 0.25
+		industrial_jobs_rare_crystals_produces_add = 0.25
+		industrial_jobs_volatile_motes_produces_add = 0.25
+	}
+
+	ai_resource_production = {
+		alloys = 10
+		consumer_goods = 10
+
+		trigger = {
+			has_any_industrial_zone = yes
+		}
+	}
+
+	ai_weight_coefficient = 1.1
+	ai_priority = 8
+	
+	swap_type = district_arcology_mixed_industry
+	swap_type_weight = 5
+
+	zone_sets = {
+		arcology
+	}
+
+	inline_script = {
+		script = zones/shared_arcology_zone_modifiers
+	}
+}
+
+zone_central_spire_arcology = {
+	icon = GFX_district_specialization_research
+	base_buildtime = @zone_buildtime
+	
+	planet_limit = { base = 1 }
+
+	potential = { # planet scope
+		hidden_trigger = {
+			has_deposit = d_former_relic_world
+			is_planet_class = pc_city
+			exists = owner
+			owner = {
+				is_wilderness_empire = no
+			}
+		}
+	}
+
+	unlock = { # planet scope
+		hidden_trigger = {
+			has_deposit = d_former_relic_world
+			is_planet_class = pc_city
+			exists = owner
+			owner = {
+				is_wilderness_empire = no
+			}
+		}
+	}
+
+	resources = {
+		category = planet_zones
+		inline_script = {
+			script = buildings/nomadic_cost_switcher
+			REGULAR_RESOURCE = minerals
+			NOMADIC_RESOURCE = alloys
+			COST = @zone_cost
+			NOMADIC_COST_MULT = 0.5
+		}
+	}
+
+	included_building_sets = {
+		research
+		urban_automation
+		origin
+	}
+
+	inline_script = {
+		script = jobs/zone_researchers_add
+		AMOUNT = @doubled_scaling_district_3_jobs
+	}
+
+	planet_modifier = {
+		zone_building_slots_add = @time_mod_zone_max_buildings
+		planet_physicists_physics_research_produces_add = 0.75
+		planet_biologists_society_research_produces_add = 0.75
+		planet_engineers_engineering_research_produces_add = 0.75
+	}
+
+	ai_resource_production = {
+		physics_research = 12
+		society_research = 12
+		engineering_research = 12
+
+		trigger = {
+			has_any_research_zone = yes
+		}
+	}
+
+	ai_weight_coefficient = 1.2
+	ai_priority = 8
+
+	zone_sets = {
+		urban
+	}
+
+	inline_script = {
+		script = zones/shared_city_non_urban_zone_modifiers
+	}
+}

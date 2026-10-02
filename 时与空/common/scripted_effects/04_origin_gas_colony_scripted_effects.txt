@@ -1,0 +1,149 @@
+# 星球
+reroll_pc_gas_colony_deposits = {
+	clear_deposits_and_orbital_station = yes
+	# 电
+	random_list = {
+		2 = {
+			while = {
+				count = 5
+				add_deposit = d_gas_generator
+			}
+		}
+		2 = {
+			while = {
+				count = 4
+				add_deposit = d_gas_generator
+			}
+		}
+		3 = {
+			while = {
+				count = 3
+				add_deposit = d_gas_generator
+			}
+		}
+		3 = {
+			while = {
+				count = 2
+				add_deposit = d_gas_generator
+			}
+		}
+	}
+	# 矿
+	random_list = {
+		2 = {
+			while = {
+				count = 5
+				add_deposit = d_gas_mining
+			}
+		}
+		2 = {
+			while = {
+				count = 4
+				add_deposit = d_gas_mining
+			}
+		}
+		3 = {
+			while = {
+				count = 3
+				add_deposit = d_gas_mining
+			}
+		}
+		3 = {
+			while = {
+				count = 2
+				add_deposit = d_gas_mining
+			}
+		}
+	}
+	# 粮
+	random_list = {
+		2 = {
+			while = {
+				count = 5
+				add_deposit = d_gas_farming
+			}
+		}
+		2 = {
+			while = {
+				count = 4
+				add_deposit = d_gas_farming
+			}
+		}
+		3 = {
+			while = {
+				count = 3
+				add_deposit = d_gas_farming
+			}
+		}
+		3 = {
+			while = {
+				count = 2
+				add_deposit = d_gas_farming
+			}
+		}
+	}
+	# 障碍
+	random_list = {
+		# 9
+		2 = {
+			modifier = {
+				factor = 0
+				planet_size >= 25
+			}
+			add_deposit = d_gas_blocker_1
+			add_deposit = d_gas_blocker_1
+			add_blocker = {
+				type = d_gas_blocker_1
+			}
+		}
+		# 9
+		2 = {
+			modifier = {
+				factor = 0
+				planet_size >= 25
+			}
+			add_deposit = d_gas_blocker_1
+			add_deposit = d_gas_blocker_2
+		}
+		# 12
+		3 = {
+			add_deposit = d_gas_blocker_1
+			add_deposit = d_gas_blocker_1
+			add_deposit = d_gas_blocker_2
+		}
+		# 15
+		3 = {
+			add_deposit = d_gas_blocker_1
+			add_deposit = d_gas_blocker_1
+			add_blocker = {
+				type = d_gas_blocker_1
+			}
+			add_deposit = d_gas_blocker_2
+		}
+		# 18
+		2 = {
+			modifier = {
+				factor = 0
+				planet_size < 25
+			}
+			add_deposit = d_gas_blocker_1
+			add_deposit = d_gas_blocker_1
+			add_deposit = d_gas_blocker_1
+			add_blocker = {
+				type = d_gas_blocker_1
+			}
+			add_deposit = d_gas_blocker_2
+		}
+		# 18
+		2 = {
+			modifier = {
+				factor = 0
+				planet_size < 25
+			}
+			add_deposit = d_gas_blocker_1
+			add_deposit = d_gas_blocker_1
+			add_deposit = d_gas_blocker_2
+			add_deposit = d_gas_blocker_2
+		}
+	}
+}

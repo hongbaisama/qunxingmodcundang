@@ -1,0 +1,340 @@
+########################
+# 时之螶
+########################
+
+tech_akx_worm_1 = {
+	area = physics
+	start_tech = no
+	cost = @horizontechcost1
+	is_rare = yes
+	is_reverse_engineerable = no
+	tier = @horizontechtier
+	category = { horror_time }
+	prerequisites = { }
+	weight = 0
+	
+	gateway = akx_worm
+	
+	potential = {
+		has_country_flag = horizonsignal_trigger
+	}
+
+	prereqfor_desc = {
+		custom = {
+			title = "tech_akx_worm_partial_custom"
+			desc = "tech_akx_worm_partial_custom_desc"
+		}
+	}
+	
+	ai_weight = {
+		weight = 10000
+	}
+}
+
+tech_akx_worm_2 = {
+	area = society
+	start_tech = no
+	cost = @horizontechcost1
+	is_rare = yes
+	is_reverse_engineerable = no
+	tier = @horizontechtier
+	category = { horror_time }
+	prerequisites = { }
+	weight = 0
+	
+	gateway = akx_worm
+	
+	potential = {
+		has_country_flag = horizonsignal_trigger
+	}
+
+	prereqfor_desc = {
+		custom = {
+			title = "tech_akx_worm_partial_custom"
+			desc = "tech_akx_worm_partial_custom_desc"
+		}
+	}
+	
+	ai_weight = {
+		weight = 10000
+	}
+}
+
+tech_akx_worm_3 = {
+	area = physics
+	start_tech = no
+	cost = @horizontechcost2
+	is_rare = yes
+	is_dangerous = yes
+	is_reverse_engineerable = no
+	tier = @horizontechtier
+	category = { horror_time }
+	prerequisites = { "tech_akx_worm_1" "tech_akx_worm_2" }
+	weight = 0
+	
+	gateway = akx_worm
+	
+	potential = {
+		has_country_flag = horizonsignal_trigger
+	}
+	
+	ai_weight = {
+		weight = 10000
+	}
+}
+
+########################
+# 负相焦点
+########################
+
+tech_horror_focus_1 = {
+	cost = @base_time_tech_cost
+	area = physics
+	tier = 5
+	category = { horror_time }
+	is_rare = yes
+	is_dangerous = yes
+	is_reverse_engineerable = no
+	weight = 0
+	
+	potential = {
+		has_country_flag = horror_focus_16_completed
+	}
+
+	modifier = {
+		description = tech_horror_focus_1_effect
+	}
+	
+	ai_weight = {
+		weight = 10000
+	}
+}
+
+tech_horror_focus_2 = {
+	cost = @base_time_tech_cost
+	area = society
+	tier = 5
+	category = { horror_time }
+	is_rare = yes
+	is_dangerous = yes
+	is_reverse_engineerable = no
+	weight = 0
+	
+	potential = {
+		has_country_flag = horror_focus_24_completed
+	}
+
+	modifier = {
+		description = tech_horror_focus_2_effect
+	}
+	
+	ai_weight = {
+		weight = 10000
+	}
+}
+
+########################
+# 神之圆环
+########################
+
+tech_coils_god_1 = {
+	cost = 314159
+	area = society
+	tier = 5
+	category = { psionics }
+	is_rare = yes
+	is_insight = yes
+	is_reverse_engineerable = no
+	weight = 0
+	
+	potential = {
+		has_country_flag = coils_god_halted
+	}
+	
+	modifier = {
+		ship_evasion_add = 3
+		ship_accuracy_mult = 0.1
+		ship_tracking_mult = 0.04
+	}
+
+	weight_modifier = {
+		factor = 0
+	}
+	
+	ai_weight = {
+		weight = 10000
+	}
+}
+
+tech_coils_god_2 = {
+	icon = tech_coils_god_1
+	cost = 314159
+	area = society
+	tier = 5
+	category = { psionics }
+	is_rare = yes
+	is_insight = yes
+	is_reverse_engineerable = no
+	weight = 0
+	
+	potential = {
+		has_country_flag = coils_god_end
+	}
+	
+	modifier = {
+		planet_stability_add = 3
+		pop_happiness = 0.1
+		planet_amenities_mult = 0.04
+	}
+
+	weight_modifier = {
+		factor = 0
+	}
+	
+	ai_weight = {
+		weight = 10000
+	}
+}
+
+
+########################
+# 时光旅馆
+########################
+
+tech_building_time_hotel = {
+	cost = @tier5cost3
+	area = society
+	tier = 5
+	category = { archaeostudies }
+	is_rare = yes
+	is_reverse_engineerable = no
+	weight = 0
+	
+	potential = {
+		has_modifier = time_hotel_modifier_1
+	}
+
+	weight_modifier = {
+		factor = 0
+	}
+	
+	ai_weight = {
+		weight = 10000
+	}
+}
+
+tech_time_microsingularity = {
+	cost = @tier5cost3
+	area = society
+	tier = 5
+	category = { archaeostudies }
+	is_rare = yes
+	is_reverse_engineerable = no
+	weight = 0
+	
+	potential = {
+		has_modifier = time_hotel_modifier_2
+	}
+
+	weight_modifier = {
+		factor = 0
+	}
+	
+	ai_weight = {
+		weight = 10000
+	}
+}
+
+########################
+# 星界裂隙
+########################
+
+tech_akx_ouroboros = {
+	cost = @tier5cost3
+	area = society
+	tier = 5
+	category = { horror_time }
+	is_rare = yes
+	is_reverse_engineerable = no
+	weight = 0
+	
+	potential = {
+		has_ascension_perk = ap_horror
+	}
+	
+	modifier = {
+		society_tech_cost_mult = -0.1
+		country_society_tech_research_speed = -0.25
+	}
+
+	weight_modifier = {
+		factor = 0
+	}
+}
+
+########################
+# 终末行舟
+########################
+
+tech_horror_titan_blueprint = {
+	icon = tech_arkship_construction
+	cost = @base_horror_tech_cost
+	area = engineering
+	tier = 5
+	category = { horror_time }
+	is_rare = yes
+	is_reverse_engineerable = no
+	weight = 0
+	
+	potential = {
+		has_country_flag = gain_time_titan
+		has_country_flag = unlock_horror_titan_blueprint
+	}
+
+	weight_modifier = {
+		factor = 0
+	}
+}
+
+tech_time_titan_blueprint = {
+	icon = tech_arkship_tier_2
+	cost = @base_time_tech_cost
+	area = engineering
+	tier = 5
+	category = { horror_time }
+	is_rare = yes
+	is_reverse_engineerable = no
+	weight = 0
+	
+	potential = {
+		has_country_flag = gain_time_titan
+		has_country_flag = unlock_time_titan_blueprint
+	}
+
+	weight_modifier = {
+		factor = 0
+	}
+}
+
+tech_end_titan_blueprint = {
+	icon = tech_arkship_tier_3
+	cost = @base_end_tech_cost
+	area = physics
+	tier = 5
+	category = { horror_time }
+	is_rare = yes
+	is_dangerous = yes
+	is_reverse_engineerable = no
+	weight = 0
+	
+	prerequisites = { "tech_time_titan_blueprint" }
+	
+	potential = {
+		has_country_flag = gain_time_titan
+		has_country_flag = unlock_end_titan_blueprint
+	}
+
+	weight_modifier = {
+		factor = 0
+	}
+}

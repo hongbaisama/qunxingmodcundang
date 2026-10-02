@@ -1,0 +1,940 @@
+namespace = time_dimensional_horror_crisis
+
+# 终焉宣告天灾出现
+country_event = {
+	id = time_dimensional_horror_crisis.1
+	title = time_dimensional_horror_crisis.1.name
+	desc = {
+		text = time_dimensional_horror_crisis.1.desc.a
+		trigger = {
+			has_country_flag = discover_between_three_and_four
+		}
+	}
+	desc = {
+		text = time_dimensional_horror_crisis.1.desc.b
+		trigger = {
+			NOT = { has_country_flag = discover_between_three_and_four }
+		}
+	}
+	picture = GFX_evt_astral_rift_library
+	show_sound = ap_rift_event_15_time_crystal
+	event_chain = beyond_infinity_chain
+	
+	is_triggered_only = yes
+
+	trigger = {
+		forbid_beyond_infinity = no
+		NOT = { has_global_flag = dimensional_horror_crisis_happened }
+	}
+	
+	immediate = {
+		set_global_flag = dimensional_horror_crisis_happened
+		create_country = {
+			name = "NAME_Dimensional_Horror_Crisis_Country"
+			type = dimensional_horror_crisis
+			auto_delete = no
+			flag = {
+				icon= {
+					category = "special"
+					file = "extradimensional_02.dds"
+				}
+				background= {
+					category = "backgrounds"
+					file = "circle.dds"
+				}
+				colors={
+					"dark_purple"
+					"red"
+					"null"
+					"null"
+				}
+			}
+			effect = {
+				save_global_event_target_as = dimensional_horror_crisis_country
+				country_event = { id = time_dimensional_horror_crisis.50 days = 720 }
+			}
+		}
+		if = {
+			limit = {
+				event_target:akx_star = {
+					solar_system = { is_owned_by = root }
+				}
+			}
+			event_target:akx_star = {
+				solar_system = { save_global_event_target_as = dimensional_horror_crisis_storm_start_system }
+			}
+		}
+		else = {
+			capital_scope = {
+				solar_system = { save_global_event_target_as = dimensional_horror_crisis_storm_start_system }
+			}
+		}
+		event_target:dimensional_horror_crisis_storm_start_system = {
+			if = {
+				limit = {
+					is_inside_storm = yes
+				}
+				every_cosmic_storm = {
+					limit = {
+						any_system_within_storm = {
+							is_same_value = event_target:dimensional_horror_crisis_storm_start_system
+						}
+					}
+					destroy_cosmic_storm = yes
+				}
+			}
+			random_create_dimensional_horror_crisis_storm = yes
+		}
+		# 以太相引擎会促进终焉宣告的形成
+		every_system = {
+			limit = {
+				if = {
+					limit = {
+						any_system_megastructure = {
+							is_crisis_sphere = yes
+						}
+					}
+					NOR = {
+						is_same_value = event_target:dimensional_horror_crisis_storm_start_system
+						has_star_flag = random_create_dimensional_horror_crisis_storm_system
+						is_inside_storm = yes
+					}
+				}
+				else = {
+					always = no
+				}
+			}
+			set_timed_star_flag = {
+				flag = random_create_dimensional_horror_crisis_storm_system
+				days = 1
+			}
+			random_create_dimensional_horror_crisis_storm = yes
+		}
+		# 曾被时空抹除的星系也要随机出现终焉宣告
+		while = {
+			count = value:random_create_dimensional_horror_crisis_storm_system
+			random_system = {
+				limit = {
+					if = {
+						limit = {
+							has_star_flag = time_erasure_system
+						}
+						NOR = {
+							is_same_value = event_target:dimensional_horror_crisis_storm_start_system
+							has_star_flag = random_create_dimensional_horror_crisis_storm_system
+							is_inside_storm = yes
+						}
+					}
+					else = {
+						always = no
+					}
+				}
+				set_timed_star_flag = {
+					flag = random_create_dimensional_horror_crisis_storm_system
+					days = 1
+				}
+				random_create_dimensional_horror_crisis_storm = yes
+			}
+		}
+	}
+	
+	option = {
+		name = time_dimensional_horror_crisis.1.a
+		custom_tooltip = time_dimensional_horror_crisis.1.a.tooltip
+	}
+}
+
+# 刷新终焉宣告坍缩等级
+event = {
+	id = time_dimensional_horror_crisis.5
+	hide_window = yes
+	is_triggered_only = yes
+	
+	trigger = {
+		has_global_flag = dimensional_horror_crisis_storm_has_occurred
+	}
+	
+	immediate = {
+		refresh_dimensional_horror_crisis_storm_original_level = yes
+	}
+}
+
+# 添加天灾计数板（非新国家）
+country_event = {
+	id = time_dimensional_horror_crisis.10
+	title = time_dimensional_horror_crisis.10.name
+	desc = {
+		text = time_dimensional_horror_crisis.10.desc.a
+		trigger = {
+			has_ascension_perk = ap_beyond_infinity
+		}
+	}
+	desc = {
+		text = time_dimensional_horror_crisis.10.desc.b
+		trigger = {
+			NOT = { has_ascension_perk = ap_beyond_infinity }
+		}
+	}
+	picture = GFX_dimensional_horror_crisis_storm
+	show_sound = event_red_alert
+	location = event_target:dimensional_horror_crisis_storm_start_system
+	event_chain = dimensional_horror_crisis_chain
+	
+	is_triggered_only = yes
+	
+	trigger = {
+		has_global_flag = dimensional_horror_crisis_storm_has_occurred
+	}
+	
+	immediate = {
+		create_dimensional_horror_crisis_chain = yes
+		create_timeline_dimensional_horror_crisis_begin = yes
+	}
+	
+	after = {
+		hidden_effect = {
+			if = {
+				limit = {
+					has_ascension_perk = ap_beyond_infinity
+					forbid_beyond_infinity = no
+				}
+				country_event = { id = beyond_infinity.3100 }
+			}
+		}
+	}
+	
+	option = {
+		name = time_dimensional_horror_crisis.10.a
+		tooltip = {
+			begin_event_chain = {
+				event_chain = dimensional_horror_crisis_chain
+				target = this
+			}
+		}
+	}
+}
+
+# 添加天灾计数板（新国家）
+country_event = {
+	id = time_dimensional_horror_crisis.15
+	hide_window = yes
+	is_triggered_only = yes
+	
+	trigger = {
+		has_global_flag = dimensional_horror_crisis_storm_has_occurred
+		NOT = { has_event_chain = dimensional_horror_crisis_chain }
+		OR = {
+			is_default_or_player = yes
+			is_fallen_empire = yes
+		}
+	}
+	
+	immediate = {
+		create_dimensional_horror_crisis_chain = yes
+		create_timeline_dimensional_horror_crisis_begin_for_new_country = yes
+	}
+}
+
+# 终焉之魇被击退
+country_event = {
+	id = time_dimensional_horror_crisis.20
+	hide_window = yes
+	is_triggered_only = yes
+	
+	trigger = {
+		is_same_value = event_target:dimensional_horror_crisis_country
+	}
+	
+	immediate = {
+		event_target:global_event_country = {
+			change_variable = {
+				which = dimensional_horror_crisis_kills
+				value = 1
+			}
+		}
+		From = {
+			if = {
+				limit = {
+					has_event_chain = dimensional_horror_crisis_chain
+				}
+				add_event_chain_counter = {
+					event_chain = dimensional_horror_crisis_chain
+					counter = dimensional_horror_crisis_kills_us
+					amount = 1
+				}
+				add_dimensional_horror_crisis_mission_counter = {
+					MISSION = SHIP
+					COUNTER = ship
+				}
+			}
+		}
+		every_country = {
+			limit = {
+				has_event_chain = dimensional_horror_crisis_chain
+				NOT = { is_same_value = root.From }
+			}
+			add_event_chain_counter = {
+				event_chain = dimensional_horror_crisis_chain
+				counter = dimensional_horror_crisis_kills_others
+				amount = 1
+			}
+		}
+	}
+}
+
+# 终焉之魇吞噬船只
+country_event = {
+	id = time_dimensional_horror_crisis.25
+	hide_window = yes
+	is_triggered_only = yes
+	
+	trigger = {
+		From = { is_same_value = event_target:dimensional_horror_crisis_country }
+	}
+	
+	immediate = {
+		event_target:global_event_country = {
+			change_variable = {
+				which = dimensional_horror_crisis_victims
+				value = 1
+			}
+		}
+		add_dimensional_horror_crisis_chain_counter = { COUNTER = dimensional_horror_crisis_victims }
+	}
+}
+
+# 研究终焉洞见
+country_event = {
+	id = time_dimensional_horror_crisis.30
+	hide_window = yes
+	is_triggered_only = yes
+
+	trigger = {
+		if = {
+			limit = {
+				has_event_chain = dimensional_horror_crisis_chain
+			}
+			if = {
+				limit = {
+					has_all_dimensional_horror_crisis_storm_protection_tech = no
+					NOT = { has_country_flag = mission_dimensional_horror_crisis_technology_5_completed }
+				}
+				OR = {
+					last_increased_tech = tech_dimensional_horror_crisis_storm_protection_level_1
+					last_increased_tech = tech_dimensional_horror_crisis_storm_protection_level_2
+					last_increased_tech = tech_dimensional_horror_crisis_storm_protection_level_3
+					last_increased_tech = tech_dimensional_horror_crisis_storm_protection_level_4
+					last_increased_tech = tech_dimensional_horror_crisis_storm_protection_level_5
+					last_increased_tech = tech_dimensional_horror_crisis_storm_protection_building_1
+					last_increased_tech = tech_dimensional_horror_crisis_storm_protection_building_2
+					last_increased_tech = tech_dimensional_horror_crisis_storm_protection_building_3
+					last_increased_tech = tech_dimensional_horror_crisis_storm_protection_building_4
+					last_increased_tech = tech_dimensional_horror_crisis_storm_protection_building_5
+					last_increased_tech = tech_dimensional_horror_crisis_storm_protection_component_1
+					last_increased_tech = tech_dimensional_horror_crisis_storm_protection_component_2
+					last_increased_tech = tech_dimensional_horror_crisis_storm_protection_component_3
+					last_increased_tech = tech_dimensional_horror_crisis_storm_protection_component_4
+					last_increased_tech = tech_dimensional_horror_crisis_storm_protection_component_5
+				}
+			}
+			else = {
+				always = no
+			}
+		}
+		else = {
+			always = no
+		}
+	}
+	
+	immediate = {
+		add_dimensional_horror_crisis_mission_counter = {
+			MISSION = TECHNOLOGY
+			COUNTER = technology
+		}
+	}
+}
+
+# 终焉宣告创造风暴
+country_event = {
+	id = time_dimensional_horror_crisis.50
+	hide_window = yes
+	is_triggered_only = yes
+
+	trigger = {
+		is_same_value = event_target:dimensional_horror_crisis_country
+	}
+	
+	immediate = {
+		# 自循环
+		country_event = {
+			id = time_dimensional_horror_crisis.50
+			days = value:dimensional_horror_crisis_storm_cooldown
+		}
+		# 创造风暴
+		random_system = {
+			limit = {
+				NOR = {
+					is_star_class = sc_endless_time
+					is_star_class = sc_time_core
+					is_star_class = sc_endless_time_core
+					is_time_white_hole_star_class = yes
+					is_dimensional_horror_crisis_inactive_system = yes
+					is_inside_storm = yes
+				}
+			}
+			weights = {
+				base = 1
+				modifier = {
+					is_time_black_hole_star_class = yes
+					NOT = { has_star_flag = recent_dimensional_horror_crisis_storm_system }
+					factor = 5
+				}
+				modifier = {
+					has_star_flag = recent_dimensional_horror_crisis_storm_system
+					factor = 0.2
+				}
+				modifier = {
+					if = {
+						limit = { exists = owner }
+						owner = { is_ai = yes }
+					}
+					factor = 2
+				}
+				modifier = {
+					is_storm_active_in_storm_sector = yes
+					factor = 0.0001
+				}
+			}
+			random_create_dimensional_horror_crisis_storm = yes
+		}
+	}
+}
+
+# 终焉宣告危机音乐
+event = {
+	id = time_dimensional_horror_crisis.60
+	hide_window = yes
+	is_triggered_only = yes
+	
+	trigger = {
+		has_global_flag = dimensional_horror_crisis_storm_has_occurred
+	}
+	
+	immediate = {
+		if = {
+			# 命运BOSS战
+			limit = {
+				has_global_flag = greatest_dimensional_horror_crisis
+			}
+			set_crisis_sound = time_dimensional_horror_crisis_stage_3
+		}
+		else_if = {
+			# 开启终焉封印
+			limit = {
+				has_global_flag = time_dimensional_horror_crisis_stage_2
+			}
+			set_crisis_sound = time_dimensional_horror_crisis_stage_2
+		}
+		else = {
+			# 终焉宣告出现
+			set_crisis_sound = time_dimensional_horror_crisis_stage_1
+		}
+	}
+}
+
+# 终焉宣告风暴效果
+event = {
+	id = time_dimensional_horror_crisis.100
+	hide_window = yes
+	is_triggered_only = yes
+
+	trigger = {
+		has_global_flag = dimensional_horror_crisis_storm_has_occurred
+	}
+	
+	immediate = {
+		every_cosmic_storm = {
+			limit = {
+				is_dimensional_horror_crisis_storm = yes
+			}
+			every_system_within_storm = {
+				limit = {
+					is_dimensional_horror_crisis_inactive_system = no
+				}
+				# 伤害舰船
+				every_ship_in_system = {
+					limit = {
+						has_hp_percentage > @dimensional_horror_crisis_storm_ship_damage_received_hp_limit
+						immune_to_dimensional_horror_crisis_storm = no
+					}
+					damage_ship = value:dimensional_horror_crisis_storm_ship_damage_received
+				}
+				# 杀死人口
+				every_system_planet = {
+					limit = {
+						is_colony = yes
+						count_owned_pop_amount = {
+							limit = {
+								has_virtual_species_trait = no
+							}
+							count >= @dimensional_horror_crisis_storm_pop_killed_pop_limit
+						}
+					}
+					dimensional_horror_crisis_storm_pop_killed_effect = yes
+				}
+			}
+		}
+	}
+}
+
+# 终焉宣告时空抹除
+fleet_event = {
+	id = time_dimensional_horror_crisis.200
+	hide_window = yes
+	is_triggered_only = yes
+	
+	trigger = {
+		is_dimensional_horror_crisis_inactive_system = no
+		is_time_erasure_system = no
+	}
+	
+	immediate = {
+		if = {
+			limit = {
+				is_in_combat = no
+				is_time_erasure_system = no
+				can_dimensional_horror_crisis_erasured_system = yes
+			}
+			random_owned_ship = {
+				save_event_target_as = akx_time_eraser_ship
+			}
+			owner = {
+				save_event_target_as = akx_time_eraser
+			}
+			solar_system = {
+				save_event_target_as = dimensional_horror_crisis_erasured_system
+				set_star_flag = dimensional_horror_crisis_erasured
+				if = {
+					limit = {
+						count_neighbor_system = {
+							count < 1
+						}
+						NOT = { has_star_flag = lcluster }
+					}
+					akx_time_erasure_system = yes
+					remove_star_flag = lcluster # 避免孤立星系无法进入
+				}
+				else = {
+					akx_time_erasure_system = yes
+				}
+			}
+			event_target:global_event_country = {
+				change_variable = {
+					which = dimensional_horror_crisis_erasured_system
+					value = 1
+				}
+			}
+			increase_beyond_infinity_seal_requirement = yes
+			add_dimensional_horror_crisis_chain_counter = { COUNTER = dimensional_horror_crisis_erasured_system }
+			if = {
+				limit = {
+					any_playable_country = { has_event_chain = beyond_infinity_seal_chain }
+				}
+				every_playable_country = {
+					limit = {
+						has_event_chain = beyond_infinity_seal_chain
+					}
+					event_target:dimensional_horror_crisis_erasured_system = {
+						set_star_flag = exists_beyond_infinity_seal_project_for@prev
+						save_event_target_as = beyond_infinity_seal_project_target
+						star = {
+							enable_special_project = {
+								name = BEYOND_INFINITY_SEAL_PROJECT
+								location = this
+								owner = prevprev
+							}
+						}
+					}
+				}
+			}
+		}
+		else = {
+			fleet_event = { id = time_dimensional_horror_crisis.200 days = 90 }
+		}
+	}
+}
+
+# 避免未知bug导致单星系堆叠多只终焉之魇
+fleet_event = {
+	id = time_dimensional_horror_crisis.300
+	hide_window = yes
+	is_triggered_only = yes
+	
+	trigger = {
+		if = {
+			limit = {
+				is_dimensional_horror_crisis_ship_size = yes
+			}
+			From = {
+				any_fleet_in_system = {
+					is_dimensional_horror_crisis_ship_size = yes
+					NOT = { is_same_value = root }
+				}
+			}
+		}
+		else = {
+			always = no
+		}
+	}
+	
+	immediate = {
+		if = {
+			limit = {
+				is_same_value = event_target:dimensional_horror_crisis_destiny_fleet
+			}
+			From = {
+				every_fleet_in_system = {
+					limit = {
+						is_dimensional_horror_crisis_ship_size = yes
+						NOT = { is_same_value = root }
+					}
+					delete_fleet = this
+				}
+			}
+		}
+		else = {
+			delete_fleet = this
+		}
+	}
+}
+
+# 激活终焉封印项目
+fleet_event = {
+	id = time_dimensional_horror_crisis.400
+	hide_window = yes
+	is_triggered_only = yes
+	
+	trigger = {
+		if = {
+			limit = {
+				has_global_flag = dimensional_horror_crisis_storm_has_occurred
+			}
+			if = {
+				limit = {
+					exists = owner
+					owner = { has_event_chain = beyond_infinity_seal_chain }
+				}
+				if = {
+					limit = {
+						From = {
+							NOR = {
+								has_star_flag = exists_beyond_infinity_seal_project_for@root.owner # 已有封印项目
+								is_dimensional_horror_crisis_sealed_system = yes # 已被封印
+							}
+						}
+					}
+					if = {
+						limit = {
+							owner = { has_policy_flag = beyond_infinity_seal_for_affected }
+						}
+						From = {
+							is_dimensional_horror_crisis_affected_system = yes # 只封印被影响的星系（被抹除自然包含在内）
+						}
+					}
+					else = {
+						From = {
+							is_dimensional_horror_crisis_erasured_system = yes # 只封印被抹除的星系
+						}
+					}
+				}
+				else = {
+					always = no
+				}
+			}
+			else = {
+				always = no
+			}
+		}
+		else = {
+			always = no
+		}
+	}
+	
+	immediate = {
+		From = {
+			set_star_flag = exists_beyond_infinity_seal_project_for@root.owner
+			save_event_target_as = beyond_infinity_seal_project_target
+			star = {
+				enable_special_project = {
+					name = BEYOND_INFINITY_SEAL_PROJECT
+					location = this
+					owner = root.owner
+				}
+			}
+		}
+	}
+}
+
+# 终焉封印
+ship_event = {
+	id = time_dimensional_horror_crisis.500
+	title = time_dimensional_horror_crisis.500.name
+	desc = {
+		text = time_dimensional_horror_crisis.500.desc.a
+		trigger = {
+			event_target:dimensional_horror_crisis_sealed_system = {
+				has_star_flag = last_sealed_erasured_system
+			}
+		}
+	}
+	desc = {
+		text = time_dimensional_horror_crisis.500.desc.b
+		trigger = {
+			event_target:dimensional_horror_crisis_sealed_system = {
+				NOT = { has_star_flag = last_sealed_erasured_system }
+			}
+		}
+	}
+	picture = GFX_dimensional_horror_crisis_storm
+	show_sound = ap_rift_event_10_wormhole_sealed
+	location = event_target:dimensional_horror_crisis_sealed_system
+	event_chain = beyond_infinity_seal_chain
+	
+	is_triggered_only = yes
+
+	trigger = {
+		exists = event_target:dimensional_horror_crisis_sealed_system
+		event_target:dimensional_horror_crisis_sealed_system = {
+			is_dimensional_horror_crisis_sealed_system = no
+		}
+	}
+	
+	immediate = {
+		event_target:dimensional_horror_crisis_sealed_system = {
+			set_star_flag = dimensional_horror_crisis_sealed
+			every_system_ambient_object = {
+				limit = {
+					has_ambient_object_flag = dimensional_horror_crisis_storm_object
+				}
+				destroy_ambient_object = this
+			}
+			every_fleet_in_system = {
+				limit = {
+					is_dimensional_horror_crisis_ship_size = yes
+					NOT = { is_same_value = event_target:dimensional_horror_crisis_destiny_fleet }
+				}
+				destroy_fleet = this
+			}
+		}
+		event_target:global_event_country = {
+			change_variable = {
+				which = dimensional_horror_crisis_sealed_system
+				value = 1
+			}
+			if = {
+				limit = {
+					event_target:dimensional_horror_crisis_sealed_system = {
+						is_dimensional_horror_crisis_erasured_system = yes
+					}
+				}
+				change_variable = {
+					which = dimensional_horror_crisis_sealed_erasured_system
+					value = 1
+				}
+				meet_beyond_infinity_seal_requirement = yes
+			}
+		}
+		owner = {
+			add_event_chain_counter = {
+				event_chain = dimensional_horror_crisis_chain
+				counter = dimensional_horror_crisis_sealed_us
+				amount = 1
+			}
+		}
+		add_dimensional_horror_crisis_chain_counter = { COUNTER = dimensional_horror_crisis_sealed_system }
+		# 移除其它国家对该星系的封印项目
+		every_playable_country = {
+			limit = {
+				has_event_chain = beyond_infinity_seal_chain
+				NOT = { is_same_value = root.owner }
+			}
+			abort_special_project = {
+				type = BEYOND_INFINITY_SEAL_PROJECT
+				location = event_target:dimensional_horror_crisis_sealed_star
+			}
+		}
+		# 判断全部被抹除星系是否都已被封印
+		if = {
+			limit = {
+				NOT = { has_global_flag = all_erasured_system_is_sealed }
+			}
+			if = {
+				limit = {
+					event_target:global_event_country = {
+						check_variable = {
+							which = dimensional_horror_crisis_sealed_erasured_system
+							value >= dimensional_horror_crisis_erasured_system
+						}
+					}
+				}
+				set_global_flag = all_erasured_system_is_sealed
+				# 用于文本差异判断
+				event_target:dimensional_horror_crisis_sealed_system = {
+					set_star_flag = last_sealed_erasured_system
+				}
+				# 观察者事件
+				observer_event = { id = beyond_infinity.4650 }
+				# 不是超越无限国家，立即触发下一个事件
+				if = {
+					limit = {
+						owner = {
+							NOT = { is_same_value = event_target:beyond_infinity_country }
+						}
+					}
+					event_target:beyond_infinity_country = {
+						country_event = { id = beyond_infinity.4500 }
+					}
+				}
+			}
+		}
+	}
+	
+	after = {
+		hidden_effect = {
+			# 将该星系的封印项目从日志中移除
+			owner = {
+				abort_special_project = {
+					type = BEYOND_INFINITY_SEAL_PROJECT
+					location = event_target:dimensional_horror_crisis_sealed_star
+				}
+			}
+		}
+	}
+	
+	option = {
+		name = time_dimensional_horror_crisis.500.a
+		trigger = {
+			event_target:dimensional_horror_crisis_sealed_system = {
+				has_star_flag = last_sealed_erasured_system
+			}
+		}
+		custom_tooltip = time_dimensional_horror_crisis.500.a.tooltip
+		custom_tooltip = time_dimensional_horror_crisis.500.b.tooltip
+		hidden_effect = {
+			event_target:dimensional_horror_crisis_sealed_system = {
+				remove_star_flag = last_sealed_erasured_system
+			}
+			# 是超越无限国家，事后触发下一个事件
+			if = {
+				limit = {
+					owner = { is_same_value = event_target:beyond_infinity_country }
+				}
+				event_target:beyond_infinity_country = {
+					country_event = { id = beyond_infinity.4500 }
+				}
+			}
+		}
+	}
+	
+	option = {
+		name = time_dimensional_horror_crisis.500.b
+		trigger = {
+			event_target:dimensional_horror_crisis_sealed_system = {
+				NOT = { has_star_flag = last_sealed_erasured_system }
+			}
+		}
+		custom_tooltip = time_dimensional_horror_crisis.500.b.tooltip
+	}
+}
+
+# 击败命运
+country_event = {
+	id = time_dimensional_horror_crisis.1000
+	title = time_dimensional_horror_crisis.1000.name
+	desc = time_dimensional_horror_crisis.1000.desc
+	picture = GFX_evt_dimensional_horror
+	show_sound = ap_rift_event_9_cosmic_calm
+	location = event_target:dimensional_horror_crisis_destiny_system
+	event_chain = dimensional_horror_crisis_chain
+	
+	is_triggered_only = yes
+	
+	trigger = {
+		FromFromFrom = {
+			is_same_value = event_target:dimensional_horror_crisis_destiny_fleet
+		}
+	}
+	
+	immediate = {
+		remove_global_flag = greatest_dimensional_horror_crisis
+		date_distortion = no
+		every_country = {
+			limit = {
+				has_modifier = time_machine_is_defective
+			}
+			remove_modifier = time_machine_is_defective
+		}
+		every_playable_country = {
+			limit = {
+				has_point_of_interest = { poi = dimensional_horror_crisis_destiny_point }
+			}
+			remove_point_of_interest = dimensional_horror_crisis_destiny_point
+		}
+		every_country = {
+			limit = {
+				NOT = { is_same_value = root }
+				OR = {
+					is_default_or_player = yes
+					is_fallen_empire = yes
+				}
+			}
+			country_event = { id = time_dimensional_horror_crisis.1100 }
+		}
+	}
+	
+	option = {
+		name = time_dimensional_horror_crisis.1000.a
+		give_r_horror_matter = { FLAG = dimensional_horror_crisis_relic }
+		hidden_effect = {
+			if = {
+				limit = {
+					has_ascension_perk = ap_beyond_infinity
+				}
+				country_event = { id = beyond_infinity.5500 }
+			}
+		}
+	}
+}
+
+country_event = {
+	id = time_dimensional_horror_crisis.1100
+	title = time_dimensional_horror_crisis.1000.name
+	desc = time_dimensional_horror_crisis.1100.desc
+	picture = GFX_evt_dimensional_horror
+	show_sound = ap_rift_event_9_cosmic_calm
+	location = event_target:dimensional_horror_crisis_destiny_system
+	event_chain = dimensional_horror_crisis_chain
+
+	is_triggered_only = yes
+	
+	trigger = {
+	}
+
+	option = {
+		name = time_dimensional_horror_crisis.1100.a
+		add_monthly_resource_mult = {
+			resource = unity
+			value = @tier5unityreward
+			min = @tier5unitymin
+			max = @tier5unitymax
+		}
+		hidden_effect = {
+			if = {
+				limit = {
+					has_ascension_perk = ap_beyond_infinity
+				}
+				country_event = { id = beyond_infinity.5500 }
+			}
+		}
+	}
+}

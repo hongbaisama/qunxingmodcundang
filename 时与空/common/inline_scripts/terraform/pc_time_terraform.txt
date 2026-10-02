@@ -1,0 +1,37 @@
+from = $CLASS$
+to = pc_time
+
+resources = {
+	category = terraforming
+
+	cost = {
+		sr_dark_matter = 1000
+	}
+}
+
+duration = 3600
+
+condition = {
+	has_technology = tech_climate_restoration
+	from = {
+		custom_tooltip = {
+			fail_text = "is_dimensional_horrorling_black_hole"
+			NOT = { has_carrier_flag = exist_dimensional_horrorling_object }
+		}
+	}
+}
+
+potential = {
+	has_origin_time = yes
+	has_country_flag = situation_origin_time_finished
+}
+
+effect = {
+	from = {
+		carrier_event = { id = time.21 }
+	}
+}
+
+ai_weight = {
+	weight = 0
+}

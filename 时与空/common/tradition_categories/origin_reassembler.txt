@@ -1,0 +1,20 @@
+tradition_origin_reassembler = {
+	tree_template = "tree_21_21"
+	adoption_bonus = "tr_origin_reassembler_adopt"
+	finish_bonus = "tr_origin_reassembler_finish"
+	traditions = {
+		"tr_origin_reassembler_housing"
+		"tr_origin_reassembler_amenities"
+		"tr_origin_reassembler_empire_size"
+		"tr_origin_reassembler_upkeep"
+		"tr_origin_reassembler_produces"
+	}
+
+	potential = {
+		has_origin = origin_reassembler
+	}
+
+	ai_weight = {
+		factor = 1000
+	}
+}

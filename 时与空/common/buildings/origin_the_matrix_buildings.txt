@@ -1,0 +1,443 @@
+building_origin_the_matrix_lathe_capital = {
+	icon = building_lathe_capital
+	capital = yes
+	can_build = no
+	can_demolish = no
+	can_be_ruined = no
+	can_be_disabled = no
+	planet_limit = 1
+	position_priority = 0
+	capital_tier = 3
+	
+	category = government
+	
+	building_sets = { time_ruin_cosmogenesis_world_main }
+
+	potential = {
+		is_planet_class = pc_time_ruin_cosmogenesis_world
+	}
+
+	resources = {
+		category = planet_buildings
+		upkeep = {
+			energy = @b3_upkeep
+			alloys = 5
+		}
+	}
+	
+	triggered_country_modifier = {
+		envoys_add = 1
+		intel_encryption_add = 1
+		intel_decryption_add = 1
+		add_base_country_intel = 5
+		mult = value:origin_the_matrix_building_country_modifier
+	}
+	
+	planet_modifier = {
+		planet_housing_add = 2000
+		planet_amenities_add = 1500
+	}
+	
+	convert_to = {
+		building_lathe_capital
+	}
+
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { is_gestalt = no }
+		}
+		job_physicist_per_pop = 0.05
+		job_biologist_per_pop = 0.05
+		job_engineer_per_pop = 0.05
+	}
+
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { is_gestalt = yes }
+		}
+		job_calculator_physicist_per_pop = 0.05
+		job_calculator_biologist_per_pop = 0.05
+		job_calculator_engineer_per_pop = 0.05
+	}
+	
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { has_origin = origin_the_matrix }
+		}
+		planet_physicists_physics_research_produces_add = 0.05
+		mult = value:origin_the_matrix_lathe_capital_physics
+	}
+	
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { has_origin = origin_the_matrix }
+		}
+		planet_biologists_society_research_produces_add = 0.05
+		mult = value:origin_the_matrix_lathe_capital_society
+	}
+	
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { has_origin = origin_the_matrix }
+		}
+		planet_engineers_engineering_research_produces_add = 0.05
+		mult = value:origin_the_matrix_lathe_capital_engineering
+	}
+	
+	triggered_desc = {
+		trigger = {
+			exists = owner
+			owner = { has_origin = origin_the_matrix }
+		}
+		text = building_origin_the_matrix_lathe_capital_effect
+	}
+}
+
+building_origin_the_matrix_lathe_resonator = {
+	icon = building_lathe_resonator
+	base_buildtime = @b2_time
+	planet_limit = 4
+	
+	category = manufacturing
+	
+	building_sets = { time_ruin_cosmogenesis_world }
+
+	potential = {
+		is_planet_class = pc_time_ruin_cosmogenesis_world
+	}
+
+	resources = {
+		category = planet_buildings
+		cost = {
+			alloys = 200
+		}
+		upkeep = {
+			energy = @b2_upkeep
+		}
+	}
+	
+	triggered_country_modifier = {
+		operations_cost_mult = -0.05
+		operations_upkeep_mult = -0.05
+		mult = value:origin_the_matrix_building_country_modifier
+	}
+	
+	planet_modifier = {
+		planet_jobs_upkeep_mult = -0.05
+		planet_metallurgists_volatile_motes_produces_add = 0.1
+		planet_metallurgists_exotic_gases_produces_add = 0.1
+		planet_metallurgists_rare_crystals_produces_add = 0.1
+		planet_artisans_volatile_motes_produces_add = 0.1
+		planet_artisans_exotic_gases_produces_add = 0.1
+		planet_artisans_rare_crystals_produces_add = 0.1
+	}
+}
+
+building_origin_the_matrix_lathe_stabilisator = {
+	icon = building_lathe_stabilisator
+	base_buildtime = @b2_time
+	planet_limit = 4
+	
+	category = government
+	
+	building_sets = { time_ruin_cosmogenesis_world }
+
+	potential = {
+		is_planet_class = pc_time_ruin_cosmogenesis_world
+	}
+
+	resources = {
+		category = planet_buildings
+		cost = {
+			alloys = 200
+		}
+		upkeep = {
+			energy = @b2_upkeep
+		}
+	}
+	
+	triggered_country_modifier = {
+		first_contact_defense_add = 0.5
+		espionage_hostile_operation_difficulty_add = 0.5
+		mult = value:origin_the_matrix_building_country_modifier
+	}
+	
+	planet_modifier = {
+		planet_stability_add = 2.5
+	}
+	
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { is_gestalt = no }
+		}
+		job_enforcer_add = 500
+	}
+	
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { is_gestalt = yes }
+		}
+		job_patrol_drone_add = 500
+	}
+}
+
+building_origin_the_matrix_lathe_overclocker = {
+	icon = building_lathe_overclocker
+	base_buildtime = @b2_time
+	planet_limit = 4
+	
+	category = manufacturing
+	
+	building_sets = { time_ruin_cosmogenesis_world }
+
+	potential = {
+		is_planet_class = pc_time_ruin_cosmogenesis_world
+	}
+
+	resources = {
+		category = planet_buildings
+		cost = {
+			alloys = 200
+		}
+		upkeep = {
+			energy = @b2_upkeep
+		}
+	}
+	
+	triggered_country_modifier = {
+		first_contact_speed_mult = 0.1
+		espionage_operation_speed_mult = 0.1
+		mult = value:origin_the_matrix_building_country_modifier
+	}
+	
+	planet_modifier = {
+		planet_jobs_produces_mult = 0.05
+	}
+	
+	inline_script = {
+		script = jobs/foundry_add
+		AMOUNT = 400
+	}
+	
+	inline_script = {
+		script = jobs/miners_add
+		AMOUNT = 600
+	}
+}
+
+building_origin_the_matrix_lathe_preserver = {
+	icon = building_lathe_preserver
+	base_buildtime = @b2_time
+	planet_limit = 4
+	
+	category = manufacturing
+	
+	building_sets = { time_ruin_cosmogenesis_world }
+
+	potential = {
+		is_planet_class = pc_time_ruin_cosmogenesis_world
+	}
+
+	resources = {
+		category = planet_buildings
+		cost = {
+			alloys = 200
+		}
+		upkeep = {
+			energy = @b2_upkeep
+		}
+	}
+	
+	triggered_country_modifier = {
+		diplomacy_influence_upkeep_mult = -0.05
+		spy_network_decay_mult = -0.05
+		mult = value:origin_the_matrix_building_country_modifier
+	}
+	
+	planet_modifier = {
+		logistic_growth_mult = 0.05
+		bonus_pop_growth_mult = 0.05
+	}
+	
+	inline_script = {
+		script = jobs/factory_add
+		AMOUNT = 400
+	}
+	
+	inline_script = {
+		script = jobs/farmers_add
+		AMOUNT = 600
+	}
+}
+
+building_origin_the_matrix_lathe_reactor = {
+	icon = building_lathe_reactor
+	base_buildtime = @b2_time
+	planet_limit = 4
+	
+	category = resource
+	
+	building_sets = { time_ruin_cosmogenesis_world }
+
+	potential = {
+		is_planet_class = pc_time_ruin_cosmogenesis_world
+	}
+
+	resources = {
+		category = planet_buildings
+		cost = {
+			alloys = 200
+		}
+		upkeep = {
+			energy = @b2_upkeep
+		}
+	}
+	
+	triggered_country_modifier = {
+		spy_network_daily_value_mult = 0.1
+		espionage_operation_cost_mult = -0.05
+		mult = value:origin_the_matrix_building_country_modifier
+	}
+	
+	planet_modifier = {
+		planet_structures_upkeep_mult = -0.05
+	}
+	
+	inline_script = {
+		script = jobs/technicians_add
+		AMOUNT = 1000
+	}
+}
+
+building_origin_the_matrix_lathe_life_support = {
+	icon = building_lathe_life_support
+	base_buildtime = @b2_time
+	planet_limit = 4
+	
+	category = amenity
+	
+	building_sets = { time_ruin_cosmogenesis_world }
+
+	potential = {
+		is_planet_class = pc_time_ruin_cosmogenesis_world
+	}
+
+	resources = {
+		category = planet_buildings
+		cost = {
+			alloys = 200
+		}
+		upkeep = {
+			energy = @b2_upkeep
+		}
+	}
+	
+	triggered_country_modifier = {
+		envoy_improve_relations_mult = 0.1
+		country_trust_growth = 0.1
+		mult = value:origin_the_matrix_building_country_modifier
+	}
+	
+	planet_modifier = {
+		planet_amenities_mult = 0.05
+	}
+	
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { is_gestalt = yes }
+		}
+		planet_amenities_add = 500
+	}
+	
+	inline_script = {
+		script = jobs/entertainers_add
+		AMOUNT = 500
+	}
+}
+
+building_origin_the_matrix_lathe_cogitator = {
+	icon = building_lathe_cogitator
+	base_buildtime = @b2_time
+	planet_limit = 4
+	
+	category = unity
+	
+	building_sets = { time_ruin_cosmogenesis_world }
+
+	potential = {
+		is_planet_class = pc_time_ruin_cosmogenesis_world
+	}
+
+	resources = {
+		category = planet_buildings
+		cost = {
+			alloys = 200
+		}
+		upkeep = {
+			energy = @b2_upkeep
+		}
+	}
+	
+	triggered_country_modifier = {
+		max_rivalries = 0.5
+		divided_patrongage_max_subjects = 0.5
+		mult = value:origin_the_matrix_building_country_modifier
+	}
+	
+	country_modifier = {
+		country_naval_cap_add = 5
+	}
+	
+	inline_script = {
+		script = jobs/unity_jobs_add
+		AMOUNT = 500
+	}
+}
+
+building_origin_the_matrix_lathe_validator = {
+	icon = building_lathe_validator
+	base_buildtime = @b2_time
+	planet_limit = 4
+	
+	category = research
+	
+	building_sets = { time_ruin_cosmogenesis_world }
+
+	potential = {
+		is_planet_class = pc_time_ruin_cosmogenesis_world
+	}
+
+	resources = {
+		category = planet_buildings
+		cost = {
+			alloys = 200
+		}
+		upkeep = {
+			energy = @b2_upkeep
+		}
+	}
+	
+	triggered_country_modifier = {
+		first_contact_clues_add = 0.5
+		espionage_operation_skill_add = 0.5
+		mult = value:origin_the_matrix_building_country_modifier
+	}
+	
+	country_modifier = {
+		category_computing_research_speed_mult = 0.025
+	}
+	
+	inline_script = {
+		script = jobs/researchers_add
+		AMOUNT = 150
+		LARGE_AMOUNT = 500
+	}
+}

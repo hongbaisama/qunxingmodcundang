@@ -1,0 +1,6 @@
+modifier = {
+	civilian_and_maintenance_drone_cat_bonus_workforce_mult = @low_dimensional_adaptor_or_high_dimensional_extender_$LOW$
+	worker_and_simple_drone_cat_bonus_workforce_mult = @low_dimensional_adaptor_or_high_dimensional_extender_$LOW$
+	specialist_and_complex_drone_cat_bonus_workforce_mult = @low_dimensional_adaptor_or_high_dimensional_extender_$HIGH$
+	pop_cat_ruler_bonus_workforce_mult = @low_dimensional_adaptor_or_high_dimensional_extender_$HIGH$
+}

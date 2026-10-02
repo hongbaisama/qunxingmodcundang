@@ -1,0 +1,142 @@
+﻿l_simp_chinese:
+ # 旅者
+ dimension_traveler_song_of_nature: "天籁之音"
+ dimension_traveler_song_of_nature_desc_short: "一首白洞演奏的乐曲"
+ dimension_traveler_song_of_nature_desc_details: "\n来自白洞的天籁之音倾诉着我们的过去与未来。"
+ 
+ dimension_traveler_photo_booth: "双人大头贴"
+ dimension_traveler_photo_booth_desc_short: "与旅者告别时获赠的纪念品"
+ dimension_traveler_photo_booth_desc_details: "\n一张双人大头贴，但其中一方戴着兜帽。"
+ 
+ dimension_traveler_compressed_candy: "酸橙味的压缩糖果"
+ dimension_traveler_compressed_candy_desc_short: "与旅者永别后残留的纪念品"
+ dimension_traveler_compressed_candy_desc_details: "\n星空下的夜与闪烁的废墟一样孤寂。"
+ 
+ dimension_traveler_moisturizing_lipstick: "酸橙味的保湿唇膏"
+ dimension_traveler_moisturizing_lipstick_desc_short: "与旅者告别时获赠的纪念品"
+ dimension_traveler_moisturizing_lipstick_desc_details: "\n旷野中的风与夜晚的城市一样干燥。"
+ 
+ # 视界信号
+ akx_horizonsignal_love_poem: "视界情诗"
+ akx_horizonsignal_love_poem_desc_short: "一首来自黑洞的情诗"
+ akx_horizonsignal_love_poem_desc_details: "\n“黑洞，那宇宙深处的幽暗秘境，\n吞噬着光芒，却藏着不为人知的情愫。\n在无尽的虚空中，它缓缓吟唱，\n一首关于引力与爱的，奇异情诗。\n\n在黑洞的边缘，时间轻轻扭曲，\n如同我对你的思念，缠绵而复杂。\n你的眼眸，深邃如黑洞的深渊，\n吸引着我，让我无法逃离这爱的引力场。\n\n黑洞的边界，是光也无法触及的禁地，\n却在我心中，映照出你温柔的轮廓。\n你的存在，是我心中最亮的星辰，\n即使被吞噬，也愿化作你身边的尘埃。\n\n黑洞的引力，拉扯着时空的经纬，\n如同我对你的渴望，跨越了亿万光年。\n在这无边的宇宙中，你是我唯一的归宿，\n即使坠入深渊，也要与你紧紧相拥。\n\n黑洞的深处，或许藏着另一个宇宙，\n那里是否也有你我，共度的温柔时光？\n在这无尽的黑暗中，你是我唯一的光芒，\n照亮我前行的路，直到永恒的尽头。\n\n黑洞，你是宇宙中最神秘的存在，\n也是我心中最深沉的爱恋。\n即使被你的引力所束缚，我也心甘情愿，\n因为在这爱的深渊中，我找到了真正的自我。”"
+ 
+ akx_time_and_stone: "时与石"
+ akx_time_and_stone_desc_short: "为侍奉“时间蠕虫”或者说是§H时之螶§!所刻下的铭文"
+ akx_time_and_stone_desc_details: "\n大多数铭文都充满韵律和诗意，祈祷着时之螶的降临——或者，如果反过来读的话——它的离开。\n它还有一部分在描述“宇宙的运转”，并引用了先进的场方程。"
+ 
+ akx_pi_based_computer: "Π进制计算机"
+ akx_pi_based_computer_desc_short: "逢Π进一的计算机"
+ akx_pi_based_computer_desc_details: "\n从裂隙探针上拆除的计算机，其所受裂隙的影响即使在裂隙之外也未削减。\n该计算机独特的进制完全不兼容我们常规的编程系统，但其在处理负相位面相关的问题时却能发挥意料之外的作用。"
+ 
+ akx_pass_black_hole: "黑洞穿行"
+ akx_pass_black_hole_desc_short: "异界科研船往返于黑洞星系间的记录"
+ akx_pass_black_hole_desc_details: "\n或许在遥远的过去，我们也曾有这样的经历。"
+ 
+ akx_ouroboros: "衔尾之蛇"
+ akx_ouroboros_desc_short: "塔顶祭坛上的祭祀图案"
+ akx_ouroboros_desc_details: "\n一条衔尾蛇，似乎隐喻着某种经历或遭遇。"
+ 
+ akx_klein_tower: "克莱因塔"
+ akx_klein_tower_desc_short: "一座首尾相连的塔"
+ akx_klein_tower_desc_details: "\n向塔底前进，最终却会从塔顶离开——这根本不是什么塔，而是一个圆。"
+ 
+ akx_out_of_0_and_1: "01之外"
+ akx_out_of_0_and_1_desc_short: "面壁人§MPlayer§!，我是你的破壁人"
+ akx_out_of_0_and_1_desc_details: "\n01100110\n01101001\n01101110\n01100100\n00100000\n01111001\n01101111\n01110101" # find you
+ 
+ # 时螶之界
+ akx_the_quality_of_light: "光的质量"
+ akx_the_quality_of_light_desc_short: "时螶之界上的最后景象"
+ akx_the_quality_of_light_desc_details: "\n星系内太阳辐射的波动具备准超新星的特征——伴随着一些 “闪光事件”，大气中的光线似乎是莫名其妙积累然后以五光十色的形式释放在§Y[event_target:waiting_world.GetName]§!的表面上。\n这的确是一份有价值的特殊数据，但这并没有阐明殖民者们的命运。"
+ 
+ akx_everyone_is: "人人皆此"
+ akx_everyone_is_desc_short: "时螶之界上的诡异景象"
+ akx_everyone_is_desc_details: "\n§Y[event_target:waiting_world.GetName]§!曾经有过神秘的人口增长。虽然目前的人口数量和我们预期的一致，但是一些信息貌似出现了点问题，或者……或者有什么我们的政府官员也无法解释的信息。\n报告中，这些人员没有一个存在于我们的初始记录中，最初的每一个殖民者都失踪了。看起来就像是每个居民都被陌生人完整的代替了。"
+ 
+ akx_the_limit_of_light: "光的界限"
+ akx_the_limit_of_light_desc_short: "时螶之界上的奇异景象"
+ akx_the_limit_of_light_desc_details: "\n在§Y[event_target:waiting_world.GetName]§!上，即使是光也难以挣脱星球的引力。"
+ 
+ akx_the_wrong_path_dead: "亡者迷途"
+ akx_the_wrong_path_dead_desc_short: "时螶之界上的奇异景象"
+ akx_the_wrong_path_dead_desc_details: "\n在§Y[event_target:waiting_world.GetName]§!上，生与死的界限于此变得模糊。"
+ 
+ akx_transparent_world: "通透之心"
+ akx_transparent_world_desc_short: "时螶之界上的奇异景象"
+ akx_transparent_world_desc_details: "\n在§Y[event_target:waiting_world.GetName]§!上，居民的身体正变得逐渐透明。"
+ 
+ akx_utawarerumono: "受赞颂者"
+ akx_utawarerumono_desc_short: "时螶之界上的奇异景象"
+ akx_utawarerumono_desc_details: "\n在§Y[event_target:waiting_world.GetName]§!上，梦魇正引领着§Y$NAME_Rising_Manifold$§!前往彼岸。"
+ 
+ # 信使
+ akx_messenger: "信使"
+ akx_messenger_desc_short: "螺旋舱内的船员遗体"
+ akx_messenger_desc_details: "\n§H已行之事，终将再行；将行之事，必为已行§!——这或许是“信使”传递给我们的最后讯息。"
+ 
+ akx_elegy_of_disaster: "灾厄挽歌"
+ akx_elegy_of_disaster_desc_short: "来自终末的信使带来了灾厄的挽歌"
+ akx_elegy_of_disaster_desc_details: "\n未来变得黑暗，一切的结果都源于恐怖负相物质的发现——最顶尖的科学官对恐怖负相物质进行了研究，发现它拥有一些诡异的性质。利用恐怖负相物质，人们可以在一定程度上扭曲时空与位面，并前往无穷的过去掠夺富裕的资源。正是由于资源的消逝，使得宇宙循环彻底脱离正轨，也使世界破损成为现实。"
+ 
+ akx_paean_of_hope: "希望赞歌"
+ akx_paean_of_hope_desc_short: "来自未来的信使带来了希望的赞歌"
+ akx_paean_of_hope_desc_details: "\n未来变得光明，一切的原因都在于恐怖负相物质的发现——最顶尖的科学官对恐怖负相物质进行了研究，发现它拥有一些奇妙的性质。利用恐怖负相物质，人们可以在一定程度上扭曲时空与位面，并前往无穷的过去采集富裕的资源。正是由于资源的涌进，使得星海文明彻底脱离竞争，也使银河一统成为可能。"
+ 
+ akx_answer_of_riddle: "谜语答案"
+ akx_answer_of_riddle_desc_short: "我是答案，但问题是什么"
+ akx_answer_of_riddle_desc_details: "\n平行世界的演算似乎十分顺利，信使网络向我们传来了源源不断的数据，这些或许就是所谓的谜语答案。然而，它们并没有告诉我们，或者说，它们也不知道，这些答案的问题是什么。我们不知道问题，也无从利用答案。"
+ 
+ # 命中相会
+ akx_debris_of_syzygy: "“朔望”号的残骸"
+ akx_debris_of_syzygy_desc_short: "来自未来的陪葬品"
+ akx_debris_of_syzygy_desc_details: "\n$akx.9340.desc$"
+ 
+ akx_darkness_over_depth: "“深邃的黑暗”"
+ akx_darkness_over_depth_desc_short: "来自终末的暴食者"
+ akx_darkness_over_depth_desc_details: "\n一团深邃的黑暗，无法判断其是否拥有生命或意识。\n行动速度受外界因素影响，具有极高的侵略性，会将几乎一切接触到的物质缓慢同化。\n畏惧高温，在绝对零度附近拥有最高的活性。\n危险程度：§R极高§!。应通过高温真空隔绝严密收容。"
+ 
+ # 神之圆环
+ akx_coils_rituals: "圆环祭礼"
+ akx_coils_rituals_desc_short: "§Y[event_target:coils_planet.GetName]§!上原始文明的神秘仪式"
+ akx_coils_rituals_desc_details: "\n原始的机械钟被认为是圣物，但是在运行一年之后就会被仪式般的毁掉。星球上的蠕虫状和蛇状物被保护免受损害。时间，神之圆环的祭司称，是一个迷宫。“已行之事，必将再行；将行之事，终为已行。”他们在祈祷中这样吟咏道。"
+ 
+ akx_the_other_shore: "“彼岸”"
+ akx_the_other_shore_desc_short: "关于“彼岸”的刹那一瞥"
+ akx_the_other_shore_desc_details: "\n无数个§Y[event_target:new_coils_planet.GetName]§!上发生灾难的情景充斥着整个空间，就像是无数个平行宇宙在此刻叠加在了一起。\n仪式告终，星球上的所有居民都在转瞬间消失不见，仿佛他们从未存在过。"
+ 
+ # 圣仆
+ akx_brief: "“摘录者”"
+ akx_brief_desc_short: "圣仆的最后使命，也是摘录者新的开始"
+ akx_brief_desc_details: "\n[GetAkxBriefDescDetails]"
+ akx_brief_desc_details_default: "那个名为摘录者的造主回归了么？恒星系里没有任何智慧生命的痕迹。但是探测器却发现了在黑洞的近地轨道环绕着嗜热生命体，正享受着黑洞发出的辐射。我们的科学专员表示之前黑洞周围并没有此类生物。虽然没有证据显示它们有智力水平，但是没准这些生物是高科技球体造主的远亲后代，或者是造主们的祖先。"
+ akx_brief_desc_details_time: "那个名为摘录者的造主回归了么？恒星系里没有任何智慧生命的痕迹。但是探测器却发现黑洞的辐射数据出现了大幅波动，各项指标都在逐渐趋近于某个熟悉的星体。最终，§Y$NAME_Gargantua$§!变成了一颗§H时空黑洞§!——我们生存了数亿年的母星。\n\n我们的母星最初也是这么形成的吗？我们与摘录者之间存在什么关系吗？这一切都是§H时之螶§!所设计好的吗？我们不知道答案，或许我们永远也无法找到答案，或许我们本身就是答案。"
+ 
+ akx_black_hole_compression: "黑洞压缩"
+ akx_black_hole_compression_desc_short: "$NAME_Gargantua$——$NAME_Pantagruel$"
+ akx_black_hole_compression_desc_details: "\n[GetAkxBlackHoleCompressionDescDetails]"
+ akx_black_hole_compression_desc_details_default: "§Y[event_target:hole_pets.GetName]§!已经压缩至无法进一步压缩的程度。\n这颗曾经庞大的黑洞，现如今已经变成了一颗极其微小的奇点，也许这就是它的末路。"
+ akx_black_hole_compression_desc_details_white_hole: "§Y[event_target:hole_pets.GetName]§!已经压缩至无法进一步压缩的程度。\n奇点在奉献出最终的秘密后便瞬间消失，却又在恍惚之中突然膨胀。一颗白洞在我们的见证下诞生了，正如我们在白洞的见证下诞生。"
+ akx_black_hole_compression_desc_details_time: "§Y[event_target:hole_pets.GetName]§!已经压缩至无法进一步压缩的程度。\n这颗曾经庞大的黑洞，现如今已经变成了一颗极其微小的奇点，也许这就是它的终结。"
+ 
+ # 时光旅馆
+ akx_wake_up: "如梦方醒"
+ akx_wake_up_desc_short: "一份忏悔者的自白"
+ akx_wake_up_desc_details: "\n这一切就像是一场梦，一场令人永生难忘的梦。\n梦醒了，却发现梦早已成为现实。"
+ 
+ # 来自深渊
+ akx_rainbow_sea: "“彩虹海”"
+ akx_rainbow_sea_desc_short: "$NAME_Pirate_King_Leader$的藏宝图"
+ akx_rainbow_sea_desc_details: "\n[GetAkxRainbowSeaDescDetails]"
+ akx_rainbow_sea_desc_details_default: "一张缺损的藏宝图，绘制了多个星系的坐标。一系列路径最终都指向了一个目的地——“§Y彩虹海§!”。"
+ akx_rainbow_sea_desc_details_pirate_king: "一张缺损的藏宝图，绘制了多个星系的坐标。一系列路径最终都指向了一个目的地——“§Y彩虹海§!”。\n“§Y彩虹海§!”是祖辈中历代海盗都痴迷向往的神秘藏宝地，据说里面充满了无尽的财富、权利和力量。然而，所有试图寻找“§Y彩虹海§!”的海盗都没有回来，包括最著名的海盗之王。"
+ akx_rainbow_sea_desc_details_pirate_king_true: "一张缺损的藏宝图，绘制了多个星系的坐标。一系列路径最终都指向了一个目的地——“§Y彩虹海§!”。\n令人惋惜的是，§Y彩虹海§!”是场骗局，而身为§H海盗之王§!的我们则会给予卑劣的骗子严酷的惩罚。"
+ 
+ # 诺亚方舟
+ time_way_to_heaven: "天堂的方向"
+ time_way_to_heaven_desc_short: "诺亚方舟的航行日志"
+ time_way_to_heaven_desc_details: "\n我们原本生活在一片天堂中，但神明却不满于天堂中生物的罪行，降下了神罚。浩浩荡荡的天洪在一瞬间淹没了这片乐土，也杀死了所有的生物。\n\n但幸运的是，这个名叫诺亚的文明提前造好了方舟，避过了洪水的劫难。并且他们不仅限于保全自己，还带上了许多其它的生物，其中也包括我们。然而，飞行的旅途太过遥远，绝大多数的生物都在航行中死去，只留下了我们孤单地抵达了目的地。\n\n但是，诺亚的行为不是毫无意义的，因为我们还活着，我们会带着诺亚的意志顽强地活下去。我们已经找到了天堂的方向，我们也希望将她恢复成往昔的天堂。"
+ 
+ time_hymn_of_heaven: "天堂的赞美诗"
+ time_hymn_of_heaven_desc_short: "天堂的赞美诗献给往昔的神明"
+ time_hymn_of_heaven_desc_details: "\n建造诺亚方舟的那个叫“诺亚”的文明，就是对这颗星球上原始生物进行启蒙的神明。诺亚文明与原始生物在这片乐土上和谐共处，诺亚文明提供先进的技术，原始生物也以自己的方式对此表示感激。然而，这片平静的生活被入侵者文明打破了，他们拥有者更高的科技和更强的舰队，以碾压的优势击垮了诺亚文明全部的舰船，并占领了诺亚文明所有的星球。但是，他们在接管这颗星球时经历了原始生物和诺亚残兵的顽强抵抗，于是，不耐烦的他们决定动用巨像武器直接摧毁这个天堂。\n\n残余的诺亚文明耗尽最后的资源建造了数艘逃生舰船以逃出生天，但他们与原始生物间的情谊深厚，他们不惜超载也要带上原始伙伴们一起撤离。入侵者文明的火力太过强大，最终只有一艘方舟成功地穿过了包围网，但入侵者文明也使用特殊的武器截断了这个星系对外的全部超空间航道，最后的方舟只得被迫隐藏在星系中的一颗星球上。\n\n这就是诺亚方舟的历史，这就是天堂之下隐藏的真相。"

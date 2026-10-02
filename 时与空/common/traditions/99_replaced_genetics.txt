@@ -1,0 +1,40 @@
+tr_genetics_adopt = {
+	possible = {
+		if = {
+			limit = {
+				OR = {
+					has_country_flag = organic_syncretic_evolution_country
+					has_origin = origin_tree_of_life
+				}
+			}
+			has_technology = tech_gene_tailoring
+			has_technology = tech_gene_expressions
+		}
+		else_if = {
+			limit = { auto_genetics_ascension = yes }
+			has_technology = tech_gene_tailoring
+		}
+		else = {
+			has_ascension_perk = ap_engineered_evolution
+			has_technology = tech_gene_tailoring
+		}
+	}
+	unlocks_agenda = agenda_genetic_pursuit
+	custom_tooltip = tr_genetics_adopt_modifier_desc
+	# Unlocks Clone Vats
+	on_enabled = {
+		if = {
+			limit = {
+				OR = {
+					has_country_flag = organic_syncretic_evolution_country
+					has_origin = origin_tree_of_life
+				}
+			}
+			add_research_option = tech_gene_seed_purification
+			add_research_option = tech_glandular_acclimation
+		}
+		hidden_effect = {
+			country_event = { id = utopia.2700 }
+		}
+	}
+}

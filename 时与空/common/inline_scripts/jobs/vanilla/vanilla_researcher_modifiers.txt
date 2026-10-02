@@ -1,0 +1,3 @@
+inline_script = "jobs/academia_recruiter_naval_cap_add"
+
+inline_script = "jobs/inf_navalcap_jobs"

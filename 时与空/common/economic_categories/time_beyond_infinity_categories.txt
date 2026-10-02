@@ -1,0 +1,113 @@
+# 时空旅行者
+
+planet_time_travelers = {
+	parent = planet_jobs_productive
+	modifier_category = colony
+	generate_mult_modifiers = {
+		produces
+		upkeep
+	}
+	generate_add_modifiers = {
+		produces
+		upkeep
+	}
+	################################################################
+	# 继承修正
+	################################################################
+	inline_script = {
+		script = economic_categories/time_inherited_economic_category_modifier_only_mult
+		TYPE = planet_bureaucrats
+	}
+	inline_script = {
+		script = economic_categories/time_inherited_economic_category_modifier_only_mult
+		TYPE = planet_physicists
+	}
+	# 物理学家作为研究人员的子类，也应继承mult类修正
+	inline_script = {
+		script = economic_categories/time_inherited_economic_category_modifier_only_mult
+		TYPE = planet_researchers
+	}
+	# 精英/复合子个体
+	inline_script = {
+		script = economic_categories/time_inherited_economic_category_modifier_for_job_category
+		REGULAR_TYPE = planet_jobs_ruler
+		GESTALT_TYPE_1 = planet_jobs_specialist
+		GESTALT_TYPE_2 = planet_jobs_complex_drone
+	}
+}
+
+# 圆环扭曲者
+
+planet_circle_benders = {
+	parent = planet_jobs_productive
+	modifier_category = colony
+	generate_mult_modifiers = {
+		produces
+		upkeep
+	}
+	generate_add_modifiers = {
+		produces
+		upkeep
+	}
+	################################################################
+	# 继承修正
+	################################################################
+	inline_script = {
+		script = economic_categories/time_inherited_economic_category_modifier_only_mult
+		TYPE = planet_bureaucrats
+	}
+	inline_script = {
+		script = economic_categories/time_inherited_economic_category_modifier_only_mult
+		TYPE = planet_biologists
+	}
+	# 生物学家作为研究人员的子类，也应继承mult类修正
+	inline_script = {
+		script = economic_categories/time_inherited_economic_category_modifier_only_mult
+		TYPE = planet_researchers
+	}
+	# 精英/复合子个体
+	inline_script = {
+		script = economic_categories/time_inherited_economic_category_modifier_for_job_category
+		REGULAR_TYPE = planet_jobs_ruler
+		GESTALT_TYPE_1 = planet_jobs_specialist
+		GESTALT_TYPE_2 = planet_jobs_complex_drone
+	}
+}
+
+# 位面锚定者
+
+planet_dimension_anchors = {
+	parent = planet_jobs_productive
+	modifier_category = colony
+	generate_mult_modifiers = {
+		produces
+		upkeep
+	}
+	generate_add_modifiers = {
+		produces
+		upkeep
+	}
+	################################################################
+	# 继承修正
+	################################################################
+	inline_script = {
+		script = economic_categories/time_inherited_economic_category_modifier_only_mult
+		TYPE = planet_bureaucrats
+	}
+	inline_script = {
+		script = economic_categories/time_inherited_economic_category_modifier_only_mult
+		TYPE = planet_engineers
+	}
+	# 工程学家作为研究人员的子类，也应继承mult类修正
+	inline_script = {
+		script = economic_categories/time_inherited_economic_category_modifier_only_mult
+		TYPE = planet_researchers
+	}
+	# 精英/复合子个体
+	inline_script = {
+		script = economic_categories/time_inherited_economic_category_modifier_for_job_category
+		REGULAR_TYPE = planet_jobs_ruler
+		GESTALT_TYPE_1 = planet_jobs_specialist
+		GESTALT_TYPE_2 = planet_jobs_complex_drone
+	}
+}

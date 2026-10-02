@@ -1,0 +1,276 @@
+# 国家统治
+triggered_councilor_modifier = {
+	potential = {
+		can_ruler_time_trait_active = yes
+	}
+	show_if_not_potential = yes
+	not_potential_override_text_key = BLANK_STRING
+	empire_size_mult = @ruler_time_trait_ruler_negative
+	tradition_cost_mult = @ruler_time_trait_ruler_negative
+	mod_ship_naval_cap_usage_mult = @ruler_time_trait_ruler_negative
+	country_government_civic_points_add = @ruler_time_trait_ruler_special
+	mult = value:num_ruler_time_trait_ruler_value|BASE|$BASE$|
+}
+# 行政官
+triggered_councilor_modifier = {
+	potential = {
+		can_ruler_time_trait_active = yes
+	}
+	show_if_not_potential = yes
+	not_potential_override_text_key = BLANK_STRING
+	society_tech_cost_mult = @ruler_time_trait_modifier_negative
+	country_produces_mult = @ruler_time_trait_modifier
+	monthly_loyalty_from_subjects = @ruler_time_trait_modifier_subject
+	diplo_action_acceptance_add = @ruler_time_trait_modifier_acceptance
+	mult = value:num_ruler_time_trait_class_value|BASE|$BASE$|CLASS|official|
+}
+# 科学官
+triggered_councilor_modifier = {
+	potential = {
+		can_ruler_time_trait_active = yes
+	}
+	show_if_not_potential = yes
+	not_potential_override_text_key = BLANK_STRING
+	physics_tech_cost_mult = @ruler_time_trait_modifier_negative
+	planetary_ascension_effect_mult = @ruler_time_trait_modifier
+	country_upkeep_mult = @ruler_time_trait_modifier_negative
+	pop_bonus_workforce_mult = @ruler_time_trait_modifier
+	mult = value:num_ruler_time_trait_class_value|BASE|$BASE$|CLASS|scientist|
+}
+# 指挥官
+triggered_councilor_modifier = {
+	potential = {
+		can_ruler_time_trait_active = yes
+	}
+	show_if_not_potential = yes
+	not_potential_override_text_key = BLANK_STRING
+	engineering_tech_cost_mult = @ruler_time_trait_modifier_negative
+	country_cost_mult = @ruler_time_trait_modifier_negative
+	ship_weapon_range_mult = @ruler_time_trait_modifier
+	ship_damage_reduction_mult = @ruler_time_trait_modifier_reduction
+	mult = value:num_ruler_time_trait_class_value|BASE|$BASE$|CLASS|commander|
+}
+# 资源产出
+triggered_self_modifier = {
+	potential = {
+		if = {
+			limit = { leader_class = official }
+			can_ruler_time_trait_active = yes
+		}
+		else = {
+			always = no
+		}
+	}
+	leader_officials_physics_research_produces_add = @ruler_time_trait_resource
+	leader_officials_society_research_produces_add = @ruler_time_trait_resource
+	leader_officials_engineering_research_produces_add = @ruler_time_trait_resource
+	leader_officials_sr_dark_matter_produces_add = @ruler_time_trait_resource_rare
+	mult = value:num_ruler_time_trait_resource_value|BASE|$BASE$|
+}
+triggered_self_modifier = {
+	potential = {
+		if = {
+			limit = { leader_class = scientist }
+			can_ruler_time_trait_active = yes
+		}
+		else = {
+			always = no
+		}
+	}
+	leader_scientists_physics_research_produces_add = @ruler_time_trait_resource
+	leader_scientists_society_research_produces_add = @ruler_time_trait_resource
+	leader_scientists_engineering_research_produces_add = @ruler_time_trait_resource
+	leader_scientists_sr_dark_matter_produces_add = @ruler_time_trait_resource_rare
+	mult = value:num_ruler_time_trait_resource_value|BASE|$BASE$|
+}
+triggered_self_modifier = {
+	potential = {
+		if = {
+			limit = { leader_class = commander }
+			can_ruler_time_trait_active = yes
+		}
+		else = {
+			always = no
+		}
+	}
+	leader_commanders_physics_research_produces_add = @ruler_time_trait_resource
+	leader_commanders_society_research_produces_add = @ruler_time_trait_resource
+	leader_commanders_engineering_research_produces_add = @ruler_time_trait_resource
+	leader_commanders_sr_dark_matter_produces_add = @ruler_time_trait_resource_rare
+	mult = value:num_ruler_time_trait_resource_value|BASE|$BASE$|
+}
+# 奇点之心
+triggered_self_modifier = {
+	potential = {
+		if = {
+			limit = { leader_class = official }
+			can_ruler_time_trait_active = yes
+			species = { is_time_soul_species = yes }
+		}
+		else = {
+			always = no
+		}
+	}
+	leader_officials_astral_threads_produces_add = @ruler_time_trait_resource_rare
+	mult = value:num_ruler_time_trait_resource_value|BASE|$BASE$|
+}
+triggered_self_modifier = {
+	potential = {
+		if = {
+			limit = { leader_class = scientist }
+			can_ruler_time_trait_active = yes
+			species = { is_time_soul_species = yes }
+		}
+		else = {
+			always = no
+		}
+	}
+	leader_scientists_astral_threads_produces_add = @ruler_time_trait_resource_rare
+	mult = value:num_ruler_time_trait_resource_value|BASE|$BASE$|
+}
+triggered_self_modifier = {
+	potential = {
+		if = {
+			limit = { leader_class = commander }
+			can_ruler_time_trait_active = yes
+			species = { is_time_soul_species = yes }
+		}
+		else = {
+			always = no
+		}
+	}
+	leader_commanders_astral_threads_produces_add = @ruler_time_trait_resource_rare
+	mult = value:num_ruler_time_trait_resource_value|BASE|$BASE$|
+}
+# 黑洞理事会/奇点理事会
+triggered_self_modifier = {
+	potential = {
+		if = {
+			limit = { leader_class = official }
+			is_ruler = no
+			is_councilor = yes
+			owner = { is_auth_time_democratic = yes }
+		}
+		else = {
+			always = no
+		}
+	}
+	leader_officials_unity_upkeep_add = 2
+	mult = trigger:has_base_skill
+}
+triggered_self_modifier = {
+	potential = {
+		if = {
+			limit = { leader_class = scientist }
+			is_ruler = no
+			is_councilor = yes
+			owner = { is_auth_time_democratic = yes }
+		}
+		else = {
+			always = no
+		}
+	}
+	leader_scientists_unity_upkeep_add = 2
+	mult = trigger:has_base_skill
+}
+triggered_self_modifier = {
+	potential = {
+		if = {
+			limit = { leader_class = commander }
+			is_ruler = no
+			is_councilor = yes
+			owner = { is_auth_time_democratic = yes }
+		}
+		else = {
+			always = no
+		}
+	}
+	leader_commanders_unity_upkeep_add = 2
+	mult = trigger:has_base_skill
+}
+# 摘录者帝国/序时者帝国
+triggered_self_modifier = {
+	potential = {
+		if = {
+			limit = { leader_class = official }
+			is_ruler = yes
+			owner = { is_auth_time_imperial = yes }
+		}
+		else = {
+			always = no
+		}
+	}
+	leader_officials_sr_dark_matter_upkeep_add = 1
+	mult = trigger:has_base_skill
+}
+triggered_self_modifier = {
+	potential = {
+		if = {
+			limit = { leader_class = scientist }
+			is_ruler = yes
+			owner = { is_auth_time_imperial = yes }
+		}
+		else = {
+			always = no
+		}
+	}
+	leader_scientists_sr_dark_matter_upkeep_add = 1
+	mult = trigger:has_base_skill
+}
+triggered_self_modifier = {
+	potential = {
+		if = {
+			limit = { leader_class = commander }
+			is_ruler = yes
+			owner = { is_auth_time_imperial = yes }
+		}
+		else = {
+			always = no
+		}
+	}
+	leader_commanders_sr_dark_matter_upkeep_add = 1
+	mult = trigger:has_base_skill
+}
+# 位面枢纽/次元枢纽
+triggered_self_modifier = {
+	potential = {
+		if = {
+			limit = { leader_class = official }
+			is_ruler = yes
+			owner = { is_auth_time_corporate = yes }
+		}
+		else = {
+			always = no
+		}
+	}
+	leader_officials_energy_upkeep_add = 5
+	mult = trigger:has_base_skill
+}
+triggered_self_modifier = {
+	potential = {
+		if = {
+			limit = { leader_class = scientist }
+			is_ruler = yes
+			owner = { is_auth_time_corporate = yes }
+		}
+		else = {
+			always = no
+		}
+	}
+	leader_scientists_energy_upkeep_add = 5
+	mult = trigger:has_base_skill
+}
+triggered_self_modifier = {
+	potential = {
+		if = {
+			limit = { leader_class = commander }
+			is_ruler = yes
+			owner = { is_auth_time_corporate = yes }
+		}
+		else = {
+			always = no
+		}
+	}
+	leader_commanders_energy_upkeep_add = 5
+	mult = trigger:has_base_skill
+}

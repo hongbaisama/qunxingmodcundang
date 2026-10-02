@@ -1,0 +1,1341 @@
+# 古老契约
+
+building_origin_contract_whisperers = {
+	category = research
+	
+	building_sets = {
+		government
+		research
+	}
+	
+	inline_script = {
+		script = buildings/building_origin_contract_whisperers
+	}
+	
+	triggered_planet_modifier = {
+		planet_origin_contract_whisperers_physics_research_produces_add = 100
+		mult = modifier:planet_physicists_physics_research_produces_add
+	}
+	triggered_planet_modifier = {
+		planet_origin_contract_whisperers_society_research_produces_add = 100
+		mult = modifier:planet_biologists_society_research_produces_add
+	}
+	triggered_planet_modifier = {
+		planet_origin_contract_whisperers_engineering_research_produces_add = 100
+		mult = modifier:planet_engineers_engineering_research_produces_add
+	}
+	
+	triggered_planet_modifier = {
+		planet_origin_contract_whisperers_unity_produces_add = 100
+		mult = modifier:planet_physicists_unity_produces_add
+	}
+	triggered_planet_modifier = {
+		planet_origin_contract_whisperers_unity_produces_add = 100
+		mult = modifier:planet_biologists_unity_produces_add
+	}
+	triggered_planet_modifier = {
+		planet_origin_contract_whisperers_unity_produces_add = 100
+		mult = modifier:planet_engineers_unity_produces_add
+	}
+}
+
+building_origin_contract_composer = {
+	category = amenity
+	
+	building_sets = {
+		government
+		urban
+	}
+	
+	inline_script = {
+		script = buildings/building_origin_contract_other
+		PATRON = composer
+		PATRON_1 = cradle
+		PATRON_2 = eater
+		PATRON_3 = instrument
+	}
+	
+	triggered_planet_modifier = {
+		planet_origin_contract_composer_food_produces_add = 10
+		mult = modifier:planet_farmers_food_produces_add
+	}
+}
+
+building_origin_contract_cradle = {
+	category = unity
+	
+	building_sets = {
+		government
+		unity
+	}
+	
+	inline_script = {
+		script = buildings/building_origin_contract_other
+		PATRON = cradle
+		PATRON_1 = composer
+		PATRON_2 = eater
+		PATRON_3 = instrument
+	}
+	
+	triggered_planet_modifier = {
+		planet_origin_contract_cradle_unity_produces_add = 10
+		mult = modifier:planet_bureaucrats_unity_produces_add
+	}
+}
+
+building_origin_contract_eater = {
+	category = army
+	
+	building_sets = {
+		government
+		fortress
+		foundry
+	}
+	
+	inline_script = {
+		script = buildings/building_origin_contract_other
+		PATRON = eater
+		PATRON_1 = composer
+		PATRON_2 = cradle
+		PATRON_3 = instrument
+	}
+	
+	triggered_planet_modifier = {
+		planet_origin_contract_eater_alloys_produces_add = 10
+		mult = modifier:planet_metallurgists_alloys_produces_add
+	}
+}
+
+building_origin_contract_instrument = {
+	category = trade
+	
+	building_sets = {
+		government
+		trade
+		factory
+	}
+	
+	inline_script = {
+		script = buildings/building_origin_contract_other
+		PATRON = instrument
+		PATRON_1 = composer
+		PATRON_2 = cradle
+		PATRON_3 = eater
+	}
+	
+	triggered_planet_modifier = {
+		planet_origin_contract_instrument_trade_produces_add = 10
+		mult = modifier:planet_traders_trade_produces_add
+	}
+}
+
+# 赞美太阳
+building_origin_praise_the_sun = {
+	icon = building_great_pyramid
+	base_buildtime = @b2_time
+	planet_limit = 1
+
+	category = unity
+	
+	building_sets = {
+		generator
+		unity
+	}
+
+	potential = {
+		is_special_colony_type = no
+		owner = { has_origin = origin_praise_the_sun }
+	}
+
+	allow = {
+		has_major_upgraded_capital = yes
+	}
+
+	triggered_planet_modifier = {
+		potential = {
+			OR = {
+				NOT = { exists = owner } # 用于概念显示
+				owner = { is_gestalt = no }
+			}
+		}
+		job_sun_praiser_add = 100
+	}
+	
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { is_gestalt = yes }
+		}
+		job_sun_praiser_drone_add = 100
+	}
+
+	resources = {
+		category = planet_buildings
+		inline_script = {
+			script = buildings/nomadic_cost_switcher
+			REGULAR_RESOURCE = minerals
+			NOMADIC_RESOURCE = rare_crystals
+			COST = @b2_minerals
+			NOMADIC_COST_MULT = @nomadic_minerals_to_strategic_ratio
+		}
+		cost = {
+			rare_crystals = @b2_rare_cost
+		}
+		upkeep = {
+			energy = @b2_upkeep
+			rare_crystals = @b2_rare_upkeep
+		}
+	}
+	
+	ai_resource_production = {
+		energy = 20
+	}
+}
+
+# 宁和之道
+building_origin_tao_of_ninghe_yin = {
+	icon = building_posthumous_employment_center
+	base_buildtime = @b2_time
+	planet_limit = 1
+	
+	category = unity
+	
+	building_sets = {
+		government
+		unity
+		factory
+		trade
+		urban
+		entertainment
+		resort
+	}
+
+	potential = {
+		owner = { has_tradition = tr_origin_tao_of_ninghe_building_yin }
+	}
+
+	allow = {
+		has_major_upgraded_capital = yes
+	}
+
+	planet_modifier = {
+		yin_mult_modifier = -0.5
+	}
+
+	resources = {
+		category = planet_buildings
+		inline_script = {
+			script = buildings/nomadic_cost_switcher
+			REGULAR_RESOURCE = minerals
+			NOMADIC_RESOURCE = rare_crystals
+			COST = @b2_minerals
+			NOMADIC_COST_MULT = @nomadic_minerals_to_strategic_ratio
+		}
+		upkeep = {
+			energy = @b2_upkeep
+		}
+		produces = {
+			unity = 16
+		}
+	}
+}
+
+building_origin_tao_of_ninghe_yang = {
+	icon = building_offspring_nest
+	base_buildtime = @b2_time
+	planet_limit = 1
+	
+	category = research
+	
+	building_sets = {
+		government
+		research
+		foundry
+		generator
+		mining
+		farming
+		fortress
+	}
+
+	potential = {
+		owner = { has_tradition = tr_origin_tao_of_ninghe_building_yang }
+	}
+
+	allow = {
+		has_major_upgraded_capital = yes
+	}
+
+	planet_modifier = {
+		yang_mult_modifier = -0.5
+	}
+
+	resources = {
+		category = planet_buildings
+		inline_script = {
+			script = buildings/nomadic_cost_switcher
+			REGULAR_RESOURCE = minerals
+			NOMADIC_RESOURCE = exotic_gases
+			COST = @b2_minerals
+			NOMADIC_COST_MULT = @nomadic_minerals_to_strategic_ratio
+		}
+		upkeep = {
+			energy = @b2_upkeep
+		}
+		produces = {
+			physics_research = 16
+			society_research = 16
+			engineering_research = 16
+		}
+	}
+}
+
+# 娱乐至死
+building_origin_manifesti = {
+	icon = building_ancient_relics
+	planet_limit = 1
+	empire_limit = { base = 1 }
+	can_build = no
+	can_demolish = no
+	can_be_ruined = no
+	can_be_disabled = no
+	position_priority = 10
+
+	category = amenity
+	
+	building_sets = {
+		government
+	}
+
+	potential = {
+		has_carrier_flag = exists_building_origin_manifesti
+	}
+
+	destroy_trigger = {
+		always = no
+	}
+	
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { has_origin = origin_manifesti }
+		}
+		job_entertainer_add = 1000
+		job_entertainer_per_pop = 0.1
+		planet_entertainers_unity_produces_add = 0.5
+		planet_civilians_unity_produces_add = 0.25
+		bonus_automated_workforce_mult = 0.5
+		planet_buildings_energy_upkeep_mult = -0.25
+		planet_buildings_upkeep_mult = -0.25
+		planet_entertainers_upkeep_mult = -0.5
+		planet_automated_jobs_upkeep_mult = -0.5
+	}
+	
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = {
+				NOT = { has_origin = origin_manifesti }
+			}
+		}
+		country_produces_mult = -9
+		bonus_automated_workforce_mult = -9
+		pop_amenities_usage_mult = 9
+	}
+
+	resources = {
+		category = planet_buildings
+		upkeep = {
+			rare_crystals = @b3_rare_upkeep
+			exotic_gases = @b3_rare_upkeep
+			volatile_motes = @b3_rare_upkeep
+		}
+	}
+	
+	triggered_desc = {
+		trigger = {
+			exists = owner
+			owner = {
+				NOT = { has_origin = origin_manifesti }
+			}
+		}
+		text = building_origin_manifesti_effect
+	}
+}
+
+building_origin_manifesti_dream = {
+	icon = building_ancient_relics
+	planet_limit = 1
+	empire_limit = { base = 1 }
+	can_build = no
+	can_demolish = no
+	can_be_ruined = no
+	can_be_disabled = no
+	position_priority = 10
+
+	category = amenity
+	
+	building_sets = {
+		government
+	}
+
+	potential = {
+		has_carrier_flag = exists_building_origin_manifesti
+	}
+
+	destroy_trigger = {
+		always = no
+	}
+
+	planet_modifier = {
+	}
+
+	resources = {
+		category = planet_buildings
+		produces = {
+			trigger = {
+				exists = owner
+				owner = { has_origin = origin_manifesti_dream_2 }
+			}
+			energy = 2
+			minerals = 2
+			food = 2
+			consumer_goods = 1
+			alloys = 1
+			trade = 1
+			physics_research = 1
+			society_research = 1
+			engineering_research = 1
+			unity = 1
+			mult = value:num_time_normal_resources_value
+		}
+		produces = {
+			trigger = {
+				exists = owner
+				owner = {
+					NOT = { has_origin = origin_manifesti_dream_2 }
+				}
+			}
+			energy = 1
+			minerals = 1
+			food = 1
+			consumer_goods = 0.5
+			alloys = 0.5
+			trade = 0.5
+			physics_research = 0.5
+			society_research = 0.5
+			engineering_research = 0.5
+			unity = 0.5
+			mult = value:num_time_normal_resources_value
+		}
+		upkeep = {
+			rare_crystals = 5
+			exotic_gases = 5
+			volatile_motes = 5
+		}
+	}
+	
+	triggered_desc = {
+		trigger = {
+			exists = owner
+			owner = { has_origin = origin_manifesti_dream_2 }
+		}
+		text = building_origin_manifesti_dream_effect_1
+	}
+	triggered_desc = {
+		trigger = {
+			exists = owner
+			owner = {
+				NOT = { has_origin = origin_manifesti_dream_2 }
+			}
+		}
+		text = building_origin_manifesti_dream_effect_2
+	}
+}
+
+# 机械神教
+building_adeptus_mechanicus_1 = {
+	icon = building_organic_sanctuary
+	base_buildtime = @b1_time
+
+	category = unity
+	
+	building_sets = {
+		adeptus_mechanicus
+		urban
+		unity
+	}
+
+	potential = {
+		OR = {
+			is_special_colony_type = no
+			has_modifier = resort_colony
+		}
+		exists = owner
+		owner = { has_origin = origin_adeptus_mechanicus }
+	}
+
+	destroy_trigger = {
+		exists = owner
+		OR = {
+			owner = {
+				NOT = { has_origin = origin_adeptus_mechanicus }
+			}
+			AND = {
+				owner = { is_ai = yes }
+				count_owned_pop_amount = {
+					limit = {
+						has_citizenship_type = {
+							type = citizenship_adeptus_mechanicus
+							country = owner
+						}
+					}
+					count <= 2000
+				}
+				num_buildings = { type = building_adeptus_mechanicus_1 value > 3 }
+			}
+			AND = {
+				owner = { is_ai = yes }
+				count_owned_pop_amount = {
+					limit = {
+						has_citizenship_type = {
+							type = citizenship_adeptus_mechanicus
+							country = owner
+						}
+					}
+					count <= 4000
+				}
+				num_buildings = { type = building_adeptus_mechanicus_1 value > 5 }
+			}
+		}
+	}
+
+	convert_to = {
+		building_luxury_residence
+		building_communal_housing
+		building_organic_sanctuary
+	}
+
+	resources = {
+		category = planet_buildings
+		inline_script = {
+			script = buildings/nomadic_cost_switcher
+			REGULAR_RESOURCE = minerals
+			NOMADIC_RESOURCE = rare_crystals
+			COST = @b1_minerals
+			NOMADIC_COST_MULT = @nomadic_minerals_to_strategic_ratio
+		}
+		upkeep = {
+			energy = @b1_upkeep
+		}
+	}
+
+	planet_modifier = {
+		job_adeptus_mechanicus_add = 1500
+	}
+
+	upgrades = {
+		"building_adeptus_mechanicus_2"
+	}
+
+	# We need to cheat here and tell AI that this will probably give some complex output since AI can not evaluate what this building does without the pops which it cant get without the building - chicken and egg
+	ai_resource_production = {
+		unity = 10
+		physics_research = 10
+		alloys = 5
+
+		trigger = {
+			NOT = { has_building = building_adeptus_mechanicus_1 }
+		}
+	}
+
+	ai_weight_coefficient = 1.2
+
+	# Here we try to adress the second issue that the AI cant evaluate the pop job output of the bio trophy given the happiness trigger that was put inplace to guard against players exploiting bio trophies
+
+	#science
+	ai_resource_production = {
+		unity = 10
+		physics_research = 10
+
+		trigger = {
+			any_owned_pop_group = {
+				is_pop_category = adeptus_mechanicus_unemployment
+			}
+
+			planet_resource_compare = {
+				resource = physics_research
+				value >= 100
+				type = produces
+			}
+		}
+	}
+
+	#alloys
+	ai_resource_production = {
+		unity = 10
+		alloys = 10
+
+		trigger = {
+			any_owned_pop_group = {
+				is_pop_category = adeptus_mechanicus_unemployment
+			}
+
+			planet_resource_compare = {
+				resource = alloys
+				value >= 100
+				type = produces
+			}
+		}
+	}
+
+	#cgs
+	ai_resource_production = {
+		unity = 10
+		consumer_goods = 10
+
+		trigger = {
+			any_owned_pop_group = {
+				is_pop_category = adeptus_mechanicus_unemployment
+			}
+
+			planet_resource_compare = {
+				resource = consumer_goods
+				value >= 100
+				type = produces
+			}
+		}
+	}
+}
+
+building_adeptus_mechanicus_2 = {
+	base_buildtime = @b2_time
+	can_build = no
+	icon = building_paradise_dome
+	
+	category = unity
+	
+	building_sets = {
+		adeptus_mechanicus
+		urban
+		unity
+	}
+
+	potential = {
+		OR = {
+			is_special_colony_type = no
+			has_modifier = resort_colony
+		}
+		exists = owner
+		owner = { has_origin = origin_adeptus_mechanicus }
+	}
+
+	destroy_trigger = {
+		exists = owner
+		NOT = {
+			owner = { has_origin = origin_adeptus_mechanicus }
+		}
+	}
+
+	convert_to = {
+		building_paradise_dome
+		building_communal_housing_large
+		building_organic_paradise
+	}
+
+	resources = {
+		category = planet_buildings
+		inline_script = {
+			script = buildings/nomadic_cost_switcher
+			REGULAR_RESOURCE = minerals
+			NOMADIC_RESOURCE = rare_crystals
+			COST = @b2_minerals
+			NOMADIC_COST_MULT = @nomadic_minerals_to_strategic_ratio
+		}
+		cost = {
+			exotic_gases = @b2_rare_cost
+		}
+		upkeep = {
+			energy = @b2_upkeep
+			exotic_gases = @b2_rare_upkeep
+		}
+	}
+
+	planet_modifier = {
+		job_adeptus_mechanicus_add = 3000
+	}
+
+	prerequisites = { "tech_paradise_dome" }
+
+	show_tech_unlock_if = {
+		owner = { has_origin = origin_adeptus_mechanicus }
+	}
+
+	ai_weight_coefficient = 1.2
+
+	# Here we try to adress the second issue that the AI cant evaluate the pop job output of the bio trophy given the happiness trigger that was put inplace to guard against players exploiting bio trophies
+
+	#science
+	ai_resource_production = {
+		unity = 20
+		physics_research = 20
+
+		trigger = {
+			any_owned_pop_group = {
+				is_pop_category = adeptus_mechanicus_unemployment
+			}
+
+			planet_resource_compare = {
+				resource = physics_research
+				value >= 100
+				type = produces
+			}
+		}
+	}
+
+	#alloys
+	ai_resource_production = {
+		unity = 20
+		alloys = 20
+
+		trigger = {
+			any_owned_pop_group = {
+				is_pop_category = adeptus_mechanicus_unemployment
+			}
+
+			planet_resource_compare = {
+				resource = alloys
+				value >= 100
+				type = produces
+			}
+		}
+	}
+
+	#cgs
+	ai_resource_production = {
+		unity = 20
+		consumer_goods = 20
+
+		trigger = {
+			any_owned_pop_group = {
+				is_pop_category = adeptus_mechanicus_unemployment
+			}
+
+			planet_resource_compare = {
+				resource = consumer_goods
+				value >= 100
+				type = produces
+			}
+		}
+	}
+}
+
+building_adeptus_mechanicus_vault = {
+	base_buildtime = @b2_time
+	planet_limit = 1
+	category = unity
+	icon = building_autocurating_vault
+
+	building_sets = {
+		adeptus_mechanicus
+		unity
+	}
+
+	potential = {
+		exists = owner
+		is_special_colony_type = no
+		owner = {
+			has_origin = origin_adeptus_mechanicus
+			is_spiritualist = yes
+		}
+	}
+
+	allow = {
+		NOR = {
+			has_building = building_autocurating_vault
+			has_building = building_citadel_of_faith
+			has_building = building_alpha_hub
+			has_building = building_corporate_vault
+			has_building = building_trophy_vault
+		}
+	}
+
+	destroy_trigger = {
+		exists = owner
+		OR = {
+			has_modifier = slave_colony
+			has_building = building_autocurating_vault
+			has_building = building_citadel_of_faith
+			has_building = building_alpha_hub
+			has_building = building_corporate_vault
+			has_building = building_trophy_vault
+			owner = {
+				NAND = {
+					has_origin = origin_adeptus_mechanicus
+					is_spiritualist = yes
+				}
+			}
+		}
+	}
+
+	convert_to = {
+		building_autocurating_vault
+		building_citadel_of_faith
+		building_alpha_hub
+		building_corporate_vault
+		building_trophy_vault
+	}
+
+	resources = {
+		category = planet_buildings
+		inline_script = {
+			script = buildings/nomadic_cost_switcher
+			REGULAR_RESOURCE = minerals
+			NOMADIC_RESOURCE = rare_crystals
+			COST = @b2_minerals
+			NOMADIC_COST_MULT = @nomadic_minerals_to_strategic_ratio
+		}
+		cost = {
+			rare_crystals = @b2_rare_cost
+		}
+		upkeep = {
+			energy = @b2_upkeep
+			rare_crystals = @b2_rare_upkeep
+		}
+	}
+
+	planet_modifier = {
+		planet_adeptus_mechanicus_unity_produces_add = 0.5
+		planet_adeptus_mechanicus_consumer_goods_upkeep_add = 0.5
+		pop_cat_adeptus_mechanicus_happiness = 0.10
+	}
+
+	prerequisites = {
+		"tech_transcendent_faith"
+	}
+
+	show_tech_unlock_if = {
+		has_origin = origin_adeptus_mechanicus
+		is_spiritualist = yes
+	}
+}
+
+# 怪物猎人
+building_origin_monster_hunter_1 = {
+	base_buildtime = @b1_time
+	icon = building_order_holding
+
+	category = amenity
+	
+	building_sets = {
+		government
+		urban
+		entertainment
+		resort
+		monster_hunter
+	}
+
+	potential = {
+		OR = {
+			is_special_colony_type = no
+			has_modifier = resort_colony
+		}
+		owner = {
+			has_origin = origin_monster_hunter
+			has_valid_civic = civic_warrior_culture
+		}
+	}
+
+	planet_modifier = {
+		job_monster_hunter_add = @b1_jobs
+	}
+
+	resources = {
+		category = planet_buildings
+		inline_script = {
+			script = buildings/nomadic_cost_switcher
+			REGULAR_RESOURCE = minerals
+			NOMADIC_RESOURCE = alloys
+			COST = @b1_minerals
+			NOMADIC_COST_MULT = @nomadic_minerals_to_strategic_ratio
+		}
+		upkeep = {
+			energy = @b1_upkeep
+		}
+	}
+
+	upgrades = {
+		"building_origin_monster_hunter_2"
+	}
+	
+	convert_to = {
+		building_holo_theatres
+	}
+
+	prerequisites = {
+		"tech_holo_entertainment"
+	}
+	
+	show_tech_unlock_if = {
+		has_origin = origin_monster_hunter
+		has_valid_civic = civic_warrior_culture
+	}
+	
+	triggered_desc = {
+		text = job_monster_hunter_effect
+	}
+	
+	ai_resource_production = {
+		unity = 10
+		consumer_goods = 10
+	}
+	
+	ai_resource_production = {
+		food = 10
+		trigger = {
+			owner = {
+				is_lithoid_empire = no
+				is_robot_empire = no
+			}
+		}
+	}
+	
+	ai_resource_production = {
+		minerals = 10
+		trigger = {
+			owner = {
+				is_lithoid_empire = yes
+				is_robot_empire = no
+			}
+		}
+	}
+	
+	ai_resource_production = {
+		energy = 10
+		trigger = {
+			owner = { is_robot_empire = yes }
+		}
+	}
+}
+
+building_origin_monster_hunter_2 = {
+	base_buildtime = @b2_time
+	can_build = no
+	icon = building_order_keep
+
+	category = amenity
+	
+	building_sets = {
+		government
+		urban
+		entertainment
+		resort
+		monster_hunter
+	}
+
+	potential = {
+		OR = {
+			is_special_colony_type = no
+			has_modifier = resort_colony
+		}
+		owner = {
+			has_origin = origin_monster_hunter
+			has_valid_civic = civic_warrior_culture
+		}
+	}
+
+	allow = {
+		has_upgraded_capital = yes
+	}
+
+	planet_modifier = {
+		job_monster_hunter_add = @b2_jobs
+	}
+
+	resources = {
+		category = planet_buildings
+		inline_script = {
+			script = buildings/nomadic_cost_switcher
+			REGULAR_RESOURCE = minerals
+			NOMADIC_RESOURCE = alloys
+			COST = @b2_minerals
+			NOMADIC_COST_MULT = @nomadic_minerals_to_strategic_ratio
+		}
+		cost = {
+			exotic_gases = @b2_rare_cost
+		}
+		upkeep = {
+			energy = @b2_upkeep
+			exotic_gases = @b2_rare_upkeep
+		}
+	}
+	
+	convert_to = {
+		building_hyper_entertainment_forum
+	}
+
+	prerequisites = {
+		"tech_hyper_entertainment_forum"
+	}
+	
+	show_tech_unlock_if = {
+		has_origin = origin_monster_hunter
+		has_valid_civic = civic_warrior_culture
+	}
+	
+	triggered_desc = {
+		text = job_monster_hunter_effect
+	}
+	
+	ai_resource_production = {
+		unity = 20
+		consumer_goods = 20
+	}
+	
+	ai_resource_production = {
+		food = 20
+		trigger = {
+			owner = {
+				is_lithoid_empire = no
+				is_robot_empire = no
+			}
+		}
+	}
+	
+	ai_resource_production = {
+		minerals = 20
+		trigger = {
+			owner = {
+				is_lithoid_empire = yes
+				is_robot_empire = no
+			}
+		}
+	}
+	
+	ai_resource_production = {
+		energy = 20
+		trigger = {
+			owner = { is_robot_empire = yes }
+		}
+	}
+}
+
+# 神眷之族
+building_blessed_by_god = {
+	icon = building_sentinel_posts
+	planet_limit = 1
+	empire_limit = { base = 1 }
+	can_build = no
+	can_demolish = no
+	can_be_ruined = no
+	can_be_disabled = no
+	position_priority = 10
+
+	category = unity
+	
+	building_sets = {
+		government
+	}
+
+	potential = {
+		has_carrier_flag = exists_building_blessed_by_god
+	}
+	
+	destroy_trigger = {
+		always = no
+	}
+	
+	# 官僚
+	triggered_planet_modifier = {
+		potential = {
+			OR = {
+				NOT = { exists = owner } # 用于概念显示
+				owner = { has_origin = origin_blessed_by_god }
+			}
+		}
+		planet_bureaucrats_unity_produces_add = 1.5
+		planet_bureaucrats_upkeep_mult = 0.5
+		job_bureaucrat_per_pop = 0.1
+	}
+	
+	# 灵能使
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = {
+				has_origin = origin_blessed_by_god
+				OR = {
+					has_tradition = tr_psionics_psi_corps
+					has_tradition = tr_psionics_shroud_psi_corps
+				}
+			}
+		}
+		planet_telepaths_unity_produces_add = 4.5
+		planet_telepaths_upkeep_mult = 0.5
+		job_telepath_per_pop = 0.01
+	}
+
+	resources = {
+		category = planet_buildings_blessed_by_god
+		produces = {
+			trigger = {
+				exists = owner
+				owner = {
+					has_origin = origin_blessed_by_god
+					has_country_flag = recently_blessed_by_god
+				}
+			}
+			energy = 0.5
+			minerals = 0.5
+			food = 0.5
+			consumer_goods = 0.25
+			alloys = 0.25
+			trade = 0.25
+			physics_research = 0.25
+			society_research = 0.25
+			engineering_research = 0.25
+			unity = 0.25
+			mult = value:blessed_by_god_building_value
+		}
+		upkeep = {
+			trigger = {
+				exists = owner
+				owner = {
+					has_origin = origin_blessed_by_god
+					has_country_flag = recently_blessed_by_god
+				}
+			}
+			sr_zro = 0.1
+			mult = value:num_time_normal_resources_value
+		}
+		upkeep = {
+			trigger = {
+				NAND = {
+					exists = owner
+					owner = { has_origin = origin_blessed_by_god }
+				}
+			}
+			sr_zro = 3
+		}
+	}
+	
+	triggered_desc = {
+		trigger = {
+			OR = {
+				NOT = { exists = owner } # 用于概念显示
+				owner = { has_origin = origin_blessed_by_god }
+			}
+		}
+		text = building_blessed_by_god_effect
+	}
+	
+	triggered_desc = {
+		text = building_blessed_by_god_reject_robot_effect
+	}
+}
+
+# 神弃之族
+building_abandoned_by_god = {
+	icon = building_ruined
+	planet_limit = 1
+	empire_limit = { base = 1 }
+	can_build = no
+	can_demolish = no
+	can_be_ruined = no
+	can_be_disabled = no
+	position_priority = 10
+
+	category = research
+	
+	building_sets = {
+		government
+	}
+
+	potential = {
+		has_carrier_flag = exists_building_abandoned_by_god
+	}
+	
+	destroy_trigger = {
+		always = no
+	}
+	
+	# 研究人员
+	triggered_planet_modifier = {
+		potential = {
+			OR = {
+				NOT = { exists = owner } # 用于概念显示
+				owner = { has_origin = origin_abandoned_by_god }
+			}
+		}
+		planet_physicists_physics_research_produces_add = 1.5
+		planet_biologists_society_research_produces_add = 1.5
+		planet_engineers_engineering_research_produces_add = 1.5
+		planet_researchers_upkeep_mult = 0.5
+		job_physicist_per_pop = 0.05
+		job_biologist_per_pop = 0.05
+		job_engineer_per_pop = 0.05
+	}
+	
+	# 灵能使
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = {
+				has_origin = origin_abandoned_by_god
+				OR = {
+					has_tradition = tr_psionics_psi_corps
+					has_tradition = tr_psionics_shroud_psi_corps
+				}
+				has_country_flag = will_be_abandoned_by_god # 通过神眷之族转化而来
+			}
+		}
+		planet_telepaths_physics_research_produces_add = 1.5
+		planet_telepaths_society_research_produces_add = 1.5
+		planet_telepaths_engineering_research_produces_add = 1.5
+		planet_telepaths_upkeep_mult = 0.5
+		job_telepath_per_pop = 0.01
+	}
+	
+	triggered_planet_modifier = {
+		potential = {
+			has_carrier_flag = original_abandoned_by_god # 初始神弃之族母星专属
+		}
+		planet_max_districts_add = 5
+	}
+
+	resources = {
+		category = planet_buildings
+		upkeep = {
+			sr_dark_matter = 3
+		}
+	}
+}
+
+# 清算已至
+building_reckoning_arrived_composer_sanctum = {
+	inline_script = {
+		script = buildings/building_origin_reckoning_arrived
+		TYPE = composer_sanctum
+	}
+	
+	building_sets = {
+		government
+		urban
+		medical
+	}
+	
+	triggered_country_modifier = {
+		logistic_growth_mult = 0.1
+		leader_lifespan_mult = 0.2
+		mult = value:building_reckoning_arrived_sanctum_value
+	}
+	
+	triggered_planet_modifier = {
+		farmer_jobs_bonus_workforce_mult = 0.2
+		pop_healthcare_bonus_workforce_mult = 0.2
+		mult = value:building_reckoning_arrived_sanctum_value
+	}
+}
+
+building_reckoning_arrived_eater_sanctum = {
+	inline_script = {
+		script = buildings/building_origin_reckoning_arrived
+		TYPE = eater_sanctum
+	}
+	
+	building_sets = {
+		government
+		industrial
+		foundry
+		fortress
+	}
+	
+	triggered_country_modifier = {
+		country_naval_cap_mult = 0.1
+		starbase_shipyard_build_speed_mult = 0.2
+		mult = value:building_reckoning_arrived_sanctum_value
+	}
+	
+	triggered_planet_modifier = {
+		foundry_jobs_bonus_workforce_mult = 0.2
+		enforcer_jobs_bonus_workforce_mult = 0.2
+		soldier_jobs_bonus_workforce_mult = 0.2
+		mult = value:building_reckoning_arrived_sanctum_value
+	}
+}
+
+building_reckoning_arrived_instrument_sanctum = {
+	inline_script = {
+		script = buildings/building_origin_reckoning_arrived
+		TYPE = instrument_sanctum
+	}
+	
+	building_sets = {
+		government
+		industrial
+		factory
+	}
+	
+	triggered_country_modifier = {
+		planet_amenities_mult = 0.1
+		planet_building_build_speed_mult = 0.2
+		mult = value:building_reckoning_arrived_sanctum_value
+	}
+	
+	triggered_planet_modifier = {
+		technician_jobs_bonus_workforce_mult = 0.2
+		miner_jobs_bonus_workforce_mult = 0.2
+		artisan_jobs_bonus_workforce_mult = 0.2
+		mult = value:building_reckoning_arrived_sanctum_value
+	}
+}
+
+building_reckoning_arrived_cradle_sanctum = {
+	inline_script = {
+		script = buildings/building_origin_reckoning_arrived
+		TYPE = cradle_sanctum
+	}
+	
+	building_sets = {
+		government
+		urban
+		unity
+		trade
+		entertainment
+	}
+	
+	triggered_country_modifier = {
+		planet_housing_mult = 0.1
+		diplo_weight_mult = 0.2
+		mult = value:building_reckoning_arrived_sanctum_value
+	}
+	
+	triggered_planet_modifier = {
+		bureaucrat_jobs_bonus_workforce_mult = 0.2
+		trader_jobs_bonus_workforce_mult = 0.2
+		influential_jobs_bonus_workforce_mult = 0.2
+		mult = value:building_reckoning_arrived_sanctum_value
+	}
+}
+
+building_reckoning_arrived_whisperers_sanctum = {
+	inline_script = {
+		script = buildings/building_origin_reckoning_arrived
+		TYPE = whisperers_sanctum
+	}
+	
+	building_sets = {
+		government
+		research
+	}
+	
+	triggered_country_modifier = {
+		all_technology_research_speed = 0.1
+		spy_network_daily_value_mult = 0.2
+		mult = value:building_reckoning_arrived_sanctum_value
+	}
+	
+	triggered_planet_modifier = {
+		researcher_jobs_bonus_workforce_mult = 0.2
+		mult = value:building_reckoning_arrived_sanctum_value
+	}
+}

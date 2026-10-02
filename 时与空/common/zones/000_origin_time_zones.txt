@@ -1,0 +1,253 @@
+# 文件名排在原版文件前是为了让特化排在最上面
+zone_time_default = {
+	icon = GFX_diplomatic_weight_large
+	base_buildtime = @zone_buildtime
+	potential = {
+		is_origin_time_planet_class = yes
+	}
+
+	unlock = {
+		is_origin_time_planet_class = yes
+	}
+
+	resources = {
+		category = planet_zones
+		inline_script = {
+			script = buildings/nomadic_cost_switcher
+			REGULAR_RESOURCE = minerals
+			NOMADIC_RESOURCE = alloys
+			COST = @zone_cost
+			NOMADIC_COST_MULT = 0.5
+		}
+	}
+
+	max_buildings = @time_mod_default_zone_max_buildings
+
+	zone_sets = {
+		zone_time_default
+	}
+
+	include = {
+		all
+	}
+
+	excluded_building_sets = {
+		generator
+		mining
+		farming
+		knights
+		betharian
+		fallen_empire_generator
+		fallen_empire_farming
+		fallen_empire_mining
+		urban_automation
+		generator_automation
+		mining_automation
+		farming_automation
+		akx_worm
+		zone_time_physics
+		zone_time_society
+		zone_time_engineering
+	}
+	
+	# 岗位专注效果
+	triggered_planet_modifier = {
+		potential = {
+			has_carrier_flag = focus_on_black_hole_physicist
+		}
+		job_black_hole_physicist_mult = 1
+		job_black_hole_biologist_mult = -0.5
+		job_black_hole_engineer_mult = -0.5
+	}
+	
+	triggered_planet_modifier = {
+		potential = {
+			has_carrier_flag = focus_on_black_hole_biologist
+		}
+		job_black_hole_biologist_mult = 1
+		job_black_hole_physicist_mult = -0.5
+		job_black_hole_engineer_mult = -0.5
+	}
+	
+	triggered_planet_modifier = {
+		potential = {
+			has_carrier_flag = focus_on_black_hole_engineer
+		}
+		job_black_hole_engineer_mult = 1
+		job_black_hole_physicist_mult = -0.5
+		job_black_hole_biologist_mult = -0.5
+	}
+
+	ai_priority = 0
+}
+
+zone_time_urban = {
+	icon = GFX_district_specialization_urban
+	base_buildtime = @zone_buildtime
+	potential = {
+		is_origin_time_planet_class = yes
+	}
+
+	unlock = {
+		is_origin_time_planet_class = yes
+	}
+
+	resources = {
+		category = planet_zones
+		inline_script = {
+			script = buildings/nomadic_cost_switcher
+			REGULAR_RESOURCE = minerals
+			NOMADIC_RESOURCE = alloys
+			COST = @zone_cost
+			NOMADIC_COST_MULT = 0.5
+		}
+	}
+
+	triggered_district_planet_modifier = {
+		planet_housing_add = @zone_time_urban_base_housing
+		mult = value:district_time_level_value
+	}
+
+	zone_sets = {
+		urban
+	}
+
+	include = {
+		all
+	}
+
+	excluded_building_sets = {
+		generator
+		mining
+		farming
+		knights
+		betharian
+		generator_automation
+		mining_automation
+		farming_automation
+		akx_worm
+		zone_time_physics
+		zone_time_society
+		zone_time_engineering
+	}
+
+	planet_modifier = {
+		zone_building_slots_add = @time_mod_zone_max_buildings
+	}
+
+	triggered_desc = {
+		trigger = {
+			always = yes
+		}
+		text = zone_urban_triggered_desc
+	}
+
+	ai_priority = 2
+	ai_weight_coefficient = 0.5
+}
+
+zone_time = {
+	icon = GFX_district_specialization_time
+	
+	inline_script = {
+		script = zones/pc_time_zones_urban
+	}
+	
+	zone_sets = {
+		zone_time
+	}
+	
+	include = {
+		all
+	}
+	
+	excluded_building_sets = {
+		generator
+		mining
+		farming
+		knights
+		betharian
+		generator_automation
+		mining_automation
+		farming_automation
+		akx_worm
+		zone_time_physics
+		zone_time_society
+		zone_time_engineering
+	}
+}
+
+zone_time_physics = {
+	icon = GFX_district_specialization_time_physics
+	
+	inline_script = {
+		script = zones/pc_time_zones_rural
+		UPKEEP = rare_crystals
+		DISTRICT = district_time_physics
+		JOB = black_hole_physicist
+		TECH_1 = tech_power_hub_1
+		TECH_2 = tech_luxuries_1
+		TECH_3 = tech_physics_1
+		RESOURCE_1 = energy
+		RESOURCE_2 = consumer_goods
+		RESOURCE_3 = physics_research
+	}
+	
+	zone_sets = {
+		zone_time_physics
+	}
+	
+	included_building_sets = {
+		zone_time_physics
+	}
+}
+
+zone_time_society = {
+	icon = GFX_district_specialization_time_society
+	
+	inline_script = {
+		script = zones/pc_time_zones_rural
+		UPKEEP = exotic_gases
+		DISTRICT = district_time_society
+		JOB = black_hole_biologist
+		TECH_1 = tech_food_processing_1
+		TECH_2 = tech_adaptive_bureaucracy
+		TECH_3 = tech_society_1
+		RESOURCE_1 = food
+		RESOURCE_2 = unity
+		RESOURCE_3 = society_research
+	}
+	
+	zone_sets = {
+		zone_time_society
+	}
+
+	included_building_sets = {
+		zone_time_society
+	}
+}
+
+zone_time_engineering = {
+	icon = GFX_district_specialization_time_engineering
+	
+	inline_script = {
+		script = zones/pc_time_zones_rural
+		UPKEEP = volatile_motes
+		DISTRICT = district_time_engineering
+		JOB = black_hole_engineer
+		TECH_1 = tech_mineral_purification_1
+		TECH_2 = tech_alloys_1
+		TECH_3 = tech_engineering_1
+		RESOURCE_1 = minerals
+		RESOURCE_2 = alloys
+		RESOURCE_3 = engineering_research
+	}
+	
+	zone_sets = {
+		zone_time_engineering
+	}
+
+	included_building_sets = {
+		zone_time_engineering
+	}
+}

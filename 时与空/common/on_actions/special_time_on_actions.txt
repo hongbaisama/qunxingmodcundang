@@ -1,0 +1,56 @@
+# root = Country
+# from = Species（新机械物种）
+# fromfrom = Species（旧有机物种）
+on_set_synth_origin_traits = {
+	events = {
+		time.1500 # 机飞自动加特质
+	}
+}
+
+on_origin_colossus_project_0_finished = {
+	events = {
+		origin_colossus.4
+	}
+}
+
+on_open_time_titan_main_menu = {
+	events = {
+		time_akx.20000
+	}
+}
+
+on_start_time_titan_pass_black_hole = {
+	events = {
+		time_akx.20010
+	}
+}
+
+on_activate_time_titan_cloaking = {
+	events = {
+		time_akx.20015
+	}
+}
+
+on_deactivate_time_titan_cloaking = {
+	events = {
+		time_akx.20020
+	}
+}
+
+on_time_titan_end_shelter_completed = {
+	events = {
+		time_akx.20030
+	}
+}
+
+on_time_titan_end_shelter_start = {
+	events = {
+		time_akx.20031
+	}
+}
+
+on_time_titan_end_shelter_cancelled = {
+	events = {
+		time_akx.20032
+	}
+}

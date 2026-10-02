@@ -1,0 +1,44 @@
+beyond_infinity_tech_modifier_value = {
+	base = $BASE$
+	multiply = event_target:beyond_infinity_country.$VARIABLE$
+}
+
+beyond_infinity_spiral_modifier_value = {
+	base = 0.01
+	multiply = beyond_infinity_spiral_variable
+	max = 1
+	min = -1
+	multiply = trigger:planet_size
+}
+
+crisobj_beyond_infinity_produced_cap_check_value = {
+	base = 0
+	add = crisobj_beyond_infinity_produced_variable
+	complex_trigger_modifier = {
+		trigger = resource_stockpile_compare
+		parameters = {
+			resource = beyond_infinity_time
+		}
+		mode = add
+	}
+}
+
+crisobj_beyond_infinity_produce_over_cap_value = {
+	base = 48
+	modifier = {
+		set = 1440
+		has_beyond_infinity_level = { LEVEL = 1 }
+	}
+	modifier = {
+		set = 17280
+		has_beyond_infinity_level = { LEVEL = 2 }
+	}
+	complex_trigger_modifier = {
+		trigger = resource_stockpile_compare
+		parameters = {
+			resource = beyond_infinity_time
+		}
+		mode = subtract
+	}
+	min = 0
+}

@@ -1,0 +1,10 @@
+# 1代表1%
+@gas_colony_try_fail_chance_base = 25
+@gas_colony_try_fail_chance_factor = 10
+@gas_colony_try_fail_chance_max = 50
+
+@gas_colony_change_fail_chance_base = 50
+@gas_colony_change_fail_chance_factor = 10
+@gas_colony_change_fail_chance_max = 30
+
+@gas_colony_fail_chance_ap_factor = 0.5

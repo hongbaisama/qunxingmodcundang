@@ -1,0 +1,34 @@
+portraits = {
+	dimension_traveler_portrait = {
+		texturefile = "gfx/models/portraits/dimension_traveler.dds"
+	}
+	
+	dimension_traveler_smile_portrait = {
+		texturefile = "gfx/models/portraits/dimension_traveler_smile.dds"
+	}
+	
+	dimension_traveler_normal_portrait = {
+		texturefile = "gfx/models/portraits/dimension_traveler_normal.dds"
+	}
+	
+	dimension_traveler_official_portrait = {
+		texturefile = "gfx/models/portraits/dimension_traveler_official.dds"
+	}
+	
+	dimension_traveler_scientist_portrait = {
+		texturefile = "gfx/models/portraits/dimension_traveler_scientist.dds"
+	}
+	
+	dimension_traveler_commander_portrait = {
+		texturefile = "gfx/models/portraits/dimension_traveler_commander.dds"
+	}
+	
+	dimension_traveler_mam = {
+		entity = "portrait_mammalian_03_entity"
+		clothes_selector = "mammalian_dimension_traveler_clothes"
+		attachment_selector = "no_texture"
+		character_textures = {
+			"gfx/models/portraits/mammalian/mammalian_slender_03_orange.dds"
+		}
+	}
+}

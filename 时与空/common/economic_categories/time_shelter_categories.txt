@@ -1,0 +1,257 @@
+planet_districts_time_shelter_main = {
+	parent = planet_districts_cities
+	generate_mult_modifiers = {
+		produces
+		cost
+		upkeep
+	}
+	generate_add_modifiers = {
+		produces
+		cost
+		upkeep
+	}
+	modifier_category = colony
+}
+
+planet_districts_time_shelter_secondary = {
+	parent = planet_districts_cities
+	generate_mult_modifiers = {
+		produces
+		cost
+		upkeep
+	}
+	generate_add_modifiers = {
+		produces
+		cost
+		upkeep
+	}
+	modifier_category = colony
+}
+
+planet_time_shelter_visitors = {
+	parent = planet_jobs_productive
+	modifier_category = colony
+	generate_mult_modifiers = {
+		produces
+		upkeep
+	}
+	generate_add_modifiers = {
+		produces
+		upkeep
+	}
+	################################################################
+	# 继承修正
+	################################################################
+	triggered_produces_modifier = {
+		key = planet_civilians
+		modifier_types = {
+			mult
+		}
+		trigger = {
+			exists = owner
+			owner = { is_gestalt = no }
+		}
+		use_parent_icon = yes
+	}
+	triggered_upkeep_modifier = {
+		key = planet_civilians
+		modifier_types = {
+			mult
+		}
+		trigger = {
+			exists = owner
+			owner = { is_gestalt = no }
+		}
+		use_parent_icon = yes
+	}
+	triggered_produces_modifier = {
+		key = planet_maintenance_drones
+		modifier_types = {
+			mult
+		}
+		trigger = {
+			exists = owner
+			owner = { is_gestalt = yes }
+		}
+		use_parent_icon = yes
+	}
+	triggered_upkeep_modifier = {
+		key = planet_maintenance_drones
+		modifier_types = {
+			mult
+		}
+		trigger = {
+			exists = owner
+			owner = { is_gestalt = yes }
+		}
+		use_parent_icon = yes
+	}
+}
+
+planet_time_shelter_visitor_unemployments = {
+	parent = planet_jobs_productive
+	modifier_category = colony
+	generate_mult_modifiers = {
+		produces
+		upkeep
+	}
+	generate_add_modifiers = {
+		produces
+		upkeep
+	}
+	################################################################
+	# 继承修正
+	################################################################
+	triggered_produces_modifier = {
+		key = planet_civilians
+		modifier_types = {
+			mult
+		}
+		trigger = {
+			exists = owner
+			owner = { is_gestalt = no }
+		}
+		use_parent_icon = yes
+	}
+	triggered_upkeep_modifier = {
+		key = planet_civilians
+		modifier_types = {
+			mult
+		}
+		trigger = {
+			exists = owner
+			owner = { is_gestalt = no }
+		}
+		use_parent_icon = yes
+	}
+	triggered_produces_modifier = {
+		key = planet_maintenance_drones
+		modifier_types = {
+			mult
+		}
+		trigger = {
+			exists = owner
+			owner = { is_gestalt = yes }
+		}
+		use_parent_icon = yes
+	}
+	triggered_upkeep_modifier = {
+		key = planet_maintenance_drones
+		modifier_types = {
+			mult
+		}
+		trigger = {
+			exists = owner
+			owner = { is_gestalt = yes }
+		}
+		use_parent_icon = yes
+	}
+}
+
+planet_time_shelter_sentinels = {
+	parent = planet_jobs_specialist
+	modifier_category = colony
+	generate_mult_modifiers = {
+		produces
+		upkeep
+	}
+	generate_add_modifiers = {
+		produces
+		upkeep
+	}
+	################################################################
+	# 继承修正
+	################################################################
+	inline_script = {
+		script = economic_categories/time_inherited_economic_category_modifier_only_mult
+		TYPE = planet_technician
+	}
+	inline_script = {
+		script = economic_categories/time_inherited_economic_category_modifier_only_mult
+		TYPE = planet_miners
+	}
+	inline_script = {
+		script = economic_categories/time_inherited_economic_category_modifier_only_mult
+		TYPE = planet_farmers
+	}
+}
+
+planet_time_shelter_artisans = {
+	parent = planet_jobs_specialist
+	modifier_category = colony
+	generate_mult_modifiers = {
+		produces
+		upkeep
+	}
+	generate_add_modifiers = {
+		produces
+		upkeep
+	}
+	################################################################
+	# 继承修正
+	################################################################
+	inline_script = {
+		script = economic_categories/time_inherited_economic_category_modifier_only_mult
+		TYPE = planet_metallurgists
+	}
+	inline_script = {
+		script = economic_categories/time_inherited_economic_category_modifier_only_mult
+		TYPE = planet_artisans
+	}
+}
+
+planet_time_shelter_elders = {
+	parent = planet_jobs_specialist
+	modifier_category = colony
+	generate_mult_modifiers = {
+		produces
+		upkeep
+	}
+	generate_add_modifiers = {
+		produces
+		upkeep
+	}
+	################################################################
+	# 继承修正
+	################################################################
+	inline_script = {
+		script = economic_categories/time_inherited_economic_category_modifier_only_mult
+		TYPE = planet_bureaucrats
+	}
+	inline_script = {
+		script = economic_categories/time_inherited_economic_category_modifier_only_mult
+		TYPE = planet_traders
+	}
+}
+
+planet_time_shelter_watchers = {
+	parent = planet_jobs_specialist
+	modifier_category = colony
+	generate_mult_modifiers = {
+		produces
+		upkeep
+	}
+	generate_add_modifiers = {
+		produces
+		upkeep
+	}
+	################################################################
+	# 继承修正
+	################################################################
+	inline_script = {
+		script = economic_categories/time_inherited_economic_category_modifier_only_mult
+		TYPE = planet_researchers
+	}
+	inline_script = {
+		script = economic_categories/time_inherited_economic_category_modifier_only_mult
+		TYPE = planet_physicists
+	}
+	inline_script = {
+		script = economic_categories/time_inherited_economic_category_modifier_only_mult
+		TYPE = planet_biologists
+	}
+	inline_script = {
+		script = economic_categories/time_inherited_economic_category_modifier_only_mult
+		TYPE = planet_engineers
+	}
+}

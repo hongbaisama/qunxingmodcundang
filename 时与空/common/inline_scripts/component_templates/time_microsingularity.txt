@@ -1,0 +1,58 @@
+key = $TYPE$
+size = aux
+icon = "GFX_ship_part_wormhole"
+icon_frame = 1
+build_time = $TIME$
+resources = {
+	category = ship_components
+	cost = {
+		alloys = 50
+		sr_dark_matter = 1
+		minor_artifacts = @minor_artifacts_cost_m
+	}
+	upkeep = {
+		sr_dark_matter = 0.01
+	}
+}
+
+component_set = $TYPE$
+
+custom_tooltip = time_microsingularity_ap_effect
+
+ship_modifier = {
+	ship_accuracy_add = 5
+	ship_tracking_add = 5
+	ship_disengage_opportunities_add = 1
+	time_microsingularity_build_time_add = $TIME$
+}
+
+modifier = {
+	ship_evasion_add = 5
+	ship_reactor_power_mult = 0.2
+}
+
+triggered_ship_design_modifier = {
+	potential = {
+		from = { has_ascension_perk = ap_archaeoengineers }
+	}
+	ship_cloaking_strength_add = 1
+}
+
+triggered_ship_modifier = {
+	potential = {
+		active_ap_horror_bonus = { SCOPE = owner }
+	}
+	ship_armor_penetration_add = 0.05
+	ship_shield_penetration_add = 0.05
+}
+
+triggered_ship_modifier = {
+	potential = {
+		active_ap_time_bonus = { SCOPE = owner }
+	}
+	ship_damage_reduction_add = 10
+}
+
+ai_weight = {
+	weight = 100
+}

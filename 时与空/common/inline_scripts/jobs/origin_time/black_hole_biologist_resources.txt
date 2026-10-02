@@ -1,0 +1,40 @@
+produces = {
+	food = 4
+	mult = value:time_researcher_normal_resource_value|RESOURCE|food|WEIGHT|resource|
+}
+
+produces = {
+	unity = 2
+	mult = value:time_researcher_normal_resource_value|RESOURCE|unity|WEIGHT|unity|
+}
+
+produces = {
+	society_research = 2
+	mult = value:time_researcher_normal_resource_value|RESOURCE|society_research|WEIGHT|research|
+}
+
+produces = {
+	trade = 1
+	mult = value:time_researcher_trade_value
+}
+
+produces = {
+	trigger = {
+		colony = { has_modifier = timesingularity }
+	}
+	sr_dark_matter = 0.1
+	mult = value:time_researcher_rare_resource_value
+}
+
+upkeep = {
+	consumer_goods = 0.5
+	alloys = 0.5
+	mult = value:time_researcher_normal_resource_value|RESOURCE|unity|WEIGHT|unity|
+}
+
+upkeep = {
+	food = 1
+	consumer_goods = 0.5
+	alloys = 0.25
+	mult = value:time_researcher_normal_resource_value|RESOURCE|society_research|WEIGHT|research|
+}

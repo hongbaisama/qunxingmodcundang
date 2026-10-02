@@ -1,0 +1,57 @@
+akx_horror = {
+	name = astral_rift_akx_horror
+	randomized = no
+	flags = { akx_horror }
+	event = time_akx.501
+	on_roll_failed = {
+		standard_astral_rift_on_roll_failed = yes
+	}
+}
+
+akx_time = {
+	name = astral_rift_akx_time
+	randomized = no
+	flags = { akx_time }
+	event = time_akx.601
+	on_roll_failed = {
+		standard_astral_rift_on_roll_failed = yes
+	}
+}
+
+equinox_seal = {
+	name = astral_rift_equinox_seal
+	randomized = no
+	flags = { equinox_seal }
+	event = origin_equinox_seal.11
+	on_roll_failed = {
+		standard_astral_rift_on_roll_failed = yes
+		hidden_effect = {
+			if = {
+				limit = {
+					has_astral_rift_flag = start_equinox_seal
+				}
+				leader = {
+					subtract_variable = {
+						which = equinox_seal_chance
+						value = 1
+					}
+				}
+				subtract_variable = {
+					which = equinox_seal_chance
+					value = 1
+				}
+				if = {
+					limit = {
+						check_variable = {
+							which = equinox_seal_chance
+							value <= 0
+						}
+					}
+					solar_system = {
+						system_event = { id = origin_equinox_seal.8 }
+					}
+				}
+			}
+		}
+	}
+}

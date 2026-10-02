@@ -1,0 +1,65 @@
+inline_script = {
+	script = trait/subtitle/council_yes
+	RARITY = $RARITY$
+	CLASS = $CLASS$
+}
+icon = {
+	layer = {
+		icon = "GFX_trait_bg"
+		color = "trait_bg_default"
+	}
+	inline_script = trait/icon_element/rarity_$RARITY$
+	layer = {
+		icon = $ICON$
+		color = "trait_icon_default"
+	}
+	layer = {
+		icon = "GFX_trait_councilor"
+		visible = {
+			OR = {
+				is_ruler = yes
+				is_heir = yes
+			}
+			owner = { is_imperial_authority = yes }
+		}
+	}
+	layer = {
+		icon = "GFX_trait_disabled"
+		visible = {
+			OR = {
+				AND = {
+					is_ruler = no
+					is_heir = no
+				}
+				is_councilor = no
+				owner = { is_imperial_authority = no }
+			}
+		}
+	}
+	inline_script = trait/icon_element/tier_$TIER$
+	# 监管人
+	layer = {
+		icon = "GFX_trait_galactic_custodian"
+		visible = {
+			is_ruler = yes
+			owner = {
+				is_imperial_authority = yes
+				is_galactic_custodian = yes
+			}
+		}
+	}
+	# 星海帝皇
+	layer = {
+		icon = "GFX_trait_galactic_emperor"
+		visible = {
+			is_ruler = yes
+			owner = {
+				is_imperial_authority = yes
+				is_galactic_emperor = yes
+			}
+		}
+	}
+	
+}
+leader_trait_rarity = $RARITY$
+sorting_priority = $PRIORITY$

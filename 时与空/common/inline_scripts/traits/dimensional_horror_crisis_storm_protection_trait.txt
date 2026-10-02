@@ -1,0 +1,27 @@
+triggered_planet_modifier = {
+	potential = {
+		has_global_flag = dimensional_horror_crisis_storm_has_occurred
+	}
+	dimensional_horror_crisis_storm_planet_modifier = $COUNT$
+}
+triggered_sector_modifier = {
+	potential = {
+		leader_class = official
+		has_global_flag = dimensional_horror_crisis_storm_has_occurred
+	}
+	dimensional_horror_crisis_storm_fleet_modifier = $COUNT$
+}
+triggered_modifier = {
+	potential = {
+		leader_class = scientist
+		has_global_flag = dimensional_horror_crisis_storm_has_occurred
+	}
+	dimensional_horror_crisis_storm_fleet_modifier = $COUNT$
+}
+triggered_fleet_modifier = {
+	potential = {
+		leader_class = commander
+		has_global_flag = dimensional_horror_crisis_storm_has_occurred
+	}
+	dimensional_horror_crisis_storm_fleet_modifier = $COUNT$
+}

@@ -1,0 +1,385 @@
+gov_time_0 = {
+	ruler_title = PRESCRIPTED_ruler_title_time_0
+	heir_title = PRESCRIPTED_heir_title_time_0
+	ruler_title_female = PRESCRIPTED_ruler_title_female_time_0
+	heir_title_female = PRESCRIPTED_heir_title_female_time_0
+
+	possible = {
+		is_wonder_country_time_0 = yes
+	}
+
+	weight = {
+		base = 100000000
+	}
+}
+
+gov_time_1 = {
+	ruler_title = PRESCRIPTED_ruler_title_time_1
+	ruler_title_female = PRESCRIPTED_ruler_title_female_time_1
+
+	possible = {
+		is_wonder_country_time_1 = yes
+	}
+
+	weight = {
+		base = 100000000
+	}
+}
+
+gov_time_2 = {
+	ruler_title = PRESCRIPTED_ruler_title_time_2
+
+	possible = {
+		is_wonder_country_time_2 = yes
+	}
+
+	weight = {
+		base = 100000000
+	}
+}
+
+gov_time_3 = {
+	ruler_title = PRESCRIPTED_ruler_title_time_3
+	heir_title = PRESCRIPTED_heir_title_time_3
+	ruler_title_female = PRESCRIPTED_ruler_title_female_time_3
+	heir_title_female = PRESCRIPTED_heir_title_female_time_3
+
+	possible = {
+		is_wonder_country_time_3 = yes
+	}
+
+	weight = {
+		base = 100000000
+	}
+}
+
+gov_wonder_country_35 = {
+	ruler_title = PRESCRIPTED_ruler_title_wonder_country_35
+
+	possible = {
+		is_wonder_country_35 = yes
+		is_nemesis_crisis_country = no
+	}
+
+	weight = {
+		base = 100000000
+	}
+}
+
+gov_wonder_country_35_crisis = {
+	ruler_title = PRESCRIPTED_ruler_title_wonder_country_35_crisis
+
+	possible = {
+		is_wonder_country_35 = yes
+		is_nemesis_crisis_country = yes
+	}
+
+	weight = {
+		base = 100000000
+	}
+}
+
+gov_wonder_country_38 = {
+	ruler_title = PRESCRIPTED_ruler_title_wonder_country_38
+	ruler_title_female = PRESCRIPTED_ruler_title_female_wonder_country_38
+
+	possible = {
+		is_wonder_country_38 = yes
+	}
+
+	weight = {
+		base = 100000000
+	}
+}
+
+gov_wonder_country_39 = {
+	ruler_title = PRESCRIPTED_ruler_title_wonder_country_39
+
+	possible = {
+		is_wonder_country_39 = yes
+	}
+
+	weight = {
+		base = 100000000
+	}
+}
+
+gov_wonder_country_40 = {
+	ruler_title = PRESCRIPTED_ruler_title_wonder_country_40
+	ruler_title_female = PRESCRIPTED_ruler_title_female_wonder_country_40
+
+	possible = {
+		is_wonder_country_40 = yes
+	}
+
+	weight = {
+		base = 100000000
+	}
+}
+
+gov_wonder_country_synth_queen = {
+	ruler_title = PRESCRIPTED_ruler_title_wonder_country_synth_queen
+
+	possible = {
+		is_wonder_country_synth_queen = yes
+	}
+
+	weight = {
+		base = 100000000
+	}
+}
+
+gov_wonder_country_91 = {
+	ruler_title = PRESCRIPTED_ruler_title_wonder_country_91
+	heir_title = PRESCRIPTED_heir_title_wonder_country_91
+	ruler_title_female = PRESCRIPTED_ruler_title_female_wonder_country_91
+	heir_title_female = PRESCRIPTED_heir_title_female_wonder_country_91
+
+	possible = {
+		is_wonder_country_91 = yes
+	}
+
+	weight = {
+		base = 100000000
+	}
+}
+
+gov_hypocritical_face_1 = {
+	ruler_title = RT_OLIGARCH
+
+	should_force_rename = yes
+
+	possible = {
+		if = {
+			limit = {
+				has_origin = origin_hypocritical_face
+			}
+			is_megacorp = yes
+			has_valid_civic = civic_criminal_heritage
+			NOT = { has_valid_civic = civic_crusader_spirit_corporate }
+			NOR = {
+				has_valid_civic = civic_gospel_of_the_masses
+				has_valid_civic = civic_death_cult_corporate
+				is_wonder_country_49 = yes
+			}
+			is_lost_hypocritical_face = no
+		}
+		else = {
+			always = no
+		}
+	}
+
+	weight = {
+		base = 100000000
+	}
+}
+
+gov_hypocritical_face_2 = {
+	ruler_title = RT_OLIGARCH
+
+	should_force_rename = yes
+
+	possible = {
+		if = {
+			limit = {
+				has_origin = origin_hypocritical_face
+			}
+			is_megacorp = yes
+			has_valid_civic = civic_criminal_heritage
+			has_valid_civic = civic_crusader_spirit_corporate
+			NOR = {
+				has_valid_civic = civic_gospel_of_the_masses
+				has_valid_civic = civic_death_cult_corporate
+				is_wonder_country_49 = yes
+			}
+			is_lost_hypocritical_face = no
+		}
+		else = {
+			always = no
+		}
+	}
+
+	weight = {
+		base = 200000000
+	}
+}
+
+gov_hypocritical_face_3 = {
+	ruler_title = RT_ORACLE
+
+	should_force_rename = yes
+
+	possible = {
+		if = {
+			limit = {
+				has_origin = origin_hypocritical_face
+			}
+			is_megacorp = yes
+			has_valid_civic = civic_criminal_heritage
+			OR = {
+				has_valid_civic = civic_gospel_of_the_masses
+				has_valid_civic = civic_death_cult_corporate
+				is_wonder_country_49 = yes
+			}
+			is_lost_hypocritical_face = no
+		}
+		else = {
+			always = no
+		}
+	}
+
+	weight = {
+		base = 300000000
+	}
+}
+
+gov_lost_hypocritical_face_1 = {
+	ruler_title = RT_OLIGARCH
+
+	should_force_rename = yes
+
+	possible = {
+		if = {
+			limit = {
+				has_origin = origin_hypocritical_face
+			}
+			is_megacorp = yes
+			has_valid_civic = civic_criminal_heritage
+			NOT = { has_valid_civic = civic_crusader_spirit_corporate }
+			NOR = {
+				has_valid_civic = civic_gospel_of_the_masses
+				has_valid_civic = civic_death_cult_corporate
+				is_wonder_country_49 = yes
+			}
+			is_lost_hypocritical_face = yes
+		}
+		else = {
+			always = no
+		}
+	}
+
+	weight = {
+		base = 100000000
+	}
+}
+
+gov_lost_hypocritical_face_2 = {
+	ruler_title = RT_OLIGARCH
+
+	should_force_rename = yes
+
+	possible = {
+		if = {
+			limit = {
+				has_origin = origin_hypocritical_face
+			}
+			is_megacorp = yes
+			has_valid_civic = civic_criminal_heritage
+			has_valid_civic = civic_crusader_spirit_corporate
+			NOR = {
+				has_valid_civic = civic_gospel_of_the_masses
+				has_valid_civic = civic_death_cult_corporate
+				is_wonder_country_49 = yes
+			}
+			is_lost_hypocritical_face = yes
+		}
+		else = {
+			always = no
+		}
+	}
+
+	weight = {
+		base = 200000000
+	}
+}
+
+gov_lost_hypocritical_face_3 = {
+	ruler_title = RT_ORACLE
+
+	should_force_rename = yes
+
+	possible = {
+		if = {
+			limit = {
+				has_origin = origin_hypocritical_face
+			}
+			is_megacorp = yes
+			has_valid_civic = civic_criminal_heritage
+			OR = {
+				has_valid_civic = civic_gospel_of_the_masses
+				has_valid_civic = civic_death_cult_corporate
+				is_wonder_country_49 = yes
+			}
+			is_lost_hypocritical_face = yes
+		}
+		else = {
+			always = no
+		}
+	}
+
+	weight = {
+		base = 300000000
+	}
+}
+
+gov_coils_god = {
+	ruler_title = coils_god_ruler_title
+	heir_title = coils_god_heir_title
+	ruler_title_female = coils_god_ruler_title_female
+	heir_title_female = coils_god_heir_title_female
+
+	should_force_rename = yes
+
+	possible = {
+		OR = {
+			has_valid_civic = civic_coils_god
+			has_valid_civic = civic_coils_god_ftl
+		}
+	}
+
+	weight = {
+		base = 100000000
+	}
+}
+
+gov_parallel_sky_1 = {
+	ruler_title = parallel_sky_1_ruler_title
+
+	should_force_rename = yes
+
+	possible = {
+		has_civic = civic_parallel_sky_1
+	}
+
+	weight = {
+		base = 100000
+	}
+}
+
+gov_parallel_sky_2 = {
+	ruler_title = parallel_sky_2_ruler_title
+
+	should_force_rename = yes
+
+	possible = {
+		has_civic = civic_parallel_sky_2
+	}
+
+	weight = {
+		base = 100000
+	}
+}
+
+gov_parallel_sky_3 = {
+	ruler_title = parallel_sky_3_ruler_title
+
+	should_force_rename = yes
+
+	possible = {
+		has_civic = civic_parallel_sky_3
+	}
+
+	weight = {
+		base = 100000
+	}
+}

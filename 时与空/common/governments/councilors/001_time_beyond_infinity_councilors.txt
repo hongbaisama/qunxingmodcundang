@@ -1,0 +1,143 @@
+# 时空机器
+
+councilor_time_machine = {
+	leader_class = { scientist }
+	is_leader_possible = {
+		leader_class = scientist
+	}
+	civic = civic_time_machine
+	modifier = {
+		pop_physicist_bonus_workforce_mult = 0.02
+		pop_time_traveler_bonus_workforce_mult = 0.02
+	}
+	triggered_country_modifier = {
+		potential = {
+			has_country_flag = astral_rift_akx_time_hidden
+		}
+		country_physics_research_produces_mult = 0.02
+		country_physics_tech_research_speed = 0.02
+	}
+	ai_hiring_weight = {
+		inline_script = councilor_leader_weights
+	}
+	ai_priority = 1
+}
+
+councilor_time_machine_corporate = {
+	leader_class = { scientist }
+	is_leader_possible = {
+		leader_class = scientist
+	}
+	civic = civic_time_machine_corporate
+	modifier = {
+		pop_physicist_bonus_workforce_mult = 0.02
+		pop_time_traveler_bonus_workforce_mult = 0.02
+	}
+	triggered_country_modifier = {
+		potential = {
+			has_country_flag = astral_rift_akx_time_hidden
+		}
+		country_physics_research_produces_mult = 0.02
+		country_physics_tech_research_speed = 0.02
+	}
+	ai_hiring_weight = {
+		inline_script = councilor_leader_weights
+	}
+	ai_priority = 1
+}
+
+# 圆环枢纽
+
+councilor_circle_nexus = {
+	leader_class = { scientist }
+	is_leader_possible = {
+		leader_class = scientist
+	}
+	civic = civic_circle_nexus
+	modifier = {
+		pop_biologist_bonus_workforce_mult = 0.02
+		pop_circle_bender_bonus_workforce_mult = 0.02
+	}
+	triggered_country_modifier = {
+		potential = {
+			has_country_flag = astral_rift_akx_time_hidden
+		}
+		country_society_research_produces_mult = 0.02
+		country_society_tech_research_speed = 0.02
+	}
+	ai_hiring_weight = {
+		inline_script = councilor_leader_weights
+	}
+	ai_priority = 1
+}
+
+councilor_circle_nexus_corporate = {
+	leader_class = { scientist }
+	is_leader_possible = {
+		leader_class = scientist
+	}
+	civic = civic_circle_nexus_corporate
+	modifier = {
+		pop_biologist_bonus_workforce_mult = 0.02
+		pop_circle_bender_bonus_workforce_mult = 0.02
+	}
+	triggered_country_modifier = {
+		potential = {
+			has_country_flag = astral_rift_akx_time_hidden
+		}
+		country_society_research_produces_mult = 0.02
+		country_society_tech_research_speed = 0.02
+	}
+	ai_hiring_weight = {
+		inline_script = councilor_leader_weights
+	}
+	ai_priority = 1
+}
+
+# 位面引擎
+
+councilor_dimension_engine = {
+	leader_class = { scientist }
+	is_leader_possible = {
+		leader_class = scientist
+	}
+	civic = civic_dimension_engine
+	modifier = {
+		pop_engineer_bonus_workforce_mult = 0.02
+		pop_dimension_anchor_bonus_workforce_mult = 0.02
+	}
+	triggered_country_modifier = {
+		potential = {
+			has_country_flag = astral_rift_akx_time_hidden
+		}
+		country_engineering_research_produces_mult = 0.02
+		country_engineering_tech_research_speed = 0.02
+	}
+	ai_hiring_weight = {
+		inline_script = councilor_leader_weights
+	}
+	ai_priority = 1
+}
+
+councilor_dimension_engine_corporate = {
+	leader_class = { scientist }
+	is_leader_possible = {
+		leader_class = scientist
+	}
+	civic = civic_dimension_engine_corporate
+	modifier = {
+		pop_engineer_bonus_workforce_mult = 0.02
+		pop_dimension_anchor_bonus_workforce_mult = 0.02
+	}
+	triggered_country_modifier = {
+		potential = {
+			has_country_flag = astral_rift_akx_time_hidden
+		}
+		country_engineering_research_produces_mult = 0.02
+		country_engineering_tech_research_speed = 0.02
+	}
+	ai_hiring_weight = {
+		inline_script = councilor_leader_weights
+	}
+	ai_priority = 1
+}

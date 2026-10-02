@@ -1,0 +1,104 @@
+swap_type = {
+	trigger = {
+		colony? = { has_building = building_zone_time_food }
+	}
+	building_icon = building_zone_time_food
+	weight = 5
+}
+swap_type = {
+	trigger = {
+		colony? = { has_building = building_zone_time_unity }
+	}
+	building_icon = building_zone_time_unity
+	weight = 6
+}
+swap_type = {
+	trigger = {
+		colony? = { has_building = building_zone_time_society_research }
+	}
+	building_icon = building_zone_time_society_research
+	weight = 7
+}
+swap_type = {
+	trigger = {
+		colony? = { has_building = building_zone_time_food_advanced }
+	}
+	building_icon = building_zone_time_food_advanced
+	weight = 8
+}
+swap_type = {
+	trigger = {
+		colony? = { has_building = building_zone_time_unity_advanced }
+	}
+	building_icon = building_zone_time_unity_advanced
+	weight = 9
+}
+swap_type = {
+	trigger = {
+		colony? = { has_building = building_zone_time_society_research_advanced }
+	}
+	building_icon = building_zone_time_society_research_advanced
+	weight = 10
+}
+
+swap_type = {
+	trigger = {
+		time_researcher_is_advanced = yes
+	}
+	name = advanced_black_hole_biologist
+	weight = 14
+}
+swap_type = {
+	trigger = {
+		time_researcher_is_advanced = yes
+		colony? = { has_building = building_zone_time_food }
+	}
+	name = advanced_black_hole_biologist
+	building_icon = building_zone_time_food
+	weight = 15
+}
+swap_type = {
+	trigger = {
+		time_researcher_is_advanced = yes
+		colony? = { has_building = building_zone_time_unity }
+	}
+	name = advanced_black_hole_biologist
+	building_icon = building_zone_time_unity
+	weight = 16
+}
+swap_type = {
+	trigger = {
+		time_researcher_is_advanced = yes
+		colony? = { has_building = building_zone_time_society_research }
+	}
+	name = advanced_black_hole_biologist
+	building_icon = building_zone_time_society_research
+	weight = 17
+}
+swap_type = {
+	trigger = {
+		time_researcher_is_advanced = yes
+		colony? = { has_building = building_zone_time_food_advanced }
+	}
+	name = advanced_black_hole_biologist
+	building_icon = building_zone_time_food_advanced
+	weight = 18
+}
+swap_type = {
+	trigger = {
+		time_researcher_is_advanced = yes
+		colony? = { has_building = building_zone_time_unity_advanced }
+	}
+	name = advanced_black_hole_biologist
+	building_icon = building_zone_time_unity_advanced
+	weight = 19
+}
+swap_type = {
+	trigger = {
+		time_researcher_is_advanced = yes
+		colony? = { has_building = building_zone_time_society_research_advanced }
+	}
+	name = advanced_black_hole_biologist
+	building_icon = building_zone_time_society_research_advanced
+	weight = 20
+}

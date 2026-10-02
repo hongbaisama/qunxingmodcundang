@@ -1,0 +1,56 @@
+dimensional_horror_crisis_storm_aftermath_modifier_severity_1 = {
+	country_physics_research_produces_mult = 0.25
+	country_society_research_produces_mult = 0.25
+	country_engineering_research_produces_mult = 0.25
+	country_astral_threads_produces_mult = 0.5
+	country_sr_dark_matter_produces_mult = 1.25
+	planet_stability_mult = -0.25
+	planet_amenities_mult = -0.25
+	planet_housing_mult = -0.25
+	habitability_ceil_uncapped_add = -0.25
+	habitability_ceil_add = -0.25
+	habitability_floor_add = -0.25
+	logistic_growth_mult = -0.25
+	bonus_pop_growth_mult = -0.25
+	planet_pop_assembly_mult = -0.25
+	icon = "gfx/interface/icons/planet_modifiers/pm_dimensional_horror_crisis_aftermath_modifier.dds"
+	icon_frame = 2
+}
+
+dimensional_horror_crisis_storm_aftermath_modifier_severity_2 = {
+	country_physics_research_produces_mult = 0.5
+	country_society_research_produces_mult = 0.5
+	country_engineering_research_produces_mult = 0.5
+	country_astral_threads_produces_mult = 1
+	country_sr_dark_matter_produces_mult = 2.5
+	planet_stability_mult = -0.5
+	planet_amenities_mult = -0.5
+	planet_housing_mult = -0.5
+	habitability_ceil_uncapped_add = -0.5
+	habitability_ceil_add = -0.5
+	habitability_floor_add = -0.5
+	logistic_growth_mult = -0.5
+	bonus_pop_growth_mult = -0.5
+	planet_pop_assembly_mult = -0.5
+	icon = "gfx/interface/icons/planet_modifiers/pm_dimensional_horror_crisis_aftermath_modifier.dds"
+	icon_frame = 2
+}
+
+dimensional_horror_crisis_storm_aftermath_modifier_severity_3 = {
+	country_physics_research_produces_mult = 0.75
+	country_society_research_produces_mult = 0.75
+	country_engineering_research_produces_mult = 0.75
+	country_astral_threads_produces_mult = 1.5
+	country_sr_dark_matter_produces_mult = 3.75
+	planet_stability_mult = -0.75
+	planet_amenities_mult = -0.75
+	planet_housing_mult = -0.75
+	habitability_ceil_uncapped_add = -0.75
+	habitability_ceil_add = -0.75
+	habitability_floor_add = -0.75
+	logistic_growth_mult = -0.75
+	bonus_pop_growth_mult = -0.75
+	planet_pop_assembly_mult = -0.75
+	icon = "gfx/interface/icons/planet_modifiers/pm_dimensional_horror_crisis_aftermath_modifier.dds"
+	icon_frame = 2
+}

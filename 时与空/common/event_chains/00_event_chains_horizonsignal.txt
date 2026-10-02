@@ -1,0 +1,11 @@
+WORM_CHAIN_1 = {
+	icon = "gfx/interface/icons/situation_log/situation_log_akx_worm.dds"
+	picture = GFX_evt_black_hole
+	situation_log_category = horizonsignal
+}
+
+WORM_CHAIN_2 = {
+	icon = "gfx/interface/icons/situation_log/situation_log_akx_worm.dds"
+	picture = GFX_evt_black_hole
+	situation_log_category = horizonsignal
+}

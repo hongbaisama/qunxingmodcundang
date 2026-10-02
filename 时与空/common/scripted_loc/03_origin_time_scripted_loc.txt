@@ -1,0 +1,300 @@
+defined_text = {
+	name = GetLeaderTraitRulerTimeBonusRuler
+	random = no
+	text = {
+		trigger = {
+			owner = { is_auth_time_imperial = yes }
+			ruler_time_trait_gain_bonus = { TYPE = ruler }
+		}
+		localization_key = leader_trait_ruler_time_bonus_full
+	}
+	text = {
+		trigger = {
+			ruler_time_trait_gain_bonus = { TYPE = ruler }
+		}
+		localization_key = leader_trait_ruler_time_bonus_normal
+	}
+	default = leader_trait_ruler_time_bonus_none
+}
+
+defined_text = {
+	name = GetLeaderTraitRulerTimeBonusResource
+	random = no
+	text = {
+		trigger = {
+			owner = { is_auth_time_imperial = yes }
+			ruler_time_trait_gain_bonus = { TYPE = resource }
+		}
+		localization_key = leader_trait_ruler_time_bonus_full
+	}
+	text = {
+		trigger = {
+			ruler_time_trait_gain_bonus = { TYPE = resource }
+		}
+		localization_key = leader_trait_ruler_time_bonus_normal
+	}
+	default = leader_trait_ruler_time_bonus_none
+}
+
+defined_text = {
+	name = GetLeaderTraitRulerTimeBonusPrimary
+	random = no
+	text = {
+		trigger = {
+			owner = { is_auth_time_imperial = yes }
+			ruler_time_trait_gain_bonus = { TYPE = primary }
+		}
+		localization_key = leader_trait_ruler_time_bonus_full
+	}
+	text = {
+		trigger = {
+			ruler_time_trait_gain_bonus = { TYPE = primary }
+		}
+		localization_key = leader_trait_ruler_time_bonus_normal
+	}
+	default = leader_trait_ruler_time_bonus_none
+}
+
+defined_text = {
+	name = GetLeaderTraitRulerTimeBonusOther
+	random = no
+	text = {
+		trigger = {
+			owner = { is_auth_time_imperial = yes }
+			ruler_time_trait_gain_bonus = { TYPE = other }
+		}
+		localization_key = leader_trait_ruler_time_bonus_full
+	}
+	text = {
+		trigger = {
+			ruler_time_trait_gain_bonus = { TYPE = other }
+		}
+		localization_key = leader_trait_ruler_time_bonus_normal
+	}
+	default = leader_trait_ruler_time_bonus_none
+}
+
+defined_text = {
+	name = GetLeaderTraitRulerTimeTooltip
+	random = no
+	text = {
+		trigger = {
+			has_leader_flag = trapped_in_situation_pc_time
+		}
+		localization_key = origin_time_ruler_is_trapped
+	}
+	text = {
+		trigger = {
+			owner = { is_auth_time_democratic = no }
+		}
+		localization_key = time_trait_for_ruler_tooltip
+	}
+	text = {
+		trigger = {
+			is_councilor = yes
+		}
+		localization_key = time_trait_for_councilor_enabled
+	}
+	text = {
+		trigger = {
+			is_councilor = no
+		}
+		localization_key = time_trait_for_councilor_disabled
+	}
+	default = time_trait_for_ruler_disabled
+}
+
+defined_text = {
+	name = GetLeaderTraitRulerTimeTooltipSpecial
+	random = no
+	text = {
+		trigger = {
+			has_leader_flag = trapped_in_situation_pc_time
+		}
+		localization_key = origin_time_ruler_is_trapped
+	}
+	text = {
+		trigger = {
+			owner = { is_auth_time_democratic = no }
+		}
+		localization_key = time_trait_for_ruler_tooltip
+	}
+	text = {
+		trigger = {
+			is_ruler = yes
+			owner = { is_galactic_emperor = yes }
+		}
+		localization_key = time_trait_for_councilor_enabled_emperor
+	}
+	text = {
+		trigger = {
+			is_ruler = yes
+			owner = { is_galactic_custodian = yes }
+		}
+		localization_key = time_trait_for_councilor_enabled_custodian
+	}
+	text = {
+		trigger = {
+			is_councilor = yes
+		}
+		localization_key = time_trait_for_councilor_enabled
+	}
+	text = {
+		trigger = {
+			is_councilor = no
+		}
+		localization_key = time_trait_for_councilor_disabled
+	}
+	default = time_trait_for_ruler_disabled
+}
+
+defined_text = {
+	name = GetPcTimeModifierLoc
+	default = pc_time_modifier_loc
+}
+
+defined_text = {
+	name = GetPcEndlessTimeModifierLoc
+	default = pc_endless_time_modifier_loc
+}
+
+defined_text = {
+	name = GetTimeResearcherWeightMaxLoc
+	value = value:num_time_researcher_modifier_loc_value_weight_max
+}
+
+defined_text = {
+	name = GetTimeResearcherWeightUsageLoc
+	value = value:num_time_researcher_modifier_loc_value_weight_usage
+}
+
+defined_text = {
+	name = GetColTimeMultLoc
+	value = value:num_time_researcher_modifier_loc_value_good|MODIFIER|col_time_mult|
+}
+
+defined_text = {
+	name = GetTimeResearcherEnergyProducesLoc
+	value = value:num_time_researcher_modifier_loc_value_good|MODIFIER|time_researcher_energy_produces_mult|
+}
+
+defined_text = {
+	name = GetTimeResearcherMineralsProducesLoc
+	value = value:num_time_researcher_modifier_loc_value_good|MODIFIER|time_researcher_minerals_produces_mult|
+}
+
+defined_text = {
+	name = GetTimeResearcherFoodProducesLoc
+	value = value:num_time_researcher_modifier_loc_value_good|MODIFIER|time_researcher_food_produces_mult|
+}
+
+defined_text = {
+	name = GetTimeResearcherConsumerGoodsProducesLoc
+	value = value:num_time_researcher_modifier_loc_value_good|MODIFIER|time_researcher_consumer_goods_produces_mult|
+}
+
+defined_text = {
+	name = GetTimeResearcherAlloysProducesLoc
+	value = value:num_time_researcher_modifier_loc_value_good|MODIFIER|time_researcher_alloys_produces_mult|
+}
+
+defined_text = {
+	name = GetTimeResearcherUnityProducesLoc
+	value = value:num_time_researcher_modifier_loc_value_good|MODIFIER|time_researcher_unity_produces_mult|
+}
+
+defined_text = {
+	name = GetTimeResearcherPhysicsResearchProducesLoc
+	value = value:num_time_researcher_modifier_loc_value_good|MODIFIER|time_researcher_physics_research_produces_mult|
+}
+
+defined_text = {
+	name = GetTimeResearcherSocietyResearchProducesLoc
+	value = value:num_time_researcher_modifier_loc_value_good|MODIFIER|time_researcher_society_research_produces_mult|
+}
+
+defined_text = {
+	name = GetTimeResearcherEngineeringResearchProducesLoc
+	value = value:num_time_researcher_modifier_loc_value_good|MODIFIER|time_researcher_engineering_research_produces_mult|
+}
+
+defined_text = {
+	name = GetTimeResearcherProducesLoc
+	value = value:num_time_researcher_modifier_loc_value_good|MODIFIER|time_researcher_produces_mult|
+}
+
+defined_text = {
+	name = GetDistrictTimeUsageLoc
+	value = value:num_time_researcher_modifier_loc_value_static|MODIFIER|district_time_usage|
+}
+
+defined_text = {
+	name = GetDistrictTimeUsageCapLoc
+	value = value:num_district_time_usage_cap
+}
+
+defined_text = {
+	name = GetDistrictTimeUsagePunishmentLoc
+	value = value:num_time_researcher_modifier_loc_value_district_time_usage_punishment
+}
+
+
+
+defined_text = {
+	name = GetPcTimeModifierEndDesc
+	random = no
+	text = {
+		trigger = {
+			is_planet_class = pc_endless_time
+		}
+		localization_key = pc_time_modifier_end_desc_4
+	}
+	text = {
+		trigger = {
+			has_modifier = timesingularity
+		}
+		localization_key = pc_time_modifier_end_desc_3
+	}
+	text = {
+		trigger = {
+			has_deposit = d_time
+		}
+		localization_key = pc_time_modifier_end_desc_2
+	}
+	default = pc_time_modifier_end_desc_1
+}
+
+defined_text = {
+	name = GetLeaderTraitTimeSoulDesc
+	text = {
+		trigger = {
+			species = { has_trait = trait_time_soul_virtuality }
+		}
+		localization_key = leader_trait_time_soul_virtuality_desc
+	}
+	text = {
+		trigger = {
+			species = { has_trait = trait_time_soul_synthetic }
+		}
+		localization_key = leader_trait_time_soul_synthetic_desc
+	}
+	text = {
+		trigger = {
+			species = { has_trait = trait_time_soul_cybernetic }
+		}
+		localization_key = leader_trait_time_soul_cybernetic_desc
+	}
+	text = {
+		trigger = {
+			species = { has_trait = trait_time_soul_genetic }
+		}
+		localization_key = leader_trait_time_soul_genetic_desc
+	}
+	text = {
+		trigger = {
+			species = { has_trait = trait_time_soul_psionic }
+		}
+		localization_key = leader_trait_time_soul_psionic_desc
+	}
+	default = ""
+}

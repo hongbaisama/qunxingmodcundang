@@ -1,0 +1,20 @@
+num_corrupt_brain_value = {
+	base = 1 # 腐化主脑、腐化节点本身也要被计入为负面特质
+	add = trigger:has_base_skill
+	complex_trigger_modifier = {
+		trigger = num_leader_traits
+		parameters = {
+			negative = yes
+			count_tiers = yes
+		}
+		mult = 1
+		mode = add
+	}
+	multiply = $MULT|0.5$
+}
+
+corrupt_brain_situation_progress_value = {
+	base = $PROGRESS$
+	max = trigger:situation_progress
+	multiply = -1
+}

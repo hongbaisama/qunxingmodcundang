@@ -1,0 +1,54 @@
+category = $CATEGORY$
+is_capped_by_modifier = no
+count_as_available_for_ai = yes
+can_be_automated = no
+
+swappable_data = {
+	default = {
+		building_icon = building_ancient_ward_1
+		icon = cruise_passenger_unemployment
+	}
+	swap_type = {
+		trigger = {
+			colony? = { has_building = building_time_shelter_capital_2 }
+		}
+		building_icon = building_ancient_ward_2
+		weight = 5
+	}
+	swap_type = {
+		trigger = {
+			colony? = { has_building = building_time_shelter_capital_3 }
+		}
+		building_icon = building_psionic_suppressor
+		weight = 10
+	}
+}
+
+tags = { amenities }
+
+possible_pre_triggers = {
+	has_owner = yes
+	is_enslaved = no
+	is_being_purged = no
+	is_being_assimilated = no
+	is_sapient = yes
+}
+
+possible = {
+	colony? = { is_planet_class = pc_time_shelter }
+	hidden_trigger = { exists = owner }
+	owner = { is_gestalt = $GESTALT$ }
+}
+
+resources = {
+	category = planet_time_shelter_visitor_unemployments
+}
+
+triggered_planet_modifier = {
+	planet_amenities_add = 50
+	mult = value:scripted_modifier_mult|MODIFIER|pop_job_amenities_mult|
+}
+
+weight = {
+	weight = 10
+}

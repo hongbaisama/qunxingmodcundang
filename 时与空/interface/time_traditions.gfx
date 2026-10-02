@@ -1,0 +1,414 @@
+spriteTypes = {
+	spriteType = {
+		name = "GFX_arrow_merge_reverse"
+		textureFile = "gfx/interface/traditions/arrow_merge_reverse.dds"
+	}
+	
+	################################################################
+	# 负相
+	################################################################
+	
+	spriteType = {
+		name = "GFX_tradition_hex_bg_tradition_horror"
+		textureFile = "gfx/interface/traditions/tradition_hex_bg_politics.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_tradition_category_bg_tradition_horror"
+		textureFile = "gfx/interface/tiles/tradition_category_tile_horror.dds"
+	}
+	
+	corneredTileSpriteType = {
+		name = "GFX_tradition_category_tile_tradition_horror"
+		textureFile = "gfx/interface/tiles/tradition_category_tile_horror.dds"
+		borderSize = { x=140 y=140 }
+		effectFile = "gfx/FX/buttonstate_onlydisable.shader"
+	}
+	
+	spriteType = {
+		name = "GFX_tradition_category_icon_tradition_horror"
+		textureFile = "gfx/interface/icons/traditions/tree_icons/tradition_icon_horror.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_tr_horror_1"
+		textureFile = "gfx/interface/icons/traditions/tr_horror_1.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_tr_horror_2"
+		textureFile = "gfx/interface/icons/traditions/tr_horror_2.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_tr_horror_3"
+		textureFile = "gfx/interface/icons/traditions/tr_horror_3.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_tr_horror_4"
+		textureFile = "gfx/interface/icons/traditions/tr_horror_4.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_tr_horror_5"
+		textureFile = "gfx/interface/icons/traditions/tr_horror_5.dds"
+	}
+	
+	################################################################
+	# 时空
+	################################################################
+	
+	spriteType = {
+		name = "GFX_tradition_hex_bg_tradition_time"
+		textureFile = "gfx/interface/traditions/tradition_hex_bg_synthetics.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_tradition_category_bg_tradition_time"
+		textureFile = "gfx/interface/tiles/tradition_category_tile_time.dds"
+	}
+	
+	corneredTileSpriteType = {
+		name = "GFX_tradition_category_tile_tradition_time"
+		textureFile = "gfx/interface/tiles/tradition_category_tile_time.dds"
+		borderSize = { x=140 y=140 }
+		effectFile = "gfx/FX/buttonstate_onlydisable.shader"
+	}
+	
+	spriteType = {
+		name = "GFX_tradition_category_icon_tradition_time"
+		textureFile = "gfx/interface/icons/traditions/tree_icons/tradition_icon_time.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_tr_time_1"
+		textureFile = "gfx/interface/icons/traditions/tr_time_1.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_tr_time_2"
+		textureFile = "gfx/interface/icons/traditions/tr_time_2.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_tr_time_3"
+		textureFile = "gfx/interface/icons/traditions/tr_time_3.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_tr_time_4"
+		textureFile = "gfx/interface/icons/traditions/tr_time_4.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_tr_time_5"
+		textureFile = "gfx/interface/icons/traditions/tr_time_5.dds"
+	}
+	
+	################################################################
+	# 终末
+	################################################################
+	
+	spriteType = {
+		name = "GFX_tradition_hex_bg_tradition_end"
+		textureFile = "gfx/interface/traditions/tradition_hex_bg_psionics.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_tradition_category_bg_tradition_end"
+		textureFile = "gfx/interface/tiles/tradition_category_tile_end.dds"
+	}
+	
+	corneredTileSpriteType = {
+		name = "GFX_tradition_category_tile_tradition_end"
+		textureFile = "gfx/interface/tiles/tradition_category_tile_end.dds"
+		borderSize = { x=140 y=140 }
+		effectFile = "gfx/FX/buttonstate_onlydisable.shader"
+	}
+	
+	spriteType = {
+		name = "GFX_tradition_category_icon_tradition_end"
+		textureFile = "gfx/interface/icons/traditions/tree_icons/tradition_icon_end.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_tr_end_1"
+		textureFile = "gfx/interface/icons/traditions/tr_end_1.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_tr_end_2"
+		textureFile = "gfx/interface/icons/traditions/tr_end_2.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_tr_end_3"
+		textureFile = "gfx/interface/icons/traditions/tr_end_3.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_tr_end_4"
+		textureFile = "gfx/interface/icons/traditions/tr_end_4.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_tr_end_5"
+		textureFile = "gfx/interface/icons/traditions/tr_end_5.dds"
+	}
+	
+	################################################################
+	# 希望
+	################################################################
+	
+	spriteType = {
+		name = "GFX_tradition_hex_bg_tradition_hope"
+		textureFile = "gfx/interface/traditions/tradition_hex_bg_genetics.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_tradition_category_bg_tradition_hope"
+		textureFile = "gfx/interface/tiles/tradition_category_tile_hope.dds"
+	}
+	
+	corneredTileSpriteType = {
+		name = "GFX_tradition_category_tile_tradition_hope"
+		textureFile = "gfx/interface/tiles/tradition_category_tile_hope.dds"
+		borderSize = { x=140 y=140 }
+		effectFile = "gfx/FX/buttonstate_onlydisable.shader"
+	}
+	
+	spriteType = {
+		name = "GFX_tradition_category_icon_tradition_hope"
+		textureFile = "gfx/interface/icons/traditions/tree_icons/tradition_icon_hope.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_tr_hope_1"
+		textureFile = "gfx/interface/icons/traditions/tradition_adaptability_adaptive_ecology.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_tr_hope_2"
+		textureFile = "gfx/interface/icons/traditions/tradition_discovery_planetary_survey_corps.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_tr_hope_3"
+		textureFile = "gfx/interface/icons/traditions/tradition_expansion_courier_network.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_tr_hope_4"
+		textureFile = "gfx/interface/icons/traditions/tradition_aptitude_the_empire_needs_you.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_tr_hope_5"
+		textureFile = "gfx/interface/icons/traditions/tradition_synthetics_maintenance_protocols.dds"
+	}
+	
+	################################################################
+	# 奇点
+	################################################################
+	
+	spriteType = {
+		name = "GFX_tradition_hex_bg_tradition_origin_time"
+		textureFile = "gfx/interface/traditions/tradition_hex_bg_psionics.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_tradition_category_bg_tradition_origin_time"
+		textureFile = "gfx/interface/tiles/tradition_category_tile_origin_time.dds"
+	}
+	
+	corneredTileSpriteType = {
+		name = "GFX_tradition_category_tile_tradition_origin_time"
+		textureFile = "gfx/interface/tiles/tradition_category_tile_origin_time.dds"
+		borderSize = { x=140 y=140 }
+		effectFile = "gfx/FX/buttonstate_onlydisable.shader"
+	}
+	
+	spriteType = {
+		name = "GFX_tradition_category_icon_tradition_origin_time"
+		textureFile = "gfx/interface/icons/traditions/tree_icons/tradition_icon_origin_time.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_tr_origin_time_resource"
+		textureFile = "gfx/interface/icons/traditions/tradition_cybernetics_crucible_worlds.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_tr_origin_time_manufacturing"
+		textureFile = "gfx/interface/icons/traditions/tradition_versatility_spatial_optimization.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_tr_origin_time_decisions"
+		textureFile = "gfx/interface/icons/traditions/tradition_psionics_breach_shroud.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_tr_origin_time_unity"
+		textureFile = "gfx/interface/icons/traditions/tradition_harmony_mind_and_body.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_tr_origin_time_research"
+		textureFile = "gfx/interface/icons/traditions/tradition_prosperity_peak_performance.dds"
+	}
+	
+	################################################################
+	# 宁和
+	################################################################
+	
+	spriteType = {
+		name = "GFX_tradition_hex_bg_tradition_origin_tao_of_ninghe"
+		textureFile = "gfx/interface/traditions/tradition_hex_bg_harmony.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_tradition_category_bg_tradition_origin_tao_of_ninghe"
+		textureFile = "gfx/interface/tiles/tradition_category_tile_origin_tao_of_ninghe.dds"
+	}
+	
+	corneredTileSpriteType = {
+		name = "GFX_tradition_category_tile_tradition_origin_tao_of_ninghe"
+		textureFile = "gfx/interface/tiles/tradition_category_tile_origin_tao_of_ninghe.dds"
+		borderSize = { x=140 y=140 }
+		effectFile = "gfx/FX/buttonstate_onlydisable.shader"
+	}
+	
+	spriteType = {
+		name = "GFX_tradition_category_icon_tradition_origin_tao_of_ninghe"
+		textureFile = "gfx/interface/icons/traditions/tree_icons/tradition_icon_origin_tao_of_ninghe.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_tr_origin_tao_of_ninghe_building_yin"
+		textureFile = "gfx/interface/icons/traditions/tradition_discovery_polytechnic_education.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_tr_origin_tao_of_ninghe_building_yang"
+		textureFile = "gfx/interface/icons/traditions/tradition_adaptability_recycling.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_tr_origin_tao_of_ninghe_situations"
+		textureFile = "gfx/interface/icons/traditions/tradition_prosperity_interstellar_franchising.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_tr_origin_tao_of_ninghe_pure_yin"
+		textureFile = "gfx/interface/icons/traditions/tradition_psionics_shrouded_encryption.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_tr_origin_tao_of_ninghe_pure_yang"
+		textureFile = "gfx/interface/icons/traditions/tradition_psionics_mind_readers.dds"
+	}
+	
+	################################################################
+	# 重组
+	################################################################
+	
+	spriteType = {
+		name = "GFX_tradition_hex_bg_tradition_origin_reassembler"
+		textureFile = "gfx/interface/traditions/tradition_hex_bg_synthetics.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_tradition_category_bg_tradition_origin_reassembler"
+		textureFile = "gfx/interface/tiles/tradition_category_tile_origin_reassembler.dds"
+	}
+	
+	corneredTileSpriteType = {
+		name = "GFX_tradition_category_tile_tradition_origin_reassembler"
+		textureFile = "gfx/interface/tiles/tradition_category_tile_origin_reassembler.dds"
+		borderSize = { x=140 y=140 }
+		effectFile = "gfx/FX/buttonstate_onlydisable.shader"
+	}
+	
+	spriteType = {
+		name = "GFX_tradition_category_icon_tradition_origin_reassembler"
+		textureFile = "gfx/interface/icons/traditions/tree_icons/tradition_icon_origin_reassembler.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_tr_origin_reassembler_housing"
+		textureFile = "gfx/interface/icons/traditions/tradition_synthetics_solid_state_actuators.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_tr_origin_reassembler_amenities"
+		textureFile = "gfx/interface/icons/traditions/tradition_synchronicity_self_preservation.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_tr_origin_reassembler_empire_size"
+		textureFile = "gfx/interface/icons/traditions/tradition_synthetics_optimization_algorithms.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_tr_origin_reassembler_upkeep"
+		textureFile = "gfx/interface/icons/traditions/tradition_versatility_universal_compatability.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_tr_origin_reassembler_produces"
+		textureFile = "gfx/interface/icons/traditions/tradition_adaptability_survival_fittest.dds"
+	}
+	
+	################################################################
+	# 洗涤
+	################################################################
+	
+	spriteType = {
+		name = "GFX_tradition_hex_bg_tradition_origin_pure_brain"
+		textureFile = "gfx/interface/traditions/tradition_hex_bg_domination.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_tradition_category_bg_tradition_origin_pure_brain"
+		textureFile = "gfx/interface/tiles/tradition_category_tile_origin_pure_brain.dds"
+	}
+	
+	corneredTileSpriteType = {
+		name = "GFX_tradition_category_tile_tradition_origin_pure_brain"
+		textureFile = "gfx/interface/tiles/tradition_category_tile_origin_pure_brain.dds"
+		borderSize = { x=140 y=140 }
+		effectFile = "gfx/FX/buttonstate_onlydisable.shader"
+	}
+	
+	spriteType = {
+		name = "GFX_tradition_category_icon_tradition_origin_pure_brain"
+		textureFile = "gfx/interface/icons/traditions/tree_icons/tradition_icon_origin_pure_brain.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_tr_origin_pure_brain_growth"
+		textureFile = "gfx/interface/icons/traditions/tradition_cybernetics_synaptic_sub_processing.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_tr_origin_pure_brain_regulatory"
+		textureFile = "gfx/interface/icons/traditions/tradition_subterfuge_information_security.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_tr_origin_pure_brain_cognitive"
+		textureFile = "gfx/interface/icons/traditions/tradition_domination_drone_network.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_tr_origin_pure_brain_legion"
+		textureFile = "gfx/interface/icons/traditions/tradition_supremacy_war_games.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_tr_origin_pure_brain_ruler"
+		textureFile = "gfx/interface/icons/traditions/tradition_statecraft_4.dds"
+	}
+}

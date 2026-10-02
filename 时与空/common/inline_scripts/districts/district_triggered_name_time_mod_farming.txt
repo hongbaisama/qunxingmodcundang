@@ -1,0 +1,23 @@
+triggered_name = {
+	trigger = {
+		num_zones = {
+			type = zone_$TYPE$_food_biology
+			value > 0
+		}
+	}
+	text = district_$TYPE$_farming_2
+}
+
+triggered_name = {
+	trigger = {
+		num_zones = {
+			type = zone_$TYPE$_food
+			value > 0
+		}
+	}
+	text = district_$TYPE$_farming_1
+}
+
+triggered_name = {
+	text = district_$TYPE$_farming_0
+}

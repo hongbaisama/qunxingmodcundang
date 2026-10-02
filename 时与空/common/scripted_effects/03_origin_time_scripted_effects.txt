@@ -1,0 +1,1687 @@
+# 国家（root域为国家）
+agenda_time_soul_effect = {
+	set_country_flag = time_soul_$TYPE$_finished
+	every_owned_species = {
+		limit = {
+			is_same_species = prev.owner_main_species
+			has_trait = trait_time
+			is_robotic = $ROBOTIC$
+		}
+		change_species_characteristics = { remove_trait = trait_time }
+		change_species_characteristics = { add_trait = trait_time_soul_$TYPE$ }
+	}
+}
+
+# 人口组
+clear_origin_time_trait = {
+	modify_species = {
+		species = this
+		remove_trait = trait_time
+		remove_trait = trait_time_1
+		remove_trait = trait_time_2
+		remove_trait = trait_time_soul_virtuality
+		remove_trait = trait_time_soul_synthetic
+		remove_trait = trait_time_soul_cybernetic
+		remove_trait = trait_time_soul_genetic
+		remove_trait = trait_time_soul_psionic
+	}
+}
+
+# 领袖
+gain_leader_trait_time_soul = {
+	if = {
+		limit = {
+			species = { is_time_soul_species = yes }
+			is_time_soul_leader = no
+		}
+		add_trait = {
+			trait = leader_trait_time_soul
+			show_message = no
+		}
+	}
+}
+
+# 星球
+d_time_blocker_0_cleared_effect = {
+	if = {
+		limit = {
+			OR = {
+				has_deposit = d_time_resources
+				has_deposit = d_time_resources_end
+			}
+		}
+		random_list = {
+			1 = {
+				modifier = {
+					factor = 0
+					has_carrier_flag = time_blocker_cleared_1
+				}
+				set_carrier_flag = time_blocker_cleared_1
+				create_time_blocker_cleared_message = { TYPE = 1 }
+				owner = {
+					add_resource = {
+						energy = 500
+					}
+				}
+			}
+			1 = {
+				modifier = {
+					factor = 0
+					has_carrier_flag = time_blocker_cleared_2
+				}
+				set_carrier_flag = time_blocker_cleared_2
+				create_time_blocker_cleared_message = { TYPE = 2 }
+				owner = {
+					add_resource = {
+						minerals = 500
+					}
+				}
+			}
+			1 = {
+				modifier = {
+					factor = 0
+					has_carrier_flag = time_blocker_cleared_3
+				}
+				set_carrier_flag = time_blocker_cleared_3
+				create_time_blocker_cleared_message = { TYPE = 3 }
+				owner = {
+					add_resource = {
+						food = 500
+					}
+				}
+			}
+			1 = {
+				modifier = {
+					factor = 0
+					has_carrier_flag = time_blocker_cleared_4
+				}
+				set_carrier_flag = time_blocker_cleared_4
+				create_time_blocker_cleared_message = { TYPE = 4 }
+				owner = {
+					add_resource = {
+						alloys = 250
+					}
+				}
+			}
+			1 = {
+				modifier = {
+					factor = 0
+					has_carrier_flag = time_blocker_cleared_5
+				}
+				set_carrier_flag = time_blocker_cleared_5
+				create_time_blocker_cleared_message = { TYPE = 5 }
+				owner = {
+					add_resource = {
+						consumer_goods = 250
+					}
+				}
+			}
+			1 = {
+				modifier = {
+					factor = 0
+					has_carrier_flag = time_blocker_cleared_6
+				}
+				set_carrier_flag = time_blocker_cleared_6
+				create_time_blocker_cleared_message = { TYPE = 6 }
+				owner = {
+					add_resource = {
+						physics_research = 250
+						society_research = 250
+						engineering_research = 250
+					}
+				}
+			}
+			1 = {
+				modifier = {
+					factor = 0
+					has_carrier_flag = time_blocker_cleared_7
+				}
+				set_carrier_flag = time_blocker_cleared_7
+				create_time_blocker_cleared_message = { TYPE = 7 }
+				owner = {
+					add_resource = {
+						unity = 250
+					}
+				}
+			}
+			1 = {
+				modifier = {
+					factor = 0
+					has_carrier_flag = time_blocker_cleared_8
+				}
+				set_carrier_flag = time_blocker_cleared_8
+				create_time_blocker_cleared_message = { TYPE = 8 }
+				create_pop_group = {
+					species = owner.species
+					size = 10
+				}
+			}
+		}
+	}
+}
+
+# 星球
+create_time_blocker_cleared_message = {
+	owner = {
+		if = {
+			limit = {
+				NOT = { has_country_flag = hide_time_blocker_cleared_message }
+			}
+			create_message = {
+				type = TIME_BLOCKER_CLEARED
+				localization = TIME_BLOCKER_CLEARED_$TYPE$
+				days = 30
+				target = prev
+			}
+		}
+	}
+}
+
+# 星球
+set_time_blocker_0_can_be_cleared = {
+	if = {
+		limit = {
+			any_deposit = { is_deposit_type = d_time_blocker_0 }
+		}
+		custom_tooltip = clear_a_time_blocker_0
+		hidden_effect = {
+			random_deposit = {
+				limit = { is_deposit_type = d_time_blocker_0 }
+				clear_blocker = yes
+			}
+		}
+	}
+	else_if = {
+		limit = {
+			any_deposit = { is_deposit_type = d_time_blocker_1 }
+		}
+		random_deposit = {
+			limit = { is_deposit_type = d_time_blocker_1 }
+			clear_blocker = yes
+		}
+	}
+	else = {
+		owner = {
+			add_resource = {
+				energy = 500
+				minerals = 500
+				food = 500
+				consumer_goods = 250
+				alloys = 250
+				sr_dark_matter = 25
+			}
+		}
+	}
+}
+
+# 星球
+make_district_time_level_up = {
+	if = {
+		limit = {
+			check_variable = {
+				which = district_time_level_up
+				value < @district_time_level_max
+			}
+		}
+		custom_tooltip = district_time_level_up
+		hidden_effect = {
+			change_variable = {
+				which = district_time_level_up
+				value = 1
+			}
+		}
+	}
+	else_if = {
+		limit = {
+			free_district_slots >= 1
+		}
+		add_district = district_time
+	}
+	else = {
+		owner = {
+			add_resource = {
+				energy = 500
+				minerals = 500
+				food = 500
+				consumer_goods = 250
+				alloys = 250
+				sr_dark_matter = 25
+			}
+		}
+	}
+}
+
+# 星球
+clear_focus_on_black_hole_researcher_flag = {
+	remove_carrier_flag = focus_on_black_hole_physicist
+	remove_carrier_flag = focus_on_black_hole_biologist
+	remove_carrier_flag = focus_on_black_hole_engineer
+}
+
+# 星球
+finish_pc_endless_time = {
+	# 星球设置
+	while = {
+		limit = {
+			num_districts = {
+				type = district_time
+				value > 1
+			}
+		}
+		remove_district = district_time
+	}
+	while = {
+		limit = {
+			num_districts = {
+				type = district_time_physics
+				value > 1
+			}
+		}
+		remove_district = district_time_physics
+	}
+	while = {
+		limit = {
+			num_districts = {
+				type = district_time_society
+				value > 1
+			}
+		}
+		remove_district = district_time_society
+	}
+	while = {
+		limit = {
+			num_districts = {
+				type = district_time_engineering
+				value > 1
+			}
+		}
+		remove_district = district_time_engineering
+	}
+	remove_deposit = d_time
+	add_time_special_deposit_keep_on_terraform = { DEPOSIT = d_endless_time }
+	change_pc = pc_endless_time
+	remove_modifier = timesingularity
+	set_planet_size = 0
+	validate_planet_buildings_and_districts = yes
+	save_global_event_target_as = time_dimensional_horror_planet
+	if = {
+		limit = {
+			is_capital = yes
+		}
+		set_colony_type = col_endless_time_capital
+		set_colony_type = none # 更新星球规划的同时改用自动规划
+	}
+	every_owned_pop_group = {
+		limit = {
+			is_origin_time_species = yes
+		}
+		if = {
+			limit = {
+				is_robot_pop_group = no
+			}
+			modify_species = {
+				species = this
+				ideal_planet_class = pc_endless_time
+			}
+		}
+		else = {
+			modify_species = {
+				species = this
+				remove_trait = trait_dry_planet_preference
+				remove_trait = trait_wet_planet_preference
+				remove_trait = trait_cold_planet_preference
+				remove_trait = trait_pc_time_preference
+				add_trait = trait_pc_endless_time_preference
+			}
+		}
+	}
+	carrier_event = { id = time.50 days = 1080 random = 1440 }
+	# 国家设置
+	owner = {
+		save_global_event_target_as = time_dimensional_horror_owner
+		set_country_flag = situation_origin_time_finished
+		create_timeline_pc_endless_time = yes
+		if = {
+			limit = {
+				has_origin_time_ruler = yes
+			}
+			switch = {
+				trigger = has_country_flag
+				time_soul_virtuality_finished = { set_origin = origin_endless_time_virtuality }
+				time_soul_synthetic_finished = { set_origin = origin_endless_time_synthetic }
+				time_soul_cybernetic_finished = { set_origin = origin_endless_time_cybernetic }
+				time_soul_genetic_finished = { set_origin = origin_endless_time_genetic }
+				time_soul_psionic_finished = { set_origin = origin_endless_time_psionic }
+			}
+			if = {
+				limit = {
+					is_normal_origin_time_authority = yes
+				}
+				set_country_flag = unlock_auth_endless_time
+				advanced_authority_refresh = yes
+			}
+		}
+	}
+	# 时之螶设置
+	create_country = {
+		name = "NAME_The_Loop"
+		type = faction
+		auto_delete = no
+		use_hostilities_from = event_target:time_dimensional_horror_owner
+		flag = {
+			icon= {
+				category = "special"
+				file = "extradimensional_02.dds"
+			}
+			background= {
+				category = "backgrounds"
+				file = "circle.dds"
+			}
+			colors={
+				"black"
+				"red"
+				"null"
+				"null"
+			}
+		}
+		effect = {
+			add_modifier = {
+				modifier = time_dimensional_horror_modifier
+				days = -1
+			}
+			establish_communications_no_message = event_target:time_dimensional_horror_owner
+			establish_contact = { who = event_target:time_dimensional_horror_owner location = root }
+			set_faction_hostility = {
+				target = event_target:time_dimensional_horror_owner
+				set_hostile = no
+				set_neutral = no
+				set_friendly = yes
+			}
+			save_global_event_target_as = time_dimensional_horror_country
+			create_time_dimensional_horror_end_fleet = yes
+		}
+	}
+	# 星系设置
+	solar_system = {
+		if = {
+			limit = {
+				has_star_flag = time_core_system
+			}
+			set_star_class = sc_endless_time_core
+		}
+		else = {
+			set_star_flag = lcluster
+			set_star_class = sc_endless_time
+		}
+		time_remove_neighbor_hyperlane = yes
+	}
+}
+
+# 任意
+create_time_dimensional_horror_end_fleet = {
+	create_fleet = {
+		name = "NAME_TIME_IS_SIGHT_GRAVITY_IS_DESIRE"
+		settings = {
+			can_upgrade = no
+			can_change_composition = no
+			uses_naval_capacity = no
+			can_disband = no
+			spawn_debris = no
+			is_ultra_boss = yes
+		}
+		effect = {
+			set_owner = event_target:time_dimensional_horror_country
+			create_ship = {
+				name = NAME_Worm_in_Waiting
+				design = NAME_Time_Dimensional_Horror_END
+				prefix = no
+				upgradable = no
+			}
+			set_location = {
+				target = event_target:time_dimensional_horror_planet
+				distance = 0
+				direction = in_system
+			}
+			save_global_event_target_as = time_dimensional_horror_fleet
+		}
+	}
+}
+
+# 星球（仅初始母星使用）
+reroll_pc_time_deposits = {
+	clear_deposits_and_orbital_station = yes
+	add_time_special_deposit_keep_on_terraform = { DEPOSIT = d_time_resources } # 未来宫殿
+	add_time_special_deposit_keep_on_terraform = { DEPOSIT = d_time_blocker_2 } # 引力屏障
+	while = {
+		count = 6
+		add_time_special_deposit_keep_on_terraform = { DEPOSIT = d_time_blocker_0 } # 引力漩涡
+	}
+}
+
+# 星球
+search_pc_time_deposits = {
+	reroll_random = yes
+	random_list = {
+		1 = {
+			inline_script = {
+				script = weights/search_pc_time_deposits
+				DEPOSIT = d_time_energy
+			}
+		}
+		1 = {
+			inline_script = {
+				script = weights/search_pc_time_deposits
+				DEPOSIT = d_time_minerals
+			}
+		}
+		1 = {
+			inline_script = {
+				script = weights/search_pc_time_deposits
+				DEPOSIT = d_time_food
+			}
+		}
+		1 = {
+			inline_script = {
+				script = weights/search_pc_time_deposits
+				DEPOSIT = d_time_alloys
+			}
+		}
+		1 = {
+			inline_script = {
+				script = weights/search_pc_time_deposits
+				DEPOSIT = d_time_consumer_goods
+			}
+		}
+		1 = {
+			inline_script = {
+				script = weights/search_pc_time_deposits
+				DEPOSIT = d_time_physics_research
+			}
+		}
+		1 = {
+			inline_script = {
+				script = weights/search_pc_time_deposits
+				DEPOSIT = d_time_society_research
+			}
+		}
+		1 = {
+			inline_script = {
+				script = weights/search_pc_time_deposits
+				DEPOSIT = d_time_engineering_research
+			}
+		}
+		1 = {
+			inline_script = {
+				script = weights/search_pc_time_deposits
+				DEPOSIT = d_time_unity
+			}
+		}
+	}
+}
+
+# 国家
+give_situation_pc_time_next_physics_tech = {
+	if = {
+		limit = {
+			NOT = { has_technology = tech_power_hub_1 }
+		}
+		add_tech_option_or_research_effect = {
+			TECH = tech_power_hub_1
+			PROGRESS = 0.2
+			CATEGORY = physics_research
+		}
+	}
+	else = {
+		add_tech_option_or_research_effect = {
+			TECH = tech_power_hub_2
+			PROGRESS = 0.2
+			CATEGORY = physics_research
+		}
+	}
+	if = {
+		limit = {
+			NOT = { has_technology = tech_luxuries_1 }
+		}
+		add_tech_option_or_research_effect = {
+			TECH = tech_luxuries_1
+			PROGRESS = 0.2
+			CATEGORY = physics_research
+		}
+	}
+	else = {
+		add_tech_option_or_research_effect = {
+			TECH = tech_luxuries_2
+			PROGRESS = 0.2
+			CATEGORY = physics_research
+		}
+	}
+	if = {
+		limit = {
+			NOT = { has_technology = tech_physics_1 }
+		}
+		add_tech_option_or_research_effect = {
+			TECH = tech_physics_1
+			PROGRESS = 0.2
+			CATEGORY = physics_research
+		}
+	}
+	else = {
+		add_tech_option_or_research_effect = {
+			TECH = tech_physics_2
+			PROGRESS = 0.2
+			CATEGORY = physics_research
+		}
+	}
+}
+
+# 国家
+give_situation_pc_time_next_society_tech = {
+	if = {
+		limit = {
+			NOT = { has_technology = tech_food_processing_1 }
+		}
+		add_tech_option_or_research_effect = {
+			TECH = tech_food_processing_1
+			PROGRESS = 0.2
+			CATEGORY = society_research
+		}
+	}
+	else = {
+		add_tech_option_or_research_effect = {
+			TECH = tech_food_processing_2
+			PROGRESS = 0.2
+			CATEGORY = society_research
+		}
+	}
+	if = {
+		limit = {
+			NOT = { has_technology = tech_adaptive_bureaucracy }
+		}
+		add_tech_option_or_research_effect = {
+			TECH = tech_adaptive_bureaucracy
+			PROGRESS = 0.2
+			CATEGORY = society_research
+		}
+	}
+	else = {
+		add_tech_option_or_research_effect = {
+			TECH = tech_effective_bureaucracy
+			PROGRESS = 0.2
+			CATEGORY = society_research
+		}
+	}
+	if = {
+		limit = {
+			NOT = { has_technology = tech_society_1 }
+		}
+		add_tech_option_or_research_effect = {
+			TECH = tech_society_1
+			PROGRESS = 0.2
+			CATEGORY = society_research
+		}
+	}
+	else = {
+		add_tech_option_or_research_effect = {
+			TECH = tech_society_2
+			PROGRESS = 0.2
+			CATEGORY = society_research
+		}
+	}
+}
+
+# 国家
+give_situation_pc_time_next_engineering_tech = {
+	if = {
+		limit = {
+			NOT = { has_technology = tech_mineral_purification_1 }
+		}
+		add_tech_option_or_research_effect = {
+			TECH = tech_mineral_purification_1
+			PROGRESS = 0.2
+			CATEGORY = engineering_research
+		}
+	}
+	else = {
+		add_tech_option_or_research_effect = {
+			TECH = tech_mineral_purification_2
+			PROGRESS = 0.2
+			CATEGORY = engineering_research
+		}
+	}
+	if = {
+		limit = {
+			NOT = { has_technology = tech_alloys_1 }
+		}
+		add_tech_option_or_research_effect = {
+			TECH = tech_alloys_1
+			PROGRESS = 0.2
+			CATEGORY = engineering_research
+		}
+	}
+	else = {
+		add_tech_option_or_research_effect = {
+			TECH = tech_alloys_2
+			PROGRESS = 0.2
+			CATEGORY = engineering_research
+		}
+	}
+	if = {
+		limit = {
+			NOT = { has_technology = tech_engineering_1 }
+		}
+		add_tech_option_or_research_effect = {
+			TECH = tech_engineering_1
+			PROGRESS = 0.2
+			CATEGORY = engineering_research
+		}
+	}
+	else = {
+		add_tech_option_or_research_effect = {
+			TECH = tech_engineering_2
+			PROGRESS = 0.2
+			CATEGORY = engineering_research
+		}
+	}
+}
+
+# 国家
+give_situation_pc_time_reward = {
+	give_situation_pc_time_reward_$LEVEL$ = yes
+}
+
+# 国家
+give_situation_pc_time_reward_1 = {
+	add_monthly_resource_mult = {
+		resource = physics_research
+		value = @tier1researchreward
+		min = @tier1researchmin
+		max = @tier1researchmax
+	}
+	add_monthly_resource_mult = {
+		resource = society_research
+		value = @tier1researchreward
+		min = @tier1researchmin
+		max = @tier1researchmax
+	}
+	add_monthly_resource_mult = {
+		resource = engineering_research
+		value = @tier1researchreward
+		min = @tier1researchmin
+		max = @tier1researchmax
+	}
+	add_monthly_resource_mult = {
+		resource = unity
+		value = @tier1unityreward
+		min = @tier1unitymin
+		max = @tier1unitymax
+	}
+	if = {
+		limit = {
+			NOT = { has_technology = tech_time_blocker_1 }
+		}
+		add_tech_progress = {
+			tech = tech_time_blocker_1
+			progress = 0.2
+		}
+	}
+}
+
+# 国家
+give_situation_pc_time_reward_2 = {
+	add_monthly_resource_mult = {
+		resource = physics_research
+		value = @tier2researchreward
+		min = @tier2researchmin
+		max = @tier2researchmax
+	}
+	add_monthly_resource_mult = {
+		resource = society_research
+		value = @tier2researchreward
+		min = @tier2researchmin
+		max = @tier2researchmax
+	}
+	add_monthly_resource_mult = {
+		resource = engineering_research
+		value = @tier2researchreward
+		min = @tier2researchmin
+		max = @tier2researchmax
+	}
+	add_monthly_resource_mult = {
+		resource = unity
+		value = @tier2unityreward
+		min = @tier2unitymin
+		max = @tier2unitymax
+	}
+}
+
+# 国家
+give_situation_pc_time_reward_3 = {
+	add_monthly_resource_mult = {
+		resource = physics_research
+		value = @tier4researchreward
+		min = @tier4researchmin
+		max = @tier4researchmax
+	}
+	add_monthly_resource_mult = {
+		resource = society_research
+		value = @tier4researchreward
+		min = @tier4researchmin
+		max = @tier4researchmax
+	}
+	add_monthly_resource_mult = {
+		resource = engineering_research
+		value = @tier4researchreward
+		min = @tier4researchmin
+		max = @tier4researchmax
+	}
+	add_monthly_resource_mult = {
+		resource = unity
+		value = @tier4unityreward
+		min = @tier4unitymin
+		max = @tier4unitymax
+	}
+}
+
+# 局势
+save_situation_pc_time_approach = {
+	switch = {
+		trigger = current_situation_approach
+		approach_pc_time_encourage = {
+			set_situation_flag = approach_pc_time_encourage
+		}
+		approach_pc_time_default = {
+			set_situation_flag = approach_pc_time_default
+		}
+		approach_pc_time_discourage = {
+			set_situation_flag = approach_pc_time_discourage
+		}
+		default = {
+		}
+	}
+	set_situation_approach = approach_pc_time_discourage
+}
+
+# 局势
+load_situation_pc_time_approach = {
+	if = {
+		limit = {
+			current_situation_approach = approach_pc_time_discourage
+		}
+		switch = {
+			trigger = has_situation_flag
+			approach_pc_time_encourage = {
+				set_situation_approach = approach_pc_time_encourage
+			}
+			approach_pc_time_default = {
+				set_situation_approach = approach_pc_time_default
+			}
+			approach_pc_time_discourage = {
+				set_situation_approach = approach_pc_time_discourage
+			}
+			default = {
+			}
+		}
+	}
+	hidden_effect = {
+		remove_situation_flag = approach_pc_time_encourage
+		remove_situation_flag = approach_pc_time_default
+		remove_situation_flag = approach_pc_time_discourage
+	}
+}
+
+# 局势
+refresh_time_ethic_power_variable = {
+	clear_variable = time_authoritarian_power
+	clear_variable = time_egalitarian_power
+	clear_variable = time_spiritualist_power
+	clear_variable = time_materialist_power
+	clear_variable = time_militarist_power
+	clear_variable = time_pacifist_power
+	clear_variable = time_xenophobe_power
+	clear_variable = time_xenophile_power
+	target = {
+		every_owned_pop_group = {
+			limit = {
+				is_origin_time_species = yes
+			}
+			change_time_ethic_power_variable = { ETHIC = authoritarian }
+			change_time_ethic_power_variable = { ETHIC = egalitarian }
+			change_time_ethic_power_variable = { ETHIC = spiritualist }
+			change_time_ethic_power_variable = { ETHIC = materialist }
+			change_time_ethic_power_variable = { ETHIC = militarist }
+			change_time_ethic_power_variable = { ETHIC = pacifist }
+			change_time_ethic_power_variable = { ETHIC = xenophobe }
+			change_time_ethic_power_variable = { ETHIC = xenophile }
+		}
+	}
+}
+
+# 人口组
+change_time_ethic_power_variable = {
+	event_target:situation_time_black_hole_chain = {
+		change_variable = {
+			which = time_$ETHIC$_power
+			value = prev.value:time_ethic_power|ETHIC|$ETHIC$|
+		}
+	}
+}
+
+# 星球
+shift_random_pop_time_ethic = {
+	every_owned_pop_group = {
+		limit = {
+			has_any_ethic = yes
+		}
+		pop_group_add_ethic_effect = {
+			POP_GROUP = this
+			ETHOS = ethic_$ETHIC$
+			PERCENTAGE = $PERCENTAGE$
+			RANDOM = 0
+		}
+	}
+}
+
+# 局势
+time_ethic_win = {
+	set_situation_flag = is_winner # 防止影响下一次抽取
+	destroy_situation = this
+	event_target:situation_time_black_hole_chain = {
+		set_situation_flag = $ETHIC$_is_winner
+		if = {
+			limit = {
+				NOT = { has_situation_flag = exist_first_winner }
+			}
+			owner = { set_country_flag = $ETHIC$_is_first_winner }
+			set_situation_flag = $ETHIC$_is_first_winner
+			set_situation_flag = exist_first_winner
+		}
+		else = {
+			owner = { set_country_flag = $ETHIC$_is_second_winner }
+			set_situation_flag = $ETHIC$_is_second_winner
+			set_situation_flag = exist_second_winner
+			situation_event = { id = time.292 }
+		}
+	}
+}
+
+# 局势
+check_time_ethic_winner = {
+	if = {
+		limit = {
+			has_situation_flag = exist_second_winner
+		}
+		# 无事发生
+	}
+	else_if = {
+		limit = {
+			has_situation_flag = exist_first_winner
+		}
+		choose_time_ethic_winner = { TYPE = second }
+	}
+	else = {
+		choose_time_ethic_winner = { TYPE = first }
+		choose_time_ethic_winner = { TYPE = second }
+	}
+}
+
+# 局势
+choose_time_ethic_winner = {
+	owner = {
+		ordered_situation = {
+			limit = {
+				OR = {
+					is_same_value = event_target:situation_time_authoritarian_vs_egalitarian
+					is_same_value = event_target:situation_time_spiritualist_vs_materialist
+					is_same_value = event_target:situation_time_militarist_vs_pacifist
+					is_same_value = event_target:situation_time_xenophobe_vs_xenophile
+				}
+				NOT = { has_situation_flag = is_winner }
+			}
+			position = 0
+			order_by = value:time_ethic_score
+			set_situation_flag = is_winner # 防止影响下一次抽取
+			switch = {
+				trigger = is_same_value
+				event_target:situation_time_authoritarian_vs_egalitarian = {
+					save_as_time_ethic_winner = {
+						ETHIC_1 = authoritarian
+						ETHIC_2 = egalitarian
+						TYPE = $TYPE$
+					}
+				}
+				event_target:situation_time_spiritualist_vs_materialist = {
+					save_as_time_ethic_winner = {
+						ETHIC_1 = spiritualist
+						ETHIC_2 = materialist
+						TYPE = $TYPE$
+					}
+				}
+				event_target:situation_time_militarist_vs_pacifist = {
+					save_as_time_ethic_winner = {
+						ETHIC_1 = militarist
+						ETHIC_2 = pacifist
+						TYPE = $TYPE$
+					}
+				}
+				event_target:situation_time_xenophobe_vs_xenophile = {
+					save_as_time_ethic_winner = {
+						ETHIC_1 = xenophobe
+						ETHIC_2 = xenophile
+						TYPE = $TYPE$
+					}
+				}
+			}
+		}
+	}
+}
+
+# 局势
+save_as_time_ethic_winner = {
+	if = {
+		limit = {
+			situation_progress <= 500
+		}
+		event_target:situation_time_black_hole_chain = {
+			set_situation_flag = $ETHIC_1$_is_winner
+			set_situation_flag = $ETHIC_1$_is_$TYPE$_winner
+			set_situation_flag = exist_$TYPE$_winner
+			owner = { set_country_flag = $ETHIC_1$_is_$TYPE$_winner }
+		}
+	}
+	else = {
+		event_target:situation_time_black_hole_chain = {
+			set_situation_flag = $ETHIC_2$_is_winner
+			set_situation_flag = $ETHIC_2$_is_$TYPE$_winner
+			set_situation_flag = exist_$TYPE$_winner
+			owner = { set_country_flag = $ETHIC_2$_is_$TYPE$_winner }
+		}
+	}
+}
+
+# 局势
+choose_time_new_authority = {
+	if = {
+		limit = {
+			has_situation_flag = situation_time_death
+			OR = {
+				has_situation_flag = authoritarian_is_winner
+				AND = {
+					has_situation_flag = spiritualist_is_winner
+					owner = { is_megacorp = no }
+				}
+			}
+			NOT = { has_situation_flag = egalitarian_is_winner }
+		}
+		set_situation_flag = auth_time_imperial
+	}
+	else_if = {
+		limit = {
+			has_situation_flag = situation_time_death
+			OR = {
+				has_situation_flag = egalitarian_is_winner
+				AND = {
+					has_situation_flag = materialist_is_winner
+					owner = { is_megacorp = no }
+				}
+			}
+			NOT = { has_situation_flag = authoritarian_is_winner }
+		}
+		set_situation_flag = auth_time_democratic
+	}
+	else_if = {
+		limit = {
+			has_situation_flag = situation_time_death
+			OR = {
+				has_situation_flag = xenophile_is_winner
+				owner = { is_megacorp = yes }
+			}
+		}
+		set_situation_flag = auth_time_corporate
+	}
+	else_if = {
+		limit = {
+			has_situation_flag = authoritarian_is_winner
+			OR = {
+				has_situation_flag = spiritualist_is_winner
+				has_situation_flag = militarist_is_winner
+				has_situation_flag = xenophobe_is_winner
+			}
+		}
+		set_situation_flag = auth_imperial
+	}
+	else_if = {
+		limit = {
+			has_situation_flag = egalitarian_is_winner
+			OR = {
+				has_situation_flag = materialist_is_winner
+				has_situation_flag = pacifist_is_winner
+				has_situation_flag = xenophile_is_winner
+				has_situation_flag = egalitarian_is_first_winner # 极端平等只能民主制
+			}
+		}
+		set_situation_flag = auth_democratic
+	}
+	else_if = {
+		limit = {
+			owner = { is_megacorp = yes }
+		}
+		set_situation_flag = auth_corporate
+	}
+	else_if = {
+		limit = {
+			has_situation_flag = authoritarian_is_winner
+		}
+		set_situation_flag = auth_dictatorial
+	}
+	else_if = {
+		limit = {
+			has_situation_flag = egalitarian_is_winner
+		}
+		set_situation_flag = auth_oligarchic
+	}
+	else_if = {
+		limit = {
+			has_situation_flag = xenophile_is_winner
+		}
+		set_situation_flag = auth_corporate
+	}
+	else_if = {
+		limit = {
+			has_situation_flag = situation_time_death
+		}
+		set_situation_flag = auth_dictatorial
+	}
+	else = {
+		set_situation_flag = auth_oligarchic
+	}
+}
+
+# 局势
+set_time_new_ethic = {
+	show_time_new_ethic = yes
+	hidden_effect = {
+		owner = { clear_ethos = yes }
+		add_time_ethic = yes
+	}
+}
+
+# 局势
+add_time_ethic = {
+	switch = {
+		trigger = has_situation_flag
+		authoritarian_is_second_winner = {
+			shift_time_ethic = { ETHIC = authoritarian }
+		}
+		egalitarian_is_second_winner = {
+			shift_time_ethic = { ETHIC = egalitarian }
+		}
+		spiritualist_is_second_winner = {
+			shift_time_ethic = { ETHIC = spiritualist }
+		}
+		materialist_is_second_winner = {
+			shift_time_ethic = { ETHIC = materialist }
+		}
+		militarist_is_second_winner = {
+			shift_time_ethic = { ETHIC = militarist }
+		}
+		pacifist_is_second_winner = {
+			shift_time_ethic = { ETHIC = pacifist }
+		}
+		xenophobe_is_second_winner = {
+			shift_time_ethic = { ETHIC = xenophobe }
+		}
+		xenophile_is_second_winner = {
+			shift_time_ethic = { ETHIC = xenophile }
+		}
+	}
+	switch = {
+		trigger = has_situation_flag
+		authoritarian_is_first_winner = {
+			shift_time_fanatic_ethic = { ETHIC = authoritarian }
+		}
+		egalitarian_is_first_winner = {
+			shift_time_fanatic_ethic = { ETHIC = egalitarian }
+		}
+		spiritualist_is_first_winner = {
+			shift_time_fanatic_ethic = { ETHIC = spiritualist }
+		}
+		materialist_is_first_winner = {
+			shift_time_fanatic_ethic = { ETHIC = materialist }
+		}
+		militarist_is_first_winner = {
+			shift_time_fanatic_ethic = { ETHIC = militarist }
+		}
+		pacifist_is_first_winner = {
+			shift_time_fanatic_ethic = { ETHIC = pacifist }
+		}
+		xenophobe_is_first_winner = {
+			shift_time_fanatic_ethic = { ETHIC = xenophobe }
+		}
+		xenophile_is_first_winner = {
+			shift_time_fanatic_ethic = { ETHIC = xenophile }
+		}
+	}
+}
+
+# 局势
+shift_time_ethic = {
+	owner = { country_add_ethic = ethic_$ETHIC$ }
+}
+
+# 局势
+shift_time_fanatic_ethic = {
+	owner = { country_add_ethic = ethic_fanatic_$ETHIC$ }
+}
+
+# 局势（按显示的写法未必能准确获得需要的思潮，需要额外的写法）
+show_time_new_ethic = {
+	tooltip = {
+		switch = {
+			trigger = has_situation_flag
+			authoritarian_is_first_winner = {
+				owner = { shift_ethic = ethic_fanatic_authoritarian }
+			}
+			egalitarian_is_first_winner = {
+				owner = { shift_ethic = ethic_fanatic_egalitarian }
+			}
+			spiritualist_is_first_winner = {
+				owner = { shift_ethic = ethic_fanatic_spiritualist }
+			}
+			materialist_is_first_winner = {
+				owner = { shift_ethic = ethic_fanatic_materialist }
+			}
+			militarist_is_first_winner = {
+				owner = { shift_ethic = ethic_fanatic_militarist }
+			}
+			pacifist_is_first_winner = {
+				owner = { shift_ethic = ethic_fanatic_pacifist }
+			}
+			xenophobe_is_first_winner = {
+				owner = { shift_ethic = ethic_fanatic_xenophobe }
+			}
+			xenophile_is_first_winner = {
+				owner = { shift_ethic = ethic_fanatic_xenophile }
+			}
+		}
+		switch = {
+			trigger = has_situation_flag
+			authoritarian_is_second_winner = {
+				owner = { shift_ethic = ethic_authoritarian }
+			}
+			egalitarian_is_second_winner = {
+				owner = { shift_ethic = ethic_egalitarian }
+			}
+			spiritualist_is_second_winner = {
+				owner = { shift_ethic = ethic_spiritualist }
+			}
+			materialist_is_second_winner = {
+				owner = { shift_ethic = ethic_materialist }
+			}
+			militarist_is_second_winner = {
+				owner = { shift_ethic = ethic_militarist }
+			}
+			pacifist_is_second_winner = {
+				owner = { shift_ethic = ethic_pacifist }
+			}
+			xenophobe_is_second_winner = {
+				owner = { shift_ethic = ethic_xenophobe }
+			}
+			xenophile_is_second_winner = {
+				owner = { shift_ethic = ethic_xenophile }
+			}
+		}
+	}
+}
+
+# 局势
+set_time_new_authority = {
+	switch = {
+		trigger = has_situation_flag
+		auth_time_imperial = {
+			owner = { set_country_flag = unlock_auth_time_imperial }
+			set_time_auth_imperial = yes
+			owner = {
+				create_timeline_time_change_auth_time_imperial = yes
+				custom_tooltip = change_auth_time_imperial
+			}
+		}
+		auth_time_democratic = {
+			owner = { set_country_flag = unlock_auth_time_democratic }
+			set_time_auth_democratic = yes
+			owner = {
+				create_timeline_time_change_auth_time_democratic = yes
+				custom_tooltip = change_auth_time_democratic
+			}
+		}
+		auth_time_corporate = {
+			owner = { set_country_flag = unlock_auth_time_corporate }
+			set_time_auth_corporate = yes
+			owner = {
+				create_timeline_time_change_auth_time_corporate = yes
+				custom_tooltip = change_auth_time_corporate
+			}
+		}
+		auth_imperial = {
+			set_time_auth_imperial = yes
+			owner = { create_timeline_time_change_auth_imperial = yes }
+		}
+		auth_dictatorial = {
+			set_time_auth_dictatorial = yes
+			owner = { create_timeline_time_change_auth_dictatorial = yes }
+		}
+		auth_oligarchic = {
+			set_time_auth_oligarchic = yes
+			owner = { create_timeline_time_change_auth_oligarchic = yes }
+		}
+		auth_democratic = {
+			set_time_auth_democratic = yes
+			owner = { create_timeline_time_change_auth_democratic = yes }
+		}
+		auth_corporate = {
+			set_time_auth_corporate = yes
+			owner = { create_timeline_time_change_auth_corporate = yes }
+		}
+	}
+	hidden_effect = {
+		owner = {
+			advanced_authority_refresh = yes # 刷新高级政体
+		}
+	}
+}
+
+# 局势
+set_time_auth_imperial = {
+	switch = {
+		trigger = has_situation_flag
+		spiritualist_is_winner = {
+			change_time_government = {
+				AUTH = auth_imperial
+				CIVIC_1 = civic_philosopher_king
+				CIVIC_2 = civic_imperial_cult
+			}
+		}
+		militarist_is_winner = {
+			change_time_government = {
+				AUTH = auth_imperial
+				CIVIC_1 = civic_philosopher_king
+				CIVIC_2 = civic_warrior_culture
+			}
+		}
+		xenophobe_is_winner = {
+			change_time_government = {
+				AUTH = auth_imperial
+				CIVIC_1 = civic_philosopher_king
+				CIVIC_2 = civic_pompous_purists
+			}
+		}
+		default = {
+			change_time_government = {
+				AUTH = auth_imperial
+				CIVIC_1 = civic_philosopher_king
+				CIVIC_2 = civic_aristocratic_elite
+			}
+		}
+	}
+}
+
+# 局势
+set_time_auth_dictatorial = {
+	switch = {
+		trigger = has_situation_flag
+		spiritualist_is_winner = {
+			change_time_government = {
+				AUTH = auth_dictatorial
+				CIVIC_1 = civic_police_state
+				CIVIC_2 = civic_exalted_priesthood
+			}
+		}
+		militarist_is_winner = {
+			change_time_government = {
+				AUTH = auth_dictatorial
+				CIVIC_1 = civic_police_state
+				CIVIC_2 = civic_distinguished_admiralty
+			}
+		}
+		xenophobe_is_winner = {
+			if = {
+				limit = {
+					owner = {
+						owner_main_species = { is_robotic = no }
+					}
+				}
+				change_time_government = {
+					AUTH = auth_dictatorial
+					CIVIC_1 = civic_police_state
+					CIVIC_2 = civic_selective_kinship
+				}
+			}
+			else = {
+				change_time_government = {
+					AUTH = auth_dictatorial
+					CIVIC_1 = civic_police_state
+					CIVIC_2 = civic_heroic_tales
+				}
+			}
+		}
+		default = {
+			change_time_government = {
+				AUTH = auth_dictatorial
+				CIVIC_1 = civic_police_state
+				CIVIC_2 = civic_heroic_tales
+			}
+		}
+	}
+}
+
+# 局势
+set_time_auth_oligarchic = {
+	switch = {
+		trigger = has_situation_flag
+		materialist_is_winner = {
+			change_time_government = {
+				AUTH = auth_oligarchic
+				CIVIC_1 = civic_shadow_council
+				CIVIC_2 = civic_memory_vault
+			}
+		}
+		pacifist_is_winner = {
+			change_time_government = {
+				AUTH = auth_oligarchic
+				CIVIC_1 = civic_shadow_council
+				CIVIC_2 = civic_efficient_bureaucracy
+			}
+		}
+		xenophile_is_winner = {
+			change_time_government = {
+				AUTH = auth_oligarchic
+				CIVIC_1 = civic_shadow_council
+				CIVIC_2 = civic_beacon_of_liberty
+			}
+		}
+		default = {
+			change_time_government = {
+				AUTH = auth_oligarchic
+				CIVIC_1 = civic_shadow_council
+				CIVIC_2 = civic_cutthroat_politics
+			}
+		}
+	}
+}
+
+# 局势
+set_time_auth_democratic = {
+	switch = {
+		trigger = has_situation_flag
+		materialist_is_winner = {
+			change_time_government = {
+				AUTH = auth_democratic
+				CIVIC_1 = civic_meritocracy
+				CIVIC_2 = civic_technocracy
+			}
+		}
+		pacifist_is_winner = {
+			change_time_government = {
+				AUTH = auth_democratic
+				CIVIC_1 = civic_meritocracy
+				CIVIC_2 = civic_idealistic_foundation
+			}
+		}
+		xenophile_is_winner = {
+			change_time_government = {
+				AUTH = auth_democratic
+				CIVIC_1 = civic_meritocracy
+				CIVIC_2 = civic_shared_burden
+			}
+		}
+		default = {
+			change_time_government = {
+				AUTH = auth_democratic
+				CIVIC_1 = civic_meritocracy
+				CIVIC_2 = civic_parliamentary_system
+			}
+		}
+	}
+}
+
+# 局势
+set_time_auth_corporate = {
+	if = {
+		limit = {
+			has_situation_flag = xenophile_is_winner
+		}
+		change_time_government = {
+			AUTH = auth_corporate
+			CIVIC_1 = civic_public_relations_specialists
+			CIVIC_2 = civic_franchising
+		}
+	}
+	else = {
+		change_time_government = {
+			AUTH = auth_corporate
+			CIVIC_1 = civic_task_delegation_corporate
+			CIVIC_2 = civic_memory_vault_corporate
+		}
+	}
+}
+
+# 局势
+change_time_government = {
+	owner = {
+		hidden_effect = {
+			# 预防普政巨企间切换失败（记录理念）
+			if = {
+				limit = {
+					is_megacorp = no
+					prev = {
+						OR = {
+							has_situation_flag = auth_time_corporate
+							has_situation_flag = auth_corporate
+						}
+					}
+				}
+				change_time_government_check_civic = {
+					CIVIC = civic_time_machine
+					SWITCH = civic_time_machine_corporate
+				}
+				change_time_government_check_civic = {
+					CIVIC = civic_circle_nexus
+					SWITCH = civic_circle_nexus_corporate
+				}
+				change_time_government_check_civic = {
+					CIVIC = civic_dimension_engine
+					SWITCH = civic_dimension_engine_corporate
+				}
+				change_time_government_check_civic = {
+					CIVIC = civic_dark_consortium
+					SWITCH = civic_corporate_dark_consortium
+				}
+				change_time_government_check_civic = {
+					CIVIC = civic_eager_explorers
+					SWITCH = civic_privatized_exploration
+				}
+				change_time_government_check_civic = {
+					CIVIC = civic_sovereign_guardianship
+					SWITCH = civic_corporate_sovereign_guardianship
+				}
+				change_time_government_check_civic = {
+					CIVIC = civic_storm_callers
+					SWITCH = civic_storm_callers_megacorp
+				}
+				change_time_government_check_civic = {
+					CIVIC = civic_galactic_curators
+					SWITCH = civic_corporate_galactic_curators
+				}
+			}
+			else_if = {
+				limit = {
+					is_megacorp = yes
+					prev = {
+						NOR = {
+							has_situation_flag = auth_time_corporate
+							has_situation_flag = auth_corporate
+						}
+					}
+				}
+				change_time_government_check_civic = {
+					CIVIC = civic_time_machine_corporate
+					SWITCH = civic_time_machine
+				}
+				change_time_government_check_civic = {
+					CIVIC = civic_circle_nexus_corporate
+					SWITCH = civic_circle_nexus
+				}
+				change_time_government_check_civic = {
+					CIVIC = civic_dimension_engine_corporate
+					SWITCH = civic_dimension_engine
+				}
+				change_time_government_check_civic = {
+					CIVIC = civic_corporate_dark_consortium
+					SWITCH = civic_dark_consortium
+				}
+				change_time_government_check_civic = {
+					CIVIC = civic_privatized_exploration
+					SWITCH = civic_eager_explorers
+				}
+				change_time_government_check_civic = {
+					CIVIC = civic_corporate_sovereign_guardianship
+					SWITCH = civic_sovereign_guardianship
+				}
+				change_time_government_check_civic = {
+					CIVIC = civic_storm_callers_megacorp
+					SWITCH = civic_storm_callers
+				}
+				change_time_government_check_civic = {
+					CIVIC = civic_corporate_galactic_curators
+					SWITCH = civic_galactic_curators
+				}
+			}
+		}
+		change_government = {
+			authority = $AUTH$
+			cooldown = no
+			remove_invalid_civics = yes
+		}
+		hidden_effect = {
+			# 预防普政巨企间切换失败（还原理念）
+			if = {
+				limit = {
+					prev = {
+						NOR = {
+							has_situation_flag = auth_time_corporate
+							has_situation_flag = auth_corporate
+						}
+					}
+				}
+				change_time_government_give_civic = { CIVIC = civic_time_machine }
+				change_time_government_give_civic = { CIVIC = civic_circle_nexus }
+				change_time_government_give_civic = { CIVIC = civic_dimension_engine }
+				change_time_government_give_civic = { CIVIC = civic_dark_consortium }
+				change_time_government_give_civic = { CIVIC = civic_eager_explorers }
+				change_time_government_give_civic = { CIVIC = civic_sovereign_guardianship }
+				change_time_government_give_civic = { CIVIC = civic_storm_callers }
+				change_time_government_give_civic = { CIVIC = civic_galactic_curators }
+			}
+			else = {
+				change_time_government_give_civic = { CIVIC = civic_time_machine_corporate }
+				change_time_government_give_civic = { CIVIC = civic_circle_nexus_corporate }
+				change_time_government_give_civic = { CIVIC = civic_dimension_engine_corporate }
+				change_time_government_give_civic = { CIVIC = civic_corporate_dark_consortium }
+				change_time_government_give_civic = { CIVIC = civic_privatized_exploration }
+				change_time_government_give_civic = { CIVIC = civic_corporate_sovereign_guardianship }
+				change_time_government_give_civic = { CIVIC = civic_storm_callers_megacorp }
+				change_time_government_give_civic = { CIVIC = civic_corporate_galactic_curators }
+			}
+		}
+		if = {
+			limit = {
+				NOT = { has_civic = $CIVIC_1$ }
+			}
+			force_add_civic = $CIVIC_1$
+		}
+		if = {
+			limit = {
+				NOT = { has_civic = $CIVIC_2$ }
+			}
+			force_add_civic = $CIVIC_2$
+		}
+	}
+}
+
+# 国家
+change_time_government_check_civic = {
+	if = {
+		limit = {
+			has_civic = $CIVIC$
+		}
+		set_country_flag = time_government_switch_to_$SWITCH$
+		force_remove_civic = $CIVIC$
+	}
+}
+
+# 国家
+change_time_government_give_civic = {
+	if = {
+		limit = {
+			has_country_flag = time_government_switch_to_$CIVIC$
+		}
+		remove_country_flag = time_government_switch_to_$CIVIC$
+		force_add_civic = $CIVIC$
+	}
+}
+
+# 局势
+trigger_time_ethic_random_situation_event = {
+	random_list = {
+		10 = {
+			modifier = {
+				factor = 0
+				has_situation_flag = time_2$TYPE$1_triggered
+			}
+			situation_event = { id = time.2$TYPE$1 days = 1 random = 19 }
+		}
+		10 = {
+			modifier = {
+				factor = 0
+				has_situation_flag = time_2$TYPE$2_triggered
+			}
+			situation_event = { id = time.2$TYPE$2 days = 1 random = 19 }
+		}
+		2 = {
+			modifier = {
+				factor = 0
+				has_situation_flag = time_2$TYPE$3_triggered
+			}
+			modifier = {
+				factor = 0
+				owner = { is_$ETHIC$ = yes }
+			}
+			modifier = {
+				factor = 0
+				target = { has_modifier = origin_time_coup }
+			}
+			situation_event = { id = time.2$TYPE$3 days = 1 random = 19 }
+		}
+		5 = {
+			modifier = {
+				factor = 0
+				has_situation_flag = time_2$TYPE$4_triggered
+			}
+			modifier = {
+				factor = 0
+				owner = { is_$ETHIC$ = yes }
+			}
+			modifier = {
+				factor = 0.2
+				has_situation_flag = time_planet_devastation_event
+			}
+			situation_event = { id = time.2$TYPE$4 days = 1 random = 19 }
+		}
+		10 = {
+			modifier = {
+				factor = 0
+				has_situation_flag = time_2$TYPE$5_triggered
+			}
+			situation_event = { id = time.2$TYPE$5 days = 1 random = 19 }
+		}
+	}
+}

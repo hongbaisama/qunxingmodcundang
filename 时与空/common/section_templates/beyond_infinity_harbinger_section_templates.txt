@@ -1,0 +1,381 @@
+ship_section_template = {
+	key = "HARBINGER_STAGE_1_beyond_infinity"
+	ship_size = harbinger_stage_1
+	fits_on_slot = mid
+	should_draw_components = no
+	icon = "GFX_ship_part_core_mid"
+	entity = "harbinger_stage_1_ship_entity"
+
+	ai_tags = {
+		carrier
+		carrier_stealth
+		artillery
+		artillery_stealth
+	}
+	
+	prerequisites = { tech_beyond_infinity_cruiser }
+	
+	modifier = {
+		ship_hull_mult = 0.3
+	}
+	
+	ship_modifier = {
+		ship_weapon_range_mult = 0.1
+		strike_craft_regeneration_mult = 0.1
+		ship_tracking_mult = 0.1
+	}
+
+	component_slot = {
+		name = "STRIKE_CRAFT_01"
+		template = "large_strike_craft"
+		locatorname = "weapon_01"
+	}
+
+	component_slot = {
+		name = "STRIKE_CRAFT_02"
+		template = "large_strike_craft"
+		locatorname = "weapon_02"
+	}
+
+	component_slot = {
+		name = "STRIKE_CRAFT_03"
+		template = "large_strike_craft"
+		locatorname = "weapon_01"
+	}
+
+	component_slot = {
+		name = "STRIKE_CRAFT_04"
+		template = "large_strike_craft"
+		locatorname = "weapon_02"
+	}
+
+	component_slot = {
+		name = "TORPEDO_01"
+		template = "invisible_missile_turret"
+		locatorname = "weapon_01"
+	}
+
+	component_slot = {
+		name = "TORPEDO_02"
+		template = "invisible_missile_turret"
+		locatorname = "weapon_02"
+	}
+
+	component_slot = {
+		name = "PD_01"
+		template = "point_defence_turret"
+		locatorname = "weapon_01"
+	}
+
+	component_slot = {
+		name = "PD_02"
+		template = "point_defence_turret"
+		locatorname = "weapon_02"
+	}
+
+	component_slot = {
+		name = "PD_03"
+		template = "point_defence_turret"
+		locatorname = "weapon_01"
+	}
+
+	component_slot = {
+		name = "PD_04"
+		template = "point_defence_turret"
+		locatorname = "weapon_02"
+	}
+
+	medium_utility_slots = 8
+	large_utility_slots = 4
+	aux_utility_slots = 4
+
+	ai_weight = {
+		factor = 100
+	}
+
+	resources = {
+		category = ship_sections
+		cost = {
+			food = @harbinger_stage_1_section_cost
+			mult = @beyond_infinity_alloy_to_food_cost_ratio
+		}
+	}
+}
+
+ship_section_template = {
+	key = "HARBINGER_STAGE_2_beyond_infinity"
+	ship_size = harbinger_stage_2
+	fits_on_slot = mid
+	should_draw_components = no
+	icon = "GFX_ship_part_core_mid"
+	entity = "harbinger_stage_2_ship_entity"
+
+	ai_tags = {
+		carrier
+		carrier_stealth
+		artillery
+		artillery_stealth
+	}
+	
+	prerequisites = { tech_beyond_infinity_cruiser }
+	
+	modifier = {
+		ship_hull_mult = 0.3
+	}
+	
+	ship_modifier = {
+		ship_weapon_range_mult = 0.1
+		strike_craft_regeneration_mult = 0.1
+		ship_tracking_mult = 0.1
+	}
+
+	component_slot = {
+		name = "EXTRA_LARGE_01"
+		template = "invisible_extra_large_turret"
+		locatorname = "weapon_01"
+	}
+
+	component_slot = {
+		name = "STRIKE_CRAFT_01"
+		template = "large_strike_craft"
+		locatorname = "weapon_01"
+	}
+
+	component_slot = {
+		name = "STRIKE_CRAFT_02"
+		template = "large_strike_craft"
+		locatorname = "weapon_02"
+	}
+
+	component_slot = {
+		name = "STRIKE_CRAFT_03"
+		template = "large_strike_craft"
+		locatorname = "weapon_01"
+	}
+	component_slot = {
+		name = "STRIKE_CRAFT_04"
+		template = "large_strike_craft"
+		locatorname = "weapon_02"
+	}
+
+	component_slot = {
+		name = "TORPEDO_01"
+		template = "invisible_missile_turret"
+		locatorname = "weapon_02"
+	}
+
+	component_slot = {
+		name = "TORPEDO_02"
+		template = "invisible_missile_turret"
+		locatorname = "weapon_01"
+	}
+
+	component_slot = {
+		name = "TORPEDO_03"
+		template = "invisible_missile_turret"
+		locatorname = "weapon_02"
+	}
+
+	component_slot = {
+		name = "PD_01"
+		template = "point_defence_turret"
+		locatorname = "weapon_02"
+	}
+
+	component_slot = {
+		name = "PD_02"
+		template = "point_defence_turret"
+		locatorname = "weapon_01"
+	}
+
+	component_slot = {
+		name = "PD_03"
+		template = "point_defence_turret"
+		locatorname = "weapon_02"
+	}
+
+	component_slot = {
+		name = "PD_04"
+		template = "point_defence_turret"
+		locatorname = "weapon_01"
+	}
+
+	component_slot = {
+		name = "PD_05"
+		template = "point_defence_turret"
+		locatorname = "weapon_02"
+	}
+
+	component_slot = {
+		name = "PD_06"
+		template = "point_defence_turret"
+		locatorname = "weapon_01"
+	}
+
+	medium_utility_slots = 4
+	large_utility_slots = 8
+	aux_utility_slots = 4
+
+	ai_weight = {
+		factor = 100
+	}
+
+	resources = {
+		category = ship_sections
+		cost = {
+			food = @harbinger_stage_2_section_cost
+			mult = @beyond_infinity_alloy_to_food_cost_ratio
+		}
+	}
+}
+
+ship_section_template = {
+	key = "HARBINGER_STAGE_3_beyond_infinity"
+	ship_size = harbinger_stage_3
+	fits_on_slot = mid
+	should_draw_components = no
+	icon = "GFX_ship_part_core_mid"
+	entity = "harbinger_stage_3_ship_entity"
+
+	ai_tags = {
+		carrier
+		carrier_stealth
+		artillery
+		artillery_stealth
+	}
+	
+	prerequisites = { tech_beyond_infinity_cruiser }
+	
+	modifier = {
+		ship_hull_mult = 0.3
+	}
+	
+	ship_modifier = {
+		ship_weapon_range_mult = 0.1
+		strike_craft_regeneration_mult = 0.1
+		ship_tracking_mult = 0.1
+	}
+
+	component_slot = {
+		name = "EXTRA_LARGE_01"
+		template = "invisible_extra_large_turret"
+		locatorname = "weapon_01"
+	}
+
+	component_slot = {
+		name = "EXTRA_LARGE_02"
+		template = "invisible_extra_large_turret"
+		locatorname = "weapon_02"
+	}
+	
+	component_slot = {
+		name = "STRIKE_CRAFT_01"
+		template = "large_strike_craft"
+		locatorname = "weapon_01"
+	}
+
+	component_slot = {
+		name = "STRIKE_CRAFT_02"
+		template = "large_strike_craft"
+		locatorname = "weapon_02"
+	}
+
+	component_slot = {
+		name = "STRIKE_CRAFT_03"
+		template = "large_strike_craft"
+		locatorname = "weapon_01"
+	}
+
+	component_slot = {
+		name = "STRIKE_CRAFT_04"
+		template = "large_strike_craft"
+		locatorname = "weapon_02"
+	}
+
+	component_slot = {
+		name = "TORPEDO_01"
+		template = "invisible_missile_turret"
+		locatorname = "weapon_01"
+	}
+
+	component_slot = {
+		name = "TORPEDO_02"
+		template = "invisible_missile_turret"
+		locatorname = "weapon_02"
+	}
+
+	component_slot = {
+		name = "TORPEDO_03"
+		template = "invisible_missile_turret"
+		locatorname = "weapon_01"
+	}
+
+	component_slot = {
+		name = "TORPEDO_04"
+		template = "invisible_missile_turret"
+		locatorname = "weapon_02"
+	}
+
+	component_slot = {
+		name = "PD_01"
+		template = "point_defence_turret"
+		locatorname = "weapon_01"
+	}
+
+	component_slot = {
+		name = "PD_02"
+		template = "point_defence_turret"
+		locatorname = "weapon_02"
+	}
+
+	component_slot = {
+		name = "PD_03"
+		template = "point_defence_turret"
+		locatorname = "weapon_01"
+	}
+
+	component_slot = {
+		name = "PD_04"
+		template = "point_defence_turret"
+		locatorname = "weapon_02"
+	}
+
+	component_slot = {
+		name = "PD_05"
+		template = "point_defence_turret"
+		locatorname = "weapon_01"
+	}
+
+	component_slot = {
+		name = "PD_06"
+		template = "point_defence_turret"
+		locatorname = "weapon_02"
+	}
+
+	component_slot = {
+		name = "PD_07"
+		template = "point_defence_turret"
+		locatorname = "weapon_01"
+	}
+
+	component_slot = {
+		name = "PD_08"
+		template = "point_defence_turret"
+		locatorname = "weapon_02"
+	}
+
+	large_utility_slots = 12
+	aux_utility_slots = 6
+
+	ai_weight = {
+		factor = 100
+	}
+
+	resources = {
+		category = ship_sections
+		cost = {
+			food = @harbinger_stage_3_section_cost
+			mult = @beyond_infinity_alloy_to_food_cost_ratio
+		}
+	}
+}

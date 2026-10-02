@@ -1,0 +1,39 @@
+# 特质图标不应用原版背景
+custom_subtitle = destiny_dimension_traveler_subtitle_gestalt
+icon = {
+	inline_script = trait/icon_element/rarity_$RARITY$
+	layer = {
+		icon = $ICON$
+	}
+	layer = {
+		icon = "GFX_trait_councilor"
+	}
+	layer = {
+		icon = "GFX_trait_disabled"
+		visible = {
+			OR = {
+				is_councilor = no
+				owner = { active_dimension_traveler_destiny_trait_gestalt = no }
+			}
+		}
+	}
+	inline_script = trait/icon_element/tier_$TIER$
+}
+leader_trait_rarity = $RARITY$
+sorting_priority = $PRIORITY$
+# 防伪
+on_gained_effect = {
+	if = {
+		limit = {
+			NAND = {
+				owner = {
+					is_gestalt = yes
+					unlock_dimension_traveler_destiny_trait = yes
+				}
+				is_councilor = yes
+			}
+		}
+		remove_trait = leader_trait_dimension_traveler_horror_secret_gestalt
+		remove_trait = leader_trait_dimension_traveler_horror_secret_true_gestalt
+	}
+}

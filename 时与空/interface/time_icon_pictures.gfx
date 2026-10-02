@@ -1,0 +1,281 @@
+spriteTypes = {
+	spriteType = {
+		name = "GFX_text_wonder_building_picture"
+		textureFile = "gfx/interface/icons/text_icons/pictures/wonder_building_picture.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_text_akx_worm_1_picture"
+		textureFile = "gfx/interface/icons/text_icons/pictures/akx_worm_1_picture.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_text_akx_worm_2_picture"
+		textureFile = "gfx/interface/icons/text_icons/pictures/akx_worm_2_picture.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_text_akx_worm_3_picture"
+		textureFile = "gfx/interface/icons/text_icons/pictures/akx_worm_3_picture.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_text_akx_worm_4_picture"
+		textureFile = "gfx/interface/icons/text_icons/pictures/akx_worm_4_picture.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_text_akx_messenger_closed_picture"
+		textureFile = "gfx/interface/icons/text_icons/pictures/akx_messenger_closed_picture.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_text_akx_messenger_picture"
+		textureFile = "gfx/interface/icons/text_icons/pictures/akx_messenger_picture.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_text_time_clock_picture"
+		textureFile = "gfx/interface/icons/text_icons/pictures/time_clock_picture.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_text_horror_trait_picture"
+		textureFile = "gfx/interface/icons/text_icons/pictures/horror_trait_picture.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_text_trait_akx_waiting_world_picture"
+		textureFile = "gfx/interface/icons/text_icons/pictures/trait_akx_waiting_world_picture.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_text_tower_of_infinity_picture"
+		textureFile = "gfx/interface/icons/text_icons/pictures/tower_of_infinity_picture.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_text_dimensional_horror_crisis_picture"
+		textureFile = "gfx/interface/icons/text_icons/pictures/dimensional_horror_crisis_picture.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_text_origin_time_picture"
+		textureFile = "gfx/interface/icons/text_icons/pictures/origin_time_picture.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_text_pc_time_pitcure"
+		textureFile = "gfx/interface/icons/text_icons/pictures/pc_time_pitcure.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_text_pc_endless_time_picture"
+		textureFile = "gfx/interface/icons/text_icons/pictures/pc_endless_time_picture.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_text_hope_parliament_picture"
+		textureFile = "gfx/interface/icons/text_icons/pictures/hope_parliament_picture.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_text_hope_institution_picture"
+		textureFile = "gfx/interface/icons/text_icons/pictures/hope_institution_picture.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_text_eternal_probe_picture"
+		textureFile = "gfx/interface/icons/text_icons/pictures/eternal_probe_picture.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_text_eternal_matrix_picture"
+		textureFile = "gfx/interface/icons/text_icons/pictures/eternal_matrix_picture.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_text_dimensional_fortress_picture"
+		textureFile = "gfx/interface/icons/text_icons/pictures/dimensional_fortress_picture.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_text_dimensional_metropolis_picture"
+		textureFile = "gfx/interface/icons/text_icons/pictures/dimensional_metropolis_picture.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_text_original_sanctuary_picture"
+		textureFile = "gfx/interface/icons/text_icons/pictures/original_sanctuary_picture.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_text_original_palace_picture"
+		textureFile = "gfx/interface/icons/text_icons/pictures/original_palace_picture.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_text_origin_contract_picture"
+		textureFile = "gfx/interface/icons/text_icons/pictures/origin_contract_picture.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_text_origin_gas_colony_picture"
+		textureFile = "gfx/interface/icons/text_icons/pictures/origin_gas_colony_picture.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_text_origin_psionic_picture"
+		textureFile = "gfx/interface/icons/text_icons/pictures/origin_psionic_picture.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_text_origin_nanites_picture"
+		textureFile = "gfx/interface/icons/text_icons/pictures/origin_nanites_picture.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_text_origin_praise_the_sun_picture"
+		textureFile = "gfx/interface/icons/text_icons/pictures/origin_praise_the_sun_picture.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_text_origin_parallel_sky_picture"
+		textureFile = "gfx/interface/icons/text_icons/pictures/origin_parallel_sky_picture.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_text_origin_under_the_haze_picture"
+		textureFile = "gfx/interface/icons/text_icons/pictures/origin_under_the_haze_picture.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_text_origin_tao_of_ninghe_yin_picture"
+		textureFile = "gfx/interface/icons/text_icons/pictures/origin_tao_of_ninghe_yin_picture.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_text_origin_tao_of_ninghe_yang_picture"
+		textureFile = "gfx/interface/icons/text_icons/pictures/origin_tao_of_ninghe_yang_picture.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_text_origin_the_matrix_picture"
+		textureFile = "gfx/interface/icons/text_icons/pictures/origin_the_matrix_picture.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_text_origin_reassembler_picture"
+		textureFile = "gfx/interface/icons/text_icons/pictures/origin_reassembler_picture.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_text_origin_colossus_picture"
+		textureFile = "gfx/interface/icons/text_icons/pictures/origin_colossus_picture.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_text_origin_manifesti_picture"
+		textureFile = "gfx/interface/icons/text_icons/pictures/origin_manifesti_picture.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_text_origin_pirate_king_picture"
+		textureFile = "gfx/interface/icons/text_icons/pictures/origin_pirate_king_picture.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_text_origin_adeptus_mechanicus_picture"
+		textureFile = "gfx/interface/icons/text_icons/pictures/origin_adeptus_mechanicus_picture.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_text_origin_noah_ark_picture"
+		textureFile = "gfx/interface/icons/text_icons/pictures/origin_noah_ark_picture.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_text_origin_monster_hunter_picture"
+		textureFile = "gfx/interface/icons/text_icons/pictures/origin_monster_hunter_picture.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_text_leader_trait_scientist_time_curator_picture"
+		textureFile = "gfx/interface/icons/text_icons/pictures/leader_trait_scientist_time_curator_picture.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_text_leader_trait_official_time_artist_picture"
+		textureFile = "gfx/interface/icons/text_icons/pictures/leader_trait_official_time_artist_picture.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_text_origin_knowledge_from_alien_picture"
+		textureFile = "gfx/interface/icons/text_icons/pictures/origin_knowledge_from_alien_picture.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_text_origin_born_in_the_purple_picture"
+		textureFile = "gfx/interface/icons/text_icons/pictures/origin_born_in_the_purple_picture.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_text_origin_corrupt_brain_picture"
+		textureFile = "gfx/interface/icons/text_icons/pictures/origin_corrupt_brain_picture.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_text_leader_trait_inborn_legendary_picture"
+		textureFile = "gfx/interface/icons/text_icons/pictures/leader_trait_inborn_legendary_picture.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_text_leader_trait_inborn_renowned_picture"
+		textureFile = "gfx/interface/icons/text_icons/pictures/leader_trait_inborn_renowned_picture.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_text_origin_blessed_by_god_picture"
+		textureFile = "gfx/interface/icons/text_icons/pictures/origin_blessed_by_god_picture.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_text_origin_abandoned_by_god_picture"
+		textureFile = "gfx/interface/icons/text_icons/pictures/origin_abandoned_by_god_picture.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_text_origin_equinox_seal_picture"
+		textureFile = "gfx/interface/icons/text_icons/pictures/origin_equinox_seal_picture.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_text_origin_black_hole_picture"
+		textureFile = "gfx/interface/icons/text_icons/pictures/origin_black_hole_picture.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_text_origin_pulsar_picture"
+		textureFile = "gfx/interface/icons/text_icons/pictures/origin_pulsar_picture.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_text_origin_neutron_star_picture"
+		textureFile = "gfx/interface/icons/text_icons/pictures/origin_neutron_star_picture.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_text_origin_white_hole_picture"
+		textureFile = "gfx/interface/icons/text_icons/pictures/origin_white_hole_picture.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_text_origin_fourth_crisis_picture"
+		textureFile = "gfx/interface/icons/text_icons/pictures/origin_fourth_crisis_picture.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_text_dimension_traveler_trait_picture"
+		textureFile = "gfx/interface/icons/text_icons/pictures/dimension_traveler_trait_picture.dds"
+	}
+}

@@ -1,0 +1,380 @@
+
+namespace = time_replaced_origin
+
+# 机械师
+country_event = {
+	id = time_replaced_origin.1
+	is_triggered_only = yes
+	hide_window = yes
+
+	trigger = {
+		has_origin = origin_mechanists
+	}
+	
+	immediate = {
+		give_technology = { tech = "tech_administrative_ai" message = no }
+		give_technology = { tech = "tech_self_aware_logic" message = no }
+		give_technology = { tech = "tech_droid_workers" message = no }
+		add_research_option = tech_sapient_ai
+		add_research_option = tech_synthetic_workers
+		# 送的科技太多了，所以自带的科技进度减少
+		add_tech_progress = {
+			tech = tech_sapient_ai
+			progress = 0.20
+		}
+		add_tech_progress = {
+			tech = tech_synthetic_workers
+			progress = 0.20
+		}
+	}
+}
+
+# 协同进化
+country_event = {
+	id = time_replaced_origin.2
+	is_triggered_only = yes
+	hide_window = yes
+
+	trigger = {
+		has_origin = origin_syncretic_evolution
+	}
+	
+	immediate = {
+		if = {
+			limit = {
+				owner_main_species = { is_robotic = no }
+			}
+			set_country_flag = organic_syncretic_evolution_country
+			give_technology = { tech = "tech_genome_mapping" message = no }
+			give_technology = { tech = "tech_cloning" message = no }
+			give_technology = { tech = "tech_frontier_health" message = no }
+			add_research_option = tech_gene_tailoring
+			add_research_option = tech_gene_expressions
+			add_tech_progress = {
+				tech = tech_gene_tailoring
+				progress = 0.50
+			}
+			add_tech_progress = {
+				tech = tech_gene_expressions
+				progress = 0.50
+			}
+			capital_scope = {
+				add_building = building_medical_1
+				validate_and_repair_planet_buildings_and_districts = yes
+			}
+		}
+		owner_main_species = {
+			if = {
+				limit = {
+					NOR = {
+						has_trait = trait_syncretic_proles
+						has_trait = trait_nerve_stapled
+					}
+				}
+				make_syncretic_evolution_traits_valid = yes
+			}
+		}
+	}
+}
+
+# 一方霸主
+country_event = {
+	id = time_replaced_origin.3
+	is_triggered_only = yes
+	hide_window = yes
+
+	trigger = {
+		has_origin = origin_hegemon
+	}
+	
+	immediate = {
+		every_playable_country = {
+			limit = {
+				has_origin = origin_hegemon_npc
+				is_in_federation_with = root
+			}
+			set_subject_of = {
+				who = root
+			}
+			add_modifier = { modifier = time_origin_hegemon_modifier days = 7200 }
+		}
+	}
+}
+
+# 繁荣一统
+country_event = {
+	id = time_replaced_origin.4
+	is_triggered_only = yes
+	hide_window = yes
+
+	trigger = {
+		has_origin = origin_default
+		exists = capital_scope
+	}
+	
+	immediate = {
+		capital_scope = {
+			remove_modifier = prosp_uni_mod
+			remove_modifier = prosp_uni_mod_gestalt
+			if = {
+				limit = {
+					owner = { is_gestalt = no }
+				}
+				add_modifier = { modifier = prosp_uni_mod days = -1 }
+			}
+			else = {
+				add_modifier = { modifier = prosp_uni_mod_gestalt days = -1 }
+			}
+		}
+	}
+}
+
+# 生命之籽
+country_event = {
+	id = time_replaced_origin.5
+	is_triggered_only = yes
+	hide_window = yes
+
+	trigger = {
+		has_origin = origin_life_seeded
+	}
+	
+	immediate = {
+		every_owned_species = {
+			change_species_characteristics = {
+				remove_trait = trait_pc_gaia_preference
+			}
+			change_species_characteristics = {
+				remove_trait = trait_machine_pc_gaia_preference
+			}
+			change_species_characteristics = {
+				add_trait = trait_pc_gaia_preference_terraforming
+			}
+		}
+		capital_scope = {
+			while = {
+				count = trigger:num_guaranteed_colonies
+				add_random_time_gaia_deposit = yes
+			}
+		}
+	}
+}
+
+# 生命之树
+country_event = {
+	id = time_replaced_origin.6
+	is_triggered_only = yes
+	hide_window = yes
+
+	trigger = {
+		has_origin = origin_tree_of_life
+	}
+	
+	immediate = {
+		give_technology = { tech = "tech_genome_mapping" message = no }
+		give_technology = { tech = "tech_cloning" message = no }
+		give_technology = { tech = "tech_colonization_2" message = no }
+		add_research_option = tech_gene_tailoring
+		add_research_option = tech_gene_expressions
+		add_tech_progress = {
+			tech = tech_gene_tailoring
+			progress = 0.50
+		}
+		add_tech_progress = {
+			tech = tech_gene_expressions
+			progress = 0.50
+		}
+	}
+}
+
+# 自动基飞
+country_event = {
+	id = time_replaced_origin.10
+	title = time_replaced_origin.10.name
+	desc = time_replaced_origin.10.desc
+	picture = GFX_evt_genetic_modification
+	show_sound = event_activating_unknown_technology
+	
+	is_triggered_only = yes
+	
+	trigger = {
+		if = {
+			limit = {
+				OR = {
+					AND = {
+						has_origin = origin_syncretic_evolution
+						owner_main_species = { is_robotic = no }
+					}
+					has_origin = origin_tree_of_life
+				}
+				has_biogenesis_dlc = yes
+				NOT = { has_country_flag = time_replaced_origin_10_triggered }
+			}
+			has_technology = tech_gene_tailoring
+			has_technology = tech_gene_expressions
+		}
+		else = {
+			always = no
+		}
+	}
+	
+	immediate = {
+		set_country_flag = time_replaced_origin_10_triggered
+	}
+	
+	option = {
+		name = time_replaced_origin.10.a
+		custom_tooltip = genomic_research_facility_unlocked_tt
+		set_country_flag = genomic_research_facility_unlocked
+		if = {
+			limit = {
+				is_hive_empire = no
+			}
+			start_situation = {
+				type = genetic_ascension_situation
+				target = root
+			}
+		}
+		else = {
+			start_situation = {
+				type = genetic_ascension_situation_hive
+				target = root
+			}
+		}
+	}
+}
+
+carrier_event = {
+	id = time_replaced_origin.20
+	title = time_replaced_origin.20.name
+	desc = time_replaced_origin.20.desc
+	picture = GFX_evt_wilderness_colonizer
+	show_sound = event_cityscape
+	location = root
+	
+	is_triggered_only = yes
+	
+	trigger = {
+		has_deposit = d_heart_of_wilderness
+	}
+	
+	immediate = {
+	}
+
+	option = {
+		name = time_replaced_origin.20.a
+		tooltip = { add_deposit = d_heart_of_wilderness }
+		custom_tooltip = decision_heart_of_wilderness_effect
+	}
+}
+
+# 奴性特质合理化
+country_event = {
+	id = time_replaced_origin.100
+	is_triggered_only = yes
+	hide_window = yes
+	
+	trigger = {
+		if = {
+			limit = {
+				has_origin = origin_syncretic_evolution
+			}
+			from = {
+				NOR = {
+					has_trait = trait_syncretic_proles
+					has_trait = trait_nerve_stapled
+				}
+				OR = {
+					has_trait = trait_syncretic_evolution_starborn
+					has_trait = trait_syncretic_evolution_earthbound
+					has_trait = trait_syncretic_evolution_proles
+					has_trait = trait_syncretic_evolution_conservative
+					has_trait = trait_syncretic_evolution_irradiated
+					has_trait = trait_syncretic_evolution_docile_livestock
+				}
+			}
+		}
+		else = {
+			always = no
+		}
+	}
+
+	immediate = {
+		from = {
+			make_syncretic_evolution_traits_valid = yes
+		}
+	}
+}
+
+# 特殊理念开局效果
+country_event = {
+	id = time_replaced_origin.1000
+	is_triggered_only = yes
+	hide_window = yes
+
+	trigger = {
+		OR = {
+			has_civic_origin_ruin_megastructure = yes
+			has_civic_origin_life_seeded = yes
+			has_civic_origin_pc_hive = yes
+			has_civic_origin_machine = yes
+			has_civic_overclocking_art_only = yes
+			has_civic_overclocking_art_corporate = yes
+		}
+	}
+	
+	immediate = {
+		if = {
+			limit = {
+				has_civic_origin_ruin_megastructure = yes
+			}
+			if = {
+				limit = {
+					has_origin = origin_bright_pearl
+				}
+				add_tech_progress = {
+					tech = tech_mega_engineering
+					progress = 0.25
+				}
+			}
+			else = {
+				add_research_option = tech_mega_engineering
+			}
+		}
+		if = {
+			limit = {
+				OR = {
+					has_civic_origin_life_seeded = yes
+					has_civic_origin_pc_hive = yes
+					has_civic_origin_machine = yes
+				}
+			}
+			add_research_option = tech_terrestrial_sculpting
+		}
+		if = {
+			limit = {
+				OR = {
+					has_civic_overclocking_art_only = yes
+					has_civic_overclocking_art_corporate = yes
+				}
+			}
+			set_country_flag = civic_overclocking_art_locked
+			if = {
+				limit = {
+					has_origin = origin_mechanists
+				}
+				add_tech_progress = {
+					tech = tech_synthetic_workers
+					progress = 0.30
+				}
+			}
+			else = {
+				give_technology = { tech = "tech_robotic_workers" message = no }
+				capital_scope = {
+					add_building = building_robot_assembly_plant
+					validate_and_repair_planet_buildings_and_districts = yes
+				}
+			}
+		}
+	}
+}

@@ -1,0 +1,92 @@
+triggered_country_modifier = {
+	potential = {
+		has_country_flag = cyber_individualist
+	}
+	councilor_exp_gain = 0.025
+	planet_jobs_produces_mult = 0.01
+	all_technology_research_speed = 0.01
+	ship_weapon_damage = 0.01
+}
+
+triggered_country_modifier = {
+	potential = {
+		has_country_flag = cyber_collectivist
+	}
+	planet_entertainers_unity_produces_add = 0.1
+	planet_entertainers_alloys_upkeep_add = 0.05
+	planet_resettlement_unemployed_destination_mult = 0.025
+	planet_pops_upkeep_mult = -0.01
+}
+
+triggered_country_modifier = {
+	potential = {
+		has_country_flag = synth_physical
+	}
+	leader_initial_skill = 0.2
+	leader_officials_society_research_produces_add = 1
+	leader_scientists_physics_research_produces_add = 1
+	leader_commanders_engineering_research_produces_add = 1
+	leaders_upkeep_mult = 0.02
+}
+
+triggered_country_modifier = {
+	potential = {
+		has_country_flag = synth_virtual
+	}
+	army_damage_taken_mult = -0.01
+	army_morale_damage_taken_mult = -0.01
+	ship_damage_reduction_mult = 0.01
+	ship_damage_reduction_add = 1
+	armies_upkeep_mult = 0.01
+	ships_upkeep_mult = 0.01
+}
+
+triggered_country_modifier = {
+	potential = {
+		has_country_flag = bio_purity
+	}
+	leader_lifespan_mult = 0.02
+	species_leader_exp_gain = 0.02
+}
+
+triggered_country_modifier = {
+	potential = {
+		has_country_flag = bio_cloning
+	}
+	planet_jobs_ruler_produces_mult = 0.02
+	pop_cat_ruler_bonus_workforce_mult = 0.01
+}
+
+triggered_country_modifier = {
+	potential = {
+		has_country_flag = bio_mutation
+	}
+	species_leader_exp_gain = 0.02
+	pop_cat_worker_bonus_workforce_mult = 0.02
+	all_technology_research_speed = 0.01
+	country_leader_pool_size = -0.1
+}
+
+triggered_country_modifier = {
+	potential = {
+		is_transcendent_authority = yes
+	}
+	psionic_aura_hyperlane_range_add = 0.2
+	envoy_improve_relations_mult = 0.05
+	envoy_harm_relations_mult = 0.05
+	envoy_attunement_mult = 0.05
+	planet_crime_add = 2
+}
+
+triggered_country_modifier = {
+	potential = {
+		is_corporeal_authority = yes
+	}
+	psionic_aura_effectiveness_mult = 0.025
+	envoy_improve_relations_mult = 0.05
+	envoy_harm_relations_mult = 0.05
+	envoy_attunement_mult = 0.05
+	leader_lifespan_add = 2
+	logistic_growth_mult = -0.005
+	planet_pop_assembly_mult = -0.005
+}

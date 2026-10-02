@@ -1,0 +1,133 @@
+# 星球
+reroll_pc_nanites_deposits = {
+	clear_deposits_and_orbital_station = yes
+	# 电矿
+	random_list = {
+		2 = {
+			add_deposit = d_nanites_generator
+			add_deposit = d_nanites_generator
+			add_deposit = d_nanites_mining
+			add_deposit = d_nanites_mining
+		}
+		3 = {
+			add_deposit = d_nanites_generator
+			add_deposit = d_nanites_generator
+			add_deposit = d_nanites_mining
+		}
+		3 = {
+			add_deposit = d_nanites_generator
+			add_deposit = d_nanites_mining
+			add_deposit = d_nanites_mining
+		}
+		3 = {
+			add_deposit = d_nanites_generator
+			add_deposit = d_nanites_mining
+		}
+		2 = {
+			modifier = {
+				factor = 0
+				has_carrier_flag = original_nanites_planet
+			}
+			add_deposit = d_nanites_generator
+		}
+		2 = {
+			modifier = {
+				factor = 0
+				has_carrier_flag = original_nanites_planet
+			}
+			add_deposit = d_nanites_mining
+		}
+	}
+	# 障碍
+	random_list = {
+		# 4
+		2 = {
+			modifier = {
+				factor = 0
+				planet_size >= 18
+			}
+			add_deposit = d_nanites_blocker_1
+			add_deposit = d_nanites_blocker_1
+			add_deposit = d_nanites_blocker_1
+			add_deposit = d_nanites_blocker_1
+		}
+		# 5
+		2 = {
+			modifier = {
+				factor = 0
+				planet_size >= 18
+			}
+			add_deposit = d_nanites_blocker_1
+			add_deposit = d_nanites_blocker_1
+			random_list = {
+				1 = {
+					add_deposit = d_nanites_blocker_2
+				}
+				1 = {
+					add_deposit = d_nanites_blocker_3
+				}
+			}
+		}
+		# 6
+		3 = {
+			add_deposit = d_nanites_blocker_1
+			add_deposit = d_nanites_blocker_1
+			add_deposit = d_nanites_blocker_1
+			random_list = {
+				1 = {
+					add_deposit = d_nanites_blocker_2
+				}
+				1 = {
+					add_deposit = d_nanites_blocker_3
+				}
+			}
+		}
+		# 7
+		3 = {
+			add_deposit = d_nanites_blocker_1
+			add_deposit = d_nanites_blocker_2
+			add_deposit = d_nanites_blocker_3
+		}
+		# 8
+		2 = {
+			modifier = {
+				factor = 0
+				planet_size < 18
+			}
+			add_deposit = d_nanites_blocker_1
+			add_deposit = d_nanites_blocker_1
+			add_deposit = d_nanites_blocker_2
+			add_deposit = d_nanites_blocker_3
+		}
+		# 9
+		2 = {
+			modifier = {
+				factor = 0
+				planet_size < 18
+			}
+			add_deposit = d_nanites_blocker_1
+			add_deposit = d_nanites_blocker_1
+			add_deposit = d_nanites_blocker_1
+			add_deposit = d_nanites_blocker_2
+			add_deposit = d_nanites_blocker_3
+		}
+	}
+}
+
+# 国家
+refresh_faction_hostility_with_graygoo_country = {
+	if = {
+		limit = {
+			exists = event_target:graygoo_country
+		}
+		# 以防万一，恢复友好
+		event_target:graygoo_country = {
+			set_faction_hostility = {
+				target = prev
+				set_hostile = no
+				set_neutral = no
+				set_friendly = yes
+			}
+		}
+	}
+}

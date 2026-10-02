@@ -1,0 +1,8 @@
+# 应确保较晚触发
+
+# No scope, like on_game_start
+on_monthly_pulse = {
+	events = {
+		time.2000 # 特殊特质不允许通过同化获取
+	}
+}

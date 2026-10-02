@@ -1,0 +1,75 @@
+base_buildtime = @b3_time
+planet_limit = 1
+
+category = pop_assembly
+
+potential = {
+	is_special_colony_type = no
+	exists = owner
+	owner = { has_$CIVIC$ = yes }
+}
+
+allow = {
+	has_major_upgraded_capital = yes
+}
+
+triggered_planet_modifier = {
+	planet_engineers_engineering_research_produces_add = -0.5
+}
+
+triggered_planet_modifier = {
+	planet_engineers_$RESOURCE$_produces_add = 0.5
+	planet_pop_assemblers_engineering_research_produces_add = 0.5
+	mult = value:building_civic_overclocking_art_modifier_value
+}
+
+triggered_planet_modifier = {
+	roboticist_jobs_bonus_workforce_mult = 0.5
+	mult = value:building_civic_overclocking_art_bonus_workforce_value
+}
+
+triggered_desc = {
+	trigger = {
+		NAND = {
+			exists = owner
+			owner = { has_origin = origin_mechanists }
+		}
+	}
+	text = building_civic_overclocking_art_effect
+}
+
+triggered_desc = {
+	trigger = {
+		exists = owner
+		owner = { has_origin = origin_mechanists }
+	}
+	text = building_civic_overclocking_art_mechanists_effect
+}
+
+prerequisites = {
+	$PREREQUISITES$
+}
+
+show_tech_unlock_if = {
+	has_$CIVIC$ = yes
+}
+
+resources = {
+	category = planet_buildings
+	inline_script = {
+		script = buildings/nomadic_cost_switcher
+		REGULAR_RESOURCE = minerals
+		NOMADIC_RESOURCE = alloys
+		COST = @b3_minerals
+		NOMADIC_COST_MULT = @nomadic_minerals_to_strategic_ratio
+	}
+	cost = {
+		volatile_motes = @b3_rare_cost
+	}
+	upkeep = {
+		energy = @b3_upkeep
+		volatile_motes = @b3_rare_upkeep
+	}
+}
+
+ai_weight_coefficient = 2

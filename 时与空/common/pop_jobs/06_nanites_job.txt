@@ -1,0 +1,234 @@
+nanites_trader = {
+	category = specialist
+	can_be_automated = no
+	
+	swappable_data = {
+		default = {
+			condition_string = SPECIALIST_JOB_TRIGGER
+			building_icon = building_research_lab_1
+			icon = nanotech_researcher
+		}
+	}
+
+	tags = { trade research }
+
+	possible_pre_triggers = {
+		has_owner = yes
+		is_being_purged = no
+		is_being_assimilated = no
+		is_sapient = yes
+	}
+
+	possible_precalc = can_fill_specialist_job
+	possible = {
+		has_trait = trait_origin_nanites
+	}
+	
+	resources = {
+		category = planet_nanites_logistics_drones
+		produces = {
+			trade = 8
+			physics_research = 1
+			society_research = 1
+			engineering_research = 1
+		}
+		upkeep = {
+			consumer_goods = 2.5
+		}
+		upkeep = {
+			trigger = {
+				colony = {
+					has_carrier_flag = has_science_ministry
+				}
+			}
+			consumer_goods = 0.5
+		}
+		inline_script = "jobs/origin_nanites/nanites_logistics_drone_resources"
+	}
+	
+	overlord_resources = {
+		category = planet_requisitioned_research
+		produces = {
+			trigger = {
+				colony = {
+					has_carrier_flag = has_science_ministry
+				}
+			}
+			physics_research = 0.5
+			engineering_research = 0.5
+			society_research = 0.5
+		}
+		produces = {
+			trigger = {
+				colony = {
+					has_carrier_flag = has_franchise_headquarters
+				}
+			}
+			unity = 0.25
+		}
+	}
+	
+	inline_script = "jobs/origin_nanites/nanites_logistics_drone_modifiers"
+
+	# 商贩部分
+	
+	inline_script = "jobs/vanilla/vanilla_trader_modifiers"
+	
+	# 研究人员部分
+	
+	inline_script = "jobs/vanilla/vanilla_researcher_modifiers"
+
+	weight = {
+		weight = @specialist_job_weight
+		mult = value:scripted_modifier_job_weight_mult|MODIFIER|pop_job_amenities_mult|
+		modifier = {
+			factor = 0.25
+			is_enslaved = yes
+			can_take_servant_job = no
+		}
+		modifier = {
+			factor = 2
+			OR = {
+				is_non_sapient_robot = yes
+				is_shackled_robot = yes
+			}
+			can_take_servant_job = no
+		}
+		modifier = {
+			factor = 10
+			OR = {
+				is_non_sapient_robot = yes
+				is_shackled_robot = yes
+			}
+			can_take_servant_job = no
+			can_fill_specialist_job_trigger = no
+		}
+		modifier = {
+			factor = 0.1
+			can_take_servant_job = yes
+		}
+		modifier = {
+			factor = 1.1
+			exists = owner
+			owner = { is_megacorp = yes }
+		}
+		modifier = {
+			factor = 0.5
+			exists = owner
+			owner = { is_fallen_empire = yes }
+		}
+	}
+
+	inline_script = "jobs/automodding_priority_research"
+}
+
+nanites_logistics_drone = {
+	category = complex_drone
+	can_be_automated = no
+	
+	swappable_data = {
+		default = {
+			condition_string = DRONE_JOB_TRIGGER
+			building_icon = building_research_lab_1
+			icon = nanotech_researcher
+		}
+		swap_type = {
+			trigger = {
+				nanites_logistics_drone_is_civic_origin_nanites_logistics_drone_trigger = yes
+			}
+			building_icon = building_robot_assembly_plant
+			name = civic_origin_nanites_logistics_drone
+			desc = civic_origin_nanites_logistics_drone
+			icon = civic_origin_nanites_logistics_drone
+			weight = 5
+		}
+	}
+
+	tags = { trade research }
+
+	possible_pre_triggers = {
+		has_owner = yes
+		is_enslaved = no
+		is_being_purged = no
+		is_being_assimilated = no
+		is_sapient = yes
+	}
+
+	possible_precalc = can_fill_drone_job
+	possible = {
+		has_trait = trait_origin_nanites
+		can_think = yes
+	}
+
+	resources = {
+		category = planet_nanites_logistics_drones
+		produces = {
+			trade = 6
+			physics_research = 1
+			society_research = 1
+			engineering_research = 1
+		}
+		produces = {
+			trigger = {
+				nanites_logistics_drone_is_civic_origin_nanites_logistics_drone_trigger = yes
+			}
+			trade = -1.5
+		}
+		upkeep = {
+			trigger = {
+				exists = owner
+				owner = {
+					is_hive_empire = yes
+				}
+			}
+			minerals = 6
+		}
+		upkeep = {
+			trigger = {
+				exists = owner
+				owner = {
+					is_hive_empire = no
+				}
+			}
+			energy = 5
+		}
+		inline_script = "jobs/origin_nanites/nanites_logistics_drone_resources"
+	}
+	
+	overlord_resources = {
+		category = planet_requisitioned_research
+		produces = {
+			trigger = {
+				colony = {
+					has_carrier_flag = has_science_ministry
+				}
+			}
+			physics_research = 0.5
+			engineering_research = 0.5
+			society_research = 0.5
+		}
+	}
+	
+	triggered_country_modifier = {
+		potential = {
+			nanites_logistics_drone_is_civic_origin_nanites_logistics_drone_trigger = yes
+		}
+		planet_pop_assembly_add = 0.2
+	}
+	
+	inline_script = "jobs/origin_nanites/nanites_logistics_drone_modifiers"
+	
+	# 后勤工蜂部分
+	
+	inline_script = "jobs/vanilla/vanilla_logistics_drone_modifiers"
+	
+	# 研究人员部分
+	
+	inline_script = "jobs/vanilla/vanilla_researcher_modifiers"
+
+	weight = {
+		weight = @complex_drone_job_weight
+	}
+
+	inline_script = "jobs/automodding_priority_research"
+}

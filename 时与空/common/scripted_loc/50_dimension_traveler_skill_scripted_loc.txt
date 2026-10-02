@@ -1,0 +1,298 @@
+# 星辰记忆各职业点数上限
+defined_text = {
+	name = GetMaxDimensionTravelerSkillPointClass
+	value = value:max_dimension_traveler_skill_point_class
+}
+
+# 星辰记忆各职业点数占用
+defined_text = {
+	name = GetDimensionTravelerSkillPointTextDetailOfficialUsage
+	random = no
+	text = {
+		trigger = {
+			check_variable = {
+				which = used_dimension_traveler_skill_point_official
+				value > 0
+			}
+		}
+		localization_key = dimension_traveler_skill_point_text_detail_official_usage
+	}
+	default = BLANK_STRING
+}
+
+defined_text = {
+	name = GetDimensionTravelerSkillMainOfficialTextDetailNormal
+	random = no
+	text = {
+		trigger = {
+			check_variable = {
+				which = used_dimension_traveler_skill_point_official_normal
+				value > 0
+			}
+		}
+		localization_key = dimension_traveler_skill_main_official_text_detail_normal
+	}
+	default = BLANK_STRING
+}
+
+defined_text = {
+	name = GetDimensionTravelerSkillMainOfficialTextDetailCouncilor
+	random = no
+	text = {
+		trigger = {
+			check_variable = {
+				which = used_dimension_traveler_skill_point_official_councilor
+				value > 0
+			}
+		}
+		localization_key = dimension_traveler_skill_main_official_text_detail_councilor
+	}
+	default = BLANK_STRING
+}
+
+
+
+defined_text = {
+	name = GetDimensionTravelerSkillPointTextDetailScientistUsage
+	random = no
+	text = {
+		trigger = {
+			check_variable = {
+				which = used_dimension_traveler_skill_point_scientist
+				value > 0
+			}
+		}
+		localization_key = dimension_traveler_skill_point_text_detail_scientist_usage
+	}
+	default = BLANK_STRING
+}
+
+defined_text = {
+	name = GetDimensionTravelerSkillMainScientistTextDetailNormal
+	random = no
+	text = {
+		trigger = {
+			check_variable = {
+				which = used_dimension_traveler_skill_point_scientist_normal
+				value > 0
+			}
+		}
+		localization_key = dimension_traveler_skill_main_scientist_text_detail_normal
+	}
+	default = BLANK_STRING
+}
+
+defined_text = {
+	name = GetDimensionTravelerSkillMainScientistTextDetailCouncilor
+	random = no
+	text = {
+		trigger = {
+			check_variable = {
+				which = used_dimension_traveler_skill_point_scientist_councilor
+				value > 0
+			}
+		}
+		localization_key = dimension_traveler_skill_main_scientist_text_detail_councilor
+	}
+	default = BLANK_STRING
+}
+
+
+
+defined_text = {
+	name = GetDimensionTravelerSkillPointTextDetailCommanderUsage
+	random = no
+	text = {
+		trigger = {
+			check_variable = {
+				which = used_dimension_traveler_skill_point_commander
+				value > 0
+			}
+		}
+		localization_key = dimension_traveler_skill_point_text_detail_commander_usage
+	}
+	default = BLANK_STRING
+}
+
+defined_text = {
+	name = GetDimensionTravelerSkillMainCommanderTextDetailNormal
+	random = no
+	text = {
+		trigger = {
+			check_variable = {
+				which = used_dimension_traveler_skill_point_commander_normal
+				value > 0
+			}
+		}
+		localization_key = dimension_traveler_skill_main_commander_text_detail_normal
+	}
+	default = BLANK_STRING
+}
+
+defined_text = {
+	name = GetDimensionTravelerSkillMainCommanderTextDetailCouncilor
+	random = no
+	text = {
+		trigger = {
+			check_variable = {
+				which = used_dimension_traveler_skill_point_commander_councilor
+				value > 0
+			}
+		}
+		localization_key = dimension_traveler_skill_main_commander_text_detail_councilor
+	}
+	default = BLANK_STRING
+}
+
+# 星辰记忆点数容量
+defined_text = {
+	name = GetDimensionTravelerSkillPointTextDetailCap1
+	value = value:dimension_traveler_skill_point_loc_value|BASE|1|
+}
+
+defined_text = {
+	name = GetDimensionTravelerSkillPointTextDetailCap2
+	value = value:dimension_traveler_skill_point_loc_value|BASE|2|
+}
+
+defined_text = {
+	name = GetDimensionTravelerSkillPointTextDetailCap3
+	value = value:dimension_traveler_skill_point_loc_value|BASE|3|
+}
+
+defined_text = {
+	name = GetDimensionTravelerSkillPointTextDetailCap4
+	value = value:dimension_traveler_skill_point_loc_value|BASE|4|
+}
+
+defined_text = {
+	name = GetDimensionTravelerSkillPointTextDetailBaseCap
+	random = no
+	text = {
+		trigger = {
+			always = yes
+		}
+		localization_key = dimension_traveler_skill_point_text_detail_base_cap
+	}
+	default = BLANK_STRING
+}
+
+defined_text = {
+	name = GetDimensionTravelerSkillPointTextDetailCivicCap
+	random = no
+	text = {
+		trigger = {
+			has_civic_origin_white_hole = yes
+		}
+		localization_key = dimension_traveler_skill_point_text_detail_civic_cap
+	}
+	default = BLANK_STRING
+}
+
+defined_text = {
+	name = GetDimensionTravelerSkillPointTextDetailDestinyCap
+	random = no
+	text = {
+		trigger = {
+			is_gestalt = no
+			unlock_dimension_traveler_destiny_trait = yes
+			has_country_flag = dimension_traveler_end
+		}
+		localization_key = dimension_traveler_skill_point_text_detail_destiny_end_cap
+	}
+	text = {
+		trigger = {
+			is_gestalt = yes
+			unlock_dimension_traveler_destiny_trait = yes
+			has_country_flag = dimension_traveler_end
+		}
+		localization_key = dimension_traveler_skill_point_text_detail_destiny_gestalt_end_cap
+	}
+	text = {
+		trigger = {
+			is_gestalt = no
+			unlock_dimension_traveler_destiny_trait = yes
+		}
+		localization_key = dimension_traveler_skill_point_text_detail_destiny_cap
+	}
+	text = {
+		trigger = {
+			is_gestalt = no
+			unlock_dimension_traveler_destiny_trait = yes
+		}
+		localization_key = dimension_traveler_skill_point_text_detail_destiny_gestalt_cap
+	}
+	default = BLANK_STRING
+}
+
+defined_text = {
+	name = GetDimensionTravelerSkillPointTextDetailTrait1Cap
+	random = no
+	text = {
+		trigger = {
+			has_country_flag = dimension_traveler_trait_dimension_traveler_brief
+		}
+		localization_key = dimension_traveler_skill_point_text_detail_trait_1_cap
+	}
+	default = BLANK_STRING
+}
+
+defined_text = {
+	name = GetDimensionTravelerSkillPointTextDetailTrait2Cap
+	random = no
+	text = {
+		trigger = {
+			has_country_flag = dimension_traveler_trait_pass_black_hole
+		}
+		localization_key = dimension_traveler_skill_point_text_detail_trait_2_cap
+	}
+	default = BLANK_STRING
+}
+
+defined_text = {
+	name = GetDimensionTravelerSkillPointTextDetailTrait3Cap
+	random = no
+	text = {
+		trigger = {
+			has_country_flag = dimension_traveler_trait_between_three_and_four
+		}
+		localization_key = dimension_traveler_skill_point_text_detail_trait_3_cap
+	}
+	default = BLANK_STRING
+}
+
+defined_text = {
+	name = GetDimensionTravelerSkillPointTextDetailTrait4Cap
+	random = no
+	text = {
+		trigger = {
+			has_country_flag = dimension_traveler_trait_mirror_image
+		}
+		localization_key = dimension_traveler_skill_point_text_detail_trait_4_cap
+	}
+	default = BLANK_STRING
+}
+
+defined_text = {
+	name = GetDimensionTravelerSkillPointTextDetailTrait5Cap
+	random = no
+	text = {
+		trigger = {
+			has_country_flag = dimension_traveler_trait_end_of_circle
+		}
+		localization_key = dimension_traveler_skill_point_text_detail_trait_5_cap
+	}
+	default = BLANK_STRING
+}
+
+defined_text = {
+	name = GetDimensionTravelerSkillPointTextDetailTrait6Cap
+	random = no
+	text = {
+		trigger = {
+			has_country_flag = dimension_traveler_trait_wall_breaker
+		}
+		localization_key = dimension_traveler_skill_point_text_detail_trait_6_cap
+	}
+	default = BLANK_STRING
+}

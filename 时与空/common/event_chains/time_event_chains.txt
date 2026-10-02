@@ -1,0 +1,169 @@
+beyond_infinity_chain = {
+	picture = GFX_evt_clocks
+	icon = "gfx/interface/icons/situation_log/situation_log_beyond_infinity_main.dds"
+	counter = {
+		beyond_infinity_level_reached = { max = 5 }
+	}
+	situation_log_category = ambitions
+}
+
+beyond_infinity_cosmogenesis_planet_pickup_chain = {
+	picture = GFX_evt_horizon_needle
+	icon = "gfx/interface/icons/situation_log/situation_log_main_quest.dds"
+	situation_log_category = ambitions
+}
+
+dimensional_horror_crisis_chain = {
+	picture = GFX_dimensional_horror_crisis_storm
+	icon = "gfx/interface/icons/situation_log/situation_log_dimensional_horror_crisis.dds"
+	counter = {
+		dimensional_horror_crisis_storm_original_level = {
+		}
+		black_hole_horror_count = {
+		}
+		dimensional_horror_crisis_affected_system = {
+		}
+		dimensional_horror_crisis_erasured_system = {
+		}
+		dimensional_horror_crisis_sealed_system = {
+		}
+		dimensional_horror_crisis_sealed_us = {
+		}
+		dimensional_horror_crisis_kills_us = {
+		}
+		dimensional_horror_crisis_kills_others = {
+		}
+		dimensional_horror_crisis_victims = {
+		}
+	}
+	situation_log_category = crises
+}
+
+beyond_infinity_seal_chain = {
+	picture = GFX_dimensional_horror_crisis_storm
+	icon = "gfx/interface/icons/situation_log/situation_log_astral_rift.dds"
+	counter = {
+		beyond_infinity_seal_requirement = {
+		}
+	}
+	situation_log_category = crises
+}
+
+PC_TIME_CHAIN = {
+	icon = "gfx/interface/icons/situation_log/situation_log_akx_worm.dds"
+	picture = GFX_evt_astral_rift_microverse
+	situation_log_category = empire_concerns
+}
+
+PC_TIME_END_CHAIN = {
+	icon = "gfx/interface/icons/situation_log/situation_log_akx_worm.dds"
+	picture = GFX_evt_black_hole
+	situation_log_category = urgent_matters
+}
+
+TIME_BLACK_HOLE_CHAIN = {
+	icon = "gfx/interface/icons/situation_log/situation_log_akx_worm.dds"
+	picture = GFX_evt_black_hole
+	situation_log_category = horizonsignal
+}
+
+TIME_WANDERER_CHAIN = {
+	icon = "gfx/interface/icons/situation_log/situation_log_akx_worm.dds"
+	picture = GFX_evt_black_hole
+	situation_log_category = urgent_matters
+}
+
+AP_HORROR_CHAIN = {
+	icon = "gfx/interface/icons/situation_log/situation_log_akx_worm.dds"
+	picture = GFX_evt_dimensional_horror
+	counter = {
+		ap_horror_chain_time = {
+			max = 1
+		}
+		ap_horror_chain_circle = {
+			max = 1
+		}
+		ap_horror_chain_dimension = {
+			max = 1
+		}
+	}
+	situation_log_category = horizonsignal
+}
+
+DIMENSION_TRAVELER_CHAIN_1 = {
+	icon = "gfx/interface/icons/situation_log/situation_log_dimension_traveler.dds"
+	picture = GFX_evt_wormhole
+	situation_log_category = horizonsignal
+}
+
+DIMENSION_TRAVELER_CHAIN_2 = {
+	icon = "gfx/interface/icons/situation_log/situation_log_dimension_traveler.dds"
+	picture = GFX_evt_board_meeting
+	situation_log_category = horizonsignal
+}
+
+DIMENSION_TRAVELER_CHAIN_END_1 = {
+	icon = "gfx/interface/icons/situation_log/situation_log_dimension_traveler.dds"
+	picture = GFX_evt_clocks
+	situation_log_category = horizonsignal
+}
+
+DIMENSION_TRAVELER_CHAIN_END_2 = {
+	icon = "gfx/interface/icons/situation_log/situation_log_dimension_traveler.dds"
+	picture = GFX_evt_vortex
+	situation_log_category = horizonsignal
+}
+
+DIMENSION_TRAVELER_CHAIN_END_3 = {
+	icon = "gfx/interface/icons/situation_log/situation_log_dimension_traveler.dds"
+	picture = GFX_evt_supernova
+	situation_log_category = horizonsignal
+}
+
+PARALLEL_SKY_CHAIN = {
+	icon = "gfx/interface/icons/situation_log/situation_log_precursor.dds"
+	picture = GFX_evt_shroud_tunnel
+	situation_log_category = empire_concerns
+}
+
+ORIGIN_COLOSSUS_CHAIN = {
+	icon = "gfx/interface/icons/situation_log/situation_log_main_quest.dds"
+	picture = GFX_evt_planet_beam
+	situation_log_category = empire_concerns
+}
+
+ORIGIN_BRIGHT_PEARL_CHAIN = {
+	icon = "gfx/interface/icons/situation_log/situation_log_federation.dds"
+	picture = GFX_evt_shroudwalker_enclave
+	situation_log_category = empire_concerns
+}
+
+PIRATE_KING_CHAIN = {
+	icon = "gfx/interface/icons/situation_log/situation_log_main_quest.dds"
+	picture = GFX_evt_black_hole
+	situation_log_category = horizonsignal
+}
+
+SWARM_CRISIS_CHAIN = {
+	icon = "gfx/interface/icons/situation_log/situation_log_swarm.dds"
+	picture = GFX_evt_unidentified_monster
+	situation_log_category = crises
+}
+
+AI_CRISIS_CHAIN = {
+	icon = "gfx/interface/icons/situation_log/situation_log_ai.dds"
+	picture = GFX_evt_contingency_planet
+	situation_log_category = crises
+}
+
+EXD_CRISIS_CHAIN = {
+	icon = "gfx/interface/icons/situation_log/situation_log_extradimensional.dds"
+	picture = GFX_evt_announcement
+	situation_log_category = crises
+}
+
+TIME_LIFELINE_CHAIN = {
+	icon = "gfx/interface/icons/situation_log/situation_log_radar.dds"
+	picture = GFX_evt_mysterious_signal
+	situation_log_category = urgent_matters
+}

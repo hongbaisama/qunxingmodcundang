@@ -1,0 +1,32 @@
+﻿l_simp_chinese:
+ ap_category_akx_horror: "负相"
+ ap_category_akx_horror_desc: "对负相的探索永无止境。"
+ 
+ ap_horror:0 "负相奥秘"
+ ap_horror_desc:0 "在时之螶的指引下，我们可以尝试探索神秘的恐怖负相位面，并踏入无尽的飞升。"
+ ap_horror_effect:0 "§M获取恐怖负相位面的知识，并增强['concept_horror_time']科技。§!"
+ 
+ ap_time:0 "时空因果"
+ ap_time_desc:0 "我们为负相中的奥秘而痴狂，我们渴求知识，我们渴求真相，我们渴求无限。\n正如我们过去之所做，正如我们未来之所为。"
+ ap_time_effect:0 "§M洞悉恐怖负相位面的知识，并大幅增强['concept_horror_time']科技。§!"
+ ap_time_potential_effect:0 "$ap_time_effect$\n§R该飞升及后续内容强度较高，原版八飞升环境无法解锁，请谨慎选择！§!"
+ 
+ ap_beyond_infinity:0 "超越无限"
+ ap_beyond_infinity_desc:0 "我们并非化身天灾的痴狂者，而是寻觅救赎的迷途者。纵使阻止终末的成功率无限接近于零，但若不去尝试，那就只会是零。\n\n既然我们已经超越了因果，那我们也一定可以超越无限。"
+ ap_beyond_infinity_effect:0 "[Root.GetName]现在可以踏上§M超越无限§!之路。"
+ ap_beyond_infinity_potential_effect:0 "$ap_beyond_infinity_effect$\n§R该飞升及后续内容强度极高，甚至可能面临颇为强力的对手，请谨慎选择！§!"
+ 
+ ap_origin_time:0 "奇点之心"
+ ap_origin_time_desc:0 "无穷的我们探索着无垠的黑洞，无尽的奇点连接着无限的时空。我们已触及黑洞之心，我们即奇点。"
+ ap_origin_time_effect:0 "$UNLOCKS_AGENDA$§Y$council_agenda_agenda_time_soul_name$§!。"
+ ap_origin_time_potential_effect:0 "$UNLOCKS_AGENDA$§Y$council_agenda_agenda_time_soul_name$§!，根据§Y飞升路线§!获得相应的['concept_trait_time_soul']特质。"
+ 
+ ap_origin_gas_colony:0 "气体人征途"
+ ap_origin_gas_colony_desc:0 "$NAME_Baldarak$与$NAME_New_Baldarak$之间发生了许多有趣的事情，纵使移动受限，它们也仍然按照自己的意愿行事。或许，我们也应该克服自身的缺陷，勇敢地踏上我们的征途。"
+ ap_origin_gas_colony_effect:0 "允许我们对§Y$pc_gas_giant$§!进行适应性环境改造。"
+ 
+ ap_nanites_ring:0 "纳米星环"
+ ap_nanites_ring_desc:0 "在得知我们的使命之后，对过去的记忆也在存储单元中重现。我们过去曾被用于各种各样的建设工程，但如今，我们将遵循自己的意愿塑造家园。"
+ ap_nanites_ring_effect:0 "解锁专属的星环基地§Y模块§!和§Y建筑§!。"
+ 
+ dimension_traveler_may_leave:0 "§R界旅者不希望我们这么做，如果我们坚持化身天灾，她可能会离开我们！§!"

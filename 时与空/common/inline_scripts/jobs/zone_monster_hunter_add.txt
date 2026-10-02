@@ -1,0 +1,15 @@
+triggered_district_planet_modifier = {
+	potential = {
+		OR = {
+			is_special_colony_type = no
+			has_modifier = resort_colony
+		}
+		exists = owner
+		owner = {
+			has_origin = origin_monster_hunter
+			has_valid_civic = civic_warrior_culture
+		}
+	}
+	job_monster_hunter_add = $AMOUNT$
+	mult = value:time_zone_job_value
+}

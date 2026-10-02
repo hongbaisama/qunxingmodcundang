@@ -1,0 +1,35 @@
+base_buildtime = 0
+can_build = no
+
+category = $CATEGORY$
+
+potential = {
+	is_special_colony_type = no
+	NOT = { has_building = building_tower_of_infinity_$TYPE$ }
+	owner = { has_crisis_perk = menp_beyond_infinity_building_$LEVEL$ }
+}
+
+destroy_trigger = {
+	OR = {
+		is_special_colony_type = yes
+		owner = {
+			NOT = { has_crisis_perk = menp_beyond_infinity_building_$LEVEL$ }
+		}
+	}
+}
+
+#abort_construction_trigger = {
+#	has_building = building_tower_of_infinity_$TYPE$
+#}
+
+resources = {
+	category = planet_buildings
+	upkeep = {
+		unity = 500
+		astral_threads = 5
+	}
+}
+
+prerequisites = {
+	tech_building_tower_of_infinity_$TYPE$
+}

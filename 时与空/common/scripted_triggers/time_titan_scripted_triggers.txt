@@ -1,0 +1,294 @@
+# 舰队
+is_time_titan_fleet = {
+	exists = event_target:time_titan_fleet
+	is_same_value = event_target:time_titan_fleet
+}
+
+# 船只
+is_time_titan_ship = {
+	exists = event_target:time_titan_ship
+	is_same_value = event_target:time_titan_ship
+}
+
+# 船只/舰队
+is_time_titan_ship_size = {
+	OR = {
+		is_ship_size = horror_titan
+		is_ship_size = time_titan
+		is_ship_size = end_titan
+	}
+}
+
+# 恒星基地
+is_time_titan_starbase = {
+	OR = {
+		has_starbase_size = horror_titan
+		has_starbase_size = time_titan
+		has_starbase_size = end_titan
+	}
+}
+
+# 任意
+time_titan_has_upgrade = {
+	event_target:time_titan_fleet = {
+		check_variable = {
+			which = time_titan_$TYPE$_level
+			value = $LEVEL$
+		}
+	}
+}
+
+# 任意
+time_titan_has_upgrade_or_more = {
+	event_target:time_titan_fleet = {
+		check_variable = {
+			which = time_titan_$TYPE$_level
+			value >= $LEVEL$
+		}
+	}
+}
+
+# 任意
+time_titan_has_upgrade_less_than_max = {
+	event_target:time_titan_fleet = {
+		check_variable_arithmetic = {
+			which = value:time_titan_max_level_for_$MODE$
+			value > time_titan_$TYPE$_level
+		}
+	}
+}
+
+# 任意
+time_titan_has_all_upgrade = {
+	time_titan_has_upgrade_or_more = {
+		TYPE = primary
+		LEVEL = $LEVEL$
+	}
+	time_titan_has_upgrade_or_more = {
+		TYPE = normal
+		LEVEL = $LEVEL$
+	}
+	time_titan_has_upgrade_or_more = {
+		TYPE = subsidiary
+		LEVEL = $LEVEL$
+	}
+	time_titan_has_upgrade_or_more = {
+		TYPE = power
+		LEVEL = $LEVEL$
+	}
+	time_titan_has_upgrade_or_more = {
+		TYPE = sapient
+		LEVEL = $LEVEL$
+	}
+	time_titan_has_upgrade_or_more = {
+		TYPE = drive
+		LEVEL = $LEVEL$
+	}
+	time_titan_has_upgrade_or_more = {
+		TYPE = hull
+		LEVEL = $LEVEL$
+	}
+	time_titan_has_upgrade_or_more = {
+		TYPE = armor
+		LEVEL = $LEVEL$
+	}
+	time_titan_has_upgrade_or_more = {
+		TYPE = shield
+		LEVEL = $LEVEL$
+	}
+}
+
+# 任意
+time_titan_has_upgrade_process_more_than = {
+	event_target:time_titan_fleet = {
+		check_variable_arithmetic = {
+			which = value:time_titan_upgrade_percent
+			value >= $PROCESS$
+		}
+	}
+}
+
+# 任意
+time_titan_has_upgrade_process_less_than = {
+	event_target:time_titan_fleet = {
+		check_variable_arithmetic = {
+			which = value:time_titan_upgrade_percent
+			value < $PROCESS$
+		}
+	}
+}
+
+# 任意
+can_upgrade_time_titan = {
+	time_titan_is_upgrading = no
+	time_titan_is_in_combat = no
+	time_titan_is_not_mia = yes
+	time_titan_is_in_time_titan_end_shelter_progress = no
+	time_titan_exist_syzygy_admiral = yes
+	from = {
+		has_country_resource = {
+			type = sr_dark_matter
+			amount >= value:time_titan_upgrade_cost|TYPE|$TYPE$|MODE|$MODE$|
+		}
+	}
+}
+
+# 任意
+time_titan_is_free_for_action = {
+	custom_tooltip = {
+		fail_text = time_titan_is_upgrading
+		time_titan_is_upgrading = no
+	}
+	custom_tooltip = {
+		fail_text = time_titan_is_in_combat
+		time_titan_is_in_combat = no
+	}
+	custom_tooltip = {
+		fail_text = time_titan_is_mia
+		time_titan_is_not_mia = yes
+	}
+	custom_tooltip = {
+		fail_text = time_titan_is_in_time_titan_end_shelter_progress
+		time_titan_is_in_time_titan_end_shelter_progress = no
+	}
+	custom_tooltip = {
+		fail_text = require_syzygy_admiral
+		time_titan_exist_syzygy_admiral = yes
+	}
+}
+
+# 任意
+time_titan_is_upgrading = {
+	event_target:time_titan_fleet = {
+		OR = {
+			has_fleet_flag = time_titan_upgrade_primary
+			has_fleet_flag = time_titan_upgrade_normal
+			has_fleet_flag = time_titan_upgrade_subsidiary
+			has_fleet_flag = time_titan_upgrade_power
+			has_fleet_flag = time_titan_upgrade_sapient
+			has_fleet_flag = time_titan_upgrade_drive
+			has_fleet_flag = time_titan_upgrade_hull
+			has_fleet_flag = time_titan_upgrade_armor
+			has_fleet_flag = time_titan_upgrade_shield
+		}
+	}
+}
+
+# 任意
+time_titan_is_upgrading_specific_type = {
+	event_target:time_titan_fleet = {
+		has_fleet_flag = time_titan_upgrade_$TYPE$
+	}
+}
+
+# 任意
+time_titan_is_in_combat = {
+	event_target:time_titan_fleet = {
+		is_in_combat = yes
+	}
+}
+
+# 经测试，只要舰船处于战斗状态或者失踪状态，无论判定can_go_mia = yes还是no，均返回false，否则返回true
+# 任意（舰船未交战且未失踪，该条件返回true，很神奇吧？）（弃用）
+time_titan_is_mia = {
+	event_target:time_titan_fleet = {
+		is_in_combat = no
+		can_go_mia = no
+	}
+}
+
+# 任意（舰船未交战且未失踪，该条件也返回true，很神奇吧？）（实际使用）
+time_titan_is_not_mia = {
+	event_target:time_titan_fleet = {
+		OR = {
+			is_in_combat = yes
+			can_go_mia = yes
+		}
+	}
+}
+
+# 任意
+time_titan_is_in_time_titan_end_shelter_progress = {
+	event_target:time_titan_fleet = {
+		has_fleet_flag = in_time_titan_end_shelter_progress
+	}
+}
+
+# 任意
+time_titan_exist_syzygy_admiral = {
+	event_target:time_titan_fleet = {
+		owner = {
+			OR = {
+				any_owned_leader = {
+					is_syzygy_admiral = yes # 明日船长存活
+				}
+				has_country_flag = dimension_traveler_trait_foredoomed_to_a_rendezvous
+				has_country_flag = dimension_traveler_trait_foredoomed_to_a_rendezvous_end
+			}
+		}
+	}
+}
+
+# 船只
+time_titan_is_fine = {
+	fleet = {
+		exists = leader
+		leader = {
+			OR = {
+				is_syzygy_admiral = yes
+				is_dimension_traveler = yes
+			}
+		}
+	}
+}
+
+# 殖民地
+has_time_shelter_level = {
+	is_planet_class = pc_time_shelter
+	has_time_shelter_level_$LEVEL$ = yes
+}
+
+# 殖民地
+has_time_shelter_level_1 = {
+	ship? = {
+		OR = {
+			is_ship_size = horror_titan
+			is_ship_size = time_titan
+			is_ship_size = end_titan
+		}
+	}
+}
+
+# 殖民地
+has_time_shelter_level_2 = {
+	ship? = {
+		OR = {
+			is_ship_size = time_titan
+			is_ship_size = end_titan
+		}
+	}
+}
+
+# 殖民地
+has_time_shelter_level_3 = {
+	OR = {
+		ship? = { is_ship_size = end_titan }
+		AND = {
+			ship? = { is_ship_size = time_titan }
+			owner? = { has_technology = tech_hope_time_titan }
+		}
+	}
+}
+
+# 殖民地
+has_time_shelter_level_3_without_hope = {
+	ship? = { is_ship_size = end_titan }
+}
+
+# 殖民地
+has_time_shelter_modifier = {
+	check_modifier_value = {
+		modifier = $MODIFIER$
+		value != 0
+	}
+}

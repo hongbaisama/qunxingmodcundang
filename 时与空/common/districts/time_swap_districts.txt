@@ -1,0 +1,165 @@
+district_arcology_adeptus_mechanicus = {
+	overlay_icon = GFX_district_unity
+
+	triggered_name = {
+		text = district_adeptus_mechanicus_name
+	}
+
+	zone_slots = {
+		slot_empty
+	}
+
+	show_on_uncolonized = {
+		always = no
+	}
+
+	potential = {
+		always = no
+	}
+}
+
+district_ring_world_adeptus_mechanicus = {
+	icon = district_arcology_adeptus_mechanicus
+	overlay_icon = GFX_district_unity
+
+	triggered_name = {
+		text = district_adeptus_mechanicus_name
+	}
+
+	zone_slots = {
+		slot_empty
+	}
+
+	show_on_uncolonized = {
+		always = no
+	}
+
+	potential = {
+		always = no
+	}
+}
+
+district_resort_adeptus_mechanicus = {
+	icon = district_arcology_adeptus_mechanicus
+	overlay_icon = GFX_district_unity
+
+	triggered_name = {
+		text = district_adeptus_mechanicus_name
+	}
+
+	zone_slots = {
+		slot_empty
+	}
+
+	show_on_uncolonized = {
+		always = no
+	}
+
+	potential = {
+		always = no
+	}
+}
+
+district_arcology_monster_hunter = {
+	overlay_icon = GFX_district_amenities
+
+	triggered_name = {
+		text = district_monster_hunter_name
+	}
+
+	zone_slots = {
+		slot_empty
+	}
+
+	show_on_uncolonized = {
+		always = no
+	}
+
+	potential = {
+		always = no
+	}
+}
+
+district_ring_world_monster_hunter = {
+	icon = district_arcology_monster_hunter
+	overlay_icon = GFX_district_amenities
+
+	triggered_name = {
+		text = district_monster_hunter_name
+	}
+
+	zone_slots = {
+		slot_empty
+	}
+
+	show_on_uncolonized = {
+		always = no
+	}
+
+	potential = {
+		always = no
+	}
+}
+
+district_resort_monster_hunter = {
+	icon = district_arcology_monster_hunter
+	overlay_icon = GFX_district_amenities
+
+	triggered_name = {
+		text = district_monster_hunter_name
+	}
+
+	zone_slots = {
+		slot_empty
+	}
+
+	show_on_uncolonized = {
+		always = no
+	}
+
+	potential = {
+		always = no
+	}
+}
+
+district_arcology_ancient_reactor_pits = {
+	icon = district_generator
+	overlay_icon = GFX_district_energy
+
+	zone_slots = {
+		slot_empty
+	}
+
+	show_on_uncolonized = {
+		always = no
+	}
+
+	potential = {
+		always = no
+	}
+
+	inline_script = {
+		script = districts/district_triggered_name_generator
+	}
+}
+
+district_arcology_abandoned_mining_tunnels = {
+	icon = district_mining
+	overlay_icon = GFX_district_minerals
+
+	zone_slots = {
+		slot_empty
+	}
+
+	show_on_uncolonized = {
+		always = no
+	}
+
+	potential = {
+		always = no
+	}
+
+	inline_script = {
+		script = districts/district_triggered_name_mining
+	}
+}

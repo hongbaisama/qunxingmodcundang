@@ -1,0 +1,159 @@
+time_machine_is_defective = {
+	hide_from_country_list = yes
+	building_time_mult = 0.25
+	starbase_upgrade_time_mult = 0.25
+	starbase_module_build_time_mult = 0.25
+	starbase_building_build_time_mult = 0.25
+	icon = "gfx/interface/icons/planet_modifiers/pm_time_acceleration.dds"
+}
+
+beyond_infinity_time_saturation = {
+	custom_tooltip = beyond_infinity_time_saturation_effect
+	icon = "gfx/interface/icons/planet_modifiers/pm_time_acceleration.dds"
+}
+
+beyond_infinity_physics_modifier = {
+	hide_from_country_list = yes
+	planet_physicists_beyond_infinity_time_produces_add = 0.1
+	planet_physicists_beyond_infinity_time_upkeep_add = 0.1
+	planet_physicists_produces_mult = 0.01
+	leader_officials_beyond_infinity_time_produces_add = 0.1
+	leader_officials_beyond_infinity_time_upkeep_add = 0.1
+	leader_officials_produces_mult = 0.01
+	leader_scientists_beyond_infinity_time_produces_add = 0.1
+	leader_scientists_beyond_infinity_time_upkeep_add = 0.1
+	leader_scientists_produces_mult = 0.01
+	leader_commanders_beyond_infinity_time_produces_add = 0.1
+	leader_commanders_beyond_infinity_time_upkeep_add = 0.1
+	leader_commanders_produces_mult = 0.01
+	icon = "gfx/interface/icons/planet_modifiers/pm_time_acceleration.dds"
+}
+
+beyond_infinity_society_modifier = {
+	hide_from_country_list = yes
+	planet_biologists_beyond_infinity_time_produces_add = 0.1
+	planet_biologists_beyond_infinity_time_upkeep_add = 0.1
+	planet_biologists_produces_mult = 0.01
+	planet_bureaucrats_beyond_infinity_time_produces_add = 0.1
+	planet_bureaucrats_beyond_infinity_time_upkeep_add = 0.1
+	planet_bureaucrats_produces_mult = 0.01
+	icon = "gfx/interface/icons/planet_modifiers/pm_time_acceleration.dds"
+}
+
+beyond_infinity_engineering_modifier = {
+	hide_from_country_list = yes
+	planet_engineers_beyond_infinity_time_produces_add = 0.1
+	planet_engineers_beyond_infinity_time_upkeep_add = 0.1
+	planet_engineers_produces_mult = 0.01
+	megastructures_beyond_infinity_time_produces_add = 0.1
+	megastructures_beyond_infinity_time_upkeep_add = 0.1
+	megastructures_produces_mult = 0.01
+	icon = "gfx/interface/icons/planet_modifiers/pm_time_acceleration.dds"
+}
+
+beyond_infinity_spiral_modifier = {
+	planet_max_districts_add = 1
+	icon = "gfx/interface/icons/planet_modifiers/beyond_infinity_spiral_modifier.dds"
+}
+
+beyond_infinity_become_the_crisis_modifier_1 = {
+	hide_from_country_list = yes
+	country_subject_acceptance_add = 25
+	icon = "gfx/interface/icons/planet_modifiers/pm_time_acceleration.dds"
+}
+
+beyond_infinity_become_the_crisis_modifier_2 = {
+	hide_from_country_list = yes
+	country_subject_acceptance_add = 25
+	ship_damage_against_starbases_mult = 0.3
+	country_war_exhaustion_mult = -0.75
+	icon = "gfx/interface/icons/planet_modifiers/pm_time_acceleration.dds"
+}
+
+beyond_infinity_become_the_crisis_modifier_3 = {
+	hide_from_country_list = yes
+	country_subject_acceptance_add = 25
+	ship_damage_against_starbases_mult = 0.3
+	country_war_exhaustion_mult = -0.75
+	starbase_shipyard_build_speed_mult = 0.5
+	ship_orbital_bombardment_mult = 0.2
+	shipsize_corvette_evasion_mult = 0.15
+	shipsize_corvette_disengage_chance_mult = 0.5
+	icon = "gfx/interface/icons/planet_modifiers/pm_time_acceleration.dds"
+}
+
+beyond_infinity_become_the_crisis_modifier_4 = {
+	hide_from_country_list = yes
+	country_subject_acceptance_add = 25
+	ship_damage_against_starbases_mult = 0.3
+	country_war_exhaustion_mult = -0.75
+	starbase_shipyard_build_speed_mult = 0.5
+	ship_orbital_bombardment_mult = 0.2
+	shipsize_corvette_evasion_mult = 0.15
+	shipsize_corvette_disengage_chance_mult = 0.5
+	ship_weapon_damage = 0.5
+	shipsize_destroyer_tracking_mult = 0.3
+	icon = "gfx/interface/icons/planet_modifiers/pm_time_acceleration.dds"
+}
+
+beyond_infinity_become_the_crisis_modifier_5 = {
+	hide_from_country_list = yes
+	country_subject_acceptance_add = 25
+	ship_damage_against_starbases_mult = 0.3
+	country_war_exhaustion_mult = -0.75
+	starbase_shipyard_build_speed_mult = 0.5
+	ship_orbital_bombardment_mult = 0.2
+	shipsize_corvette_evasion_mult = 0.15
+	shipsize_corvette_disengage_chance_mult = 0.5
+	ship_weapon_damage = 0.5
+	shipsize_destroyer_tracking_mult = 0.3
+	shipsize_cruiser_hull_mult = 0.3
+	ships_upkeep_mult = -0.3
+	icon = "gfx/interface/icons/planet_modifiers/pm_time_acceleration.dds"
+}
+
+resolution_beyond_infinity_emperor_1 = {
+	diplo_weight_technology_mult = 0.25
+	country_beyond_infinity_time_produces_mult = 0.25
+	all_technology_research_speed = 0.125
+	empire_size_mult = 0.125
+}
+
+resolution_beyond_infinity_emperor_2 = {
+	diplo_weight_technology_mult = 0.25
+	country_beyond_infinity_time_produces_mult = 0.25
+	all_technology_research_speed = 0.125
+	empire_size_mult = 0.125
+	envoys_add = -1
+}
+
+resolution_beyond_infinity_emperor_3 = {
+	diplo_weight_technology_mult = 0.5
+	country_beyond_infinity_time_produces_mult = 0.5
+	all_technology_research_speed = 0.25
+	empire_size_mult = 0.25
+	envoys_add = -1
+}
+
+resolution_beyond_infinity_custodian_1 = {
+	diplo_weight_technology_mult = 0.25
+	country_beyond_infinity_time_produces_mult = 0.25
+	all_technology_research_speed = 0.125
+	empire_size_mult = 0.125
+}
+
+resolution_beyond_infinity_custodian_2 = {
+	diplo_weight_technology_mult = 0.25
+	country_beyond_infinity_time_produces_mult = 0.25
+	all_technology_research_speed = 0.125
+	empire_size_mult = 0.125
+	envoys_add = -1
+}
+
+resolution_beyond_infinity_custodian_3 = {
+	diplo_weight_technology_mult = 0.5
+	country_beyond_infinity_time_produces_mult = 0.5
+	all_technology_research_speed = 0.25
+	empire_size_mult = 0.25
+	envoys_add = -1
+}

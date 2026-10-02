@@ -1,0 +1,71 @@
+spriteTypes = {
+	spriteType = {
+		name = "GFX_icon_councilor_ruler_time_democratic"
+		texturefile = "gfx/interface/council_view/icon_councilor_ruler_time_democratic.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_icon_councilor_ruler_time_imperial"
+		texturefile = "gfx/interface/council_view/icon_councilor_ruler_time_imperial.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_icon_councilor_ruler_time_corporate"
+		texturefile = "gfx/interface/council_view/icon_councilor_ruler_time_corporate.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_icon_councilor_origin_legendary_worship_legendary"
+		texturefile = "gfx/interface/icons/governments/civics/civic_final_defense_protocols.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_icon_councilor_origin_legendary_worship_renowned"
+		texturefile = "gfx/interface/icons/governments/civics/civic_awakened_machine.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_icon_councilor_tradition_hope"
+		textureFile = "gfx/interface/icons/traditions/tree_icons/tradition_icon_end.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_icon_councilor_akx_waiting_world"
+		texturefile = "gfx/interface/icons/menu_icon_traditions.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_icon_councilor_akx_end_messenger"
+		texturefile = "gfx/interface/icons/jobs/job_end_messenger.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_icon_councilor_akx_future_messenger"
+		texturefile = "gfx/interface/icons/jobs/job_future_messenger.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_icon_councilor_akx_syzygy_admiral"
+		texturefile = "gfx/interface/council_view/icon_councilor_akx_syzygy_admiral.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_icon_councilor_akx_coils_god"
+		texturefile = "gfx/interface/council_view/icon_councilor_akx_coils_god.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_icon_councilor_akx_hole_pets"
+		texturefile = "gfx/interface/icons/traits/trait_robot_infinity_sphere.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_icon_councilor_time_hotel"
+		texturefile = "gfx/interface/icons/traits/leader_trait_time_hotel.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_icon_councilor_akx_pirate_king"
+		texturefile = "gfx/interface/icons/technologies/categories/category_horror_time.dds"
+	}
+}

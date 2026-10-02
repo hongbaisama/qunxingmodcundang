@@ -1,0 +1,142 @@
+zone_adeptus_mechanicus = {
+	inline_script = {
+		script = zones/shared_adeptus_mechanicus_zone
+		AMOUNT = @scaling_district_1_job
+		BUILDING_SLOT = @time_mod_zone_max_buildings
+	}
+	
+	zone_sets = {
+		urban
+		habitat_urban
+		ark_urban
+	}
+
+	triggered_district_planet_modifier = {
+		planet_housing_add = -500
+	}
+	
+	convert_to = {
+		zone_unity
+		zone_unity_spiritualist
+		zone_unity_bio_trophy
+		zone_adeptus_mechanicus_ark
+		zone_adeptus_mechanicus_arcology
+		zone_adeptus_mechanicus_ring_world
+		zone_adeptus_mechanicus_resort
+	}
+}
+
+zone_adeptus_mechanicus_ark = {
+	inline_script = {
+		script = zones/shared_adeptus_mechanicus_zone
+		AMOUNT = @doubled_scaling_district_1_job
+		BUILDING_SLOT = @time_mod_zone_max_buildings
+	}
+	
+	zone_sets = {
+		ark_basic
+		ark_forever_cruise
+	}
+	
+	convert_to = {
+		zone_ark_forever_cruise_passenger
+		zone_adeptus_mechanicus
+		zone_adeptus_mechanicus_arcology
+		zone_adeptus_mechanicus_ring_world
+		zone_adeptus_mechanicus_resort
+	}
+}
+
+zone_adeptus_mechanicus_arcology = {
+	inline_script = {
+		script = zones/shared_adeptus_mechanicus_zone
+		AMOUNT = @doubled_scaling_district_1_job
+		BUILDING_SLOT = @time_mod_zone_max_buildings
+	}
+	
+	swap_type = district_arcology_adeptus_mechanicus
+	swap_type_weight = 5
+	
+	zone_sets = {
+		arcology
+	}
+
+	triggered_district_planet_modifier = {
+		planet_housing_add = -1500
+	}
+	
+	convert_to = {
+		zone_unity_arcology
+		zone_unity_spiritualist_arcology
+		zone_unity_bio_trophy_arcology
+		zone_adeptus_mechanicus
+		zone_adeptus_mechanicus_ark
+		zone_adeptus_mechanicus_ring_world
+		zone_adeptus_mechanicus_resort
+	}
+}
+
+zone_adeptus_mechanicus_ring_world = {
+	inline_script = {
+		script = zones/shared_adeptus_mechanicus_zone
+		AMOUNT = @doubled_scaling_district_1_job
+		BUILDING_SLOT = @time_mod_zone_max_buildings
+	}
+	
+	swap_type = district_ring_world_adeptus_mechanicus
+	swap_type_weight = 5
+	
+	zone_sets = {
+		ring_world
+	}
+
+	triggered_district_planet_modifier = {
+		planet_housing_add = -1500
+	}
+	
+	convert_to = {
+		zone_unity_ring_world
+		zone_unity_spiritualist_ring_world
+		zone_unity_bio_trophy_ring_world
+		zone_adeptus_mechanicus
+		zone_adeptus_mechanicus_ark
+		zone_adeptus_mechanicus_arcology
+		zone_adeptus_mechanicus_resort
+	}
+}
+
+zone_adeptus_mechanicus_resort = {
+	inline_script = {
+		script = zones/shared_adeptus_mechanicus_zone
+		AMOUNT = @doubled_scaling_district_1_job
+		BUILDING_SLOT = 1
+	}
+	
+	max_buildings = 1
+	
+	empire_limit = {
+		base = 1
+	}
+	
+	planet_limit = {
+		base = 1
+	}
+	
+	swap_type = district_resort_adeptus_mechanicus
+	swap_type_weight = 5
+	
+	zone_sets = {
+		resort_attraction
+	}
+
+	triggered_district_planet_modifier = {
+		planet_housing_add = -500
+	}
+	
+	convert_to = {
+		zone_adeptus_mechanicus
+		zone_adeptus_mechanicus_ark
+		zone_adeptus_mechanicus_arcology
+		zone_adeptus_mechanicus_ring_world
+	}
+}

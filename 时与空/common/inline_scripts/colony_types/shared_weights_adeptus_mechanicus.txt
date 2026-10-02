@@ -1,0 +1,16 @@
+complex_trigger_modifier = {
+	trigger = num_buildings
+	parameters = {
+		type = building_adeptus_mechanicus_1
+	}
+	mode = add
+	mult = 10
+}
+complex_trigger_modifier = {
+	trigger = num_buildings
+	parameters = {
+		type = building_adeptus_mechanicus_2
+	}
+	mode = add
+	mult = 20
+}

@@ -1,0 +1,30 @@
+################################################################
+# 地块
+################################################################
+
+d_secondhand_country = {
+	is_for_colonizable = yes
+	
+	category = deposit_cat_rare
+
+	icon = d_organic_landfill
+	
+	custom_tooltip = d_secondhand_country_effect
+	custom_tooltip_short = d_secondhand_country_effect_short
+	
+	planet_modifier = {
+		planet_jobs_minerals_produces_mult = 0.15
+		planet_jobs_alloys_produces_mult = 0.15
+		planet_jobs_engineering_research_produces_mult = 0.15
+		pop_environment_tolerance = -0.3
+		planet_max_districts_add = -1
+	}
+	
+	potential = {
+		always = no
+	}
+	
+	drop_weight = {
+		weight = 0
+	}
+}

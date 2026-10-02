@@ -1,0 +1,59 @@
+slot_nanites_energy = {
+	included_zone_sets = {
+		zone_nanites_energy
+	}
+	
+	exclude = {
+	}
+	
+	unlock = { # planet scope
+		custom_tooltip = {
+			fail_text = zone_unavailable_tech_power_hub_1
+			exists = owner
+			owner = {
+				has_tech_or_functional_civic = {
+					TECH = tech_power_hub_1
+				}
+			}
+		}
+	}
+}
+
+slot_nanites_minerals = {
+	included_zone_sets = {
+		zone_nanites_minerals
+	}
+	
+	exclude = {
+	}
+	
+	unlock = { # planet scope
+		custom_tooltip = {
+			fail_text = zone_unavailable_tech_mineral_purification_1
+			exists = owner
+			owner = {
+				has_tech_or_functional_civic = {
+					TECH = tech_mineral_purification_1
+				}
+			}
+		}
+	}
+}
+
+slot_nanites_nexus = {
+	included_zone_sets = {
+		nexus
+	}
+
+	unlock = { # planet scope
+		custom_tooltip = {
+			fail_text = zone_unavailable_tech_planetary_unification
+			exists = owner
+			owner = {
+				has_tech_or_functional_civic = {
+					TECH = tech_planetary_unification
+				}
+			}
+		}
+	}
+}

@@ -1,0 +1,28 @@
+# 国家
+start_situation_origin_manifesti = {
+	if = {
+		limit = {
+			has_country_flag = approach_origin_manifesti_interfere
+		}
+		start_situation = {
+			type = situation_origin_manifesti
+			target = owner
+			effect = {
+				add_situation_progress = $START$
+				set_situation_approach = approach_origin_manifesti_interfere
+				save_global_event_target_as = situation_origin_manifesti
+			}
+		}
+	}
+	else = {
+		start_situation = {
+			type = situation_origin_manifesti
+			target = owner
+			effect = {
+				add_situation_progress = $START$
+				save_global_event_target_as = situation_origin_manifesti
+			}
+		}
+	}
+	remove_country_flag = approach_origin_manifesti_interfere
+}

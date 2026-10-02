@@ -1,0 +1,67 @@
+create_horror_focus_completed_message = {
+	create_message = {
+		type = MESSAGE_$CATEGORY$_FOCUS_COMPLETED
+		localization = MESSAGE_HORROR_FOCUS_$ID$_COMPLETED_DESC
+		days = 30
+	}
+}
+
+gain_horror_focus_12_reward = {
+	if = {
+		limit = {
+			NOR = {
+				has_country_flag = unlock_tradition_horror
+				has_tradition = tr_horror_adopt
+				# 时虫事件期间不提前解锁负相传统
+				has_event_chain = WORM_CHAIN_1
+				has_event_chain = WORM_CHAIN_2
+				has_country_flag = worm_tomb_ending
+			}
+		}
+		create_horror_focus_completed_message = {
+			CATEGORY = DEVELOPMENT
+			ID = 12
+		}
+		unlock_tradition_horror = yes
+	}
+	else = {
+		create_horror_focus_completed_message = {
+			CATEGORY = DEVELOPMENT
+			ID = 12_UNITY
+		}
+		add_monthly_resource_mult = {
+			resource = unity
+			value = @tier3unityreward
+			min = @tier3unitymin
+			max = @tier3unitymax
+		}
+	}
+}
+
+gain_horror_focus_22_reward = {
+	if = {
+		limit = {
+			NOR = {
+				has_country_flag = unlock_tradition_time
+				has_tradition = tr_time_adopt
+			}
+		}
+		create_horror_focus_completed_message = {
+			CATEGORY = DEVELOPMENT
+			ID = 22
+		}
+		unlock_tradition_time = yes
+	}
+	else = {
+		create_horror_focus_completed_message = {
+			CATEGORY = DEVELOPMENT
+			ID = 22_UNITY
+		}
+		add_monthly_resource_mult = {
+			resource = unity
+			value = @tier5unityreward
+			min = @tier5unitymin
+			max = @tier5unitymax
+		}
+	}
+}

@@ -1,0 +1,119 @@
+# 国家
+active_repair_noah_ark_project = {
+	if = {
+		limit = {
+			country_uses_bio_ships = no
+		}
+		add_resource = {
+			influence = -500
+			alloys = -10000
+		}
+	}
+	else = {
+		add_resource = {
+			influence = -500
+			alloys = -5000
+			food = -17500
+		}
+	}
+	custom_tooltip = repair_noah_ark_$TYPE$
+	enable_special_project = {
+		name = REPAIR_NOAH_ARK_$TYPE$_PROJECT
+		location = event_target:noah_ark_starting_planet_of@this
+		owner = this
+	}
+}
+
+# 国家
+repair_noah_ark = {
+	set_country_flag = finish_repair_noah_ark
+	event_target:noah_ark_starting_planet_of@this = {
+		remove_deposit = d_noah_ark_vestige
+	}
+	create_fleet = {
+		name = NAME_Noah_Ark_Arkship
+		settings = {
+			can_change_composition = no
+			uses_naval_capacity = no
+			spawn_debris = no
+		}
+		effect = {
+			set_owner = prev
+			create_ship = {
+				name = NAME_Noah_Ark_Arkship
+				design = NAME_Noah_Ark_$TYPE$_1
+				graphical_culture = $TYPE$_arkship
+				prefix = no
+				effect = {
+					set_ship_flag = noah_ark_ship
+					set_disable_at_health = -1
+					colony = {
+						add_district = district_ark_generator
+						add_district = district_ark_basic
+						add_district = district_ark_military
+						add_zone = { zone = zone_noah_ark_$TYPE$ }
+					}
+					starbase = {
+						if = {
+							limit = { owner = { is_beastmasters_empire = yes } }
+							set_starbase_module = {
+								slot = 1
+								module = arkship_beastport
+							}
+						}
+						else = {
+							set_starbase_module = {
+								slot = 1
+								module = arkship_engineering_bay
+							}
+						}
+						set_starbase_module = {
+							slot = 2
+							module = arkship_docking_bay
+						}
+						set_starbase_building = {
+							slot = 1
+							building = arkship_armor
+						}
+						set_starbase_building = {
+							slot = 2
+							building = arkship_shield
+						}
+					}
+				}
+			}
+			set_location = {
+				target = event_target:noah_ark_starting_planet_of@prev
+				distance = 20
+				angle = random
+				direction = out_system
+			}
+			save_event_target_as = noah_ark_fleet
+		}
+	}
+}
+
+# 国家
+delay_repair_noah_ark = {
+	custom_tooltip = delay_repair_noah_ark
+	hidden_effect = {
+		country_event = { id = origin_noah_ark.55 days = 360 }
+	}
+}
+
+# 国家
+abandon_repair_noah_ark = {
+	custom_tooltip = abandon_repair_noah_ark
+	add_monthly_resource_mult = {
+		resource = influence
+		value = @tier2influencereward
+		min = @tier2influencemin
+		max = @tier2influencemax
+	}
+	add_monthly_resource_mult = {
+		resource = unity
+		value = @tier2unityreward
+		min = @tier2unitymin
+		max = @tier2unitymax
+	}
+}

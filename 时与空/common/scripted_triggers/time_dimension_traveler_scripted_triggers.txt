@@ -1,0 +1,424 @@
+# 国家
+is_dimension_traveler_owner = {
+	exists = event_target:dimension_traveler_owner
+	is_same_value = event_target:dimension_traveler_owner
+}
+
+# 领袖
+is_dimension_traveler = {
+	exists = event_target:dimension_traveler_leader
+	is_same_value = event_target:dimension_traveler_leader
+}
+
+# 领袖
+is_dimension_traveler_with_tooltip = {
+	custom_tooltip = {
+		fail_text = "requires_dimension_traveler"
+		is_dimension_traveler = yes
+	}
+}
+
+# 领袖
+is_dimension_traveler_portrait_leader = {
+	exists = event_target:dimension_traveler_portrait_leader
+	is_same_value = event_target:dimension_traveler_portrait_leader
+}
+
+# 领袖
+can_gain_dimension_traveler_trait = {
+	OR = {
+		is_dimension_traveler = yes
+		is_dimension_traveler_portrait_leader = yes
+	}
+}
+
+# 领袖
+has_dimension_traveler_subclass = {
+	OR = {
+		has_trait = subclass_official_dimension_traveler
+		has_trait = subclass_scientist_dimension_traveler
+		has_trait = subclass_commander_dimension_traveler
+	}
+}
+
+# 领袖（全部）
+has_dimension_traveler_destiny_trait = {
+	OR = {
+		has_dimension_traveler_destiny_trait_self = yes
+		has_dimension_traveler_destiny_trait_gestalt = yes
+	}
+}
+
+# 领袖（界旅者本人）
+has_dimension_traveler_destiny_trait_self = {
+	OR = {
+		has_trait = leader_trait_dimension_traveler_horror_secret
+		has_trait = leader_trait_dimension_traveler_horror_secret_true
+		has_trait = leader_trait_dimension_traveler_horror_secret_self
+	}
+}
+
+# 领袖（格式塔内阁）
+has_dimension_traveler_destiny_trait_gestalt = {
+	OR = {
+		has_trait = leader_trait_dimension_traveler_horror_secret_gestalt
+		has_trait = leader_trait_dimension_traveler_horror_secret_true_gestalt
+	}
+}
+
+# 国家
+forbid_dimension_traveler = {
+	OR = {
+		is_homicidal = yes
+		is_nemesis_crisis_country = yes
+		is_infernals_crisis_country = yes
+		has_origin = origin_endbringers
+	}
+}
+
+# 国家
+has_any_dimension_traveler_trait_secret = {
+	OR = {
+		has_country_flag = dimension_traveler_trait_time_secret
+		has_country_flag = dimension_traveler_trait_circle_secret
+		has_country_flag = dimension_traveler_trait_dimension_secret
+	}
+}
+
+# 国家
+unlock_dimension_traveler_destiny_trait = {
+	has_country_flag = dimension_traveler_trait_time_secret
+	has_country_flag = dimension_traveler_trait_circle_secret
+	has_country_flag = dimension_traveler_trait_dimension_secret
+}
+
+# 国家
+active_dimension_traveler_destiny_trait_gestalt = {
+	exists = event_target:dimension_traveler_leader
+	event_target:dimension_traveler_leader = {
+		is_exploring_astral_rift = no
+		is_owned_by = prev
+	}
+}
+
+# 国家
+has_dimension_traveler_horror_modifier_good = {
+	OR = {
+		has_modifier = dimension_traveler_horror_official_modifier_good
+		has_modifier = dimension_traveler_horror_scientist_modifier_good
+		has_modifier = dimension_traveler_horror_commander_modifier_good
+	}
+}
+
+# 国家
+has_dimension_traveler_horror_modifier_bad = {
+	OR = {
+		has_modifier = dimension_traveler_horror_official_modifier_bad
+		has_modifier = dimension_traveler_horror_scientist_modifier_bad
+		has_modifier = dimension_traveler_horror_commander_modifier_bad
+	}
+}
+
+# 国家
+dimension_traveler_is_by_our_side = {
+	if = {
+		limit = {
+			is_dimension_traveler_owner = yes
+		}
+		if = {
+			limit = {
+				OR = {
+					has_country_flag = dimension_traveler_dance_with_death
+					has_country_flag = dimension_traveler_returning
+				}
+			}
+			always = no
+		}
+		else_if = {
+			limit = {
+				OR = {
+					has_country_flag = dimension_traveler_official_active
+					has_country_flag = dimension_traveler_scientist_active
+					has_country_flag = dimension_traveler_commander_active
+				}
+			}
+			dimension_traveler_is_our_leader = yes
+		}
+		else = {
+			always = yes
+		}
+	}
+	else = {
+		always = no
+	}
+}
+
+# 国家
+dimension_traveler_is_our_leader = {
+	exists = event_target:dimension_traveler_leader
+	event_target:dimension_traveler_leader = {
+		is_owned_by = prev
+	}
+}
+
+# 国家
+dimension_traveler_diplomacy_is_engaged = {
+	has_active_event = {
+		dimension_traveler.60
+		dimension_traveler.61
+		dimension_traveler.62
+		dimension_traveler.64
+		dimension_traveler.65
+		dimension_traveler.66
+		dimension_traveler.68
+		dimension_traveler.69
+		dimension_traveler.150
+		dimension_traveler.200
+		dimension_traveler.201
+		dimension_traveler.202
+		dimension_traveler.203
+		dimension_traveler.204
+		dimension_traveler.205
+		dimension_traveler.206
+		dimension_traveler.207
+		dimension_traveler.208
+		dimension_traveler.209
+		dimension_traveler.210
+		dimension_traveler.211
+		dimension_traveler.212
+		dimension_traveler.213
+		dimension_traveler.214
+		dimension_traveler.500
+		dimension_traveler.510
+		dimension_traveler.1001
+		dimension_traveler.1002
+		time_akx.406
+		time_wanderer.100
+		time_wanderer.101
+		time_wanderer.102
+		time_wanderer.103
+		time_wanderer.104
+		time_wanderer.105
+		time_wanderer.115
+		time_wanderer.120
+		beyond_infinity.500
+		beyond_infinity.501
+		beyond_infinity.502
+		beyond_infinity.503
+		beyond_infinity.504
+		beyond_infinity.1000
+		beyond_infinity.1001
+		beyond_infinity.1500
+		beyond_infinity.1501
+		beyond_infinity.1502
+		beyond_infinity.2000
+		beyond_infinity.2001
+		beyond_infinity.2002
+		beyond_infinity.2003
+		beyond_infinity.2500
+		beyond_infinity.2501
+		beyond_infinity.2502
+		beyond_infinity.2503
+		beyond_infinity.2504
+		beyond_infinity.2505
+		beyond_infinity.2506
+		beyond_infinity.2507
+		beyond_infinity.3000
+		beyond_infinity.3001
+		beyond_infinity.3002
+		beyond_infinity.3003
+		beyond_infinity.3004
+		beyond_infinity.3005
+		beyond_infinity.3006
+		beyond_infinity.3100
+		beyond_infinity.3101
+		beyond_infinity.3102
+		beyond_infinity.3103
+		beyond_infinity.3104
+		beyond_infinity.3105
+		beyond_infinity.4000
+		beyond_infinity.4001
+		beyond_infinity.4002
+		beyond_infinity.4003
+		beyond_infinity.4400
+		beyond_infinity.4401
+		beyond_infinity.4402
+		beyond_infinity.4403
+		beyond_infinity.4404
+		beyond_infinity.4405
+		beyond_infinity.4406
+		beyond_infinity.4500
+		beyond_infinity.4501
+		beyond_infinity.4502
+		beyond_infinity.4503
+		beyond_infinity.4504
+		beyond_infinity.4505
+		beyond_infinity.5000
+		beyond_infinity.5001
+		beyond_infinity.5002
+		beyond_infinity.5400
+		beyond_infinity.5401
+		beyond_infinity.5402
+		beyond_infinity.5500
+		beyond_infinity.5501
+		beyond_infinity.5502
+		beyond_infinity.5700
+		beyond_infinity.6000
+		beyond_infinity.6001
+		beyond_infinity.6002
+	}
+}
+
+# 国家
+can_change_dimension_traveler_class = {
+	custom_tooltip = {
+		dimension_traveler_is_disappointed = no
+		fail_text = dimension_traveler_is_disappointed_in_you
+	}
+	custom_tooltip = {
+		dimension_traveler_is_by_our_side = yes
+		fail_text = dimension_traveler_is_returning
+	}
+	custom_tooltip = {
+		if = {
+			limit = {
+				exists = event_target:dimension_traveler_leader
+			}
+			event_target:dimension_traveler_leader = {
+				is_exploring_astral_rift = no
+			}
+		}
+		fail_text = dimension_traveler_is_exploring_astral_rift
+	}
+	custom_tooltip = {
+		if = {
+			limit = {
+				exists = event_target:dimension_traveler_leader
+			}
+			dimension_traveler_is_researching_important_special_project = no
+		}
+		fail_text = dimension_traveler_is_researching_important_special_project
+	}
+	custom_tooltip = {
+		if = {
+			limit = {
+				exists = event_target:dimension_traveler_leader
+			}
+			event_target:dimension_traveler_leader = {
+				is_ruler = no
+			}
+		}
+		fail_text = dimension_traveler_is_ruler
+	}
+}
+
+# 国家
+can_change_dimension_traveler_policy = {
+	custom_tooltip = {
+		dimension_traveler_is_by_our_side = yes
+		fail_text = can_not_change_dimension_traveler_policy_because_of_returning
+	}
+	custom_tooltip = {
+		has_dimension_traveler_horror_modifier_good = no
+		has_dimension_traveler_horror_modifier_bad = no
+		fail_text = can_not_change_dimension_traveler_policy_because_of_modifier
+	}
+}
+
+# 国家
+dimension_traveler_is_disappointed = {
+	has_country_flag = dimension_traveler_is_disappointed_in_you
+}
+
+# 国家
+can_print_dimension_traveler_hidden_log = {
+	if = {
+		limit = {
+			is_gestalt = no
+		}
+		# 非格式塔需担任首席科学家
+		exists = event_target:dimension_traveler_leader
+		event_target:dimension_traveler_leader = {
+			is_head_of_research = yes
+		}
+	}
+	else = {
+		# 格式塔需管理首都
+		exists = event_target:dimension_traveler_leader
+		event_target:dimension_traveler_leader = {
+			exists = colony
+			colony = { is_capital = yes }
+		}
+	}
+}
+
+# 任意
+active_dimension_traveler_special_portrait = {
+	event_target:dimension_traveler_species = {
+		is_species_class = DIMENSION_TRAVELER_SPECIAL
+	}
+}
+
+# 任意
+dimension_traveler_is_researching_important_special_project = {
+	exists = event_target:dimension_traveler_leader
+	event_target:dimension_traveler_leader = {
+		OR = {
+			is_researching_special_project = BEYOND_INFINITY_DIMENSIONAL_HORROR_CRISIS_END_PROJECT
+			is_researching_special_project = SYZYGY_ADMIRAL_PROJECT
+			is_researching_special_project = TIME_WANDERER_PROJECT
+		}
+	}
+}
+
+# 恒星基地
+use_white_hole_recycle_bin_rare = {
+	is_scope_valid = yes
+	has_starbase_building = white_hole_recycle_bin
+	star = {
+		OR = {
+			has_deposit = d_dark_matter_deposit_10
+			has_deposit = d_zro_deposit_5
+			has_deposit = d_astral_threads_deposit_3
+		}
+	}
+}
+
+# 恒星基地
+use_white_hole_recycle_bin_research = {
+	is_scope_valid = yes
+	has_starbase_building = white_hole_recycle_bin
+	star = {
+		OR = {
+			has_deposit = d_physics_10
+			has_deposit = d_society_10
+			has_deposit = d_engineering_10
+		}
+	}
+}
+
+# 恒星基地
+use_white_hole_recycle_bin_minerals = {
+	is_scope_valid = yes
+	has_starbase_building = white_hole_recycle_bin
+	star = { has_deposit = d_minerals_10 }
+}
+
+# 恒星基地
+use_white_hole_recycle_bin_default = {
+	OR = {
+		is_scope_valid = no
+		NOT = { has_starbase_building = white_hole_recycle_bin }
+		star = {
+			NOR = {
+				has_deposit = d_dark_matter_deposit_10
+				has_deposit = d_zro_deposit_5
+				has_deposit = d_astral_threads_deposit_3
+				has_deposit = d_physics_10
+				has_deposit = d_society_10
+				has_deposit = d_engineering_10
+				has_deposit = d_minerals_10
+			}
+		}
+	}
+}

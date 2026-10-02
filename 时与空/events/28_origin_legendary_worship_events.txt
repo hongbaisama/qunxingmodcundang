@@ -1,0 +1,300 @@
+namespace = origin_legendary_worship
+
+# 初始
+country_event = {
+	id = origin_legendary_worship.1
+	is_triggered_only = yes
+	hide_window = yes
+
+	trigger = {
+		has_origin = origin_legendary_worship
+	}
+	
+	immediate = {
+		unlock_council_selection = yes
+		ruler = { become_renowned_without_promotion = yes }
+	}
+}
+
+country_event = {
+	id = origin_legendary_worship.2
+	is_triggered_only = yes
+	hide_window = yes
+
+	trigger = {
+		has_origin = origin_legendary_worship
+		From = {
+			NOT = { leader_class = envoy }
+		}
+	}
+	
+	immediate = {
+		From = {
+			# 晋升为著名
+			if = {
+				limit = {
+					has_base_skill >= 4
+					is_leader_tier = leader_tier_default
+					NOT = { has_leader_flag = has_tried_to_promote_to_renowned_leader }
+				}
+				set_leader_flag = has_tried_to_promote_to_renowned_leader
+				random = {
+					chance = value:promotes_to_renowned_leader_value
+					set_leader_tier = leader_tier_renowned
+					root = {
+						create_message = {
+							type = PROMOTE_TO_RENOWNED_LEADER
+							localization =  PROMOTE_TO_RENOWNED_LEADER_DESC
+							days = @toast_message_days
+							target = prev
+							variable = {
+								type = name
+								localization = LEADER
+								scope = prev
+							}
+							variable = {
+								key = "border"
+								value = "GFX_border_veteran" 
+							}
+						}
+					}
+				}
+			}
+			# 晋升为传奇（先尝试晋升著名，随后可接着晋升传奇）
+			if = {
+				limit = {
+					has_base_skill >= 8
+					is_leader_tier = leader_tier_renowned
+					NOT = { has_leader_flag = has_tried_to_promote_to_legendary_leader }
+				}
+				set_leader_flag = has_tried_to_promote_to_legendary_leader
+				random = {
+					chance = value:promotes_to_legendary_leader_value
+					set_leader_tier = leader_tier_legendary
+					# 晋升传奇会离开轶事说书人席位
+					if = {
+						limit = {
+							is_councilor_type = councilor_origin_legendary_worship_renowned
+						}
+						if = {
+							limit = {
+								root = {
+									has_councilor = { COUNCILOR = councilor_origin_legendary_worship_legendary }
+								}
+							}
+							root = {
+								create_leader = {
+									name = random
+									class = scientist
+									effect = {
+										set_leader_tier = leader_tier_renowned
+										save_event_target_as = new_renowned_councilor
+									}
+								}
+								event_target:new_renowned_councilor = {
+									set_council_position = councilor_origin_legendary_worship_renowned
+									exile_leader_as = new_renowned_councilor
+									kill_leader = { show_notification = no }
+								}
+							}
+						}
+						else = {
+							set_council_position = councilor_origin_legendary_worship_legendary
+						}
+					}
+					root = {
+						create_message = {
+							type = PROMOTE_TO_LEGENDARY_LEADER
+							localization =  PROMOTE_TO_LEGENDARY_LEADER_DESC
+							days = @toast_message_days
+							target = prev
+							variable = {
+								type = name
+								localization = LEADER
+								scope = prev
+							}
+							variable = {
+								key = "border"
+								value = "GFX_border_legendary" 
+							}
+						}
+					}
+				}
+			}
+			# 特殊特质成为天生著名
+			if = {
+				limit = {
+					is_leader_tier = leader_tier_default
+					OR = {
+						has_trait = leader_trait_dragonslayer
+						has_trait = leader_trait_dragonbane
+						has_trait = leader_trait_time_hotel
+					}
+				}
+				become_renowned_without_promotion = yes
+			}
+			# 传奇著名额外命定
+			if = {
+				limit = {
+					has_base_skill >= 10
+					NOT = { has_leader_flag = has_gain_extra_destiny_trait }
+				}
+				if = {
+					limit = {
+						is_leader_tier_or_higher = { TIER = legendary }
+					}
+					set_leader_flag = has_gain_extra_destiny_trait
+					gain_extra_destiny_trait = yes
+					gain_extra_destiny_trait = yes
+					add_trait = {
+						trait = leader_trait_peak_of_legendary
+						show_message = no
+					}
+				}
+				else_if = {
+					limit = {
+						is_leader_tier_or_higher = { TIER = renowned }
+					}
+					set_leader_flag = has_gain_extra_destiny_trait
+					gain_extra_destiny_trait = yes
+					add_trait = {
+						trait = leader_trait_peak_of_renowned
+						show_message = no
+					}
+				}
+			}
+		}
+	}
+}
+
+# 间接添加
+country_event = {
+	id = origin_legendary_worship.3
+	is_triggered_only = yes
+	hide_window = yes
+
+	trigger = {
+		from = {
+			NOT = { leader_class = envoy }
+		}
+	}
+	
+	immediate = {
+		from = {
+			# 命定的传奇
+			if = {
+				limit = {
+					is_leader_tier_or_higher = { TIER = legendary }
+					NOT = { has_leader_flag = has_tried_to_promote_to_legendary_leader }
+				}
+				gain_leader_trait_inborn_legendary = yes
+			}
+			# 天生的英杰
+			else_if = {
+				limit = {
+					is_leader_tier_or_higher = { TIER = renowned }
+					NOT = { has_leader_flag = has_tried_to_promote_to_renowned_leader }
+				}
+				gain_leader_trait_inborn_renowned = yes
+			}
+			leader_event = { id = origin_legendary_worship.4 days = 1 } # 避免领袖在创建时来不及加上传奇著名flag
+		}
+	}
+}
+
+leader_event = {
+	id = origin_legendary_worship.4
+	is_triggered_only = yes
+	hide_window = yes
+
+	trigger = {
+		NOT = { leader_class = envoy }
+		OR = {
+			is_leader_tier_or_higher = { TIER = renowned }
+			owner = { has_origin = origin_legendary_worship }
+		}
+	}
+	
+	immediate = {
+		# 命定的传奇
+		if = {
+			limit = {
+				is_leader_tier_or_higher = { TIER = legendary }
+				NOT = { has_leader_flag = has_tried_to_promote_to_legendary_leader }
+			}
+			gain_leader_trait_inborn_legendary = yes
+		}
+		# 天生的英杰
+		else_if = {
+			limit = {
+				is_leader_tier_or_higher = { TIER = renowned }
+				NOT = { has_leader_flag = has_tried_to_promote_to_renowned_leader }
+			}
+			gain_leader_trait_inborn_renowned = yes
+		}
+		# 传奇崇拜
+		owner = {
+			if = {
+				limit = {
+					has_origin = origin_legendary_worship
+				}
+				country_event = { id = origin_legendary_worship.2 }
+			}
+		}
+	}
+}
+
+# 天灾出现
+country_event = {
+	id = origin_legendary_worship.10
+	is_triggered_only = yes
+	hide_window = yes
+
+	trigger = {
+		OR = {
+			is_country_type = swarm
+			is_country_type = ai_empire
+			is_country_type = extradimensional
+			is_country_type = synth_queen_storm
+			is_country_type = dimensional_horror_crisis
+		}
+	}
+	
+	immediate = {
+		every_playable_country = {
+			limit = {
+				has_origin = origin_legendary_worship
+				NOR = {
+					has_country_flag = origin_legendary_worship_11_triggered
+					is_crisis_country = yes
+				}
+			}
+			country_event = { id = origin_legendary_worship.11 }
+		}
+	}
+}
+
+country_event = {
+	id = origin_legendary_worship.11
+	title = "origin_legendary_worship.11.name"
+	desc = "origin_legendary_worship.11.desc"
+	picture = GFX_evt_crisis_declared
+	show_sound = event_ex_started
+	
+	is_triggered_only = yes
+	
+	trigger = {
+	}
+	
+	immediate = {
+		set_country_flag = origin_legendary_worship_11_triggered
+	}
+	
+	option = {
+		name = origin_legendary_worship.11.a
+		add_modifier = {
+			modifier = origin_legendary_worship_crisis_modifier
+			years = 25
+		}
+	}
+}

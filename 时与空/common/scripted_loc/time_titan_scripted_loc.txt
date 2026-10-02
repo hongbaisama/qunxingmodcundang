@@ -1,0 +1,472 @@
+################################################################
+# 终末行舟基础信息
+################################################################
+
+defined_text = {
+	name = GetTimeTitanRarity
+	random = no
+	text = {
+		trigger = {
+			event_target:time_titan_ship = {
+				has_ship_flag = exceptional_time_titan
+			}
+		}
+		localization_key = exceptional_time_titan
+	}
+	text = {
+		trigger = {
+			event_target:time_titan_ship = {
+				has_ship_flag = epic_time_titan
+			}
+		}
+		localization_key = epic_time_titan
+	}
+	text = {
+		trigger = {
+			event_target:time_titan_ship = {
+				has_ship_flag = rare_time_titan
+			}
+		}
+		localization_key = rare_time_titan
+	}
+	default = common_time_titan
+}
+
+defined_text = {
+	name = GetTimeTitanRarityConcept
+	random = no
+	text = {
+		trigger = {
+			event_target:time_titan_ship = {
+				has_ship_flag = exceptional_time_titan
+			}
+		}
+		localization_key = exceptional_time_titan_concept
+	}
+	text = {
+		trigger = {
+			event_target:time_titan_ship = {
+				has_ship_flag = epic_time_titan
+			}
+		}
+		localization_key = epic_time_titan_concept
+	}
+	text = {
+		trigger = {
+			event_target:time_titan_ship = {
+				has_ship_flag = rare_time_titan
+			}
+		}
+		localization_key = rare_time_titan_concept
+	}
+	default = common_time_titan_concept
+}
+
+defined_text = {
+	name = GetTimeTitanStatus
+	random = no
+	text = {
+		trigger = {
+			event_target:time_titan_fleet = {
+				exists = leader
+				leader = {
+					is_syzygy_admiral = yes
+					is_dimension_traveler = yes
+				}
+			}
+		}
+		localization_key = time_titan_best_status
+	}
+	text = {
+		trigger = {
+			event_target:time_titan_fleet = {
+				exists = leader
+				leader = {
+					is_syzygy_admiral = yes
+				}
+			}
+		}
+		localization_key = time_titan_good_status
+	}
+	text = {
+		trigger = {
+			event_target:time_titan_fleet = {
+				exists = leader
+				leader = {
+					is_dimension_traveler = yes
+				}
+			}
+		}
+		localization_key = time_titan_normal_status
+	}
+	default = time_titan_bad_status
+}
+
+defined_text = {
+	name = GetTimeTitanStatusConcept
+	random = no
+	text = {
+		trigger = {
+			event_target:time_titan_fleet = {
+				exists = leader
+				leader = {
+					is_syzygy_admiral = yes
+					is_dimension_traveler = yes
+				}
+			}
+		}
+		localization_key = time_titan_best_status_concept
+	}
+	text = {
+		trigger = {
+			event_target:time_titan_fleet = {
+				exists = leader
+				leader = {
+					is_syzygy_admiral = yes
+				}
+			}
+		}
+		localization_key = time_titan_good_status_concept
+	}
+	text = {
+		trigger = {
+			event_target:time_titan_fleet = {
+				exists = leader
+				leader = {
+					is_dimension_traveler = yes
+				}
+			}
+		}
+		localization_key = time_titan_normal_status_concept
+	}
+	default = time_titan_bad_status_concept
+}
+
+defined_text = {
+	name = GetTimeTitanCloakingCooldown
+	value = value:time_titan_cloaking_cooldown_loc
+}
+
+################################################################
+# 终末行舟部位升级
+################################################################
+
+defined_text = {
+	name = GetTimeTitanUpgradePercent
+	value = event_target:time_titan_fleet.value:time_titan_upgrade_percent
+}
+
+defined_text = {
+	name = GetTimeTitanUpgradeProcess
+	value = event_target:time_titan_fleet.value:time_titan_upgrade_process_loc
+}
+
+defined_text = {
+	name = GetTimeTitanUpgradeRequirement
+	value = event_target:time_titan_fleet.value:time_titan_upgrade_requirement_loc
+}
+
+defined_text = {
+	name = GetTimeTitanUpgradeProcessIcon
+	inline_script = {
+		script = scripted_loc/time_titan_upgrade_process_icon
+		TYPE = upgrade
+	}
+}
+
+defined_text = {
+	name = GetTimeTitanShelterMainUpgradeProcessIcon
+	inline_script = {
+		script = scripted_loc/time_titan_upgrade_process_icon
+		TYPE = shelter_main_upgrade
+	}
+}
+
+
+
+defined_text = {
+	name = GetTimeTitanNormalLevelIcon
+	inline_script = {
+		script = scripted_loc/time_titan_level_icon
+		TYPE = normal
+	}
+}
+
+defined_text = {
+	name = GetTimeTitanNormalLevel
+	value = event_target:time_titan_fleet.value:time_titan_upgrade_levle|TYPE|normal|
+}
+
+defined_text = {
+	name = GetTimeTitanNormalModifier
+	value = event_target:time_titan_fleet.value:time_titan_upgrade_modifier|BASE|5|TYPE|normal|
+}
+
+defined_text = {
+	name = GetTimeTitanNormalTime
+	value = event_target:time_titan_fleet.value:time_titan_upgrade_requirement|TYPE|normal|MODE|battle|
+}
+
+defined_text = {
+	name = GetTimeTitanNormalCost
+	value = event_target:time_titan_fleet.value:time_titan_upgrade_cost|TYPE|normal|MODE|battle|
+}
+
+
+
+defined_text = {
+	name = GetTimeTitanPrimaryLevelIcon
+	inline_script = {
+		script = scripted_loc/time_titan_level_icon
+		TYPE = primary
+	}
+}
+
+defined_text = {
+	name = GetTimeTitanPrimaryLevel
+	value = event_target:time_titan_fleet.value:time_titan_upgrade_levle|TYPE|primary|
+}
+
+defined_text = {
+	name = GetTimeTitanPrimaryModifier
+	value = event_target:time_titan_fleet.value:time_titan_upgrade_modifier|BASE|5|TYPE|primary|
+}
+
+defined_text = {
+	name = GetTimeTitanPrimaryTime
+	value = event_target:time_titan_fleet.value:time_titan_upgrade_requirement|TYPE|primary|MODE|battle|
+}
+
+defined_text = {
+	name = GetTimeTitanPrimaryCost
+	value = event_target:time_titan_fleet.value:time_titan_upgrade_cost|TYPE|primary|MODE|battle|
+}
+
+
+
+defined_text = {
+	name = GetTimeTitanSubsidiaryLevelIcon
+	inline_script = {
+		script = scripted_loc/time_titan_level_icon
+		TYPE = subsidiary
+	}
+}
+
+defined_text = {
+	name = GetTimeTitanSubsidiaryLevel
+	value = event_target:time_titan_fleet.value:time_titan_upgrade_levle|TYPE|subsidiary|
+}
+
+defined_text = {
+	name = GetTimeTitanSubsidiaryModifier
+	value = event_target:time_titan_fleet.value:time_titan_upgrade_modifier|BASE|5|TYPE|subsidiary|
+}
+
+defined_text = {
+	name = GetTimeTitanSubsidiaryTime
+	value = event_target:time_titan_fleet.value:time_titan_upgrade_requirement|TYPE|subsidiary|MODE|battle|
+}
+
+defined_text = {
+	name = GetTimeTitanSubsidiaryCost
+	value = event_target:time_titan_fleet.value:time_titan_upgrade_cost|TYPE|subsidiary|MODE|battle|
+}
+
+
+
+defined_text = {
+	name = GetTimeTitanSapientLevelIcon
+	inline_script = {
+		script = scripted_loc/time_titan_level_icon
+		TYPE = sapient
+	}
+}
+
+defined_text = {
+	name = GetTimeTitanSapientLevel
+	value = event_target:time_titan_fleet.value:time_titan_upgrade_levle|TYPE|sapient|
+}
+
+defined_text = {
+	name = GetTimeTitanSapientModifier
+	value = event_target:time_titan_fleet.value:time_titan_upgrade_modifier|BASE|5|TYPE|sapient|
+}
+
+defined_text = {
+	name = GetTimeTitanSapientTime
+	value = event_target:time_titan_fleet.value:time_titan_upgrade_requirement|TYPE|sapient|MODE|battle|
+}
+
+defined_text = {
+	name = GetTimeTitanSapientCost
+	value = event_target:time_titan_fleet.value:time_titan_upgrade_cost|TYPE|sapient|MODE|battle|
+}
+
+
+
+defined_text = {
+	name = GetTimeTitanPowerLevelIcon
+	inline_script = {
+		script = scripted_loc/time_titan_level_icon
+		TYPE = power
+	}
+}
+
+defined_text = {
+	name = GetTimeTitanPowerLevel
+	value = event_target:time_titan_fleet.value:time_titan_upgrade_levle|TYPE|power|
+}
+
+defined_text = {
+	name = GetTimeTitanPowerModifier
+	value = event_target:time_titan_fleet.value:time_titan_upgrade_modifier|BASE|5|TYPE|power|
+}
+
+defined_text = {
+	name = GetTimeTitanPowerTime
+	value = event_target:time_titan_fleet.value:time_titan_upgrade_requirement|TYPE|power|MODE|battle|
+}
+
+defined_text = {
+	name = GetTimeTitanPowerCost
+	value = event_target:time_titan_fleet.value:time_titan_upgrade_cost|TYPE|power|MODE|battle|
+}
+
+
+
+defined_text = {
+	name = GetTimeTitanDriveLevelIcon
+	inline_script = {
+		script = scripted_loc/time_titan_level_icon
+		TYPE = drive
+	}
+}
+
+defined_text = {
+	name = GetTimeTitanDriveLevel
+	value = event_target:time_titan_fleet.value:time_titan_upgrade_levle|TYPE|drive|
+}
+
+defined_text = {
+	name = GetTimeTitanDriveModifier
+	value = event_target:time_titan_fleet.value:time_titan_upgrade_modifier|BASE|5|TYPE|drive|
+}
+
+defined_text = {
+	name = GetTimeTitanDriveTime
+	value = event_target:time_titan_fleet.value:time_titan_upgrade_requirement|TYPE|drive|MODE|battle|
+}
+
+defined_text = {
+	name = GetTimeTitanDriveCost
+	value = event_target:time_titan_fleet.value:time_titan_upgrade_cost|TYPE|drive|MODE|battle|
+}
+
+
+
+defined_text = {
+	name = GetTimeTitanArmorLevelIcon
+	inline_script = {
+		script = scripted_loc/time_titan_level_icon
+		TYPE = armor
+	}
+}
+
+defined_text = {
+	name = GetTimeTitanArmorLevel
+	value = event_target:time_titan_fleet.value:time_titan_upgrade_levle|TYPE|armor|
+}
+
+defined_text = {
+	name = GetTimeTitanArmorModifier
+	value = event_target:time_titan_fleet.value:time_titan_upgrade_modifier|BASE|5|TYPE|armor|
+}
+
+defined_text = {
+	name = GetTimeTitanArmorTime
+	value = event_target:time_titan_fleet.value:time_titan_upgrade_requirement|TYPE|armor|MODE|battle|
+}
+
+defined_text = {
+	name = GetTimeTitanArmorCost
+	value = event_target:time_titan_fleet.value:time_titan_upgrade_cost|TYPE|armor|MODE|battle|
+}
+
+
+
+defined_text = {
+	name = GetTimeTitanHullLevelIcon
+	inline_script = {
+		script = scripted_loc/time_titan_level_icon
+		TYPE = hull
+	}
+}
+
+defined_text = {
+	name = GetTimeTitanHullLevel
+	value = event_target:time_titan_fleet.value:time_titan_upgrade_levle|TYPE|hull|
+}
+
+defined_text = {
+	name = GetTimeTitanHullModifier
+	value = event_target:time_titan_fleet.value:time_titan_upgrade_modifier|BASE|5|TYPE|hull|
+}
+
+defined_text = {
+	name = GetTimeTitanHullSpecialModifier
+	value = event_target:time_titan_fleet.value:time_titan_upgrade_modifier|BASE|2.5|TYPE|hull|
+}
+
+defined_text = {
+	name = GetTimeTitanHullTime
+	value = event_target:time_titan_fleet.value:time_titan_upgrade_requirement|TYPE|hull|MODE|battle|
+}
+
+defined_text = {
+	name = GetTimeTitanHullCost
+	value = event_target:time_titan_fleet.value:time_titan_upgrade_cost|TYPE|hull|MODE|battle|
+}
+
+
+
+defined_text = {
+	name = GetTimeTitanShieldLevelIcon
+	inline_script = {
+		script = scripted_loc/time_titan_level_icon
+		TYPE = shield
+	}
+}
+
+defined_text = {
+	name = GetTimeTitanShieldLevel
+	value = event_target:time_titan_fleet.value:time_titan_upgrade_levle|TYPE|shield|
+}
+
+defined_text = {
+	name = GetTimeTitanShieldModifier
+	value = event_target:time_titan_fleet.value:time_titan_upgrade_modifier|BASE|5|TYPE|shield|
+}
+
+defined_text = {
+	name = GetTimeTitanShieldTime
+	value = event_target:time_titan_fleet.value:time_titan_upgrade_requirement|TYPE|shield|MODE|battle|
+}
+
+defined_text = {
+	name = GetTimeTitanShieldCost
+	value = event_target:time_titan_fleet.value:time_titan_upgrade_cost|TYPE|shield|MODE|battle|
+}
+
+################################################################
+# 彼岸庇护所
+################################################################
+
+defined_text = {
+	name = GetTimeShelterMaintenanceLoc
+	value = event_target:time_titan_ship.value:time_shelter_maintenance_loc
+}
+
+defined_text = {
+	name = GetTimeShelterMaintenanceCapLoc
+	value = event_target:time_titan_ship.value:time_shelter_maintenance_cap_loc
+}

@@ -1,0 +1,12 @@
+modifier = {
+	factor = 0
+	OR = {
+		has_technology = $TECH$
+		has_tech_option = $TECH$
+	}
+}
+add_tech_option_or_research_effect = {
+	TECH = $TECH$
+	PROGRESS = 0.2
+	CATEGORY = society_research
+}

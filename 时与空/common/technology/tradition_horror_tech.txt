@@ -1,0 +1,673 @@
+tech_horror_1_a_1 = {
+	cost = @base_horror_tech_cost
+	area = physics
+	tier = 4
+	category = { horror_time }
+	is_rare = yes
+	is_reverse_engineerable = no
+	weight = 0
+	
+	gateway = horror_time
+	
+	potential = {
+		has_tradition = tr_horror_1
+	}
+	
+	modifier = {
+		ship_shield_mult = 0.1
+	}
+	
+	ai_weight = {
+		weight = 10000
+	}
+}
+
+tech_horror_1_a_2 = {
+	cost = @base_horror_tech_cost
+	area = physics
+	tier = 4
+	category = { horror_time }
+	prerequisites = { "tech_horror_1_a_1" }
+	is_rare = yes
+	is_reverse_engineerable = no
+	weight = 0
+
+	gateway = horror_time
+	
+	potential = {
+		has_tradition = tr_horror_1
+	}
+	
+	modifier = {
+		ship_shield_damage_mult = 0.1
+	}
+	
+	ai_weight = {
+		weight = 10000
+	}
+}
+
+tech_horror_1_b_1 = {
+	cost = @base_horror_tech_cost
+	area = engineering
+	tier = 4
+	category = { horror_time }
+	is_rare = yes
+	is_reverse_engineerable = no
+	weight = 0
+
+	gateway = horror_time
+	
+	potential = {
+		has_tradition = tr_horror_1
+	}
+	
+	modifier = {
+		ship_shield_regen_add_perc = 0.5
+	}
+	
+	ai_weight = {
+		weight = 10000
+	}
+}
+
+tech_horror_1_b_2 = {
+	cost = @base_horror_tech_cost
+	area = engineering
+	tier = 4
+	category = { horror_time }
+	prerequisites = { "tech_horror_1_b_1" }
+	is_rare = yes
+	is_reverse_engineerable = no
+	weight = 0
+
+	gateway = horror_time
+	
+	potential = {
+		has_tradition = tr_horror_1
+	}
+	
+	modifier = {
+		ship_tracking_mult = 0.1
+	}
+	
+	ai_weight = {
+		weight = 10000
+	}
+}
+
+tech_horror_shield = {
+	cost = @base_horror_tech_cost
+	area = physics
+	tier = 4
+	category = { horror_time }
+	prerequisites = { "tech_horror_1_a_2" "tech_horror_1_b_2" }
+	ai_update_type = all
+	is_rare = yes
+	is_dangerous = yes
+	is_reverse_engineerable = no
+	weight = 0
+
+	gateway = horror_time
+	
+	potential = {
+		has_tradition = tr_horror_1
+	}
+	
+	ai_weight = {
+		weight = 10000
+	}
+}
+
+
+
+tech_horror_2_a_1 = {
+	cost = @base_horror_tech_cost
+	area = engineering
+	tier = 4
+	category = { horror_time }
+	is_rare = yes
+	is_reverse_engineerable = no
+	weight = 0
+
+	gateway = horror_time
+	
+	potential = {
+		has_tradition = tr_horror_2
+	}
+	
+	modifier = {
+		ship_armor_mult = 0.1
+	}
+	
+	ai_weight = {
+		weight = 10000
+	}
+}
+
+tech_horror_2_a_2 = {
+	cost = @base_horror_tech_cost
+	area = engineering
+	tier = 4
+	category = { horror_time }
+	prerequisites = { "tech_horror_2_a_1" }
+	is_rare = yes
+	is_reverse_engineerable = no
+	weight = 0
+
+	gateway = horror_time
+	
+	potential = {
+		has_tradition = tr_horror_2
+	}
+	
+	modifier = {
+		ship_armor_damage_mult = 0.1
+	}
+	
+	ai_weight = {
+		weight = 10000
+	}
+}
+
+tech_horror_2_b_1 = {
+	cost = @base_horror_tech_cost
+	area = physics
+	tier = 4
+	category = { horror_time }
+	is_rare = yes
+	is_reverse_engineerable = no
+	weight = 0
+
+	gateway = horror_time
+	
+	potential = {
+		has_tradition = tr_horror_2
+	}
+	
+	modifier = {
+		ship_armor_regen_add_perc = 0.5
+	}
+	
+	ai_weight = {
+		weight = 10000
+	}
+}
+
+tech_horror_2_b_2 = {
+	cost = @base_horror_tech_cost
+	area = physics
+	tier = 4
+	category = { horror_time }
+	prerequisites = { "tech_horror_2_b_1" }
+	is_rare = yes
+	is_reverse_engineerable = no
+	weight = 0
+
+	gateway = horror_time
+	
+	potential = {
+		has_tradition = tr_horror_2
+	}
+	
+	modifier = {
+		ship_accuracy_mult = 0.1
+	}
+	
+	ai_weight = {
+		weight = 10000
+	}
+}
+
+tech_horror_armor = {
+	cost = @base_horror_tech_cost
+	area = engineering
+	tier = 4
+	category = { horror_time }
+	prerequisites = { "tech_horror_2_a_2" "tech_horror_2_b_2" }
+	ai_update_type = all
+	is_rare = yes
+	is_dangerous = yes
+	is_reverse_engineerable = no
+	weight = 0
+
+	gateway = horror_time
+	
+	potential = {
+		has_tradition = tr_horror_2
+	}
+	
+	ai_weight = {
+		weight = 10000
+	}
+}
+
+
+
+tech_horror_3_a_1 = {
+	cost = @base_horror_tech_cost
+	area = physics
+	tier = 4
+	category = { horror_time }
+	is_rare = yes
+	is_reverse_engineerable = no
+	weight = 0
+
+	gateway = horror_time
+	
+	potential = {
+		OR = {
+			has_tradition = tr_horror_3
+			has_country_flag = unlock_tech_horror_3_a_1
+		}
+	}
+	
+	ai_weight = {
+		weight = 10000
+	}
+}
+
+tech_horror_3_a_2 = {
+	cost = @base_horror_tech_cost
+	area = physics
+	tier = 4
+	category = { horror_time }
+	prerequisites = { "tech_horror_3_a_1" }
+	is_rare = yes
+	is_reverse_engineerable = no
+	weight = 0
+
+	gateway = horror_time
+	
+	potential = {
+		OR = {
+			has_tradition = tr_horror_3
+			has_country_flag = unlock_tech_horror_3_a_2
+		}
+	}
+	
+	ai_weight = {
+		weight = 10000
+	}
+}
+
+tech_horror_3_b_1 = {
+	cost = @base_horror_tech_cost
+	area = society
+	tier = 4
+	category = { horror_time }
+	is_rare = yes
+	is_reverse_engineerable = no
+	weight = 0
+
+	gateway = horror_time
+	
+	potential = {
+		OR = {
+			has_tradition = tr_horror_3
+			has_country_flag = unlock_tech_horror_3_b_1
+		}
+	}
+	
+	ai_weight = {
+		weight = 10000
+	}
+}
+
+tech_horror_3_b_2 = {
+	cost = @base_horror_tech_cost
+	area = society
+	tier = 4
+	category = { horror_time }
+	prerequisites = { "tech_horror_3_b_1" }
+	is_rare = yes
+	is_reverse_engineerable = no
+	weight = 0
+
+	gateway = horror_time
+	
+	potential = {
+		OR = {
+			has_tradition = tr_horror_3
+			has_country_flag = unlock_tech_horror_3_b_2
+		}
+	}
+	
+	ai_weight = {
+		weight = 10000
+	}
+}
+
+tech_horror_modifier = {
+	cost = @base_horror_tech_cost
+	area = physics
+	tier = 4
+	category = { horror_time }
+	prerequisites = { "tech_horror_3_a_2" "tech_horror_3_b_2" }
+	is_rare = yes
+	is_dangerous = yes
+	is_reverse_engineerable = no
+	weight = 0
+
+	gateway = horror_time
+	
+	potential = {
+		has_tradition = tr_horror_3
+	}
+	
+	prereqfor_desc = {
+		custom = {
+			title = "tech_horror_modifier_custom"
+			desc = "tech_horror_modifier_custom_desc"
+		}
+	}
+	
+	ai_weight = {
+		weight = 10000
+	}
+}
+
+
+
+tech_horror_4_a_1 = {
+	cost = @base_horror_tech_cost
+	area = engineering
+	tier = 4
+	category = { horror_time }
+	is_rare = yes
+	is_reverse_engineerable = no
+	weight = 0
+
+	gateway = horror_time
+	
+	potential = {
+		has_tradition = tr_horror_4
+	}
+	
+	modifier = {
+		ship_hull_mult = 0.1
+	}
+	
+	ai_weight = {
+		weight = 10000
+	}
+}
+
+tech_horror_4_a_2 = {
+	cost = @base_horror_tech_cost
+	area = physics
+	tier = 4
+	category = { horror_time }
+	prerequisites = { "tech_horror_4_a_1" }
+	is_rare = yes
+	is_reverse_engineerable = no
+	weight = 0
+
+	gateway = horror_time
+	
+	potential = {
+		has_tradition = tr_horror_4
+	}
+	
+	modifier = {
+		ship_hull_damage_mult = 0.1
+	}
+	
+	ai_weight = {
+		weight = 10000
+	}
+}
+
+tech_horror_4_b_1 = {
+	cost = @base_horror_tech_cost
+	area = society
+	tier = 4
+	category = { horror_time }
+	is_rare = yes
+	is_reverse_engineerable = no
+	weight = 0
+
+	gateway = horror_time
+	
+	potential = {
+		has_tradition = tr_horror_4
+	}
+	
+	modifier = {
+		ship_hull_regen_add_perc = 0.5
+	}
+	
+	ai_weight = {
+		weight = 10000
+	}
+}
+
+tech_horror_4_b_2 = {
+	cost = @base_horror_tech_cost
+	area = society
+	tier = 4
+	category = { horror_time }
+	prerequisites = { "tech_horror_4_b_1" }
+	is_rare = yes
+	is_reverse_engineerable = no
+	weight = 0
+
+	gateway = horror_time
+	
+	potential = {
+		has_tradition = tr_horror_4
+	}
+	
+	modifier = {
+		ship_evasion_mult = 0.1
+	}
+	
+	ai_weight = {
+		weight = 10000
+	}
+}
+
+tech_horror_beam = {
+	cost = @base_horror_tech_cost
+	area = physics
+	tier = 4
+	category = { horror_time }
+	prerequisites = { "tech_horror_4_a_2" "tech_horror_4_b_2" }
+	ai_update_type = all
+	is_rare = yes
+	is_dangerous = yes
+	is_reverse_engineerable = no
+	weight = 0
+
+	gateway = horror_time
+	
+	potential = {
+		has_tradition = tr_horror_4
+	}
+	
+	technology_swap = {
+		name = tech_bio_horror_beam
+		inherit_icon = no
+		inherit_effects = yes
+		trigger = {
+			country_uses_bio_ships = yes
+		}
+		weight = {
+			factor = 1
+		}
+	}
+	
+	ai_weight = {
+		weight = 10000
+	}
+}
+
+
+
+tech_horror_dimension = {
+	cost = @base_horror_tech_cost
+	area = physics
+	tier = 4
+	category = { horror_time }
+	is_rare = yes
+	is_reverse_engineerable = no
+	weight = 0
+
+	gateway = horror_time
+	
+	potential = {
+		has_tradition = tr_horror_5
+	}
+	
+	prereqfor_desc = {
+		custom = {
+			title = "tech_horror_dimension_custom"
+			desc = "tech_horror_dimension_custom_desc"
+		}
+	}
+	
+	ai_weight = {
+		weight = 10000
+	}
+}
+
+tech_horror_5_a_1 = {
+	cost = @base_horror_tech_cost
+	area = society
+	tier = 4
+	category = { horror_time }
+	prerequisites = { "tech_horror_dimension" }
+	is_rare = yes
+	is_reverse_engineerable = no
+	weight = 0
+
+	gateway = horror_time
+	
+	potential = {
+		has_tradition = tr_horror_5
+	}
+	
+	prereqfor_desc = {
+		custom = {
+			title = "tech_horror_5_a_1_custom"
+			desc = "tech_horror_5_a_1_custom_desc"
+		}
+	}
+	
+	ai_weight = {
+		weight = 10000
+	}
+}
+
+tech_horror_5_a_2 = {
+	cost = @base_horror_tech_cost
+	area = society
+	tier = 4
+	category = { horror_time }
+	prerequisites = { "tech_horror_5_a_1" }
+	is_rare = yes
+	is_reverse_engineerable = no
+	weight = 0
+
+	gateway = horror_time
+	
+	potential = {
+		has_tradition = tr_horror_5
+	}
+	
+	prereqfor_desc = {
+		custom = {
+			title = "tech_horror_5_a_2_custom"
+			desc = "tech_horror_5_a_2_custom_desc"
+		}
+	}
+	
+	ai_weight = {
+		weight = 10000
+	}
+}
+
+tech_horror_5_b_1 = {
+	cost = @base_horror_tech_cost
+	area = physics
+	tier = 4
+	category = { horror_time }
+	prerequisites = { "tech_horror_dimension" }
+	is_rare = yes
+	is_reverse_engineerable = no
+	weight = 0
+
+	gateway = horror_time
+	
+	potential = {
+		has_tradition = tr_horror_5
+	}
+	
+	prereqfor_desc = {
+		custom = {
+			title = "tech_horror_5_b_1_custom"
+			desc = "tech_horror_5_b_1_custom_desc"
+		}
+	}
+	
+	ai_weight = {
+		weight = 10000
+	}
+}
+
+tech_horror_5_b_2 = {
+	cost = @base_horror_tech_cost
+	area = physics
+	tier = 4
+	category = { horror_time }
+	prerequisites = { "tech_horror_5_b_1" }
+	is_rare = yes
+	is_reverse_engineerable = no
+	weight = 0
+
+	gateway = horror_time
+	
+	potential = {
+		has_tradition = tr_horror_5
+	}
+	
+	prereqfor_desc = {
+		custom = {
+			title = "tech_horror_5_b_2_custom"
+			desc = "tech_horror_5_b_2_custom_desc"
+		}
+	}
+	
+	ai_weight = {
+		weight = 10000
+	}
+}
+
+tech_horror_trait = {
+	cost = @base_horror_tech_cost
+	area = society
+	tier = 4
+	category = { horror_time }
+	prerequisites = { "tech_horror_5_a_2" "tech_horror_5_b_2" }
+	is_rare = yes
+	is_dangerous = yes
+	is_reverse_engineerable = no
+	weight = 0
+
+	gateway = horror_time
+	
+	potential = {
+		has_tradition = tr_horror_5
+	}
+	
+	prereqfor_desc = {
+		custom = {
+			title = "tech_horror_trait_custom"
+			desc = "tech_horror_trait_custom_desc"
+		}
+	}
+	
+	ai_weight = {
+		weight = 10000
+	}
+}

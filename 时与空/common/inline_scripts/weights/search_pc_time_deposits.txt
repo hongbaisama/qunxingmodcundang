@@ -1,0 +1,27 @@
+modifier = {
+	factor = 0
+	if = {
+		limit = {
+			owner = { has_tradition = tr_origin_time_decisions }
+		}
+		count_deposits = {
+			type = $DEPOSIT$
+			count >= @pc_time_deposits_limit_2
+		}
+	}
+	else = {
+		count_deposits = {
+			type = $DEPOSIT$
+			count >= @pc_time_deposits_limit_1
+		}
+	}
+}
+add_deposit = $DEPOSIT$
+owner = {
+	create_message = {
+		type = SEARCH_PC_TIME_DEPOSITS
+		localization = SEARCH_PC_TIME_DEPOSITS_$DEPOSIT$
+		days = 30
+		target = root
+	}
+}

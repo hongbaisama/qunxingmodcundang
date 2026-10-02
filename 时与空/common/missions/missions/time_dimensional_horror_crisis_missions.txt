@@ -1,0 +1,386 @@
+MISSION_DIMENSIONAL_HORROR_CRISIS_SYSTEM_1 = {
+	desc = MISSION_DIMENSIONAL_HORROR_CRISIS_SYSTEM_1_DESC
+	event_chain = dimensional_horror_crisis_chain
+	icon = "gfx/interface/icons/situation_log/situation_log_federation.dds"
+	picture = GFX_evt_cosmic_storms_the_storm_speaks
+
+	abort_trigger = {
+		OR = {
+			NOT = { has_event_chain = dimensional_horror_crisis_chain }
+			has_all_dimensional_horror_crisis_storm_protection_tech = yes
+		}
+	}
+
+	counter = {
+		mission_dimensional_horror_crisis_system = {
+			max = 1
+		}
+	}
+
+	on_success = {
+		set_country_flag = mission_dimensional_horror_crisis_system_1_completed
+		randomly_add_dimensional_horror_crisis_storm_protection_tech_option = { MISSION = SYSTEM }
+		enable_dimensional_horror_crisis_mission = { MISSION = MISSION_DIMENSIONAL_HORROR_CRISIS_SYSTEM_2 }
+	}
+}
+
+MISSION_DIMENSIONAL_HORROR_CRISIS_SYSTEM_2 = {
+	desc = MISSION_DIMENSIONAL_HORROR_CRISIS_SYSTEM_2_DESC
+	event_chain = dimensional_horror_crisis_chain
+	icon = "gfx/interface/icons/situation_log/situation_log_federation.dds"
+	picture = GFX_evt_cosmic_storms_the_storm_speaks
+
+	abort_trigger = {
+		OR = {
+			NOT = { has_event_chain = dimensional_horror_crisis_chain }
+			has_all_dimensional_horror_crisis_storm_protection_tech = yes
+		}
+	}
+
+	counter = {
+		mission_dimensional_horror_crisis_system = {
+			max = 3
+		}
+	}
+
+	on_success = {
+		set_country_flag = mission_dimensional_horror_crisis_system_2_completed
+		randomly_add_dimensional_horror_crisis_storm_protection_tech_option = { MISSION = SYSTEM }
+		enable_dimensional_horror_crisis_mission = { MISSION = MISSION_DIMENSIONAL_HORROR_CRISIS_SYSTEM_3 }
+	}
+}
+
+MISSION_DIMENSIONAL_HORROR_CRISIS_SYSTEM_3 = {
+	desc = MISSION_DIMENSIONAL_HORROR_CRISIS_SYSTEM_3_DESC
+	event_chain = dimensional_horror_crisis_chain
+	icon = "gfx/interface/icons/situation_log/situation_log_federation.dds"
+	picture = GFX_evt_cosmic_storms_the_storm_speaks
+
+	abort_trigger = {
+		OR = {
+			NOT = { has_event_chain = dimensional_horror_crisis_chain }
+			has_all_dimensional_horror_crisis_storm_protection_tech = yes
+		}
+	}
+
+	counter = {
+		mission_dimensional_horror_crisis_system = {
+			max = 6
+		}
+	}
+
+	on_success = {
+		set_country_flag = mission_dimensional_horror_crisis_system_3_completed
+		randomly_add_dimensional_horror_crisis_storm_protection_tech_option = { MISSION = SYSTEM }
+		enable_dimensional_horror_crisis_mission = { MISSION = MISSION_DIMENSIONAL_HORROR_CRISIS_SYSTEM_4 }
+	}
+}
+
+MISSION_DIMENSIONAL_HORROR_CRISIS_SYSTEM_4 = {
+	desc = MISSION_DIMENSIONAL_HORROR_CRISIS_SYSTEM_4_DESC
+	event_chain = dimensional_horror_crisis_chain
+	icon = "gfx/interface/icons/situation_log/situation_log_federation.dds"
+	picture = GFX_evt_cosmic_storms_the_storm_speaks
+
+	abort_trigger = {
+		OR = {
+			NOT = { has_event_chain = dimensional_horror_crisis_chain }
+			has_all_dimensional_horror_crisis_storm_protection_tech = yes
+		}
+	}
+
+	counter = {
+		mission_dimensional_horror_crisis_system = {
+			max = 10
+		}
+	}
+
+	on_success = {
+		set_country_flag = mission_dimensional_horror_crisis_system_4_completed
+		randomly_add_dimensional_horror_crisis_storm_protection_tech_option = { MISSION = SYSTEM }
+		enable_dimensional_horror_crisis_mission = { MISSION = MISSION_DIMENSIONAL_HORROR_CRISIS_SYSTEM_5 }
+	}
+}
+
+MISSION_DIMENSIONAL_HORROR_CRISIS_SYSTEM_5 = {
+	desc = MISSION_DIMENSIONAL_HORROR_CRISIS_SYSTEM_5_DESC
+	event_chain = dimensional_horror_crisis_chain
+	icon = "gfx/interface/icons/situation_log/situation_log_federation.dds"
+	picture = GFX_evt_cosmic_storms_the_storm_speaks
+
+	abort_trigger = {
+		OR = {
+			NOT = { has_event_chain = dimensional_horror_crisis_chain }
+			has_all_dimensional_horror_crisis_storm_protection_tech = yes
+		}
+	}
+
+	counter = {
+		mission_dimensional_horror_crisis_system = {
+			max = 15
+		}
+	}
+
+	on_success = {
+		randomly_add_dimensional_horror_crisis_storm_protection_tech_option = { MISSION = SYSTEM }
+		enable_dimensional_horror_crisis_mission = { MISSION = MISSION_DIMENSIONAL_HORROR_CRISIS_SYSTEM_5 }
+	}
+}
+
+MISSION_DIMENSIONAL_HORROR_CRISIS_SHIP_1 = {
+	desc = MISSION_DIMENSIONAL_HORROR_CRISIS_SHIP_1_DESC
+	event_chain = dimensional_horror_crisis_chain
+	icon = "gfx/interface/icons/situation_log/situation_log_space_creature.dds"
+	picture = GFX_evt_dimensional_horror
+
+	abort_trigger = {
+		OR = {
+			NOT = { has_event_chain = dimensional_horror_crisis_chain }
+			has_all_dimensional_horror_crisis_storm_protection_tech = yes
+		}
+	}
+
+	counter = {
+		mission_dimensional_horror_crisis_ship = {
+			max = 1
+		}
+	}
+
+	on_success = {
+		set_country_flag = mission_dimensional_horror_crisis_ship_1_completed
+		randomly_add_dimensional_horror_crisis_storm_protection_tech_option = { MISSION = SHIP }
+		enable_dimensional_horror_crisis_mission = { MISSION = MISSION_DIMENSIONAL_HORROR_CRISIS_SHIP_2 }
+	}
+}
+
+MISSION_DIMENSIONAL_HORROR_CRISIS_SHIP_2 = {
+	desc = MISSION_DIMENSIONAL_HORROR_CRISIS_SHIP_2_DESC
+	event_chain = dimensional_horror_crisis_chain
+	icon = "gfx/interface/icons/situation_log/situation_log_space_creature.dds"
+	picture = GFX_evt_dimensional_horror
+
+	abort_trigger = {
+		OR = {
+			NOT = { has_event_chain = dimensional_horror_crisis_chain }
+			has_all_dimensional_horror_crisis_storm_protection_tech = yes
+		}
+	}
+
+	counter = {
+		mission_dimensional_horror_crisis_ship = {
+			max = 3
+		}
+	}
+
+	on_success = {
+		set_country_flag = mission_dimensional_horror_crisis_ship_2_completed
+		randomly_add_dimensional_horror_crisis_storm_protection_tech_option = { MISSION = SHIP }
+		enable_dimensional_horror_crisis_mission = { MISSION = MISSION_DIMENSIONAL_HORROR_CRISIS_SHIP_3 }
+	}
+}
+
+MISSION_DIMENSIONAL_HORROR_CRISIS_SHIP_3 = {
+	desc = MISSION_DIMENSIONAL_HORROR_CRISIS_SHIP_3_DESC
+	event_chain = dimensional_horror_crisis_chain
+	icon = "gfx/interface/icons/situation_log/situation_log_space_creature.dds"
+	picture = GFX_evt_dimensional_horror
+
+	abort_trigger = {
+		OR = {
+			NOT = { has_event_chain = dimensional_horror_crisis_chain }
+			has_all_dimensional_horror_crisis_storm_protection_tech = yes
+		}
+	}
+
+	counter = {
+		mission_dimensional_horror_crisis_ship = {
+			max = 6
+		}
+	}
+
+	on_success = {
+		set_country_flag = mission_dimensional_horror_crisis_ship_3_completed
+		randomly_add_dimensional_horror_crisis_storm_protection_tech_option = { MISSION = SHIP }
+		enable_dimensional_horror_crisis_mission = { MISSION = MISSION_DIMENSIONAL_HORROR_CRISIS_SHIP_4 }
+	}
+}
+
+MISSION_DIMENSIONAL_HORROR_CRISIS_SHIP_4 = {
+	desc = MISSION_DIMENSIONAL_HORROR_CRISIS_SHIP_4_DESC
+	event_chain = dimensional_horror_crisis_chain
+	icon = "gfx/interface/icons/situation_log/situation_log_space_creature.dds"
+	picture = GFX_evt_dimensional_horror
+
+	abort_trigger = {
+		OR = {
+			NOT = { has_event_chain = dimensional_horror_crisis_chain }
+			has_all_dimensional_horror_crisis_storm_protection_tech = yes
+		}
+	}
+
+	counter = {
+		mission_dimensional_horror_crisis_ship = {
+			max = 10
+		}
+	}
+
+	on_success = {
+		set_country_flag = mission_dimensional_horror_crisis_ship_4_completed
+		randomly_add_dimensional_horror_crisis_storm_protection_tech_option = { MISSION = SHIP }
+		enable_dimensional_horror_crisis_mission = { MISSION = MISSION_DIMENSIONAL_HORROR_CRISIS_SHIP_5 }
+	}
+}
+
+MISSION_DIMENSIONAL_HORROR_CRISIS_SHIP_5 = {
+	desc = MISSION_DIMENSIONAL_HORROR_CRISIS_SHIP_5_DESC
+	event_chain = dimensional_horror_crisis_chain
+	icon = "gfx/interface/icons/situation_log/situation_log_space_creature.dds"
+	picture = GFX_evt_dimensional_horror
+
+	abort_trigger = {
+		OR = {
+			NOT = { has_event_chain = dimensional_horror_crisis_chain }
+			has_all_dimensional_horror_crisis_storm_protection_tech = yes
+		}
+	}
+
+	counter = {
+		mission_dimensional_horror_crisis_ship = {
+			max = 15
+		}
+	}
+
+	on_success = {
+		randomly_add_dimensional_horror_crisis_storm_protection_tech_option = { MISSION = SHIP }
+		enable_dimensional_horror_crisis_mission = { MISSION = MISSION_DIMENSIONAL_HORROR_CRISIS_SHIP_5 }
+	}
+}
+
+MISSION_DIMENSIONAL_HORROR_CRISIS_TECHNOLOGY_1 = {
+	desc = MISSION_DIMENSIONAL_HORROR_CRISIS_TECHNOLOGY_1_DESC
+	event_chain = dimensional_horror_crisis_chain
+	icon = "gfx/interface/icons/situation_log/situation_log_modification.dds"
+	picture = GFX_evt_cosmic_storms_broadcast_hacking
+
+	abort_trigger = {
+		OR = {
+			NOT = { has_event_chain = dimensional_horror_crisis_chain }
+			has_all_dimensional_horror_crisis_storm_protection_tech = yes
+		}
+	}
+
+	counter = {
+		mission_dimensional_horror_crisis_technology = {
+			max = 1
+		}
+	}
+
+	on_success = {
+		set_country_flag = mission_dimensional_horror_crisis_technology_1_completed
+		randomly_add_dimensional_horror_crisis_storm_protection_tech_option = { MISSION = TECHNOLOGY }
+		enable_dimensional_horror_crisis_mission = { MISSION = MISSION_DIMENSIONAL_HORROR_CRISIS_TECHNOLOGY_2 }
+	}
+}
+
+MISSION_DIMENSIONAL_HORROR_CRISIS_TECHNOLOGY_2 = {
+	desc = MISSION_DIMENSIONAL_HORROR_CRISIS_TECHNOLOGY_2_DESC
+	event_chain = dimensional_horror_crisis_chain
+	icon = "gfx/interface/icons/situation_log/situation_log_modification.dds"
+	picture = GFX_evt_cosmic_storms_broadcast_hacking
+
+	abort_trigger = {
+		OR = {
+			NOT = { has_event_chain = dimensional_horror_crisis_chain }
+			has_all_dimensional_horror_crisis_storm_protection_tech = yes
+		}
+	}
+
+	counter = {
+		mission_dimensional_horror_crisis_technology = {
+			max = 1
+		}
+	}
+
+	on_success = {
+		set_country_flag = mission_dimensional_horror_crisis_technology_2_completed
+		randomly_add_dimensional_horror_crisis_storm_protection_tech_option = { MISSION = TECHNOLOGY }
+		enable_dimensional_horror_crisis_mission = { MISSION = MISSION_DIMENSIONAL_HORROR_CRISIS_TECHNOLOGY_3 }
+	}
+}
+
+MISSION_DIMENSIONAL_HORROR_CRISIS_TECHNOLOGY_3 = {
+	desc = MISSION_DIMENSIONAL_HORROR_CRISIS_TECHNOLOGY_3_DESC
+	event_chain = dimensional_horror_crisis_chain
+	icon = "gfx/interface/icons/situation_log/situation_log_modification.dds"
+	picture = GFX_evt_cosmic_storms_broadcast_hacking
+
+	abort_trigger = {
+		OR = {
+			NOT = { has_event_chain = dimensional_horror_crisis_chain }
+			has_all_dimensional_horror_crisis_storm_protection_tech = yes
+		}
+	}
+
+	counter = {
+		mission_dimensional_horror_crisis_technology = {
+			max = 2
+		}
+	}
+
+	on_success = {
+		set_country_flag = mission_dimensional_horror_crisis_technology_3_completed
+		randomly_add_dimensional_horror_crisis_storm_protection_tech_option = { MISSION = TECHNOLOGY }
+		enable_dimensional_horror_crisis_mission = { MISSION = MISSION_DIMENSIONAL_HORROR_CRISIS_TECHNOLOGY_4 }
+	}
+}
+
+MISSION_DIMENSIONAL_HORROR_CRISIS_TECHNOLOGY_4 = {
+	desc = MISSION_DIMENSIONAL_HORROR_CRISIS_TECHNOLOGY_4_DESC
+	event_chain = dimensional_horror_crisis_chain
+	icon = "gfx/interface/icons/situation_log/situation_log_modification.dds"
+	picture = GFX_evt_cosmic_storms_broadcast_hacking
+
+	abort_trigger = {
+		OR = {
+			NOT = { has_event_chain = dimensional_horror_crisis_chain }
+			has_all_dimensional_horror_crisis_storm_protection_tech = yes
+		}
+	}
+
+	counter = {
+		mission_dimensional_horror_crisis_technology = {
+			max = 2
+		}
+	}
+
+	on_success = {
+		set_country_flag = mission_dimensional_horror_crisis_technology_4_completed
+		randomly_add_dimensional_horror_crisis_storm_protection_tech_option = { MISSION = TECHNOLOGY }
+		enable_dimensional_horror_crisis_mission = { MISSION = MISSION_DIMENSIONAL_HORROR_CRISIS_TECHNOLOGY_5 }
+	}
+}
+
+MISSION_DIMENSIONAL_HORROR_CRISIS_TECHNOLOGY_5 = {
+	desc = MISSION_DIMENSIONAL_HORROR_CRISIS_TECHNOLOGY_5_DESC
+	event_chain = dimensional_horror_crisis_chain
+	icon = "gfx/interface/icons/situation_log/situation_log_modification.dds"
+	picture = GFX_evt_cosmic_storms_broadcast_hacking
+
+	abort_trigger = {
+		OR = {
+			NOT = { has_event_chain = dimensional_horror_crisis_chain }
+			has_all_dimensional_horror_crisis_storm_protection_tech = yes
+		}
+	}
+
+	counter = {
+		mission_dimensional_horror_crisis_technology = {
+			max = 3
+		}
+	}
+
+	on_success = {
+		set_country_flag = mission_dimensional_horror_crisis_technology_5_completed
+		randomly_add_dimensional_horror_crisis_storm_protection_tech_option = { MISSION = TECHNOLOGY }
+	}
+}

@@ -1,0 +1,22 @@
+category = specialist
+can_be_automated = no
+
+swappable_data = {
+	default = {
+		condition_string = SPECIALIST_JOB_TRIGGER
+		building_icon = building_origin_contract_$PATRON$
+	}
+}
+
+possible_pre_triggers = {
+	has_owner = yes
+	is_enslaved = no
+	is_being_purged = no
+	is_being_assimilated = no
+	is_sapient = yes
+}
+
+possible_precalc = can_fill_specialist_job
+possible = {
+	complex_specialist_job_check_trigger = yes
+}

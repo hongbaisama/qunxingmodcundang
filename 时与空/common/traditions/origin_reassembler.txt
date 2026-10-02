@@ -1,0 +1,71 @@
+tr_origin_reassembler_adopt = {
+	possible = {
+		if = {
+			limit = {
+				has_civic = civic_machine_assimilator
+			}
+			has_tradition = tr_cybernetics_assimilator_finish
+		}
+		else = {
+			has_tradition = tr_modularity_finish
+		}
+	}
+	unlocks_agenda = agenda_tradition_origin_reassembler
+	modifier = {
+		reassembly_speed_mult = 0.5
+	}
+	on_enabled = {
+	}
+}
+
+tr_origin_reassembler_finish = {
+	modifier = {
+		ascension_perks_add = 1
+	}
+	on_enabled = {
+		custom_tooltip = tr_origin_reassembler_finish_desc
+	}
+}
+
+tr_origin_reassembler_housing = {
+	custom_tooltip = tr_origin_reassembler_housing_desc
+	ai_weight = {
+		factor = 1000
+	}
+}
+
+tr_origin_reassembler_amenities = {
+	custom_tooltip = tr_origin_reassembler_amenities_desc
+	ai_weight = {
+		factor = 1000
+	}
+}
+
+tr_origin_reassembler_empire_size = {
+	custom_tooltip = tr_origin_reassembler_empire_size_desc
+	ai_weight = {
+		factor = 1000
+	}
+}
+
+tr_origin_reassembler_upkeep = {
+	custom_tooltip = tr_origin_reassembler_upkeep_desc
+	possible = {
+		has_tradition = tr_origin_reassembler_housing
+		has_tradition = tr_origin_reassembler_amenities
+	}
+	ai_weight = {
+		factor = 1000
+	}
+}
+
+tr_origin_reassembler_produces = {
+	custom_tooltip = tr_origin_reassembler_produces_desc
+	possible = {
+		has_tradition = tr_origin_reassembler_amenities
+		has_tradition = tr_origin_reassembler_empire_size
+	}
+	ai_weight = {
+		factor = 1000
+	}
+}

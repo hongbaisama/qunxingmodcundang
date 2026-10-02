@@ -1,0 +1,151 @@
+resources = {
+	category = planet_buildings
+	produces = {
+		$RESOURCE$ = 1
+		mult = value:num_time_rare_resources_value
+	}
+	produces = {
+		trigger = {
+			exists = owner
+			owner = {
+				has_origin_time_winner_ethic = { ETHIC = $ETHIC_1$ }
+				has_origin_time_winner_ethic = { ETHIC = $ETHIC_2$ }
+			}
+		}
+		$RESOURCE$ = 0.5
+		mult = value:num_time_rare_resources_value
+	}
+	cost = {
+		energy = 10000
+		minerals = 10000
+		food = 10000
+		consumer_goods = 5000
+		alloys = 5000
+		sr_dark_matter = 500
+		influence = 250
+	}
+	upkeep = {
+		volatile_motes = 10
+		rare_crystals = 10
+		exotic_gases = 10
+	}
+}
+
+potential = {
+	is_special_colony_type = no
+	has_carrier_flag = time_home_planet_of@owner
+	owner = {
+		is_advanced_origin_time_authority = yes
+		OR = {
+			has_origin_time_winner_ethic = { ETHIC = $ETHIC_1$ }
+			has_origin_time_winner_ethic = { ETHIC = $ETHIC_2$ }
+		}
+	}
+}
+
+allow = {
+	has_fully_upgraded_capital = yes
+}
+
+triggered_planet_modifier = {
+	potential = {
+		exists = owner
+		owner = {
+			is_$ETHIC_1$ = yes
+			has_origin_time_winner_ethic = { ETHIC = $ETHIC_1$ }
+		}
+	}
+	job_$JOB_1$_add = 1
+}
+
+triggered_planet_modifier = {
+	potential = {
+		exists = owner
+		owner = {
+			is_$ETHIC_1$ = yes
+			has_origin_time_winner_ethic = { ETHIC = $ETHIC_1$ }
+		}
+	}
+	job_$JOB_1$_max_workforce_mult = -1
+	mult = modifier:job_max_workforce_mult
+}
+
+triggered_desc = {
+	trigger = {
+		exists = owner
+		owner = {
+			is_$ETHIC_1$ = yes
+			has_origin_time_winner_ethic = { ETHIC = $ETHIC_1$ }
+		}
+	}
+	text = job_$JOB_1$_effect_desc
+}
+
+triggered_planet_modifier = {
+	potential = {
+		exists = owner
+		owner = {
+			is_$ETHIC_2$ = yes
+			has_origin_time_winner_ethic = { ETHIC = $ETHIC_2$ }
+		}
+	}
+	job_$JOB_2$_add = 1
+}
+
+triggered_planet_modifier = {
+	potential = {
+		exists = owner
+		owner = {
+			is_$ETHIC_2$ = yes
+			has_origin_time_winner_ethic = { ETHIC = $ETHIC_2$ }
+		}
+	}
+	job_$JOB_2$_max_workforce_mult = -1
+	mult = modifier:job_max_workforce_mult
+}
+
+triggered_desc = {
+	trigger = {
+		exists = owner
+		owner = {
+			is_$ETHIC_2$ = yes
+			has_origin_time_winner_ethic = { ETHIC = $ETHIC_2$ }
+		}
+	}
+	text = job_$JOB_2$_effect_desc
+}
+
+auto_generate_description = no
+
+desc = {
+	trigger = {
+		exists = owner
+		owner = {
+			has_origin_time_winner_ethic = { ETHIC = $ETHIC_1$ }
+			NOT = { has_origin_time_winner_ethic = { ETHIC = $ETHIC_2$ } }
+		}
+	}
+	text = building_$ETHIC_1$_is_winner_advanced_desc
+}
+
+desc = {
+	trigger = {
+		exists = owner
+		owner = {
+			NOT = { has_origin_time_winner_ethic = { ETHIC = $ETHIC_1$ } }
+			has_origin_time_winner_ethic = { ETHIC = $ETHIC_2$ }
+		}
+	}
+	text = building_$ETHIC_2$_is_winner_advanced_desc
+}
+
+desc = {
+	trigger = {
+		exists = owner
+		owner = {
+			has_origin_time_winner_ethic = { ETHIC = $ETHIC_1$ }
+			has_origin_time_winner_ethic = { ETHIC = $ETHIC_2$ }
+		}
+	}
+	text = building_$ETHIC_1$_and_$ETHIC_2$_is_winner_advanced_desc
+}

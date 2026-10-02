@@ -1,0 +1,726 @@
+########################
+# 隐藏科技
+########################
+
+tech_time_hide = {
+	icon = tech_akx_worm_3
+	cost = 100000000
+	area = physics
+	category = { particles }
+	tier = 5
+	is_rare = yes
+	is_dangerous = yes
+	is_reverse_engineerable = no
+	weight = 0
+
+	potential = {
+		always = no
+	}
+	
+	ai_weight = {
+		modifier = {
+			factor = 0
+		}
+	}
+}
+
+########################
+# 诺亚方舟
+########################
+
+tech_noah_ark = {
+	cost = @tier5cost3
+	area = society
+	tier = 5
+	category = { archaeostudies }
+	is_rare = yes
+	weight = 0
+	
+	potential = {
+		has_country_flag = unlock_tech_noah_ark
+	}
+
+	weight_modifier = {
+		factor = 0
+	}
+}
+
+########################
+# 腐化主脑
+########################
+
+tech_corrupt_brain_hive_1 = {
+	icon = tech_gene_tailoring
+	cost = @tier3cost1
+	area = society
+	tier = 3
+	category = { biology }
+	is_rare = yes
+	weight = @tier3weight1
+	
+	gateway = origin_corrupt_brain
+	
+	potential = {
+		has_origin = origin_corrupt_brain
+		is_hive_empire = yes
+		OR = {
+			has_tradition = tr_genetics_adopt
+			has_tradition = tr_purity_adopt
+			has_tradition = tr_cloning_adopt
+			has_tradition = tr_mutation_adopt
+		}
+	}
+	
+	modifier = {
+		planet_crime_no_happiness_mult = -0.25
+		negative_traits_country = -2
+	}
+	
+	weight_modifier = {
+		modifier = {
+			factor = 0
+			NOR = {
+				has_tradition = tr_genetics_finish
+				has_tradition = tr_purity_finish
+				has_tradition = tr_cloning_finish
+				has_tradition = tr_mutation_finish
+			}
+		}
+		modifier = {
+			factor = 2
+			has_technology = tech_node_culling_1
+		}
+		modifier = {
+			factor = 2
+			has_technology = tech_node_culling_2
+		}
+		modifier = {
+			factor = 2
+			has_technology = tech_node_culling_3
+		}
+	}
+	
+	ai_weight = {
+		weight = 10000
+	}
+}
+
+tech_corrupt_brain_hive_2 = {
+	icon = tech_integrated_cybernetics
+	cost = @tier3cost1
+	area = engineering
+	tier = 3
+	category = { materials }
+	is_rare = yes
+	weight = @tier3weight1
+	
+	gateway = origin_corrupt_brain
+	
+	potential = {
+		has_origin = origin_corrupt_brain
+		is_hive_empire = yes
+		has_tradition = tr_cybernetics_adopt
+	}
+	
+	modifier = {
+		planet_crime_no_happiness_mult = -0.25
+		negative_traits_country = -2
+	}
+	
+	weight_modifier = {
+		modifier = {
+			factor = 0
+			NOT = { has_tradition = tr_cybernetics_finish }
+		}
+		modifier = {
+			factor = 2
+			has_technology = tech_node_culling_1
+		}
+		modifier = {
+			factor = 2
+			has_technology = tech_node_culling_2
+		}
+		modifier = {
+			factor = 2
+			has_technology = tech_node_culling_3
+		}
+	}
+	
+	ai_weight = {
+		weight = 10000
+	}
+}
+
+tech_corrupt_brain_hive_3 = {
+	icon = tech_psionic_sacrificial_volunteers
+	cost = @tier3cost1
+	area = society
+	tier = 3
+	category = { psionics }
+	is_rare = yes
+	weight = @tier3weight1
+	
+	gateway = origin_corrupt_brain
+	
+	potential = {
+		has_origin = origin_corrupt_brain
+		is_hive_empire = yes
+		has_tradition = tr_psionics_shroud_adopt
+	}
+	
+	modifier = {
+		planet_crime_no_happiness_mult = -0.25
+		negative_traits_country = -2
+	}
+	
+	weight_modifier = {
+		modifier = {
+			factor = 0
+			NOT = { has_tradition = tr_psionics_shroud_finish }
+		}
+		modifier = {
+			factor = 2
+			has_technology = tech_node_culling_1
+		}
+		modifier = {
+			factor = 2
+			has_technology = tech_node_culling_2
+		}
+		modifier = {
+			factor = 2
+			has_technology = tech_node_culling_3
+		}
+	}
+	
+	ai_weight = {
+		weight = 10000
+	}
+}
+
+tech_corrupt_brain_machine_1 = {
+	icon = tech_synthetic_leaders
+	cost = @tier3cost1
+	area = physics
+	tier = 3
+	category = { computing }
+	is_rare = yes
+	weight = @tier3weight1
+	
+	gateway = origin_corrupt_brain
+	
+	potential = {
+		has_origin = origin_corrupt_brain
+		is_machine_empire = yes
+		OR = {
+			has_tradition = tr_synthetics_adopt
+			has_tradition = tr_nanotech_adopt
+			has_tradition = tr_modularity_adopt
+			has_tradition = tr_virtuality_adopt
+		}
+	}
+	
+	modifier = {
+		planet_crime_no_happiness_mult = -0.25
+		negative_traits_country = -2
+	}
+	
+	weight_modifier = {
+		modifier = {
+			factor = 0
+			NOR = {
+				has_tradition = tr_synthetics_finish
+				has_tradition = tr_nanotech_finish
+				has_tradition = tr_modularity_finish
+				has_tradition = tr_virtuality_finish
+			}
+		}
+		modifier = {
+			factor = 2
+			has_technology = tech_node_reformatting_1
+		}
+		modifier = {
+			factor = 2
+			has_technology = tech_node_reformatting_2
+		}
+		modifier = {
+			factor = 2
+			has_technology = tech_node_reformatting_3
+		}
+	}
+	
+	ai_weight = {
+		weight = 10000
+	}
+}
+
+tech_corrupt_brain_machine_2 = {
+	icon = tech_synthetic_workers
+	cost = @tier3cost1
+	area = engineering
+	tier = 3
+	category = { industry }
+	is_rare = yes
+	weight = @tier3weight1
+	
+	gateway = origin_corrupt_brain
+	
+	potential = {
+		has_origin = origin_corrupt_brain
+		is_machine_empire = yes
+		has_tradition = tr_cybernetics_assimilator_adopt
+	}
+	
+	modifier = {
+		planet_crime_no_happiness_mult = -0.25
+		negative_traits_country = -2
+	}
+	
+	weight_modifier = {
+		modifier = {
+			factor = 0
+			NOT = { has_tradition = tr_cybernetics_assimilator_finish }
+		}
+		modifier = {
+			factor = 2
+			has_technology = tech_node_reformatting_1
+		}
+		modifier = {
+			factor = 2
+			has_technology = tech_node_reformatting_2
+		}
+		modifier = {
+			factor = 2
+			has_technology = tech_node_reformatting_3
+		}
+	}
+	
+	ai_weight = {
+		weight = 10000
+	}
+}
+
+tech_corrupt_brain_machine_3 = {
+	icon = tech_psionic_suppression
+	cost = @tier3cost1
+	area = society
+	tier = 3
+	category = { psionics }
+	is_rare = yes
+	weight = @tier3weight1
+	
+	gateway = origin_corrupt_brain
+	
+	potential = {
+		has_origin = origin_corrupt_brain
+		is_machine_empire = yes
+		has_tradition = tr_psionics_shroud_adopt
+	}
+	
+	modifier = {
+		planet_crime_no_happiness_mult = -0.25
+		negative_traits_country = -2
+	}
+	
+	weight_modifier = {
+		modifier = {
+			factor = 0
+			NOT = { has_tradition = tr_psionics_shroud_finish }
+		}
+		modifier = {
+			factor = 2
+			has_technology = tech_node_reformatting_1
+		}
+		modifier = {
+			factor = 2
+			has_technology = tech_node_reformatting_2
+		}
+		modifier = {
+			factor = 2
+			has_technology = tech_node_reformatting_3
+		}
+	}
+	
+	ai_weight = {
+		weight = 10000
+	}
+}
+
+########################
+# 彼岸封印
+########################
+
+tech_equinox_seal = {
+	icon = tech_repeatable_reduced_building_cost
+	area = physics
+	cost = 0
+	cost_per_level = 10000
+	tier = 2
+	is_rare = yes
+	category = { horror_time }
+	levels = -1
+	weight = 100
+
+	potential = {
+		has_country_flag = start_equinox_seal
+		NOT = { has_global_flag = finish_equinox_seal }
+	}
+
+	prereqfor_desc = {
+		custom = {
+			title = add_equinox_seal_clue
+			desc = tech_equinox_seal_desc
+		}
+	}
+
+	ai_weight = {
+		factor = 1.0
+	}
+}
+
+########################
+# 清算已至
+########################
+
+tech_reckoning_arrived_composer_sanctum = {
+	cost = @tier3cost1
+	area = society
+	tier = 3
+	category = { psionics }
+	is_rare = yes
+	weight = 0
+	
+	gateway = psionics
+	
+	potential = {
+		has_origin = origin_reckoning_arrived
+		has_country_flag = unlock_tech_reckoning_arrived_composer_sanctum
+	}
+	
+	weight_modifier = {
+		factor = 0
+	}
+	
+	ai_weight = {
+		weight = 100
+	}
+}
+
+tech_reckoning_arrived_eater_sanctum = {
+	cost = @tier3cost1
+	area = engineering
+	tier = 3
+	category = { psionics }
+	is_rare = yes
+	weight = 0
+	
+	gateway = psionics
+	
+	potential = {
+		has_origin = origin_reckoning_arrived
+		has_country_flag = unlock_tech_reckoning_arrived_eater_sanctum
+	}
+	
+	weight_modifier = {
+		factor = 0
+	}
+	
+	ai_weight = {
+		weight = 100
+	}
+}
+
+tech_reckoning_arrived_instrument_sanctum = {
+	cost = @tier3cost1
+	area = engineering
+	tier = 3
+	category = { psionics }
+	is_rare = yes
+	weight = 0
+	
+	gateway = psionics
+	
+	potential = {
+		has_origin = origin_reckoning_arrived
+		has_country_flag = unlock_tech_reckoning_arrived_instrument_sanctum
+	}
+	
+	weight_modifier = {
+		factor = 0
+	}
+	
+	ai_weight = {
+		weight = 100
+	}
+}
+
+tech_reckoning_arrived_cradle_sanctum = {
+	cost = @tier3cost1
+	area = society
+	tier = 3
+	category = { psionics }
+	is_rare = yes
+	weight = 0
+	
+	gateway = psionics
+	
+	potential = {
+		has_origin = origin_reckoning_arrived
+		has_country_flag = unlock_tech_reckoning_arrived_cradle_sanctum
+	}
+	
+	weight_modifier = {
+		factor = 0
+	}
+	
+	ai_weight = {
+		weight = 100
+	}
+}
+
+tech_reckoning_arrived_whisperers_sanctum = {
+	cost = @tier3cost1
+	area = physics
+	tier = 3
+	category = { psionics }
+	is_rare = yes
+	weight = 0
+	
+	gateway = psionics
+	
+	potential = {
+		has_origin = origin_reckoning_arrived
+		has_country_flag = unlock_tech_reckoning_arrived_whisperers_sanctum
+	}
+	
+	weight_modifier = {
+		factor = 0
+	}
+	
+	ai_weight = {
+		weight = 100
+	}
+}
+
+########################
+# 特殊预设科技
+########################
+
+tech_change_pc_time = {
+	icon = tech_wormhole_stabilization
+	cost = @beyond_infinity_tech_cost_5
+	area = physics
+	category = { horror_time }
+	tier = 5
+	is_dangerous = yes
+	is_rare = yes
+	is_reverse_engineerable = no
+	weight = 0
+	prerequisites = { "tech_time_blocker_1" "tech_time_blocker_2" "tech_time_blocker_3" }
+	
+	gateway = origin_time
+
+	potential = {
+		is_wonder_country_time_0 = no
+		can_start_situation_origin_time = yes
+	}
+
+	prereqfor_desc = {
+		custom = {
+			title = "tech_change_pc_time_0_custom"
+			desc = "tech_change_pc_time_0_custom_desc"
+		}
+	}
+	
+	ai_weight = {
+		weight = 10000
+	}
+}
+
+tech_change_pc_time_0 = {
+	icon = tech_wormhole_stabilization
+	cost = @beyond_infinity_tech_cost_5
+	area = physics
+	category = { horror_time }
+	tier = 5
+	is_dangerous = yes
+	is_rare = yes
+	is_reverse_engineerable = no
+	weight = 0
+	prerequisites = { "tech_time_blocker_1" "tech_time_blocker_2" "tech_time_blocker_3" }
+	
+	gateway = origin_time
+
+	potential = {
+		is_wonder_country_time_0 = yes
+		can_start_situation_origin_time = yes
+	}
+
+	prereqfor_desc = {
+		custom = {
+			title = "tech_change_pc_time_0_custom"
+			desc = "tech_change_pc_time_0_custom_desc"
+		}
+	}
+	
+	modifier = {
+		description = tech_change_pc_time_0_effect
+	}
+	
+	ai_weight = {
+		weight = 10000
+	}
+}
+
+tech_change_pc_time_1 = {
+	icon = tech_mine_dark_matter
+	cost = @base_time_tech_cost
+	area = physics
+	category = { horror_time }
+	tier = 5
+	is_rare = yes
+	is_reverse_engineerable = no
+	weight = 0
+	
+	gateway = origin_time
+
+	potential = {
+		is_wonder_country_time_1 = yes
+		has_ascension_perk = ap_time
+		any_planet_within_border = {
+			has_carrier_flag = time_0_planet
+			is_planet_class = pc_time
+		}
+	}
+
+	prereqfor_desc = {
+		custom = {
+			title = "tech_change_pc_time_1_custom"
+			desc = "tech_change_pc_time_1_custom_desc"
+		}
+	}
+	
+	ai_weight = {
+		weight = 10000
+	}
+}
+
+tech_change_pc_time_2 = {
+	icon = tech_sensors_4
+	cost = @base_time_tech_cost
+	area = physics
+	category = { horror_time }
+	tier = 5
+	is_rare = yes
+	is_reverse_engineerable = no
+	weight = 0
+	
+	gateway = origin_time
+
+	potential = {
+		is_wonder_country_time_2 = yes
+		has_ascension_perk = ap_time
+		any_planet_within_border = {
+			has_carrier_flag = time_0_planet
+			is_planet_class = pc_time
+		}
+	}
+
+	prereqfor_desc = {
+		custom = {
+			title = "tech_change_pc_time_2_custom"
+			desc = "tech_change_pc_time_2_custom_desc"
+		}
+	}
+	
+	ai_weight = {
+		weight = 10000
+	}
+}
+
+########################
+# 曲速引擎
+########################
+
+tech_time_warp_drive_1 = {
+	cost = @tier0cost3
+	area = physics
+	tier = 0
+	category = { field_manipulation }
+	is_rare = yes
+	weight = 0
+	
+	gateway = warp
+	
+	prereqfor_desc = {
+		component = {
+			title = "TECH_UNLOCK_WARPDRIVE_1_TITLE"
+			desc = "TECH_UNLOCK_WARPDRIVE_1_DESC"
+		}
+	}
+	
+	weight_modifier = {
+		factor = 0
+	}
+}
+
+tech_time_warp_drive_2 = {
+	cost = @tier2cost2
+	area = physics
+	tier = 2
+	category = { field_manipulation }
+	ai_update_type = all
+	is_rare = yes
+	prerequisites = { "tech_time_warp_drive_1" }
+	weight = @tier2weight2
+	
+	gateway = warp
+	
+	prereqfor_desc = {
+		component = {
+			title = "TECH_UNLOCK_WARPDRIVE_2_TITLE"
+			desc = "TECH_UNLOCK_WARPDRIVE_2_DESC"
+		}
+	}
+
+	weight_modifier = {
+		modifier = {
+			factor = 1.25
+			has_tradition = tr_discovery_adopt
+		}
+		modifier = {
+			factor = @ap_grasp_the_void_travel_tech
+			has_ascension_perk = ap_grasp_the_void
+		}
+	}
+}
+
+tech_time_warp_drive_3 = {
+	cost = @tier3cost3
+	area = physics
+	tier = 3
+	category = { field_manipulation }
+	ai_update_type = all
+	is_rare = yes
+	prerequisites = { "tech_time_warp_drive_2" }
+	weight = @tier3weight3
+	
+	gateway = warp
+	
+	prereqfor_desc = {
+		component = {
+			title = "TECH_UNLOCK_WARPDRIVE_3_TITLE"
+			desc = "TECH_UNLOCK_WARPDRIVE_3_DESC"
+		}
+	}
+
+	weight_modifier = {
+		modifier = {
+			factor = 1.25
+			has_tradition = tr_discovery_adopt
+		}
+		modifier = {
+			factor = @ap_grasp_the_void_travel_tech
+			has_ascension_perk = ap_grasp_the_void
+		}
+	}
+}

@@ -1,0 +1,5 @@
+on_game_start = {
+	events = {
+		time.20000 # 起源时间线（应比原版timeline.0更早触发）
+	}
+}

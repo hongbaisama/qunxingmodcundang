@@ -1,0 +1,257 @@
+building_dimensional_horror_crisis_storm_protection_1 = {
+	icon = building_advanced_storm_resistant_production
+	base_buildtime = @b2_time
+	planet_limit = 1
+	
+	category = amenity
+	
+	building_sets = {
+		government
+		urban
+		fortress
+	}
+
+	potential = {
+	}
+
+	allow = {
+	}
+	
+	planet_modifier = {
+		dimensional_horror_crisis_storm_planet_modifier = -0.15
+		planet_storm_devastation_mult = -0.15
+		planet_amenities_mult = 0.15
+	}
+	
+	inline_script = {
+		script = cosmic_storms/StormBuildingModifiers
+	}
+
+	resources = {
+		category = planet_buildings
+		inline_script = {
+			script = buildings/nomadic_cost_switcher
+			REGULAR_RESOURCE = minerals
+			NOMADIC_RESOURCE = alloys
+			COST = @b2_minerals
+			NOMADIC_COST_MULT = @nomadic_minerals_to_strategic_ratio
+		}
+		cost = {
+			sr_dark_matter = 25
+		}
+		upkeep = {
+			energy = @b2_upkeep
+			sr_dark_matter = 0.05
+		}
+	}
+	
+	prerequisites = { "tech_dimensional_horror_crisis_storm_protection_building_1" }
+}
+
+building_dimensional_horror_crisis_storm_protection_2 = {
+	icon = building_astrometeorology_observation_center
+	base_buildtime = @b2_time
+	planet_limit = 1
+	
+	category = amenity
+	
+	building_sets = {
+		government
+		urban
+		fortress
+	}
+
+	potential = {
+	}
+
+	allow = {
+	}
+	
+	planet_modifier = {
+		dimensional_horror_crisis_storm_planet_modifier = -0.15
+		planet_storm_devastation_mult = -0.15
+		planet_housing_mult = 0.15
+	}
+	
+	inline_script = {
+		script = cosmic_storms/StormBuildingModifiers
+	}
+
+	resources = {
+		category = planet_buildings
+		inline_script = {
+			script = buildings/nomadic_cost_switcher
+			REGULAR_RESOURCE = minerals
+			NOMADIC_RESOURCE = alloys
+			COST = @b2_minerals
+			NOMADIC_COST_MULT = @nomadic_minerals_to_strategic_ratio
+		}
+		cost = {
+			sr_dark_matter = 25
+		}
+		upkeep = {
+			energy = @b2_upkeep
+			sr_dark_matter = 0.05
+		}
+	}
+	
+	prerequisites = { "tech_dimensional_horror_crisis_storm_protection_building_2" }
+}
+
+building_dimensional_horror_crisis_storm_protection_3 = {
+	icon = building_advanced_storm_attraction_center
+	base_buildtime = @b3_time
+	planet_limit = 1
+	
+	category = amenity
+	
+	building_sets = {
+		government
+		urban
+		fortress
+	}
+
+	potential = {
+	}
+
+	allow = {
+		has_upgraded_capital = yes
+	}
+	
+	planet_modifier = {
+		dimensional_horror_crisis_storm_planet_modifier = -0.2
+		planet_storm_devastation_mult = -0.2
+		habitability_ceil_uncapped_add = 0.2
+		habitability_ceil_add = 0.2
+		habitability_floor_add = 0.2
+	}
+	
+	inline_script = {
+		script = cosmic_storms/StormBuildingModifiers
+	}
+
+	resources = {
+		category = planet_buildings
+		inline_script = {
+			script = buildings/nomadic_cost_switcher
+			REGULAR_RESOURCE = minerals
+			NOMADIC_RESOURCE = alloys
+			COST = @b3_minerals
+			NOMADIC_COST_MULT = @nomadic_minerals_to_strategic_ratio
+		}
+		cost = {
+			sr_dark_matter = 50
+		}
+		upkeep = {
+			energy = @b3_upkeep
+			sr_dark_matter = 0.1
+		}
+	}
+	
+	prerequisites = { "tech_dimensional_horror_crisis_storm_protection_building_3" }
+}
+
+building_dimensional_horror_crisis_storm_protection_4 = {
+	icon = building_advanced_storm_repellent_center
+	base_buildtime = @b3_time
+	planet_limit = 1
+	
+	category = amenity
+	
+	building_sets = {
+		government
+		urban
+		fortress
+	}
+
+	potential = {
+	}
+
+	allow = {
+		has_upgraded_capital = yes
+	}
+	
+	planet_modifier = {
+		dimensional_horror_crisis_storm_planet_modifier = -0.2
+		planet_storm_devastation_mult = -0.2
+		logistic_growth_mult = 0.2
+		bonus_pop_growth_mult = 0.2
+		planet_pop_assembly_mult = 0.2
+	}
+	
+	inline_script = {
+		script = cosmic_storms/StormBuildingModifiers
+	}
+
+	resources = {
+		category = planet_buildings
+		inline_script = {
+			script = buildings/nomadic_cost_switcher
+			REGULAR_RESOURCE = minerals
+			NOMADIC_RESOURCE = alloys
+			COST = @b3_minerals
+			NOMADIC_COST_MULT = @nomadic_minerals_to_strategic_ratio
+		}
+		cost = {
+			sr_dark_matter = 50
+		}
+		upkeep = {
+			energy = @b3_upkeep
+			sr_dark_matter = 0.1
+		}
+	}
+	
+	prerequisites = { "tech_dimensional_horror_crisis_storm_protection_building_4" }
+}
+
+building_dimensional_horror_crisis_storm_protection_5 = {
+	icon = building_storm_grand_theater
+	base_buildtime = @b4_time
+	planet_limit = 1
+	
+	category = army
+	
+	building_sets = {
+		government
+		urban
+		fortress
+	}
+
+	potential = {
+	}
+
+	allow = {
+		has_major_upgraded_capital = yes
+	}
+	
+	planet_modifier = {
+		dimensional_horror_crisis_storm_planet_modifier = -0.25
+		planet_storm_devastation_mult = -0.25
+		planet_orbital_bombardment_damage = -0.25
+		army_damage_taken_mult = -0.25
+	}
+	
+	inline_script = {
+		script = cosmic_storms/StormBuildingModifiers
+	}
+
+	resources = {
+		category = planet_buildings
+		inline_script = {
+			script = buildings/nomadic_cost_switcher
+			REGULAR_RESOURCE = minerals
+			NOMADIC_RESOURCE = alloys
+			COST = @b4_minerals
+			NOMADIC_COST_MULT = @nomadic_minerals_to_strategic_ratio
+		}
+		cost = {
+			astral_threads = 50
+		}
+		upkeep = {
+			energy = @b4_upkeep
+			astral_threads = 0.1
+		}
+	}
+	
+	prerequisites = { "tech_dimensional_horror_crisis_storm_protection_building_5" }
+}

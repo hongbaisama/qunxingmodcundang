@@ -1,0 +1,59 @@
+district_time_notofthisworld = {
+	overlay_icon = GFX_district_government
+	base_buildtime = 360
+	exempt_from_ai_planet_specialization = yes
+
+	zone_slots = {
+		slot_city_government
+		slot_time_notofthisworld_rift_sphere
+		slot_time_notofthisworld_astral_harvesting
+	}
+	
+	show_on_uncolonized = {
+		is_planet_class = pc_time_notofthisworld
+	}
+	
+	potential = {
+		is_planet_class = pc_time_notofthisworld
+		NAND = {
+			is_capital = yes
+			owner = {
+				has_menace_perk = menp_behemoth_mind_meld
+			}
+		}
+	}
+
+	conversion_ratio = 1
+	convert_to = {
+		district_mindlink
+		district_ark_city
+	}
+	
+	resources = {
+		category = planet_districts_time_notofthisworld
+		cost = {
+			astral_threads = 100
+		}
+		upkeep = {
+			astral_threads = 1
+		}
+	}
+	
+	planet_modifier = {
+		planet_max_districts_add = 1
+		planet_districts_time_notofthisworld_astral_threads_cost_add = 25
+		planet_districts_time_notofthisworld_astral_threads_upkeep_add = 0.25
+		building_time_mult = 0.1
+	}
+	
+	prerequisites = {
+	}
+	
+	inline_script = {
+		script = districts/district_time_notofthisworld_triggered_name
+	}
+	
+	inline_script = {
+		script = districts/ai_urban_district_extra_weighting
+	}
+}

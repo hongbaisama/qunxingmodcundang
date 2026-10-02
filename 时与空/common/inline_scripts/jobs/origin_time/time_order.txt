@@ -1,0 +1,22 @@
+inline_script = {
+	script = jobs/origin_time/time_order_base
+	ETHIC = $ETHIC$
+}
+
+resources = {
+	category = planet_$JOB$s
+	produces = {
+		$RESOURCE$ = $AMONT$
+		mult = value:time_order_normal_resource_value|RESOURCE|$RESOURCE$|WEIGHT|$WEIGHT$|ETHIC|$ETHIC$|
+	}
+	inline_script = {
+		script = jobs/origin_time/time_order_base_resources
+		ETHIC = $ETHIC$
+	}
+}
+
+triggered_country_modifier = {
+	$MODIFIER_1$ = @time_order_modifier
+	$MODIFIER_2$ = @time_order_modifier
+	mult = value:time_order_modifier_value|ETHIC|$ETHIC$|
+}

@@ -1,0 +1,183 @@
+crisis_beyond_infinity_level_1 = {
+	allow = {
+		custom_tooltip = {
+			has_country_flag = unlock_crisis_beyond_infinity_level_1
+			success_text = next_crisis_beyond_infinity_level_is_unlocked
+			fail_text = next_crisis_beyond_infinity_level_is_locked
+		}
+		custom_tooltip = {
+			dimension_traveler_is_by_our_side = yes
+			fail_text = dimension_traveler_is_returning_with_icon
+		}
+		custom_tooltip = {
+			forbid_beyond_infinity = no
+			fail_text = forbid_beyond_infinity
+		}
+	}
+	
+	required_crisis_currency = 24
+	
+	perks = {
+		menp_beyond_infinity_building_1
+		menp_beyond_infinity_section_1
+		menp_beyond_infinity_component_1
+		menp_beyond_infinity_modifier_1
+	}
+	
+	on_unlock = {
+		hidden_effect = {
+			remove_modifier = beyond_infinity_time_saturation
+			country_event = { id = beyond_infinity.1000 }
+		}
+	}
+}
+
+crisis_beyond_infinity_level_2 = {
+	allow = {
+		custom_tooltip = {
+			has_country_flag = unlock_crisis_beyond_infinity_level_2
+			success_text = next_crisis_beyond_infinity_level_is_unlocked
+			fail_text = next_crisis_beyond_infinity_level_is_locked
+		}
+		custom_tooltip = {
+			dimension_traveler_is_by_our_side = yes
+			fail_text = dimension_traveler_is_returning_with_icon
+		}
+		custom_tooltip = {
+			forbid_beyond_infinity = no
+			fail_text = forbid_beyond_infinity
+		}
+	}
+	
+	required_crisis_currency = 720
+	
+	perks = {
+		menp_beyond_infinity_building_2
+		menp_beyond_infinity_section_2
+		menp_beyond_infinity_component_2
+		menp_beyond_infinity_modifier_2
+	}
+	
+	on_unlock = {
+		hidden_effect = {
+			remove_modifier = beyond_infinity_time_saturation
+			country_event = { id = beyond_infinity.2000 }
+		}
+	}
+}
+
+crisis_beyond_infinity_level_3 = {
+	allow = {
+		custom_tooltip = {
+			has_country_flag = unlock_crisis_beyond_infinity_level_3
+			success_text = next_crisis_beyond_infinity_level_is_unlocked
+			fail_text = next_crisis_beyond_infinity_level_is_locked
+		}
+		custom_tooltip = {
+			dimension_traveler_is_by_our_side = yes
+			fail_text = dimension_traveler_is_returning_with_icon
+		}
+		custom_tooltip = {
+			forbid_beyond_infinity = no
+			fail_text = forbid_beyond_infinity
+		}
+	}
+	
+	required_crisis_currency = 8640
+	
+	perks = {
+		menp_beyond_infinity_building_3
+		menp_beyond_infinity_section_3
+		menp_beyond_infinity_component_3
+		menp_beyond_infinity_crisis
+	}
+	
+	on_unlock = {
+		hidden_effect = {
+			remove_modifier = beyond_infinity_time_saturation
+			country_event = { id = beyond_infinity.3000 }
+		}
+	}
+}
+
+crisis_beyond_infinity_level_4 = {
+	allow = {
+		custom_tooltip = {
+			has_country_flag = unlock_crisis_beyond_infinity_level_4
+			success_text = next_crisis_beyond_infinity_level_is_unlocked
+			fail_text = next_crisis_beyond_infinity_level_is_locked
+		}
+		custom_tooltip = {
+			dimension_traveler_is_by_our_side = yes
+			fail_text = dimension_traveler_is_returning_with_icon
+		}
+		custom_tooltip = {
+			forbid_beyond_infinity = no
+			fail_text = forbid_beyond_infinity
+		}
+	}
+	
+	required_crisis_currency = 864000
+	
+	perks = {
+		menp_beyond_infinity_building_4
+		menp_beyond_infinity_section_4
+		menp_beyond_infinity_component_4
+		menp_beyond_infinity_project_1
+	}
+	
+	on_unlock = {
+		hidden_effect = {
+			set_global_flag = great_dimensional_horror_crisis
+			remove_modifier = beyond_infinity_time_saturation
+			country_event = { id = beyond_infinity.4000 }
+		}
+	}
+}
+
+crisis_beyond_infinity_level_5 = {
+	allow = {
+		if = {
+			limit = {
+				has_event_chain = beyond_infinity_seal_chain
+			}
+			custom_tooltip = {
+				OR = {
+					has_global_flag = all_erasured_system_is_sealed
+					has_country_flag = no_dimensional_horror_crisis_erasured_system
+				}
+				success_text = beyond_infinity_seal_is_finished
+				fail_text = beyond_infinity_seal_is_in_progress
+			}
+		}
+		custom_tooltip = {
+			has_country_flag = unlock_crisis_beyond_infinity_level_5
+			success_text = next_crisis_beyond_infinity_level_is_unlocked
+			fail_text = next_crisis_beyond_infinity_level_is_locked
+		}
+		custom_tooltip = {
+			dimension_traveler_is_by_our_side = yes
+			fail_text = dimension_traveler_is_returning_with_icon
+		}
+		custom_tooltip = {
+			forbid_beyond_infinity = no
+			fail_text = forbid_beyond_infinity
+		}
+	}
+	
+	required_crisis_currency = 283115520
+	
+	perks = {
+		menp_beyond_infinity_building_5
+		menp_beyond_infinity_section_5
+		menp_beyond_infinity_component_5
+		menp_beyond_infinity_project_2
+	}
+	
+	on_unlock = {
+		hidden_effect = {
+			remove_modifier = beyond_infinity_time_saturation
+			country_event = { id = beyond_infinity.5000 }
+		}
+	}
+}

@@ -1,0 +1,121 @@
+################################################################
+# 地块
+################################################################
+
+# 天籁之音
+d_white_hole = {
+	is_for_colonizable = yes
+	
+	category = deposit_cat_rare
+	
+	planet_modifier = {
+		planet_jobs_unity_produces_mult = 0.1
+	}
+	
+	potential = {
+		always = no
+	}
+	
+	drop_weight = {
+		weight = 0
+	}
+}
+
+# 原点
+d_white_hole_1 = {
+	is_for_colonizable = yes
+	
+	category = deposit_cat_rare
+	
+	planet_modifier = {
+		planet_jobs_unity_produces_mult = 0.2
+	}
+	
+	potential = {
+		always = no
+	}
+	
+	drop_weight = {
+		weight = 0
+	}
+}
+
+# 尘影余音
+d_white_hole_2 = {
+	is_for_colonizable = yes
+	
+	category = deposit_cat_rare
+	
+	icon = d_white_hole
+	
+	planet_modifier = {
+		planet_jobs_unity_produces_mult = 0.05
+		pop_happiness = -0.05
+	}
+	
+	potential = {
+		always = no
+	}
+	
+	drop_weight = {
+		weight = 0
+	}
+}
+
+# 终结
+d_white_hole_3 = {
+	is_for_colonizable = yes
+	
+	category = deposit_cat_rare
+	
+	planet_modifier = {
+		planet_jobs_produces_mult = 0.1
+	}
+	
+	potential = {
+		always = no
+	}
+	
+	drop_weight = {
+		weight = 0
+	}
+}
+
+# 原点即终结
+d_white_hole_4 = {
+	is_for_colonizable = yes
+	
+	category = deposit_cat_rare
+	
+	planet_modifier = {
+		planet_jobs_produces_mult = 0.1
+		pop_happiness = -0.1
+	}
+	
+	potential = {
+		always = no
+	}
+	
+	drop_weight = {
+		weight = 0
+	}
+}
+
+# 终结即原点
+d_white_hole_5 = {
+	is_for_colonizable = yes
+	
+	category = deposit_cat_rare
+	
+	planet_modifier = {
+		planet_jobs_produces_mult = 0.2
+	}
+	
+	potential = {
+		always = no
+	}
+	
+	drop_weight = {
+		weight = 0
+	}
+}

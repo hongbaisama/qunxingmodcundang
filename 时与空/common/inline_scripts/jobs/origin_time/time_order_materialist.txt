@@ -1,0 +1,30 @@
+inline_script = {
+	script = jobs/origin_time/time_order_base
+	ETHIC = $ETHIC$
+}
+
+resources = {
+	category = planet_$JOB$s
+	produces = {
+		physics_research = $AMONT$
+		mult = value:time_order_normal_resource_value|RESOURCE|physics_research|WEIGHT|research|ETHIC|$ETHIC$|
+	}
+	produces = {
+		society_research = $AMONT$
+		mult = value:time_order_normal_resource_value|RESOURCE|society_research|WEIGHT|research|ETHIC|$ETHIC$|
+	}
+	produces = {
+		engineering_research = $AMONT$
+		mult = value:time_order_normal_resource_value|RESOURCE|engineering_research|WEIGHT|research|ETHIC|$ETHIC$|
+	}
+	inline_script = {
+		script = jobs/origin_time/time_order_base_resources
+		ETHIC = $ETHIC$
+	}
+}
+
+triggered_country_modifier = {
+	$MODIFIER_1$ = @time_order_modifier
+	$MODIFIER_2$ = @time_order_modifier
+	mult = value:time_order_modifier_value|ETHIC|$ETHIC$|
+}

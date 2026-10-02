@@ -1,0 +1,228 @@
+#Dyson Sphere Site
+dyson_sphere_0 = {
+	entity = "construction_platform_entity"
+	construction_entity = "construction_platform_entity"
+	portrait = "GFX_megastructure_construction_background"
+	place_entity_on_planet_plane = no
+	entity_offset = { x = -7 y = -7 }
+	build_time = 1800
+	resources = {
+		category = megastructures
+		cost = {
+			unity = 1000
+		}
+		cost = {
+			trigger = {
+				country_uses_bio_ships = no
+			}
+			alloys = 5000
+		}
+		cost = {
+			trigger = {
+				country_uses_bio_ships = yes
+			}
+			alloys = 5000
+			mult = 0.5
+		}
+		cost = {
+			trigger = {
+				country_uses_bio_ships = yes
+			}
+			food = 5000
+			mult = @halved_alloy_to_food_cost_ratio
+		}
+
+		upkeep = {
+			energy = 5
+		}
+	}
+
+	custom_tooltip_requirements = "MEGASTRUCTURE_TOOLTIP_REQUIREMENTS_DYSON_SPHERE"
+
+	prerequisites = { "tech_dyson_sphere" }
+	
+	potential = {
+		has_machine_age_dlc = no
+	}
+
+	possible = {
+		hidden_trigger = {
+			exists = starbase
+		}
+		custom_tooltip = {
+			fail_text = "requires_inside_border"
+			is_inside_border = from
+		}
+		custom_tooltip = {
+			fail_text = "requires_no_existing_dyson_sphere"
+			from = {
+				OR = {
+					has_relic = r_contingency_core
+					NOT = { has_country_flag = built_dyson_sphere }
+				}
+			}
+		}
+		custom_tooltip = {
+			fail_text = "requires_no_machine_age"
+			from = { has_machine_age_dlc = no }
+		}
+		custom_tooltip = {
+			fail_text = "requires_no_existing_dyson_sphere_two"
+			from = {
+				NOR = {
+					has_country_flag = built_dyson_sphere_contingency
+					has_country_flag = built_dyson_sphere_contingency_swarm
+				}
+			}
+		}
+		custom_tooltip = {
+			fail_text = "requires_surveyed_system"
+			NOT = {
+				any_system_planet = {
+					is_surveyed = {
+						who = prev.from
+						status = no
+					}
+				}
+			}
+		}
+		custom_tooltip = {
+			fail_text = "requires_no_arc_furnace"
+			system_has_arc_furnace = no
+		}
+		custom_tooltip = {
+			fail_text = "requires_no_arc_furnace_construction"
+			if = {
+				limit = {
+					system_has_arc_furnace = no
+				}
+				NOT = {
+					solar_system = {
+						has_star_flag = arc_furnace_construction
+					}
+				}
+			}
+		}
+		custom_tooltip = {
+			fail_text = "requires_no_colonies"
+			NOT = {
+				any_system_planet = {
+					is_colony = yes
+					is_artificial = no
+					exists = owner
+					owner = {
+						is_primitive = no
+					}
+				}
+			}
+		}
+		custom_tooltip = {
+			fail_text = "blocked_by_pre_ftl_policy"
+			if = {
+				limit = {
+					any_system_planet = {
+						exists = owner
+						owner = {
+							is_primitive = yes
+						}
+					}
+				}
+				from = {
+					has_policy_flag = interference_aggressive
+				}
+			}
+		}
+		custom_tooltip = {
+			fail_text = "requires_no_binary_trinary"
+			is_binary_star = no
+			is_trinary_star = no
+		}
+		custom_tooltip = {
+			fail_text = "requires_no_existing_megastructure"
+			has_no_non_gate_megastructure = yes
+			NOT = {
+				any_system_planet = {
+					is_planet_class = pc_cosmogenesis_world
+				}
+			}
+		}
+	}
+
+	placement_rules = {
+		planet_possible = {
+			custom_tooltip = {
+				fail_text = "requires_no_protostar"
+				NOT = {
+					is_planet_class = pc_protostar
+				}
+			}
+			custom_tooltip = {
+				fail_text = "must_build_around_star"
+				is_star = yes
+			}
+			custom_tooltip = {
+				fail_text = "requires_no_black_hole_neutron_star_pulsar"
+				NOR = {
+					is_time_black_hole_or_white_hole_planet_class = yes
+					is_planet_class = pc_neutron_star
+					is_planet_class = pc_pulsar
+				}
+			}
+			custom_tooltip = {
+				fail_text = "requires_no_anomaly"
+				NOT = { has_anomaly = yes }
+			}
+		}
+	}
+
+	# root = system
+	# from = country
+	ai_weight = {
+		factor = 15
+
+		modifier = {
+			factor = 0.1
+			starbase = { NOT = { has_starbase_size >= starbase_starfortress } }
+		}
+
+		modifier = {
+			factor = 0.1
+			any_neighbor_system = {
+				exists = owner
+				NOT = {
+					owner = { is_same_value = from }
+				}
+			}
+		}
+	}
+
+	on_build_start = {
+		set_star_flag = dyson_sphere_construction
+	}
+	on_build_cancel = {
+		remove_star_flag = dyson_sphere_construction
+	}
+	on_build_complete = {
+		remove_star_flag = dyson_sphere_construction
+		set_star_flag = dyson_sphere_built
+		remove_system_terraforming_candidates = yes
+		from = {
+			if = {
+				limit = {
+					has_relic = r_contingency_core
+					has_country_flag = built_dyson_sphere
+				}
+				set_country_flag = built_dyson_sphere_contingency
+			}
+			set_country_flag = built_dyson_sphere
+		}
+		fromfrom.planet = {
+			if = {
+				limit = { has_orbital_station = yes }
+				orbital_station = {
+					dismantle = yes
+				}
+			}
+		}
+	}
+}

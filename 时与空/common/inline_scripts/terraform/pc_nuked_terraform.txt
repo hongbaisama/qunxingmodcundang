@@ -1,0 +1,27 @@
+from = $CLASS$
+to = pc_nuked
+
+resources = {
+	category = terraforming
+
+	cost = {
+		energy = 2500
+	}
+}
+
+duration = 900
+
+condition = {
+	has_technology = tech_terrestrial_sculpting
+}
+
+potential = {
+	OR = {
+		has_origin = origin_post_apocalyptic
+		has_origin = origin_post_apocalyptic_machines
+	}
+}
+
+ai_weight = {
+	weight = 20
+}

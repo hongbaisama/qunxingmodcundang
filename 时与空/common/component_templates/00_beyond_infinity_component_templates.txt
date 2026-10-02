@@ -1,0 +1,394 @@
+utility_component_template = {
+	key = "CORVETTE_BEYOND_INFINITY_REACTOR"
+	size = small
+	icon = "GFX_ship_part_beyond_infinity_reactor"
+	icon_frame = 1
+	power = 600
+	resources = {
+		category = ship_components
+		cost = {
+			alloys = 80
+			sr_dark_matter = 2
+		}
+		inline_script = {
+			script = component_templates/time_component_template_basic_upkeep
+			ENERGY = 0.8
+			ALLOYS = 0.08
+		}
+	}
+
+	prerequisites = { "tech_beyond_infinity_reactor_1" }
+	component_set = "power_core"
+	
+	potential = {
+		ship_uses_corvette_reactors = yes
+		NOT = { is_ship_size = frigate }
+		from = { has_crisis_perk = menp_beyond_infinity_component_1 }
+	}
+
+	ai_weight = {
+		weight = 100
+	}
+}
+
+utility_component_template = {
+	key = "FRIGATE_BEYOND_INFINITY_REACTOR"
+	size = small
+	icon = "GFX_ship_part_beyond_infinity_reactor"
+	icon_frame = 1
+	power = 600
+	resources = {
+		category = ship_components
+		cost = {
+			alloys = 80
+			sr_dark_matter = 2
+		}
+		inline_script = {
+			script = component_templates/time_component_template_basic_upkeep
+			ENERGY = 0.8
+			ALLOYS = 0.08
+		}
+	}
+
+	prerequisites = { "tech_beyond_infinity_reactor_1" }
+	component_set = "power_core"
+	
+	potential = {
+		is_ship_size = frigate
+		from = { has_crisis_perk = menp_beyond_infinity_component_1 }
+	}
+
+	ai_weight = {
+		weight = 100
+	}
+}
+
+utility_component_template = {
+	key = "DESTROYER_BEYOND_INFINITY_REACTOR"
+	size = small
+	icon = "GFX_ship_part_beyond_infinity_reactor"
+	icon_frame = 1
+	power = 1200
+	resources = {
+		category = ship_components
+		cost = {
+			alloys = 160
+			sr_dark_matter = 4
+		}
+		inline_script = {
+			script = component_templates/time_component_template_basic_upkeep
+			ENERGY = 1.6
+			ALLOYS = 0.16
+		}
+	}
+
+	prerequisites = { "tech_beyond_infinity_reactor_2" }
+	component_set = "power_core"
+	
+	potential = {
+		ship_uses_destroyer_reactors = yes
+		from = { has_crisis_perk = menp_beyond_infinity_component_2 }
+	}
+	
+	ai_weight = {
+		weight = 100
+	}
+}
+
+utility_component_template = {
+	key = "CRUISER_BEYOND_INFINITY_REACTOR"
+	size = small
+	icon = "GFX_ship_part_beyond_infinity_reactor"
+	icon_frame = 1
+	power = 2400
+	resources = {
+		category = ship_components
+		cost = {
+			alloys = 320
+			sr_dark_matter = 8
+		}
+		inline_script = {
+			script = component_templates/time_component_template_basic_upkeep
+			ENERGY = 3.2
+			ALLOYS = 0.32
+		}
+	}
+
+	prerequisites = { "tech_beyond_infinity_reactor_2" }
+	component_set = "power_core"
+	
+	potential = {
+		ship_uses_cruiser_reactors = yes
+		from = { has_crisis_perk = menp_beyond_infinity_component_2 }
+	}
+	
+	ai_weight = {
+		weight = 100
+	}
+}
+
+utility_component_template = {
+	key = "BATTLESHIP_BEYOND_INFINITY_REACTOR"
+	size = small
+	icon = "GFX_ship_part_beyond_infinity_reactor"
+	icon_frame = 1
+	power = 4800
+	resources = {
+		category = ship_components
+		cost = {
+			alloys = 640
+			sr_dark_matter = 16
+		}
+		inline_script = {
+			script = component_templates/time_component_template_basic_upkeep
+			ENERGY = 6.4
+			ALLOYS = 0.64
+		}
+	}
+
+	prerequisites = { "tech_beyond_infinity_reactor_3" }
+	component_set = "power_core"
+	
+	potential = {
+		ship_uses_battleship_reactors = yes
+		from = { has_crisis_perk = menp_beyond_infinity_component_3 }
+	}
+	
+	ai_weight = {
+		weight = 100
+	}
+}
+
+utility_component_template = {
+	key = "PLATFORM_BEYOND_INFINITY_REACTOR"
+	size = large
+	icon = "GFX_ship_part_beyond_infinity_reactor"
+	icon_frame = 1
+	power = 1600
+	resources = {
+		category = ship_components
+		cost = {
+			alloys = 160
+			sr_dark_matter = 4
+		}
+		inline_script = {
+			script = component_templates/time_component_template_basic_upkeep
+			ENERGY = 1.6
+			ALLOYS = 0.16
+		}
+	}
+
+	prerequisites = { "tech_beyond_infinity_reactor_3" }
+	component_set = "power_core"
+	
+	potential = {
+		ship_uses_platform_reactors = yes
+		from = { has_crisis_perk = menp_beyond_infinity_component_3 }
+	}
+	
+	ai_weight = {
+		weight = 100
+	}
+}
+
+utility_component_template = {
+	key = "TITAN_BEYOND_INFINITY_REACTOR"
+	size = small
+	icon = "GFX_ship_part_beyond_infinity_reactor"
+	icon_frame = 1
+	power = 9600
+	resources = {
+		category = ship_components
+		cost = {
+			alloys = 1280
+			sr_dark_matter = 32
+		}
+		inline_script = {
+			script = component_templates/time_component_template_basic_upkeep
+			ENERGY = 12.8
+			ALLOYS = 1.28
+		}
+	}
+
+	prerequisites = { "tech_beyond_infinity_reactor_4" }
+	component_set = "power_core"
+	
+	potential = {
+		ship_uses_titan_reactors = yes
+		from = { has_crisis_perk = menp_beyond_infinity_component_4 }
+	}
+	
+	ai_weight = {
+		weight = 100
+	}
+}
+
+utility_component_template = {
+	key = "ION_CANNON_BEYOND_INFINITY_REACTOR"
+	size = small
+	icon = "GFX_ship_part_beyond_infinity_reactor"
+	icon_frame = 1
+	power = 2400
+	resources = {
+		category = ship_components
+		cost = {
+			alloys = 320
+			sr_dark_matter = 8
+		}
+		inline_script = {
+			script = component_templates/time_component_template_basic_upkeep
+			ENERGY = 3.2
+			ALLOYS = 0.32
+		}
+	}
+
+	prerequisites = { "tech_beyond_infinity_reactor_4" }
+	component_set = "power_core"
+	
+	potential = {
+		ship_uses_ion_cannon_components = yes
+		from = { has_crisis_perk = menp_beyond_infinity_component_4 }
+	}
+
+	ai_weight = {
+		weight = 100
+	}
+}
+
+utility_component_template = {
+	key = "STARBASE_BEYOND_INFINITY_REACTOR"
+	size = large
+	icon = "GFX_ship_part_beyond_infinity_reactor"
+	icon_frame = 1
+	power = 14400
+
+	prerequisites = { "tech_beyond_infinity_reactor_4" }
+	component_set = "power_core"
+	potential = {
+		ship_uses_starbase_components = yes
+	}
+	
+	ai_weight = {
+		weight = 100
+	}
+}
+
+utility_component_template = {
+	key = "COLOSSUS_BEYOND_INFINITY_REACTOR"
+	size = small
+	icon = "GFX_ship_part_beyond_infinity_reactor"
+	icon_frame = 1
+	power = 20000
+	resources = {
+		category = ship_components
+		cost = {
+			alloys = 1920
+			sr_dark_matter = 48
+		}
+		inline_script = {
+			script = component_templates/time_component_template_basic_upkeep
+			ENERGY = 19.2
+			ALLOYS = 1.92
+		}
+	}
+
+	prerequisites = { "tech_beyond_infinity_reactor_5" }
+	component_set = "power_core"
+	
+	potential = {
+		ship_uses_colossus_components = yes
+		from = { has_crisis_perk = menp_beyond_infinity_component_5 }
+	}
+
+	ai_weight = {
+		weight = 100
+	}
+}
+
+utility_component_template = {
+	key = "JUGGERNAUT_BEYOND_INFINITY_REACTOR"
+	size = small
+	icon = "GFX_ship_part_beyond_infinity_reactor"
+	icon_frame = 1
+	power = 33600
+	resources = {
+		category = ship_components
+		cost = {
+			alloys = 4480
+			sr_dark_matter = 64
+		}
+		inline_script = {
+			script = component_templates/time_component_template_basic_upkeep
+			ENERGY = 44.8
+			ALLOYS = 4.48
+		}
+	}
+
+	prerequisites = { "tech_beyond_infinity_reactor_5" }
+	component_set = "power_core"
+	
+	potential = {
+		ship_uses_juggernaut_reactors = yes
+		from = { has_crisis_perk = menp_beyond_infinity_component_5 }
+	}
+	
+	friendly_aura = {
+		name = "juggernaut_logistics"
+		system_wide = yes
+
+		stack_info = {			#A ship can only be affected by one aura of a certain id. If multiple auras have the same ID the one with the highest priority will be applied.
+			id = juggernaut_logistics
+			priority = 1
+		}
+
+		modifier = {
+			ships_logistics_mult = -0.75
+		}
+	}
+	
+	ai_weight = {
+		weight = 100
+	}
+}
+
+utility_component_template = {
+	key = "BEYOND_INFINITY_DRIVE"
+	size = small
+	icon = "GFX_ship_part_beyond_infinity_drive"
+	icon_frame = 1
+	power = -50
+	resources = {
+		category = ship_components
+		cost = {
+			alloys = 50
+			sr_dark_matter = 5
+			astral_threads = 2.5
+		}
+	}
+	ftl = yes
+	jumpdrive = yes
+	
+	modifier = {
+		ship_base_speed_mult = 2
+	}
+	
+	ship_modifier = {
+		ship_disengage_opportunities_add = 5
+		ship_interstellar_speed_mult = 2
+		ship_ftl_jumpdrive_range_mult = 2
+		ship_jumpdrive_cooldown_mult = -1
+		ship_windup_mult = -1
+	}
+
+	prerequisites = { "tech_beyond_infinity_drive" }
+	component_set = "ftl_components"
+	
+	potential = {
+		ship_uses_jump_drives = yes
+		from = { has_crisis_perk = menp_beyond_infinity_project_1 }
+	}
+	
+	ai_weight = {
+		weight = 100
+	}
+}

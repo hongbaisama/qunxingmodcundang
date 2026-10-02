@@ -1,0 +1,264 @@
+under_the_haze_army_1 = {
+	defensive = yes
+	damage = 1.0
+	morale_damage = 1.0
+	health = 1.0
+	morale = 1.0
+	collateral_damage = 1.0
+	icon = GFX_army_type_rebel
+	use_armynames_from = assault_army
+
+	potential_country = {
+		always = no
+	}
+}
+
+under_the_haze_army_2 = {
+	defensive = yes
+	damage = 2.0
+	morale_damage = 1.5
+	health = 1.75
+	morale = 2.5
+	collateral_damage = 1.0
+	icon = GFX_army_type_psionic
+	use_armynames_from = psionic_army
+
+	potential_country = {
+		always = no
+	}
+}
+
+parallel_sky_army_0 = {
+	defensive = yes
+	damage = 1.0
+	morale_damage = 1.0
+	health = 1.0
+	morale = 1.0
+	collateral_damage = 1.0
+	icon = GFX_army_type_assault
+	use_armynames_from = assault_army
+
+	potential_country = {
+		always = no
+	}
+}
+
+parallel_sky_army_1 = {
+	defensive = yes
+	damage = 1.0
+	morale_damage = 1.0
+	health = 2.0
+	collateral_damage = 1.5
+	has_morale = no
+	icon = GFX_army_type_robot
+	use_armynames_from = robotic_army
+
+	potential_country = {
+		always = no
+	}
+}
+
+parallel_sky_army_2 = {
+	defensive = yes
+	damage = 2.0
+	morale_damage = 1.0
+	health = 2.5
+	morale = 2.5
+	collateral_damage = 0.75
+	icon = GFX_army_type_gene_warrior
+	use_armynames_from = gene_warrior_army
+
+	potential_country = {
+		always = no
+	}
+}
+
+parallel_sky_army_3 = {
+	defensive = yes
+	damage = 2.0
+	morale_damage = 1.5
+	health = 1.75
+	morale = 2.5
+	collateral_damage = 1.0
+	icon = GFX_army_type_psionic
+	use_armynames_from = psionic_army
+
+	potential_country = {
+		always = no
+	}
+}
+
+primitive_origin_time_army = {
+	defensive = yes
+	damage = 2.50
+	health = 0.50
+	morale = 0.50
+	morale_damage = 2.00
+	collateral_damage = 0.00
+	war_exhaustion = 2.00
+	icon = GFX_army_type_clone
+	use_armynames_from = primitive_army
+
+	potential_country = {
+		always = no
+	}
+	
+	army_modifier = {
+		army_damage_taken_mult = -0.9
+		army_morale_damage_taken_mult = -0.9
+		army_disengage_chance_mult = 1
+	}
+}
+
+origin_time_army = {
+	damage = 5.00
+	health = 0.50
+	morale = 0.50
+	morale_damage = 2.00
+	collateral_damage = 0.00
+	war_exhaustion = 2.00
+	time = 360
+	icon = GFX_army_type_clone
+	use_armynames_from = undead_army
+	prerequisites = { "tech_combat_training" }
+	
+	resources = {
+		category = armies
+		cost = {
+			sr_dark_matter = 100
+		}
+		upkeep = {
+			sr_dark_matter = 1
+		}
+	}
+	
+	show_tech_unlock_if = {
+		has_origin_time = yes
+	}
+
+	potential_country = {
+		has_origin_time = yes
+	}
+	
+	potential = {
+		from = {
+			is_origin_time_species = yes
+		}
+		colony = {
+			is_origin_time_planet_class = yes
+		}
+	}
+	
+	army_modifier = {
+		army_damage_taken_mult = -1
+		army_morale_damage_taken_mult = -1
+		army_disengage_chance_mult = 1
+	}
+	
+	ai_weight = {
+		base = 200
+	}
+}
+
+origin_monster_hunter_defense_army = {
+	defensive = yes
+	is_pop_spawned = yes
+	health = 2.50
+	damage = 2.00
+	morale = 2.00
+	morale_damage = 1.00
+	collateral_damage = 0.0
+	war_exhaustion = 0.0 # No WE from defense armies
+	icon = GFX_army_type_defensive
+	use_armynames_from = defense_army
+
+	resources = {
+		category = armies
+		produces = {
+			trigger = {
+				exists = owner
+				owner = { has_active_tradition = tr_unyielding_resistance_is_frugal }
+			}
+			unity = 0.5
+		}
+	}
+
+	potential = {
+		from = { has_trait = trait_origin_monster_hunter }
+		colony = {
+			count_owned_workforce = {
+				limit = {
+					has_job_type = monster_hunter
+				}
+				count >= 100
+			}
+		}
+		owner = {
+			has_origin = origin_monster_hunter
+			has_valid_civic = civic_warrior_culture
+		}
+	}
+	
+	army_modifier = {
+		army_morale_damage_taken_mult = -1
+		army_experience_gain_mult = 1
+	}
+	
+	spawn_chance = {
+		factor = 1000
+	}
+}
+
+origin_monster_hunter_army = {
+	damage = 2.00
+	health = 1.50
+	morale = 1.50
+	morale_damage = 1.00
+	collateral_damage = 5.00
+	war_exhaustion = 1.00
+	time = 135
+	icon = GFX_army_type_assault
+	use_armynames_from = assault_army
+	prerequisites = { "tech_assault_armies" }
+	
+	resources = {
+		category = armies
+		cost = {
+			minerals = 150
+		}
+		upkeep = {
+			energy = 1.5
+		}
+	}
+	
+	show_tech_unlock_if = {
+		has_origin = origin_monster_hunter
+		has_valid_civic = civic_warrior_culture
+	}
+
+	potential_country = {
+		has_origin = origin_monster_hunter
+		has_valid_civic = civic_warrior_culture
+	}
+	
+	potential = {
+		from = { has_trait = trait_origin_monster_hunter }
+		colony = {
+			count_owned_workforce = {
+				limit = {
+					has_job_type = monster_hunter
+				}
+				count >= 100
+			}
+		}
+	}
+	
+	army_modifier = {
+		army_morale_damage_taken_mult = -1
+		army_experience_gain_mult = 1
+	}
+	
+	ai_weight = {
+		base = 500
+	}
+}

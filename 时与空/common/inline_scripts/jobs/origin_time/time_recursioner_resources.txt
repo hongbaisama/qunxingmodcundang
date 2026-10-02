@@ -1,0 +1,116 @@
+produces = {
+	energy = 2
+	mult = value:time_recursioner_normal_resource_value|RESOURCE|energy|WEIGHT|resource|MODIFIER|job_black_hole_physicist_mult|
+}
+
+produces = {
+	minerals = 2
+	mult = value:time_recursioner_normal_resource_value|RESOURCE|minerals|WEIGHT|resource|MODIFIER|job_black_hole_engineer_mult|
+}
+
+produces = {
+	food = 2
+	mult = value:time_recursioner_normal_resource_value|RESOURCE|food|WEIGHT|resource|MODIFIER|job_black_hole_biologist_mult|
+}
+
+produces = {
+	consumer_goods = 1
+	mult = value:time_recursioner_normal_resource_value|RESOURCE|consumer_goods|WEIGHT|manufacturing|MODIFIER|job_black_hole_physicist_mult|
+}
+
+produces = {
+	alloys = 1
+	mult = value:time_recursioner_normal_resource_value|RESOURCE|alloys|WEIGHT|manufacturing|MODIFIER|job_black_hole_engineer_mult|
+}
+
+produces = {
+	unity = 1
+	mult = value:time_recursioner_normal_resource_value|RESOURCE|unity|WEIGHT|unity|MODIFIER|job_black_hole_biologist_mult|
+}
+
+produces = {
+	physics_research = 1
+	mult = value:time_recursioner_normal_resource_value|RESOURCE|physics_research|WEIGHT|research|MODIFIER|job_black_hole_physicist_mult|
+}
+
+produces = {
+	society_research = 1
+	mult = value:time_recursioner_normal_resource_value|RESOURCE|society_research|WEIGHT|research|MODIFIER|job_black_hole_biologist_mult|
+}
+
+produces = {
+	engineering_research = 1
+	mult = value:time_recursioner_normal_resource_value|RESOURCE|engineering_research|WEIGHT|research|MODIFIER|job_black_hole_engineer_mult|
+}
+
+produces = {
+	trade = 1
+	mult = value:time_researcher_trade_value
+}
+
+produces = {
+	sr_dark_matter = 0.1
+	mult = value:time_researcher_rare_resource_value
+}
+
+upkeep = {
+	trigger = {
+		industrial_jobs_are_catalytic_trigger = no
+	}
+	minerals = 0.5
+	food = 0.5
+	mult = value:time_recursioner_normal_resource_value|RESOURCE|consumer_goods|WEIGHT|manufacturing|MODIFIER|job_black_hole_physicist_mult|
+}
+
+upkeep = {
+	trigger = {
+		industrial_jobs_are_catalytic_trigger = yes
+	}
+	food = 1
+	mult = value:time_recursioner_normal_resource_value|RESOURCE|consumer_goods|WEIGHT|manufacturing|MODIFIER|job_black_hole_physicist_mult|
+}
+
+upkeep = {
+	trigger = {
+		industrial_jobs_are_catalytic_trigger = no
+	}
+	energy = 0.5
+	minerals = 0.5
+	mult = value:time_recursioner_normal_resource_value|RESOURCE|alloys|WEIGHT|manufacturing|MODIFIER|job_black_hole_engineer_mult|
+}
+
+upkeep = {
+	trigger = {
+		industrial_jobs_are_catalytic_trigger = yes
+	}
+	energy = 0.5
+	food = 0.5
+	mult = value:time_recursioner_normal_resource_value|RESOURCE|alloys|WEIGHT|manufacturing|MODIFIER|job_black_hole_engineer_mult|
+}
+
+upkeep = {
+	consumer_goods = 0.25
+	alloys = 0.25
+	mult = value:time_recursioner_normal_resource_value|RESOURCE|unity|WEIGHT|unity|MODIFIER|job_black_hole_biologist_mult|
+}
+
+upkeep = {
+	energy = 0.5
+	consumer_goods = 0.25
+	alloys = 0.125
+	mult = value:time_recursioner_normal_resource_value|RESOURCE|physics_research|WEIGHT|research|MODIFIER|job_black_hole_physicist_mult|
+}
+
+upkeep = {
+	food = 0.5
+	consumer_goods = 0.25
+	alloys = 0.125
+	mult = value:time_recursioner_normal_resource_value|RESOURCE|society_research|WEIGHT|research|MODIFIER|job_black_hole_biologist_mult|
+}
+
+upkeep = {
+	minerals = 0.5
+	consumer_goods = 0.25
+	alloys = 0.125
+	mult = value:time_recursioner_normal_resource_value|RESOURCE|engineering_research|WEIGHT|research|MODIFIER|job_black_hole_engineer_mult|
+}

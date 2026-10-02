@@ -1,0 +1,254 @@
+namespace = grand_archive
+
+####################################
+# Grand Archive Destruction Events #
+####################################
+
+# Grand Archive Destroyed effect after system is destroyed
+# This = starbase being destroyed (not ship!)
+# From = fleet that destroyed the starbase
+starbase_event = {
+	id = grand_archive.4500
+	hide_window = yes
+	is_triggered_only = yes
+
+	trigger = {
+		is_normal_starbase = yes
+		solar_system = {
+			any_system_megastructure = { is_megastructure_type = grand_archive_0 }
+			NOT = {
+				any_starbase_in_system = {
+					is_normal_starbase = yes
+					is_owned_by = space_owner
+				}
+			}
+		}
+	}
+
+	immediate = {
+		solar_system = {
+			every_system_megastructure = {
+				limit = { is_megastructure_type = grand_archive_0 }
+				if = {
+					limit = { exists = planet }
+					planet = { save_event_target_as = grand_archive_location }
+				}
+				else = {
+					prev = { save_event_target_as = grand_archive_location }
+				}
+				destroy_grand_archive = yes
+			}
+		}
+		
+		if = {
+			limit = {
+				owner = { has_any_grand_archive = no }
+			}
+			owner = {
+				# Cleanup
+				remove_country_flag = ga_destroyed_contains_specimen
+				remove_country_flag = ga_destroyed_contains_space_fauna
+
+				if = {
+					limit = { num_vivarium_slots > 0 }
+					set_country_flag = ga_destroyed_contains_space_fauna
+					release_all_vivarium_fauna = { LOCATION = event_target:grand_archive_location }
+				}
+				set_country_flag = grand_archive_destroyed
+			}
+			if = {
+				limit = {
+					exists = from.controller
+					from.controller = { is_country_type = default }
+				}
+				from.controller = {
+					country_event = {
+						id = grand_archive.4505
+						scopes = {
+							from = root.owner
+							fromfrom = root.solar_system
+						}
+					}
+				}
+			}
+			else = {
+				owner = {
+					country_event = { id = grand_archive.4520 }
+				}
+			}
+		}
+	}
+}
+
+# Grand Archive Destroyed effect from system destroyed
+# This = system
+system_event = {
+	id = grand_archive.4501
+	hide_window = yes
+	is_triggered_only = yes
+
+	trigger = {
+		any_system_megastructure = {
+			is_megastructure_type = grand_archive_0
+		}
+	}
+
+	immediate = {
+		every_system_megastructure = {
+			limit = { is_megastructure_type = grand_archive_0 }
+			if = {
+				limit = { exists = planet }
+				planet = { save_event_target_as = grand_archive_location }
+			}
+			else = {
+				prev = { save_event_target_as = grand_archive_location }
+			}
+			destroy_grand_archive = yes
+		}
+
+		if = {
+			limit = {
+				exists = owner
+				owner = { has_any_grand_archive = no }
+			}
+			owner = {
+				remove_country_flag = ga_destroyed_contains_space_fauna
+				if = {
+					limit = { num_vivarium_slots > 0 }
+					set_country_flag = ga_destroyed_contains_space_fauna
+					release_all_vivarium_fauna = { LOCATION = event_target:grand_archive_location }
+				}
+				set_country_flag = grand_archive_destroyed
+				country_event = { id = grand_archive.4520 }
+			}
+		}
+		else_if = {
+			# Nomads cannot own systems; locate the owning nomad via their waystation on the wayline (build prereq: level 2+ waystation).
+			limit = {
+				any_starbase_in_system = {
+					is_waystation_starbase = yes
+					has_starbase_size >= starbase_waystation_2
+					has_starbase_module = arkship_grand_archive
+					exists = owner
+					owner = { is_nomadic = yes }
+				}
+			}
+			every_starbase_in_system = {
+				limit = {
+					is_waystation_starbase = yes
+					has_starbase_size >= starbase_waystation_2
+					has_starbase_module = arkship_grand_archive
+					owner? = { is_nomadic = yes }
+				}
+				owner = {
+					remove_country_flag = ga_destroyed_contains_space_fauna
+					if = {
+						limit = { num_vivarium_slots > 0 }
+						set_country_flag = ga_destroyed_contains_space_fauna
+						release_all_vivarium_fauna = { LOCATION = event_target:grand_archive_location }
+					}
+					set_country_flag = grand_archive_destroyed
+					remove_country_flag = has_arkship_grand_archive_module
+					country_event = { id = grand_archive.4520 }
+				}
+			}
+		}
+	}
+}
+
+# Grand Archive Dismantled effect from giving system
+# This = System containing the Grand Archive
+# FROM = Country: New controller of the system
+# FROMFROM = Country: Old controller of the system
+system_event = {
+	id = grand_archive.4550
+	hide_window = yes
+	is_triggered_only = yes
+
+	trigger = {
+		any_system_megastructure = {
+			is_megastructure_type = grand_archive_0
+		}
+		exists = from
+		exists = fromfrom
+		from = { # Subject integration is handled in grand_archive.4570
+			NOT = { is_same_value = root.fromfrom }
+		}
+	}
+
+	immediate = {
+		every_system_megastructure = {
+			limit = { is_megastructure_type = grand_archive_0 }
+			if = {
+				limit = { exists = planet }
+				planet = {
+					remove_carrier_flag = has_megastructure
+					save_event_target_as = grand_archive_location
+				}
+			}
+			else = {
+				prev = { save_event_target_as = grand_archive_location }
+			}
+			remove_megastructure = this
+		}
+		if = {
+			limit = {
+				fromfrom = { has_any_grand_archive = no }
+			}
+			fromfrom = {
+				# Cleanup
+				remove_country_flag = ga_destroyed_contains_specimen
+				remove_country_flag = ga_destroyed_contains_space_fauna
+
+				if = {
+					limit = { any_exhibit = { contains_specimen = yes } }
+					set_country_flag = ga_destroyed_contains_specimen
+				}
+				if = {
+					limit = { num_vivarium_slots > 0 }
+					set_country_flag = ga_destroyed_contains_space_fauna
+				}
+				set_country_flag = grand_archive_destroyed
+			}
+			if = {
+				limit = {
+					fromfrom = { has_country_flag = grand_archive_system_disabled }
+				}
+				fromfrom = {
+					if = {
+						limit = { has_country_flag = ga_destroyed_contains_space_fauna }
+						release_all_vivarium_fauna = { LOCATION = event_target:grand_archive_location }
+					}
+				}
+				from = {
+					country_event = {
+						id = grand_archive.4505
+						scopes = {
+							from = root.fromfrom
+							fromfrom = root
+						}
+					}
+				}
+			}
+			else = {
+				from = {
+					country_event = {
+						id = grand_archive.4555
+						scopes = {
+							from = root.fromfrom
+							fromfrom = root
+						}
+					}
+				}
+				fromfrom = {
+					country_event = {
+						id = grand_archive.4560
+						scopes = {
+							from = root
+						}
+					}
+				}
+			}
+		}
+	}
+}

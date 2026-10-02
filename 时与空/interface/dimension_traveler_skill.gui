@@ -1,0 +1,2176 @@
+guiTypes = {
+	containerWindowType = {
+		name = "DimensionTravelerOption"
+		position = { x=0 y=0 }
+		size = { width = 388 height = 30 }
+		moveable = no
+		
+		buttonType = {
+			name = "option_button"
+			quadTextureSprite = "GFX_event_button_452"
+			position = { x=0 y=8 }
+			font = "cg_16b"
+			text = "OPTION_TEXT"
+		}
+		
+		OverlappingElementsBoxType = {
+			name = "trigger_icons"
+			position = { x = 0  y = 10 }
+			size = { x=65 y= 28 }
+		}
+
+		OverlappingElementsBoxType = {
+			name = "effect_icons"
+			position = { x = 370 y = 8 }
+			size = { x = 72 y = 28 }
+			format = right
+		}
+	}
+	
+	containerWindowType = {
+		name = "DimensionTravelerWindow"
+		orientation = center
+		origo = center
+		moveable = yes
+		size = { width = 1485 height = 680 }
+
+		background = {
+			name = "background"
+			quadTextureSprite ="GFX_tile_large_bg"
+		}
+
+		iconType = {
+			name = "hex_bg"
+			spriteType = "GFX_hex_bg"
+			position = { x = 980 y = -14 }
+			alwaysTransparent = yes
+		}
+
+		iconType = {
+			name = "empire_header_line"
+			quadTextureSprite = "GFX_line_long"
+			position = { x = 6 y = 22 }
+			alwaysTransparent = yes
+		}
+
+		buttonType = {
+			name = "close"
+			quadTextureSprite = "GFX_main_close_button"
+			position = { x = 933 y = 14 }
+#			Orientation = "UPPER_RIGHT"
+			shortcut = "ESCAPE"
+			clicksound = "back_click"
+		}
+		
+		buttonType = {
+			name = "focus_button"
+			position = { x = 895 y = 14 }
+#			orientation = "UPPER_RIGHT"
+			spriteType = "GFX_fleetview_focus"
+			buttonFont = "cg_16b"
+			shortcut = "q"
+		}
+
+		instantTextBoxType = {
+			name = "heading"
+			font = "malgun_goth_24"
+			text = "DIPLOMACY"
+			position = { x = 20 y = 5 }
+			maxWidth = 543
+			maxHeight = 22
+			fixedSize = yes
+			alwaysTransparent = yes
+		}
+
+		buttonType = {
+			name = "tts_button"
+			position = { x = 466 y = 639 }
+			spriteType = "GFX_button_tts_start"
+			buttonFont = "cg_16b"
+			shortCut = "t"
+		}
+
+		### DESCRIPTION ###
+		
+		buttonType = {
+			name = "alien_message_background"
+			size = { x = 485 y = 240 }
+			position = { x = 10 y = 430 }
+			spriteType = "GFX_tiles_dark_area_cut_8"
+			alwaysTransparent = yes
+		}
+		
+		instantTextBoxType = {
+			name = "alien_message"
+			font = "cg_16b"
+			position = { x = 20 y = 440 }
+			maxWidth = 465
+			maxHeight = 220
+			format = left
+			scrollbartype = "standardtext_slider"
+		}
+
+		buttonType = {
+			name = "confirm_button"
+			quadTextureSprite = "GFX_standard_button_142_34_button"
+			position = { x= -670 y = 564  }
+			Orientation = "UPPER_RIGHT"
+			font = "cg_16b"
+			text = "MESSAGE_OK"
+			clicksound = "confirmation"
+		}
+
+		### PORTRAIT ###
+
+		containerWindowType = {
+			name = "portrait_background"
+			position = { x = 17 y = 45 }
+			size = { width = 964 height = 350 }
+			clipping = yes
+			
+			iconType = {
+				name = "event_picture"
+				spriteType = "GFX_diplomacy_portrait_frame"
+				position = { x = -6 y = -5 }
+			}
+			
+			iconType = {
+				name = "portrait"
+				position = { x = 250 y = 0 }
+				spriteType = "GFX_portrait_character"
+			}	
+		}
+		
+		containerWindowType = {
+			name = "portrait"
+			position = { x = 17 y = 45 }
+			size = { width = 964 height = 350 }
+			clipping = yes
+			
+			iconType = {
+				name = "portrait"
+				spriteType = "GFX_portrait_gamesetup_mask"
+				alwaysTransparent = yes
+			}
+					
+			iconType = {
+				name = "black_frame"
+				spriteType = "GFX_diplomacy_portrait_shadow_frame"
+				position = { x = -4 y = -5}
+				alwaysTransparent = yes
+			}
+			
+			iconType = {
+				name = "stripes_1"
+				spriteType = "GFX_diplomacy_stripes_2"
+				alwaysTransparent = yes
+			}
+				
+			iconType = {
+				name = "city_frame"
+				spriteType = "GFX_diplomacy_portrait_frame"
+				position = { x = -6 y = -5 }
+				alwaysTransparent = yes
+			}
+		}
+
+		### EMPIRE INFO ###
+		
+		iconType = {
+			name = "empire_info_bg"
+			spriteType = "GFX_diplomacy_dark_fade_bg"
+			position = { x = 33 y = 64 }
+			alwaysTransparent = yes
+		}
+
+		instantTextBoxType={
+			name = "empire_name"
+			font = "malgun_goth_24"
+			text = "Kammarian Galactic Concordat"
+			position = { x = 45 y = 70 }
+			maxWidth = 450
+			maxHeight = 16
+			format = LEFT
+			text_color_code = "E"
+			fixedsize = yes
+		}
+
+		instantTextBoxType={
+			name = "empire_government_type"
+			font = "cg_16b"
+			text = "Autocracy"
+			position = { x = 45 y = 95	}
+			maxWidth = 250
+			maxHeight = 16
+			format = LEFT
+			fixedsize = yes
+			text_color_code = "Y"
+		}
+		
+		instantTextBoxType={
+			name = "empire_personality_type"
+			font = "cg_16b"
+			text = "Despicable Neutrals"
+			position = { x = 45 y = 112	}
+			maxWidth = 250
+			maxHeight = 16
+			format = LEFT
+			fixedsize = yes
+		}
+
+		OverlappingElementsBoxType = {
+			name = "empire_ethics_icons"
+			position = { x = 45 y = 138 }
+			size = { x = 240 y = 30 }
+			spacing = 2.0
+			format = left
+		}
+
+		buttonType = {
+			name = "empire_flag"
+			quadTextureSprite = "GFX_empire_flag_128"
+			position = { x = 25 y = 235 }
+			orientation = UPPER_LEFT
+		}
+		
+		containerWindowType = {
+			name = "leader_details"
+			position = { x = 25 y = 75 }
+			
+			containerWindowType = {
+				name = "leader_traits_box"
+				position = { x = 0 y = -5 }
+				size = { width = 210 height = 75 }
+
+				background = {
+					name = "ethics_bg"
+					spriteType = "GFX_tiles_dark_area_cut_8"
+				}
+			}
+			
+			instantTextBoxType = {
+				name = "leader_traits_label"
+				position = { x = 214 y = 37 }
+				font = "cg_16b"
+				maxWidth = 230
+				maxHeight = 20
+				fixedSize = yes
+				format = left
+				#text_color_code = "E"
+				text = "RULER_TRAITS"
+				alwaysTransparent = yes
+			}
+		
+			overlappingElementsBoxType = {
+				name = "leader_traits"
+				position = { x = 215 y = 55 }
+				size = { x = 125 y = 330 }
+			}
+	
+			instantTextBoxType = {
+				name = "leader_name"
+				position = { x = 10 y = 0 }
+				font = "cg_16b"
+				maxWidth = 330
+				maxHeight = 20
+				fixedSize = yes
+				format = left
+				text = "Leader Name"
+				text_color_code = "E"
+			}
+	
+			instantTextBoxType = {
+				name = "leader_species"
+				position = { x = 10 y = 18 }
+				font = "cg_16b"
+				maxWidth = 330
+				maxHeight = 20
+				fixedSize = yes
+				text = "Leader Species"
+				format = left
+			}
+		}
+
+		### OPINION
+		containerWindowType = {
+			name = "opinion_window"
+			position = { x = 27 y = 110 }
+			size = { width = 94 height = 30 }
+			
+			# Use this for tooltip area, picture comes from somewhere else
+			background = {
+				name = "opinion_bg"
+				spriteType = "GFX_tile_dimension_traveler_skill_tree_bg"
+			}
+			
+			iconType = {
+				name = "their_opinion_icon"
+				spriteType = "GFX_diplomacy_opinion"
+				position = { x = 7 y = 4 }
+				alwaysTransparent = yes
+			}
+
+			instantTextBoxType = {
+				name = "their_opinion"
+				font = "cg_16b"
+				maxWidth = 40
+				position = { x = 40 y = 7 }
+				format = left
+				text = "100"
+				alwaysTransparent = yes
+			}
+		}
+		
+		### EVENT DIPLO ###
+		
+		containerWindowType = {
+			name = "EVENT_DIPLO"
+			position = { x = 0 y = 400 }
+			size = { width=563 height=220 }
+			moveable = no
+			
+			instantTextBoxType = {
+				name = "action_title"
+				font = "malgun_goth_24"
+				position = { x = 20 y = 0 }
+				maxWidth = 450
+				alwaysTransparent = yes
+			}
+			
+			instantTextBoxType = {
+				name = "action_desc"
+				font = "malgun_goth_24"
+				position = { x = 490 y = 0 }
+				maxWidth = 500
+				maxHeight = 180
+				Orientation = "UPPER_LEFT"
+				format = center
+				alwaysTransparent = yes
+				text_color_code = "H"
+			}
+			
+			listboxType = {
+				name = "option_list"
+				position = { x = 500 y = 20 }
+				backGround=""
+				size = { x=462 y=200 }
+				spacing = 1
+				scrollbartype = "standardlistbox_slider"
+				borderSize = { x = 0 y = 0 }
+				Orientation = "UPPER_LEFT"
+			}
+		}
+		
+		################################################################
+		# 技能树
+		################################################################
+		
+		containerWindowType = {
+			name = "DimensionTravelerSkillTreeWindow"
+			position = { x = 980 y = 18 }
+			size = { width = 495 height = 650 }
+			moveable = no
+			
+			background = {
+				name = "dimension_traveler_skill_tree_bg"
+				quadTextureSprite ="GFX_tile_dimension_traveler_skill_tree_bg"
+			}
+			
+			@dimension_traveler_skill_point_icon_x = 165
+			@dimension_traveler_skill_point_icon_y = 18
+			@dimension_traveler_skill_point_class_icon_x = 169
+			@dimension_traveler_skill_point_class_icon_y = 18
+			@dimension_traveler_skill_point_text_x = 246
+			@dimension_traveler_skill_point_text_y = 26
+			@dimension_traveler_skill_point_official_icon_y = 154
+			@dimension_traveler_skill_point_scientist_icon_y = 326
+			@dimension_traveler_skill_point_commander_icon_y = 480
+			@dimension_traveler_skill_point_official_text_y = 162
+			@dimension_traveler_skill_point_scientist_text_y = 334
+			@dimension_traveler_skill_point_commander_text_y = 488
+			
+			################################################################
+			# 星辰记忆点数图标
+			################################################################
+			
+			effectButtonType = {
+				name = "dimension_traveler_skill_point_main_icon"
+				spriteType = "GFX_dimension_traveler_skill_point"
+				position = { x = @dimension_traveler_skill_point_icon_x y = @dimension_traveler_skill_point_icon_y }
+				format = center
+				shortcut = "RETURN"
+				clicksound = "dimension_traveler_click"
+				effect = dimension_traveler_skill_point_main
+			}
+			
+			effectButtonType = {
+				name = "dimension_traveler_skill_point_official_icon"
+				spriteType = "GFX_leader_subclass_official_dimension_traveler_large"
+				position = { x = @dimension_traveler_skill_point_class_icon_x y = @dimension_traveler_skill_point_class_icon_y }
+				format = center
+				shortcut = "TAB"
+				clicksound = "dimension_traveler_click"
+				effect = dimension_traveler_skill_point_official
+			}
+			
+			effectButtonType = {
+				name = "dimension_traveler_skill_point_scientist_icon"
+				spriteType = "GFX_leader_subclass_scientist_dimension_traveler_large"
+				position = { x = @dimension_traveler_skill_point_class_icon_x y = @dimension_traveler_skill_point_class_icon_y }
+				format = center
+				shortcut = "TAB"
+				clicksound = "dimension_traveler_click"
+				effect = dimension_traveler_skill_point_scientist
+			}
+			
+			effectButtonType = {
+				name = "dimension_traveler_skill_point_commander_icon"
+				spriteType = "GFX_leader_subclass_commander_dimension_traveler_large"
+				position = { x = @dimension_traveler_skill_point_class_icon_x y = @dimension_traveler_skill_point_class_icon_y }
+				format = center
+				shortcut = "TAB"
+				clicksound = "dimension_traveler_click"
+				effect = dimension_traveler_skill_point_commander
+			}
+			
+			effectButtonType = {
+				name = "dimension_traveler_skill_back"
+				spriteType = "GFX_rallypoint_toggle_off"
+				position = { x = 432 y = 8 }
+				format = center
+				clicksound = "back_click"
+				shortcut = "RETURN"
+				effect = dimension_traveler_skill_back
+			}
+			
+			################################################################
+			# 星辰记忆点数数值
+			################################################################
+			
+			effectButtonType = {
+				name = "dimension_traveler_skill_point_text"
+				spriteType = "GFX_tiles_frame"
+				position = { x = @dimension_traveler_skill_point_text_x y = @dimension_traveler_skill_point_text_y }
+				size = { x = 100 y = 50 }
+				no_clicksound = yes
+				oversound = no_sound
+				text = dimension_traveler_skill_point_text
+				font = "large_title_font_28"
+				format = center
+				effect = dimension_traveler_skill_point_text
+			}
+			
+			################################################################
+			# 行政官技能点
+			################################################################
+			
+			effectButtonType = {
+				name = "dimension_traveler_skill_main_official_icon"
+				spriteType = "GFX_leader_subclass_official_dimension_traveler_large"
+				position = { x = @dimension_traveler_skill_point_class_icon_x y = @dimension_traveler_skill_point_official_icon_y }
+				format = center
+				shortcut = "o"
+				clicksound = "dimension_traveler_click"
+				effect = dimension_traveler_skill_main_official
+			}
+			
+			effectButtonType = {
+				name = "dimension_traveler_skill_main_official_text"
+				spriteType = "GFX_tiles_frame"
+				position = { x = @dimension_traveler_skill_point_text_x y = @dimension_traveler_skill_point_official_text_y }
+				size = { x = 100 y = 50 }
+				no_clicksound = yes
+				oversound = no_sound
+				text = dimension_traveler_skill_main_official_text
+				font = "large_title_font_28"
+				format = center
+				effect = dimension_traveler_skill_main_official_text
+			}
+			
+			################################################################
+			# 科学官技能点
+			################################################################
+			
+			effectButtonType = {
+				name = "dimension_traveler_skill_main_scientist_icon"
+				spriteType = "GFX_leader_subclass_scientist_dimension_traveler_large"
+				position = { x = @dimension_traveler_skill_point_class_icon_x y = @dimension_traveler_skill_point_scientist_icon_y }
+				format = center
+				shortcut = "s"
+				clicksound = "dimension_traveler_click"
+				effect = dimension_traveler_skill_main_scientist
+			}
+			
+			effectButtonType = {
+				name = "dimension_traveler_skill_main_scientist_text"
+				spriteType = "GFX_tiles_frame"
+				position = { x = @dimension_traveler_skill_point_text_x y = @dimension_traveler_skill_point_scientist_text_y }
+				size = { x = 100 y = 50 }
+				no_clicksound = yes
+				oversound = no_sound
+				text = dimension_traveler_skill_main_scientist_text
+				font = "large_title_font_28"
+				format = center
+				effect = dimension_traveler_skill_main_scientist_text
+			}
+			
+			################################################################
+			# 指挥官技能点
+			################################################################
+			
+			effectButtonType = {
+				name = "dimension_traveler_skill_main_commander_icon"
+				spriteType = "GFX_leader_subclass_commander_dimension_traveler_large"
+				position = { x = @dimension_traveler_skill_point_class_icon_x y = @dimension_traveler_skill_point_commander_icon_y }
+				format = center
+				shortcut = "c"
+				clicksound = "dimension_traveler_click"
+				effect = dimension_traveler_skill_main_commander
+			}
+			
+			effectButtonType = {
+				name = "dimension_traveler_skill_main_commander_text"
+				spriteType = "GFX_tiles_frame"
+				position = { x = @dimension_traveler_skill_point_text_x y = @dimension_traveler_skill_point_commander_text_y }
+				size = { x = 100 y = 50 }
+				no_clicksound = yes
+				oversound = no_sound
+				text = dimension_traveler_skill_main_commander_text
+				font = "large_title_font_28"
+				format = center
+				effect = dimension_traveler_skill_main_commander_text
+			}
+			
+			################################################################
+			# 技能点起始x坐标：6 每隔一段间隔43
+			# 技能点起始y坐标：25 每隔一段间隔61
+			################################################################
+			
+			@dimension_traveler_skill_x_1 = 49
+			@dimension_traveler_skill_x_2 = 92
+			@dimension_traveler_skill_x_3 = 135
+			@dimension_traveler_skill_x_4 = 178
+			@dimension_traveler_skill_x_5 = 221
+			@dimension_traveler_skill_x_6 = 264
+			@dimension_traveler_skill_x_7 = 307
+			@dimension_traveler_skill_x_8 = 350
+			@dimension_traveler_skill_x_9 = 393
+			@dimension_traveler_skill_y_1 = 86
+			@dimension_traveler_skill_y_2 = 147
+			@dimension_traveler_skill_y_3 = 208
+			@dimension_traveler_skill_y_4 = 269
+			@dimension_traveler_skill_y_5 = 330
+			@dimension_traveler_skill_y_6 = 391
+			@dimension_traveler_skill_y_7 = 452
+			@dimension_traveler_skill_y_8 = 513
+			@dimension_traveler_skill_y_9 = 574
+			
+			@dimension_traveler_arrow_x_1 = 73
+			@dimension_traveler_arrow_x_2 = 116
+			@dimension_traveler_arrow_x_3 = 159
+			@dimension_traveler_arrow_x_4 = 202
+			@dimension_traveler_arrow_x_6 = 246
+			@dimension_traveler_arrow_x_7 = 289
+			@dimension_traveler_arrow_x_8 = 332
+			@dimension_traveler_arrow_x_9 = 375
+			@dimension_traveler_arrow_y_1 = 118
+			@dimension_traveler_arrow_y_2 = 179
+			@dimension_traveler_arrow_y_3 = 240
+			@dimension_traveler_arrow_y_4 = 301
+			@dimension_traveler_arrow_y_6 = 362
+			@dimension_traveler_arrow_y_7 = 423
+			@dimension_traveler_arrow_y_8 = 484
+			@dimension_traveler_arrow_y_9 = 545
+			
+			################################################################################################################################
+			#														  技能树箭头														   #
+			################################################################################################################################
+			
+			################################################################
+			# 1层（箭头）
+			################################################################
+			effectButtonType = {
+				name = "arrow_dimension_traveler_skill_1_5_left"
+				spriteType = "GFX_dimension_traveler_skill_arrow_left"
+				position = { x = @dimension_traveler_arrow_x_4 y = @dimension_traveler_arrow_y_1 }
+				format = center
+				effect = arrow_dimension_traveler_skill_1_5
+			}
+			effectButtonType = {
+				name = "arrow_dimension_traveler_skill_1_5_right"
+				spriteType = "GFX_dimension_traveler_skill_arrow_right"
+				position = { x = @dimension_traveler_arrow_x_6 y = @dimension_traveler_arrow_y_1 }
+				format = center
+				effect = arrow_dimension_traveler_skill_1_5
+			}
+			################################################################
+			# 2层（箭头）
+			################################################################
+			effectButtonType = {
+				name = "arrow_dimension_traveler_skill_2_4_left"
+				spriteType = "GFX_dimension_traveler_skill_arrow_left"
+				position = { x = @dimension_traveler_arrow_x_3 y = @dimension_traveler_arrow_y_2 }
+				format = center
+				effect = arrow_dimension_traveler_skill_2_4
+			}
+			effectButtonType = {
+				name = "arrow_dimension_traveler_skill_2_4_right"
+				spriteType = "GFX_dimension_traveler_skill_arrow_right"
+				position = { x = @dimension_traveler_arrow_x_4 y = @dimension_traveler_arrow_y_2 }
+				format = center
+				effect = arrow_dimension_traveler_skill_2_4
+			}
+			
+			effectButtonType = {
+				name = "arrow_dimension_traveler_skill_2_6_left"
+				spriteType = "GFX_dimension_traveler_skill_arrow_left"
+				position = { x = @dimension_traveler_arrow_x_6 y = @dimension_traveler_arrow_y_2 }
+				format = center
+				effect = arrow_dimension_traveler_skill_2_6
+			}
+			effectButtonType = {
+				name = "arrow_dimension_traveler_skill_2_6_right"
+				spriteType = "GFX_dimension_traveler_skill_arrow_right"
+				position = { x = @dimension_traveler_arrow_x_7 y = @dimension_traveler_arrow_y_2 }
+				format = center
+				effect = arrow_dimension_traveler_skill_2_6
+			}
+			################################################################
+			# 3层（箭头）
+			################################################################
+			effectButtonType = {
+				name = "arrow_dimension_traveler_skill_3_3_left"
+				spriteType = "GFX_dimension_traveler_skill_arrow_left"
+				position = { x = @dimension_traveler_arrow_x_2 y = @dimension_traveler_arrow_y_3 }
+				format = center
+				effect = arrow_dimension_traveler_skill_3_3
+			}
+			effectButtonType = {
+				name = "arrow_dimension_traveler_skill_3_3_right"
+				spriteType = "GFX_dimension_traveler_skill_arrow_right"
+				position = { x = @dimension_traveler_arrow_x_3 y = @dimension_traveler_arrow_y_3 }
+				format = center
+				effect = arrow_dimension_traveler_skill_3_3
+			}
+			
+			effectButtonType = {
+				name = "arrow_dimension_traveler_skill_3_5_left"
+				spriteType = "GFX_dimension_traveler_skill_arrow_left"
+				position = { x = @dimension_traveler_arrow_x_4 y = @dimension_traveler_arrow_y_3 }
+				format = center
+				effect = arrow_dimension_traveler_skill_3_5
+			}
+			effectButtonType = {
+				name = "arrow_dimension_traveler_skill_3_5_right"
+				spriteType = "GFX_dimension_traveler_skill_arrow_right"
+				position = { x = @dimension_traveler_arrow_x_6 y = @dimension_traveler_arrow_y_3 }
+				format = center
+				effect = arrow_dimension_traveler_skill_3_5
+			}
+			
+			effectButtonType = {
+				name = "arrow_dimension_traveler_skill_3_7_left"
+				spriteType = "GFX_dimension_traveler_skill_arrow_left"
+				position = { x = @dimension_traveler_arrow_x_7 y = @dimension_traveler_arrow_y_3 }
+				format = center
+				effect = arrow_dimension_traveler_skill_3_7
+			}
+			effectButtonType = {
+				name = "arrow_dimension_traveler_skill_3_7_right"
+				spriteType = "GFX_dimension_traveler_skill_arrow_right"
+				position = { x = @dimension_traveler_arrow_x_8 y = @dimension_traveler_arrow_y_3 }
+				format = center
+				effect = arrow_dimension_traveler_skill_3_7
+			}
+			################################################################
+			# 4层（箭头）
+			################################################################
+			effectButtonType = {
+				name = "arrow_dimension_traveler_skill_4_2_left"
+				spriteType = "GFX_dimension_traveler_skill_arrow_left"
+				position = { x = @dimension_traveler_arrow_x_1 y = @dimension_traveler_arrow_y_4 }
+				format = center
+				effect = arrow_dimension_traveler_skill_4_2
+			}
+			effectButtonType = {
+				name = "arrow_dimension_traveler_skill_4_2_right"
+				spriteType = "GFX_dimension_traveler_skill_arrow_right"
+				position = { x = @dimension_traveler_arrow_x_2 y = @dimension_traveler_arrow_y_4 }
+				format = center
+				effect = arrow_dimension_traveler_skill_4_2
+			}
+			
+			effectButtonType = {
+				name = "arrow_dimension_traveler_skill_4_4_left"
+				spriteType = "GFX_dimension_traveler_skill_arrow_left"
+				position = { x = @dimension_traveler_arrow_x_3 y = @dimension_traveler_arrow_y_4 }
+				format = center
+				effect = arrow_dimension_traveler_skill_4_4
+			}
+			effectButtonType = {
+				name = "arrow_dimension_traveler_skill_4_4_right"
+				spriteType = "GFX_dimension_traveler_skill_arrow_right"
+				position = { x = @dimension_traveler_arrow_x_4 y = @dimension_traveler_arrow_y_4 }
+				format = center
+				effect = arrow_dimension_traveler_skill_4_4_core
+			}
+			
+			effectButtonType = {
+				name = "arrow_dimension_traveler_skill_4_6_left"
+				spriteType = "GFX_dimension_traveler_skill_arrow_left"
+				position = { x = @dimension_traveler_arrow_x_6 y = @dimension_traveler_arrow_y_4 }
+				format = center
+				effect = arrow_dimension_traveler_skill_4_6_core
+			}
+			effectButtonType = {
+				name = "arrow_dimension_traveler_skill_4_6_right"
+				spriteType = "GFX_dimension_traveler_skill_arrow_right"
+				position = { x = @dimension_traveler_arrow_x_7 y = @dimension_traveler_arrow_y_4 }
+				format = center
+				effect = arrow_dimension_traveler_skill_4_6
+			}
+			
+			effectButtonType = {
+				name = "arrow_dimension_traveler_skill_4_8_left"
+				spriteType = "GFX_dimension_traveler_skill_arrow_left"
+				position = { x = @dimension_traveler_arrow_x_8 y = @dimension_traveler_arrow_y_4 }
+				format = center
+				effect = arrow_dimension_traveler_skill_4_8
+			}
+			effectButtonType = {
+				name = "arrow_dimension_traveler_skill_4_8_right"
+				spriteType = "GFX_dimension_traveler_skill_arrow_right"
+				position = { x = @dimension_traveler_arrow_x_9 y = @dimension_traveler_arrow_y_4 }
+				format = center
+				effect = arrow_dimension_traveler_skill_4_8
+			}
+			################################################################
+			# 6层（箭头）
+			################################################################
+			effectButtonType = {
+				name = "arrow_dimension_traveler_skill_6_2_left"
+				spriteType = "GFX_dimension_traveler_skill_arrow_right"
+				position = { x = @dimension_traveler_arrow_x_1 y = @dimension_traveler_arrow_y_6 }
+				format = center
+				effect = arrow_dimension_traveler_skill_6_2
+			}
+			effectButtonType = {
+				name = "arrow_dimension_traveler_skill_6_2_right"
+				spriteType = "GFX_dimension_traveler_skill_arrow_left"
+				position = { x = @dimension_traveler_arrow_x_2 y = @dimension_traveler_arrow_y_6 }
+				format = center
+				effect = arrow_dimension_traveler_skill_6_2
+			}
+			
+			effectButtonType = {
+				name = "arrow_dimension_traveler_skill_6_4_left"
+				spriteType = "GFX_dimension_traveler_skill_arrow_right"
+				position = { x = @dimension_traveler_arrow_x_3 y = @dimension_traveler_arrow_y_6 }
+				format = center
+				effect = arrow_dimension_traveler_skill_6_4
+			}
+			effectButtonType = {
+				name = "arrow_dimension_traveler_skill_6_4_right"
+				spriteType = "GFX_dimension_traveler_skill_arrow_left"
+				position = { x = @dimension_traveler_arrow_x_4 y = @dimension_traveler_arrow_y_6 }
+				format = center
+				effect = arrow_dimension_traveler_skill_6_4_core
+			}
+			
+			effectButtonType = {
+				name = "arrow_dimension_traveler_skill_6_6_left"
+				spriteType = "GFX_dimension_traveler_skill_arrow_right"
+				position = { x = @dimension_traveler_arrow_x_6 y = @dimension_traveler_arrow_y_6 }
+				format = center
+				effect = arrow_dimension_traveler_skill_6_6_core
+			}
+			effectButtonType = {
+				name = "arrow_dimension_traveler_skill_6_6_right"
+				spriteType = "GFX_dimension_traveler_skill_arrow_left"
+				position = { x = @dimension_traveler_arrow_x_7 y = @dimension_traveler_arrow_y_6 }
+				format = center
+				effect = arrow_dimension_traveler_skill_6_6
+			}
+			
+			effectButtonType = {
+				name = "arrow_dimension_traveler_skill_6_8_left"
+				spriteType = "GFX_dimension_traveler_skill_arrow_right"
+				position = { x = @dimension_traveler_arrow_x_8 y = @dimension_traveler_arrow_y_6 }
+				format = center
+				effect = arrow_dimension_traveler_skill_6_8
+			}
+			effectButtonType = {
+				name = "arrow_dimension_traveler_skill_6_8_right"
+				spriteType = "GFX_dimension_traveler_skill_arrow_left"
+				position = { x = @dimension_traveler_arrow_x_9 y = @dimension_traveler_arrow_y_6 }
+				format = center
+				effect = arrow_dimension_traveler_skill_6_8
+			}
+			################################################################
+			# 7层（箭头）
+			################################################################
+			effectButtonType = {
+				name = "arrow_dimension_traveler_skill_7_3_left"
+				spriteType = "GFX_dimension_traveler_skill_arrow_right"
+				position = { x = @dimension_traveler_arrow_x_2 y = @dimension_traveler_arrow_y_7 }
+				format = center
+				effect = arrow_dimension_traveler_skill_7_3
+			}
+			effectButtonType = {
+				name = "arrow_dimension_traveler_skill_7_3_right"
+				spriteType = "GFX_dimension_traveler_skill_arrow_left"
+				position = { x = @dimension_traveler_arrow_x_3 y = @dimension_traveler_arrow_y_7 }
+				format = center
+				effect = arrow_dimension_traveler_skill_7_3
+			}
+			
+			effectButtonType = {
+				name = "arrow_dimension_traveler_skill_7_5_left"
+				spriteType = "GFX_dimension_traveler_skill_arrow_right"
+				position = { x = @dimension_traveler_arrow_x_4 y = @dimension_traveler_arrow_y_7 }
+				format = center
+				effect = arrow_dimension_traveler_skill_7_5
+			}
+			effectButtonType = {
+				name = "arrow_dimension_traveler_skill_7_5_right"
+				spriteType = "GFX_dimension_traveler_skill_arrow_left"
+				position = { x = @dimension_traveler_arrow_x_6 y = @dimension_traveler_arrow_y_7 }
+				format = center
+				effect = arrow_dimension_traveler_skill_7_5
+			}
+			
+			effectButtonType = {
+				name = "arrow_dimension_traveler_skill_7_7_left"
+				spriteType = "GFX_dimension_traveler_skill_arrow_right"
+				position = { x = @dimension_traveler_arrow_x_7 y = @dimension_traveler_arrow_y_7 }
+				format = center
+				effect = arrow_dimension_traveler_skill_7_7
+			}
+			effectButtonType = {
+				name = "arrow_dimension_traveler_skill_7_7_right"
+				spriteType = "GFX_dimension_traveler_skill_arrow_left"
+				position = { x = @dimension_traveler_arrow_x_8 y = @dimension_traveler_arrow_y_7 }
+				format = center
+				effect = arrow_dimension_traveler_skill_7_7
+			}
+			################################################################
+			# 8层（箭头）
+			################################################################
+			effectButtonType = {
+				name = "arrow_dimension_traveler_skill_8_4_left"
+				spriteType = "GFX_dimension_traveler_skill_arrow_right"
+				position = { x = @dimension_traveler_arrow_x_3 y = @dimension_traveler_arrow_y_8 }
+				format = center
+				effect = arrow_dimension_traveler_skill_8_4
+			}
+			effectButtonType = {
+				name = "arrow_dimension_traveler_skill_8_4_right"
+				spriteType = "GFX_dimension_traveler_skill_arrow_left"
+				position = { x = @dimension_traveler_arrow_x_4 y = @dimension_traveler_arrow_y_8 }
+				format = center
+				effect = arrow_dimension_traveler_skill_8_4
+			}
+			
+			effectButtonType = {
+				name = "arrow_dimension_traveler_skill_8_6_left"
+				spriteType = "GFX_dimension_traveler_skill_arrow_right"
+				position = { x = @dimension_traveler_arrow_x_6 y = @dimension_traveler_arrow_y_8 }
+				format = center
+				effect = arrow_dimension_traveler_skill_8_6
+			}
+			effectButtonType = {
+				name = "arrow_dimension_traveler_skill_8_6_right"
+				spriteType = "GFX_dimension_traveler_skill_arrow_left"
+				position = { x = @dimension_traveler_arrow_x_7 y = @dimension_traveler_arrow_y_8 }
+				format = center
+				effect = arrow_dimension_traveler_skill_8_6
+			}
+			################################################################
+			# 9层（箭头）
+			################################################################
+			effectButtonType = {
+				name = "arrow_dimension_traveler_skill_9_5_left"
+				spriteType = "GFX_dimension_traveler_skill_arrow_right"
+				position = { x = @dimension_traveler_arrow_x_4 y = @dimension_traveler_arrow_y_9 }
+				format = center
+				effect = arrow_dimension_traveler_skill_9_5
+			}
+			effectButtonType = {
+				name = "arrow_dimension_traveler_skill_9_5_right"
+				spriteType = "GFX_dimension_traveler_skill_arrow_left"
+				position = { x = @dimension_traveler_arrow_x_6 y = @dimension_traveler_arrow_y_9 }
+				format = center
+				effect = arrow_dimension_traveler_skill_9_5
+			}
+			
+			################################################################################################################################
+			#															行政官															   #
+			################################################################################################################################
+			
+			################################################################
+			# 1层（技能）
+			################################################################
+			effectButtonType = {
+				name = "dimension_traveler_skill_official_1_5"
+				spriteType = "GFX_dimension_traveler_skill_official_1_5"
+				position = { x = @dimension_traveler_skill_x_5 y = @dimension_traveler_skill_y_1 }
+				format = center
+				clicksound = "dimension_traveler_response"
+				effect = dimension_traveler_skill_official_1_5
+			}
+			effectButtonType = {
+				name = "actived_dimension_traveler_skill_official_1_5"
+				spriteType = "GFX_actived_dimension_traveler_skill_official_1_5"
+				position = { x = @dimension_traveler_skill_x_5 y = @dimension_traveler_skill_y_1 }
+				format = center
+				effect = actived_dimension_traveler_skill_official_1_5
+			}
+			################################################################
+			# 2层（技能）
+			################################################################
+			effectButtonType = {
+				name = "dimension_traveler_skill_official_2_4"
+				spriteType = "GFX_dimension_traveler_skill_official_2_4"
+				position = { x = @dimension_traveler_skill_x_4 y = @dimension_traveler_skill_y_2 }
+				format = center
+				clicksound = "dimension_traveler_response"
+				effect = dimension_traveler_skill_official_2_4
+			}
+			effectButtonType = {
+				name = "actived_dimension_traveler_skill_official_2_4"
+				spriteType = "GFX_actived_dimension_traveler_skill_official_2_4"
+				position = { x = @dimension_traveler_skill_x_4 y = @dimension_traveler_skill_y_2 }
+				format = center
+				effect = actived_dimension_traveler_skill_official_2_4
+			}
+			
+			effectButtonType = {
+				name = "dimension_traveler_skill_official_2_6"
+				spriteType = "GFX_dimension_traveler_skill_official_2_6"
+				position = { x = @dimension_traveler_skill_x_6 y = @dimension_traveler_skill_y_2 }
+				format = center
+				clicksound = "dimension_traveler_response"
+				effect = dimension_traveler_skill_official_2_6
+			}
+			effectButtonType = {
+				name = "actived_dimension_traveler_skill_official_2_6"
+				spriteType = "GFX_actived_dimension_traveler_skill_official_2_6"
+				position = { x = @dimension_traveler_skill_x_6 y = @dimension_traveler_skill_y_2 }
+				format = center
+				effect = actived_dimension_traveler_skill_official_2_6
+			}
+			################################################################
+			# 3层（技能）
+			################################################################
+			effectButtonType = {
+				name = "dimension_traveler_skill_official_3_3"
+				spriteType = "GFX_dimension_traveler_skill_official_3_3"
+				position = { x = @dimension_traveler_skill_x_3 y = @dimension_traveler_skill_y_3 }
+				format = center
+				clicksound = "dimension_traveler_response"
+				effect = dimension_traveler_skill_official_3_3
+			}
+			effectButtonType = {
+				name = "actived_dimension_traveler_skill_official_3_3"
+				spriteType = "GFX_actived_dimension_traveler_skill_official_3_3"
+				position = { x = @dimension_traveler_skill_x_3 y = @dimension_traveler_skill_y_3 }
+				format = center
+				effect = actived_dimension_traveler_skill_official_3_3
+			}
+			
+			effectButtonType = {
+				name = "dimension_traveler_skill_official_3_5"
+				spriteType = "GFX_dimension_traveler_skill_official_3_5"
+				position = { x = @dimension_traveler_skill_x_5 y = @dimension_traveler_skill_y_3 }
+				format = center
+				clicksound = "dimension_traveler_response"
+				effect = dimension_traveler_skill_official_3_5
+			}
+			effectButtonType = {
+				name = "actived_dimension_traveler_skill_official_3_5"
+				spriteType = "GFX_actived_dimension_traveler_skill_official_3_5"
+				position = { x = @dimension_traveler_skill_x_5 y = @dimension_traveler_skill_y_3 }
+				format = center
+				effect = actived_dimension_traveler_skill_official_3_5
+			}
+			
+			effectButtonType = {
+				name = "dimension_traveler_skill_official_3_7"
+				spriteType = "GFX_dimension_traveler_skill_official_3_7"
+				position = { x = @dimension_traveler_skill_x_7 y = @dimension_traveler_skill_y_3 }
+				format = center
+				clicksound = "dimension_traveler_response"
+				effect = dimension_traveler_skill_official_3_7
+			}
+			effectButtonType = {
+				name = "actived_dimension_traveler_skill_official_3_7"
+				spriteType = "GFX_actived_dimension_traveler_skill_official_3_7"
+				position = { x = @dimension_traveler_skill_x_7 y = @dimension_traveler_skill_y_3 }
+				format = center
+				effect = actived_dimension_traveler_skill_official_3_7
+			}
+			################################################################
+			# 4层（技能）
+			################################################################
+			effectButtonType = {
+				name = "dimension_traveler_skill_official_4_2"
+				spriteType = "GFX_dimension_traveler_skill_official_4_2"
+				position = { x = @dimension_traveler_skill_x_2 y = @dimension_traveler_skill_y_4 }
+				format = center
+				clicksound = "dimension_traveler_response"
+				effect = dimension_traveler_skill_official_4_2
+			}
+			effectButtonType = {
+				name = "actived_dimension_traveler_skill_official_4_2"
+				spriteType = "GFX_actived_dimension_traveler_skill_official_4_2"
+				position = { x = @dimension_traveler_skill_x_2 y = @dimension_traveler_skill_y_4 }
+				format = center
+				effect = actived_dimension_traveler_skill_official_4_2
+			}
+			
+			effectButtonType = {
+				name = "dimension_traveler_skill_official_4_4"
+				spriteType = "GFX_dimension_traveler_skill_official_4_4"
+				position = { x = @dimension_traveler_skill_x_4 y = @dimension_traveler_skill_y_4 }
+				format = center
+				clicksound = "dimension_traveler_response"
+				effect = dimension_traveler_skill_official_4_4
+			}
+			effectButtonType = {
+				name = "actived_dimension_traveler_skill_official_4_4"
+				spriteType = "GFX_actived_dimension_traveler_skill_official_4_4"
+				position = { x = @dimension_traveler_skill_x_4 y = @dimension_traveler_skill_y_4 }
+				format = center
+				effect = actived_dimension_traveler_skill_official_4_4
+			}
+			
+			effectButtonType = {
+				name = "dimension_traveler_skill_official_4_6"
+				spriteType = "GFX_dimension_traveler_skill_official_4_6"
+				position = { x = @dimension_traveler_skill_x_6 y = @dimension_traveler_skill_y_4 }
+				format = center
+				clicksound = "dimension_traveler_response"
+				effect = dimension_traveler_skill_official_4_6
+			}
+			effectButtonType = {
+				name = "actived_dimension_traveler_skill_official_4_6"
+				spriteType = "GFX_actived_dimension_traveler_skill_official_4_6"
+				position = { x = @dimension_traveler_skill_x_6 y = @dimension_traveler_skill_y_4 }
+				format = center
+				effect = actived_dimension_traveler_skill_official_4_6
+			}
+			
+			effectButtonType = {
+				name = "dimension_traveler_skill_official_4_8"
+				spriteType = "GFX_dimension_traveler_skill_official_4_8"
+				position = { x = @dimension_traveler_skill_x_8 y = @dimension_traveler_skill_y_4 }
+				format = center
+				clicksound = "dimension_traveler_response"
+				effect = dimension_traveler_skill_official_4_8
+			}
+			effectButtonType = {
+				name = "actived_dimension_traveler_skill_official_4_8"
+				spriteType = "GFX_actived_dimension_traveler_skill_official_4_8"
+				position = { x = @dimension_traveler_skill_x_8 y = @dimension_traveler_skill_y_4 }
+				format = center
+				effect = actived_dimension_traveler_skill_official_4_8
+			}
+			################################################################
+			# 5层（内阁）
+			################################################################
+			effectButtonType = {
+				name = "dimension_traveler_skill_official_5_1"
+				spriteType = "GFX_dimension_traveler_skill_official_5_1"
+				position = { x = @dimension_traveler_skill_x_1 y = @dimension_traveler_skill_y_5 }
+				format = center
+				clicksound = "dimension_traveler_response"
+				effect = dimension_traveler_skill_official_5_1
+			}
+			effectButtonType = {
+				name = "actived_dimension_traveler_skill_official_5_1"
+				spriteType = "GFX_actived_dimension_traveler_skill_official_5_1"
+				position = { x = @dimension_traveler_skill_x_1 y = @dimension_traveler_skill_y_5 }
+				format = center
+				effect = actived_dimension_traveler_skill_official_5_1
+			}
+			
+			effectButtonType = {
+				name = "dimension_traveler_skill_official_5_3"
+				spriteType = "GFX_dimension_traveler_skill_official_5_3"
+				position = { x = @dimension_traveler_skill_x_3 y = @dimension_traveler_skill_y_5 }
+				format = center
+				clicksound = "dimension_traveler_response"
+				effect = dimension_traveler_skill_official_5_3
+			}
+			effectButtonType = {
+				name = "actived_dimension_traveler_skill_official_5_3"
+				spriteType = "GFX_actived_dimension_traveler_skill_official_5_3"
+				position = { x = @dimension_traveler_skill_x_3 y = @dimension_traveler_skill_y_5 }
+				format = center
+				effect = actived_dimension_traveler_skill_official_5_3
+			}
+			
+			effectButtonType = {
+				name = "dimension_traveler_skill_official_5_5"
+				spriteType = "GFX_dimension_traveler_skill_official_5_5"
+				position = { x = @dimension_traveler_skill_x_5 y = @dimension_traveler_skill_y_5 }
+				format = center
+				clicksound = "dimension_traveler_response"
+				effect = dimension_traveler_skill_official_5_5
+			}
+			effectButtonType = {
+				name = "actived_dimension_traveler_skill_official_5_5"
+				spriteType = "GFX_actived_dimension_traveler_skill_official_5_5"
+				position = { x = @dimension_traveler_skill_x_5 y = @dimension_traveler_skill_y_5 }
+				format = center
+				effect = actived_dimension_traveler_skill_official_5_5
+			}
+			
+			effectButtonType = {
+				name = "dimension_traveler_skill_official_5_7"
+				spriteType = "GFX_dimension_traveler_skill_official_5_7"
+				position = { x = @dimension_traveler_skill_x_7 y = @dimension_traveler_skill_y_5 }
+				format = center
+				clicksound = "dimension_traveler_response"
+				effect = dimension_traveler_skill_official_5_7
+			}
+			effectButtonType = {
+				name = "actived_dimension_traveler_skill_official_5_7"
+				spriteType = "GFX_actived_dimension_traveler_skill_official_5_7"
+				position = { x = @dimension_traveler_skill_x_7 y = @dimension_traveler_skill_y_5 }
+				format = center
+				effect = actived_dimension_traveler_skill_official_5_7
+			}
+			
+			effectButtonType = {
+				name = "dimension_traveler_skill_official_5_9"
+				spriteType = "GFX_dimension_traveler_skill_official_5_9"
+				position = { x = @dimension_traveler_skill_x_9 y = @dimension_traveler_skill_y_5 }
+				format = center
+				clicksound = "dimension_traveler_response"
+				effect = dimension_traveler_skill_official_5_9
+			}
+			effectButtonType = {
+				name = "actived_dimension_traveler_skill_official_5_9"
+				spriteType = "GFX_actived_dimension_traveler_skill_official_5_9"
+				position = { x = @dimension_traveler_skill_x_9 y = @dimension_traveler_skill_y_5 }
+				format = center
+				effect = actived_dimension_traveler_skill_official_5_9
+			}
+			################################################################
+			# 6层（技能）
+			################################################################
+			effectButtonType = {
+				name = "dimension_traveler_skill_official_6_2"
+				spriteType = "GFX_dimension_traveler_skill_official_6_2"
+				position = { x = @dimension_traveler_skill_x_2 y = @dimension_traveler_skill_y_6 }
+				format = center
+				clicksound = "dimension_traveler_response"
+				effect = dimension_traveler_skill_official_6_2
+			}
+			effectButtonType = {
+				name = "actived_dimension_traveler_skill_official_6_2"
+				spriteType = "GFX_actived_dimension_traveler_skill_official_6_2"
+				position = { x = @dimension_traveler_skill_x_2 y = @dimension_traveler_skill_y_6 }
+				format = center
+				effect = actived_dimension_traveler_skill_official_6_2
+			}
+			
+			effectButtonType = {
+				name = "dimension_traveler_skill_official_6_4"
+				spriteType = "GFX_dimension_traveler_skill_official_6_4"
+				position = { x = @dimension_traveler_skill_x_4 y = @dimension_traveler_skill_y_6 }
+				format = center
+				clicksound = "dimension_traveler_response"
+				effect = dimension_traveler_skill_official_6_4
+			}
+			effectButtonType = {
+				name = "actived_dimension_traveler_skill_official_6_4"
+				spriteType = "GFX_actived_dimension_traveler_skill_official_6_4"
+				position = { x = @dimension_traveler_skill_x_4 y = @dimension_traveler_skill_y_6 }
+				format = center
+				effect = actived_dimension_traveler_skill_official_6_4
+			}
+			
+			effectButtonType = {
+				name = "dimension_traveler_skill_official_6_6"
+				spriteType = "GFX_dimension_traveler_skill_official_6_6"
+				position = { x = @dimension_traveler_skill_x_6 y = @dimension_traveler_skill_y_6 }
+				format = center
+				clicksound = "dimension_traveler_response"
+				effect = dimension_traveler_skill_official_6_6
+			}
+			effectButtonType = {
+				name = "actived_dimension_traveler_skill_official_6_6"
+				spriteType = "GFX_actived_dimension_traveler_skill_official_6_6"
+				position = { x = @dimension_traveler_skill_x_6 y = @dimension_traveler_skill_y_6 }
+				format = center
+				effect = actived_dimension_traveler_skill_official_6_6
+			}
+			
+			effectButtonType = {
+				name = "dimension_traveler_skill_official_6_8"
+				spriteType = "GFX_dimension_traveler_skill_official_6_8"
+				position = { x = @dimension_traveler_skill_x_8 y = @dimension_traveler_skill_y_6 }
+				format = center
+				clicksound = "dimension_traveler_response"
+				effect = dimension_traveler_skill_official_6_8
+			}
+			effectButtonType = {
+				name = "actived_dimension_traveler_skill_official_6_8"
+				spriteType = "GFX_actived_dimension_traveler_skill_official_6_8"
+				position = { x = @dimension_traveler_skill_x_8 y = @dimension_traveler_skill_y_6 }
+				format = center
+				effect = actived_dimension_traveler_skill_official_6_8
+			}
+			################################################################
+			# 7层（技能）
+			################################################################
+			effectButtonType = {
+				name = "dimension_traveler_skill_official_7_3"
+				spriteType = "GFX_dimension_traveler_skill_official_7_3"
+				position = { x = @dimension_traveler_skill_x_3 y = @dimension_traveler_skill_y_7 }
+				format = center
+				clicksound = "dimension_traveler_response"
+				effect = dimension_traveler_skill_official_7_3
+			}
+			effectButtonType = {
+				name = "actived_dimension_traveler_skill_official_7_3"
+				spriteType = "GFX_actived_dimension_traveler_skill_official_7_3"
+				position = { x = @dimension_traveler_skill_x_3 y = @dimension_traveler_skill_y_7 }
+				format = center
+				effect = actived_dimension_traveler_skill_official_7_3
+			}
+			
+			effectButtonType = {
+				name = "dimension_traveler_skill_official_7_5"
+				spriteType = "GFX_dimension_traveler_skill_official_7_5"
+				position = { x = @dimension_traveler_skill_x_5 y = @dimension_traveler_skill_y_7 }
+				format = center
+				clicksound = "dimension_traveler_response"
+				effect = dimension_traveler_skill_official_7_5
+			}
+			effectButtonType = {
+				name = "actived_dimension_traveler_skill_official_7_5"
+				spriteType = "GFX_actived_dimension_traveler_skill_official_7_5"
+				position = { x = @dimension_traveler_skill_x_5 y = @dimension_traveler_skill_y_7 }
+				format = center
+				effect = actived_dimension_traveler_skill_official_7_5
+			}
+			
+			effectButtonType = {
+				name = "dimension_traveler_skill_official_7_7"
+				spriteType = "GFX_dimension_traveler_skill_official_7_7"
+				position = { x = @dimension_traveler_skill_x_7 y = @dimension_traveler_skill_y_7 }
+				format = center
+				clicksound = "dimension_traveler_response"
+				effect = dimension_traveler_skill_official_7_7
+			}
+			effectButtonType = {
+				name = "actived_dimension_traveler_skill_official_7_7"
+				spriteType = "GFX_actived_dimension_traveler_skill_official_7_7"
+				position = { x = @dimension_traveler_skill_x_7 y = @dimension_traveler_skill_y_7 }
+				format = center
+				effect = actived_dimension_traveler_skill_official_7_7
+			}
+			################################################################
+			# 8层（技能）
+			################################################################
+			effectButtonType = {
+				name = "dimension_traveler_skill_official_8_4"
+				spriteType = "GFX_dimension_traveler_skill_official_8_4"
+				position = { x = @dimension_traveler_skill_x_4 y = @dimension_traveler_skill_y_8 }
+				format = center
+				clicksound = "dimension_traveler_response"
+				effect = dimension_traveler_skill_official_8_4
+			}
+			effectButtonType = {
+				name = "actived_dimension_traveler_skill_official_8_4"
+				spriteType = "GFX_actived_dimension_traveler_skill_official_8_4"
+				position = { x = @dimension_traveler_skill_x_4 y = @dimension_traveler_skill_y_8 }
+				format = center
+				effect = actived_dimension_traveler_skill_official_8_4
+			}
+			
+			effectButtonType = {
+				name = "dimension_traveler_skill_official_8_6"
+				spriteType = "GFX_dimension_traveler_skill_official_8_6"
+				position = { x = @dimension_traveler_skill_x_6 y = @dimension_traveler_skill_y_8 }
+				format = center
+				clicksound = "dimension_traveler_response"
+				effect = dimension_traveler_skill_official_8_6
+			}
+			effectButtonType = {
+				name = "actived_dimension_traveler_skill_official_8_6"
+				spriteType = "GFX_actived_dimension_traveler_skill_official_8_6"
+				position = { x = @dimension_traveler_skill_x_6 y = @dimension_traveler_skill_y_8 }
+				format = center
+				effect = actived_dimension_traveler_skill_official_8_6
+			}
+			################################################################
+			# 9层（技能）
+			################################################################
+			effectButtonType = {
+				name = "dimension_traveler_skill_official_9_5"
+				spriteType = "GFX_dimension_traveler_skill_official_9_5"
+				position = { x = @dimension_traveler_skill_x_5 y = @dimension_traveler_skill_y_9 }
+				format = center
+				clicksound = "dimension_traveler_response"
+				effect = dimension_traveler_skill_official_9_5
+			}
+			effectButtonType = {
+				name = "actived_dimension_traveler_skill_official_9_5"
+				spriteType = "GFX_actived_dimension_traveler_skill_official_9_5"
+				position = { x = @dimension_traveler_skill_x_5 y = @dimension_traveler_skill_y_9 }
+				format = center
+				effect = actived_dimension_traveler_skill_official_9_5
+			}
+			
+			################################################################################################################################
+			#															科学官															   #
+			################################################################################################################################
+			
+			################################################################
+			# 1层（技能）
+			################################################################
+			effectButtonType = {
+				name = "dimension_traveler_skill_scientist_1_5"
+				spriteType = "GFX_dimension_traveler_skill_scientist_1_5"
+				position = { x = @dimension_traveler_skill_x_5 y = @dimension_traveler_skill_y_1 }
+				format = center
+				clicksound = "dimension_traveler_response"
+				effect = dimension_traveler_skill_scientist_1_5
+			}
+			effectButtonType = {
+				name = "actived_dimension_traveler_skill_scientist_1_5"
+				spriteType = "GFX_actived_dimension_traveler_skill_scientist_1_5"
+				position = { x = @dimension_traveler_skill_x_5 y = @dimension_traveler_skill_y_1 }
+				format = center
+				effect = actived_dimension_traveler_skill_scientist_1_5
+			}
+			################################################################
+			# 2层（技能）
+			################################################################
+			effectButtonType = {
+				name = "dimension_traveler_skill_scientist_2_4"
+				spriteType = "GFX_dimension_traveler_skill_scientist_2_4"
+				position = { x = @dimension_traveler_skill_x_4 y = @dimension_traveler_skill_y_2 }
+				format = center
+				clicksound = "dimension_traveler_response"
+				effect = dimension_traveler_skill_scientist_2_4
+			}
+			effectButtonType = {
+				name = "actived_dimension_traveler_skill_scientist_2_4"
+				spriteType = "GFX_actived_dimension_traveler_skill_scientist_2_4"
+				position = { x = @dimension_traveler_skill_x_4 y = @dimension_traveler_skill_y_2 }
+				format = center
+				effect = actived_dimension_traveler_skill_scientist_2_4
+			}
+			
+			effectButtonType = {
+				name = "dimension_traveler_skill_scientist_2_6"
+				spriteType = "GFX_dimension_traveler_skill_scientist_2_6"
+				position = { x = @dimension_traveler_skill_x_6 y = @dimension_traveler_skill_y_2 }
+				format = center
+				clicksound = "dimension_traveler_response"
+				effect = dimension_traveler_skill_scientist_2_6
+			}
+			effectButtonType = {
+				name = "actived_dimension_traveler_skill_scientist_2_6"
+				spriteType = "GFX_actived_dimension_traveler_skill_scientist_2_6"
+				position = { x = @dimension_traveler_skill_x_6 y = @dimension_traveler_skill_y_2 }
+				format = center
+				effect = actived_dimension_traveler_skill_scientist_2_6
+			}
+			################################################################
+			# 3层（技能）
+			################################################################
+			effectButtonType = {
+				name = "dimension_traveler_skill_scientist_3_3"
+				spriteType = "GFX_dimension_traveler_skill_scientist_3_3"
+				position = { x = @dimension_traveler_skill_x_3 y = @dimension_traveler_skill_y_3 }
+				format = center
+				clicksound = "dimension_traveler_response"
+				effect = dimension_traveler_skill_scientist_3_3
+			}
+			effectButtonType = {
+				name = "actived_dimension_traveler_skill_scientist_3_3"
+				spriteType = "GFX_actived_dimension_traveler_skill_scientist_3_3"
+				position = { x = @dimension_traveler_skill_x_3 y = @dimension_traveler_skill_y_3 }
+				format = center
+				effect = actived_dimension_traveler_skill_scientist_3_3
+			}
+			
+			effectButtonType = {
+				name = "dimension_traveler_skill_scientist_3_5"
+				spriteType = "GFX_dimension_traveler_skill_scientist_3_5"
+				position = { x = @dimension_traveler_skill_x_5 y = @dimension_traveler_skill_y_3 }
+				format = center
+				clicksound = "dimension_traveler_response"
+				effect = dimension_traveler_skill_scientist_3_5
+			}
+			effectButtonType = {
+				name = "actived_dimension_traveler_skill_scientist_3_5"
+				spriteType = "GFX_actived_dimension_traveler_skill_scientist_3_5"
+				position = { x = @dimension_traveler_skill_x_5 y = @dimension_traveler_skill_y_3 }
+				format = center
+				effect = actived_dimension_traveler_skill_scientist_3_5
+			}
+			
+			effectButtonType = {
+				name = "dimension_traveler_skill_scientist_3_7"
+				spriteType = "GFX_dimension_traveler_skill_scientist_3_7"
+				position = { x = @dimension_traveler_skill_x_7 y = @dimension_traveler_skill_y_3 }
+				format = center
+				clicksound = "dimension_traveler_response"
+				effect = dimension_traveler_skill_scientist_3_7
+			}
+			effectButtonType = {
+				name = "actived_dimension_traveler_skill_scientist_3_7"
+				spriteType = "GFX_actived_dimension_traveler_skill_scientist_3_7"
+				position = { x = @dimension_traveler_skill_x_7 y = @dimension_traveler_skill_y_3 }
+				format = center
+				effect = actived_dimension_traveler_skill_scientist_3_7
+			}
+			################################################################
+			# 4层（技能）
+			################################################################
+			effectButtonType = {
+				name = "dimension_traveler_skill_scientist_4_2"
+				spriteType = "GFX_dimension_traveler_skill_scientist_4_2"
+				position = { x = @dimension_traveler_skill_x_2 y = @dimension_traveler_skill_y_4 }
+				format = center
+				clicksound = "dimension_traveler_response"
+				effect = dimension_traveler_skill_scientist_4_2
+			}
+			effectButtonType = {
+				name = "actived_dimension_traveler_skill_scientist_4_2"
+				spriteType = "GFX_actived_dimension_traveler_skill_scientist_4_2"
+				position = { x = @dimension_traveler_skill_x_2 y = @dimension_traveler_skill_y_4 }
+				format = center
+				effect = actived_dimension_traveler_skill_scientist_4_2
+			}
+			
+			effectButtonType = {
+				name = "dimension_traveler_skill_scientist_4_4"
+				spriteType = "GFX_dimension_traveler_skill_scientist_4_4"
+				position = { x = @dimension_traveler_skill_x_4 y = @dimension_traveler_skill_y_4 }
+				format = center
+				clicksound = "dimension_traveler_response"
+				effect = dimension_traveler_skill_scientist_4_4
+			}
+			effectButtonType = {
+				name = "actived_dimension_traveler_skill_scientist_4_4"
+				spriteType = "GFX_actived_dimension_traveler_skill_scientist_4_4"
+				position = { x = @dimension_traveler_skill_x_4 y = @dimension_traveler_skill_y_4 }
+				format = center
+				effect = actived_dimension_traveler_skill_scientist_4_4
+			}
+			
+			effectButtonType = {
+				name = "dimension_traveler_skill_scientist_4_6"
+				spriteType = "GFX_dimension_traveler_skill_scientist_4_6"
+				position = { x = @dimension_traveler_skill_x_6 y = @dimension_traveler_skill_y_4 }
+				format = center
+				clicksound = "dimension_traveler_response"
+				effect = dimension_traveler_skill_scientist_4_6
+			}
+			effectButtonType = {
+				name = "actived_dimension_traveler_skill_scientist_4_6"
+				spriteType = "GFX_actived_dimension_traveler_skill_scientist_4_6"
+				position = { x = @dimension_traveler_skill_x_6 y = @dimension_traveler_skill_y_4 }
+				format = center
+				effect = actived_dimension_traveler_skill_scientist_4_6
+			}
+			
+			effectButtonType = {
+				name = "dimension_traveler_skill_scientist_4_8"
+				spriteType = "GFX_dimension_traveler_skill_scientist_4_8"
+				position = { x = @dimension_traveler_skill_x_8 y = @dimension_traveler_skill_y_4 }
+				format = center
+				clicksound = "dimension_traveler_response"
+				effect = dimension_traveler_skill_scientist_4_8
+			}
+			effectButtonType = {
+				name = "actived_dimension_traveler_skill_scientist_4_8"
+				spriteType = "GFX_actived_dimension_traveler_skill_scientist_4_8"
+				position = { x = @dimension_traveler_skill_x_8 y = @dimension_traveler_skill_y_4 }
+				format = center
+				effect = actived_dimension_traveler_skill_scientist_4_8
+			}
+			################################################################
+			# 5层（内阁）
+			################################################################
+			effectButtonType = {
+				name = "dimension_traveler_skill_scientist_5_1"
+				spriteType = "GFX_dimension_traveler_skill_scientist_5_1"
+				position = { x = @dimension_traveler_skill_x_1 y = @dimension_traveler_skill_y_5 }
+				format = center
+				clicksound = "dimension_traveler_response"
+				effect = dimension_traveler_skill_scientist_5_1
+			}
+			effectButtonType = {
+				name = "actived_dimension_traveler_skill_scientist_5_1"
+				spriteType = "GFX_actived_dimension_traveler_skill_scientist_5_1"
+				position = { x = @dimension_traveler_skill_x_1 y = @dimension_traveler_skill_y_5 }
+				format = center
+				effect = actived_dimension_traveler_skill_scientist_5_1
+			}
+			
+			effectButtonType = {
+				name = "dimension_traveler_skill_scientist_5_3"
+				spriteType = "GFX_dimension_traveler_skill_scientist_5_3"
+				position = { x = @dimension_traveler_skill_x_3 y = @dimension_traveler_skill_y_5 }
+				format = center
+				clicksound = "dimension_traveler_response"
+				effect = dimension_traveler_skill_scientist_5_3
+			}
+			effectButtonType = {
+				name = "actived_dimension_traveler_skill_scientist_5_3"
+				spriteType = "GFX_actived_dimension_traveler_skill_scientist_5_3"
+				position = { x = @dimension_traveler_skill_x_3 y = @dimension_traveler_skill_y_5 }
+				format = center
+				effect = actived_dimension_traveler_skill_scientist_5_3
+			}
+			
+			effectButtonType = {
+				name = "dimension_traveler_skill_scientist_5_5"
+				spriteType = "GFX_dimension_traveler_skill_scientist_5_5"
+				position = { x = @dimension_traveler_skill_x_5 y = @dimension_traveler_skill_y_5 }
+				format = center
+				clicksound = "dimension_traveler_response"
+				effect = dimension_traveler_skill_scientist_5_5
+			}
+			effectButtonType = {
+				name = "actived_dimension_traveler_skill_scientist_5_5"
+				spriteType = "GFX_actived_dimension_traveler_skill_scientist_5_5"
+				position = { x = @dimension_traveler_skill_x_5 y = @dimension_traveler_skill_y_5 }
+				format = center
+				effect = actived_dimension_traveler_skill_scientist_5_5
+			}
+			
+			effectButtonType = {
+				name = "dimension_traveler_skill_scientist_5_7"
+				spriteType = "GFX_dimension_traveler_skill_scientist_5_7"
+				position = { x = @dimension_traveler_skill_x_7 y = @dimension_traveler_skill_y_5 }
+				format = center
+				clicksound = "dimension_traveler_response"
+				effect = dimension_traveler_skill_scientist_5_7
+			}
+			effectButtonType = {
+				name = "actived_dimension_traveler_skill_scientist_5_7"
+				spriteType = "GFX_actived_dimension_traveler_skill_scientist_5_7"
+				position = { x = @dimension_traveler_skill_x_7 y = @dimension_traveler_skill_y_5 }
+				format = center
+				effect = actived_dimension_traveler_skill_scientist_5_7
+			}
+			
+			effectButtonType = {
+				name = "dimension_traveler_skill_scientist_5_9"
+				spriteType = "GFX_dimension_traveler_skill_scientist_5_9"
+				position = { x = @dimension_traveler_skill_x_9 y = @dimension_traveler_skill_y_5 }
+				format = center
+				clicksound = "dimension_traveler_response"
+				effect = dimension_traveler_skill_scientist_5_9
+			}
+			effectButtonType = {
+				name = "actived_dimension_traveler_skill_scientist_5_9"
+				spriteType = "GFX_actived_dimension_traveler_skill_scientist_5_9"
+				position = { x = @dimension_traveler_skill_x_9 y = @dimension_traveler_skill_y_5 }
+				format = center
+				effect = actived_dimension_traveler_skill_scientist_5_9
+			}
+			################################################################
+			# 6层（技能）
+			################################################################
+			effectButtonType = {
+				name = "dimension_traveler_skill_scientist_6_2"
+				spriteType = "GFX_dimension_traveler_skill_scientist_6_2"
+				position = { x = @dimension_traveler_skill_x_2 y = @dimension_traveler_skill_y_6 }
+				format = center
+				clicksound = "dimension_traveler_response"
+				effect = dimension_traveler_skill_scientist_6_2
+			}
+			effectButtonType = {
+				name = "actived_dimension_traveler_skill_scientist_6_2"
+				spriteType = "GFX_actived_dimension_traveler_skill_scientist_6_2"
+				position = { x = @dimension_traveler_skill_x_2 y = @dimension_traveler_skill_y_6 }
+				format = center
+				effect = actived_dimension_traveler_skill_scientist_6_2
+			}
+			
+			effectButtonType = {
+				name = "dimension_traveler_skill_scientist_6_4"
+				spriteType = "GFX_dimension_traveler_skill_scientist_6_4"
+				position = { x = @dimension_traveler_skill_x_4 y = @dimension_traveler_skill_y_6 }
+				format = center
+				clicksound = "dimension_traveler_response"
+				effect = dimension_traveler_skill_scientist_6_4
+			}
+			effectButtonType = {
+				name = "actived_dimension_traveler_skill_scientist_6_4"
+				spriteType = "GFX_actived_dimension_traveler_skill_scientist_6_4"
+				position = { x = @dimension_traveler_skill_x_4 y = @dimension_traveler_skill_y_6 }
+				format = center
+				effect = actived_dimension_traveler_skill_scientist_6_4
+			}
+			
+			effectButtonType = {
+				name = "dimension_traveler_skill_scientist_6_6"
+				spriteType = "GFX_dimension_traveler_skill_scientist_6_6"
+				position = { x = @dimension_traveler_skill_x_6 y = @dimension_traveler_skill_y_6 }
+				format = center
+				clicksound = "dimension_traveler_response"
+				effect = dimension_traveler_skill_scientist_6_6
+			}
+			effectButtonType = {
+				name = "actived_dimension_traveler_skill_scientist_6_6"
+				spriteType = "GFX_actived_dimension_traveler_skill_scientist_6_6"
+				position = { x = @dimension_traveler_skill_x_6 y = @dimension_traveler_skill_y_6 }
+				format = center
+				effect = actived_dimension_traveler_skill_scientist_6_6
+			}
+			
+			effectButtonType = {
+				name = "dimension_traveler_skill_scientist_6_8"
+				spriteType = "GFX_dimension_traveler_skill_scientist_6_8"
+				position = { x = @dimension_traveler_skill_x_8 y = @dimension_traveler_skill_y_6 }
+				format = center
+				clicksound = "dimension_traveler_response"
+				effect = dimension_traveler_skill_scientist_6_8
+			}
+			effectButtonType = {
+				name = "actived_dimension_traveler_skill_scientist_6_8"
+				spriteType = "GFX_actived_dimension_traveler_skill_scientist_6_8"
+				position = { x = @dimension_traveler_skill_x_8 y = @dimension_traveler_skill_y_6 }
+				format = center
+				effect = actived_dimension_traveler_skill_scientist_6_8
+			}
+			################################################################
+			# 7层（技能）
+			################################################################
+			effectButtonType = {
+				name = "dimension_traveler_skill_scientist_7_3"
+				spriteType = "GFX_dimension_traveler_skill_scientist_7_3"
+				position = { x = @dimension_traveler_skill_x_3 y = @dimension_traveler_skill_y_7 }
+				format = center
+				clicksound = "dimension_traveler_response"
+				effect = dimension_traveler_skill_scientist_7_3
+			}
+			effectButtonType = {
+				name = "actived_dimension_traveler_skill_scientist_7_3"
+				spriteType = "GFX_actived_dimension_traveler_skill_scientist_7_3"
+				position = { x = @dimension_traveler_skill_x_3 y = @dimension_traveler_skill_y_7 }
+				format = center
+				effect = actived_dimension_traveler_skill_scientist_7_3
+			}
+			
+			effectButtonType = {
+				name = "dimension_traveler_skill_scientist_7_5"
+				spriteType = "GFX_dimension_traveler_skill_scientist_7_5"
+				position = { x = @dimension_traveler_skill_x_5 y = @dimension_traveler_skill_y_7 }
+				format = center
+				clicksound = "dimension_traveler_response"
+				effect = dimension_traveler_skill_scientist_7_5
+			}
+			effectButtonType = {
+				name = "actived_dimension_traveler_skill_scientist_7_5"
+				spriteType = "GFX_actived_dimension_traveler_skill_scientist_7_5"
+				position = { x = @dimension_traveler_skill_x_5 y = @dimension_traveler_skill_y_7 }
+				format = center
+				effect = actived_dimension_traveler_skill_scientist_7_5
+			}
+			
+			effectButtonType = {
+				name = "dimension_traveler_skill_scientist_7_7"
+				spriteType = "GFX_dimension_traveler_skill_scientist_7_7"
+				position = { x = @dimension_traveler_skill_x_7 y = @dimension_traveler_skill_y_7 }
+				format = center
+				clicksound = "dimension_traveler_response"
+				effect = dimension_traveler_skill_scientist_7_7
+			}
+			effectButtonType = {
+				name = "actived_dimension_traveler_skill_scientist_7_7"
+				spriteType = "GFX_actived_dimension_traveler_skill_scientist_7_7"
+				position = { x = @dimension_traveler_skill_x_7 y = @dimension_traveler_skill_y_7 }
+				format = center
+				effect = actived_dimension_traveler_skill_scientist_7_7
+			}
+			################################################################
+			# 8层（技能）
+			################################################################
+			effectButtonType = {
+				name = "dimension_traveler_skill_scientist_8_4"
+				spriteType = "GFX_dimension_traveler_skill_scientist_8_4"
+				position = { x = @dimension_traveler_skill_x_4 y = @dimension_traveler_skill_y_8 }
+				format = center
+				clicksound = "dimension_traveler_response"
+				effect = dimension_traveler_skill_scientist_8_4
+			}
+			effectButtonType = {
+				name = "actived_dimension_traveler_skill_scientist_8_4"
+				spriteType = "GFX_actived_dimension_traveler_skill_scientist_8_4"
+				position = { x = @dimension_traveler_skill_x_4 y = @dimension_traveler_skill_y_8 }
+				format = center
+				effect = actived_dimension_traveler_skill_scientist_8_4
+			}
+			
+			effectButtonType = {
+				name = "dimension_traveler_skill_scientist_8_6"
+				spriteType = "GFX_dimension_traveler_skill_scientist_8_6"
+				position = { x = @dimension_traveler_skill_x_6 y = @dimension_traveler_skill_y_8 }
+				format = center
+				clicksound = "dimension_traveler_response"
+				effect = dimension_traveler_skill_scientist_8_6
+			}
+			effectButtonType = {
+				name = "actived_dimension_traveler_skill_scientist_8_6"
+				spriteType = "GFX_actived_dimension_traveler_skill_scientist_8_6"
+				position = { x = @dimension_traveler_skill_x_6 y = @dimension_traveler_skill_y_8 }
+				format = center
+				effect = actived_dimension_traveler_skill_scientist_8_6
+			}
+			################################################################
+			# 9层（技能）
+			################################################################
+			effectButtonType = {
+				name = "dimension_traveler_skill_scientist_9_5"
+				spriteType = "GFX_dimension_traveler_skill_scientist_9_5"
+				position = { x = @dimension_traveler_skill_x_5 y = @dimension_traveler_skill_y_9 }
+				format = center
+				clicksound = "dimension_traveler_response"
+				effect = dimension_traveler_skill_scientist_9_5
+			}
+			effectButtonType = {
+				name = "actived_dimension_traveler_skill_scientist_9_5"
+				spriteType = "GFX_actived_dimension_traveler_skill_scientist_9_5"
+				position = { x = @dimension_traveler_skill_x_5 y = @dimension_traveler_skill_y_9 }
+				format = center
+				effect = actived_dimension_traveler_skill_scientist_9_5
+			}
+			
+			################################################################################################################################
+			#															指挥官															   #
+			################################################################################################################################
+			
+			################################################################
+			# 1层（技能）
+			################################################################
+			effectButtonType = {
+				name = "dimension_traveler_skill_commander_1_5"
+				spriteType = "GFX_dimension_traveler_skill_commander_1_5"
+				position = { x = @dimension_traveler_skill_x_5 y = @dimension_traveler_skill_y_1 }
+				format = center
+				clicksound = "dimension_traveler_response"
+				effect = dimension_traveler_skill_commander_1_5
+			}
+			effectButtonType = {
+				name = "actived_dimension_traveler_skill_commander_1_5"
+				spriteType = "GFX_actived_dimension_traveler_skill_commander_1_5"
+				position = { x = @dimension_traveler_skill_x_5 y = @dimension_traveler_skill_y_1 }
+				format = center
+				effect = actived_dimension_traveler_skill_commander_1_5
+			}
+			################################################################
+			# 2层（技能）
+			################################################################
+			effectButtonType = {
+				name = "dimension_traveler_skill_commander_2_4"
+				spriteType = "GFX_dimension_traveler_skill_commander_2_4"
+				position = { x = @dimension_traveler_skill_x_4 y = @dimension_traveler_skill_y_2 }
+				format = center
+				clicksound = "dimension_traveler_response"
+				effect = dimension_traveler_skill_commander_2_4
+			}
+			effectButtonType = {
+				name = "actived_dimension_traveler_skill_commander_2_4"
+				spriteType = "GFX_actived_dimension_traveler_skill_commander_2_4"
+				position = { x = @dimension_traveler_skill_x_4 y = @dimension_traveler_skill_y_2 }
+				format = center
+				effect = actived_dimension_traveler_skill_commander_2_4
+			}
+			
+			effectButtonType = {
+				name = "dimension_traveler_skill_commander_2_6"
+				spriteType = "GFX_dimension_traveler_skill_commander_2_6"
+				position = { x = @dimension_traveler_skill_x_6 y = @dimension_traveler_skill_y_2 }
+				format = center
+				clicksound = "dimension_traveler_response"
+				effect = dimension_traveler_skill_commander_2_6
+			}
+			effectButtonType = {
+				name = "actived_dimension_traveler_skill_commander_2_6"
+				spriteType = "GFX_actived_dimension_traveler_skill_commander_2_6"
+				position = { x = @dimension_traveler_skill_x_6 y = @dimension_traveler_skill_y_2 }
+				format = center
+				effect = actived_dimension_traveler_skill_commander_2_6
+			}
+			################################################################
+			# 3层（技能）
+			################################################################
+			effectButtonType = {
+				name = "dimension_traveler_skill_commander_3_3"
+				spriteType = "GFX_dimension_traveler_skill_commander_3_3"
+				position = { x = @dimension_traveler_skill_x_3 y = @dimension_traveler_skill_y_3 }
+				format = center
+				clicksound = "dimension_traveler_response"
+				effect = dimension_traveler_skill_commander_3_3
+			}
+			effectButtonType = {
+				name = "actived_dimension_traveler_skill_commander_3_3"
+				spriteType = "GFX_actived_dimension_traveler_skill_commander_3_3"
+				position = { x = @dimension_traveler_skill_x_3 y = @dimension_traveler_skill_y_3 }
+				format = center
+				effect = actived_dimension_traveler_skill_commander_3_3
+			}
+			
+			effectButtonType = {
+				name = "dimension_traveler_skill_commander_3_5"
+				spriteType = "GFX_dimension_traveler_skill_commander_3_5"
+				position = { x = @dimension_traveler_skill_x_5 y = @dimension_traveler_skill_y_3 }
+				format = center
+				clicksound = "dimension_traveler_response"
+				effect = dimension_traveler_skill_commander_3_5
+			}
+			effectButtonType = {
+				name = "actived_dimension_traveler_skill_commander_3_5"
+				spriteType = "GFX_actived_dimension_traveler_skill_commander_3_5"
+				position = { x = @dimension_traveler_skill_x_5 y = @dimension_traveler_skill_y_3 }
+				format = center
+				effect = actived_dimension_traveler_skill_commander_3_5
+			}
+			
+			effectButtonType = {
+				name = "dimension_traveler_skill_commander_3_7"
+				spriteType = "GFX_dimension_traveler_skill_commander_3_7"
+				position = { x = @dimension_traveler_skill_x_7 y = @dimension_traveler_skill_y_3 }
+				format = center
+				clicksound = "dimension_traveler_response"
+				effect = dimension_traveler_skill_commander_3_7
+			}
+			effectButtonType = {
+				name = "actived_dimension_traveler_skill_commander_3_7"
+				spriteType = "GFX_actived_dimension_traveler_skill_commander_3_7"
+				position = { x = @dimension_traveler_skill_x_7 y = @dimension_traveler_skill_y_3 }
+				format = center
+				effect = actived_dimension_traveler_skill_commander_3_7
+			}
+			################################################################
+			# 4层（技能）
+			################################################################
+			effectButtonType = {
+				name = "dimension_traveler_skill_commander_4_2"
+				spriteType = "GFX_dimension_traveler_skill_commander_4_2"
+				position = { x = @dimension_traveler_skill_x_2 y = @dimension_traveler_skill_y_4 }
+				format = center
+				clicksound = "dimension_traveler_response"
+				effect = dimension_traveler_skill_commander_4_2
+			}
+			effectButtonType = {
+				name = "actived_dimension_traveler_skill_commander_4_2"
+				spriteType = "GFX_actived_dimension_traveler_skill_commander_4_2"
+				position = { x = @dimension_traveler_skill_x_2 y = @dimension_traveler_skill_y_4 }
+				format = center
+				effect = actived_dimension_traveler_skill_commander_4_2
+			}
+			
+			effectButtonType = {
+				name = "dimension_traveler_skill_commander_4_4"
+				spriteType = "GFX_dimension_traveler_skill_commander_4_4"
+				position = { x = @dimension_traveler_skill_x_4 y = @dimension_traveler_skill_y_4 }
+				format = center
+				clicksound = "dimension_traveler_response"
+				effect = dimension_traveler_skill_commander_4_4
+			}
+			effectButtonType = {
+				name = "actived_dimension_traveler_skill_commander_4_4"
+				spriteType = "GFX_actived_dimension_traveler_skill_commander_4_4"
+				position = { x = @dimension_traveler_skill_x_4 y = @dimension_traveler_skill_y_4 }
+				format = center
+				effect = actived_dimension_traveler_skill_commander_4_4
+			}
+			
+			effectButtonType = {
+				name = "dimension_traveler_skill_commander_4_6"
+				spriteType = "GFX_dimension_traveler_skill_commander_4_6"
+				position = { x = @dimension_traveler_skill_x_6 y = @dimension_traveler_skill_y_4 }
+				format = center
+				clicksound = "dimension_traveler_response"
+				effect = dimension_traveler_skill_commander_4_6
+			}
+			effectButtonType = {
+				name = "actived_dimension_traveler_skill_commander_4_6"
+				spriteType = "GFX_actived_dimension_traveler_skill_commander_4_6"
+				position = { x = @dimension_traveler_skill_x_6 y = @dimension_traveler_skill_y_4 }
+				format = center
+				effect = actived_dimension_traveler_skill_commander_4_6
+			}
+			
+			effectButtonType = {
+				name = "dimension_traveler_skill_commander_4_8"
+				spriteType = "GFX_dimension_traveler_skill_commander_4_8"
+				position = { x = @dimension_traveler_skill_x_8 y = @dimension_traveler_skill_y_4 }
+				format = center
+				clicksound = "dimension_traveler_response"
+				effect = dimension_traveler_skill_commander_4_8
+			}
+			effectButtonType = {
+				name = "actived_dimension_traveler_skill_commander_4_8"
+				spriteType = "GFX_actived_dimension_traveler_skill_commander_4_8"
+				position = { x = @dimension_traveler_skill_x_8 y = @dimension_traveler_skill_y_4 }
+				format = center
+				effect = actived_dimension_traveler_skill_commander_4_8
+			}
+			################################################################
+			# 5层（内阁）
+			################################################################
+			effectButtonType = {
+				name = "dimension_traveler_skill_commander_5_1"
+				spriteType = "GFX_dimension_traveler_skill_commander_5_1"
+				position = { x = @dimension_traveler_skill_x_1 y = @dimension_traveler_skill_y_5 }
+				format = center
+				clicksound = "dimension_traveler_response"
+				effect = dimension_traveler_skill_commander_5_1
+			}
+			effectButtonType = {
+				name = "actived_dimension_traveler_skill_commander_5_1"
+				spriteType = "GFX_actived_dimension_traveler_skill_commander_5_1"
+				position = { x = @dimension_traveler_skill_x_1 y = @dimension_traveler_skill_y_5 }
+				format = center
+				effect = actived_dimension_traveler_skill_commander_5_1
+			}
+			
+			effectButtonType = {
+				name = "dimension_traveler_skill_commander_5_3"
+				spriteType = "GFX_dimension_traveler_skill_commander_5_3"
+				position = { x = @dimension_traveler_skill_x_3 y = @dimension_traveler_skill_y_5 }
+				format = center
+				clicksound = "dimension_traveler_response"
+				effect = dimension_traveler_skill_commander_5_3
+			}
+			effectButtonType = {
+				name = "actived_dimension_traveler_skill_commander_5_3"
+				spriteType = "GFX_actived_dimension_traveler_skill_commander_5_3"
+				position = { x = @dimension_traveler_skill_x_3 y = @dimension_traveler_skill_y_5 }
+				format = center
+				effect = actived_dimension_traveler_skill_commander_5_3
+			}
+			
+			effectButtonType = {
+				name = "dimension_traveler_skill_commander_5_5"
+				spriteType = "GFX_dimension_traveler_skill_commander_5_5"
+				position = { x = @dimension_traveler_skill_x_5 y = @dimension_traveler_skill_y_5 }
+				format = center
+				clicksound = "dimension_traveler_response"
+				effect = dimension_traveler_skill_commander_5_5
+			}
+			effectButtonType = {
+				name = "actived_dimension_traveler_skill_commander_5_5"
+				spriteType = "GFX_actived_dimension_traveler_skill_commander_5_5"
+				position = { x = @dimension_traveler_skill_x_5 y = @dimension_traveler_skill_y_5 }
+				format = center
+				effect = actived_dimension_traveler_skill_commander_5_5
+			}
+			
+			effectButtonType = {
+				name = "dimension_traveler_skill_commander_5_7"
+				spriteType = "GFX_dimension_traveler_skill_commander_5_7"
+				position = { x = @dimension_traveler_skill_x_7 y = @dimension_traveler_skill_y_5 }
+				format = center
+				clicksound = "dimension_traveler_response"
+				effect = dimension_traveler_skill_commander_5_7
+			}
+			effectButtonType = {
+				name = "actived_dimension_traveler_skill_commander_5_7"
+				spriteType = "GFX_actived_dimension_traveler_skill_commander_5_7"
+				position = { x = @dimension_traveler_skill_x_7 y = @dimension_traveler_skill_y_5 }
+				format = center
+				effect = actived_dimension_traveler_skill_commander_5_7
+			}
+			
+			effectButtonType = {
+				name = "dimension_traveler_skill_commander_5_9"
+				spriteType = "GFX_dimension_traveler_skill_commander_5_9"
+				position = { x = @dimension_traveler_skill_x_9 y = @dimension_traveler_skill_y_5 }
+				format = center
+				clicksound = "dimension_traveler_response"
+				effect = dimension_traveler_skill_commander_5_9
+			}
+			effectButtonType = {
+				name = "actived_dimension_traveler_skill_commander_5_9"
+				spriteType = "GFX_actived_dimension_traveler_skill_commander_5_9"
+				position = { x = @dimension_traveler_skill_x_9 y = @dimension_traveler_skill_y_5 }
+				format = center
+				effect = actived_dimension_traveler_skill_commander_5_9
+			}
+			################################################################
+			# 6层（技能）
+			################################################################
+			effectButtonType = {
+				name = "dimension_traveler_skill_commander_6_2"
+				spriteType = "GFX_dimension_traveler_skill_commander_6_2"
+				position = { x = @dimension_traveler_skill_x_2 y = @dimension_traveler_skill_y_6 }
+				format = center
+				clicksound = "dimension_traveler_response"
+				effect = dimension_traveler_skill_commander_6_2
+			}
+			effectButtonType = {
+				name = "actived_dimension_traveler_skill_commander_6_2"
+				spriteType = "GFX_actived_dimension_traveler_skill_commander_6_2"
+				position = { x = @dimension_traveler_skill_x_2 y = @dimension_traveler_skill_y_6 }
+				format = center
+				effect = actived_dimension_traveler_skill_commander_6_2
+			}
+			
+			effectButtonType = {
+				name = "dimension_traveler_skill_commander_6_4"
+				spriteType = "GFX_dimension_traveler_skill_commander_6_4"
+				position = { x = @dimension_traveler_skill_x_4 y = @dimension_traveler_skill_y_6 }
+				format = center
+				clicksound = "dimension_traveler_response"
+				effect = dimension_traveler_skill_commander_6_4
+			}
+			effectButtonType = {
+				name = "actived_dimension_traveler_skill_commander_6_4"
+				spriteType = "GFX_actived_dimension_traveler_skill_commander_6_4"
+				position = { x = @dimension_traveler_skill_x_4 y = @dimension_traveler_skill_y_6 }
+				format = center
+				effect = actived_dimension_traveler_skill_commander_6_4
+			}
+			
+			effectButtonType = {
+				name = "dimension_traveler_skill_commander_6_6"
+				spriteType = "GFX_dimension_traveler_skill_commander_6_6"
+				position = { x = @dimension_traveler_skill_x_6 y = @dimension_traveler_skill_y_6 }
+				format = center
+				clicksound = "dimension_traveler_response"
+				effect = dimension_traveler_skill_commander_6_6
+			}
+			effectButtonType = {
+				name = "actived_dimension_traveler_skill_commander_6_6"
+				spriteType = "GFX_actived_dimension_traveler_skill_commander_6_6"
+				position = { x = @dimension_traveler_skill_x_6 y = @dimension_traveler_skill_y_6 }
+				format = center
+				effect = actived_dimension_traveler_skill_commander_6_6
+			}
+			
+			effectButtonType = {
+				name = "dimension_traveler_skill_commander_6_8"
+				spriteType = "GFX_dimension_traveler_skill_commander_6_8"
+				position = { x = @dimension_traveler_skill_x_8 y = @dimension_traveler_skill_y_6 }
+				format = center
+				clicksound = "dimension_traveler_response"
+				effect = dimension_traveler_skill_commander_6_8
+			}
+			effectButtonType = {
+				name = "actived_dimension_traveler_skill_commander_6_8"
+				spriteType = "GFX_actived_dimension_traveler_skill_commander_6_8"
+				position = { x = @dimension_traveler_skill_x_8 y = @dimension_traveler_skill_y_6 }
+				format = center
+				effect = actived_dimension_traveler_skill_commander_6_8
+			}
+			################################################################
+			# 7层（技能）
+			################################################################
+			effectButtonType = {
+				name = "dimension_traveler_skill_commander_7_3"
+				spriteType = "GFX_dimension_traveler_skill_commander_7_3"
+				position = { x = @dimension_traveler_skill_x_3 y = @dimension_traveler_skill_y_7 }
+				format = center
+				clicksound = "dimension_traveler_response"
+				effect = dimension_traveler_skill_commander_7_3
+			}
+			effectButtonType = {
+				name = "actived_dimension_traveler_skill_commander_7_3"
+				spriteType = "GFX_actived_dimension_traveler_skill_commander_7_3"
+				position = { x = @dimension_traveler_skill_x_3 y = @dimension_traveler_skill_y_7 }
+				format = center
+				effect = actived_dimension_traveler_skill_commander_7_3
+			}
+			
+			effectButtonType = {
+				name = "dimension_traveler_skill_commander_7_5"
+				spriteType = "GFX_dimension_traveler_skill_commander_7_5"
+				position = { x = @dimension_traveler_skill_x_5 y = @dimension_traveler_skill_y_7 }
+				format = center
+				clicksound = "dimension_traveler_response"
+				effect = dimension_traveler_skill_commander_7_5
+			}
+			effectButtonType = {
+				name = "actived_dimension_traveler_skill_commander_7_5"
+				spriteType = "GFX_actived_dimension_traveler_skill_commander_7_5"
+				position = { x = @dimension_traveler_skill_x_5 y = @dimension_traveler_skill_y_7 }
+				format = center
+				effect = actived_dimension_traveler_skill_commander_7_5
+			}
+			
+			effectButtonType = {
+				name = "dimension_traveler_skill_commander_7_7"
+				spriteType = "GFX_dimension_traveler_skill_commander_7_7"
+				position = { x = @dimension_traveler_skill_x_7 y = @dimension_traveler_skill_y_7 }
+				format = center
+				clicksound = "dimension_traveler_response"
+				effect = dimension_traveler_skill_commander_7_7
+			}
+			effectButtonType = {
+				name = "actived_dimension_traveler_skill_commander_7_7"
+				spriteType = "GFX_actived_dimension_traveler_skill_commander_7_7"
+				position = { x = @dimension_traveler_skill_x_7 y = @dimension_traveler_skill_y_7 }
+				format = center
+				effect = actived_dimension_traveler_skill_commander_7_7
+			}
+			################################################################
+			# 8层（技能）
+			################################################################
+			effectButtonType = {
+				name = "dimension_traveler_skill_commander_8_4"
+				spriteType = "GFX_dimension_traveler_skill_commander_8_4"
+				position = { x = @dimension_traveler_skill_x_4 y = @dimension_traveler_skill_y_8 }
+				format = center
+				clicksound = "dimension_traveler_response"
+				effect = dimension_traveler_skill_commander_8_4
+			}
+			effectButtonType = {
+				name = "actived_dimension_traveler_skill_commander_8_4"
+				spriteType = "GFX_actived_dimension_traveler_skill_commander_8_4"
+				position = { x = @dimension_traveler_skill_x_4 y = @dimension_traveler_skill_y_8 }
+				format = center
+				effect = actived_dimension_traveler_skill_commander_8_4
+			}
+			
+			effectButtonType = {
+				name = "dimension_traveler_skill_commander_8_6"
+				spriteType = "GFX_dimension_traveler_skill_commander_8_6"
+				position = { x = @dimension_traveler_skill_x_6 y = @dimension_traveler_skill_y_8 }
+				format = center
+				clicksound = "dimension_traveler_response"
+				effect = dimension_traveler_skill_commander_8_6
+			}
+			effectButtonType = {
+				name = "actived_dimension_traveler_skill_commander_8_6"
+				spriteType = "GFX_actived_dimension_traveler_skill_commander_8_6"
+				position = { x = @dimension_traveler_skill_x_6 y = @dimension_traveler_skill_y_8 }
+				format = center
+				effect = actived_dimension_traveler_skill_commander_8_6
+			}
+			################################################################
+			# 9层（技能）
+			################################################################
+			effectButtonType = {
+				name = "dimension_traveler_skill_commander_9_5"
+				spriteType = "GFX_dimension_traveler_skill_commander_9_5"
+				position = { x = @dimension_traveler_skill_x_5 y = @dimension_traveler_skill_y_9 }
+				format = center
+				clicksound = "dimension_traveler_response"
+				effect = dimension_traveler_skill_commander_9_5
+			}
+			effectButtonType = {
+				name = "actived_dimension_traveler_skill_commander_9_5"
+				spriteType = "GFX_actived_dimension_traveler_skill_commander_9_5"
+				position = { x = @dimension_traveler_skill_x_5 y = @dimension_traveler_skill_y_9 }
+				format = center
+				effect = actived_dimension_traveler_skill_commander_9_5
+			}
+		}
+	}
+}

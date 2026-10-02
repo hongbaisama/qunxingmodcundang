@@ -1,0 +1,8253 @@
+namespace = time_lifeline
+
+################################################################
+# 阶段1
+################################################################
+
+ship_event = {
+	id = time_lifeline.1
+	title = time_lifeline.name
+	desc = time_lifeline.1.desc
+	picture = GFX_evt_worrying_signal
+	show_sound = event_alien_signal
+	location = FROMFROMFROM
+	
+	is_triggered_only = yes
+
+	immediate = {
+	}
+
+	option = {
+		name = time_lifeline.1.a
+		hidden_effect = {
+			owner = {
+				country_event = { id = time_lifeline.2 }
+			}
+		}
+	}
+	
+	option = {
+		name = time_lifeline.1.b
+		owner = {
+			add_monthly_resource_mult = {
+				resource = influence
+				value = @tier2influencereward
+				min = @tier2influencemin
+				max = @tier2influencemax
+			}
+		}
+	}
+}
+
+country_event = {
+	id = time_lifeline.2
+	title = time_lifeline.name
+	desc = time_lifeline.2.desc
+	show_sound = event_radio_chatter
+
+	diplomatic = yes
+	force_open = yes
+
+	picture_event_data = {
+		room = no_video_feed_room
+	}
+
+	is_triggered_only = yes
+
+	option = {
+		name = time_lifeline.2.a
+		hidden_effect = {
+			country_event = { id = time_lifeline.3 }
+		}
+	}
+}
+
+country_event = {
+	id = time_lifeline.3
+	title = time_lifeline.name
+	desc = time_lifeline.3.desc
+
+	diplomatic = yes
+	force_open = yes
+
+	picture_event_data = {
+		room = no_video_feed_room
+	}
+
+	is_triggered_only = yes
+
+	option = {
+		name = time_lifeline.3.a
+		custom_gui = "enclave_caravaneer_option"
+		trigger = {
+			is_homicidal = no
+		}
+		hidden_effect = {
+			country_event = { id = time_lifeline.4 }
+		}
+	}
+	
+	option = {
+		name = time_lifeline.3.b
+		response_text = time_lifeline.3.b.response
+		custom_gui = "enclave_caravaneer_option"
+		trigger = {
+			is_homicidal = yes
+		}
+		add_monthly_resource_mult = {
+			resource = influence
+			value = @tier3influencereward
+			min = @tier3influencemin
+			max = @tier3influencemax
+		}
+	}
+}
+
+country_event = {
+	id = time_lifeline.4
+	title = time_lifeline.name
+	desc = time_lifeline.4.desc
+
+	diplomatic = yes
+	force_open = yes
+
+	picture_event_data = {
+		room = no_video_feed_room
+	}
+
+	is_triggered_only = yes
+
+	option = {
+		name = time_lifeline.4.a
+		hidden_effect = {
+			country_event = { id = time_lifeline.5 }
+		}
+	}
+}
+
+country_event = {
+	id = time_lifeline.5
+	title = time_lifeline.name
+	desc = time_lifeline.5.desc
+
+	diplomatic = yes
+	force_open = yes
+
+	picture_event_data = {
+		room = no_video_feed_room
+	}
+
+	is_triggered_only = yes
+
+	option = {
+		name = time_lifeline.5.a
+		hidden_effect = {
+			country_event = { id = time_lifeline.6 }
+		}
+	}
+}
+
+country_event = {
+	id = time_lifeline.6
+	title = time_lifeline.name
+	desc = time_lifeline.6.desc
+
+	diplomatic = yes
+	force_open = yes
+
+	picture_event_data = {
+		room = no_video_feed_room
+	}
+
+	is_triggered_only = yes
+
+	option = {
+		name = time_lifeline.6.a
+		custom_gui = "enclave_caravaneer_option"
+		hidden_effect = {
+			country_event = { id = time_lifeline.7 }
+		}
+	}
+	
+	option = {
+		name = time_lifeline.6.b
+		custom_gui = "enclave_caravaneer_option"
+		hidden_effect = {
+			country_event = { id = time_lifeline.7 }
+		}
+	}
+	
+	option = {
+		name = time_lifeline.6.c
+		custom_gui = "enclave_caravaneer_option"
+		response_text = time_lifeline.6.c.response
+	}
+}
+
+country_event = {
+	id = time_lifeline.7
+	title = time_lifeline.name
+	desc = time_lifeline.7.desc
+	show_sound = ap_rift_event_3_dimensional_bending
+
+	diplomatic = yes
+	force_open = yes
+
+	picture_event_data = {
+		room = no_video_feed_room
+	}
+
+	is_triggered_only = yes
+
+	option = {
+		name = time_lifeline.7.a
+		hidden_effect = {
+			country_event = { id = time_lifeline.8 }
+		}
+	}
+}
+
+country_event = {
+	id = time_lifeline.8
+	title = time_lifeline.name
+	desc = time_lifeline.8.desc
+
+	diplomatic = yes
+	force_open = yes
+
+	picture_event_data = {
+		room = no_video_feed_room
+	}
+
+	is_triggered_only = yes
+	
+	after = {
+		begin_event_chain = {
+			event_chain = TIME_LIFELINE_CHAIN
+			target = root
+		}
+		add_monthly_resource_mult = {
+			resource = society_research
+			value = @tier3researchreward
+			min = @tier3researchmin
+			max = @tier3researchmax
+		}
+		hidden_effect = {
+			set_country_flag = time_lifeline_begin
+			country_event = { id = time_lifeline.10 days = 30 random = 30 }
+		}
+	}
+
+	option = {
+		name = time_lifeline.8.a
+		custom_gui = "enclave_caravaneer_option"
+	}
+	
+	option = {
+		name = time_lifeline.8.b
+		custom_gui = "enclave_caravaneer_option"
+	}
+}
+
+################################################################
+# 阶段2
+################################################################
+
+country_event = {
+	id = time_lifeline.10
+	title = time_lifeline.name
+	desc = time_lifeline.10.desc
+	show_sound = event_radio_chatter
+
+	diplomatic = yes
+	force_open = yes
+
+	picture_event_data = {
+		room = no_video_feed_room
+	}
+
+	is_triggered_only = yes
+
+	option = {
+		name = time_lifeline.10.a
+		hidden_effect = {
+			country_event = { id = time_lifeline.11 }
+		}
+	}
+}
+
+country_event = {
+	id = time_lifeline.11
+	title = time_lifeline.name
+	desc = time_lifeline.11.desc
+
+	diplomatic = yes
+	force_open = yes
+
+	picture_event_data = {
+		room = no_video_feed_room
+	}
+
+	is_triggered_only = yes
+
+	option = {
+		name = time_lifeline.11.a
+		hidden_effect = {
+			country_event = { id = time_lifeline.12 }
+		}
+	}
+}
+
+country_event = {
+	id = time_lifeline.12
+	title = time_lifeline.name
+	desc = time_lifeline.12.desc
+
+	diplomatic = yes
+	force_open = yes
+
+	picture_event_data = {
+		room = no_video_feed_room
+	}
+
+	is_triggered_only = yes
+
+	option = {
+		name = time_lifeline.12.a
+		response_text = time_lifeline.12.a.response
+		custom_gui = "enclave_caravaneer_option"
+		time_lifeline_some_time_event = { ID = time_lifeline.100 }
+	}
+	
+	option = {
+		name = time_lifeline.12.b
+		response_text = time_lifeline.12.b.response
+		custom_gui = "enclave_caravaneer_option"
+		time_lifeline_some_time_event = { ID = time_lifeline.200 }
+	}
+	
+	option = {
+		name = time_lifeline.12.c
+		response_text = time_lifeline.12.c.response
+		custom_gui = "enclave_caravaneer_option"
+		time_lifeline_long_time_event = { ID = time_lifeline.300 }
+	}
+}
+
+################################################################
+# 阶段2（山峰）
+################################################################
+
+country_event = {
+	id = time_lifeline.100
+	title = time_lifeline.name
+	desc = time_lifeline.100.desc
+	show_sound = event_radio_chatter
+
+	diplomatic = yes
+	force_open = yes
+
+	picture_event_data = {
+		room = no_video_feed_room
+	}
+
+	is_triggered_only = yes
+
+	option = {
+		name = time_lifeline.100.a
+		hidden_effect = {
+			country_event = { id = time_lifeline.101 }
+		}
+	}
+}
+
+country_event = {
+	id = time_lifeline.101
+	title = time_lifeline.name
+	desc = time_lifeline.101.desc
+
+	diplomatic = yes
+	force_open = yes
+
+	picture_event_data = {
+		room = no_video_feed_room
+	}
+
+	is_triggered_only = yes
+
+	option = {
+		name = time_lifeline.101.a
+		response_text = time_lifeline.101.a.response
+		custom_gui = "enclave_caravaneer_option"
+		time_lifeline_short_time_event = { ID = time_lifeline.110 }
+	}
+	
+	option = {
+		name = time_lifeline.101.b
+		response_text = time_lifeline.101.b.response
+		custom_gui = "enclave_caravaneer_option"
+		time_lifeline_short_time_event = { ID = time_lifeline.120 }
+	}
+	
+	option = {
+		name = time_lifeline.101.c
+		response_text = time_lifeline.101.c.response
+		custom_gui = "enclave_caravaneer_option"
+		time_lifeline_short_time_event = { ID = time_lifeline.130 }
+	}
+}
+
+country_event = {
+	id = time_lifeline.110
+	title = time_lifeline.name
+	desc = time_lifeline.110.desc
+	show_sound = event_radio_chatter
+
+	diplomatic = yes
+	force_open = yes
+
+	picture_event_data = {
+		room = no_video_feed_room
+	}
+
+	is_triggered_only = yes
+
+	option = {
+		name = time_lifeline.110.a
+		hidden_effect = {
+			country_event = { id = time_lifeline.111 }
+		}
+	}
+}
+
+country_event = {
+	id = time_lifeline.111
+	title = time_lifeline.name
+	desc = time_lifeline.111.desc
+	show_sound = ap_rift_event_27_cutting_winds
+
+	diplomatic = yes
+	force_open = yes
+
+	picture_event_data = {
+		room = no_video_feed_room
+	}
+
+	is_triggered_only = yes
+
+	option = {
+		name = time_lifeline.111.a
+		response_text = time_lifeline.111.a.response
+		custom_gui = "enclave_caravaneer_option"
+		time_lifeline_some_time_event = { ID = time_lifeline.140 }
+	}
+	
+	option = {
+		name = time_lifeline.111.b
+		response_text = time_lifeline.111.b.response
+		custom_gui = "enclave_caravaneer_option"
+		time_lifeline_long_time_event = { ID = time_lifeline.150 }
+	}
+}
+
+country_event = {
+	id = time_lifeline.120
+	title = time_lifeline.name
+	desc = time_lifeline.120.desc
+	show_sound = event_radio_chatter
+
+	diplomatic = yes
+	force_open = yes
+
+	picture_event_data = {
+		room = no_video_feed_room
+	}
+
+	is_triggered_only = yes
+
+	option = {
+		name = time_lifeline.120.a
+		hidden_effect = {
+			country_event = { id = time_lifeline.121 }
+		}
+	}
+}
+
+country_event = {
+	id = time_lifeline.121
+	title = time_lifeline.name
+	desc = time_lifeline.121.desc
+	show_sound = ap_rift_event_27_cutting_winds
+
+	diplomatic = yes
+	force_open = yes
+
+	picture_event_data = {
+		room = no_video_feed_room
+	}
+
+	is_triggered_only = yes
+
+	option = {
+		name = time_lifeline.121.a
+		response_text = time_lifeline.121.a.response
+		custom_gui = "enclave_caravaneer_option"
+		time_lifeline_some_time_event = { ID = time_lifeline.140 }
+		hidden_effect = {
+			change_variable = {
+				which = time_lifeline_hurt
+				value = 1
+			}
+		}
+	}
+	
+	option = {
+		name = time_lifeline.121.b
+		response_text = time_lifeline.121.b.response
+		custom_gui = "enclave_caravaneer_option"
+		time_lifeline_long_time_event = { ID = time_lifeline.150 }
+	}
+}
+
+country_event = {
+	id = time_lifeline.130
+	title = time_lifeline.name
+	desc = time_lifeline.130.desc
+	show_sound = event_radio_chatter
+
+	diplomatic = yes
+	force_open = yes
+
+	picture_event_data = {
+		room = no_video_feed_room
+	}
+
+	is_triggered_only = yes
+
+	option = {
+		name = time_lifeline.130.a
+		hidden_effect = {
+			country_event = { id = time_lifeline.131 }
+		}
+	}
+}
+
+country_event = {
+	id = time_lifeline.131
+	title = time_lifeline.name
+	desc = time_lifeline.131.desc
+	show_sound = ap_rift_event_27_cutting_winds
+
+	diplomatic = yes
+	force_open = yes
+
+	picture_event_data = {
+		room = no_video_feed_room
+	}
+
+	is_triggered_only = yes
+
+	option = {
+		name = time_lifeline.131.a
+		response_text = time_lifeline.131.a.response
+		custom_gui = "enclave_caravaneer_option"
+		time_lifeline_some_time_event = { ID = time_lifeline.140 }
+		hidden_effect = {
+			change_variable = {
+				which = time_lifeline_hurt
+				value = 2
+			}
+		}
+	}
+}
+
+country_event = {
+	id = time_lifeline.140
+	title = time_lifeline.name
+	desc = time_lifeline.140.desc
+	show_sound = event_radio_chatter
+
+	diplomatic = yes
+	force_open = yes
+
+	picture_event_data = {
+		room = no_video_feed_room
+	}
+
+	is_triggered_only = yes
+
+	option = {
+		name = time_lifeline.140.a
+		hidden_effect = {
+			country_event = { id = time_lifeline.141 }
+		}
+	}
+}
+
+country_event = {
+	id = time_lifeline.141
+	title = time_lifeline.name
+	desc = {
+		text = time_lifeline.141.desc.1
+		trigger = {
+			check_variable = {
+				which = time_lifeline_hurt
+				value = 0
+			}
+		}
+	}
+	desc = {
+		text = time_lifeline.141.desc.2
+		trigger = {
+			check_variable = {
+				which = time_lifeline_hurt
+				value = 1
+			}
+		}
+	}
+	desc = {
+		text = time_lifeline.141.desc.3
+		trigger = {
+			check_variable = {
+				which = time_lifeline_hurt
+				value >= 2
+			}
+		}
+	}
+	show_sound = ap_rift_event_0_meditating_voices
+
+	diplomatic = yes
+	force_open = yes
+
+	picture_event_data = {
+		room = no_video_feed_room
+	}
+
+	is_triggered_only = yes
+
+	option = {
+		name = time_lifeline.141.a
+		hidden_effect = {
+			country_event = { id = time_lifeline.142 }
+		}
+	}
+}
+
+country_event = {
+	id = time_lifeline.142
+	title = time_lifeline.name
+	desc = time_lifeline.142.desc
+	show_sound = ap_rift_event_21_dimensional_machine
+
+	diplomatic = yes
+	force_open = yes
+
+	picture_event_data = {
+		room = no_video_feed_room
+	}
+
+	is_triggered_only = yes
+	
+	after = {
+		hidden_effect = {
+			country_event = { id = time_lifeline.143 }
+		}
+	}
+
+	option = {
+		name = time_lifeline.142.a
+		trigger = {
+			is_materialist = yes
+		}
+		add_monthly_resource_mult = {
+			resource = engineering_research
+			value = @tier3researchreward
+			min = @tier3researchmin
+			max = @tier3researchmax
+		}
+	}
+	
+	option = {
+		name = time_lifeline.142.b
+		trigger = {
+			is_spiritualist = yes
+		}
+		add_monthly_resource_mult = {
+			resource = unity
+			value = @tier3unityreward
+			min = @tier3unitymin
+			max = @tier3unitymax
+		}
+	}
+	
+	option = {
+		name = time_lifeline.142.c
+		trigger = {
+			is_militarist = yes
+		}
+		add_monthly_resource_mult = {
+			resource = society_research
+			value = @tier3researchreward
+			min = @tier3researchmin
+			max = @tier3researchmax
+		}
+	}
+	
+	option = {
+		name = time_lifeline.142.d
+		trigger = {
+			is_machine_empire = yes
+		}
+		add_monthly_resource_mult = {
+			resource = physics_research
+			value = @tier3researchreward
+			min = @tier3researchmin
+			max = @tier3researchmax
+		}
+	}
+	
+	option = {
+		name = time_lifeline.142.e
+	}
+}
+
+country_event = {
+	id = time_lifeline.143
+	title = time_lifeline.name
+	desc = time_lifeline.143.desc
+	show_sound = ap_rift_event_27_cutting_winds
+
+	diplomatic = yes
+	force_open = yes
+
+	picture_event_data = {
+		room = no_video_feed_room
+	}
+
+	is_triggered_only = yes
+
+	option = {
+		name = time_lifeline.143.a
+		response_text = time_lifeline.143.a.response
+		custom_gui = "enclave_caravaneer_option"
+		time_lifeline_long_time_event = { ID = time_lifeline.400 }
+		hidden_effect = {
+			random_list = {
+				1 = {
+					set_country_flag = time_lifeline_pass
+				}
+				1 = {
+					set_country_flag = time_lifeline_future
+				}
+			}
+		}
+	}
+}
+
+country_event = {
+	id = time_lifeline.150
+	title = time_lifeline.name
+	desc = time_lifeline.150.desc
+	picture = GFX_evt_worrying_signal
+	event_chain = TIME_LIFELINE_CHAIN
+	
+	is_triggered_only = yes
+
+	immediate = {
+	}
+	
+	after = {
+		end_event_chain = TIME_LIFELINE_CHAIN
+		add_monthly_resource_mult = {
+			resource = society_research
+			value = @tier3researchreward
+			min = @tier3researchmin
+			max = @tier3researchmax
+		}
+	}
+
+	option = {
+		name = time_lifeline.150.a
+		trigger = {
+			is_xenophile = yes
+		}
+	}
+	
+	option = {
+		name = time_lifeline.150.b
+		trigger = {
+			is_xenophobe = yes
+		}
+	}
+	
+	option = {
+		name = time_lifeline.150.c
+		trigger = {
+			is_authoritarian = yes
+		}
+	}
+	
+	option = {
+		name = time_lifeline.150.d
+		trigger = {
+			has_valid_civic = civic_machine_servitor
+		}
+	}
+	
+	option = {
+		name = time_lifeline.150.e
+	}
+}
+
+################################################################
+# 阶段2（湖泊）
+################################################################
+
+country_event = {
+	id = time_lifeline.200
+	title = time_lifeline.name
+	desc = time_lifeline.200.desc
+	show_sound = event_radio_chatter
+
+	diplomatic = yes
+	force_open = yes
+
+	picture_event_data = {
+		room = no_video_feed_room
+	}
+
+	is_triggered_only = yes
+
+	option = {
+		name = time_lifeline.200.a
+		hidden_effect = {
+			country_event = { id = time_lifeline.201 }
+		}
+	}
+}
+
+country_event = {
+	id = time_lifeline.201
+	title = time_lifeline.name
+	desc = time_lifeline.201.desc
+
+	diplomatic = yes
+	force_open = yes
+
+	picture_event_data = {
+		room = no_video_feed_room
+	}
+
+	is_triggered_only = yes
+
+	option = {
+		name = time_lifeline.201.a
+		hidden_effect = {
+			country_event = { id = time_lifeline.202 }
+		}
+	}
+}
+
+country_event = {
+	id = time_lifeline.202
+	title = time_lifeline.name
+	desc = time_lifeline.202.desc
+
+	diplomatic = yes
+	force_open = yes
+
+	picture_event_data = {
+		room = no_video_feed_room
+	}
+
+	is_triggered_only = yes
+
+	option = {
+		name = time_lifeline.202.a
+		response_text = time_lifeline.202.a.response
+		time_lifeline_short_time_event = { ID = time_lifeline.210 }
+	}
+}
+
+country_event = {
+	id = time_lifeline.210
+	title = time_lifeline.name
+	desc = time_lifeline.210.desc
+	show_sound = event_radio_chatter
+
+	diplomatic = yes
+	force_open = yes
+
+	picture_event_data = {
+		room = no_video_feed_room
+	}
+
+	is_triggered_only = yes
+
+	option = {
+		name = time_lifeline.210.a
+		hidden_effect = {
+			country_event = { id = time_lifeline.211 }
+		}
+	}
+}
+
+country_event = {
+	id = time_lifeline.211
+	title = time_lifeline.name
+	desc = time_lifeline.211.desc
+	show_sound = ap_rift_event_5_scanning
+
+	diplomatic = yes
+	force_open = yes
+
+	picture_event_data = {
+		room = no_video_feed_room
+	}
+
+	is_triggered_only = yes
+
+	option = {
+		name = time_lifeline.211.a
+		custom_gui = "enclave_caravaneer_option"
+		hidden_effect = {
+			country_event = { id = time_lifeline.212 }
+		}
+	}
+	
+	option = {
+		name = time_lifeline.211.b
+		custom_gui = "enclave_caravaneer_option"
+		hidden_effect = {
+			country_event = { id = time_lifeline.213 }
+		}
+	}
+}
+
+country_event = {
+	id = time_lifeline.212
+	title = time_lifeline.name
+	desc = time_lifeline.212.desc
+	show_sound = ap_rift_event_7_white_noise
+
+	diplomatic = yes
+	force_open = yes
+
+	picture_event_data = {
+		room = no_video_feed_room
+	}
+
+	is_triggered_only = yes
+
+	option = {
+		name = time_lifeline.212.a
+		response_text = time_lifeline.212.a.response
+		time_lifeline_some_time_event = { ID = time_lifeline.220 }
+	}
+}
+
+country_event = {
+	id = time_lifeline.213
+	title = time_lifeline.name
+	desc = time_lifeline.213.desc
+	show_sound = ap_rift_event_7_white_noise
+
+	diplomatic = yes
+	force_open = yes
+
+	picture_event_data = {
+		room = no_video_feed_room
+	}
+
+	is_triggered_only = yes
+
+	option = {
+		name = time_lifeline.213.a
+		response_text = time_lifeline.213.a.response
+		time_lifeline_some_time_event = { ID = time_lifeline.220 }
+		hidden_effect = {
+			change_variable = {
+				which = time_lifeline_hurt
+				value = 1
+			}
+		}
+	}
+}
+
+country_event = {
+	id = time_lifeline.220
+	title = time_lifeline.name
+	desc = time_lifeline.220.desc
+	show_sound = event_radio_chatter
+
+	diplomatic = yes
+	force_open = yes
+
+	picture_event_data = {
+		room = no_video_feed_room
+	}
+
+	is_triggered_only = yes
+
+	option = {
+		name = time_lifeline.220.a
+		hidden_effect = {
+			country_event = { id = time_lifeline.221 }
+		}
+	}
+}
+
+country_event = {
+	id = time_lifeline.221
+	title = time_lifeline.name
+	desc = {
+		text = time_lifeline.221.desc.1
+		trigger = {
+			check_variable = {
+				which = time_lifeline_hurt
+				value = 0
+			}
+		}
+	}
+	desc = {
+		text = time_lifeline.221.desc.2
+		trigger = {
+			check_variable = {
+				which = time_lifeline_hurt
+				value > 0
+			}
+		}
+	}
+
+	diplomatic = yes
+	force_open = yes
+
+	picture_event_data = {
+		room = no_video_feed_room
+	}
+
+	is_triggered_only = yes
+
+	option = {
+		name = time_lifeline.221.a
+		custom_gui = "enclave_caravaneer_option"
+		hidden_effect = {
+			country_event = { id = time_lifeline.222 }
+		}
+	}
+	
+	option = {
+		name = time_lifeline.221.b
+		response_text = time_lifeline.221.b.response
+		custom_gui = "enclave_caravaneer_option"
+		trigger = {
+			check_variable = {
+				which = time_lifeline_hurt
+				value > 0
+			}
+		}
+		time_lifeline_some_time_event = { ID = time_lifeline.230 }
+	}
+}
+
+country_event = {
+	id = time_lifeline.222
+	title = time_lifeline.name
+	desc = time_lifeline.222.desc
+
+	diplomatic = yes
+	force_open = yes
+
+	picture_event_data = {
+		room = no_video_feed_room
+	}
+
+	is_triggered_only = yes
+
+	option = {
+		name = time_lifeline.222.a
+		response_text = time_lifeline.222.a.response
+		custom_gui = "enclave_caravaneer_option"
+		time_lifeline_some_time_event = { ID = time_lifeline.240 }
+	}
+	
+	option = {
+		name = time_lifeline.222.b
+		response_text = time_lifeline.222.b.response
+		custom_gui = "enclave_caravaneer_option"
+		time_lifeline_some_time_event = { ID = time_lifeline.230 }
+	}
+}
+
+country_event = {
+	id = time_lifeline.230
+	title = time_lifeline.name
+	desc = time_lifeline.230.desc
+	show_sound = ap_rift_event_7_white_noise
+
+	diplomatic = yes
+	force_open = yes
+
+	picture_event_data = {
+		room = no_video_feed_room
+	}
+
+	is_triggered_only = yes
+
+	option = {
+		name = time_lifeline.230.a
+		hidden_effect = {
+			country_event = { id = time_lifeline.231 }
+		}
+	}
+}
+
+country_event = {
+	id = time_lifeline.231
+	title = time_lifeline.name
+	desc = time_lifeline.231.desc
+	show_sound = ap_rift_event_7_white_noise
+
+	diplomatic = yes
+	force_open = yes
+
+	picture_event_data = {
+		room = no_video_feed_room
+	}
+
+	is_triggered_only = yes
+
+	option = {
+		name = time_lifeline.231.a
+		response_text = time_lifeline.231.a.response
+		time_lifeline_long_time_event = { ID = time_lifeline.232 }
+	}
+}
+
+country_event = {
+	id = time_lifeline.232
+	title = time_lifeline.name
+	desc = time_lifeline.232.desc
+	picture = GFX_evt_worrying_signal
+	
+	is_triggered_only = yes
+
+	immediate = {
+	}
+	
+	after = {
+		end_event_chain = TIME_LIFELINE_CHAIN
+		add_monthly_resource_mult = {
+			resource = society_research
+			value = @tier3researchreward
+			min = @tier3researchmin
+			max = @tier3researchmax
+		}
+	}
+
+	option = {
+		name = time_lifeline.232.a
+		trigger = {
+			is_xenophile = yes
+		}
+	}
+	
+	option = {
+		name = time_lifeline.232.b
+		trigger = {
+			is_xenophobe = yes
+		}
+	}
+	
+	option = {
+		name = time_lifeline.232.c
+		trigger = {
+			is_materialist = yes
+		}
+	}
+	
+	option = {
+		name = time_lifeline.232.d
+		trigger = {
+			has_valid_civic = civic_machine_servitor
+		}
+	}
+	
+	option = {
+		name = time_lifeline.232.e
+	}
+}
+
+country_event = {
+	id = time_lifeline.240
+	title = time_lifeline.name
+	desc = time_lifeline.240.desc
+	show_sound = event_radio_chatter
+
+	diplomatic = yes
+	force_open = yes
+
+	picture_event_data = {
+		room = no_video_feed_room
+	}
+
+	is_triggered_only = yes
+
+	option = {
+		name = time_lifeline.240.a
+		hidden_effect = {
+			country_event = { id = time_lifeline.241 }
+		}
+	}
+}
+
+country_event = {
+	id = time_lifeline.241
+	title = time_lifeline.name
+	desc = time_lifeline.241.desc
+
+	diplomatic = yes
+	force_open = yes
+
+	picture_event_data = {
+		room = no_video_feed_room
+	}
+
+	is_triggered_only = yes
+
+	option = {
+		name = time_lifeline.241.a
+		hidden_effect = {
+			country_event = { id = time_lifeline.242 }
+		}
+	}
+}
+
+country_event = {
+	id = time_lifeline.242
+	title = time_lifeline.name
+	desc = time_lifeline.242.desc
+
+	diplomatic = yes
+	force_open = yes
+
+	picture_event_data = {
+		room = no_video_feed_room
+	}
+
+	is_triggered_only = yes
+
+	option = {
+		name = time_lifeline.242.a
+		hidden_effect = {
+			country_event = { id = time_lifeline.243 }
+		}
+	}
+}
+
+country_event = {
+	id = time_lifeline.243
+	title = time_lifeline.name
+	desc = time_lifeline.243.desc
+	show_sound = ap_rift_event_1_footsteps
+
+	diplomatic = yes
+	force_open = yes
+
+	picture_event_data = {
+		room = no_video_feed_room
+	}
+
+	is_triggered_only = yes
+
+	option = {
+		name = time_lifeline.243.a
+		hidden_effect = {
+			country_event = { id = time_lifeline.244 }
+		}
+	}
+}
+
+country_event = {
+	id = time_lifeline.244
+	title = time_lifeline.name
+	desc = time_lifeline.244.desc
+	show_sound = ap_rift_event_5_swimming
+
+	diplomatic = yes
+	force_open = yes
+
+	picture_event_data = {
+		room = no_video_feed_room
+	}
+
+	is_triggered_only = yes
+
+	option = {
+		name = time_lifeline.244.a
+		response_text = time_lifeline.244.a.response
+		custom_gui = "enclave_caravaneer_option"
+		time_lifeline_long_time_event = { ID = time_lifeline.500 }
+	}
+}
+
+################################################################
+# 阶段2（沙漠）
+################################################################
+
+country_event = {
+	id = time_lifeline.300
+	title = time_lifeline.name
+	desc = time_lifeline.300.desc
+	picture = GFX_evt_worrying_signal
+	event_chain = TIME_LIFELINE_CHAIN
+	
+	is_triggered_only = yes
+
+	immediate = {
+	}
+	
+	after = {
+		end_event_chain = TIME_LIFELINE_CHAIN
+		add_monthly_resource_mult = {
+			resource = society_research
+			value = @tier3researchreward
+			min = @tier3researchmin
+			max = @tier3researchmax
+		}
+	}
+
+	option = {
+		name = time_lifeline.300.a
+		trigger = {
+			is_xenophile = yes
+		}
+	}
+	
+	option = {
+		name = time_lifeline.300.b
+		trigger = {
+			is_xenophobe = yes
+		}
+	}
+	
+	option = {
+		name = time_lifeline.300.c
+		trigger = {
+			is_spiritualist = yes
+		}
+	}
+	
+	option = {
+		name = time_lifeline.300.d
+		trigger = {
+			has_valid_civic = civic_machine_servitor
+		}
+	}
+	
+	option = {
+		name = time_lifeline.300.e
+	}
+}
+
+################################################################
+# 阶段3（时间机器）
+################################################################
+
+country_event = {
+	id = time_lifeline.400
+	title = time_lifeline.name
+	desc = time_lifeline.400.desc
+	show_sound = event_radio_chatter
+
+	diplomatic = yes
+	force_open = yes
+
+	picture_event_data = {
+		room = no_video_feed_room
+	}
+
+	is_triggered_only = yes
+
+	option = {
+		name = time_lifeline.400.a
+		hidden_effect = {
+			country_event = { id = time_lifeline.401 }
+		}
+	}
+}
+
+country_event = {
+	id = time_lifeline.401
+	title = time_lifeline.name
+	desc = time_lifeline.401.desc
+
+	diplomatic = yes
+	force_open = yes
+
+	picture_event_data = {
+		room = no_video_feed_room
+	}
+
+	is_triggered_only = yes
+
+	option = {
+		name = time_lifeline.401.a
+		hidden_effect = {
+			country_event = { id = time_lifeline.402 }
+		}
+	}
+}
+
+country_event = {
+	id = time_lifeline.402
+	title = time_lifeline.name
+	desc = {
+		text = time_lifeline.402.desc.pass
+		trigger = {
+			has_country_flag = time_lifeline_pass
+		}
+	}
+	desc = {
+		text = time_lifeline.402.desc.future
+		trigger = {
+			has_country_flag = time_lifeline_future
+		}
+	}
+
+	diplomatic = yes
+	force_open = yes
+
+	picture_event_data = {
+		room = no_video_feed_room
+	}
+
+	is_triggered_only = yes
+	
+	after = {
+		hidden_effect = {
+			country_event = { id = time_lifeline.403 }
+		}
+	}
+
+	option = {
+		name = time_lifeline.402.a
+		custom_gui = "enclave_caravaneer_option"
+		trigger = {
+			has_country_flag = time_lifeline_pass
+		}
+	}
+	
+	option = {
+		name = time_lifeline.402.b
+		custom_gui = "enclave_caravaneer_option"
+		trigger = {
+			has_country_flag = time_lifeline_future
+		}
+	}
+}
+
+country_event = {
+	id = time_lifeline.403
+	title = time_lifeline.name
+	desc = time_lifeline.403.desc
+
+	diplomatic = yes
+	force_open = yes
+
+	picture_event_data = {
+		room = no_video_feed_room
+	}
+
+	is_triggered_only = yes
+
+	option = {
+		name = time_lifeline.403.a
+		response_text = time_lifeline.403.a.response
+		time_lifeline_some_time_event = { ID = time_lifeline.410 }
+	}
+}
+
+country_event = {
+	id = time_lifeline.410
+	title = time_lifeline.name
+	desc = time_lifeline.410.desc
+	show_sound = event_radio_chatter
+
+	diplomatic = yes
+	force_open = yes
+
+	picture_event_data = {
+		room = no_video_feed_room
+	}
+
+	is_triggered_only = yes
+
+	option = {
+		name = time_lifeline.410.a
+		hidden_effect = {
+			country_event = { id = time_lifeline.411 }
+		}
+	}
+}
+
+country_event = {
+	id = time_lifeline.411
+	title = time_lifeline.name
+	desc = {
+		text = time_lifeline.411.desc.pass
+		trigger = {
+			has_country_flag = time_lifeline_pass
+		}
+	}
+	desc = {
+		text = time_lifeline.411.desc.future
+		trigger = {
+			has_country_flag = time_lifeline_future
+		}
+	}
+
+	diplomatic = yes
+	force_open = yes
+
+	picture_event_data = {
+		room = no_video_feed_room
+	}
+
+	is_triggered_only = yes
+
+	option = {
+		name = time_lifeline.411.a
+		hidden_effect = {
+			country_event = { id = time_lifeline.412 }
+		}
+	}
+}
+
+country_event = {
+	id = time_lifeline.412
+	title = time_lifeline.name
+	desc = time_lifeline.412.desc
+
+	diplomatic = yes
+	force_open = yes
+
+	picture_event_data = {
+		room = no_video_feed_room
+	}
+
+	is_triggered_only = yes
+
+	option = {
+		name = time_lifeline.412.a
+		response_text = time_lifeline.412.a.response
+		if = {
+			limit = {
+				has_country_flag = time_lifeline_pass
+			}
+			time_lifeline_some_time_event = { ID = time_lifeline.420 }
+		}
+		else = {
+			time_lifeline_some_time_event = { ID = time_lifeline.460 }
+		}
+	}
+}
+
+################################################################
+# 阶段3（时间机器-过去）
+################################################################
+
+country_event = {
+	id = time_lifeline.420
+	title = time_lifeline.name
+	desc = time_lifeline.420.desc
+	show_sound = event_radio_chatter
+
+	diplomatic = yes
+	force_open = yes
+
+	picture_event_data = {
+		room = no_video_feed_room
+	}
+
+	is_triggered_only = yes
+
+	option = {
+		name = time_lifeline.420.a
+		hidden_effect = {
+			country_event = { id = time_lifeline.421 }
+		}
+	}
+}
+
+country_event = {
+	id = time_lifeline.421
+	title = time_lifeline.name
+	desc = time_lifeline.421.desc
+
+	diplomatic = yes
+	force_open = yes
+
+	picture_event_data = {
+		room = no_video_feed_room
+	}
+
+	is_triggered_only = yes
+
+	option = {
+		name = time_lifeline.421.a
+		hidden_effect = {
+			country_event = { id = time_lifeline.422 }
+		}
+	}
+}
+
+country_event = {
+	id = time_lifeline.422
+	title = time_lifeline.name
+	desc = time_lifeline.422.desc
+
+	diplomatic = yes
+	force_open = yes
+
+	picture_event_data = {
+		room = no_video_feed_room
+	}
+
+	is_triggered_only = yes
+
+	option = {
+		name = time_lifeline.422.a
+		custom_gui = "enclave_caravaneer_option"
+		hidden_effect = {
+			country_event = { id = time_lifeline.423 }
+		}
+	}
+	
+	option = {
+		name = time_lifeline.422.b
+		custom_gui = "enclave_caravaneer_option"
+		hidden_effect = {
+			country_event = { id = time_lifeline.424 }
+		}
+	}
+}
+
+country_event = {
+	id = time_lifeline.423
+	title = time_lifeline.name
+	desc = time_lifeline.423.desc
+	show_sound = ap_rift_event_27_living_wind
+
+	diplomatic = yes
+	force_open = yes
+
+	picture_event_data = {
+		room = no_video_feed_room
+	}
+
+	is_triggered_only = yes
+
+	option = {
+		name = time_lifeline.423.a
+		response_text = time_lifeline.423.a.response
+		time_lifeline_some_time_event = { ID = time_lifeline.430 }
+	}
+}
+
+country_event = {
+	id = time_lifeline.424
+	title = time_lifeline.name
+	desc = time_lifeline.424.desc
+	show_sound = ap_rift_event_27_living_wind
+
+	diplomatic = yes
+	force_open = yes
+
+	picture_event_data = {
+		room = no_video_feed_room
+	}
+
+	is_triggered_only = yes
+
+	option = {
+		name = time_lifeline.424.a
+		response_text = time_lifeline.424.a.response
+		time_lifeline_some_time_event = { ID = time_lifeline.440 }
+		hidden_effect = {
+			change_variable = {
+				which = time_lifeline_hurt
+				value = 1
+			}
+		}
+	}
+}
+
+country_event = {
+	id = time_lifeline.430
+	title = time_lifeline.name
+	desc = time_lifeline.430.desc
+	show_sound = event_radio_chatter
+
+	diplomatic = yes
+	force_open = yes
+
+	picture_event_data = {
+		room = no_video_feed_room
+	}
+
+	is_triggered_only = yes
+
+	option = {
+		name = time_lifeline.430.a
+		hidden_effect = {
+			country_event = { id = time_lifeline.431 }
+		}
+	}
+}
+
+country_event = {
+	id = time_lifeline.431
+	title = time_lifeline.name
+	desc = time_lifeline.431.desc
+
+	diplomatic = yes
+	force_open = yes
+
+	picture_event_data = {
+		room = no_video_feed_room
+	}
+
+	is_triggered_only = yes
+
+	option = {
+		name = time_lifeline.431.a
+		hidden_effect = {
+			country_event = { id = time_lifeline.432 }
+		}
+	}
+}
+
+country_event = {
+	id = time_lifeline.432
+	title = time_lifeline.name
+	desc = time_lifeline.432.desc
+
+	diplomatic = yes
+	force_open = yes
+
+	picture_event_data = {
+		room = no_video_feed_room
+	}
+
+	is_triggered_only = yes
+
+	option = {
+		name = time_lifeline.432.a
+		hidden_effect = {
+			country_event = { id = time_lifeline.433 }
+		}
+	}
+}
+
+country_event = {
+	id = time_lifeline.433
+	title = time_lifeline.name
+	desc = time_lifeline.433.desc
+	show_sound = ap_rift_event_3_clock_slowing_down
+
+	diplomatic = yes
+	force_open = yes
+
+	picture_event_data = {
+		room = no_video_feed_room
+	}
+
+	is_triggered_only = yes
+
+	option = {
+		name = time_lifeline.433.a
+		hidden_effect = {
+			country_event = { id = time_lifeline.434 }
+		}
+	}
+}
+
+country_event = {
+	id = time_lifeline.434
+	title = time_lifeline.name
+	desc = time_lifeline.434.desc
+
+	diplomatic = yes
+	force_open = yes
+
+	picture_event_data = {
+		room = no_video_feed_room
+	}
+
+	is_triggered_only = yes
+
+	option = {
+		name = time_lifeline.434.a
+		response_text = time_lifeline.434.a.response
+		time_lifeline_some_time_event = { ID = time_lifeline.450 }
+		hidden_effect = {
+			set_country_flag = time_lifeline_pass_true
+		}
+	}
+}
+
+country_event = {
+	id = time_lifeline.440
+	title = time_lifeline.name
+	desc = {
+		text = time_lifeline.440.desc.1
+		trigger = {
+			check_variable = {
+				which = time_lifeline_hurt
+				value < 3
+			}
+		}
+	}
+	desc = {
+		text = time_lifeline.440.desc.2
+		trigger = {
+			check_variable = {
+				which = time_lifeline_hurt
+				value >= 3
+			}
+		}
+	}
+	show_sound = event_radio_chatter
+
+	diplomatic = yes
+	force_open = yes
+
+	picture_event_data = {
+		room = no_video_feed_room
+	}
+
+	is_triggered_only = yes
+	
+	after = {
+		hidden_effect = {
+			country_event = { id = time_lifeline.441 }
+		}
+	}
+
+	option = {
+		name = time_lifeline.440.a
+		trigger = {
+			check_variable = {
+				which = time_lifeline_hurt
+				value < 3
+			}
+		}
+	}
+	
+	option = {
+		name = time_lifeline.440.b
+		trigger = {
+			check_variable = {
+				which = time_lifeline_hurt
+				value >= 3
+			}
+		}
+	}
+}
+
+country_event = {
+	id = time_lifeline.441
+	title = time_lifeline.name
+	desc = {
+		text = time_lifeline.441.desc.1
+		trigger = {
+			check_variable = {
+				which = time_lifeline_hurt
+				value < 3
+			}
+		}
+	}
+	desc = {
+		text = time_lifeline.441.desc.2
+		trigger = {
+			check_variable = {
+				which = time_lifeline_hurt
+				value >= 3
+			}
+		}
+	}
+	show_sound = {
+		sound = ap_rift_event_0_ropes_pulleys
+		trigger = {
+			check_variable = {
+				which = time_lifeline_hurt
+				value < 3
+			}
+		}
+	}
+	show_sound = {
+		sound = ap_rift_event_18_falling_rock
+		trigger = {
+			check_variable = {
+				which = time_lifeline_hurt
+				value >= 3
+			}
+		}
+	}
+
+	diplomatic = yes
+	force_open = yes
+
+	picture_event_data = {
+		room = no_video_feed_room
+	}
+
+	is_triggered_only = yes
+
+	option = {
+		name = time_lifeline.441.a
+		trigger = {
+			check_variable = {
+				which = time_lifeline_hurt
+				value < 3
+			}
+		}
+		hidden_effect = {
+			country_event = { id = time_lifeline.442 }
+		}
+	}
+	
+	option = {
+		name = time_lifeline.441.b
+		response_text = time_lifeline.441.b.response
+		sound = ap_rift_event_1_plasma_drill
+		custom_gui = "enclave_caravaneer_option"
+		trigger = {
+			check_variable = {
+				which = time_lifeline_hurt
+				value >= 3
+			}
+		}
+		hidden_effect = {
+			country_event = { id = time_lifeline.490 days = 1 }
+		}
+	}
+}
+
+country_event = {
+	id = time_lifeline.442
+	title = time_lifeline.name
+	desc = time_lifeline.442.desc
+
+	diplomatic = yes
+	force_open = yes
+
+	picture_event_data = {
+		room = no_video_feed_room
+	}
+
+	is_triggered_only = yes
+
+	option = {
+		name = time_lifeline.442.a
+		hidden_effect = {
+			country_event = { id = time_lifeline.443 }
+		}
+	}
+}
+
+country_event = {
+	id = time_lifeline.443
+	title = time_lifeline.name
+	desc = time_lifeline.443.desc
+
+	diplomatic = yes
+	force_open = yes
+
+	picture_event_data = {
+		room = no_video_feed_room
+	}
+
+	is_triggered_only = yes
+
+	option = {
+		name = time_lifeline.443.a
+		hidden_effect = {
+			country_event = { id = time_lifeline.444 }
+		}
+	}
+}
+
+country_event = {
+	id = time_lifeline.444
+	title = time_lifeline.name
+	desc = time_lifeline.444.desc
+
+	diplomatic = yes
+	force_open = yes
+
+	picture_event_data = {
+		room = no_video_feed_room
+	}
+
+	is_triggered_only = yes
+
+	option = {
+		name = time_lifeline.444.a
+		hidden_effect = {
+			country_event = { id = time_lifeline.445 }
+		}
+	}
+}
+
+country_event = {
+	id = time_lifeline.445
+	title = time_lifeline.name
+	desc = time_lifeline.445.desc
+
+	diplomatic = yes
+	force_open = yes
+
+	picture_event_data = {
+		room = no_video_feed_room
+	}
+
+	is_triggered_only = yes
+
+	option = {
+		name = time_lifeline.445.a
+		hidden_effect = {
+			country_event = { id = time_lifeline.446 }
+		}
+	}
+}
+
+country_event = {
+	id = time_lifeline.446
+	title = time_lifeline.name
+	desc = time_lifeline.446.desc
+
+	diplomatic = yes
+	force_open = yes
+
+	picture_event_data = {
+		room = no_video_feed_room
+	}
+
+	is_triggered_only = yes
+
+	option = {
+		name = time_lifeline.446.a
+		response_text = time_lifeline.446.a.response
+		time_lifeline_some_time_event = { ID = time_lifeline.450 }
+		hidden_effect = {
+			set_country_flag = time_lifeline_pass_false
+		}
+	}
+}
+
+country_event = {
+	id = time_lifeline.450
+	title = time_lifeline.name
+	desc = {
+		text = time_lifeline.450.desc.1
+		trigger = {
+			has_country_flag = time_lifeline_pass_true
+		}
+	}
+	desc = {
+		text = time_lifeline.450.desc.2
+		trigger = {
+			has_country_flag = time_lifeline_pass_false
+		}
+	}
+	show_sound = event_radio_chatter
+
+	diplomatic = yes
+	force_open = yes
+
+	picture_event_data = {
+		room = no_video_feed_room
+	}
+
+	is_triggered_only = yes
+
+	option = {
+		name = time_lifeline.450.a
+		hidden_effect = {
+			country_event = { id = time_lifeline.451 }
+		}
+	}
+}
+
+country_event = {
+	id = time_lifeline.451
+	title = time_lifeline.name
+	desc = time_lifeline.451.desc
+
+	diplomatic = yes
+	force_open = yes
+
+	picture_event_data = {
+		room = no_video_feed_room
+	}
+
+	is_triggered_only = yes
+
+	option = {
+		name = time_lifeline.451.a
+		hidden_effect = {
+			country_event = { id = time_lifeline.452 }
+		}
+	}
+}
+
+country_event = {
+	id = time_lifeline.452
+	title = time_lifeline.name
+	desc = time_lifeline.452.desc
+	show_sound = ap_rift_event_15_time_crystal
+
+	diplomatic = yes
+	force_open = yes
+
+	picture_event_data = {
+		room = no_video_feed_room
+	}
+
+	is_triggered_only = yes
+
+	option = {
+		name = time_lifeline.452.a
+		response_text = time_lifeline.452.a.response
+		custom_gui = "enclave_caravaneer_option"
+		trigger = {
+			has_country_flag = time_lifeline_pass_true
+		}
+		time_lifeline_unknown_time_event = { ID = time_lifeline.600 }
+	}
+	
+	option = {
+		name = time_lifeline.452.b
+		response_text = time_lifeline.452.b.response
+		custom_gui = "enclave_caravaneer_option"
+		trigger = {
+			has_country_flag = time_lifeline_pass_false
+		}
+		time_lifeline_unknown_time_event = { ID = time_lifeline.700 }
+	}
+}
+
+country_event = {
+	id = time_lifeline.490
+	title = time_lifeline.name
+	desc = time_lifeline.490.desc
+	picture = GFX_evt_worrying_signal
+	event_chain = TIME_LIFELINE_CHAIN
+	
+	is_triggered_only = yes
+
+	immediate = {
+	}
+
+	option = {
+		name = time_lifeline.490.a
+		trigger = {
+			OR = {
+				is_xenophobe = yes
+				is_hive_empire = yes
+			}
+		}
+		end_event_chain = TIME_LIFELINE_CHAIN
+		add_modifier = {
+			modifier = time_lifeline_i_am_sorry
+			days = -1
+		}
+		hidden_effect = {
+			create_message = {
+				type = TIME_LIFELINE_SPECIAL_END_2
+				localization = TIME_LIFELINE_SPECIAL_END_2_DESC
+				days = 30
+				target = this
+			}
+		}
+	}
+	
+	option = {
+		name = time_lifeline.490.b
+		trigger = {
+			is_machine_empire = yes
+		}
+		end_event_chain = TIME_LIFELINE_CHAIN
+		add_modifier = {
+			modifier = time_lifeline_i_am_sorry
+			days = -1
+		}
+		hidden_effect = {
+			create_message = {
+				type = TIME_LIFELINE_SPECIAL_END_2
+				localization = TIME_LIFELINE_SPECIAL_END_2_DESC
+				days = 30
+				target = this
+			}
+		}
+	}
+	
+	option = {
+		name = time_lifeline.490.c
+		trigger = {
+			is_xenophobe = no
+			is_hive_empire = no
+			is_machine_empire = no
+		}
+		end_event_chain = TIME_LIFELINE_CHAIN
+		add_modifier = {
+			modifier = time_lifeline_i_am_sorry
+			days = -1
+		}
+		hidden_effect = {
+			create_message = {
+				type = TIME_LIFELINE_SPECIAL_END_2
+				localization = TIME_LIFELINE_SPECIAL_END_2_DESC
+				days = 30
+				target = this
+			}
+		}
+	}
+	
+	option = {
+		name = time_lifeline.490.d
+		trigger = {
+			is_xenophobe = yes
+		}
+		end_event_chain = TIME_LIFELINE_CHAIN
+		add_monthly_resource_mult = {
+			resource = unity
+			value = @tier4unityreward
+			min = @tier4unitymin
+			max = @tier4unitymax
+		}
+	}
+	
+	option = {
+		name = time_lifeline.490.e
+		trigger = {
+			is_xenophobe = no
+		}
+		end_event_chain = TIME_LIFELINE_CHAIN
+		add_monthly_resource_mult = {
+			resource = unity
+			value = @tier3unityreward
+			min = @tier3unitymin
+			max = @tier3unitymax
+		}
+	}
+}
+
+################################################################
+# 阶段3（时间机器-未来）
+################################################################
+
+country_event = {
+	id = time_lifeline.460
+	title = time_lifeline.name
+	desc = time_lifeline.460.desc
+	show_sound = event_radio_chatter
+
+	diplomatic = yes
+	force_open = yes
+
+	picture_event_data = {
+		room = no_video_feed_room
+	}
+
+	is_triggered_only = yes
+
+	option = {
+		name = time_lifeline.460.a
+		hidden_effect = {
+			country_event = { id = time_lifeline.461 }
+		}
+	}
+}
+
+country_event = {
+	id = time_lifeline.461
+	title = time_lifeline.name
+	desc = time_lifeline.461.desc
+
+	diplomatic = yes
+	force_open = yes
+
+	picture_event_data = {
+		room = no_video_feed_room
+	}
+
+	is_triggered_only = yes
+
+	option = {
+		name = time_lifeline.461.a
+		hidden_effect = {
+			country_event = { id = time_lifeline.462 }
+		}
+	}
+}
+
+country_event = {
+	id = time_lifeline.462
+	title = time_lifeline.name
+	desc = time_lifeline.462.desc
+
+	diplomatic = yes
+	force_open = yes
+
+	picture_event_data = {
+		room = no_video_feed_room
+	}
+
+	is_triggered_only = yes
+
+	option = {
+		name = time_lifeline.462.a
+		hidden_effect = {
+			country_event = { id = time_lifeline.463 }
+		}
+	}
+}
+
+country_event = {
+	id = time_lifeline.463
+	title = time_lifeline.name
+	desc = time_lifeline.463.desc
+
+	diplomatic = yes
+	force_open = yes
+
+	picture_event_data = {
+		room = no_video_feed_room
+	}
+
+	is_triggered_only = yes
+
+	option = {
+		name = time_lifeline.463.a
+		hidden_effect = {
+			country_event = { id = time_lifeline.464 }
+		}
+	}
+}
+
+country_event = {
+	id = time_lifeline.464
+	title = time_lifeline.name
+	desc = time_lifeline.464.desc
+
+	diplomatic = yes
+	force_open = yes
+
+	picture_event_data = {
+		room = no_video_feed_room
+	}
+
+	is_triggered_only = yes
+
+	option = {
+		name = time_lifeline.464.a
+		hidden_effect = {
+			country_event = { id = time_lifeline.465 }
+		}
+	}
+}
+
+country_event = {
+	id = time_lifeline.465
+	title = time_lifeline.name
+	desc = time_lifeline.465.desc
+
+	diplomatic = yes
+	force_open = yes
+
+	picture_event_data = {
+		room = no_video_feed_room
+	}
+
+	is_triggered_only = yes
+
+	option = {
+		name = time_lifeline.465.a
+		hidden_effect = {
+			country_event = { id = time_lifeline.466 }
+		}
+	}
+}
+
+country_event = {
+	id = time_lifeline.466
+	title = time_lifeline.name
+	desc = time_lifeline.466.desc
+	show_sound = ap_rift_event_3_clock_slowing_down
+
+	diplomatic = yes
+	force_open = yes
+
+	picture_event_data = {
+		room = no_video_feed_room
+	}
+
+	is_triggered_only = yes
+
+	option = {
+		name = time_lifeline.466.a
+		hidden_effect = {
+			country_event = { id = time_lifeline.467 }
+		}
+	}
+}
+
+country_event = {
+	id = time_lifeline.467
+	title = time_lifeline.name
+	desc = time_lifeline.467.desc
+
+	diplomatic = yes
+	force_open = yes
+
+	picture_event_data = {
+		room = no_video_feed_room
+	}
+
+	is_triggered_only = yes
+
+	option = {
+		name = time_lifeline.467.a
+		hidden_effect = {
+			country_event = { id = time_lifeline.468 }
+		}
+	}
+}
+
+country_event = {
+	id = time_lifeline.468
+	title = time_lifeline.name
+	desc = time_lifeline.468.desc
+	show_sound = ap_rift_event_5_scanning
+
+	diplomatic = yes
+	force_open = yes
+
+	picture_event_data = {
+		room = no_video_feed_room
+	}
+
+	is_triggered_only = yes
+
+	option = {
+		name = time_lifeline.468.a
+		hidden_effect = {
+			country_event = { id = time_lifeline.469 }
+		}
+	}
+}
+
+country_event = {
+	id = time_lifeline.469
+	title = time_lifeline.name
+	desc = time_lifeline.469.desc
+
+	diplomatic = yes
+	force_open = yes
+
+	picture_event_data = {
+		room = no_video_feed_room
+	}
+
+	is_triggered_only = yes
+
+	option = {
+		name = time_lifeline.469.a
+		response_text = time_lifeline.469.a.response
+		time_lifeline_short_time_event = { ID = time_lifeline.470 }
+	}
+}
+
+country_event = {
+	id = time_lifeline.470
+	title = time_lifeline.name
+	desc = time_lifeline.470.desc
+	show_sound = event_radio_chatter
+
+	diplomatic = yes
+	force_open = yes
+
+	picture_event_data = {
+		room = no_video_feed_room
+	}
+
+	is_triggered_only = yes
+
+	option = {
+		name = time_lifeline.470.a
+		hidden_effect = {
+			country_event = { id = time_lifeline.471 }
+		}
+	}
+}
+
+country_event = {
+	id = time_lifeline.471
+	title = time_lifeline.name
+	desc = time_lifeline.471.desc
+
+	diplomatic = yes
+	force_open = yes
+
+	picture_event_data = {
+		room = no_video_feed_room
+	}
+
+	is_triggered_only = yes
+
+	option = {
+		name = time_lifeline.471.a
+		hidden_effect = {
+			country_event = { id = time_lifeline.472 }
+		}
+	}
+}
+
+country_event = {
+	id = time_lifeline.472
+	title = time_lifeline.name
+	desc = time_lifeline.472.desc
+
+	diplomatic = yes
+	force_open = yes
+
+	picture_event_data = {
+		room = no_video_feed_room
+	}
+
+	is_triggered_only = yes
+
+	option = {
+		name = time_lifeline.472.a
+		hidden_effect = {
+			country_event = { id = time_lifeline.473 }
+		}
+	}
+}
+
+country_event = {
+	id = time_lifeline.473
+	title = time_lifeline.name
+	desc = time_lifeline.473.desc
+
+	diplomatic = yes
+	force_open = yes
+
+	picture_event_data = {
+		room = no_video_feed_room
+	}
+
+	is_triggered_only = yes
+
+	option = {
+		name = time_lifeline.473.a
+		hidden_effect = {
+			country_event = { id = time_lifeline.474 }
+		}
+	}
+}
+
+country_event = {
+	id = time_lifeline.474
+	title = time_lifeline.name
+	desc = time_lifeline.474.desc
+
+	diplomatic = yes
+	force_open = yes
+
+	picture_event_data = {
+		room = no_video_feed_room
+	}
+
+	is_triggered_only = yes
+
+	option = {
+		name = time_lifeline.474.a
+		response_text = time_lifeline.474.a.response
+		time_lifeline_some_time_event = { ID = time_lifeline.480 }
+	}
+}
+
+country_event = {
+	id = time_lifeline.480
+	title = time_lifeline.name
+	desc = time_lifeline.480.desc
+	show_sound = event_radio_chatter
+
+	diplomatic = yes
+	force_open = yes
+
+	picture_event_data = {
+		room = no_video_feed_room
+	}
+
+	is_triggered_only = yes
+
+	option = {
+		name = time_lifeline.480.a
+		hidden_effect = {
+			country_event = { id = time_lifeline.481 }
+		}
+	}
+}
+
+country_event = {
+	id = time_lifeline.481
+	title = time_lifeline.name
+	desc = time_lifeline.481.desc
+
+	diplomatic = yes
+	force_open = yes
+
+	picture_event_data = {
+		room = no_video_feed_room
+	}
+
+	is_triggered_only = yes
+
+	option = {
+		name = time_lifeline.481.a
+		hidden_effect = {
+			country_event = { id = time_lifeline.482 }
+		}
+	}
+}
+
+country_event = {
+	id = time_lifeline.482
+	title = time_lifeline.name
+	desc = time_lifeline.482.desc
+	show_sound = ap_rift_event_15_time_crystal
+
+	diplomatic = yes
+	force_open = yes
+
+	picture_event_data = {
+		room = no_video_feed_room
+	}
+
+	is_triggered_only = yes
+
+	option = {
+		name = time_lifeline.482.a
+		response_text = time_lifeline.482.a.response
+		custom_gui = "enclave_caravaneer_option"
+		time_lifeline_unknown_time_event = { ID = time_lifeline.700 }
+	}
+	
+	option = {
+		name = time_lifeline.482.b
+		response_text = time_lifeline.482.b.response
+		custom_gui = "enclave_caravaneer_option"
+		time_lifeline_unknown_time_event = { ID = time_lifeline.600 }
+	}
+	
+	option = {
+		name = time_lifeline.482.c
+		response_text = time_lifeline.482.c.response
+		custom_gui = "enclave_caravaneer_option"
+		locked_random_list = {
+			1 = {
+				time_lifeline_unknown_time_event = { ID = time_lifeline.700 }
+			}
+			2 = {
+				# 更有可能相信自己的判断
+				time_lifeline_unknown_time_event = { ID = time_lifeline.600 }
+			}
+		}
+		hidden_effect = {
+			set_country_flag = time_lifeline_chosen_by_myself
+		}
+	}
+}
+
+################################################################
+# 阶段3（镜中世界）
+################################################################
+
+country_event = {
+	id = time_lifeline.500
+	title = time_lifeline.name
+	desc = time_lifeline.500.desc
+	show_sound = event_radio_chatter
+
+	diplomatic = yes
+	force_open = yes
+
+	picture_event_data = {
+		room = no_video_feed_room
+	}
+
+	is_triggered_only = yes
+
+	option = {
+		name = time_lifeline.500.a
+		hidden_effect = {
+			country_event = { id = time_lifeline.501 }
+		}
+	}
+}
+
+country_event = {
+	id = time_lifeline.501
+	title = time_lifeline.name
+	desc = time_lifeline.501.desc
+
+	diplomatic = yes
+	force_open = yes
+
+	picture_event_data = {
+		room = no_video_feed_room
+	}
+
+	is_triggered_only = yes
+
+	option = {
+		name = time_lifeline.501.a
+		hidden_effect = {
+			country_event = { id = time_lifeline.502 }
+		}
+	}
+}
+
+country_event = {
+	id = time_lifeline.502
+	title = time_lifeline.name
+	desc = time_lifeline.502.desc
+
+	diplomatic = yes
+	force_open = yes
+
+	picture_event_data = {
+		room = no_video_feed_room
+	}
+
+	is_triggered_only = yes
+
+	option = {
+		name = time_lifeline.502.a
+		custom_gui = "enclave_caravaneer_option"
+		hidden_effect = {
+			country_event = { id = time_lifeline.503 }
+		}
+	}
+	
+	option = {
+		name = time_lifeline.502.b
+		custom_gui = "enclave_caravaneer_option"
+		hidden_effect = {
+			country_event = { id = time_lifeline.504 }
+		}
+	}
+	
+	option = {
+		name = time_lifeline.502.c
+		custom_gui = "enclave_caravaneer_option"
+		hidden_effect = {
+			country_event = { id = time_lifeline.505 }
+		}
+	}
+}
+
+country_event = {
+	id = time_lifeline.503
+	title = time_lifeline.name
+	desc = time_lifeline.503.desc
+
+	diplomatic = yes
+	force_open = yes
+
+	picture_event_data = {
+		room = no_video_feed_room
+	}
+
+	is_triggered_only = yes
+	
+	after = {
+		add_monthly_resource_mult = {
+			resource = unity
+			value = @tier4unityreward
+			min = @tier4unitymin
+			max = @tier4unitymax
+		}
+	}
+
+	option = {
+		name = time_lifeline.503.a
+		hidden_effect = {
+			country_event = { id = time_lifeline.506 }
+		}
+	}
+}
+
+country_event = {
+	id = time_lifeline.504
+	title = time_lifeline.name
+	desc = time_lifeline.504.desc
+
+	diplomatic = yes
+	force_open = yes
+
+	picture_event_data = {
+		room = no_video_feed_room
+	}
+
+	is_triggered_only = yes
+	
+	after = {
+		add_monthly_resource_mult = {
+			resource = society_research
+			value = @tier4researchreward
+			min = @tier4researchmin
+			max = @tier4researchmax
+		}
+	}
+
+	option = {
+		name = time_lifeline.504.a
+		hidden_effect = {
+			country_event = { id = time_lifeline.506 }
+		}
+	}
+}
+
+country_event = {
+	id = time_lifeline.505
+	title = time_lifeline.name
+	desc = time_lifeline.505.desc
+
+	diplomatic = yes
+	force_open = yes
+
+	picture_event_data = {
+		room = no_video_feed_room
+	}
+
+	is_triggered_only = yes
+	
+	after = {
+		end_event_chain = TIME_LIFELINE_CHAIN
+		add_modifier = {
+			modifier = time_lifeline_just_a_dream
+			days = -1
+		}
+		hidden_effect = {
+			create_message = {
+				type = TIME_LIFELINE_SPECIAL_END_1
+				localization = TIME_LIFELINE_SPECIAL_END_1_DESC
+				days = 30
+				target = this
+			}
+		}
+	}
+
+	option = {
+		name = time_lifeline.505.a
+		response_text = time_lifeline.505.a.response
+	}
+}
+
+country_event = {
+	id = time_lifeline.506
+	title = time_lifeline.name
+	desc = time_lifeline.506.desc
+
+	diplomatic = yes
+	force_open = yes
+
+	picture_event_data = {
+		room = no_video_feed_room
+	}
+
+	is_triggered_only = yes
+
+	option = {
+		name = time_lifeline.506.a
+		response_text = time_lifeline.506.a.response
+		time_lifeline_some_time_event = { ID = time_lifeline.510 }
+	}
+}
+
+country_event = {
+	id = time_lifeline.510
+	title = time_lifeline.name
+	desc = time_lifeline.510.desc
+	show_sound = event_radio_chatter
+
+	diplomatic = yes
+	force_open = yes
+
+	picture_event_data = {
+		room = no_video_feed_room
+	}
+
+	is_triggered_only = yes
+
+	option = {
+		name = time_lifeline.510.a
+		hidden_effect = {
+			country_event = { id = time_lifeline.511 }
+		}
+	}
+}
+
+country_event = {
+	id = time_lifeline.511
+	title = time_lifeline.name
+	desc = time_lifeline.511.desc
+
+	diplomatic = yes
+	force_open = yes
+
+	picture_event_data = {
+		room = no_video_feed_room
+	}
+
+	is_triggered_only = yes
+
+	option = {
+		name = time_lifeline.511.a
+		response_text = time_lifeline.511.a.response
+		time_lifeline_short_time_event = { ID = time_lifeline.520 }
+	}
+}
+
+country_event = {
+	id = time_lifeline.520
+	title = time_lifeline.name
+	desc = time_lifeline.520.desc
+	show_sound = event_radio_chatter
+
+	diplomatic = yes
+	force_open = yes
+
+	picture_event_data = {
+		room = no_video_feed_room
+	}
+
+	is_triggered_only = yes
+
+	option = {
+		name = time_lifeline.520.a
+		hidden_effect = {
+			country_event = { id = time_lifeline.521 }
+		}
+	}
+}
+
+country_event = {
+	id = time_lifeline.521
+	title = time_lifeline.name
+	desc = time_lifeline.521.desc
+
+	diplomatic = yes
+	force_open = yes
+
+	picture_event_data = {
+		room = no_video_feed_room
+	}
+
+	is_triggered_only = yes
+
+	option = {
+		name = time_lifeline.521.a
+		hidden_effect = {
+			country_event = { id = time_lifeline.522 }
+		}
+	}
+}
+
+country_event = {
+	id = time_lifeline.522
+	title = time_lifeline.name
+	desc = time_lifeline.522.desc
+	show_sound = ap_rift_event_0_troops_marching
+
+	diplomatic = yes
+	force_open = yes
+
+	picture_event_data = {
+		room = no_video_feed_room
+	}
+
+	is_triggered_only = yes
+
+	option = {
+		name = time_lifeline.522.a
+		response_text = time_lifeline.522.a.response
+		time_lifeline_some_time_event = { ID = time_lifeline.530 }
+	}
+}
+
+country_event = {
+	id = time_lifeline.530
+	title = time_lifeline.name
+	desc = time_lifeline.530.desc
+	show_sound = event_radio_chatter
+
+	diplomatic = yes
+	force_open = yes
+
+	picture_event_data = {
+		room = no_video_feed_room
+	}
+
+	is_triggered_only = yes
+
+	option = {
+		name = time_lifeline.530.a
+		hidden_effect = {
+			country_event = { id = time_lifeline.531 }
+		}
+	}
+}
+
+country_event = {
+	id = time_lifeline.531
+	title = time_lifeline.name
+	desc = time_lifeline.531.desc
+
+	diplomatic = yes
+	force_open = yes
+
+	picture_event_data = {
+		room = no_video_feed_room
+	}
+
+	is_triggered_only = yes
+
+	option = {
+		name = time_lifeline.531.a
+		hidden_effect = {
+			country_event = { id = time_lifeline.532 }
+		}
+	}
+}
+
+country_event = {
+	id = time_lifeline.532
+	title = time_lifeline.name
+	desc = time_lifeline.532.desc
+
+	diplomatic = yes
+	force_open = yes
+
+	picture_event_data = {
+		room = no_video_feed_room
+	}
+
+	is_triggered_only = yes
+
+	option = {
+		name = time_lifeline.532.a
+		hidden_effect = {
+			country_event = { id = time_lifeline.533 }
+		}
+	}
+}
+
+country_event = {
+	id = time_lifeline.533
+	title = time_lifeline.name
+	desc = time_lifeline.533.desc
+
+	diplomatic = yes
+	force_open = yes
+
+	picture_event_data = {
+		room = no_video_feed_room
+	}
+
+	is_triggered_only = yes
+
+	option = {
+		name = time_lifeline.533.a
+		hidden_effect = {
+			country_event = { id = time_lifeline.534 }
+		}
+	}
+}
+
+country_event = {
+	id = time_lifeline.534
+	title = time_lifeline.name
+	desc = time_lifeline.534.desc
+	show_sound = ap_rift_event_3_clock_slowing_down
+
+	diplomatic = yes
+	force_open = yes
+
+	picture_event_data = {
+		room = no_video_feed_room
+	}
+
+	is_triggered_only = yes
+
+	option = {
+		name = time_lifeline.534.a
+		hidden_effect = {
+			country_event = { id = time_lifeline.535 }
+		}
+	}
+}
+
+country_event = {
+	id = time_lifeline.535
+	title = time_lifeline.name
+	desc = time_lifeline.535.desc
+
+	diplomatic = yes
+	force_open = yes
+
+	picture_event_data = {
+		room = no_video_feed_room
+	}
+
+	is_triggered_only = yes
+
+	option = {
+		name = time_lifeline.535.a
+		hidden_effect = {
+			country_event = { id = time_lifeline.536 }
+		}
+	}
+}
+
+country_event = {
+	id = time_lifeline.536
+	title = time_lifeline.name
+	desc = time_lifeline.536.desc
+
+	diplomatic = yes
+	force_open = yes
+
+	picture_event_data = {
+		room = no_video_feed_room
+	}
+
+	is_triggered_only = yes
+
+	option = {
+		name = time_lifeline.536.a
+		response_text = time_lifeline.536.a.response
+		time_lifeline_some_time_event = { ID = time_lifeline.540 }
+	}
+}
+
+country_event = {
+	id = time_lifeline.540
+	title = time_lifeline.name
+	desc = time_lifeline.540.desc
+	show_sound = event_radio_chatter
+
+	diplomatic = yes
+	force_open = yes
+
+	picture_event_data = {
+		room = no_video_feed_room
+	}
+
+	is_triggered_only = yes
+
+	option = {
+		name = time_lifeline.540.a
+		hidden_effect = {
+			country_event = { id = time_lifeline.541 }
+		}
+	}
+}
+
+country_event = {
+	id = time_lifeline.541
+	title = time_lifeline.name
+	desc = time_lifeline.541.desc
+
+	diplomatic = yes
+	force_open = yes
+
+	picture_event_data = {
+		room = no_video_feed_room
+	}
+
+	is_triggered_only = yes
+
+	option = {
+		name = time_lifeline.541.a
+		hidden_effect = {
+			country_event = { id = time_lifeline.542 }
+		}
+	}
+}
+
+country_event = {
+	id = time_lifeline.542
+	title = time_lifeline.name
+	desc = time_lifeline.542.desc
+	show_sound = ap_rift_event_0_meditating_voices
+
+	diplomatic = yes
+	force_open = yes
+
+	picture_event_data = {
+		room = no_video_feed_room
+	}
+
+	is_triggered_only = yes
+
+	option = {
+		name = time_lifeline.542.a
+		hidden_effect = {
+			country_event = { id = time_lifeline.543 }
+		}
+	}
+}
+
+country_event = {
+	id = time_lifeline.543
+	title = time_lifeline.name
+	desc = time_lifeline.543.desc
+
+	diplomatic = yes
+	force_open = yes
+
+	picture_event_data = {
+		room = no_video_feed_room
+	}
+
+	is_triggered_only = yes
+
+	option = {
+		name = time_lifeline.543.a
+		custom_gui = "enclave_caravaneer_option"
+		hidden_effect = {
+			country_event = { id = time_lifeline.544 }
+		}
+	}
+	
+	option = {
+		name = time_lifeline.543.b
+		custom_gui = "enclave_caravaneer_option"
+		hidden_effect = {
+			country_event = { id = time_lifeline.545 }
+		}
+	}
+}
+
+country_event = {
+	id = time_lifeline.544
+	title = time_lifeline.name
+	desc = time_lifeline.544.desc
+
+	diplomatic = yes
+	force_open = yes
+
+	picture_event_data = {
+		room = no_video_feed_room
+	}
+
+	is_triggered_only = yes
+
+	option = {
+		name = time_lifeline.544.a
+		response_text = time_lifeline.544.a.response
+		custom_gui = "enclave_caravaneer_option"
+		time_lifeline_unknown_time_event = { ID = time_lifeline.800 }
+	}
+}
+
+country_event = {
+	id = time_lifeline.545
+	title = time_lifeline.name
+	desc = time_lifeline.545.desc
+
+	diplomatic = yes
+	force_open = yes
+
+	picture_event_data = {
+		room = no_video_feed_room
+	}
+
+	is_triggered_only = yes
+
+	option = {
+		name = time_lifeline.545.a
+		response_text = time_lifeline.545.a.response
+		custom_gui = "enclave_caravaneer_option"
+		time_lifeline_long_time_event = { ID = time_lifeline.900 }
+	}
+}
+
+################################################################
+# 阶段4（达成闭环）
+################################################################
+
+country_event = {
+	id = time_lifeline.600
+	title = time_lifeline.name
+	desc = {
+		text = time_lifeline.600.desc.pass
+		trigger = {
+			has_country_flag = time_lifeline_pass
+		}
+	}
+	desc = {
+		text = time_lifeline.600.desc.future
+		trigger = {
+			has_country_flag = time_lifeline_future
+			NOT = { has_country_flag = time_lifeline_chosen_by_myself }
+		}
+	}
+	desc = {
+		text = time_lifeline.600.desc.future.chosen_by_myself
+		trigger = {
+			has_country_flag = time_lifeline_future
+			has_country_flag = time_lifeline_chosen_by_myself
+		}
+	}
+	show_sound = event_radio_chatter
+
+	diplomatic = yes
+	force_open = yes
+
+	picture_event_data = {
+		room = no_video_feed_room
+	}
+
+	is_triggered_only = yes
+
+	option = {
+		name = time_lifeline.600.a
+		hidden_effect = {
+			country_event = { id = time_lifeline.601 }
+		}
+	}
+}
+
+country_event = {
+	id = time_lifeline.601
+	title = time_lifeline.name
+	desc = {
+		text = time_lifeline.601.desc.pass
+		trigger = {
+			has_country_flag = time_lifeline_pass
+		}
+	}
+	desc = {
+		text = time_lifeline.601.desc.future
+		trigger = {
+			has_country_flag = time_lifeline_future
+			NOT = { has_country_flag = time_lifeline_chosen_by_myself }
+		}
+	}
+	desc = {
+		text = time_lifeline.601.desc.future.chosen_by_myself
+		trigger = {
+			has_country_flag = time_lifeline_future
+			has_country_flag = time_lifeline_chosen_by_myself
+		}
+	}
+
+	diplomatic = yes
+	force_open = yes
+
+	picture_event_data = {
+		room = no_video_feed_room
+	}
+
+	is_triggered_only = yes
+
+	option = {
+		name = time_lifeline.601.a
+		hidden_effect = {
+			country_event = { id = time_lifeline.602 }
+		}
+	}
+}
+
+country_event = {
+	id = time_lifeline.602
+	title = time_lifeline.name
+	desc = time_lifeline.602.desc
+
+	diplomatic = yes
+	force_open = yes
+
+	picture_event_data = {
+		room = no_video_feed_room
+	}
+
+	is_triggered_only = yes
+
+	option = {
+		name = time_lifeline.602.a
+		hidden_effect = {
+			country_event = { id = time_lifeline.603 }
+		}
+	}
+}
+
+country_event = {
+	id = time_lifeline.603
+	title = time_lifeline.name
+	desc = time_lifeline.603.desc
+
+	diplomatic = yes
+	force_open = yes
+
+	picture_event_data = {
+		room = no_video_feed_room
+	}
+
+	is_triggered_only = yes
+
+	option = {
+		name = time_lifeline.603.a
+		response_text = time_lifeline.603.a.response
+		time_lifeline_short_time_event = { ID = time_lifeline.610 }
+	}
+}
+
+country_event = {
+	id = time_lifeline.610
+	title = time_lifeline.name
+	desc = time_lifeline.610.desc
+	show_sound = event_radio_chatter
+
+	diplomatic = yes
+	force_open = yes
+
+	picture_event_data = {
+		room = no_video_feed_room
+	}
+
+	is_triggered_only = yes
+
+	option = {
+		name = time_lifeline.610.a
+		hidden_effect = {
+			country_event = { id = time_lifeline.611 }
+		}
+	}
+}
+
+country_event = {
+	id = time_lifeline.611
+	title = time_lifeline.name
+	desc = time_lifeline.611.desc
+
+	diplomatic = yes
+	force_open = yes
+
+	picture_event_data = {
+		room = no_video_feed_room
+	}
+
+	is_triggered_only = yes
+
+	option = {
+		name = time_lifeline.611.a
+		response_text = time_lifeline.611.a.response
+		is_dialog_only = yes
+	}
+	
+	option = {
+		name = time_lifeline.611.b
+		custom_gui = "enclave_caravaneer_option"
+		hidden_effect = {
+			if = {
+				limit = {
+					has_country_flag = time_lifeline_pass
+				}
+				country_event = { id = time_lifeline.612 }
+			}
+			else = {
+				country_event = { id = time_lifeline.613 }
+			}
+		}
+	}
+}
+
+country_event = {
+	id = time_lifeline.612
+	title = time_lifeline.name
+	desc = time_lifeline.612.desc
+
+	diplomatic = yes
+	force_open = yes
+
+	picture_event_data = {
+		room = no_video_feed_room
+	}
+
+	is_triggered_only = yes
+
+	option = {
+		name = time_lifeline.612.a
+		hidden_effect = {
+			country_event = { id = time_lifeline.615 }
+		}
+	}
+}
+
+country_event = {
+	id = time_lifeline.613
+	title = time_lifeline.name
+	desc = time_lifeline.613.desc
+
+	diplomatic = yes
+	force_open = yes
+
+	picture_event_data = {
+		room = no_video_feed_room
+	}
+
+	is_triggered_only = yes
+
+	option = {
+		name = time_lifeline.613.a
+		hidden_effect = {
+			country_event = { id = time_lifeline.614 }
+		}
+	}
+}
+
+country_event = {
+	id = time_lifeline.614
+	title = time_lifeline.name
+	desc = time_lifeline.614.desc
+
+	diplomatic = yes
+	force_open = yes
+
+	picture_event_data = {
+		room = no_video_feed_room
+	}
+
+	is_triggered_only = yes
+
+	option = {
+		name = time_lifeline.614.a
+		hidden_effect = {
+			country_event = { id = time_lifeline.615 }
+		}
+	}
+}
+
+country_event = {
+	id = time_lifeline.615
+	title = time_lifeline.name
+	desc = time_lifeline.615.desc
+
+	diplomatic = yes
+	force_open = yes
+
+	picture_event_data = {
+		room = no_video_feed_room
+	}
+
+	is_triggered_only = yes
+
+	option = {
+		name = time_lifeline.615.a
+		hidden_effect = {
+			country_event = { id = time_lifeline.616 }
+		}
+	}
+}
+
+country_event = {
+	id = time_lifeline.616
+	title = time_lifeline.name
+	desc = time_lifeline.616.desc
+
+	diplomatic = yes
+	force_open = yes
+
+	picture_event_data = {
+		room = no_video_feed_room
+	}
+
+	is_triggered_only = yes
+
+	option = {
+		name = time_lifeline.616.a
+		hidden_effect = {
+			country_event = { id = time_lifeline.617 }
+		}
+	}
+}
+
+country_event = {
+	id = time_lifeline.617
+	title = time_lifeline.name
+	desc = time_lifeline.617.desc
+
+	diplomatic = yes
+	force_open = yes
+
+	picture_event_data = {
+		room = no_video_feed_room
+	}
+
+	is_triggered_only = yes
+
+	option = {
+		name = time_lifeline.617.a
+		hidden_effect = {
+			country_event = { id = time_lifeline.618 }
+		}
+	}
+}
+
+country_event = {
+	id = time_lifeline.618
+	title = time_lifeline.name
+	desc = time_lifeline.618.desc
+
+	diplomatic = yes
+	force_open = yes
+
+	picture_event_data = {
+		room = no_video_feed_room
+	}
+
+	is_triggered_only = yes
+
+	option = {
+		name = time_lifeline.618.a
+		response_text = time_lifeline.618.a.response
+		time_lifeline_long_time_event = { ID = time_lifeline.620 }
+	}
+}
+
+country_event = {
+	id = time_lifeline.620
+	title = time_lifeline.name
+	desc = time_lifeline.620.desc
+	show_sound = event_radio_chatter
+
+	diplomatic = yes
+	force_open = yes
+
+	picture_event_data = {
+		room = no_video_feed_room
+	}
+
+	is_triggered_only = yes
+
+	option = {
+		name = time_lifeline.620.a
+		hidden_effect = {
+			country_event = { id = time_lifeline.621 }
+		}
+	}
+}
+
+country_event = {
+	id = time_lifeline.621
+	title = time_lifeline.name
+	desc = time_lifeline.621.desc
+
+	diplomatic = yes
+	force_open = yes
+
+	picture_event_data = {
+		room = no_video_feed_room
+	}
+
+	is_triggered_only = yes
+
+	option = {
+		name = time_lifeline.621.a
+		hidden_effect = {
+			country_event = { id = time_lifeline.622 }
+		}
+	}
+}
+
+country_event = {
+	id = time_lifeline.622
+	title = time_lifeline.name
+	desc = time_lifeline.622.desc
+
+	diplomatic = yes
+	force_open = yes
+
+	picture_event_data = {
+		room = no_video_feed_room
+	}
+
+	is_triggered_only = yes
+
+	option = {
+		name = time_lifeline.622.a
+		hidden_effect = {
+			country_event = { id = time_lifeline.623 }
+		}
+	}
+}
+
+country_event = {
+	id = time_lifeline.623
+	title = time_lifeline.name
+	desc = {
+		text = time_lifeline.623.desc.pass
+		trigger = {
+			has_country_flag = time_lifeline_pass
+		}
+	}
+	desc = {
+		text = time_lifeline.623.desc.future
+		trigger = {
+			has_country_flag = time_lifeline_future
+		}
+	}
+
+	diplomatic = yes
+	force_open = yes
+
+	picture_event_data = {
+		room = no_video_feed_room
+	}
+
+	is_triggered_only = yes
+
+	option = {
+		name = time_lifeline.623.a
+		response_text = time_lifeline.623.a.response
+		trigger = {
+			has_country_flag = time_lifeline_pass
+		}
+		time_lifeline_short_time_event = { ID = time_lifeline.630 }
+	}
+	
+	option = {
+		name = time_lifeline.623.b
+		response_text = time_lifeline.623.b.response
+		trigger = {
+			has_country_flag = time_lifeline_future
+		}
+		time_lifeline_short_time_event = { ID = time_lifeline.660 }
+	}
+}
+
+country_event = {
+	id = time_lifeline.630
+	title = time_lifeline.name
+	desc = time_lifeline.630.desc
+	show_sound = event_radio_chatter
+
+	diplomatic = yes
+	force_open = yes
+
+	picture_event_data = {
+		room = no_video_feed_room
+	}
+
+	is_triggered_only = yes
+
+	option = {
+		name = time_lifeline.630.a
+		hidden_effect = {
+			country_event = { id = time_lifeline.631 }
+		}
+	}
+}
+
+country_event = {
+	id = time_lifeline.631
+	title = time_lifeline.name
+	desc = time_lifeline.631.desc
+
+	diplomatic = yes
+	force_open = yes
+
+	picture_event_data = {
+		room = no_video_feed_room
+	}
+
+	is_triggered_only = yes
+
+	option = {
+		name = time_lifeline.631.a
+		hidden_effect = {
+			country_event = { id = time_lifeline.632 }
+		}
+	}
+}
+
+country_event = {
+	id = time_lifeline.632
+	title = time_lifeline.name
+	desc = time_lifeline.632.desc
+
+	diplomatic = yes
+	force_open = yes
+
+	picture_event_data = {
+		room = no_video_feed_room
+	}
+
+	is_triggered_only = yes
+
+	option = {
+		name = time_lifeline.632.a
+		hidden_effect = {
+			country_event = { id = time_lifeline.633 }
+		}
+	}
+}
+
+country_event = {
+	id = time_lifeline.633
+	title = time_lifeline.name
+	desc = time_lifeline.633.desc
+
+	diplomatic = yes
+	force_open = yes
+
+	picture_event_data = {
+		room = no_video_feed_room
+	}
+
+	is_triggered_only = yes
+
+	option = {
+		name = time_lifeline.633.a
+		hidden_effect = {
+			country_event = { id = time_lifeline.634 }
+		}
+	}
+}
+
+country_event = {
+	id = time_lifeline.634
+	title = time_lifeline.name
+	desc = time_lifeline.634.desc
+	show_sound = ap_rift_event_3_clock_slowing_down
+
+	diplomatic = yes
+	force_open = yes
+
+	picture_event_data = {
+		room = no_video_feed_room
+	}
+
+	is_triggered_only = yes
+	
+	after = {
+		add_monthly_resource_mult = {
+			resource = physics_research
+			value = @tier4researchreward
+			min = @tier4researchmin
+			max = @tier4researchmax
+		}
+	}
+
+	option = {
+		name = time_lifeline.634.a
+		hidden_effect = {
+			country_event = { id = time_lifeline.635 }
+		}
+	}
+}
+
+country_event = {
+	id = time_lifeline.635
+	title = time_lifeline.name
+	desc = time_lifeline.635.desc
+
+	diplomatic = yes
+	force_open = yes
+
+	picture_event_data = {
+		room = no_video_feed_room
+	}
+
+	is_triggered_only = yes
+
+	option = {
+		name = time_lifeline.635.a
+		hidden_effect = {
+			country_event = { id = time_lifeline.636 }
+		}
+	}
+}
+
+country_event = {
+	id = time_lifeline.636
+	title = time_lifeline.name
+	desc = time_lifeline.636.desc
+
+	diplomatic = yes
+	force_open = yes
+
+	picture_event_data = {
+		room = no_video_feed_room
+	}
+
+	is_triggered_only = yes
+
+	option = {
+		name = time_lifeline.636.a
+		hidden_effect = {
+			country_event = { id = time_lifeline.637 }
+		}
+	}
+}
+
+country_event = {
+	id = time_lifeline.637
+	title = time_lifeline.name
+	desc = time_lifeline.637.desc
+
+	diplomatic = yes
+	force_open = yes
+
+	picture_event_data = {
+		room = no_video_feed_room
+	}
+
+	is_triggered_only = yes
+
+	option = {
+		name = time_lifeline.637.a
+		response_text = time_lifeline.637.a.response
+		custom_gui = "enclave_caravaneer_option"
+		if = {
+			limit = {
+				check_variable = {
+					which = time_lifeline_hurt
+					value = 0
+				}
+			}
+			time_lifeline_long_time_event = { ID = time_lifeline.640 }
+		}
+		else_if = {
+			limit = {
+				check_variable = {
+					which = time_lifeline_hurt
+					value < 2
+				}
+			}
+			locked_random_list = {
+				2 = {
+					time_lifeline_long_time_event = { ID = time_lifeline.640 }
+				}
+				1 = {
+					time_lifeline_long_time_event = { ID = time_lifeline.650 }
+				}
+			}
+		}
+		else = {
+			locked_random_list = {
+				1 = {
+					time_lifeline_long_time_event = { ID = time_lifeline.640 }
+				}
+				2 = {
+					time_lifeline_long_time_event = { ID = time_lifeline.650 }
+				}
+			}
+		}
+	}
+	
+	option = {
+		name = time_lifeline.637.b
+		custom_gui = "enclave_caravaneer_option"
+		hidden_effect = {
+			country_event = { id = time_lifeline.638 }
+		}
+	}
+}
+
+country_event = {
+	id = time_lifeline.638
+	title = time_lifeline.name
+	desc = time_lifeline.638.desc
+
+	diplomatic = yes
+	force_open = yes
+
+	picture_event_data = {
+		room = no_video_feed_room
+	}
+
+	is_triggered_only = yes
+
+	after = {
+		end_event_chain = TIME_LIFELINE_CHAIN
+		add_modifier = {
+			modifier = time_lifeline_closed_loop
+			days = -1
+		}
+		hidden_effect = {
+			create_message = {
+				type = TIME_LIFELINE_NORMAL_END_1
+				localization = TIME_LIFELINE_NORMAL_END_1_DESC
+				days = 30
+				target = this
+			}
+		}
+	}
+
+	option = {
+		name = time_lifeline.638.a
+		response_text = time_lifeline.638.a.response
+		custom_gui = "enclave_caravaneer_option"
+	}
+}
+
+country_event = {
+	id = time_lifeline.640
+	title = time_lifeline.name
+	desc = time_lifeline.640.desc
+	show_sound = event_radio_chatter
+
+	diplomatic = yes
+	force_open = yes
+
+	picture_event_data = {
+		room = no_video_feed_room
+	}
+
+	is_triggered_only = yes
+
+	option = {
+		name = time_lifeline.640.a
+		hidden_effect = {
+			country_event = { id = time_lifeline.641 }
+		}
+	}
+}
+
+country_event = {
+	id = time_lifeline.641
+	title = time_lifeline.name
+	desc = time_lifeline.641.desc
+	show_sound = ap_rift_event_25_black_sun
+
+	diplomatic = yes
+	force_open = yes
+
+	picture_event_data = {
+		room = no_video_feed_room
+	}
+
+	is_triggered_only = yes
+	
+	after = {
+		hidden_effect = {
+			country_event = { id = time_lifeline.642 }
+		}
+	}
+
+	option = {
+		name = time_lifeline.641.a
+		trigger = {
+			has_country_flag = meet_time_wanderer
+		}
+		add_monthly_resource_mult = {
+			resource = physics_research
+			value = @tier4researchreward
+			min = @tier4researchmin
+			max = @tier4researchmax
+		}
+	}
+	
+	option = {
+		name = time_lifeline.641.b
+		trigger = {
+			NOT = { has_country_flag = meet_time_wanderer }
+		}
+	}
+}
+
+country_event = {
+	id = time_lifeline.642
+	title = time_lifeline.name
+	desc = {
+		text = time_lifeline.642.desc.1
+		trigger = {
+			has_country_flag = meet_time_wanderer
+		}
+	}
+	desc = {
+		text = time_lifeline.642.desc.2
+		trigger = {
+			NOT = { has_country_flag = meet_time_wanderer }
+		}
+	}
+
+	diplomatic = yes
+	force_open = yes
+
+	picture_event_data = {
+		room = no_video_feed_room
+	}
+
+	is_triggered_only = yes
+
+	option = {
+		name = time_lifeline.642.a
+		hidden_effect = {
+			country_event = { id = time_lifeline.643 }
+		}
+	}
+}
+
+country_event = {
+	id = time_lifeline.643
+	title = time_lifeline.name
+	desc = time_lifeline.643.desc
+
+	diplomatic = yes
+	force_open = yes
+
+	picture_event_data = {
+		room = no_video_feed_room
+	}
+
+	is_triggered_only = yes
+
+	option = {
+		name = time_lifeline.643.a
+		hidden_effect = {
+			country_event = { id = time_lifeline.644 }
+		}
+	}
+}
+
+country_event = {
+	id = time_lifeline.644
+	title = time_lifeline.name
+	desc = time_lifeline.644.desc
+
+	diplomatic = yes
+	force_open = yes
+
+	picture_event_data = {
+		room = no_video_feed_room
+	}
+
+	is_triggered_only = yes
+
+	option = {
+		name = time_lifeline.644.a
+		hidden_effect = {
+			country_event = { id = time_lifeline.645 }
+		}
+	}
+}
+
+country_event = {
+	id = time_lifeline.645
+	title = time_lifeline.name
+	desc = time_lifeline.645.desc
+
+	diplomatic = yes
+	force_open = yes
+
+	picture_event_data = {
+		room = no_video_feed_room
+	}
+
+	is_triggered_only = yes
+
+	option = {
+		name = time_lifeline.645.a
+		hidden_effect = {
+			country_event = { id = time_lifeline.646 }
+		}
+	}
+}
+
+country_event = {
+	id = time_lifeline.646
+	title = time_lifeline.name
+	desc = time_lifeline.646.desc
+
+	diplomatic = yes
+	force_open = yes
+
+	picture_event_data = {
+		room = no_video_feed_room
+	}
+
+	is_triggered_only = yes
+
+	option = {
+		name = time_lifeline.646.a
+		hidden_effect = {
+			country_event = { id = time_lifeline.647 }
+		}
+	}
+}
+
+country_event = {
+	id = time_lifeline.647
+	title = time_lifeline.name
+	desc = time_lifeline.647.desc
+	show_sound = ap_rift_event_15_time_crystal
+
+	diplomatic = yes
+	force_open = yes
+
+	picture_event_data = {
+		room = no_video_feed_room
+	}
+
+	is_triggered_only = yes
+	
+	after = {
+		end_event_chain = TIME_LIFELINE_CHAIN
+		add_modifier = {
+			modifier = time_lifeline_traveler_in_dream
+			days = -1
+		}
+		hidden_effect = {
+			create_message = {
+				type = TIME_LIFELINE_GOOD_END_1
+				localization = TIME_LIFELINE_GOOD_END_1_DESC
+				days = 30
+				target = this
+			}
+		}
+	}
+
+	option = {
+		name = time_lifeline.647.a
+		response_text = time_lifeline.647.a.response
+		custom_gui = "enclave_caravaneer_option"
+	}
+}
+
+country_event = {
+	id = time_lifeline.650
+	title = time_lifeline.name
+	desc = time_lifeline.650.desc
+	picture = GFX_evt_worrying_signal
+	event_chain = TIME_LIFELINE_CHAIN
+	
+	is_triggered_only = yes
+
+	immediate = {
+	}
+	
+	after = {
+		end_event_chain = TIME_LIFELINE_CHAIN
+		add_monthly_resource_mult = {
+			resource = physics_research
+			value = @tier3researchreward
+			min = @tier3researchmin
+			max = @tier3researchmax
+		}
+	}
+
+	option = {
+		name = time_lifeline.650.a
+		trigger = {
+			is_xenophile = yes
+		}
+	}
+	
+	option = {
+		name = time_lifeline.650.b
+		trigger = {
+			is_xenophobe = yes
+		}
+	}
+	
+	option = {
+		name = time_lifeline.650.c
+		trigger = {
+			is_materialist = yes
+		}
+	}
+	
+	option = {
+		name = time_lifeline.650.d
+		trigger = {
+			has_valid_civic = civic_machine_servitor
+		}
+	}
+	
+	option = {
+		name = time_lifeline.650.e
+	}
+}
+
+country_event = {
+	id = time_lifeline.660
+	title = time_lifeline.name
+	desc = time_lifeline.660.desc
+	show_sound = event_radio_chatter
+
+	diplomatic = yes
+	force_open = yes
+
+	picture_event_data = {
+		room = no_video_feed_room
+	}
+
+	is_triggered_only = yes
+
+	option = {
+		name = time_lifeline.660.a
+		hidden_effect = {
+			country_event = { id = time_lifeline.661 }
+		}
+	}
+}
+
+country_event = {
+	id = time_lifeline.661
+	title = time_lifeline.name
+	desc = time_lifeline.661.desc
+	show_sound = ap_rift_event_21_dimensional_machine
+
+	diplomatic = yes
+	force_open = yes
+
+	picture_event_data = {
+		room = no_video_feed_room
+	}
+
+	is_triggered_only = yes
+
+	option = {
+		name = time_lifeline.661.a
+		hidden_effect = {
+			country_event = { id = time_lifeline.662 }
+		}
+	}
+}
+
+country_event = {
+	id = time_lifeline.662
+	title = time_lifeline.name
+	desc = time_lifeline.662.desc
+
+	diplomatic = yes
+	force_open = yes
+
+	picture_event_data = {
+		room = no_video_feed_room
+	}
+
+	is_triggered_only = yes
+	
+	after = {
+		add_monthly_resource_mult = {
+			resource = physics_research
+			value = @tier4researchreward
+			min = @tier4researchmin
+			max = @tier4researchmax
+		}
+	}
+
+	option = {
+		name = time_lifeline.662.a
+		hidden_effect = {
+			country_event = { id = time_lifeline.663 }
+		}
+	}
+}
+
+country_event = {
+	id = time_lifeline.663
+	title = time_lifeline.name
+	desc = time_lifeline.663.desc
+
+	diplomatic = yes
+	force_open = yes
+
+	picture_event_data = {
+		room = no_video_feed_room
+	}
+
+	is_triggered_only = yes
+
+	option = {
+		name = time_lifeline.663.a
+		hidden_effect = {
+			country_event = { id = time_lifeline.664 }
+		}
+	}
+}
+
+country_event = {
+	id = time_lifeline.664
+	title = time_lifeline.name
+	desc = time_lifeline.664.desc
+
+	diplomatic = yes
+	force_open = yes
+
+	picture_event_data = {
+		room = no_video_feed_room
+	}
+
+	is_triggered_only = yes
+
+	option = {
+		name = time_lifeline.664.a
+		hidden_effect = {
+			country_event = { id = time_lifeline.665 }
+		}
+	}
+}
+
+country_event = {
+	id = time_lifeline.665
+	title = time_lifeline.name
+	desc = time_lifeline.665.desc
+
+	diplomatic = yes
+	force_open = yes
+
+	picture_event_data = {
+		room = no_video_feed_room
+	}
+
+	is_triggered_only = yes
+	
+	option = {
+		name = time_lifeline.665.a
+		response_text = time_lifeline.665.a.response
+		custom_gui = "enclave_caravaneer_option"
+		if = {
+			limit = {
+				check_variable = {
+					which = time_lifeline_hurt
+					value = 0
+				}
+			}
+			time_lifeline_long_time_event = { ID = time_lifeline.670 }
+		}
+		else_if = {
+			limit = {
+				check_variable = {
+					which = time_lifeline_hurt
+					value < 2
+				}
+			}
+			locked_random_list = {
+				2 = {
+					time_lifeline_long_time_event = { ID = time_lifeline.670 }
+				}
+				1 = {
+					time_lifeline_long_time_event = { ID = time_lifeline.680 }
+				}
+			}
+		}
+		else = {
+			locked_random_list = {
+				1 = {
+					time_lifeline_long_time_event = { ID = time_lifeline.670 }
+				}
+				2 = {
+					time_lifeline_long_time_event = { ID = time_lifeline.680 }
+				}
+			}
+		}
+	}
+	
+	option = {
+		name = time_lifeline.665.b
+		custom_gui = "enclave_caravaneer_option"
+		hidden_effect = {
+			country_event = { id = time_lifeline.666 }
+		}
+	}
+}
+
+country_event = {
+	id = time_lifeline.666
+	title = time_lifeline.name
+	desc = time_lifeline.666.desc
+
+	diplomatic = yes
+	force_open = yes
+
+	picture_event_data = {
+		room = no_video_feed_room
+	}
+
+	is_triggered_only = yes
+
+	after = {
+		end_event_chain = TIME_LIFELINE_CHAIN
+		add_modifier = {
+			modifier = time_lifeline_closed_loop
+			days = -1
+		}
+		hidden_effect = {
+			create_message = {
+				type = TIME_LIFELINE_NORMAL_END_2
+				localization = TIME_LIFELINE_NORMAL_END_2_DESC
+				days = 30
+				target = this
+			}
+		}
+	}
+
+	option = {
+		name = time_lifeline.666.a
+		response_text = time_lifeline.666.a.response
+		custom_gui = "enclave_caravaneer_option"
+	}
+}
+
+country_event = {
+	id = time_lifeline.670
+	title = time_lifeline.name
+	desc = time_lifeline.670.desc
+	show_sound = event_radio_chatter
+
+	diplomatic = yes
+	force_open = yes
+
+	picture_event_data = {
+		room = no_video_feed_room
+	}
+
+	is_triggered_only = yes
+
+	option = {
+		name = time_lifeline.670.a
+		hidden_effect = {
+			country_event = { id = time_lifeline.671 }
+		}
+	}
+}
+
+country_event = {
+	id = time_lifeline.671
+	title = time_lifeline.name
+	desc = time_lifeline.671.desc
+
+	diplomatic = yes
+	force_open = yes
+
+	picture_event_data = {
+		room = no_video_feed_room
+	}
+
+	is_triggered_only = yes
+
+	option = {
+		name = time_lifeline.671.a
+		hidden_effect = {
+			country_event = { id = time_lifeline.672 }
+		}
+	}
+}
+
+country_event = {
+	id = time_lifeline.672
+	title = time_lifeline.name
+	desc = time_lifeline.672.desc
+
+	diplomatic = yes
+	force_open = yes
+
+	picture_event_data = {
+		room = no_video_feed_room
+	}
+
+	is_triggered_only = yes
+
+	option = {
+		name = time_lifeline.672.a
+		hidden_effect = {
+			country_event = { id = time_lifeline.673 }
+		}
+	}
+}
+
+country_event = {
+	id = time_lifeline.673
+	title = time_lifeline.name
+	desc = time_lifeline.673.desc
+
+	diplomatic = yes
+	force_open = yes
+
+	picture_event_data = {
+		room = no_video_feed_room
+	}
+
+	is_triggered_only = yes
+	
+	after = {
+		hidden_effect = {
+			country_event = { id = time_lifeline.674 }
+		}
+	}
+
+	option = {
+		name = time_lifeline.673.a
+		trigger = {
+			OR = {
+				has_country_flag = worm_events_available
+				has_country_flag = worm_awaited
+			}
+		}
+		add_monthly_resource_mult = {
+			resource = physics_research
+			value = @tier3researchreward
+			min = @tier3researchmin
+			max = @tier3researchmax
+		}
+	}
+	
+	option = {
+		name = time_lifeline.673.b
+		trigger = {
+			NOR = {
+				has_country_flag = worm_events_available
+				has_country_flag = worm_awaited
+			}
+		}
+	}
+}
+
+country_event = {
+	id = time_lifeline.674
+	title = time_lifeline.name
+	desc = {
+		text = time_lifeline.674.desc.1
+		trigger = {
+			OR = {
+				has_country_flag = worm_events_available
+				has_country_flag = worm_awaited
+			}
+		}
+	}
+	desc = {
+		text = time_lifeline.674.desc.2
+		trigger = {
+			NOR = {
+				has_country_flag = worm_events_available
+				has_country_flag = worm_awaited
+			}
+		}
+	}
+
+	diplomatic = yes
+	force_open = yes
+
+	picture_event_data = {
+		room = no_video_feed_room
+	}
+
+	is_triggered_only = yes
+
+	option = {
+		name = time_lifeline.674.a
+		hidden_effect = {
+			country_event = { id = time_lifeline.675 }
+		}
+	}
+}
+
+country_event = {
+	id = time_lifeline.675
+	title = time_lifeline.name
+	desc = time_lifeline.675.desc
+
+	diplomatic = yes
+	force_open = yes
+
+	picture_event_data = {
+		room = no_video_feed_room
+	}
+
+	is_triggered_only = yes
+
+	option = {
+		name = time_lifeline.675.a
+		hidden_effect = {
+			country_event = { id = time_lifeline.676 }
+		}
+	}
+}
+
+country_event = {
+	id = time_lifeline.676
+	title = time_lifeline.name
+	desc = time_lifeline.676.desc
+
+	diplomatic = yes
+	force_open = yes
+
+	picture_event_data = {
+		room = no_video_feed_room
+	}
+
+	is_triggered_only = yes
+
+	option = {
+		name = time_lifeline.676.a
+		hidden_effect = {
+			country_event = { id = time_lifeline.677 }
+		}
+	}
+}
+
+country_event = {
+	id = time_lifeline.677
+	title = time_lifeline.name
+	desc = {
+		text = time_lifeline.677.desc
+		trigger = {
+			NOT = { has_country_flag = time_lifeline_chosen_by_myself }
+		}
+	}
+	desc = {
+		text = time_lifeline.677.desc.chosen_by_myself
+		trigger = {
+			has_country_flag = time_lifeline_chosen_by_myself
+		}
+	}
+
+	diplomatic = yes
+	force_open = yes
+
+	picture_event_data = {
+		room = no_video_feed_room
+	}
+
+	is_triggered_only = yes
+	
+	after = {
+		if = {
+			limit = {
+				has_country_flag = time_lifeline_chosen_by_myself
+			}
+			add_monthly_resource_mult = {
+				resource = society_research
+				value = @tier4researchreward
+				min = @tier4researchmin
+				max = @tier4researchmax
+			}
+		}
+		hidden_effect = {
+			country_event = { id = time_lifeline.678 }
+		}
+	}
+
+	option = {
+		name = time_lifeline.677.a
+		trigger = {
+			is_gestalt = no
+		}
+	}
+	
+	option = {
+		name = time_lifeline.677.b
+		trigger = {
+			is_gestalt = yes
+		}
+	}
+}
+
+country_event = {
+	id = time_lifeline.678
+	title = time_lifeline.name
+	desc = time_lifeline.678.desc
+	show_sound = ap_rift_event_15_time_crystal
+
+	diplomatic = yes
+	force_open = yes
+
+	picture_event_data = {
+		room = no_video_feed_room
+	}
+
+	is_triggered_only = yes
+
+	after = {
+		end_event_chain = TIME_LIFELINE_CHAIN
+		add_modifier = {
+			modifier = time_lifeline_rule_of_time
+			days = -1
+		}
+		hidden_effect = {
+			create_message = {
+				type = TIME_LIFELINE_GOOD_END_2
+				localization = TIME_LIFELINE_GOOD_END_2_DESC
+				days = 30
+				target = this
+			}
+		}
+	}
+
+	option = {
+		name = time_lifeline.678.a
+		response_text = time_lifeline.678.a.response
+		custom_gui = "enclave_caravaneer_option"
+	}
+}
+
+country_event = {
+	id = time_lifeline.680
+	title = time_lifeline.name
+	desc = time_lifeline.680.desc
+	picture = GFX_evt_worrying_signal
+	event_chain = TIME_LIFELINE_CHAIN
+	
+	is_triggered_only = yes
+
+	immediate = {
+	}
+	
+	after = {
+		end_event_chain = TIME_LIFELINE_CHAIN
+		add_monthly_resource_mult = {
+			resource = physics_research
+			value = @tier3researchreward
+			min = @tier3researchmin
+			max = @tier3researchmax
+		}
+	}
+
+	option = {
+		name = time_lifeline.680.a
+		trigger = {
+			is_xenophile = yes
+		}
+	}
+	
+	option = {
+		name = time_lifeline.680.b
+		trigger = {
+			is_xenophobe = yes
+		}
+	}
+	
+	option = {
+		name = time_lifeline.680.c
+		trigger = {
+			is_materialist = yes
+		}
+	}
+	
+	option = {
+		name = time_lifeline.680.d
+		trigger = {
+			has_valid_civic = civic_machine_servitor
+		}
+	}
+	
+	option = {
+		name = time_lifeline.680.e
+	}
+}
+
+################################################################
+# 阶段4（偏离航道）
+################################################################
+
+country_event = {
+	id = time_lifeline.700
+	title = time_lifeline.name
+	desc = {
+		text = time_lifeline.700.desc.pass
+		trigger = {
+			has_country_flag = time_lifeline_pass
+		}
+	}
+	desc = {
+		text = time_lifeline.700.desc.future
+		trigger = {
+			has_country_flag = time_lifeline_future
+			NOT = { has_country_flag = time_lifeline_chosen_by_myself }
+		}
+	}
+	desc = {
+		text = time_lifeline.700.desc.future.chosen_by_myself
+		trigger = {
+			has_country_flag = time_lifeline_future
+			has_country_flag = time_lifeline_chosen_by_myself
+		}
+	}
+	show_sound = event_radio_chatter
+
+	diplomatic = yes
+	force_open = yes
+
+	picture_event_data = {
+		room = no_video_feed_room
+	}
+
+	is_triggered_only = yes
+
+	option = {
+		name = time_lifeline.700.a
+		hidden_effect = {
+			if = {
+				limit = {
+					has_country_flag = time_lifeline_pass
+				}
+				country_event = { id = time_lifeline.710 }
+			}
+			else = {
+				country_event = { id = time_lifeline.760 }
+			}
+		}
+	}
+}
+
+################################################################
+# 阶段4（偏离航道-过去）
+################################################################
+
+country_event = {
+	id = time_lifeline.710
+	title = time_lifeline.name
+	desc = time_lifeline.710.desc
+
+	diplomatic = yes
+	force_open = yes
+
+	picture_event_data = {
+		room = no_video_feed_room
+	}
+
+	is_triggered_only = yes
+
+	option = {
+		name = time_lifeline.710.a
+		custom_gui = "enclave_caravaneer_option"
+		hidden_effect = {
+			country_event = { id = time_lifeline.711 }
+		}
+	}
+	
+	option = {
+		name = time_lifeline.710.b
+		response_text = time_lifeline.710.b.response
+		custom_gui = "enclave_caravaneer_option"
+		time_lifeline_short_time_event = { ID = time_lifeline.720 }
+	}
+}
+
+country_event = {
+	id = time_lifeline.711
+	title = time_lifeline.name
+	desc = time_lifeline.711.desc
+
+	diplomatic = yes
+	force_open = yes
+
+	picture_event_data = {
+		room = no_video_feed_room
+	}
+
+	is_triggered_only = yes
+
+	option = {
+		name = time_lifeline.711.a
+		response_text = time_lifeline.711.a.response
+		hidden_effect = {
+			country_event = { id = time_lifeline.712 days = 1 }
+		}
+	}
+}
+
+country_event = {
+	id = time_lifeline.712
+	title = time_lifeline.name
+	desc = time_lifeline.712.desc
+	picture = GFX_evt_worrying_signal
+	event_chain = TIME_LIFELINE_CHAIN
+	
+	is_triggered_only = yes
+
+	immediate = {
+	}
+	
+	after = {
+		end_event_chain = TIME_LIFELINE_CHAIN
+		add_monthly_resource_mult = {
+			resource = society_research
+			value = @tier3researchreward
+			min = @tier3researchmin
+			max = @tier3researchmax
+		}
+	}
+
+	option = {
+		name = time_lifeline.712.a
+		trigger = {
+			is_xenophile = yes
+		}
+	}
+	
+	option = {
+		name = time_lifeline.712.b
+		trigger = {
+			is_xenophobe = yes
+		}
+	}
+	
+	option = {
+		name = time_lifeline.712.c
+		trigger = {
+			is_egalitarian = yes
+		}
+	}
+	
+	option = {
+		name = time_lifeline.712.d
+		trigger = {
+			has_valid_civic = civic_machine_servitor
+		}
+	}
+	
+	option = {
+		name = time_lifeline.712.e
+	}
+}
+
+country_event = {
+	id = time_lifeline.720
+	title = time_lifeline.name
+	desc = time_lifeline.720.desc
+	show_sound = event_radio_chatter
+
+	diplomatic = yes
+	force_open = yes
+
+	picture_event_data = {
+		room = no_video_feed_room
+	}
+
+	is_triggered_only = yes
+
+	option = {
+		name = time_lifeline.720.a
+		hidden_effect = {
+			country_event = { id = time_lifeline.721 }
+		}
+	}
+}
+
+country_event = {
+	id = time_lifeline.721
+	title = time_lifeline.name
+	desc = time_lifeline.721.desc
+
+	diplomatic = yes
+	force_open = yes
+
+	picture_event_data = {
+		room = no_video_feed_room
+	}
+
+	is_triggered_only = yes
+
+	option = {
+		name = time_lifeline.721.a
+		hidden_effect = {
+			country_event = { id = time_lifeline.722 }
+		}
+	}
+}
+
+country_event = {
+	id = time_lifeline.722
+	title = time_lifeline.name
+	desc = time_lifeline.722.desc
+
+	diplomatic = yes
+	force_open = yes
+
+	picture_event_data = {
+		room = no_video_feed_room
+	}
+
+	is_triggered_only = yes
+
+	option = {
+		name = time_lifeline.722.a
+		hidden_effect = {
+			country_event = { id = time_lifeline.723 }
+		}
+	}
+}
+
+country_event = {
+	id = time_lifeline.723
+	title = time_lifeline.name
+	desc = time_lifeline.723.desc
+	show_sound = ap_rift_event_12_star_to_gas
+
+	diplomatic = yes
+	force_open = yes
+
+	picture_event_data = {
+		room = no_video_feed_room
+	}
+
+	is_triggered_only = yes
+
+	option = {
+		name = time_lifeline.723.a
+		hidden_effect = {
+			country_event = { id = time_lifeline.724 }
+		}
+	}
+}
+
+country_event = {
+	id = time_lifeline.724
+	title = time_lifeline.name
+	desc = time_lifeline.724.desc
+
+	diplomatic = yes
+	force_open = yes
+
+	picture_event_data = {
+		room = no_video_feed_room
+	}
+
+	is_triggered_only = yes
+
+	option = {
+		name = time_lifeline.724.a
+		hidden_effect = {
+			country_event = { id = time_lifeline.725 }
+		}
+	}
+}
+country_event = {
+	id = time_lifeline.725
+	title = time_lifeline.name
+	desc = time_lifeline.725.desc
+
+	diplomatic = yes
+	force_open = yes
+
+	picture_event_data = {
+		room = no_video_feed_room
+	}
+
+	is_triggered_only = yes
+
+	option = {
+		name = time_lifeline.725.a
+		hidden_effect = {
+			country_event = { id = time_lifeline.726 }
+		}
+	}
+}
+
+country_event = {
+	id = time_lifeline.726
+	title = time_lifeline.name
+	desc = time_lifeline.726.desc
+
+	diplomatic = yes
+	force_open = yes
+
+	picture_event_data = {
+		room = no_video_feed_room
+	}
+
+	is_triggered_only = yes
+
+	option = {
+		name = time_lifeline.726.a
+		response_text = time_lifeline.726.a.response
+		time_lifeline_short_time_event = { ID = time_lifeline.730 }
+	}
+}
+
+country_event = {
+	id = time_lifeline.730
+	title = time_lifeline.name
+	desc = time_lifeline.730.desc
+	show_sound = event_radio_chatter
+
+	diplomatic = yes
+	force_open = yes
+
+	picture_event_data = {
+		room = no_video_feed_room
+	}
+
+	is_triggered_only = yes
+
+	option = {
+		name = time_lifeline.730.a
+		hidden_effect = {
+			country_event = { id = time_lifeline.731 }
+		}
+	}
+}
+
+country_event = {
+	id = time_lifeline.731
+	title = time_lifeline.name
+	desc = time_lifeline.731.desc
+
+	diplomatic = yes
+	force_open = yes
+
+	picture_event_data = {
+		room = no_video_feed_room
+	}
+
+	is_triggered_only = yes
+
+	option = {
+		name = time_lifeline.731.a
+		hidden_effect = {
+			country_event = { id = time_lifeline.732 }
+		}
+	}
+}
+
+country_event = {
+	id = time_lifeline.732
+	title = time_lifeline.name
+	desc = time_lifeline.732.desc
+
+	diplomatic = yes
+	force_open = yes
+
+	picture_event_data = {
+		room = no_video_feed_room
+	}
+
+	is_triggered_only = yes
+
+	option = {
+		name = time_lifeline.732.a
+		hidden_effect = {
+			country_event = { id = time_lifeline.733 }
+		}
+	}
+}
+
+country_event = {
+	id = time_lifeline.733
+	title = time_lifeline.name
+	desc = time_lifeline.733.desc
+
+	diplomatic = yes
+	force_open = yes
+
+	picture_event_data = {
+		room = no_video_feed_room
+	}
+
+	is_triggered_only = yes
+
+	option = {
+		name = time_lifeline.733.a
+		hidden_effect = {
+			country_event = { id = time_lifeline.734 }
+		}
+	}
+}
+
+country_event = {
+	id = time_lifeline.734
+	title = time_lifeline.name
+	desc = time_lifeline.734.desc
+
+	diplomatic = yes
+	force_open = yes
+
+	picture_event_data = {
+		room = no_video_feed_room
+	}
+
+	is_triggered_only = yes
+
+	option = {
+		name = time_lifeline.734.a
+		hidden_effect = {
+			country_event = { id = time_lifeline.735 }
+		}
+	}
+}
+
+country_event = {
+	id = time_lifeline.735
+	title = time_lifeline.name
+	desc = time_lifeline.735.desc
+
+	diplomatic = yes
+	force_open = yes
+
+	picture_event_data = {
+		room = no_video_feed_room
+	}
+
+	is_triggered_only = yes
+
+	option = {
+		name = time_lifeline.735.a
+		hidden_effect = {
+			country_event = { id = time_lifeline.736 }
+		}
+	}
+}
+
+country_event = {
+	id = time_lifeline.736
+	title = time_lifeline.name
+	desc = time_lifeline.736.desc
+
+	diplomatic = yes
+	force_open = yes
+
+	picture_event_data = {
+		room = no_video_feed_room
+	}
+
+	is_triggered_only = yes
+
+	option = {
+		name = time_lifeline.736.a
+		hidden_effect = {
+			country_event = { id = time_lifeline.737 }
+		}
+	}
+}
+
+country_event = {
+	id = time_lifeline.737
+	title = time_lifeline.name
+	desc = time_lifeline.737.desc
+	show_sound = ap_rift_event_3_clock_slowing_down
+
+	diplomatic = yes
+	force_open = yes
+
+	picture_event_data = {
+		room = no_video_feed_room
+	}
+
+	is_triggered_only = yes
+
+	option = {
+		name = time_lifeline.737.a
+		response_text = time_lifeline.737.a.response
+		custom_gui = "enclave_caravaneer_option"
+		hidden_effect = {
+			country_event = { id = time_lifeline.740 days = 1 }
+		}
+	}
+}
+
+country_event = {
+	id = time_lifeline.740
+	title = time_lifeline.name
+	desc = time_lifeline.740.desc
+	picture = GFX_evt_worrying_signal
+	event_chain = TIME_LIFELINE_CHAIN
+	
+	is_triggered_only = yes
+
+	immediate = {
+	}
+	
+	after = {
+		end_event_chain = TIME_LIFELINE_CHAIN
+		add_modifier = {
+			modifier = time_lifeline_my_last_mission
+			days = -1
+		}
+		hidden_effect = {
+			create_message = {
+				type = TIME_LIFELINE_BAD_END_1
+				localization = TIME_LIFELINE_BAD_END_1_DESC
+				days = 30
+				target = this
+			}
+		}
+	}
+
+	option = {
+		name = time_lifeline.740.a
+		trigger = {
+			is_materialist = yes
+		}
+	}
+	
+	option = {
+		name = time_lifeline.740.b
+		trigger = {
+			is_spiritualist = yes
+		}
+	}
+	
+	option = {
+		name = time_lifeline.740.c
+		trigger = {
+			is_egalitarian = yes
+		}
+	}
+	
+	option = {
+		name = time_lifeline.740.d
+		trigger = {
+			is_militarist = yes
+		}
+	}
+	
+	option = {
+		name = time_lifeline.740.e
+		trigger = {
+			is_gestalt = yes
+		}
+	}
+	
+	option = {
+		name = time_lifeline.740.f
+	}
+}
+
+################################################################
+# 阶段4（偏离航道-未来）
+################################################################
+
+country_event = {
+	id = time_lifeline.760
+	title = time_lifeline.name
+	desc = {
+		text = time_lifeline.760.desc.1
+		trigger = {
+			NOT = { has_country_flag = time_lifeline_chosen_by_myself }
+		}
+	}
+	desc = {
+		text = time_lifeline.760.desc.2
+		trigger = {
+			has_country_flag = time_lifeline_chosen_by_myself
+		}
+	}
+
+	diplomatic = yes
+	force_open = yes
+
+	picture_event_data = {
+		room = no_video_feed_room
+	}
+
+	is_triggered_only = yes
+
+	option = {
+		name = time_lifeline.760.a
+		hidden_effect = {
+			country_event = { id = time_lifeline.761 }
+		}
+	}
+}
+
+country_event = {
+	id = time_lifeline.761
+	title = time_lifeline.name
+	desc = time_lifeline.761.desc
+
+	diplomatic = yes
+	force_open = yes
+
+	picture_event_data = {
+		room = no_video_feed_room
+	}
+
+	is_triggered_only = yes
+
+	option = {
+		name = time_lifeline.761.a
+		response_text = time_lifeline.761.a.response
+		time_lifeline_short_time_event = { ID = time_lifeline.770 }
+	}
+}
+
+country_event = {
+	id = time_lifeline.770
+	title = time_lifeline.name
+	desc = time_lifeline.770.desc
+	show_sound = event_radio_chatter
+
+	diplomatic = yes
+	force_open = yes
+
+	picture_event_data = {
+		room = no_video_feed_room
+	}
+
+	is_triggered_only = yes
+
+	option = {
+		name = time_lifeline.770.a
+		hidden_effect = {
+			country_event = { id = time_lifeline.771 }
+		}
+	}
+}
+
+country_event = {
+	id = time_lifeline.771
+	title = time_lifeline.name
+	desc = time_lifeline.771.desc
+
+	diplomatic = yes
+	force_open = yes
+
+	picture_event_data = {
+		room = no_video_feed_room
+	}
+
+	is_triggered_only = yes
+
+	option = {
+		name = time_lifeline.771.a
+		hidden_effect = {
+			country_event = { id = time_lifeline.772 }
+		}
+	}
+}
+
+country_event = {
+	id = time_lifeline.772
+	title = time_lifeline.name
+	desc = time_lifeline.772.desc
+	show_sound = ap_rift_event_13_blood_pulse
+
+	diplomatic = yes
+	force_open = yes
+
+	picture_event_data = {
+		room = no_video_feed_room
+	}
+
+	is_triggered_only = yes
+
+	option = {
+		name = time_lifeline.772.a
+		hidden_effect = {
+			country_event = { id = time_lifeline.773 }
+		}
+	}
+}
+
+country_event = {
+	id = time_lifeline.773
+	title = time_lifeline.name
+	desc = time_lifeline.773.desc
+
+	diplomatic = yes
+	force_open = yes
+
+	picture_event_data = {
+		room = no_video_feed_room
+	}
+
+	is_triggered_only = yes
+
+	option = {
+		name = time_lifeline.773.a
+		hidden_effect = {
+			country_event = { id = time_lifeline.774 }
+		}
+	}
+}
+
+country_event = {
+	id = time_lifeline.774
+	title = time_lifeline.name
+	desc = time_lifeline.774.desc
+
+	diplomatic = yes
+	force_open = yes
+
+	picture_event_data = {
+		room = no_video_feed_room
+	}
+
+	is_triggered_only = yes
+	
+	after = {
+		add_monthly_resource_mult = {
+			resource = society_research
+			value = @tier5researchreward
+			min = @tier5researchmin
+			max = @tier5researchmax
+		}
+	}
+
+	option = {
+		name = time_lifeline.774.a
+		hidden_effect = {
+			country_event = { id = time_lifeline.775 }
+		}
+	}
+}
+
+country_event = {
+	id = time_lifeline.775
+	title = time_lifeline.name
+	desc = time_lifeline.775.desc
+
+	diplomatic = yes
+	force_open = yes
+
+	picture_event_data = {
+		room = no_video_feed_room
+	}
+
+	is_triggered_only = yes
+
+	option = {
+		name = time_lifeline.775.a
+		response_text = time_lifeline.775.a.response
+		custom_gui = "enclave_caravaneer_option"
+		trigger = {
+			check_variable = {
+				which = time_lifeline_hurt
+				value < 2
+			}
+		}
+		time_lifeline_some_time_event = { ID = time_lifeline.780 }
+	}
+	
+	option = {
+		name = time_lifeline.775.b
+		response_text = time_lifeline.775.b.response
+		custom_gui = "enclave_caravaneer_option"
+		trigger = {
+			check_variable = {
+				which = time_lifeline_hurt
+				value >= 2
+			}
+		}
+		time_lifeline_long_time_event = { ID = time_lifeline.790 }
+	}
+}
+
+country_event = {
+	id = time_lifeline.780
+	title = time_lifeline.name
+	desc = time_lifeline.780.desc
+	show_sound = event_radio_chatter
+
+	diplomatic = yes
+	force_open = yes
+
+	picture_event_data = {
+		room = no_video_feed_room
+	}
+
+	is_triggered_only = yes
+
+	option = {
+		name = time_lifeline.780.a
+		hidden_effect = {
+			country_event = { id = time_lifeline.781 }
+		}
+	}
+}
+
+country_event = {
+	id = time_lifeline.781
+	title = time_lifeline.name
+	desc = time_lifeline.781.desc
+
+	diplomatic = yes
+	force_open = yes
+
+	picture_event_data = {
+		room = no_video_feed_room
+	}
+
+	is_triggered_only = yes
+
+	option = {
+		name = time_lifeline.781.a
+		hidden_effect = {
+			country_event = { id = time_lifeline.782 }
+		}
+	}
+}
+
+country_event = {
+	id = time_lifeline.782
+	title = time_lifeline.name
+	desc = time_lifeline.782.desc
+	show_sound = ap_rift_event_13_blob_dissolve
+
+	diplomatic = yes
+	force_open = yes
+
+	picture_event_data = {
+		room = no_video_feed_room
+	}
+
+	is_triggered_only = yes
+
+	option = {
+		name = time_lifeline.782.a
+		response_text = time_lifeline.782.a.response
+		custom_gui = "enclave_caravaneer_option"
+		hidden_effect = {
+			country_event = { id = time_lifeline.783 days = 1 }
+		}
+	}
+}
+
+country_event = {
+	id = time_lifeline.783
+	title = time_lifeline.name
+	desc = time_lifeline.783.desc
+	picture = GFX_evt_worrying_signal
+	event_chain = TIME_LIFELINE_CHAIN
+	
+	is_triggered_only = yes
+
+	immediate = {
+	}
+	
+	after = {
+		end_event_chain = TIME_LIFELINE_CHAIN
+		if = {
+			limit = {
+				is_gestalt = no
+			}
+			add_modifier = {
+				modifier = time_lifeline_there_is_no_wonder
+				days = -1
+			}
+		}
+		else = {
+			add_modifier = {
+				modifier = time_lifeline_there_is_no_wonder_gestalt
+				days = -1
+			}
+		}
+		hidden_effect = {
+			create_message = {
+				type = TIME_LIFELINE_BAD_END_2
+				localization = TIME_LIFELINE_BAD_END_2_DESC
+				days = 30
+				target = this
+			}
+		}
+	}
+
+	option = {
+		name = time_lifeline.783.a
+		trigger = {
+			is_materialist = yes
+		}
+	}
+	
+	option = {
+		name = time_lifeline.783.b
+		trigger = {
+			is_spiritualist = yes
+		}
+	}
+	
+	option = {
+		name = time_lifeline.783.c
+		trigger = {
+			is_militarist = yes
+		}
+	}
+	
+	option = {
+		name = time_lifeline.783.d
+		trigger = {
+			is_pacifist = yes
+		}
+	}
+	
+	option = {
+		name = time_lifeline.783.e
+		trigger = {
+			is_gestalt = yes
+		}
+	}
+	
+	option = {
+		name = time_lifeline.783.f
+	}
+}
+
+country_event = {
+	id = time_lifeline.790
+	title = time_lifeline.name
+	desc = time_lifeline.790.desc
+	picture = GFX_evt_worrying_signal
+	event_chain = TIME_LIFELINE_CHAIN
+	
+	is_triggered_only = yes
+
+	immediate = {
+	}
+	
+	after = {
+		end_event_chain = TIME_LIFELINE_CHAIN
+		add_monthly_resource_mult = {
+			resource = society_research
+			value = @tier3researchreward
+			min = @tier3researchmin
+			max = @tier3researchmax
+		}
+	}
+
+	option = {
+		name = time_lifeline.790.a
+		trigger = {
+			is_xenophile = yes
+		}
+	}
+	
+	option = {
+		name = time_lifeline.790.b
+		trigger = {
+			is_xenophobe = yes
+		}
+	}
+	
+	option = {
+		name = time_lifeline.790.c
+		trigger = {
+			is_materialist = yes
+		}
+	}
+	
+	option = {
+		name = time_lifeline.790.d
+		trigger = {
+			has_valid_civic = civic_machine_servitor
+		}
+	}
+	
+	option = {
+		name = time_lifeline.790.e
+	}
+}
+
+################################################################
+# 阶段4（时间祭礼）
+################################################################
+
+country_event = {
+	id = time_lifeline.800
+	title = time_lifeline.name
+	desc = time_lifeline.800.desc
+	show_sound = event_radio_chatter
+
+	diplomatic = yes
+	force_open = yes
+
+	picture_event_data = {
+		room = no_video_feed_room
+	}
+
+	is_triggered_only = yes
+
+	option = {
+		name = time_lifeline.800.a
+		hidden_effect = {
+			country_event = { id = time_lifeline.801 }
+		}
+	}
+}
+
+country_event = {
+	id = time_lifeline.801
+	title = time_lifeline.name
+	desc = time_lifeline.801.desc
+
+	diplomatic = yes
+	force_open = yes
+
+	picture_event_data = {
+		room = no_video_feed_room
+	}
+
+	is_triggered_only = yes
+
+	option = {
+		name = time_lifeline.801.a
+		hidden_effect = {
+			country_event = { id = time_lifeline.802 }
+		}
+	}
+}
+
+country_event = {
+	id = time_lifeline.802
+	title = time_lifeline.name
+	desc = time_lifeline.802.desc
+
+	diplomatic = yes
+	force_open = yes
+
+	picture_event_data = {
+		room = no_video_feed_room
+	}
+
+	is_triggered_only = yes
+
+	option = {
+		name = time_lifeline.802.a
+		hidden_effect = {
+			country_event = { id = time_lifeline.803 }
+		}
+	}
+}
+
+country_event = {
+	id = time_lifeline.803
+	title = time_lifeline.name
+	desc = time_lifeline.803.desc
+
+	diplomatic = yes
+	force_open = yes
+
+	picture_event_data = {
+		room = no_video_feed_room
+	}
+
+	is_triggered_only = yes
+
+	option = {
+		name = time_lifeline.803.a
+		response_text = time_lifeline.803.a.response
+		custom_gui = "enclave_caravaneer_option"
+		time_lifeline_some_time_event = { ID = time_lifeline.810 }
+	}
+	
+	option = {
+		name = time_lifeline.803.b
+		response_text = time_lifeline.803.b.response
+		custom_gui = "enclave_caravaneer_option"
+		time_lifeline_some_time_event = { ID = time_lifeline.805 }
+	}
+}
+
+country_event = {
+	id = time_lifeline.804
+	title = time_lifeline.name
+	desc = time_lifeline.804.desc
+
+	diplomatic = yes
+	force_open = yes
+
+	picture_event_data = {
+		room = no_video_feed_room
+	}
+
+	is_triggered_only = yes
+
+	option = {
+		name = time_lifeline.804.a
+		response_text = time_lifeline.804.a.response
+		time_lifeline_some_time_event = { ID = time_lifeline.810 }
+		hidden_effect = {
+			set_country_flag = time_lifeline_under_the_haze
+			change_variable = {
+				which = time_lifeline_hurt
+				value = 1
+			}
+		}
+	}
+}
+
+country_event = {
+	id = time_lifeline.805
+	title = time_lifeline.name
+	desc = time_lifeline.805.desc
+	show_sound = event_radio_chatter
+
+	diplomatic = yes
+	force_open = yes
+
+	picture_event_data = {
+		room = no_video_feed_room
+	}
+
+	is_triggered_only = yes
+
+	option = {
+		name = time_lifeline.805.a
+		hidden_effect = {
+			country_event = { id = time_lifeline.806 }
+		}
+	}
+}
+
+country_event = {
+	id = time_lifeline.806
+	title = time_lifeline.name
+	desc = time_lifeline.806.desc
+	show_sound = ap_rift_event_19_smoke_ash
+
+	diplomatic = yes
+	force_open = yes
+
+	picture_event_data = {
+		room = no_video_feed_room
+	}
+
+	is_triggered_only = yes
+
+	option = {
+		name = time_lifeline.806.a
+		custom_gui = "enclave_caravaneer_option"
+		hidden_effect = {
+			country_event = { id = time_lifeline.807 }
+		}
+	}
+	
+	option = {
+		name = time_lifeline.806.b
+		custom_gui = "enclave_caravaneer_option"
+		hidden_effect = {
+			country_event = { id = time_lifeline.804 }
+		}
+	}
+}
+
+country_event = {
+	id = time_lifeline.807
+	title = time_lifeline.name
+	desc = time_lifeline.807.desc
+
+	diplomatic = yes
+	force_open = yes
+
+	picture_event_data = {
+		room = no_video_feed_room
+	}
+
+	is_triggered_only = yes
+
+	option = {
+		name = time_lifeline.807.a
+		hidden_effect = {
+			country_event = { id = time_lifeline.808 }
+		}
+	}
+}
+
+country_event = {
+	id = time_lifeline.808
+	title = time_lifeline.name
+	desc = time_lifeline.808.desc
+
+	diplomatic = yes
+	force_open = yes
+
+	picture_event_data = {
+		room = no_video_feed_room
+	}
+
+	is_triggered_only = yes
+
+	option = {
+		name = time_lifeline.808.a
+		response_text = time_lifeline.808.a.response
+		custom_gui = "enclave_caravaneer_option"
+		hidden_effect = {
+			country_event = { id = time_lifeline.809 days = 1 }
+		}
+	}
+}
+
+country_event = {
+	id = time_lifeline.809
+	title = time_lifeline.name
+	desc = time_lifeline.809.desc
+	picture = GFX_evt_worrying_signal
+	event_chain = TIME_LIFELINE_CHAIN
+	
+	is_triggered_only = yes
+
+	immediate = {
+	}
+	
+	after = {
+		end_event_chain = TIME_LIFELINE_CHAIN
+		add_modifier = {
+			modifier = time_lifeline_fly_against_fire
+			days = -1
+		}
+		hidden_effect = {
+			create_message = {
+				type = TIME_LIFELINE_BAD_END_3
+				localization = TIME_LIFELINE_BAD_END_3_DESC
+				days = 30
+				target = this
+			}
+		}
+	}
+
+	option = {
+		name = time_lifeline.809.a
+		trigger = {
+			is_xenophile = yes
+		}
+	}
+	
+	option = {
+		name = time_lifeline.809.b
+		trigger = {
+			is_xenophobe = yes
+		}
+	}
+	
+	option = {
+		name = time_lifeline.809.c
+		trigger = {
+			is_spiritualist = yes
+		}
+	}
+	
+	option = {
+		name = time_lifeline.809.d
+		trigger = {
+			is_authoritarian = yes
+		}
+	}
+	
+	option = {
+		name = time_lifeline.809.e
+		trigger = {
+			has_valid_civic = civic_machine_servitor
+		}
+	}
+	
+	option = {
+		name = time_lifeline.809.f
+	}
+}
+
+country_event = {
+	id = time_lifeline.810
+	title = time_lifeline.name
+	desc = {
+		text = time_lifeline.810.desc.1
+		trigger = {
+			NOT = { has_country_flag = time_lifeline_under_the_haze }
+		}
+	}
+	desc = {
+		text = time_lifeline.810.desc.2
+		trigger = {
+			has_country_flag = time_lifeline_under_the_haze
+		}
+	}
+	show_sound = event_radio_chatter
+
+	diplomatic = yes
+	force_open = yes
+
+	picture_event_data = {
+		room = no_video_feed_room
+	}
+
+	is_triggered_only = yes
+	
+	after = {
+		hidden_effect = {
+			country_event = { id = time_lifeline.811 }
+		}
+	}
+
+	option = {
+		name = time_lifeline.810.a
+		trigger = {
+			NOT = { has_country_flag = time_lifeline_under_the_haze }
+		}
+	}
+	
+	option = {
+		name = time_lifeline.810.b
+		trigger = {
+			has_country_flag = time_lifeline_under_the_haze
+		}
+	}
+}
+
+country_event = {
+	id = time_lifeline.811
+	title = time_lifeline.name
+	desc = {
+		text = time_lifeline.811.desc.1
+		trigger = {
+			NOT = { has_country_flag = time_lifeline_under_the_haze }
+		}
+	}
+	desc = {
+		text = time_lifeline.811.desc.2
+		trigger = {
+			has_country_flag = time_lifeline_under_the_haze
+		}
+	}
+
+	diplomatic = yes
+	force_open = yes
+
+	picture_event_data = {
+		room = no_video_feed_room
+	}
+
+	is_triggered_only = yes
+
+	option = {
+		name = time_lifeline.811.a
+		hidden_effect = {
+			country_event = { id = time_lifeline.812 }
+		}
+	}
+}
+
+country_event = {
+	id = time_lifeline.812
+	title = time_lifeline.name
+	desc = time_lifeline.812.desc
+
+	diplomatic = yes
+	force_open = yes
+
+	picture_event_data = {
+		room = no_video_feed_room
+	}
+
+	is_triggered_only = yes
+	
+	after = {
+		add_monthly_resource_mult = {
+			resource = physics_research
+			value = @tier4researchreward
+			min = @tier4researchmin
+			max = @tier4researchmax
+		}
+	}
+
+	option = {
+		name = time_lifeline.812.a
+		hidden_effect = {
+			country_event = { id = time_lifeline.813 }
+		}
+	}
+}
+
+country_event = {
+	id = time_lifeline.813
+	title = time_lifeline.name
+	desc = {
+		text = time_lifeline.813.desc
+		trigger = {
+			NOR = {
+				has_country_flag = time_lifeline_813_a_desc
+				has_country_flag = time_lifeline_813_b_desc
+				has_country_flag = time_lifeline_813_c_desc
+			}
+		}
+	}
+	desc = {
+		text = time_lifeline.813.desc.a
+		trigger = {
+			has_country_flag = time_lifeline_813_a_desc
+		}
+	}
+	desc = {
+		text = time_lifeline.813.desc.b
+		trigger = {
+			has_country_flag = time_lifeline_813_b_desc
+		}
+	}
+	desc = {
+		text = time_lifeline.813.desc.c
+		trigger = {
+			has_country_flag = time_lifeline_813_c_desc
+		}
+	}
+
+	diplomatic = yes
+	force_open = yes
+
+	picture_event_data = {
+		room = no_video_feed_room
+	}
+
+	is_triggered_only = yes
+
+	option = {
+		name = time_lifeline.813.a
+		trigger = {
+			NOT = { has_country_flag = time_lifeline_813_a_desc }
+		}
+		hidden_effect = {
+			remove_country_flag = time_lifeline_813_b_desc
+			remove_country_flag = time_lifeline_813_c_desc
+			set_country_flag = time_lifeline_813_a_desc
+			set_country_flag = time_lifeline_813_a
+			country_event = { id = time_lifeline.813 }
+		}
+	}
+	
+	option = {
+		name = time_lifeline.813.b
+		trigger = {
+			NOT = { has_country_flag = time_lifeline_813_b_desc }
+		}
+		hidden_effect = {
+			remove_country_flag = time_lifeline_813_a_desc
+			remove_country_flag = time_lifeline_813_c_desc
+			set_country_flag = time_lifeline_813_b_desc
+			set_country_flag = time_lifeline_813_b
+			country_event = { id = time_lifeline.813 }
+		}
+	}
+	
+	option = {
+		name = time_lifeline.813.c
+		trigger = {
+			NOT = { has_country_flag = time_lifeline_813_c_desc }
+		}
+		hidden_effect = {
+			remove_country_flag = time_lifeline_813_a_desc
+			remove_country_flag = time_lifeline_813_b_desc
+			set_country_flag = time_lifeline_813_c_desc
+			set_country_flag = time_lifeline_813_c
+			country_event = { id = time_lifeline.813 }
+		}
+	}
+	
+	option = {
+		name = time_lifeline.813.d
+		custom_gui = "enclave_caravaneer_option"
+		trigger = {
+			has_country_flag = time_lifeline_813_a
+			has_country_flag = time_lifeline_813_b
+			has_country_flag = time_lifeline_813_c
+		}
+		hidden_effect = {
+			country_event = { id = time_lifeline.814 }
+		}
+	}
+}
+
+country_event = {
+	id = time_lifeline.814
+	title = time_lifeline.name
+	desc = time_lifeline.814.desc
+
+	diplomatic = yes
+	force_open = yes
+
+	picture_event_data = {
+		room = no_video_feed_room
+	}
+
+	is_triggered_only = yes
+
+	option = {
+		name = time_lifeline.814.a
+		response_text = time_lifeline.814.a.response
+		time_lifeline_long_time_event = { ID = time_lifeline.820 }
+	}
+}
+
+country_event = {
+	id = time_lifeline.820
+	title = time_lifeline.name
+	desc = time_lifeline.820.desc
+	show_sound = event_radio_chatter
+
+	diplomatic = yes
+	force_open = yes
+
+	picture_event_data = {
+		room = no_video_feed_room
+	}
+
+	is_triggered_only = yes
+
+	option = {
+		name = time_lifeline.820.a
+		hidden_effect = {
+			country_event = { id = time_lifeline.821 }
+		}
+	}
+}
+
+country_event = {
+	id = time_lifeline.821
+	title = time_lifeline.name
+	desc = time_lifeline.821.desc
+
+	diplomatic = yes
+	force_open = yes
+
+	picture_event_data = {
+		room = no_video_feed_room
+	}
+
+	is_triggered_only = yes
+
+	option = {
+		name = time_lifeline.821.a
+		hidden_effect = {
+			country_event = { id = time_lifeline.822 }
+		}
+	}
+}
+
+country_event = {
+	id = time_lifeline.822
+	title = time_lifeline.name
+	desc = time_lifeline.822.desc
+
+	diplomatic = yes
+	force_open = yes
+
+	picture_event_data = {
+		room = no_video_feed_room
+	}
+
+	is_triggered_only = yes
+
+	option = {
+		name = time_lifeline.822.a
+		response_text = time_lifeline.822.a.response
+		time_lifeline_some_time_event = { ID = time_lifeline.830 }
+	}
+}
+
+country_event = {
+	id = time_lifeline.830
+	title = time_lifeline.name
+	desc = time_lifeline.830.desc
+	show_sound = event_radio_chatter
+
+	diplomatic = yes
+	force_open = yes
+
+	picture_event_data = {
+		room = no_video_feed_room
+	}
+
+	is_triggered_only = yes
+
+	option = {
+		name = time_lifeline.830.a
+		hidden_effect = {
+			country_event = { id = time_lifeline.831 }
+		}
+	}
+}
+
+country_event = {
+	id = time_lifeline.831
+	title = time_lifeline.name
+	desc = time_lifeline.831.desc
+	show_sound = event_wind_ruins
+
+	diplomatic = yes
+	force_open = yes
+
+	picture_event_data = {
+		room = no_video_feed_room
+	}
+
+	is_triggered_only = yes
+
+	option = {
+		name = time_lifeline.831.a
+		hidden_effect = {
+			country_event = { id = time_lifeline.832 }
+		}
+	}
+}
+
+country_event = {
+	id = time_lifeline.832
+	title = time_lifeline.name
+	desc = time_lifeline.832.desc
+
+	diplomatic = yes
+	force_open = yes
+
+	picture_event_data = {
+		room = no_video_feed_room
+	}
+
+	is_triggered_only = yes
+	
+	after = {
+		add_monthly_resource_mult = {
+			resource = engineering_research
+			value = @tier3researchreward
+			min = @tier3researchmin
+			max = @tier3researchmax
+		}
+	}
+
+	option = {
+		name = time_lifeline.832.a
+		hidden_effect = {
+			country_event = { id = time_lifeline.833 }
+		}
+	}
+}
+
+country_event = {
+	id = time_lifeline.833
+	title = time_lifeline.name
+	desc = time_lifeline.833.desc
+
+	diplomatic = yes
+	force_open = yes
+
+	picture_event_data = {
+		room = no_video_feed_room
+	}
+
+	is_triggered_only = yes
+
+	option = {
+		name = time_lifeline.833.a
+		hidden_effect = {
+			country_event = { id = time_lifeline.834 }
+		}
+	}
+}
+
+country_event = {
+	id = time_lifeline.834
+	title = time_lifeline.name
+	desc = time_lifeline.834.desc
+
+	diplomatic = yes
+	force_open = yes
+
+	picture_event_data = {
+		room = no_video_feed_room
+	}
+
+	is_triggered_only = yes
+
+	option = {
+		name = time_lifeline.834.a
+		response_text = time_lifeline.834.a.response
+		time_lifeline_short_time_event = { ID = time_lifeline.840 }
+	}
+}
+
+country_event = {
+	id = time_lifeline.840
+	title = time_lifeline.name
+	desc = time_lifeline.840.desc
+	show_sound = event_radio_chatter
+
+	diplomatic = yes
+	force_open = yes
+
+	picture_event_data = {
+		room = no_video_feed_room
+	}
+
+	is_triggered_only = yes
+
+	option = {
+		name = time_lifeline.840.a
+		hidden_effect = {
+			country_event = { id = time_lifeline.841 }
+		}
+	}
+}
+
+country_event = {
+	id = time_lifeline.841
+	title = time_lifeline.name
+	desc = time_lifeline.841.desc
+	show_sound = ap_rift_event_21_dimensional_machine
+
+	diplomatic = yes
+	force_open = yes
+
+	picture_event_data = {
+		room = no_video_feed_room
+	}
+
+	is_triggered_only = yes
+
+	option = {
+		name = time_lifeline.841.a
+		response_text = time_lifeline.841.a.response
+		is_dialog_only = yes
+	}
+	
+	option = {
+		name = time_lifeline.841.b
+		custom_gui = "enclave_caravaneer_option"
+		hidden_effect = {
+			country_event = { id = time_lifeline.842 }
+		}
+	}
+}
+
+country_event = {
+	id = time_lifeline.842
+	title = time_lifeline.name
+	desc = time_lifeline.842.desc
+
+	diplomatic = yes
+	force_open = yes
+
+	picture_event_data = {
+		room = no_video_feed_room
+	}
+
+	is_triggered_only = yes
+
+	option = {
+		name = time_lifeline.842.a
+		hidden_effect = {
+			country_event = { id = time_lifeline.843 }
+		}
+	}
+}
+
+country_event = {
+	id = time_lifeline.843
+	title = time_lifeline.name
+	desc = time_lifeline.843.desc
+
+	diplomatic = yes
+	force_open = yes
+
+	picture_event_data = {
+		room = no_video_feed_room
+	}
+
+	is_triggered_only = yes
+
+	option = {
+		name = time_lifeline.843.a
+		response_text = time_lifeline.843.a.response
+		custom_gui = "enclave_caravaneer_option"
+		if = {
+			limit = {
+				check_variable = {
+					which = time_lifeline_hurt
+					value = 0
+				}
+			}
+			time_lifeline_long_time_event = { ID = time_lifeline.850 }
+		}
+		else_if = {
+			limit = {
+				check_variable = {
+					which = time_lifeline_hurt
+					value < 2
+				}
+			}
+			locked_random_list = {
+				2 = {
+					time_lifeline_long_time_event = { ID = time_lifeline.850 }
+				}
+				1 = {
+					time_lifeline_long_time_event = { ID = time_lifeline.860 }
+				}
+			}
+		}
+		else = {
+			locked_random_list = {
+				1 = {
+					time_lifeline_long_time_event = { ID = time_lifeline.850 }
+				}
+				2 = {
+					time_lifeline_long_time_event = { ID = time_lifeline.860 }
+				}
+			}
+		}
+	}
+	
+	option = {
+		name = time_lifeline.843.b
+		custom_gui = "enclave_caravaneer_option"
+		hidden_effect = {
+			country_event = { id = time_lifeline.844 }
+		}
+	}
+}
+
+country_event = {
+	id = time_lifeline.844
+	title = time_lifeline.name
+	desc = time_lifeline.844.desc
+
+	diplomatic = yes
+	force_open = yes
+
+	picture_event_data = {
+		room = no_video_feed_room
+	}
+
+	is_triggered_only = yes
+
+	after = {
+		end_event_chain = TIME_LIFELINE_CHAIN
+		if = {
+			limit = {
+				is_gestalt = no
+			}
+			add_modifier = {
+				modifier = time_lifeline_civilization_afterglow
+				days = -1
+			}
+		}
+		else = {
+			add_modifier = {
+				modifier = time_lifeline_civilization_afterglow_gestalt
+				days = -1
+			}
+		}
+		hidden_effect = {
+			create_message = {
+				type = TIME_LIFELINE_NORMAL_END_3
+				localization = TIME_LIFELINE_NORMAL_END_3_DESC
+				days = 30
+				target = this
+			}
+		}
+	}
+
+	option = {
+		name = time_lifeline.844.a
+		response_text = time_lifeline.844.a.response
+		custom_gui = "enclave_caravaneer_option"
+	}
+}
+
+country_event = {
+	id = time_lifeline.850
+	title = time_lifeline.name
+	desc = time_lifeline.850.desc
+	show_sound = event_radio_chatter
+
+	diplomatic = yes
+	force_open = yes
+
+	picture_event_data = {
+		room = no_video_feed_room
+	}
+
+	is_triggered_only = yes
+
+	option = {
+		name = time_lifeline.850.a
+		hidden_effect = {
+			country_event = { id = time_lifeline.851 }
+		}
+	}
+}
+
+country_event = {
+	id = time_lifeline.851
+	title = time_lifeline.name
+	desc = time_lifeline.851.desc
+
+	diplomatic = yes
+	force_open = yes
+
+	picture_event_data = {
+		room = no_video_feed_room
+	}
+
+	is_triggered_only = yes
+
+	option = {
+		name = time_lifeline.851.a
+		hidden_effect = {
+			country_event = { id = time_lifeline.852 }
+		}
+	}
+}
+
+country_event = {
+	id = time_lifeline.852
+	title = time_lifeline.name
+	desc = time_lifeline.852.desc
+
+	diplomatic = yes
+	force_open = yes
+
+	picture_event_data = {
+		room = no_video_feed_room
+	}
+
+	is_triggered_only = yes
+
+	option = {
+		name = time_lifeline.852.a
+		hidden_effect = {
+			country_event = { id = time_lifeline.853 }
+		}
+	}
+}
+
+country_event = {
+	id = time_lifeline.853
+	title = time_lifeline.name
+	desc = time_lifeline.853.desc
+
+	diplomatic = yes
+	force_open = yes
+
+	picture_event_data = {
+		room = no_video_feed_room
+	}
+
+	is_triggered_only = yes
+
+	option = {
+		name = time_lifeline.853.a
+		hidden_effect = {
+			country_event = { id = time_lifeline.854 }
+		}
+	}
+}
+
+country_event = {
+	id = time_lifeline.854
+	title = time_lifeline.name
+	desc = time_lifeline.854.desc
+
+	diplomatic = yes
+	force_open = yes
+
+	picture_event_data = {
+		room = no_video_feed_room
+	}
+
+	is_triggered_only = yes
+
+	option = {
+		name = time_lifeline.854.a
+		hidden_effect = {
+			country_event = { id = time_lifeline.855 }
+		}
+	}
+}
+
+country_event = {
+	id = time_lifeline.855
+	title = time_lifeline.name
+	desc = time_lifeline.855.desc
+
+	diplomatic = yes
+	force_open = yes
+
+	picture_event_data = {
+		room = no_video_feed_room
+	}
+
+	is_triggered_only = yes
+
+	option = {
+		name = time_lifeline.855.a
+		hidden_effect = {
+			country_event = { id = time_lifeline.856 }
+		}
+	}
+}
+
+country_event = {
+	id = time_lifeline.856
+	title = time_lifeline.name
+	desc = time_lifeline.856.desc
+	show_sound = ap_rift_event_3_clock_slowing_down
+
+	diplomatic = yes
+	force_open = yes
+
+	picture_event_data = {
+		room = no_video_feed_room
+	}
+
+	is_triggered_only = yes
+	
+	after = {
+		add_monthly_resource_mult = {
+			resource = society_research
+			value = @tier4researchreward
+			min = @tier4researchmin
+			max = @tier4researchmax
+		}
+	}
+
+	option = {
+		name = time_lifeline.856.a
+		hidden_effect = {
+			country_event = { id = time_lifeline.857 }
+		}
+	}
+}
+
+country_event = {
+	id = time_lifeline.857
+	title = time_lifeline.name
+	desc = time_lifeline.857.desc
+
+	diplomatic = yes
+	force_open = yes
+
+	picture_event_data = {
+		room = no_video_feed_room
+	}
+
+	is_triggered_only = yes
+
+	option = {
+		name = time_lifeline.857.a
+		hidden_effect = {
+			country_event = { id = time_lifeline.858 }
+		}
+	}
+}
+
+country_event = {
+	id = time_lifeline.858
+	title = time_lifeline.name
+	desc = time_lifeline.858.desc
+	show_sound = ap_rift_event_15_time_crystal
+
+	diplomatic = yes
+	force_open = yes
+
+	picture_event_data = {
+		room = no_video_feed_room
+	}
+
+	is_triggered_only = yes
+
+	after = {
+		end_event_chain = TIME_LIFELINE_CHAIN
+		add_modifier = {
+			modifier = time_lifeline_song_of_circle
+			days = -1
+		}
+		hidden_effect = {
+			create_message = {
+				type = TIME_LIFELINE_GOOD_END_3
+				localization = TIME_LIFELINE_GOOD_END_3_DESC
+				days = 30
+				target = this
+			}
+		}
+	}
+
+	option = {
+		name = time_lifeline.858.a
+		response_text = time_lifeline.858.a.response
+		custom_gui = "enclave_caravaneer_option"
+	}
+}
+
+country_event = {
+	id = time_lifeline.860
+	title = time_lifeline.name
+	desc = time_lifeline.860.desc
+	picture = GFX_evt_worrying_signal
+	event_chain = TIME_LIFELINE_CHAIN
+	
+	is_triggered_only = yes
+
+	immediate = {
+	}
+	
+	after = {
+		end_event_chain = TIME_LIFELINE_CHAIN
+		add_monthly_resource_mult = {
+			resource = society_research
+			value = @tier3researchreward
+			min = @tier3researchmin
+			max = @tier3researchmax
+		}
+	}
+
+	option = {
+		name = time_lifeline.860.a
+		trigger = {
+			is_xenophile = yes
+		}
+	}
+	
+	option = {
+		name = time_lifeline.860.b
+		trigger = {
+			is_xenophobe = yes
+		}
+	}
+	
+	option = {
+		name = time_lifeline.860.c
+		trigger = {
+			is_spiritualist = yes
+		}
+	}
+	
+	option = {
+		name = time_lifeline.860.d
+		trigger = {
+			has_valid_civic = civic_machine_servitor
+		}
+	}
+	
+	option = {
+		name = time_lifeline.860.e
+	}
+}
+
+################################################################
+# 阶段4（镜面之谜）
+################################################################
+
+country_event = {
+	id = time_lifeline.900
+	title = time_lifeline.name
+	desc = time_lifeline.900.desc
+	show_sound = event_radio_chatter
+
+	diplomatic = yes
+	force_open = yes
+
+	picture_event_data = {
+		room = no_video_feed_room
+	}
+
+	is_triggered_only = yes
+
+	option = {
+		name = time_lifeline.900.a
+		hidden_effect = {
+			country_event = { id = time_lifeline.901 }
+		}
+	}
+}
+
+country_event = {
+	id = time_lifeline.901
+	title = time_lifeline.name
+	desc = time_lifeline.901.desc
+
+	diplomatic = yes
+	force_open = yes
+
+	picture_event_data = {
+		room = no_video_feed_room
+	}
+
+	is_triggered_only = yes
+
+	option = {
+		name = time_lifeline.901.a
+		hidden_effect = {
+			country_event = { id = time_lifeline.902 }
+		}
+	}
+}
+
+country_event = {
+	id = time_lifeline.902
+	title = time_lifeline.name
+	desc = time_lifeline.902.desc
+
+	diplomatic = yes
+	force_open = yes
+
+	picture_event_data = {
+		room = no_video_feed_room
+	}
+
+	is_triggered_only = yes
+
+	option = {
+		name = time_lifeline.902.a
+		hidden_effect = {
+			country_event = { id = time_lifeline.903 }
+		}
+	}
+}
+
+country_event = {
+	id = time_lifeline.903
+	title = time_lifeline.name
+	desc = time_lifeline.903.desc
+
+	diplomatic = yes
+	force_open = yes
+
+	picture_event_data = {
+		room = no_video_feed_room
+	}
+
+	is_triggered_only = yes
+
+	option = {
+		name = time_lifeline.903.a
+		hidden_effect = {
+			country_event = { id = time_lifeline.904 }
+		}
+	}
+}
+
+country_event = {
+	id = time_lifeline.904
+	title = time_lifeline.name
+	desc = time_lifeline.904.desc
+
+	diplomatic = yes
+	force_open = yes
+
+	picture_event_data = {
+		room = no_video_feed_room
+	}
+
+	is_triggered_only = yes
+
+	option = {
+		name = time_lifeline.904.a
+		response_text = time_lifeline.904.a.response
+		time_lifeline_short_time_event = { ID = time_lifeline.910 }
+	}
+}
+
+country_event = {
+	id = time_lifeline.910
+	title = time_lifeline.name
+	desc = time_lifeline.910.desc
+	show_sound = event_radio_chatter
+
+	diplomatic = yes
+	force_open = yes
+
+	picture_event_data = {
+		room = no_video_feed_room
+	}
+
+	is_triggered_only = yes
+
+	option = {
+		name = time_lifeline.910.a
+		hidden_effect = {
+			country_event = { id = time_lifeline.911 }
+		}
+	}
+}
+
+country_event = {
+	id = time_lifeline.911
+	title = time_lifeline.name
+	desc = time_lifeline.911.desc
+	show_sound = event_radio_chatter
+
+	diplomatic = yes
+	force_open = yes
+
+	picture_event_data = {
+		room = no_video_feed_room
+	}
+
+	is_triggered_only = yes
+
+	option = {
+		name = time_lifeline.911.a
+		response_text = time_lifeline.911.a.response
+		custom_gui = "enclave_caravaneer_option"
+		time_lifeline_some_time_event = { ID = time_lifeline.920 }
+	}
+	
+	option = {
+		name = time_lifeline.911.b
+		response_text = time_lifeline.911.b.response
+		custom_gui = "enclave_caravaneer_option"
+		time_lifeline_some_time_event = { ID = time_lifeline.940 }
+	}
+}
+
+country_event = {
+	id = time_lifeline.920
+	title = time_lifeline.name
+	desc = time_lifeline.920.desc
+	show_sound = event_radio_chatter
+
+	diplomatic = yes
+	force_open = yes
+
+	picture_event_data = {
+		room = no_video_feed_room
+	}
+
+	is_triggered_only = yes
+
+	option = {
+		name = time_lifeline.920.a
+		hidden_effect = {
+			country_event = { id = time_lifeline.921 }
+		}
+	}
+}
+
+country_event = {
+	id = time_lifeline.921
+	title = time_lifeline.name
+	desc = time_lifeline.921.desc
+
+	diplomatic = yes
+	force_open = yes
+
+	picture_event_data = {
+		room = no_video_feed_room
+	}
+
+	is_triggered_only = yes
+
+	option = {
+		name = time_lifeline.921.a
+		hidden_effect = {
+			country_event = { id = time_lifeline.922 }
+		}
+	}
+}
+
+country_event = {
+	id = time_lifeline.922
+	title = time_lifeline.name
+	desc = time_lifeline.922.desc
+	show_sound = ap_rift_event_5_scanning
+
+	diplomatic = yes
+	force_open = yes
+
+	picture_event_data = {
+		room = no_video_feed_room
+	}
+
+	is_triggered_only = yes
+	
+	after = {
+		add_monthly_resource_mult = {
+			resource = society_research
+			value = @tier4researchreward
+			min = @tier4researchmin
+			max = @tier4researchmax
+		}
+	}
+
+	option = {
+		name = time_lifeline.922.a
+		response_text = time_lifeline.922.a.response
+		time_lifeline_short_time_event = { ID = time_lifeline.930 }
+	}
+}
+
+country_event = {
+	id = time_lifeline.930
+	title = time_lifeline.name
+	desc = time_lifeline.930.desc
+	show_sound = event_radio_chatter
+
+	diplomatic = yes
+	force_open = yes
+
+	picture_event_data = {
+		room = no_video_feed_room
+	}
+
+	is_triggered_only = yes
+
+	option = {
+		name = time_lifeline.930.a
+		hidden_effect = {
+			country_event = { id = time_lifeline.931 }
+		}
+	}
+}
+
+country_event = {
+	id = time_lifeline.931
+	title = time_lifeline.name
+	desc = time_lifeline.931.desc
+
+	diplomatic = yes
+	force_open = yes
+
+	picture_event_data = {
+		room = no_video_feed_room
+	}
+
+	is_triggered_only = yes
+
+	option = {
+		name = time_lifeline.931.a
+		hidden_effect = {
+			country_event = { id = time_lifeline.932 }
+		}
+	}
+}
+
+country_event = {
+	id = time_lifeline.932
+	title = time_lifeline.name
+	desc = time_lifeline.932.desc
+
+	diplomatic = yes
+	force_open = yes
+
+	picture_event_data = {
+		room = no_video_feed_room
+	}
+
+	is_triggered_only = yes
+
+	option = {
+		name = time_lifeline.932.a
+		response_text = time_lifeline.932.a.response
+		time_lifeline_unknown_time_event = { ID = time_lifeline.960 }
+	}
+}
+
+country_event = {
+	id = time_lifeline.940
+	title = time_lifeline.name
+	desc = time_lifeline.940.desc
+	show_sound = event_radio_chatter
+
+	diplomatic = yes
+	force_open = yes
+
+	picture_event_data = {
+		room = no_video_feed_room
+	}
+
+	is_triggered_only = yes
+
+	option = {
+		name = time_lifeline.940.a
+		hidden_effect = {
+			country_event = { id = time_lifeline.941 }
+		}
+	}
+}
+
+country_event = {
+	id = time_lifeline.941
+	title = time_lifeline.name
+	desc = time_lifeline.941.desc
+	show_sound = ap_rift_event_5_scanning
+
+	diplomatic = yes
+	force_open = yes
+
+	picture_event_data = {
+		room = no_video_feed_room
+	}
+
+	is_triggered_only = yes
+	
+	immediate = {
+		set_country_flag = time_lifeline_secret_in_mirror
+	}
+
+	option = {
+		name = time_lifeline.941.a
+		response_text = time_lifeline.941.a.response
+		is_dialog_only = yes
+	}
+	
+	option = {
+		name = time_lifeline.941.b
+		custom_gui = "enclave_caravaneer_option"
+		add_monthly_resource_mult = {
+			resource = physics_research
+			value = @tier4researchreward
+			min = @tier4researchmin
+			max = @tier4researchmax
+		}
+		hidden_effect = {
+			country_event = { id = time_lifeline.942 }
+		}
+	}
+}
+
+country_event = {
+	id = time_lifeline.942
+	title = time_lifeline.name
+	desc = time_lifeline.942.desc
+
+	diplomatic = yes
+	force_open = yes
+
+	picture_event_data = {
+		room = no_video_feed_room
+	}
+
+	is_triggered_only = yes
+
+	option = {
+		name = time_lifeline.942.a
+		response_text = time_lifeline.942.a.response
+		time_lifeline_short_time_event = { ID = time_lifeline.950 }
+	}
+}
+
+country_event = {
+	id = time_lifeline.950
+	title = time_lifeline.name
+	desc = time_lifeline.950.desc
+	show_sound = event_radio_chatter
+
+	diplomatic = yes
+	force_open = yes
+
+	picture_event_data = {
+		room = no_video_feed_room
+	}
+
+	is_triggered_only = yes
+
+	option = {
+		name = time_lifeline.950.a
+		hidden_effect = {
+			country_event = { id = time_lifeline.951 }
+		}
+	}
+}
+
+country_event = {
+	id = time_lifeline.951
+	title = time_lifeline.name
+	desc = time_lifeline.951.desc
+	show_sound = ap_rift_event_0_troops_marching
+
+	diplomatic = yes
+	force_open = yes
+
+	picture_event_data = {
+		room = no_video_feed_room
+	}
+
+	is_triggered_only = yes
+
+	option = {
+		name = time_lifeline.951.a
+		hidden_effect = {
+			country_event = { id = time_lifeline.952 }
+		}
+	}
+}
+
+country_event = {
+	id = time_lifeline.952
+	title = time_lifeline.name
+	desc = time_lifeline.952.desc
+
+	diplomatic = yes
+	force_open = yes
+
+	picture_event_data = {
+		room = no_video_feed_room
+	}
+
+	is_triggered_only = yes
+
+	option = {
+		name = time_lifeline.952.a
+		hidden_effect = {
+			country_event = { id = time_lifeline.953 }
+		}
+	}
+}
+
+country_event = {
+	id = time_lifeline.953
+	title = time_lifeline.name
+	desc = {
+		text = time_lifeline.953.desc.1
+		trigger = {
+			check_variable = {
+				which = time_lifeline_hurt
+				value = 0
+			}
+		}
+	}
+	desc = {
+		text = time_lifeline.953.desc.2
+		trigger = {
+			check_variable = {
+				which = time_lifeline_hurt
+				value > 0
+			}
+		}
+	}
+	show_sound = ap_rift_event_27_living_wind
+
+	diplomatic = yes
+	force_open = yes
+
+	picture_event_data = {
+		room = no_video_feed_room
+	}
+
+	is_triggered_only = yes
+
+	option = {
+		name = time_lifeline.953.a
+		response_text = time_lifeline.953.a.response
+		trigger = {
+			check_variable = {
+				which = time_lifeline_hurt
+				value = 0
+			}
+		}
+		time_lifeline_unknown_time_event = { ID = time_lifeline.960 }
+	}
+	
+	option = {
+		name = time_lifeline.953.b
+		response_text = time_lifeline.953.b.response
+		trigger = {
+			check_variable = {
+				which = time_lifeline_hurt
+				value > 0
+			}
+		}
+		hidden_effect = {
+			country_event = { id = time_lifeline.954 days = 1 }
+		}
+	}
+}
+
+country_event = {
+	id = time_lifeline.954
+	title = time_lifeline.name
+	desc = time_lifeline.954.desc
+	picture = GFX_evt_worrying_signal
+	event_chain = TIME_LIFELINE_CHAIN
+	
+	is_triggered_only = yes
+
+	immediate = {
+	}
+	
+	after = {
+		end_event_chain = TIME_LIFELINE_CHAIN
+		if = {
+			limit = {
+				is_spiritualist = yes
+			}
+			add_modifier = {
+				modifier = time_lifeline_finally_be_oblation_spiritualist
+				days = -1
+			}
+		}
+		else_if = {
+			limit = {
+				is_gestalt = yes
+			}
+			add_modifier = {
+				modifier = time_lifeline_finally_be_oblation_gestalt
+				days = -1
+			}
+		}
+		else = {
+			add_modifier = {
+				modifier = time_lifeline_finally_be_oblation
+				days = -1
+			}
+		}
+		hidden_effect = {
+			create_message = {
+				type = TIME_LIFELINE_BAD_END_4
+				localization = TIME_LIFELINE_BAD_END_4_DESC
+				days = 30
+				target = this
+			}
+		}
+	}
+
+	option = {
+		name = time_lifeline.954.a
+		trigger = {
+			is_materialist = yes
+		}
+	}
+	
+	option = {
+		name = time_lifeline.954.b
+		trigger = {
+			is_spiritualist = yes
+		}
+	}
+	
+	option = {
+		name = time_lifeline.954.c
+		trigger = {
+			is_militarist = yes
+		}
+	}
+	
+	option = {
+		name = time_lifeline.954.d
+		trigger = {
+			is_xenophobe = yes
+		}
+	}
+	
+	option = {
+		name = time_lifeline.954.e
+		trigger = {
+			is_machine_empire = yes
+		}
+	}
+	
+	option = {
+		name = time_lifeline.954.f
+	}
+}
+
+country_event = {
+	id = time_lifeline.960
+	title = time_lifeline.name
+	desc = {
+		text = time_lifeline.960.desc.1
+		trigger = {
+			has_country_flag = time_lifeline_secret_in_mirror
+		}
+	}
+	desc = {
+		text = time_lifeline.960.desc.2
+		trigger = {
+			NOT = { has_country_flag = time_lifeline_secret_in_mirror }
+		}
+	}
+	show_sound = event_radio_chatter
+
+	diplomatic = yes
+	force_open = yes
+
+	picture_event_data = {
+		room = no_video_feed_room
+	}
+
+	is_triggered_only = yes
+
+	option = {
+		name = time_lifeline.960.a
+		hidden_effect = {
+			country_event = { id = time_lifeline.961 }
+		}
+	}
+}
+
+country_event = {
+	id = time_lifeline.961
+	title = time_lifeline.name
+	desc = time_lifeline.961.desc
+
+	diplomatic = yes
+	force_open = yes
+
+	picture_event_data = {
+		room = no_video_feed_room
+	}
+
+	is_triggered_only = yes
+
+	option = {
+		name = time_lifeline.961.a
+		hidden_effect = {
+			country_event = { id = time_lifeline.962 }
+		}
+	}
+}
+
+country_event = {
+	id = time_lifeline.962
+	title = time_lifeline.name
+	desc = time_lifeline.962.desc
+	show_sound = ap_rift_event_5_swimming
+
+	diplomatic = yes
+	force_open = yes
+
+	picture_event_data = {
+		room = no_video_feed_room
+	}
+
+	is_triggered_only = yes
+
+	option = {
+		name = time_lifeline.962.a
+		hidden_effect = {
+			country_event = { id = time_lifeline.963 }
+		}
+	}
+}
+
+country_event = {
+	id = time_lifeline.963
+	title = time_lifeline.name
+	desc = {
+		text = time_lifeline.963.desc.1
+		trigger = {
+			has_country_flag = time_lifeline_secret_in_mirror
+		}
+	}
+	desc = {
+		text = time_lifeline.963.desc.2
+		trigger = {
+			NOT = { has_country_flag = time_lifeline_secret_in_mirror }
+		}
+	}
+
+	diplomatic = yes
+	force_open = yes
+
+	picture_event_data = {
+		room = no_video_feed_room
+	}
+
+	is_triggered_only = yes
+
+	option = {
+		name = time_lifeline.963.a
+		response_text = time_lifeline.963.a.response
+		time_lifeline_long_time_event = { ID = time_lifeline.970 }
+	}
+}
+
+country_event = {
+	id = time_lifeline.970
+	title = time_lifeline.name
+	desc = time_lifeline.970.desc
+	show_sound = event_radio_chatter
+
+	diplomatic = yes
+	force_open = yes
+
+	picture_event_data = {
+		room = no_video_feed_room
+	}
+
+	is_triggered_only = yes
+
+	option = {
+		name = time_lifeline.970.a
+		hidden_effect = {
+			country_event = { id = time_lifeline.971 }
+		}
+	}
+}
+
+country_event = {
+	id = time_lifeline.971
+	title = time_lifeline.name
+	desc = time_lifeline.971.desc
+
+	diplomatic = yes
+	force_open = yes
+
+	picture_event_data = {
+		room = no_video_feed_room
+	}
+
+	is_triggered_only = yes
+
+	option = {
+		name = time_lifeline.971.a
+		hidden_effect = {
+			country_event = { id = time_lifeline.972 }
+		}
+	}
+}
+
+country_event = {
+	id = time_lifeline.972
+	title = time_lifeline.name
+	desc = time_lifeline.972.desc
+	show_sound = ap_rift_event_21_dimensional_machine
+
+	diplomatic = yes
+	force_open = yes
+
+	picture_event_data = {
+		room = no_video_feed_room
+	}
+
+	is_triggered_only = yes
+	
+	after = {
+		add_monthly_resource_mult = {
+			resource = engineering_research
+			value = @tier5researchreward
+			min = @tier5researchmin
+			max = @tier5researchmax
+		}
+	}
+
+	option = {
+		name = time_lifeline.972.a
+		hidden_effect = {
+			country_event = { id = time_lifeline.973 }
+		}
+	}
+}
+
+country_event = {
+	id = time_lifeline.973
+	title = time_lifeline.name
+	desc = time_lifeline.973.desc
+
+	diplomatic = yes
+	force_open = yes
+
+	picture_event_data = {
+		room = no_video_feed_room
+	}
+
+	is_triggered_only = yes
+
+	option = {
+		name = time_lifeline.973.a
+		response_text = time_lifeline.973.a.response
+		if = {
+			limit = {
+				has_country_flag = time_lifeline_secret_in_mirror
+			}
+			time_lifeline_long_time_event = { ID = time_lifeline.990 }
+		}
+		else = {
+			time_lifeline_some_time_event = { ID = time_lifeline.980 }
+		}
+	}
+}
+
+country_event = {
+	id = time_lifeline.980
+	title = time_lifeline.name
+	desc = time_lifeline.980.desc
+	show_sound = event_radio_chatter
+
+	diplomatic = yes
+	force_open = yes
+
+	picture_event_data = {
+		room = no_video_feed_room
+	}
+
+	is_triggered_only = yes
+
+	option = {
+		name = time_lifeline.980.a
+		hidden_effect = {
+			country_event = { id = time_lifeline.981 }
+		}
+	}
+}
+
+country_event = {
+	id = time_lifeline.981
+	title = time_lifeline.name
+	desc = time_lifeline.981.desc
+
+	diplomatic = yes
+	force_open = yes
+
+	picture_event_data = {
+		room = no_video_feed_room
+	}
+
+	is_triggered_only = yes
+
+	option = {
+		name = time_lifeline.981.a
+		hidden_effect = {
+			country_event = { id = time_lifeline.982 }
+		}
+	}
+}
+
+country_event = {
+	id = time_lifeline.982
+	title = time_lifeline.name
+	desc = time_lifeline.982.desc
+
+	diplomatic = yes
+	force_open = yes
+
+	picture_event_data = {
+		room = no_video_feed_room
+	}
+
+	is_triggered_only = yes
+
+	option = {
+		name = time_lifeline.982.a
+		hidden_effect = {
+			country_event = { id = time_lifeline.983 }
+		}
+	}
+}
+
+country_event = {
+	id = time_lifeline.983
+	title = time_lifeline.name
+	desc = time_lifeline.983.desc
+
+	diplomatic = yes
+	force_open = yes
+
+	picture_event_data = {
+		room = no_video_feed_room
+	}
+
+	is_triggered_only = yes
+
+	option = {
+		name = time_lifeline.983.a
+		hidden_effect = {
+			country_event = { id = time_lifeline.984 }
+		}
+	}
+}
+
+country_event = {
+	id = time_lifeline.984
+	title = time_lifeline.name
+	desc = time_lifeline.984.desc
+
+	diplomatic = yes
+	force_open = yes
+
+	picture_event_data = {
+		room = no_video_feed_room
+	}
+
+	is_triggered_only = yes
+
+	option = {
+		name = time_lifeline.984.a
+		hidden_effect = {
+			country_event = { id = time_lifeline.985 }
+		}
+	}
+}
+
+country_event = {
+	id = time_lifeline.985
+	title = time_lifeline.name
+	desc = time_lifeline.985.desc
+
+	diplomatic = yes
+	force_open = yes
+
+	picture_event_data = {
+		room = no_video_feed_room
+	}
+
+	is_triggered_only = yes
+
+	option = {
+		name = time_lifeline.985.a
+		response_text = time_lifeline.985.a.response
+		is_dialog_only = yes
+	}
+	
+	option = {
+		name = time_lifeline.985.b
+		response_text = time_lifeline.985.b.response
+		custom_gui = "enclave_caravaneer_option"
+		end_event_chain = TIME_LIFELINE_CHAIN
+		add_modifier = {
+			modifier = time_lifeline_mirror_world
+			days = -1
+		}
+		hidden_effect = {
+			create_message = {
+				type = TIME_LIFELINE_NORMAL_END_4
+				localization = TIME_LIFELINE_NORMAL_END_4_DESC
+				days = 30
+				target = this
+			}
+		}
+	}
+}
+
+country_event = {
+	id = time_lifeline.990
+	title = time_lifeline.name
+	desc = time_lifeline.990.desc
+	show_sound = event_radio_chatter
+
+	diplomatic = yes
+	force_open = yes
+
+	picture_event_data = {
+		room = no_video_feed_room
+	}
+
+	is_triggered_only = yes
+
+	option = {
+		name = time_lifeline.990.a
+		hidden_effect = {
+			country_event = { id = time_lifeline.991 }
+		}
+	}
+}
+
+country_event = {
+	id = time_lifeline.991
+	title = time_lifeline.name
+	desc = time_lifeline.991.desc
+
+	diplomatic = yes
+	force_open = yes
+
+	picture_event_data = {
+		room = no_video_feed_room
+	}
+
+	is_triggered_only = yes
+
+	option = {
+		name = time_lifeline.991.a
+		hidden_effect = {
+			country_event = { id = time_lifeline.992 }
+		}
+	}
+}
+
+country_event = {
+	id = time_lifeline.992
+	title = time_lifeline.name
+	desc = time_lifeline.992.desc
+
+	diplomatic = yes
+	force_open = yes
+
+	picture_event_data = {
+		room = no_video_feed_room
+	}
+
+	is_triggered_only = yes
+
+	option = {
+		name = time_lifeline.992.a
+		hidden_effect = {
+			country_event = { id = time_lifeline.993 }
+		}
+	}
+}
+
+country_event = {
+	id = time_lifeline.993
+	title = time_lifeline.name
+	desc = time_lifeline.993.desc
+
+	diplomatic = yes
+	force_open = yes
+
+	picture_event_data = {
+		room = no_video_feed_room
+	}
+
+	is_triggered_only = yes
+
+	option = {
+		name = time_lifeline.993.a
+		hidden_effect = {
+			country_event = { id = time_lifeline.994 }
+		}
+	}
+}
+
+country_event = {
+	id = time_lifeline.994
+	title = time_lifeline.name
+	desc = time_lifeline.994.desc
+
+	diplomatic = yes
+	force_open = yes
+
+	picture_event_data = {
+		room = no_video_feed_room
+	}
+
+	is_triggered_only = yes
+
+	option = {
+		name = time_lifeline.994.a
+		hidden_effect = {
+			country_event = { id = time_lifeline.995 }
+		}
+	}
+}
+
+country_event = {
+	id = time_lifeline.995
+	title = time_lifeline.name
+	desc = time_lifeline.995.desc
+
+	diplomatic = yes
+	force_open = yes
+
+	picture_event_data = {
+		room = no_video_feed_room
+	}
+
+	is_triggered_only = yes
+
+	option = {
+		name = time_lifeline.995.a
+		hidden_effect = {
+			country_event = { id = time_lifeline.996 }
+		}
+	}
+}
+
+country_event = {
+	id = time_lifeline.996
+	title = time_lifeline.name
+	desc = time_lifeline.996.desc
+
+	diplomatic = yes
+	force_open = yes
+
+	picture_event_data = {
+		room = no_video_feed_room
+	}
+
+	is_triggered_only = yes
+
+	option = {
+		name = time_lifeline.996.a
+		hidden_effect = {
+			country_event = { id = time_lifeline.997 }
+		}
+	}
+}
+
+country_event = {
+	id = time_lifeline.997
+	title = time_lifeline.name
+	desc = time_lifeline.997.desc
+	show_sound = ap_rift_event_25_black_sun
+
+	diplomatic = yes
+	force_open = yes
+
+	picture_event_data = {
+		room = no_video_feed_room
+	}
+
+	is_triggered_only = yes
+	
+	after = {
+		add_monthly_resource_mult = {
+			resource = physics_research
+			value = @tier4researchreward
+			min = @tier4researchmin
+			max = @tier4researchmax
+		}
+	}
+
+	option = {
+		name = time_lifeline.997.a
+		hidden_effect = {
+			country_event = { id = time_lifeline.998 }
+		}
+	}
+}
+
+country_event = {
+	id = time_lifeline.998
+	title = time_lifeline.name
+	desc = time_lifeline.998.desc
+
+	diplomatic = yes
+	force_open = yes
+
+	picture_event_data = {
+		room = no_video_feed_room
+	}
+
+	is_triggered_only = yes
+
+	option = {
+		name = time_lifeline.998.a
+		hidden_effect = {
+			country_event = { id = time_lifeline.999 }
+		}
+	}
+}
+
+country_event = {
+	id = time_lifeline.999
+	title = time_lifeline.name
+	desc = time_lifeline.999.desc
+	show_sound = ap_rift_event_15_time_crystal
+
+	diplomatic = yes
+	force_open = yes
+
+	picture_event_data = {
+		room = no_video_feed_room
+	}
+
+	is_triggered_only = yes
+	
+	after = {
+		end_event_chain = TIME_LIFELINE_CHAIN
+		add_modifier = {
+			modifier = time_lifeline_identical_twins
+			days = -1
+		}
+		hidden_effect = {
+			create_message = {
+				type = TIME_LIFELINE_GOOD_END_4
+				localization = TIME_LIFELINE_GOOD_END_4_DESC
+				days = 30
+				target = this
+			}
+		}
+	}
+
+	option = {
+		name = time_lifeline.999.a
+		response_text = time_lifeline.999.a.response
+		custom_gui = "enclave_caravaneer_option"
+	}
+}

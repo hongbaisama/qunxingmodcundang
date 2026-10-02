@@ -1,0 +1,209 @@
+# 国家
+num_akx_ap_value = {
+	base = 1
+	modifier = {
+		add = 0.5
+		has_ascension_perk = ap_horror
+	}
+	modifier = {
+		add = 0.5
+		has_ascension_perk = ap_time
+	}
+}
+
+building_akx_worm_value = {
+	base = 0
+	add = value:num_time_normal_resources_value
+	multiply = owner.value:num_akx_ap_value
+}
+
+zone_akx_worm_value = {
+	base = 1
+	multiply = value:time_zone_job_value
+	multiply = owner.value:num_akx_ap_value
+	# 0.5倍额外岗位
+	modifier = {
+		multiply = 1.5
+		exists = owner
+		owner = { has_active_tradition = tr_virtuality_4 }
+	}
+}
+
+mirrored_syzygy_admiral_choose_weight = {
+	base = 0
+	add = trigger:has_base_skill
+	modifier = {
+		multiply = 25
+		is_dimension_traveler = yes
+	}
+	modifier = {
+		multiply = 5
+		is_leader_tier_or_higher = { TIER = legendary }
+	}
+	modifier = {
+		multiply = 5
+		is_leader_tier_or_higher = { TIER = renowned }
+	}
+	modifier = {
+		multiply = 5
+		has_trait = subclass_commander_admiral
+	}
+	modifier = {
+		multiply = 3
+		has_trait = subclass_commander_councilor
+	}
+	modifier = {
+		multiply = 2
+		has_trait = subclass_commander_general
+	}
+	modifier = {
+		multiply = 5
+		exists = fleet
+		fleet = {
+			OR = {
+				is_ship_class = shipclass_military
+				is_ship_class = shipclass_military_special
+				is_ship_class = shipclass_starbase
+			}
+		}
+	}
+}
+
+num_akx_messenger_job_per_pop_value = {
+	base = 0.25
+	modifier = {
+		add = 0.25
+		has_carrier_flag = $TYPE$_messenger_2
+	}
+	modifier = {
+		add = 0.5
+		has_carrier_flag = $TYPE$_messenger_3
+	}
+}
+
+# 彼岸之门每次转变总人口数百分之$PERCENTAGE$的人口，此处计算理应转变人口数占可转变人口数的百分比
+akx_waiting_world_pop_transfer_percentage = {
+	base = $PERCENTAGE$
+	complex_trigger_modifier = {
+		trigger = count_owned_pop_amount
+		parameters = {
+			limit = { always = yes }
+		}
+		mode = mult
+	}
+	complex_trigger_modifier = {
+		trigger = count_owned_pop_amount
+		parameters = {
+			limit = {
+				has_akx_waiting_world = yes
+				has_akx_messenger = no
+			}
+		}
+		mode = divide
+		min_value = 1
+	}
+	min = 0
+	max = 1
+}
+
+situation_ap_time_speed_value = {
+	base = 2200
+	add = trigger:years_passed
+	multiply = 0.01
+	add = 1
+}
+
+trait_akx_messenger_decay_value = {
+	base = 1
+	complex_trigger_modifier = {
+		trigger = count_owned_colony
+		trigger_scope = owner
+		parameters = {
+			limit = {
+				ignore_colony_counted = no
+			}
+		}
+		mode = divide
+		min_value = 1
+	}
+	max = 1
+	min = 0
+	[[MULT]
+		multiply = $MULT$
+	]
+}
+
+building_time_hotel_value = {
+	base = 0
+	modifier = {
+		add = 1
+		is_sector_capital = yes
+	}
+	modifier = {
+		add = 1
+		is_capital = yes # 实际上首都提供双倍全国加成
+	}
+	modifier = {
+		add = 1
+		has_modifier = penal_colony # 作为星域首府的流放地也会提供双倍全国加成
+	}
+}
+
+akx_dark_consortium_edict_cost = {
+	base = 1
+	multiply = value:edict_size_effect
+	multiply = value:akx_dark_consortium_edict_value
+}
+
+akx_dark_consortium_edict_value = {
+	base = 1
+	modifier = {
+		add = 0.5
+		has_edict = akx_shorten_r_time_cooldown
+	}
+}
+
+dimensional_horror_ship_size_bonus_difficulty_value = {
+	base = 0
+	modifier = {
+		set = 1
+		is_difficulty = 6
+	}
+	modifier = {
+		set = 0.75
+		is_difficulty = 5
+	}
+	modifier = {
+		set = 0.5
+		is_difficulty = 4
+	}
+	modifier = {
+		set = 0.25
+		is_difficulty = 3
+	}
+}
+
+dimensional_horror_ship_size_bonus = {
+	base = 0
+	add = value:dimensional_horror_ship_size_bonus_difficulty_value
+	modifier = {
+		multiply = 0.1
+		is_ship_size = dimensional_horror_voidworms
+	}
+	modifier = {
+		multiply = 0.25
+		is_ship_size = dimensional_horror
+	}
+	modifier = {
+		multiply = 0.5
+		is_ship_size = dimensional_horror_crisis
+	}
+	modifier = {
+		multiply = 1
+		is_ship_size = dimensional_horror_destiny
+	}
+	modifier = {
+		multiply = 0 # 固定数值，写在ship_size里
+		is_ship_size = dimensional_horror_end
+	}
+}

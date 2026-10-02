@@ -1,0 +1,87 @@
+key = HORROR_MUTATION_ARMOR_$KEY$
+size = $SIZE$
+icon = "GFX_ship_part_horror_armor"
+icon_frame = 1
+
+modifier = {
+	ship_armor_add = $ADD$
+	ship_armor_mult = 0.1
+	ship_armor_regen_add_perc = 0.5
+}
+
+ship_modifier = {
+	ship_armor_hardening_add = $HARDENING$
+	weapon_confuser_protect_chance = $HARDENING$
+	weapon_terrify_protect_chance = $HARDENING$
+}
+
+triggered_ship_modifier = {
+	potential = {
+		owner = { has_technology = tech_time_armor }
+	}
+	ship_armor_hardening_add = $HARDENING$
+	weapon_confuser_protect_chance = $HARDENING$
+	weapon_terrify_protect_chance = $HARDENING$
+	ship_armor_regen_add_perc = 0.5
+}
+
+triggered_ship_modifier = {
+	potential = {
+		owner = { has_technology = tech_end_armor }
+	}
+	ship_armor_hardening_add = $HARDENING$
+	weapon_confuser_protect_chance = $HARDENING$
+	weapon_terrify_protect_chance = $HARDENING$
+	ship_armor_regen_add_perc = 0.5
+	ship_armor_reduction = -0.1
+}
+
+triggered_ship_modifier = {
+	potential = {
+		owner = { has_technology = tech_hope_hull }
+	}
+	ship_armor_hardening_add = $HARDENING$
+	weapon_confuser_protect_chance = $HARDENING$
+	weapon_terrify_protect_chance = $HARDENING$
+	ship_hull_regen_add_perc = 0.5
+}
+
+triggered_ship_design_modifier = {
+	potential = {
+		from = { has_technology = tech_hope_hull }
+	}
+	ship_hull_mult = 0.1
+}
+
+prerequisites = { "tech_horror_armor" }
+component_set = "HORROR_MUTATION_ARMOR"
+
+potential = {
+	OR = {
+		is_ship_size = voidworms_small
+		is_ship_size = voidworms_medium
+		is_ship_size = voidworms_large
+		is_ship_size = voidworms_titan
+	}
+	from = { has_tradition = tr_horror_2 }
+}
+
+resources = {
+	category = ship_components
+	cost = {
+		sr_dark_matter = $COST_RARE$
+	}
+	inline_script = {
+		script = "grand_archive/mutations/component_dynamic_cost"
+		COST = $COST$
+	}
+}
+
+ai_weight = {
+	weight = 100
+	modifier = {
+		factor = 0.0
+		no_resource_for_component = { RESOURCE = sr_dark_matter }
+		is_ai = yes
+	}
+}

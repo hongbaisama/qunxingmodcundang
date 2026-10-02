@@ -1,0 +1,521 @@
+# 负相时空
+concept_horror_time = {
+	icon = "gfx/interface/icons/technologies/categories/category_horror_time.dds"
+	alias = {
+	}
+}
+
+concept_has_horror_time_knowledge = {
+	icon = "gfx/interface/icons/technologies/categories/category_horror_time.dds"
+	alias = {
+	}
+}
+
+concept_category_horror_time_research_speed_mult = {
+	icon = "gfx/interface/icons/technologies/categories/category_horror_time.dds"
+	alias = {
+		concept_category_horror_time_research_speed_mult_white
+	}
+}
+
+concept_category_horror_time_draw_chance_mult = {
+	icon = "gfx/interface/icons/technologies/categories/category_horror_time.dds"
+	alias = {
+		concept_category_horror_time_draw_chance_mult_white
+	}
+}
+
+concept_can_approach_black_hole = {
+	icon = "gfx/interface/icons/planet_modifiers/pm_black_hole.dds"
+	alias = {
+	}
+}
+
+# 终末行舟
+concept_exceptional_time_titan = {
+	icon = "gfx/interface/council_view/icon_councilor_akx_syzygy_admiral.dds"
+	alias = {
+		concept_exceptional_time_titan_color
+	}
+	databank = {
+		category = db_time_titan
+		icon = "gfx/interface/icons/concepts/time_titan/time_titan.dds"
+		picture = "GFX_evt_federation_fleet"
+	}
+}
+
+concept_epic_time_titan = {
+	icon = "gfx/interface/council_view/icon_councilor_akx_syzygy_admiral.dds"
+	alias = {
+		concept_epic_time_titan_color
+	}
+	databank = {
+		category = db_time_titan
+		icon = "gfx/interface/icons/concepts/time_titan/time_titan.dds"
+		picture = "GFX_evt_federation_fleet"
+	}
+}
+
+concept_rare_time_titan = {
+	icon = "gfx/interface/council_view/icon_councilor_akx_syzygy_admiral.dds"
+	alias = {
+		concept_rare_time_titan_color
+	}
+	databank = {
+		category = db_time_titan
+		icon = "gfx/interface/icons/concepts/time_titan/time_titan.dds"
+		picture = "GFX_evt_federation_fleet"
+	}
+}
+
+concept_common_time_titan = {
+	icon = "gfx/interface/council_view/icon_councilor_akx_syzygy_admiral.dds"
+	alias = {
+		concept_common_time_titan_color
+	}
+	databank = {
+		category = db_time_titan
+		icon = "gfx/interface/icons/concepts/time_titan/time_titan.dds"
+		picture = "GFX_evt_federation_fleet"
+	}
+}
+
+concept_time_titan_best_status = {
+	icon = "gfx/interface/council_view/icon_councilor_akx_syzygy_admiral.dds"
+	alias = {
+		concept_time_titan_best_status_color
+	}
+	databank = {
+		category = db_time_titan
+		icon = "gfx/interface/icons/concepts/time_titan/time_titan.dds"
+		picture = "GFX_evt_decryption"
+	}
+}
+
+concept_time_titan_good_status = {
+	icon = "gfx/interface/council_view/icon_councilor_akx_syzygy_admiral.dds"
+	alias = {
+		concept_time_titan_good_status_color
+	}
+	databank = {
+		category = db_time_titan
+		icon = "gfx/interface/icons/concepts/time_titan/time_titan.dds"
+		picture = "GFX_evt_decryption"
+	}
+}
+
+concept_time_titan_normal_status = {
+	icon = "gfx/interface/council_view/icon_councilor_akx_syzygy_admiral.dds"
+	alias = {
+		concept_time_titan_normal_status_color
+	}
+	databank = {
+		category = db_time_titan
+		icon = "gfx/interface/icons/concepts/time_titan/time_titan.dds"
+		picture = "GFX_evt_decryption"
+	}
+}
+
+concept_time_titan_bad_status = {
+	icon = "gfx/interface/council_view/icon_councilor_akx_syzygy_admiral.dds"
+	alias = {
+		concept_time_titan_bad_status_color
+	}
+	databank = {
+		category = db_time_titan
+		icon = "gfx/interface/icons/concepts/time_titan/time_titan.dds"
+		picture = "GFX_evt_decryption"
+	}
+}
+
+concept_time_shelter_maintenance = {
+	icon = "gfx/interface/icons/modifiers/mod_time_shelter_maintenance.dds"
+	alias = {
+		concept_time_shelter_maintenance_white
+		concept_time_shelter_maintenance_yellow
+	}
+	databank = {
+		category = db_time_titan
+		icon = "gfx/interface/icons/concepts/time_titan/time_shelter.dds"
+		picture = "GFX_evt_astral_rift_genesis_2"
+	}
+}
+
+concept_time_shelter_maintenance_cap = {
+	icon = "gfx/interface/icons/modifiers/mod_time_shelter_maintenance_cap.dds"
+	alias = {
+		concept_time_shelter_maintenance_cap_white
+	}
+	databank = {
+		category = db_time_titan
+		icon = "gfx/interface/icons/concepts/time_titan/time_shelter.dds"
+		picture = "GFX_evt_astral_rift_genesis_3"
+	}
+}
+
+# 位面之鳞
+concept_dimensional_horror_damage_reduction = {
+}
+
+# 负相武器负面概率
+concept_horror_weapon_debuff_chance = {
+	alias = {
+		concept_horror_weapon_debuff_chance_short
+	}
+}
+
+# 特质
+concept_wonder_country_species_trait = {
+}
+
+concept_time_ruler_trait = {
+	alias = {
+		concept_time_ruler_trait_green
+		concept_time_ruler_trait_red
+	}
+}
+
+concept_time_node_trait = {
+	alias = {
+		concept_time_node_trait_green
+		concept_time_node_trait_red
+	}
+}
+
+concept_time_inborn_legendary_trait = {
+}
+
+concept_time_inborn_renowned_trait = {
+}
+
+concept_akx_messenger_species_trait = {
+	icon = "gfx/interface/icons/traits/trait_akx_messenger.dds"
+}
+
+concept_trait_akx_messenger = {
+	icon = "gfx/interface/icons/traits/trait_akx_messenger.dds"
+	tooltip_override = "trait:trait_akx_messenger"
+	alias = {
+		concept_trait_akx_messenger_with_icon
+	}
+}
+
+concept_trait_akx_waiting_world = {
+	icon = "gfx/interface/icons/traits/trait_akx_waiting_world.dds"
+	tooltip_override = "trait:trait_akx_waiting_world"
+}
+
+concept_trait_akx_waiting_world_robot = {
+	icon = "gfx/interface/icons/traits/trait_akx_waiting_world.dds"
+	tooltip_override = "trait:trait_akx_waiting_world_robot"
+}
+
+concept_trait_akx_waiting_world_all = {
+	icon = "gfx/interface/icons/traits/trait_akx_waiting_world.dds"
+}
+
+concept_tech_time_trait = {
+	icon = "gfx/interface/icons/technologies/tech_time_trait.dds"
+	alias = {
+		concept_tech_time_trait_purple
+	}
+}
+
+concept_trait_akx_low_dimensional_adaptor = {
+	icon = "gfx/interface/icons/traits/trait_akx_low_dimensional_adaptor.dds"
+	tooltip_override = "trait:trait_akx_low_dimensional_adaptor"
+}
+
+concept_trait_akx_low_dimensional_adaptor_robot = {
+	icon = "gfx/interface/icons/traits/trait_akx_low_dimensional_adaptor_robot.dds"
+	tooltip_override = "trait:trait_akx_low_dimensional_adaptor_robot"
+}
+
+concept_trait_akx_high_dimensional_extender = {
+	icon = "gfx/interface/icons/traits/trait_akx_high_dimensional_extender.dds"
+	tooltip_override = "trait:trait_akx_high_dimensional_extender"
+}
+
+concept_trait_akx_high_dimensional_extender_robot = {
+	icon = "gfx/interface/icons/traits/trait_akx_high_dimensional_extender_robot.dds"
+	tooltip_override = "trait:trait_akx_high_dimensional_extender_robot"
+}
+
+concept_trait_akx_spatial_entity = {
+	icon = "gfx/interface/icons/traits/trait_akx_spatial_entity.dds"
+	tooltip_override = "trait:trait_akx_spatial_entity"
+}
+
+concept_trait_akx_spatial_entity_robot = {
+	icon = "gfx/interface/icons/traits/trait_akx_spatial_entity_robot.dds"
+	tooltip_override = "trait:trait_akx_spatial_entity_robot"
+}
+
+concept_trait_akx_time_incorporeality = {
+	icon = "gfx/interface/icons/traits/trait_akx_time_incorporeality.dds"
+	tooltip_override = "trait:trait_akx_time_incorporeality"
+}
+
+concept_trait_akx_time_incorporeality_robot = {
+	icon = "gfx/interface/icons/traits/trait_akx_time_incorporeality_robot.dds"
+	tooltip_override = "trait:trait_akx_time_incorporeality_robot"
+}
+
+concept_trait_akx_concentrator = {
+	icon = "gfx/interface/icons/traits/trait_akx_concentrator.dds"
+	tooltip_override = "trait:trait_akx_concentrator"
+}
+
+concept_trait_akx_concentrator_robot = {
+	icon = "gfx/interface/icons/traits/trait_akx_concentrator_robot.dds"
+	tooltip_override = "trait:trait_akx_concentrator_robot"
+}
+
+concept_trait_akx_diffuser = {
+	icon = "gfx/interface/icons/traits/trait_akx_diffuser.dds"
+	tooltip_override = "trait:trait_akx_diffuser"
+}
+
+concept_trait_akx_diffuser_robot = {
+	icon = "gfx/interface/icons/traits/trait_akx_diffuser_robot.dds"
+	tooltip_override = "trait:trait_akx_diffuser_robot"
+}
+
+concept_trait_akx_spiritual_radiator = {
+	icon = "gfx/interface/icons/traits/trait_akx_spiritual_radiator.dds"
+	tooltip_override = "trait:trait_akx_spiritual_radiator"
+}
+
+concept_trait_akx_spiritual_radiator_robot = {
+	icon = "gfx/interface/icons/traits/trait_akx_spiritual_radiator_robot.dds"
+	tooltip_override = "trait:trait_akx_spiritual_radiator_robot"
+}
+
+concept_trait_akx_body_folder = {
+	icon = "gfx/interface/icons/traits/trait_akx_body_folder.dds"
+	tooltip_override = "trait:trait_akx_body_folder"
+}
+
+concept_trait_akx_body_folder_robot = {
+	icon = "gfx/interface/icons/traits/trait_akx_body_folder_robot.dds"
+	tooltip_override = "trait:trait_akx_body_folder_robot"
+}
+
+# 科技
+concept_tech_horror_focus_1 = {
+	icon = "gfx/interface/icons/technologies/tech_horror_focus_1.dds"
+	tooltip_override = "technology:tech_horror_focus_1"
+}
+
+concept_tech_horror_focus_2 = {
+	icon = "gfx/interface/icons/technologies/tech_horror_focus_2.dds"
+	tooltip_override = "technology:tech_horror_focus_2"
+}
+
+# 传统
+concept_tradition_horror = {
+	icon = "gfx/interface/icons/traditions/tree_icons/tradition_icon_horror.dds"
+	tooltip_override = "tradition_category:tradition_horror"
+}
+
+concept_tradition_time = {
+	icon = "gfx/interface/icons/traditions/tree_icons/tradition_icon_time.dds"
+	tooltip_override = "tradition_category:tradition_time"
+}
+
+concept_tradition_end = {
+	icon = "gfx/interface/icons/traditions/tree_icons/tradition_icon_end.dds"
+	tooltip_override = "tradition_category:tradition_end"
+}
+
+concept_tradition_hope = {
+	icon = "gfx/interface/icons/traditions/tree_icons/tradition_icon_hope.dds"
+	tooltip_override = "tradition_category:tradition_hope"
+}
+
+# 飞升
+concept_ap_become_the_crisis = {
+	icon = "gfx/interface/icons/ascension_perks/ap_become_the_crisis.dds"
+	tooltip_override = "ascension_perk:ap_become_the_crisis"
+}
+
+concept_ap_cosmogenesis = {
+	icon = "gfx/interface/icons/ascension_perks/ap_cosmogenesis.dds"
+	tooltip_override = "ascension_perk:ap_cosmogenesis"
+}
+
+concept_ap_behemoths = {
+	icon = "gfx/interface/icons/ascension_perks/ap_behemoths.dds"
+	tooltip_override = "ascension_perk:ap_behemoths"
+}
+
+concept_ap_galactic_hyperthermia = {
+	icon = "gfx/interface/icons/ascension_perks/ap_galactic_hyperthermia.dds"
+	tooltip_override = "ascension_perk:ap_galactic_hyperthermia"
+}
+
+concept_ap_horror = {
+	icon = "gfx/interface/icons/ascension_perks/ap_horror.dds"
+	tooltip_override = "ascension_perk:ap_horror"
+}
+
+concept_ap_time = {
+	icon = "gfx/interface/icons/ascension_perks/ap_time.dds"
+	tooltip_override = "ascension_perk:ap_time"
+}
+
+concept_ap_beyond_infinity = {
+	icon = "gfx/interface/icons/ascension_perks/ap_beyond_infinity.dds"
+	tooltip_override = "ascension_perk:ap_beyond_infinity"
+}
+
+# 飞升路线
+concept_nanotech_ascension = {
+	icon =  "gfx/interface/icons/traditions/tree_icons/tradition_icon_nanotech.dds"
+}
+
+concept_modularity_ascension = {
+	icon =  "gfx/interface/icons/traditions/tree_icons/tradition_icon_modularity.dds"
+}
+
+concept_crisis_ascension = {
+	icon =  "gfx/interface/icons/resources/menace.dds"
+}
+
+# 修正
+concept_building_akx_research_decay = {
+	icon =  "gfx/interface/icons/buildings/building_end_research.dds"
+	alias = {
+		concept_building_akx_research_decay_white
+	}
+}
+
+concept_building_akx_computer_decay = {
+	icon =  "gfx/interface/icons/buildings/building_amusement_megaplex.dds"
+	alias = {
+		concept_building_akx_computer_decay_white
+	}
+}
+
+concept_building_akx_monument_decay = {
+	icon =  "gfx/interface/icons/buildings/building_galactic_memorial_3.dds"
+	alias = {
+		concept_building_akx_monument_decay_white
+	}
+}
+
+concept_building_akx_forecast_decay = {
+	icon =  "gfx/interface/icons/buildings/building_sacrificial_temple_3.dds"
+	alias = {
+		concept_building_akx_forecast_decay_white
+	}
+}
+
+# 地块
+concept_time_gaia_deposit = {
+	icon = "gfx/interface/icons/concepts/planet_classes/pc_gaia.dds"
+}
+
+concept_d_time_gaia_energy = {
+	icon = "gfx/interface/icons/deposits/d_forceful_winds.dds"
+}
+
+concept_d_time_gaia_minerals = {
+	icon = "gfx/interface/icons/deposits/d_crystal_forest.dds"
+}
+
+concept_d_time_gaia_food = {
+	icon = "gfx/interface/icons/deposits/d_time_food.dds"
+}
+
+# 星球类型
+concept_pc_hive = {
+	icon = "gfx/interface/icons/concepts/planet_classes/pc_hive.dds"
+}
+
+concept_pc_time = {
+	icon = "gfx/interface/icons/concepts/planet_classes/pc_black_hole.dds"
+}
+
+concept_pc_endless_time = {
+	icon = "gfx/interface/icons/planet_types/endless_time.dds"
+}
+
+concept_pc_gas_colony = {
+	icon = "gfx/interface/icons/concepts/planet_classes/pc_gas_giant.dds"
+}
+
+concept_pc_psionic = {
+	icon = "gfx/interface/icons/concepts/planet_classes/pc_shrouded.dds"
+}
+
+concept_pc_nanites = {
+	# 原版的纳米星球就是用的剧毒星球图标
+	icon = "gfx/interface/icons/concepts/planet_classes/pc_toxic.dds"
+}
+
+concept_pc_time_ruin_cosmogenesis_world = {
+	icon = "gfx/interface/icons/concepts/planet_classes/pc_synaptic_lathe.dds"
+}
+
+concept_pc_flood = {
+	icon = "gfx/interface/icons/concepts/planet_classes/pc_ocean.dds"
+}
+
+concept_pc_city = {
+	icon = "gfx/interface/icons/concepts/planet_classes/pc_city.dds"
+}
+
+# 星系类型
+concept_sc_bright_pearl = {
+	icon = "gfx/interface/icons/concepts/star_classes/sc_bright_pearl.dds"
+}
+
+concept_sc_black_hole = {
+	icon = "gfx/interface/icons/concepts/planet_classes/pc_black_hole.dds"
+}
+
+concept_sc_pulsar = {
+	icon = "gfx/interface/icons/concepts/planet_classes/pc_pulsar.dds"
+}
+
+concept_sc_neutron_star = {
+	icon = "gfx/interface/icons/concepts/planet_classes/pc_neutron.dds"
+}
+
+concept_sc_time_white_hole = {
+	icon = "gfx/interface/icons/planet_types/time_white_hole.dds"
+}
+
+# 巨构类型（暂时废弃）
+concept_dyson_sphere_ruined = {
+	icon = "gfx/interface/icons/megastructures/dyson_sphere_ruined.dds"
+}
+
+concept_matter_decompressor_ruined = {
+	icon = "gfx/interface/icons/megastructures/matter_decompressor_ruined.dds"
+}
+
+concept_strategic_coordination_center_ruined = {
+	icon = "gfx/interface/icons/megastructures/strategic_coordination_center_ruined.dds"
+}
+
+concept_spy_orb_ruined = {
+	icon = "gfx/interface/icons/megastructures/spy_orb_ruined.dds"
+}
+
+concept_mega_shipyard_ruined = {
+	icon = "gfx/interface/icons/megastructures/mega_shipyard_ruined.dds"
+}
+
+concept_think_tank_ruined = {
+	icon = "gfx/interface/icons/megastructures/think_tank_ruined.dds"
+}
+
+concept_interstellar_assembly_ruined = {
+	icon = "gfx/interface/icons/megastructures/interstellar_assembly_ruined.dds"
+}
+
+concept_mega_art_installation_ruined = {
+	icon = "gfx/interface/icons/megastructures/mega_art_installation_ruined.dds"
+}

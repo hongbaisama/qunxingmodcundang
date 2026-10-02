@@ -1,0 +1,41 @@
+origin_the_matrix_lathe_capital_physics = {
+	base = 0
+	add = value:num_jobs_workforce_value|JOB|physicist|
+	add = value:num_jobs_workforce_value|JOB|calculator_physicist|
+	max = 60
+}
+
+origin_the_matrix_lathe_capital_society = {
+	base = 0
+	add = value:num_jobs_workforce_value|JOB|biologist|
+	add = value:num_jobs_workforce_value|JOB|calculator_biologist|
+	max = 60
+}
+
+origin_the_matrix_lathe_capital_engineering = {
+	base = 0
+	add = value:num_jobs_workforce_value|JOB|engineer|
+	add = value:num_jobs_workforce_value|JOB|calculator_engineer|
+	max = 60
+}
+
+origin_the_matrix_building_country_modifier = {
+	base = 1
+	modifier = {
+		multiply = 2
+		owner = { has_origin = origin_the_matrix }
+	}
+	modifier = {
+		multiply = 2
+		owner = { has_technology = tech_cosmogenesis_world }
+	}
+}
+
+# 0~100
+the_matrix_blocker_value = {
+	base = 20
+	subtract = trigger:years_passed
+	multiply = 5
+	min = 0
+	floor = yes
+}

@@ -1,0 +1,27 @@
+triggered_planet_modifier = {
+	potential = {
+		has_global_flag = active_better_ascension_traits
+		has_nanites_nanotech_swarm_consume_world = yes
+		OR = {
+			has_active_building = building_nanolab_1
+			has_active_building = building_nanolab_2
+		}
+	}
+	planet_engineers_produces_mult = 0.1
+	planet_engineers_upkeep_mult = -0.1
+	engineer_jobs_bonus_workforce_mult = 0.1
+}
+
+triggered_planet_modifier = {
+	potential = {
+		has_global_flag = active_better_ascension_traits
+		has_nanites_nanotech_swarm_consume_world = yes
+		OR = {
+			has_active_building = building_nanotech_cauldron
+			has_active_building = building_nanotech_transfigurator
+		}
+	}
+	planet_metallurgists_produces_mult = 0.1
+	planet_metallurgists_upkeep_mult = -0.1
+	foundry_jobs_bonus_workforce_mult = 0.1
+}

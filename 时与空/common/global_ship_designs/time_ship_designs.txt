@@ -1,0 +1,3515 @@
+# 旅者
+ship_design = {
+	name = "NAME_Traveler"
+	ship_size = science
+	is_event_design = yes
+
+	section = {
+		template = "DEFAULT_SCIENCESHIP_SECTION"
+		slot = "mid"
+		
+		component = {
+			slot = "SMALL_UTILITY_1"
+			template = "SMALL_PSI_BARRIER"
+		}
+		component = {
+			slot = "SMALL_UTILITY_2"
+			template = "SMALL_ARMOR_1"
+		}
+		component = {
+			slot = "SMALL_UTILITY_3"
+			template = "SMALL_ARMOR_1"
+		}
+	}
+
+	required_component = "SHIP_THRUSTER_2"
+	required_component = "SENSOR_2"
+	required_component = "CORVETTE_FUSION_REACTOR"
+	required_component = "TIME_WARP_DRIVE_2"
+	required_component = "SCIENCE_CLOAKING_PSI"
+}
+
+
+
+# 平行星空
+ship_design = {
+	name = "NAME_Parallel_Sky_1"
+	ship_size = destroyer
+	is_event_design = yes
+	section = {
+		template = "DESTROYER_BOW_M1S2"
+		slot = "bow"
+
+		component = {
+			slot = "MEDIUM_GUN_01"
+			template = "MEDIUM_GAMMA_LASER"
+		}
+		component = {
+			slot = "SMALL_GUN_01"
+			template = "SMALL_GAMMA_LASER"
+		}
+		component = {
+			slot = "SMALL_GUN_02"
+			template = "SMALL_GAMMA_LASER"
+		}
+		component = {
+			slot = "SMALL_UTILITY_1"
+			template = "SMALL_SHIELD_5"
+		}
+		component = {
+			slot = "SMALL_UTILITY_2"
+			template = "SMALL_SHIELD_5"
+		}
+		component = {
+			slot = "SMALL_UTILITY_3"
+			template = "SMALL_SHIELD_5"
+		}
+		component = {
+			slot = "SMALL_UTILITY_4"
+			template = "SMALL_ARMOR_5"
+		}
+		component = {
+			slot = "SMALL_UTILITY_5"
+			template = "SMALL_ARMOR_5"
+		}
+		component = {
+			slot = "SMALL_UTILITY_6"
+			template = "SMALL_ARMOR_5"
+		}
+	}
+	section = {
+		template = "DESTROYER_STERN_S2"
+		slot = "stern"
+
+		component = {
+			slot = "SMALL_GUN_01"
+			template = "SMALL_GAMMA_LASER"
+		}
+		component = {
+			slot = "SMALL_GUN_02"
+			template = "SMALL_GAMMA_LASER"
+		}
+		component = {
+			slot = "AUX_UTILITY_1"
+			template = "SHIELD_BOOSTER"
+		}
+		component = {
+			slot = "AUX_UTILITY_2"
+			template = "AUTO_REPAIR"
+		}
+	}
+	required_component="TIME_WARP_DRIVE_3"
+	required_component="COMBAT_COMPUTER_PICKET_SAPIENT"
+	required_component="DESTROYER_SHIP_THRUSTER_4"
+	required_component="SENSOR_4"
+	required_component = "DESTROYER_ZERO_POINT_REACTOR"
+}
+
+ship_design = {
+	name = "NAME_Parallel_Sky_2"
+	ship_size = cruiser
+	is_event_design = yes
+	section = {
+		template = "CRUISER_BOW_L1"
+		slot = "bow"
+
+		component = {
+			slot = "LARGE_GUN_01"
+			template = "LARGE_GAMMA_LASER"
+		}
+		component = {
+			slot = "MEDIUM_UTILITY_1"
+			template = "MEDIUM_SHIELD_5"
+		}
+		component = {
+			slot = "MEDIUM_UTILITY_2"
+			template = "MEDIUM_SHIELD_5"
+		}
+		component = {
+			slot = "MEDIUM_UTILITY_3"
+			template = "MEDIUM_SHIELD_5"
+		}
+		component = {
+			slot = "MEDIUM_UTILITY_4"
+			template = "MEDIUM_SHIELD_5"
+		}
+	}
+	section = {
+		template = "CRUISER_MID_M2S2"
+		slot = "mid"
+
+		component = {
+			slot = "TORPEDO_01"
+			template = "ENERGY_TORPEDO_2"
+		}
+		component = {
+			slot = "TORPEDO_02"
+			template = "ENERGY_TORPEDO_2"
+		}
+		component = {
+			slot = "SMALL_GUN_01"
+			template = "SMALL_GAMMA_LASER"
+		}
+		component = {
+			slot = "SMALL_GUN_02"
+			template = "SMALL_GAMMA_LASER"
+		}
+		component = {
+			slot = "MEDIUM_UTILITY_1"
+			template = "MEDIUM_ARMOR_5"
+		}
+		component = {
+			slot = "MEDIUM_UTILITY_2"
+			template = "MEDIUM_ARMOR_5"
+		}
+		component = {
+			slot = "MEDIUM_UTILITY_3"
+			template = "MEDIUM_ARMOR_5"
+		}
+		component = {
+			slot = "MEDIUM_UTILITY_4"
+			template = "MEDIUM_ARMOR_5"
+		}
+	}
+	section = {
+		template = "CRUISER_STERN_M1"
+		slot = "stern"
+
+		component = {
+			slot = "MEDIUM_GUN_01"
+			template = "MEDIUM_GAMMA_LASER"
+		}
+		component = {
+			slot = "AUX_UTILITY_1"
+			template = "SHIELD_BOOSTER"
+		}
+		component = {
+			slot = "AUX_UTILITY_2"
+			template = "AUTO_REPAIR"
+		}
+	}
+	required_component="TIME_WARP_DRIVE_3"
+	required_component="COMBAT_COMPUTER_LINE_SAPIENT"
+	required_component="CRUISER_SHIP_THRUSTER_4"
+	required_component="SENSOR_4"
+	required_component="CRUISER_ZERO_POINT_REACTOR"
+}
+
+ship_design = {
+	name = "NAME_Parallel_Sky_3"
+	ship_size = battleship
+	is_event_design = yes
+
+	section = {
+		template = "BATTLESHIP_BOW_M2S4"
+		slot = "bow"
+
+		component = {
+			slot = "EXTRA_LARGE_01"
+			template = "ENERGY_LANCE_2"
+		}
+		component = {
+			slot = "LARGE_UTILITY_1"
+			template = "LARGE_SHIELD_5"
+		}
+		component = {
+			slot = "LARGE_UTILITY_2"
+			template = "LARGE_SHIELD_5"
+		}
+		component = {
+			slot = "LARGE_UTILITY_3"
+			template = "LARGE_SHIELD_5"
+		}
+	}
+	section = {
+		template = "BATTLESHIP_MID_L3"
+		slot = "mid"
+
+		component = {
+			slot = "LARGE_GUN_01"
+			template = "LARGE_GAMMA_LASER"
+		}
+		component = {
+			slot = "LARGE_GUN_02"
+			template = "LARGE_GAMMA_LASER"
+		}
+		component = {
+			slot = "LARGE_GUN_03"
+			template = "LARGE_GAMMA_LASER"
+		}
+		component = {
+			slot = "LARGE_UTILITY_1"
+			template = "LARGE_ARMOR_5"
+		}
+		component = {
+			slot = "LARGE_UTILITY_2"
+			template = "LARGE_ARMOR_5"
+		}
+		component = {
+			slot = "LARGE_UTILITY_3"
+			template = "LARGE_ARMOR_5"
+		}
+	}
+	section = {
+		template = "BATTLESHIP_STERN_L1"
+		slot = "stern"
+
+		component = {
+			slot = "LARGE_GUN_01"
+			template = "LARGE_GAMMA_LASER"
+		}
+		component = {
+			slot = "AUX_UTILITY_1"
+			template = "SHIELD_BOOSTER"
+		}
+		component = {
+			slot = "AUX_UTILITY_2"
+			template = "AUTO_REPAIR"
+		}
+	}
+	required_component = "TIME_WARP_DRIVE_3"
+	required_component = "COMBAT_COMPUTER_ARTILLERY_SAPIENT"
+	required_component = "BATTLESHIP_SHIP_THRUSTER_4"
+	required_component = "SENSOR_4"
+	required_component = "BATTLESHIP_ZERO_POINT_REACTOR"
+}
+
+ship_design = {
+	name = "NAME_Parallel_Sky_Bio_1"
+	is_event_design = yes
+	growth_stages = {
+		{
+			ship_size = weaver_stage_1
+			section = {
+				template = "WEAVER_STAGE_1_buffer"
+				slot = "mid"
+
+				component = {
+					slot = "MEDIUM_GUN_01"
+					template = "MEDIUM_GAMMA_BIO_LASER"
+				}
+				component = {
+					slot = "MEDIUM_GUN_02"
+					template = "MEDIUM_GAMMA_BIO_LASER"
+				}
+				component = {
+					slot = "SMALL_GUN_01"
+					template = "HEALING_GUN_5"
+				}
+				component = {
+					slot = "SMALL_GUN_02"
+					template = "HEALING_GUN_5"
+				}
+				component = {
+					slot = "SMALL_UTILITY_1"
+					template = "SMALL_BIO_SHIELD_5"
+				}
+				component = {
+					slot = "SMALL_UTILITY_2"
+					template = "SMALL_BIO_SHIELD_5"
+				}
+				component = {
+					slot = "SMALL_UTILITY_3"
+					template = "SMALL_BIO_SHIELD_5"
+				}
+				component = {
+					slot = "SMALL_UTILITY_4"
+					template = "SMALL_BIO_ARMOR_5"
+				}
+				component = {
+					slot = "SMALL_UTILITY_5"
+					template = "SMALL_BIO_ARMOR_5"
+				}
+				component = {
+					slot = "SMALL_UTILITY_6"
+					template = "SMALL_BIO_ARMOR_5"
+				}
+				component = {
+					slot = "AUX_UTILITY_1"
+					template = "SHIELD_BOOSTER"
+				}
+				component = {
+					slot = "AUX_UTILITY_2"
+					template = "AUTO_REPAIR"
+				}
+			}
+			required_component = "TIME_WARP_DRIVE_3"
+			required_component = "DESTROYER_BIO_SHIP_THRUSTER_4"
+			required_component = "BIOSHIP_SENSOR_4"
+			required_component = "DESTROYER_BIO_ZERO_POINT_REACTOR"
+			required_component = "BIO_COMBAT_COMPUTER_BUFFER_SAPIENT"
+			required_component = "WEAVER_BOOSTER_2"
+		}
+		{
+			ship_size = weaver_stage_2
+			section = {
+				template = "WEAVER_STAGE_2_buffer"
+				slot = "mid"
+
+				component = {
+					slot = "MEDIUM_GUN_01"
+					template = "MEDIUM_GAMMA_BIO_LASER"
+				}
+				component = {
+					slot = "MEDIUM_GUN_02"
+					template = "MEDIUM_GAMMA_BIO_LASER"
+				}
+				component = {
+					slot = "MEDIUM_GUN_03"
+					template = "MEDIUM_GAMMA_BIO_LASER"
+				}
+				component = {
+					slot = "SMALL_GUN_01"
+					template = "HEALING_GUN_5"
+				}
+				component = {
+					slot = "SMALL_GUN_02"
+					template = "HEALING_GUN_5"
+				}
+				component = {
+					slot = "SMALL_GUN_03"
+					template = "ANTI_FIRE_RATE_GUN_5"
+				}
+				component = {
+					slot = "SMALL_UTILITY_1"
+					template = "SMALL_BIO_SHIELD_5"
+				}
+				component = {
+					slot = "SMALL_UTILITY_2"
+					template = "SMALL_BIO_SHIELD_5"
+				}
+				component = {
+					slot = "SMALL_UTILITY_3"
+					template = "SMALL_BIO_ARMOR_5"
+				}
+				component = {
+					slot = "SMALL_UTILITY_4"
+					template = "SMALL_BIO_ARMOR_5"
+				}
+				component = {
+					slot = "MEDIUM_UTILITY_1"
+					template = "MEDIUM_BIO_SHIELD_5"
+				}
+				component = {
+					slot = "MEDIUM_UTILITY_2"
+					template = "MEDIUM_BIO_ARMOR_5"
+				}
+				component = {
+					slot = "AUX_UTILITY_1"
+					template = "SHIELD_BOOSTER"
+				}
+				component = {
+					slot = "AUX_UTILITY_2"
+					template = "AUTO_REPAIR"
+				}
+			}
+			required_component = "TIME_WARP_DRIVE_3"
+			required_component = "DESTROYER_BIO_SHIP_THRUSTER_4"
+			required_component = "BIOSHIP_SENSOR_4"
+			required_component = "DESTROYER_BIO_ZERO_POINT_REACTOR"
+			required_component = "BIO_COMBAT_COMPUTER_BUFFER_SAPIENT"
+			required_component = "WEAVER_BOOSTER_2"
+		}
+		{
+			ship_size = weaver_stage_3
+			section = {
+				template = "WEAVER_STAGE_3_buffer"
+				slot = "mid"
+
+				component = {
+					slot = "MEDIUM_GUN_01"
+					template = "MEDIUM_GAMMA_BIO_LASER"
+				}
+				component = {
+					slot = "MEDIUM_GUN_02"
+					template = "MEDIUM_GAMMA_BIO_LASER"
+				}
+				component = {
+					slot = "MEDIUM_GUN_03"
+					template = "MEDIUM_GAMMA_BIO_LASER"
+				}
+				component = {
+					slot = "MEDIUM_GUN_04"
+					template = "MEDIUM_GAMMA_BIO_LASER"
+				}
+				component = {
+					slot = "SMALL_GUN_01"
+					template = "HEALING_GUN_5"
+				}
+				component = {
+					slot = "SMALL_GUN_02"
+					template = "HEALING_GUN_5"
+				}
+				component = {
+					slot = "SMALL_GUN_03"
+					template = "ANTI_FIRE_RATE_GUN_5"
+				}
+				component = {
+					slot = "SMALL_GUN_04"
+					template = "ANTI_FIRE_RATE_GUN_5"
+				}
+				component = {
+					slot = "SMALL_UTILITY_1"
+					template = "SMALL_BIO_SHIELD_5"
+				}
+				component = {
+					slot = "SMALL_UTILITY_2"
+					template = "SMALL_BIO_ARMOR_5"
+				}
+				component = {
+					slot = "MEDIUM_UTILITY_1"
+					template = "MEDIUM_BIO_SHIELD_5"
+				}
+				component = {
+					slot = "MEDIUM_UTILITY_2"
+					template = "MEDIUM_BIO_SHIELD_5"
+				}
+				component = {
+					slot = "MEDIUM_UTILITY_3"
+					template = "MEDIUM_BIO_ARMOR_5"
+				}
+				component = {
+					slot = "MEDIUM_UTILITY_4"
+					template = "MEDIUM_BIO_ARMOR_5"
+				}
+				component = {
+					slot = "AUX_UTILITY_1"
+					template = "SHIELD_BOOSTER"
+				}
+				component = {
+					slot = "AUX_UTILITY_2"
+					template = "AUTO_REPAIR"
+				}
+				component = {
+					slot = "AUX_UTILITY_3"
+					template = "AUTO_REPAIR"
+				}
+			}
+			required_component = "TIME_WARP_DRIVE_3"
+			required_component = "DESTROYER_BIO_SHIP_THRUSTER_4"
+			required_component = "BIOSHIP_SENSOR_4"
+			required_component = "DESTROYER_BIO_ZERO_POINT_REACTOR"
+			required_component = "BIO_COMBAT_COMPUTER_BUFFER_SAPIENT"
+			required_component = "WEAVER_BOOSTER_2"
+		}
+	}
+}
+
+ship_design = {
+	name = "NAME_Parallel_Sky_Bio_2"
+	is_event_design = yes
+	growth_stages = {
+		{
+			ship_size = harbinger_stage_1
+			section = {
+				template = "HARBINGER_STAGE_1_artillery"
+				slot = "mid"
+
+				component = {
+					slot = "STRIKE_CRAFT_01"
+					template = "BIO_STRIKE_CRAFT_HANGAR_3"
+				}
+				component = {
+					slot = "STRIKE_CRAFT_02"
+					template = "BIO_STRIKE_CRAFT_HANGAR_3"
+				}
+				component = {
+					slot = "TORPEDO_01"
+					template = "BIO_ENERGY_TORPEDO_2"
+				}
+				component = {
+					slot = "TORPEDO_02"
+					template = "BIO_ENERGY_TORPEDO_2"
+				}
+				component = {
+					slot = "MEDIUM_UTILITY_1"
+					template = "MEDIUM_BIO_SHIELD_5"
+				}
+				component = {
+					slot = "MEDIUM_UTILITY_2"
+					template = "MEDIUM_BIO_SHIELD_5"
+				}
+				component = {
+					slot = "MEDIUM_UTILITY_3"
+					template = "MEDIUM_BIO_SHIELD_5"
+				}
+				component = {
+					slot = "MEDIUM_UTILITY_4"
+					template = "MEDIUM_BIO_SHIELD_5"
+				}
+				component = {
+					slot = "MEDIUM_UTILITY_5"
+					template = "MEDIUM_BIO_ARMOR_5"
+				}
+				component = {
+					slot = "MEDIUM_UTILITY_6"
+					template = "MEDIUM_BIO_ARMOR_5"
+				}
+				component = {
+					slot = "MEDIUM_UTILITY_7"
+					template = "MEDIUM_BIO_ARMOR_5"
+				}
+				component = {
+					slot = "MEDIUM_UTILITY_8"
+					template = "MEDIUM_BIO_ARMOR_5"
+				}
+				component = {
+					slot = "AUX_UTILITY_1"
+					template = "SHIELD_BOOSTER"
+				}
+				component = {
+					slot = "AUX_UTILITY_2"
+					template = "AUTO_REPAIR"
+				}
+			}
+			required_component = "TIME_WARP_DRIVE_3"
+			required_component = "CRUISER_BIO_SHIP_THRUSTER_4"
+			required_component = "BIOSHIP_SENSOR_4"
+			required_component = "CRUISER_BIO_ZERO_POINT_REACTOR"
+			required_component = "BIO_COMBAT_COMPUTER_LINE_SAPIENT"
+			required_component = "HARBINGER_INCUBATOR_2"
+		}
+		{
+			ship_size = harbinger_stage_2
+			section = {
+				template = "HARBINGER_STAGE_2_artillery"
+				slot = "mid"
+
+				component = {
+					slot = "STRIKE_CRAFT_01"
+					template = "BIO_STRIKE_CRAFT_HANGAR_3"
+				}
+				component = {
+					slot = "STRIKE_CRAFT_02"
+					template = "BIO_STRIKE_CRAFT_HANGAR_3"
+				}
+				component = {
+					slot = "STRIKE_CRAFT_03"
+					template = "BIO_STRIKE_CRAFT_HANGAR_3"
+				}
+				component = {
+					slot = "TORPEDO_01"
+					template = "BIO_ENERGY_TORPEDO_2"
+				}
+				component = {
+					slot = "TORPEDO_02"
+					template = "BIO_ENERGY_TORPEDO_2"
+				}
+				component = {
+					slot = "TORPEDO_03"
+					template = "BIO_ENERGY_TORPEDO_2"
+				}
+				component = {
+					slot = "MEDIUM_UTILITY_1"
+					template = "MEDIUM_BIO_SHIELD_5"
+				}
+				component = {
+					slot = "MEDIUM_UTILITY_2"
+					template = "MEDIUM_BIO_ARMOR_5"
+				}
+				component = {
+					slot = "LARGE_UTILITY_1"
+					template = "LARGE_BIO_SHIELD_5"
+				}
+				component = {
+					slot = "LARGE_UTILITY_2"
+					template = "LARGE_BIO_SHIELD_5"
+				}
+				component = {
+					slot = "LARGE_UTILITY_3"
+					template = "LARGE_BIO_ARMOR_5"
+				}
+				component = {
+					slot = "LARGE_UTILITY_4"
+					template = "LARGE_BIO_ARMOR_5"
+				}
+				component = {
+					slot = "AUX_UTILITY_1"
+					template = "SHIELD_BOOSTER"
+				}
+				component = {
+					slot = "AUX_UTILITY_2"
+					template = "AUTO_REPAIR"
+				}
+			}
+			required_component = "TIME_WARP_DRIVE_3"
+			required_component = "CRUISER_BIO_SHIP_THRUSTER_4"
+			required_component = "BIOSHIP_SENSOR_4"
+			required_component = "CRUISER_BIO_ZERO_POINT_REACTOR"
+			required_component = "BIO_COMBAT_COMPUTER_LINE_SAPIENT"
+			required_component = "HARBINGER_INCUBATOR_2"
+		}
+		{
+			ship_size = harbinger_stage_3
+			section = {
+				template = "HARBINGER_STAGE_3_artillery"
+				slot = "mid"
+
+				component = {
+					slot = "STRIKE_CRAFT_01"
+					template = "BIO_STRIKE_CRAFT_HANGAR_3"
+				}
+				component = {
+					slot = "STRIKE_CRAFT_02"
+					template = "BIO_STRIKE_CRAFT_HANGAR_3"
+				}
+				component = {
+					slot = "STRIKE_CRAFT_03"
+					template = "BIO_STRIKE_CRAFT_HANGAR_3"
+				}
+				component = {
+					slot = "STRIKE_CRAFT_04"
+					template = "BIO_STRIKE_CRAFT_HANGAR_3"
+				}
+				component = {
+					slot = "TORPEDO_01"
+					template = "BIO_ENERGY_TORPEDO_2"
+				}
+				component = {
+					slot = "TORPEDO_02"
+					template = "BIO_ENERGY_TORPEDO_2"
+				}
+				component = {
+					slot = "TORPEDO_03"
+					template = "BIO_ENERGY_TORPEDO_2"
+				}
+				component = {
+					slot = "TORPEDO_04"
+					template = "BIO_ENERGY_TORPEDO_2"
+				}
+				component = {
+					slot = "LARGE_UTILITY_1"
+					template = "LARGE_BIO_SHIELD_5"
+				}
+				component = {
+					slot = "LARGE_UTILITY_2"
+					template = "LARGE_BIO_SHIELD_5"
+				}
+				component = {
+					slot = "LARGE_UTILITY_3"
+					template = "LARGE_BIO_SHIELD_5"
+				}
+				component = {
+					slot = "LARGE_UTILITY_4"
+					template = "LARGE_BIO_ARMOR_5"
+				}
+				component = {
+					slot = "LARGE_UTILITY_5"
+					template = "LARGE_BIO_ARMOR_5"
+				}
+				component = {
+					slot = "LARGE_UTILITY_6"
+					template = "LARGE_BIO_ARMOR_5"
+				}
+				component = {
+					slot = "AUX_UTILITY_1"
+					template = "SHIELD_BOOSTER"
+				}
+				component = {
+					slot = "AUX_UTILITY_2"
+					template = "AUTO_REPAIR"
+				}
+				component = {
+					slot = "AUX_UTILITY_3"
+					template = "AUTO_REPAIR"
+				}
+			}
+			required_component = "TIME_WARP_DRIVE_3"
+			required_component = "CRUISER_BIO_SHIP_THRUSTER_4"
+			required_component = "BIOSHIP_SENSOR_4"
+			required_component = "CRUISER_BIO_ZERO_POINT_REACTOR"
+			required_component = "BIO_COMBAT_COMPUTER_LINE_SAPIENT"
+			required_component = "HARBINGER_INCUBATOR_2"
+		}
+	}
+}
+
+ship_design = {
+	name = "NAME_Parallel_Sky_Bio_3"
+	is_event_design = yes
+	growth_stages = {
+		{
+			ship_size = stinger_stage_1
+			section = {
+				template = "STINGER_STAGE_1_artillery"
+				slot = "mid"
+
+				component = {
+					slot = "EXTRA_LARGE_01"
+					template = "BIO_ENERGY_LANCE_2"
+				}
+				component = {
+					slot = "EXTRA_LARGE_02"
+					template = "BIO_ENERGY_LANCE_2"
+				}
+				component = {
+					slot = "LARGE_GUN_01"
+					template = "LARGE_GAMMA_BIO_LASER"
+				}
+				component = {
+					slot = "LARGE_GUN_02"
+					template = "LARGE_GAMMA_BIO_LASER"
+				}
+				component = {
+					slot = "LARGE_UTILITY_1"
+					template = "LARGE_BIO_SHIELD_5"
+				}
+				component = {
+					slot = "LARGE_UTILITY_2"
+					template = "LARGE_BIO_SHIELD_5"
+				}
+				component = {
+					slot = "LARGE_UTILITY_3"
+					template = "LARGE_BIO_ARMOR_5"
+				}
+				component = {
+					slot = "LARGE_UTILITY_4"
+					template = "LARGE_BIO_ARMOR_5"
+				}
+				component = {
+					slot = "LARGE_UTILITY_5"
+					template = "LARGE_BIO_ARMOR_5"
+				}
+				component = {
+					slot = "AUX_UTILITY_1"
+					template = "AUTO_REPAIR"
+				}
+			}
+			required_component = "TIME_WARP_DRIVE_3"
+			required_component = "BATTLESHIP_BIO_SHIP_THRUSTER_4"
+			required_component = "BIOSHIP_SENSOR_4"
+			required_component = "BATTLESHIP_BIO_ZERO_POINT_REACTOR"
+			required_component = "BIO_COMBAT_COMPUTER_ARTILLERY_SAPIENT"
+			required_component = "STINGER_RANGE_2"
+		}
+		{
+			ship_size = stinger_stage_2
+			section = {
+				template = "STINGER_STAGE_2_artillery"
+				slot = "mid"
+
+				component = {
+					slot = "EXTRA_LARGE_01"
+					template = "BIO_ENERGY_LANCE_2"
+				}
+				component = {
+					slot = "EXTRA_LARGE_02"
+					template = "BIO_ENERGY_LANCE_2"
+				}
+				component = {
+					slot = "EXTRA_LARGE_03"
+					template = "BIO_ENERGY_LANCE_2"
+				}
+				component = {
+					slot = "LARGE_GUN_01"
+					template = "LARGE_GAMMA_BIO_LASER"
+				}
+				component = {
+					slot = "LARGE_GUN_02"
+					template = "LARGE_GAMMA_BIO_LASER"
+				}
+				component = {
+					slot = "LARGE_GUN_03"
+					template = "LARGE_GAMMA_BIO_LASER"
+				}
+				component = {
+					slot = "LARGE_UTILITY_1"
+					template = "LARGE_BIO_SHIELD_5"
+				}
+				component = {
+					slot = "LARGE_UTILITY_2"
+					template = "LARGE_BIO_SHIELD_5"
+				}
+				component = {
+					slot = "LARGE_UTILITY_3"
+					template = "LARGE_BIO_SHIELD_5"
+				}
+				component = {
+					slot = "LARGE_UTILITY_4"
+					template = "LARGE_BIO_ARMOR_5"
+				}
+				component = {
+					slot = "LARGE_UTILITY_5"
+					template = "LARGE_BIO_ARMOR_5"
+				}
+				component = {
+					slot = "LARGE_UTILITY_6"
+					template = "LARGE_BIO_ARMOR_5"
+				}
+				component = {
+					slot = "LARGE_UTILITY_7"
+					template = "LARGE_BIO_ARMOR_5"
+				}
+				component = {
+					slot = "AUX_UTILITY_1"
+					template = "SHIELD_BOOSTER"
+				}
+				component = {
+					slot = "AUX_UTILITY_2"
+					template = "AUTO_REPAIR"
+				}
+			}
+			required_component = "TIME_WARP_DRIVE_3"
+			required_component = "BATTLESHIP_BIO_SHIP_THRUSTER_4"
+			required_component = "BIOSHIP_SENSOR_4"
+			required_component = "BATTLESHIP_BIO_ZERO_POINT_REACTOR"
+			required_component = "BIO_COMBAT_COMPUTER_ARTILLERY_SAPIENT"
+			required_component = "STINGER_RANGE_2"
+		}
+		{
+			ship_size = stinger_stage_3
+			section = {
+				template = "STINGER_STAGE_3_artillery"
+				slot = "mid"
+
+				component = {
+					slot = "EXTRA_LARGE_01"
+					template = "BIO_ENERGY_LANCE_2"
+				}
+				component = {
+					slot = "EXTRA_LARGE_02"
+					template = "BIO_ENERGY_LANCE_2"
+				}
+				component = {
+					slot = "EXTRA_LARGE_03"
+					template = "BIO_ENERGY_LANCE_2"
+				}
+				component = {
+					slot = "EXTRA_LARGE_04"
+					template = "BIO_ENERGY_LANCE_2"
+				}
+				component = {
+					slot = "LARGE_GUN_01"
+					template = "LARGE_GAMMA_BIO_LASER"
+				}
+				component = {
+					slot = "LARGE_GUN_02"
+					template = "LARGE_GAMMA_BIO_LASER"
+				}
+				component = {
+					slot = "LARGE_GUN_03"
+					template = "LARGE_GAMMA_BIO_LASER"
+				}
+				component = {
+					slot = "LARGE_GUN_04"
+					template = "LARGE_GAMMA_BIO_LASER"
+				}
+				component = {
+					slot = "LARGE_UTILITY_1"
+					template = "LARGE_BIO_SHIELD_5"
+				}
+				component = {
+					slot = "LARGE_UTILITY_2"
+					template = "LARGE_BIO_SHIELD_5"
+				}
+				component = {
+					slot = "LARGE_UTILITY_3"
+					template = "LARGE_BIO_SHIELD_5"
+				}
+				component = {
+					slot = "LARGE_UTILITY_4"
+					template = "LARGE_BIO_SHIELD_5"
+				}
+				component = {
+					slot = "LARGE_UTILITY_5"
+					template = "LARGE_BIO_ARMOR_5"
+				}
+				component = {
+					slot = "LARGE_UTILITY_6"
+					template = "LARGE_BIO_ARMOR_5"
+				}
+				component = {
+					slot = "LARGE_UTILITY_7"
+					template = "LARGE_BIO_ARMOR_5"
+				}
+				component = {
+					slot = "LARGE_UTILITY_8"
+					template = "LARGE_BIO_ARMOR_5"
+				}
+				component = {
+					slot = "LARGE_UTILITY_9"
+					template = "LARGE_BIO_ARMOR_5"
+				}
+				component = {
+					slot = "AUX_UTILITY_1"
+					template = "SHIELD_BOOSTER"
+				}
+				component = {
+					slot = "AUX_UTILITY_2"
+					template = "AUTO_REPAIR"
+				}
+				component = {
+					slot = "AUX_UTILITY_3"
+					template = "AUTO_REPAIR"
+				}
+			}
+			required_component = "TIME_WARP_DRIVE_3"
+			required_component = "BATTLESHIP_BIO_SHIP_THRUSTER_4"
+			required_component = "BIOSHIP_SENSOR_4"
+			required_component = "BATTLESHIP_BIO_ZERO_POINT_REACTOR"
+			required_component = "BIO_COMBAT_COMPUTER_ARTILLERY_SAPIENT"
+			required_component = "STINGER_RANGE_2"
+		}
+	}
+}
+
+ship_design = {
+	name = "NAME_Time_Warp_Monster_1"
+	ship_size = warp_monster_1
+	is_event_design = yes
+	hide_size = yes
+
+	section = {
+		template = "space_amoeba_small_beige_blue"
+		slot = "mid"
+
+		component = {
+			slot = "SMALL_GUN_01"
+			template = "SMALL_SPACE_AMOEBA_WEAPON"
+		}
+		component = {
+			slot = "SMALL_GUN_02"
+			template = "SMALL_SPACE_AMOEBA_WEAPON"
+		}
+		component = {
+			slot = "SMALL_GUN_03"
+			template = "SMALL_SPACE_AMOEBA_WEAPON"
+		}
+		component = {
+			slot = "AUX_UTILITY_1"
+			template = "BIO_AUTO_REPAIR"
+		}
+	}
+	required_component="TIME_WARP_DRIVE_1"
+}
+
+ship_design = {
+	name = "NAME_Time_Warp_Monster_2"
+	ship_size = warp_monster_2
+	is_event_design = yes
+	hide_size = yes
+
+	section = {
+		template = "space_amoeba_large_beige_blue"
+		slot = "mid"
+
+		component = {
+			slot = "LARGE_GUN_01"
+			template = "LARGE_SPACE_AMOEBA_WEAPON"
+		}
+		component = {
+			slot = "SMALL_GUN_01"
+			template = "SMALL_SPACE_AMOEBA_WEAPON"
+		}
+		component = {
+			slot = "SMALL_GUN_02"
+			template = "SMALL_SPACE_AMOEBA_WEAPON"
+		}
+		component = {
+			slot = "STRIKE_CRAFT_01"
+			template = "AMOEBA_STRIKE_CRAFT_BIO"
+		}
+		component = {
+			slot = "AUX_UTILITY_1"
+			template = "BIO_AUTO_REPAIR"
+		}
+	}
+	required_component="TIME_WARP_DRIVE_2"
+	required_component="WARP_AURA"
+}
+
+ship_design = {
+	name = "NAME_Time_Warp_Monster_3"
+	ship_size = warp_monster_1
+	is_event_design = yes
+	hide_size = yes
+
+	section = {
+		template = "space_amoeba_small_black_orange"
+		slot = "mid"
+
+		component = {
+			slot = "SMALL_GUN_01"
+			template = "SMALL_SPACE_AMOEBA_WEAPON"
+		}
+		component = {
+			slot = "SMALL_GUN_02"
+			template = "SMALL_SPACE_AMOEBA_WEAPON"
+		}
+		component = {
+			slot = "SMALL_GUN_03"
+			template = "SMALL_SPACE_AMOEBA_WEAPON"
+		}
+		component = {
+			slot = "AUX_UTILITY_1"
+			template = "BIO_AUTO_REPAIR"
+		}
+	}
+
+	required_component="TIME_WARP_DRIVE_1"
+}
+
+ship_design = {
+	name = "NAME_Time_Warp_Monster_4"
+	ship_size = warp_monster_2
+	is_event_design = yes
+	hide_size = yes
+
+	section = {
+		template = "space_amoeba_large_black_orange"
+		slot = "mid"
+
+		component = {
+			slot = "LARGE_GUN_01"
+			template = "LARGE_SPACE_AMOEBA_WEAPON"
+		}
+		component = {
+			slot = "SMALL_GUN_01"
+			template = "SMALL_SPACE_AMOEBA_WEAPON"
+		}
+		component = {
+			slot = "SMALL_GUN_02"
+			template = "SMALL_SPACE_AMOEBA_WEAPON"
+		}
+		component = {
+			slot = "STRIKE_CRAFT_01"
+			template = "AMOEBA_STRIKE_CRAFT_BIO"
+		}
+		component = {
+			slot = "AUX_UTILITY_1"
+			template = "BIO_AUTO_REPAIR"
+		}
+	}
+
+	required_component="TIME_WARP_DRIVE_2"
+	required_component="WARP_AURA"
+}
+
+ship_design = {
+	name = "NAME_Time_Warp_Monster_5"
+	ship_size = warp_monster_1
+	is_event_design = yes
+	hide_size = yes
+
+	section = {
+		template = "space_amoeba_small_zebra_blue"
+		slot = "mid"
+
+		component = {
+			slot = "SMALL_GUN_01"
+			template = "SMALL_SPACE_AMOEBA_WEAPON"
+		}
+		component = {
+			slot = "SMALL_GUN_02"
+			template = "SMALL_SPACE_AMOEBA_WEAPON"
+		}
+		component = {
+			slot = "SMALL_GUN_03"
+			template = "SMALL_SPACE_AMOEBA_WEAPON"
+		}
+		component = {
+			slot = "AUX_UTILITY_1"
+			template = "BIO_AUTO_REPAIR"
+		}
+	}
+
+	required_component="TIME_WARP_DRIVE_1"
+}
+
+ship_design = {
+	name = "NAME_Time_Warp_Monster_6"
+	ship_size = warp_monster_2
+	is_event_design = yes
+	hide_size = yes
+
+	section = {
+		template = "space_amoeba_large_zebra_blue"
+		slot = "mid"
+
+		component = {
+			slot = "LARGE_GUN_01"
+			template = "LARGE_SPACE_AMOEBA_WEAPON"
+		}
+		component = {
+			slot = "SMALL_GUN_01"
+			template = "SMALL_SPACE_AMOEBA_WEAPON"
+		}
+		component = {
+			slot = "SMALL_GUN_02"
+			template = "SMALL_SPACE_AMOEBA_WEAPON"
+		}
+		component = {
+			slot = "STRIKE_CRAFT_01"
+			template = "AMOEBA_STRIKE_CRAFT_BIO"
+		}
+		component = {
+			slot = "AUX_UTILITY_1"
+			template = "BIO_AUTO_REPAIR"
+		}
+	}
+
+	required_component="TIME_WARP_DRIVE_2"
+	required_component="WARP_AURA"
+}
+
+ship_design = {
+	name = "NAME_Time_Warp_Monster_7"
+	ship_size = warp_monster_3
+	is_event_design = yes
+	hide_size = yes
+
+	section = {
+		template = "space_dragon_red_key"
+		slot = "mid"
+
+		component = {
+			slot = "PRIMARY_GUN_01"
+			template = "DRAGON_WEAPON"
+		}
+		component = {
+			slot = "SECONDARY_GUN_01"
+			template = "DRAGON_SECONDARY_WEAPON"
+		}
+		component = {
+			slot = "SECONDARY_GUN_02"
+			template = "DRAGON_SECONDARY_WEAPON"
+		}
+		component = {
+			slot = "SECONDARY_GUN_03"
+			template = "DRAGON_SECONDARY_WEAPON"
+		}
+		component = {
+			slot = "SECONDARY_GUN_04"
+			template = "DRAGON_SECONDARY_WEAPON"
+		}
+		component = {
+			slot = "SECONDARY_GUN_05"
+			template = "DRAGON_SECONDARY_WEAPON"
+		}
+		component = {
+			slot = "SECONDARY_GUN_06"
+			template = "DRAGON_SECONDARY_WEAPON"
+		}
+		component = {
+			slot = "SECONDARY_GUN_07"
+			template = "DRAGON_SECONDARY_WEAPON"
+		}
+		component = {
+			slot = "SECONDARY_GUN_08"
+			template = "DRAGON_SECONDARY_WEAPON"
+		}
+		component = {
+			slot = "TERTIARY_GUN_01"
+			template = "DRAGON_TERTIARY_WEAPON"
+		}
+		component = {
+			slot = "TERTIARY_GUN_02"
+			template = "DRAGON_TERTIARY_WEAPON"
+		}
+		component = {
+			slot = "TERTIARY_GUN_03"
+			template = "DRAGON_TERTIARY_WEAPON"
+		}
+		component = {
+			slot = "TERTIARY_GUN_04"
+			template = "DRAGON_TERTIARY_WEAPON"
+		}
+
+		component = {
+			slot = "LARGE_UTILITY_1"
+			template = "LARGE_DRAGON_ARMOR"
+		}
+		component = {
+			slot = "LARGE_UTILITY_2"
+			template = "LARGE_DRAGON_ARMOR"
+		}
+		component = {
+			slot = "LARGE_UTILITY_3"
+			template = "LARGE_DRAGON_ARMOR"
+		}
+		component = {
+			slot = "LARGE_UTILITY_4"
+			template = "LARGE_DRAGON_ARMOR"
+		}
+		component = {
+			slot = "AUX_UTILITY_1"
+			template = "AUTO_REPAIR"
+		}
+		component = {
+			slot = "AUX_UTILITY_2"
+			template = "AUTO_REPAIR"
+		}
+	}
+	required_component="TIME_WARP_DRIVE_3"
+	required_component="COMBAT_COMPUTER_ARTILLERY_BASIC"
+	required_component="GUARDIAN_PROPULSION"
+	required_component="GUARDIAN_SENSORS"
+	required_component="SPECIAL_WARP_AURA"
+}
+
+ship_design = {
+	name = "NAME_Time_Warp_Monster_8"
+	ship_size = warp_monster_4
+	is_event_design = yes
+	hide_size = yes
+
+	section = {
+		template = "space_dragon_blue_key"
+		slot = "mid"
+
+		component = {
+			slot = "PRIMARY_GUN_01"
+			template = "DRAGON_WEAPON"
+		}
+		component = {
+			slot = "SECONDARY_GUN_01"
+			template = "DRAGON_SECONDARY_WEAPON"
+		}
+		component = {
+			slot = "SECONDARY_GUN_02"
+			template = "DRAGON_SECONDARY_WEAPON"
+		}
+		component = {
+			slot = "SECONDARY_GUN_03"
+			template = "DRAGON_SECONDARY_WEAPON"
+		}
+		component = {
+			slot = "SECONDARY_GUN_04"
+			template = "DRAGON_SECONDARY_WEAPON"
+		}
+		component = {
+			slot = "SECONDARY_GUN_05"
+			template = "DRAGON_SECONDARY_WEAPON"
+		}
+		component = {
+			slot = "SECONDARY_GUN_06"
+			template = "DRAGON_SECONDARY_WEAPON"
+		}
+		component = {
+			slot = "SECONDARY_GUN_07"
+			template = "DRAGON_SECONDARY_WEAPON"
+		}
+		component = {
+			slot = "SECONDARY_GUN_08"
+			template = "DRAGON_SECONDARY_WEAPON"
+		}
+		component = {
+			slot = "TERTIARY_GUN_01"
+			template = "DRAGON_TERTIARY_WEAPON"
+		}
+		component = {
+			slot = "TERTIARY_GUN_02"
+			template = "DRAGON_TERTIARY_WEAPON"
+		}
+		component = {
+			slot = "TERTIARY_GUN_03"
+			template = "DRAGON_TERTIARY_WEAPON"
+		}
+		component = {
+			slot = "TERTIARY_GUN_04"
+			template = "DRAGON_TERTIARY_WEAPON"
+		}
+
+		component = {
+			slot = "LARGE_UTILITY_1"
+			template = "LARGE_DRAGON_ARMOR"
+		}
+		component = {
+			slot = "LARGE_UTILITY_2"
+			template = "LARGE_DRAGON_ARMOR"
+		}
+		component = {
+			slot = "LARGE_UTILITY_3"
+			template = "LARGE_DRAGON_ARMOR"
+		}
+		component = {
+			slot = "LARGE_UTILITY_4"
+			template = "LARGE_DRAGON_ARMOR"
+		}
+		component = {
+			slot = "AUX_UTILITY_1"
+			template = "AUTO_REPAIR"
+		}
+		component = {
+			slot = "AUX_UTILITY_2"
+			template = "AUTO_REPAIR"
+		}
+	}
+	required_component="TIME_WARP_DRIVE_3"
+	required_component="COMBAT_COMPUTER_ARTILLERY_BASIC"
+	required_component="GUARDIAN_PROPULSION"
+	required_component="GUARDIAN_SENSORS"
+	required_component="SPECIAL_WARP_AURA"
+}
+
+ship_design = {
+	name = "NAME_Time_Warp_Monster_9"
+	ship_size = warp_monster_5
+	is_event_design = yes
+	hide_size = yes
+
+	section = {
+		template = "space_dragon_origin_key"
+		slot = "mid"
+
+		component = {
+			slot = "PRIMARY_GUN_01"
+			template = "DRAGON_WEAPON_ICE"
+		}
+		component = {
+			slot = "SECONDARY_GUN_01"
+			template = "DRAGON_SECONDARY_WEAPON_ICE"
+		}
+		component = {
+			slot = "SECONDARY_GUN_02"
+			template = "DRAGON_SECONDARY_WEAPON_ICE"
+		}
+		component = {
+			slot = "SECONDARY_GUN_03"
+			template = "DRAGON_SECONDARY_WEAPON_ICE"
+		}
+		component = {
+			slot = "SECONDARY_GUN_04"
+			template = "DRAGON_SECONDARY_WEAPON_ICE"
+		}
+		component = {
+			slot = "SECONDARY_GUN_05"
+			template = "DRAGON_SECONDARY_WEAPON_ICE"
+		}
+		component = {
+			slot = "SECONDARY_GUN_06"
+			template = "DRAGON_SECONDARY_WEAPON_ICE"
+		}
+		component = {
+			slot = "SECONDARY_GUN_07"
+			template = "DRAGON_SECONDARY_WEAPON_ICE"
+		}
+		component = {
+			slot = "SECONDARY_GUN_08"
+			template = "DRAGON_SECONDARY_WEAPON_ICE"
+		}
+		component = {
+			slot = "TERTIARY_GUN_01"
+			template = "DRAGON_TERTIARY_WEAPON_ICE"
+		}
+		component = {
+			slot = "TERTIARY_GUN_02"
+			template = "DRAGON_TERTIARY_WEAPON_ICE"
+		}
+		component = {
+			slot = "TERTIARY_GUN_03"
+			template = "DRAGON_TERTIARY_WEAPON_ICE"
+		}
+		component = {
+			slot = "TERTIARY_GUN_04"
+			template = "DRAGON_TERTIARY_WEAPON_ICE"
+		}
+
+		component = {
+			slot = "LARGE_UTILITY_1"
+			template = "LARGE_DRAGON_ARMOR"
+		}
+		component = {
+			slot = "LARGE_UTILITY_2"
+			template = "LARGE_DRAGON_ARMOR"
+		}
+		component = {
+			slot = "LARGE_UTILITY_3"
+			template = "LARGE_DRAGON_ARMOR"
+		}
+		component = {
+			slot = "LARGE_UTILITY_4"
+			template = "LARGE_DRAGON_ARMOR"
+		}
+		component = {
+			slot = "AUX_UTILITY_1"
+			template = "AUTO_REPAIR"
+		}
+		component = {
+			slot = "AUX_UTILITY_2"
+			template = "AUTO_REPAIR"
+		}
+	}
+	required_component="TIME_WARP_DRIVE_3"
+	required_component="COMBAT_COMPUTER_ARTILLERY_BASIC"
+	required_component="GUARDIAN_PROPULSION"
+	required_component="GUARDIAN_SENSORS"
+	required_component="SPECIAL_WARP_AURA"
+}
+
+ship_design = {
+	name = "NAME_Time_Warp_Monster_10"
+	ship_size = warp_monster_6
+	is_event_design = yes
+	hide_size = yes
+
+	section = {
+		template = "voidspawn_key"
+		slot = "mid"
+
+		component = {
+			slot = "LARGE_GUN_01"
+			template = "SPORE_LAUNCHER"
+		}
+		component = {
+			slot = "LARGE_GUN_02"
+			template = "SPORE_LAUNCHER"
+		}
+		component = {
+			slot = "LARGE_GUN_03"
+			template = "SPORE_LAUNCHER"
+		}
+		component = {
+			slot = "LARGE_GUN_04"
+			template = "SPORE_LAUNCHER"
+		}
+		component = {
+			slot = "LARGE_GUN_05"
+			template = "SPORE_LAUNCHER"
+		}
+		component = {
+			slot = "LARGE_GUN_06"
+			template = "SPORE_LAUNCHER"
+		}
+
+		component = {
+			slot = "LARGE_UTILITY_1"
+			template = "LARGE_DRAGON_ARMOR"
+		}
+		component = {
+			slot = "LARGE_UTILITY_2"
+			template = "LARGE_DRAGON_ARMOR"
+		}
+		component = {
+			slot = "LARGE_UTILITY_3"
+			template = "LARGE_DRAGON_ARMOR"
+		}
+		component = {
+			slot = "LARGE_UTILITY_4"
+			template = "LARGE_DRAGON_ARMOR"
+		}
+		component = {
+			slot = "LARGE_UTILITY_5"
+			template = "LARGE_DRAGON_ARMOR"
+		}
+		component = {
+			slot = "LARGE_UTILITY_6"
+			template = "LARGE_DRAGON_ARMOR"
+		}
+		component = {
+			slot = "LARGE_UTILITY_7"
+			template = "LARGE_DRAGON_ARMOR"
+		}
+		component = {
+			slot = "LARGE_UTILITY_8"
+			template = "LARGE_DRAGON_ARMOR"
+		}
+		component = {
+			slot = "LARGE_UTILITY_9"
+			template = "LARGE_DRAGON_ARMOR"
+		}
+		component = {
+			slot = "LARGE_UTILITY_10"
+			template = "LARGE_DRAGON_ARMOR"
+		}
+
+		component = {
+			slot = "AUX_UTILITY_1"
+			template = "AUTO_REPAIR"
+		}
+		component = {
+			slot = "AUX_UTILITY_2"
+			template = "AUTO_REPAIR"
+		}
+	}
+	required_component="TIME_WARP_DRIVE_3"
+	required_component="COMBAT_COMPUTER_ARTILLERY_BASIC"
+	required_component="BIO_PROPULSION"
+	required_component="BIO_SENSORS"
+	required_component="SPECIAL_WARP_AURA"
+}
+
+ship_design = {
+	name = "NAME_Time_Warp_Monster_11"
+	ship_size = warp_monster_7
+	is_event_design = yes
+	hide_size = yes
+
+	section = {
+		template = "nanite_space_dragon_baby_key"
+		slot = "mid"
+
+		component = {
+			slot = "PRIMARY_GUN_01"
+			template = "DRAGON_WEAPON"
+		}
+		component = {
+			slot = "SECONDARY_GUN_01"
+			template = "DRAGON_SECONDARY_WEAPON"
+		}
+		component = {
+			slot = "SECONDARY_GUN_02"
+			template = "DRAGON_SECONDARY_WEAPON"
+		}
+		component = {
+			slot = "SECONDARY_GUN_03"
+			template = "DRAGON_SECONDARY_WEAPON"
+		}
+		component = {
+			slot = "SECONDARY_GUN_04"
+			template = "DRAGON_SECONDARY_WEAPON"
+		}
+		component = {
+			slot = "SECONDARY_GUN_05"
+			template = "DRAGON_SECONDARY_WEAPON"
+		}
+		component = {
+			slot = "SECONDARY_GUN_06"
+			template = "DRAGON_SECONDARY_WEAPON"
+		}
+		component = {
+			slot = "SECONDARY_GUN_07"
+			template = "DRAGON_SECONDARY_WEAPON"
+		}
+		component = {
+			slot = "SECONDARY_GUN_08"
+			template = "DRAGON_SECONDARY_WEAPON"
+		}
+		component = {
+			slot = "TERTIARY_GUN_01"
+			template = "DRAGON_TERTIARY_WEAPON"
+		}
+		component = {
+			slot = "TERTIARY_GUN_02"
+			template = "DRAGON_TERTIARY_WEAPON"
+		}
+		component = {
+			slot = "TERTIARY_GUN_03"
+			template = "DRAGON_TERTIARY_WEAPON"
+		}
+		component = {
+			slot = "TERTIARY_GUN_04"
+			template = "DRAGON_TERTIARY_WEAPON"
+		}
+
+		component = {
+			slot = "LARGE_UTILITY_1"
+			template = "LARGE_DRAGON_ARMOR"
+		}
+		component = {
+			slot = "LARGE_UTILITY_2"
+			template = "LARGE_DRAGON_ARMOR"
+		}
+		component = {
+			slot = "LARGE_UTILITY_3"
+			template = "LARGE_DRAGON_ARMOR"
+		}
+		component = {
+			slot = "LARGE_UTILITY_4"
+			template = "LARGE_DRAGON_ARMOR"
+		}
+		component = {
+			slot = "AUX_UTILITY_1"
+			template = "AUTO_REPAIR"
+		}
+		component = {
+			slot = "AUX_UTILITY_2"
+			template = "AUTO_REPAIR"
+		}
+	}
+	required_component="TIME_WARP_DRIVE_3"
+	required_component="COMBAT_COMPUTER_ARTILLERY_DEFAULT"
+	required_component="GUARDIAN_PROPULSION"
+	required_component="GUARDIAN_SENSORS"
+	required_component="SPECIAL_WARP_AURA"
+}
+
+
+
+# 阴霾之下
+ship_design = {
+	name = "NAME_Under_The_Haze_Design_1"
+	ship_size = destroyer
+	is_event_design = yes
+	section = {
+		template = "DESTROYER_BOW_M1S2"
+		slot = "bow"
+
+		component = {
+			slot = "MEDIUM_GUN_01"
+			template = "MEDIUM_MASS_DRIVER_3"
+		}
+		component = {
+			slot = "SMALL_GUN_01"
+			template = "SMALL_MASS_DRIVER_3"
+		}
+		component = {
+			slot = "SMALL_GUN_02"
+			template = "SMALL_MASS_DRIVER_3"
+		}
+		component = {
+			slot = "SMALL_UTILITY_1"
+			template = "SMALL_ARMOR_3"
+		}
+		component = {
+			slot = "SMALL_UTILITY_2"
+			template = "SMALL_ARMOR_3"
+		}
+		component = {
+			slot = "SMALL_UTILITY_3"
+			template = "SMALL_ARMOR_3"
+		}
+		component = {
+			slot = "SMALL_UTILITY_4"
+			template = "SMALL_ARMOR_3"
+		}
+		component = {
+			slot = "SMALL_UTILITY_5"
+			template = "SMALL_ARMOR_3"
+		}
+		component = {
+			slot = "SMALL_UTILITY_6"
+			template = "SMALL_ARMOR_3"
+		}
+	}
+	section = {
+		template = "DESTROYER_STERN_S2"
+		slot = "stern"
+
+		component = {
+			slot = "SMALL_GUN_01"
+			template = "SMALL_MASS_DRIVER_3"
+		}
+		component = {
+			slot = "SMALL_GUN_02"
+			template = "SMALL_MASS_DRIVER_3"
+		}
+		component = {
+			slot = "AUX_UTILITY_1"
+			template = "AUTO_REPAIR"
+		}
+		component = {
+			slot = "AUX_UTILITY_2"
+			template = "AUTO_REPAIR"
+		}
+	}
+	required_component="HYPER_DRIVE_2"
+	required_component="COMBAT_COMPUTER_PICKET_BASIC"
+	required_component="DESTROYER_SHIP_THRUSTER_2"
+	required_component="SENSOR_2"
+	required_component = "DESTROYER_COLD_FUSION_REACTOR"
+}
+
+ship_design = {
+	name = "NAME_Under_The_Haze_Design_2"
+	ship_size = cruiser
+	is_event_design = yes
+	section = {
+		template = "CRUISER_BOW_L1"
+		slot = "bow"
+
+		component = {
+			slot = "LARGE_GUN_01"
+			template = "LARGE_XRAY_LASER"
+		}
+		component = {
+			slot = "MEDIUM_UTILITY_1"
+			template = "MEDIUM_SHIELD_4"
+		}
+		component = {
+			slot = "MEDIUM_UTILITY_2"
+			template = "MEDIUM_SHIELD_4"
+		}
+		component = {
+			slot = "MEDIUM_UTILITY_3"
+			template = "MEDIUM_SHIELD_4"
+		}
+		component = {
+			slot = "MEDIUM_UTILITY_4"
+			template = "MEDIUM_SHIELD_4"
+		}
+	}
+	section = {
+		template = "CRUISER_MID_L1M1"
+		slot = "mid"
+
+		component = {
+			slot = "LARGE_GUN_01"
+			template = "LARGE_XRAY_LASER"
+		}
+		component = {
+			slot = "MEDIUM_GUN_01"
+			template = "MEDIUM_XRAY_LASER"
+		}
+		component = {
+			slot = "MEDIUM_UTILITY_1"
+			template = "MEDIUM_SHIELD_4"
+		}
+		component = {
+			slot = "MEDIUM_UTILITY_2"
+			template = "MEDIUM_SHIELD_4"
+		}
+		component = {
+			slot = "MEDIUM_UTILITY_3"
+			template = "MEDIUM_SHIELD_4"
+		}
+		component = {
+			slot = "MEDIUM_UTILITY_4"
+			template = "MEDIUM_SHIELD_4"
+		}
+	}
+	section = {
+		template = "CRUISER_STERN_M1"
+		slot = "stern"
+
+		component = {
+			slot = "MEDIUM_GUN_01"
+			template = "MEDIUM_XRAY_LASER"
+		}
+		component = {
+			slot = "AUX_UTILITY_1"
+			template = "SHIELD_BOOSTER"
+		}
+		component = {
+			slot = "AUX_UTILITY_2"
+			template = "SHIELD_BOOSTER"
+		}
+	}
+	required_component="HYPER_DRIVE_3"
+	required_component="COMBAT_COMPUTER_LINE_ADVANCED"
+	required_component="CRUISER_SHIP_THRUSTER_3"
+	required_component="SENSOR_3"
+	required_component="CRUISER_ANTIMATTER_REACTOR"
+}
+
+ship_design = {
+	name = "NAME_Under_The_Haze_Bio_Design_1"
+	is_event_design = yes
+	growth_stages = {
+		{
+			ship_size = weaver_stage_1
+			section = {
+				template = "WEAVER_STAGE_1_debuffer"
+				slot = "mid"
+
+				component = {
+					slot = "MEDIUM_GUN_01"
+					template = "MEDIUM_BIO_MASS_DRIVER_3"
+				}
+				component = {
+					slot = "MEDIUM_GUN_02"
+					template = "MEDIUM_BIO_MASS_DRIVER_3"
+				}
+				component = {
+					slot = "SMALL_GUN_01"
+					template = "ANTI_FIRE_RATE_GUN_3"
+				}
+				component = {
+					slot = "SMALL_GUN_02"
+					template = "ANTI_FIRE_RATE_GUN_3"
+				}
+				component = {
+					slot = "SMALL_UTILITY_1"
+					template = "SMALL_BIO_ARMOR_3"
+				}
+				component = {
+					slot = "SMALL_UTILITY_2"
+					template = "SMALL_BIO_ARMOR_3"
+				}
+				component = {
+					slot = "SMALL_UTILITY_3"
+					template = "SMALL_BIO_ARMOR_3"
+				}
+				component = {
+					slot = "SMALL_UTILITY_4"
+					template = "SMALL_BIO_ARMOR_3"
+				}
+				component = {
+					slot = "SMALL_UTILITY_5"
+					template = "SMALL_BIO_ARMOR_3"
+				}
+				component = {
+					slot = "SMALL_UTILITY_6"
+					template = "SMALL_BIO_ARMOR_3"
+				}
+				component = {
+					slot = "AUX_UTILITY_1"
+					template = "AUTO_REPAIR"
+				}
+				component = {
+					slot = "AUX_UTILITY_2"
+					template = "AUTO_REPAIR"
+				}
+			}
+			required_component = "BIO_HYPER_DRIVE_2"
+			required_component = "DESTROYER_BIO_SHIP_THRUSTER_2"
+			required_component = "BIOSHIP_SENSOR_2"
+			required_component = "DESTROYER_BIO_COLD_FUSION_REACTOR"
+			required_component = "BIO_COMBAT_COMPUTER_DEBUFFER_BASIC"
+			required_component = "WEAVER_BOOSTER_1"
+		}
+		{
+			ship_size = weaver_stage_2
+			section = {
+				template = "WEAVER_STAGE_2_debuffer"
+				slot = "mid"
+
+				component = {
+					slot = "MEDIUM_GUN_01"
+					template = "MEDIUM_BIO_MASS_DRIVER_3"
+				}
+				component = {
+					slot = "MEDIUM_GUN_02"
+					template = "MEDIUM_BIO_MASS_DRIVER_3"
+				}
+				component = {
+					slot = "MEDIUM_GUN_03"
+					template = "MEDIUM_BIO_MASS_DRIVER_3"
+				}
+				component = {
+					slot = "SMALL_GUN_01"
+					template = "ANTI_FIRE_RATE_GUN_3"
+				}
+				component = {
+					slot = "SMALL_GUN_02"
+					template = "ANTI_FIRE_RATE_GUN_3"
+				}
+				component = {
+					slot = "SMALL_GUN_03"
+					template = "EVASION_GUN_3"
+				}
+				component = {
+					slot = "SMALL_UTILITY_1"
+					template = "SMALL_BIO_ARMOR_3"
+				}
+				component = {
+					slot = "SMALL_UTILITY_2"
+					template = "SMALL_BIO_ARMOR_3"
+				}
+				component = {
+					slot = "SMALL_UTILITY_3"
+					template = "SMALL_BIO_ARMOR_3"
+				}
+				component = {
+					slot = "SMALL_UTILITY_4"
+					template = "SMALL_BIO_ARMOR_3"
+				}
+				component = {
+					slot = "MEDIUM_UTILITY_1"
+					template = "MEDIUM_BIO_ARMOR_3"
+				}
+				component = {
+					slot = "MEDIUM_UTILITY_2"
+					template = "MEDIUM_BIO_ARMOR_3"
+				}
+				component = {
+					slot = "AUX_UTILITY_1"
+					template = "AUTO_REPAIR"
+				}
+				component = {
+					slot = "AUX_UTILITY_2"
+					template = "AUTO_REPAIR"
+				}
+			}
+			required_component = "BIO_HYPER_DRIVE_2"
+			required_component = "DESTROYER_BIO_SHIP_THRUSTER_2"
+			required_component = "BIOSHIP_SENSOR_2"
+			required_component = "DESTROYER_BIO_COLD_FUSION_REACTOR"
+			required_component = "BIO_COMBAT_COMPUTER_DEBUFFER_BASIC"
+			required_component = "WEAVER_BOOSTER_1"
+		}
+		{
+			ship_size = weaver_stage_3
+			section = {
+				template = "WEAVER_STAGE_3_debuffer"
+				slot = "mid"
+
+				component = {
+					slot = "MEDIUM_GUN_01"
+					template = "MEDIUM_BIO_MASS_DRIVER_3"
+				}
+				component = {
+					slot = "MEDIUM_GUN_02"
+					template = "MEDIUM_BIO_MASS_DRIVER_3"
+				}
+				component = {
+					slot = "MEDIUM_GUN_03"
+					template = "MEDIUM_BIO_MASS_DRIVER_3"
+				}
+				component = {
+					slot = "MEDIUM_GUN_04"
+					template = "MEDIUM_BIO_MASS_DRIVER_3"
+				}
+				component = {
+					slot = "SMALL_GUN_01"
+					template = "ANTI_FIRE_RATE_GUN_3"
+				}
+				component = {
+					slot = "SMALL_GUN_02"
+					template = "ANTI_FIRE_RATE_GUN_3"
+				}
+				component = {
+					slot = "SMALL_GUN_03"
+					template = "EVASION_GUN_3"
+				}
+				component = {
+					slot = "SMALL_GUN_04"
+					template = "EVASION_GUN_3"
+				}
+				component = {
+					slot = "SMALL_UTILITY_1"
+					template = "SMALL_BIO_ARMOR_3"
+				}
+				component = {
+					slot = "SMALL_UTILITY_2"
+					template = "SMALL_BIO_ARMOR_3"
+				}
+				component = {
+					slot = "MEDIUM_UTILITY_1"
+					template = "MEDIUM_BIO_ARMOR_3"
+				}
+				component = {
+					slot = "MEDIUM_UTILITY_2"
+					template = "MEDIUM_BIO_ARMOR_3"
+				}
+				component = {
+					slot = "MEDIUM_UTILITY_3"
+					template = "MEDIUM_BIO_ARMOR_3"
+				}
+				component = {
+					slot = "MEDIUM_UTILITY_4"
+					template = "MEDIUM_BIO_ARMOR_3"
+				}
+				component = {
+					slot = "AUX_UTILITY_1"
+					template = "AUTO_REPAIR"
+				}
+				component = {
+					slot = "AUX_UTILITY_2"
+					template = "AUTO_REPAIR"
+				}
+				component = {
+					slot = "AUX_UTILITY_3"
+					template = "AUTO_REPAIR"
+				}
+			}
+			required_component = "BIO_HYPER_DRIVE_2"
+			required_component = "DESTROYER_BIO_SHIP_THRUSTER_2"
+			required_component = "BIOSHIP_SENSOR_2"
+			required_component = "DESTROYER_BIO_COLD_FUSION_REACTOR"
+			required_component = "BIO_COMBAT_COMPUTER_DEBUFFER_BASIC"
+			required_component = "WEAVER_BOOSTER_1"
+		}
+	}
+}
+
+ship_design = {
+	name = "NAME_Under_The_Haze_Bio_Design_2"
+	is_event_design = yes
+	growth_stages = {
+		{
+			ship_size = harbinger_stage_1
+			section = {
+				template = "HARBINGER_STAGE_1_picket"
+				slot = "mid"
+
+				component = {
+					slot = "STRIKE_CRAFT_01"
+					template = "BIO_STRIKE_CRAFT_HANGAR_3"
+				}
+				component = {
+					slot = "STRIKE_CRAFT_02"
+					template = "BIO_STRIKE_CRAFT_HANGAR_3"
+				}
+				component = {
+					slot = "PD_01"
+					template = "BIO_POINT_DEFENCE_3"
+				}
+				component = {
+					slot = "PD_02"
+					template = "BIO_POINT_DEFENCE_3"
+				}
+				component = {
+					slot = "PD_03"
+					template = "BIO_POINT_DEFENCE_3"
+				}
+				component = {
+					slot = "PD_04"
+					template = "BIO_POINT_DEFENCE_3"
+				}
+				component = {
+					slot = "MEDIUM_UTILITY_1"
+					template = "MEDIUM_BIO_SHIELD_4"
+				}
+				component = {
+					slot = "MEDIUM_UTILITY_2"
+					template = "MEDIUM_BIO_SHIELD_4"
+				}
+				component = {
+					slot = "MEDIUM_UTILITY_3"
+					template = "MEDIUM_BIO_SHIELD_4"
+				}
+				component = {
+					slot = "MEDIUM_UTILITY_4"
+					template = "MEDIUM_BIO_SHIELD_4"
+				}
+				component = {
+					slot = "MEDIUM_UTILITY_5"
+					template = "MEDIUM_BIO_SHIELD_4"
+				}
+				component = {
+					slot = "MEDIUM_UTILITY_6"
+					template = "MEDIUM_BIO_SHIELD_4"
+				}
+				component = {
+					slot = "MEDIUM_UTILITY_7"
+					template = "MEDIUM_BIO_SHIELD_4"
+				}
+				component = {
+					slot = "MEDIUM_UTILITY_8"
+					template = "MEDIUM_BIO_SHIELD_4"
+				}
+				component = {
+					slot = "AUX_UTILITY_1"
+					template = "SHIELD_BOOSTER"
+				}
+				component = {
+					slot = "AUX_UTILITY_2"
+					template = "SHIELD_BOOSTER"
+				}
+			}
+			required_component = "BIO_HYPER_DRIVE_3"
+			required_component = "CRUISER_BIO_SHIP_THRUSTER_3"
+			required_component = "BIOSHIP_SENSOR_3"
+			required_component = "CRUISER_BIO_ANTIMATTER_REACTOR"
+			required_component = "BIO_COMBAT_COMPUTER_LINE_ADVANCED"
+			required_component = "HARBINGER_CHITIN_1"
+		}
+		{
+			ship_size = harbinger_stage_2
+			section = {
+				template = "HARBINGER_STAGE_2_picket"
+				slot = "mid"
+
+				component = {
+					slot = "STRIKE_CRAFT_01"
+					template = "BIO_STRIKE_CRAFT_HANGAR_3"
+				}
+				component = {
+					slot = "STRIKE_CRAFT_02"
+					template = "BIO_STRIKE_CRAFT_HANGAR_3"
+				}
+				component = {
+					slot = "STRIKE_CRAFT_03"
+					template = "BIO_STRIKE_CRAFT_HANGAR_3"
+				}
+				component = {
+					slot = "PD_01"
+					template = "BIO_POINT_DEFENCE_3"
+				}
+				component = {
+					slot = "PD_02"
+					template = "BIO_POINT_DEFENCE_3"
+				}
+				component = {
+					slot = "PD_03"
+					template = "BIO_POINT_DEFENCE_3"
+				}
+				component = {
+					slot = "PD_04"
+					template = "BIO_POINT_DEFENCE_3"
+				}
+				component = {
+					slot = "PD_05"
+					template = "BIO_POINT_DEFENCE_3"
+				}
+				component = {
+					slot = "PD_06"
+					template = "BIO_POINT_DEFENCE_3"
+				}
+				component = {
+					slot = "MEDIUM_UTILITY_1"
+					template = "MEDIUM_BIO_SHIELD_4"
+				}
+				component = {
+					slot = "MEDIUM_UTILITY_2"
+					template = "MEDIUM_BIO_SHIELD_4"
+				}
+				component = {
+					slot = "LARGE_UTILITY_1"
+					template = "LARGE_BIO_SHIELD_4"
+				}
+				component = {
+					slot = "LARGE_UTILITY_2"
+					template = "LARGE_BIO_SHIELD_4"
+				}
+				component = {
+					slot = "LARGE_UTILITY_3"
+					template = "LARGE_BIO_SHIELD_4"
+				}
+				component = {
+					slot = "LARGE_UTILITY_4"
+					template = "LARGE_BIO_SHIELD_4"
+				}
+				component = {
+					slot = "AUX_UTILITY_1"
+					template = "SHIELD_BOOSTER"
+				}
+				component = {
+					slot = "AUX_UTILITY_2"
+					template = "SHIELD_BOOSTER"
+				}
+			}
+			required_component = "BIO_HYPER_DRIVE_3"
+			required_component = "CRUISER_BIO_SHIP_THRUSTER_3"
+			required_component = "BIOSHIP_SENSOR_3"
+			required_component = "CRUISER_BIO_ANTIMATTER_REACTOR"
+			required_component = "BIO_COMBAT_COMPUTER_LINE_ADVANCED"
+			required_component = "HARBINGER_CHITIN_1"
+		}
+		{
+			ship_size = harbinger_stage_3
+			section = {
+				template = "HARBINGER_STAGE_3_picket"
+				slot = "mid"
+
+				component = {
+					slot = "STRIKE_CRAFT_01"
+					template = "BIO_STRIKE_CRAFT_HANGAR_3"
+				}
+				component = {
+					slot = "STRIKE_CRAFT_02"
+					template = "BIO_STRIKE_CRAFT_HANGAR_3"
+				}
+				component = {
+					slot = "STRIKE_CRAFT_03"
+					template = "BIO_STRIKE_CRAFT_HANGAR_3"
+				}
+				component = {
+					slot = "STRIKE_CRAFT_04"
+					template = "BIO_STRIKE_CRAFT_HANGAR_3"
+				}
+				component = {
+					slot = "PD_01"
+					template = "BIO_POINT_DEFENCE_3"
+				}
+				component = {
+					slot = "PD_02"
+					template = "BIO_POINT_DEFENCE_3"
+				}
+				component = {
+					slot = "PD_03"
+					template = "BIO_POINT_DEFENCE_3"
+				}
+				component = {
+					slot = "PD_04"
+					template = "BIO_POINT_DEFENCE_3"
+				}
+				component = {
+					slot = "PD_05"
+					template = "BIO_POINT_DEFENCE_3"
+				}
+				component = {
+					slot = "PD_06"
+					template = "BIO_POINT_DEFENCE_3"
+				}
+				component = {
+					slot = "PD_07"
+					template = "BIO_POINT_DEFENCE_3"
+				}
+				component = {
+					slot = "PD_08"
+					template = "BIO_POINT_DEFENCE_3"
+				}
+				component = {
+					slot = "LARGE_UTILITY_1"
+					template = "LARGE_BIO_SHIELD_4"
+				}
+				component = {
+					slot = "LARGE_UTILITY_2"
+					template = "LARGE_BIO_SHIELD_4"
+				}
+				component = {
+					slot = "LARGE_UTILITY_3"
+					template = "LARGE_BIO_SHIELD_4"
+				}
+				component = {
+					slot = "LARGE_UTILITY_4"
+					template = "LARGE_BIO_SHIELD_4"
+				}
+				component = {
+					slot = "LARGE_UTILITY_5"
+					template = "LARGE_BIO_SHIELD_4"
+				}
+				component = {
+					slot = "LARGE_UTILITY_6"
+					template = "LARGE_BIO_SHIELD_4"
+				}
+				component = {
+					slot = "AUX_UTILITY_1"
+					template = "SHIELD_BOOSTER"
+				}
+				component = {
+					slot = "AUX_UTILITY_2"
+					template = "SHIELD_BOOSTER"
+				}
+				component = {
+					slot = "AUX_UTILITY_3"
+					template = "SHIELD_BOOSTER"
+				}
+			}
+			required_component = "BIO_HYPER_DRIVE_3"
+			required_component = "CRUISER_BIO_SHIP_THRUSTER_3"
+			required_component = "BIOSHIP_SENSOR_3"
+			required_component = "CRUISER_BIO_ANTIMATTER_REACTOR"
+			required_component = "BIO_COMBAT_COMPUTER_LINE_ADVANCED"
+			required_component = "HARBINGER_CHITIN_1"
+		}
+	}
+}
+
+ship_design = {
+	name = "NAME_Ishar_mla"
+	ship_size = psionic_avatar
+	is_event_design = yes
+	hide_size = yes
+
+	section = {
+		template = "psionic_avatar_section"
+		slot = "mid"
+
+		component = {
+			slot = "MEDIUM_GUN_01"
+			template = "PSIONIC_BLAST_1"
+		}
+		component = {
+			slot = "MEDIUM_GUN_02"
+			template = "PSIONIC_BLAST_1"
+		}
+		component = {
+			slot = "MEDIUM_GUN_03"
+			template = "PSIONIC_BLAST_1"
+		}
+		component = {
+			slot = "MEDIUM_GUN_04"
+			template = "PSIONIC_BLAST_1"
+		}
+	}
+	required_component="COMBAT_COMPUTER_LINE_DEFAULT"
+	required_component="SHIP_THRUSTER_1"
+	required_component="SENSOR_1"
+	required_component="PSI_JUMP_DRIVE_1"
+}
+
+
+
+# 悬顶之剑
+ship_design = {
+	name = "NAME_origin_colossus"
+	ship_size = colossus
+	is_event_design = yes
+
+	section = {
+		template = "ORIGIN_COLOSSUS_SECTION"
+		slot = "ship"
+
+		component = {
+			slot = "PLANET_KILLER_GUN_01"
+			template = "PLANET_KILLER_CRACKER"
+		}
+		component = {
+			slot = "PD_01"
+			template = "POINT_DEFENCE_3"
+		}
+		component = {
+			slot = "PD_04"
+			template = "FLAK_BATTERY_3"
+		}
+		
+		component = {
+			slot = "LARGE_UTILITY_1"
+			template = "LARGE_SHIELD_5"
+		}
+		component = {
+			slot = "LARGE_UTILITY_3"
+			template = "LARGE_SHIELD_5"
+		}
+		component = {
+			slot = "LARGE_UTILITY_5"
+			template = "LARGE_SHIELD_5"
+		}
+		component = {
+			slot = "LARGE_UTILITY_7"
+			template = "LARGE_SHIELD_5"
+		}
+		component = {
+			slot = "LARGE_UTILITY_9"
+			template = "LARGE_SHIELD_5"
+		}
+		component = {
+			slot = "AUX_UTILITY_1"
+			template = "SHIELD_BOOSTER"
+		}
+		component = {
+			slot = "LARGE_UTILITY_12"
+			template = "LARGE_ARMOR_5"
+		}
+		component = {
+			slot = "LARGE_UTILITY_14"
+			template = "LARGE_ARMOR_5"
+		}
+		component = {
+			slot = "LARGE_UTILITY_16"
+			template = "LARGE_ARMOR_5"
+		}
+		component = {
+			slot = "LARGE_UTILITY_18"
+			template = "LARGE_ARMOR_5"
+		}
+		component = {
+			slot = "LARGE_UTILITY_20"
+			template = "LARGE_ARMOR_5"
+		}
+		component = {
+			slot = "AUX_UTILITY_5"
+			template = "AUTO_REPAIR"
+		}
+	}
+	required_component = "TIME_WARP_DRIVE_1"
+	required_component = "COMBAT_COMPUTER_COLOSSUS"
+	required_component = "COLOSSUS_SHIP_THRUSTER_3"
+	required_component = "SENSOR_2"
+	required_component = "COLOSSUS_ZERO_POINT_REACTOR"
+}
+
+ship_design = {
+	name = "NAME_origin_colossus_middle"
+	ship_size = star_eater
+	is_event_design = yes
+
+	section = {
+		template = "ORIGIN_COLOSSUS_END_SECTION"
+		slot = "mid"
+
+		component = {
+			slot = "PLANET_KILLER_GUN_01"
+			template = "PLANET_KILLER_STAR_CRACKER"
+		}
+		component = {
+			slot = "LARGE_GUN_01"
+			template = "LARGE_GAMMA_LASER"
+		}
+		component = {
+			slot = "MEDIUM_GUN_01"
+			template = "MEDIUM_GAMMA_LASER"
+		}
+		component = {
+			slot = "SMALL_GUN_01"
+			template = "SMALL_GAMMA_LASER"
+		}
+		component = {
+			slot = "STRIKE_CRAFT_01"
+			template = "STRIKE_CRAFT_HANGAR_3"
+		}
+		component = {
+			slot = "PD_01"
+			template = "POINT_DEFENCE_3"
+		}
+		component = {
+			slot = "PD_02"
+			template = "POINT_DEFENCE_3"
+		}
+		component = {
+			slot = "TITAN_01"
+			template = "TIME_ACCELERATOR"
+		}
+		component = {
+			slot = "LARGE_GUN_03"
+			template = "LARGE_MASS_DRIVER_5"
+		}
+		component = {
+			slot = "MEDIUM_GUN_03"
+			template = "MEDIUM_MASS_DRIVER_5"
+		}
+		component = {
+			slot = "SMALL_GUN_03"
+			template = "SMALL_MASS_DRIVER_5"
+		}
+		component = {
+			slot = "STRIKE_CRAFT_03"
+			template = "STRIKE_CRAFT_HANGAR_3"
+		}
+		component = {
+			slot = "PD_04"
+			template = "FLAK_BATTERY_3"
+		}
+		component = {
+			slot = "PD_05"
+			template = "FLAK_BATTERY_3"
+		}
+		
+		component = {
+			slot = "LARGE_UTILITY_1"
+			template = "LARGE_HORROR_SHIELD"
+		}
+		component = {
+			slot = "LARGE_UTILITY_2"
+			template = "LARGE_HORROR_SHIELD"
+		}
+		component = {
+			slot = "LARGE_UTILITY_3"
+			template = "LARGE_HORROR_SHIELD"
+		}
+		component = {
+			slot = "LARGE_UTILITY_4"
+			template = "LARGE_HORROR_SHIELD"
+		}
+		component = {
+			slot = "LARGE_UTILITY_5"
+			template = "LARGE_HORROR_SHIELD"
+		}
+		component = {
+			slot = "LARGE_UTILITY_6"
+			template = "LARGE_HORROR_SHIELD"
+		}
+		component = {
+			slot = "LARGE_UTILITY_7"
+			template = "LARGE_HORROR_SHIELD"
+		}
+		component = {
+			slot = "LARGE_UTILITY_8"
+			template = "LARGE_HORROR_SHIELD"
+		}
+		component = {
+			slot = "LARGE_UTILITY_9"
+			template = "LARGE_HORROR_SHIELD"
+		}
+		component = {
+			slot = "LARGE_UTILITY_10"
+			template = "LARGE_HORROR_SHIELD"
+		}
+		component = {
+			slot = "AUX_UTILITY_1"
+			template = "SHIELD_BOOSTER"
+		}
+		component = {
+			slot = "AUX_UTILITY_2"
+			template = "SHIELD_BOOSTER"
+		}
+		component = {
+			slot = "LARGE_UTILITY_11"
+			template = "LARGE_HORROR_ARMOR"
+		}
+		component = {
+			slot = "LARGE_UTILITY_12"
+			template = "LARGE_HORROR_ARMOR"
+		}
+		component = {
+			slot = "LARGE_UTILITY_13"
+			template = "LARGE_HORROR_ARMOR"
+		}
+		component = {
+			slot = "LARGE_UTILITY_14"
+			template = "LARGE_HORROR_ARMOR"
+		}
+		component = {
+			slot = "LARGE_UTILITY_15"
+			template = "LARGE_HORROR_ARMOR"
+		}
+		component = {
+			slot = "LARGE_UTILITY_16"
+			template = "LARGE_HORROR_ARMOR"
+		}
+		component = {
+			slot = "LARGE_UTILITY_17"
+			template = "LARGE_HORROR_ARMOR"
+		}
+		component = {
+			slot = "LARGE_UTILITY_18"
+			template = "LARGE_HORROR_ARMOR"
+		}
+		component = {
+			slot = "LARGE_UTILITY_19"
+			template = "LARGE_HORROR_ARMOR"
+		}
+		component = {
+			slot = "LARGE_UTILITY_20"
+			template = "LARGE_HORROR_ARMOR"
+		}
+		component = {
+			slot = "AUX_UTILITY_4"
+			template = "AUTO_REPAIR"
+		}
+		component = {
+			slot = "AUX_UTILITY_5"
+			template = "AUTO_REPAIR"
+		}
+	}
+	required_component = "TIME_WARP_DRIVE_2"
+	required_component = "COMBAT_COMPUTER_COLOSSUS"
+	required_component = "COLOSSUS_SHIP_THRUSTER_4"
+	required_component = "SENSOR_3"
+	required_component = "COLOSSUS_ZERO_POINT_REACTOR"
+}
+
+ship_design = {
+	name = "NAME_origin_colossus_other"
+	ship_size = star_eater
+	is_event_design = yes
+
+	section = {
+		template = "ORIGIN_COLOSSUS_END_SECTION"
+		slot = "mid"
+
+		component = {
+			slot = "PLANET_KILLER_GUN_01"
+			template = "PLANET_KILLER_STAR_CRACKER"
+		}
+		component = {
+			slot = "LARGE_GUN_01"
+			template = "LARGE_GAMMA_LASER"
+		}
+		component = {
+			slot = "MEDIUM_GUN_01"
+			template = "MEDIUM_GAMMA_LASER"
+		}
+		component = {
+			slot = "SMALL_GUN_01"
+			template = "SMALL_GAMMA_LASER"
+		}
+		component = {
+			slot = "STRIKE_CRAFT_01"
+			template = "STRIKE_CRAFT_HANGAR_3"
+		}
+		component = {
+			slot = "PD_01"
+			template = "POINT_DEFENCE_3"
+		}
+		component = {
+			slot = "PD_02"
+			template = "POINT_DEFENCE_3"
+		}
+		component = {
+			slot = "TITAN_01"
+			template = "TIME_ACCELERATOR"
+		}
+		component = {
+			slot = "LARGE_GUN_03"
+			template = "LARGE_MASS_DRIVER_5"
+		}
+		component = {
+			slot = "MEDIUM_GUN_03"
+			template = "MEDIUM_MASS_DRIVER_5"
+		}
+		component = {
+			slot = "SMALL_GUN_03"
+			template = "SMALL_MASS_DRIVER_5"
+		}
+		component = {
+			slot = "STRIKE_CRAFT_03"
+			template = "STRIKE_CRAFT_HANGAR_3"
+		}
+		component = {
+			slot = "PD_04"
+			template = "FLAK_BATTERY_3"
+		}
+		component = {
+			slot = "PD_05"
+			template = "FLAK_BATTERY_3"
+		}
+		
+		component = {
+			slot = "LARGE_UTILITY_1"
+			template = "LARGE_HORROR_SHIELD"
+		}
+		component = {
+			slot = "LARGE_UTILITY_2"
+			template = "LARGE_HORROR_SHIELD"
+		}
+		component = {
+			slot = "LARGE_UTILITY_3"
+			template = "LARGE_HORROR_SHIELD"
+		}
+		component = {
+			slot = "LARGE_UTILITY_4"
+			template = "LARGE_HORROR_SHIELD"
+		}
+		component = {
+			slot = "LARGE_UTILITY_5"
+			template = "LARGE_HORROR_SHIELD"
+		}
+		component = {
+			slot = "LARGE_UTILITY_6"
+			template = "LARGE_HORROR_SHIELD"
+		}
+		component = {
+			slot = "LARGE_UTILITY_7"
+			template = "LARGE_HORROR_SHIELD"
+		}
+		component = {
+			slot = "LARGE_UTILITY_8"
+			template = "LARGE_HORROR_SHIELD"
+		}
+		component = {
+			slot = "LARGE_UTILITY_9"
+			template = "LARGE_HORROR_SHIELD"
+		}
+		component = {
+			slot = "LARGE_UTILITY_10"
+			template = "LARGE_HORROR_SHIELD"
+		}
+		component = {
+			slot = "AUX_UTILITY_1"
+			template = "SHIELD_BOOSTER"
+		}
+		component = {
+			slot = "AUX_UTILITY_2"
+			template = "SHIELD_BOOSTER"
+		}
+		component = {
+			slot = "LARGE_UTILITY_11"
+			template = "LARGE_HORROR_ARMOR"
+		}
+		component = {
+			slot = "LARGE_UTILITY_12"
+			template = "LARGE_HORROR_ARMOR"
+		}
+		component = {
+			slot = "LARGE_UTILITY_13"
+			template = "LARGE_HORROR_ARMOR"
+		}
+		component = {
+			slot = "LARGE_UTILITY_14"
+			template = "LARGE_HORROR_ARMOR"
+		}
+		component = {
+			slot = "LARGE_UTILITY_15"
+			template = "LARGE_HORROR_ARMOR"
+		}
+		component = {
+			slot = "LARGE_UTILITY_16"
+			template = "LARGE_HORROR_ARMOR"
+		}
+		component = {
+			slot = "LARGE_UTILITY_17"
+			template = "LARGE_HORROR_ARMOR"
+		}
+		component = {
+			slot = "LARGE_UTILITY_18"
+			template = "LARGE_HORROR_ARMOR"
+		}
+		component = {
+			slot = "LARGE_UTILITY_19"
+			template = "LARGE_HORROR_ARMOR"
+		}
+		component = {
+			slot = "LARGE_UTILITY_20"
+			template = "LARGE_HORROR_ARMOR"
+		}
+		component = {
+			slot = "AUX_UTILITY_4"
+			template = "AUTO_REPAIR"
+		}
+		component = {
+			slot = "AUX_UTILITY_5"
+			template = "AUTO_REPAIR"
+		}
+	}
+	required_component = "JUMP_DRIVE_1"
+	required_component = "COMBAT_COMPUTER_COLOSSUS"
+	required_component = "COLOSSUS_SHIP_THRUSTER_4"
+	required_component = "SENSOR_3"
+	required_component = "COLOSSUS_ZERO_POINT_REACTOR"
+}
+
+ship_design = {
+	name = "NAME_origin_colossus_end"
+	ship_size = star_eater
+	is_event_design = yes
+
+	section = {
+		template = "ORIGIN_COLOSSUS_END_SECTION"
+		slot = "mid"
+
+		component = {
+			slot = "PLANET_KILLER_GUN_01"
+			template = "PLANET_KILLER_STAR_CRACKER"
+		}
+		component = {
+			slot = "EXTRA_LARGE_01"
+			template = "ENERGY_LANCE_2"
+		}
+		component = {
+			slot = "LARGE_GUN_01"
+			template = "LARGE_GAMMA_LASER"
+		}
+		component = {
+			slot = "LARGE_GUN_02"
+			template = "LARGE_GAMMA_LASER"
+		}
+		component = {
+			slot = "MEDIUM_GUN_01"
+			template = "MEDIUM_GAMMA_LASER"
+		}
+		component = {
+			slot = "MEDIUM_GUN_02"
+			template = "MEDIUM_GAMMA_LASER"
+		}
+		component = {
+			slot = "SMALL_GUN_01"
+			template = "SMALL_GAMMA_LASER"
+		}
+		component = {
+			slot = "SMALL_GUN_02"
+			template = "SMALL_GAMMA_LASER"
+		}
+		component = {
+			slot = "STRIKE_CRAFT_01"
+			template = "STRIKE_CRAFT_HANGAR_3"
+		}
+		component = {
+			slot = "STRIKE_CRAFT_02"
+			template = "STRIKE_CRAFT_HANGAR_3"
+		}
+		component = {
+			slot = "PD_01"
+			template = "POINT_DEFENCE_3"
+		}
+		component = {
+			slot = "PD_02"
+			template = "POINT_DEFENCE_3"
+		}
+		component = {
+			slot = "PD_03"
+			template = "POINT_DEFENCE_3"
+		}
+		component = {
+			slot = "TITAN_01"
+			template = "END_ACCELERATOR"
+		}
+		component = {
+			slot = "EXTRA_LARGE_02"
+			template = "MASS_ACCELERATOR_2"
+		}
+		component = {
+			slot = "LARGE_GUN_03"
+			template = "LARGE_MASS_DRIVER_5"
+		}
+		component = {
+			slot = "LARGE_GUN_04"
+			template = "LARGE_MASS_DRIVER_5"
+		}
+		component = {
+			slot = "MEDIUM_GUN_03"
+			template = "MEDIUM_MASS_DRIVER_5"
+		}
+		component = {
+			slot = "MEDIUM_GUN_04"
+			template = "MEDIUM_MASS_DRIVER_5"
+		}
+		component = {
+			slot = "SMALL_GUN_03"
+			template = "SMALL_MASS_DRIVER_5"
+		}
+		component = {
+			slot = "SMALL_GUN_04"
+			template = "SMALL_MASS_DRIVER_5"
+		}
+		component = {
+			slot = "STRIKE_CRAFT_03"
+			template = "STRIKE_CRAFT_HANGAR_3"
+		}
+		component = {
+			slot = "STRIKE_CRAFT_04"
+			template = "STRIKE_CRAFT_HANGAR_3"
+		}
+		component = {
+			slot = "PD_04"
+			template = "FLAK_BATTERY_3"
+		}
+		component = {
+			slot = "PD_05"
+			template = "FLAK_BATTERY_3"
+		}
+		component = {
+			slot = "PD_06"
+			template = "FLAK_BATTERY_3"
+		}
+		
+		component = {
+			slot = "LARGE_UTILITY_1"
+			template = "LARGE_TIME_SHIELD"
+		}
+		component = {
+			slot = "LARGE_UTILITY_2"
+			template = "LARGE_TIME_SHIELD"
+		}
+		component = {
+			slot = "LARGE_UTILITY_3"
+			template = "LARGE_TIME_SHIELD"
+		}
+		component = {
+			slot = "LARGE_UTILITY_4"
+			template = "LARGE_TIME_SHIELD"
+		}
+		component = {
+			slot = "LARGE_UTILITY_5"
+			template = "LARGE_TIME_SHIELD"
+		}
+		component = {
+			slot = "LARGE_UTILITY_6"
+			template = "LARGE_TIME_SHIELD"
+		}
+		component = {
+			slot = "LARGE_UTILITY_7"
+			template = "LARGE_TIME_SHIELD"
+		}
+		component = {
+			slot = "LARGE_UTILITY_8"
+			template = "LARGE_TIME_SHIELD"
+		}
+		component = {
+			slot = "LARGE_UTILITY_9"
+			template = "LARGE_TIME_SHIELD"
+		}
+		component = {
+			slot = "LARGE_UTILITY_10"
+			template = "LARGE_TIME_SHIELD"
+		}
+		component = {
+			slot = "AUX_UTILITY_1"
+			template = "SHIELD_BOOSTER"
+		}
+		component = {
+			slot = "AUX_UTILITY_2"
+			template = "SHIELD_BOOSTER"
+		}
+		component = {
+			slot = "AUX_UTILITY_3"
+			template = "ENIGMATIC_ENCODER"
+		}
+		component = {
+			slot = "LARGE_UTILITY_11"
+			template = "LARGE_TIME_ARMOR"
+		}
+		component = {
+			slot = "LARGE_UTILITY_12"
+			template = "LARGE_TIME_ARMOR"
+		}
+		component = {
+			slot = "LARGE_UTILITY_13"
+			template = "LARGE_TIME_ARMOR"
+		}
+		component = {
+			slot = "LARGE_UTILITY_14"
+			template = "LARGE_TIME_ARMOR"
+		}
+		component = {
+			slot = "LARGE_UTILITY_15"
+			template = "LARGE_TIME_ARMOR"
+		}
+		component = {
+			slot = "LARGE_UTILITY_16"
+			template = "LARGE_TIME_ARMOR"
+		}
+		component = {
+			slot = "LARGE_UTILITY_17"
+			template = "LARGE_TIME_ARMOR"
+		}
+		component = {
+			slot = "LARGE_UTILITY_18"
+			template = "LARGE_TIME_ARMOR"
+		}
+		component = {
+			slot = "LARGE_UTILITY_19"
+			template = "LARGE_TIME_ARMOR"
+		}
+		component = {
+			slot = "LARGE_UTILITY_20"
+			template = "LARGE_TIME_ARMOR"
+		}
+		component = {
+			slot = "AUX_UTILITY_4"
+			template = "AUTO_REPAIR"
+		}
+		component = {
+			slot = "AUX_UTILITY_5"
+			template = "AUTO_REPAIR"
+		}
+		component = {
+			slot = "AUX_UTILITY_6"
+			template = "ENIGMATIC_DECODER"
+		}
+	}
+	required_component = "TIME_WARP_DRIVE_3"
+	required_component = "COMBAT_COMPUTER_ORIGIN_COLOSSUS"
+	required_component = "COLOSSUS_SHIP_THRUSTER_5"
+	required_component = "SENSOR_4"
+	required_component = "COLOSSUS_DARK_MATTER_REACTOR"
+}
+
+# 江洋大盗
+ship_design = {
+	name = "NAME_Pirate_King_Arkship_Design_1"
+	ship_size = military_arkship_tier_1
+
+	section = {
+		template = "military_arkship_tier_1_section"
+		slot = "mid"
+		
+		component = {
+			slot = "STRIKE_CRAFT_01"
+			template = "STRIKE_CRAFT_HANGAR_1"
+		}
+		component = {
+			slot = "STRIKE_CRAFT_02"
+			template = "STRIKE_CRAFT_HANGAR_1"
+		}
+		component = {
+			slot = "MEDIUM_GUN_01"
+			template = "MEDIUM_MASS_DRIVER_1"
+		}
+		component = {
+			slot = "MEDIUM_GUN_02"
+			template = "MEDIUM_MASS_DRIVER_1"
+		}
+		component = {
+			slot = "MEDIUM_GUN_03"
+			template = "MEDIUM_RED_LASER"
+		}
+		component = {
+			slot = "MEDIUM_GUN_04"
+			template = "MEDIUM_RED_LASER"
+		}
+		component = {
+			slot = "PD_01"
+			template = "FLAK_BATTERY_1"
+		}
+		component = {
+			slot = "PD_02"
+			template = "FLAK_BATTERY_1"
+		}
+		component = {
+			slot = "PD_03"
+			template = "POINT_DEFENCE_1"
+		}
+		component = {
+			slot = "PD_04"
+			template = "POINT_DEFENCE_1"
+		}
+	}
+	required_component = "JUGGERNAUT_FISSION_REACTOR"
+	required_component = "HYPER_DRIVE_1"
+	required_component = "COLOSSUS_SHIP_THRUSTER_1"
+	required_component = "SENSOR_1"
+	required_component = "COMBAT_COMPUTER_ARKSHIP"
+}
+
+ship_design = {
+	name = "NAME_Pirate_King_Arkship_Design_2"
+	ship_size = military_arkship_tier_2
+
+	section = {
+		template = "military_arkship_tier_2_section"
+		slot = "mid"
+		
+		component = {
+			slot = "STRIKE_CRAFT_01"
+			template = "STRIKE_CRAFT_HANGAR_2"
+		}
+		component = {
+			slot = "STRIKE_CRAFT_02"
+			template = "STRIKE_CRAFT_HANGAR_2"
+		}
+		component = {
+			slot = "STRIKE_CRAFT_03"
+			template = "STRIKE_CRAFT_HANGAR_2"
+		}
+		component = {
+			slot = "STRIKE_CRAFT_04"
+			template = "STRIKE_CRAFT_HANGAR_2"
+		}
+		component = {
+			slot = "MEDIUM_GUN_01"
+			template = "MEDIUM_MASS_DRIVER_2"
+		}
+		component = {
+			slot = "MEDIUM_GUN_02"
+			template = "MEDIUM_MASS_DRIVER_2"
+		}
+		component = {
+			slot = "MEDIUM_GUN_03"
+			template = "MEDIUM_BLUE_LASER"
+		}
+		component = {
+			slot = "MEDIUM_GUN_04"
+			template = "MEDIUM_BLUE_LASER"
+		}
+		component = {
+			slot = "LARGE_GUN_01"
+			template = "LARGE_MASS_DRIVER_2"
+		}
+		component = {
+			slot = "LARGE_GUN_02"
+			template = "LARGE_MASS_DRIVER_2"
+		}
+		component = {
+			slot = "LARGE_GUN_03"
+			template = "LARGE_BLUE_LASER"
+		}
+		component = {
+			slot = "LARGE_GUN_04"
+			template = "LARGE_BLUE_LASER"
+		}
+		component = {
+			slot = "PD_01"
+			template = "FLAK_BATTERY_2"
+		}
+		component = {
+			slot = "PD_02"
+			template = "FLAK_BATTERY_2"
+		}
+		component = {
+			slot = "PD_03"
+			template = "FLAK_BATTERY_2"
+		}
+		component = {
+			slot = "PD_04"
+			template = "FLAK_BATTERY_2"
+		}
+		component = {
+			slot = "PD_05"
+			template = "POINT_DEFENCE_2"
+		}
+		component = {
+			slot = "PD_06"
+			template = "POINT_DEFENCE_2"
+		}
+		component = {
+			slot = "PD_07"
+			template = "POINT_DEFENCE_2"
+		}
+		component = {
+			slot = "PD_08"
+			template = "POINT_DEFENCE_2"
+		}
+	}
+	required_component = "JUGGERNAUT_FUSION_REACTOR"
+	required_component = "HYPER_DRIVE_2"
+	required_component = "COLOSSUS_SHIP_THRUSTER_2"
+	required_component = "SENSOR_2"
+	required_component = "COMBAT_COMPUTER_ARKSHIP"
+}
+
+ship_design = {
+	name = "NAME_Pirate_King_Arkship_Design_3"
+	ship_size = military_arkship_tier_3
+
+	section = {
+		template = "military_arkship_tier_3_section"
+		slot = "mid"
+		
+		component = {
+			slot = "STRIKE_CRAFT_01"
+			template = "STRIKE_CRAFT_HANGAR_3"
+		}
+		component = {
+			slot = "STRIKE_CRAFT_02"
+			template = "STRIKE_CRAFT_HANGAR_3"
+		}
+		component = {
+			slot = "STRIKE_CRAFT_03"
+			template = "STRIKE_CRAFT_HANGAR_3"
+		}
+		component = {
+			slot = "STRIKE_CRAFT_04"
+			template = "STRIKE_CRAFT_HANGAR_3"
+		}
+		component = {
+			slot = "STRIKE_CRAFT_05"
+			template = "STRIKE_CRAFT_HANGAR_3"
+		}
+		component = {
+			slot = "STRIKE_CRAFT_06"
+			template = "STRIKE_CRAFT_HANGAR_3"
+		}
+		component = {
+			slot = "LARGE_GUN_01"
+			template = "LARGE_MASS_DRIVER_3"
+		}
+		component = {
+			slot = "LARGE_GUN_02"
+			template = "LARGE_MASS_DRIVER_3"
+		}
+		component = {
+			slot = "LARGE_GUN_03"
+			template = "LARGE_MASS_DRIVER_3"
+		}
+		component = {
+			slot = "LARGE_GUN_04"
+			template = "LARGE_MASS_DRIVER_3"
+		}
+		component = {
+			slot = "LARGE_GUN_05"
+			template = "LARGE_UV_LASER"
+		}
+		component = {
+			slot = "LARGE_GUN_06"
+			template = "LARGE_UV_LASER"
+		}
+		component = {
+			slot = "LARGE_GUN_07"
+			template = "LARGE_UV_LASER"
+		}
+		component = {
+			slot = "LARGE_GUN_08"
+			template = "LARGE_UV_LASER"
+		}
+		component = {
+			slot = "PD_01"
+			template = "FLAK_BATTERY_3"
+		}
+		component = {
+			slot = "PD_02"
+			template = "FLAK_BATTERY_3"
+		}
+		component = {
+			slot = "PD_03"
+			template = "FLAK_BATTERY_3"
+		}
+		component = {
+			slot = "PD_04"
+			template = "FLAK_BATTERY_3"
+		}
+		component = {
+			slot = "PD_05"
+			template = "FLAK_BATTERY_3"
+		}
+		component = {
+			slot = "PD_06"
+			template = "FLAK_BATTERY_3"
+		}
+		component = {
+			slot = "PD_07"
+			template = "FLAK_BATTERY_3"
+		}
+		component = {
+			slot = "PD_08"
+			template = "FLAK_BATTERY_3"
+		}
+		component = {
+			slot = "PD_09"
+			template = "POINT_DEFENCE_3"
+		}
+		component = {
+			slot = "PD_10"
+			template = "POINT_DEFENCE_3"
+		}
+		component = {
+			slot = "PD_11"
+			template = "POINT_DEFENCE_3"
+		}
+		component = {
+			slot = "PD_12"
+			template = "POINT_DEFENCE_3"
+		}
+		component = {
+			slot = "PD_13"
+			template = "POINT_DEFENCE_3"
+		}
+		component = {
+			slot = "PD_14"
+			template = "POINT_DEFENCE_3"
+		}
+		component = {
+			slot = "PD_15"
+			template = "POINT_DEFENCE_3"
+		}
+		component = {
+			slot = "PD_16"
+			template = "POINT_DEFENCE_3"
+		}
+	}
+	required_component = "JUGGERNAUT_COLD_FUSION_REACTOR"
+	required_component = "HYPER_DRIVE_3"
+	required_component = "COLOSSUS_SHIP_THRUSTER_3"
+	required_component = "SENSOR_3"
+	required_component = "COMBAT_COMPUTER_ARKSHIP"
+}
+
+ship_design = {
+	name = "NAME_Pirate_King_End_Arkship_Design"
+	ship_size = military_arkship_tier_3
+
+	section = {
+		template = "military_arkship_tier_3_section"
+		slot = "mid"
+		
+		component = {
+			slot = "STRIKE_CRAFT_01"
+			template = "STRIKE_CRAFT_HANGAR_3"
+		}
+		component = {
+			slot = "STRIKE_CRAFT_02"
+			template = "STRIKE_CRAFT_HANGAR_3"
+		}
+		component = {
+			slot = "STRIKE_CRAFT_03"
+			template = "STRIKE_CRAFT_HANGAR_3"
+		}
+		component = {
+			slot = "STRIKE_CRAFT_04"
+			template = "STRIKE_CRAFT_HANGAR_3"
+		}
+		component = {
+			slot = "STRIKE_CRAFT_05"
+			template = "STRIKE_CRAFT_HANGAR_3"
+		}
+		component = {
+			slot = "STRIKE_CRAFT_06"
+			template = "STRIKE_CRAFT_HANGAR_3"
+		}
+		component = {
+			slot = "LARGE_GUN_01"
+			template = "LARGE_MASS_DRIVER_3"
+		}
+		component = {
+			slot = "LARGE_GUN_02"
+			template = "LARGE_MASS_DRIVER_3"
+		}
+		component = {
+			slot = "LARGE_GUN_03"
+			template = "LARGE_MASS_DRIVER_3"
+		}
+		component = {
+			slot = "LARGE_GUN_04"
+			template = "LARGE_MASS_DRIVER_3"
+		}
+		component = {
+			slot = "LARGE_GUN_05"
+			template = "LARGE_UV_LASER"
+		}
+		component = {
+			slot = "LARGE_GUN_06"
+			template = "LARGE_UV_LASER"
+		}
+		component = {
+			slot = "LARGE_GUN_07"
+			template = "LARGE_UV_LASER"
+		}
+		component = {
+			slot = "LARGE_GUN_08"
+			template = "LARGE_UV_LASER"
+		}
+		component = {
+			slot = "PD_01"
+			template = "FLAK_BATTERY_3"
+		}
+		component = {
+			slot = "PD_02"
+			template = "FLAK_BATTERY_3"
+		}
+		component = {
+			slot = "PD_03"
+			template = "FLAK_BATTERY_3"
+		}
+		component = {
+			slot = "PD_04"
+			template = "FLAK_BATTERY_3"
+		}
+		component = {
+			slot = "PD_05"
+			template = "FLAK_BATTERY_3"
+		}
+		component = {
+			slot = "PD_06"
+			template = "FLAK_BATTERY_3"
+		}
+		component = {
+			slot = "PD_07"
+			template = "FLAK_BATTERY_3"
+		}
+		component = {
+			slot = "PD_08"
+			template = "FLAK_BATTERY_3"
+		}
+		component = {
+			slot = "PD_09"
+			template = "POINT_DEFENCE_3"
+		}
+		component = {
+			slot = "PD_10"
+			template = "POINT_DEFENCE_3"
+		}
+		component = {
+			slot = "PD_11"
+			template = "POINT_DEFENCE_3"
+		}
+		component = {
+			slot = "PD_12"
+			template = "POINT_DEFENCE_3"
+		}
+		component = {
+			slot = "PD_13"
+			template = "POINT_DEFENCE_3"
+		}
+		component = {
+			slot = "PD_14"
+			template = "POINT_DEFENCE_3"
+		}
+		component = {
+			slot = "PD_15"
+			template = "POINT_DEFENCE_3"
+		}
+		component = {
+			slot = "PD_16"
+			template = "POINT_DEFENCE_3"
+		}
+	}
+	required_component = "JUGGERNAUT_COLD_FUSION_REACTOR"
+	required_component = "HYPER_DRIVE_3"
+	required_component = "COLOSSUS_SHIP_THRUSTER_3"
+	required_component = "SENSOR_3"
+	required_component = "COMBAT_COMPUTER_ARKSHIP"
+}
+
+# 诺亚方舟
+ship_design = {
+	name = "NAME_Noah_Ark_civilian_1"
+	ship_size = civilian_arkship_tier_1
+
+	section = {
+		template = "civilian_arkship_tier_1_section"
+		slot = "mid"
+		
+		component = {
+			slot = "STRIKE_CRAFT_01"
+			template = "STRIKE_CRAFT_HANGAR_3"
+		}
+		component = {
+			slot = "STRIKE_CRAFT_02"
+			template = "STRIKE_CRAFT_HANGAR_3"
+		}
+		component = {
+			slot = "PD_01"
+			template = "FLAK_BATTERY_3"
+		}
+		component = {
+			slot = "PD_02"
+			template = "FLAK_BATTERY_3"
+		}
+		component = {
+			slot = "PD_03"
+			template = "POINT_DEFENCE_3"
+		}
+		component = {
+			slot = "PD_04"
+			template = "POINT_DEFENCE_3"
+		}
+	}
+	required_component = "JUGGERNAUT_COLD_FUSION_REACTOR"
+	required_component = "HYPER_DRIVE_1"
+	required_component = "COLOSSUS_SHIP_THRUSTER_1"
+	required_component = "SENSOR_1"
+	required_component = "COMBAT_COMPUTER_ARKSHIP"
+}
+
+ship_design = {
+	name = "NAME_Noah_Ark_civilian_2"
+	ship_size = civilian_arkship_tier_2
+
+	section = {
+		template = "civilian_arkship_tier_2_section"
+		slot = "mid"
+	}
+	required_component = "JUGGERNAUT_ANTIMATTER_REACTOR"
+	required_component = "HYPER_DRIVE_2"
+	required_component = "COLOSSUS_SHIP_THRUSTER_2"
+	required_component = "SENSOR_2"
+	required_component = "COMBAT_COMPUTER_ARKSHIP"
+}
+
+ship_design = {
+	name = "NAME_Noah_Ark_civilian_3"
+	ship_size = civilian_arkship_tier_3
+
+	section = {
+		template = "civilian_arkship_tier_3_section"
+		slot = "mid"
+	}
+	required_component = "JUGGERNAUT_ZERO_POINT_REACTOR"
+	required_component = "HYPER_DRIVE_3"
+	required_component = "COLOSSUS_SHIP_THRUSTER_3"
+	required_component = "SENSOR_3"
+	required_component = "COMBAT_COMPUTER_ARKSHIP"
+}
+
+ship_design = {
+	name = "NAME_Noah_Ark_science_1"
+	ship_size = science_arkship_tier_1
+
+	section = {
+		template = "science_arkship_tier_1_section"
+		slot = "mid"
+		
+		component = {
+			slot = "STRIKE_CRAFT_01"
+			template = "STRIKE_CRAFT_HANGAR_3"
+		}
+		component = {
+			slot = "STRIKE_CRAFT_02"
+			template = "STRIKE_CRAFT_HANGAR_3"
+		}
+		component = {
+			slot = "PD_01"
+			template = "FLAK_BATTERY_3"
+		}
+		component = {
+			slot = "PD_02"
+			template = "FLAK_BATTERY_3"
+		}
+		component = {
+			slot = "PD_03"
+			template = "POINT_DEFENCE_3"
+		}
+		component = {
+			slot = "PD_04"
+			template = "POINT_DEFENCE_3"
+		}
+	}
+	required_component = "JUGGERNAUT_COLD_FUSION_REACTOR"
+	required_component = "HYPER_DRIVE_1"
+	required_component = "COLOSSUS_SHIP_THRUSTER_1"
+	required_component = "SENSOR_1"
+	required_component = "COMBAT_COMPUTER_ARKSHIP"
+}
+
+ship_design = {
+	name = "NAME_Noah_Ark_science_2"
+	ship_size = science_arkship_tier_2
+
+	section = {
+		template = "science_arkship_tier_2_section"
+		slot = "mid"
+	}
+	required_component = "JUGGERNAUT_ANTIMATTER_REACTOR"
+	required_component = "HYPER_DRIVE_2"
+	required_component = "COLOSSUS_SHIP_THRUSTER_2"
+	required_component = "SENSOR_2"
+	required_component = "COMBAT_COMPUTER_ARKSHIP"
+}
+
+ship_design = {
+	name = "NAME_Noah_Ark_science_3"
+	ship_size = science_arkship_tier_3
+
+	section = {
+		template = "science_arkship_tier_3_section"
+		slot = "mid"
+	}
+	required_component = "JUGGERNAUT_ZERO_POINT_REACTOR"
+	required_component = "HYPER_DRIVE_3"
+	required_component = "COLOSSUS_SHIP_THRUSTER_3"
+	required_component = "SENSOR_3"
+	required_component = "COMBAT_COMPUTER_ARKSHIP"
+}

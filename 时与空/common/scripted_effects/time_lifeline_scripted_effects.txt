@@ -1,0 +1,31 @@
+# 国家
+time_lifeline_short_time_event = {
+	custom_tooltip = time_lifeline_need_short_time
+	hidden_effect = {
+		country_event = { id = $ID$ days = 30 random = 30 }
+	}
+}
+
+# 国家
+time_lifeline_some_time_event = {
+	custom_tooltip = time_lifeline_need_some_time
+	hidden_effect = {
+		country_event = { id = $ID$ days = 90 random = 90 }
+	}
+}
+
+# 国家
+time_lifeline_long_time_event = {
+	custom_tooltip = time_lifeline_need_long_time
+	hidden_effect = {
+		country_event = { id = $ID$ days = 180 random = 180 }
+	}
+}
+
+# 国家
+time_lifeline_unknown_time_event = {
+	custom_tooltip = time_lifeline_need_unknown_time
+	hidden_effect = {
+		country_event = { id = $ID$ days = 1 random = 719 }
+	}
+}

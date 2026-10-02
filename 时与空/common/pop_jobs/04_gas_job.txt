@@ -1,0 +1,530 @@
+gas_technician = {
+	category = worker
+	
+	swappable_data = {
+		default = {
+			condition_string = WORKER_JOB_TRIGGER
+			building_icon = building_energy_grid
+			icon = technician
+		}
+		swap_type = {
+			trigger = {
+				gas_colony_job_is_civic_origin_gas_colony_job_trigger = yes
+			}
+			name = civic_origin_gas_colony_technician
+			desc = civic_origin_gas_colony_technician
+			icon = civic_origin_gas_colony_technician
+			weight = 5
+		}
+	}
+
+	tags = { energy }
+
+	possible_pre_triggers = {
+		has_owner = yes
+		is_being_purged = no
+		is_being_assimilated = no
+		is_sapient = yes
+	}
+
+	possible_precalc = can_fill_worker_job
+	possible = {
+		hidden_trigger = { exists = owner }
+		owner = {
+			is_gestalt = no
+		}
+		has_trait = trait_origin_gas_colony
+	}
+
+	resources = {
+		category = planet_technician
+		produces = {
+			energy = 6
+			volatile_motes = 0.5
+		}
+		produces = {
+			trigger = {
+				colony = {
+					has_carrier_flag = has_energy_requisitorium
+				}
+			}
+			energy = @requisitorium_energy_reduction
+		}
+		produces = {
+			trigger = {
+				gas_colony_job_is_civic_origin_gas_colony_job_trigger = yes
+			}
+			energy = -1.5
+		}
+	}
+	
+	overlord_resources = {
+		category = planet_requisitioned_energy
+		produces = {
+			trigger = {
+				colony = {
+					has_carrier_flag = has_energy_requisitorium
+				}
+			}
+			energy = @requisitorium_energy_overlord
+		}
+	}
+	
+	triggered_country_modifier = {
+		potential = {
+			gas_colony_job_is_civic_origin_gas_colony_job_trigger = yes
+		}
+		ship_shield_mult = 0.01
+	}
+	
+	# 技工部分
+	
+	inline_script = "jobs/vanilla/vanilla_technician_modifiers"
+	
+	inline_script = {
+		script = jobs/vanilla_weight/vanilla_technician_weight
+	}
+	
+	inline_script = "jobs/automodding_priority_energy"
+}
+
+gas_miner = {
+	category = worker
+	
+	swappable_data = {
+		default = {
+			condition_string = WORKER_JOB_TRIGGER
+			building_icon = building_mineral_purification_plant
+			icon = miner
+		}
+		swap_type = {
+			trigger = {
+				gas_colony_job_is_civic_origin_gas_colony_job_trigger = yes
+			}
+			name = civic_origin_gas_colony_miner
+			desc = civic_origin_gas_colony_miner
+			icon = civic_origin_gas_colony_miner
+			weight = 5
+		}
+	}
+
+	tags = { minerals }
+
+	possible_pre_triggers = {
+		has_owner = yes
+		is_being_purged = no
+		is_being_assimilated = no
+		is_sapient = yes
+	}
+
+	possible_precalc = can_fill_worker_job
+	possible = {
+		hidden_trigger = { exists = owner }
+		owner = {
+			is_gestalt = no
+		}
+		has_trait = trait_origin_gas_colony
+	}
+
+	resources = {
+		category = planet_miners
+		produces = {
+			minerals = 4
+			rare_crystals = 0.5
+		}
+		produces = {
+			trigger = {
+				colony = {
+					has_carrier_flag = has_material_requisitorium
+				}
+			}
+			minerals = @requisitorium_minerals_reduction
+		}
+		produces = {
+			trigger = {
+				gas_colony_job_is_civic_origin_gas_colony_job_trigger = yes
+			}
+			minerals = -1
+		}
+	}
+	
+	overlord_resources = {
+		category = planet_requisitioned_minerals
+		produces = {
+			trigger = {
+				colony = {
+					has_carrier_flag = has_material_requisitorium
+				}
+			}
+			minerals = @requisitorium_minerals_overlord
+		}
+	}
+	
+	triggered_country_modifier = {
+		potential = {
+			gas_colony_job_is_civic_origin_gas_colony_job_trigger = yes
+		}
+		ship_armor_mult = 0.01
+	}
+	
+	# 矿工部分
+	
+	inline_script = "jobs/vanilla/vanilla_miner_modifiers"
+	
+	inline_script = {
+		script = jobs/vanilla_weight/vanilla_miner_weight
+	}
+	
+	inline_script = "jobs/automodding_priority_minerals"
+}
+
+gas_farmer = {
+	category = worker
+	
+	swappable_data = {
+		default = {
+			condition_string = WORKER_JOB_TRIGGER
+			building_icon = building_food_processing_facility
+			icon = farmer
+		}
+		swap_type = {
+			trigger = {
+				gas_colony_job_is_civic_origin_gas_colony_job_trigger = yes
+			}
+			name = civic_origin_gas_colony_farmer
+			desc = civic_origin_gas_colony_farmer
+			icon = civic_origin_gas_colony_farmer
+			weight = 5
+		}
+	}
+
+	tags = { food }
+
+	possible_pre_triggers = {
+		has_owner = yes
+		is_being_purged = no
+		is_being_assimilated = no
+		is_sapient = yes
+	}
+
+	possible_precalc = can_fill_worker_job
+	possible = {
+		hidden_trigger = { exists = owner }
+		owner = {
+			is_gestalt = no
+		}
+		has_trait = trait_origin_gas_colony
+	}
+
+	resources = {
+		category = planet_farmers
+		produces = {
+			food = 6
+			exotic_gases = 0.5
+		}
+		produces = {
+			trigger = {
+				colony = {
+					has_carrier_flag = has_produce_requisitorium
+				}
+			}
+			food = @requisitorium_food_reduction
+		}
+		produces = {
+			trigger = {
+				gas_colony_job_is_civic_origin_gas_colony_job_trigger = yes
+			}
+			food = -1.5
+		}
+	}
+	
+	overlord_resources = {
+		category = planet_requisitioned_food
+		produces = {
+			trigger = {
+				colony = {
+					has_carrier_flag = has_produce_requisitorium
+				}
+			}
+			food = @requisitorium_food_overlord
+		}
+	}
+	
+	triggered_country_modifier = {
+		potential = {
+			gas_colony_job_is_civic_origin_gas_colony_job_trigger = yes
+		}
+		ship_hull_mult = 0.01
+	}
+	
+	# 农夫部分
+	
+	inline_script = "jobs/vanilla/vanilla_farmer_modifiers"
+	
+	inline_script = {
+		script = jobs/vanilla_weight/vanilla_farmer_weight
+	}
+	
+	inline_script = "jobs/automodding_priority_food"
+}
+
+gas_technician_drone = {
+	category = simple_drone
+	
+	swappable_data = {
+		default = {
+			condition_string = DRONE_JOB_TRIGGER
+			building_icon = building_energy_grid
+			icon = technician_drone
+		}
+		swap_type = {
+			trigger = {
+				gas_colony_job_is_civic_origin_gas_colony_job_trigger = yes
+			}
+			name = civic_origin_gas_colony_technician_drone
+			desc = civic_origin_gas_colony_technician_drone
+			icon = civic_origin_gas_colony_technician
+			weight = 5
+		}
+	}
+
+	tags = { energy }
+
+	possible_pre_triggers = {
+		has_owner = yes
+		is_enslaved = no
+		is_being_purged = no
+		is_being_assimilated = no
+		is_sapient = yes
+	}
+
+	possible_precalc = can_fill_drone_job
+	possible = {
+		has_trait = trait_origin_gas_colony
+	}
+
+	resources = {
+		category = planet_technician
+		produces = {
+			energy = 6
+			volatile_motes = 0.5
+		}
+		produces = {
+			trigger = {
+				colony = {
+					has_carrier_flag = has_energy_requisitorium
+				}
+			}
+			energy = @requisitorium_energy_reduction
+		}
+		produces = {
+			trigger = {
+				gas_colony_job_is_civic_origin_gas_colony_job_trigger = yes
+			}
+			energy = -1.5
+		}
+	}
+	
+	overlord_resources = {
+		category = planet_requisitioned_energy
+		produces = {
+			trigger = {
+				colony = {
+					has_carrier_flag = has_energy_requisitorium
+				}
+			}
+			energy = @requisitorium_energy_overlord
+		}
+	}
+	
+	triggered_country_modifier = {
+		potential = {
+			gas_colony_job_is_civic_origin_gas_colony_job_trigger = yes
+		}
+		ship_shield_mult = 0.015 # 对于没有专属内阁职位的补偿
+	}
+	
+	# 技工部分
+	
+	inline_script = "jobs/vanilla/vanilla_technician_modifiers"
+
+	inline_script = {
+		script = jobs/vanilla_weight/vanilla_technician_drone_weight
+	}
+	
+	inline_script = "jobs/automodding_priority_energy"
+}
+
+gas_mining_drone = {
+	category = simple_drone
+	
+	swappable_data = {
+		default = {
+			condition_string = DRONE_JOB_TRIGGER
+			building_icon = building_mineral_purification_plant
+			icon = mining_drone
+		}
+		swap_type = {
+			trigger = {
+				gas_colony_job_is_civic_origin_gas_colony_job_trigger = yes
+			}
+			name = civic_origin_gas_colony_mining_drone
+			desc = civic_origin_gas_colony_mining_drone
+			icon = civic_origin_gas_colony_miner
+			weight = 5
+		}
+	}
+
+	tags = { minerals }
+
+	possible_pre_triggers = {
+		has_owner = yes
+		is_enslaved = no
+		is_being_purged = no
+		is_being_assimilated = no
+		is_sapient = yes
+	}
+
+	possible_precalc = can_fill_drone_job
+	possible = {
+		has_trait = trait_origin_gas_colony
+	}
+
+	resources = {
+		category = planet_miners
+		produces = {
+			minerals = 4
+			rare_crystals = 0.5
+		}
+		produces = {
+			trigger = {
+				colony = {
+					has_carrier_flag = has_material_requisitorium
+				}
+			}
+			minerals = @requisitorium_minerals_reduction
+		}
+		produces = {
+			trigger = {
+				gas_colony_job_is_civic_origin_gas_colony_job_trigger = yes
+			}
+			minerals = -1
+		}
+	}
+	
+	overlord_resources = {
+		category = planet_requisitioned_minerals
+		produces = {
+			trigger = {
+				colony = {
+					has_carrier_flag = has_material_requisitorium
+				}
+			}
+			minerals = @requisitorium_minerals_overlord
+		}
+	}
+	
+	triggered_country_modifier = {
+		potential = {
+			gas_colony_job_is_civic_origin_gas_colony_job_trigger = yes
+		}
+		ship_armor_mult = 0.015 # 对于没有专属内阁职位的补偿
+	}
+	
+	# 矿工部分
+	
+	inline_script = "jobs/vanilla/vanilla_miner_modifiers"
+
+	inline_script = {
+		script = jobs/vanilla_weight/vanilla_mining_drone_weight
+	}
+	
+	inline_script = "jobs/automodding_priority_minerals"
+}
+
+gas_agri_drone = {
+	category = simple_drone
+	
+	swappable_data = {
+		default = {
+			condition_string = DRONE_JOB_TRIGGER
+			building_icon = building_food_processing_facility
+			icon = agri_drone
+		}
+		swap_type = {
+			trigger = {
+				gas_colony_job_is_civic_origin_gas_colony_job_trigger = yes
+			}
+			name = civic_origin_gas_colony_agri_drone
+			desc = civic_origin_gas_colony_agri_drone
+			icon = civic_origin_gas_colony_farmer
+			weight = 5
+		}
+	}
+
+	tags = { food }
+
+	possible_pre_triggers = {
+		has_owner = yes
+		is_enslaved = no
+		is_being_purged = no
+		is_being_assimilated = no
+		is_sapient = yes
+	}
+
+	possible_precalc = can_fill_drone_job
+	possible = {
+		has_trait = trait_origin_gas_colony
+	}
+
+	resources = {
+		category = planet_farmers
+		produces = {
+			food = 6	
+			exotic_gases = 0.5
+		}
+		produces = {
+			trigger = {
+				colony = {
+					has_carrier_flag = has_produce_requisitorium
+				}
+			}
+			food = @requisitorium_food_reduction
+		}
+		produces = {
+			trigger = {
+				gas_colony_job_is_civic_origin_gas_colony_job_trigger = yes
+			}
+			food = -1.5
+		}
+	}
+	
+	overlord_resources = {
+		category = planet_requisitioned_food
+		produces = {
+			trigger = {
+				colony = {
+					has_carrier_flag = has_produce_requisitorium
+				}
+			}
+			food = @requisitorium_food_overlord
+		}
+	}
+	
+	triggered_country_modifier = {
+		potential = {
+			gas_colony_job_is_civic_origin_gas_colony_job_trigger = yes
+		}
+		ship_hull_mult = 0.015 # 对于没有专属内阁职位的补偿
+	}
+	
+	# 农夫部分
+	
+	inline_script = "jobs/vanilla/vanilla_farmer_modifiers"
+
+	inline_script = {
+		script = jobs/vanilla_weight/vanilla_agri_drone_weight
+	}
+	
+	inline_script = "jobs/automodding_priority_food"
+}

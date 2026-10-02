@@ -1,0 +1,162 @@
+sun_praiser = {
+	category = ruler
+	can_be_automated = no
+	
+	swappable_data = {
+		default = {
+			condition_string = RULER_JOB_TRIGGER
+			building_icon = building_great_pyramid
+		}
+	}
+
+	tags = { unity }
+
+	possible_pre_triggers = {
+		has_owner = yes
+		is_enslaved = no
+		is_being_purged = no
+		is_being_assimilated = no
+		is_sapient = yes
+	}
+
+	possible_precalc = can_fill_ruler_job
+	possible = {
+	}
+
+	resources = {
+		category = planet_politicians
+		produces = {
+			unity = 5
+		}
+		upkeep = {
+			consumer_goods = 3
+		}
+	}
+	
+	country_modifier = {
+		country_energy_produces_mult = 0.05
+	}
+
+	# 政客部分
+	
+	inline_script = "jobs/vanilla/vanilla_politician_modifiers"
+
+	weight = {
+		weight = @ruler_job_weight
+		mult = value:scripted_modifier_job_weight_mult|MODIFIER|pop_job_amenities_mult|
+		modifier = {
+			factor = 0.1
+			has_citizenship_rights = no
+			NOT = { has_trait = trait_mechanical }
+		}
+		# crisis purge
+		modifier = {
+			factor = 0.01
+			exists = planet
+			exists = colony.controller
+			colony.controller = {
+				OR = {
+					is_country_type = swarm
+					is_country_type = ai_empire
+				}
+			}
+		}
+	}
+	
+	inline_script = "jobs/automodding_priority_unity"
+}
+
+sun_praiser_drone = {
+	category = complex_drone
+	can_be_automated = no
+	
+	swappable_data = {
+		default = {
+			condition_string = DRONE_JOB_TRIGGER
+			building_icon = building_great_pyramid
+			icon = sun_praiser
+		}
+		swap_type = {
+			trigger = {
+				exists = owner
+				owner = { is_hive_empire = yes }
+			}
+			name = sun_praiser_drone_hive
+			desc = sun_praiser_drone_hive
+			weight = 2
+		}
+	}
+
+	tags = { unity }
+
+	possible_pre_triggers = {
+		has_owner = yes
+		is_enslaved = no
+		is_being_purged = no
+		is_being_assimilated = no
+		is_sapient = yes
+	}
+
+	possible_precalc = can_fill_drone_job
+
+	possible = { can_think = yes }
+
+	resources = {
+		category = planet_bureaucrats
+		produces = {
+			unity = 5
+		}
+		upkeep = {
+			trigger = {
+				exists = owner
+				owner = {
+					is_hive_empire = yes
+					is_lithoid_or_infernal_empire = no
+				}
+			}
+			food = 3
+			energy = 3
+		}
+		upkeep = {
+			trigger = {
+				exists = owner
+				owner = {
+					is_hive_empire = yes
+					is_lithoid_or_infernal_empire = yes
+				}
+			}
+			minerals = 3
+			energy = 3
+		}
+		upkeep = {
+			trigger = {
+				exists = owner
+				owner = {
+					is_hive_empire = no
+				}
+			}
+			energy = 6
+		}
+	}
+	
+	country_modifier = {
+		country_energy_produces_mult = 0.05
+	}
+
+	# 协调者部分
+	
+	inline_script = "jobs/vanilla/vanilla_coordinator_modifiers"
+
+	weight = {
+		weight = @synapse_drone_job_weight
+		modifier = {
+			factor = 0.9
+			exists = owner
+			years_passed < 1
+			owner = { has_valid_civic = civic_machine_assimilator }
+			has_trait = trait_cybernetic
+		}
+	}
+	
+	inline_script = "jobs/automodding_priority_unity"
+}

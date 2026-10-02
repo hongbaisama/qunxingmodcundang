@@ -1,0 +1,51 @@
+triggered_species_modifier = {
+	potential = {
+		exists = from
+		has_trait_notofthisworld = yes
+	}
+	trait_pops_society_research_produces_add = 0.5
+	trait_pops_engineering_research_produces_add = 0.5
+}
+triggered_species_modifier = {
+	potential = {
+		exists = from
+		from = { has_technology = tech_hope_messenger_pod }
+	}
+	trait_pops_unity_produces_add = 0.5
+}
+triggered_species_modifier = {
+	potential = {
+		exists = from
+		has_trait_notofthisworld = yes
+	}
+	pop_bonus_workforce_mult = $POSITIVE$
+	mult = from.value:trait_akx_messenger_decay_value
+}
+triggered_species_modifier = {
+	potential = {
+		exists = from
+		from = { has_technology = tech_hope_messenger_pod }
+	}
+	planet_pops_produces_mult = $POSITIVE$
+	planet_pops_upkeep_mult = $NEGATIVE$
+	mult = from.value:trait_akx_messenger_decay_value|MULT|2|
+}
+resources = {
+	category = planet_pops
+	produces = {
+		trigger = {
+			is_slave_or_better = yes
+			has_trait_notofthisworld = yes
+		}
+		society_research = 0.5
+		engineering_research = 0.5
+	}
+	produces = {
+		trigger = {
+			is_slave_or_better = yes
+			exists = owner
+			owner = { has_technology = tech_hope_messenger_pod }
+		}
+		unity = 0.5
+	}
+}

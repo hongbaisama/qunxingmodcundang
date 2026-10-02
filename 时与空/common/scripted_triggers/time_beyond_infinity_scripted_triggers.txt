@@ -1,0 +1,367 @@
+# 国家
+ap_beyond_infinity_potential = {
+	ap_beyond_infinity_basic_potential = yes
+	NOT = { has_ascension_perk = ap_beyond_infinity }
+	OR = {
+		has_beyond_infinity_civic = yes
+		has_tradition = tr_end_adopt
+		has_tradition = tr_hope_adopt
+	}
+}
+
+# 国家
+ap_beyond_infinity_basic_potential = {
+	forbid_beyond_infinity = no
+	has_country_flag = dimension_traveler_end
+	NOR = {
+		is_potential_crisis_country = yes
+		has_global_flag = dark_forest
+	}
+}
+
+# 国家（超越无限）
+forbid_beyond_infinity = {
+	OR = {
+		has_country_flag = akx_off_cource
+		dimension_traveler_is_disappointed = yes
+		is_nomadic = yes
+		is_homicidal = yes
+		is_wilderness_empire = yes
+		is_crisis_country = yes
+		is_defender_of_the_galaxy_country = yes
+	}
+}
+
+# 国家
+has_beyond_infinity_civic = {
+	OR = {
+		has_time_machine_civic = yes
+		has_circle_nexus_civic = yes
+		has_dimension_engine_civic = yes
+	}
+}
+
+# 国家
+unlock_building_time_machine = {
+	is_crisis_country = no
+	OR = {
+		has_time_machine_civic = yes
+		has_country_flag = unlock_building_time_machine
+		has_country_flag = show_beyond_infinity_building_effect
+	}
+}
+
+# 国家
+has_time_machine_civic = {
+	OR = {
+		has_valid_civic = civic_time_machine
+		has_valid_civic = civic_time_machine_corporate
+		has_valid_civic = civic_time_machine_hive
+		has_valid_civic = civic_time_machine_machine
+	}
+}
+
+# 星球
+has_building_time_machine = {
+	OR = {
+		has_building = building_ruin_time_machine
+		has_building = building_defective_time_machine
+		has_building = building_time_machine
+		has_building = building_infinity_time_machine
+	}
+}
+
+# 国家
+unlock_building_circle_nexus = {
+	is_crisis_country = no
+	OR = {
+		has_circle_nexus_civic = yes
+		has_country_flag = unlock_building_circle_nexus
+		has_country_flag = show_beyond_infinity_building_effect
+	}
+}
+
+# 国家
+has_circle_nexus_civic = {
+	OR = {
+		has_valid_civic = civic_circle_nexus
+		has_valid_civic = civic_circle_nexus_corporate
+		has_valid_civic = civic_circle_nexus_hive
+		has_valid_civic = civic_circle_nexus_machine
+	}
+}
+
+# 星球
+has_building_circle_nexus = {
+	OR = {
+		has_building = building_ruin_circle_nexus
+		has_building = building_defective_circle_nexus
+		has_building = building_circle_nexus
+		has_building = building_infinity_circle_nexus
+	}
+}
+
+# 国家
+unlock_building_dimension_engine = {
+	is_crisis_country = no
+	OR = {
+		has_dimension_engine_civic = yes
+		has_country_flag = unlock_building_dimension_engine
+		has_country_flag = show_beyond_infinity_building_effect
+	}
+}
+
+# 国家
+has_dimension_engine_civic = {
+	OR = {
+		has_valid_civic = civic_dimension_engine
+		has_valid_civic = civic_dimension_engine_corporate
+		has_valid_civic = civic_dimension_engine_hive
+		has_valid_civic = civic_dimension_engine_machine
+	}
+}
+
+# 星球
+has_building_dimension_engine = {
+	OR = {
+		has_building = building_ruin_dimension_engine
+		has_building = building_defective_dimension_engine
+		has_building = building_dimension_engine
+		has_building = building_infinity_dimension_engine
+	}
+}
+
+################################################################
+# 超越无限
+################################################################
+
+# 国家
+has_beyond_infinity_level = {
+	has_crisis_beyond_infinity_level_$LEVEL$ = yes
+}
+
+# 国家
+has_crisis_beyond_infinity_level_1 = {
+	OR = {
+		has_crisis_level = crisis_beyond_infinity_level_1
+		has_crisis_level = crisis_beyond_infinity_level_2
+		has_crisis_level = crisis_beyond_infinity_level_3
+		has_crisis_level = crisis_beyond_infinity_level_4
+		has_crisis_level = crisis_beyond_infinity_level_5
+	}
+}
+
+# 国家
+has_crisis_beyond_infinity_level_2 = {
+	OR = {
+		has_crisis_level = crisis_beyond_infinity_level_2
+		has_crisis_level = crisis_beyond_infinity_level_3
+		has_crisis_level = crisis_beyond_infinity_level_4
+		has_crisis_level = crisis_beyond_infinity_level_5
+	}
+}
+
+# 国家
+has_crisis_beyond_infinity_level_3 = {
+	OR = {
+		has_crisis_level = crisis_beyond_infinity_level_3
+		has_crisis_level = crisis_beyond_infinity_level_4
+		has_crisis_level = crisis_beyond_infinity_level_5
+	}
+}
+
+# 国家
+has_crisis_beyond_infinity_level_4 = {
+	OR = {
+		has_crisis_level = crisis_beyond_infinity_level_4
+		has_crisis_level = crisis_beyond_infinity_level_5
+	}
+}
+
+# 国家
+has_crisis_beyond_infinity_level_5 = {
+	has_crisis_level = crisis_beyond_infinity_level_5
+}
+
+# 国家
+can_finish_crisobj_beyond_infinity_produced = {
+	# 时间饱和容量为下一等级所需时间的2倍
+	if = {
+		limit = {
+			has_beyond_infinity_level = { LEVEL = 3 }
+		}
+		always = yes
+	}
+	else_if = {
+		limit = {
+			has_beyond_infinity_level = { LEVEL = 2 }
+		}
+		check_variable_arithmetic = {
+			which = value:crisobj_beyond_infinity_produced_cap_check_value
+			value <= 17280
+		}
+	}
+	else_if = {
+		limit = {
+			has_beyond_infinity_level = { LEVEL = 1 }
+		}
+		check_variable_arithmetic = {
+			which = value:crisobj_beyond_infinity_produced_cap_check_value
+			value <= 1440
+		}
+	}
+	else = {
+		check_variable_arithmetic = {
+			which = value:crisobj_beyond_infinity_produced_cap_check_value
+			value <= 48
+		}
+	}
+}
+
+# 国家
+has_beyond_infinity_tech_modifier = {
+	OR = {
+		has_modifier = beyond_infinity_physics_modifier
+		has_modifier = beyond_infinity_society_modifier
+		has_modifier = beyond_infinity_engineering_modifier
+	}
+}
+
+# 任意
+has_resolution_beyond_infinity_level = {
+	has_resolution_beyond_infinity_level_$LEVEL$ = yes
+}
+
+# 任意
+has_resolution_beyond_infinity_level_1 = {
+	OR = {
+		is_active_resolution = resolution_beyond_infinity_emperor_1
+		is_active_resolution = resolution_beyond_infinity_emperor_2
+		is_active_resolution = resolution_beyond_infinity_emperor_3
+		is_active_resolution = resolution_beyond_infinity_custodian_1
+		is_active_resolution = resolution_beyond_infinity_custodian_2
+		is_active_resolution = resolution_beyond_infinity_custodian_3
+	}
+}
+
+# 任意
+has_resolution_beyond_infinity_level_2 = {
+	OR = {
+		is_active_resolution = resolution_beyond_infinity_emperor_2
+		is_active_resolution = resolution_beyond_infinity_emperor_3
+		is_active_resolution = resolution_beyond_infinity_custodian_2
+		is_active_resolution = resolution_beyond_infinity_custodian_3
+	}
+}
+
+# 任意
+has_resolution_beyond_infinity_level_3 = {
+	OR = {
+		is_active_resolution = resolution_beyond_infinity_emperor_3
+		is_active_resolution = resolution_beyond_infinity_custodian_3
+	}
+}
+
+# 任意
+has_resolution_time_keeper_setup = {
+	OR = {
+		is_active_resolution = resolution_time_keeper_emperor_setup
+		is_active_resolution = resolution_time_keeper_custodian_setup
+	}
+}
+
+# 任意
+has_resolution_time_keeper_breakthrough_focus_on_shield = {
+	OR = {
+		is_active_resolution = resolution_time_keeper_emperor_breakthrough_focus_on_shield
+		is_active_resolution = resolution_time_keeper_custodian_breakthrough_focus_on_shield
+	}
+}
+
+# 任意
+has_resolution_time_keeper_breakthrough_focus_on_armor = {
+	OR = {
+		is_active_resolution = resolution_time_keeper_emperor_breakthrough_focus_on_armor
+		is_active_resolution = resolution_time_keeper_custodian_breakthrough_focus_on_armor
+	}
+}
+
+# 任意
+has_resolution_time_keeper_resistance_focus_on_energy = {
+	OR = {
+		is_active_resolution = resolution_time_keeper_emperor_resistance_focus_on_energy
+		is_active_resolution = resolution_time_keeper_custodian_resistance_focus_on_energy
+	}
+}
+
+# 任意
+has_resolution_time_keeper_resistance_focus_on_kinetic = {
+	OR = {
+		is_active_resolution = resolution_time_keeper_emperor_resistance_focus_on_kinetic
+		is_active_resolution = resolution_time_keeper_custodian_resistance_focus_on_kinetic
+	}
+}
+
+# 任意
+has_resolution_time_keeper_offensive_tactics_of_snipe = {
+	OR = {
+		is_active_resolution = resolution_time_keeper_emperor_offensive_tactics_of_snipe
+		is_active_resolution = resolution_time_keeper_custodian_offensive_tactics_of_snipe
+	}
+}
+
+# 任意
+has_resolution_time_keeper_offensive_tactics_of_pour = {
+	OR = {
+		is_active_resolution = resolution_time_keeper_emperor_offensive_tactics_of_pour
+		is_active_resolution = resolution_time_keeper_custodian_offensive_tactics_of_pour
+	}
+}
+
+# 任意
+has_resolution_time_keeper_defensive_tactics_of_cover = {
+	OR = {
+		is_active_resolution = resolution_time_keeper_emperor_defensive_tactics_of_cover
+		is_active_resolution = resolution_time_keeper_custodian_defensive_tactics_of_cover
+	}
+}
+
+# 任意
+has_resolution_time_keeper_defensive_tactics_of_maneuver = {
+	OR = {
+		is_active_resolution = resolution_time_keeper_emperor_defensive_tactics_of_maneuver
+		is_active_resolution = resolution_time_keeper_custodian_defensive_tactics_of_maneuver
+	}
+}
+
+# 任意
+has_resolution_time_keeper_logistics_strategy_of_support = {
+	OR = {
+		is_active_resolution = resolution_time_keeper_emperor_logistics_strategy_of_support
+		is_active_resolution = resolution_time_keeper_custodian_logistics_strategy_of_support
+	}
+}
+
+# 任意
+has_resolution_time_keeper_logistics_strategy_of_supply = {
+	OR = {
+		is_active_resolution = resolution_time_keeper_emperor_logistics_strategy_of_supply
+		is_active_resolution = resolution_time_keeper_custodian_logistics_strategy_of_supply
+	}
+}
+
+# 任意
+has_resolution_time_keeper_command_strategy_of_elite = {
+	OR = {
+		is_active_resolution = resolution_time_keeper_emperor_command_strategy_of_elite
+		is_active_resolution = resolution_time_keeper_custodian_command_strategy_of_elite
+	}
+}
+
+# 任意
+has_resolution_time_keeper_command_strategy_of_cluster = {
+	OR = {
+		is_active_resolution = resolution_time_keeper_emperor_command_strategy_of_cluster
+		is_active_resolution = resolution_time_keeper_custodian_command_strategy_of_cluster
+	}
+}

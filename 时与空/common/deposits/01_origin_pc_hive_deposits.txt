@@ -1,0 +1,333 @@
+################################################################
+# 障碍
+################################################################
+
+@blocker_high = 10
+@blocker_low = 5
+@ranger_small_production = 0.5
+@ranger_large_production = 1
+@evopred_large_blocker_progress = 40
+@evopred_small_blocker_progress = 20
+
+d_pc_hive_blocker = {
+	time = 720
+
+	is_for_colonizable = yes
+	category = deposit_cat_blockers_natural
+
+	icon = d_infestation
+
+	use_weights_for_blocker_swap_types = no
+	
+	can_be_cleared = {
+		is_planet_class = pc_hive
+		hidden_trigger = { exists = owner }
+		owner = { has_origin = origin_pc_hive }
+	}
+
+	blocker_swap_types = {
+		d_pc_hive
+	}
+
+	resources = {
+		category = deposit_blockers_natural
+		cost = {
+			food = 1500
+		}
+	}
+
+	potential = {
+		always = no
+	}
+
+	planet_modifier = {
+		planet_max_districts_mult = -0.5
+		species_empire_size_mult = 0.2
+		pop_amenities_usage_no_happiness_mult = 0.2
+		planet_pops_upkeep_mult = 0.2
+		bonus_pop_growth_mult = -0.2
+		planet_jobs_produces_mult = -0.2
+		planet_structures_upkeep_mult = 0.2
+	}
+	
+	triggered_planet_modifier = {
+		potential = {
+			biologist_is_ranger_trigger = yes
+		}
+		planet_biologists_minerals_produces_add = @ranger_large_production
+	}
+
+	inline_script = deposits/environmental_architects_natural_blocker_modifier
+	
+	on_cleared = {
+		hidden_effect = {
+			owner = { set_country_flag = unlock_decision_origin_pc_hive }
+			# 有机障碍
+			if = {
+				limit = {
+					exists = owner
+					owner = { has_civic = civic_hive_devouring_swarm }
+				}
+				owner = { add_resource = { food = 200 } }
+			}
+			give_bio_repurposing_reward_on_organic_deposit_cleared = yes
+		}
+	}
+
+	drop_weight = {
+		weight = 0
+	}
+
+	inline_script = deposits/ai_weight_natural_blocker
+}
+
+d_dead_pc_hive = {
+	time = 720
+	
+	is_for_colonizable = yes
+	category = deposit_cat_blockers_natural
+	
+	icon = d_infestation
+	
+	can_be_cleared = {
+		is_planet_class = pc_hive
+		hidden_trigger = { exists = owner }
+		owner = { has_origin = origin_pc_hive }
+	}
+
+	blocker_swap_types = {
+		d_pc_hive
+	}
+	
+	resources = {
+		category = deposit_blockers_natural
+		cost = {
+			food = 1500
+		}
+	}
+	
+	planet_modifier = {
+		planet_max_districts_mult = -0.25
+		species_empire_size_mult = 0.1
+		pop_amenities_usage_no_happiness_mult = 0.1
+		planet_pops_upkeep_mult = 0.1
+		bonus_pop_growth_mult = -0.1
+		planet_jobs_produces_mult = -0.1
+		planet_structures_upkeep_mult = 0.1
+	}
+	
+	triggered_planet_modifier = {
+		potential = {
+			biologist_is_ranger_trigger = yes
+		}
+		planet_biologists_minerals_produces_add = @ranger_large_production
+	}
+
+	inline_script = deposits/environmental_architects_natural_blocker_modifier
+	
+	on_cleared = {
+		hidden_effect = {
+			owner = { set_country_flag = unlock_decision_origin_pc_hive }
+			# 有机障碍
+			if = {
+				limit = {
+					exists = owner
+					owner = { has_civic = civic_hive_devouring_swarm }
+				}
+				owner = { add_resource = { food = 200 } }
+			}
+			give_bio_repurposing_reward_on_organic_deposit_cleared = yes
+		}
+	}
+
+	potential = {
+		always = no
+	}
+	
+	drop_weight = {
+		weight = 0
+	}
+
+	inline_script = deposits/ai_weight_natural_blocker
+}
+
+d_dead_pc_hive_other = {
+	time = 360
+	
+	is_for_colonizable = yes
+	category = deposit_cat_blockers_natural
+	
+	icon = d_infestation
+	
+	can_be_cleared = {
+		is_planet_class = pc_hive
+		hidden_trigger = { exists = owner }
+		owner = {
+			has_origin = origin_pc_hive
+			if = {
+				limit = {
+					has_origin = origin_pc_hive
+				}
+				any_owned_colony = { has_deposit = d_pc_hive }
+			}
+		}
+	}
+
+	blocker_swap_types = {
+		d_pc_hive_other
+	}
+	
+	resources = {
+		category = deposit_blockers_natural
+		cost = {
+			food = 750
+		}
+	}
+	
+	planet_modifier = {
+		planet_max_districts_mult = -0.25
+		species_empire_size_mult = 0.05
+		pop_amenities_usage_no_happiness_mult = 0.05
+		planet_pops_upkeep_mult = 0.05
+		bonus_pop_growth_mult = -0.05
+		planet_jobs_produces_mult = -0.05
+		planet_structures_upkeep_mult = 0.05
+	}
+	
+	triggered_planet_modifier = {
+		potential = {
+			biologist_is_ranger_trigger = yes
+		}
+		planet_biologists_minerals_produces_add = @ranger_large_production
+	}
+
+	inline_script = deposits/environmental_architects_natural_blocker_modifier
+	
+	on_cleared = {
+		hidden_effect = {
+			# 有机障碍
+			if = {
+				limit = {
+					exists = owner
+					owner = { has_civic = civic_hive_devouring_swarm }
+				}
+				owner = { add_resource = { food = 200 } }
+			}
+			give_bio_repurposing_reward_on_organic_deposit_cleared = yes
+		}
+	}
+
+	potential = {
+		always = no
+	}
+	
+	drop_weight = {
+		weight = 0
+	}
+
+	inline_script = deposits/ai_weight_natural_blocker
+}
+
+################################################################
+# 地块
+################################################################
+
+d_pc_hive = {
+	is_for_colonizable = yes
+	category = deposit_cat_rare
+	
+	icon = d_huge_tree
+	
+	custom_tooltip = d_pc_hive_effect
+	custom_tooltip_short = d_pc_hive_effect_short
+	
+	resources = {
+		category = planet_deposits
+		upkeep = {
+			trigger = {
+				is_planet_class = pc_hive
+				exists = owner
+				owner = { has_origin = origin_pc_hive }
+			}
+			food = 10
+			mult = value:d_pc_hive_value
+		}
+	}
+	
+	planet_modifier = {
+		planet_max_districts_mult = -0.25
+	}
+	
+	triggered_planet_modifier = {
+		potential = {
+			is_planet_class = pc_hive
+			exists = owner
+			owner = { has_origin = origin_pc_hive }
+		}
+		species_empire_size_mult = -0.025
+		pop_amenities_usage_no_happiness_mult = -0.025
+		planet_pops_upkeep_mult = -0.025
+		bonus_pop_growth_mult = 0.025
+		planet_jobs_produces_mult = 0.025
+		planet_structures_upkeep_mult = 0.025
+		mult = value:d_pc_hive_value
+	}
+
+	potential = {
+		always = no
+	}
+	
+	drop_weight = {
+		weight = 0
+	}
+}
+
+d_pc_hive_other = {
+	is_for_colonizable = yes
+	category = deposit_cat_rare
+	
+	icon = d_huge_tree
+	
+	custom_tooltip = d_pc_hive_other_effect
+	custom_tooltip_short = d_pc_hive_other_effect_short
+	
+	resources = {
+		category = planet_deposits
+		upkeep = {
+			trigger = {
+				is_planet_class = pc_hive
+				exists = owner
+				owner = { has_origin = origin_pc_hive }
+			}
+			food = 5
+			mult = value:d_pc_hive_value
+		}
+	}
+	
+	planet_modifier = {
+		planet_max_districts_mult = -0.25
+	}
+	
+	triggered_planet_modifier = {
+		potential = {
+			is_planet_class = pc_hive
+			exists = owner
+			owner = { has_origin = origin_pc_hive }
+		}
+		species_empire_size_mult = -0.0125
+		pop_amenities_usage_no_happiness_mult = -0.0125
+		planet_pops_upkeep_mult = -0.0125
+		bonus_pop_growth_mult = 0.0125
+		planet_jobs_produces_mult = 0.0125
+		planet_structures_upkeep_mult = 0.0125
+		mult = value:d_pc_hive_value
+	}
+
+	potential = {
+		always = no
+	}
+	
+	drop_weight = {
+		weight = 0
+	}
+}

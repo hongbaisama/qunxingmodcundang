@@ -1,0 +1,116 @@
+# 特质图标不应用原版背景
+custom_subtitle = destiny_dimension_traveler_subtitle_$COUNCIL$
+icon = {
+	inline_script = trait/icon_element/rarity_$RARITY$
+	layer = {
+		icon = $ICON$
+	}
+	# 负相
+	layer = {
+		icon = "GFX_horror_dimension_traveler_trait"
+		visible = {
+			owner = { has_policy_flag = horror_dimension_traveler }
+		}
+	}
+	inline_script = {
+		script = trait/icon_element/council_$COUNCIL$
+		CLASS = $CLASS$
+	}
+	# 负相导能
+	layer = {
+		icon = "GFX_trait_disabled"
+		visible = {
+			is_exploring_astral_rift = yes
+			owner = { is_gestalt = yes }
+		}
+	}
+	inline_script = trait/icon_element/tier_$TIER$
+	# 激活
+	layer = {
+		icon = "GFX_dimension_traveler_horror_modifier"
+		visible = {
+			owner = { has_dimension_traveler_horror_modifier_good = yes }
+		}
+	}
+	# 冷却
+	layer = {
+		icon = "GFX_trait_timed"
+		visible = {
+			owner = {
+				has_dimension_traveler_horror_modifier_good = no
+				has_country_flag = dimension_traveler_horror_cooldown
+			}
+		}
+	}
+	# 誓约
+	layer = {
+		icon = "GFX_dimension_traveler_wedding"
+		visible = {
+			OR = {
+				has_global_flag = time_wanderer_end
+				owner = { has_country_flag = married_dimension_traveler }
+			}
+		}
+	}
+}
+leader_trait_rarity = $RARITY$
+sorting_priority = $PRIORITY$
+# 星辰记忆
+triggered_self_modifier = {
+	dimension_traveler_skill_point = 1
+	mult = owner.value:destiny_dimension_traveler_skill_point_value
+}
+# 界旅者命定维护费
+inline_script = {
+	script = dimension_traveler/destiny_dimension_traveler_upkeep
+	CLASS = official
+}
+inline_script = {
+	script = dimension_traveler/destiny_dimension_traveler_upkeep
+	CLASS = scientist
+}
+inline_script = {
+	script = dimension_traveler/destiny_dimension_traveler_upkeep
+	CLASS = commander
+}
+# 负相界旅者无经验获取
+triggered_self_modifier = {
+	potential = {
+		owner = { has_policy_flag = horror_dimension_traveler }
+	}
+	species_leader_exp_gain = -100
+}
+# 免疫混乱
+triggered_self_modifier = {
+	custom_tooltip = leader_immune_to_confuse
+}
+# 免疫恐惧
+triggered_self_modifier = {
+	custom_tooltip = leader_immune_to_terrify
+}
+# 免疫灵能光环
+triggered_self_modifier = {
+	custom_tooltip = leader_immune_to_psionic_aura
+}
+# 免疫
+triggered_fleet_modifier = {
+	custom_tooltip = BLANK_STRING
+	immune_to_confuse = 1
+	immune_to_terrify = 1
+	psionic_aura_resistance_mult = 100
+}
+# 防伪
+on_gained_effect = {
+	if = {
+		limit = {
+			can_gain_dimension_traveler_trait = no
+		}
+		remove_dimension_traveler_trait = yes
+	}
+	else = {
+		set_leader_flag = immune_to_confuse
+		set_leader_flag = immune_to_terrify
+		# 晋升传奇
+		become_legendary_without_promotion = yes
+	}
+}

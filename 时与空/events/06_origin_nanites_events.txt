@@ -1,0 +1,520 @@
+
+namespace = nanites
+
+country_event = {
+	id = nanites.1
+	title = nanites.1.name
+	desc = nanites.1.desc
+	picture = GFX_evt_gray_goo
+	show_sound = event_construction
+	is_triggered_only = yes
+
+	trigger = {
+		has_origin = origin_nanites
+	}
+	
+	immediate = {
+		give_technology = { tech = "tech_nanite_transmutation" message = no }
+		give_technology = { tech = "tech_robomodding_m" message = no }
+		give_technology = { tech = "tech_binary_motivators" message = no }
+		set_country_flag = encountered_first_lgate
+		set_country_flag = machine_age_nanites_studied # Familiarity with nanites gained for Machine Ascension
+		start_lcluster_chain = yes
+		remove_global_flag = gray_goo_crisis_set
+		remove_global_flag = gray_goo_empire_set
+		remove_global_flag = dragon_season
+		set_global_flag = gray_goo_crisis_set
+		if = {
+			limit = {
+				is_ai = yes
+			}
+			country_event = { id = nanites.1000 days = 1800 random = 1800 }
+		}
+		capital_scope = {
+			if = {
+				limit = {
+					planet_size < 18
+				}
+				set_planet_size = 18
+			}
+			set_carrier_flag = original_nanites_planet
+			# 设置地块
+			reroll_pc_nanites_deposits = yes
+			add_time_special_deposit_keep_on_terraform = { DEPOSIT = d_nanites_old_factory }
+			# 设置区划、区域与建筑
+			# 见inline/game_start/authority_machine
+			set_variable = {
+				which = energy_districts
+				value = 3
+			}
+			set_variable = {
+				which = mining_districts
+				value = 4
+			}
+			set_variable = {
+				which = farming_districts
+				value = 0
+			}
+			inline_script = "game_start/shipsets"
+			inline_script = "game_start/species_lithoids"
+			while = {
+				limit = {
+					has_district = district_nexus
+				}
+				remove_district = district_nexus
+			}
+			while = {
+				count = 2
+				add_district = district_nanites_nexus
+			}
+			while = {
+				count = energy_districts
+				add_district = district_nanites_generator
+			}
+			while = {
+				count = mining_districts
+				add_district = district_nanites_mining
+			}
+			clear_variable = energy_districts
+			clear_variable = mining_districts
+			clear_variable = farming_districts
+			add_zone = {
+				district = district_nanites_nexus
+				zone = zone_research_unity
+				zone_slot = 1
+			}
+			if = {
+				limit = {
+					owner = { has_valid_civic = civic_machine_obsessional_directive }
+				}
+				add_zone = {
+					district = district_nanites_nexus
+					zone = zone_industrial
+					zone_slot = 2
+				}
+				add_building = {
+					building = building_factory_1
+					zone = zone_industrial
+				}
+			}
+			else = {
+				add_zone = {
+					district = district_nanites_nexus
+					zone = zone_foundry
+					zone_slot = 2
+				}
+			}
+			validate_and_repair_planet_buildings_and_districts = yes
+			
+			set_colony_type = col_nanites_capital_machine
+			set_colony_type = none # 更新星球规划的同时改用自动规划
+			# 保底球
+			solar_system = {
+				while = {
+					count = trigger:num_guaranteed_colonies
+					random_system_planet = {
+						limit = {
+							is_planet_class = pc_gray_goo
+						}
+						change_pc = pc_nanites
+						clear_terraforming_candidate = yes
+						reroll_pc_nanites_deposits = yes
+						add_modifier = {
+							modifier = nanites_1
+							years = 5
+						}
+						add_modifier = {
+							modifier = nanites_2
+							years = 10
+						}
+						add_modifier = {
+							modifier = nanites_3
+							years = 15
+						}
+						add_modifier = {
+							modifier = nanites_4
+							years = 20
+						}
+						add_modifier = {
+							modifier = nanites_5
+							years = 25
+						}
+					}
+				}
+			}
+		}
+	}
+	
+	option = {
+		name = nanites.1.a
+		trigger = {
+			has_origin = origin_nanites
+		}
+	}
+}
+
+carrier_event = {
+	id = nanites.10
+	is_triggered_only = yes
+	hide_window = yes
+
+	trigger = {
+		is_planet_class = pc_nanites
+	}
+
+	immediate = {
+		from = {
+			country_event = { id = nanites.11 }
+		}
+	}
+}
+
+country_event = {
+	id = nanites.11
+	title = nanites.11.name
+	desc = nanites.11.desc
+	picture = GFX_evt_gray_goo
+	show_sound = event_construction
+	is_triggered_only = yes
+	location = from
+
+	trigger = {
+		has_origin = origin_nanites
+	}
+
+	immediate = {
+	}
+
+	option = {
+		name = nanites.11.a
+	}
+}
+
+# 开启L星门，创建灰蛊国家
+country_event = {
+	id = nanites.15
+	is_triggered_only = yes
+	hide_window = yes
+
+	trigger = {
+		is_country_type = gray_goo
+	}
+	
+	immediate = {
+		every_playable_country = {
+			limit = {
+				has_origin = origin_nanites
+			}
+			country_event = { id = nanites.20 }
+		}
+	}
+}
+
+country_event = {
+	id = nanites.20
+	title = nanites.20.name
+	desc = nanites.20.desc
+	picture = GFX_evt_gray_goo_ships
+	show_sound = event_radio_chatter
+	is_triggered_only = yes
+
+	trigger = {
+		has_origin = origin_nanites
+	}
+
+	immediate = {
+	}
+
+	option = {
+		name = nanites.20.a
+		trigger = {
+			has_origin = origin_nanites
+		}
+		allow = {
+			if = {
+				limit = {
+					has_valid_civic = civic_machine_terminator
+				}
+				always = yes
+			}
+			else = {
+				custom_tooltip = {
+					fail_text = "forbid_become_the_crisis"
+					forbid_become_the_crisis = no
+				}
+			}
+		}
+		custom_tooltip = "nanites.20.a.tooltip"
+		time_active_nemesis = yes
+		add_modifier = {
+			modifier = nanites_attacker
+			days = -1
+		}
+		hidden_effect = {
+			create_timeline_choose_nanites_attacker = yes
+			# 宣战全银河
+			declare_war_to_galaxy = yes
+			# 与灰蛊结盟
+			event_target:graygoo_country = {
+				set_faction_hostility = {
+					target = root
+					set_hostile = no
+					set_neutral = no
+					set_friendly = yes
+				}
+			}
+			# 不与其它纳米毁灭者敌对
+			every_playable_country = {
+				limit = {
+					has_modifier = nanites_attacker
+				}
+				every_war = {
+					limit = {
+						using_war_goal = {
+							type = wg_time_become_end_crisis
+							owner = attacker
+						}
+						any_attacker = {
+							has_modifier = nanites_attacker
+						}
+						any_defender = {
+							is_same_value = prev
+						}
+					}
+					remove_war_participant = prev
+				}
+			}
+			# 首都星系创建灰蛊舰队
+			while = {
+				count = 5
+				create_fleet = {
+					name = "NAME_Tempest_Fleet"
+					settings = {
+						can_upgrade = no
+						can_change_composition = no
+						uses_naval_capacity = no
+					}
+					effect = {
+						set_owner = root
+						create_graygoo_ships_1 = yes
+						set_formation_scale = 2
+						set_fleet_stance = aggressive
+						set_location = {
+							target = root.capital_star
+							distance = 30
+							angle = random
+						}
+					}
+				}
+			}
+		}
+	}
+	
+	option = {
+		name = nanites.20.b
+		trigger = {
+			has_origin = origin_nanites
+		}
+		allow = {
+			NOT = { has_valid_civic = civic_machine_terminator }
+		}
+		custom_tooltip = "nanites.20.b.tooltip"
+		time_defender_of_the_galaxy = yes
+		add_modifier = {
+			modifier = nanites_protector
+			days = -1
+		}
+		hidden_effect = {
+			create_timeline_choose_nanites_protector = yes
+		}
+	}
+}
+
+carrier_event = {
+	id = nanites.30
+	title = nanites.30.name
+	desc = nanites.30.desc
+	picture = GFX_evt_gray_goo_ships
+	show_sound = event_construction
+	is_triggered_only = yes
+	location = root
+
+	trigger = {
+		is_planet_class = pc_nanites
+		exists = owner
+		owner = {
+			has_origin = origin_nanites
+			has_modifier = nanites_attacker
+		}
+	}
+
+	immediate = {
+		owner = { refresh_faction_hostility_with_graygoo_country = yes }
+		create_fleet = {
+			name = "NAME_Tempest_Fleet"
+			settings = {
+				can_upgrade = no
+				can_change_composition = no
+				uses_naval_capacity = no
+			}
+			effect = {
+				set_owner = root.owner
+				create_graygoo_ships_1 = yes
+				set_formation_scale = 2
+				set_fleet_stance = aggressive
+				set_location = {
+					target = root
+					distance = 30
+					angle = random
+				}
+			}
+		}
+	}
+	
+	option = {
+		name = nanites.30.a
+	}
+}
+
+# 刷新与灰蛊舰队的状态
+event = {
+	id = nanites.50
+	is_triggered_only = yes
+	hide_window = yes
+
+	trigger = {
+		exists = event_target:graygoo_country
+		any_playable_country = {
+			has_origin = origin_nanites
+			has_modifier = nanites_attacker
+		}
+	}
+	
+	immediate = {
+		every_playable_country = {
+			limit = {
+				has_origin = origin_nanites
+				has_modifier = nanites_attacker
+			}
+			refresh_faction_hostility_with_graygoo_country = yes
+		}
+	}
+}
+
+carrier_event = {
+	id = nanites.100
+	is_triggered_only = yes
+	hide_window = yes
+
+	trigger = {
+		is_planet_class = pc_nanites
+	}
+
+	immediate = {
+		clear_terraforming_candidate = yes
+		reroll_pc_nanites_deposits = yes
+		validate_planet_buildings_and_districts = yes
+		remove_modifier = wooden_planet
+		add_modifier = {
+			modifier = nanites_1
+			years = 2
+		}
+		add_modifier = {
+			modifier = nanites_2
+			years = 4
+		}
+		add_modifier = {
+			modifier = nanites_3
+			years = 6
+		}
+		add_modifier = {
+			modifier = nanites_4
+			years = 8
+		}
+		add_modifier = {
+			modifier = nanites_5
+			years = 10
+		}
+	}
+}
+
+country_event = {
+	id = nanites.1000
+	hide_window = yes
+	
+	is_triggered_only = yes
+	
+	trigger = {
+		has_origin = origin_nanites
+		is_ai = yes
+	}
+	
+	immediate = {
+		country_event = { id = nanites.1000 days = 1800 random = 1800 }
+		if = {
+			limit = {
+				has_technology = tech_terrestrial_sculpting
+			}
+			if = {
+				limit = {
+					any_planet_within_border = {
+						is_planet_class = pc_gray_goo
+						is_terraforming = no
+					}
+					has_country_resource = {
+						type = nanites
+						amount >= 200
+					}
+				}
+				random_planet_within_border = {
+					limit = {
+						is_planet_class = pc_gray_goo
+						is_terraforming = no
+					}
+					change_pc = pc_nanites
+					carrier_event = { id = nanites.100 }
+					create_colony = {
+						owner = root
+						species = root.owner_main_species
+					}
+				}
+				add_resource = {
+					nanites = -200
+				}
+			}
+			else_if = {
+				limit = {
+					any_planet_within_border = {
+						OR = {
+							is_planet_class = pc_machine
+							is_planet_class = pc_nanotech
+						}
+						is_terraforming = no
+					}
+					has_country_resource = {
+						type = nanites
+						amount >= 500
+					}
+				}
+				random_planet_within_border = {
+					limit = {
+						OR = {
+							is_planet_class = pc_machine
+							is_planet_class = pc_nanotech
+						}
+						is_terraforming = no
+					}
+					change_pc = pc_nanites
+					carrier_event = { id = nanites.100 }
+					create_colony = {
+						owner = root
+						species = root.owner_main_species
+					}
+				}
+				add_resource = {
+					nanites = -500
+				}
+			}
+		}
+	}
+}

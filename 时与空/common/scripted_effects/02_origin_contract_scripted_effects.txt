@@ -1,0 +1,165 @@
+# 国家
+origin_contract_whisperers_in_the_void_replace_patron = {
+	# 必须在国家解锁虚境面板后，执行替换超主的effect才生效
+	hidden_effect = {
+		switch = {
+			trigger = has_country_flag
+			origin_contract_replace_the_eater_of_worlds = {
+				whisperers_in_the_void_replace_patron = {
+					PATRON = the_eater_of_worlds
+					CHAIN = "shroud_eater_covenant_chain"
+				}
+			}
+			origin_contract_replace_the_cradle_of_souls = {
+				whisperers_in_the_void_replace_patron = {
+					PATRON = the_cradle_of_souls
+					CHAIN = "shroud_cradle_covenant_chain"
+				}
+			}
+			origin_contract_replace_the_instrument_of_desire = {
+				whisperers_in_the_void_replace_patron = {
+					PATRON = the_instrument_of_desire
+					CHAIN = "shroud_instrument_covenant_chain"
+				}
+			}
+			origin_contract_replace_the_composer_of_strands = {
+				whisperers_in_the_void_replace_patron = {
+					PATRON = the_composer_of_strands
+					CHAIN = "shroud_composer_covenant_chain"
+				}
+			}
+		}
+	}
+}
+
+# 国家
+origin_contract_replace_whisperers_in_the_void_by_situation = {
+	remove_country_flag = origin_contract_replace_$PATRON$
+	remove_country_flag = $PATRON$_betrayal
+	revert_accords = whisperers_in_the_void
+	replace_patron = {
+		new_patron = $PATRON$
+		replaced_patron = whisperers_in_the_void
+	}
+	clear_covenant_flags = yes
+	refresh_psionic_aura_type = yes
+	set_patron_first_contact_state = { patron = $PATRON$ state = completed }
+}
+
+# 国家
+origin_contract_whisperers_in_the_void_replace_patron_by_situation = {
+	if = {
+		limit = {
+			NOT = { has_country_flag = origin_contract_replace_$PATRON$ }
+		}
+		# 还原旧超主
+		switch = {
+			trigger = has_country_flag
+			origin_contract_replace_the_eater_of_worlds = {
+				origin_contract_replace_whisperers_in_the_void_by_situation = {
+					PATRON = the_eater_of_worlds
+				}
+			}
+			origin_contract_replace_the_cradle_of_souls = {
+				origin_contract_replace_whisperers_in_the_void_by_situation = {
+					PATRON = the_cradle_of_souls
+				}
+			}
+			origin_contract_replace_the_instrument_of_desire = {
+				origin_contract_replace_whisperers_in_the_void_by_situation = {
+					PATRON = the_instrument_of_desire
+				}
+			}
+			origin_contract_replace_the_composer_of_strands = {
+				origin_contract_replace_whisperers_in_the_void_by_situation = {
+					PATRON = the_composer_of_strands
+				}
+			}
+		}
+		# 替换新超主
+		set_country_flag = origin_contract_replace_$PATRON$
+		origin_contract_whisperers_in_the_void_replace_patron = yes
+		set_patron_first_contact_state = { patron = whisperers_in_the_void state = completed }
+		set_attunement = {
+			patron = whisperers_in_the_void
+			value = 1000
+		}
+		accept_covenant = whisperers_in_the_void # 第一遍初步缔结契约（解锁光环）
+		accept_covenant = whisperers_in_the_void # 第二遍完全缔结契约（解锁主动）
+		refresh_psionic_aura_type = yes
+	}
+}
+
+# 国家
+origin_contract_accept_covenant_with_whisperers_in_the_void = {
+	custom_tooltip = shroud_whisperers_covenant_chain_begin
+	give_tech_no_error_effect = { MESSAGE = yes TECH = tech_psionic_aura }
+	add_research_option = tech_aura_intensification
+	hidden_effect = {
+		breach_shroud = yes # 必须已突入虚境，执行缔结契约的effect才生效
+		set_country_flag = power_of_will
+		set_patron_first_contact_state = { patron = whisperers_in_the_void state = completed }
+		# 必须有至少600调和度，执行缔结契约的effect才生效
+		set_attunement = {
+			patron = whisperers_in_the_void
+			value = 600
+		}
+		accept_covenant = whisperers_in_the_void # 第一遍初步缔结契约（解锁光环）
+		accept_covenant = whisperers_in_the_void # 第二遍完全缔结契约（解锁主动）
+		if = {
+			limit = { is_robot_empire = yes }
+			begin_event_chain = {
+				event_chain = robot_shroud_whisperers_covenant_chain
+				target = this
+			}
+		}
+		else = {
+			begin_event_chain = {
+				event_chain = shroud_whisperers_covenant_chain
+				target = this
+			}
+		}
+		set_country_flag = has_shroud_patron
+		inline_script = {
+			script = shroud/accept_covenant
+			PATRON = whisperers
+			MARK_TECH = tech_covenant_whisperers
+		}
+		start_situation = {
+			type = situation_origin_contract_eater_vs_cradle
+			target = this
+		}
+		start_situation = {
+			type = situation_origin_contract_instrument_vs_composer
+			target = this
+		}
+	}
+}
+
+# 国家
+clear_origin_contract_assimilation = {
+	if = {
+		limit = {
+			has_modifier = origin_contract_composer_assimilation
+		}
+		remove_modifier = origin_contract_composer_assimilation
+	}
+	if = {
+		limit = {
+			has_modifier = origin_contract_cradle_assimilation
+		}
+		remove_modifier = origin_contract_cradle_assimilation
+	}
+	if = {
+		limit = {
+			has_modifier = origin_contract_eater_assimilation
+		}
+		remove_modifier = origin_contract_eater_assimilation
+	}
+	if = {
+		limit = {
+			has_modifier = origin_contract_instrument_assimilation
+		}
+		remove_modifier = origin_contract_instrument_assimilation
+	}
+}

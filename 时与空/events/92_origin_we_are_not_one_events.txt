@@ -1,0 +1,297 @@
+namespace = origin_we_are_not_one
+
+country_event = {
+	id = origin_we_are_not_one.1
+	is_triggered_only = yes
+	hide_window = yes
+
+	trigger = {
+	}
+	
+	immediate = {
+		add_resource = {
+			energy = 1900
+			minerals = 1900
+			alloys = 800
+			consumer_goods = 900
+		}
+		if = {
+			limit = {
+				is_lithoid_empire = no
+			}
+			add_resource = {
+				food = 1800
+			}
+		}
+		else = {
+			add_resource = {
+				minerals = 1000
+			}
+		}
+		give_technology = { tech = "tech_habitat_1" message = no }
+		set_variable = {
+			which = we_are_not_one_age
+			value = 0
+		}
+		every_owned_leader = {
+			limit = {
+				is_ruler = no
+			}
+			kill_leader = { show_notification = no }
+		}
+		ruler = {
+			add_trait = {
+				trait = leader_trait_we_are_not_one
+				show_message = no
+			}
+		}
+		while = {
+			count = 5
+			create_leader = {
+				class = official
+				species = owner_main_species
+				name = random
+				skill = 1
+				set_age = 20
+				traits = {
+					trait = leader_trait_we_are_not_one
+				}
+			}
+			create_leader = {
+				class = scientist
+				species = owner_main_species
+				name = random
+				skill = 1
+				set_age = 20
+				traits = {
+					trait = leader_trait_we_are_not_one
+				}
+			}
+			create_leader = {
+				class = commander
+				species = owner_main_species
+				name = random
+				skill = 1
+				set_age = 20
+				traits = {
+					trait = leader_trait_we_are_not_one
+				}
+			}
+		}
+		capital_scope = {
+			add_district = district_generator
+			add_district = district_mining
+			if = {
+				limit = {
+					root = {
+						OR = {
+							is_lithoid_empire = no
+							has_country_flag = non_lithoid_subspecies
+						}
+					}
+				}
+				add_district = district_farming
+			}
+			solar_system = {
+				set_star_flag = has_we_are_not_one_bonus
+				every_neighbor_system = {
+					limit = {
+						NOR = {
+							exists = owner
+							has_star_flag = guardian
+							any_fleet_in_system = {
+								owner = { is_hostile = root }
+							}
+						}
+					}
+					generate_we_are_not_one_bonus = yes
+				}
+				while = {
+					limit = {
+						root = {
+							check_variable = {
+								which = we_are_not_one_bonus_count
+								value < 4
+							}
+						}
+					}
+					if = {
+						limit = {
+							any_neighbor_system = {
+								any_neighbor_system = {
+									NOR = {
+										exists = owner
+										has_star_flag = guardian
+										has_star_flag = has_we_are_not_one_bonus
+										any_fleet_in_system = {
+											owner = { is_hostile = root }
+										}
+									}
+								}
+							}
+						}
+						random_neighbor_system = {
+							limit = {
+								any_neighbor_system = {
+									NOR = {
+										exists = owner
+										has_star_flag = guardian
+										has_star_flag = has_we_are_not_one_bonus
+										any_fleet_in_system = {
+											owner = { is_hostile = root }
+										}
+									}
+								}
+							}
+							random_neighbor_system = {
+								limit = {
+									NOR = {
+										exists = owner
+										has_star_flag = guardian
+										has_star_flag = has_we_are_not_one_bonus
+										any_fleet_in_system = {
+											owner = { is_hostile = root }
+										}
+									}
+								}
+								generate_we_are_not_one_bonus = yes
+							}
+						}
+					}
+					else = {
+						# 以防万一
+						root = {
+							set_variable = {
+								which = we_are_not_one_bonus_count
+								value = 4
+							}
+						}
+					}
+				}
+			}
+		}
+		country_event = { id = origin_we_are_not_one.5 }
+	}
+}
+
+country_event = {
+	id = origin_we_are_not_one.5
+	title = origin_we_are_not_one.5.name
+	desc = origin_we_are_not_one.5.desc
+	picture = GFX_evt_three_sided_deal
+	show_sound = event_administrative_work
+
+	is_triggered_only = yes
+
+	trigger = {
+	}
+	
+	immediate = {
+		
+	}
+	
+	option = {
+		name = origin_we_are_not_one.5.subtract.5
+		trigger = {
+			NOT = { has_country_flag = we_are_not_one_immortal }
+		}
+		hidden_effect = {
+			subtract_variable = {
+				which = we_are_not_one_age
+				value = 5
+			}
+			country_event = { id = origin_we_are_not_one.5 }
+		}
+	}
+	
+	option = {
+		name = origin_we_are_not_one.5.subtract.1
+		trigger = {
+			NOT = { has_country_flag = we_are_not_one_immortal }
+		}
+		hidden_effect = {
+			subtract_variable = {
+				which = we_are_not_one_age
+				value = 1
+			}
+			country_event = { id = origin_we_are_not_one.5 }
+		}
+	}
+	
+	option = {
+		name = origin_we_are_not_one.5.add.1
+		trigger = {
+			NOT = { has_country_flag = we_are_not_one_immortal }
+		}
+		hidden_effect = {
+			change_variable = {
+				which = we_are_not_one_age
+				value = 1
+			}
+			country_event = { id = origin_we_are_not_one.5 }
+		}
+	}
+	
+	option = {
+		name = origin_we_are_not_one.5.add.5
+		trigger = {
+			NOT = { has_country_flag = we_are_not_one_immortal }
+		}
+		hidden_effect = {
+			change_variable = {
+				which = we_are_not_one_age
+				value = 5
+			}
+			country_event = { id = origin_we_are_not_one.5 }
+		}
+	}
+	
+	option = {
+		name = origin_we_are_not_one.5.immortal.yes
+		trigger = {
+			NOT = { has_country_flag = we_are_not_one_immortal }
+		}
+		hidden_effect = {
+			set_country_flag = we_are_not_one_immortal
+			every_owned_leader = {
+				set_immortal = yes
+			}
+			country_event = { id = origin_we_are_not_one.5 }
+		}
+	}
+	
+	option = {
+		name = origin_we_are_not_one.5.immortal.no
+		trigger = {
+			has_country_flag = we_are_not_one_immortal
+		}
+		hidden_effect = {
+			remove_country_flag = we_are_not_one_immortal
+			every_owned_leader = {
+				set_immortal = no
+			}
+			country_event = { id = origin_we_are_not_one.5 }
+		}
+	}
+	
+	option = {
+		name = origin_we_are_not_one.5.done
+	}
+}
+
+country_event = {
+	id = origin_we_are_not_one.10
+	is_triggered_only = yes
+	hide_window = yes
+
+	trigger = {
+		has_origin = origin_we_are_not_one
+		NOT = { has_authority = auth_democratic }
+	}
+	
+	immediate = {
+		change_government = {
+			authority = auth_democratic
+		}
+	}
+}

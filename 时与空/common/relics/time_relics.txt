@@ -1,0 +1,512 @@
+r_horror_matter = {
+	activation_duration = @triumph_duration
+	portrait = "GFX_relic_horror_matter"
+	sound = "relic_activation_vultaum_real_perforator"
+
+	resources = {
+		category = relics
+		# Activation cost
+		cost = {
+			sr_dark_matter = @base_r_horror_matter_cost
+		}
+		produces = {
+			trigger = {
+				is_gestalt = yes
+				has_country_flag = time_akx_messenger_end_4
+				is_dimension_traveler_owner = yes
+			}
+			physics_research = 42
+			society_research = 42
+			engineering_research = 42
+		}
+	}
+	
+	can_be_stolen = no
+
+	ai_weight = {
+		weight = 1000
+	}
+	
+	# 常规修正
+	
+	triggered_country_modifier = {
+		potential = {
+			has_country_flag = dimensional_horror_relic
+		}
+		ship_ftl_jumpdrive_range_mult = 0.25
+		ship_jumpdrive_cooldown_mult = -0.1
+	}
+	
+	triggered_country_modifier = {
+		potential = {
+			has_country_flag = eldritch_horror_relic
+		}
+		all_technology_research_speed = 0.0617
+		biological_logistic_growth_mult = -0.1
+	}
+	
+	triggered_country_modifier = {
+		potential = {
+			has_country_flag = tradition_time_relic
+		}
+		category_horror_time_research_speed_mult = 0.5
+		category_horror_time_draw_chance_mult = 0.5
+	}
+	
+	triggered_country_modifier = {
+		potential = {
+			has_country_flag = dimensional_horror_crisis_relic
+		}
+		ship_hull_damage_mult = 0.5
+		ship_shield_damage_mult = 0.5
+		ship_armor_damage_mult = 0.5
+		ship_shield_penetration_mult = 0.5
+		ship_armor_penetration_mult = 0.5
+	}
+	
+	triggered_country_modifier = {
+		potential = {
+			has_country_flag = time_relic
+		}
+		building_time_mult = -0.25
+		starbase_upgrade_time_mult = -0.25
+		starbase_building_build_time_mult = -0.25
+		starbase_module_build_time_mult = -0.25
+		starbase_shipyard_build_speed_mult = 0.5
+		planet_clear_blocker_speed_mult = 0.5
+		planet_decision_enact_speed_mult = 0.5
+		terraform_speed_mult = 0.5
+	}
+	
+	triggered_country_modifier = {
+		potential = {
+			has_country_flag = parallel_sky_relic
+		}
+		country_physics_research_produces_mult = 0.25
+		country_society_research_produces_mult = 0.25
+		country_engineering_research_produces_mult = 0.25
+		ship_ftl_jumpdrive_range_mult = 0.5
+	}
+	
+	triggered_country_modifier = {
+		potential = {
+			has_country_flag = under_the_haze_relic
+		}
+		planet_stability_add = 15
+		pop_happiness = 0.3
+	}
+	
+	triggered_country_modifier = {
+		potential = {
+			has_country_flag = manifesti_relic_1
+		}
+		physics_tech_cost_mult = -0.1
+		society_tech_cost_mult = -0.1
+		engineering_tech_cost_mult = -0.1
+		planet_amenities_mult = 0.25
+	}
+	
+	triggered_country_modifier = {
+		potential = {
+			has_country_flag = manifesti_relic_2
+		}
+		country_cost_mult = -0.1
+		country_upkeep_mult = -0.1
+		mod_ship_naval_cap_usage_mult = -0.1
+		ship_hull_damage_mult = 0.25
+		ship_armor_damage_mult = 0.25
+		ship_shield_damage_mult = 0.25
+		planet_amenities_mult = 0.5
+	}
+	
+	triggered_country_modifier = {
+		potential = {
+			has_country_flag = pirate_king_relic
+			NAND = {
+				is_gestalt = yes
+				has_technology = tech_end_trait
+			}
+		}
+		ship_weapon_damage = 0.33
+		ship_fire_rate_mult = 0.33
+		ship_weapon_range_mult = 0.33
+		ship_hull_regen_add_perc = 0.33
+		ship_armor_regen_add_perc = 0.33
+		ship_shield_regen_add_perc = 0.33
+	}
+	
+	triggered_country_modifier = {
+		potential = {
+			has_country_flag = pirate_king_relic
+			is_gestalt = yes
+			has_technology = tech_end_trait
+		}
+		ship_weapon_damage = 0.66
+		ship_fire_rate_mult = 0.66
+		ship_weapon_range_mult = 0.66
+		ship_hull_regen_add_perc = 0.66
+		ship_armor_regen_add_perc = 0.66
+		ship_shield_regen_add_perc = 0.66
+	}
+	
+	triggered_country_modifier = {
+		potential = {
+			has_country_flag = equinox_seal_relic
+		}
+		planet_physicists_physics_research_produces_add = 0.75
+		planet_biologists_society_research_produces_add = 0.75
+		planet_engineers_engineering_research_produces_add = 0.75
+		planet_bureaucrats_unity_produces_add = 1
+		mult = value:equinox_seal_relic_value
+	}
+	
+	# 格式塔完成时虫支线的奖励（因为没内阁，但是只按8级算）
+	
+	triggered_country_modifier = {
+		potential = {
+			is_gestalt = yes
+			has_country_flag = manifold_country_end
+		}
+		planetary_ascension_effect_mult = 0.2
+	}
+	
+	triggered_country_modifier = {
+		potential = {
+			is_gestalt = yes
+			has_country_flag = time_akx_messenger_end_4
+			is_dimension_traveler_owner = yes
+		}
+		messenger_network = 0.08
+	}
+	
+	triggered_country_modifier = {
+		potential = {
+			is_gestalt = yes
+			OR = {
+				has_country_flag = time_akx_syzygy_admiral_end_2
+				has_country_flag = time_akx_syzygy_admiral_end_3
+			}
+		}
+		ship_jumpdrive_cooldown_mult = -0.08
+		ship_ftl_jumpdrive_range_mult = 0.2
+		ship_base_speed_mult = 0.2
+	}
+	
+	triggered_country_modifier = {
+		potential = {
+			is_gestalt = yes
+			OR = {
+				has_country_flag = time_akx_coils_god_end_1
+				has_country_flag = time_akx_coils_god_end_2
+			}
+		}
+		all_technology_research_speed = 0.314 # 特殊数字，不按8级算
+	}
+	
+	triggered_country_modifier = {
+		potential = {
+			is_gestalt = yes
+			OR = {
+				has_country_flag = time_akx_hole_pets_end_1
+				has_country_flag = time_akx_hole_pets_end_2
+				has_country_flag = time_akx_hole_pets_end_3
+			}
+		}
+		country_physics_research_produces_mult = 0.2
+		country_society_research_produces_mult = 0.2
+		country_engineering_research_produces_mult = 0.2
+		country_unity_produces_mult = 0.2
+	}
+	
+	triggered_country_modifier = {
+		potential = {
+			is_gestalt = yes
+			has_modifier = time_hotel_modifier_1
+		}
+		planet_stability_add = 8
+		planet_crime_add = -20
+	}
+	
+	triggered_country_modifier = {
+		potential = {
+			is_gestalt = yes
+			has_modifier = time_hotel_modifier_2
+		}
+		planet_building_build_speed_mult = 0.16
+		starbase_shipyard_build_speed_mult = 0.16
+	}
+
+	score = 5000
+
+	active_effect = {
+		custom_tooltip = r_horror_matter_active_effect
+		unlock_tradition_horror = yes
+		if = {
+			limit = { has_country_flag = dimensional_horror_crisis_relic }
+			unlock_tradition_time = yes
+		}
+		add_modifier = {
+			modifier = r_horror_matter_modifier
+			days = @triumph_duration
+		}
+		custom_tooltip = relic_triumph_cooldown
+		hidden_effect = {
+			ordered_owned_colony = {
+				position = 0
+				order_by = value:num_no_notofthisworld_pop
+				every_owned_pop_group = {
+					make_notofthisworld = yes
+				}
+			}
+			add_modifier = {
+				modifier = relic_activation_cooldown
+				days = @triumph_duration
+			}
+		}
+	}
+
+	# Possible check for activation
+	possible = {
+		inline_script = {
+			script = relics/activation_checks
+			RELIC = r_horror_matter
+		}
+	}
+}
+
+r_time = {
+	activation_duration = @triumph_duration
+	portrait = "GFX_relic_time"
+	sound = "relic_activation_scales_of_the_worm"
+
+	resources = {
+		category = relics
+		# Activation cost
+		cost = {
+			sr_dark_matter = @base_r_time_cost
+			multiplier = r_time_count
+		}
+	}
+	
+	can_be_stolen = no
+
+	ai_weight = {
+		weight = 1000
+	}
+	
+	# 无尽负相蔓延
+	
+	triggered_country_modifier = {
+		potential = {
+			has_technology = tech_end_modifier
+		}
+		country_cost_mult = -0.005
+		country_upkeep_mult = -0.005
+		country_produces_mult = 0.01
+		ship_hull_damage_mult = 0.01
+		ship_armor_damage_mult = 0.01
+		ship_armor_penetration_mult = 0.01
+		ship_shield_damage_mult = 0.01
+		ship_shield_penetration_mult = 0.01
+		ship_jumpdrive_cooldown_mult = -0.01
+		starbase_building_build_time_mult = -0.01
+		starbase_module_build_time_mult = -0.01
+		starbase_upgrade_time_mult = -0.01
+		building_time_mult = -0.01
+		starbase_shipyard_build_speed_mult = 0.02
+		logistic_growth_mult = 0.02
+		bonus_pop_growth_mult = 0.02
+		planet_pop_assembly_mult = 0.02
+		planet_stability_mult = -0.01
+		mult = value:tech_end_modifier_value
+		custom_tooltip = r_time_tech_end_modifier_effect
+		show_only_custom_tooltip = no
+	}
+	
+	# 希望传统闭门（格式塔）
+	
+	triggered_country_modifier = {
+		potential = {
+			is_gestalt = yes
+			has_tradition = tr_hope_finish
+		}
+		diplo_action_acceptance_add = 50
+		inline_script = {
+			script = modifiers/damage_vs_crisis_country_modifiers
+			COUNT = 1
+		}
+		custom_tooltip = r_time_gestalt_hope_effect
+	}
+	
+	# 思潮政体修正
+	
+	triggered_country_modifier = {
+		potential = {
+			has_ethic = ethic_fanatic_materialist
+		}
+		country_physics_research_produces_mult = 0.5
+		country_society_research_produces_mult = 0.5
+		country_engineering_research_produces_mult = 0.5
+		pop_ethic_materialist_attraction_mult = 0.5
+	}
+	
+	triggered_country_modifier = {
+		potential = {
+			has_ethic = ethic_materialist
+		}
+		country_physics_research_produces_mult = 0.25
+		country_society_research_produces_mult = 0.25
+		country_engineering_research_produces_mult = 0.25
+		pop_ethic_materialist_attraction_mult = 0.25
+	}
+	
+	triggered_country_modifier = {
+		potential = {
+			has_ethic = ethic_fanatic_spiritualist
+		}
+		country_unity_produces_mult = 0.5
+		pop_ethic_spiritualist_attraction_mult = 0.5
+	}
+	
+	triggered_country_modifier = {
+		potential = {
+			has_ethic = ethic_spiritualist
+		}
+		country_unity_produces_mult = 0.25
+		pop_ethic_spiritualist_attraction_mult = 0.25
+	}
+	
+	triggered_country_modifier = {
+		potential = {
+			has_ethic = ethic_fanatic_militarist
+		}
+		country_alloys_produces_mult = 0.5
+		pop_ethic_militarist_attraction_mult = 0.5
+	}
+	
+	triggered_country_modifier = {
+		potential = {
+			has_ethic = ethic_militarist
+		}
+		country_alloys_produces_mult = 0.25
+		pop_ethic_militarist_attraction_mult = 0.25
+	}
+	
+	triggered_country_modifier = {
+		potential = {
+			has_ethic = ethic_fanatic_pacifist
+		}
+		country_food_produces_mult = 0.5
+		pop_ethic_pacifist_attraction_mult = 0.5
+	}
+	
+	triggered_country_modifier = {
+		potential = {
+			has_ethic = ethic_pacifist
+		}
+		country_food_produces_mult = 0.25
+		pop_ethic_pacifist_attraction_mult = 0.25
+	}
+	
+	triggered_country_modifier = {
+		potential = {
+			has_ethic = ethic_fanatic_xenophile
+		}
+		country_energy_produces_mult = 0.5
+		pop_ethic_xenophile_attraction_mult = 0.5
+	}
+	
+	triggered_country_modifier = {
+		potential = {
+			has_ethic = ethic_xenophile
+		}
+		country_energy_produces_mult = 0.25
+		pop_ethic_xenophile_attraction_mult = 0.25
+	}
+	
+	triggered_country_modifier = {
+		potential = {
+			has_ethic = ethic_fanatic_xenophobe
+		}
+		country_minerals_produces_mult = 0.5
+		pop_ethic_xenophobe_attraction_mult = 0.5
+	}
+	
+	triggered_country_modifier = {
+		potential = {
+			has_ethic = ethic_xenophobe
+		}
+		country_minerals_produces_mult = 0.25
+		pop_ethic_xenophobe_attraction_mult = 0.25
+	}
+	
+	triggered_country_modifier = {
+		potential = {
+			has_ethic = ethic_fanatic_egalitarian
+		}
+		country_consumer_goods_produces_mult = 0.5
+		pop_ethic_egalitarian_attraction_mult = 0.5
+	}
+	
+	triggered_country_modifier = {
+		potential = {
+			has_ethic = ethic_egalitarian
+		}
+		country_consumer_goods_produces_mult = 0.25
+		pop_ethic_egalitarian_attraction_mult = 0.25
+	}
+	
+	triggered_country_modifier = {
+		potential = {
+			has_ethic = ethic_fanatic_authoritarian
+		}
+		country_influence_produces_mult = 0.5
+		pop_ethic_authoritarian_attraction_mult = 0.5
+	}
+	
+	triggered_country_modifier = {
+		potential = {
+			has_ethic = ethic_authoritarian
+		}
+		country_influence_produces_mult = 0.25
+		pop_ethic_authoritarian_attraction_mult = 0.25
+	}
+	
+	triggered_country_modifier = {
+		potential = {
+			is_hive_empire = yes
+		}
+		country_minerals_produces_mult = 0.25
+		country_food_produces_mult = 0.25
+		country_unity_produces_mult = 0.25
+	}
+	
+	triggered_country_modifier = {
+		potential = {
+			is_machine_empire = yes
+		}
+		country_energy_produces_mult = 0.25
+		country_alloys_produces_mult = 0.25
+		country_physics_research_produces_mult = 0.25
+		country_society_research_produces_mult = 0.25
+		country_engineering_research_produces_mult = 0.25
+	}
+
+	score = 10000
+
+	active_effect = {
+		active_r_time = yes
+	}
+
+	# Possible check for activation
+	possible = {
+		inline_script = {
+			script = relics/activation_checks
+			RELIC = r_time
+		}
+		custom_tooltip = {
+			fail_text = "r_time_is_active"
+			r_time_is_active = no
+		}
+	}
+}

@@ -1,0 +1,272 @@
+# this为目标舰船域，from为攻击者舰船域
+horror_weapon_confuse_effect = {
+	if = {
+		limit = {
+			NOR = {
+				has_ship_flag = is_confused
+				is_civilian = yes
+				is_ship_class = shipclass_starbase
+			}
+		}
+		reroll_random = yes
+		random = {
+			chance = value:horror_weapon_confuse_chance|CHANCE|$CHANCE$|BIO_SHIPS|$BIO_SHIPS$|
+			set_confused = yes
+			set_ship_flag = is_confused
+			ship_event = {
+				id = bioship.1
+				days = $DAYS$
+				random = $DAYS$
+			}
+		}
+	}
+}
+
+horror_weapon_terrify_effect = {
+	if = {
+		limit = {
+			NOR = {
+				has_ship_flag = is_terrified
+				is_civilian = yes
+				is_ship_class = shipclass_starbase
+			}
+		}
+		reroll_random = yes
+		random = {
+			chance = value:horror_weapon_terrify_chance|CHANCE|$CHANCE$|BIO_SHIPS|$BIO_SHIPS$|
+			set_terrified_by = root.from
+			set_ship_flag = is_terrified
+			ship_event = {
+				id = shroud.5
+				days = $DAYS$
+				random = $DAYS$
+			}
+		}
+	}
+}
+
+horror_weapon_on_hit_effect = {
+	custom_tooltip = $TYPE$_beam_on_hit_effect
+	hidden_effect = {
+		if = {
+			limit = {
+				exists = this
+			}
+			if = {
+				limit = {
+					from = { active_horror_weapon_debuff = yes }
+				}
+				if = {
+					limit = {
+						from = { active_best_horror_weapon_debuff = yes }
+					}
+					horror_weapon_$DEBUFF$_effect = {
+						CHANCE = @$TYPE$_beam_debuff_chance_3
+						DAYS = @$TYPE$_beam_debuff_days
+						BIO_SHIPS = $BIO_SHIPS$
+					}
+				}
+				else_if = {
+					limit = {
+						from = { active_advanced_horror_weapon_debuff = yes }
+					}
+					horror_weapon_$DEBUFF$_effect = {
+						CHANCE = @$TYPE$_beam_debuff_chance_2
+						DAYS = @$TYPE$_beam_debuff_days
+						BIO_SHIPS = $BIO_SHIPS$
+					}
+				}
+				else = {
+					horror_weapon_$DEBUFF$_effect = {
+						CHANCE = @$TYPE$_beam_debuff_chance_1
+						DAYS = @$TYPE$_beam_debuff_days
+						BIO_SHIPS = $BIO_SHIPS$
+					}
+				}
+			}
+		}
+	}
+}
+
+horror_weapon_on_hit_aoe_effect = {
+	custom_tooltip = $TYPE$_beam_on_hit_effect
+	hidden_effect = {
+		if = {
+			limit = {
+				exists = this
+			}
+			if = {
+				limit = {
+					from = { active_horror_weapon_debuff = yes }
+				}
+				if = {
+					limit = {
+						from = { active_best_horror_weapon_debuff = yes }
+					}
+					solar_system = {
+						every_ship_in_system = {
+							limit = {
+								controller = {
+									is_hostile = from.controller
+								}
+								distance = {
+									source = root
+									max_distance <= @$TYPE$_beam_aoe_range
+									same_solar_system = yes
+								}
+							}
+							horror_weapon_$DEBUFF$_effect = {
+								CHANCE = @$TYPE$_beam_debuff_chance_3
+								DAYS = @$TYPE$_beam_debuff_days
+								BIO_SHIPS = $BIO_SHIPS$
+							}
+						}
+					}
+				}
+				else_if = {
+					limit = {
+						from = { active_advanced_horror_weapon_debuff = yes }
+					}
+					solar_system = {
+						every_ship_in_system = {
+							limit = {
+								controller = {
+									is_hostile = from.controller
+								}
+								distance = {
+									source = root
+									max_distance <= @$TYPE$_beam_aoe_range
+									same_solar_system = yes
+								}
+							}
+							horror_weapon_$DEBUFF$_effect = {
+								CHANCE = @$TYPE$_beam_debuff_chance_2
+								DAYS = @$TYPE$_beam_debuff_days
+								BIO_SHIPS = $BIO_SHIPS$
+							}
+						}
+					}
+				}
+				else = {
+					solar_system = {
+						every_ship_in_system = {
+							limit = {
+								controller = {
+									is_hostile = from.controller
+								}
+								distance = {
+									source = root
+									max_distance <= @$TYPE$_beam_aoe_range
+									same_solar_system = yes
+								}
+							}
+							horror_weapon_$DEBUFF$_effect = {
+								CHANCE = @$TYPE$_beam_debuff_chance_1
+								DAYS = @$TYPE$_beam_debuff_days
+								BIO_SHIPS = $BIO_SHIPS$
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+}
+
+hope_weapon_on_hit_aoe_effect = {
+	custom_tooltip = hope_$TYPE$_on_hit_effect
+	hidden_effect = {
+		solar_system = {
+			every_ship_in_system = {
+				limit = {
+					controller = {
+						NOT = { is_hostile = from.controller }
+					}
+					distance = {
+						source = root
+						max_distance <= @hope_beam_aoe_range
+						same_solar_system = yes
+					}
+				}
+				repair_percentage = 1
+				repair_$TYPE$_percentage = 1
+				if = {
+					limit = {
+						has_ship_flag = is_confused
+					}
+					set_confused = no
+					remove_ship_flag = is_confused
+				}
+				if = {
+					limit = {
+						has_ship_flag = is_terrified
+					}
+					remove_terrified = yes
+					remove_ship_flag = is_terrified
+				}
+				if = {
+					limit = {
+						NOT = { has_ship_flag = immune_to_confuse }
+					}
+					set_timed_ship_flag = {
+						flag = immune_to_confuse
+						days = 40
+					}
+				}
+				if = {
+					limit = {
+						NOT = { has_ship_flag = immune_to_terrify }
+					}
+					set_timed_ship_flag = {
+						flag = immune_to_terrify
+						days = 40
+					}
+				}
+			}
+		}
+	}
+}
+
+# 舰队
+dimensional_horror_on_entering_battle_confuse_effect = {
+	every_owned_ship = {
+		limit = {
+			NOR = {
+				has_ship_flag = is_confused
+				ship_only_is_immune_to_confuse = yes
+				is_civilian = yes
+				is_ship_class = shipclass_starbase
+			}
+		}
+		reroll_random = yes
+		set_confused = yes
+		set_ship_flag = is_confused
+		ship_event = {
+			id = bioship.1
+			days = $DAYS$
+			random = $DAYS$
+		}
+	}
+}
+
+# 舰队
+dimensional_horror_on_entering_battle_terrify_effect = {
+	every_owned_ship = {
+		limit = {
+			NOR = {
+				has_ship_flag = is_terrified
+				ship_only_is_immune_to_terrify = yes
+				is_civilian = yes
+				is_ship_class = shipclass_starbase
+			}
+		}
+		reroll_random = yes
+		set_terrified_by = event_target:dimensional_horror_ship
+		set_ship_flag = is_terrified
+		ship_event = {
+			id = shroud.5
+			days = $DAYS$
+			random = $DAYS$
+		}
+	}
+}

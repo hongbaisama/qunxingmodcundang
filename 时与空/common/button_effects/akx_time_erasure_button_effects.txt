@@ -1,0 +1,56 @@
+akx_time_erasure_effect = {
+	potential = {
+		always = yes
+	}
+	
+	allow = {
+		custom_tooltip = {
+			fail_text = "forbid_action_akx_time_erasure"
+			NOT = { has_global_flag = dimensional_horror_crisis_storm_has_occurred }
+		}
+		if = {
+			limit = {
+				NOT = { is_scope_type = country }
+				exists = solar_system
+			}
+			custom_tooltip = {
+				fail_text = "require_not_time_erasure_system"
+				solar_system = {
+					NOT = { has_star_flag = time_erasure_system }
+				}
+			}
+			from = {
+				has_country_resource = {
+					type = astral_threads
+					amount >= 2500
+				}
+				has_country_resource = {
+					type = sr_dark_matter
+					amount >= 5000
+				}
+			}
+		}
+		else = {
+			custom_tooltip = {
+				fail_text = "can_not_time_erasure"
+				always = no
+			}
+		}
+	}
+	
+	effect = {
+		custom_tooltip = akx_time_erasure_effect
+		from = {
+			add_resource = {
+				astral_threads = -2500
+				sr_dark_matter = -5000
+			}
+		}
+		hidden_effect = {
+			from = { save_event_target_as = akx_time_eraser }
+			solar_system = {
+				akx_time_erasure_system = yes
+			}
+		}
+	}
+}

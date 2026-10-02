@@ -1,0 +1,572 @@
+# 繁星向往
+building_civic_starry_yearning = {
+	icon = building_clear_thought_clinic
+	base_buildtime = @b3_time
+	planet_limit = 1
+	
+	category = research
+	
+	building_sets = {
+		government
+		research
+	}
+	
+	potential = {
+		is_special_colony_type = no
+		exists = owner
+		owner = { has_valid_civic = civic_starry_yearning }
+	}
+
+	allow = {
+		has_major_upgraded_capital = yes
+	}
+	
+	inline_script = {
+		script = buildings/building_civic_starry_yearning_modifiers
+		MULT = 2
+	}
+
+	convert_to = {
+		building_civic_starry_yearning_corporate
+	}
+
+	prerequisites = {
+		"tech_global_research_initiative"
+	}
+	
+	show_tech_unlock_if = {
+		has_valid_civic = civic_starry_yearning
+	}
+
+	resources = {
+		category = planet_buildings
+		inline_script = {
+			script = buildings/nomadic_cost_switcher
+			REGULAR_RESOURCE = minerals
+			NOMADIC_RESOURCE = exotic_gases
+			COST = @b3_minerals
+			NOMADIC_COST_MULT = @nomadic_minerals_to_strategic_ratio
+		}
+		cost = {
+			rare_crystals = @b3_rare_cost
+		}
+		upkeep = {
+			energy = @b3_upkeep
+			rare_crystals = @b3_rare_upkeep
+		}
+	}
+	
+	ai_weight_coefficient = 2
+
+	inline_script = {
+		script = districts/ai_research_extra_weighting
+		AMOUNT = 10
+	}
+}
+
+building_civic_starry_yearning_corporate = {
+	icon = building_citadel_uplink
+	base_buildtime = @b3_time
+	planet_limit = 1
+	
+	category = research
+	
+	building_sets = {
+		government
+		research
+	}
+	
+	potential = {
+		is_special_colony_type = no
+		exists = owner
+		owner = { has_valid_civic = civic_starry_yearning_corporate }
+	}
+
+	allow = {
+		has_major_upgraded_capital = yes
+	}
+	
+	inline_script = {
+		script = buildings/building_civic_starry_yearning_modifiers
+		MULT = 1
+	}
+	
+	inline_script = {
+		script = buildings/building_civic_starry_yearning_corporate_extra_modifiers
+		MULT = 1
+	}
+
+	convert_to = {
+		building_civic_starry_yearning
+	}
+
+	prerequisites = {
+		"tech_global_research_initiative"
+	}
+	
+	show_tech_unlock_if = {
+		has_valid_civic = civic_starry_yearning_corporate
+	}
+
+	resources = {
+		category = planet_buildings
+		inline_script = {
+			script = buildings/nomadic_cost_switcher
+			REGULAR_RESOURCE = minerals
+			NOMADIC_RESOURCE = exotic_gases
+			COST = @b3_minerals
+			NOMADIC_COST_MULT = @nomadic_minerals_to_strategic_ratio
+		}
+		cost = {
+			rare_crystals = @b3_rare_cost
+		}
+		upkeep = {
+			energy = @b3_upkeep
+			rare_crystals = @b3_rare_upkeep
+		}
+	}
+	
+	ai_weight_coefficient = 2
+
+	inline_script = {
+		script = districts/ai_research_extra_weighting
+		AMOUNT = 10
+	}
+}
+
+# 超频艺术
+building_civic_overclocking_art = {
+	icon = building_materiality_engine
+	
+	inline_script = {
+		script = buildings/building_civic_overclocking_art
+		CIVIC = civic_overclocking_art_only
+		PREREQUISITES = tech_robot_assembly_complex
+		RESOURCE = unity
+	}
+	
+	building_sets = {
+		government
+		engineering
+		unity
+	}
+
+	convert_to = {
+		building_civic_overclocking_art_corporate
+		building_civic_overclocking_art_machine
+	}
+}
+
+building_civic_overclocking_art_corporate = {
+	icon = building_maintenance_depot
+	
+	inline_script = {
+		script = buildings/building_civic_overclocking_art
+		CIVIC = civic_overclocking_art_corporate
+		PREREQUISITES = tech_robot_assembly_complex
+		RESOURCE = trade
+	}
+	
+	building_sets = {
+		government
+		engineering
+		trade
+	}
+
+	convert_to = {
+		building_civic_overclocking_art
+		building_civic_overclocking_art_machine
+	}
+}
+
+building_civic_overclocking_art_machine = {
+	icon = building_identity_repository
+	
+	inline_script = {
+		script = buildings/building_civic_overclocking_art
+		CIVIC = civic_overclocking_art_machine
+		PREREQUISITES = tech_mega_assembly
+		RESOURCE = physics_research
+	}
+	
+	building_sets = {
+		government
+		engineering
+		physics
+	}
+
+	convert_to = {
+		building_civic_overclocking_art
+		building_civic_overclocking_art_corporate
+	}
+}
+
+# 凝视深渊
+building_civic_origin_black_hole = {
+	base_buildtime = @b2_time
+	planet_limit = 1
+	
+	category = research
+	
+	building_sets = {
+		government
+		research
+		physics
+	}
+	
+	potential = {
+		is_special_colony_type = no
+		owner = {
+			OR = {
+				has_valid_civic = civic_origin_black_hole
+				has_valid_civic = civic_origin_black_hole_gestalt
+			}
+		}
+	}
+
+	allow = {
+		has_major_upgraded_capital = yes
+	}
+	
+	country_modifier = {
+		country_physics_tech_research_speed = 0.05
+	}
+	
+	triggered_country_modifier = {
+		potential = {
+			acitve_building_civic_origin_black_hole_bonus = yes
+		}
+		country_physics_tech_research_speed = 0.05
+	}
+
+	planet_modifier = {
+		planet_physicists_physics_research_produces_add = 0.5
+	}
+	
+	triggered_planet_modifier = {
+		potential = {
+			acitve_building_civic_origin_black_hole_bonus = yes
+		}
+		planet_physicists_physics_research_produces_add = 0.5
+	}
+
+	prerequisites = {
+		"tech_physics_1"
+	}
+	
+	show_tech_unlock_if = {
+		OR = {
+			has_valid_civic = civic_origin_black_hole
+			has_valid_civic = civic_origin_black_hole_gestalt
+		}
+	}
+
+	resources = {
+		category = planet_buildings
+		inline_script = {
+			script = buildings/nomadic_cost_switcher
+			REGULAR_RESOURCE = minerals
+			NOMADIC_RESOURCE = exotic_gases
+			COST = @b2_minerals
+			NOMADIC_COST_MULT = @nomadic_minerals_to_strategic_ratio
+		}
+		upkeep = {
+			energy = @b2_upkeep
+		}
+		produces = {
+			physics_research = 20
+		}
+		produces = {
+			trigger = {
+				acitve_building_civic_origin_black_hole_bonus = yes
+			}
+			physics_research = 20
+		}
+	}
+	
+	ai_weight_coefficient = 2
+}
+
+# 精神脉冲
+building_civic_origin_pulsar = {
+	base_buildtime = @b2_time
+	planet_limit = 1
+	
+	category = research
+	
+	building_sets = {
+		government
+		research
+		society
+	}
+	
+	potential = {
+		is_special_colony_type = no
+		owner = {
+			OR = {
+				has_valid_civic = civic_origin_pulsar
+				has_valid_civic = civic_origin_pulsar_gestalt
+			}
+		}
+	}
+
+	allow = {
+		has_major_upgraded_capital = yes
+	}
+	
+	country_modifier = {
+		country_society_tech_research_speed = 0.05
+	}
+	
+	triggered_country_modifier = {
+		potential = {
+			acitve_building_civic_origin_pulsar_bonus = yes
+		}
+		country_society_tech_research_speed = 0.05
+	}
+
+	planet_modifier = {
+		planet_biologists_society_research_produces_add = 0.5
+	}
+	
+	triggered_planet_modifier = {
+		potential = {
+			acitve_building_civic_origin_pulsar_bonus = yes
+		}
+		planet_biologists_society_research_produces_add = 0.5
+	}
+
+	prerequisites = {
+		"tech_society_1"
+	}
+	
+	show_tech_unlock_if = {
+		OR = {
+			has_valid_civic = civic_origin_pulsar
+			has_valid_civic = civic_origin_pulsar_gestalt
+		}
+	}
+
+	resources = {
+		category = planet_buildings
+		inline_script = {
+			script = buildings/nomadic_cost_switcher
+			REGULAR_RESOURCE = minerals
+			NOMADIC_RESOURCE = exotic_gases
+			COST = @b2_minerals
+			NOMADIC_COST_MULT = @nomadic_minerals_to_strategic_ratio
+		}
+		upkeep = {
+			energy = @b2_upkeep
+		}
+		produces = {
+			society_research = 20
+		}
+		produces = {
+			trigger = {
+				acitve_building_civic_origin_pulsar_bonus = yes
+			}
+			society_research = 20
+		}
+	}
+	
+	ai_weight_coefficient = 2
+}
+
+# 中子壁垒
+building_civic_origin_neutron_star = {
+	base_buildtime = @b2_time
+	planet_limit = 1
+	
+	category = research
+	
+	building_sets = {
+		government
+		research
+		engineering
+	}
+	
+	potential = {
+		is_special_colony_type = no
+		owner = {
+			OR = {
+				has_valid_civic = civic_origin_neutron_star
+				has_valid_civic = civic_origin_neutron_star_gestalt
+			}
+		}
+	}
+
+	allow = {
+		has_major_upgraded_capital = yes
+	}
+	
+	country_modifier = {
+		country_engineering_tech_research_speed = 0.05
+	}
+	
+	triggered_country_modifier = {
+		potential = {
+			acitve_building_civic_origin_neutron_star_bonus = yes
+		}
+		country_engineering_tech_research_speed = 0.05
+	}
+
+	planet_modifier = {
+		planet_engineers_engineering_research_produces_add = 0.5
+	}
+	
+	triggered_planet_modifier = {
+		potential = {
+			acitve_building_civic_origin_neutron_star_bonus = yes
+		}
+		planet_engineers_engineering_research_produces_add = 0.5
+	}
+
+	prerequisites = {
+		"tech_engineering_1"
+	}
+	
+	show_tech_unlock_if = {
+		OR = {
+			has_valid_civic = civic_origin_neutron_star
+			has_valid_civic = civic_origin_neutron_star_gestalt
+		}
+	}
+
+	resources = {
+		category = planet_buildings
+		inline_script = {
+			script = buildings/nomadic_cost_switcher
+			REGULAR_RESOURCE = minerals
+			NOMADIC_RESOURCE = exotic_gases
+			COST = @b2_minerals
+			NOMADIC_COST_MULT = @nomadic_minerals_to_strategic_ratio
+		}
+		upkeep = {
+			energy = @b2_upkeep
+		}
+		produces = {
+			engineering_research = 20
+		}
+		produces = {
+			trigger = {
+				acitve_building_civic_origin_neutron_star_bonus = yes
+			}
+			engineering_research = 20
+		}
+	}
+	
+	ai_weight_coefficient = 2
+}
+
+# 维度崇拜
+building_akx_dimensional_worship = {
+	icon = building_hive_confluence
+	base_buildtime = @b3_time
+	planet_limit = 1
+	empire_limit = { base = 1 }
+	
+	category = unity
+	
+	building_sets = {
+		government
+		unity
+	}
+	
+	potential = {
+		is_special_colony_type = no
+		owner = {
+			is_dimensional_worship_empire = yes
+			has_country_flag = unlock_akx_dimensional_worship_building
+		}
+	}
+
+	allow = {
+		has_major_upgraded_capital = yes
+	}
+	
+	country_modifier = {
+		country_astral_rift_fail_mult = -0.25
+		country_astral_rift_speed_mult = 0.25
+		country_astral_threads_produces_mult = 0.25
+	}
+
+	prerequisites = {
+	}
+
+	resources = {
+		category = planet_buildings
+		inline_script = {
+			script = buildings/nomadic_cost_switcher
+			REGULAR_RESOURCE = minerals
+			NOMADIC_RESOURCE = rare_crystals
+			COST = @b3_minerals
+			NOMADIC_COST_MULT = @nomadic_minerals_to_strategic_ratio
+		}
+		upkeep = {
+			energy = @b3_upkeep
+		}
+		produces = {
+			unity = 10
+			mult = value:num_dimensional_shrine
+		}
+	}
+	
+	triggered_desc = {
+		text = building_akx_dimensional_worship_effect
+	}
+}
+
+building_akx_ouroboros = {
+	icon = building_artist_patron
+	base_buildtime = 314
+	planet_limit = 1
+	empire_limit = { base = 1 }
+	
+	category = research
+	
+	building_sets = {
+		government
+		research
+	}
+	
+	potential = {
+		is_special_colony_type = no
+		owner = {
+			is_dimensional_worship_empire = yes
+			has_country_flag = unlock_akx_ouroboros_building
+		}
+	}
+
+	allow = {
+		has_fully_upgraded_capital = yes
+	}
+	
+	triggered_country_modifier  = {
+		society_tech_cost_mult = -0.01
+		mult = value:num_dimensional_shrine
+	}
+
+	prerequisites = {
+		"tech_akx_ouroboros"
+	}
+	
+	show_tech_unlock_if = {
+		is_dimensional_worship_empire = yes
+		has_country_flag = unlock_akx_ouroboros_building
+	}
+
+	resources = {
+		category = planet_buildings
+		cost = {
+			astral_threads = 314
+		}
+		upkeep = {
+			astral_threads = 3.14
+		}
+	}
+	
+	triggered_desc = {
+		text = building_akx_ouroboros_effect
+	}
+}

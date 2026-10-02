@@ -1,0 +1,973 @@
+spriteTypes = {
+	spriteType = {
+		name = "GFX_origin_pc_hive"
+		texturefile = "gfx/event_pictures/origins/origin_pc_hive.dds"
+		alwaystransparent = yes
+	}
+	spriteType = {
+		parent = "GFX_origin_pc_hive"
+		name = "GFX_origin_pc_hive_zoom_1"
+		upper_left = { x = 48 y = 5 }
+		lower_right = { x = 191 y = 109 }
+	}
+	spriteType = {
+		parent = "GFX_origin_pc_hive"
+		name = "GFX_origin_pc_hive_zoom_2"
+		upper_left = { x = 57 y = 5 }
+		lower_right = { x = 167 y = 85 }
+	}
+	
+	spriteType = {
+		name = "GFX_origin_contract"
+		texturefile = "gfx/event_pictures/origins/origin_contract.dds"
+		alwaystransparent = yes
+	}
+	spriteType = {
+		parent = "GFX_origin_contract"
+		name = "GFX_origin_contract_zoom_1"
+		upper_left = { x = 48 y = 5 }
+		lower_right = { x = 191 y = 109 }
+	}
+	spriteType = {
+		parent = "GFX_origin_contract"
+		name = "GFX_origin_contract_zoom_2"
+		upper_left = { x = 57 y = 5 }
+		lower_right = { x = 167 y = 85 }
+	}
+	
+	spriteType = {
+		name = "GFX_origin_time"
+		texturefile = "gfx/event_pictures/origins/origin_time.dds"
+		alwaystransparent = yes
+	}
+	spriteType = {
+		parent = "GFX_origin_time"
+		name = "GFX_origin_time_zoom_1"
+		upper_left = { x = 48 y = 5 }
+		lower_right = { x = 191 y = 109 }
+	}
+	spriteType = {
+		parent = "GFX_origin_time"
+		name = "GFX_origin_time_zoom_2"
+		upper_left = { x = 57 y = 5 }
+		lower_right = { x = 167 y = 85 }
+	}
+	
+	spriteType = {
+		name = "GFX_origin_gas_colony"
+		texturefile = "gfx/event_pictures/origins/origin_gas_colony.dds"
+		alwaystransparent = yes
+	}
+	spriteType = {
+		parent = "GFX_origin_gas_colony"
+		name = "GFX_origin_gas_colony_zoom_1"
+		upper_left = { x = 48 y = 5 }
+		lower_right = { x = 191 y = 109 }
+	}
+	spriteType = {
+		parent = "GFX_origin_gas_colony"
+		name = "GFX_origin_gas_colony_zoom_2"
+		upper_left = { x = 57 y = 5 }
+		lower_right = { x = 167 y = 85 }
+	}
+	
+	spriteType = {
+		name = "GFX_origin_psionic"
+		texturefile = "gfx/event_pictures/origins/origin_psionic.dds"
+		alwaystransparent = yes
+	}
+	spriteType = {
+		parent = "GFX_origin_psionic"
+		name = "GFX_origin_psionic_zoom_1"
+		upper_left = { x = 48 y = 5 }
+		lower_right = { x = 191 y = 109 }
+	}
+	spriteType = {
+		parent = "GFX_origin_psionic"
+		name = "GFX_origin_psionic_zoom_2"
+		upper_left = { x = 57 y = 5 }
+		lower_right = { x = 167 y = 85 }
+	}
+	
+	spriteType = {
+		name = "GFX_origin_nanites"
+		texturefile = "gfx/event_pictures/origins/origin_nanites.dds"
+		alwaystransparent = yes
+	}
+	spriteType = {
+		parent = "GFX_origin_nanites"
+		name = "GFX_origin_nanites_zoom_1"
+		upper_left = { x = 48 y = 5 }
+		lower_right = { x = 191 y = 109 }
+	}
+	spriteType = {
+		parent = "GFX_origin_nanites"
+		name = "GFX_origin_nanites_zoom_2"
+		upper_left = { x = 57 y = 5 }
+		lower_right = { x = 167 y = 85 }
+	}
+	
+	spriteType = {
+		name = "GFX_origin_praise_the_sun"
+		texturefile = "gfx/event_pictures/origins/origin_praise_the_sun.dds"
+		alwaystransparent = yes
+	}
+	spriteType = {
+		parent = "GFX_origin_praise_the_sun"
+		name = "GFX_origin_praise_the_sun_zoom_1"
+		upper_left = { x = 48 y = 5 }
+		lower_right = { x = 191 y = 109 }
+	}
+	spriteType = {
+		parent = "GFX_origin_praise_the_sun"
+		name = "GFX_origin_praise_the_sun_zoom_2"
+		upper_left = { x = 57 y = 5 }
+		lower_right = { x = 167 y = 85 }
+	}
+	
+	spriteType = {
+		name = "GFX_origin_parallel_sky"
+		texturefile = "gfx/event_pictures/origins/origin_parallel_sky.dds"
+		alwaystransparent = yes
+	}
+	spriteType = {
+		parent = "GFX_origin_parallel_sky"
+		name = "GFX_origin_parallel_sky_zoom_1"
+		upper_left = { x = 48 y = 5 }
+		lower_right = { x = 191 y = 109 }
+	}
+	spriteType = {
+		parent = "GFX_origin_parallel_sky"
+		name = "GFX_origin_parallel_sky_zoom_2"
+		upper_left = { x = 57 y = 5 }
+		lower_right = { x = 167 y = 85 }
+	}
+	
+	spriteType = {
+		name = "GFX_origin_under_the_haze"
+		texturefile = "gfx/event_pictures/origins/origin_under_the_haze.dds"
+		alwaystransparent = yes
+	}
+	spriteType = {
+		parent = "GFX_origin_under_the_haze"
+		name = "GFX_origin_under_the_haze_zoom_1"
+		upper_left = { x = 48 y = 5 }
+		lower_right = { x = 191 y = 109 }
+	}
+	spriteType = {
+		parent = "GFX_origin_under_the_haze"
+		name = "GFX_origin_under_the_haze_zoom_2"
+		upper_left = { x = 57 y = 5 }
+		lower_right = { x = 167 y = 85 }
+	}
+	
+	spriteType = {
+		name = "GFX_origin_tao_of_ninghe"
+		texturefile = "gfx/event_pictures/origins/origin_tao_of_ninghe.dds"
+		alwaystransparent = yes
+	}
+	spriteType = {
+		parent = "GFX_origin_tao_of_ninghe"
+		name = "GFX_origin_tao_of_ninghe_zoom_1"
+		upper_left = { x = 48 y = 5 }
+		lower_right = { x = 191 y = 109 }
+	}
+	spriteType = {
+		parent = "GFX_origin_tao_of_ninghe"
+		name = "GFX_origin_tao_of_ninghe_zoom_2"
+		upper_left = { x = 57 y = 5 }
+		lower_right = { x = 167 y = 85 }
+	}
+	
+	spriteType = {
+		name = "GFX_origin_the_matrix"
+		texturefile = "gfx/event_pictures/origins/origin_the_matrix.dds"
+		alwaystransparent = yes
+	}
+	spriteType = {
+		parent = "GFX_origin_the_matrix"
+		name = "GFX_origin_the_matrix_zoom_1"
+		upper_left = { x = 48 y = 5 }
+		lower_right = { x = 191 y = 109 }
+	}
+	spriteType = {
+		parent = "GFX_origin_the_matrix"
+		name = "GFX_origin_the_matrix_zoom_2"
+		upper_left = { x = 57 y = 5 }
+		lower_right = { x = 167 y = 85 }
+	}
+	
+	spriteType = {
+		name = "GFX_origin_reassembler"
+		texturefile = "gfx/event_pictures/origins/origin_reassembler.dds"
+		alwaystransparent = yes
+	}
+	spriteType = {
+		parent = "GFX_origin_reassembler"
+		name = "GFX_origin_reassembler_zoom_1"
+		upper_left = { x = 48 y = 5 }
+		lower_right = { x = 191 y = 109 }
+	}
+	spriteType = {
+		parent = "GFX_origin_reassembler"
+		name = "GFX_origin_reassembler_zoom_2"
+		upper_left = { x = 57 y = 5 }
+		lower_right = { x = 167 y = 85 }
+	}
+	
+	spriteType = {
+		name = "GFX_origin_colossus"
+		texturefile = "gfx/event_pictures/origins/origin_colossus.dds"
+		alwaystransparent = yes
+	}
+	spriteType = {
+		parent = "GFX_origin_colossus"
+		name = "GFX_origin_colossus_zoom_1"
+		upper_left = { x = 48 y = 5 }
+		lower_right = { x = 191 y = 109 }
+	}
+	spriteType = {
+		parent = "GFX_origin_colossus"
+		name = "GFX_origin_colossus_zoom_2"
+		upper_left = { x = 57 y = 5 }
+		lower_right = { x = 167 y = 85 }
+	}
+	
+	spriteType = {
+		name = "GFX_origin_manifesti"
+		texturefile = "gfx/event_pictures/origins/origin_manifesti.dds"
+		alwaystransparent = yes
+	}
+	spriteType = {
+		parent = "GFX_origin_manifesti"
+		name = "GFX_origin_manifesti_zoom_1"
+		upper_left = { x = 48 y = 5 }
+		lower_right = { x = 191 y = 109 }
+	}
+	spriteType = {
+		parent = "GFX_origin_manifesti"
+		name = "GFX_origin_manifesti_zoom_2"
+		upper_left = { x = 57 y = 5 }
+		lower_right = { x = 167 y = 85 }
+	}
+	
+	spriteType = {
+		name = "GFX_origin_voidspawn"
+		texturefile = "gfx/event_pictures/origins/origin_voidspawn.dds"
+		alwaystransparent = yes
+	}
+	spriteType = {
+		parent = "GFX_origin_voidspawn"
+		name = "GFX_origin_voidspawn_zoom_1"
+		upper_left = { x = 48 y = 5 }
+		lower_right = { x = 191 y = 109 }
+	}
+	spriteType = {
+		parent = "GFX_origin_voidspawn"
+		name = "GFX_origin_voidspawn_zoom_2"
+		upper_left = { x = 57 y = 5 }
+		lower_right = { x = 167 y = 85 }
+	}
+	
+	spriteType = {
+		name = "GFX_origin_bright_pearl"
+		texturefile = "gfx/event_pictures/origins/origin_bright_pearl.dds"
+		alwaystransparent = yes
+	}
+	spriteType = {
+		parent = "GFX_origin_bright_pearl"
+		name = "GFX_origin_bright_pearl_zoom_1"
+		upper_left = { x = 48 y = 5 }
+		lower_right = { x = 191 y = 109 }
+	}
+	spriteType = {
+		parent = "GFX_origin_bright_pearl"
+		name = "GFX_origin_bright_pearl_zoom_2"
+		upper_left = { x = 57 y = 5 }
+		lower_right = { x = 167 y = 85 }
+	}
+	
+	spriteType = {
+		name = "GFX_origin_pirate_king"
+		texturefile = "gfx/event_pictures/origins/origin_pirate_king.dds"
+		alwaystransparent = yes
+	}
+	spriteType = {
+		parent = "GFX_origin_pirate_king"
+		name = "GFX_origin_pirate_king_zoom_1"
+		upper_left = { x = 48 y = 5 }
+		lower_right = { x = 191 y = 109 }
+	}
+	spriteType = {
+		parent = "GFX_origin_pirate_king"
+		name = "GFX_origin_pirate_king_zoom_2"
+		upper_left = { x = 57 y = 5 }
+		lower_right = { x = 167 y = 85 }
+	}
+	
+	spriteType = {
+		name = "GFX_origin_no_water_no_fish"
+		texturefile = "gfx/event_pictures/origins/origin_no_water_no_fish.dds"
+		alwaystransparent = yes
+	}
+	spriteType = {
+		parent = "GFX_origin_no_water_no_fish"
+		name = "GFX_origin_no_water_no_fish_zoom_1"
+		upper_left = { x = 48 y = 5 }
+		lower_right = { x = 191 y = 109 }
+	}
+	spriteType = {
+		parent = "GFX_origin_no_water_no_fish"
+		name = "GFX_origin_no_water_no_fish_zoom_2"
+		upper_left = { x = 57 y = 5 }
+		lower_right = { x = 167 y = 85 }
+	}
+	
+	spriteType = {
+		name = "GFX_origin_adeptus_mechanicus"
+		texturefile = "gfx/event_pictures/origins/origin_adeptus_mechanicus.dds"
+		alwaystransparent = yes
+	}
+	spriteType = {
+		parent = "GFX_origin_adeptus_mechanicus"
+		name = "GFX_origin_adeptus_mechanicus_zoom_1"
+		upper_left = { x = 48 y = 5 }
+		lower_right = { x = 191 y = 109 }
+	}
+	spriteType = {
+		parent = "GFX_origin_adeptus_mechanicus"
+		name = "GFX_origin_adeptus_mechanicus_zoom_2"
+		upper_left = { x = 57 y = 5 }
+		lower_right = { x = 167 y = 85 }
+	}
+	
+	spriteType = {
+		name = "GFX_origin_hypocritical_face"
+		texturefile = "gfx/event_pictures/origins/origin_hypocritical_face.dds"
+		alwaystransparent = yes
+	}
+	spriteType = {
+		parent = "GFX_origin_hypocritical_face"
+		name = "GFX_origin_hypocritical_face_zoom_1"
+		upper_left = { x = 48 y = 5 }
+		lower_right = { x = 191 y = 109 }
+	}
+	spriteType = {
+		parent = "GFX_origin_hypocritical_face"
+		name = "GFX_origin_hypocritical_face_zoom_2"
+		upper_left = { x = 57 y = 5 }
+		lower_right = { x = 167 y = 85 }
+	}
+	
+	spriteType = {
+		name = "GFX_origin_noah_ark"
+		texturefile = "gfx/event_pictures/origins/origin_noah_ark.dds"
+		alwaystransparent = yes
+	}
+	spriteType = {
+		parent = "GFX_origin_noah_ark"
+		name = "GFX_origin_noah_ark_zoom_1"
+		upper_left = { x = 48 y = 5 }
+		lower_right = { x = 191 y = 109 }
+	}
+	spriteType = {
+		parent = "GFX_origin_noah_ark"
+		name = "GFX_origin_noah_ark_zoom_2"
+		upper_left = { x = 57 y = 5 }
+		lower_right = { x = 167 y = 85 }
+	}
+	
+	spriteType = {
+		name = "GFX_origin_monster_hunter"
+		texturefile = "gfx/event_pictures/origins/origin_monster_hunter.dds"
+		alwaystransparent = yes
+	}
+	spriteType = {
+		parent = "GFX_origin_monster_hunter"
+		name = "GFX_origin_monster_hunter_zoom_1"
+		upper_left = { x = 48 y = 5 }
+		lower_right = { x = 191 y = 109 }
+	}
+	spriteType = {
+		parent = "GFX_origin_monster_hunter"
+		name = "GFX_origin_monster_hunter_zoom_2"
+		upper_left = { x = 57 y = 5 }
+		lower_right = { x = 167 y = 85 }
+	}
+	
+	spriteType = {
+		name = "GFX_origin_curator_artist_and_me"
+		texturefile = "gfx/event_pictures/origins/origin_curator_artist_and_me.dds"
+		alwaystransparent = yes
+	}
+	spriteType = {
+		parent = "GFX_origin_curator_artist_and_me"
+		name = "GFX_origin_curator_artist_and_me_zoom_1"
+		upper_left = { x = 48 y = 5 }
+		lower_right = { x = 191 y = 109 }
+	}
+	spriteType = {
+		parent = "GFX_origin_curator_artist_and_me"
+		name = "GFX_origin_curator_artist_and_me_zoom_2"
+		upper_left = { x = 57 y = 5 }
+		lower_right = { x = 167 y = 85 }
+	}
+	
+	spriteType = {
+		name = "GFX_origin_ever_changing"
+		texturefile = "gfx/event_pictures/origins/origin_ever_changing.dds"
+		alwaystransparent = yes
+	}
+	spriteType = {
+		parent = "GFX_origin_ever_changing"
+		name = "GFX_origin_ever_changing_zoom_1"
+		upper_left = { x = 48 y = 5 }
+		lower_right = { x = 191 y = 109 }
+	}
+	spriteType = {
+		parent = "GFX_origin_ever_changing"
+		name = "GFX_origin_ever_changing_zoom_2"
+		upper_left = { x = 57 y = 5 }
+		lower_right = { x = 167 y = 85 }
+	}
+	
+	spriteType = {
+		name = "GFX_origin_knowledge_from_alien"
+		texturefile = "gfx/event_pictures/origins/origin_knowledge_from_alien.dds"
+		alwaystransparent = yes
+	}
+	spriteType = {
+		parent = "GFX_origin_knowledge_from_alien"
+		name = "GFX_origin_knowledge_from_alien_zoom_1"
+		upper_left = { x = 48 y = 5 }
+		lower_right = { x = 191 y = 109 }
+	}
+	spriteType = {
+		parent = "GFX_origin_knowledge_from_alien"
+		name = "GFX_origin_knowledge_from_alien_zoom_2"
+		upper_left = { x = 57 y = 5 }
+		lower_right = { x = 167 y = 85 }
+	}
+	
+	spriteType = {
+		name = "GFX_origin_born_in_the_purple"
+		texturefile = "gfx/event_pictures/origins/origin_born_in_the_purple.dds"
+		alwaystransparent = yes
+	}
+	spriteType = {
+		parent = "GFX_origin_born_in_the_purple"
+		name = "GFX_origin_born_in_the_purple_zoom_1"
+		upper_left = { x = 48 y = 5 }
+		lower_right = { x = 191 y = 109 }
+	}
+	spriteType = {
+		parent = "GFX_origin_born_in_the_purple"
+		name = "GFX_origin_born_in_the_purple_zoom_2"
+		upper_left = { x = 57 y = 5 }
+		lower_right = { x = 167 y = 85 }
+	}
+	
+	spriteType = {
+		name = "GFX_origin_corrupt_brain"
+		texturefile = "gfx/event_pictures/origins/origin_corrupt_brain.dds"
+		alwaystransparent = yes
+	}
+	spriteType = {
+		parent = "GFX_origin_corrupt_brain"
+		name = "GFX_origin_corrupt_brain_zoom_1"
+		upper_left = { x = 48 y = 5 }
+		lower_right = { x = 191 y = 109 }
+	}
+	spriteType = {
+		parent = "GFX_origin_corrupt_brain"
+		name = "GFX_origin_corrupt_brain_zoom_2"
+		upper_left = { x = 57 y = 5 }
+		lower_right = { x = 167 y = 85 }
+	}
+	
+	spriteType = {
+		name = "GFX_origin_legendary_worship"
+		texturefile = "gfx/event_pictures/origins/origin_legendary_worship.dds"
+		alwaystransparent = yes
+	}
+	spriteType = {
+		parent = "GFX_origin_legendary_worship"
+		name = "GFX_origin_legendary_worship_zoom_1"
+		upper_left = { x = 48 y = 5 }
+		lower_right = { x = 191 y = 109 }
+	}
+	spriteType = {
+		parent = "GFX_origin_legendary_worship"
+		name = "GFX_origin_legendary_worship_zoom_2"
+		upper_left = { x = 57 y = 5 }
+		lower_right = { x = 167 y = 85 }
+	}
+	
+	spriteType = {
+		name = "GFX_origin_blessed_by_god"
+		texturefile = "gfx/event_pictures/origins/origin_blessed_by_god.dds"
+		alwaystransparent = yes
+	}
+	spriteType = {
+		parent = "GFX_origin_blessed_by_god"
+		name = "GFX_origin_blessed_by_god_zoom_1"
+		upper_left = { x = 48 y = 5 }
+		lower_right = { x = 191 y = 109 }
+	}
+	spriteType = {
+		parent = "GFX_origin_blessed_by_god"
+		name = "GFX_origin_blessed_by_god_zoom_2"
+		upper_left = { x = 57 y = 5 }
+		lower_right = { x = 167 y = 85 }
+	}
+	
+	spriteType = {
+		name = "GFX_origin_abandoned_by_god"
+		texturefile = "gfx/event_pictures/origins/origin_abandoned_by_god.dds"
+		alwaystransparent = yes
+	}
+	spriteType = {
+		parent = "GFX_origin_abandoned_by_god"
+		name = "GFX_origin_abandoned_by_god_zoom_1"
+		upper_left = { x = 48 y = 5 }
+		lower_right = { x = 191 y = 109 }
+	}
+	spriteType = {
+		parent = "GFX_origin_abandoned_by_god"
+		name = "GFX_origin_abandoned_by_god_zoom_2"
+		upper_left = { x = 57 y = 5 }
+		lower_right = { x = 167 y = 85 }
+	}
+	
+	spriteType = {
+		name = "GFX_origin_equinox_seal"
+		texturefile = "gfx/event_pictures/origins/origin_equinox_seal.dds"
+		alwaystransparent = yes
+	}
+	spriteType = {
+		parent = "GFX_origin_equinox_seal"
+		name = "GFX_origin_equinox_seal_zoom_1"
+		upper_left = { x = 48 y = 5 }
+		lower_right = { x = 191 y = 109 }
+	}
+	spriteType = {
+		parent = "GFX_origin_equinox_seal"
+		name = "GFX_origin_equinox_seal_zoom_2"
+		upper_left = { x = 57 y = 5 }
+		lower_right = { x = 167 y = 85 }
+	}
+	
+	spriteType = {
+		name = "GFX_origin_secondhand_country"
+		texturefile = "gfx/event_pictures/origins/origin_secondhand_country.dds"
+		alwaystransparent = yes
+	}
+	spriteType = {
+		parent = "GFX_origin_secondhand_country"
+		name = "GFX_origin_secondhand_country_zoom_1"
+		upper_left = { x = 48 y = 5 }
+		lower_right = { x = 191 y = 109 }
+	}
+	spriteType = {
+		parent = "GFX_origin_secondhand_country"
+		name = "GFX_origin_secondhand_country_zoom_2"
+		upper_left = { x = 57 y = 5 }
+		lower_right = { x = 167 y = 85 }
+	}
+	
+	spriteType = {
+		name = "GFX_origin_wishing_well"
+		texturefile = "gfx/event_pictures/origins/origin_wishing_well.dds"
+		alwaystransparent = yes
+	}
+	spriteType = {
+		parent = "GFX_origin_wishing_well"
+		name = "GFX_origin_wishing_well_zoom_1"
+		upper_left = { x = 48 y = 5 }
+		lower_right = { x = 191 y = 109 }
+	}
+	spriteType = {
+		parent = "GFX_origin_wishing_well"
+		name = "GFX_origin_wishing_well_zoom_2"
+		upper_left = { x = 57 y = 5 }
+		lower_right = { x = 167 y = 85 }
+	}
+	
+	spriteType = {
+		name = "GFX_origin_reckoning_arrived"
+		texturefile = "gfx/event_pictures/origins/origin_reckoning_arrived.dds"
+		alwaystransparent = yes
+	}
+	spriteType = {
+		parent = "GFX_origin_reckoning_arrived"
+		name = "GFX_origin_reckoning_arrived_zoom_1"
+		upper_left = { x = 48 y = 5 }
+		lower_right = { x = 191 y = 109 }
+	}
+	spriteType = {
+		parent = "GFX_origin_reckoning_arrived"
+		name = "GFX_origin_reckoning_arrived_zoom_2"
+		upper_left = { x = 57 y = 5 }
+		lower_right = { x = 167 y = 85 }
+	}
+	
+	spriteType = {
+		name = "GFX_origin_black_hole"
+		texturefile = "gfx/event_pictures/origins/origin_black_hole.dds"
+		alwaystransparent = yes
+	}
+	spriteType = {
+		parent = "GFX_origin_black_hole"
+		name = "GFX_origin_black_hole_zoom_1"
+		upper_left = { x = 48 y = 5 }
+		lower_right = { x = 191 y = 109 }
+	}
+	spriteType = {
+		parent = "GFX_origin_black_hole"
+		name = "GFX_origin_black_hole_zoom_2"
+		upper_left = { x = 57 y = 5 }
+		lower_right = { x = 167 y = 85 }
+	}
+	
+	spriteType = {
+		name = "GFX_origin_pulsar"
+		texturefile = "gfx/event_pictures/origins/origin_pulsar.dds"
+		alwaystransparent = yes
+	}
+	spriteType = {
+		parent = "GFX_origin_pulsar"
+		name = "GFX_origin_pulsar_zoom_1"
+		upper_left = { x = 48 y = 5 }
+		lower_right = { x = 191 y = 109 }
+	}
+	spriteType = {
+		parent = "GFX_origin_pulsar"
+		name = "GFX_origin_pulsar_zoom_2"
+		upper_left = { x = 57 y = 5 }
+		lower_right = { x = 167 y = 85 }
+	}
+	
+	spriteType = {
+		name = "GFX_origin_neutron_star"
+		texturefile = "gfx/event_pictures/origins/origin_neutron_star.dds"
+		alwaystransparent = yes
+	}
+	spriteType = {
+		parent = "GFX_origin_neutron_star"
+		name = "GFX_origin_neutron_star_zoom_1"
+		upper_left = { x = 48 y = 5 }
+		lower_right = { x = 191 y = 109 }
+	}
+	spriteType = {
+		parent = "GFX_origin_neutron_star"
+		name = "GFX_origin_neutron_star_zoom_2"
+		upper_left = { x = 57 y = 5 }
+		lower_right = { x = 167 y = 85 }
+	}
+	
+	spriteType = {
+		name = "GFX_origin_white_hole"
+		texturefile = "gfx/event_pictures/origins/origin_white_hole.dds"
+		alwaystransparent = yes
+	}
+	spriteType = {
+		parent = "GFX_origin_white_hole"
+		name = "GFX_origin_white_hole_zoom_1"
+		upper_left = { x = 48 y = 5 }
+		lower_right = { x = 191 y = 109 }
+	}
+	spriteType = {
+		parent = "GFX_origin_white_hole"
+		name = "GFX_origin_white_hole_zoom_2"
+		upper_left = { x = 57 y = 5 }
+		lower_right = { x = 167 y = 85 }
+	}
+	
+	spriteType = {
+		name = "GFX_origin_dyson_sphere"
+		texturefile = "gfx/event_pictures/origins/origin_dyson_sphere.dds"
+		alwaystransparent = yes
+	}
+	spriteType = {
+		parent = "GFX_origin_dyson_sphere"
+		name = "GFX_origin_dyson_sphere_zoom_1"
+		upper_left = { x = 48 y = 5 }
+		lower_right = { x = 191 y = 109 }
+	}
+	spriteType = {
+		parent = "GFX_origin_dyson_sphere"
+		name = "GFX_origin_dyson_sphere_zoom_2"
+		upper_left = { x = 57 y = 5 }
+		lower_right = { x = 167 y = 85 }
+	}
+	
+	spriteType = {
+		name = "GFX_origin_matter_decompressor"
+		texturefile = "gfx/event_pictures/origins/origin_matter_decompressor.dds"
+		alwaystransparent = yes
+	}
+	spriteType = {
+		parent = "GFX_origin_matter_decompressor"
+		name = "GFX_origin_matter_decompressor_zoom_1"
+		upper_left = { x = 48 y = 5 }
+		lower_right = { x = 191 y = 109 }
+	}
+	spriteType = {
+		parent = "GFX_origin_matter_decompressor"
+		name = "GFX_origin_matter_decompressor_zoom_2"
+		upper_left = { x = 57 y = 5 }
+		lower_right = { x = 167 y = 85 }
+	}
+	
+	spriteType = {
+		name = "GFX_origin_strategic_coordination_center"
+		texturefile = "gfx/event_pictures/origins/origin_strategic_coordination_center.dds"
+		alwaystransparent = yes
+	}
+	spriteType = {
+		parent = "GFX_origin_strategic_coordination_center"
+		name = "GFX_origin_strategic_coordination_center_zoom_1"
+		upper_left = { x = 48 y = 5 }
+		lower_right = { x = 191 y = 109 }
+	}
+	spriteType = {
+		parent = "GFX_origin_strategic_coordination_center"
+		name = "GFX_origin_strategic_coordination_center_zoom_2"
+		upper_left = { x = 57 y = 5 }
+		lower_right = { x = 167 y = 85 }
+	}
+	
+	spriteType = {
+		name = "GFX_origin_spy_orb"
+		texturefile = "gfx/event_pictures/origins/origin_spy_orb.dds"
+		alwaystransparent = yes
+	}
+	spriteType = {
+		parent = "GFX_origin_spy_orb"
+		name = "GFX_origin_spy_orb_zoom_1"
+		upper_left = { x = 48 y = 5 }
+		lower_right = { x = 191 y = 109 }
+	}
+	spriteType = {
+		parent = "GFX_origin_spy_orb"
+		name = "GFX_origin_spy_orb_zoom_2"
+		upper_left = { x = 57 y = 5 }
+		lower_right = { x = 167 y = 85 }
+	}
+	
+	spriteType = {
+		name = "GFX_origin_mega_shipyard"
+		texturefile = "gfx/event_pictures/origins/origin_mega_shipyard.dds"
+		alwaystransparent = yes
+	}
+	spriteType = {
+		parent = "GFX_origin_mega_shipyard"
+		name = "GFX_origin_mega_shipyard_zoom_1"
+		upper_left = { x = 48 y = 5 }
+		lower_right = { x = 191 y = 109 }
+	}
+	spriteType = {
+		parent = "GFX_origin_mega_shipyard"
+		name = "GFX_origin_mega_shipyard_zoom_2"
+		upper_left = { x = 57 y = 5 }
+		lower_right = { x = 167 y = 85 }
+	}
+	
+	spriteType = {
+		name = "GFX_origin_think_tank"
+		texturefile = "gfx/event_pictures/origins/origin_think_tank.dds"
+		alwaystransparent = yes
+	}
+	spriteType = {
+		parent = "GFX_origin_think_tank"
+		name = "GFX_origin_think_tank_zoom_1"
+		upper_left = { x = 48 y = 5 }
+		lower_right = { x = 191 y = 109 }
+	}
+	spriteType = {
+		parent = "GFX_origin_think_tank"
+		name = "GFX_origin_think_tank_zoom_2"
+		upper_left = { x = 57 y = 5 }
+		lower_right = { x = 167 y = 85 }
+	}
+	
+	spriteType = {
+		name = "GFX_origin_interstellar_assembly"
+		texturefile = "gfx/event_pictures/origins/origin_interstellar_assembly.dds"
+		alwaystransparent = yes
+	}
+	spriteType = {
+		parent = "GFX_origin_interstellar_assembly"
+		name = "GFX_origin_interstellar_assembly_zoom_1"
+		upper_left = { x = 48 y = 5 }
+		lower_right = { x = 191 y = 109 }
+	}
+	spriteType = {
+		parent = "GFX_origin_interstellar_assembly"
+		name = "GFX_origin_interstellar_assembly_zoom_2"
+		upper_left = { x = 57 y = 5 }
+		lower_right = { x = 167 y = 85 }
+	}
+	
+	spriteType = {
+		name = "GFX_origin_mega_art_installation"
+		texturefile = "gfx/event_pictures/origins/origin_mega_art_installation.dds"
+		alwaystransparent = yes
+	}
+	spriteType = {
+		parent = "GFX_origin_mega_art_installation"
+		name = "GFX_origin_mega_art_installation_zoom_1"
+		upper_left = { x = 48 y = 5 }
+		lower_right = { x = 191 y = 109 }
+	}
+	spriteType = {
+		parent = "GFX_origin_mega_art_installation"
+		name = "GFX_origin_mega_art_installation_zoom_2"
+		upper_left = { x = 57 y = 5 }
+		lower_right = { x = 167 y = 85 }
+	}
+	
+	spriteType = {
+		name = "GFX_origin_we_are_not_one"
+		texturefile = "gfx/event_pictures/origins/origin_we_are_not_one.dds"
+		alwaystransparent = yes
+	}
+	spriteType = {
+		parent = "GFX_origin_we_are_not_one"
+		name = "GFX_origin_we_are_not_one_zoom_1"
+		upper_left = { x = 48 y = 5 }
+		lower_right = { x = 191 y = 109 }
+	}
+	spriteType = {
+		parent = "GFX_origin_we_are_not_one"
+		name = "GFX_origin_we_are_not_one_zoom_2"
+		upper_left = { x = 57 y = 5 }
+		lower_right = { x = 167 y = 85 }
+	}
+	
+	spriteType = {
+		name = "GFX_origin_swarm_crisis"
+		texturefile = "gfx/event_pictures/origins/origin_swarm_crisis.dds"
+		alwaystransparent = yes
+	}
+	spriteType = {
+		parent = "GFX_origin_swarm_crisis"
+		name = "GFX_origin_swarm_crisis_zoom_1"
+		upper_left = { x = 48 y = 5 }
+		lower_right = { x = 191 y = 109 }
+	}
+	spriteType = {
+		parent = "GFX_origin_swarm_crisis"
+		name = "GFX_origin_swarm_crisis_zoom_2"
+		upper_left = { x = 57 y = 5 }
+		lower_right = { x = 167 y = 85 }
+	}
+	
+	spriteType = {
+		name = "GFX_origin_ai_crisis"
+		texturefile = "gfx/event_pictures/origins/origin_ai_crisis.dds"
+		alwaystransparent = yes
+	}
+	spriteType = {
+		parent = "GFX_origin_ai_crisis"
+		name = "GFX_origin_ai_crisis_zoom_1"
+		upper_left = { x = 48 y = 5 }
+		lower_right = { x = 191 y = 109 }
+	}
+	spriteType = {
+		parent = "GFX_origin_ai_crisis"
+		name = "GFX_origin_ai_crisis_zoom_2"
+		upper_left = { x = 57 y = 5 }
+		lower_right = { x = 167 y = 85 }
+	}
+	
+	spriteType = {
+		name = "GFX_origin_exd_crisis"
+		texturefile = "gfx/event_pictures/origins/origin_exd_crisis.dds"
+		alwaystransparent = yes
+	}
+	spriteType = {
+		parent = "GFX_origin_exd_crisis"
+		name = "GFX_origin_exd_crisis_zoom_1"
+		upper_left = { x = 48 y = 5 }
+		lower_right = { x = 191 y = 109 }
+	}
+	spriteType = {
+		parent = "GFX_origin_exd_crisis"
+		name = "GFX_origin_exd_crisis_zoom_2"
+		upper_left = { x = 57 y = 5 }
+		lower_right = { x = 167 y = 85 }
+	}
+	
+	spriteType = {
+		name = "GFX_origin_synth_queen_crisis"
+		texturefile = "gfx/event_pictures/origins/origin_synth_queen_crisis.dds"
+		alwaystransparent = yes
+	}
+	spriteType = {
+		parent = "GFX_origin_synth_queen_crisis"
+		name = "GFX_origin_synth_queen_crisis_zoom_1"
+		upper_left = { x = 48 y = 5 }
+		lower_right = { x = 191 y = 109 }
+	}
+	spriteType = {
+		parent = "GFX_origin_synth_queen_crisis"
+		name = "GFX_origin_synth_queen_crisis_zoom_2"
+		upper_left = { x = 57 y = 5 }
+		lower_right = { x = 167 y = 85 }
+	}
+	
+	spriteType = {
+		name = "GFX_origin_fourth_crisis"
+		texturefile = "gfx/event_pictures/origins/origin_fourth_crisis.dds"
+		alwaystransparent = yes
+	}
+	spriteType = {
+		parent = "GFX_origin_fourth_crisis"
+		name = "GFX_origin_fourth_crisis_zoom_1"
+		upper_left = { x = 48 y = 5 }
+		lower_right = { x = 191 y = 109 }
+	}
+	spriteType = {
+		parent = "GFX_origin_fourth_crisis"
+		name = "GFX_origin_fourth_crisis_zoom_2"
+		upper_left = { x = 57 y = 5 }
+		lower_right = { x = 167 y = 85 }
+	}
+	
+	spriteType = {
+		name = "GFX_origin_new_country"
+		texturefile = "gfx/event_pictures/origins/origin_new_country.dds"
+		alwaystransparent = yes
+	}
+	spriteType = {
+		parent = "GFX_origin_new_country"
+		name = "GFX_origin_new_country_zoom_1"
+		upper_left = { x = 48 y = 5 }
+		lower_right = { x = 191 y = 109 }
+	}
+	spriteType = {
+		parent = "GFX_origin_new_country"
+		name = "GFX_origin_new_country_zoom_2"
+		upper_left = { x = 57 y = 5 }
+		lower_right = { x = 167 y = 85 }
+	}
+	
+	spriteType = {
+		name = "GFX_origin_dark_forest"
+		texturefile = "gfx/event_pictures/origins/origin_dark_forest.dds"
+		alwaystransparent = yes
+	}
+	spriteType = {
+		parent = "GFX_origin_dark_forest"
+		name = "GFX_origin_dark_forest_zoom_1"
+		upper_left = { x = 48 y = 5 }
+		lower_right = { x = 191 y = 109 }
+	}
+	spriteType = {
+		parent = "GFX_origin_dark_forest"
+		name = "GFX_origin_dark_forest_zoom_2"
+		upper_left = { x = 57 y = 5 }
+		lower_right = { x = 167 y = 85 }
+	}
+}

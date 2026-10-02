@@ -1,0 +1,8 @@
+﻿l_simp_chinese:
+ time_replaced_origin.10.name:0 "重塑基因"
+ time_replaced_origin.10.desc:0 "我们已经掌握了足够多的科技，是时候进一步钻研基因的原理，并解锁基因操纵的全部潜力了。"
+ time_replaced_origin.10.a:0 "我们将塑造新的时代。"
+ 
+ time_replaced_origin.20.name:0 "$decision_heart_of_wilderness$"
+ time_replaced_origin.20.desc:0 "$decision_heart_of_wilderness_desc$"
+ time_replaced_origin.20.a:0 "荒野不朽，蜂群永存。"

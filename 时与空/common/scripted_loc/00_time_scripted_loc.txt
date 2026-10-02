@@ -1,0 +1,498 @@
+# 信使事件描述
+defined_text = {
+	name = GetAkx9210Desc
+	text = {
+		trigger = {
+			owner_main_species = { is_robotic = yes }
+		}
+		localization_key = akx.9210.desc.robotic
+	}
+	default = akx.9210.desc.normal
+}
+
+defined_text = {
+	name = GetAkx9220Desc
+	text = {
+		trigger = {
+			owner_main_species = { is_robotic = yes }
+		}
+		localization_key = akx.9220.desc.robotic
+	}
+	default = akx.9220.desc.normal
+}
+
+# 研究职位
+defined_text = {
+	name = GetResearcherCouncilorName
+	text = {
+		trigger = {
+			owner = { is_gestalt = yes }
+		}
+		localization_key = councilor_gestalt_cognitive
+	}
+	default = councilor_research
+}
+
+# 奥秘项目（普政）
+defined_text = {
+	name = GetApHorrorProjectDesc
+	text = {
+		trigger = {
+			owner = {
+				OR = {
+					dimension_traveler_is_by_our_side = no
+					has_country_flag = dimension_traveler_end
+				}
+			}
+		}
+		localization_key = ApHorrorProjectDesc_1
+	}
+	text = {
+		trigger = {
+			owner = {
+				dimension_traveler_is_by_our_side = yes
+				NOT = { has_country_flag = dimension_traveler_end }
+			}
+		}
+		localization_key = ApHorrorProjectDesc_2
+	}
+}
+
+# 奥秘项目（格式塔）
+defined_text = {
+	name = GetApHorrorProjectGestaltDesc
+	text = {
+		trigger = {
+			owner = {
+				OR = {
+					dimension_traveler_is_by_our_side = no
+					has_country_flag = dimension_traveler_end
+				}
+			}
+		}
+		localization_key = ApHorrorProjectGestaltDesc_1
+	}
+	text = {
+		trigger = {
+			owner = {
+				dimension_traveler_is_by_our_side = yes
+				NOT = { has_country_flag = dimension_traveler_end }
+			}
+		}
+		localization_key = ApHorrorProjectGestaltDesc_2
+	}
+}
+
+# 密码项目
+defined_text = {
+	name = GetDimensionTravelerProjectEndDesc
+	text = {
+		trigger = {
+			owner = {
+				is_gestalt = no
+			}
+		}
+		localization_key = DimensionTravelerProjectEndDesc_1
+	}
+	text = {
+		trigger = {
+			owner = {
+				is_gestalt = yes
+			}
+		}
+		localization_key = DimensionTravelerProjectEndDesc_2
+	}
+}
+
+# 命中相会
+defined_text = {
+	name = GetTimeAkxDesc205
+	text = {
+		trigger = {
+			NOT = {
+				has_global_flag = syzygy_admiral_end
+			}
+		}
+		localization_key = time_akx.205.desc_1
+	}
+	text = {
+		trigger = {
+			has_global_flag = syzygy_admiral_end
+		}
+		localization_key = time_akx.205.desc_2
+	}
+}
+
+# “摘录者”标本描述
+defined_text = {
+	name = GetAkxBriefDescDetails
+	text = {
+		trigger = {
+			has_origin_time = yes
+		}
+		localization_key = akx_brief_desc_details_time
+	}
+	default = akx_brief_desc_details_default
+}
+
+# 黑洞压缩标本描述
+defined_text = {
+	name = GetAkxBlackHoleCompressionDescDetails
+	text = {
+		trigger = {
+			has_origin = origin_white_hole
+		}
+		localization_key = akx_black_hole_compression_desc_details_white_hole
+	}
+	text = {
+		trigger = {
+			has_origin_time = yes
+		}
+		localization_key = akx_black_hole_compression_desc_details_time
+	}
+	default = akx_black_hole_compression_desc_details_default
+}
+
+# “彩虹海”标本描述
+defined_text = {
+	name = GetAkxRainbowSeaDescDetails
+	text = {
+		trigger = {
+			OR = {
+				has_origin = origin_pirate_king
+				has_origin = origin_pirate_king_end
+			}
+			has_country_flag = pirate_king_true_end
+		}
+		localization_key = akx_rainbow_sea_desc_details_pirate_king_true
+	}
+	text = {
+		trigger = {
+			OR = {
+				has_origin = origin_pirate_king
+				has_origin = origin_pirate_king_end
+			}
+			NOT = { has_country_flag = pirate_king_true_end }
+		}
+		localization_key = akx_rainbow_sea_desc_details_pirate_king
+	}
+	default = akx_rainbow_sea_desc_details_default
+}
+
+# 时空传统闭门效果
+defined_text = {
+	name = GetTrTimeFinishDesc
+	text = {
+		trigger = {
+			OR = {
+				has_country_flag = gain_r_horror_matter_by_tradition #如果是靠传统获得的遗珍，那么在点完传统后，传统效果依旧会显示获得遗珍而非获得暗物质
+				NOT = { has_relic = r_horror_matter }
+			}
+		}
+		localization_key = tr_time_finish_desc_1
+	}
+	default = tr_time_finish_desc_2
+}
+
+# 希望传统闭门效果
+defined_text = {
+	name = GetTrHopeFinishDesc
+	text = {
+		trigger = {
+			is_gestalt = yes
+		}
+		localization_key = tr_hope_finish_desc_2
+	}
+	default = tr_hope_finish_desc_1
+}
+
+# 时与空遗珍描述
+defined_text = {
+	name = GetRelicTimeDesc
+	text = {
+		trigger = {
+			NOT = { has_technology = tech_end_modifier }
+		}
+		localization_key = r_time_desc_1
+	}
+	text = {
+		trigger = {
+			has_technology = tech_end_modifier
+		}
+		localization_key = r_time_desc_2
+	}
+}
+
+# 时与空遗珍激活上限
+defined_text = {
+	name = GetRelicTimeEffectNumber
+	text = {
+		trigger = {
+			has_country_flag = r_time_level_1
+		}
+		localization_key = r_time_effect_number_1
+	}
+	text = {
+		trigger = {
+			has_country_flag = r_time_level_2
+		}
+		localization_key = r_time_effect_number_2
+	}
+	text = {
+		trigger = {
+			has_country_flag = r_time_level_3
+		}
+		localization_key = r_time_effect_number_3
+	}
+	text = {
+		trigger = {
+			has_country_flag = r_time_level_4
+		}
+		localization_key = r_time_effect_number_4
+	}
+	text = {
+		trigger = {
+			has_country_flag = r_time_level_5
+		}
+		localization_key = r_time_effect_number_5
+	}
+	default = r_time_effect_number_0
+}
+
+# 彼岸之门
+defined_text = {
+	name = GetDepositAkxMessengerEffect
+	random = no
+	text = {
+		trigger = {
+			OR = {
+				has_carrier_flag = end_messenger_3
+				has_carrier_flag = future_messenger_3
+			}
+		}
+		localization_key = make_akx_messenger_effect
+	}
+	default = BLANK_STRING
+}
+
+defined_text = {
+	name = GetDepositAkxGestaltMessengerEffect
+	random = no
+	text = {
+		trigger = {
+			has_carrier_flag = gestalt_messenger_3
+		}
+		localization_key = make_akx_messenger_gestalt_effect
+	}
+	default = BLANK_STRING
+}
+
+# 是否显示信使网络
+defined_text = {
+	name = GetMessengerNetworkDesc
+	text = {
+		trigger = {
+			exists = owner
+			owner = {
+				check_modifier_value = {
+					modifier = messenger_network
+					value > 0
+				}
+			}
+		}
+		localization_key = messenger_network_loc
+	}
+	default = BLANK_STRING
+}
+
+# 信使网络
+defined_text = {
+	name = GetMessengerNetworkLoc
+	value = value:messenger_network_loc_value
+}
+
+# 终末信使产出（星界丝缕）
+defined_text = {
+	name = GetEndMessengerAstralThreadsOutput
+	text = {
+		trigger = {
+			is_scope_valid = yes
+			owner = {
+				OR = {
+					has_technology = tech_hope_end_messenger
+					unlock_dimension_traveler_destiny_trait = yes
+				}
+			}
+		}
+		localization_key = MESSENGER_OUTPUT_ASTRAL_THREADS
+	}
+	default = MESSENGER_OUTPUT_BLANK
+}
+
+# 希望信使产出（星界丝缕）
+defined_text = {
+	name = GetFutureMessengerAstralThreadsOutput
+	text = {
+		trigger = {
+			is_scope_valid = yes
+			owner = {
+				OR = {
+					has_technology = tech_hope_future_messenger
+					unlock_dimension_traveler_destiny_trait = yes
+				}
+			}
+		}
+		localization_key = MESSENGER_OUTPUT_ASTRAL_THREADS
+	}
+	default = MESSENGER_OUTPUT_BLANK
+}
+
+# 信使子个体产出（星界丝缕）
+defined_text = {
+	name = GetGestaltMessengerAstralThreadsOutput
+	text = {
+		trigger = {
+			is_scope_valid = yes
+			owner = {
+				OR = {
+					has_technology = tech_hope_gestalt_messenger
+					unlock_dimension_traveler_destiny_trait = yes
+				}
+			}
+		}
+		localization_key = MESSENGER_OUTPUT_ASTRAL_THREADS
+	}
+	default = MESSENGER_OUTPUT_BLANK
+}
+
+# 信使产出（唯心唯物）
+defined_text = {
+	name = GetMessengerSpiMatOutput
+	text = {
+		trigger = {
+			is_scope_valid = yes
+			owner = { is_spiritualist = yes }
+		}
+		localization_key = MESSENGER_OUTPUT_SPI
+	}
+	text = {
+		trigger = {
+			is_scope_valid = yes
+			owner = { is_materialist = yes }
+		}
+		localization_key = MESSENGER_OUTPUT_MAT
+	}
+	default = MESSENGER_OUTPUT_BLANK
+}
+
+# 信使产出（平等威权）
+defined_text = {
+	name = GetMessengerEgalAuthOutput
+	text = {
+		trigger = {
+			is_scope_valid = yes
+			owner = { is_egalitarian = yes }
+		}
+		localization_key = MESSENGER_OUTPUT_EGAL
+	}
+	text = {
+		trigger = {
+			is_scope_valid = yes
+			owner = { is_authoritarian = yes }
+		}
+		localization_key = MESSENGER_OUTPUT_AUTH
+	}
+	default = MESSENGER_OUTPUT_BLANK
+}
+
+# 信使产出（军国和平）
+defined_text = {
+	name = GetMessengerMilPacOutput
+	text = {
+		trigger = {
+			is_scope_valid = yes
+			owner = { is_militarist = yes }
+		}
+		localization_key = MESSENGER_OUTPUT_MIL
+	}
+	text = {
+		trigger = {
+			is_scope_valid = yes
+			owner = { is_pacifist = yes }
+		}
+		localization_key = MESSENGER_OUTPUT_PAC
+	}
+	default = MESSENGER_OUTPUT_BLANK
+}
+
+# 信使产出（亲外排外）
+defined_text = {
+	name = GetMessengerXenoOutput
+	text = {
+		trigger = {
+			is_scope_valid = yes
+			owner = { is_xenophobe = yes }
+		}
+		localization_key = MESSENGER_OUTPUT_PHOB
+	}
+	text = {
+		trigger = {
+			is_scope_valid = yes
+			owner = { is_xenophile = yes }
+		}
+		localization_key = MESSENGER_OUTPUT_PHIL
+	}
+	default = MESSENGER_OUTPUT_BLANK
+}
+
+# 信使产出（蜂巢智械）
+defined_text = {
+	name = GetMessengerGestaltOutput
+	text = {
+		trigger = {
+			is_scope_valid = yes
+			owner = { is_hive_empire = yes }
+		}
+		localization_key = MESSENGER_OUTPUT_HIVE
+	}
+	text = {
+		trigger = {
+			is_scope_valid = yes
+			owner = { is_machine_empire = yes }
+		}
+		localization_key = MESSENGER_OUTPUT_MACHINE
+	}
+	default = MESSENGER_OUTPUT_BLANK
+}
+
+# 人口维护费图标
+defined_text = {
+	name = GetPopUpkeepMultIcon
+	text = {
+		trigger = {
+			owner = {
+				is_lithoid_empire = no
+				is_robot_empire = no
+			}
+		}
+		localization_key = pop_upkeep_mult_icon_food
+	}
+	text = {
+		trigger = {
+			owner = {
+				is_lithoid_empire = yes
+				is_robot_empire = no
+			}
+		}
+		localization_key = pop_upkeep_mult_icon_minerals
+	}
+	text = {
+		trigger = {
+			owner = {
+				is_robot_empire = yes
+			}
+		}
+		localization_key = pop_upkeep_mult_icon_energy
+	}
+	default = pop_upkeep_mult_icon_default
+}

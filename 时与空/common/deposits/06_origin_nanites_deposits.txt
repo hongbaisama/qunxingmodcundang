@@ -1,0 +1,297 @@
+################################################################
+# 障碍
+################################################################
+
+@blocker_high = 10
+@blocker_low = 5
+@ranger_small_production = 0.5
+@ranger_large_production = 1
+@evopred_large_blocker_progress = 40
+@evopred_small_blocker_progress = 20
+
+d_nanites_blocker_1 = {
+	time = 180
+
+	is_for_colonizable = yes
+	category = deposit_cat_blockers_natural
+
+	icon = d_crater
+
+	resources = {
+		category = deposit_blockers_natural
+		cost = {
+			energy = 500
+			nanites = 15
+		}
+	}
+
+	potential = {
+		always = no
+	}
+
+	planet_modifier = {
+		planet_max_districts_add = -1
+	}
+	
+	triggered_planet_modifier = {
+		potential = {
+			biologist_is_ranger_trigger = yes
+		}
+		planet_biologists_minerals_produces_add = @ranger_small_production
+	}
+
+	inline_script = deposits/environmental_architects_natural_blocker_modifier
+
+	on_cleared = {
+		owner = {
+			add_resource = {
+				nanites = 50
+			}
+		}
+	}
+
+	drop_weight = {
+		weight = 0
+	}
+
+	inline_script = deposits/ai_weight_natural_blocker
+	
+	prerequisites = { "tech_nanites_blocker_1" }
+}
+
+d_nanites_blocker_2 = {
+	time = 540
+	
+	is_for_colonizable = yes
+	category = deposit_cat_blockers_natural
+	
+	use_weights_for_blocker_swap_types = no
+
+	resources = {
+		category = deposit_blockers_natural
+		cost = {
+			energy = 1500
+			nanites = 45
+		}
+	}
+
+	blocker_swap_types = {
+		d_nanites_generator
+	}
+
+	potential = {
+		always = no
+	}
+
+	planet_modifier = {
+		planet_max_districts_add = -3
+	}
+	
+	triggered_planet_modifier = {
+		potential = {
+			biologist_is_ranger_trigger = yes
+		}
+		planet_biologists_minerals_produces_add = @ranger_large_production
+	}
+
+	inline_script = deposits/environmental_architects_natural_blocker_modifier
+
+	drop_weight = {
+		weight = 0
+	}
+
+	inline_script = deposits/ai_weight_natural_blocker
+	
+	prerequisites = { "tech_nanites_blocker_2" }
+}
+
+d_nanites_blocker_3 = {
+	time = 540
+	
+	is_for_colonizable = yes
+	category = deposit_cat_blockers_natural
+
+	icon = d_massive_crevice
+
+	use_weights_for_blocker_swap_types = no
+
+	resources = {
+		category = deposit_blockers_natural
+		cost = {
+			energy = 1500
+			nanites = 45
+		}
+	}
+
+	blocker_swap_types = {
+		d_nanites_mining
+	}
+
+	potential = {
+		always = no
+	}
+
+	planet_modifier = {
+		planet_max_districts_add = -3
+	}
+	
+	triggered_planet_modifier = {
+		potential = {
+			biologist_is_ranger_trigger = yes
+		}
+		planet_biologists_minerals_produces_add = @ranger_large_production
+	}
+
+	inline_script = deposits/environmental_architects_natural_blocker_modifier
+
+	drop_weight = {
+		weight = 0
+	}
+
+	inline_script = deposits/ai_weight_natural_blocker
+	
+	prerequisites = { "tech_nanites_blocker_3" }
+}
+
+################################################################
+# 地块
+################################################################
+
+d_nanites_generator = {
+	is_for_colonizable = yes
+	
+	category = deposit_cat_energy
+
+	icon = d_radioactive_wasteland
+	
+	planet_modifier = {
+		planet_technician_nanites_produces_add = 0.15
+		planet_jobs_energy_produces_mult = 0.15
+	}
+	
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { has_tradition = tr_nanotech_finish }
+		}
+		planet_nanites_logistics_drones_nanites_produces_add = 0.15
+		planet_technician_nanites_produces_add = 0.15
+		planet_jobs_energy_produces_mult = 0.15
+	}
+	
+	potential = {
+		always = no
+	}
+	
+	drop_weight = {
+		weight = 20
+		modifier = {
+			factor = 0
+			NOT = {
+				is_planet_class = pc_nanites
+			}
+		}
+	}
+}
+
+d_nanites_mining = {
+	is_for_colonizable = yes
+	
+	category = deposit_cat_minerals
+
+	icon = d_dust_desert
+	
+	planet_modifier = {
+		planet_miners_nanites_produces_add = 0.15
+		planet_jobs_minerals_produces_mult = 0.15
+	}
+	
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { has_tradition = tr_nanotech_finish }
+		}
+		planet_nanites_logistics_drones_nanites_produces_add = 0.15
+		planet_miners_nanites_produces_add = 0.15
+		planet_jobs_minerals_produces_mult = 0.15
+	}
+	
+	potential = {
+		always = no
+	}
+	
+	drop_weight = {
+		weight = 20
+		modifier = {
+			factor = 0
+			NOT = {
+				is_planet_class = pc_nanites
+			}
+		}
+	}
+}
+
+d_nanites_old_factory = {
+	is_for_colonizable = yes
+	
+	category = deposit_cat_rare
+	
+	icon = d_building
+	
+	custom_tooltip = d_nanites_old_factory_effect
+	custom_tooltip_short = d_nanites_old_factory_effect_short
+	
+	resources = {
+		category = planet_buildings
+		produces = {
+			nanites = 1
+			mult = value:num_nanites_old_factory_resources_value
+		}
+	}
+	
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { is_machine_empire = yes }
+		}
+		job_replicator_add = 100
+		district_nanites_modifier_mult = 0.2
+		mult = value:num_nanites_old_factory_value
+	}
+	
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = {
+				is_machine_empire = yes
+				NOR = {
+					has_modifier = nanites_attacker
+					has_modifier = nanites_protector
+				}
+			}
+		}
+		job_replicator_per_pop = 0.01
+	}
+	
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = {
+				is_machine_empire = yes
+				OR = {
+					has_modifier = nanites_attacker
+					has_modifier = nanites_protector
+				}
+			}
+		}
+		job_replicator_per_pop = 0.02
+	}
+	
+	potential = {
+		always = no
+	}
+	
+	drop_weight = {
+		weight = 0
+	}
+}

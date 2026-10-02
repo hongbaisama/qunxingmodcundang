@@ -1,0 +1,987 @@
+@base_cost = 300
+@city_cost = 500
+@rural_district_ai_coefficient = 0.75
+
+district_psionic_city = {
+	overlay_icon = GFX_district_government
+	base_buildtime = 480
+	exempt_from_ai_planet_specialization = yes
+
+	zone_slots = {
+		slot_city_government
+		slot_city_01
+		slot_city_02
+	}
+
+	show_on_uncolonized = {
+		exists = from
+		from = { is_regular_empire = yes }
+		is_planet_class = pc_psionic
+		is_special_colony_type = no
+	}
+
+	potential = {
+		exists = owner
+		owner = {
+			OR = {
+				is_regular_empire = yes
+				AND = {
+					is_country_type = primitive
+					is_hive_empire = no
+				}
+			}
+		}
+		is_planet_class = pc_psionic
+		is_special_colony_type = no
+		NAND = {
+			is_capital = yes
+			owner = {
+				has_menace_perk = menp_behemoth_mind_meld
+			}
+		}
+	}
+
+	allow = {
+		is_special_colony_type = no
+	}
+
+	conversion_ratio = 1
+	convert_to = {
+		district_psionic_nexus
+		district_psionic_hive
+		district_crashed_slaver_ship
+		district_arcology_housing
+		district_rw_city
+		district_city
+		district_nexus
+		district_hive
+		district_prison
+		district_craglands
+		district_mindlink
+		district_crashed_slaver_ship
+		district_resort
+		district_slave
+		district_ark_city
+	}
+
+	resources = {
+		category = planet_districts_cities
+		cost = {
+			minerals = @city_cost
+			sr_zro = 50
+			trigger = {
+				NOT = { has_modifier = wooden_planet }
+			}
+		}
+		cost = {
+			food = @city_cost
+			sr_zro = 50
+			trigger = {
+				has_modifier = wooden_planet
+			}
+		}
+		upkeep = {
+			energy = 2
+			trigger = {
+				NOT = { has_modifier = wooden_planet }
+			}
+		}
+		upkeep = {
+			food = 2
+			trigger = {
+				has_modifier = wooden_planet
+			}
+		}
+	}
+
+	triggered_planet_modifier = {
+		planet_housing_add = 1000
+		mult = value:district_psionic_value
+	}
+
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = {
+				has_valid_civic = civic_agrarian_idyll
+			}
+		}
+		planet_housing_add = -200
+		mult = value:district_psionic_value
+	}
+
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { has_active_tradition = tr_prosperity_public_works }
+		}
+		planet_housing_add = 100
+		mult = value:district_psionic_value
+	}
+
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = {
+				has_technology = tech_housing_1
+			}
+		}
+		planet_housing_add = 100
+		mult = value:district_psionic_value
+	}
+
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = {
+				has_technology = tech_housing_2
+				NOT = { has_valid_civic = civic_agrarian_idyll }
+			}
+		}
+		planet_housing_add = 200
+		mult = value:district_psionic_value
+	}
+
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { is_regular_empire = yes }
+		}
+		job_psionic_trader_add = @base_district_jobs
+		mult = value:district_psionic_value
+	}
+	
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { is_tankbound_empire = yes }
+		}
+		job_production_overseer_add = 100
+		mult = value:district_psionic_value
+	}
+	
+	prerequisites = {
+		tech_mine_zro
+	}
+	
+	show_tech_unlock_if = {
+		is_regular_empire = yes
+		any_owned_colony = {
+			is_planet_class = pc_psionic
+		}
+	}
+	
+	inline_script = {
+		script = districts/district_triggered_name_urban
+	}
+	
+	inline_script = {
+		script = districts/ai_urban_district_extra_weighting
+	}
+}
+
+district_psionic_hive = {
+	icon = district_psionic_city
+	overlay_icon = GFX_district_government
+	base_buildtime = 480
+	exempt_from_ai_planet_specialization = yes
+
+	zone_slots = {
+		slot_city_government
+		slot_city_01
+		slot_city_02
+	}
+
+	show_on_uncolonized = {
+		from = { is_hive_empire = yes }
+		is_planet_class = pc_psionic
+	}
+
+	potential = {
+		exists = owner
+		owner = { is_hive_empire = yes }
+		is_planet_class = pc_psionic
+		NAND = {
+			is_capital = yes
+			owner = {
+				has_menace_perk = menp_behemoth_mind_meld
+			}
+		}
+	}
+
+	allow = {
+		NOT = { has_modifier = resort_colony }
+	}
+
+	conversion_ratio = 1
+	convert_to = {
+		district_psionic_nexus
+		district_psionic_city
+		district_crashed_slaver_ship
+		district_arcology_housing
+		district_rw_city
+		district_city
+		district_nexus
+		district_hive
+		district_prison
+		district_craglands
+		district_mindlink
+		district_crashed_slaver_ship
+		district_resort
+		district_slave
+		district_ark_city
+	}
+
+	resources = {
+		category = planet_districts_cities
+		cost = {
+			minerals = @city_cost
+			sr_zro = 50
+			trigger = {
+				NOT = { has_modifier = wooden_planet }
+			}
+		}
+		cost = {
+			food = @city_cost
+			sr_zro = 50
+			trigger = {
+				has_modifier = wooden_planet
+			}
+		}
+		upkeep = {
+			energy = 2
+			trigger = {
+				NOT = { has_modifier = wooden_planet }
+			}
+		}
+		upkeep = {
+			food = 2
+			trigger = {
+				has_modifier = wooden_planet
+			}
+		}
+	}
+
+	triggered_planet_modifier = {
+		planet_housing_add = 1200
+		mult = value:district_psionic_value
+	}
+
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { has_technology = tech_housing_1 }
+		}
+		planet_housing_add = 100
+		mult = value:district_psionic_value
+	}
+
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { has_technology = tech_housing_2 }
+		}
+		planet_housing_add = 100
+		mult = value:district_psionic_value
+	}
+
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { has_active_tradition = tr_prosperity_extended_hives }
+		}
+		planet_housing_add = 100
+		mult = value:district_psionic_value
+	}
+	
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { is_hive_empire = yes }
+		}
+		job_psionic_logistics_drone_add = @base_district_jobs
+		mult = value:district_psionic_value
+	}
+	
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { is_tankbound_empire = yes }
+		}
+		job_production_overseer_add = 100
+		mult = value:district_psionic_value
+	}
+	
+	prerequisites = {
+		tech_mine_zro
+	}
+	
+	show_tech_unlock_if = {
+		is_hive_empire = yes
+		any_owned_colony = {
+			is_planet_class = pc_psionic
+		}
+	}
+
+	inline_script = {
+		script = districts/district_triggered_name_hive
+	}
+	
+	inline_script = {
+		script = districts/ai_urban_district_extra_weighting
+	}
+}
+
+district_psionic_nexus = {
+	icon = district_psionic_city
+	overlay_icon = GFX_district_government
+	base_buildtime = 480
+	exempt_from_ai_planet_specialization = yes
+
+	zone_slots = {
+		slot_city_government
+		slot_city_01
+		slot_city_02
+	}
+
+	show_on_uncolonized = {
+		from = { is_machine_empire = yes }
+		is_planet_class = pc_psionic
+	}
+
+	potential = {
+		exists = owner
+		owner = { is_machine_empire = yes }
+		is_planet_class = pc_psionic
+		NAND = {
+			is_capital = yes
+			owner = {
+				has_menace_perk = menp_behemoth_mind_meld
+			}
+		}
+	}
+
+	allow = {
+		NOT = { has_modifier = resort_colony }
+	}
+
+	conversion_ratio = 1
+	convert_to = {
+		district_psionic_city
+		district_psionic_hive
+		district_crashed_slaver_ship
+		district_arcology_housing
+		district_rw_city
+		district_city
+		district_nexus
+		district_hive
+		district_prison
+		district_craglands
+		district_mindlink
+		district_crashed_slaver_ship
+		district_resort
+		district_slave
+		district_ark_city
+	}
+
+	resources = {
+		category = planet_districts_cities
+		cost = {
+			minerals = @city_cost
+			sr_zro = 50
+			trigger = {
+				NOT = { has_modifier = wooden_planet }
+			}
+		}
+		cost = {
+			food = @city_cost
+			sr_zro = 50
+			trigger = {
+				has_modifier = wooden_planet
+			}
+		}
+		upkeep = {
+			energy = 2
+			trigger = {
+				NOT = { has_modifier = wooden_planet }
+			}
+		}
+		upkeep = {
+			food = 2
+			trigger = {
+				has_modifier = wooden_planet
+			}
+		}
+	}
+
+	triggered_planet_modifier = {
+		planet_housing_add = 1100
+		mult = value:district_psionic_value
+	}
+
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { has_technology = tech_housing_1 }
+		}
+		planet_housing_add = 100
+		mult = value:district_psionic_value
+	}
+
+	triggered_planet_modifier = {
+		potential = {
+			has_modifier = gestation_colony
+		}
+		job_gestation_drone_add = 100
+		mult = value:district_psionic_value
+	}
+
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { has_technology = tech_housing_2 }
+		}
+		planet_housing_add = 100
+		mult = value:district_psionic_value
+	}
+
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { has_active_tradition = tr_prosperity_optimized_nexus }
+		}
+		planet_housing_add = 100
+		mult = value:district_psionic_value
+	}
+	
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { is_machine_empire = yes }
+		}
+		job_psionic_logistics_drone_add = @base_district_jobs
+		mult = value:district_psionic_value
+	}
+	
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { is_tankbound_empire = yes }
+		}
+		job_production_overseer_add = 100
+		mult = value:district_psionic_value
+	}
+	
+	prerequisites = {
+		tech_mine_zro
+	}
+	
+	show_tech_unlock_if = {
+		is_machine_empire = yes
+		any_owned_colony = {
+			is_planet_class = pc_psionic
+		}
+	}
+
+	inline_script = {
+		script = districts/district_triggered_name_machine
+	}
+	
+	inline_script = {
+		script = districts/ai_urban_district_extra_weighting
+	}
+}
+
+district_psionic_generator = {
+	icon = district_generator
+	overlay_icon = GFX_district_energy
+	base_buildtime = 240
+	expansion_planner = yes
+	shared_capacity_modifier = district_generator
+	is_uncapped = {
+		is_pc_psionic_district_uncapped = yes
+	}
+
+	min_for_deposits_on_planet = 3
+	max_for_deposits_on_planet = 15
+
+	zone_slots = {
+		slot_psionic_energy
+	}
+
+	show_on_uncolonized = {
+		is_planet_class = pc_psionic
+		NOT = { has_modifier = resort_colony }
+	}
+
+	potential = {
+		is_planet_class = pc_psionic
+		NOT = { has_modifier = resort_colony }
+	}
+
+	conversion_ratio = 1
+	convert_to = {
+		district_generator
+		district_photosynthesis_fields
+		district_arcology_urban_1
+		district_nexus_1
+		district_hive_1
+		district_ark_generator
+	}
+
+	resources = {
+		category = planet_districts_generator
+		cost = {
+			minerals = @base_cost
+			sr_zro = 25
+		}
+		upkeep = {
+			energy = 1
+		}
+	}
+
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { is_gestalt = yes }
+		}
+		job_psionic_technician_drone_add = @base_rural_district_jobs
+		mult = value:district_psionic_value
+	}
+
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = {
+				is_gestalt = no
+				is_fallen_empire_spiritualist = no
+			}
+		}
+		job_psionic_technician_add = @base_rural_district_jobs
+		mult = value:district_psionic_value
+	}
+
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { is_fallen_empire_spiritualist = yes }
+		}
+		job_fe_acolyte_generator_add = @base_rural_district_jobs
+		mult = value:district_psionic_value
+	}
+	
+	triggered_planet_modifier = {
+		planet_housing_add = 200
+		mult = value:district_psionic_value
+	}
+
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = {
+				has_valid_civic = civic_agrarian_idyll
+			}
+		}
+		planet_housing_add = 300
+		mult = value:district_psionic_value
+	}
+
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { is_gestalt = yes }
+		}
+		planet_housing_add = 100
+		mult = value:district_psionic_value
+	}
+
+	inline_script = {
+		script = districts/time_district_script_modifier
+		DISTRICT = generator
+	}
+	
+	inline_script = {
+		script = districts/district_triggered_name_time_mod_generator
+		TYPE = psionic
+	}
+
+	prerequisites = {
+		tech_power_plant_1
+	}
+	
+	show_tech_unlock_if = {
+		any_owned_colony = {
+			is_planet_class = pc_psionic
+		}
+	}
+
+	ai_weight_coefficient = @rural_district_ai_coefficient
+}
+
+district_psionic_mining = {
+	icon = district_mining
+	overlay_icon = GFX_district_minerals
+	base_buildtime = 240
+	expansion_planner = yes
+	shared_capacity_modifier = district_mining
+	is_uncapped = {
+		is_pc_psionic_district_uncapped = yes
+	}
+
+	min_for_deposits_on_planet = 1
+	max_for_deposits_on_planet = 15
+
+	zone_slots = {
+		slot_psionic_minerals
+	}
+
+	show_on_uncolonized = {
+		is_planet_class = pc_psionic
+	}
+
+	potential = {
+		is_planet_class = pc_psionic
+	}
+
+	allow = {
+		NOT = { has_modifier = resort_colony }
+	}
+
+	conversion_ratio = 1
+	convert_to = {
+		district_mining
+		district_hollow_mountains
+		district_arcology_urban_2
+		district_nexus_2
+		district_hive_2
+		district_ark_military
+		district_ark_forever_cruise
+	}
+
+	resources = {
+		category = planet_districts_mining
+		cost = {
+			minerals = @base_cost
+			sr_zro = 25
+		}
+		upkeep = {
+			energy = 1
+		}
+	}
+
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { is_gestalt = yes }
+		}
+		job_psionic_mining_drone_add = @base_rural_district_jobs
+		mult = value:district_psionic_value
+	}
+
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = {
+				is_gestalt = no
+				is_fallen_empire_spiritualist = no
+			}
+		}
+		job_psionic_miner_add = @base_rural_district_jobs
+		mult = value:district_psionic_value
+	}
+
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { is_fallen_empire_spiritualist = yes }
+		}
+		job_fe_acolyte_mine_add = @base_rural_district_jobs
+		mult = value:district_psionic_value
+	}
+	
+	triggered_planet_modifier = {
+		planet_housing_add = 200
+		mult = value:district_psionic_value
+	}
+
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = {
+				has_valid_civic = civic_agrarian_idyll
+			}
+		}
+		planet_housing_add = 300
+		mult = value:district_psionic_value
+	}
+
+	triggered_planet_modifier = {
+		potential = {
+			has_modifier = metal_planet
+		}
+		planet_housing_add = 500
+		mult = value:district_psionic_value
+	}
+
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { is_gestalt = yes }
+		}
+		planet_housing_add = 100
+		mult = value:district_psionic_value
+	}
+	
+	inline_script = {
+		script = districts/time_district_script_modifier
+		DISTRICT = mining
+	}
+	
+	inline_script = {
+		script = districts/district_triggered_name_time_mod_mining
+		TYPE = psionic
+	}
+
+	prerequisites = {
+		tech_mechanized_mining
+	}
+	
+	show_tech_unlock_if = {
+		any_owned_colony = {
+			is_planet_class = pc_psionic
+		}
+	}
+
+	ai_weight_coefficient = @rural_district_ai_coefficient
+}
+
+district_psionic_farming = {
+	icon = district_farming
+	overlay_icon = GFX_district_food
+	base_buildtime = 240
+	expansion_planner = yes
+	shared_capacity_modifier = district_farming
+	is_uncapped = {
+		is_pc_psionic_district_uncapped = yes
+	}
+
+	min_for_deposits_on_planet = 3
+	max_for_deposits_on_planet = 15
+
+	zone_slots = {
+		slot_psionic_food
+	}
+
+	show_on_uncolonized = {
+		is_planet_class = pc_psionic
+	}
+
+	potential = {
+		OR = {
+			NOT = { exists = owner }
+			NOT = { owner = { is_anglers_empire = yes } }
+			AND = {
+				owner = { is_anglers_empire = yes }
+				NOT = { is_planet_class = pc_ocean }
+			}
+		}
+		is_planet_class = pc_psionic
+	}
+
+	allow = {
+		NOT = { has_modifier = resort_colony }
+	}
+
+	conversion_ratio = 1
+	convert_to = {
+		district_farming
+		district_orchard_forests
+		district_arcology_urban_3
+		district_nexus_3
+		district_hive_3
+		district_ark_basic
+	}
+
+	resources = {
+		category = planet_districts_farming
+		cost = {
+			minerals = @base_cost
+			sr_zro = 25
+			trigger = {
+				NOT = { has_modifier = wooden_planet }
+			}
+		}
+		cost = {
+			food = @base_cost
+			sr_zro = 25
+			trigger = {
+				has_modifier = wooden_planet
+			}
+		}
+		upkeep = {
+			energy = 1
+		}
+	}
+
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { is_gestalt = yes }
+		}
+		job_psionic_agri_drone_add = @base_rural_district_jobs
+		mult = value:district_psionic_value
+	}
+
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = {
+				is_gestalt = no
+				is_fallen_empire_spiritualist = no
+			}
+		}
+		job_psionic_farmer_add = @base_rural_district_jobs
+		mult = value:district_psionic_value
+	}
+
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { is_fallen_empire_spiritualist = yes }
+		}
+		job_fe_acolyte_farm_add = @base_rural_district_jobs
+		mult = value:district_psionic_value
+	}
+	
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { is_wilderness_empire = no }
+		}
+		planet_housing_add = 200
+		mult = value:district_psionic_value
+	}
+
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = {
+				has_valid_civic = civic_agrarian_idyll
+			}
+		}
+		planet_housing_add = 400
+		mult = value:district_psionic_value
+	}
+
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = {
+				has_technology = tech_housing_agrarian_idyll
+				has_valid_civic = civic_agrarian_idyll
+			}
+		}
+		planet_housing_add = 200
+		mult = value:district_psionic_value
+	}
+
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { is_gestalt = yes }
+		}
+		planet_housing_add = 100
+		mult = value:district_psionic_value
+	}
+	
+	inline_script = {
+		script = districts/time_district_script_modifier
+		DISTRICT = farming
+	}
+	
+	inline_script = {
+		script = districts/district_triggered_name_time_mod_farming
+		TYPE = psionic
+	}
+
+	prerequisites = {
+		tech_industrial_farming
+	}
+	
+	show_tech_unlock_if = {
+		any_owned_colony = {
+			is_planet_class = pc_psionic
+		}
+	}
+
+	ai_weight_coefficient = @rural_district_ai_coefficient
+}
+
+district_psionic_generator_physics = {
+	icon = district_generator
+	overlay_icon = GFX_district_physics
+	gridbox = district_arcology_research
+
+	zone_slots = {
+		slot_empty
+	}
+
+	show_on_uncolonized = {
+		always = no
+	}
+
+	potential = {
+		always = no
+	}
+
+	inline_script = {
+		script = districts/district_triggered_name_time_mod_generator
+		TYPE = psionic
+	}
+}
+
+district_psionic_mining_engineering = {
+	icon = district_mining
+	overlay_icon = GFX_district_engineering
+	gridbox = district_arcology_research
+
+	zone_slots = {
+		slot_empty
+	}
+
+	show_on_uncolonized = {
+		always = no
+	}
+
+	potential = {
+		always = no
+	}
+
+	inline_script = {
+		script = districts/district_triggered_name_time_mod_mining
+		TYPE = psionic
+	}
+}
+
+district_psionic_farming_society = {
+	icon = district_farming
+	overlay_icon = GFX_district_society
+	gridbox = district_arcology_research
+
+	zone_slots = {
+		slot_empty
+	}
+
+	show_on_uncolonized = {
+		always = no
+	}
+
+	potential = {
+		always = no
+	}
+
+	inline_script = {
+		script = districts/district_triggered_name_time_mod_farming
+		TYPE = psionic
+	}
+}

@@ -1,0 +1,241 @@
+﻿l_simp_chinese:
+ # 负相时空
+ concept_horror_time: "§M负相时空§!"
+ concept_horror_time_desc: "§M负相时空§!是一类神秘科技的统称，它们主要来自于我们对§M负相位面§!的研究。尽管其依据与结果可能大相径庭，但这就是§M负相位面§!的真实所在。\n\n§M负相时空§!是一类特殊的科技，它永远不会自然出现，但每次完成研究后，都有可能获得满足条件的科技选项。\n激活§Y$r_horror_matter$§!、激活§Y$r_time$§!、任命['concept_has_horror_time_knowledge']的领袖进行研究、提高['concept_category_horror_time_draw_chance_mult']等，都能§G提高§!获得研究选项的§Y概率§!。"
+ 
+ concept_has_horror_time_knowledge: "拥有负相知识"
+ concept_has_horror_time_knowledge_desc: "这代表着该领袖对['concept_horror_time']拥有一定独到的知识。\n\n该领袖需满足以下条件之一：\n—获悉了任意§Y负相奥秘§!\n—经历过§Y黑洞穿行§!\n—拥有§Y$leader_trait_time_soul$§!特质\n—拥有['concept_leader_trait_equinox_seal']特质\n—拥有§Y$leader_trait_horror_focus$§!特质\n—拥有§Y$leader_trait_expertise_horror_time$§!特质\n—拥有§Y$leader_trait_dimensional_horror_weapon_specialization$§!特质\n—拥有§Y界旅者命定特质§!\n—拥有§Y$leader_trait_dimension_traveler_brief$§!特质"
+ 
+ concept_category_horror_time_research_speed_mult_white: "§W研究速度（§Y负相时空§!）§!"
+ concept_category_horror_time_research_speed_mult: "研究速度（负相时空）"
+ concept_category_horror_time_research_speed_mult_desc: "这代表着我们对['concept_horror_time']的掌握程度，能§G加快§!我们对相关领域科技的§Y研究速度§!，也能§G减少§!相关议程的§Y推行需求§!。"
+ 
+ concept_category_horror_time_draw_chance_mult_white: "§W§Y负相时空§!选项的概率§!"
+ concept_category_horror_time_draw_chance_mult: "负相时空选项的概率"
+ concept_category_horror_time_draw_chance_mult_desc: "这代表着我们对['concept_horror_time']的了解程度，能§G提高§!获得相关领域科技选项的§Y概率§!。"
+ 
+ concept_can_approach_black_hole: "触及视界边缘"
+ concept_can_approach_black_hole_desc: "这代表着该领袖拥有靠近黑洞工作的能力，可以执行其它常规领袖无法完成的任务。\n\n该领袖需满足以下条件之一：\n—物种拥有['concept_trait_time']特质\n—物种拥有['concept_trait_time_soul']特质\n—物种拥有['concept_trait_origin_black_hole']特质\n—物种拥有['concept_trait_dimension_traveler']特质\n—物种拥有['concept_trait_akx_messenger']特质\n—物种拥有['concept_trait_akx_waiting_world_all']特质\n—物种拥有['concept_tech_time_trait']\n—领袖['concept_has_horror_time_knowledge']"
+ 
+ # 终末行舟
+ databank_time_titan: "终末行舟"
+ 
+ concept_time_titan_desc: "终末行舟的数据库显示，本有数量众多的终末行舟参与了逃亡计划，但大多都因无可避免的命运而陨落，仅有极少数成功地抵达了不同的位面，而被我们的宇宙所接纳的仅有这一艘。\n\n终末行舟的建造不是批量的，取决于设计者与组装者的能力，不同的终末行舟所能发挥的实力也有所差异——换言之，每艘终末行舟都是独一无二的。\n\n"
+ 
+ concept_exceptional_time_titan_color: "§3$concept_exceptional_time_titan$§!"
+ concept_exceptional_time_titan: "$exceptional$"
+ concept_exceptional_time_titan_desc: "$concept_time_titan_desc$$concept_exceptional_time_titan_color$稀有度导致：\n$t$终末行舟组件升级效果：§G+100%§!\n$t$彼岸庇护所最终产出：§G+100%§!"
+ 
+ concept_epic_time_titan_color: "§2$concept_epic_time_titan$§!"
+ concept_epic_time_titan: "$epic$"
+ concept_epic_time_titan_desc: "$concept_time_titan_desc$$concept_epic_time_titan_color$稀有度导致：\n$t$终末行舟组件升级效果：§G+80%§!\n$t$彼岸庇护所最终产出：§G+80%§!"
+ 
+ concept_rare_time_titan_color: "§1$concept_rare_time_titan$§!"
+ concept_rare_time_titan: "$rare$"
+ concept_rare_time_titan_desc: "$concept_time_titan_desc$$concept_rare_time_titan_color$稀有度导致：\n$t$终末行舟组件升级效果：§G+40%§!\n$t$彼岸庇护所最终产出：§G+40%§!"
+ 
+ concept_common_time_titan_color: "§0$concept_common_time_titan$§!"
+ concept_common_time_titan: "$common$"
+ concept_common_time_titan_desc: "$concept_time_titan_desc$$concept_common_time_titan_color$稀有度导致：\n$t$终末行舟组件升级效果：§Y+0%§!\n$t$彼岸庇护所最终产出：§Y+0%§!"
+ 
+ concept_time_titan_best_status_color: "§M$concept_time_titan_best_status$§!"
+ concept_time_titan_best_status: "命定循环"
+ concept_time_titan_best_status_desc: "终末行舟由身为明日船长的界旅者驾驶，她将为我们打破命定的终末循环。\n\n$concept_time_titan_best_status_color$状态导致：\n$t$$unlock_time_titan_component_upgrade$\n$t$终末行舟组件生效倍率：§Y100%§!\n$t$终末行舟诅咒生效倍率：§R0%§!"
+ 
+ concept_time_titan_good_status_color: "§H$concept_time_titan_good_status$§!"
+ concept_time_titan_good_status: "未来偏航"
+ concept_time_titan_good_status_desc: "终末行舟由明日船长驾驶，通往终末的未来就此偏航。\n\n$concept_time_titan_good_status_color$状态导致：\n$t$终末行舟组件生效倍率：§Y100%§!\n$t$终末行舟诅咒生效倍率：§R0%§!"
+ 
+ concept_time_titan_normal_status_color: "§B$concept_time_titan_normal_status$§!"
+ concept_time_titan_normal_status: "因果庇佑"
+ concept_time_titan_normal_status_desc: "终末行舟由界旅者驾驶，交织的因果于终末中取得庇佑。\n\n$concept_time_titan_normal_status_color$状态导致：\n$t$终末行舟组件生效倍率：§Y50%§!\n$t$终末行舟诅咒生效倍率：§R0%§!"
+ 
+ concept_time_titan_bad_status_color: "§R$concept_time_titan_bad_status$§!"
+ concept_time_titan_bad_status: "终末诅咒"
+ concept_time_titan_bad_status_desc: "终末行舟未由合适的指挥官驾驶，终末的诅咒正逐渐将其腐蚀。\n\n$concept_time_titan_bad_status_color$状态导致：\n$t$终末行舟组件生效倍率：§Y0%§!\n$t$终末行舟诅咒生效倍率：§R100%§!"
+ 
+ concept_time_shelter_maintenance_white: "§W$concept_time_shelter_maintenance$§!"
+ concept_time_shelter_maintenance_yellow: "§Y$concept_time_shelter_maintenance$§!"
+ concept_time_shelter_maintenance: "彼岸维系度"
+ concept_time_shelter_maintenance_desc: "彼岸并非终末行舟的内部空间，而是借助终末行舟扭曲奇点可以抵达的不计其数的混沌之一。因此，彼岸与现世的物质交换与信息流通必须依靠专门的设施维持，该维持效率即为彼岸维系度。\n\n提高彼岸维系度可以令彼岸庇护所§Y产出的资源§!与§Y提供的修正§!更§G完整§!地增益于我们的帝国。\n\n§Y$concept_time_shelter_maintenance$§!无法超过['concept_time_shelter_maintenance_cap']"
+ 
+ concept_time_shelter_maintenance_cap_white: "§W$concept_time_shelter_maintenance_cap$§!"
+ concept_time_shelter_maintenance_cap: "彼岸维系度上限"
+ concept_time_shelter_maintenance_cap_desc: "现世与彼岸的维系效率并非无上限，这受我们的维系设施性能与彼岸的总体环境影响。\n\n['concept_time_shelter_maintenance']无法超过§Y$concept_time_shelter_maintenance_cap$§!"
+ 
+ # 位面之鳞
+ concept_dimensional_horror_damage_reduction: "位面之鳞"
+ concept_dimensional_horror_damage_reduction_desc: "位面之魇通体覆盖诡异的位面之鳞，其引发的时空扭曲可以为其抵御绝大多数受到的伤害。\n\n§Y$dimensional_horror_voidworms$§!会因$FE_DIFFICULTY$至多产生：\n$t$—$MOD_SHIP_DAMAGE_REDUCTION_MULT$：§G+10%§!\n\n§Y$dimensional_horror$§!会因$FE_DIFFICULTY$至多产生：\n$t$—$MOD_SHIP_DAMAGE_REDUCTION_MULT$：§G+25%§!\n\n§Y$dimensional_horror_crisis$§!会因$FE_DIFFICULTY$至多产生：\n$t$—$MOD_SHIP_DAMAGE_REDUCTION_MULT$：§G+50%§!\n\n§Y$dimensional_horror_destiny$§!会因$FE_DIFFICULTY$至多产生：\n$t$—$MOD_SHIP_DAMAGE_REDUCTION_MULT$：§G+100%§!\n\n§R该部件装配于位面之魇以外的舰船时不会产生上述效果！§!"
+ 
+ # 负相武器负面概率
+ concept_horror_weapon_debuff_chance: "负相武器负面概率"
+ concept_horror_weapon_debuff_chance_short: "概率"
+ concept_horror_weapon_debuff_chance_desc: "研究£physics ['concept_tech_horror_focus_1']科技后，绝大多数负相武器可以造成['concept_confusion']或['concept_terrify']，其施加负面效果的概率受到以下影响：\n$t$—拥有['concept_ap_horror']飞升：§G×2§!\n$t$—拥有['concept_ap_time']飞升：§G×1.5§!\n$t$—装配于['concept_biological_ship']或['concept_space_fauna']：§R×0.5§!"
+ 
+ # 特质
+ concept_wonder_country_species_trait: "预设国物种特质"
+ concept_wonder_country_species_trait_desc: "$concept_wonder_country_species_trait$是特定预设国专属的物种特质，无法被添加或移除。"
+ 
+ concept_time_ruler_trait_green: "§G$concept_time_ruler_trait$§!"
+ concept_time_ruler_trait_red: "§R$concept_time_ruler_trait$§!"
+ concept_time_ruler_trait: "起源统治者特质"
+ concept_time_ruler_trait_desc: "这是§H时与空§!模组起源专属的统治者§d命定特质§!，只有对应起源的§Y统治者§!或§Y继承人§!才可获取，并且仅作为§Y统治者§!时方可§G生效§!。\n\n此类特质的加成数值一般与§Y$MOD_LEADER_SKILL_ADD$§!、§Y$MOD_COUNCILOR_SKILL_ADD$§!、§Y$MOD_RULER_SKILL_ADD$§!有关。"
+ 
+ concept_time_node_trait_green: "§G$concept_time_node_trait$§!"
+ concept_time_node_trait_red: "§R$concept_time_node_trait$§!"
+ concept_time_node_trait: "起源节点特质"
+ concept_time_node_trait_desc: "这是§H时与空§!模组起源专属的节点§d命定特质§!，只有对应起源的§Y格式塔节点§!才可获取，并且仅作为§Y格式塔节点§!时方可§G生效§!。\n\n此类特质的加成数值一般与§Y有效节点技能等级§!、§Y$MOD_COUNCILOR_SKILL_ADD$§!有关。"
+ 
+ concept_time_inborn_legendary_trait: "§l传奇英杰专属特质§!"
+ concept_time_inborn_legendary_trait_desc: "这是§H时与空§!模组为所有§l传奇英杰§!（包含其它模组）添加的§d命定特质§!，但通过['concept_origin_legendary_worship']起源晋升而来的领袖并不会获得此特质。\n\n此特质的加成侧重与§Y领袖老练级§!有关，加成数值与§Y$MOD_LEADER_SKILL_ADD$§!有关，且['concept_origin_legendary_worship']起源会使此特质效果§G翻倍§!。"
+ 
+ concept_time_inborn_renowned_trait: "§r著名英杰专属特质§!"
+ concept_time_inborn_renowned_trait_desc: "这是§H时与空§!模组为所有§r著名英杰§!（包含其它模组）添加的§d命定特质§!，但通过['concept_origin_legendary_worship']起源晋升而来的领袖并不会获得此特质。\n\n此特质的加成侧重与§Y领袖老练级§!有关，加成数值与§Y$MOD_LEADER_SKILL_ADD$§!有关，且['concept_origin_legendary_worship']起源会使此特质效果§G翻倍§!。"
+ 
+ concept_akx_messenger_species_trait: "信使特质"
+ concept_akx_messenger_species_trait_desc: "信使也许是他们的先祖，或许是他们的未来，但无论如何，该物种已经接受了这一现实，并积极享受着信使血脉带来的优势。\n\n$concept_akx_messenger_species_trait$：\n$t$['concept_trait_akx_messenger']\n$t$['concept_trait_akx_waiting_world_all']"
+ 
+ concept_trait_akx_messenger: "$trait_akx_messenger$"
+ concept_trait_akx_messenger_with_icon: "£akx_messenger $trait_akx_messenger$"
+ 
+ concept_trait_akx_waiting_world: "$trait_akx_waiting_world$"
+ 
+ concept_trait_akx_waiting_world_robot: "$trait_akx_waiting_world_robot$"
+ 
+ concept_trait_akx_waiting_world_all: "$trait_akx_waiting_world$"
+ concept_trait_akx_waiting_world_all_desc: "有机物种：['concept_trait_akx_waiting_world']\n机械物种：['concept_trait_akx_waiting_world_robot']"
+ 
+ concept_tech_time_trait_purple: "§M负相特质§!"
+ concept_tech_time_trait: "负相特质"
+ concept_tech_time_trait_desc: "这是从负相位面与位面之魇逆向得到的独特基因与诡异组件，我们真的应该将它们应用于我们自身吗？\n\n$concept_tech_time_trait$：\n$t$['concept_trait_akx_low_dimensional_adaptor']\n$t$['concept_trait_akx_low_dimensional_adaptor_robot']\n$t$['concept_trait_akx_high_dimensional_extender']\n$t$['concept_trait_akx_high_dimensional_extender_robot']\n$t$['concept_trait_akx_spatial_entity']\n$t$['concept_trait_akx_spatial_entity_robot']\n$t$['concept_trait_akx_time_incorporeality']\n$t$['concept_trait_akx_time_incorporeality_robot']\n$t$['concept_trait_akx_concentrator']\n$t$['concept_trait_akx_concentrator_robot']\n$t$['concept_trait_akx_diffuser']\n$t$['concept_trait_akx_diffuser_robot']\n$t$['concept_trait_akx_spiritual_radiator']\n$t$['concept_trait_akx_spiritual_radiator_robot']\n$t$['concept_trait_akx_body_folder']\n$t$['concept_trait_akx_body_folder_robot']"
+ 
+ concept_trait_akx_low_dimensional_adaptor: "$trait_akx_low_dimensional_adaptor$"
+ concept_trait_akx_low_dimensional_adaptor_robot: "$trait_akx_low_dimensional_adaptor_robot$"
+ concept_trait_akx_high_dimensional_extender: "$trait_akx_high_dimensional_extender$"
+ concept_trait_akx_high_dimensional_extender_robot: "$trait_akx_high_dimensional_extender_robot$"
+ concept_trait_akx_spatial_entity: "$trait_akx_spatial_entity$"
+ concept_trait_akx_spatial_entity_robot: "$trait_akx_spatial_entity_robot$"
+ concept_trait_akx_time_incorporeality: "$trait_akx_time_incorporeality$"
+ concept_trait_akx_time_incorporeality_robot: "$trait_akx_time_incorporeality_robot$"
+ concept_trait_akx_concentrator: "$trait_akx_concentrator$"
+ concept_trait_akx_concentrator_robot: "$trait_akx_concentrator_robot$"
+ concept_trait_akx_diffuser: "$trait_akx_diffuser$"
+ concept_trait_akx_diffuser_robot: "$trait_akx_diffuser_robot$"
+ concept_trait_akx_spiritual_radiator: "$trait_akx_spiritual_radiator$"
+ concept_trait_akx_spiritual_radiator_robot: "$trait_akx_spiritual_radiator_robot$"
+ concept_trait_akx_body_folder: "$trait_akx_body_folder$"
+ concept_trait_akx_body_folder_robot: "$trait_akx_body_folder_robot$"
+ 
+ # 科技
+ concept_tech_horror_focus_1: "$tech_horror_focus_1$"
+ 
+ concept_tech_horror_focus_2: "$tech_horror_focus_2$"
+ 
+ # 传统
+ concept_tradition_horror: "$tradition_horror$"
+ 
+ concept_tradition_time: "$tradition_time$"
+ 
+ concept_tradition_end: "$tradition_end$"
+ 
+ concept_tradition_hope: "$tradition_hope$"
+ 
+ # 飞升
+ concept_ap_become_the_crisis: "$ap_become_the_crisis$"
+ 
+ concept_ap_cosmogenesis: "$ap_cosmogenesis$"
+ 
+ concept_ap_behemoths: "$ap_behemoths$"
+ 
+ concept_ap_galactic_hyperthermia: "$ap_galactic_hyperthermia$"
+ 
+ concept_ap_horror: "$ap_horror$"
+ 
+ concept_ap_time: "$ap_time$"
+ 
+ concept_ap_beyond_infinity: "$ap_beyond_infinity$"
+ 
+ # 飞升路线
+ concept_nanotech_ascension: "纳米飞升"
+ concept_nanotech_ascension_desc: "通过对纳米机器人的整合，就有可能成为吞噬整片星海的纳米虫群，一既是全。"
+ 
+ concept_modularity_ascension: "模组飞升"
+ concept_modularity_ascension_desc: "通过对部件更换协议的完善，就有可能了解机体运作的原理，并明白我们从何而来。"
+ 
+ concept_crisis_ascension: "天灾飞升"
+ concept_crisis_ascension_desc: "$concept_crisis_ascension$：\n—['concept_ap_become_the_crisis']\n—['concept_ap_cosmogenesis']\n—['concept_ap_behemoths']\n—['concept_ap_galactic_hyperthermia']"
+ 
+ # 修正
+ concept_building_akx_research_decay_white: "§W$concept_building_akx_research_decay$§!"
+ concept_building_akx_research_decay: "负相观测紊乱"
+ concept_building_akx_research_decay_desc: "同时对负相位面进行高频、大量的观测可能导致严重的负相紊乱，并阻碍我们对负相的深入。\n\n为了避免潜在的灾害，每个£building §Y$building_horror_research$系列建筑§!会平分对星球的加成。"
+ 
+ concept_building_akx_computer_decay_white: "§W$concept_building_akx_computer_decay$§!"
+ concept_building_akx_computer_decay: "负相干涉紊乱"
+ concept_building_akx_computer_decay_desc: "同时对负相位面进行高频、大量的干涉可能导致严重的负相紊乱，并阻碍我们对负相的深入。\n\n为了避免潜在的灾害，每个£building §Y$building_horror_computer$系列建筑§!会平分对星球的加成。"
+ 
+ concept_building_akx_monument_decay_white: "§W$concept_building_akx_monument_decay$§!"
+ concept_building_akx_monument_decay: "负相记忆紊乱"
+ concept_building_akx_monument_decay_desc: "同时对负相位面进行高频、大量的记忆可能导致严重的负相紊乱，并阻碍我们对负相的深入。\n\n为了避免潜在的灾害，每个£building §Y$building_horror_monument$系列建筑§!会平分对星球的加成。"
+ 
+ concept_building_akx_forecast_decay_white: "§W$concept_building_akx_forecast_decay$§!"
+ concept_building_akx_forecast_decay: "负相感知紊乱"
+ concept_building_akx_forecast_decay_desc: "同时对负相位面进行高频、大量的感知可能导致严重的负相紊乱，并阻碍我们对负相的深入。\n\n为了避免潜在的灾害，每个£building §Y$building_horror_forecast$系列建筑§!会平分对星球的加成。"
+ 
+ # 地块
+ concept_time_gaia_deposit: "盖亚世界专属特征"
+ concept_time_gaia_deposit_desc: "这是盖亚世界专属的行星特征，所有盖亚星球都会随机拥有其中之一，且会因§Y$ap_world_shaper$§!提供额外加成。\n\n$concept_time_gaia_deposit$：\n—['concept_d_time_gaia_energy']\n—['concept_d_time_gaia_minerals']\n—['concept_d_time_gaia_food']"
+ 
+ concept_d_time_gaia_energy: "$d_time_gaia_energy$"
+ concept_d_time_gaia_energy_desc: "—$mod_district_generator_max_add$：§G+5§!\n—$mod_district_generator_max_mult$：§G+50%§!\n—$mod_job_technician_max_workforce_mult$：§G+50%§!\n—每$PLANET_SIZE$导致:\n$tt$—$mod_country_energy_produces_mult$：§G+2%§!\n$tt$—$mod_country_physics_research_produces_mult$：§G+1%§!\n—$ap_world_shaper$导致:\n$tt$—$mod_planet_technician_energy_produces_add$：§G+2§!\n$tt$—$mod_planet_technician_physics_research_produces_add$：§G+1§!\n$tt$—$mod_planet_technician_volatile_motes_produces_add$：§G+0.5§!\n$tt$—$mod_district_generator_max_add$：§G+5§!\n$tt$—$mod_district_generator_max_mult$：§G+50%§!\n$tt$—$mod_job_technician_max_workforce_mult$：§G+50%§!\n$h_line$§L$d_time_gaia_energy_desc$§!"
+ 
+ concept_d_time_gaia_minerals: "$d_time_gaia_minerals$"
+ concept_d_time_gaia_minerals_desc: "—$mod_district_mining_max_add$：§G+5§!\n—$mod_district_mining_max_mult$：§G+50%§!\n—$mod_job_miner_max_workforce_mult$：§G+50%§!\n—每$PLANET_SIZE$导致:\n$tt$—$mod_country_minerals_produces_mult$：§G+2%§!\n$tt$—$mod_country_engineering_research_produces_mult$：§G+1%§!\n—$ap_world_shaper$导致:\n$tt$—$mod_planet_miners_minerals_produces_add$：§G+2§!\n$tt$—$mod_planet_miners_engineering_research_produces_add$：§G+1§!\n$tt$—$mod_planet_miners_rare_crystals_produces_add$：§G+0.5§!\n$tt$—$mod_district_mining_max_add$：§G+5§!\n$tt$—$mod_district_mining_max_mult$：§G+50%§!\n$tt$—$mod_job_miner_max_workforce_mult$：§G+50%§!\n$h_line$§L$d_time_gaia_minerals_desc$§!"
+ 
+ concept_d_time_gaia_food: "$d_time_gaia_food$"
+ concept_d_time_gaia_food_desc: "—$mod_district_farming_max_add$：§G+5§!\n—$mod_district_farming_max_mult$：§G+50%§!\n—$mod_job_farmer_max_workforce_mult$：§G+50%§!\n—每$PLANET_SIZE$导致:\n$tt$—$mod_country_food_produces_mult$：§G+2%§!\n$tt$—$mod_country_society_research_produces_mult$：§G+1%§!\n—$ap_world_shaper$导致:\n$tt$—$mod_planet_farmers_food_produces_add$：§G+2§!\n$tt$—$mod_planet_farmers_society_research_produces_add$：§G+1§!\n$tt$—$mod_planet_farmers_exotic_gases_produces_add$：§G+0.5§!\n$tt$—$mod_district_farming_max_add$：§G+5§!\n$tt$—$mod_district_farming_max_mult$：§G+50%§!\n$tt$—$mod_job_farmer_max_workforce_mult$：§G+50%§!\n$h_line$§L$d_time_gaia_food_desc$§!"
+ 
+ # 星球类型
+ concept_pc_hive: "$pc_hive$"
+ concept_pc_hive_desc: "—$trait_hive_mind$人口宜居性：§Y100%§!\n—$mod_planet_jobs_produces_mult$：§G+10%§!\n—$MOD_PLANET_RESETTLEMENT_UNEMPLOYED_DESTINATION_MULT$：§G+50%§!\n—['concept_generator_district', £district $district_generator$]、['concept_mining_district', £district $district_mining$]、['concept_farming_district', £district $district_farming$]数量不受限制\n\n§L$pc_hive_desc$§!"
+ 
+ concept_pc_time: "$pc_time$"
+ concept_pc_time_desc: "—['concept_trait_time']人口宜居性：§Y100%§!\n—$mod_country_produces_mult$：§R-50%§!\n—$MOD_POP_BONUS_WORKFORCE_MULT$：§R-50%§!\n—$MOD_LOGISTIC_GROWTH_MULT$：§R-50%§!\n—$MOD_BONUS_POP_GROWTH_MULT$：§R-50%§!\n—$MOD_PLANET_POP_ASSEMBLY_MULT$：§R-50%§!\n—$mod_pop_ethic_materialist_attraction_mult$：§G+50%§!\n—$MOD_PLANET_STORM_DEVASTATION_MULT$：§G-50%§!\n—$MOD_PLANET_ORBITAL_BOMBARDMENT_DAMAGE$：§G-100%§!\n—可以提供专属的['concept_black_hole_physicist']、['concept_black_hole_biologist']、['concept_black_hole_engineer']岗位生产资源\n\n§L$pc_time_desc$§!"
+ 
+ concept_pc_endless_time: "$pc_endless_time$"
+ concept_pc_endless_time_desc: "—['concept_trait_time']人口宜居性：§Y100%§!\n—$MOD_PLANET_MAX_DISTRICTS_ADD$：§G+5§!\n—$mod_pop_ethic_materialist_attraction_mult$：§G+100%§!\n—$MOD_PLANET_STORM_DEVASTATION_MULT$：§G-100%§!\n—$MOD_PLANET_ORBITAL_BOMBARDMENT_DAMAGE$：§G-200%§!\n—$MOD_PLANET_CARRY_CAP_ADD$：§G+1000000§!\n—可以提供专属的['concept_time_recursioner']岗位生产资源\n\n§L$pc_endless_time_desc$§!"
+ 
+ concept_pc_gas_colony: "$pc_gas_colony$"
+ concept_pc_gas_colony_desc: "—['concept_trait_origin_gas_colony']人口宜居性：§Y100%§!\n—$MOD_PLANET_MAX_DISTRICTS_MULT$：§G+50%§!\n—$mod_planet_jobs_worker_produces_mult$：§G+20%§!\n—$mod_planet_pops_upkeep_mult$：§G-10%§!\n—$MOD_PLANET_STORM_DEVASTATION_MULT$：§G-25%§!\n—$MOD_PLANET_ORBITAL_BOMBARDMENT_DAMAGE$：§G-50%§!\n—可以提供专属的['concept_gas_technician']、['concept_gas_miner']、['concept_gas_farmer']或['concept_gas_technician_drone']、['concept_gas_mining_drone']、['concept_gas_agri_drone']岗位生产资源\n\n§L$pc_gas_colony_desc$§!"
+ 
+ concept_pc_psionic: "$pc_psionic$"
+ concept_pc_psionic_desc: "—['concept_trait_origin_psionic']人口宜居性：§Y100%§!\n—$mod_planet_jobs_specialist_produces_mult$：§G+20%§!\n—$MOD_POP_AMENITIES_USAGE_MULT$：§G-10%§!\n—$MOD_PLANET_STORM_DEVASTATION_MULT$：§G-50%§!\n—$MOD_PLANET_ORBITAL_BOMBARDMENT_DAMAGE$：§G-100%§!\n—可以提供专属的['concept_psionic_trader']、['concept_psionic_technician']、['concept_psionic_miner']、['concept_psionic_farmer']岗位生产资源\n\n§L$pc_psionic_desc$§!"
+ 
+ concept_pc_nanites: "$pc_nanites$"
+ concept_pc_nanites_desc: "—['concept_trait_origin_nanites']人口宜居性：§Y100%§!\n—$mod_planet_jobs_produces_mult$：§G+10%§!\n—$MOD_POP_HOUSING_USAGE_MULT$：§G-10%§!\n—$MOD_PLANET_STORM_DEVASTATION_MULT$：§G-25%§!\n—$MOD_PLANET_ORBITAL_BOMBARDMENT_DAMAGE$：§G-50%§!\n—可以提供专属的['concept_nanites_logistics_drone']岗位生产资源\n\n§L$pc_nanites_desc$§!"
+ 
+ concept_pc_time_ruin_cosmogenesis_world: "$pc_time_ruin_cosmogenesis_world$"
+ concept_pc_time_ruin_cosmogenesis_world_desc: "—$MOD_PLANET_MAX_DISTRICTS_ADD$：§G+4§!\n—$MOD_LOGISTIC_GROWTH_MULT$：§R-25%§!\n—$MOD_BONUS_POP_GROWTH_MULT$：§R-25%§!\n—拥有专属的区划、特化与建筑，可被修复为§Y$pc_cosmogenesis_world$§!\n\n§L$pc_time_ruin_cosmogenesis_world_desc$§!"
+ 
+ concept_pc_flood: "$pc_flood$"
+ concept_pc_flood_desc: "—§R不可殖民§!\n—可以环境改造为$pc_ocean$\n\n§L$pc_flood_desc$§!"
+ 
+ concept_pc_city: "$pc_city$"
+ concept_pc_city_desc: "—人口宜居性：§Y100%§!\n—$mod_planet_jobs_produces_mult$：§G+20%§!\n—$MOD_LOGISTIC_GROWTH_MULT$：§G+15%§!\n—$MOD_PLANET_POP_ASSEMBLY_MULT$：§G+15%§!\n—$MOD_BONUS_POP_GROWTH_MULT$：§G+15%§!\n—$MOD_PLANET_RESETTLEMENT_UNEMPLOYED_DESTINATION_MULT$：§G+50%§!\n\n§L$pc_city_desc$§!"
+ 
+ # 星系类型
+ concept_sc_bright_pearl: "$sc_bright_pearl$"
+ concept_sc_bright_pearl_desc: "—$MOD_SHIP_DISENGAGE_CHANCE_REDUCTION$：§R+50%§!\n—$MOD_SHIP_EMERGENCY_FTL_MIN_DAYS_MULT$：§R+50%§!\n—$MOD_SHIP_SPEED_REDUCTION$：§R+50%§!\n—$MOD_SHIP_SHIELD_REDUCTION$：§R+100%§!\n—$MOD_SHIP_ARMOR_REDUCTION$：§R+100%§!\n—星系中存在大量§Y废弃巨构§!，但该星系的拥有者将受到全银河的§R觊觎§!\n\n§L$sc_bright_pearl_desc$§!"
+ 
+ concept_sc_black_hole: "$sc_black_hole$星系"
+ concept_sc_black_hole_desc: "—$MOD_SHIP_DISENGAGE_CHANCE_REDUCTION$：§R+50%§!\n—$MOD_SHIP_EMERGENCY_FTL_MIN_DAYS_MULT$：§R+50%§!\n\n§L$sc_black_hole_desc$§!"
+ 
+ concept_sc_pulsar: "$sc_pulsar$星系"
+ concept_sc_pulsar_desc: "—$MOD_SHIP_SHIELD_REDUCTION$：§R+100%§!\n\n§L$sc_pulsar_desc$§!"
+ 
+ concept_sc_neutron_star: "$sc_neutron_star$星系"
+ concept_sc_neutron_star_desc: "—$MOD_SHIP_SPEED_REDUCTION$：§R+50%§!\n\n§L$sc_neutron_star_desc$§!"
+ 
+ concept_sc_time_white_hole: "$sc_time_white_hole$星系"
+ concept_sc_time_white_hole_desc: "—$MOD_SHIP_ARMOR_REDUCTION$：§R+100%§!\n\n§L$sc_time_white_hole_desc$§!"
+ 

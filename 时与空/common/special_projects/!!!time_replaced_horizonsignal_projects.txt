@@ -1,0 +1,135 @@
+# 将特殊项目纳入事件链
+special_project = {
+	key = "HORIZON_DEBRIS_PROJECT"
+	#cost = 0
+	days_to_research = 40
+	tech_department = engineering_technology
+	picture = GFX_evt_debris
+	icon = "gfx/interface/icons/situation_log/situation_log_quest.dds"
+	event_chain = WORM_CHAIN_1
+
+	event_scope = ship_event
+
+	requirements = {
+		shipclass_science_ship = 1
+		leader = scientist
+		#skill = 2
+	}
+
+	on_success = {
+		ship_event = { id = akx.9095 }
+	}
+
+	on_fail = {
+	}
+}
+
+special_project = {
+	key = "LOOP_TEMPLE_PROJECT"
+	cost = 1000
+	#days_to_research = 200
+	tech_department = society_technology
+	picture = GFX_evt_medieval_alien_civilization
+	icon = "gfx/interface/icons/situation_log/situation_log_quest.dds"
+	event_chain = WORM_CHAIN_1
+	location = no
+
+	event_scope = planet_event
+
+	requirements = {
+	}
+
+	on_success = {
+		carrier_event = { id = akx.9101 }
+	}
+
+	on_fail = {
+	}
+}
+# 将特殊项目纳入事件链
+
+special_project = {
+	key = "COILS_GOD_PROJECT_DISRUPT"
+	#cost = 0
+	days_to_research = 10 # 避免时间过短，舰船未抵达轨道就完成，导致丢失scope
+	tech_department = society_technology
+	timelimit = 1080
+	picture = GFX_evt_alien_city
+	icon = "gfx/interface/icons/situation_log/situation_log_quest.dds"
+
+	event_scope = ship_event
+
+	requirements = {
+		leader = scientist
+		shipclass_science_ship = 1
+	}
+
+	on_success = {
+		owner = {
+			random_list = {
+				75 = { country_event = { id = akx.9460 } }
+				25 = { country_event = { id = akx.9465 } }
+			}
+		}
+	}
+
+	on_fail = {
+		country_event = { id = akx.9490 }
+	}
+}
+
+
+special_project = {
+	key = "COILS_GOD_PROJECT_PREVENT"
+	#cost = 0
+	days_to_research = 10 # 避免时间过短，舰船未抵达轨道就完成，导致丢失scope
+	tech_department = society_technology
+	timelimit = 1080
+	picture = GFX_evt_alien_city
+	icon = "gfx/interface/icons/situation_log/situation_log_quest.dds"
+
+	event_scope = ship_event
+
+	requirements = {
+		shipclass_transport = 1
+	}
+
+	on_success = {
+		owner = {
+			country_event = { id = akx.9470 }
+		}
+	}
+
+	on_fail = {
+		country_event = { id = akx.9490 }
+	}
+}
+
+
+special_project = {
+	key = "COILS_GOD_PROJECT_PARTICIPATE"
+	#cost = 0
+	days_to_research = 10 # 避免时间过短，舰船未抵达轨道就完成，导致丢失scope
+	tech_department = society_technology
+	timelimit = 1080
+	picture = GFX_evt_alien_city
+	icon = "gfx/interface/icons/situation_log/situation_log_quest.dds"
+
+	event_scope = ship_event
+
+	requirements = {
+		leader = scientist
+		shipclass_science_ship = 1
+		# 原版项目为运输船，但根据akx.9480事件中杀死科学家的代码和事件文本来判断，此处是蠢驴写错，应为科学家和科研船
+	}
+
+	on_success = {
+		owner = {
+			country_event = { id = akx.9480 }
+		}
+	}
+
+	on_fail = {
+		country_event = { id = akx.9490 }
+	}
+}

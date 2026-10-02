@@ -1,0 +1,609 @@
+district_time = {
+	overlay_icon = GFX_district_government
+	base_buildtime = 360
+	exempt_from_ai_planet_specialization = yes
+	
+	custom_gui = planet_district_time_entry
+
+	zone_slots = {
+		slot_time_0
+		slot_time_1
+		slot_time_2
+	}
+	
+	show_on_uncolonized = {
+		OR = {
+			is_planet_class = pc_time
+			is_planet_class = pc_time_replace # 以防万一
+		}
+	}
+	
+	potential = {
+		OR = {
+			is_planet_class = pc_time
+			is_planet_class = pc_time_replace # 以防万一
+		}
+		NAND = {
+			is_capital = yes
+			owner = {
+				has_menace_perk = menp_behemoth_mind_meld
+			}
+		}
+	}
+
+	conversion_ratio = 1
+	convert_to = {
+		district_endless_time
+		district_mindlink
+		district_ark_city
+	}
+	
+	resources = {
+		category = planet_districts_time
+		cost = {
+			energy = 500
+			minerals = 500
+			food = 500
+			consumer_goods = 250
+			alloys = 250
+			sr_dark_matter = 25
+		}
+		upkeep = {
+			rare_crystals = 1
+			exotic_gases = 1
+			volatile_motes = 1
+		}
+	}
+	
+	# 通用
+	planet_modifier = {
+		building_time_mult = -0.01
+	}
+	
+	# 主区划
+	triggered_planet_modifier = {
+		planet_housing_add = @district_time_base_housing
+		district_time_usage_cap = @district_time_base_usage_cap
+		mult = value:district_time_level_value
+	}
+	
+	triggered_desc = {
+		text = district_time_effect
+	}
+	
+	prerequisites = {
+		tech_mine_dark_matter
+	}
+	
+	show_tech_unlock_if = {
+		any_owned_colony = {
+			is_planet_class = pc_time
+		}
+	}
+	
+	inline_script = {
+		script = districts/district_time_triggered_name
+	}
+	
+	inline_script = {
+		script = districts/ai_urban_district_extra_weighting
+	}
+}
+
+district_endless_time = {
+	overlay_icon = GFX_district_government
+	base_buildtime = 2147483648
+	can_demolish = no
+	exempt_from_ai_planet_specialization = yes
+	shared_capacity_modifier = district_endless_time
+	is_uncapped = { always = no }
+	
+	custom_gui = planet_district_time_entry
+	
+	zone_slots = {
+		slot_time_0
+		slot_time_1
+		slot_time_2
+	}
+	
+	show_on_uncolonized = {
+		is_planet_class = pc_endless_time
+	}
+	
+	potential = {
+		is_planet_class = pc_endless_time
+		NAND = {
+			is_capital = yes
+			owner = {
+				has_menace_perk = menp_behemoth_mind_meld
+			}
+		}
+	}
+
+	conversion_ratio = 1
+	convert_to = {
+		district_time
+		district_mindlink
+		district_ark_city
+	}
+	
+	resources = {
+		category = planet_districts_endless_time
+		cost = {
+			energy = 2147483648
+			minerals = 2147483648
+			food = 2147483648
+			consumer_goods = 2147483648
+			alloys = 2147483648
+			trade = 2147483648
+			influence = 2147483648
+			unity = 2147483648
+			physics_research = 2147483648
+			society_research = 2147483648
+			engineering_research = 2147483648
+			rare_crystals = 2147483648
+			exotic_gases = 2147483648
+			volatile_motes = 2147483648
+			sr_living_metal = 2147483648
+			sr_zro = 2147483648
+			sr_dark_matter = 2147483648
+			nanites = 2147483648
+			astral_threads = 2147483648
+			minor_artifacts = 2147483648
+			biomass = 2147483648
+			menace = 2147483648
+			integrity = 2147483648
+			advanced_logic = 2147483648
+			feral_insight = 2147483648
+			entropy_crystals = 2147483648
+			beyond_infinity_time = 2147483648
+		}
+		upkeep = {
+			rare_crystals = 0.1
+			exotic_gases = 0.1
+			volatile_motes = 0.1
+			mult = value:num_time_recursioner
+		}
+	}
+	
+	planet_modifier = {
+		planet_housing_add = 1000000
+		planet_amenities_add = 1000000
+		planet_resettlement_unemployed_destination_mult = 100
+		building_time_mult = -100
+	}
+	
+	triggered_planet_modifier = {
+		district_time_usage_cap = @district_endless_time_base_usage_cap
+		mult = value:district_time_level_value
+	}
+
+	triggered_desc = {
+		trigger = {
+			exists = owner
+			owner = { is_gestalt = no }
+		}
+		text = district_endless_time_effect
+	}
+
+	triggered_desc = {
+		trigger = {
+			exists = owner
+			owner = { is_gestalt = yes }
+		}
+		text = district_endless_time_gestalt_effect
+	}
+	
+	prerequisites = {
+		tech_akx_worm_1
+		tech_akx_worm_2
+		tech_akx_worm_3
+	}
+	
+	show_tech_unlock_if = {
+		any_owned_colony = {
+			is_planet_class = pc_endless_time
+		}
+	}
+	
+	ai_weight = {
+		weight = 0
+	}
+	
+	inline_script = {
+		script = districts/district_time_triggered_name
+	}
+	
+	inline_script = {
+		script = districts/ai_urban_district_extra_weighting
+	}
+}
+
+district_time_physics = {
+	overlay_icon = GFX_district_physics
+	base_buildtime = 360
+	exempt_from_ai_planet_specialization = yes
+
+	zone_slots = {
+		slot_time_physics
+	}
+	
+	show_on_uncolonized = {
+		is_planet_class = pc_time
+	}
+	
+	potential = {
+		is_planet_class = pc_time
+	}
+
+	conversion_ratio = 1
+	convert_to = {
+		district_endless_time_physics
+		district_ark_generator
+	}
+	
+	resources = {
+		category = planet_districts_time_physics
+		cost = {
+			energy = 500
+			minerals = 500
+			food = 500
+			consumer_goods = 250
+			alloys = 250
+			sr_dark_matter = 25
+		}
+		upkeep = {
+			rare_crystals = 2
+		}
+	}
+	
+	inline_script = {
+		script = districts/district_time_rural_modifier
+		JOB = black_hole_physicist
+	}
+	
+	triggered_desc = {
+		text = district_time_physics_effect
+	}
+	
+	prerequisites = {
+		tech_power_plant_1
+	}
+	
+	show_tech_unlock_if = {
+		any_owned_colony = {
+			is_planet_class = pc_time
+		}
+	}
+	
+	inline_script = {
+		script = districts/district_time_physics_triggered_name
+	}
+}
+
+district_endless_time_physics = {
+	icon = district_time_physics
+	overlay_icon = GFX_district_physics
+	base_buildtime = 3600
+	exempt_from_ai_planet_specialization = yes
+
+	zone_slots = {
+		slot_time_physics
+	}
+	
+	show_on_uncolonized = {
+		is_planet_class = pc_endless_time
+	}
+	
+	potential = {
+		is_planet_class = pc_endless_time
+	}
+
+	conversion_ratio = 1
+	convert_to = {
+		district_time_physics
+		district_ark_generator
+	}
+	
+	resources = {
+		category = planet_districts_endless_time_physics
+		cost = {
+			energy = 10000
+			minerals = 10000
+			food = 10000
+			consumer_goods = 5000
+			alloys = 5000
+			sr_dark_matter = 500
+			astral_threads = 250
+			influence = 250
+		}
+		upkeep = {
+			rare_crystals = 20
+		}
+	}
+	
+	inline_script = {
+		script = districts/district_endless_time_rural_modifier
+		RESOURCE_1 = energy
+		RESOURCE_2 = consumer_goods
+		RESOURCE_3 = physics_research
+	}
+	
+	triggered_desc = {
+		text = district_time_physics_effect
+	}
+	
+	prerequisites = {
+		tech_akx_worm_3
+	}
+	
+	show_tech_unlock_if = {
+		any_owned_colony = {
+			is_planet_class = pc_endless_time
+		}
+	}
+	
+	inline_script = {
+		script = districts/district_time_physics_triggered_name
+	}
+}
+
+district_time_society = {
+	overlay_icon = GFX_district_society
+	base_buildtime = 360
+	exempt_from_ai_planet_specialization = yes
+
+	zone_slots = {
+		slot_time_society
+	}
+	
+	show_on_uncolonized = {
+		is_planet_class = pc_time
+	}
+	
+	potential = {
+		is_planet_class = pc_time
+	}
+
+	conversion_ratio = 1
+	convert_to = {
+		district_endless_time_society
+		district_ark_military
+		district_ark_forever_cruise
+	}
+	
+	resources = {
+		category = planet_districts_time_society
+		cost = {
+			energy = 500
+			minerals = 500
+			food = 500
+			consumer_goods = 250
+			alloys = 250
+			sr_dark_matter = 25
+		}
+		upkeep = {
+			exotic_gases = 2
+		}
+	}
+	
+	inline_script = {
+		script = districts/district_time_rural_modifier
+		JOB = black_hole_biologist
+	}
+	
+	triggered_desc = {
+		text = district_time_society_effect
+	}
+	
+	prerequisites = {
+		tech_industrial_farming
+	}
+	
+	show_tech_unlock_if = {
+		any_owned_colony = {
+			is_planet_class = pc_time
+		}
+	}
+	
+	inline_script = {
+		script = districts/district_time_society_triggered_name
+	}
+}
+
+district_endless_time_society = {
+	icon = district_time_society
+	overlay_icon = GFX_district_society
+	base_buildtime = 3600
+	exempt_from_ai_planet_specialization = yes
+
+	zone_slots = {
+		slot_time_society
+	}
+	
+	show_on_uncolonized = {
+		is_planet_class = pc_endless_time
+	}
+	
+	potential = {
+		is_planet_class = pc_endless_time
+	}
+
+	conversion_ratio = 1
+	convert_to = {
+		district_time_society
+		district_ark_military
+		district_ark_forever_cruise
+	}
+	
+	resources = {
+		category = planet_districts_endless_time_society
+		cost = {
+			energy = 10000
+			minerals = 10000
+			food = 10000
+			consumer_goods = 5000
+			alloys = 5000
+			sr_dark_matter = 500
+			astral_threads = 250
+			influence = 250
+		}
+		upkeep = {
+			exotic_gases = 20
+		}
+	}
+	
+	inline_script = {
+		script = districts/district_endless_time_rural_modifier
+		RESOURCE_1 = food
+		RESOURCE_2 = unity
+		RESOURCE_3 = society_research
+	}
+	
+	triggered_desc = {
+		text = district_time_society_effect
+	}
+	
+	prerequisites = {
+		tech_akx_worm_2
+	}
+	
+	show_tech_unlock_if = {
+		any_owned_colony = {
+			is_planet_class = pc_endless_time
+		}
+	}
+	
+	inline_script = {
+		script = districts/district_time_society_triggered_name
+	}
+}
+
+district_time_engineering = {
+	overlay_icon = GFX_district_engineering
+	base_buildtime = 360
+	exempt_from_ai_planet_specialization = yes
+
+	zone_slots = {
+		slot_time_engineering
+	}
+	
+	show_on_uncolonized = {
+		is_planet_class = pc_time
+	}
+	
+	potential = {
+		is_planet_class = pc_time
+	}
+
+	conversion_ratio = 1
+	convert_to = {
+		district_endless_time_engineering
+		district_ark_basic
+	}
+	
+	resources = {
+		category = planet_districts_time_engineering
+		cost = {
+			energy = 500
+			minerals = 500
+			food = 500
+			consumer_goods = 250
+			alloys = 250
+			sr_dark_matter = 25
+		}
+		upkeep = {
+			volatile_motes = 2
+		}
+	}
+	
+	inline_script = {
+		script = districts/district_time_rural_modifier
+		JOB = black_hole_engineer
+	}
+	
+	triggered_desc = {
+		text = district_time_engineering_effect
+	}
+	
+	prerequisites = {
+		tech_mechanized_mining
+	}
+	
+	show_tech_unlock_if = {
+		any_owned_colony = {
+			is_planet_class = pc_time
+		}
+	}
+	
+	inline_script = {
+		script = districts/district_time_engineering_triggered_name
+	}
+}
+
+district_endless_time_engineering = {
+	icon = district_time_engineering
+	overlay_icon = GFX_district_engineering
+	base_buildtime = 3600
+	exempt_from_ai_planet_specialization = yes
+
+	zone_slots = {
+		slot_time_engineering
+	}
+	
+	show_on_uncolonized = {
+		is_planet_class = pc_endless_time
+	}
+	
+	potential = {
+		is_planet_class = pc_endless_time
+	}
+
+	conversion_ratio = 1
+	convert_to = {
+		district_time_engineering
+		district_ark_basic
+	}
+	
+	resources = {
+		category = planet_districts_endless_time_engineering
+		cost = {
+			energy = 10000
+			minerals = 10000
+			food = 10000
+			consumer_goods = 5000
+			alloys = 5000
+			sr_dark_matter = 500
+			astral_threads = 250
+			influence = 250
+		}
+		upkeep = {
+			volatile_motes = 20
+		}
+	}
+	
+	inline_script = {
+		script = districts/district_endless_time_rural_modifier
+		RESOURCE_1 = minerals
+		RESOURCE_2 = alloys
+		RESOURCE_3 = engineering_research
+	}
+	
+	triggered_desc = {
+		text = district_time_engineering_effect
+	}
+	
+	prerequisites = {
+		tech_akx_worm_1
+	}
+	
+	show_tech_unlock_if = {
+		any_owned_colony = {
+			is_planet_class = pc_endless_time
+		}
+	}
+	
+	inline_script = {
+		script = districts/district_time_engineering_triggered_name
+	}
+}

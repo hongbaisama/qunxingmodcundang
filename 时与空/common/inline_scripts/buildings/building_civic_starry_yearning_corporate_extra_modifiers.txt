@@ -1,0 +1,209 @@
+triggered_planet_modifier = {
+	potential = {
+		solar_system = {
+			any_system_planet = {
+				is_star = yes
+				is_planet_class = pc_b_star
+			}
+		}
+	}
+	planet_engineers_trade_produces_add = 1.5
+	planet_engineers_consumer_goods_upkeep_add = 1
+	job_engineer_add = 300
+	mult = $MULT$
+}
+
+triggered_planet_modifier = {
+	potential = {
+		solar_system = {
+			any_system_planet = {
+				is_star = yes
+				is_planet_class = pc_a_star
+			}
+		}
+	}
+	planet_engineers_trade_produces_add = 1.5
+	planet_engineers_consumer_goods_upkeep_add = 1
+	job_engineer_add = 300
+	mult = $MULT$
+}
+
+triggered_planet_modifier = {
+	potential = {
+		solar_system = {
+			any_system_planet = {
+				is_star = yes
+				is_planet_class = pc_f_star
+			}
+		}
+	}
+	planet_biologists_trade_produces_add = 1.5
+	planet_biologists_consumer_goods_upkeep_add = 1
+	job_biologist_add = 300
+	mult = $MULT$
+}
+
+triggered_planet_modifier = {
+	potential = {
+		solar_system = {
+			any_system_planet = {
+				is_star = yes
+				is_planet_class = pc_g_star
+			}
+		}
+	}
+	planet_physicists_trade_produces_add = 1.5
+	planet_physicists_consumer_goods_upkeep_add = 1
+	job_physicist_add = 300
+	mult = $MULT$
+}
+
+triggered_planet_modifier = {
+	potential = {
+		solar_system = {
+			any_system_planet = {
+				is_star = yes
+				is_planet_class = pc_k_star
+			}
+		}
+	}
+	planet_engineers_trade_produces_add = 1.5
+	planet_engineers_consumer_goods_upkeep_add = 1
+	job_engineer_add = 300
+	mult = $MULT$
+}
+
+triggered_planet_modifier = {
+	potential = {
+		solar_system = {
+			any_system_planet = {
+				is_star = yes
+				is_planet_class = pc_m_star
+			}
+		}
+	}
+	planet_engineers_trade_produces_add = 1.5
+	planet_engineers_consumer_goods_upkeep_add = 1
+	job_engineer_add = 300
+	mult = $MULT$
+}
+
+triggered_planet_modifier = {
+	potential = {
+		solar_system = {
+			any_system_planet = {
+				is_star = yes
+				is_planet_class = pc_m_giant_star
+			}
+		}
+	}
+	planet_engineers_trade_produces_add = 1.5
+	planet_engineers_consumer_goods_upkeep_add = 1
+	job_engineer_add = 300
+	mult = $MULT$
+}
+
+triggered_planet_modifier = {
+	potential = {
+		solar_system = {
+			any_system_planet = {
+				is_star = yes
+				is_planet_class = pc_t_star
+			}
+		}
+	}
+	planet_physicists_trade_produces_add = 1.5
+	planet_physicists_consumer_goods_upkeep_add = 1
+	job_physicist_add = 300
+	mult = $MULT$
+}
+
+triggered_planet_modifier = {
+	potential = {
+		solar_system = {
+			any_system_planet = {
+				is_star = yes
+				is_planet_class = pc_pulsar
+			}
+		}
+	}
+	planet_biologists_trade_produces_add = 1.5
+	planet_biologists_consumer_goods_upkeep_add = 1
+	job_biologist_add = 300
+	mult = $MULT$
+}
+
+triggered_planet_modifier = {
+	potential = {
+		solar_system = {
+			any_system_planet = {
+				is_star = yes
+				is_time_black_hole_planet_class = yes
+			}
+		}
+	}
+	planet_physicists_trade_produces_add = 1.5
+	planet_physicists_consumer_goods_upkeep_add = 1
+	job_physicist_add = 300
+	mult = $MULT$
+}
+
+triggered_planet_modifier = {
+	potential = {
+		solar_system = {
+			any_system_planet = {
+				is_star = yes
+				is_planet_class = pc_neutron_star
+			}
+		}
+	}
+	planet_engineers_trade_produces_add = 1.5
+	planet_engineers_consumer_goods_upkeep_add = 1
+	job_engineer_add = 300
+	mult = $MULT$
+}
+
+triggered_planet_modifier = {
+	potential = {
+		solar_system = {
+			any_system_planet = {
+				is_star = yes
+				is_planet_class = pc_toxoid_star
+			}
+		}
+	}
+	planet_biologists_trade_produces_add = 1.5
+	planet_biologists_consumer_goods_upkeep_add = 1
+	job_biologist_add = 300
+	mult = $MULT$
+}
+
+triggered_planet_modifier = {
+	potential = {
+		solar_system = {
+			any_system_planet = {
+				is_star = yes
+				is_planet_class = pc_rift_star
+			}
+		}
+	}
+	planet_physicists_trade_produces_add = 1.5
+	planet_physicists_consumer_goods_upkeep_add = 1
+	job_physicist_add = 300
+	mult = $MULT$
+}
+
+triggered_planet_modifier = {
+	potential = {
+		solar_system = {
+			any_system_planet = {
+				is_star = yes
+				is_time_white_hole_planet_class = yes
+			}
+		}
+	}
+	planet_biologists_trade_produces_add = 1.5
+	planet_biologists_consumer_goods_upkeep_add = 1
+	job_biologist_add = 300
+	mult = $MULT$
+}

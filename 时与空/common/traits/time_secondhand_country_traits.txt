@@ -1,0 +1,523 @@
+trait_old_refrigerator = {
+	cost = 1
+	inline_script = "trait/allowed_archetypes/time_archetypes_robotic"
+	allowed_origins = { origin_secondhand_country }
+	localized_tags = {
+		SPECIES_TRAIT_ORIGIN_SECONDHAND_COUNTRY
+	}
+	tags = { machine positive habitability leader upkeep special }
+	randomized = no
+	inline_script = "trait/modification_condition/time_secondhand_country_trait"
+	custom_tooltip_with_modifiers = trait_old_refrigerator_tooltip
+	triggered_planet_growth_habitability_modifier = {
+		potential = {
+			exists = fromfrom
+			fromfrom = { NOT = { has_edict = secondhand_country_edict } }
+		}
+		pop_environment_tolerance = 0.2
+	}
+	triggered_planet_growth_habitability_modifier = {
+		potential = {
+			exists = fromfrom
+			fromfrom = { has_edict = secondhand_country_edict }
+		}
+		pop_environment_tolerance = 0.4
+	}
+	modifier = {
+		leader_lifespan_add = -10
+	}
+	slave_cost = {
+		trade = 1000
+	}
+}
+
+trait_old_microwave_oven = {
+	cost = 1
+	inline_script = "trait/allowed_archetypes/time_archetypes_robotic"
+	allowed_origins = { origin_secondhand_country }
+	localized_tags = {
+		SPECIES_TRAIT_ORIGIN_SECONDHAND_COUNTRY
+	}
+	tags = { machine positive pop_output army leader upkeep special }
+	randomized = no
+	inline_script = "trait/modification_condition/time_secondhand_country_trait"
+	custom_tooltip_with_modifiers = trait_old_microwave_oven_tooltip
+	triggered_pop_group_modifier = {
+		potential = {
+			exists = owner
+			owner = { NOT = { has_edict = secondhand_country_edict } }
+		}
+		worker_and_simple_drone_cat_bonus_workforce_mult = 0.05
+	}
+	triggered_pop_group_modifier = {
+		potential = {
+			exists = owner
+			owner = { has_edict = secondhand_country_edict }
+		}
+		worker_and_simple_drone_cat_bonus_workforce_mult = 0.1
+	}
+	modifier = {
+		army_damage_mult = 0.4
+		leader_lifespan_add = -10
+	}
+	slave_cost = {
+		trade = 1000
+	}
+	assembly_score = {
+		modifier = {
+			add = 0.5
+		}
+	}
+}
+
+trait_old_motorcycle = {
+	cost = 1
+	inline_script = "trait/allowed_archetypes/time_archetypes_robotic"
+	allowed_origins = { origin_secondhand_country }
+	localized_tags = {
+		SPECIES_TRAIT_ORIGIN_SECONDHAND_COUNTRY
+	}
+	tags = { machine positive pop_output mineral leader upkeep special }
+	randomized = no
+	inline_script = "trait/modification_condition/time_secondhand_country_trait"
+	custom_tooltip_with_modifiers = trait_old_motorcycle_tooltip
+	triggered_pop_group_modifier = {
+		potential = {
+			exists = owner
+			owner = { NOT = { has_edict = secondhand_country_edict } }
+		}
+		miner_jobs_bonus_workforce_mult = 0.15
+	}
+	triggered_pop_group_modifier = {
+		potential = {
+			exists = owner
+			owner = { has_edict = secondhand_country_edict }
+		}
+		miner_jobs_bonus_workforce_mult = 0.3
+	}
+	modifier = {
+		leader_lifespan_add = -10
+	}
+	slave_cost = {
+		trade = 1000
+	}
+	assembly_score = {
+		modifier = {
+			add = 1.5
+			from = { has_mining_designation = yes }
+		}
+		modifier = {
+			add = 0.5
+			from = { has_rural_designation = yes }
+		}
+	}
+}
+
+trait_old_electromobile = {
+	cost = 1
+	inline_script = "trait/allowed_archetypes/time_archetypes_robotic"
+	allowed_origins = { origin_secondhand_country }
+	localized_tags = {
+		SPECIES_TRAIT_ORIGIN_SECONDHAND_COUNTRY
+	}
+	tags = { machine positive pop_output energy leader upkeep special }
+	randomized = no
+	inline_script = "trait/modification_condition/time_secondhand_country_trait"
+	custom_tooltip_with_modifiers = trait_old_electromobile_tooltip
+	triggered_pop_group_modifier = {
+		potential = {
+			exists = owner
+			owner = { NOT = { has_edict = secondhand_country_edict } }
+		}
+		technician_jobs_bonus_workforce_mult = 0.15
+	}
+	triggered_pop_group_modifier = {
+		potential = {
+			exists = owner
+			owner = { has_edict = secondhand_country_edict }
+		}
+		technician_jobs_bonus_workforce_mult = 0.3
+	}
+	modifier = {
+		leader_lifespan_add = -10
+	}
+	slave_cost = {
+		trade = 1000
+	}
+	assembly_score = {
+		modifier = {
+			add = 1.5
+			from = { has_generator_designation = yes }
+		}
+		modifier = {
+			add = 0.5
+			from = { has_rural_designation = yes }
+		}
+	}
+}
+
+trait_old_pos = {
+	cost = 1
+	inline_script = "trait/allowed_archetypes/time_archetypes_robotic"
+	allowed_origins = { origin_secondhand_country }
+	localized_tags = {
+		SPECIES_TRAIT_ORIGIN_SECONDHAND_COUNTRY
+	}
+	tags = { machine positive pop_output trade leader upkeep special }
+	randomized = no
+	inline_script = "trait/modification_condition/time_secondhand_country_trait"
+	custom_tooltip_with_modifiers = trait_old_pos_tooltip
+	triggered_pop_group_modifier = {
+		potential = {
+			exists = owner
+			owner = { NOT = { has_edict = secondhand_country_edict } }
+		}
+		trader_jobs_bonus_workforce_mult = 0.25
+	}
+	triggered_pop_group_modifier = {
+		potential = {
+			exists = owner
+			owner = { has_edict = secondhand_country_edict }
+		}
+		trader_jobs_bonus_workforce_mult = 0.5
+	}
+	modifier = {
+		leader_lifespan_add = -10
+	}
+	slave_cost = {
+		trade = 1000
+	}
+	assembly_score = {
+		modifier = {
+			add = 1.5
+			from = { has_trade_designation = yes }
+		}
+	}
+}
+
+trait_old_washine_machine = {
+	cost = 1
+	inline_script = "trait/allowed_archetypes/time_archetypes_robotic"
+	allowed_origins = { origin_secondhand_country }
+	localized_tags = {
+		SPECIES_TRAIT_ORIGIN_SECONDHAND_COUNTRY
+	}
+	tags = { machine positive pop_output amenities leader upkeep special }
+	randomized = no
+	inline_script = "trait/modification_condition/time_secondhand_country_trait"
+	custom_tooltip_with_modifiers = trait_old_washine_machine_tooltip
+	triggered_pop_group_modifier = {
+		potential = {
+			exists = owner
+			owner = { NOT = { has_edict = secondhand_country_edict } }
+		}
+		influential_jobs_bonus_workforce_mult = 0.15
+	}
+	triggered_pop_group_modifier = {
+		potential = {
+			exists = owner
+			owner = { has_edict = secondhand_country_edict }
+		}
+		influential_jobs_bonus_workforce_mult = 0.3
+	}
+	modifier = {
+		leader_lifespan_add = -10
+	}
+	slave_cost = {
+		trade = 1000
+	}
+}
+
+trait_old_radio = {
+	cost = 1
+	inline_script = "trait/allowed_archetypes/time_archetypes_robotic"
+	allowed_origins = { origin_secondhand_country }
+	localized_tags = {
+		SPECIES_TRAIT_ORIGIN_SECONDHAND_COUNTRY
+	}
+	tags = { machine positive empire_size leader upkeep special }
+	randomized = no
+	inline_script = "trait/modification_condition/time_secondhand_country_trait"
+	custom_tooltip_with_modifiers = trait_old_radio_tooltip
+	triggered_pop_group_modifier = {
+		potential = {
+			exists = owner
+			owner = { NOT = { has_edict = secondhand_country_edict } }
+		}
+		species_empire_size_mult = -0.1
+	}
+	triggered_pop_group_modifier = {
+		potential = {
+			exists = owner
+			owner = { has_edict = secondhand_country_edict }
+		}
+		species_empire_size_mult = -0.2
+	}
+	modifier = {
+		leader_lifespan_add = -10
+	}
+	slave_cost = {
+		trade = 1000
+	}
+}
+
+trait_old_calculator = {
+	cost = 1
+	inline_script = "trait/allowed_archetypes/time_archetypes_robotic"
+	allowed_origins = { origin_secondhand_country }
+	localized_tags = {
+		SPECIES_TRAIT_ORIGIN_SECONDHAND_COUNTRY
+	}
+	tags = { machine positive pop_output research leader upkeep special }
+	randomized = no
+	inline_script = "trait/modification_condition/time_secondhand_country_trait"
+	custom_tooltip_with_modifiers = trait_old_calculator_tooltip
+	triggered_pop_group_modifier = {
+		potential = {
+			exists = owner
+			owner = { NOT = { has_edict = secondhand_country_edict } }
+		}
+		researcher_jobs_bonus_workforce_mult = 0.1
+	}
+	triggered_pop_group_modifier = {
+		potential = {
+			exists = owner
+			owner = { has_edict = secondhand_country_edict }
+		}
+		researcher_jobs_bonus_workforce_mult = 0.2
+	}
+	modifier = {
+		leader_lifespan_add = -10
+	}
+	slave_cost = {
+		trade = 1000
+	}
+	assembly_score = {
+		modifier = {
+			add = 1.5
+			from = { has_research_designation = yes }
+		}
+		modifier = {
+			add = 1.5
+			from = { has_building = building_order_keep }
+		}
+	}
+}
+
+trait_old_mobile_phone = {
+	cost = 1
+	inline_script = "trait/allowed_archetypes/time_archetypes_robotic"
+	allowed_origins = { origin_secondhand_country }
+	localized_tags = {
+		SPECIES_TRAIT_ORIGIN_SECONDHAND_COUNTRY
+	}
+	tags = { machine positive leader upkeep special }
+	randomized = no
+	inline_script = "trait/modification_condition/time_secondhand_country_trait"
+	custom_tooltip_with_modifiers = trait_old_mobile_phone_tooltip
+	triggered_leader_modifier = {
+		potential = {
+			exists = owner
+			owner = { NOT = { has_edict = secondhand_country_edict } }
+		}
+		species_leader_exp_gain = 0.3
+	}
+	triggered_leader_modifier = {
+		potential = {
+			exists = owner
+			owner = { has_edict = secondhand_country_edict }
+		}
+		species_leader_exp_gain = 0.6
+	}
+	modifier = {
+		leader_lifespan_add = -10
+	}
+	slave_cost = {
+		trade = 1000
+	}
+}
+
+trait_old_color_tv = {
+	cost = 1
+	inline_script = "trait/allowed_archetypes/time_archetypes_robotic"
+	allowed_origins = { origin_secondhand_country }
+	localized_tags = {
+		SPECIES_TRAIT_ORIGIN_SECONDHAND_COUNTRY
+	}
+	tags = { machine positive pop_output unity leader upkeep special }
+	randomized = no
+	inline_script = "trait/modification_condition/time_secondhand_country_trait"
+	custom_tooltip_with_modifiers = trait_old_color_tv_tooltip
+	triggered_pop_group_modifier = {
+		potential = {
+			exists = owner
+			owner = { NOT = { has_edict = secondhand_country_edict } }
+		}
+		bureaucrat_jobs_bonus_workforce_mult = 0.1
+	}
+	triggered_pop_group_modifier = {
+		potential = {
+			exists = owner
+			owner = { has_edict = secondhand_country_edict }
+		}
+		bureaucrat_jobs_bonus_workforce_mult = 0.2
+	}
+	modifier = {
+		leader_lifespan_add = -10
+	}
+	slave_cost = {
+		trade = 1000
+	}
+	assembly_score = {
+		modifier = {
+			add = 1.5
+			from = { has_unity_designation = yes }
+		}
+		modifier = {
+			add = 1.5
+			from = { has_building = building_order_keep }
+		}
+	}
+}
+
+trait_old_computer = {
+	cost = 2
+	inline_script = "trait/allowed_archetypes/time_archetypes_robotic"
+	allowed_origins = { origin_secondhand_country }
+	localized_tags = {
+		SPECIES_TRAIT_ORIGIN_SECONDHAND_COUNTRY_ADVANCED
+	}
+	tags = { machine positive pop_output research leader upkeep special }
+	randomized = no
+	inline_script = "trait/modification_condition/time_secondhand_country_trait_advanced"
+	custom_tooltip_with_modifiers = trait_old_computer_tooltip
+	triggered_pop_group_modifier = {
+		potential = {
+			exists = owner
+			owner = { NOT = { has_edict = secondhand_country_edict } }
+		}
+		researcher_jobs_bonus_workforce_mult  = 0.2
+	}
+	triggered_pop_group_modifier = {
+		potential = {
+			exists = owner
+			owner = { has_edict = secondhand_country_edict }
+		}
+		researcher_jobs_bonus_workforce_mult  = 0.4
+	}
+	modifier = {
+		leader_lifespan_add = -30
+		negative_leader_traits_species = -1
+		leaders_upkeep_mult = -0.25
+	}
+	slave_cost = {
+		trade = 2000
+	}
+	assembly_score = {
+		modifier = {
+			add = 2.5
+			from = { has_research_designation = yes }
+		}
+		modifier = {
+			add = 2.5
+			from = { has_building = building_order_keep }
+		}
+	}
+}
+
+trait_old_pressure_cooker = {
+	cost = 2
+	inline_script = "trait/allowed_archetypes/time_archetypes_robotic"
+	allowed_origins = { origin_secondhand_country }
+	localized_tags = {
+		SPECIES_TRAIT_ORIGIN_SECONDHAND_COUNTRY_ADVANCED
+	}
+	tags = { machine positive pop_growth housing leader upkeep special }
+	randomized = no
+	inline_script = "trait/modification_condition/time_secondhand_country_trait_advanced"
+	custom_tooltip_with_modifiers = trait_old_pressure_cooker_tooltip
+	triggered_planet_growth_habitability_modifier = {
+		potential = {
+			exists = owner
+			owner = { NOT = { has_edict = secondhand_country_edict } }
+		}
+		planet_pop_assembly_mult = 0.3
+	}
+	triggered_pop_group_modifier = {
+		potential = {
+			exists = owner
+			owner = { NOT = { has_edict = secondhand_country_edict } }
+		}
+		pop_housing_usage_mult = -0.1
+	}
+	triggered_planet_growth_habitability_modifier = {
+		potential = {
+			exists = owner
+			owner = { has_edict = secondhand_country_edict }
+		}
+		planet_pop_assembly_mult = 0.6
+	}
+	triggered_pop_group_modifier = {
+		potential = {
+			exists = owner
+			owner = { has_edict = secondhand_country_edict }
+		}
+		pop_housing_usage_mult = -0.2
+	}
+	modifier = {
+		leader_lifespan_add = -30
+	}
+	slave_cost = {
+		trade = 2000
+	}
+}
+
+trait_old_air_conditioner = {
+	cost = 3
+	inline_script = "trait/allowed_archetypes/time_archetypes_robotic"
+	allowed_origins = { origin_secondhand_country }
+	localized_tags = {
+		SPECIES_TRAIT_ORIGIN_SECONDHAND_COUNTRY_ADVANCED
+	}
+	tags = { machine positive pop_output habitability leader upkeep special }
+	randomized = no
+	inline_script = "trait/modification_condition/time_secondhand_country_trait_advanced"
+	custom_tooltip_with_modifiers = trait_old_air_conditioner_tooltip
+	triggered_pop_group_modifier = {
+		potential = {
+			exists = owner
+			owner = { NOT = { has_edict = secondhand_country_edict } }
+		}
+		pop_bonus_workforce_mult = 0.05
+	}
+	triggered_planet_growth_habitability_modifier = {
+		potential = {
+			exists = fromfrom
+			fromfrom = { NOT = { has_edict = secondhand_country_edict } }
+		}
+		pop_environment_tolerance = 0.3
+	}
+	triggered_pop_group_modifier = {
+		potential = {
+			exists = owner
+			owner = { has_edict = secondhand_country_edict }
+		}
+		pop_bonus_workforce_mult = 0.1
+	}
+	triggered_planet_growth_habitability_modifier = {
+		potential = {
+			exists = fromfrom
+			fromfrom = { has_edict = secondhand_country_edict }
+		}
+		pop_environment_tolerance = 0.6
+	}
+	modifier = {
+		leader_lifespan_add = -30
+	}
+	slave_cost = {
+		trade = 2000
+	}
+	assembly_score = {
+		base = 0.5
+	}
+}

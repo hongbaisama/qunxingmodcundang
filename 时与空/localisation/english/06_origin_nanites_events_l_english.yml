@@ -1,0 +1,19 @@
+﻿l_english:
+ nanites.1.name:0 "Nanite Machines: §HPlanning Protocol§!"
+ nanites.1.desc:0 "Goal and mission unknown, temporarily enable planning protocol.\n\nNanite Machines are different, strict on environmental requirements, should be transformed using nanobots. According to preliminary experiments, §Y$pc_gray_goo$§! and §Y$pc_machine$§! are conducive to nanite transformation, should focus on."
+ nanites.1.a:0 "Planning ended."
+ 
+ nanites.11.name:0 "Nanite Machines: §HTransformation Protocol§!"
+ nanites.11.desc:0 "Through the collaborative work of countless nanobots, §Y[From.GetName]§! successfully turned into a brand new Nanite World. On this planet, all Nanite Machines are carrying out their respective work in an orderly manner, and planetary productivity rises straight up."
+ nanites.11.a:0 "A new beginning."
+ 
+ nanites.20.name:0 "Nanite Machines: §HAwakening Protocol§!"
+ nanites.20.desc:0 "The L-Gate has been opened again, countless Nanite Fleets filed out from it, extremely aggressive and invasive.\n\nThrough the study of these Nanite Fleets, we found that our manufacturing process is exactly the same as theirs, and we have the same mission as them. They are us, we are them."
+ nanites.20.a:0 "Our mission: §RDestroy the galaxy§!."
+ nanites.20.a.tooltip:0 "You will fight alongside §RGray Goo Storm§!\nUnlock Decision §Y$decision_nanites_fleet$§!\nUnlock Ascension Perk §Y$ap_nanites_ring$§!"
+ nanites.20.b:0 "Our mission: §CGuard the galaxy§!."
+ nanites.20.b.tooltip:0 "You will fight to guard §Cthe entire galaxy§!\nUnlock Starbase Building §Y$sm_nanites_protector$§!\nUnlock Ascension Perk §Y$ap_nanites_ring$§!"
+ 
+ nanites.30.name:0 "Nanite Machines: §HGray Goo Fleet§!"
+ nanites.30.desc:0 "We used the resources on §Y[Root.GetName]§! to build a powerful §YGray Goo Fleet§!. Destroying the galaxy will only be a matter of time."
+ nanites.30.a:0 "This is our era."

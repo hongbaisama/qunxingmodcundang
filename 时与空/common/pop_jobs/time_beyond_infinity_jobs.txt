@@ -1,0 +1,272 @@
+# 时空旅行者
+
+time_traveler = {
+	category = ruler
+	can_be_automated = no
+	
+	swappable_data = {
+		default = {
+			condition_string = RULER_JOB_TRIGGER
+			building_icon = building_time_machine
+		}
+		swap_type = {
+			trigger = {
+				exists = carrier
+				colony = { has_building = building_infinity_time_machine }
+			}
+			building_icon = building_infinity_time_machine
+			weight = 5
+		}
+	}
+
+	tags = { research }
+
+	possible_pre_triggers = {
+		has_owner = yes
+		is_enslaved = no
+		is_being_purged = no
+		is_being_assimilated = no
+		is_sapient = yes
+	}
+
+	possible_precalc = can_fill_ruler_job
+	
+	inline_script = "jobs/beyond_infinity/time_traveler"
+
+	weight = {
+		weight = @ruler_job_weight
+		mult = 10000
+		modifier = {
+			factor = 0.2
+			has_citizenship_rights = no
+			NOT = { has_trait = trait_mechanical }
+		}
+	}
+	
+	inline_script = "jobs/automodding_priority_research"
+}
+
+time_traveler_drone = {
+	category = complex_drone
+	can_be_automated = no
+	
+	swappable_data = {
+		default = {
+			condition_string = DRONE_JOB_TRIGGER
+			building_icon = building_time_machine
+			icon = time_traveler
+		}
+		swap_type = {
+			trigger = {
+				exists = carrier
+				colony = { has_building = building_infinity_time_machine }
+			}
+			building_icon = building_infinity_time_machine
+			weight = 5
+		}
+	}
+
+	tags = { research }
+
+	possible_pre_triggers = {
+		has_owner = yes
+		is_enslaved = no
+		is_being_purged = no
+		is_being_assimilated = no
+		is_sapient = yes
+	}
+
+	possible_precalc = can_fill_drone_job
+	possible = { can_think = yes }
+	
+	inline_script = "jobs/beyond_infinity/time_traveler"
+	
+	weight = {
+		weight = @complex_drone_job_weight
+		mult = 10000
+	}
+	
+	inline_script = "jobs/automodding_priority_research"
+}
+
+# 圆环扭曲者
+
+circle_bender = {
+	category = ruler
+	can_be_automated = no
+	
+	swappable_data = {
+		default = {
+			condition_string = RULER_JOB_TRIGGER
+			building_icon = building_circle_nexus
+		}
+		swap_type = {
+			trigger = {
+				exists = carrier
+				colony = { has_building = building_infinity_circle_nexus }
+			}
+			building_icon = building_infinity_circle_nexus
+			weight = 5
+		}
+	}
+
+	tags = { research }
+
+	possible_pre_triggers = {
+		has_owner = yes
+		is_enslaved = no
+		is_being_purged = no
+		is_being_assimilated = no
+		is_sapient = yes
+	}
+
+	possible_precalc = can_fill_ruler_job
+	
+	inline_script = "jobs/beyond_infinity/circle_bender"
+
+	weight = {
+		weight = @ruler_job_weight
+		mult = 10000
+		modifier = {
+			factor = 0.2
+			has_citizenship_rights = no
+			NOT = { has_trait = trait_mechanical }
+		}
+	}
+	
+	inline_script = "jobs/automodding_priority_research"
+}
+
+circle_bender_drone = {
+	category = complex_drone
+	can_be_automated = no
+	
+	swappable_data = {
+		default = {
+			condition_string = DRONE_JOB_TRIGGER
+			building_icon = building_circle_nexus
+			icon = circle_bender
+		}
+		swap_type = {
+			trigger = {
+				exists = carrier
+				colony = { has_building = building_infinity_circle_nexus }
+			}
+			building_icon = building_infinity_circle_nexus
+			weight = 5
+		}
+	}
+
+	tags = { research }
+
+	possible_pre_triggers = {
+		has_owner = yes
+		is_enslaved = no
+		is_being_purged = no
+		is_being_assimilated = no
+		is_sapient = yes
+	}
+
+	possible_precalc = can_fill_drone_job
+	possible = { can_think = yes }
+	
+	inline_script = "jobs/beyond_infinity/circle_bender"
+	
+	weight = {
+		weight = @complex_drone_job_weight
+		mult = 10000
+	}
+	
+	inline_script = "jobs/automodding_priority_research"
+}
+
+# 位面锚定者
+
+dimension_anchor = {
+	category = ruler
+	can_be_automated = no
+	
+	swappable_data = {
+		default = {
+			condition_string = RULER_JOB_TRIGGER
+			building_icon = building_dimension_engine
+		}
+		swap_type = {
+			trigger = {
+				exists = carrier
+				colony = { has_building = building_infinity_dimension_engine }
+			}
+			building_icon = building_infinity_dimension_engine
+			weight = 5
+		}
+	}
+
+	tags = { research }
+
+	possible_pre_triggers = {
+		has_owner = yes
+		is_enslaved = no
+		is_being_purged = no
+		is_being_assimilated = no
+		is_sapient = yes
+	}
+
+	possible_precalc = can_fill_ruler_job
+	
+	inline_script = "jobs/beyond_infinity/dimension_anchor"
+
+	weight = {
+		weight = @ruler_job_weight
+		mult = 10000
+		modifier = {
+			factor = 0.2
+			has_citizenship_rights = no
+			NOT = { has_trait = trait_mechanical }
+		}
+	}
+	
+	inline_script = "jobs/automodding_priority_research"
+}
+
+dimension_anchor_drone = {
+	category = complex_drone
+	can_be_automated = no
+	
+	swappable_data = {
+		default = {
+			condition_string = DRONE_JOB_TRIGGER
+			building_icon = building_dimension_engine
+			icon = dimension_anchor
+		}
+		swap_type = {
+			trigger = {
+				exists = carrier
+				colony = { has_building = building_infinity_dimension_engine }
+			}
+			building_icon = building_infinity_dimension_engine
+			weight = 5
+		}
+	}
+
+	tags = { research }
+
+	possible_pre_triggers = {
+		has_owner = yes
+		is_enslaved = no
+		is_being_purged = no
+		is_being_assimilated = no
+		is_sapient = yes
+	}
+
+	possible_precalc = can_fill_drone_job
+	possible = { can_think = yes }
+	
+	inline_script = "jobs/beyond_infinity/dimension_anchor"
+	
+	weight = {
+		weight = @complex_drone_job_weight
+		mult = 10000
+	}
+	
+	inline_script = "jobs/automodding_priority_research"
+}

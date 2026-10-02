@@ -1,0 +1,48 @@
+gas_colony_try_success_chance = {
+	base = 100
+	subtract = value:gas_colony_try_fail_chance
+	min = 0
+	max = 100
+}
+
+gas_colony_try_fail_chance = {
+	base = 0
+	add = gas_colony_try_fail_chance
+	multiply = @gas_colony_try_fail_chance_factor
+	max = @gas_colony_try_fail_chance_max
+	modifier = {
+		multiply = @gas_colony_fail_chance_ap_factor
+		has_ascension_perk = ap_origin_gas_colony
+	}
+	add = @gas_colony_try_fail_chance_base
+}
+
+gas_colony_change_success_chance = {
+	base = 100
+	subtract = value:gas_colony_change_fail_chance
+	min = 0
+	max = 100
+}
+
+gas_colony_change_fail_chance = {
+	base = 0
+	add = gas_colony_change_fail_chance
+	multiply = @gas_colony_change_fail_chance_factor
+	max = @gas_colony_change_fail_chance_max
+	modifier = {
+		multiply = @gas_colony_fail_chance_ap_factor
+		has_ascension_perk = ap_origin_gas_colony
+	}
+	add = @gas_colony_change_fail_chance_base
+}
+
+origin_gas_colony_edict_value = {
+	base = 1
+	modifier = {
+		multiply = 2
+		OR = {
+			has_ascension_perk = ap_arcology_project
+			has_ascension_perk = ap_hive_worlds
+		}
+	}
+}

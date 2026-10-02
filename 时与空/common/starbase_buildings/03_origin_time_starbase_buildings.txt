@@ -1,0 +1,413 @@
+time_energy_hub = {
+	icon = "GFX_orbitalring_energy_hub"
+	construction_days = 720
+	category = sm_colony_cat
+	
+	potential = {
+		exists = owner
+		owner = {
+			has_tradition = tr_origin_time_resource
+			has_origin_time = yes
+		}
+		colony? = {
+			is_origin_time_planet_class = yes
+		}
+	}
+	
+	possible = {
+		owner = {
+			has_technology = tech_power_hub_2
+		}
+		colony? = {
+			has_deposit = d_time_energy
+		}
+	}
+	
+	planet_modifier = {
+		d_time_energy_mult = 1
+	}
+	
+	resources = {
+		category = starbase_buildings
+		cost = {
+			alloys = 500
+			exotic_gases = 500
+		}
+		upkeep = {
+			energy = 10
+			exotic_gases = 5
+		}
+	}
+	
+	ai_weight = {
+		weight = 1000
+	}
+}
+
+time_minerals_hub = {
+	icon = "GFX_orbitalring_mineral_hub"
+	construction_days = 720
+	category = sm_colony_cat
+	
+	potential = {
+		exists = owner
+		owner = {
+			has_tradition = tr_origin_time_resource
+			has_origin_time = yes
+		}
+		colony? = {
+			is_origin_time_planet_class = yes
+		}
+	}
+	
+	possible = {
+		owner = {
+			has_technology = tech_mineral_purification_2
+		}
+		colony? = {
+			has_deposit = d_time_minerals
+		}
+	}
+	
+	planet_modifier = {
+		d_time_minerals_mult = 1
+	}
+	
+	resources = {
+		category = starbase_buildings
+		cost = {
+			alloys = 500
+			volatile_motes = 500
+		}
+		upkeep = {
+			energy = 10
+			volatile_motes = 5
+		}
+	}
+	
+	ai_weight = {
+		weight = 1000
+	}
+}
+
+time_food_hub = {
+	icon = "GFX_orbitalring_food_hub"
+	construction_days = 720
+	category = sm_colony_cat
+	
+	potential = {
+		exists = owner
+		owner = {
+			has_tradition = tr_origin_time_resource
+			has_origin_time = yes
+		}
+		colony? = {
+			is_origin_time_planet_class = yes
+		}
+	}
+	
+	possible = {
+		owner = {
+			has_technology = tech_food_processing_2
+		}
+		colony? = {
+			has_deposit = d_time_food
+		}
+	}
+	
+	planet_modifier = {
+		d_time_food_mult = 1
+	}
+	
+	resources = {
+		category = starbase_buildings
+		cost = {
+			alloys = 500
+			exotic_gases = 500
+		}
+		upkeep = {
+			energy = 10
+			exotic_gases = 5
+		}
+	}
+	
+	ai_weight = {
+		weight = 1000
+	}
+}
+
+time_consumer_goods_hub = {
+	icon = "GFX_orbitalring_consumer_hub"
+	construction_days = 720
+	category = sm_colony_cat
+	
+	potential = {
+		exists = owner
+		owner = {
+			has_tradition = tr_origin_time_manufacturing
+			has_origin_time = yes
+		}
+		colony? = {
+			is_origin_time_planet_class = yes
+		}
+	}
+	
+	possible = {
+		owner = {
+			has_technology = tech_luxuries_2
+		}
+		colony? = {
+			has_deposit = d_time_consumer_goods
+		}
+	}
+	
+	planet_modifier = {
+		d_time_consumer_goods_mult = 1
+	}
+	
+	resources = {
+		category = starbase_buildings
+		cost = {
+			alloys = 500
+			rare_crystals = 500
+		}
+		upkeep = {
+			energy = 10
+			rare_crystals = 5
+		}
+	}
+	
+	ai_weight = {
+		weight = 1000
+	}
+}
+
+time_alloys_hub = {
+	icon = "GFX_orbitalring_alloy_hub"
+	construction_days = 720
+	category = sm_colony_cat
+	
+	potential = {
+		exists = owner
+		owner = {
+			has_tradition = tr_origin_time_manufacturing
+			has_origin_time = yes
+		}
+		colony? = {
+			is_origin_time_planet_class = yes
+		}
+	}
+	
+	possible = {
+		owner = {
+			has_technology = tech_alloys_2
+		}
+		colony? = {
+			has_deposit = d_time_alloys
+		}
+	}
+	
+	planet_modifier = {
+		d_time_alloys_mult = 1
+	}
+	
+	resources = {
+		category = starbase_buildings
+		cost = {
+			alloys = 500
+			volatile_motes = 500
+		}
+		upkeep = {
+			energy = 10
+			volatile_motes = 5
+		}
+	}
+	
+	ai_weight = {
+		weight = 1000
+	}
+}
+
+time_unity_hub = {
+	icon = "GFX_starbase_artist_college"
+	construction_days = 720
+	category = sm_colony_cat
+	
+	potential = {
+		exists = owner
+		owner = {
+			has_tradition = tr_origin_time_unity
+			has_origin_time = yes
+		}
+		colony? = {
+			is_origin_time_planet_class = yes
+		}
+	}
+	
+	possible = {
+		owner = {
+			has_technology = tech_effective_bureaucracy
+		}
+		colony? = {
+			has_deposit = d_time_unity
+		}
+	}
+	
+	planet_modifier = {
+		d_time_unity_mult = 1
+	}
+	
+	resources = {
+		category = starbase_buildings
+		cost = {
+			alloys = 500
+			rare_crystals = 500
+		}
+		upkeep = {
+			energy = 10
+			rare_crystals = 5
+		}
+	}
+	
+	ai_weight = {
+		weight = 1000
+	}
+}
+
+time_physics_research_hub = {
+	icon = "GFX_starbase_curator_think_tank"
+	construction_days = 720
+	category = sm_colony_cat
+	
+	potential = {
+		exists = owner
+		owner = {
+			has_tradition = tr_origin_time_research
+			has_origin_time = yes
+		}
+		colony? = {
+			is_origin_time_planet_class = yes
+		}
+	}
+	
+	possible = {
+		owner = {
+			has_technology = tech_physics_2
+		}
+		colony? = {
+			has_deposit = d_time_physics_research
+		}
+	}
+	
+	planet_modifier = {
+		d_time_physics_research_mult = 1
+	}
+	
+	resources = {
+		category = starbase_buildings
+		cost = {
+			alloys = 500
+			volatile_motes = 500
+		}
+		upkeep = {
+			energy = 10
+			volatile_motes = 5
+		}
+	}
+	
+	ai_weight = {
+		weight = 1000
+	}
+}
+
+time_society_research_hub = {
+	icon = "GFX_orbitalring_bureaucracy_hub"
+	construction_days = 720
+	category = sm_colony_cat
+	
+	potential = {
+		exists = owner
+		owner = {
+			has_tradition = tr_origin_time_research
+			has_origin_time = yes
+		}
+		colony? = {
+			is_origin_time_planet_class = yes
+		}
+	}
+	
+	possible = {
+		owner = {
+			has_technology = tech_society_2
+		}
+		colony? = {
+			has_deposit = d_time_society_research
+		}
+	}
+	
+	planet_modifier = {
+		d_time_society_research_mult = 1
+	}
+	
+	resources = {
+		category = starbase_buildings
+		cost = {
+			alloys = 500
+			exotic_gases = 500
+		}
+		upkeep = {
+			energy = 10
+			exotic_gases = 5
+		}
+	}
+	
+	ai_weight = {
+		weight = 1000
+	}
+}
+
+time_engineering_research_hub = {
+	icon = "GFX_orbitalring_maintenance_hub"
+	construction_days = 720
+	category = sm_colony_cat
+	
+	potential = {
+		exists = owner
+		owner = {
+			has_tradition = tr_origin_time_research
+			has_origin_time = yes
+		}
+		colony? = {
+			is_origin_time_planet_class = yes
+		}
+	}
+	
+	possible = {
+		owner = {
+			has_technology = tech_engineering_2
+		}
+		colony? = {
+			has_deposit = d_time_engineering_research
+		}
+	}
+	
+	planet_modifier = {
+		d_time_engineering_research_mult = 1
+	}
+	
+	resources = {
+		category = starbase_buildings
+		cost = {
+			alloys = 500
+			rare_crystals = 500
+		}
+		upkeep = {
+			energy = 10
+			rare_crystals = 5
+		}
+	}
+	
+	ai_weight = {
+		weight = 1000
+	}
+}

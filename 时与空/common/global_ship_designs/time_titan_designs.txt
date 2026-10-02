@@ -1,0 +1,836 @@
+ship_design = {
+	name = "NAME_Horror_Titan"
+	ship_size = horror_titan
+	is_event_design = yes
+	hide_size = yes
+	
+	section = {
+		template = "TIME_TITAN_SECTION"
+		slot = "mid"
+		
+		# bow
+		component = {
+			slot = "TITANIC_01"
+		}
+		component = {
+			slot = "BOW_EXTRA_LARGE_01"
+		}
+		component = {
+			slot = "BOW_EXTRA_LARGE_02"
+		}
+		component = {
+			slot = "BOW_LARGE_01"
+			template = "HORROR_BEAM"
+		}
+		component = {
+			slot = "BOW_LARGE_02"
+			template = "HORROR_ACCELERATOR"
+		}
+		
+		component = {
+			slot = "LARGE_UTILITY_1"
+			template = "DIMENSION_HORROR_SHIELD"
+		}
+		component = {
+			slot = "LARGE_UTILITY_2"
+			template = "DIMENSION_HORROR_SHIELD"
+		}
+		component = {
+			slot = "LARGE_UTILITY_3"
+			template = "DIMENSION_HORROR_SHIELD"
+		}
+		component = {
+			slot = "LARGE_UTILITY_4"
+			template = "DIMENSION_HORROR_SHIELD"
+		}
+		component = {
+			slot = "LARGE_UTILITY_5"
+			template = "DIMENSION_HORROR_SHIELD"
+		}
+		component = {
+			slot = "LARGE_UTILITY_6"
+			template = "DIMENSION_HORROR_SHIELD"
+		}
+		component = {
+			slot = "LARGE_UTILITY_7"
+			template = "DIMENSION_HORROR_SHIELD"
+		}
+		component = {
+			slot = "LARGE_UTILITY_8"
+			template = "DIMENSION_HORROR_SHIELD"
+		}
+		component = {
+			slot = "LARGE_UTILITY_9"
+			template = "DIMENSION_HORROR_SHIELD"
+		}
+		component = {
+			slot = "LARGE_UTILITY_10"
+			template = "DIMENSION_HORROR_SHIELD"
+		}
+		
+		# mid
+		component = {
+			slot = "EXTRA_LARGE_01"
+		}
+		component = {
+			slot = "EXTRA_LARGE_02"
+		}
+		component = {
+			slot = "LARGE_GUN_01"
+			template = "DIMENSIONAL_HORROR_LARGE_BEAM"
+		}
+		component = {
+			slot = "LARGE_GUN_02"
+			template = "DIMENSIONAL_HORROR_LARGE_ACCELERATOR"
+		}
+		component = {
+			slot = "MEDIUM_GUN_01"
+			template = "DIMENSIONAL_HORROR_MEDIUM_BEAM"
+		}
+		component = {
+			slot = "MEDIUM_GUN_02"
+			template = "DIMENSIONAL_HORROR_MEDIUM_ACCELERATOR"
+		}
+		component = {
+			slot = "SMALL_GUN_01"
+			template = "DIMENSIONAL_HORROR_SMALL_BEAM"
+		}
+		component = {
+			slot = "SMALL_GUN_02"
+			template = "DIMENSIONAL_HORROR_SMALL_ACCELERATOR"
+		}
+		
+		component = {
+			slot = "AUX_UTILITY_1"
+			template = "TIME_MICROSINGULARITY"
+		}
+		component = {
+			slot = "AUX_UTILITY_2"
+		}
+		component = {
+			slot = "AUX_UTILITY_3"
+		}
+		
+		# core
+		component = {
+			slot = "LARGE_UTILITY_11"
+			template = "DIMENSION_HORROR_ARMOR"
+		}
+		component = {
+			slot = "LARGE_UTILITY_12"
+			template = "DIMENSION_HORROR_ARMOR"
+		}
+		component = {
+			slot = "LARGE_UTILITY_13"
+			template = "DIMENSION_HORROR_ARMOR"
+		}
+		component = {
+			slot = "LARGE_UTILITY_14"
+			template = "DIMENSION_HORROR_ARMOR"
+		}
+		component = {
+			slot = "LARGE_UTILITY_15"
+			template = "DIMENSION_HORROR_ARMOR"
+		}
+		component = {
+			slot = "LARGE_UTILITY_16"
+			template = "DIMENSION_HORROR_ARMOR"
+		}
+		component = {
+			slot = "LARGE_UTILITY_17"
+			template = "DIMENSION_HORROR_ARMOR"
+		}
+		component = {
+			slot = "LARGE_UTILITY_18"
+			template = "DIMENSION_HORROR_ARMOR"
+		}
+		component = {
+			slot = "LARGE_UTILITY_19"
+			template = "DIMENSION_HORROR_ARMOR"
+		}
+		component = {
+			slot = "LARGE_UTILITY_20"
+			template = "DIMENSION_HORROR_ARMOR"
+		}
+		
+		component = {
+			slot = "AUX_UTILITY_4"
+			template = "TIME_MICROSINGULARITY"
+		}
+		component = {
+			slot = "AUX_UTILITY_5"
+		}
+		component = {
+			slot = "AUX_UTILITY_6"
+		}
+		
+		# ship
+		component = {
+			slot = "STRIKE_CRAFT_01"
+			template = "DIMENSIONAL_HORROR_STRIKE_CRAFT_ENERGY"
+		}
+		component = {
+			slot = "STRIKE_CRAFT_02"
+		}
+		component = {
+			slot = "STRIKE_CRAFT_03"
+		}
+		component = {
+			slot = "STRIKE_CRAFT_04"
+			template = "DIMENSIONAL_HORROR_STRIKE_CRAFT_KINETIC"
+		}
+		component = {
+			slot = "STRIKE_CRAFT_05"
+		}
+		component = {
+			slot = "STRIKE_CRAFT_06"
+		}
+		
+		component = {
+			slot = "LARGE_UTILITY_21"
+			template = "DIMENSION_HOPE_HULL"
+		}
+		component = {
+			slot = "LARGE_UTILITY_22"
+			template = "DIMENSION_HOPE_HULL"
+		}
+		component = {
+			slot = "LARGE_UTILITY_23"
+		}
+		component = {
+			slot = "LARGE_UTILITY_24"
+		}
+		component = {
+			slot = "LARGE_UTILITY_25"
+		}
+		component = {
+			slot = "LARGE_UTILITY_26"
+		}
+		component = {
+			slot = "LARGE_UTILITY_27"
+		}
+		component = {
+			slot = "LARGE_UTILITY_28"
+		}
+		component = {
+			slot = "LARGE_UTILITY_29"
+		}
+		component = {
+			slot = "LARGE_UTILITY_30"
+		}
+		
+		# stern
+		component = {
+			slot = "PD_01"
+			template = "DIMENSIONAL_HORROR_PD_ENERGY"
+		}
+		component = {
+			slot = "PD_02"
+		}
+		component = {
+			slot = "PD_03"
+		}
+		component = {
+			slot = "PD_04"
+			template = "DIMENSIONAL_HORROR_PD_KINETIC"
+		}
+		component = {
+			slot = "PD_05"
+		}
+		component = {
+			slot = "PD_06"
+		}
+		
+		component = {
+			slot = "AUX_UTILITY_7"
+			template = "TIME_MICROSINGULARITY"
+		}
+		component = {
+			slot = "AUX_UTILITY_8"
+		}
+		component = {
+			slot = "AUX_UTILITY_9"
+		}
+	}
+	required_component="TITAN_BEYOND_INFINITY_REACTOR"
+	required_component="TIME_WARP_DRIVE_HORROR"
+	required_component="TIME_TITAN_SHIP_THRUSTER"
+	required_component="TIME_TITAN_SENSOR"
+	required_component="COMBAT_COMPUTER_HORROR"
+	required_component="HORROR_AURA_1"
+}
+
+ship_design = {
+	name = "NAME_Time_Titan"
+	ship_size = time_titan
+	is_event_design = yes
+	hide_size = yes
+	
+	section = {
+		template = "TIME_TITAN_SECTION"
+		slot = "mid"
+		
+		# bow
+		component = {
+			slot = "TITANIC_01"
+		}
+		component = {
+			slot = "BOW_EXTRA_LARGE_01"
+			template = "TIME_BEAM"
+		}
+		component = {
+			slot = "BOW_EXTRA_LARGE_02"
+			template = "TIME_ACCELERATOR"
+		}
+		component = {
+			slot = "BOW_LARGE_01"
+			template = "HORROR_BEAM"
+		}
+		component = {
+			slot = "BOW_LARGE_02"
+			template = "HORROR_ACCELERATOR"
+		}
+		
+		component = {
+			slot = "LARGE_UTILITY_1"
+			template = "DIMENSION_TIME_SHIELD"
+		}
+		component = {
+			slot = "LARGE_UTILITY_2"
+			template = "DIMENSION_TIME_SHIELD"
+		}
+		component = {
+			slot = "LARGE_UTILITY_3"
+			template = "DIMENSION_TIME_SHIELD"
+		}
+		component = {
+			slot = "LARGE_UTILITY_4"
+			template = "DIMENSION_TIME_SHIELD"
+		}
+		component = {
+			slot = "LARGE_UTILITY_5"
+			template = "DIMENSION_TIME_SHIELD"
+		}
+		component = {
+			slot = "LARGE_UTILITY_6"
+			template = "DIMENSION_TIME_SHIELD"
+		}
+		component = {
+			slot = "LARGE_UTILITY_7"
+			template = "DIMENSION_TIME_SHIELD"
+		}
+		component = {
+			slot = "LARGE_UTILITY_8"
+			template = "DIMENSION_TIME_SHIELD"
+		}
+		component = {
+			slot = "LARGE_UTILITY_9"
+			template = "DIMENSION_TIME_SHIELD"
+		}
+		component = {
+			slot = "LARGE_UTILITY_10"
+			template = "DIMENSION_TIME_SHIELD"
+		}
+		
+		# mid
+		component = {
+			slot = "EXTRA_LARGE_01"
+			template = "DIMENSIONAL_HORROR_PRIMARY_BEAM"
+		}
+		component = {
+			slot = "EXTRA_LARGE_02"
+			template = "DIMENSIONAL_HORROR_PRIMARY_ACCELERATOR"
+		}
+		component = {
+			slot = "LARGE_GUN_01"
+			template = "DIMENSIONAL_HORROR_LARGE_BEAM"
+		}
+		component = {
+			slot = "LARGE_GUN_02"
+			template = "DIMENSIONAL_HORROR_LARGE_ACCELERATOR"
+		}
+		component = {
+			slot = "MEDIUM_GUN_01"
+			template = "DIMENSIONAL_HORROR_MEDIUM_BEAM"
+		}
+		component = {
+			slot = "MEDIUM_GUN_02"
+			template = "DIMENSIONAL_HORROR_MEDIUM_ACCELERATOR"
+		}
+		component = {
+			slot = "SMALL_GUN_01"
+			template = "DIMENSIONAL_HORROR_SMALL_BEAM"
+		}
+		component = {
+			slot = "SMALL_GUN_02"
+			template = "DIMENSIONAL_HORROR_SMALL_ACCELERATOR"
+		}
+		
+		component = {
+			slot = "AUX_UTILITY_1"
+			template = "TIME_MICROSINGULARITY"
+		}
+		component = {
+			slot = "AUX_UTILITY_2"
+			template = "TIME_MICROSINGULARITY"
+		}
+		component = {
+			slot = "AUX_UTILITY_3"
+		}
+		
+		# core
+		component = {
+			slot = "PLANET_KILLER_GUN_01"
+			template = "PLANET_KILLER_SHIELDER"
+		}
+		
+		component = {
+			slot = "LARGE_UTILITY_11"
+			template = "DIMENSION_TIME_ARMOR"
+		}
+		component = {
+			slot = "LARGE_UTILITY_12"
+			template = "DIMENSION_TIME_ARMOR"
+		}
+		component = {
+			slot = "LARGE_UTILITY_13"
+			template = "DIMENSION_TIME_ARMOR"
+		}
+		component = {
+			slot = "LARGE_UTILITY_14"
+			template = "DIMENSION_TIME_ARMOR"
+		}
+		component = {
+			slot = "LARGE_UTILITY_15"
+			template = "DIMENSION_TIME_ARMOR"
+		}
+		component = {
+			slot = "LARGE_UTILITY_16"
+			template = "DIMENSION_TIME_ARMOR"
+		}
+		component = {
+			slot = "LARGE_UTILITY_17"
+			template = "DIMENSION_TIME_ARMOR"
+		}
+		component = {
+			slot = "LARGE_UTILITY_18"
+			template = "DIMENSION_TIME_ARMOR"
+		}
+		component = {
+			slot = "LARGE_UTILITY_19"
+			template = "DIMENSION_TIME_ARMOR"
+		}
+		component = {
+			slot = "LARGE_UTILITY_20"
+			template = "DIMENSION_TIME_ARMOR"
+		}
+		
+		component = {
+			slot = "AUX_UTILITY_4"
+			template = "TIME_MICROSINGULARITY"
+		}
+		component = {
+			slot = "AUX_UTILITY_5"
+			template = "TIME_MICROSINGULARITY"
+		}
+		component = {
+			slot = "AUX_UTILITY_6"
+		}
+		
+		# ship
+		component = {
+			slot = "STRIKE_CRAFT_01"
+			template = "DIMENSIONAL_HORROR_STRIKE_CRAFT_ENERGY"
+		}
+		component = {
+			slot = "STRIKE_CRAFT_02"
+			template = "DIMENSIONAL_HORROR_STRIKE_CRAFT_ENERGY"
+		}
+		component = {
+			slot = "STRIKE_CRAFT_03"
+		}
+		component = {
+			slot = "STRIKE_CRAFT_04"
+			template = "DIMENSIONAL_HORROR_STRIKE_CRAFT_KINETIC"
+		}
+		component = {
+			slot = "STRIKE_CRAFT_05"
+			template = "DIMENSIONAL_HORROR_STRIKE_CRAFT_KINETIC"
+		}
+		component = {
+			slot = "STRIKE_CRAFT_06"
+		}
+		
+		component = {
+			slot = "LARGE_UTILITY_21"
+			template = "DIMENSION_HOPE_HULL"
+		}
+		component = {
+			slot = "LARGE_UTILITY_22"
+			template = "DIMENSION_HOPE_HULL"
+		}
+		component = {
+			slot = "LARGE_UTILITY_23"
+			template = "DIMENSION_HOPE_HULL"
+		}
+		component = {
+			slot = "LARGE_UTILITY_24"
+			template = "DIMENSION_HOPE_HULL"
+		}
+		component = {
+			slot = "LARGE_UTILITY_25"
+			template = "DIMENSION_HOPE_HULL"
+		}
+		component = {
+			slot = "LARGE_UTILITY_26"
+		}
+		component = {
+			slot = "LARGE_UTILITY_27"
+		}
+		component = {
+			slot = "LARGE_UTILITY_28"
+		}
+		component = {
+			slot = "LARGE_UTILITY_29"
+		}
+		component = {
+			slot = "LARGE_UTILITY_30"
+		}
+		
+		# stern
+		component = {
+			slot = "PD_01"
+			template = "DIMENSIONAL_HORROR_PD_ENERGY"
+		}
+		component = {
+			slot = "PD_02"
+			template = "DIMENSIONAL_HORROR_PD_ENERGY"
+		}
+		component = {
+			slot = "PD_03"
+		}
+		component = {
+			slot = "PD_04"
+			template = "DIMENSIONAL_HORROR_PD_KINETIC"
+		}
+		component = {
+			slot = "PD_05"
+			template = "DIMENSIONAL_HORROR_PD_KINETIC"
+		}
+		component = {
+			slot = "PD_06"
+		}
+		
+		component = {
+			slot = "AUX_UTILITY_7"
+			template = "TIME_MICROSINGULARITY"
+		}
+		component = {
+			slot = "AUX_UTILITY_8"
+			template = "TIME_MICROSINGULARITY"
+		}
+		component = {
+			slot = "AUX_UTILITY_9"
+		}
+	}
+	required_component="COLOSSUS_BEYOND_INFINITY_REACTOR"
+	required_component="TIME_WARP_DRIVE_HORROR"
+	required_component="TIME_TITAN_SHIP_THRUSTER"
+	required_component="TIME_TITAN_SENSOR"
+	required_component="COMBAT_COMPUTER_HORROR"
+	required_component="HORROR_AURA_2"
+}
+
+ship_design = {
+	name = "NAME_End_Titan"
+	ship_size = end_titan
+	is_event_design = yes
+	hide_size = yes
+	
+	section = {
+		template = "TIME_TITAN_SECTION"
+		slot = "mid"
+		
+		# bow
+		component = {
+			slot = "TITANIC_01"
+			template = "DIMENSION_END_BEAM"
+		}
+		component = {
+			slot = "BOW_EXTRA_LARGE_01"
+			template = "TIME_BEAM"
+		}
+		component = {
+			slot = "BOW_EXTRA_LARGE_02"
+			template = "TIME_ACCELERATOR"
+		}
+		component = {
+			slot = "BOW_LARGE_01"
+			template = "HORROR_BEAM"
+		}
+		component = {
+			slot = "BOW_LARGE_02"
+			template = "HORROR_ACCELERATOR"
+		}
+		
+		component = {
+			slot = "LARGE_UTILITY_1"
+			template = "DIMENSION_END_SHIELD"
+		}
+		component = {
+			slot = "LARGE_UTILITY_2"
+			template = "DIMENSION_END_SHIELD"
+		}
+		component = {
+			slot = "LARGE_UTILITY_3"
+			template = "DIMENSION_END_SHIELD"
+		}
+		component = {
+			slot = "LARGE_UTILITY_4"
+			template = "DIMENSION_END_SHIELD"
+		}
+		component = {
+			slot = "LARGE_UTILITY_5"
+			template = "DIMENSION_END_SHIELD"
+		}
+		component = {
+			slot = "LARGE_UTILITY_6"
+			template = "DIMENSION_END_SHIELD"
+		}
+		component = {
+			slot = "LARGE_UTILITY_7"
+			template = "DIMENSION_END_SHIELD"
+		}
+		component = {
+			slot = "LARGE_UTILITY_8"
+			template = "DIMENSION_END_SHIELD"
+		}
+		component = {
+			slot = "LARGE_UTILITY_9"
+			template = "DIMENSION_END_SHIELD"
+		}
+		component = {
+			slot = "LARGE_UTILITY_10"
+			template = "DIMENSION_END_SHIELD"
+		}
+		
+		# mid
+		component = {
+			slot = "EXTRA_LARGE_01"
+			template = "DIMENSIONAL_HORROR_PRIMARY_BEAM"
+		}
+		component = {
+			slot = "EXTRA_LARGE_02"
+			template = "DIMENSIONAL_HORROR_PRIMARY_ACCELERATOR"
+		}
+		component = {
+			slot = "LARGE_GUN_01"
+			template = "DIMENSIONAL_HORROR_LARGE_BEAM"
+		}
+		component = {
+			slot = "LARGE_GUN_02"
+			template = "DIMENSIONAL_HORROR_LARGE_ACCELERATOR"
+		}
+		component = {
+			slot = "MEDIUM_GUN_01"
+			template = "DIMENSIONAL_HORROR_MEDIUM_BEAM"
+		}
+		component = {
+			slot = "MEDIUM_GUN_02"
+			template = "DIMENSIONAL_HORROR_MEDIUM_ACCELERATOR"
+		}
+		component = {
+			slot = "SMALL_GUN_01"
+			template = "DIMENSIONAL_HORROR_SMALL_BEAM"
+		}
+		component = {
+			slot = "SMALL_GUN_02"
+			template = "DIMENSIONAL_HORROR_SMALL_ACCELERATOR"
+		}
+		
+		component = {
+			slot = "AUX_UTILITY_1"
+			template = "TIME_MICROSINGULARITY"
+		}
+		component = {
+			slot = "AUX_UTILITY_2"
+			template = "TIME_MICROSINGULARITY"
+		}
+		component = {
+			slot = "AUX_UTILITY_3"
+			template = "TIME_MICROSINGULARITY"
+		}
+		
+		# core
+		component = {
+			slot = "PLANET_KILLER_GUN_01"
+			template = "PLANET_KILLER_STAR_CRACKER"
+		}
+		
+		component = {
+			slot = "LARGE_UTILITY_11"
+			template = "DIMENSION_END_ARMOR"
+		}
+		component = {
+			slot = "LARGE_UTILITY_12"
+			template = "DIMENSION_END_ARMOR"
+		}
+		component = {
+			slot = "LARGE_UTILITY_13"
+			template = "DIMENSION_END_ARMOR"
+		}
+		component = {
+			slot = "LARGE_UTILITY_14"
+			template = "DIMENSION_END_ARMOR"
+		}
+		component = {
+			slot = "LARGE_UTILITY_15"
+			template = "DIMENSION_END_ARMOR"
+		}
+		component = {
+			slot = "LARGE_UTILITY_16"
+			template = "DIMENSION_END_ARMOR"
+		}
+		component = {
+			slot = "LARGE_UTILITY_17"
+			template = "DIMENSION_END_ARMOR"
+		}
+		component = {
+			slot = "LARGE_UTILITY_18"
+			template = "DIMENSION_END_ARMOR"
+		}
+		component = {
+			slot = "LARGE_UTILITY_19"
+			template = "DIMENSION_END_ARMOR"
+		}
+		component = {
+			slot = "LARGE_UTILITY_20"
+			template = "DIMENSION_END_ARMOR"
+		}
+		
+		component = {
+			slot = "AUX_UTILITY_4"
+			template = "TIME_MICROSINGULARITY"
+		}
+		component = {
+			slot = "AUX_UTILITY_5"
+			template = "TIME_MICROSINGULARITY"
+		}
+		component = {
+			slot = "AUX_UTILITY_6"
+			template = "TIME_MICROSINGULARITY"
+		}
+		
+		# ship
+		component = {
+			slot = "STRIKE_CRAFT_01"
+			template = "DIMENSIONAL_HORROR_STRIKE_CRAFT_ENERGY"
+		}
+		component = {
+			slot = "STRIKE_CRAFT_02"
+			template = "DIMENSIONAL_HORROR_STRIKE_CRAFT_ENERGY"
+		}
+		component = {
+			slot = "STRIKE_CRAFT_03"
+			template = "DIMENSIONAL_HORROR_STRIKE_CRAFT_ENERGY"
+		}
+		component = {
+			slot = "STRIKE_CRAFT_04"
+			template = "DIMENSIONAL_HORROR_STRIKE_CRAFT_KINETIC"
+		}
+		component = {
+			slot = "STRIKE_CRAFT_05"
+			template = "DIMENSIONAL_HORROR_STRIKE_CRAFT_KINETIC"
+		}
+		component = {
+			slot = "STRIKE_CRAFT_06"
+			template = "DIMENSIONAL_HORROR_STRIKE_CRAFT_KINETIC"
+		}
+		
+		component = {
+			slot = "LARGE_UTILITY_21"
+			template = "DIMENSION_HOPE_HULL"
+		}
+		component = {
+			slot = "LARGE_UTILITY_22"
+			template = "DIMENSION_HOPE_HULL"
+		}
+		component = {
+			slot = "LARGE_UTILITY_23"
+			template = "DIMENSION_HOPE_HULL"
+		}
+		component = {
+			slot = "LARGE_UTILITY_24"
+			template = "DIMENSION_HOPE_HULL"
+		}
+		component = {
+			slot = "LARGE_UTILITY_25"
+			template = "DIMENSION_HOPE_HULL"
+		}
+		component = {
+			slot = "LARGE_UTILITY_26"
+			template = "DIMENSION_HOPE_HULL"
+		}
+		component = {
+			slot = "LARGE_UTILITY_27"
+			template = "DIMENSION_HOPE_HULL"
+		}
+		component = {
+			slot = "LARGE_UTILITY_28"
+			template = "DIMENSION_HOPE_HULL"
+		}
+		component = {
+			slot = "LARGE_UTILITY_29"
+			template = "DIMENSION_HOPE_HULL"
+		}
+		component = {
+			slot = "LARGE_UTILITY_30"
+			template = "DIMENSION_HOPE_HULL"
+		}
+		
+		# stern
+		component = {
+			slot = "PD_01"
+			template = "DIMENSIONAL_HORROR_PD_ENERGY"
+		}
+		component = {
+			slot = "PD_02"
+			template = "DIMENSIONAL_HORROR_PD_ENERGY"
+		}
+		component = {
+			slot = "PD_03"
+			template = "DIMENSIONAL_HORROR_PD_ENERGY"
+		}
+		component = {
+			slot = "PD_04"
+			template = "DIMENSIONAL_HORROR_PD_KINETIC"
+		}
+		component = {
+			slot = "PD_05"
+			template = "DIMENSIONAL_HORROR_PD_KINETIC"
+		}
+		component = {
+			slot = "PD_06"
+			template = "DIMENSIONAL_HORROR_PD_KINETIC"
+		}
+		
+		component = {
+			slot = "AUX_UTILITY_7"
+			template = "TIME_MICROSINGULARITY"
+		}
+		component = {
+			slot = "AUX_UTILITY_8"
+			template = "TIME_MICROSINGULARITY"
+		}
+		component = {
+			slot = "AUX_UTILITY_9"
+			template = "TIME_MICROSINGULARITY"
+		}
+	}
+	required_component="JUGGERNAUT_BEYOND_INFINITY_REACTOR"
+	required_component="TIME_WARP_DRIVE_HORROR"
+	required_component="TIME_TITAN_SHIP_THRUSTER"
+	required_component="TIME_TITAN_SENSOR"
+	required_component="COMBAT_COMPUTER_HORROR"
+	required_component="HORROR_AURA_3"
+}

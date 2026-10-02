@@ -1,0 +1,268 @@
+
+namespace = origin_dyson_sphere_and_matter_decompressor
+
+country_event = {
+	id = origin_dyson_sphere_and_matter_decompressor.1
+	is_triggered_only = yes
+	hide_window = yes
+
+	trigger = {
+		has_origin = origin_dyson_sphere
+	}
+	
+	immediate = {
+		capital_scope.solar_system = {
+			closest_system = {
+				limit = {
+					NOR = {
+						has_star_flag = empire_home_system
+						has_star_flag = hostile_system
+						has_star_flag = guardian
+						is_binary_star = yes
+						is_trinary_star = yes
+						is_time_black_hole_or_white_hole_star_class = yes
+						is_star_class = sc_neutron_star
+						is_star_class = sc_pulsar
+						any_system_planet = {
+							is_colonizable = yes
+						}
+					}
+					has_no_non_gate_megastructure = yes
+				}
+				set_star_flag = ruined_dyson_system
+				spawn_megastructure = {
+					name = "NAME_origin_dyson_sphere"
+					type = "dyson_sphere_ruined"
+					planet = star
+
+					init_effect = {
+						if = {
+							limit = {
+								root = { has_country_flag = time_1 }
+							}
+							set_name = "NAME_origin_dyson_sphere_time_1"
+						}
+						set_megastructure_flag = origin_dyson_sphere
+						create_ambient_object = {
+							type = "large_debris_object"
+							location = solar_system
+						}
+						create_ambient_object = {
+							type = "large_debris_object"
+							location = solar_system
+						}
+						create_ambient_object = {
+							type = "large_debris_object"
+							location = solar_system
+						}
+						create_ambient_object = {
+							type = "medium_debris_01_object"
+							location = solar_system
+						}
+						create_ambient_object = {
+							type = "medium_debris_02_object"
+							location = solar_system
+						}
+						create_ambient_object = {
+							type = "medium_debris_01_object"
+							location = solar_system
+						}
+						create_ambient_object = {
+							type = "medium_debris_02_object"
+							location = solar_system
+						}
+						create_ambient_object = {
+							type = "small_debris_object"
+							location = solar_system
+						}
+					}
+				}
+			}
+		}
+	}
+}
+
+country_event = {
+	id = origin_dyson_sphere_and_matter_decompressor.2
+	is_triggered_only = yes
+	hide_window = yes
+
+	trigger = {
+		has_origin = origin_matter_decompressor
+	}
+	
+	immediate = {
+		capital_scope.solar_system = {
+			closest_system = {
+				limit = {
+					NOR = {
+						has_star_flag = empire_home_system
+						has_star_flag = hostile_system
+						has_star_flag = guardian
+						is_binary_star = yes
+						is_trinary_star = yes
+						is_time_white_hole_star_class = yes
+						is_star_class = sc_neutron_star
+						is_star_class = sc_pulsar
+						any_system_planet = {
+							is_colonizable = yes
+						}
+					}
+					has_no_non_gate_megastructure = yes
+				}
+				if = {
+					limit = {
+						is_time_black_hole_star_class = no # 本来就是黑洞星系则无需修改
+					}
+					set_star_class = sc_black_hole
+				}
+				set_star_flag = ruined_matter_decompressor_system
+				spawn_megastructure = {
+					name = "NAME_origin_matter_decompressor"
+					type = "matter_decompressor_ruined"
+					planet = star
+
+					init_effect = {
+						if = {
+							limit = {
+								root = { has_country_flag = time_2 }
+							}
+							set_name = "NAME_origin_matter_decompressor_time_2"
+						}
+						set_megastructure_flag = origin_matter_decompressor
+						create_ambient_object = {
+							type = "large_debris_object"
+							location = this
+						}
+						last_created_ambient_object = {
+							set_location = {
+								target = prev
+								distance = 20
+								angle = 20
+							}
+						}
+						create_ambient_object = {
+							type = "large_debris_object"
+							location = this
+						}
+						last_created_ambient_object = {
+							set_location = {
+								target = prev
+								distance = 20
+								angle = 150
+							}
+						}
+						create_ambient_object = {
+							type = "medium_debris_01_object"
+							location = this
+						}
+						last_created_ambient_object = {
+							set_location = {
+								target = prev
+								distance = 35
+								angle = 90
+							}
+						}
+						create_ambient_object = {
+							type = "medium_debris_02_object"
+							location = this
+						}
+						last_created_ambient_object = {
+							set_location = {
+								target = prev
+								distance = 3
+								angle = 270
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+}
+
+country_event = {
+	id = origin_dyson_sphere_and_matter_decompressor.11
+	title = origin_ruined_megastructure.name
+	desc = origin_ruined_megastructure.desc
+	picture = GFX_evt_dyson_sphere
+	show_sound = event_mystic_reveal
+	location = FROM
+	
+	is_triggered_only = yes
+	
+	trigger = {
+		NOT = { has_country_flag = origin_dyson_sphere_and_matter_decompressor_11_triggered }
+		has_origin = origin_dyson_sphere
+		From = {
+			has_megastructure_flag = origin_dyson_sphere
+			NOT = { has_megastructure_flag = ruined_megastructure_event_triggered }
+		}
+	}
+	
+	immediate = {
+		set_country_flag = origin_dyson_sphere_and_matter_decompressor_11_triggered
+		From = {
+			set_megastructure_flag = ruined_megastructure_event_triggered
+		}
+	}
+	
+	option = {
+		name = origin_ruined_megastructure.a
+		trigger = {
+			has_origin = origin_dyson_sphere
+		}
+		add_modifier = {
+			modifier = origin_dyson_sphere_modifier
+			days = -1
+		}
+		add_research_option = tech_dyson_sphere
+		add_tech_progress = {
+			tech = tech_dyson_sphere
+			progress = 0.50
+		}
+	}
+}
+
+country_event = {
+	id = origin_dyson_sphere_and_matter_decompressor.12
+	title = origin_ruined_megastructure.name
+	desc = origin_ruined_megastructure.desc
+	picture = GFX_evt_matter_decompressor
+	show_sound = event_mystic_reveal
+	location = FROM
+	
+	is_triggered_only = yes
+	
+	trigger = {
+		NOT = { has_country_flag = origin_dyson_sphere_and_matter_decompressor_12_triggered }
+		has_origin = origin_matter_decompressor
+		From = {
+			has_megastructure_flag = origin_matter_decompressor
+			NOT = { has_megastructure_flag = ruined_megastructure_event_triggered }
+		}
+	}
+	
+	immediate = {
+		set_country_flag = origin_dyson_sphere_and_matter_decompressor_12_triggered
+		From = {
+			set_megastructure_flag = ruined_megastructure_event_triggered
+		}
+	}
+	
+	option = {
+		name = origin_ruined_megastructure.a
+		trigger = {
+			has_origin = origin_matter_decompressor
+		}
+		add_modifier = {
+			modifier = origin_matter_decompressor_modifier
+			days = -1
+		}
+		add_research_option = tech_matter_decompressor
+		add_tech_progress = {
+			tech = tech_matter_decompressor
+			progress = 0.50
+		}
+	}
+}

@@ -1,0 +1,71 @@
+category = $CATEGORY$
+can_be_automated = no
+
+swappable_data = {
+	default = {
+		building_icon = building_forever_cruise_passenger_research
+		icon = skywatcher
+	}
+}
+
+tags = { research }
+
+resources = {
+	category = planet_time_shelter_watchers
+	produces = {
+		physics_research = 3
+		society_research = 3
+		engineering_research = 3
+		mult = value:time_shelter_output_value
+	}
+	upkeep = {
+		trigger = {
+			owner = { is_gestalt = no }
+		}
+		consumer_goods = 2.5
+	}
+	upkeep = {
+		trigger = {
+			owner = { is_gestalt = yes }
+		}
+		energy = 2.5
+		minerals = 2.5
+	}
+}
+
+triggered_planet_modifier = {
+	potential = {
+		has_time_shelter_modifier = { MODIFIER = time_shelter_watcher_produce_pop_housing_usage_mult }
+	}
+	pop_housing_usage_mult = 1
+	mult = value:time_shelter_modifier_output_value|MODIFIER|time_shelter_watcher_produce_pop_housing_usage_mult|
+}
+
+triggered_planet_modifier = {
+	potential = {
+		has_time_shelter_modifier = { MODIFIER = time_shelter_watcher_produce_deposit_blockers_cost_mult }
+	}
+	deposit_blockers_cost_mult = 1
+	mult = value:time_shelter_modifier_output_value|MODIFIER|time_shelter_watcher_produce_deposit_blockers_cost_mult|
+}
+
+triggered_planet_modifier = {
+	potential = {
+		has_time_shelter_modifier = { MODIFIER = time_shelter_watcher_produce_planet_jobs_produces_mult }
+	}
+	planet_jobs_produces_mult = 1
+	mult = value:time_shelter_modifier_output_value|MODIFIER|time_shelter_watcher_produce_planet_jobs_produces_mult|
+}
+
+triggered_planet_modifier = {
+	potential = {
+		has_time_shelter_modifier = { MODIFIER = time_shelter_watcher_produce_planet_jobs_upkeep_mult }
+	}
+	planet_jobs_upkeep_mult = 1
+	mult = value:time_shelter_modifier_output_value|MODIFIER|time_shelter_watcher_produce_planet_jobs_upkeep_mult|
+}
+
+weight = {
+	weight = $WEIGHT$
+	mult = 100
+}

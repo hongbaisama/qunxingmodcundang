@@ -1,0 +1,312 @@
+################################################################
+# 星辰记忆点数图标
+################################################################
+dimension_traveler_skill_point_main = {
+	potential = {
+		event_target:dimension_traveler_owner = {
+			NOR = {
+				has_country_flag = show_dimension_traveler_official_skill
+				has_country_flag = show_dimension_traveler_scientist_skill
+				has_country_flag = show_dimension_traveler_commander_skill
+			}
+		}
+	}
+	
+	effect = {
+		custom_tooltip = dimension_traveler_skill_point_main
+		hidden_effect = {
+			event_target:dimension_traveler_owner = {
+				refresh_dimension_traveler_skill_point = yes
+			}
+		}
+	}
+}
+
+dimension_traveler_skill_point_official = {
+	potential = {
+		event_target:dimension_traveler_owner = {
+			has_country_flag = show_dimension_traveler_official_skill
+		}
+	}
+	
+	effect = {
+		custom_tooltip = dimension_traveler_skill_point_official
+		hidden_effect = {
+			event_target:dimension_traveler_owner = {
+				refresh_dimension_traveler_skill_point = yes
+				clear_dimension_traveler_skill_flag = yes
+				set_country_flag = show_dimension_traveler_scientist_skill
+			}
+		}
+	}
+}
+
+dimension_traveler_skill_point_scientist = {
+	potential = {
+		event_target:dimension_traveler_owner = {
+			has_country_flag = show_dimension_traveler_scientist_skill
+		}
+	}
+	
+	effect = {
+		custom_tooltip = dimension_traveler_skill_point_scientist
+		hidden_effect = {
+			event_target:dimension_traveler_owner = {
+				refresh_dimension_traveler_skill_point = yes
+				clear_dimension_traveler_skill_flag = yes
+				set_country_flag = show_dimension_traveler_commander_skill
+			}
+		}
+	}
+}
+
+dimension_traveler_skill_point_commander = {
+	potential = {
+		event_target:dimension_traveler_owner = {
+			has_country_flag = show_dimension_traveler_commander_skill
+		}
+	}
+	
+	effect = {
+		custom_tooltip = dimension_traveler_skill_point_commander
+		hidden_effect = {
+			event_target:dimension_traveler_owner = {
+				refresh_dimension_traveler_skill_point = yes
+				clear_dimension_traveler_skill_flag = yes
+				set_country_flag = show_dimension_traveler_official_skill
+			}
+		}
+	}
+}
+
+dimension_traveler_skill_back = {
+	potential = {
+		event_target:dimension_traveler_owner = {
+			OR = {
+				has_country_flag = show_dimension_traveler_official_skill
+				has_country_flag = show_dimension_traveler_scientist_skill
+				has_country_flag = show_dimension_traveler_commander_skill
+			}
+		}
+	}
+	
+	effect = {
+		custom_tooltip = dimension_traveler_skill_back
+		hidden_effect = {
+			event_target:dimension_traveler_owner = {
+				refresh_dimension_traveler_skill_point = yes
+				clear_dimension_traveler_skill_flag = yes
+			}
+		}
+	}
+}
+
+################################################################
+# 星辰记忆点数数值
+################################################################
+
+dimension_traveler_skill_point_text = {
+	potential = {
+		always = yes
+	}
+	
+	effect = {
+		custom_tooltip = dimension_traveler_skill_point_text_detail
+	}
+}
+
+################################################################
+# 行政官技能点
+################################################################
+
+dimension_traveler_skill_main_official = {
+	potential = {
+		event_target:dimension_traveler_owner = {
+			NOR = {
+				has_country_flag = show_dimension_traveler_official_skill
+				has_country_flag = show_dimension_traveler_scientist_skill
+				has_country_flag = show_dimension_traveler_commander_skill
+			}
+		}
+	}
+	
+	effect = {
+		custom_tooltip = dimension_traveler_skill_main_official
+		hidden_effect = {
+			event_target:dimension_traveler_owner = {
+				refresh_dimension_traveler_skill_point = yes
+				set_country_flag = show_dimension_traveler_official_skill
+			}
+		}
+	}
+}
+
+dimension_traveler_skill_main_official_text = {
+	potential = {
+		event_target:dimension_traveler_owner = {
+			NOR = {
+				has_country_flag = show_dimension_traveler_official_skill
+				has_country_flag = show_dimension_traveler_scientist_skill
+				has_country_flag = show_dimension_traveler_commander_skill
+			}
+		}
+	}
+	
+	effect = {
+		custom_tooltip = dimension_traveler_skill_main_official_text_detail
+	}
+}
+
+################################################################
+# 科学官技能点
+################################################################
+
+dimension_traveler_skill_main_scientist = {
+	potential = {
+		event_target:dimension_traveler_owner = {
+			NOR = {
+				has_country_flag = show_dimension_traveler_official_skill
+				has_country_flag = show_dimension_traveler_scientist_skill
+				has_country_flag = show_dimension_traveler_commander_skill
+			}
+		}
+	}
+	
+	effect = {
+		custom_tooltip = dimension_traveler_skill_main_scientist
+		hidden_effect = {
+			event_target:dimension_traveler_owner = {
+				refresh_dimension_traveler_skill_point = yes
+				set_country_flag = show_dimension_traveler_scientist_skill
+			}
+		}
+	}
+}
+
+dimension_traveler_skill_main_scientist_text = {
+	potential = {
+		event_target:dimension_traveler_owner = {
+			NOR = {
+				has_country_flag = show_dimension_traveler_official_skill
+				has_country_flag = show_dimension_traveler_scientist_skill
+				has_country_flag = show_dimension_traveler_commander_skill
+			}
+		}
+	}
+	
+	effect = {
+		custom_tooltip = dimension_traveler_skill_main_scientist_text_detail
+	}
+}
+
+################################################################
+# 指挥官技能点
+################################################################
+
+dimension_traveler_skill_main_commander = {
+	potential = {
+		event_target:dimension_traveler_owner = {
+			NOR = {
+				has_country_flag = show_dimension_traveler_official_skill
+				has_country_flag = show_dimension_traveler_scientist_skill
+				has_country_flag = show_dimension_traveler_commander_skill
+			}
+		}
+	}
+	
+	effect = {
+		custom_tooltip = dimension_traveler_skill_main_commander
+		hidden_effect = {
+			event_target:dimension_traveler_owner = {
+				refresh_dimension_traveler_skill_point = yes
+				set_country_flag = show_dimension_traveler_commander_skill
+			}
+		}
+	}
+}
+
+dimension_traveler_skill_main_commander_text = {
+	potential = {
+		event_target:dimension_traveler_owner = {
+			NOR = {
+				has_country_flag = show_dimension_traveler_official_skill
+				has_country_flag = show_dimension_traveler_scientist_skill
+				has_country_flag = show_dimension_traveler_commander_skill
+			}
+		}
+	}
+	
+	effect = {
+		custom_tooltip = dimension_traveler_skill_main_commander_text_detail
+	}
+}
+
+################################################################
+# 技能树箭头
+################################################################
+
+inline_script = {
+	script = dimension_traveler/dimension_traveler_skill_arrow_button_effects
+}
+
+################################################################
+# 界旅者技能树设定
+################################################################
+# 各层序号：
+#         5
+#        / \
+#       4   6
+#      / \ / \
+#     3   5   7
+#    / \ / \ / \
+#   2   4   6   8
+#  / \ / \ / \ / \
+# 1   3   5   7   9 （该层为内阁增强）
+#  \ / \ / \ / \ /
+#   2   4   6   8
+#    \ / \ / \ /
+#     3   5   7
+#      \ / \ /
+#       4   6
+#        \ /
+#         5
+# 以下，数字为消耗的技能点
+# 从两端起，激活的技能可以potential解锁全部顺序相连的技能（但最多解锁至中层）
+# 中层的potential还需要界旅者有专属命定，4点的使该职业的特质效果增强
+# 单职业合计需要50点
+#         1
+#        / \
+#       1   1
+#      / \ / \
+#     2   2   2
+#    / \ / \ / \
+#   2   2   2   2
+#  / \ / \ / \ / \
+# 3   3   4   3   3 （该层为内阁增强）
+#  \ / \ / \ / \ /
+#   2   2   2   2
+#    \ / \ / \ /
+#     2   2   2
+#      \ / \ /
+#       1   1
+#        \ /
+#         1
+# 示例：
+# O为已激活，X为已解锁但未激活，空白为未解锁
+#         O
+#        / \
+#       X   O
+#        \ / \
+#         O   X
+#        / \ /  
+#       O   X    
+#      / \ /      
+#     O   O         （该层为内阁增强）
+#
+#
+#
+#
+#
+#       X   X
+#        \ /
+#         O

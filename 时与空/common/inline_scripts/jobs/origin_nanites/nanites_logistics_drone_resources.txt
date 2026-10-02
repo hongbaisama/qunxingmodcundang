@@ -1,0 +1,224 @@
+produces = {
+	trigger = {
+		colony = {
+			check_modifier_value = {
+				modifier = nanites_study_system
+				value > 0
+			}
+		}
+	}
+	energy = 0.25
+	mult = value:num_nanites_logistics_drone_energy
+}
+
+produces = {
+	trigger = {
+		colony = {
+			check_modifier_value = {
+				modifier = nanites_sapient_network
+				value > 0
+			}
+		}
+	}
+	energy = 0.25
+	mult = value:num_nanites_logistics_drone_energy_network
+}
+
+produces = {
+	trigger = {
+		colony = {
+			check_modifier_value = {
+				modifier = nanites_study_system
+				value > 0
+			}
+		}
+	}
+	minerals = 0.25
+	mult = value:num_nanites_logistics_drone_minerals
+}
+
+produces = {
+	trigger = {
+		colony = {
+			check_modifier_value = {
+				modifier = nanites_sapient_network
+				value > 0
+			}
+		}
+	}
+	minerals = 0.25
+	mult = value:num_nanites_logistics_drone_minerals_network
+}
+
+produces = {
+	trigger = {
+		colony = {
+			check_modifier_value = {
+				modifier = nanites_study_system
+				value > 0
+			}
+		}
+	}
+	trade = 0.25
+	mult = value:num_nanites_logistics_drone_trade
+}
+
+produces = {
+	trigger = {
+		colony = {
+			check_modifier_value = {
+				modifier = nanites_sapient_network
+				value > 0
+			}
+		}
+	}
+	trade = 0.25
+	mult = value:num_nanites_logistics_drone_trade_network
+}
+
+produces = {
+	trigger = {
+		colony = {
+			check_modifier_value = {
+				modifier = nanites_study_system
+				value > 0
+			}
+		}
+	}
+	alloys = 0.125
+	mult = value:num_nanites_logistics_drone_alloys
+}
+
+produces = {
+	trigger = {
+		colony = {
+			check_modifier_value = {
+				modifier = nanites_sapient_network
+				value > 0
+			}
+		}
+	}
+	alloys = 0.125
+	mult = value:num_nanites_logistics_drone_alloys_network
+}
+
+produces = {
+	trigger = {
+		colony = {
+			check_modifier_value = {
+				modifier = nanites_study_system
+				value > 0
+			}
+		}
+	}
+	consumer_goods = 0.125
+	mult = value:num_nanites_logistics_drone_consumer_goods
+}
+
+produces = {
+	trigger = {
+		colony = {
+			check_modifier_value = {
+				modifier = nanites_sapient_network
+				value > 0
+			}
+		}
+	}
+	consumer_goods = 0.125
+	mult = value:num_nanites_logistics_drone_consumer_goods_network
+}
+
+produces = {
+	trigger = {
+		colony = {
+			check_modifier_value = {
+				modifier = nanites_study_system
+				value > 0
+			}
+		}
+	}
+	physics_research = 0.0625
+	society_research = 0.0625
+	engineering_research = 0.0625
+	mult = value:num_nanites_logistics_drone_research
+}
+
+produces = {
+	trigger = {
+		colony = {
+			check_modifier_value = {
+				modifier = nanites_sapient_network
+				value > 0
+			}
+		}
+	}
+	physics_research = 0.0625
+	society_research = 0.0625
+	engineering_research = 0.0625
+	mult = value:num_nanites_logistics_drone_research_network
+}
+
+produces = {
+	trigger = {
+		colony = {
+			check_modifier_value = {
+				modifier = nanites_study_system
+				value > 0
+			}
+		}
+	}
+	unity = 0.125
+	mult = value:num_nanites_logistics_drone_unity
+}
+
+produces = {
+	trigger = {
+		colony = {
+			check_modifier_value = {
+				modifier = nanites_sapient_network
+				value > 0
+			}
+		}
+	}
+	unity = 0.125
+	mult = value:num_nanites_logistics_drone_unity_network
+}
+
+produces = {
+	trigger = {
+		colony = {
+			check_modifier_value = {
+				modifier = nanites_sapient_network
+				value > 0
+			}
+		}
+	}
+	exotic_gases = 0.05
+	mult = value:num_nanites_logistics_drone_exotic_gases_network
+}
+
+produces = {
+	trigger = {
+		colony = {
+			check_modifier_value = {
+				modifier = nanites_sapient_network
+				value > 0
+			}
+		}
+	}
+	volatile_motes = 0.05
+	mult = value:num_nanites_logistics_drone_volatile_motes_network
+}
+
+produces = {
+	trigger = {
+		colony = {
+			check_modifier_value = {
+				modifier = nanites_sapient_network
+				value > 0
+			}
+		}
+	}
+	rare_crystals = 0.05
+	mult = value:num_nanites_logistics_drone_rare_crystals_network
+}

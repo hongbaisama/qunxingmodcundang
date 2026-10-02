@@ -1,0 +1,498 @@
+trait_fourth_crisis_1 = {
+	cost = 4
+	icon = "gfx/interface/icons/traits/trait_fourth_crisis_1.dds"
+	allowed_origins = { origin_fourth_crisis }
+	initial = no
+	randomized = no
+	immortal_leaders = yes
+	advanced_trait = yes
+	opposites = { "trait_fourth_crisis_4" }
+	inline_script = "trait/modification_condition/time_fourth_crisis_trait_genetics"
+	inline_script = "trait/allowed_archetypes/time_archetypes_no_robotic"
+	tags = { organic positive genetic_ascension pop_growth leader special }
+	sorting_priority = 4
+	modifier = {
+		bonus_pop_growth_mult = 0.5
+		species_leader_exp_gain = 1
+	}
+	slave_cost = {
+		trade = 1000
+	}
+}
+
+trait_fourth_crisis_2 = {
+	cost = 4
+	icon = "gfx/interface/icons/traits/trait_fourth_crisis_2.dds"
+	allowed_origins = { origin_fourth_crisis }
+	initial = no
+	randomized = no
+	advanced_trait = yes
+	opposites = { "trait_fourth_crisis_5" }
+	inline_script = "trait/modification_condition/time_fourth_crisis_trait_genetics"
+	inline_script = "trait/allowed_archetypes/time_archetypes_no_robotic"
+	tags = { organic positive genetic_ascension pop_growth pop_output happiness special }
+	sorting_priority = 4
+	modifier = {
+		pop_bonus_workforce_mult = 0.25
+		pop_happiness = 0.25
+		logistic_growth_mult = 0.5
+	}
+	slave_cost = {
+		trade = 1000
+	}
+	assembly_score = {
+		modifier = {
+			add = 2
+		}
+	}
+}
+
+trait_fourth_crisis_3 = {
+	cost = 4
+	icon = "gfx/interface/icons/traits/trait_fourth_crisis_3.dds"
+	allowed_origins = { origin_fourth_crisis }
+	initial = no
+	randomized = no
+	advanced_trait = yes
+	opposites = { "trait_fourth_crisis_6" }
+	inline_script = "trait/modification_condition/time_fourth_crisis_trait_genetics"
+	inline_script = "trait/allowed_archetypes/time_archetypes_no_robotic"
+	tags = { organic positive genetic_ascension pop_output research unity army special }
+	sorting_priority = 4
+	modifier = {
+		researcher_jobs_bonus_workforce_mult = 0.5
+		bureaucrat_jobs_bonus_workforce_mult = 0.5
+		army_damage_mult = 0.5
+	}
+	slave_cost = {
+		trade = 1000
+	}
+	assembly_score = {
+		modifier = {
+			add = 2.5
+			from = { has_research_designation = yes }
+		}
+	}
+}
+
+trait_fourth_crisis_4 = {
+	cost = 2
+	icon = "gfx/interface/icons/traits/trait_fourth_crisis_4.dds"
+	allowed_origins = { origin_fourth_crisis }
+	randomized = no
+	opposites = { "trait_fourth_crisis_1" }
+	inline_script = "trait/modification_condition/time_fourth_crisis_trait"
+	inline_script = "trait/allowed_archetypes/time_archetypes_no_robotic"
+	tags = { organic positive pop_growth leader special }
+	sorting_priority = 2
+	modifier = {
+		bonus_pop_growth_mult = 0.25
+		species_leader_exp_gain = 0.5
+		leader_lifespan_mult = 0.5
+	}
+	slave_cost = {
+		trade = 500
+	}
+}
+
+trait_fourth_crisis_5 = {
+	cost = 2
+	icon = "gfx/interface/icons/traits/trait_fourth_crisis_5.dds"
+	allowed_origins = { origin_fourth_crisis }
+	randomized = no
+	opposites = { "trait_fourth_crisis_2" }
+	inline_script = "trait/modification_condition/time_fourth_crisis_trait"
+	inline_script = "trait/allowed_archetypes/time_archetypes_no_robotic"
+	tags = { organic positive pop_growth pop_output happiness special }
+	sorting_priority = 2
+	modifier = {
+		pop_bonus_workforce_mult = 0.125
+		pop_happiness = 0.125
+		logistic_growth_mult = 0.25
+	}
+	slave_cost = {
+		trade = 500
+	}
+	assembly_score = {
+		modifier = {
+			add = 1.5
+		}
+	}
+}
+
+trait_fourth_crisis_6 = {
+	cost = 2
+	icon = "gfx/interface/icons/traits/trait_fourth_crisis_6.dds"
+	allowed_origins = { origin_fourth_crisis }
+	randomized = no
+	opposites = { "trait_fourth_crisis_3" }
+	inline_script = "trait/modification_condition/time_fourth_crisis_trait"
+	inline_script = "trait/allowed_archetypes/time_archetypes_no_robotic"
+	tags = { organic positive pop_output research unity army special }
+	sorting_priority = 2
+	modifier = {
+		researcher_jobs_bonus_workforce_mult = 0.25
+		bureaucrat_jobs_bonus_workforce_mult = 0.25
+		army_damage_mult = 0.25
+	}
+	slave_cost = {
+		trade = 500
+	}
+	assembly_score = {
+		modifier = {
+			add = 2
+			from = { has_research_designation = yes }
+		}
+	}
+}
+
+trait_fourth_crisis_7 = {
+	cost = 4
+	icon = "gfx/interface/icons/traits/trait_fourth_crisis_7.dds"
+	allowed_origins = { origin_fourth_crisis }
+	initial = no
+	randomized = no
+	immortal_leaders = yes
+	inline_script = "trait/modification_condition/time_fourth_crisis_trait_synthetics"
+	inline_script = "trait/allowed_archetypes/time_archetypes_robotic"
+	tags = { machine synthetic modularity positive pop_growth leader special }
+	sorting_priority = 4
+	modifier = {
+		planet_pop_assembly_mult = 0.5
+		species_leader_exp_gain = 1
+	}
+	slave_cost = {
+		trade = 1000
+	}
+}
+
+trait_fourth_crisis_8 = {
+	cost = 4
+	icon = "gfx/interface/icons/traits/trait_fourth_crisis_8.dds"
+	allowed_origins = { origin_fourth_crisis }
+	initial = no
+	randomized = no
+	inline_script = "trait/modification_condition/time_fourth_crisis_trait_synthetics"
+	inline_script = "trait/allowed_archetypes/time_archetypes_robotic"
+	tags = { machine synthetic modularity positive pop_output amenities housing special }
+	sorting_priority = 4
+	modifier = {
+		pop_bonus_workforce_mult = 0.25
+		pop_amenities_usage_mult = -0.25
+		pop_housing_usage_mult = -0.25
+	}
+	slave_cost = {
+		trade = 1000
+	}
+	assembly_score = {
+		modifier = {
+			add = 2
+		}
+	}
+}
+
+trait_fourth_crisis_9 = {
+	cost = 4
+	icon = "gfx/interface/icons/traits/trait_fourth_crisis_9.dds"
+	allowed_origins = { origin_fourth_crisis }
+	initial = no
+	randomized = no
+	inline_script = "trait/modification_condition/time_fourth_crisis_trait_synthetics"
+	inline_script = "trait/allowed_archetypes/time_archetypes_robotic"
+	tags = { machine synthetic modularity positive pop_output research unity army special }
+	sorting_priority = 4
+	modifier = {
+		researcher_jobs_bonus_workforce_mult = 0.5
+		bureaucrat_jobs_bonus_workforce_mult = 0.5
+		army_damage_mult = 0.5
+	}
+	slave_cost = {
+		trade = 1000
+	}
+	assembly_score = {
+		modifier = {
+			add = 2.5
+			from = { has_research_designation = yes }
+		}
+	}
+}
+
+trait_fourth_crisis_10 = {
+	cost = 2
+	icon = "gfx/interface/icons/traits/trait_fourth_crisis_10.dds"
+	allowed_origins = { origin_fourth_crisis }
+	randomized = no
+	inline_script = "trait/modification_condition/time_fourth_crisis_trait"
+	inline_script = "trait/allowed_archetypes/time_archetypes_robotic"
+	tags = { machine positive pop_growth leader special }
+	sorting_priority = 2
+	modifier = {
+		planet_pop_assembly_mult = 0.25
+		species_leader_exp_gain = 0.5
+		leader_lifespan_mult = 0.5
+	}
+	slave_cost = {
+		trade = 500
+	}
+}
+
+trait_fourth_crisis_11 = {
+	cost = 2
+	icon = "gfx/interface/icons/traits/trait_fourth_crisis_11.dds"
+	allowed_origins = { origin_fourth_crisis }
+	randomized = no
+	inline_script = "trait/modification_condition/time_fourth_crisis_trait"
+	inline_script = "trait/allowed_archetypes/time_archetypes_robotic"
+	tags = { machine positive pop_output amenities housing special }
+	sorting_priority = 2
+	modifier = {
+		pop_bonus_workforce_mult = 0.125
+		pop_amenities_usage_mult = -0.125
+		pop_housing_usage_mult = -0.125
+	}
+	slave_cost = {
+		trade = 500
+	}
+	assembly_score = {
+		modifier = {
+			add = 1.5
+		}
+	}
+}
+
+trait_fourth_crisis_12 = {
+	cost = 2
+	icon = "gfx/interface/icons/traits/trait_fourth_crisis_12.dds"
+	allowed_origins = { origin_fourth_crisis }
+	randomized = no
+	inline_script = "trait/modification_condition/time_fourth_crisis_trait"
+	inline_script = "trait/allowed_archetypes/time_archetypes_robotic"
+	tags = { machine positive pop_output research unity army special }
+	sorting_priority = 2
+	modifier = {
+		researcher_jobs_bonus_workforce_mult = 0.25
+		bureaucrat_jobs_bonus_workforce_mult = 0.25
+		army_damage_mult = 0.25
+	}
+	slave_cost = {
+		trade = 500
+	}
+	assembly_score = {
+		modifier = {
+			add = 2
+			from = { has_research_designation = yes }
+		}
+	}
+}
+
+leader_trait_fourth_crisis_egalitarian = {
+	starting_ruler_trait = yes
+	allowed_origins = { origin_fourth_crisis }
+	allowed_ethics = { ethic_egalitarian ethic_fanatic_egalitarian }
+	cost = 1
+	inline_script = {
+		script = trait/icon
+		CLASS = leader
+		ICON = "GFX_leader_trait_principled"
+		RARITY = paragon
+		COUNCIL = yes
+		TIER = none
+	}
+	councilor_modifier = {
+		country_produces_mult = 0.2
+		pop_amenities_usage_add = 0.5
+	}
+	leader_class = all
+	initial = no
+	randomized = no
+}
+
+leader_trait_fourth_crisis_authoritarian = {
+	starting_ruler_trait = yes
+	allowed_origins = { origin_fourth_crisis }
+	allowed_ethics = { ethic_authoritarian ethic_fanatic_authoritarian }
+	cost = 1
+	inline_script = {
+		script = trait/icon
+		CLASS = leader
+		ICON = "GFX_leader_trait_spymaster"
+		RARITY = paragon
+		COUNCIL = yes
+		TIER = none
+	}
+	councilor_modifier = {
+		country_cost_mult = -0.1
+		country_upkeep_mult = -0.1
+		planet_crime_mult = 0.5
+	}
+	leader_class = all
+	initial = no
+	randomized = no
+}
+
+leader_trait_fourth_crisis_spiritualist = {
+	starting_ruler_trait = yes
+	allowed_origins = { origin_fourth_crisis }
+	allowed_ethics = { ethic_spiritualist ethic_fanatic_spiritualist }
+	cost = 1
+	inline_script = {
+		script = trait/icon
+		CLASS = leader
+		ICON = "GFX_leader_trait_warform"
+		RARITY = paragon
+		COUNCIL = yes
+		TIER = none
+	}
+	councilor_modifier = {
+		country_unity_produces_mult = 0.25
+		planetary_ascension_effect_mult = 0.25
+		planet_pop_assembly_mult = -0.5
+	}
+	leader_class = all
+	initial = no
+	randomized = no
+}
+
+leader_trait_fourth_crisis_materialist = {
+	starting_ruler_trait = yes
+	allowed_origins = { origin_fourth_crisis }
+	allowed_ethics = { ethic_materialist ethic_fanatic_materialist }
+	cost = 1
+	inline_script = {
+		script = trait/icon
+		CLASS = leader
+		ICON = "GFX_leader_trait_cybrex_databases"
+		RARITY = paragon
+		COUNCIL = yes
+		TIER = none
+	}
+	councilor_modifier = {
+		country_physics_research_produces_mult = 0.25
+		country_society_research_produces_mult = 0.25
+		country_engineering_research_produces_mult = 0.25
+		all_technology_research_speed = 0.25
+		bonus_pop_growth_mult = -0.5
+	}
+	leader_class = all
+	initial = no
+	randomized = no
+}
+
+leader_trait_fourth_crisis_xenophobe = {
+	starting_ruler_trait = yes
+	allowed_origins = { origin_fourth_crisis }
+	allowed_ethics = { ethic_xenophobe ethic_fanatic_xenophobe }
+	cost = 1
+	inline_script = {
+		script = trait/icon
+		CLASS = leader
+		ICON = "GFX_leader_trait_prospectorium_optimizer"
+		RARITY = paragon
+		COUNCIL = yes
+		TIER = none
+	}
+	councilor_modifier = {
+		planet_jobs_produces_mult = 0.25
+		empire_size_mult = -0.25
+		pop_housing_usage_add = 0.5
+	}
+	leader_class = all
+	initial = no
+	randomized = no
+}
+
+leader_trait_fourth_crisis_militarist = {
+	starting_ruler_trait = yes
+	allowed_origins = { origin_fourth_crisis }
+	allowed_ethics = { ethic_militarist ethic_fanatic_militarist }
+	cost = 1
+	inline_script = {
+		script = trait/icon
+		CLASS = leader
+		ICON = "GFX_leader_trait_supreme_warrior"
+		RARITY = paragon
+		COUNCIL = yes
+		TIER = none
+	}
+	councilor_modifier = {
+		ship_hull_damage_mult = 0.25
+		ship_armor_damage_mult = 0.25
+		ship_shield_damage_mult = 0.25
+		ship_evasion_add = -25
+	}
+	leader_class = all
+	initial = no
+	randomized = no
+}
+
+leader_trait_fourth_crisis_gestalt_consciousness_a = {
+	starting_ruler_trait = yes
+	allowed_origins = { origin_fourth_crisis }
+	allowed_ethics = { ethic_gestalt_consciousness }
+	cost = 1
+	inline_script = {
+		script = trait/icon
+		CLASS = leader
+		ICON = "GFX_leader_trait_assembler"
+		RARITY = paragon
+		COUNCIL = yes
+		TIER = none
+	}
+	councilor_modifier = {
+		logistic_growth_mult = 0.5
+		bonus_pop_growth_mult = 0.5
+		planet_pop_assembly_mult = 0.5
+		empire_size_mult = 0.25
+	}
+	leader_class = all
+	initial = no
+	randomized = no
+}
+
+leader_trait_fourth_crisis_gestalt_consciousness_b = {
+	starting_ruler_trait = yes
+	allowed_origins = { origin_fourth_crisis }
+	allowed_ethics = { ethic_gestalt_consciousness }
+	cost = 1
+	inline_script = {
+		script = trait/icon
+		CLASS = leader
+		ICON = "GFX_leader_trait_mind_wipe"
+		RARITY = paragon
+		COUNCIL = yes
+		TIER = none
+	}
+	councilor_modifier = {
+		pop_housing_usage_add = -0.5
+		pop_amenities_usage_add = -0.5
+		planet_crime_no_happiness_mult = -0.5
+		all_technology_research_speed = -0.25
+	}
+	leader_class = all
+	initial = no
+	randomized = no
+}
+
+leader_trait_fourth_crisis_gestalt_consciousness_c = {
+	starting_ruler_trait = yes
+	allowed_origins = { origin_fourth_crisis }
+	allowed_ethics = { ethic_gestalt_consciousness }
+	cost = 1
+	inline_script = {
+		script = trait/icon
+		CLASS = leader
+		ICON = "GFX_leader_trait_annihilator"
+		RARITY = paragon
+		COUNCIL = yes
+		TIER = none
+	}
+	councilor_modifier = {
+		ship_accuracy_add = 25
+		ship_tracking_add = 25
+		ship_evasion_add = 25
+		planetary_ascension_effect_mult = -0.25
+	}
+	leader_class = all
+	initial = no
+	randomized = no
+}

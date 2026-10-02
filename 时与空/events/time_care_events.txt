@@ -1,0 +1,243 @@
+namespace = time_care
+
+country_event = {
+	id = time_care.1
+	title = ancrel.2060.name
+	desc = time_care.1.desc
+	location = event_target:mechanocalibrator_planet
+	
+	diplomatic = yes
+	
+	is_triggered_only = yes
+	
+	picture_event_data = {
+		portrait = event_target:mechanocalibrator_ai
+		room = personality_hegemonic_imperialists_room
+		planet_background = event_target:mechanocalibrator_planet
+	}
+	
+	option = {
+		name = time_care.1.a
+		allow = {
+			# 铁灭当然可以招募C.A.R.E
+			NOR = {
+				has_valid_civic = civic_fanatic_purifiers
+				has_valid_civic = civic_hive_devouring_swarm
+				has_valid_civic = civic_scorched_earth
+				has_valid_civic = civic_hive_scorched_earth
+			}
+		}
+		hidden_effect = {
+			country_event = { id = time_care.2 }
+		}
+	}
+	
+	option = {
+		name = {
+			text = time_care.1.b
+			trigger = {
+				is_gestalt = no
+			}
+		}
+		name = {
+			text = time_care.1.c
+			trigger = {
+				is_gestalt = yes
+			}
+		}
+		default_hide_option = yes
+		if = {
+			limit = {
+				NOT = { has_relic = r_the_defragmentor }
+			}
+			add_relic = r_the_defragmentor
+		}
+		event_target:mechanocalibrator_planet = {
+			add_modifier = { modifier = pm_planetary_mechanocalibrator }
+		}
+	}
+}
+
+country_event = {
+	id = time_care.2
+	title = ancrel.2060.name
+	desc = time_care.2.desc
+	show_sound = event_construction
+
+	diplomatic = yes
+	force_open = yes
+	
+	event_window_type = leader_recruit
+	picture_event_data = {
+		portrait = event_target:planetary_mechanocalibrator_leader
+		room = personality_hegemonic_imperialists_room
+		planet_background = event_target:mechanocalibrator_planet
+	}
+	picture = GFX_leader_recruitment_bg_renowned_care
+
+	is_triggered_only = yes
+	
+	immediate = {
+		event_target:mechanocalibrator_country = {
+			create_leader = {
+				class = official
+				species = event_target:mechanocalibrator_species
+				name = "NAME_planetary_mechanocalibrator"
+				gender = indeterminable
+				immortal = yes
+				randomize_traits = no
+				event_leader = yes
+				skill = 1
+				set_age = 1453
+				background_planet = event_target:mechanocalibrator_planet
+				background_job = planetary_mechanocalibrator
+				background_ethic = ethic_gestalt_consciousness
+				custom_catch_phrase = planetary_mechanocalibrator_catch_phrase
+				custom_description = planetary_mechanocalibrator_backstory
+				traits = {
+					trait = leader_trait_planetary_mechanocalibrator
+					trait = subclass_official_governor
+					trait = leader_trait_pop_focused_3
+					trait = leader_trait_distribution_lines_3
+					trait = leader_trait_trade_focus_2
+				}
+				effect = {
+					freeze_leader_age = no
+					set_skill = 7
+					if = {
+						limit = {
+							root = { is_machine_or_individual_machine_empire = no }
+						}
+						add_trait = {
+							trait = leader_trait_polluter_2
+						}
+					}
+					else = {
+						add_trait = {
+							trait = leader_trait_profligate_2
+						}
+					}
+					if = {
+						limit = {
+							root = {
+								OR = {
+									is_xenophile = yes
+									is_megacorp = yes
+								}
+							}
+						}
+						set_leader_flag = care_trade
+					}
+					else_if = {
+						limit = {
+							root = { is_robot_empire = yes }
+						}
+						set_leader_flag = care_energy
+					}
+					else = {
+						set_leader_flag = care_economy
+					}
+					set_leader_flag = has_gained_level_trait
+					set_leader_flag = leader_death_events_blocked
+					change_background_job = planetary_mechanocalibrator
+					save_global_event_target_as = planetary_mechanocalibrator_leader
+				}
+			}
+		}
+	}
+	
+	option = {
+		name = time_care.2.a
+		is_dialog_only = yes
+		response_text = time_care.2.a.response
+		set_country_flag = time_care_dialog_step_1
+	}
+	
+	option = {
+		name = time_care.2.b
+		allow = {
+			has_country_flag = time_care_dialog_step_1
+		}
+		hide_option_if_not_allowed = yes
+		is_dialog_only = yes
+		response_text = time_care.2.b.response
+		set_country_flag = time_care_dialog_step_2
+	}
+	
+	option = {
+		name = time_care.2.c
+		allow = {
+			has_country_flag = time_care_dialog_step_2
+		}
+		hide_option_if_not_allowed = yes
+		is_dialog_only = yes
+		response_text = time_care.2.c.response
+		set_country_flag = time_care_dialog_step_3
+	}
+	
+	option = {
+		name = time_care.2.d
+		allow = {
+			has_country_flag = time_care_dialog_step_3
+		}
+		hide_option_if_not_allowed = yes
+		is_dialog_only = yes
+		response_text = time_care.2.d.response
+	}
+	
+	option = {
+		name = {
+			text = time_care.2.hire
+			trigger = {
+				is_gestalt = no
+			}
+		}
+		name = {
+			text = time_care.2.hire.hive
+			trigger = {
+				is_hive_empire = yes
+			}
+		}
+		name = {
+			text = time_care.2.hire.machine
+			trigger = {
+				is_machine_empire = yes
+			}
+		}
+		tag = hire_leader
+		custom_tooltip = time_care.2.hire.tooltip
+		hidden_effect = {
+			clone_leader = {
+				target = event_target:planetary_mechanocalibrator_leader
+				background_planet = event_target:mechanocalibrator_planet
+				background_job = planetary_mechanocalibrator
+				save_event_target_as = new_planetary_mechanocalibrator_leader
+			}
+			event_target:new_planetary_mechanocalibrator_leader = {
+				copy_flags_and_variables_from = event_target:planetary_mechanocalibrator_leader
+				event_target:planetary_mechanocalibrator_leader = {
+					kill_leader = { show_notification = no }
+				}
+				save_global_event_target_as = planetary_mechanocalibrator_leader
+				fire_on_action = {
+					on_action = on_leader_hired
+				}
+			}
+			change_paragon_memory_vault = yes
+		}
+	}
+	
+	option = {
+		name = time_care.2.dismiss
+		tag = dismiss_leader
+		if = {
+			limit = {
+				NOT = { has_relic = r_the_defragmentor }
+			}
+			add_relic = r_the_defragmentor
+		}
+		event_target:mechanocalibrator_planet = {
+			add_modifier = { modifier = pm_planetary_mechanocalibrator }
+		}
+	}
+}

@@ -1,0 +1,156 @@
+spriteTypes = {
+	#############################
+	# 旅者
+	#############################
+	spriteType = {
+		name = "GFX_specimen_dimension_traveler_song_of_nature"
+		texturefile = "gfx/interface/icons/specimens/dimension_traveler_song_of_nature.dds"
+	}
+	spriteType = {
+		name = "GFX_specimen_dimension_traveler_photo_booth"
+		texturefile = "gfx/interface/icons/specimens/dimension_traveler_photo_booth.dds"
+	}
+	spriteType = {
+		name = "GFX_specimen_dimension_traveler_compressed_candy"
+		texturefile = "gfx/interface/icons/specimens/dimension_traveler_compressed_candy.dds"
+	}
+	spriteType = {
+		name = "GFX_specimen_dimension_traveler_moisturizing_lipstick"
+		texturefile = "gfx/interface/icons/specimens/dimension_traveler_moisturizing_lipstick.dds"
+	}
+	#############################
+	# 视界信号
+	#############################
+	spriteType = {
+		name = "GFX_specimen_akx_horizonsignal_love_poem"
+		texturefile = "gfx/interface/icons/specimens/akx_horizonsignal_love_poem.dds"
+	}
+	spriteType = {
+		name = "GFX_specimen_akx_time_and_stone"
+		texturefile = "gfx/interface/icons/specimens/akx_time_and_stone.dds"
+	}
+	spriteType = {
+		name = "GFX_specimen_akx_pi_based_computer"
+		texturefile = "gfx/interface/icons/specimens/akx_pi_based_computer.dds"
+	}
+	spriteType = {
+		name = "GFX_specimen_akx_pass_black_hole"
+		texturefile = "gfx/interface/icons/specimens/akx_pass_black_hole.dds"
+	}
+	spriteType = {
+		name = "GFX_specimen_akx_ouroboros"
+		texturefile = "gfx/interface/icons/specimens/akx_ouroboros.dds"
+	}
+	spriteType = {
+		name = "GFX_specimen_akx_klein_tower"
+		texturefile = "gfx/interface/icons/specimens/akx_klein_tower.dds"
+	}
+	spriteType = {
+		name = "GFX_specimen_akx_out_of_0_and_1"
+		texturefile = "gfx/interface/icons/specimens/akx_out_of_0_and_1.dds"
+	}
+	#############################
+	# 时螶之界
+	#############################
+	spriteType = {
+		name = "GFX_specimen_akx_the_quality_of_light"
+		texturefile = "gfx/interface/icons/specimens/akx_the_quality_of_light.dds"
+	}
+	spriteType = {
+		name = "GFX_specimen_akx_everyone_is"
+		texturefile = "gfx/interface/icons/specimens/akx_everyone_is.dds"
+	}
+	spriteType = {
+		name = "GFX_specimen_akx_the_limit_of_light"
+		texturefile = "gfx/interface/icons/specimens/akx_the_limit_of_light.dds"
+	}
+	spriteType = {
+		name = "GFX_specimen_akx_the_wrong_path_dead"
+		texturefile = "gfx/interface/icons/specimens/akx_the_wrong_path_dead.dds"
+	}
+	spriteType = {
+		name = "GFX_specimen_akx_transparent_world"
+		texturefile = "gfx/interface/icons/specimens/akx_transparent_world.dds"
+	}
+	spriteType = {
+		name = "GFX_specimen_akx_utawarerumono"
+		texturefile = "gfx/interface/icons/specimens/akx_utawarerumono.dds"
+	}
+	#############################
+	# 信使
+	#############################
+	spriteType = {
+		name = "GFX_specimen_akx_messenger"
+		texturefile = "gfx/interface/icons/specimens/akx_messenger.dds"
+	}
+	spriteType = {
+		name = "GFX_specimen_akx_elegy_of_disaster"
+		texturefile = "gfx/interface/icons/specimens/akx_elegy_of_disaster.dds"
+	}
+	spriteType = {
+		name = "GFX_specimen_akx_paean_of_hope"
+		texturefile = "gfx/interface/icons/specimens/akx_paean_of_hope.dds"
+	}
+	spriteType = {
+		name = "GFX_specimen_akx_answer_of_riddle"
+		texturefile = "gfx/interface/icons/specimens/akx_answer_of_riddle.dds"
+	}
+	#############################
+	# 命中相会
+	#############################
+	spriteType = {
+		name = "GFX_specimen_akx_debris_of_syzygy"
+		texturefile = "gfx/interface/icons/specimens/akx_debris_of_syzygy.dds"
+	}
+	spriteType = {
+		name = "GFX_specimen_akx_darkness_over_depth"
+		texturefile = "gfx/interface/icons/specimens/akx_darkness_over_depth.dds"
+	}
+	#############################
+	# 神之圆环
+	#############################
+	spriteType = {
+		name = "GFX_specimen_akx_coils_rituals"
+		texturefile = "gfx/interface/icons/specimens/akx_coils_rituals.dds"
+	}
+	spriteType = {
+		name = "GFX_specimen_akx_the_other_shore"
+		texturefile = "gfx/interface/icons/specimens/akx_the_other_shore.dds"
+	}
+	#############################
+	# 圣仆
+	#############################
+	spriteType = {
+		name = "GFX_specimen_akx_brief"
+		texturefile = "gfx/interface/icons/specimens/akx_brief.dds"
+	}
+	spriteType = {
+		name = "GFX_specimen_akx_black_hole_compression"
+		texturefile = "gfx/interface/icons/specimens/akx_black_hole_compression.dds"
+	}
+	#############################
+	# 时光旅馆
+	#############################
+	spriteType = {
+		name = "GFX_specimen_akx_wake_up"
+		texturefile = "gfx/interface/icons/specimens/akx_wake_up.dds"
+	}
+	#############################
+	# 来自深渊
+	#############################
+	spriteType = {
+		name = "GFX_specimen_akx_rainbow_sea"
+		texturefile = "gfx/interface/icons/specimens/akx_rainbow_sea.dds"
+	}
+	#############################
+	# 诺亚方舟
+	#############################
+	spriteType = {
+		name = "GFX_specimen_time_way_to_heaven"
+		texturefile = "gfx/interface/icons/specimens/time_way_to_heaven.dds"
+	}
+	spriteType = {
+		name = "GFX_specimen_time_hymn_of_heaven"
+		texturefile = "gfx/interface/icons/specimens/time_hymn_of_heaven.dds"
+	}
+}

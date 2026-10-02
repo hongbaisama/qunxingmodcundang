@@ -1,0 +1,24 @@
+name = {
+	text = time_help.200.$COUNCILOR$.unlocked
+	trigger = {
+		NOT = { has_country_flag = $COUNCILOR$_locked }
+	}
+}
+name = {
+	text = time_help.200.$COUNCILOR$.locked
+	trigger = {
+		has_country_flag = $COUNCILOR$_locked
+	}
+}
+hidden_effect = {
+	if = {
+		limit = {
+			NOT = { has_country_flag = $COUNCILOR$_locked }
+		}
+		set_country_flag = $COUNCILOR$_locked
+	}
+	else = {
+		remove_country_flag = $COUNCILOR$_locked
+	}
+	country_event = { id = time_help.200 }
+}

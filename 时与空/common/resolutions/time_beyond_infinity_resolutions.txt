@@ -1,0 +1,312 @@
+# 星海帝皇
+
+resolution_beyond_infinity_emperor_repeal_1 = {
+	inline_script = {
+		script = resolutions/resolution_beyond_infinity_repeal
+		TYPE = emperor
+		COST = 100
+		OLD_LEVEL = 1
+	}
+	
+	ai_weight = {
+		base = @resolution_weight_disliked
+		inline_script = "weights/resolution_beyond_infinity_repeal_weight"
+		modifier = {
+			factor = 0
+			is_part_of_galactic_council = yes
+			desc = gal_com_on_galatic_council
+		}
+	}
+}
+
+resolution_beyond_infinity_emperor_repeal_2 = {
+	inline_script = {
+		script = resolutions/resolution_beyond_infinity_repeal
+		TYPE = emperor
+		COST = 200
+		OLD_LEVEL = 2
+	}
+	
+	modifier = {
+		resolution_beyond_infinity_emperor_1 = 1
+	}
+	
+	ai_weight = {
+		base = @resolution_weight_unpopular
+		inline_script = "weights/resolution_beyond_infinity_repeal_weight"
+		modifier = {
+			factor = 0.5
+			is_part_of_galactic_council = yes
+			desc = gal_com_on_galatic_council
+		}
+	}
+}
+
+resolution_beyond_infinity_emperor_repeal_3 = {
+	inline_script = {
+		script = resolutions/resolution_beyond_infinity_repeal
+		TYPE = emperor
+		COST = 300
+		OLD_LEVEL = 3
+	}
+	
+	modifier = {
+		resolution_beyond_infinity_emperor_1 = 1
+		resolution_beyond_infinity_emperor_2 = 1
+	}
+	
+	ai_weight = {
+		base = @resolution_weight_unpopular
+		inline_script = "weights/resolution_beyond_infinity_repeal_weight"
+	}
+}
+
+resolution_beyond_infinity_emperor_1 = {
+	inline_script = {
+		script = resolutions/resolution_beyond_infinity_start
+		TYPE = emperor
+		COST = 100
+	}
+	
+	active = {
+		exists = event_target:beyond_infinity_country
+		event_target:beyond_infinity_country = {
+			is_galactic_emperor = yes
+		}
+	}
+	
+	modifier = {
+		resolution_beyond_infinity_emperor_1 = 1
+	}
+	
+	ai_weight = {
+		base = @resolution_weight_popular
+		inline_script = "weights/resolution_beyond_infinity_weight"
+		modifier = {
+			factor = 10
+			is_part_of_galactic_council = yes
+			desc = gal_com_on_galatic_council
+		}
+	}
+}
+
+resolution_beyond_infinity_emperor_2 = {
+	inline_script = {
+		script = resolutions/resolution_beyond_infinity
+		TYPE = emperor
+		COST = 200
+		OLD_LEVEL = 1
+		NEW_LEVEL = 2
+	}
+	
+	active = {
+		exists = event_target:beyond_infinity_country
+		event_target:beyond_infinity_country = {
+			is_galactic_emperor = yes
+		}
+	}
+	
+	modifier = {
+		resolution_beyond_infinity_emperor_1 = 1
+		resolution_beyond_infinity_emperor_2 = 1
+	}
+	
+	ai_weight = {
+		base = @resolution_weight_normal
+		inline_script = "weights/resolution_beyond_infinity_weight"
+		modifier = {
+			factor = 2
+			is_part_of_galactic_council = yes
+			desc = gal_com_on_galatic_council
+		}
+	}
+}
+
+resolution_beyond_infinity_emperor_3 = {
+	inline_script = {
+		script = resolutions/resolution_beyond_infinity
+		TYPE = emperor
+		COST = 300
+		OLD_LEVEL = 2
+		NEW_LEVEL = 3
+	}
+	
+	active = {
+		exists = event_target:beyond_infinity_country
+		event_target:beyond_infinity_country = {
+			is_galactic_emperor = yes
+		}
+	}
+	
+	modifier = {
+		resolution_beyond_infinity_emperor_1 = 1
+		resolution_beyond_infinity_emperor_2 = 1
+		resolution_beyond_infinity_emperor_3 = 1
+	}
+	
+	ai_weight = {
+		base = @resolution_weight_normal
+		inline_script = "weights/resolution_beyond_infinity_weight"
+	}
+}
+
+# 星海监管人
+
+resolution_beyond_infinity_custodian_repeal_1 = {
+	inline_script = {
+		script = resolutions/resolution_beyond_infinity_repeal
+		TYPE = custodian
+		COST = 100
+		OLD_LEVEL = 1
+	}
+	
+	ai_weight = {
+		base = @resolution_weight_disliked
+		inline_script = "weights/resolution_beyond_infinity_repeal_weight"
+		modifier = {
+			factor = 0
+			is_part_of_galactic_council = yes
+			desc = gal_com_on_galatic_council
+		}
+	}
+}
+
+resolution_beyond_infinity_custodian_repeal_2 = {
+	inline_script = {
+		script = resolutions/resolution_beyond_infinity_repeal
+		TYPE = custodian
+		COST = 200
+		OLD_LEVEL = 2
+	}
+	
+	modifier = {
+		resolution_beyond_infinity_custodian_1 = 1
+	}
+	
+	ai_weight = {
+		base = @resolution_weight_unpopular
+		inline_script = "weights/resolution_beyond_infinity_repeal_weight"
+		modifier = {
+			factor = 0.5
+			is_part_of_galactic_council = yes
+			desc = gal_com_on_galatic_council
+		}
+	}
+}
+
+resolution_beyond_infinity_custodian_repeal_3 = {
+	inline_script = {
+		script = resolutions/resolution_beyond_infinity_repeal
+		TYPE = custodian
+		COST = 300
+		OLD_LEVEL = 3
+	}
+	
+	modifier = {
+		resolution_beyond_infinity_custodian_1 = 1
+		resolution_beyond_infinity_custodian_2 = 1
+	}
+	
+	ai_weight = {
+		base = @resolution_weight_unpopular
+		inline_script = "weights/resolution_beyond_infinity_repeal_weight"
+	}
+}
+
+resolution_beyond_infinity_custodian_1 = {
+	inline_script = {
+		script = resolutions/resolution_beyond_infinity_start
+		TYPE = custodian
+		COST = 100
+	}
+	
+	active = {
+		exists = event_target:beyond_infinity_country
+		event_target:beyond_infinity_country = {
+			OR = {
+				is_galactic_emperor = yes # 成立星海帝国后，要根据已激活的议案来自动激活新的议案
+				is_galactic_custodian = yes
+			}
+		}
+	}
+	
+	modifier = {
+		resolution_beyond_infinity_custodian_1 = 1
+	}
+	
+	ai_weight = {
+		base = @resolution_weight_popular
+		inline_script = "weights/resolution_beyond_infinity_weight"
+		modifier = {
+			factor = 10
+			is_part_of_galactic_council = yes
+			desc = gal_com_on_galatic_council
+		}
+	}
+}
+
+resolution_beyond_infinity_custodian_2 = {
+	inline_script = {
+		script = resolutions/resolution_beyond_infinity
+		TYPE = custodian
+		COST = 200
+		OLD_LEVEL = 1
+		NEW_LEVEL = 2
+	}
+	
+	active = {
+		exists = event_target:beyond_infinity_country
+		event_target:beyond_infinity_country = {
+			OR = {
+				is_galactic_emperor = yes # 成立星海帝国后，要根据已激活的议案来自动激活新的议案
+				is_galactic_custodian = yes
+			}
+		}
+	}
+	
+	modifier = {
+		resolution_beyond_infinity_custodian_1 = 1
+		resolution_beyond_infinity_custodian_2 = 1
+	}
+	
+	ai_weight = {
+		base = @resolution_weight_normal
+		inline_script = "weights/resolution_beyond_infinity_weight"
+		modifier = {
+			factor = 2
+			is_part_of_galactic_council = yes
+			desc = gal_com_on_galatic_council
+		}
+	}
+}
+
+resolution_beyond_infinity_custodian_3 = {
+	inline_script = {
+		script = resolutions/resolution_beyond_infinity
+		TYPE = custodian
+		COST = 300
+		OLD_LEVEL = 2
+		NEW_LEVEL = 3
+	}
+	
+	active = {
+		exists = event_target:beyond_infinity_country
+		event_target:beyond_infinity_country = {
+			OR = {
+				is_galactic_emperor = yes # 成立星海帝国后，要根据已激活的议案来自动激活新的议案
+				is_galactic_custodian = yes
+			}
+		}
+	}
+	
+	modifier = {
+		resolution_beyond_infinity_custodian_1 = 1
+		resolution_beyond_infinity_custodian_2 = 1
+		resolution_beyond_infinity_custodian_3 = 1
+	}
+	
+	ai_weight = {
+		base = @resolution_weight_normal
+		inline_script = "weights/resolution_beyond_infinity_weight"
+	}
+}

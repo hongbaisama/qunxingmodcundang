@@ -1,0 +1,406 @@
+num_ninghe_effect = {
+	base = 1
+	modifier = {
+		multiply = 1.5
+		owner = {
+			has_tradition = tr_origin_tao_of_ninghe_finish
+		}
+	}
+	min = 1
+}
+
+num_ninghe_approach = {
+	base = $BASE$
+	modifier = {
+		multiply = 1.5
+		owner = {
+			has_tradition = tr_origin_tao_of_ninghe_situations
+		}
+	}
+}
+
+num_yin_leader = {
+	base = 0
+	complex_trigger_modifier = {
+		trigger = has_base_skill
+		mult = 1
+		mode = add
+	}
+	complex_trigger_modifier = {
+		trigger = num_leader_traits
+		parameters = {
+			count_tiers = yes
+		}
+		mult = 1
+		mode = add
+	}
+	modifier = {
+		multiply = owner.value:num_time_modifier|MODIFIER|pure_yin_mult_modifier|
+		owner = {
+			is_yang_country = yes
+		}
+	}
+}
+
+num_yang_leader = {
+	base = 0
+	complex_trigger_modifier = {
+		trigger = has_base_skill
+		mult = 1
+		mode = add
+	}
+	complex_trigger_modifier = {
+		trigger = num_leader_traits
+		parameters = {
+			count_tiers = yes
+		}
+		mult = 1
+		mode = add
+	}
+	modifier = {
+		multiply = owner.value:num_time_modifier|MODIFIER|pure_yang_mult_modifier|
+		owner = {
+			is_yin_country = yes
+		}
+	}
+}
+
+num_yin_planet = {
+	base = 0
+	complex_trigger_modifier = {
+		trigger = count_owned_colony
+		trigger_scope = owner
+		parameters = {
+			limit = {
+				any_targeting_situation = {
+					is_situation_type = situation_tao_of_ninghe_4
+				}
+			}
+		}
+		mult = 2
+		mode = add
+	}
+	complex_trigger_modifier = {
+		trigger = count_owned_colony
+		trigger_scope = owner
+		parameters = {
+			limit = {
+				any_targeting_situation = {
+					is_situation_type = situation_tao_of_ninghe_3
+				}
+			}
+		}
+		mult = 4
+		mode = add
+	}
+	complex_trigger_modifier = {
+		trigger = count_owned_colony
+		trigger_scope = owner
+		parameters = {
+			limit = {
+				any_targeting_situation = {
+					is_situation_type = situation_tao_of_ninghe_2
+				}
+			}
+		}
+		mult = 6
+		mode = add
+	}
+	complex_trigger_modifier = {
+		trigger = count_owned_colony
+		trigger_scope = owner
+		parameters = {
+			limit = {
+				any_targeting_situation = {
+					is_situation_type = situation_tao_of_ninghe_1
+				}
+			}
+		}
+		mult = 8
+		mode = add
+	}
+	complex_trigger_modifier = {
+		trigger = count_owned_colony
+		trigger_scope = owner
+		parameters = {
+			limit = {
+				any_targeting_situation = {
+					is_situation_type = situation_tao_of_ninghe_0
+				}
+			}
+		}
+		mult = 10
+		mode = add
+	}
+	modifier = {
+		multiply = owner.value:num_time_modifier|MODIFIER|pure_yin_mult_modifier|
+		owner = {
+			is_yang_country = yes
+		}
+	}
+}
+
+num_yang_planet = {
+	base = 0
+	complex_trigger_modifier = {
+		trigger = count_owned_colony
+		trigger_scope = owner
+		parameters = {
+			limit = {
+				any_targeting_situation = {
+					is_situation_type = situation_tao_of_ninghe_6
+				}
+			}
+		}
+		mult = 2
+		mode = add
+	}
+	complex_trigger_modifier = {
+		trigger = count_owned_colony
+		trigger_scope = owner
+		parameters = {
+			limit = {
+				any_targeting_situation = {
+					is_situation_type = situation_tao_of_ninghe_7
+				}
+			}
+		}
+		mult = 4
+		mode = add
+	}
+	complex_trigger_modifier = {
+		trigger = count_owned_colony
+		trigger_scope = owner
+		parameters = {
+			limit = {
+				any_targeting_situation = {
+					is_situation_type = situation_tao_of_ninghe_8
+				}
+			}
+		}
+		mult = 6
+		mode = add
+	}
+	complex_trigger_modifier = {
+		trigger = count_owned_colony
+		trigger_scope = owner
+		parameters = {
+			limit = {
+				any_targeting_situation = {
+					is_situation_type = situation_tao_of_ninghe_9
+				}
+			}
+		}
+		mult = 8
+		mode = add
+	}
+	complex_trigger_modifier = {
+		trigger = count_owned_colony
+		trigger_scope = owner
+		parameters = {
+			limit = {
+				any_targeting_situation = {
+					is_situation_type = situation_tao_of_ninghe_10
+				}
+			}
+		}
+		mult = 10
+		mode = add
+	}
+	modifier = {
+		multiply = owner.value:num_time_modifier|MODIFIER|pure_yang_mult_modifier|
+		owner = {
+			is_yin_country = yes
+		}
+	}
+}
+
+# num_buildings里，使用了category条目后，disabled条目似乎会失效，无论建筑是否禁用都会被纳入计数
+num_yin_value = {
+	base = 0
+	add = value:num_time_unity_building|MULT|5|
+	add = value:num_time_trade_building|MULT|5|
+	inline_script = { script = script_values/num_category_buildings	CATEGORY = amenity			MULT = 5	MODE = add }
+	inline_script = { script = script_values/num_category_buildings	CATEGORY = manufacturing	MULT = 5	MODE = add }
+	# 铸造类建筑的category为manufacturing，不应计入
+	subtract = value:num_time_foundry_building|MULT|5|
+	# 区划特化
+	add = value:num_time_unity_zone|MULT|10|
+	add = value:num_time_trade_zone|MULT|10|
+	add = value:num_time_factory_zone|MULT|10|
+	add = value:num_time_amenity_zone|MULT|10|
+	multiply = value:num_yin_mult_value
+}
+
+num_yang_value = {
+	base = 0
+	add = value:num_time_research_building|MULT|5|
+	add = value:num_time_resource_building|MULT|5|
+	inline_script = { script = script_values/num_category_buildings	CATEGORY = government		MULT = 5	MODE = add }
+	inline_script = { script = script_values/num_category_buildings	CATEGORY = army				MULT = 5	MODE = add }
+	inline_script = { script = script_values/num_category_buildings	CATEGORY = manufacturing	MULT = 5	MODE = add }
+	# 工业和精炼类建筑的category为manufacturing，不应计入
+	subtract = value:num_time_factory_building|MULT|5|
+	subtract = value:num_time_refinery_building|MULT|5|
+	# 区划特化
+	add = value:num_time_research_zone|MULT|10|
+	add = value:num_time_army_zone|MULT|10|
+	add = value:num_time_foundry_zone|MULT|10|
+	add = value:num_time_resource_zone|MULT|10|
+	multiply = value:num_yang_mult_value
+}
+
+num_yin_mult_value = {
+	base = 1
+	multiply = value:num_time_modifier|MODIFIER|yin_mult_modifier|
+	modifier = {
+		multiply = owner.value:num_time_modifier|MODIFIER|pure_yin_mult_modifier|
+		is_yang_planet = yes
+	}
+	# AI补助
+	modifier = {
+		multiply = 0.5
+		owner = { is_ai = yes }
+		is_yin_planet = yes
+	}
+	min = 0.1
+}
+
+num_yang_mult_value = {
+	base = 1
+	multiply = value:num_time_modifier|MODIFIER|yang_mult_modifier|
+	modifier = {
+		multiply = owner.value:num_time_modifier|MODIFIER|pure_yang_mult_modifier|
+		is_yin_planet = yes
+	}
+	# AI补助
+	modifier = {
+		multiply = 0.5
+		owner = { is_ai = yes }
+		is_yang_planet = yes
+	}
+	min = 0.1
+}
+
+num_ninghe_planet_class_yin_value = {
+	base = $BASE$
+	modifier = {
+		multiply = owner.value:num_time_modifier|MODIFIER|pure_yin_mult_modifier|
+		is_yang_planet = yes
+	}
+	# AI补助
+	modifier = {
+		multiply = 0.5
+		owner = { is_ai = yes }
+		is_yin_planet = yes
+	}
+	min = 0
+}
+
+num_ninghe_planet_class_yang_value = {
+	base = $BASE$
+	modifier = {
+		multiply = owner.value:num_time_modifier|MODIFIER|pure_yang_mult_modifier|
+		is_yin_planet = yes
+	}
+	# AI补助
+	modifier = {
+		multiply = 0.5
+		owner = { is_ai = yes }
+		is_yang_planet = yes
+	}
+	min = 0
+}
+
+num_ninghe_planet_class_value = {
+	base = 0
+	# 星球类型
+	modifier = {
+		add = value:num_ninghe_planet_class_yang_value|BASE|10|
+		OR = {
+			is_planet_class = pc_desert
+			is_planet_class = pc_arid
+			is_planet_class = pc_tropical
+		}
+	}
+	modifier = {
+		subtract = value:num_ninghe_planet_class_yin_value|BASE|10|
+		OR = {
+			is_planet_class = pc_tundra
+			is_planet_class = pc_arctic
+			is_planet_class = pc_alpine
+		}
+	}
+	modifier = {
+		add = value:num_ninghe_planet_class_yang_value|BASE|15|
+		OR = {
+			is_planet_class = pc_gaia
+			is_origin_time_planet_class = yes
+		}
+		is_yin_planet = yes
+	}
+	modifier = {
+		subtract = value:num_ninghe_planet_class_yin_value|BASE|15|
+		OR = {
+			is_planet_class = pc_gaia
+			is_origin_time_planet_class = yes
+		}
+		is_yang_planet = yes
+	}
+	modifier = {
+		add = value:num_ninghe_planet_class_yang_value|BASE|20|
+		OR = {
+			AND = {
+				is_artificial = yes
+				NOR = {
+					is_planet_class = pc_habitat
+					is_planet_class = pc_crystal_habitat
+					is_planet_class = pc_warden_guardian
+					is_planet_class = pc_time_replace
+					is_origin_time_planet_class = yes
+				}
+			}
+			is_planet_class = pc_nanites
+			uses_district_set = city_world
+			uses_district_set = machine_world
+			has_deposit = d_gas_colony_arcology
+		}
+	}
+	modifier = {
+		subtract = value:num_ninghe_planet_class_yin_value|BASE|20|
+		OR = {
+			is_planet_class = pc_habitat
+			is_planet_class = pc_crystal_habitat
+			is_planet_class = pc_warden_guardian
+			is_planet_class = pc_nuked
+			is_planet_class = pc_relic
+			is_planet_class = pc_psionic
+			uses_district_set = hive_world
+			has_deposit = d_gas_colony_hive
+		}
+	}
+	# 殖民地规划
+	modifier = {
+		add = value:num_ninghe_planet_class_yang_value|BASE|15|
+		OR = {
+			has_foundry_designation = yes
+			has_rural_designation = yes
+			has_generator_designation = yes
+			has_mining_designation = yes
+			has_farming_designation = yes
+			has_research_designation = yes
+			has_fortress_designation = yes
+			has_designation = col_slave
+			has_designation = col_penal
+		}
+	}
+	modifier = {
+		subtract = value:num_ninghe_planet_class_yin_value|BASE|15|
+		OR = {
+			has_factory_designation = yes
+			has_unity_designation = yes
+			has_trade_designation = yes
+			has_designation = col_resort
+		}
+	}
+}

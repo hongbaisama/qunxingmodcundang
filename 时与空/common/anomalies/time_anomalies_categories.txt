@@ -1,0 +1,128 @@
+time_hotel_categories = {
+	desc = time_hotel_categories_desc
+	picture = GFX_evt_board_meeting
+	level = 5
+	should_ai_use = no
+	max_once = yes
+	max_once_global = yes
+
+	spawn_chance = {
+		base = 0
+	}
+
+	on_success = {
+		2 = {
+			anomaly_event = time_hotel.9
+		}
+		1 = {
+			modifier = {
+				factor = 0
+				owner = { is_materialist = yes }
+			}
+			anomaly_event = time_hotel.10
+		}
+	}
+}
+
+hole_pets_categories_1 = {
+	desc = hole_pets_categories_1_desc
+	picture = GFX_evt_black_hole
+	level = 3
+	should_ai_use = no
+	max_once = yes
+	max_once_global = yes
+	situation_log_category = horizonsignal
+
+	spawn_chance = {
+		base = 0
+	}
+
+	on_success = {
+		1 = {
+			anomaly_event = time_akx.401
+		}
+	}
+}
+
+hole_pets_categories_2 = {
+	desc = hole_pets_categories_2_desc
+	picture = GFX_evt_black_hole
+	level = 6
+	should_ai_use = no
+	max_once = yes
+	max_once_global = yes
+	situation_log_category = horizonsignal
+
+	spawn_chance = {
+		base = 0
+	}
+
+	on_success = {
+		1 = {
+			anomaly_event = time_akx.403
+		}
+	}
+}
+
+hole_pets_categories_3 = {
+	desc = hole_pets_categories_3_desc
+	picture = GFX_evt_black_hole
+	level = 9
+	should_ai_use = no
+	max_once = yes
+	max_once_global = yes
+	situation_log_category = horizonsignal
+
+	spawn_chance = {
+		base = 0
+	}
+
+	on_success = {
+		1 = {
+			anomaly_event = time_akx.405
+		}
+	}
+}
+
+dimension_traveler_categories = {
+	desc = dimension_traveler_categories_desc
+	picture = GFX_evt_black_hole
+	level = 5
+	should_ai_use = no
+	max_once = yes
+	max_once_global = yes
+	situation_log_category = horizonsignal
+
+	spawn_chance = {
+		base = 0
+	}
+
+	on_success = {
+		1 = {
+			anomaly_event = dimension_traveler.51
+		}
+	}
+}
+
+time_lifeline_categories = {
+	desc = time_lifeline_categories_desc
+	picture = GFX_evt_mysterious_signal
+	level = 3
+	should_ai_use = no
+	max_once = yes
+	max_once_global = yes
+	situation_log_category = urgent_matters
+
+	spawn_chance = {
+		modifier = {
+			add = 100
+			is_planet_class = pc_black_hole
+		}
+	}
+
+	on_success = {
+		1 = {
+			anomaly_event = time_lifeline.1
+		}
+	}
+}

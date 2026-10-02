@@ -1,0 +1,1257 @@
+########################
+# 位面光束
+########################
+
+weapon_component_template = {
+	key = "DIMENSIONAL_HORROR_PRIMARY_BEAM"
+	size = extra_large
+	type = instant
+	prio_projectile = yes
+	hidden = yes
+
+	icon = "GFX_ship_part_dimensional_horror_primary_beam"
+	icon_frame = 1
+	projectile_gfx = "dimensional_titan_laser"
+
+	firing_arc = 30.0
+	min_range = 15
+	damage = { min = 1.00 max = 999.00 }
+	windup = { min = 10.00 max = 20.00 }
+	hull_damage = 1.50
+	shield_damage = 0.75
+	shield_penetration = 0.50
+	armor_damage = 2.50
+	armor_penetration = 1.25
+	total_fire_time = 85.00
+	range = 150.00
+	accuracy = 0.80
+	tracking = 0.30
+	size_damage_factor = 0.04
+	military_power_multiplier = 2
+	collateral_damage = @time_beam_aoe_damage_no
+	collateral_range = @time_beam_aoe_range
+	
+	on_hit = {
+		horror_weapon_on_hit_aoe_effect = {
+			TYPE = time
+			DEBUFF = terrify
+			BIO_SHIPS = no
+		}
+	}
+	
+	injected_modifier = {
+		modifier = {
+			modifier = time_beam_modifier
+			days = @time_beam_injected_modifier_days_no
+		}
+		stack_info = {			#A ship can only be affected by one injected modifier of a certain id. If multiple modifiers have the same ID the one with the highest priority will be applied.
+			id = time_beam_modifier
+			priority = 1
+		}
+	}
+	
+	tags = { weapon_type_dimensional_horror weapon_type_energy weapon_role_artillery x_slot }
+	ai_tags = { weapon_role_anti_hull weapon_role_anti_armor weapon_role_artillery artillery }
+	
+	inline_script = {
+		script = component_templates/time_target_weights_focus_large
+	}
+	
+	custom_tooltip = time_beam_effect
+	
+	triggered_ship_modifier = {
+		potential = {
+			active_ap_horror_bonus = { SCOPE = owner }
+		}
+		ship_armor_penetration_mult = 0.1
+	}
+	
+	triggered_ship_modifier = {
+		potential = {
+			active_ap_time_bonus = { SCOPE = owner }
+		}
+		ship_armor_penetration_mult = 0.2
+	}
+	
+	component_set = "DIMENSIONAL_HORROR_PRIMARY_BEAM"
+}
+
+weapon_component_template = {
+	key = "DIMENSIONAL_HORROR_PRIMARY_ACCELERATOR"
+	size = extra_large
+	type = instant
+	prio_projectile = yes
+	hidden = yes
+
+	icon = "GFX_ship_part_dimensional_horror_primary_accelerator"
+	icon_frame = 1
+	projectile_gfx = "dimensional_titan_laser"
+
+	firing_arc = 30.0
+	min_range = 15
+	damage = { min = 1.00 max = 999.00 }
+	windup = { min = 10.00 max = 20.00 }
+	hull_damage = 1.50
+	shield_damage = 2.50
+	shield_penetration = 1.25
+	armor_damage = 0.75
+	armor_penetration = 0.50
+	total_fire_time = 85.00
+	range = 150.00
+	accuracy = 1.00
+	tracking = 0.20
+	size_damage_factor = 0.04
+	military_power_multiplier = 2
+	collateral_damage = @time_beam_aoe_damage_no
+	collateral_range = @time_beam_aoe_range
+	
+	on_hit = {
+		horror_weapon_on_hit_aoe_effect = {
+			TYPE = time
+			DEBUFF = terrify
+			BIO_SHIPS = no
+		}
+	}
+	
+	injected_modifier = {
+		modifier = {
+			modifier = time_accelerator_modifier
+			days = @time_beam_injected_modifier_days_no
+		}
+		stack_info = {			#A ship can only be affected by one injected modifier of a certain id. If multiple modifiers have the same ID the one with the highest priority will be applied.
+			id = time_accelerator_modifier
+			priority = 1
+		}
+	}
+	
+	tags = { weapon_type_dimensional_horror weapon_type_kinetic weapon_role_artillery x_slot }
+	ai_tags = { weapon_role_anti_hull weapon_role_anti_shield weapon_role_artillery artillery }
+	
+	inline_script = {
+		script = component_templates/time_target_weights_focus_large
+	}
+	
+	custom_tooltip = time_accelerator_effect
+	
+	triggered_ship_modifier = {
+		potential = {
+			active_ap_horror_bonus = { SCOPE = owner }
+		}
+		ship_shield_penetration_mult = 0.1
+	}
+	
+	triggered_ship_modifier = {
+		potential = {
+			active_ap_time_bonus = { SCOPE = owner }
+		}
+		ship_shield_penetration_mult = 0.2
+	}
+	
+	component_set = "DIMENSIONAL_HORROR_PRIMARY_ACCELERATOR"
+}
+
+########################
+# 位面撕裂者
+########################
+
+weapon_component_template = {
+	inline_script = {
+		script = component_templates/dimensional_horror_beam
+		KEY = DIMENSIONAL_HORROR_LARGE_BEAM
+		SIZE = large
+		SLOT_TAG = l_slot
+		MAX_DMG = 299
+	}
+}
+
+weapon_component_template = {
+	inline_script = {
+		script = component_templates/dimensional_horror_accelerator
+		KEY = DIMENSIONAL_HORROR_LARGE_ACCELERATOR
+		SIZE = large
+		SLOT_TAG = l_slot
+		MAX_DMG = 299
+	}
+}
+
+########################
+# 位面递归者
+########################
+
+weapon_component_template = {
+	inline_script = {
+		script = component_templates/dimensional_horror_beam
+		KEY = DIMENSIONAL_HORROR_MEDIUM_BEAM
+		SIZE = medium
+		SLOT_TAG = m_slot
+		MAX_DMG = 199
+	}
+}
+
+weapon_component_template = {
+	inline_script = {
+		script = component_templates/dimensional_horror_accelerator
+		KEY = DIMENSIONAL_HORROR_MEDIUM_ACCELERATOR
+		SIZE = medium
+		SLOT_TAG = m_slot
+		MAX_DMG = 199
+	}
+}
+
+########################
+# 位面打击者
+########################
+
+weapon_component_template = {
+	inline_script = {
+		script = component_templates/dimensional_horror_beam
+		KEY = DIMENSIONAL_HORROR_SMALL_BEAM
+		SIZE = small
+		SLOT_TAG = s_slot
+		MAX_DMG = 99
+	}
+}
+
+weapon_component_template = {
+	inline_script = {
+		script = component_templates/dimensional_horror_accelerator
+		KEY = DIMENSIONAL_HORROR_SMALL_ACCELERATOR
+		SIZE = small
+		SLOT_TAG = s_slot
+		MAX_DMG = 99
+	}
+}
+
+########################
+# 位面守卫
+########################
+
+weapon_component_template = {
+	key = "DIMENSIONAL_HORROR_PD_ENERGY"
+	size = point_defence
+	type = point_defence
+	point_defence_targets = { "missile" "strike_craft" }
+	hidden = yes
+
+	icon = "GFX_ship_part_dimensional_horror_pd_energy"
+	icon_frame = 1
+	entity = "invisible_turret_entity"
+	projectile_gfx = "dimensional_horror_spike_weapon"
+	
+	damage = { min = 1.00 max = 49.00 }
+	windup = { min = 5.00 max = 15.00 }
+	hull_damage = 1.25
+	shield_damage = 0.50
+	shield_penetration = 0.25
+	armor_damage = 2.00
+	armor_penetration = 1.00
+	total_fire_time = 10.00
+	range = 50.00
+	accuracy = 0.80
+	tracking = 0.90
+	size_damage_factor = 0.02
+	military_power_multiplier = 2
+	
+	target_focus = spread
+	
+	on_hit = {
+		horror_weapon_on_hit_effect = {
+			TYPE = dimensional_pd
+			DEBUFF = confuse
+			BIO_SHIPS = no
+		}
+	}
+	
+	injected_modifier = {
+		modifier = {
+			modifier = dimensional_horror_pd_energy_modifier
+			days = @horror_beam_injected_modifier_days_no
+		}
+		stack_info = {			#A ship can only be affected by one injected modifier of a certain id. If multiple modifiers have the same ID the one with the highest priority will be applied.
+			id = dimensional_horror_pd_energy_modifier
+			priority = 1
+		}
+	}
+	
+	tags = { weapon_type_dimensional_horror weapon_type_point_defense weapon_type_energy }
+	ai_tags = { weapon_role_anti_hull weapon_role_anti_armor weapon_role_point_defense }
+	
+	inline_script = {
+		script = component_templates/time_target_weights_focus_small
+	}
+	
+	custom_tooltip = dimensional_horror_pd_energy_effect
+	
+	triggered_ship_modifier = {
+		potential = {
+			active_ap_horror_bonus = { SCOPE = owner }
+		}
+		ship_tracking_mult = 0.025
+	}
+	
+	triggered_ship_modifier = {
+		potential = {
+			active_ap_time_bonus = { SCOPE = owner }
+		}
+		ship_tracking_mult = 0.05
+	}
+	
+	component_set = "DIMENSIONAL_HORROR_PD_ENERGY"
+}
+
+weapon_component_template = {
+	key = "DIMENSIONAL_HORROR_PD_KINETIC"
+	size = point_defence
+	type = point_defence
+	point_defence_targets = { "missile" "strike_craft" }
+	hidden = yes
+
+	icon = "GFX_ship_part_dimensional_horror_pd_kinetic"
+	icon_frame = 1
+	entity = "invisible_turret_entity"
+	projectile_gfx = "dimensional_horror_spike_weapon"
+	
+	damage = { min = 1.00 max = 49.00 }
+	windup = { min = 5.00 max = 15.00 }
+	hull_damage = 1.25
+	shield_damage = 2.00
+	shield_penetration = 1.0
+	armor_damage = 0.50
+	armor_penetration = 0.25
+	total_fire_time = 10.00
+	range = 50.00
+	accuracy = 1.00
+	tracking = 0.60
+	size_damage_factor = 0.02
+	military_power_multiplier = 2
+	
+	target_focus = spread
+	
+	on_hit = {
+		horror_weapon_on_hit_effect = {
+			TYPE = dimensional_pd
+			DEBUFF = confuse
+			BIO_SHIPS = no
+		}
+	}
+	
+	injected_modifier = {
+		modifier = {
+			modifier = dimensional_horror_pd_kinetic_modifier
+			days = @horror_beam_injected_modifier_days_no
+		}
+		stack_info = {			#A ship can only be affected by one injected modifier of a certain id. If multiple modifiers have the same ID the one with the highest priority will be applied.
+			id = dimensional_horror_pd_kinetic_modifier
+			priority = 1
+		}
+	}
+	
+	tags = { weapon_type_dimensional_horror weapon_type_point_defense weapon_type_kinetic }
+	ai_tags = { weapon_role_anti_hull weapon_role_anti_shield weapon_role_point_defense }
+	
+	inline_script = {
+		script = component_templates/time_target_weights_focus_small
+	}
+	
+	custom_tooltip = dimensional_horror_pd_kinetic_effect
+	
+	triggered_ship_modifier = {
+		potential = {
+			active_ap_horror_bonus = { SCOPE = owner }
+		}
+		ship_accuracy_mult = 0.025
+	}
+	
+	triggered_ship_modifier = {
+		potential = {
+			active_ap_time_bonus = { SCOPE = owner }
+		}
+		ship_accuracy_mult = 0.05
+	}
+	
+	component_set = "DIMENSIONAL_HORROR_PD_KINETIC"
+}
+
+########################
+# 位面哨兵
+########################
+
+strike_craft_component_template = {
+	key = "DIMENSIONAL_HORROR_STRIKE_CRAFT_ENERGY"
+	size = LARGE
+	weapon_type = point_defence
+	point_defence_targets = { "missile" "strike_craft" }
+	
+	icon = "GFX_ship_part_dimensional_horror_strike_craft_energy"
+	icon_frame = 1
+	entity = "gatebuilder_01_strikecraft_entity"
+	projectile_gfx = "dimensional_horror_spike_weapon"
+	
+	power = -100
+	
+	count = 10
+	regeneration_per_day = 0.5
+	launch_time = 1.0
+	
+	damage = { min = 1 max = 29 }
+	cooldown = 2
+	range = 50
+	engagement_range = 150
+	accuracy = 0.80
+	tracking = 0.90
+	size_damage_factor = 0.02
+	
+	health = 100
+	armor = 50
+	shield = 100
+	evasion = 1
+	
+	speed = 600
+	rotation_speed = 0.2
+	acceleration = 0.5
+	
+	hull_damage = 1.25
+	shield_damage = 0.50
+	shield_penetration = 0.25
+	armor_damage = 2.00
+	armor_penetration = 1.00
+	
+	ship_behavior = "fighters_behavior"
+	
+	tags = { weapon_type_dimensional_horror weapon_type_strike_craft weapon_type_energy }
+	ai_tags = { weapon_role_anti_hull weapon_role_anti_armor weapon_role_point_defense carrier }
+	
+	prerequisites = { "tech_dimensional_horror_strike_craft" }
+	component_set = "DIMENSIONAL_HORROR_STRIKE_CRAFT_ENERGY"
+	
+	potential = {
+		from = { has_tradition = tr_hope_4 }
+	}
+	
+	resources = {
+		category = ship_components
+		cost = {
+			alloys = @l_t7_cost
+			sr_dark_matter = 3
+			nanites = 3
+		}
+		inline_script = {
+			script = component_templates/time_component_template_basic_upkeep
+			ENERGY = @l_t7_upkeep_energy
+			ALLOYS = @l_t7_upkeep_alloys
+		}
+	}
+	
+	ai_weight = {
+		weight = 100
+		modifier = {
+			factor = 0.0
+			no_resource_for_component = { RESOURCE = sr_dark_matter }
+			is_ai = yes
+		}
+		modifier = {
+			factor = 0.0
+			no_resource_for_component = { RESOURCE = nanites }
+			is_ai = yes
+		}
+	}
+}
+
+strike_craft_component_template = {
+	key = "DIMENSIONAL_HORROR_STRIKE_CRAFT_KINETIC"
+	size = LARGE
+	weapon_type = point_defence
+	point_defence_targets = { "missile" "strike_craft" }
+	
+	icon = "GFX_ship_part_dimensional_horror_strike_craft_kinetic"
+	icon_frame = 1
+	entity = "gatebuilder_01_strikecraft_entity"
+	projectile_gfx = "dimensional_horror_spike_weapon"
+	
+	power = -100
+	
+	count = 10
+	regeneration_per_day = 0.5
+	launch_time = 1.0
+	
+	damage = { min = 1 max = 29 }
+	cooldown = 2
+	range = 50
+	engagement_range = 150
+	accuracy = 1.00
+	tracking = 0.60
+	size_damage_factor = 0.02
+	
+	health = 100
+	armor = 100
+	shield = 50
+	evasion = 1
+	
+	speed = 600
+	rotation_speed = 0.2
+	acceleration = 0.5
+	
+	hull_damage = 1.25
+	shield_damage = 2.00
+	shield_penetration = 1.0
+	armor_damage = 0.50
+	armor_penetration = 0.25
+	
+	ship_behavior = "fighters_behavior"
+	
+	tags = { weapon_type_dimensional_horror weapon_type_strike_craft weapon_type_kinetic }
+	ai_tags = { weapon_role_anti_hull weapon_role_anti_shield weapon_role_point_defense carrier }
+	
+	prerequisites = { "tech_dimensional_horror_strike_craft" }
+	component_set = "DIMENSIONAL_HORROR_STRIKE_CRAFT_KINETIC"
+	
+	potential = {
+		from = { has_tradition = tr_hope_4 }
+	}
+	
+	resources = {
+		category = ship_components
+		cost = {
+			alloys = @l_t7_cost
+			sr_dark_matter = 3
+			nanites = 3
+		}
+		inline_script = {
+			script = component_templates/time_component_template_basic_upkeep
+			ENERGY = @l_t7_upkeep_energy
+			ALLOYS = @l_t7_upkeep_alloys
+		}
+	}
+	
+	ai_weight = {
+		weight = 100
+		modifier = {
+			factor = 0.0
+			no_resource_for_component = { RESOURCE = sr_dark_matter }
+			is_ai = yes
+		}
+		modifier = {
+			factor = 0.0
+			no_resource_for_component = { RESOURCE = nanites }
+			is_ai = yes
+		}
+	}
+}
+
+########################
+# 时螶之泪
+########################
+
+weapon_component_template = {
+	key = "PLANET_KILLER_HORROR"
+	size = planet_killer
+	type = planet_killer
+	can_destroy_stars = yes
+	
+	hidden = yes
+
+	icon = GFX_ship_part_dimension_end_beam
+	icon_frame = 1
+	
+	windup = { min = 1000000.00 max = 1000000.00 }
+	total_fire_time = 1000000.00
+	
+	component_set = "PLANET_KILLER_HORROR"
+	planet_destruction_gfx = "star_destroyer_effect_gfx"
+}
+
+########################
+# 跃迁引擎
+########################
+
+utility_component_template = {
+	key = "TIME_RANGELESS_JUMP_DRIVE"
+	size = small
+	icon = "GFX_ship_part_empty_ftl_drive"
+	icon_frame = 1
+	power = 0
+	should_ai_use = no
+	ftl = no
+	jumpdrive = yes
+	
+	ship_modifier = {
+		ship_ftl_jumpdrive_range_mult = -1
+		ship_jumpdrive_cooldown_mult = 100
+	}
+
+	hidden = yes
+}
+
+########################
+# 负相位面
+########################
+
+utility_component_template = {
+	key = "HORROR_AURA_0"
+	size = medium
+	should_ai_use = no
+	hidden = yes
+	icon = "GFX_ship_part_aura_horror"
+	icon_frame = 1
+	power = 0
+	
+	resources = {
+		category = ship_components
+		cost = {
+			sr_dark_matter = 10
+			astral_threads = 5
+		}
+		upkeep = {
+			sr_dark_matter = 0.1
+			astral_threads = 0.05
+		}
+	}
+	
+	component_set = "ship_aura_components"
+	upgrade_path = horror_aura
+	
+	inline_script = {
+		script = component_templates/dimensional_horror_ship_size_modifiers
+	}
+	
+	hostile_aura = {
+		name = "hostile_aura_horror"
+		system_wide = yes
+		apply_on = ships
+		
+		limit = {
+			# 防止断事件链
+			is_in_combat = yes
+			is_disabled = no
+			# 对同级无效
+			NOT = {
+				has_horror_aura_level = { LEVEL = 0 }
+			}
+		}
+
+		stack_info = {			#A ship can only be affected by one aura of a certain id. If multiple auras have the same ID the one with the highest priority will be applied.
+			id = hostile_aura_horror
+			priority = 1
+		}
+
+		modifier = {
+			ship_speed_reduction = 0.1
+			ship_shield_reduction = 0.1
+			ship_armor_reduction = 0.1
+			ship_shield_regen_mult = -0.1
+			ship_armor_regen_mult = -0.1
+			ship_hull_regen_mult = -0.1
+			weapon_type_strike_craft_speed_mult = -0.1
+			ship_damage_reduction_mult = -0.1
+			ship_evasion_mult = -0.1
+			ship_disengage_chance_reduction = 0.2
+			ship_emergency_ftl_mult = 0.2
+			ship_emergency_ftl_min_days_mult = 0.2
+			ship_disengage_opportunities_add = -1
+		}
+		
+		damage_per_day = {
+			accuracy = 1
+			damage = { min = 1 max = 49 }
+			hull_damage = 1
+			armor_damage = 0.5
+			shield_damage = 0.5
+			armor_penetration = 0.5
+			shield_penetration = 0.5
+			size_damage_factor = 0.01
+		}
+
+		graphics = {
+			area_effect = {
+				entity = "circle_area_entity"
+				dynamic_scale = yes
+			}
+			ship_effect = {
+				entity = "dimensional_horror_aura_entity"
+				dynamic_scale = no
+			}
+		}
+	}
+}
+
+utility_component_template = {
+	key = "HORROR_AURA_1"
+	size = medium
+	should_ai_use = no
+	icon = "GFX_ship_part_aura_horror"
+	icon_frame = 1
+	power = 0
+	
+	prerequisites = { tech_beyond_infinity_aura_1 }
+	
+	resources = {
+		category = ship_components
+		cost = {
+			sr_dark_matter = 20
+			astral_threads = 10
+		}
+		upkeep = {
+			sr_dark_matter = 0.2
+			astral_threads = 0.1
+		}
+	}
+	
+	potential = {
+		OR = {
+			ship_uses_titan_components = yes
+			ship_uses_dsc_components = yes
+		}
+	}
+	
+	component_set = "ship_aura_components"
+	upgrade_path = horror_aura
+	
+	inline_script = {
+		script = component_templates/dimensional_horror_ship_size_modifiers
+	}
+	
+	hostile_aura = {
+		name = "hostile_aura_horror"
+		system_wide = yes
+		apply_on = ships
+		
+		limit = {
+			# 防止断事件链
+			is_in_combat = yes
+			is_disabled = no
+			# 对同级无效
+			NOT = {
+				has_horror_aura_level = { LEVEL = 1 }
+			}
+		}
+
+		stack_info = {			#A ship can only be affected by one aura of a certain id. If multiple auras have the same ID the one with the highest priority will be applied.
+			id = hostile_aura_horror
+			priority = 2
+		}
+
+		modifier = {
+			ship_speed_reduction = 0.25
+			ship_shield_reduction = 0.25
+			ship_armor_reduction = 0.25
+			ship_shield_regen_mult = -0.25
+			ship_armor_regen_mult = -0.25
+			ship_hull_regen_mult = -0.25
+			weapon_type_strike_craft_speed_mult = -0.25
+			ship_damage_reduction_mult = -0.25
+			ship_evasion_mult = -0.25
+			ship_disengage_chance_reduction = 0.5
+			ship_emergency_ftl_mult = 0.5
+			ship_emergency_ftl_min_days_mult = 0.5
+			ship_disengage_opportunities_add = -2.5
+		}
+		
+		damage_per_day = {
+			accuracy = 1
+			damage = { min = 1 max = 99 }
+			hull_damage = 1
+			armor_damage = 0.5
+			shield_damage = 0.5
+			armor_penetration = 1
+			shield_penetration = 1
+			size_damage_factor = 0.02
+		}
+
+		graphics = {
+			area_effect = {
+				entity = "circle_area_entity"
+				dynamic_scale = yes
+			}
+			ship_effect = {
+				entity = "dimensional_horror_aura_entity"
+				dynamic_scale = no
+			}
+		}
+	}
+}
+
+utility_component_template = {
+	key = "HORROR_AURA_2"
+	size = medium
+	should_ai_use = no
+	icon = "GFX_ship_part_aura_horror"
+	icon_frame = 1
+	power = 0
+	
+	prerequisites = { tech_beyond_infinity_aura_2 }
+	
+	resources = {
+		category = ship_components
+		cost = {
+			sr_dark_matter = 50
+			astral_threads = 25
+		}
+		upkeep = {
+			sr_dark_matter = 0.5
+			astral_threads = 0.25
+		}
+	}
+	
+	potential = {
+		OR = {
+			ship_uses_juggernaut_components = yes
+			ship_uses_dsc_components = yes
+		}
+	}
+	
+	component_set = "ship_aura_components"
+	upgrade_path = horror_aura
+	
+	inline_script = {
+		script = component_templates/dimensional_horror_ship_size_modifiers
+	}
+	
+	hostile_aura = {
+		name = "hostile_aura_horror"
+		system_wide = yes
+		apply_on = ships
+		
+		limit = {
+			# 防止断事件链
+			is_in_combat = yes
+			is_disabled = no
+			# 对同级无效
+			NOT = {
+				has_horror_aura_level = { LEVEL = 2 }
+			}
+		}
+
+		stack_info = {			#A ship can only be affected by one aura of a certain id. If multiple auras have the same ID the one with the highest priority will be applied.
+			id = hostile_aura_horror
+			priority = 3
+		}
+
+		modifier = {
+			ship_speed_reduction = 0.5
+			ship_shield_reduction = 0.5
+			ship_armor_reduction = 0.5
+			ship_shield_regen_mult = -0.5
+			ship_armor_regen_mult = -0.5
+			ship_hull_regen_mult = -0.5
+			weapon_type_strike_craft_speed_mult = -0.5
+			ship_damage_reduction_mult = -0.5
+			ship_evasion_mult = -0.5
+			ship_disengage_chance_reduction = 1
+			ship_emergency_ftl_mult = 1
+			ship_emergency_ftl_min_days_mult = 1
+			ship_disengage_opportunities_add = -5
+		}
+		
+		damage_per_day = {
+			accuracy = 1
+			damage = { min = 1 max = 199 }
+			hull_damage = 1.5
+			armor_damage = 1
+			shield_damage = 1
+			armor_penetration = 1
+			shield_penetration = 1
+			size_damage_factor = 0.04
+		}
+
+		graphics = {
+			area_effect = {
+				entity = "circle_area_entity"
+				dynamic_scale = yes
+			}
+			ship_effect = {
+				entity = "dimensional_horror_aura_entity"
+				dynamic_scale = no
+			}
+		}
+	}
+}
+
+utility_component_template = {
+	key = "HORROR_AURA_3"
+	size = medium
+	should_ai_use = no
+	hidden = yes
+	icon = "GFX_ship_part_aura_horror"
+	icon_frame = 1
+	power = 0
+	
+	resources = {
+		category = ship_components
+		cost = {
+			sr_dark_matter = 100
+			astral_threads = 50
+		}
+	}
+	
+	component_set = "ship_aura_components"
+	upgrade_path = horror_aura
+	
+	inline_script = {
+		script = component_templates/dimensional_horror_ship_size_modifiers
+	}
+	
+	hostile_aura = {
+		name = "hostile_aura_horror"
+		system_wide = yes
+		apply_on = ships
+		
+		limit = {
+			# 防止断事件链
+			is_in_combat = yes
+			is_disabled = no
+			# 对同级无效
+			NOT = {
+				has_horror_aura_level = { LEVEL = 3 }
+			}
+		}
+
+		stack_info = {			#A ship can only be affected by one aura of a certain id. If multiple auras have the same ID the one with the highest priority will be applied.
+			id = hostile_aura_horror
+			priority = 4
+		}
+
+		modifier = {
+			ship_speed_reduction = 1
+			ship_shield_reduction = 1
+			ship_armor_reduction = 1
+			ship_shield_regen_mult = -1
+			ship_armor_regen_mult = -1
+			ship_hull_regen_mult = -1
+			weapon_type_strike_craft_speed_mult = -1
+			ship_damage_reduction_mult = -1
+			ship_evasion_mult = -1
+			ship_disengage_chance_reduction = 2
+			ship_emergency_ftl_mult = 2
+			ship_emergency_ftl_min_days_mult = 2
+			ship_disengage_opportunities_add = -10
+		}
+		
+		damage_per_day = {
+			accuracy = 1
+			damage = { min = 1 max = 299 }
+			hull_damage = 2
+			armor_damage = 2
+			shield_damage = 2
+			armor_penetration = 1
+			shield_penetration = 1
+			size_damage_factor = 0.1
+		}
+
+		graphics = {
+			area_effect = {
+				entity = "circle_area_entity"
+				dynamic_scale = yes
+			}
+			ship_effect = {
+				entity = "dimensional_horror_aura_entity"
+				dynamic_scale = no
+			}
+		}
+	}
+}
+
+########################
+# 左旋
+########################
+
+utility_component_template = {
+	key = "Levo_AURA"
+	size = medium
+	should_ai_use = no
+	hidden = yes
+	icon = "GFX_ship_part_aura_horror"
+	icon_frame = 1
+	power = 0
+	
+	component_set = "ship_aura_components"
+	
+	custom_tooltip = dimensional_horror_levo_aura_effect
+	
+	# 强甲克盾
+	triggered_ship_modifier = {
+		ship_hull_damage_mult = 0.05
+		ship_shield_damage_mult = 0.05
+		ship_shield_penetration_mult = 0.05
+		ship_hull_mult = 0.05
+		ship_armor_mult = 0.05
+		ship_hull_regen_mult = 0.05
+		ship_armor_regen_mult = 0.05
+		mult = value:dimensional_horror_crisis_ship_bonus
+	}
+	
+	inline_script = {
+		script = component_templates/dimensional_horror_ship_size_modifiers
+	}
+	
+	triggered_ship_modifier = {
+		potential = {
+			is_inside_dimensional_horror_crisis_storm = { TYPE = levo }
+		}
+		ship_damage_reduction_mult = 1
+		mult = value:dimensional_horror_ship_size_bonus
+	}
+	
+	hostile_aura = {
+		name = "hostile_aura_levo"
+		system_wide = yes
+		apply_on = ships
+		
+		limit = {
+			# 防止断事件链
+			is_in_combat = yes
+			# 对同级无效
+			NOT = {
+				has_horror_crisis_aura_level = { LEVEL = 1 }
+			}
+		}
+
+		stack_info = {			#A ship can only be affected by one aura of a certain id. If multiple auras have the same ID the one with the highest priority will be applied.
+			id = hostile_aura_horror_crisis
+			priority = 1
+		}
+
+		modifier = {
+			ship_speed_reduction = 0.5
+			ship_shield_reduction = 0.5
+			ship_armor_reduction = 0.25
+			ship_shield_regen_mult = -0.5
+			ship_armor_regen_mult = -0.25
+			ship_hull_regen_mult = -0.5
+			weapon_type_strike_craft_speed_mult = -0.5
+			ship_damage_reduction_mult = -0.5
+			ship_evasion_mult = -0.5
+			ship_evasion_add = -50
+			ship_disengage_chance_reduction = 1
+			ship_emergency_ftl_mult = 1
+			ship_emergency_ftl_min_days_mult = 1
+			ship_disengage_opportunities_add = -5
+		}
+		
+		damage_per_day = {
+			accuracy = 1
+			damage = { min = 1 max = 299 }
+			hull_damage = 1.5
+			armor_damage = 1
+			shield_damage = 2
+			armor_penetration = 0.5
+			shield_penetration = 1
+			size_damage_factor = 0.04
+		}
+
+		graphics = {
+			area_effect = {
+				entity = "circle_area_entity"
+				dynamic_scale = yes
+			}
+			ship_effect = {
+				entity = "dimensional_horror_aura_entity"
+				dynamic_scale = no
+			}
+		}
+	}
+}
+
+########################
+# 右旋
+########################
+
+utility_component_template = {
+	key = "Dextro_AURA"
+	size = medium
+	should_ai_use = no
+	hidden = yes
+	icon = "GFX_ship_part_aura_horror"
+	icon_frame = 1
+	power = 0
+	
+	component_set = "ship_aura_components"
+	
+	custom_tooltip = dimensional_horror_dextro_aura_effect
+	
+	# 强盾克甲
+	triggered_ship_modifier = {
+		ship_hull_damage_mult = 0.05
+		ship_armor_damage_mult = 0.05
+		ship_armor_penetration_mult = 0.05
+		ship_hull_mult = 0.05
+		ship_shield_mult = 0.05
+		ship_hull_regen_mult = 0.05
+		ship_shield_regen_mult = 0.05
+		mult = value:dimensional_horror_crisis_ship_bonus
+	}
+	
+	inline_script = {
+		script = component_templates/dimensional_horror_ship_size_modifiers
+	}
+	
+	triggered_ship_modifier = {
+		potential = {
+			is_inside_dimensional_horror_crisis_storm = { TYPE = dextro }
+		}
+		ship_damage_reduction_mult = 1
+		mult = value:dimensional_horror_ship_size_bonus
+	}
+	
+	hostile_aura = {
+		name = "hostile_aura_dextro"
+		system_wide = yes
+		apply_on = ships
+		
+		limit = {
+			# 防止断事件链
+			is_in_combat = yes
+			# 对同级无效
+			NOT = {
+				has_horror_crisis_aura_level = { LEVEL = 1 }
+			}
+		}
+
+		stack_info = {			#A ship can only be affected by one aura of a certain id. If multiple auras have the same ID the one with the highest priority will be applied.
+			id = hostile_aura_horror_crisis
+			priority = 1
+		}
+
+		modifier = {
+			ship_speed_reduction = 0.5
+			ship_shield_reduction = 0.25
+			ship_armor_reduction = 0.5
+			ship_shield_regen_mult = -0.25
+			ship_armor_regen_mult = -0.5
+			ship_hull_regen_mult = -0.5
+			weapon_type_strike_craft_speed_mult = -0.5
+			ship_damage_reduction_mult = -0.5
+			ship_evasion_mult = -0.5
+			ship_evasion_add = -50
+			ship_disengage_chance_reduction = 1
+			ship_emergency_ftl_mult = 1
+			ship_emergency_ftl_min_days_mult = 1
+			ship_disengage_opportunities_add = -5
+		}
+		
+		damage_per_day = {
+			accuracy = 1
+			damage = { min = 1 max = 299 }
+			hull_damage = 1.5
+			armor_damage = 2
+			shield_damage = 1
+			armor_penetration = 1
+			shield_penetration = 0.5
+			size_damage_factor = 0.04
+		}
+
+		graphics = {
+			area_effect = {
+				entity = "circle_area_entity"
+				dynamic_scale = yes
+			}
+			ship_effect = {
+				entity = "dimensional_horror_aura_entity"
+				dynamic_scale = no
+			}
+		}
+	}
+}
+
+########################
+# 命运
+########################
+
+utility_component_template = {
+	key = "Destiny_AURA"
+	size = medium
+	should_ai_use = no
+	hidden = yes
+	icon = "GFX_ship_part_aura_horror"
+	icon_frame = 1
+	power = 0
+	
+	component_set = "ship_aura_components"
+	
+	custom_tooltip = dimensional_horror_destiny_aura_effect
+	
+	triggered_ship_modifier = {
+		ship_hull_damage_mult = 0.05
+		ship_armor_damage_mult = 0.05
+		ship_shield_damage_mult = 0.05
+		ship_armor_penetration_mult = 0.05
+		ship_shield_penetration_mult = 0.05
+		ship_hull_mult = 0.05
+		ship_armor_mult = 0.05
+		ship_shield_mult = 0.05
+		ship_hull_regen_mult = 0.05
+		ship_armor_regen_mult = 0.05
+		ship_shield_regen_mult = 0.05
+		mult = value:dimensional_horror_crisis_ship_bonus
+	}
+	
+	inline_script = {
+		script = component_templates/dimensional_horror_ship_size_modifiers
+	}
+	
+	triggered_ship_modifier = {
+		potential = {
+			is_inside_dimensional_horror_crisis_storm = yes
+		}
+		ship_damage_reduction_mult = 0.5 # sv里已经因ship_size而比常规终焉之魇高一倍了，故基础值减半以确保最终数值一致
+		mult = value:dimensional_horror_ship_size_bonus
+	}
+	
+	hostile_aura = {
+		name = "hostile_aura_destiny"
+		system_wide = yes
+		apply_on = ships
+		
+		limit = {
+			# 防止断事件链
+			is_in_combat = yes
+			# 对同级无效
+			NOT = {
+				has_horror_crisis_aura_level = { LEVEL = 2 }
+			}
+		}
+
+		stack_info = {			#A ship can only be affected by one aura of a certain id. If multiple auras have the same ID the one with the highest priority will be applied.
+			id = hostile_aura_horror_crisis
+			priority = 2
+		}
+
+		modifier = {
+			ship_speed_reduction = 1
+			ship_shield_reduction = 1
+			ship_armor_reduction = 1
+			ship_shield_regen_mult = -1
+			ship_armor_regen_mult = -1
+			ship_hull_regen_mult = -1
+			weapon_type_strike_craft_speed_mult = -1
+			ship_damage_reduction_mult = -1
+			ship_evasion_mult = -1
+			ship_evasion_add = -100
+			ship_disengage_chance_reduction = 2
+			ship_emergency_ftl_mult = 2
+			ship_emergency_ftl_min_days_mult = 2
+			ship_disengage_opportunities_add = -10
+		}
+		
+		damage_per_day = {
+			accuracy = 1
+			damage = { min = 1 max = 299 }
+			hull_damage = 2
+			armor_damage = 2
+			shield_damage = 2
+			armor_penetration = 1
+			shield_penetration = 1
+			size_damage_factor = 0.1
+		}
+
+		graphics = {
+			area_effect = {
+				entity = "circle_area_entity"
+				dynamic_scale = yes
+			}
+			ship_effect = {
+				entity = "dimensional_horror_aura_entity"
+				dynamic_scale = no
+			}
+		}
+	}
+}

@@ -1,0 +1,88 @@
+inline_script = {
+	script = "cosmic_storms/StormConfig"
+	MIN_RADIUS = 60
+	MAX_RADIUS = 60
+	MIN_RANGE = 600
+	MAX_RANGE = 600
+	STORM_SPEED = 0.05
+	ACTIVATION_PERIOD_IN_MONTHS = 0
+	MONTHLY_ADDED_DEVASTATION = 6
+}
+
+spawn_weight = 0
+description = dimensional_horror_crisis_storm_lore_description
+
+# 正面
+triggered_planet_modifier = {
+	potential = {
+		OR = {
+			is_colonizable_or_colony = yes
+			has_deposit_for = shipclass_research_station
+		}
+	}
+	country_physics_research_produces_mult = 1
+	country_society_research_produces_mult = 1
+	country_engineering_research_produces_mult = 1
+	country_astral_threads_produces_mult = 2
+	country_sr_dark_matter_produces_mult = 5
+	mult = value:dimensional_horror_crisis_storm_planet_modifier_good
+}
+
+# 负面
+triggered_planet_modifier = {
+	potential = {
+		is_colonizable_or_colony = yes
+		is_dimensional_horror_crisis_inactive_system = no
+	}
+	planet_stability_mult = -1
+	planet_amenities_mult = -1
+	planet_housing_mult = -1
+	habitability_ceil_uncapped_add = -1
+	habitability_ceil_add = -1
+	habitability_floor_add = -1
+	logistic_growth_mult = -1
+	bonus_pop_growth_mult = -1
+	planet_pop_assembly_mult = -1
+	mult = value:dimensional_horror_crisis_storm_planet_modifier
+	custom_tooltip = dimensional_horror_crisis_storm_planet_tt
+	show_only_custom_tooltip = no
+}
+
+on_start = {
+	every_system_within_storm = {
+		added_to_storm_base_effect = yes
+		dimensional_horror_crisis_$TYPE$_storm_add = yes
+	}
+}
+
+on_finished = {
+	every_system_within_storm = {
+		removed_from_storm_base_effect = yes
+		dimensional_horror_crisis_$TYPE$_storm_remove = yes
+	}
+}
+
+on_moved = {
+	every_system_added_to_storm = {
+		added_to_storm_base_effect = yes
+		dimensional_horror_crisis_$TYPE$_storm_add = yes
+	}
+	every_system_removed_from_storm = {
+		removed_from_storm_base_effect = yes
+		dimensional_horror_crisis_$TYPE$_storm_remove = yes
+	}
+}
+
+cosmic_storm_texture_path = "gfx/map/storms/NebulaOpacity.dds"
+cosmic_storm_event_sprite = "GFX_dimensional_horror_crisis_storm"
+icon = GFX_planetview_storm_dimensional_horror_crisis_modifier_frame
+
+cosmic_storm_texture_lightning_paths = {
+	"gfx/map/storms/lightning/lightning_big_storm_01.dds"
+	"gfx/map/storms/lightning/lightning_big_storm_02.dds"
+	"gfx/map/storms/lightning/lightning_mid_storm_01.dds"
+	"gfx/map/storms/lightning/lightning_mid_storm_02.dds"
+}
+
+cosmic_storm_galaxy_lightning_time = 5.0
+cosmic_storm_galaxy_max_opacity = 0.4

@@ -1,0 +1,68 @@
+@ruler_time_trait_modifier = 0.004
+@ruler_time_trait_modifier_reduction = 0.002
+@ruler_time_trait_modifier_subject = 0.04
+@ruler_time_trait_modifier_acceptance = 0.4
+@ruler_time_trait_modifier_negative = -0.002
+@ruler_time_trait_ruler_special = 0.04
+@ruler_time_trait_ruler_negative = -0.002
+@ruler_time_trait_resource = 1
+@ruler_time_trait_resource_rare = 0.2
+@ruler_time_owner_trait_extra_modifier = 0.006
+@ruler_time_owner_trait_extra_modifier_acceptance = 0.6
+@ruler_time_owner_trait_extra_modifier_imperial_authority = 0.006
+@ruler_time_king_trait_extra_modifier = 0.012
+@ruler_time_king_trait_extra_modifier_acceptance = 1.2
+@ruler_time_king_trait_extra_modifier_imperial_authority = 0.012
+
+@time_blocker_cleared_resource_1 = 2
+@time_blocker_cleared_resource_2 = 4
+@time_blocker_cleared_resource_advanced_1 = 1
+@time_blocker_cleared_resource_advanced_2 = 2
+@time_blocker_cleared_modifier_1 = 0.01
+@time_blocker_cleared_modifier_2 = 0.02
+@time_special_deposits_job_per_pop = 0.025
+
+@col_time_capital_level_1 = 1
+@col_time_capital_level_2 = 2
+@col_time_capital_level_3 = 3
+
+@pc_time_deposits_modifier = 0.05
+@pc_time_deposits_limit_1 = 3
+@pc_time_deposits_limit_2 = 5
+@pc_time_deposits_limit_difference = 2 # @pc_time_deposits_limit_difference = @pc_time_deposits_limit_2 - @pc_time_deposits_limit_1，用于传统效果本地化
+
+# 区划等级
+@district_time_level_base = 4
+@district_time_level_max = 4
+@district_time_level_from_tech = 2
+@district_time_level_no_col_factor = 0.75
+
+# 基础4倍，每次航道升级增加1倍（最多4次升级达到8倍），序时者奇点压缩后增加2倍，非专属规划x0.75
+@district_time_base_housing = 250
+@district_time_base_usage_cap = 2.5
+@zone_time_urban_base_housing = 50 # @district_time_base_housing的1/5
+@zone_time_base_usage_cap = 1.25
+@district_endless_time_base_usage_cap = 250
+@zone_endless_time_base_usage_cap = 125
+@district_time_rural_base_housing = 50
+@district_time_rural_base_job = 50
+@zone_time_rural_base_housing = 25
+@zone_time_rural_base_job = 25
+@district_endless_time_rural_base_produce = 0.01
+@district_endless_time_rural_base_usage_cap = 5
+@zone_endless_time_rural_base_produce = 0.005
+@zone_endless_time_rural_base_usage_cap = 2.5
+@building_zone_time_base_produce = 0.025
+@building_zone_time_advanced_base_produce = 0.05
+
+@time_ethic_random_situation_event_cooldown_short = 60
+@time_ethic_random_situation_event_cooldown_middle = 120
+@time_ethic_random_situation_event_cooldown_long = 180
+@time_ethic_random_situation_event_cooldown_very_long = 360
+
+@time_ethic_shift_percentage_low = 0.1
+@time_ethic_shift_percentage_middle = 0.15
+@time_ethic_shift_percentage_high = 0.25
+
+@time_order_modifier = 0.05
+@time_order_modifier_max_factor = 1000 # 来自人口数量平方根的最大倍率（即0.05x1000x0.01=0.5）

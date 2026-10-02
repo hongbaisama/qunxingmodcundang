@@ -1,0 +1,7 @@
+﻿l_english:
+ time_civic_building.name:0 "§RPotential Unusable Buildings§!"
+ time_civic_building.a:0 "Understood, won't build this."
+ time_civic_building.b:0 "Are you teaching me how to do things?"
+ 
+ time_civic_building.2000.desc:0 "Please do not build such buildings that may change the planet type on your origin exclusive planets, because these special planets should not be transformed into §Y$pc_gaia$§! or §Y$pc_nuked$§!.\n\nAfter such buildings are completed, they will be §Rdismantled§! without §Rcompensation§!, so please cancel construction."
+ time.3501.desc:0 "Please do not build vanilla automated buildings on your origin exclusive planets, because they cannot provide maintenance fees correctly based on the number of districts.\n\nAfter such buildings are completed, they will be §Rreplaced§! or §Rdismantled§! without §Rcompensation§!, so please change to build planet exclusive automated buildings."

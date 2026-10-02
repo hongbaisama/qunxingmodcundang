@@ -1,0 +1,2498 @@
+# 气态生物
+trait_origin_gas_colony = {
+	cost = {
+		base = 0
+		modifier = {
+			add = 5
+			NOT = { has_origin = origin_gas_colony }
+		}
+	}
+	icon = "gfx/interface/icons/traits/trait_origin_gas_colony.dds"
+	initial = no
+	randomized = no
+	hidden = yes
+	inline_script = "trait/modification_condition/time_origin_basic_trait"
+	inline_script = "trait/allowed_archetypes/time_archetypes_no_robotic"
+	localized_tags = {
+		SPECIES_TRAIT_ORIGIN_GAS_COLONY
+	}
+	tags = { organic positive pop_output upkeep special }
+	sorting_priority = 25
+	custom_tooltip_with_modifiers = trait_origin_gas_colony_effect
+	modifier = {
+		worker_and_simple_drone_cat_bonus_workforce_mult = 0.1
+	}
+	triggered_pop_group_modifier = {
+		potential = {
+			exists = colony
+			colony = { has_deposit = d_gas_colony_arcology }
+		}
+		key = d_gas_colony_arcology
+		all_jobs_base_workforce_mult = 1
+		species_empire_size_mult = -0.5
+		planet_pops_upkeep_mult = -0.5
+	}
+	triggered_pop_group_modifier = {
+		potential = {
+			exists = colony
+			colony = { has_deposit = d_gas_colony_hive }
+		}
+		key = d_gas_colony_hive
+		all_jobs_base_workforce_mult = 1
+		species_empire_size_mult = -0.5
+		planet_pops_upkeep_mult = -0.5
+	}
+	triggered_planet_growth_habitability_modifier = {
+		potential = {
+			has_deposit = d_gas_colony_arcology
+		}
+		key = d_gas_colony_arcology
+		logistic_growth_mult = 0.5
+		bonus_pop_growth_mult = 0.5
+	}
+	triggered_planet_growth_habitability_modifier = {
+		potential = {
+			has_deposit = d_gas_colony_hive
+		}
+		key = d_gas_colony_hive
+		logistic_growth_mult = 0.5
+		bonus_pop_growth_mult = 0.5
+	}
+	inline_script = "traits/trait_origin_gas_colony_inherited_modifiers"
+	resources = {
+		category = planet_pops
+		upkeep = {
+			exotic_gases = 0.02
+		}
+	}
+	slave_cost = {
+		trade = 2500
+	}
+}
+
+leader_trait_origin_gas_colony = {
+	leader_trait_type = destiny
+	inline_script = {
+		script = trait/time_trait_icon_for_ruler_with_bg
+		CLASS = leader
+		ICON = "GFX_leader_trait_origin_gas_colony"
+		RARITY = paragon
+		TIER = none
+		PRIORITY = @trait_sorting_priority_paragon_yes_none
+	}
+	on_gained_effect = {
+		owner = {
+			country_event = { id = timeline.50 } # Timeline First Leader with Destiny Trait
+		}
+	}
+	leader_potential_add = {
+		is_ruler_or_heir = yes
+		owner = {
+			is_gestalt = no
+			has_origin = origin_gas_colony
+		}
+	}
+	triggered_councilor_modifier = {
+		potential = {
+			is_ruler = yes
+			leader_class = official
+		}
+		planet_farmers_food_produces_add = 0.2
+		planet_farmers_exotic_gases_produces_add = 0.05
+		mult = value:num_time_ruler_skill
+	}
+	triggered_councilor_modifier = {
+		potential = {
+			is_ruler = yes
+			leader_class = scientist
+		}
+		planet_technician_energy_produces_add = 0.2
+		planet_technician_volatile_motes_produces_add = 0.05
+		mult = value:num_time_ruler_skill
+	}
+	triggered_councilor_modifier = {
+		potential = {
+			is_ruler = yes
+			leader_class = commander
+		}
+		planet_miners_minerals_produces_add = 0.2
+		planet_miners_rare_crystals_produces_add = 0.05
+		mult = value:num_time_ruler_skill
+	}
+	custom_tooltip_with_modifiers = time_trait_for_ruler_tooltip
+	leader_class = all
+	selectable_weight = 10000
+}
+
+leader_trait_origin_gas_colony_gestalt = {
+	leader_trait_type = veteran
+	inline_script = {
+		script = trait/time_trait_icon_for_ruler_with_bg
+		CLASS = leader
+		ICON = "GFX_leader_trait_origin_gas_colony"
+		RARITY = paragon
+		TIER = none
+		PRIORITY = @trait_sorting_priority_paragon_yes_none
+	}
+	on_gained_effect = {
+		owner = {
+			country_event = { id = timeline.50 } # Timeline First Leader with Destiny Trait
+		}
+	}
+	leader_potential_add = {
+		is_ruler_or_heir = yes
+		has_base_skill >= 8
+		owner = {
+			is_gestalt = yes
+			has_origin = origin_gas_colony
+		}
+	}
+	triggered_councilor_modifier = {
+		potential = {
+			is_ruler = yes
+			leader_class = official
+		}
+		planet_farmers_food_produces_add = 0.2
+		planet_farmers_exotic_gases_produces_add = 0.05
+		mult = value:num_time_ruler_skill
+	}
+	triggered_councilor_modifier = {
+		potential = {
+			is_ruler = yes
+			leader_class = scientist
+		}
+		planet_technician_energy_produces_add = 0.2
+		planet_technician_volatile_motes_produces_add = 0.05
+		mult = value:num_time_ruler_skill
+	}
+	triggered_councilor_modifier = {
+		potential = {
+			is_ruler = yes
+			leader_class = commander
+		}
+		planet_miners_minerals_produces_add = 0.2
+		planet_miners_rare_crystals_produces_add = 0.05
+		mult = value:num_time_ruler_skill
+	}
+	custom_tooltip_with_modifiers = time_trait_for_ruler_tooltip
+	leader_class = all
+	selectable_weight = 10000
+}
+
+# 虚境访客
+trait_origin_psionic = {
+	cost = {
+		base = 0
+		modifier = {
+			add = 5
+			NOT = { has_origin = origin_psionic }
+		}
+	}
+	icon = "gfx/interface/icons/traits/trait_origin_psionic.dds"
+	initial = no
+	randomized = no
+	hidden = yes
+	inline_script = "trait/modification_condition/time_origin_basic_trait"
+	inline_script = "trait/allowed_archetypes/time_archetypes_no_robotic"
+	localized_tags = {
+		SPECIES_TRAIT_ORIGIN_PSIONIC
+	}
+	tags = { organic positive pop_output unity upkeep special }
+	sorting_priority = 25
+	custom_tooltip_with_modifiers = trait_origin_psionic_effect
+	modifier = {
+		bureaucrat_jobs_bonus_workforce_mult = 0.15
+	}
+	inline_script = "traits/trait_origin_psionic_inherited_modifiers"
+	resources = {
+		category = planet_pops
+		upkeep = {
+			sr_zro = 0.01
+		}
+	}
+	slave_cost = {
+		trade = 2500
+	}
+}
+
+leader_trait_origin_psionic = {
+	leader_trait_type = destiny
+	inline_script = {
+		script = trait/time_trait_icon_for_ruler_with_bg
+		CLASS = leader
+		ICON = "GFX_leader_trait_shroudwalkers"
+		RARITY = paragon
+		TIER = none
+		PRIORITY = @trait_sorting_priority_paragon_yes_none
+	}
+	on_gained_effect = {
+		owner = {
+			country_event = { id = timeline.50 } # Timeline First Leader with Destiny Trait
+		}
+	}
+	leader_potential_add = {
+		is_ruler_or_heir = yes
+		owner = { has_origin = origin_psionic }
+	}
+	triggered_councilor_modifier = {
+		potential = {
+			is_ruler = yes
+			leader_class = official
+		}
+		planet_farmers_food_produces_add = 0.2
+		planet_farmers_society_research_produces_add = 0.1
+		mult = value:num_time_ruler_skill
+	}
+	triggered_councilor_modifier = {
+		potential = {
+			is_ruler = yes
+			leader_class = scientist
+		}
+		planet_technician_energy_produces_add = 0.2
+		planet_technician_physics_research_produces_add = 0.1
+		mult = value:num_time_ruler_skill
+	}
+	triggered_councilor_modifier = {
+		potential = {
+			is_ruler = yes
+			leader_class = commander
+		}
+		planet_miners_minerals_produces_add = 0.2
+		planet_miners_engineering_research_produces_add = 0.1
+		mult = value:num_time_ruler_skill
+	}
+	custom_tooltip_with_modifiers = time_trait_for_ruler_tooltip
+	leader_class = all
+	selectable_weight = 10000
+}
+
+# 纳米机器
+trait_origin_nanites = {
+	cost = {
+		base = 0
+		modifier = {
+			add = 5
+			NOT = { has_origin = origin_nanites }
+		}
+	}
+	icon = "gfx/interface/icons/traits/trait_origin_nanites.dds"
+	initial = no
+	randomized = no
+	hidden = yes
+	inline_script = "trait/modification_condition/time_origin_basic_trait"
+	allowed_archetypes = { MACHINE }
+	localized_tags = {
+		SPECIES_TRAIT_ORIGIN_NANITES
+	}
+	tags = { machine positive pop_output upkeep special }
+	sorting_priority = 25
+	custom_tooltip_with_modifiers = trait_origin_nanites_effect
+	modifier = {
+		pop_bonus_workforce_mult = 0.05
+	}
+	triggered_pop_group_modifier = {
+		potential = {
+			exists = colony
+			colony = { has_nanites_nanotech_swarm_consume_world = yes }
+		}
+		key = nanites_nanotech_swarm_consume_world
+		pop_bonus_workforce_mult = 0.5
+	}
+	inline_script = "traits/trait_origin_nanites_inherited_modifiers"
+	resources = {
+		category = planet_pops
+		upkeep = {
+			nanites = 0.01
+		}
+	}
+	slave_cost = {
+		trade = 2500
+	}
+}
+
+leader_trait_origin_nanites = {
+	leader_trait_type = veteran
+	inline_script = {
+		script = trait/time_trait_icon_for_ruler_with_bg
+		CLASS = leader
+		ICON = "GFX_leader_trait_cybrex_databases"
+		RARITY = paragon
+		TIER = none
+		PRIORITY = @trait_sorting_priority_paragon_yes_none
+	}
+	leader_potential_add = {
+		is_ruler_or_heir = yes
+		has_base_skill >= 8
+		owner = { has_origin = origin_nanites }
+	}
+	triggered_councilor_modifier = {
+		potential = {
+			is_ruler = yes
+			leader_class = official
+		}
+		planet_nanites_logistics_drones_unity_produces_add = 0.1
+		planet_nanites_logistics_drones_society_research_produces_add = 0.1
+		mult = value:num_time_ruler_skill
+	}
+	triggered_councilor_modifier = {
+		potential = {
+			is_ruler = yes
+			leader_class = scientist
+		}
+		planet_nanites_logistics_drones_trade_produces_add = 0.1
+		planet_nanites_logistics_drones_physics_research_produces_add = 0.1
+		mult = value:num_time_ruler_skill
+	}
+	triggered_councilor_modifier = {
+		potential = {
+			is_ruler = yes
+			leader_class = commander
+		}
+		planet_nanites_logistics_drones_alloys_produces_add = 0.1
+		planet_nanites_logistics_drones_engineering_research_produces_add = 0.1
+		mult = value:num_time_ruler_skill
+	}
+	custom_tooltip_with_modifiers = time_trait_for_ruler_tooltip
+	leader_class = all
+	selectable_weight = 10000
+}
+
+
+
+# 平行星空
+leader_trait_origin_parallel_sky = {
+	leader_trait_type = destiny
+	inline_script = {
+		script = trait/time_trait_icon_for_ruler_with_bg
+		CLASS = leader
+		ICON = "GFX_leader_trait_dimensional_stutter"
+		RARITY = paragon
+		TIER = none
+		PRIORITY = @trait_sorting_priority_paragon_yes_none
+	}
+	on_gained_effect = {
+		owner = {
+			country_event = { id = timeline.50 } # Timeline First Leader with Destiny Trait
+		}
+	}
+	leader_potential_add = {
+		is_ruler_or_heir = yes
+		owner = { has_origin = origin_parallel_sky }
+	}
+	triggered_councilor_modifier = {
+		potential = {
+			is_ruler = yes
+		}
+		ship_ftl_jumpdrive_range_mult = 0.05
+		mult = value:num_time_ruler_skill
+	}
+	custom_tooltip_with_modifiers = time_trait_for_ruler_tooltip
+	leader_class = all
+	selectable_weight = 10000
+}
+
+
+
+# 阴霾之下
+leader_trait_origin_under_the_haze = {
+	leader_trait_type = destiny
+	inline_script = {
+		script = trait/time_trait_icon_for_ruler_with_bg
+		CLASS = leader
+		ICON = "GFX_leader_trait_legendary_spiritualist_bad"
+		RARITY = paragon
+		TIER = none
+		PRIORITY = @trait_sorting_priority_paragon_yes_none
+	}
+	on_gained_effect = {
+		owner = {
+			country_event = { id = timeline.50 } # Timeline First Leader with Destiny Trait
+		}
+	}
+	leader_potential_add = {
+		is_ruler_or_heir = yes
+		owner = { has_origin = origin_under_the_haze }
+		owner = {
+			OR = {
+				has_country_flag = under_the_haze_relic
+				has_modifier = under_the_haze_modifier_end_2
+				has_modifier = under_the_haze_modifier_end_3
+			}
+		}
+	}
+	triggered_councilor_modifier = {
+		potential = {
+			is_ruler = yes
+			owner = { has_country_flag = under_the_haze_relic }
+		}
+		planet_stability_add = 1.5
+		pop_happiness = 0.03
+		mult = value:num_time_ruler_skill
+	}
+	triggered_councilor_modifier = {
+		potential = {
+			is_ruler = yes
+			owner = { has_modifier = under_the_haze_modifier_end_2 }
+		}
+		planet_stability_add = 0.5
+		pop_happiness = 0.02
+		pop_ethic_spiritualist_attraction_mult = 0.1
+		mult = value:num_time_ruler_skill
+	}
+	triggered_councilor_modifier = {
+		potential = {
+			is_ruler = yes
+			owner = { has_modifier = under_the_haze_modifier_end_3 }
+		}
+		planet_stability_add = 1
+		pop_happiness = 0.01
+		all_technology_research_speed = 0.01
+		mult = value:num_time_ruler_skill
+	}
+	custom_tooltip_with_modifiers = time_trait_for_ruler_tooltip
+	leader_class = all
+	selectable_weight = 10000
+}
+
+
+
+# 宁和之道
+leader_trait_origin_tao_of_ninghe_yin = {
+	leader_trait_type = destiny
+	inline_script = {
+		script = trait/time_trait_icon_for_ruler_with_bg
+		CLASS = leader
+		ICON = "GFX_leader_trait_legendary_pacifist_two"
+		RARITY = paragon
+		TIER = none
+		PRIORITY = @trait_sorting_priority_paragon_yes_none
+	}
+	on_gained_effect = {
+		owner = {
+			country_event = { id = timeline.50 } # Timeline First Leader with Destiny Trait
+		}
+	}
+	leader_potential_add = {
+		is_ruler_or_heir = yes
+		is_yin_leader = yes
+		owner = { has_origin = origin_tao_of_ninghe }
+	}
+	triggered_councilor_modifier = {
+		potential = {
+			is_ruler = yes
+		}
+		pure_yin_mult_modifier = 0.05
+		mult = value:num_time_ruler_skill
+	}
+	custom_tooltip_with_modifiers = time_trait_for_ruler_tooltip
+	leader_class = all
+	selectable_weight = 10000
+}
+
+leader_trait_origin_tao_of_ninghe_yang = {
+	leader_trait_type = destiny
+	inline_script = {
+		script = trait/time_trait_icon_for_ruler_with_bg
+		CLASS = leader
+		ICON = "GFX_leader_trait_legendary_spiritualist_two"
+		RARITY = paragon
+		TIER = none
+		PRIORITY = @trait_sorting_priority_paragon_yes_none
+	}
+	on_gained_effect = {
+		owner = {
+			country_event = { id = timeline.50 } # Timeline First Leader with Destiny Trait
+		}
+	}
+	leader_potential_add = {
+		is_ruler_or_heir = yes
+		is_yang_leader = yes
+		owner = { has_origin = origin_tao_of_ninghe }
+	}
+	triggered_councilor_modifier = {
+		potential = {
+			is_ruler = yes
+		}
+		pure_yang_mult_modifier = 0.05
+		mult = value:num_time_ruler_skill
+	}
+	custom_tooltip_with_modifiers = time_trait_for_ruler_tooltip
+	leader_class = all
+	selectable_weight = 10000
+}
+
+
+
+# 黑客帝国
+leader_trait_origin_the_matrix = {
+	leader_trait_type = destiny
+	inline_script = {
+		script = trait/time_trait_icon_for_ruler_with_bg
+		CLASS = leader
+		ICON = "GFX_leader_trait_erratic_morality_core"
+		RARITY = paragon
+		TIER = none
+		PRIORITY = @trait_sorting_priority_paragon_yes_none
+	}
+	on_gained_effect = {
+		owner = {
+			country_event = { id = timeline.50 } # Timeline First Leader with Destiny Trait
+		}
+	}
+	leader_potential_add = {
+		is_ruler_or_heir = yes
+		owner = { has_origin = origin_the_matrix }
+	}
+	triggered_councilor_modifier = {
+		potential = {
+			is_ruler = yes
+		}
+		envoys_add = 0.3
+		espionage_operation_skill_add = 0.5
+		espionage_hostile_operation_difficulty_add = 0.5
+		operations_cost_mult = -0.05
+		operations_upkeep_mult = -0.05
+		espionage_operation_speed_mult = 0.1
+		spy_network_daily_value_mult = 0.1
+		mult = value:num_time_ruler_skill
+	}
+	custom_tooltip_with_modifiers = time_trait_for_ruler_tooltip
+	leader_class = all
+	selectable_weight = 10000
+}
+
+
+
+# 再组装者
+trait_reassembler = {
+	cost = {
+		base = 0
+		modifier = {
+			add = 5
+			NOT = { has_origin = origin_reassembler }
+		}
+	}
+	icon = "gfx/interface/icons/traits/trait_reassembler.dds"
+	initial = no
+	randomized = no
+	species_potential_add = {
+		from = { has_origin = origin_reassembler } # 允许再组装者起源创建用于再组装的模板
+	}
+	species_possible_merge_add = {
+		always = no # 再组装者特质无法被添加
+	}
+	species_possible_remove = {
+		from = { has_origin = origin_reassembler } # 无法进行再组装时，允许再组装者起源创建用于正常组装的模板
+	}
+	species_possible_merge_remove = {
+		always = no # 再组装者特质无法被移除
+	}
+	inline_script = "trait/allowed_archetypes/time_archetypes_robotic"
+	tags = { machine positive pop_output housing amenities empire_size upkeep pop_growth special }
+	sorting_priority = 10
+	custom_tooltip_with_modifiers = trait_reassembler_effect
+	modifier = {
+		pop_housing_usage_mult = -0.2
+		pop_amenities_usage_mult = -0.2
+		species_empire_size_mult = -0.2
+		planet_pops_robotics_upkeep_mult = -0.2
+		pop_bonus_workforce_mult = 0.2
+	}
+	triggered_planet_growth_habitability_modifier = {
+		planet_pop_assembly_mult = 1
+		mult = value:num_time_modifier|MODIFIER|reassembly_speed_mult|
+	}
+	triggered_pop_group_modifier = {
+		potential = {
+			exists = owner
+			owner = { has_tradition = tr_origin_reassembler_housing }
+		}
+		key = tr_origin_reassembler_housing
+		pop_housing_usage_mult = -0.2
+	}
+	triggered_pop_group_modifier = {
+		potential = {
+			exists = owner
+			owner = { has_tradition = tr_origin_reassembler_amenities }
+		}
+		key = tr_origin_reassembler_amenities
+		pop_amenities_usage_mult = -0.2
+	}
+	triggered_pop_group_modifier = {
+		potential = {
+			exists = owner
+			owner = { has_tradition = tr_origin_reassembler_empire_size }
+		}
+		key = tr_origin_reassembler_empire_size
+		species_empire_size_mult = -0.2
+	}
+	triggered_pop_group_modifier = {
+		potential = {
+			exists = owner
+			owner = { has_tradition = tr_origin_reassembler_upkeep }
+		}
+		key = tr_origin_reassembler_upkeep
+		planet_pops_robotics_upkeep_mult = -0.2
+	}
+	triggered_pop_group_modifier = {
+		potential = {
+			exists = owner
+			owner = { has_tradition = tr_origin_reassembler_produces }
+		}
+		key = tr_origin_reassembler_produces
+		pop_bonus_workforce_mult = 0.2
+	}
+	triggered_pop_group_modifier = {
+		key = leader_trait_origin_reassembler
+		planet_pops_upkeep_mult = 1
+		mult = modifier:reassembler_pops_upkeep_mult
+	}
+	triggered_pop_group_modifier = {
+		potential = {
+			exists = owner
+			owner = { has_agenda_selected = agenda_tradition_origin_reassembler }
+		}
+		key = council_agenda_agenda_tradition_origin_reassembler_name
+		pop_bonus_workforce_mult = 0.05
+	}
+	triggered_pop_group_modifier = {
+		potential = {
+			exists = owner
+			owner = { has_modifier = agenda_tradition_origin_reassembler_finish }
+		}
+		key = agenda_tradition_origin_reassembler_finish
+		pop_bonus_workforce_mult = 0.2
+	}
+	slave_cost = {
+		trade = 2500
+	}
+}
+
+leader_trait_origin_reassembler = {
+	leader_trait_type = destiny
+	inline_script = {
+		script = trait/time_trait_icon_for_ruler_with_bg
+		CLASS = leader
+		ICON = "GFX_leader_trait_tuner"
+		RARITY = paragon
+		TIER = none
+		PRIORITY = @trait_sorting_priority_paragon_yes_none
+	}
+	on_gained_effect = {
+		owner = {
+			country_event = { id = timeline.50 } # Timeline First Leader with Destiny Trait
+		}
+	}
+	leader_potential_add = {
+		is_ruler_or_heir = yes
+		owner = {
+			is_gestalt = no
+			has_origin = origin_reassembler
+		}
+	}
+	triggered_councilor_modifier = {
+		potential = {
+			is_ruler = yes
+		}
+		reassembly_speed_mult = 0.1
+		reassembler_pops_upkeep_mult = 0.1
+		mult = value:num_time_ruler_skill
+	}
+	custom_tooltip_with_modifiers = time_trait_for_ruler_tooltip
+	leader_class = all
+	selectable_weight = 10000
+}
+
+leader_trait_origin_reassembler_gestalt = {
+	leader_trait_type = veteran
+	inline_script = {
+		script = trait/time_trait_icon_for_ruler_with_bg
+		CLASS = leader
+		ICON = "GFX_leader_trait_tuner"
+		RARITY = paragon
+		TIER = none
+		PRIORITY = @trait_sorting_priority_paragon_yes_none
+	}
+	leader_potential_add = {
+		is_ruler_or_heir = yes
+		has_base_skill >= 8
+		owner = {
+			is_gestalt = yes
+			has_origin = origin_reassembler
+		}
+	}
+	triggered_councilor_modifier = {
+		potential = {
+			is_ruler = yes
+		}
+		reassembly_speed_mult = 0.1
+		reassembler_pops_upkeep_mult = 0.1
+		mult = value:num_time_ruler_skill
+	}
+	custom_tooltip_with_modifiers = time_trait_for_ruler_tooltip
+	leader_class = all
+	selectable_weight = 10000
+}
+
+
+
+# 江洋大盗
+trait_origin_pirate_king = {
+	cost = 0
+	icon = "gfx/interface/icons/traits/trait_origin_pirate_king.dds"
+	initial = no
+	randomized = no
+	inline_script = "trait/modification_condition/time_origin_basic_trait"
+	inline_script = "trait/allowed_archetypes/time_archetypes"
+	tags = { organic machine drawbacks pop_output alloys army habitability special }
+	sorting_priority = 25
+	modifier = {
+		pc_ark_habitability = 0.5
+		soldier_jobs_bonus_workforce_mult = 0.25
+		foundry_jobs_bonus_workforce_mult = 0.1
+		researcher_jobs_bonus_workforce_mult = -0.1
+		bureaucrat_jobs_bonus_workforce_mult = -0.1
+		artisan_jobs_bonus_workforce_mult = -0.1
+		trader_jobs_bonus_workforce_mult = -0.25
+		enforcer_jobs_bonus_workforce_mult = -0.25
+		worker_and_simple_drone_cat_bonus_workforce_mult = -0.25
+	}
+	triggered_pop_group_modifier = {
+		potential = {
+			exists = colony
+			colony = { carrier_is_type = ship }
+		}
+		soldier_jobs_bonus_workforce_mult = 0.25
+		foundry_jobs_bonus_workforce_mult = 0.1
+	}
+	custom_tooltip_with_modifiers = trait_origin_pirate_king_effect
+	slave_cost = {
+		trade = 1000
+	}
+}
+
+trait_origin_pirate_king_end = {
+	cost = 0
+	icon = "gfx/interface/icons/traits/trait_origin_pirate_king_end.dds"
+	initial = no
+	randomized = no
+	inline_script = "trait/modification_condition/time_origin_basic_trait"
+	inline_script = "trait/allowed_archetypes/time_archetypes"
+	tags = { organic machine drawbacks pop_output alloys army habitability special }
+	sorting_priority = 25
+	modifier = {
+		pc_ark_habitability = 1
+		soldier_jobs_bonus_workforce_mult = 0.5
+		foundry_jobs_bonus_workforce_mult = 0.2
+		researcher_jobs_bonus_workforce_mult = -0.2
+		bureaucrat_jobs_bonus_workforce_mult = -0.2
+		artisan_jobs_bonus_workforce_mult = -0.2
+		trader_jobs_bonus_workforce_mult = -0.5
+		enforcer_jobs_bonus_workforce_mult = -0.5
+		worker_and_simple_drone_cat_bonus_workforce_mult = -0.5
+	}
+	triggered_pop_group_modifier = {
+		potential = {
+			exists = colony
+			colony = { carrier_is_type = ship }
+		}
+		soldier_jobs_bonus_workforce_mult = 0.5
+		foundry_jobs_bonus_workforce_mult = 0.2
+	}
+	custom_tooltip_with_modifiers = trait_origin_pirate_king_end_effect
+	slave_cost = {
+		trade = 1000
+	}
+}
+
+leader_trait_origin_pirate_king_official = {
+	inline_script = {
+		script = trait/icon
+		CLASS = official
+		ICON = "GFX_leader_trait_army_veteran"
+		RARITY = common
+		COUNCIL = triggered
+		TIER = none
+	}
+	triggered_councilor_modifier = {
+		potential = {
+			is_ruler = yes
+		}
+		army_damage_mult = 0.2
+	}
+	triggered_planet_modifier = {
+		potential = {
+			is_ruler = no
+		}
+		planet_army_build_speed_mult = 0.2
+		army_starting_experience_add = 200
+	}
+	triggered_sector_modifier = {
+		potential = {
+			is_ruler = no
+		}
+		planet_army_build_speed_mult = 0.1
+		army_starting_experience_add = 100
+	}
+	leader_class = { official }
+	initial = no
+	randomized = no
+}
+
+leader_trait_origin_pirate_king_scientist = {
+	inline_script = {
+		script = trait/icon
+		CLASS = scientist
+		ICON = "GFX_leader_trait_scout"
+		RARITY = common
+		COUNCIL = triggered
+		TIER = none
+	}
+	triggered_councilor_modifier = {
+		potential = {
+			is_ruler = yes
+		}
+		ship_anomaly_generation_chance_mult = 0.2
+	}
+	triggered_modifier = {
+		potential = {
+			is_ruler = no
+		}
+		ship_sensor_range_add = 1
+		ship_hyperlane_range_add = 2
+	}
+	leader_class = { scientist }
+	initial = no
+	randomized = no
+}
+
+leader_trait_origin_pirate_king_commander = {
+	inline_script = {
+		script = trait/icon
+		CLASS = commander
+		ICON = "GFX_leader_trait_automation_champion"
+		RARITY = common
+		COUNCIL = triggered
+		TIER = none
+	}
+	triggered_councilor_modifier = {
+		potential = {
+			is_ruler = yes
+		}
+		ship_windup_mult = -0.2
+	}
+	triggered_fleet_modifier = {
+		potential = {
+			is_ruler = no
+		}
+		ship_speed_mult = 0.2
+		ship_disengage_opportunities_add = 1
+	}
+	leader_class = { commander }
+	initial = no
+	randomized = no
+}
+
+leader_trait_origin_pirate_king_end = {
+	leader_trait_type = destiny
+	inline_script = {
+		script = trait/time_trait_icon_for_ruler_with_bg
+		CLASS = leader
+		ICON = "GFX_leader_trait_great_khan"
+		RARITY = paragon
+		TIER = none
+		PRIORITY = @trait_sorting_priority_paragon_yes_none
+	}
+	on_gained_effect = {
+		owner = {
+			country_event = { id = timeline.50 } # Timeline First Leader with Destiny Trait
+		}
+	}
+	leader_potential_add = {
+		is_ruler_or_heir = yes
+		owner = { has_origin = origin_pirate_king_end }
+	}
+	triggered_councilor_modifier = {
+		potential = {
+			is_ruler = yes
+			leader_class = official
+			owner = {
+				NOT = { has_country_flag = pirate_king_relic }
+			}
+		}
+		ship_fire_rate_mult = 0.05
+		ship_hull_regen_add_perc = 0.05
+		mult = value:num_time_ruler_skill
+	}
+	triggered_councilor_modifier = {
+		potential = {
+			is_ruler = yes
+			leader_class = official
+			owner = {
+				has_country_flag = pirate_king_relic
+			}
+		}
+		ship_fire_rate_mult = 0.066
+		ship_hull_regen_add_perc = 0.066
+		mult = value:num_time_ruler_skill
+	}
+	triggered_councilor_modifier = {
+		potential = {
+			is_ruler = yes
+			leader_class = scientist
+			owner = {
+				NOT = { has_country_flag = pirate_king_relic }
+			}
+		}
+		ship_weapon_range_mult = 0.05
+		ship_shield_regen_add_perc = 0.05
+		mult = value:num_time_ruler_skill
+	}
+	triggered_councilor_modifier = {
+		potential = {
+			is_ruler = yes
+			leader_class = scientist
+			owner = {
+				has_country_flag = pirate_king_relic
+			}
+		}
+		ship_weapon_range_mult = 0.066
+		ship_shield_regen_add_perc = 0.066
+		mult = value:num_time_ruler_skill
+	}
+	triggered_councilor_modifier = {
+		potential = {
+			is_ruler = yes
+			leader_class = commander
+			owner = {
+				NOT = { has_country_flag = pirate_king_relic }
+			}
+		}
+		ship_weapon_damage = 0.05
+		ship_armor_regen_add_perc = 0.05
+		mult = value:num_time_ruler_skill
+	}
+	triggered_councilor_modifier = {
+		potential = {
+			is_ruler = yes
+			leader_class = commander
+			owner = {
+				has_country_flag = pirate_king_relic
+			}
+		}
+		ship_weapon_damage = 0.066
+		ship_armor_regen_add_perc = 0.066
+		mult = value:num_time_ruler_skill
+	}
+	custom_tooltip_with_modifiers = time_trait_for_ruler_tooltip
+	leader_class = all
+	selectable_weight = 10000
+}
+
+
+
+# 机械神教
+trait_origin_adeptus_mechanicus = {
+	cost = 0
+	icon = "gfx/interface/icons/traits/trait_origin_adeptus_mechanicus.dds"
+	initial = no
+	randomized = no
+	inline_script = "trait/modification_condition/time_origin_basic_trait"
+	inline_script = "trait/allowed_archetypes/time_archetypes_robotic"
+	tags = { machine positive pop_output unity upkeep special }
+	sorting_priority = 25
+	triggered_species_modifier = {
+		potential = {
+			NAND = {
+				exists = from
+				from = { is_xenophobe = yes } # 排外机仆（X）
+				has_species_flag = adeptus_mechanicus_of@from
+			}
+		}
+		pop_adeptus_mechanicus_bonus_workforce_mult = 0.25
+		pop_category_adeptus_mechanicus_consumer_goods_upkeep_mult = 0.5
+	}
+	triggered_species_modifier = {
+		potential = {
+			exists = from
+			from = { is_xenophobe = yes } # 排外机仆（X）
+			has_species_flag = adeptus_mechanicus_of@from
+		}
+		pop_adeptus_mechanicus_bonus_workforce_mult = 0.5
+		pop_category_adeptus_mechanicus_consumer_goods_upkeep_mult = 1
+	}
+	slave_cost = {
+		trade = 500
+	}
+}
+
+leader_trait_origin_adeptus_mechanicus = {
+	leader_trait_type = destiny
+	inline_script = {
+		script = trait/time_trait_icon_for_ruler_with_bg
+		CLASS = leader
+		ICON = "GFX_leader_trait_legendary_leader"
+		RARITY = paragon
+		TIER = none
+		PRIORITY = @trait_sorting_priority_paragon_yes_none
+	}
+	on_gained_effect = {
+		owner = {
+			country_event = { id = timeline.50 } # Timeline First Leader with Destiny Trait
+		}
+	}
+	leader_potential_add = {
+		is_ruler_or_heir = yes
+		is_spiritualist = yes
+		owner = { has_origin = origin_adeptus_mechanicus }
+	}
+	triggered_councilor_modifier = {
+		potential = {
+			is_ruler = yes
+		}
+		planet_adeptus_mechanicus_unity_produces_add = 0.05
+		pop_adeptus_mechanicus_bonus_workforce_mult = 0.025
+		pop_category_adeptus_mechanicus_consumer_goods_upkeep_mult = 0.05
+		mult = value:num_time_ruler_skill
+	}
+	custom_tooltip_with_modifiers = time_trait_for_ruler_tooltip
+	leader_class = all
+	selectable_weight = 10000
+}
+
+
+
+# 诺亚方舟
+leader_trait_origin_noah_ark = {
+	leader_trait_type = destiny
+	inline_script = {
+		script = trait/time_trait_icon_for_ruler_with_bg
+		CLASS = leader
+		ICON = "GFX_leader_trait_terraformation_nuclei"
+		RARITY = paragon
+		TIER = none
+		PRIORITY = @trait_sorting_priority_paragon_yes_none
+	}
+	on_gained_effect = {
+		owner = {
+			country_event = { id = timeline.50 } # Timeline First Leader with Destiny Trait
+		}
+	}
+	leader_potential_add = {
+		is_ruler_or_heir = yes
+		owner = { has_origin = origin_noah_ark }
+	}
+	triggered_councilor_modifier = {
+		potential = {
+			is_ruler = yes
+			leader_class = official
+		}
+		planet_buildings_upkeep_mult = -0.05
+		planet_districts_upkeep_mult = -0.05
+		mult = value:num_time_ruler_skill
+	}
+	triggered_councilor_modifier = {
+		potential = {
+			is_ruler = yes
+			leader_class = scientist
+		}
+		planet_jobs_upkeep_mult = -0.05
+		planet_pops_upkeep_mult = -0.05
+		mult = value:num_time_ruler_skill
+	}
+	triggered_councilor_modifier = {
+		potential = {
+			is_ruler = yes
+			leader_class = commander
+		}
+		ships_upkeep_mult = -0.05
+		starbases_upkeep_mult = -0.05
+		mult = value:num_time_ruler_skill
+	}
+	custom_tooltip_with_modifiers = time_trait_for_ruler_tooltip
+	leader_class = all
+	selectable_weight = 10000
+}
+
+leader_trait_origin_noah_ark_gestalt = {
+	leader_trait_type = veteran
+	inline_script = {
+		script = trait/time_trait_icon_for_ruler_with_bg
+		CLASS = leader
+		ICON = "GFX_leader_trait_terraformation_nuclei"
+		RARITY = paragon
+		TIER = none
+		PRIORITY = @trait_sorting_priority_paragon_yes_none
+	}
+	leader_potential_add = {
+		is_ruler_or_heir = yes
+		has_base_skill >= 8
+		owner = { is_gestalt = yes }
+		owner = { has_origin = origin_noah_ark }
+	}
+	triggered_councilor_modifier = {
+		potential = {
+			is_ruler = yes
+			leader_class = official
+		}
+		planet_buildings_upkeep_mult = -0.05
+		planet_districts_upkeep_mult = -0.05
+		mult = value:num_time_ruler_skill
+	}
+	triggered_councilor_modifier = {
+		potential = {
+			is_ruler = yes
+			leader_class = scientist
+		}
+		planet_jobs_upkeep_mult = -0.05
+		planet_pops_upkeep_mult = -0.05
+		mult = value:num_time_ruler_skill
+	}
+	triggered_councilor_modifier = {
+		potential = {
+			is_ruler = yes
+			leader_class = commander
+		}
+		ships_upkeep_mult = -0.05
+		starbases_upkeep_mult = -0.05
+		mult = value:num_time_ruler_skill
+	}
+	custom_tooltip_with_modifiers = time_trait_for_ruler_tooltip
+	leader_class = all
+	selectable_weight = 10000
+}
+
+
+
+# 怪物猎人
+trait_origin_monster_hunter = {
+	cost = 0
+	icon = "gfx/interface/icons/traits/trait_origin_monster_hunter.dds"
+	initial = no
+	randomized = no
+	hidden = yes
+	inline_script = "trait/modification_condition/time_origin_basic_trait"
+	inline_script = "trait/allowed_archetypes/time_archetypes"
+	localized_tags = {
+		SPECIES_TRAIT_ORIGIN_MONSTER_HUNTER
+	}
+	tags = { organic machine positive pop_output amenities upkeep army leader special }
+	sorting_priority = 25
+	modifier = {
+		commander_skill_add = 1
+		army_damage_mult = 0.1
+		army_health = 0.1
+		influential_jobs_bonus_workforce_mult = 0.1
+		enforcer_jobs_bonus_workforce_mult = 0.1
+		soldier_jobs_bonus_workforce_mult = 0.1
+		planet_pops_upkeep_mult = 0.25
+	}
+	inline_script = "traits/trait_origin_monster_hunter_inherited_modifiers"
+	slave_cost = {
+		trade = 1000
+	}
+}
+
+leader_trait_origin_monster_hunter = {
+	leader_trait_type = destiny
+	inline_script = {
+		script = trait/time_trait_icon_for_ruler_with_bg
+		CLASS = leader
+		ICON = "GFX_leader_trait_dragonslayer"
+		RARITY = paragon
+		TIER = none
+		PRIORITY = @trait_sorting_priority_paragon_yes_none
+	}
+	on_gained_effect = {
+		owner = {
+			country_event = { id = timeline.50 } # Timeline First Leader with Destiny Trait
+		}
+	}
+	leader_potential_add = {
+		is_ruler_or_heir = yes
+		owner = { has_origin = origin_monster_hunter }
+	}
+	triggered_councilor_modifier = {
+		potential = {
+			is_ruler = yes
+		}
+		planet_monster_hunters_unity_produces_add = 0.05
+		pop_monster_hunter_bonus_workforce_mult = 0.025
+		mult = value:num_time_ruler_skill
+	}
+	custom_tooltip_with_modifiers = time_trait_for_ruler_tooltip
+	leader_class = all
+	selectable_weight = 10000
+}
+
+
+
+# 三心相印
+leader_trait_scientist_time_curator = {
+	inline_script = {
+		script = trait/icon_psionic
+		CLASS = scientist
+		ICON = "GFX_leader_trait_curator"
+		RARITY = paragon
+		COUNCIL = no
+		TIER = none
+	}
+	# 普政
+	triggered_planet_modifier = {
+		potential = {
+			owner = { is_gestalt = no }
+		}
+		planet_jobs_physics_research_produces_mult = 0.02
+		planet_jobs_society_research_produces_mult = 0.02
+		planet_jobs_engineering_research_produces_mult = 0.02
+		planet_jobs_specialist_produces_mult = 0.02
+		pop_ethic_materialist_attraction_mult = 0.1
+		mult = value:num_time_leader_skill
+	}
+	triggered_sector_modifier = {
+		potential = {
+			owner = { is_gestalt = no }
+		}
+		planet_jobs_physics_research_produces_mult = 0.01
+		planet_jobs_society_research_produces_mult = 0.01
+		planet_jobs_engineering_research_produces_mult = 0.01
+		planet_jobs_specialist_produces_mult = 0.01
+		pop_ethic_materialist_attraction_mult = 0.05
+		mult = value:num_time_leader_skill
+	}
+	# 格式塔
+	triggered_planet_modifier = {
+		potential = {
+			owner = { is_gestalt = yes }
+		}
+		planet_jobs_physics_research_produces_mult = 0.02
+		planet_jobs_society_research_produces_mult = 0.02
+		planet_jobs_engineering_research_produces_mult = 0.02
+		planet_jobs_specialist_produces_mult = 0.02
+		planet_crime_no_happiness_mult = -0.02
+		mult = value:num_time_leader_skill
+	}
+	triggered_sector_modifier = {
+		potential = {
+			owner = { is_gestalt = yes }
+		}
+		planet_jobs_physics_research_produces_mult = 0.01
+		planet_jobs_society_research_produces_mult = 0.01
+		planet_jobs_engineering_research_produces_mult = 0.01
+		planet_jobs_specialist_produces_mult = 0.01
+		planet_crime_no_happiness_mult = -0.01
+		mult = value:num_time_leader_skill
+	}
+	# 通用
+	triggered_planet_modifier = {
+		potential = {
+			has_base_skill >= 8
+		}
+		planet_physicists_physics_research_produces_add = 1
+		planet_biologists_society_research_produces_add = 1
+		planet_engineers_engineering_research_produces_add = 1
+	}
+	triggered_sector_modifier = {
+		potential = {
+			has_base_skill >= 8
+		}
+		planet_physicists_physics_research_produces_add = 0.5
+		planet_biologists_society_research_produces_add = 0.5
+		planet_engineers_engineering_research_produces_add = 0.5
+	}
+	triggered_self_modifier = {
+		potential = {
+			has_vanilla_leader_upkeep = yes
+			OR = {
+				has_full_vanilla_leader_unity_upkeep = yes
+				has_half_vanilla_leader_unity_upkeep = yes
+			}
+		}
+		leader_scientists_unity_upkeep_add = -1
+		mult = trigger:has_base_skill
+	}
+	on_gained_effect = {
+		# 晋升著名
+		become_renowned_without_promotion = yes
+		# 禁用母星特质
+		set_leader_flag = block_homeworld_traits
+	}
+	leader_class = { scientist }
+	initial = no
+	randomized = no
+}
+
+leader_trait_official_time_artist = {
+	inline_script = {
+		script = trait/icon_psionic
+		CLASS = official
+		ICON = "GFX_leader_trait_expertise_psionics"
+		RARITY = paragon
+		COUNCIL = no
+		TIER = none
+	}
+	# 普政
+	triggered_planet_modifier = {
+		potential = {
+			owner = { is_gestalt = no }
+		}
+		planet_jobs_unity_produces_mult = 0.04
+		planet_amenities_mult = 0.04
+		pop_ethic_xenophile_attraction_mult = 0.1
+		mult = value:num_time_leader_skill
+	}
+	triggered_sector_modifier = {
+		potential = {
+			owner = { is_gestalt = no }
+		}
+		planet_jobs_unity_produces_mult = 0.02
+		planet_amenities_mult = 0.02
+		pop_ethic_xenophile_attraction_mult = 0.05
+		mult = value:num_time_leader_skill
+	}
+	# 格式塔
+	triggered_planet_modifier = {
+		potential = {
+			owner = { is_gestalt = yes }
+		}
+		planet_jobs_unity_produces_mult = 0.04
+		planet_amenities_no_happiness_mult = 0.04
+		planet_pops_upkeep_mult = -0.04
+		mult = value:num_time_leader_skill
+	}
+	triggered_sector_modifier = {
+		potential = {
+			owner = { is_gestalt = yes }
+		}
+		planet_jobs_unity_produces_mult = 0.02
+		planet_amenities_no_happiness_mult = 0.02
+		planet_pops_upkeep_mult = -0.02
+		mult = value:num_time_leader_skill
+	}
+	# 通用
+	triggered_planet_modifier = {
+		potential = {
+			has_base_skill >= 8
+		}
+		planet_bureaucrats_unity_produces_add = 2
+	}
+	triggered_sector_modifier = {
+		potential = {
+			has_base_skill >= 8
+		}
+		planet_bureaucrats_unity_produces_add = 1
+	}
+	triggered_self_modifier = {
+		potential = {
+			has_vanilla_leader_upkeep = yes
+			OR = {
+				has_full_vanilla_leader_unity_upkeep = yes
+				has_half_vanilla_leader_unity_upkeep = yes
+			}
+		}
+		leader_officials_unity_upkeep_add = -1
+		mult = trigger:has_base_skill
+	}
+	on_gained_effect = {
+		# 晋升著名
+		become_renowned_without_promotion = yes
+		# 禁用母星特质
+		set_leader_flag = block_homeworld_traits
+	}
+	leader_class = { official }
+	initial = no
+	randomized = no
+}
+
+
+
+# 异星学识
+leader_trait_knowledge_from_alien = {
+	inline_script = {
+		script = trait/time_trait_icon_for_timed_with_bg
+		CLASS = leader
+		COLOR = default
+		ICON = "GFX_leader_trait_cultural_focus"
+		RARITY = common
+		COUNCIL = no
+		TIER = none
+		PRIORITY = @trait_sorting_priority_common_no_none
+	}
+	self_modifier = {
+		leaders_upkeep_mult = -0.5
+	}
+	leader_class = all
+	initial = no
+	randomized = no
+	notify_on_gained = no
+}
+
+
+
+# 生于紫室
+leader_trait_born_in_the_purple = {
+	inline_script = {
+		script = trait/time_trait_icon_for_born_in_the_purple
+		CLASS = leader
+		ICON = "GFX_leader_trait_legendary_offspring"
+		RARITY = paragon
+		TIER = none
+		PRIORITY = @trait_sorting_priority_paragon_yes_none
+	}
+	triggered_councilor_modifier = {
+		potential = {
+			is_ruler = yes
+			owner = { is_imperial_authority = yes }
+		}
+		monthly_loyalty_from_subjects = 0.02
+		country_subject_acceptance_add = 0.25
+		planet_stability_add = 0.1
+		planet_crime_add = -0.2
+		councilor_exp_gain = 0.001
+		council_agenda_progress_speed = 0.001
+		council_agenda_finishing_effect_duration_mult = 0.001
+		pop_government_ethic_attraction = 0.002
+		mult = root.born_in_the_purple_value
+	}
+	triggered_councilor_modifier = {
+		potential = {
+			is_ruler = yes
+			owner = {
+				is_imperial_authority = yes
+				is_galactic_custodian = yes
+			}
+		}
+		diplo_weight_mult = 0.025
+		mult = value:num_time_ruler_skill
+	}
+	triggered_councilor_modifier = {
+		potential = {
+			is_ruler = yes
+			owner = {
+				is_imperial_authority = yes
+				is_galactic_emperor = yes
+			}
+			NOT = { has_global_flag = flag_MECR_activated }
+		}
+		country_subject_acceptance_add = 2.5
+		mult = value:num_time_ruler_skill
+	}
+	triggered_councilor_modifier = {
+		potential = {
+			is_ruler = yes
+			owner = {
+				is_imperial_authority = yes
+				is_galactic_emperor = yes
+			}
+			has_global_flag = flag_MECR_activated # 共同体议案拓展
+		}
+		imperial_authority_monthly_get = 0.025
+		mult = value:num_time_ruler_skill
+	}
+	triggered_councilor_modifier = {
+		potential = {
+			is_heir = yes
+			owner = { is_imperial_authority = yes }
+		}
+		planet_stability_add = 0.05
+		planet_crime_add = -0.1
+		councilor_exp_gain = 0.0005
+		council_agenda_progress_speed = 0.0005
+		council_agenda_finishing_effect_duration_mult = 0.0005
+		pop_government_ethic_attraction = 0.001
+		mult = root.born_in_the_purple_value
+	}
+	self_modifier = {
+		leader_trait_selection_options_add = -1
+		negative_traits_leader = 1
+	}
+	custom_tooltip_with_modifiers = leader_trait_born_in_the_purple_tooltip
+	leader_class = all
+	initial = no
+	randomized = no
+}
+
+leader_trait_born_in_the_purple_positive_a = {
+	inline_script = {
+		script = trait/icon
+		CLASS = leader
+		ICON = "GFX_leader_trait_intemporal"
+		RARITY = paragon
+		COUNCIL = yes
+		TIER = none
+	}
+	councilor_modifier = {
+		empire_size_mult = -0.1
+		country_leader_cap_add = 1
+	}
+	self_modifier = {
+		leader_lifespan_add = -13
+	}
+	leader_class = all
+	initial = no
+	randomized = no
+}
+
+leader_trait_born_in_the_purple_positive_b = {
+	inline_script = {
+		script = trait/icon
+		CLASS = leader
+		ICON = "GFX_leader_trait_mediator"
+		RARITY = veteran
+		COUNCIL = yes
+		TIER = none
+	}
+	councilor_modifier = {
+		council_agenda_progress_speed = 0.2
+		councilor_exp_gain = 0.2
+	}
+	leader_class = all
+	initial = no
+	randomized = no
+}
+
+leader_trait_born_in_the_purple_positive_c = {
+	inline_script = {
+		script = trait/icon
+		CLASS = leader
+		ICON = "GFX_leader_trait_maven_of_war"
+		RARITY = veteran
+		COUNCIL = yes
+		TIER = none
+	}
+	councilor_modifier = {
+		ship_weapon_damage = 0.1
+		ship_fire_rate_mult = 0.1
+	}
+	leader_class = all
+	initial = no
+	randomized = no
+}
+
+leader_trait_born_in_the_purple_negative_a = {
+	leader_trait_type = negative
+	inline_script = {
+		script = trait/icon_negative_no_tiers
+		ICON = "GFX_leader_trait_ruler_hive_mind"
+		COUNCIL = yes
+	}
+	councilor_modifier = {
+		country_cost_mult = 0.1
+		country_upkeep_mult = 0.1
+	}
+	self_modifier = {
+		leader_lifespan_add = 25
+	}
+	leader_class = all
+	initial = no
+	randomized = no
+}
+
+leader_trait_born_in_the_purple_negative_b = {
+	leader_trait_type = negative
+	inline_script = {
+		script = trait/icon_negative_no_tiers
+		ICON = "GFX_leader_trait_machine_intelligence"
+		COUNCIL = yes
+	}
+	councilor_modifier = {
+		ship_weapon_range_mult = -0.1
+		army_damage_mult = -0.1
+		planet_jobs_produces_mult = -0.1
+		all_technology_research_speed = -0.1
+	}
+	self_modifier = {
+		species_leader_exp_gain = 0.25
+	}
+	leader_class = all
+	initial = no
+	randomized = no
+}
+
+leader_trait_born_in_the_purple_negative_c = {
+	leader_trait_type = negative
+	inline_script = {
+		script = trait/icon_negative_no_tiers
+		ICON = "GFX_leader_trait_legendary_leader"
+		COUNCIL = no
+	}
+	self_modifier = {
+		species_leader_exp_gain = -1
+		negative_traits_leader = 2
+		leader_trait_selection_options_add = 1
+	}
+	leader_class = all
+	initial = no
+	randomized = no
+}
+
+
+
+# 腐化主脑
+leader_trait_corrupt_brain = {
+	inline_script = {
+		script = trait/icon_negative_no_tiers
+		ICON = "GFX_leader_trait_robotist"
+		COUNCIL = yes
+	}
+	triggered_councilor_modifier = {
+		potential = {
+			owner = { has_origin = origin_corrupt_brain }
+		}
+		planet_crime_no_happiness_add = 5
+		mult = value:num_corrupt_brain_value
+	}
+	triggered_councilor_modifier = {
+		potential = {
+			owner = { has_origin = origin_corrupt_brain_end }
+		}
+		planet_crime_no_happiness_add = 10
+		mult = value:num_corrupt_brain_value
+	}
+	self_modifier = {
+		species_leader_exp_gain = -0.5
+		negative_traits_leader = 6
+	}
+	leader_class = all
+	initial = no
+	randomized = no
+}
+
+leader_trait_corrupt_node = {
+	inline_script = {
+		script = trait/icon_negative_no_tiers
+		ICON = "GFX_leader_trait_passive"
+		COUNCIL = yes
+	}
+	triggered_councilor_modifier = {
+		potential = {
+			owner = { has_origin = origin_corrupt_brain }
+		}
+		planet_crime_no_happiness_add = 2.5
+		mult = value:num_corrupt_brain_value
+	}
+	triggered_councilor_modifier = {
+		potential = {
+			owner = { has_origin = origin_corrupt_brain_end }
+		}
+		planet_crime_no_happiness_add = 5
+		mult = value:num_corrupt_brain_value
+	}
+	self_modifier = {
+		species_leader_exp_gain = -0.5
+		negative_traits_leader = 3
+	}
+	leader_class = all
+	initial = no
+	randomized = no
+}
+
+leader_trait_pure_brain = {
+	replace_traits = { "leader_trait_corrupt_brain" }
+	inline_script = {
+		script = trait/icon
+		CLASS = leader
+		ICON = "GFX_leader_trait_robotist"
+		RARITY = paragon
+		COUNCIL = yes
+		TIER = none
+	}
+	triggered_councilor_modifier = {
+		councilor_exp_gain = 0.1
+		country_government_civic_points_add = 0.1
+		mult = value:num_time_ruler_skill
+	}
+	triggered_councilor_modifier = {
+		potential = {
+			owner = { has_tradition = tr_origin_pure_brain_ruler }
+		}
+		council_agenda_progress_speed = 0.05
+		council_agenda_finishing_effect_duration_mult = 0.05
+		mult = value:num_time_ruler_skill
+	}
+	triggered_councilor_modifier = {
+		potential = {
+			owner = {
+				is_hive_empire = yes
+				has_origin = origin_pure_brain_true
+			}
+		}
+		BIOLOGICAL_species_trait_picks_add = 0.2
+		BIOLOGICAL_species_trait_points_add = 0.4
+		mult = value:num_time_ruler_skill
+	}
+	triggered_councilor_modifier = {
+		potential = {
+			owner = {
+				is_machine_empire = yes
+				has_origin = origin_pure_brain_true
+			}
+		}
+		MACHINE_species_trait_picks_add = 0.2
+		MACHINE_species_trait_points_add = 0.4
+		mult = value:num_time_ruler_skill
+	}
+	self_modifier = {
+		negative_traits_leader = -2
+		leader_trait_selection_options_add = 2
+	}
+	leader_class = all
+	initial = no
+	randomized = no
+}
+
+leader_trait_pure_node = {
+	replace_traits = { "leader_trait_corrupt_node" }
+	inline_script = {
+		script = trait/icon
+		CLASS = leader
+		ICON = "GFX_leader_trait_passive"
+		RARITY = paragon
+		COUNCIL = yes
+		TIER = none
+	}
+	# 通用
+	triggered_councilor_modifier = {
+		species_leader_exp_gain = 0.025
+		mult = value:num_time_ruler_skill
+	}
+	# 生长节点
+	triggered_councilor_modifier = {
+		potential = {
+			is_councilor_type = councilor_gestalt_growth
+			owner = { is_hive_empire = yes }
+		}
+		bonus_pop_growth_mult = 0.05
+		mult = value:num_time_ruler_skill
+	}
+	triggered_councilor_modifier = {
+		potential = {
+			is_councilor_type = councilor_gestalt_growth
+			owner = { is_machine_empire = yes }
+		}
+		planet_pop_assembly_mult = 0.05
+		mult = value:num_time_ruler_skill
+	}
+	triggered_councilor_modifier = {
+		potential = {
+			is_councilor_type = councilor_gestalt_growth
+			owner = { has_tradition = tr_origin_pure_brain_growth }
+		}
+		planet_jobs_produces_mult = 0.05
+		planet_building_build_speed_mult = 0.05
+		mult = value:num_time_ruler_skill
+	}
+	triggered_councilor_modifier = {
+		potential = {
+			is_councilor_type = councilor_gestalt_growth
+			owner = { has_origin = origin_pure_brain_true }
+		}
+		planet_clear_blocker_speed_mult = 0.05
+		planet_decision_enact_speed_mult = 0.05
+		mult = value:num_time_ruler_skill
+	}
+	# 意识节点
+	triggered_councilor_modifier = {
+		potential = {
+			is_councilor_type = councilor_gestalt_cognitive
+		}
+		all_technology_research_speed = 0.05
+		mult = value:num_time_ruler_skill
+	}
+	triggered_councilor_modifier = {
+		potential = {
+			is_councilor_type = councilor_gestalt_cognitive
+			owner = { has_tradition = tr_origin_pure_brain_cognitive }
+		}
+		ship_archaeological_site_excavation_speed_mult = 0.05
+		ship_astral_rift_speed_mult = 0.05
+		mult = value:num_time_ruler_skill
+	}
+	triggered_councilor_modifier = {
+		potential = {
+			is_councilor_type = councilor_gestalt_cognitive
+			owner = { has_origin = origin_pure_brain_true }
+		}
+		ship_anomaly_generation_chance_mult = 0.05
+		ship_anomaly_research_speed_mult = 0.05
+		mult = value:num_time_ruler_skill
+	}
+	# 军团节点
+	triggered_councilor_modifier = {
+		potential = {
+			is_councilor_type = councilor_gestalt_legion
+		}
+		ship_accuracy_mult = 0.05
+		mult = value:num_time_ruler_skill
+	}
+	triggered_councilor_modifier = {
+		potential = {
+			is_councilor_type = councilor_gestalt_legion
+			owner = { has_tradition = tr_origin_pure_brain_legion }
+		}
+		ship_tracking_mult = 0.05
+		ship_evasion_mult = 0.05
+		mult = value:num_time_ruler_skill
+	}
+	triggered_councilor_modifier = {
+		potential = {
+			is_councilor_type = councilor_gestalt_legion
+			owner = { has_origin = origin_pure_brain_true }
+		}
+		ship_shield_damage_mult = 0.05
+		ship_armor_damage_mult = 0.05
+		mult = value:num_time_ruler_skill
+	}
+	# 管控节点
+	triggered_councilor_modifier = {
+		potential = {
+			is_councilor_type = councilor_gestalt_regulatory
+			owner = { is_homicidal = no }
+		}
+		first_contact_speed_mult = 0.05
+		mult = value:num_time_ruler_skill
+	}
+	triggered_councilor_modifier = {
+		potential = {
+			is_councilor_type = councilor_gestalt_regulatory
+			owner = { is_homicidal = yes }
+		}
+		army_health = 0.05
+		mult = value:num_time_ruler_skill
+	}
+	triggered_councilor_modifier = {
+		potential = {
+			is_councilor_type = councilor_gestalt_regulatory
+			owner = {
+				has_tradition = tr_origin_pure_brain_regulatory
+				is_homicidal = no
+			}
+		}
+		envoy_improve_relations_mult = 0.05
+		country_trust_growth = 0.05
+		mult = value:num_time_ruler_skill
+	}
+	triggered_councilor_modifier = {
+		potential = {
+			is_councilor_type = councilor_gestalt_regulatory
+			owner = {
+				has_tradition = tr_origin_pure_brain_regulatory
+				is_homicidal = yes
+			}
+		}
+		army_damage_mult = 0.05
+		army_morale_damage_mult = 0.05
+		mult = value:num_time_ruler_skill
+	}
+	triggered_councilor_modifier = {
+		potential = {
+			is_councilor_type = councilor_gestalt_regulatory
+			owner = {
+				has_origin = origin_pure_brain_true
+				is_homicidal = no
+			}
+		}
+		spy_network_daily_value_mult = 0.05
+		espionage_operation_speed_mult = 0.05
+		mult = value:num_time_ruler_skill
+	}
+	triggered_councilor_modifier = {
+		potential = {
+			is_councilor_type = councilor_gestalt_regulatory
+			owner = {
+				has_origin = origin_pure_brain_true
+				is_homicidal = yes
+			}
+		}
+		planet_army_build_speed_mult = 0.05
+		ship_orbital_bombardment_mult = 0.05
+		mult = value:num_time_ruler_skill
+	}
+	# 通用
+	self_modifier = {
+		negative_traits_leader = -1
+		leader_trait_selection_options_add = 1
+	}
+	leader_class = all
+	initial = no
+	randomized = no
+}
+
+
+
+# 命定的传奇
+leader_trait_inborn_legendary = {
+	replace_traits = { "leader_trait_inborn_renowned" }
+	inline_script = {
+		script = trait/time_trait_icon_for_inborn_legendary_or_renowned
+		CLASS = leader
+		ICON = "GFX_leader_trait_inborn_legendary"
+		RARITY = paragon
+		TIER = none
+	}
+	inline_script = {
+		script = traits/inborn_legendary_or_renowned_modifiers
+		TYPE = legendary
+	}
+	on_gained_effect = {
+		# 不会自然获得负面特质
+		set_leader_flag = immune_to_negative_traits
+	}
+	leader_class = all
+	initial = no
+	randomized = no
+}
+
+# 天生的英杰
+leader_trait_inborn_renowned = {
+	inline_script = {
+		script = trait/time_trait_icon_for_inborn_legendary_or_renowned
+		CLASS = leader
+		ICON = "GFX_leader_trait_chosen"
+		RARITY = paragon
+		TIER = none
+	}
+	inline_script = {
+		script = traits/inborn_legendary_or_renowned_modifiers
+		TYPE = renowned
+	}
+	on_gained_effect = {
+		# 不会自然获得负面特质
+		set_leader_flag = immune_to_negative_traits
+	}
+	leader_class = all
+	initial = no
+	randomized = no
+}
+
+# 传奇巅峰
+leader_trait_peak_of_legendary = {
+	replace_traits = { "leader_trait_peak_of_renowned" }
+	inline_script = {
+		script = trait/icon
+		CLASS = leader
+		ICON = "GFX_leader_trait_inborn_legendary"
+		RARITY = common
+		COUNCIL = no
+		TIER = none
+	}
+	force_councilor_trait = yes # 让统治者与继承人也能获得
+	triggered_self_modifier = {
+		potential = {
+			has_base_skill >= 10
+			owner = { has_origin = origin_legendary_worship }
+		}
+		leader_skill_add = 5
+	}
+	leader_class = all
+	initial = no
+	randomized = no
+}
+
+# 英杰巅峰
+leader_trait_peak_of_renowned = {
+	inline_script = {
+		script = trait/icon
+		CLASS = leader
+		ICON = "GFX_leader_trait_chosen"
+		RARITY = common
+		COUNCIL = no
+		TIER = none
+	}
+	force_councilor_trait = yes # 让统治者与继承人也能获得
+	triggered_self_modifier = {
+		potential = {
+			has_base_skill >= 10
+			owner = { has_origin = origin_legendary_worship }
+		}
+		leader_skill_add = 3
+	}
+	leader_class = all
+	initial = no
+	randomized = no
+}
+
+
+
+# 神弃之族
+leader_trait_abandoned_by_god = {
+	force_councilor_trait = yes
+	inline_script = {
+		script = trait/icon_negative_no_tiers
+		ICON = "GFX_leader_trait_victory_or_death"
+		COUNCIL = no
+	}
+	triggered_background_planet_modifier = {
+		potential = {
+			if = {
+				limit = {
+					NOT = { leader_class = envoy }
+				}
+				exists = FROM
+				FROM = {
+					exists = owner
+					owner = { is_same_value = root.owner }
+				}
+			}
+			else = {
+				always = no
+			}
+		}
+		pop_happiness = -0.01
+		mult = trigger:has_base_skill
+	}
+	triggered_self_modifier = {
+		potential = {
+			is_immortal = no
+		}
+		leader_lifespan_mult = -0.5
+	}
+	triggered_self_modifier = {
+		potential = {
+			is_immortal = yes
+		}
+		negative_traits_leader = 5
+	}
+	triggered_self_modifier = {
+		potential = {
+			leader_class = official
+		}
+		leader_officials_unity_cost_add = -1
+		mult = value:leader_cost
+		custom_tooltip = leader_not_have_unity_cost
+	}
+	triggered_self_modifier = {
+		potential = {
+			leader_class = official
+			has_vanilla_leader_upkeep = yes
+			has_full_vanilla_leader_unity_upkeep = yes
+		}
+		leader_officials_unity_upkeep_add = -2
+		mult = trigger:has_base_skill
+		custom_tooltip = leader_not_have_unity_upkeep
+	}
+	triggered_self_modifier = {
+		potential = {
+			leader_class = official
+			has_vanilla_leader_upkeep = yes
+			has_half_vanilla_leader_unity_upkeep = yes
+		}
+		leader_officials_unity_upkeep_add = -1
+		mult = trigger:has_base_skill
+		custom_tooltip = leader_not_have_unity_upkeep
+	}
+	triggered_self_modifier = {
+		potential = {
+			leader_class = official
+		}
+		leader_officials_physics_research_produces_add = 1.5
+		leader_officials_society_research_produces_add = 1.5
+		leader_officials_engineering_research_produces_add = 1.5
+		leader_officials_consumer_goods_upkeep_add = 2
+		mult = value:num_time_leader_skill
+	}
+	triggered_self_modifier = {
+		potential = {
+			leader_class = scientist
+		}
+		leader_scientists_unity_cost_add = -1
+		mult = value:leader_cost
+		custom_tooltip = leader_not_have_unity_cost
+	}
+	triggered_self_modifier = {
+		potential = {
+			leader_class = scientist
+			has_vanilla_leader_upkeep = yes
+			has_full_vanilla_leader_unity_upkeep = yes
+		}
+		leader_scientists_unity_upkeep_add = -2
+		mult = trigger:has_base_skill
+		custom_tooltip = leader_not_have_unity_upkeep
+	}
+	triggered_self_modifier = {
+		potential = {
+			leader_class = scientist
+			has_vanilla_leader_upkeep = yes
+			has_half_vanilla_leader_unity_upkeep = yes
+		}
+		leader_scientists_unity_upkeep_add = -1
+		mult = trigger:has_base_skill
+		custom_tooltip = leader_not_have_unity_upkeep
+	}
+	triggered_self_modifier = {
+		potential = {
+			leader_class = scientist
+		}
+		leader_scientists_physics_research_produces_add = 1.5
+		leader_scientists_society_research_produces_add = 1.5
+		leader_scientists_engineering_research_produces_add = 1.5
+		leader_scientists_consumer_goods_upkeep_add = 2
+		mult = value:num_time_leader_skill
+	}
+	triggered_self_modifier = {
+		potential = {
+			leader_class = commander
+		}
+		leader_commanders_unity_cost_add = -1
+		mult = value:leader_cost
+		custom_tooltip = leader_not_have_unity_cost
+	}
+	triggered_self_modifier = {
+		potential = {
+			leader_class = commander
+			has_vanilla_leader_upkeep = yes
+			has_full_vanilla_leader_unity_upkeep = yes
+		}
+		leader_commanders_unity_upkeep_add = -2
+		mult = trigger:has_base_skill
+		custom_tooltip = leader_not_have_unity_upkeep
+	}
+	triggered_self_modifier = {
+		potential = {
+			leader_class = commander
+			has_vanilla_leader_upkeep = yes
+			has_half_vanilla_leader_unity_upkeep = yes
+		}
+		leader_commanders_unity_upkeep_add = -1
+		mult = trigger:has_base_skill
+		custom_tooltip = leader_not_have_unity_upkeep
+	}
+	triggered_self_modifier = {
+		potential = {
+			leader_class = commander
+		}
+		leader_commanders_physics_research_produces_add = 1.5
+		leader_commanders_society_research_produces_add = 1.5
+		leader_commanders_engineering_research_produces_add = 1.5
+		leader_commanders_consumer_goods_upkeep_add = 2
+		mult = value:num_time_leader_skill
+	}
+	leader_class = all
+	initial = no
+	randomized = no
+}
+
+
+
+# 彼岸封印
+leader_trait_equinox_seal = {
+	inline_script = {
+		script = trait/time_trait_icon_for_equinox_seal
+		ICON = "GFX_leader_trait_mind_wipe"
+	}
+	triggered_self_modifier = {
+		potential = {
+			leader_class = official
+		}
+		leader_officials_sr_dark_matter_upkeep_add = 0.25
+		mult = trigger:has_base_skill
+	}
+	triggered_self_modifier = {
+		potential = {
+			leader_class = scientist
+		}
+		leader_scientists_sr_dark_matter_upkeep_add = 0.25
+		mult = trigger:has_base_skill
+	}
+	triggered_self_modifier = {
+		potential = {
+			leader_class = commander
+		}
+		leader_commanders_sr_dark_matter_upkeep_add = 0.25
+		mult = trigger:has_base_skill
+	}
+	triggered_self_modifier = {
+		potential = {
+			is_immortal = no
+		}
+		leader_lifespan_mult = -0.25
+	}
+	triggered_self_modifier = {
+		potential = {
+			is_immortal = yes
+		}
+		leaders_upkeep_mult = 0.5
+	}
+	triggered_self_modifier = {
+		species_leader_exp_gain = 0.5
+	}
+	triggered_councilor_modifier = {
+		potential = {
+			is_ruler = yes
+			owner = { is_gestalt = no }
+		}
+		planetary_ascension_effect_mult = 0.025
+		mult = value:num_time_leader_skill
+	}
+	triggered_councilor_modifier = {
+		potential = {
+			is_councilor = yes
+			owner = { is_gestalt = yes }
+		}
+		planetary_ascension_effect_mult = 0.005
+		mult = value:num_time_leader_skill
+	}
+	triggered_planet_modifier = {
+		potential = {
+			is_ruler = no
+			is_gestalt_node = no
+		}
+		planet_jobs_physics_research_produces_mult = 0.05
+		planet_jobs_society_research_produces_mult = 0.05
+		planet_jobs_engineering_research_produces_mult = 0.05
+		planet_jobs_unity_produces_mult = 0.05
+		mult = value:num_time_leader_skill
+	}
+	triggered_sector_modifier = {
+		potential = {
+			is_ruler = no
+			is_gestalt_node = no
+		}
+		planet_jobs_physics_research_produces_mult = 0.025
+		planet_jobs_society_research_produces_mult = 0.025
+		planet_jobs_engineering_research_produces_mult = 0.025
+		planet_jobs_unity_produces_mult = 0.025
+		mult = value:num_time_leader_skill
+	}
+	leader_class = all
+	initial = no
+	randomized = no
+}
+
+leader_trait_equinox_seal_astral_rift = {
+	inline_script = {
+		script = trait/icon_negative_no_tiers
+		ICON = "GFX_leader_trait_mind_wipe"
+		COUNCIL = no
+	}
+	triggered_modifier = {
+		ship_astral_rift_speed_mult = -0.06
+		mult = equinox_seal_chance
+	}
+	leader_class = all
+	initial = no
+	randomized = no
+}
+
+
+
+# 凝视深渊
+trait_origin_black_hole = {
+	cost = {
+		base = 0
+		modifier = {
+			add = 2
+			NOT = { has_origin = origin_black_hole }
+		}
+	}
+	icon = "gfx/interface/icons/traits/trait_origin_black_hole.dds"
+	opposites = { "trait_natural_physicists" "trait_natural_sociologists" "trait_natural_engineers" "trait_nerve_stapled" }
+	initial = no
+	randomized = no
+	inline_script = "trait/modification_condition/time_origin_basic_trait"
+	inline_script = "trait/allowed_archetypes/time_archetypes"
+	tags = { organic machine pop_output research drawbacks special }
+	sorting_priority = 10
+	modifier = {
+		physicist_jobs_bonus_workforce_mult = 0.25
+		biologist_jobs_bonus_workforce_mult = -0.1
+		engineer_jobs_bonus_workforce_mult = -0.1
+	}
+	triggered_pop_group_modifier = {
+		potential = {
+			colony? = { acitve_building_civic_origin_black_hole_bonus = yes }
+		}
+		physicist_jobs_workforce_mult = 1
+	}
+	custom_tooltip_with_modifiers = trait_origin_black_hole_effect
+	slave_cost = {
+		trade = 2500
+	}
+	assembly_score = {
+		modifier = {
+			add = 1.5
+			from = { has_research_designation = yes }
+		}
+	}
+}
+
+# 精神脉冲
+trait_origin_pulsar = {
+	cost = {
+		base = 0
+		modifier = {
+			add = 2
+			NOT = { has_origin = origin_pulsar }
+		}
+	}
+	icon = "gfx/interface/icons/traits/trait_origin_pulsar.dds"
+	opposites = { "trait_natural_physicists" "trait_natural_sociologists" "trait_natural_engineers" "trait_nerve_stapled" }
+	initial = no
+	randomized = no
+	inline_script = "trait/modification_condition/time_origin_basic_trait"
+	inline_script = "trait/allowed_archetypes/time_archetypes"
+	tags = { organic machine pop_output research drawbacks special }
+	sorting_priority = 10
+	modifier = {
+		biologist_jobs_bonus_workforce_mult = 0.25
+		physicist_jobs_bonus_workforce_mult = -0.1
+		engineer_jobs_bonus_workforce_mult = -0.1
+	}
+	triggered_pop_group_modifier = {
+		potential = {
+			colony? = { acitve_building_civic_origin_pulsar_bonus = yes }
+		}
+		biologist_jobs_workforce_mult = 1
+	}
+	custom_tooltip_with_modifiers = trait_origin_pulsar_effect
+	slave_cost = {
+		trade = 2500
+	}
+	assembly_score = {
+		modifier = {
+			add = 1.5
+			from = { has_research_designation = yes }
+		}
+	}
+}
+
+# 中子壁垒
+trait_origin_neutron_star = {
+	cost = {
+		base = 0
+		modifier = {
+			add = 2
+			NOT = { has_origin = origin_neutron_star }
+		}
+	}
+	icon = "gfx/interface/icons/traits/trait_origin_neutron_star.dds"
+	opposites = { "trait_natural_physicists" "trait_natural_sociologists" "trait_natural_engineers" "trait_nerve_stapled" }
+	initial = no
+	randomized = no
+	inline_script = "trait/modification_condition/time_origin_basic_trait"
+	inline_script = "trait/allowed_archetypes/time_archetypes"
+	tags = { organic machine pop_output research drawbacks special }
+	sorting_priority = 10
+	modifier = {
+		engineer_jobs_bonus_workforce_mult = 0.25
+		physicist_jobs_bonus_workforce_mult = -0.1
+		biologist_jobs_bonus_workforce_mult = -0.1
+	}
+	triggered_pop_group_modifier = {
+		potential = {
+			colony? = { acitve_building_civic_origin_neutron_star_bonus = yes }
+		}
+		engineer_jobs_workforce_mult = 1
+	}
+	custom_tooltip_with_modifiers = trait_origin_neutron_star_effect
+	slave_cost = {
+		trade = 2500
+	}
+	assembly_score = {
+		modifier = {
+			add = 1.5
+			from = { has_research_designation = yes }
+		}
+	}
+}
+
+
+
+# 并非一体
+leader_trait_we_are_not_one = {
+	force_councilor_trait = yes
+	inline_script = {
+		script = trait/icon
+		CLASS = leader
+		ICON = "GFX_leader_trait_legendary_leader"
+		RARITY = paragon
+		COUNCIL = no
+		TIER = none
+	}
+	triggered_self_modifier = {
+		potential = {
+			owner = {
+				is_variable_set = we_are_not_one_age
+				NOT = { has_country_flag = we_are_not_one_immortal }
+			}
+		}
+		leader_lifespan_add = 10
+		mult = owner.we_are_not_one_age
+	}
+	triggered_self_modifier = {
+		potential = {
+			leader_class = official
+			has_vanilla_leader_upkeep = yes
+			has_full_vanilla_leader_unity_upkeep = yes
+		}
+		leader_officials_unity_upkeep_add = -2
+		mult = trigger:has_base_skill
+		custom_tooltip = leader_not_have_unity_upkeep
+	}
+	triggered_self_modifier = {
+		potential = {
+			leader_class = official
+			has_vanilla_leader_upkeep = yes
+			has_half_vanilla_leader_unity_upkeep = yes
+		}
+		leader_officials_unity_upkeep_add = -1
+		mult = trigger:has_base_skill
+		custom_tooltip = leader_not_have_unity_upkeep
+	}
+	triggered_self_modifier = {
+		potential = {
+			leader_class = scientist
+			has_vanilla_leader_upkeep = yes
+			has_full_vanilla_leader_unity_upkeep = yes
+		}
+		leader_scientists_unity_upkeep_add = -2
+		mult = trigger:has_base_skill
+		custom_tooltip = leader_not_have_unity_upkeep
+	}
+	triggered_self_modifier = {
+		potential = {
+			leader_class = scientist
+			has_vanilla_leader_upkeep = yes
+			has_half_vanilla_leader_unity_upkeep = yes
+		}
+		leader_scientists_unity_upkeep_add = -1
+		mult = trigger:has_base_skill
+		custom_tooltip = leader_not_have_unity_upkeep
+	}
+	triggered_self_modifier = {
+		potential = {
+			leader_class = commander
+			has_vanilla_leader_upkeep = yes
+			has_full_vanilla_leader_unity_upkeep = yes
+		}
+		leader_commanders_unity_upkeep_add = -2
+		mult = trigger:has_base_skill
+		custom_tooltip = leader_not_have_unity_upkeep
+	}
+	triggered_self_modifier = {
+		potential = {
+			leader_class = commander
+			has_vanilla_leader_upkeep = yes
+			has_half_vanilla_leader_unity_upkeep = yes
+		}
+		leader_commanders_unity_upkeep_add = -1
+		mult = trigger:has_base_skill
+		custom_tooltip = leader_not_have_unity_upkeep
+	}
+	custom_tooltip_with_modifiers = leader_trait_we_are_not_one_tooltip
+	on_gained_effect = {
+		if = {
+			limit = {
+				owner = { has_origin = origin_we_are_not_one }
+			}
+			# 晋升传奇
+			become_legendary_without_promotion = yes
+		}
+		else = {
+			remove_trait = leader_trait_we_are_not_one
+		}
+	}
+	leader_class = all
+	initial = no
+	randomized = no
+}

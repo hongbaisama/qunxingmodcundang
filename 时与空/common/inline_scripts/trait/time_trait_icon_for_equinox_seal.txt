@@ -1,0 +1,21 @@
+custom_subtitle = equinox_seal_subtitle
+icon = {
+	layer = {
+		icon = "GFX_trait_bg"
+		color = "trait_bg_negative"
+	}
+	layer = {
+		icon = $ICON$
+		color = "trait_icon_default"
+	}
+	layer = {
+		icon = "GFX_trait_councilor"
+		visible = {
+			OR = {
+				is_ruler = yes
+				is_gestalt_node = yes
+			}
+		}
+	}
+}
+sorting_priority = 15

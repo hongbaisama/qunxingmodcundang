@@ -1,0 +1,76 @@
+message_type = {
+	key = "STORM_DIMENSIONAL_HORROR_CRISIS_STORM_VISIBLE"
+	icon = "GFX_message_storm_gravity_visible"
+	icon_frame = 1
+
+	name = "MESSAGE_DIMENSIONAL_HORROR_CRISIS_STORM_COSMIC_STORM_SPOTTED_TITLE"
+	sound = "event_red_alert"
+	ping = "ping_notification_red"
+	
+	category = cosmic_storm
+}
+
+message_type = {
+	key = "STORM_DIMENSIONAL_HORROR_CRISIS_LEVO_STORM_VISIBLE"
+	icon = "GFX_message_storm_gravity_visible"
+	icon_frame = 1
+
+	name = "MESSAGE_DIMENSIONAL_HORROR_CRISIS_LEVO_STORM_COSMIC_STORM_SPOTTED_TITLE"
+	sound = "event_red_alert"
+	ping = "ping_notification_red"
+	
+	category = cosmic_storm
+}
+
+message_type = {
+	key = "STORM_DIMENSIONAL_HORROR_CRISIS_DEXTRO_STORM_VISIBLE"
+	icon = "GFX_message_storm_gravity_visible"
+	icon_frame = 1
+
+	name = "MESSAGE_DIMENSIONAL_HORROR_CRISIS_DEXTRO_STORM_COSMIC_STORM_SPOTTED_TITLE"
+	sound = "event_red_alert"
+	ping = "ping_notification_red"
+	
+	category = cosmic_storm
+}
+
+message_type = {
+	key = "DIMENSIONAL_HORROR_CRISIS_STORM_POP_KILLED"
+	icon = "GFX_message_declining_pops"
+	icon_frame = 2
+
+	name = "DIMENSIONAL_HORROR_CRISIS_STORM_POP_KILLED_TITLE"
+	sound = "event_yellow_alert"
+	ping = "arrow_notification_yellow"
+	
+	default_toast = no
+	
+	category = cosmic_storm
+}
+
+message_type = {
+	key = "GAIN_DIMENSIONAL_HORROR_CRISIS_STORM_INSIGHT"
+	icon = "GFX_message_storm_gravity_visible"
+	icon_frame = 1
+
+	name = "GAIN_DIMENSIONAL_HORROR_CRISIS_STORM_INSIGHT_TITLE"
+	sound = "notification"
+	ping = "ping_notification_green"
+
+	default_toast = yes
+	
+	category = cosmic_storm
+}
+
+message_type = {
+	key = "DIMENSIONAL_HORROR_CRISIS_STORM_AFTERMATH"
+	icon = "GFX_toast_dimensional_horror_crisis_storm_aftermath"
+
+	name = "MESSAGE_DIMENSIONAL_HORROR_CRISIS_STORM_AFTERMATH_TITLE"
+	sound = "notification"
+	ping = "arrow_notification_yellow"
+
+	default_toast = yes
+
+	category = cosmic_storm
+}

@@ -1,0 +1,367 @@
+################################################################
+# 障碍
+################################################################
+
+@blocker_high = 10
+@blocker_low = 5
+@ranger_small_production = 0.5
+@ranger_large_production = 1
+@evopred_large_blocker_progress = 40
+@evopred_small_blocker_progress = 20
+
+d_parallel_sky_blocker = {
+	time = 900
+	
+	is_for_colonizable = yes
+	category = deposit_cat_blockers
+
+	use_weights_for_blocker_swap_types = no
+	
+	can_be_cleared = {
+		hidden_trigger = { exists = owner }
+		custom_tooltip = {
+			fail_text = can_not_clear_d_parallel_sky_blocker
+			owner = { has_country_flag = parallel_sky_relic }
+		}
+	}
+
+	resources = {
+		category = deposit_blockers
+		cost = {
+			energy = 2500
+			sr_dark_matter = 250
+		}
+	}
+
+	blocker_swap_types = {
+		d_parallel_sky_4
+	}
+	
+	potential = {
+		always = no
+	}
+
+	planet_modifier = {
+		planet_max_districts_add = -5
+		planet_physicists_physics_research_produces_add = 0.25
+		planet_biologists_society_research_produces_add = 0.25
+		planet_engineers_engineering_research_produces_add = 0.25
+	}
+
+	drop_weight = {
+		weight = 0
+	}
+
+	ai_weight = {
+		weight = 1
+	}
+	
+	prerequisites = { "tech_parallel_sky_blocker" }
+}
+
+################################################################
+# 地块
+################################################################
+
+d_parallel_sky = {
+	is_for_colonizable = yes
+	
+	category = deposit_cat_rare
+	
+	resources = {
+		category = planet_deposits_parallel_sky
+		# 科研协议
+		produces = {
+			trigger = {
+				has_carrier_flag = parallel_sky_planet_1
+			}
+			physics_research = 0.2
+			society_research = 0.2
+			engineering_research = 0.2
+			mult = value:num_time_normal_resources_value
+		}
+		upkeep = {
+			trigger = {
+				has_carrier_flag = parallel_sky_planet_1
+				exists = owner
+				owner = { is_gestalt = no }
+			}
+			consumer_goods = 0.1
+			mult = value:num_time_normal_resources_value
+		}
+		upkeep = {
+			trigger = {
+				has_carrier_flag = parallel_sky_planet_1
+				exists = owner
+				owner = { is_hive_empire = yes }
+			}
+			minerals = 0.2
+			mult = value:num_time_normal_resources_value
+		}
+		upkeep = {
+			trigger = {
+				has_carrier_flag = parallel_sky_planet_1
+				exists = owner
+				owner = { is_machine_empire = yes }
+			}
+			energy = 0.2
+			mult = value:num_time_normal_resources_value
+		}
+		# 文化协议
+		produces = {
+			trigger = {
+				has_carrier_flag = parallel_sky_planet_3
+			}
+			unity = 0.2
+			mult = value:num_time_normal_resources_value
+		}
+		upkeep = {
+			trigger = {
+				has_carrier_flag = parallel_sky_planet_3
+				exists = owner
+				owner = { is_gestalt = no }
+			}
+			consumer_goods = 0.1
+			mult = value:num_time_normal_resources_value
+		}
+		upkeep = {
+			trigger = {
+				has_carrier_flag = parallel_sky_planet_3
+				exists = owner
+				owner = { is_hive_empire = yes }
+			}
+			minerals = 0.2
+			mult = value:num_time_normal_resources_value
+		}
+		upkeep = {
+			trigger = {
+				has_carrier_flag = parallel_sky_planet_3
+				exists = owner
+				owner = { is_machine_empire = yes }
+			}
+			energy = 0.2
+			mult = value:num_time_normal_resources_value
+		}
+		# 贸易协议
+		produces = {
+			trigger = {
+				has_carrier_flag = parallel_sky_planet_4
+			}
+			trade = 0.4
+			mult = value:num_time_normal_resources_value
+		}
+		upkeep = {
+			trigger = {
+				has_carrier_flag = parallel_sky_planet_4
+				owner_main_species = {
+					is_lithoid = no
+					is_robotic = no
+				}
+			}
+			food = 0.2
+			mult = value:num_time_normal_resources_value
+		}
+		upkeep = {
+			trigger = {
+				has_carrier_flag = parallel_sky_planet_4
+				owner_main_species = { is_lithoid = yes }
+			}
+			minerals = 0.2
+			mult = value:num_time_normal_resources_value
+		}
+		upkeep = {
+			trigger = {
+				has_carrier_flag = parallel_sky_planet_4
+				owner_main_species = { is_robotic = yes }
+			}
+			energy = 0.2
+			mult = value:num_time_normal_resources_value
+		}
+		# 军事协议
+		upkeep = {
+			trigger = {
+				has_carrier_flag = parallel_sky_planet_2
+			}
+			alloys = 0.1
+			mult = value:num_time_normal_resources_value
+		}
+	}
+	
+	planet_modifier = {
+		planet_max_districts_mult = -0.5
+	}
+	
+	# 科研协议
+	triggered_planet_modifier = {
+		potential = {
+			has_carrier_flag = parallel_sky_planet_1
+		}
+		planet_jobs_physics_research_produces_mult = 0.005
+		planet_jobs_society_research_produces_mult = 0.005
+		planet_jobs_engineering_research_produces_mult = 0.005
+		mult = value:num_time_normal_resources_value
+	}
+	
+	# 文化协议
+	triggered_planet_modifier = {
+		potential = {
+			has_carrier_flag = parallel_sky_planet_3
+		}
+		planet_jobs_unity_produces_mult = 0.005
+		mult = value:num_time_normal_resources_value
+	}
+	
+	# 贸易协议
+	triggered_planet_modifier = {
+		potential = {
+			has_carrier_flag = parallel_sky_planet_4
+		}
+		planet_jobs_trade_produces_mult = 0.005
+		mult = value:num_time_normal_resources_value
+	}
+	
+	# 军事协议
+	triggered_planet_modifier = {
+		potential = {
+			has_carrier_flag = parallel_sky_planet_2
+			exists = owner
+			owner = { is_gestalt = no }
+		}
+		job_soldier_per_pop = 0.1
+	}
+	triggered_planet_modifier = {
+		potential = {
+			has_carrier_flag = parallel_sky_planet_2
+			exists = owner
+			owner = { is_gestalt = yes }
+		}
+		job_warrior_drone_per_pop = 0.1
+	}
+	triggered_planet_modifier = {
+		potential = {
+			has_carrier_flag = parallel_sky_planet_2
+		}
+		soldier_jobs_bonus_workforce_mult = 0.005
+		mult = value:num_time_normal_resources_value
+	}
+	
+	potential = {
+		always = no
+	}
+	
+	drop_weight = {
+		weight = 0
+	}
+}
+
+d_parallel_sky_1 = {
+	is_for_colonizable = yes
+	
+	category = deposit_cat_rare
+
+	icon = d_city
+	
+	triggered_planet_modifier = {
+		potential = {
+			change_parallel_sky_generator_deposit_modifier = no
+		}
+		district_generator_max_add = 5
+	}
+	
+	triggered_planet_modifier = {
+		potential = {
+			change_parallel_sky_generator_deposit_modifier = yes
+		}
+		planet_bureaucrats_energy_produces_add = 1.5
+	}
+	
+	potential = {
+		always = no
+	}
+	
+	drop_weight = {
+		weight = 0
+	}
+}
+
+d_parallel_sky_2 = {
+	is_for_colonizable = yes
+	
+	category = deposit_cat_rare
+
+	icon = d_station_cargo
+	
+	triggered_planet_modifier = {
+		potential = {
+			change_parallel_sky_mining_deposit_modifier = no
+		}
+		district_mining_max_add = 5
+	}
+	
+	triggered_planet_modifier = {
+		potential = {
+			change_parallel_sky_mining_deposit_modifier = yes
+		}
+		planet_metallurgists_minerals_produces_add = 1
+	}
+	
+	potential = {
+		always = no
+	}
+	
+	drop_weight = {
+		weight = 0
+	}
+}
+
+d_parallel_sky_3 = {
+	is_for_colonizable = yes
+	
+	category = deposit_cat_rare
+
+	icon = d_bunker_door
+	
+	triggered_planet_modifier = {
+		potential = {
+			change_parallel_sky_farming_deposit_modifier = no
+		}
+		district_farming_max_add = 5
+	}
+	
+	triggered_planet_modifier = {
+		potential = {
+			change_parallel_sky_farming_deposit_modifier = yes
+		}
+		planet_artisans_food_produces_add = 1.5
+	}
+	
+	potential = {
+		always = no
+	}
+	
+	drop_weight = {
+		weight = 0
+	}
+}
+
+d_parallel_sky_4 = {
+	is_for_colonizable = yes
+	
+	category = deposit_cat_rare
+
+	icon = d_buried_lithoids
+	
+	planet_modifier = {
+		planet_physicists_physics_research_produces_add = 0.5
+		planet_biologists_society_research_produces_add = 0.5
+		planet_engineers_engineering_research_produces_add = 0.5
+	}
+	
+	potential = {
+		always = no
+	}
+	
+	drop_weight = {
+		weight = 0
+	}
+}

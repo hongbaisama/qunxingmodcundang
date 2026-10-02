@@ -1,0 +1,26 @@
+spriteTypes = {
+	spriteType = {
+		name = "GFX_time_bright_pearl_dyson_sphere_ruined_outliner_icon"
+		textureFile = "gfx/interface/icons/megastructures/dyson_sphere_ruined.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_time_bright_pearl_dyson_sphere_restored_outliner_icon"
+		textureFile = "gfx/interface/icons/megastructures/dyson_sphere.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_time_bright_pearl_dyson_sphere_disco_restored_outliner_icon"
+		textureFile = "gfx/interface/icons/megastructures/mega_art_installation.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_time_core_matter_decompressor_ruined_outliner_icon"
+		textureFile = "gfx/interface/icons/megastructures/matter_decompressor_ruined.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_time_core_matter_decompressor_restored_outliner_icon"
+		textureFile = "gfx/interface/icons/megastructures/matter_decompressor.dds"
+	}
+}

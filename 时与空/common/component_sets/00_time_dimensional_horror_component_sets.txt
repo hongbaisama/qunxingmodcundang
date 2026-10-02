@@ -1,0 +1,90 @@
+component_set = {
+	key = "DIMENSIONAL_HORROR_PRIMARY_BEAM"
+	
+	icon = "GFX_ship_part_dimensional_horror_primary_beam"
+	icon_frame = 1
+}
+
+component_set = {
+	key = "DIMENSIONAL_HORROR_PRIMARY_ACCELERATOR"
+	
+	icon = "GFX_ship_part_dimensional_horror_primary_accelerator"
+	icon_frame = 1
+}
+
+component_set = {
+	key = "DIMENSIONAL_HORROR_LARGE_BEAM"
+	
+	icon = "GFX_ship_part_dimensional_horror_beam"
+	icon_frame = 1
+}
+
+component_set = {
+	key = "DIMENSIONAL_HORROR_LARGE_ACCELERATOR"
+	
+	icon = "GFX_ship_part_dimensional_horror_accelerator"
+	icon_frame = 1
+}
+
+component_set = {
+	key = "DIMENSIONAL_HORROR_MEDIUM_BEAM"
+	
+	icon = "GFX_ship_part_dimensional_horror_beam"
+	icon_frame = 1
+}
+
+component_set = {
+	key = "DIMENSIONAL_HORROR_MEDIUM_ACCELERATOR"
+	
+	icon = "GFX_ship_part_dimensional_horror_accelerator"
+	icon_frame = 1
+}
+
+component_set = {
+	key = "DIMENSIONAL_HORROR_SMALL_BEAM"
+	
+	icon = "GFX_ship_part_dimensional_horror_beam"
+	icon_frame = 1
+}
+
+component_set = {
+	key = "DIMENSIONAL_HORROR_SMALL_ACCELERATOR"
+	
+	icon = "GFX_ship_part_dimensional_horror_accelerator"
+	icon_frame = 1
+}
+
+component_set = {
+	key = "DIMENSIONAL_HORROR_PD_ENERGY"
+	
+	icon = "GFX_ship_part_dimensional_horror_pd_energy"
+	icon_frame = 1
+}
+
+component_set = {
+	key = "DIMENSIONAL_HORROR_PD_KINETIC"
+	
+	icon = "GFX_ship_part_dimensional_horror_pd_kinetic"
+	icon_frame = 1
+}
+
+component_set = {
+	key = "DIMENSIONAL_HORROR_STRIKE_CRAFT_ENERGY"
+	
+	icon = "GFX_ship_part_dimensional_horror_strike_craft_energy"
+	icon_frame = 1
+}
+
+component_set = {
+	key = "DIMENSIONAL_HORROR_STRIKE_CRAFT_KINETIC"
+	
+	icon = "GFX_ship_part_dimensional_horror_strike_craft_kinetic"
+	icon_frame = 1
+}
+
+component_set = {
+	key = "PLANET_KILLER_HORROR"
+	
+	icon = "GFX_ship_part_dimension_end_beam"
+	icon_frame = 1
+}

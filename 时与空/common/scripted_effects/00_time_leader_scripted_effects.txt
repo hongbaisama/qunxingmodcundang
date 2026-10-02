@@ -1,0 +1,837 @@
+# 领袖（负相生物）
+gain_timed_leader_trait_horror_secret = {
+	add_timed_trait = {
+		trait = timed_leader_trait_horror_secret
+		days = 360
+	}
+	leader_event = { id = time.550 days = 360 }
+	random_list = {
+		1 = {
+			gain_horror_secret_leader_flag = { FLAG = horror_secret_materials }
+		}
+		1 = {
+			gain_horror_secret_leader_flag = { FLAG = horror_secret_propulsion }
+		}
+		1 = {
+			gain_horror_secret_leader_flag = { FLAG = horror_secret_voidcraft }
+		}
+		1 = {
+			gain_horror_secret_leader_flag = { FLAG = horror_secret_industry }
+		}
+		1 = {
+			gain_horror_secret_leader_flag = { FLAG = horror_secret_field_manipulation }
+		}
+		1 = {
+			gain_horror_secret_leader_flag = { FLAG = horror_secret_particles }
+		}
+		1 = {
+			gain_horror_secret_leader_flag = { FLAG = horror_secret_computing }
+		}
+		1 = {
+			gain_horror_secret_leader_flag = { FLAG = horror_secret_psionics }
+		}
+		1 = {
+			gain_horror_secret_leader_flag = { FLAG = horror_secret_new_worlds }
+		}
+		1 = {
+			gain_horror_secret_leader_flag = { FLAG = horror_secret_statecraft }
+		}
+		1 = {
+			gain_horror_secret_leader_flag = { FLAG = horror_secret_biology }
+		}
+		1 = {
+			gain_horror_secret_leader_flag = { FLAG = horror_secret_military_theory }
+		}
+		1 = {
+			gain_horror_secret_leader_flag = { FLAG = horror_secret_archaeostudies }
+		}
+		1 = {
+			gain_horror_secret_leader_flag = { FLAG = horror_secret_horror_time }
+		}
+	}
+}
+
+# 领袖（负相生物标识）
+gain_horror_secret_leader_flag = {
+	set_timed_leader_flag = {
+		flag = $FLAG$
+		days = 360
+	}
+}
+
+# 领袖
+leader_finish_ap_horror_project = {
+	# 奥秘项目标识
+	set_leader_flag = leader_finish_ap_horror_project_$TYPE$
+	# 添加奥秘特质
+	if = {
+		limit = {
+			is_dimension_traveler = yes
+			owner = { has_country_flag = dimension_traveler_end }
+		}
+		# 无事发生
+	}
+	else_if = {
+		limit = {
+			is_dimension_traveler = yes
+			has_finished_all_ap_horror_project = yes
+		}
+		add_trait = {
+			trait = leader_trait_dimension_traveler_horror_secret
+		}
+	}
+	else = {
+		# 提示玩家获得新特质
+		remove_trait = leader_trait_horror_secret
+		add_trait = {
+			trait = leader_trait_horror_secret
+		}
+	}
+	# 领袖升级
+	add_skill_without_trait_selection = 1
+	remove_all_negative_traits = yes
+	# 界旅者额外
+	if = {
+		limit = {
+			is_dimension_traveler = yes
+		}
+		owner = {
+			set_country_flag = dimension_traveler_trait_$TYPE$_secret
+		}
+	}
+}
+
+# 领袖
+leader_finish_ap_horror_project_gestalt = {
+	# 奥秘项目标识
+	set_leader_flag = leader_finish_ap_horror_project_$TYPE$
+	# 添加奥秘特质
+	if = {
+		limit = {
+			is_dimension_traveler = yes
+			owner = { has_country_flag = dimension_traveler_end }
+		}
+		# 无事发生
+	}
+	else_if = {
+		limit = {
+			is_dimension_traveler = yes
+			has_finished_all_ap_horror_project = yes
+		}
+		add_trait = {
+			trait = leader_trait_dimension_traveler_horror_secret_self
+		}
+	}
+	else = {
+		# 提示玩家获得新特质
+		remove_trait = leader_trait_horror_secret_gestalt
+		add_trait = {
+			trait = leader_trait_horror_secret_gestalt
+		}
+	}
+	# 领袖升级
+	add_skill_without_trait_selection = 1
+	remove_all_negative_traits = yes
+	# 格式塔额外
+	save_event_target_as = $TYPE$_secret_researcher
+	# 界旅者额外
+	if = {
+		limit = {
+			is_dimension_traveler = yes
+		}
+		owner = {
+			set_country_flag = dimension_traveler_trait_$TYPE$_secret
+		}
+	}
+}
+
+# 领袖（来自深渊）
+leader_pass_black_hole = {
+	if = {
+		limit = {
+			has_pass_black_hole = no
+			OR = {
+				has_any_subclass = yes
+				is_gestalt_node = yes
+				is_dimension_traveler = yes
+			}
+		}
+		if = {
+			limit = {
+				is_dimension_traveler = yes
+			}
+			owner = {
+				set_country_flag = dimension_traveler_trait_pass_black_hole
+			}
+		}
+		add_trait = {
+			trait = leader_trait_pass_black_hole
+		}
+	}
+}
+
+# 领袖
+clear_care_flag = {
+	remove_leader_flag = care_economy
+	remove_leader_flag = care_trade
+	remove_leader_flag = care_energy
+	remove_leader_flag = care_research
+	remove_leader_flag = care_unity
+	remove_leader_flag = care_housing
+	remove_leader_flag = care_amenities
+	remove_leader_flag = care_growth
+	remove_leader_flag = care_alloys
+	remove_leader_flag = care_minerals
+}
+
+# 领袖
+gain_leader_trait_inborn_renowned = {
+	if = {
+		limit = {
+			NOR = {
+				has_trait = leader_trait_inborn_legendary
+				has_trait = leader_trait_inborn_renowned
+			}
+		}
+		add_trait = {
+			trait = leader_trait_inborn_renowned
+			show_message = no
+		}
+	}
+}
+
+# 领袖
+gain_leader_trait_inborn_legendary = {
+	if = {
+		limit = {
+			NOT = {
+				has_trait = leader_trait_inborn_legendary
+			}
+		}
+		add_trait = {
+			trait = leader_trait_inborn_legendary
+			show_message = no
+		}
+	}
+}
+
+# 领袖
+become_renowned_without_promotion = {
+	remove_leader_flag = has_tried_to_promote_to_renowned_leader
+	if = {
+		limit = {
+			is_leader_tier = leader_tier_default
+		}
+		set_leader_tier = leader_tier_renowned
+	}
+	gain_leader_trait_inborn_renowned = yes
+}
+
+# 领袖
+become_legendary_without_promotion = {
+	remove_leader_flag = has_tried_to_promote_to_renowned_leader
+	remove_leader_flag = has_tried_to_promote_to_legendary_leader
+	if = {
+		limit = {
+			OR = {
+				is_leader_tier = leader_tier_default
+				is_leader_tier = leader_tier_renowned
+			}
+		}
+		set_leader_tier = leader_tier_legendary
+	}
+	gain_leader_trait_inborn_legendary = yes
+}
+
+# 领袖
+block_vanilla_leader_traits = {
+	set_leader_flag = block_army_traits
+	set_leader_flag = block_council_traits
+	set_leader_flag = block_federation_traits
+	set_leader_flag = block_galcom_traits
+	set_leader_flag = block_governor_traits
+	set_leader_flag = block_pilot_traits
+	set_leader_flag = block_homeworld_traits
+}
+
+# 领袖
+gain_extra_destiny_trait = {
+	owner = {
+		change_paragon_memory_vault = yes
+	}
+	switch = {
+		trigger = leader_class
+		official = {
+			gain_extra_official_destiny_trait = yes
+		}
+		scientist = {
+			gain_extra_scientist_destiny_trait = yes
+		}
+		commander = {
+			gain_extra_commander_destiny_trait = yes
+		}
+	}
+}
+
+# 领袖
+gain_extra_official_destiny_trait = {
+	random_list = {
+		# 常规
+		1 = {
+			inline_script = {
+				script = weights/gain_extra_destiny_trait
+				FORBID = council
+				TRAIT = leader_trait_urbanist
+			}
+		}
+		1 = {
+			inline_script = {
+				script = weights/gain_extra_destiny_trait
+				FORBID = council
+				TRAIT = leader_trait_efficient
+			}
+		}
+		1 = {
+			inline_script = {
+				script = weights/gain_extra_destiny_trait
+				FORBID = council
+				TRAIT = leader_trait_utopian_idealist
+			}
+		}
+		1 = {
+			inline_script = {
+				script = weights/gain_extra_destiny_trait
+				FORBID = council
+				TRAIT = leader_trait_mediator
+			}
+		}
+		1 = {
+			inline_script = {
+				script = weights/gain_extra_destiny_trait
+				FORBID = council
+				TRAIT = leader_trait_shroud_preacher
+			}
+		}
+		1 = {
+			inline_script = {
+				script = weights/gain_extra_destiny_trait
+				FORBID = council
+				TRAIT = leader_trait_galvanizer
+			}
+		}
+		1 = {
+			inline_script = {
+				script = weights/gain_extra_destiny_trait
+				FORBID = council
+				TRAIT = leader_trait_diplo_weight
+			}
+		}
+		1 = {
+			inline_script = {
+				script = weights/gain_extra_destiny_trait
+				FORBID = council
+				TRAIT = leader_trait_supporting_voter
+			}
+		}
+		# 内阁
+		1 = {
+			inline_script = {
+				script = weights/gain_extra_destiny_trait
+				FORBID = non_council
+				TRAIT = leader_trait_master_diplomat
+			}
+		}
+		1 = {
+			inline_script = {
+				script = weights/gain_extra_destiny_trait
+				FORBID = non_council
+				TRAIT = leader_trait_supreme_organizer
+			}
+		}
+		1 = {
+			inline_script = {
+				script = weights/gain_extra_destiny_trait
+				FORBID = non_council
+				TRAIT = leader_trait_spymaster
+			}
+		}
+		1 = {
+			inline_script = {
+				script = weights/gain_extra_destiny_trait
+				FORBID = non_council
+				TRAIT = leader_trait_totalitarian
+			}
+		}
+		1 = {
+			inline_script = {
+				script = weights/gain_extra_destiny_trait
+				FORBID = non_council
+				TRAIT = leader_trait_bellicose
+			}
+		}
+		# 通用
+		1 = {
+			inline_script = {
+				script = weights/gain_extra_destiny_trait
+				FORBID = non_council
+				TRAIT = leader_trait_educator
+			}
+		}
+		1 = {
+			inline_script = {
+				script = weights/gain_extra_destiny_trait
+				FORBID = non_council
+				TRAIT = leader_trait_master_bureaucrat
+			}
+		}
+		# MOD
+		1 = {
+			modifier = {
+				factor = 0
+				NOT = { has_global_flag = active_better_ascension_traits }
+			}
+			inline_script = {
+				script = weights/gain_extra_destiny_trait
+				FORBID = council
+				TRAIT = leader_trait_cyborg_master
+			}
+		}
+		1 = {
+			modifier = {
+				factor = 0
+				NOT = { has_global_flag = active_better_ascension_traits }
+			}
+			inline_script = {
+				script = weights/gain_extra_destiny_trait
+				FORBID = council
+				TRAIT = leader_trait_ultimate_propagator
+			}
+		}
+		1 = {
+			modifier = {
+				factor = 0
+				NOT = { has_global_flag = active_better_ascension_traits }
+			}
+			inline_script = {
+				script = weights/gain_extra_destiny_trait
+				FORBID = council
+				TRAIT = leader_trait_identity_customizer
+			}
+		}
+		1 = {
+			modifier = {
+				factor = 0
+				NOT = { has_global_flag = active_better_ascension_traits }
+			}
+			inline_script = {
+				script = weights/gain_extra_destiny_trait
+				FORBID = non_council
+				TRAIT = leader_trait_cyberist
+			}
+		}
+		1 = {
+			modifier = {
+				factor = 0
+				NOT = { has_global_flag = active_better_ascension_traits }
+			}
+			inline_script = {
+				script = weights/gain_extra_destiny_trait
+				FORBID = non_council
+				TRAIT = leader_trait_gene_tracer
+			}
+		}
+		1 = {
+			modifier = {
+				factor = 0
+				NOT = { has_global_flag = active_better_ascension_traits }
+			}
+			modifier = {
+				factor = 0
+				OR = {
+					has_psionic_leader_trait = yes
+					species = { has_psionic_species_trait = yes }
+				}
+				species = { is_robotic = no }
+			}
+			inline_script = {
+				script = weights/gain_extra_destiny_trait
+				FORBID = non_council
+				TRAIT = leader_trait_synthetic_dawn
+			}
+		}
+		1 = {
+			modifier = {
+				factor = 0
+				NOT = { has_global_flag = active_better_ascension_traits }
+			}
+			modifier = {
+				factor = 0
+				species = { is_robotic = yes }
+				has_psionic_leader_trait = no
+				species = { has_psionic_species_trait = no }
+			}
+			inline_script = {
+				script = weights/gain_extra_destiny_trait
+				FORBID = non_council
+				TRAIT = leader_trait_dream_revelation
+			}
+		}
+	}
+}
+
+# 领袖
+gain_extra_scientist_destiny_trait = {
+	random_list = {
+		# 常规
+		1 = {
+			inline_script = {
+				script = weights/gain_extra_destiny_trait
+				FORBID = council
+				TRAIT = leader_trait_surveyor
+			}
+		}
+		1 = {
+			inline_script = {
+				script = weights/gain_extra_destiny_trait
+				FORBID = council
+				TRAIT = leader_trait_midas_touch
+			}
+		}
+		1 = {
+			inline_script = {
+				script = weights/gain_extra_destiny_trait
+				FORBID = council
+				TRAIT = leader_trait_robotist
+			}
+		}
+		1 = {
+			inline_script = {
+				script = weights/gain_extra_destiny_trait
+				FORBID = council
+				TRAIT = leader_trait_xeno_cataloger
+			}
+		}
+		1 = {
+			inline_script = {
+				script = weights/gain_extra_destiny_trait
+				FORBID = council
+				TRAIT = leader_trait_frontier_adventurer
+			}
+		}
+		1 = {
+			inline_script = {
+				script = weights/gain_extra_destiny_trait
+				FORBID = council
+				TRAIT = leader_trait_truth_seeker
+			}
+		}
+		# 内阁
+		1 = {
+			inline_script = {
+				script = weights/gain_extra_destiny_trait
+				FORBID = non_council
+				TRAIT = leader_trait_knowledge_for_the_masses
+			}
+		}
+		1 = {
+			inline_script = {
+				script = weights/gain_extra_destiny_trait
+				FORBID = non_council
+				TRAIT = leader_trait_brilliant_shipwright
+			}
+		}
+		1 = {
+			inline_script = {
+				script = weights/gain_extra_destiny_trait
+				FORBID = non_council
+				TRAIT = leader_trait_great_researcher
+			}
+		}
+		# 通用
+		1 = {
+			inline_script = {
+				script = weights/gain_extra_destiny_trait
+				FORBID = non_council
+				TRAIT = leader_trait_educator
+			}
+		}
+		1 = {
+			inline_script = {
+				script = weights/gain_extra_destiny_trait
+				FORBID = non_council
+				TRAIT = leader_trait_master_bureaucrat
+			}
+		}
+		# MOD
+		1 = {
+			modifier = {
+				factor = 0
+				NOT = { has_global_flag = active_better_ascension_traits }
+			}
+			inline_script = {
+				script = weights/gain_extra_destiny_trait
+				FORBID = council
+				TRAIT = leader_trait_cyborg_master
+			}
+		}
+		1 = {
+			modifier = {
+				factor = 0
+				NOT = { has_global_flag = active_better_ascension_traits }
+			}
+			inline_script = {
+				script = weights/gain_extra_destiny_trait
+				FORBID = non_council
+				TRAIT = leader_trait_cyberist
+			}
+		}
+		1 = {
+			modifier = {
+				factor = 0
+				NOT = { has_global_flag = active_better_ascension_traits }
+			}
+			inline_script = {
+				script = weights/gain_extra_destiny_trait
+				FORBID = non_council
+				TRAIT = leader_trait_gene_tracer
+			}
+		}
+		1 = {
+			modifier = {
+				factor = 0
+				NOT = { has_global_flag = active_better_ascension_traits }
+			}
+			modifier = {
+				factor = 0
+				OR = {
+					has_psionic_leader_trait = yes
+					species = { has_psionic_species_trait = yes }
+				}
+				species = { is_robotic = no }
+			}
+			inline_script = {
+				script = weights/gain_extra_destiny_trait
+				FORBID = non_council
+				TRAIT = leader_trait_synthetic_dawn
+			}
+		}
+	}
+}
+
+# 领袖
+gain_extra_commander_destiny_trait = {
+	random_list = {
+		# 常规
+		1 = {
+			inline_script = {
+				script = weights/gain_extra_destiny_trait
+				FORBID = council
+				TRAIT = leader_trait_master_gunner
+			}
+		}
+		1 = {
+			inline_script = {
+				script = weights/gain_extra_destiny_trait
+				FORBID = council
+				TRAIT = leader_trait_destiny_engineer
+			}
+		}
+		1 = {
+			inline_script = {
+				script = weights/gain_extra_destiny_trait
+				FORBID = council
+				TRAIT = leader_trait_guerilla_tactics
+			}
+		}
+		1 = {
+			inline_script = {
+				script = weights/gain_extra_destiny_trait
+				FORBID = council
+				TRAIT = leader_trait_survivalist
+			}
+		}
+		1 = {
+			inline_script = {
+				script = weights/gain_extra_destiny_trait
+				FORBID = council
+				TRAIT = leader_trait_taskmaster
+			}
+		}
+		1 = {
+			inline_script = {
+				script = weights/gain_extra_destiny_trait
+				FORBID = council
+				TRAIT = leader_trait_fortress_cracker
+			}
+		}
+		1 = {
+			inline_script = {
+				script = weights/gain_extra_destiny_trait
+				FORBID = council
+				TRAIT = leader_trait_chainbreaker
+			}
+		}
+		1 = {
+			inline_script = {
+				script = weights/gain_extra_destiny_trait
+				FORBID = council
+				TRAIT = leader_trait_honored_warmaster
+			}
+		}
+		1 = {
+			inline_script = {
+				script = weights/gain_extra_destiny_trait
+				FORBID = council
+				TRAIT = leader_trait_academia_recruiter
+			}
+		}
+		1 = {
+			inline_script = {
+				script = weights/gain_extra_destiny_trait
+				FORBID = council
+				TRAIT = leader_trait_supreme_warrior
+			}
+		}
+		1 = {
+			inline_script = {
+				script = weights/gain_extra_destiny_trait
+				FORBID = council
+				TRAIT = leader_trait_arbiter
+			}
+		}
+		# 内阁
+		1 = {
+			inline_script = {
+				script = weights/gain_extra_destiny_trait
+				FORBID = non_council
+				TRAIT = leader_trait_military_overseer
+			}
+		}
+		1 = {
+			inline_script = {
+				script = weights/gain_extra_destiny_trait
+				FORBID = non_council
+				TRAIT = leader_trait_armorer
+			}
+		}
+		1 = {
+			inline_script = {
+				script = weights/gain_extra_destiny_trait
+				FORBID = non_council
+				TRAIT = leader_trait_maven_of_war
+			}
+		}
+		1 = {
+			inline_script = {
+				script = weights/gain_extra_destiny_trait
+				FORBID = non_council
+				TRAIT = leader_trait_peacekeeper
+			}
+		}
+		1 = {
+			inline_script = {
+				script = weights/gain_extra_destiny_trait
+				FORBID = non_council
+				TRAIT = leader_trait_bellicose
+			}
+		}
+		# 通用
+		1 = {
+			inline_script = {
+				script = weights/gain_extra_destiny_trait
+				FORBID = non_council
+				TRAIT = leader_trait_educator
+			}
+		}
+		1 = {
+			inline_script = {
+				script = weights/gain_extra_destiny_trait
+				FORBID = non_council
+				TRAIT = leader_trait_master_bureaucrat
+			}
+		}
+		# MOD
+		1 = {
+			modifier = {
+				factor = 0
+				NOT = { has_global_flag = active_better_ascension_traits }
+			}
+			inline_script = {
+				script = weights/gain_extra_destiny_trait
+				FORBID = council
+				TRAIT = leader_trait_ultimate_propagator
+			}
+		}
+		1 = {
+			modifier = {
+				factor = 0
+				NOT = { has_global_flag = active_better_ascension_traits }
+			}
+			modifier = {
+				factor = 0
+				has_psionic_leader_trait = no
+			}
+			modifier = {
+				factor = 0
+				has_trait = leader_trait_psionic_provider
+			}
+			add_trait = {
+				trait = leader_trait_psionic_provider
+			}
+		}
+		1 = {
+			modifier = {
+				factor = 0
+				NOT = { has_global_flag = active_better_ascension_traits }
+			}
+			modifier = {
+				factor = 0
+				NOR = {
+					has_trait = leader_trait_synthetic
+					has_trait = leader_trait_virtual
+				}
+			}
+			modifier = {
+				factor = 0
+				has_trait = leader_trait_material_analyst
+			}
+			add_trait = {
+				trait = leader_trait_material_analyst
+			}
+		}
+		1 = {
+			modifier = {
+				factor = 0
+				NOT = { has_global_flag = active_better_ascension_traits }
+			}
+			modifier = {
+				factor = 0
+				NOT = { has_trait = leader_trait_cyborg }
+			}
+			modifier = {
+				factor = 0
+				has_trait = leader_trait_weakness_insider
+			}
+			add_trait = {
+				trait = leader_trait_weakness_insider
+			}
+		}
+		1 = {
+			modifier = {
+				factor = 0
+				NOT = { has_global_flag = active_better_ascension_traits }
+			}
+			modifier = {
+				factor = 0
+				NOT = { has_trait = leader_trait_erudite }
+			}
+			modifier = {
+				factor = 0
+				has_trait = leader_trait_leviathan_scholar
+			}
+			add_trait = {
+				trait = leader_trait_leviathan_scholar
+			}
+		}
+	}
+}

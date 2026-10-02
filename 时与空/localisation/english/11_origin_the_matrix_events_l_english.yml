@@ -1,0 +1,20 @@
+﻿l_english:
+ operation_origin_the_matrix:0 "\"Little\" Prank"
+ operation_origin_the_matrix_desc:0 "[root.target.GetName] developed too comfortably, and we can give their boring life a \"little\" adjustment."
+ operation_origin_the_matrix_on_success:0 "$IF_SUCCESSFUL|E$\nCreate some \"fake\" events for [root.target.GetName].\n\n[owner.GetDisguiseState]"
+ 
+ origin_the_matrix.10.name:0 ""
+ origin_the_matrix.10.desc:0 ""
+ origin_the_matrix.10.a:0 ""
+ 
+ origin_the_matrix.11.name:0 "Stage Preparation"
+ origin_the_matrix.11.desc:0 ""
+ origin_the_matrix.11.a:0 ""
+ 
+ origin_the_matrix.12.name:0 "Repertoire Selection"
+ origin_the_matrix.12.desc:0 ""
+ origin_the_matrix.12.a:0 ""
+ 
+ origin_the_matrix.13.name:0 "Grand Unveiling"
+ origin_the_matrix.13.desc:0 ""
+ origin_the_matrix.13.a:0 ""

@@ -1,0 +1,237 @@
+# 彼岸维系度
+time_shelter_maintenance = {
+	icon = mod_time_shelter_maintenance
+	percentage = yes
+	good = yes
+	category = colony
+}
+
+time_shelter_maintenance_cap = {
+	icon = mod_time_shelter_maintenance_cap
+	percentage = yes
+	neutral = yes
+	category = colony
+}
+
+# 区划岗位数量
+district_time_shelter_main_job_mult = {
+	icon = mod_job_cruise_passenger_add
+	percentage = yes
+	good = yes
+	category = colony
+}
+
+district_time_shelter_secondary_job_mult = {
+	icon = mod_job_max_workforce_add
+	percentage = yes
+	good = yes
+	category = colony
+}
+
+district_time_shelter_resource_job_mult = {
+	icon = mod_job_knight_add
+	percentage = yes
+	good = yes
+	category = colony
+}
+
+district_time_shelter_manufacturing_job_mult = {
+	icon = mod_job_fire_dancer_add
+	percentage = yes
+	good = yes
+	category = colony
+}
+
+district_time_shelter_unity_job_mult = {
+	icon = mod_job_sacred_path_elite_add
+	percentage = yes
+	good = yes
+	category = colony
+}
+
+district_time_shelter_research_job_mult = {
+	icon = mod_job_skywatcher_add
+	percentage = yes
+	good = yes
+	category = colony
+}
+
+# 时空访客
+time_shelter_visitor_produce_job_max_workforce_mult = {
+	icon = mod_job_max_workforce_mult
+	percentage = yes
+	good = yes
+	category = colony
+}
+
+time_shelter_visitor_produce_pop_bonus_workforce_mult = {
+	icon = mod_pop_bonus_workforce_mult
+	percentage = yes
+	good = yes
+	category = colony
+}
+
+time_shelter_visitor_produce_pop_workforce_mult = {
+	icon = mod_pop_workforce_mult
+	percentage = yes
+	good = yes
+	category = colony
+}
+
+time_shelter_visitor_produce_planet_amenities_mult = {
+	icon = mod_planet_amenities_mult
+	percentage = yes
+	good = yes
+	category = colony
+}
+
+time_shelter_visitor_produce_planet_housing_mult = {
+	icon = mod_planet_housing_mult
+	percentage = yes
+	good = yes
+	category = colony
+}
+
+# 彼岸哨兵
+time_shelter_sentinel_produce_planet_pops_upkeep_mult = {
+	icon = mod_upkeep_mult
+	percentage = yes
+	good = no
+	category = colony
+}
+
+time_shelter_sentinel_produce_planet_structures_cost_mult = {
+	icon = mod_cost_mult
+	percentage = yes
+	good = no
+	category = colony
+}
+
+time_shelter_sentinel_produce_logistic_growth_mult = {
+	icon = mod_logistic_growth_mult
+	percentage = yes
+	good = yes
+	category = colony
+}
+
+time_shelter_sentinel_produce_bonus_pop_growth_mult = {
+	icon = mod_bonus_pop_growth_mult
+	percentage = yes
+	good = yes
+	category = colony
+}
+
+time_shelter_sentinel_produce_country_naval_cap_mult = {
+	icon = mod_navy_size_add
+	percentage = yes
+	good = yes
+	category = colony
+}
+
+# 次元工匠
+time_shelter_artisan_produce_pop_amenities_usage_mult = {
+	icon = mod_pop_amenities_usage_mult
+	percentage = yes
+	good = no
+	category = colony
+}
+
+time_shelter_artisan_produce_planet_structures_upkeep_mult = {
+	icon = mod_upkeep_mult
+	percentage = yes
+	good = no
+	category = colony
+}
+
+time_shelter_artisan_produce_planet_pop_assembly_mult = {
+	icon = mod_job_max_workforce_mult
+	percentage = yes
+	good = yes
+	category = colony
+}
+
+time_shelter_artisan_produce_planet_building_build_speed_mult = {
+	icon = mod_planet_building_build_speed_mult
+	percentage = yes
+	good = yes
+	category = colony
+}
+
+time_shelter_artisan_produce_starbase_shipyard_build_speed_mult = {
+	icon = mod_starbase_shipyard_build_speed_mult
+	percentage = yes
+	good = yes
+	category = colony
+}
+
+# 位面长老
+time_shelter_elder_produce_species_empire_size_mult = {
+	icon = mod_species_empire_size_mult
+	percentage = yes
+	good = no
+	category = colony
+}
+
+time_shelter_elder_produce_empire_size_districts_mult = {
+	icon = mod_empire_size_districts_mult
+	percentage = yes
+	good = no
+	category = colony
+}
+
+time_shelter_elder_produce_planet_amenities_add = {
+	icon = mod_planet_amenities_add
+	percentage = no
+	good = yes
+	category = colony
+}
+
+time_shelter_elder_produce_planet_crime_add = {
+	icon = mod_planet_crime_add
+	percentage = no
+	good = no
+	category = colony
+}
+
+time_shelter_elder_produce_planetary_ascension_effect_mult = {
+	icon = mod_planetary_ascension_effect_mult
+	percentage = yes
+	good = yes
+	category = colony
+}
+
+# 维度观者
+time_shelter_watcher_produce_pop_housing_usage_mult = {
+	icon = mod_pop_housing_usage_mult
+	percentage = yes
+	good = no
+	category = colony
+}
+
+time_shelter_watcher_produce_deposit_blockers_cost_mult = {
+	icon = mod_planet_clear_blocker_cost_mult
+	percentage = yes
+	good = no
+	category = colony
+}
+
+time_shelter_watcher_produce_planet_jobs_produces_mult = {
+	icon = mod_pop_resource_output
+	percentage = yes
+	good = yes
+	category = colony
+}
+
+time_shelter_watcher_produce_planet_jobs_upkeep_mult = {
+	icon = mod_upkeep_mult
+	percentage = yes
+	good = no
+	category = colony
+}
+
+time_shelter_watcher_produce_councilor_skill_add = {
+	icon = mod_councilor_skill_add
+	percentage = no
+	good = yes
+	category = colony
+}

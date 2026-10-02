@@ -1,0 +1,40 @@
+icon = "GFX_resolution_time_keeper_$TYPE$"
+
+resources = {
+	category = resolutions
+	cost = {
+		influence = $COST$
+	}
+}
+target = no
+
+effect = {
+	custom_tooltip = resolution_time_keeper_$TYPE$_setup_effect
+	hidden_effect = {
+		every_galcom_member = {
+			every_owned_leader = {
+				limit = {
+					leader_class = commander
+					NOT = { has_trait = leader_trait_time_keeper }
+				}
+				add_trait = {
+					trait = leader_trait_time_keeper
+					show_message = no
+				}
+			}
+		}
+	}
+}
+
+potential = {
+	is_galactic_$TYPE$ = yes
+	has_crisis_perk = menp_beyond_infinity_crisis
+	OR = {
+		is_active_resolution = resolution_beyond_infinity_$TYPE$_1
+		is_active_resolution = resolution_beyond_infinity_$TYPE$_2
+		is_active_resolution = resolution_beyond_infinity_$TYPE$_3
+	}
+}
+
+allow = {
+}

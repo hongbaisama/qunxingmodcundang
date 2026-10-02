@@ -1,0 +1,33 @@
+# 基础
+triggered_planet_modifier = {
+	district_time_usage = 1
+}
+
+# 研究人员部分
+inline_script = "jobs/vanilla/vanilla_researcher_modifiers"
+
+triggered_country_modifier = {
+	potential = {
+		exists = owner
+		owner = { has_situation_pc_time = yes }
+	}
+	situation_pc_time_progress_add = 1
+}
+
+# 黑洞之心（普政）
+triggered_planet_modifier = {
+	potential = {
+		colony = { has_modifier = timesingularity }
+		owner = { is_gestalt = no }
+	}
+	planet_crime_add = -1
+}
+
+# 黑洞之心（格式塔）
+triggered_planet_modifier = {
+	potential = {
+		colony = { has_modifier = timesingularity }
+		owner = { is_gestalt = yes }
+	}
+	planet_crime_no_happiness_add = -1
+}

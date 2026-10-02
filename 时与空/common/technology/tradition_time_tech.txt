@@ -1,0 +1,692 @@
+tech_time_1_a_1 = {
+	cost = @base_time_tech_cost
+	area = physics
+	tier = 5
+	category = { horror_time }
+	is_rare = yes
+	is_reverse_engineerable = no
+	weight = 0
+
+	gateway = horror_time
+	
+	potential = {
+		has_tradition = tr_time_1
+	}
+	
+	modifier = {
+		ship_shield_hardening_add = 0.1
+	}
+	
+	ai_weight = {
+		weight = 10000
+	}
+}
+
+tech_time_1_a_2 = {
+	cost = @base_time_tech_cost
+	area = physics
+	tier = 5
+	category = { horror_time }
+	prerequisites = { "tech_time_1_a_1" }
+	is_rare = yes
+	is_reverse_engineerable = no
+	weight = 0
+
+	gateway = horror_time
+	
+	potential = {
+		has_tradition = tr_time_1
+	}
+	
+	modifier = {
+		ship_shield_penetration_add = 0.1
+	}
+	
+	ai_weight = {
+		weight = 10000
+	}
+}
+
+tech_time_1_b_1 = {
+	cost = @base_time_tech_cost
+	area = engineering
+	tier = 5
+	category = { horror_time }
+	is_rare = yes
+	is_reverse_engineerable = no
+	weight = 0
+
+	gateway = horror_time
+	
+	potential = {
+		has_tradition = tr_time_1
+	}
+	
+	modifier = {
+		ship_shield_reduction = -0.1
+	}
+	
+	ai_weight = {
+		weight = 10000
+	}
+}
+
+tech_time_1_b_2 = {
+	cost = @base_time_tech_cost
+	area = engineering
+	tier = 5
+	category = { horror_time }
+	prerequisites = { "tech_time_1_b_1" }
+	is_rare = yes
+	is_reverse_engineerable = no
+	weight = 0
+
+	gateway = horror_time
+	
+	potential = {
+		has_tradition = tr_time_1
+	}
+	
+	modifier = {
+		ship_tracking_add = 10
+	}
+	
+	ai_weight = {
+		weight = 10000
+	}
+}
+
+tech_time_shield = {
+	cost = @base_time_tech_cost
+	area = physics
+	tier = 5
+	category = { horror_time }
+	prerequisites = { "tech_time_1_a_2" "tech_time_1_b_2" }
+	ai_update_type = all
+	is_rare = yes
+	is_dangerous = yes
+	is_reverse_engineerable = no
+	weight = 0
+
+	gateway = horror_time
+	
+	potential = {
+		has_tradition = tr_time_1
+	}
+	
+	prereqfor_desc = {
+		custom = {
+			title = "tech_time_shield_custom"
+			desc = "tech_time_shield_custom_desc"
+		}
+	}
+	
+	ai_weight = {
+		weight = 10000
+	}
+}
+
+
+
+tech_time_2_a_1 = {
+	cost = @base_time_tech_cost
+	area = engineering
+	tier = 5
+	category = { horror_time }
+	is_rare = yes
+	is_reverse_engineerable = no
+	weight = 0
+
+	gateway = horror_time
+	
+	potential = {
+		has_tradition = tr_time_2
+	}
+	
+	modifier = {
+		ship_armor_hardening_add = 0.1
+	}
+	
+	ai_weight = {
+		weight = 10000
+	}
+}
+
+tech_time_2_a_2 = {
+	cost = @base_time_tech_cost
+	area = engineering
+	tier = 5
+	category = { horror_time }
+	prerequisites = { "tech_time_2_a_1" }
+	is_rare = yes
+	is_reverse_engineerable = no
+	weight = 0
+
+	gateway = horror_time
+	
+	potential = {
+		has_tradition = tr_time_2
+	}
+	
+	modifier = {
+		ship_armor_penetration_add = 0.1
+	}
+	
+	ai_weight = {
+		weight = 10000
+	}
+}
+
+tech_time_2_b_1 = {
+	cost = @base_time_tech_cost
+	area = physics
+	tier = 5
+	category = { horror_time }
+	is_rare = yes
+	is_reverse_engineerable = no
+	weight = 0
+
+	gateway = horror_time
+	
+	potential = {
+		has_tradition = tr_time_2
+	}
+	
+	modifier = {
+		ship_armor_reduction = -0.1
+	}
+	
+	ai_weight = {
+		weight = 10000
+	}
+}
+
+tech_time_2_b_2 = {
+	cost = @base_time_tech_cost
+	area = physics
+	tier = 5
+	category = { horror_time }
+	prerequisites = { "tech_time_2_b_1" }
+	is_rare = yes
+	is_reverse_engineerable = no
+	weight = 0
+
+	gateway = horror_time
+	
+	potential = {
+		has_tradition = tr_time_2
+	}
+	
+	modifier = {
+		ship_accuracy_add = 10
+	}
+	
+	ai_weight = {
+		weight = 10000
+	}
+}
+
+tech_time_armor = {
+	cost = @base_time_tech_cost
+	area = engineering
+	tier = 5
+	category = { horror_time }
+	prerequisites = { "tech_time_2_a_2" "tech_time_2_b_2" }
+	ai_update_type = all
+	is_rare = yes
+	is_dangerous = yes
+	is_reverse_engineerable = no
+	weight = 0
+
+	gateway = horror_time
+	
+	potential = {
+		has_tradition = tr_time_2
+	}
+	
+	prereqfor_desc = {
+		custom = {
+			title = "tech_time_armor_custom"
+			desc = "tech_time_armor_custom_desc"
+		}
+	}
+	
+	ai_weight = {
+		weight = 10000
+	}
+}
+
+
+
+tech_time_3_a_1 = {
+	cost = @base_time_tech_cost
+	area = physics
+	tier = 5
+	category = { horror_time }
+	is_rare = yes
+	is_reverse_engineerable = no
+	weight = 0
+
+	gateway = horror_time
+	
+	potential = {
+		OR = {
+			has_tradition = tr_time_3
+			has_country_flag = unlock_tech_time_3_a_1
+		}
+	}
+	
+	ai_weight = {
+		weight = 10000
+	}
+}
+
+tech_time_3_a_2 = {
+	cost = @base_time_tech_cost
+	area = physics
+	tier = 5
+	category = { horror_time }
+	prerequisites = { "tech_time_3_a_1" }
+	is_rare = yes
+	is_reverse_engineerable = no
+	weight = 0
+
+	gateway = horror_time
+	
+	potential = {
+		OR = {
+			has_tradition = tr_time_3
+			has_country_flag = unlock_tech_time_3_a_2
+		}
+	}
+	
+	ai_weight = {
+		weight = 10000
+	}
+}
+
+tech_time_3_b_1 = {
+	cost = @base_time_tech_cost
+	area = society
+	tier = 5
+	category = { horror_time }
+	is_rare = yes
+	is_reverse_engineerable = no
+	weight = 0
+
+	gateway = horror_time
+	
+	potential = {
+		OR = {
+			has_tradition = tr_time_3
+			has_country_flag = unlock_tech_time_3_b_1
+		}
+	}
+	
+	ai_weight = {
+		weight = 10000
+	}
+}
+
+tech_time_3_b_2 = {
+	cost = @base_time_tech_cost
+	area = society
+	tier = 5
+	category = { horror_time }
+	prerequisites = { "tech_time_3_b_1" }
+	is_rare = yes
+	is_reverse_engineerable = no
+	weight = 0
+
+	gateway = horror_time
+	
+	potential = {
+		OR = {
+			has_tradition = tr_time_3
+			has_country_flag = unlock_tech_time_3_b_2
+		}
+	}
+	
+	ai_weight = {
+		weight = 10000
+	}
+}
+
+tech_time_modifier = {
+	cost = @base_time_tech_cost
+	area = physics
+	tier = 5
+	category = { horror_time }
+	prerequisites = { "tech_time_3_a_2" "tech_time_3_b_2" }
+	is_rare = yes
+	is_dangerous = yes
+	is_reverse_engineerable = no
+	weight = 0
+
+	gateway = horror_time
+	
+	potential = {
+		has_tradition = tr_time_3
+	}
+	
+	prereqfor_desc = {
+		custom = {
+			title = "tech_time_modifier_custom"
+			desc = "tech_time_modifier_custom_desc"
+		}
+	}
+	
+	ai_weight = {
+		weight = 10000
+	}
+}
+
+
+
+tech_time_4_a_1 = {
+	cost = @base_time_tech_cost
+	area = engineering
+	tier = 5
+	category = { horror_time }
+	is_rare = yes
+	is_reverse_engineerable = no
+	weight = 0
+
+	gateway = horror_time
+	
+	potential = {
+		has_tradition = tr_time_4
+	}
+	
+	modifier = {
+		ship_disengage_chance_mult = 0.1
+	}
+	
+	ai_weight = {
+		weight = 10000
+	}
+}
+
+tech_time_4_a_2 = {
+	cost = @base_time_tech_cost
+	area = physics
+	tier = 5
+	category = { horror_time }
+	prerequisites = { "tech_time_4_a_1" }
+	is_rare = yes
+	is_reverse_engineerable = no
+	weight = 0
+
+	gateway = horror_time
+	
+	potential = {
+		has_tradition = tr_time_4
+	}
+	
+	modifier = {
+		ship_disengage_opportunities_add = 1
+	}
+	
+	ai_weight = {
+		weight = 10000
+	}
+}
+
+tech_time_4_b_1 = {
+	cost = @base_time_tech_cost
+	area = society
+	tier = 5
+	category = { horror_time }
+	is_rare = yes
+	is_reverse_engineerable = no
+	weight = 0
+
+	gateway = horror_time
+	
+	potential = {
+		has_tradition = tr_time_4
+	}
+	
+	modifier = {
+		ship_damage_reduction_mult = 0.1
+	}
+	
+	ai_weight = {
+		weight = 10000
+	}
+}
+
+tech_time_4_b_2 = {
+	cost = @base_time_tech_cost
+	area = society
+	tier = 5
+	category = { horror_time }
+	prerequisites = { "tech_time_4_b_1" }
+	is_rare = yes
+	is_reverse_engineerable = no
+	weight = 0
+
+	gateway = horror_time
+	
+	potential = {
+		has_tradition = tr_time_4
+	}
+	
+	modifier = {
+		ship_evasion_add = 10
+	}
+	
+	ai_weight = {
+		weight = 10000
+	}
+}
+
+tech_time_beam = {
+	icon = tech_pk_nanobots
+	cost = @base_time_tech_cost
+	area = physics
+	tier = 5
+	category = { horror_time }
+	prerequisites = { "tech_time_4_a_2" "tech_time_4_b_2" }
+	ai_update_type = all
+	is_rare = yes
+	is_dangerous = yes
+	is_reverse_engineerable = no
+	weight = 0
+
+	gateway = horror_time
+	
+	potential = {
+		has_tradition = tr_time_4
+	}
+	
+	technology_swap = {
+		name = tech_bio_time_beam
+		inherit_icon = no
+		inherit_effects = yes
+		trigger = {
+			country_uses_bio_ships = yes
+		}
+		weight = {
+			factor = 1
+		}
+	}
+	
+	prereqfor_desc = {
+		custom = {
+			title = "tech_time_beam_custom_1"
+			desc = "tech_time_beam_custom_desc_1"
+		}
+		custom = {
+			title = "tech_time_beam_custom_2"
+			desc = "tech_time_beam_custom_desc_2"
+		}
+	}
+	
+	ai_weight = {
+		weight = 10000
+	}
+}
+
+
+
+tech_time_dimension = {
+	cost = @base_time_tech_cost
+	area = physics
+	tier = 5
+	category = { horror_time }
+	is_rare = yes
+	is_reverse_engineerable = no
+	weight = 0
+
+	gateway = horror_time
+	
+	potential = {
+		has_tradition = tr_time_5
+	}
+	
+	prereqfor_desc = {
+		custom = {
+			title = "tech_time_dimension_custom"
+			desc = "tech_time_dimension_custom_desc"
+		}
+	}
+	
+	ai_weight = {
+		weight = 10000
+	}
+}
+
+tech_time_5_a_1 = {
+	cost = @base_time_tech_cost
+	area = society
+	tier = 5
+	category = { horror_time }
+	prerequisites = { "tech_time_dimension" }
+	is_rare = yes
+	is_reverse_engineerable = no
+	weight = 0
+
+	gateway = horror_time
+	
+	potential = {
+		has_tradition = tr_time_5
+	}
+	
+	modifier = {
+		starbase_module_build_time_mult = -0.1
+		starbase_building_build_time_mult = -0.1
+		country_megastructure_build_cap_add = 1
+	}
+	
+	ai_weight = {
+		weight = 10000
+	}
+}
+
+tech_time_5_a_2 = {
+	cost = @base_time_tech_cost
+	area = society
+	tier = 5
+	category = { horror_time }
+	prerequisites = { "tech_time_5_a_1" }
+	is_rare = yes
+	is_reverse_engineerable = no
+	weight = 0
+
+	gateway = horror_time
+	
+	potential = {
+		has_tradition = tr_time_5
+	}
+	
+	modifier = {
+		ship_base_speed_mult = 0.1
+		ship_ftl_jumpdrive_range_mult = 0.1
+		ship_jumpdrive_cooldown_mult = -0.1
+	}
+	
+	ai_weight = {
+		weight = 10000
+	}
+}
+
+tech_time_5_b_1 = {
+	cost = @base_time_tech_cost
+	area = physics
+	tier = 5
+	category = { horror_time }
+	prerequisites = { "tech_time_dimension" }
+	is_rare = yes
+	is_reverse_engineerable = no
+	weight = 0
+
+	gateway = horror_time
+	
+	potential = {
+		has_tradition = tr_time_5
+	}
+	
+	modifier = {
+		starbase_upgrade_time_mult = -0.1
+		building_time_mult = -0.1
+		planet_building_capacity_add = 1
+	}
+	
+	ai_weight = {
+		weight = 10000
+	}
+}
+
+tech_time_5_b_2 = {
+	cost = @base_time_tech_cost
+	area = physics
+	tier = 5
+	category = { horror_time }
+	prerequisites = { "tech_time_5_b_1" }
+	is_rare = yes
+	is_reverse_engineerable = no
+	weight = 0
+
+	gateway = horror_time
+	
+	potential = {
+		has_tradition = tr_time_5
+	}
+	
+	modifier = {
+		starbase_shipyard_build_speed_mult = 0.1
+		ship_weapon_range_mult = 0.1
+		ship_engagement_range_mult = 0.1
+	}
+	
+	ai_weight = {
+		weight = 10000
+	}
+}
+
+tech_time_trait = {
+	cost = @base_time_tech_cost
+	area = society
+	tier = 5
+	category = { horror_time }
+	prerequisites = { "tech_time_5_a_2" "tech_time_5_b_2" }
+	is_rare = yes
+	is_dangerous = yes
+	is_reverse_engineerable = no
+	weight = 0
+
+	gateway = horror_time
+	
+	potential = {
+		has_tradition = tr_time_5
+	}
+	
+	modifier = {
+		description = tech_time_trait_effect
+	}
+	
+	ai_weight = {
+		weight = 10000
+	}
+}

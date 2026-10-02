@@ -1,0 +1,185 @@
+﻿### CETANA'S NATION
+TIME_WONDER_COUNTRY_CETANA = {
+	selectable = { always = no }
+	randomized = no
+
+	### SHIPS
+
+	ship_names = {
+		
+		corvette = {
+			TIME_WONDER_COUNTRY_CETANA_Corvette
+		}
+		
+		destroyer = {
+			TIME_WONDER_COUNTRY_CETANA_Destroyer
+		}
+		
+		cruiser = {
+			TIME_WONDER_COUNTRY_CETANA_Cruiser
+		}
+		
+		battleship = {
+			TIME_WONDER_COUNTRY_CETANA_Battleship
+		}
+		
+		titan = {
+			TIME_WONDER_COUNTRY_CETANA_Titan
+		}
+		
+		colossus = {
+			TIME_WONDER_COUNTRY_CETANA_Colossus
+		}
+		
+		juggernaut = {
+			TIME_WONDER_COUNTRY_CETANA_Juggernaut
+		}
+
+		constructor = {
+			TIME_WONDER_COUNTRY_CETANA_Constructor
+		}
+
+		colonizer = {
+			TIME_WONDER_COUNTRY_CETANA_Colonizer
+		}
+		
+		science = {
+			TIME_WONDER_COUNTRY_CETANA_Science
+		}
+		
+		transport = {
+			TIME_WONDER_COUNTRY_CETANA_Transport
+		}
+		
+		military_station_small = {
+			TIME_WONDER_COUNTRY_CETANA_Military_Station_Small
+		}
+		
+		ion_cannon = {
+			TIME_WONDER_COUNTRY_CETANA_Ion_Cannon
+		}
+	}
+	
+	ship_class_names = {
+		
+		starbase_outpost = {
+			TIME_WONDER_COUNTRY_CETANA_Starbase_Outpost
+		}
+		
+		starbase_starport = {
+			TIME_WONDER_COUNTRY_CETANA_Starbase_Starport
+		}
+		
+		starbase_starhold = {
+			TIME_WONDER_COUNTRY_CETANA_Starbase_Starhold
+		}
+		
+		starbase_starfortress = {
+			TIME_WONDER_COUNTRY_CETANA_Starbase_Starfortress
+		}
+		
+		starbase_citadel = {
+			TIME_WONDER_COUNTRY_CETANA_Starbase_Citadel
+		}
+		
+		orbital_ring_tier_1 = {
+			TIME_WONDER_COUNTRY_CETANA_Orbital_Ring_Tier_1
+		}
+		
+		orbital_ring_tier_2 = {
+			TIME_WONDER_COUNTRY_CETANA_Orbital_Ring_Tier_2
+		}
+		
+		orbital_ring_tier_3 = {
+			TIME_WONDER_COUNTRY_CETANA_Orbital_Ring_Tier_3
+		}
+		
+	}
+
+	fleet_names = {
+		sequential_name = TIME_WONDER_COUNTRY_CETANA_FLEET
+	}
+
+	army_names = {
+		generic = {
+			sequential_name = TIME_WONDER_COUNTRY_CETANA_ARMY
+		}
+	}
+
+
+	### PLANETS
+
+	planet_names = {
+
+		generic = {
+			names = {
+				TIME_WONDER_COUNTRY_CETANA_Planet_1
+				TIME_WONDER_COUNTRY_CETANA_Planet_2
+				TIME_WONDER_COUNTRY_CETANA_Planet_3
+			}
+		}
+
+		pc_desert = {
+			names = {
+			}
+		}
+
+		pc_tropical = {
+			names = {
+			}
+		}
+
+		pc_arid = {
+			names = {
+			}
+		}
+
+		pc_continental = {
+			names = {
+			}
+		}
+
+		pc_ocean = {
+			names = {
+			}
+		}
+
+		pc_tundra = {
+			names = {
+			}
+		}
+
+		pc_arctic = {
+			names = {
+			}
+		}
+
+		pc_savannah = {
+			names = {
+			}
+		}
+
+		pc_alpine = {
+			names = {
+			}
+		}
+
+	}
+
+	### CHARACTERS
+
+	character_names = {
+
+		default = {
+			full_names = {
+				TIME_WONDER_COUNTRY_CETANA_Character_Name
+			}
+
+			first_names = {
+			}
+
+			second_names = {
+			}
+		}
+	}
+}

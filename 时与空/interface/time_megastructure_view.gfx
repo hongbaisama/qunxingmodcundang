@@ -1,0 +1,206 @@
+spriteTypes = {
+	spriteType = {
+		name = "GFX_pass_black_hole_background"
+		texturefile = "gfx/interface/planetview/megastructure_background/pass_black_hole.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_overclock_time_core_matter_decompressor_default"
+		texturefile = "gfx/interface/icons/megastructures/overclocking/overclock_time_core_matter_decompressor_default.dds"
+		effectFile = "gfx/FX/buttonstate.shader"
+		noOfFrames = 3
+		animation = {
+			animationmaskfile = "gfx/interface/fleet_view/fleet_task_button_mask.dds"
+			animationtexturefile = "gfx/interface/fleet_view/action_button_texture.dds"
+			animationrotation = 180.0
+			animationlooping = yes
+			animationtime = 12.0
+			animationdelay = 0.0
+			animationblendmode = "overlay"
+			animationtype = "scrolling"
+			animationrotationoffset = { x = 0.0 y = 0.0 }
+			animationtexturescale = { x = 1.0 y = 1.0 }
+			animationframes = { 1 2 3 }
+		}
+	}
+	
+	spriteType = {
+		name = "GFX_overclock_time_core_matter_decompressor_default_selected"
+		texturefile = "gfx/interface/icons/megastructures/overclocking/overclock_time_core_matter_decompressor_default_selected.dds"
+		effectFile = "gfx/FX/buttonstate.shader"
+		noOfFrames = 3
+		animation = {
+			animationmaskfile = "gfx/interface/fleet_view/fleet_task_button_mask.dds"
+			animationtexturefile = "gfx/interface/fleet_view/action_button_texture.dds"
+			animationrotation = 180.0
+			animationlooping = yes
+			animationtime = 12.0
+			animationdelay = 0.0
+			animationblendmode = "overlay"
+			animationtype = "scrolling"
+			animationrotationoffset = { x = 0.0 y = 0.0 }
+			animationtexturescale = { x = 1.0 y = 1.0 }
+			animationframes = { 1 2 3 }
+		}
+	}
+	
+	spriteType = {
+		name = "GFX_overclock_time_core_matter_decompressor_resource"
+		texturefile = "gfx/interface/icons/megastructures/overclocking/overclock_time_core_matter_decompressor_resource.dds"
+		effectFile = "gfx/FX/buttonstate.shader"
+		noOfFrames = 3
+		animation = {
+			animationmaskfile = "gfx/interface/fleet_view/fleet_task_button_mask.dds"
+			animationtexturefile = "gfx/interface/fleet_view/action_button_texture.dds"
+			animationrotation = 180.0
+			animationlooping = yes
+			animationtime = 12.0
+			animationdelay = 0.0
+			animationblendmode = "overlay"
+			animationtype = "scrolling"
+			animationrotationoffset = { x = 0.0 y = 0.0 }
+			animationtexturescale = { x = 1.0 y = 1.0 }
+			animationframes = { 1 2 3 }
+		}
+	}
+	
+	spriteType = {
+		name = "GFX_overclock_time_core_matter_decompressor_resource_selected"
+		texturefile = "gfx/interface/icons/megastructures/overclocking/overclock_time_core_matter_decompressor_resource_selected.dds"
+		effectFile = "gfx/FX/buttonstate.shader"
+		noOfFrames = 3
+		animation = {
+			animationmaskfile = "gfx/interface/fleet_view/fleet_task_button_mask.dds"
+			animationtexturefile = "gfx/interface/fleet_view/action_button_texture.dds"
+			animationrotation = 180.0
+			animationlooping = yes
+			animationtime = 12.0
+			animationdelay = 0.0
+			animationblendmode = "overlay"
+			animationtype = "scrolling"
+			animationrotationoffset = { x = 0.0 y = 0.0 }
+			animationtexturescale = { x = 1.0 y = 1.0 }
+			animationframes = { 1 2 3 }
+		}
+	}
+	
+	spriteType = {
+		name = "GFX_overclock_time_core_matter_decompressor_col_time"
+		texturefile = "gfx/interface/icons/megastructures/overclocking/overclock_time_core_matter_decompressor_col_time.dds"
+		effectFile = "gfx/FX/buttonstate.shader"
+		noOfFrames = 3
+		animation = {
+			animationmaskfile = "gfx/interface/fleet_view/fleet_task_button_mask.dds"
+			animationtexturefile = "gfx/interface/fleet_view/action_button_texture.dds"
+			animationrotation = 180.0
+			animationlooping = yes
+			animationtime = 12.0
+			animationdelay = 0.0
+			animationblendmode = "overlay"
+			animationtype = "scrolling"
+			animationrotationoffset = { x = 0.0 y = 0.0 }
+			animationtexturescale = { x = 1.0 y = 1.0 }
+			animationframes = { 1 2 3 }
+		}
+	}
+	
+	spriteType = {
+		name = "GFX_overclock_time_core_matter_decompressor_col_time_selected"
+		texturefile = "gfx/interface/icons/megastructures/overclocking/overclock_time_core_matter_decompressor_col_time_selected.dds"
+		effectFile = "gfx/FX/buttonstate.shader"
+		noOfFrames = 3
+		animation = {
+			animationmaskfile = "gfx/interface/fleet_view/fleet_task_button_mask.dds"
+			animationtexturefile = "gfx/interface/fleet_view/action_button_texture.dds"
+			animationrotation = 180.0
+			animationlooping = yes
+			animationtime = 12.0
+			animationdelay = 0.0
+			animationblendmode = "overlay"
+			animationtype = "scrolling"
+			animationrotationoffset = { x = 0.0 y = 0.0 }
+			animationtexturescale = { x = 1.0 y = 1.0 }
+			animationframes = { 1 2 3 }
+		}
+	}
+	
+	spriteType = {
+		name = "GFX_overclock_time_core_matter_decompressor_usage_cap"
+		texturefile = "gfx/interface/icons/megastructures/overclocking/overclock_time_core_matter_decompressor_usage_cap.dds"
+		effectFile = "gfx/FX/buttonstate.shader"
+		noOfFrames = 3
+		animation = {
+			animationmaskfile = "gfx/interface/fleet_view/fleet_task_button_mask.dds"
+			animationtexturefile = "gfx/interface/fleet_view/action_button_texture.dds"
+			animationrotation = 180.0
+			animationlooping = yes
+			animationtime = 12.0
+			animationdelay = 0.0
+			animationblendmode = "overlay"
+			animationtype = "scrolling"
+			animationrotationoffset = { x = 0.0 y = 0.0 }
+			animationtexturescale = { x = 1.0 y = 1.0 }
+			animationframes = { 1 2 3 }
+		}
+	}
+	
+	spriteType = {
+		name = "GFX_overclock_time_core_matter_decompressor_usage_cap_selected"
+		texturefile = "gfx/interface/icons/megastructures/overclocking/overclock_time_core_matter_decompressor_usage_cap_selected.dds"
+		effectFile = "gfx/FX/buttonstate.shader"
+		noOfFrames = 3
+		animation = {
+			animationmaskfile = "gfx/interface/fleet_view/fleet_task_button_mask.dds"
+			animationtexturefile = "gfx/interface/fleet_view/action_button_texture.dds"
+			animationrotation = 180.0
+			animationlooping = yes
+			animationtime = 12.0
+			animationdelay = 0.0
+			animationblendmode = "overlay"
+			animationtype = "scrolling"
+			animationrotationoffset = { x = 0.0 y = 0.0 }
+			animationtexturescale = { x = 1.0 y = 1.0 }
+			animationframes = { 1 2 3 }
+		}
+	}
+	
+	spriteType = {
+		name = "GFX_overclock_time_core_matter_decompressor_stop"
+		texturefile = "gfx/interface/icons/megastructures/overclocking/overclock_time_core_matter_decompressor_stop.dds"
+		effectFile = "gfx/FX/buttonstate.shader"
+		noOfFrames = 3
+		animation = {
+			animationmaskfile = "gfx/interface/fleet_view/fleet_task_button_mask.dds"
+			animationtexturefile = "gfx/interface/fleet_view/action_button_texture.dds"
+			animationrotation = 180.0
+			animationlooping = yes
+			animationtime = 12.0
+			animationdelay = 0.0
+			animationblendmode = "overlay"
+			animationtype = "scrolling"
+			animationrotationoffset = { x = 0.0 y = 0.0 }
+			animationtexturescale = { x = 1.0 y = 1.0 }
+			animationframes = { 1 2 3 }
+		}
+	}
+	
+	spriteType = {
+		name = "GFX_overclock_time_core_matter_decompressor_stop_selected"
+		texturefile = "gfx/interface/icons/megastructures/overclocking/overclock_time_core_matter_decompressor_stop_selected.dds"
+		effectFile = "gfx/FX/buttonstate.shader"
+		noOfFrames = 3
+		animation = {
+			animationmaskfile = "gfx/interface/fleet_view/fleet_task_button_mask.dds"
+			animationtexturefile = "gfx/interface/fleet_view/action_button_texture.dds"
+			animationrotation = 180.0
+			animationlooping = yes
+			animationtime = 12.0
+			animationdelay = 0.0
+			animationblendmode = "overlay"
+			animationtype = "scrolling"
+			animationrotationoffset = { x = 0.0 y = 0.0 }
+			animationtexturescale = { x = 1.0 y = 1.0 }
+			animationframes = { 1 2 3 }
+		}
+	}
+}

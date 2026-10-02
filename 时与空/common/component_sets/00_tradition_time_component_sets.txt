@@ -1,0 +1,55 @@
+component_set = {
+	key = "TIME_SHIELD"
+	
+	icon = "GFX_ship_part_time_shield"
+	icon_frame = 1
+}
+
+component_set = {
+	key = "DIMENSION_TIME_SHIELD"
+	
+	icon = "GFX_ship_part_time_shield"
+	icon_frame = 1
+}
+
+component_set = {
+	key = "TIME_ARMOR"
+	
+	icon = "GFX_ship_part_time_armor"
+	icon_frame = 1
+}
+
+component_set = {
+	key = "DIMENSION_TIME_ARMOR"
+	
+	icon = "GFX_ship_part_time_armor"
+	icon_frame = 1
+}
+
+component_set = {
+	key = "TIME_BEAM"
+	
+	icon = "GFX_ship_part_time_beam"
+	icon_frame = 1
+}
+
+component_set = {
+	key = "BIO_TIME_BEAM"
+	
+	icon = "GFX_ship_part_bio_time_beam"
+	icon_frame = 1
+}
+
+component_set = {
+	key = "TIME_ACCELERATOR"
+	
+	icon = "GFX_ship_part_time_accelerator"
+	icon_frame = 1
+}
+
+component_set = {
+	key = "BIO_TIME_ACCELERATOR"
+	
+	icon = "GFX_ship_part_bio_time_accelerator"
+	icon_frame = 1
+}

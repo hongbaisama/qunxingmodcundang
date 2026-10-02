@@ -1,0 +1,1374 @@
+#################
+# ASCENSION PATHS
+#################
+
+@ascension_path_base_weight_low = 1500
+@ascension_path_base_weight_middle = 2000
+@ascension_path_base_weight_high = 3000
+@ascension_path_synergy_weight_replaced = 2
+@ascension_path_anti_synergy_weight_replaced = 0.5
+
+# 基飞：2000，极端排外或极端威权或蜂巢x2，兽灾飞x2，非排外非威权非蜂巢x0.5
+# 义飞：2000，同化x2，文灾飞x2，非唯物非蜂巢非同化x0.5
+# 机飞：3000，极端唯物x2，非唯物或同化x0.5，唯心等x0
+# 灵飞：3000，极端唯心或极端威权x2，武灾飞x2，非唯心非威权x0.5，唯物再x0.5
+
+# 基飞
+ap_engineered_evolution = {
+	on_enabled = {
+		if = {
+			limit = {
+				has_biogenesis_dlc = yes
+				is_wilderness_empire = no
+			}
+			hidden_effect = {
+				country_event = { id = bio.1 }
+			}
+			custom_tooltip = "engineered_evolution_biogenesis_tt"
+			set_country_flag = genomic_research_facility_unlocked
+		}
+		else_if = {
+			limit = {
+				has_biogenesis_dlc = yes
+				is_wilderness_empire = yes
+			}
+			hidden_effect = {
+				country_event = { id = bio.1 }
+			}
+			custom_tooltip = "engineered_evolution_wilderness_tt"
+		}
+		else = {
+			custom_tooltip = "engineered_evolution_tooltip"
+		}
+		# 腐化主脑
+		if = {
+			limit = {
+				has_origin = origin_corrupt_brain
+			}
+			custom_tooltip = can_cure_corrupt_brain
+		}
+	}
+	possible = {
+		custom_tooltip = {
+			fail_text = "synthetic_empire_biological_ascension"
+			NOT = { has_trait = trait_mechanical }
+		}
+		if = {
+			limit = {
+				NOT = {
+					has_origin = origin_clone_army
+				}
+			}
+			custom_tooltip = {
+				fail_text = "requires_ascension_perks_2"
+				num_ascension_perks > 1
+			}
+		}
+		if = {
+			limit = {
+				NOT = { has_global_flag = time_ascension_paths }
+			}
+			custom_tooltip = {
+				fail_text = "requires_not_ap_the_flesh_is_weak"
+				NOT = { has_ascension_perk = ap_the_flesh_is_weak }
+			}
+			custom_tooltip = {
+				fail_text = "requires_not_ap_organo_machine_interfacing"
+				NOT = { has_ascension_perk = ap_organo_machine_interfacing }
+			}
+			custom_tooltip = {
+				fail_text = "requires_not_ap_mind_over_matter"
+				NOT = { has_ascension_perk = ap_mind_over_matter }
+			}
+		}
+		custom_tooltip = {
+			fail_text = "requires_not_ap_synthetic_evolution"
+			NOT = { has_ascension_perk = ap_synthetic_evolution }
+		}
+		if = {
+			limit = {
+				has_origin = origin_clone_army
+			}
+			custom_tooltip = {
+				fail_text = "clone_soldier_locked_genes"
+				OR = {
+					has_country_flag = clone_army_fertility_unlocked
+					has_country_flag = clone_army_full_potential
+				}
+			}
+		}
+		# 魔女之旅
+		custom_tooltip = {
+			fail_text = "requires_not_ap_matters_all_have_minds"
+			NOR = { 
+				has_ascension_perk = ap_matters_all_have_minds
+				has_tradition = tr_objects_wv_adopt 
+			}
+		}	
+	}
+
+	potential = {
+		ap_engineered_evolution_potential = yes
+	}
+
+	tradition_swap = {
+		inherit_effects = yes
+		inherit_icon = yes
+		name = ap_engineered_evolution_wilderness
+		trigger = {
+			is_wilderness_empire = yes
+		}
+	}
+
+	ai_weight = {
+		factor = @ascension_path_base_weight_middle
+		modifier = {
+			factor = @ascension_path_synergy_weight_replaced
+			OR = {
+				has_ethic = ethic_fanatic_xenophobe
+				has_ethic = ethic_fanatic_authoritarian
+				is_hive_empire = yes
+				has_engineered_evolution_synergy = yes
+			}
+		}
+		modifier = {
+			factor = @ascension_path_synergy_weight_replaced
+			is_behemoths_crisis_country = yes
+		}
+		modifier = {
+			factor = @ascension_path_anti_synergy_weight_replaced
+			is_xenophobe = no
+			is_authoritarian = no
+			is_hive_empire = no
+		}
+	}
+}
+
+# 有机义飞
+ap_the_flesh_is_weak = {
+	on_enabled = {
+		custom_tooltip = "flesh_is_weak_tooltip"
+	}
+	possible = {
+		custom_tooltip = {
+			fail_text = "synthetic_empire_synthetic_ascension"
+			NOT = { has_trait = trait_mechanical }
+		}
+		custom_tooltip = {
+			fail_text = "requires_ascension_perks_2"
+			OR = {
+				num_ascension_perks > 1
+				has_origin = origin_cybernetic_creed
+				has_origin = origin_unplugged
+			}
+		}
+		if = {
+			limit = {
+				NOT = { has_global_flag = time_ascension_paths }
+			}
+			custom_tooltip = {
+				fail_text = "requires_not_ap_engineered_evolution"
+				NOT = { has_ascension_perk = ap_engineered_evolution }
+			}
+			custom_tooltip = {
+				fail_text = "requires_not_ap_mind_over_matter"
+				NOT = { has_ascension_perk = ap_mind_over_matter }
+			}
+		}
+		custom_tooltip = {
+			fail_text = "requires_not_ap_synthetic_evolution"
+			NOT = { has_ascension_perk = ap_synthetic_evolution }
+		}
+	}
+
+	potential = {
+		ap_the_flesh_is_weak_potential = yes
+	}
+
+	ai_weight = {
+		factor = @ascension_path_base_weight_middle
+		modifier = {
+			factor = @ascension_path_synergy_weight_replaced
+			is_cosmogenesis_crisis_country = yes
+		}
+		modifier = {
+			factor = @ascension_path_anti_synergy_weight_replaced
+			has_flesh_is_weak_anti_synergy = yes
+		}
+	}
+}
+
+# 蜂巢义飞
+ap_organo_machine_interfacing = {
+	on_enabled = {
+		custom_tooltip = "organo_machine_interfacing_tooltip"
+		# 腐化主脑
+		if = {
+			limit = {
+				has_origin = origin_corrupt_brain
+			}
+			custom_tooltip = can_cure_corrupt_brain
+		}
+	}
+	possible = {
+		custom_tooltip = {
+			fail_text = "requires_ascension_perks_2"
+			num_ascension_perks > 1
+		}
+		if = {
+			limit = {
+				NOT = { has_global_flag = time_ascension_paths }
+			}
+			custom_tooltip = {
+				fail_text = "requires_not_ap_engineered_evolution"
+				NOT = { has_ascension_perk = ap_engineered_evolution }
+			}
+			if = {
+				limit = { has_shroud_dlc = yes }
+				custom_tooltip = {
+					fail_text = "requires_not_ap_mind_over_matter"
+					has_psionic_ascension = no
+				}
+				NOT = { country_has_situation = { SITUATION = situation_shroud_forged } }
+			}
+		}
+	}
+
+	potential = {
+		ap_organo_machine_interfacing_potential = yes
+	}
+
+	ai_weight = {
+		factor = @ascension_path_base_weight_middle
+		modifier = {
+			factor = @ascension_path_synergy_weight_replaced
+			is_cosmogenesis_crisis_country = yes
+		}
+	}
+}
+
+# 同化义飞
+ap_organo_machine_interfacing_assimilator = {
+	on_enabled = {
+		custom_tooltip = "organo_machine_interfacing_tooltip"
+		# 腐化主脑
+		if = {
+			limit = {
+				has_origin = origin_corrupt_brain
+			}
+			custom_tooltip = can_cure_corrupt_brain
+		}
+	}
+	possible = {
+		custom_tooltip = {
+			fail_text = "requires_ascension_perks_2"
+			num_ascension_perks > 1
+		}
+		if = {
+			limit = {
+				NOT = { has_global_flag = time_ascension_paths }
+			}
+			custom_tooltip = {
+				fail_text = "requires_not_ap_synthetic_age"
+				NOT = { has_ascension_perk = ap_synthetic_age }
+			}
+			if = {
+				limit = { has_shroud_dlc = yes }
+				custom_tooltip = {
+					fail_text = "requires_not_ap_mind_over_matter"
+					has_psionic_ascension = no
+				}
+				NOT = { country_has_situation = { SITUATION = situation_shroud_forged } }
+			}
+		}
+	}
+
+	potential = {
+		ap_organo_machine_interfacing_assimilator_potential = yes
+	}
+
+	ai_weight = {
+		factor = @ascension_path_base_weight_middle
+		modifier = {
+			factor = @ascension_path_synergy_weight_replaced
+			has_organo_machine_interfacing_assimilator_synergy = yes
+		}
+		modifier = {
+			factor = @ascension_path_synergy_weight_replaced
+			is_cosmogenesis_crisis_country = yes
+		}
+	}
+}
+
+# 有机机飞
+ap_synthetic_evolution = {
+	on_enabled = {
+		custom_tooltip = "synthetic_evolution_tooltip"
+		if = {
+			limit = {
+				has_origin = origin_necrophage
+				has_trait = trait_necrophage
+			}
+			custom_tooltip = disables_necrophage_features
+		}
+		if = {
+			limit = {
+				has_origin = origin_clone_army
+				OR = {
+					has_trait = trait_clone_soldier_infertile
+					has_trait = trait_clone_soldier_infertile_full_potential
+					has_trait = trait_clone_soldier_fertile
+				}
+			}
+			custom_tooltip = disables_clone_army_origin_features
+		}
+		if = {
+			limit = {
+				has_origin = origin_overtuned
+			}
+			custom_tooltip = disables_overtuned_features
+		}
+		if = {
+			limit = {
+				OR = {
+					has_valid_civic = civic_idyllic_bloom
+					has_valid_civic = civic_hive_idyllic_bloom
+				}
+			}
+			custom_tooltip = disables_idyllic_bloom
+		}
+	}
+	possible = {
+		custom_tooltip = {
+			fail_text = "synthetic_empire_synthetic_ascension"
+			NOT = { has_trait = trait_mechanical }
+		}
+		custom_tooltip = {
+			fail_text = "requires_ascension_perks_2"
+			num_ascension_perks > 1
+		}
+		custom_tooltip = {
+			fail_text = "requires_not_ap_engineered_evolution"
+			NOT = { has_ascension_perk = ap_engineered_evolution }
+		}
+		custom_tooltip = {
+			fail_text = "requires_not_ap_the_flesh_is_weak"
+			NOT = { has_ascension_perk = ap_the_flesh_is_weak }
+		}
+		if = {
+			limit = {
+				NOT = { has_global_flag = time_ascension_paths }
+			}
+			custom_tooltip = {
+				fail_text = "requires_not_ap_mind_over_matter"
+				NOT = { has_ascension_perk = ap_mind_over_matter }
+			}
+		}
+	}
+
+	potential = {
+		ap_synthetic_evolution_potential = yes
+	}
+
+	ai_weight = {
+		factor = @ascension_path_base_weight_high
+		modifier = {
+			factor = @ascension_path_synergy_weight_replaced
+			OR = {
+				has_synthetic_evolution_synergy = yes
+				has_ethic = ethic_fanatic_materialist
+			}
+		}
+		modifier = {
+			factor = @ascension_path_anti_synergy_weight_replaced
+			has_synthetic_evolution_anti_synergy = yes
+		}
+		modifier = {
+			factor = 0
+			OR = {
+				blocks_ai_synthetic_evolution = yes
+				is_spiritualist = yes
+			}
+		}
+	}
+}
+
+# 灵飞
+ap_mind_over_matter = {
+	on_enabled = {
+		custom_tooltip = "mind_over_matter_tooltip"
+		# 神眷之族
+		hidden_effect = {
+			if = {
+				limit = {
+					has_origin = origin_blessed_by_god
+					has_country_flag = will_be_abandoned_by_god
+				}
+				country_event = { id = origin_blessed_by_god.10 }
+			}
+		}
+		# 腐化主脑
+		if = {
+			limit = {
+				has_origin = origin_corrupt_brain
+			}
+			custom_tooltip = can_cure_corrupt_brain
+		}
+	}
+	possible = {
+		if = {
+			limit = {
+				OR = { 
+					is_synthetic_empire = no
+					has_origin = origin_shroud_forged 
+					is_chosen_empire = yes
+				}
+			}
+			custom_tooltip = {
+				fail_text = "requires_ascension_perks_2"
+				num_ascension_perks > 1
+			}
+		}
+		else_if = {
+			custom_tooltip = {
+				fail_text = "requires_ascension_perks_3"
+				num_ascension_perks > 2
+			}
+		}
+		if = {
+			limit = {
+				NOT = { has_global_flag = time_ascension_paths }
+			}
+			custom_tooltip = {
+				fail_text = "synthetic_empire_psionic_ascension"
+				NOT = { has_trait = trait_mechanical }
+			}
+			custom_tooltip = {
+				fail_text = "requires_not_ap_engineered_evolution"
+				NOT = { has_ascension_perk = ap_engineered_evolution }
+			}
+			custom_tooltip = {
+				fail_text = "requires_not_ap_the_flesh_is_weak"
+				NOT = { has_ascension_perk = ap_the_flesh_is_weak }
+			}
+			custom_tooltip = {
+				fail_text = "requires_not_ap_organo_machine_interfacing"
+				NOT = { has_ascension_perk = ap_organo_machine_interfacing }
+			}
+			custom_tooltip = {
+				fail_text = "requires_not_ap_organo_machine_interfacing"
+				NOT = { has_ascension_perk = ap_organo_machine_interfacing_assimilator }
+			}
+			custom_tooltip = {
+				fail_text = "requires_not_ap_synthetic_evolution"
+				NOT = { has_ascension_perk = ap_synthetic_evolution }
+			}
+			custom_tooltip = {
+				fail_text = "requires_not_ap_synthetic_age"
+				NOT = { has_ascension_perk = ap_synthetic_age }
+			}
+		}
+		if = {
+			limit = {
+				has_origin = origin_unplugged
+			}
+			custom_tooltip = {
+				fail_text = "requires_unplugged_decyberized"
+				has_country_flag = is_decyberized
+			}
+		}
+		if = {
+			limit = { has_origin = origin_shroud_forged }
+			if = {
+				limit = {
+					any_situation = {
+						is_situation_type = situation_shroud_forged
+					}
+				}
+				custom_tooltip = {
+					fail_text = "shroud_forged_situation_ongoing"
+					always = no
+				}
+			}
+			else = {	
+				custom_tooltip = {
+					fail_text = "shroud_forged_liberation_acquired"
+					NOT = { has_country_flag = finish_shroud_forged_liberation_flag }
+				}
+			}
+		}
+		# 魔女之旅
+		custom_tooltip = {
+			fail_text = "requires_not_ap_synthetic_psychics_hal"
+			NOT = { has_ascension_perk = ap_synthetic_psychics_hal }
+		}
+	}
+
+	potential = {
+		ap_mind_over_matter_potential = yes
+	}
+
+	tradition_swap = {
+		name = ap_interdimensional_processing
+		inherit_name = no
+		inherit_icon = no
+		inherit_effects = yes
+		trigger = {
+			has_shroud_dlc = yes
+			is_synthetic_empire = yes
+		}
+		weight = { factor = 1 }
+	}
+
+	ai_weight = {
+		factor = @ascension_path_base_weight_high
+		modifier = {
+			factor = @ascension_path_synergy_weight_replaced
+			OR = {
+				has_ethic = ethic_fanatic_spiritualist
+				has_ethic = ethic_fanatic_authoritarian
+				has_mind_over_matter_synergy = yes
+			}
+		}
+		modifier = {
+			factor = @ascension_path_synergy_weight_replaced
+			is_nemesis_crisis_country = yes
+		}
+		modifier = {
+			factor = @ascension_path_anti_synergy_weight_replaced
+			has_mind_over_matter_anti_synergy = yes
+			is_authoritarian = no
+		}
+		modifier = {
+			factor = @ascension_path_anti_synergy_weight_replaced
+			is_materialist = yes
+		}
+		modifier = {
+			factor = @ascension_path_synergy_weight_replaced
+			# We want more psionic AIs when someone's playing Mindwardens, so you should ascend if at least you're not materialist
+			is_materialist = no
+			any_country = {
+				has_origin = origin_mindwardens
+			}
+		}
+		modifier = {
+			factor = 0
+			has_origin = origin_mindwardens
+		}
+	}
+}
+
+# 智械机飞
+ap_synthetic_age = {
+	on_enabled = {
+		if = {
+			limit = {
+				has_machine_age_dlc = yes
+			}
+			custom_tooltip = "synthetic_age_tooltip_machine_age"
+			hidden_effect = {
+				country_event = { id = machine_age.4000 }
+			}
+		}
+		else = {
+			custom_tooltip = "synthetic_age_tooltip"
+		}
+		# 腐化主脑
+		if = {
+			limit = {
+				has_origin = origin_corrupt_brain
+			}
+			custom_tooltip = can_cure_corrupt_brain
+		}
+	}
+
+	potential = {
+		ap_synthetic_age_potential = yes
+	}
+
+	possible = {
+		custom_tooltip = {
+			fail_text = "requires_ascension_perks_2"
+			num_ascension_perks > 1
+		}
+		if = {
+			limit = {
+				NOT = { has_global_flag = time_ascension_paths }
+			}
+			custom_tooltip = {
+				fail_text = "requires_not_ap_organo_machine_interfacing"
+				NOT = { has_ascension_perk = ap_organo_machine_interfacing_assimilator }
+			}
+			if = {
+				limit = { has_shroud_dlc = yes }
+				custom_tooltip = {
+					fail_text = "requires_not_ap_mind_over_matter"
+					has_psionic_ascension = no
+				}
+				NOT = { country_has_situation = { SITUATION = situation_shroud_forged } }
+			}
+		}
+	}
+
+	ai_weight = {
+		factor = @ascension_path_base_weight_high
+		modifier = {
+			factor = @ascension_path_anti_synergy_weight_replaced
+			has_synthetic_age_anti_synergy = yes
+		}
+	}
+}
+
+#################
+# 星河卫士
+#################
+
+ap_defender_of_the_galaxy_nomads = {
+	possible = {
+		custom_tooltip = {
+			fail_text = "requires_ascension_perks_3"
+			num_ascension_perks > 2
+		}
+		NOR = {
+			has_ethic = ethic_fanatic_xenophobe
+			has_civic = civic_inwards_perfection
+		}
+		custom_tooltip = {
+			fail_text = "requires_actor_not_khan"
+			NOT = { has_country_flag = heir_of_the_khan_khan }
+		}
+		custom_tooltip = {
+			fail_text = "requires_not_nanites"
+			NOT = { has_origin = origin_nanites }
+		}
+	}
+	#custom_tooltip = ap_defender_of_the_galaxy_modifier_desc
+
+	modifier = {
+		add_attunement_the_cradle_of_souls = @ascension_perk_attunement1
+	}
+
+	on_enabled = {
+		activate_crisis_progression = defender_path
+	}
+
+	potential = {
+		has_nomads_dlc = yes
+		forbid_defender_of_the_galaxy = no
+	}
+
+	ai_weight = {
+		factor = 20
+		modifier = {
+			factor = 10
+			OR = {
+				has_crisis = yes
+				any_country = {
+					relative_power = {
+						who = prev
+						value > equivalent
+					}
+					is_player_crisis = yes
+				}
+			}
+		}
+		modifier = {
+			factor = 0
+			NOR = {
+				is_xenophile = yes
+				is_galactic_custodian = yes
+				has_valid_civic = civic_hive_familiar_face
+				any_country = {
+					OR = {
+						is_level_5_player_crisis = yes
+						is_crisis_faction = yes
+					}
+				}
+			}
+		}
+		modifier = {
+			factor = 100
+			is_galactic_custodian = yes
+		}
+		modifier = {
+			factor = 0.25
+			NOT = {
+				any_country = {
+					OR = {
+						is_level_5_player_crisis = yes
+						is_crisis_faction = yes
+					}
+				}
+			}
+		}
+		modifier = {
+			factor = 100
+			has_country_flag = normal_wonder_country_35
+		}
+	}
+}
+
+ap_defender_of_the_galaxy = {
+	possible = {
+		custom_tooltip = {
+			fail_text = "requires_ascension_perks_3"
+			num_ascension_perks > 2
+		}
+		NOR = {
+			has_ethic = ethic_fanatic_xenophobe
+			has_civic = civic_inwards_perfection
+		}
+		custom_tooltip = {
+			fail_text = "requires_actor_not_khan"
+			NOT = { has_country_flag = heir_of_the_khan_khan }
+		}
+		custom_tooltip = {
+			fail_text = "requires_not_nanites"
+			NOT = { has_origin = origin_nanites }
+		}
+	}
+	custom_tooltip = ap_defender_of_the_galaxy_voidworm_modifier_desc
+	
+	modifier = {
+		damage_vs_country_type_gray_goo_mult = 0.5
+		inline_script = {
+			script = modifiers/damage_vs_crisis_country_modifiers
+			COUNT = 0.5
+		}
+		damage_vs_country_type_voidworms_mult = @ap_defender_of_the_galaxy_voidworm_dmg_mult
+		damage_vs_country_type_voidworms_crisis_mult = @ap_defender_of_the_galaxy_voidworm_dmg_mult
+		damage_vs_country_type_voidworms_treasure_hunters_mult = @ap_defender_of_the_galaxy_voidworm_dmg_mult
+		damage_vs_country_type_frenzied_voidworms_mult = @ap_defender_of_the_galaxy_voidworm_dmg_mult
+		add_attunement_the_cradle_of_souls = @ascension_perk_attunement1
+	}
+
+	on_enabled = {
+		custom_tooltip = "ap_defender_of_the_galaxy_effect_opinion"
+		# see triggered_opinion_ap_defender_of_the_galaxy
+	}
+
+	potential = {
+		has_nomads_dlc = no
+		forbid_defender_of_the_galaxy = no
+	}
+
+	ai_weight = {
+		factor = 20
+		modifier = {
+			factor = 10
+			OR = {
+				has_crisis = yes
+				any_country = {
+					relative_power = {
+						who = prev
+						value > equivalent
+					}
+					is_player_crisis = yes
+				}
+			}
+		}
+		modifier = {
+			factor = 0
+			NOR = {
+				is_xenophile = yes
+				is_galactic_custodian = yes
+				has_valid_civic = civic_hive_familiar_face
+				any_country = {
+					OR = {
+						is_level_5_player_crisis = yes
+						is_crisis_faction = yes
+					}
+				}
+			}
+		}
+		modifier = {
+			factor = 100
+			is_galactic_custodian = yes
+		}
+		modifier = {
+			factor = 0.25
+			NOT = {
+				any_country = {
+					OR = {
+						has_crisis_level = crisis_level_5
+						has_crisis_level = crisis_cosmogenesis_level_5
+						is_crisis_faction = yes
+					}
+				}
+			}
+		}
+		modifier = {
+			factor = 100
+			has_country_flag = normal_wonder_country_35
+		}
+	}
+}
+
+#################
+# 星海天罚
+#################
+
+ap_become_the_crisis = {
+	potential = {
+		has_nemesis = yes
+		forbid_become_the_crisis = no
+	}
+
+	possible = {
+		custom_tooltip = {
+			fail_text = "requires_independence"
+			is_subject = no
+		}
+		custom_tooltip = {
+			fail_text = "must_not_be_custodian"
+			is_galactic_custodian = no
+		}
+		custom_tooltip = {
+			fail_text = "must_not_be_emperor"
+			is_galactic_emperor = no
+		}
+		custom_tooltip = {
+			fail_text = "must_finish_shroud_forged_situation"
+			OR = {
+				NOT = { has_origin = origin_shroud_forged }
+				NOT = {
+					any_situation = {
+						is_situation_type = situation_shroud_forged
+					}
+				}
+			}
+		}
+		custom_tooltip = {
+			fail_text = "locked_by_shroud_forged_situation"
+			OR = {
+				NOT = { has_origin = origin_shroud_forged }
+				NOT = { has_country_flag = finish_shroud_forged_liberation_flag }
+			}
+		}
+		if = {
+			limit = {
+				OR = {
+					NOT = { has_origin = origin_shroud_forged }
+					NOT = { has_country_flag = shroud_forged_can_become_the_crisis }
+				}
+			}
+			custom_tooltip = {
+				fail_text = "requires_ascension_perks_3"
+				num_ascension_perks > 2
+			}
+			NOR = {
+				is_xenophile = yes
+				is_pacifist = yes
+				has_civic = civic_machine_servitor
+				has_valid_civic = civic_hive_familiar_face
+			}
+		}
+		possible_allow_become_the_crisis = yes
+		possible_allow_any_crisis_progression = yes
+	}
+
+	on_enabled = {
+		if = {
+			limit = {
+				is_dimension_traveler_owner = yes
+				dimension_traveler_is_disappointed = no
+			}
+			custom_tooltip = dimension_traveler_may_leave
+		}
+		if = {
+			limit = {
+				dimension_traveler_is_disappointed = no
+				dimension_traveler_is_by_our_side = yes
+			}
+			tooltip = { activate_crisis_progression = nemesis_path }
+			hidden_effect = {
+				country_event = { id = dimension_traveler.69 }
+			}
+		}
+		else = {
+			hidden_effect = {
+				set_ai_personality = became_the_crisis
+				country_event = { id = timeline.69 } # Timeline Become the crisis
+			}
+			activate_crisis_progression = nemesis_path
+		}
+	}
+
+	modifier = {
+		refugee_attraction = -0.50
+	}
+
+	ai_weight = {
+		factor = 2
+		modifier = {
+			factor = 5
+			has_ethic = ethic_militarist
+		}
+		modifier = {
+			factor = 10
+			has_ethic = ethic_fanatic_militarist
+		}
+		modifier = {
+			factor = 5
+			has_ethic = ethic_xenophobe
+		}
+		modifier = {
+			factor = 10
+			has_ethic = ethic_fanatic_xenophobe
+		}
+		modifier = {
+			factor = 0.5
+			has_origin = origin_tree_of_life
+		}
+		modifier = {
+			factor = 5
+			has_valid_civic = civic_hive_strength_of_legions
+		}
+		modifier = {
+			factor = 0.5
+			has_government = gov_machine_research
+		}
+		modifier = {
+			factor = 5
+			has_valid_civic = civic_machine_warbots
+		}
+		modifier = {
+			factor = 100
+			is_homicidal = yes
+		}
+		modifier = {
+			factor = 2
+			has_tradition = tr_supremacy_finish
+		}
+		modifier = {
+			factor = 0.5
+			galaxy_percentage < 0.05
+		}
+		modifier = {
+			factor = 2
+			galaxy_percentage > 0.1
+		}
+		modifier = {
+			factor = 2
+			galaxy_percentage > 0.2
+		}
+		modifier = {
+			factor = 0.75
+			count_playable_country = {
+				count = 1
+				limit = {
+					is_crisis_country = yes
+				}
+			}
+		}
+		modifier = {
+			factor = 0.5
+			count_playable_country = {
+				count = 2
+				limit = {
+					is_crisis_country = yes
+				}
+			}
+		}
+		modifier = {
+			factor = 0.25
+			count_playable_country = {
+				count = 3
+				limit = {
+					is_crisis_country = yes
+				}
+			}
+		}
+		modifier = {
+			factor = 0.1
+			count_playable_country = {
+				count >= 4
+				limit = {
+					is_crisis_country = yes
+				}
+			}
+		}
+		modifier = {
+			factor = 0
+			blocks_disruptive_gameplay = yes
+		}
+		modifier = {
+			factor = 0
+			num_ascension_perks >= 10 # 避免飞升槽太多时，AI总会点到灾飞的情况
+			NOR = {
+				is_homicidal = yes
+				has_country_flag = crazy_wonder_country_35
+				is_wonder_country_39 = yes
+				is_wonder_country_40 = yes
+				has_global_flag = dark_forest
+			}
+		}
+		modifier = {
+			factor = 100
+			OR = {
+				has_country_flag = crazy_wonder_country_35
+				is_wonder_country_39 = yes
+				is_wonder_country_40 = yes
+			}
+		}
+		modifier = {
+			factor = 100
+			has_global_flag = dark_forest
+		}
+	}
+}
+
+#################
+# 宇宙创生
+#################
+
+ap_cosmogenesis = {
+	potential = {
+		has_machine_age_dlc = yes
+		forbid_cosmogenesis = no
+	}
+
+	possible = {
+		custom_tooltip = {
+			fail_text = "requires_ascension_perks_3"
+			num_ascension_perks > 2
+		}
+		custom_tooltip = {
+			fail_text = "requires_independence"
+			is_subject = no
+		}
+		custom_tooltip = {
+			fail_text = "must_not_be_custodian"
+			is_galactic_custodian = no
+		}
+		custom_tooltip = {
+			fail_text = "must_not_be_emperor"
+			is_galactic_emperor = no
+		}
+		possible_allow_any_crisis_progression = yes
+	}
+
+	on_enabled = {
+		hidden_effect = {
+			set_variable = {
+				which = cosmogenesis_world_advanced_logic_produced
+				value = 0
+			}
+		}
+		activate_crisis_progression = cosmogenesis_path
+	}
+
+	modifier = {
+		refugee_attraction = -0.50
+	}
+
+	ai_weight = {
+		factor = 7.5
+		modifier = {
+			factor = 0
+			OR = {
+				is_egalitarian = yes
+				is_xenophile = yes
+			}
+		}
+		modifier = {
+			factor = 2
+			has_tradition = tr_discovery_finish
+		}
+		modifier = {
+			factor = 2
+			has_ascension_perk = ap_technological_ascendancy
+		}
+		modifier = {
+			factor = 2
+			has_ascension_perk = ap_enigmatic_engineering
+		}
+		modifier = {
+			factor = 2
+			vassals > 0
+			any_subject = {
+				any_agreement = {
+					has_active_specialization = specialist_scholarium
+				}
+			}
+		}
+		modifier = {
+			factor = 10
+			has_country_flag = whisperers_covenant_confirmed
+		}
+		modifier = {
+			factor = 0.5
+			galaxy_percentage < 0.05
+		}
+		modifier = {
+			factor = 2
+			galaxy_percentage > 0.1
+		}
+		modifier = {
+			factor = 2
+			galaxy_percentage > 0.2
+		}
+		modifier = {
+			factor = 0
+			num_ascension_perks >= 10 # 避免飞升槽太多时，AI总会点到灾飞的情况
+			NOR = {
+				is_homicidal = yes
+				is_wonder_country_synth_queen = yes
+				has_global_flag = dark_forest
+			}
+		}
+		modifier = {
+			factor = 100
+			is_wonder_country_synth_queen = yes
+		}
+		modifier = {
+			factor = 100
+			has_global_flag = dark_forest
+		}
+	}
+}
+
+#################
+# 巨兽之怒
+#################
+
+ap_behemoths = {
+	potential = {
+		has_biogenesis_dlc = yes
+		forbid_behemoths = no
+	}
+
+	possible = {
+		custom_tooltip = {
+			fail_text = "requires_ascension_perks_3"
+			num_ascension_perks > 2
+		}
+		custom_tooltip = {
+			fail_text = "requires_independence"
+			is_subject = no
+		}
+		custom_tooltip = {
+			fail_text = "must_not_be_custodian"
+			is_galactic_custodian = no
+		}
+		custom_tooltip = {
+			fail_text = "must_not_be_emperor"
+			is_galactic_emperor = no
+		}
+		custom_tooltip = {
+			fail_text = "must_use_bioships"
+			country_uses_bio_ships = yes
+		}
+		is_xenophile = no
+		is_pacifist = no
+		possible_allow_any_crisis_progression = yes
+	}
+
+	on_enabled = {
+		activate_crisis_progression = behemoth_path
+	}
+
+	modifier = {
+		refugee_attraction = -0.50
+	}
+
+	ai_weight = {
+		factor = 7.5
+		modifier = {
+			factor = 0
+			is_xenophile = yes
+			is_spiritualist = yes
+		}
+
+		modifier = {
+			factor = 0.5
+			is_lithoid = yes
+		}
+
+		modifier = {
+			factor = 10
+			is_homicidal = yes
+		}
+
+		modifier = {
+			factor = 100
+			has_civic = civic_hive_devouring_swarm
+		}
+
+		modifier = {
+			factor = 2
+			has_tradition = tr_enmity_finish
+		}
+		modifier = {
+			factor = 2
+			has_ascension_perk = ap_engineered_evolution
+		}
+		modifier = {
+			factor = 2
+			has_ascension_perk = ap_nihilistic_acquisition
+		}
+		modifier = {
+			factor = 10
+			has_country_flag = eater_covenant_confirmed
+		}
+		modifier = {
+			factor = 0
+			galaxy_percentage < 0.1
+		}
+		modifier = {
+			factor = 2
+			galaxy_percentage > 0.2
+		}
+		modifier = {
+			factor = 0
+			num_ascension_perks >= 10 # 避免飞升槽太多时，AI总会点到灾飞的情况
+			NOR = {
+				is_homicidal = yes
+				is_wonder_country_38 = yes
+				has_global_flag = dark_forest
+			}
+		}
+		modifier = {
+			factor = 100
+			is_wonder_country_38 = yes
+		}
+		modifier = {
+			factor = 100
+			has_global_flag = dark_forest
+		}
+	}
+}
+
+#################
+# 星系热症
+#################
+
+ap_galactic_hyperthermia = {
+	potential = {
+		has_infernals = yes
+		forbid_galactic_hyperthermia = no
+	}
+
+	possible = {
+		custom_tooltip = {
+			fail_text = "requires_ascension_perks_3"
+			OR = {
+				num_ascension_perks > 2
+				has_country_flag = red_giant_discovered_crystallized_entropy
+			}
+		}
+		custom_tooltip = {
+			fail_text = "requires_independence"
+			is_subject = no
+		}
+		custom_tooltip = {
+			fail_text = "must_not_be_custodian"
+			is_galactic_custodian = no
+		}
+		custom_tooltip = {
+			fail_text = "must_not_be_emperor"
+			is_galactic_emperor = no
+		}
+		NOR = {
+			is_xenophile = yes
+			is_pacifist = yes
+			has_valid_civic = civic_hive_familiar_face
+		}
+		possible_allow_any_crisis_progression = yes
+	}
+
+	on_enabled = {
+		if = {
+			limit = {
+				is_dimension_traveler_owner = yes
+				dimension_traveler_is_disappointed = no
+			}
+			custom_tooltip = dimension_traveler_may_leave
+		}
+		if = {
+			limit = {
+				dimension_traveler_is_disappointed = no
+				dimension_traveler_is_by_our_side = yes
+			}
+			tooltip = { activate_crisis_progression = hyperthermia_path }
+			hidden_effect = {
+				country_event = { id = dimension_traveler.69 }
+			}
+		}
+		else = {
+			hidden_effect = {
+				set_ai_personality = hyperthermia_empire
+				country_event = { id = infernals.1000 }
+			}
+			activate_crisis_progression = hyperthermia_path
+		}
+	}
+
+	modifier = {
+		refugee_attraction = -0.50
+	}
+
+	ai_weight = {
+		factor = 7.5
+		modifier = {
+			factor = 0
+			NOR = {
+				is_militarist = yes
+				is_xenophobe = yes
+				is_gestalt = yes
+			}
+		}
+		modifier = {
+			factor = 10
+			is_homicidal = yes
+		}
+		modifier = {
+			factor = 2
+			has_tradition = tr_supremacy_finish
+		}
+		modifier = {
+			factor = 1.5
+			is_genocidal_infernal = yes
+		}
+		modifier = {
+			factor = 2
+			galaxy_percentage > 0.2
+		}
+		modifier = {
+			factor = 0
+			galaxy_percentage < 0.1
+		}
+		modifier = {
+			factor = 0
+			count_playable_country = {
+				count > 0
+				limit = { has_ascension_perk = ap_galactic_hyperthermia }
+			}
+		}
+		modifier = {
+			factor = 0
+			blocks_disruptive_gameplay = yes
+		}
+		modifier = {
+			factor = 0
+			is_infernal_empire = no
+		}
+		modifier = {
+			factor = 0
+			num_ascension_perks >= 10 # 避免飞升槽太多时，AI总会点到灾飞的情况
+			NOR = {
+				is_homicidal = yes
+				is_wonder_country_96 = yes
+				has_global_flag = dark_forest
+			}
+		}
+		modifier = {
+			factor = 100
+			is_wonder_country_96 = yes
+		}
+		modifier = {
+			factor = 100
+			has_global_flag = dark_forest
+		}
+	}
+}

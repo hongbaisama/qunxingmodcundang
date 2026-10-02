@@ -1,0 +1,658 @@
+horror_focus_1 = {
+	category = exploration
+	tier = 1
+	background = "GFX_focus_card_background_exploration_tier_1"
+
+	name = "horror.1.name"
+	desc = "horror.1.desc"
+	hint = "horror.1.hint"
+	lore = "horror.1.lore"
+
+	condition_for_achievement = {
+		custom_tooltip = {
+			fail_text = "horror.1.fail"
+			success_text = "horror.1.success"
+			has_country_flag = horror_focus_1_finished
+		}
+	}
+
+	on_success = {
+		create_horror_focus_completed_message = {
+			CATEGORY = EXPLORATION
+			ID = 1
+		}
+		add_focus_progress = { category = exploration amount = 10 }
+		set_country_flag = horror_focus_1_completed
+	}
+}
+
+horror_focus_2 = {
+	category = exploration
+	tier = 2
+	background = "GFX_focus_card_background_exploration_tier_2"
+
+	name = "horror.2.name"
+	desc = "horror.2.desc"
+	hint = "horror.2.hint"
+	lore = "horror.2.lore"
+	
+	possible = {
+		has_country_flag = horror_focus_1_completed
+	}
+
+	condition_for_achievement = {
+		custom_tooltip = {
+			fail_text = "horror.2.fail"
+			success_text = "horror.2.success"
+			if = {
+				limit = {
+					check_variable = {
+						which = horror_focus_2_finished
+						value >= 3
+					}
+				}
+				custom_progress = {
+					check_variable = {
+						which = horror_focus_2_finished
+						value >= 3
+					}
+					current_val_coeff = 3
+					final_val_coeff = 3
+				}
+			}
+			else = {
+				custom_progress = {
+					check_variable = {
+						which = horror_focus_2_finished
+						value >= 3
+					}
+					mode = clamped
+				}
+			}
+		}
+	}
+
+	on_success = {
+		create_horror_focus_completed_message = {
+			CATEGORY = EXPLORATION
+			ID = 2
+		}
+		add_focus_progress = { category = exploration amount = 25 }
+		set_country_flag = horror_focus_2_completed
+	}
+}
+
+horror_focus_3 = {
+	category = exploration
+	tier = 3
+	background = "GFX_focus_card_background_exploration_tier_3"
+
+	name = "horror.3.name"
+	desc = "horror.3.desc"
+	hint = "horror.3.hint"
+	lore = "horror.3.lore"
+	
+	possible = {
+		has_country_flag = horror_focus_2_completed
+	}
+
+	condition_for_achievement = {
+		custom_tooltip = {
+			fail_text = "horror.3.fail"
+			success_text = "horror.3.success"
+			has_country_flag = horror_focus_3_finished
+		}
+	}
+
+	on_success = {
+		create_horror_focus_completed_message = {
+			CATEGORY = EXPLORATION
+			ID = 3
+		}
+		add_focus_progress = { category = exploration amount = 50 }
+		set_country_flag = horror_focus_3_completed
+		add_research_option = tech_mine_dark_matter
+	}
+}
+
+horror_focus_4 = {
+	category = development
+	tier = 2
+	background = "GFX_focus_card_background_development_tier_2"
+
+	name = "horror.4.name"
+	desc = "horror.4.desc"
+	hint = "horror.4.hint"
+	lore = "horror.4.lore"
+	
+	possible = {
+		OR = {
+			has_country_flag = horror_focus_3_completed
+			has_tradition = tr_horror_adopt
+		}
+	}
+
+	condition_for_achievement = {
+		custom_tooltip = {
+			fail_text = "horror.4.fail"
+			success_text = "horror.4.success"
+			if = {
+				limit = {
+					has_resource = { type = sr_dark_matter amount >= 25 }
+				}
+				custom_progress = {
+					has_resource = { type = sr_dark_matter amount >= 25 }
+					current_val_coeff = 25
+					final_val_coeff = 25
+				}
+			}
+			else = {
+				custom_progress = {
+					has_resource = { type = sr_dark_matter amount >= 25 }
+					mode = clamped
+				}
+			}
+		}
+	}
+
+	on_success = {
+		create_horror_focus_completed_message = {
+			CATEGORY = DEVELOPMENT
+			ID = 4
+		}
+		add_focus_progress = { category = development amount = 25 }
+		set_country_flag = horror_focus_4_completed
+		hidden_effect = {
+			country_event = { id = time_focus.10 }
+		}
+	}
+}
+
+horror_focus_11_a = {
+	category = development
+	tier = 3
+	background = "GFX_focus_card_background_development_tier_3"
+
+	name = "horror.11.a.name"
+	desc = "horror.11.a.desc"
+	hint = "horror.11.a.hint"
+	lore = "horror.11.a.lore"
+	
+	possible = {
+		has_country_flag = horror_focus_4_completed
+		has_country_flag = choose_horror_focus_a
+	}
+
+	condition_for_achievement = {
+		custom_tooltip = {
+			fail_text = "horror.11.a.fail"
+			success_text = "horror.11.a.success"
+			has_country_flag = horror_focus_11_a_finished
+		}
+	}
+
+	on_success = {
+		create_horror_focus_completed_message = {
+			CATEGORY = DEVELOPMENT
+			ID = 11_A
+		}
+		add_focus_progress = { category = development amount = 50 }
+		set_country_flag = horror_focus_11_completed
+		set_country_flag = unlock_tech_horror_3_a_2
+		add_research_option = tech_horror_3_a_2
+	}
+}
+
+horror_focus_11_b = {
+	category = development
+	tier = 3
+	background = "GFX_focus_card_background_development_tier_3"
+
+	name = "horror.11.b.name"
+	desc = "horror.11.b.desc"
+	hint = "horror.11.b.hint"
+	lore = "horror.11.b.lore"
+	
+	possible = {
+		has_country_flag = horror_focus_4_completed
+		has_country_flag = choose_horror_focus_b
+	}
+
+	condition_for_achievement = {
+		custom_tooltip = {
+			fail_text = "horror.11.b.fail"
+			success_text = "horror.11.b.success"
+			has_country_flag = horror_focus_11_b_finished
+		}
+	}
+
+	on_success = {
+		create_horror_focus_completed_message = {
+			CATEGORY = DEVELOPMENT
+			ID = 11_B
+		}
+		add_focus_progress = { category = development amount = 50 }
+		set_country_flag = horror_focus_11_completed
+		set_country_flag = unlock_tech_horror_3_b_2
+		add_research_option = tech_horror_3_b_2
+	}
+}
+
+horror_focus_12_a = {
+	category = development
+	tier = 3
+	background = "GFX_focus_card_background_development_tier_3"
+
+	name = "horror.12.a.name"
+	desc = "horror.12.a.desc"
+	hint = "horror.12.a.hint"
+	lore = "horror.12.a.lore"
+	
+	possible = {
+		has_country_flag = horror_focus_11_completed
+		has_country_flag = choose_horror_focus_a
+	}
+
+	condition_for_achievement = {
+		custom_tooltip = {
+			fail_text = "horror.12.a.fail"
+			success_text = "horror.12.a.success"
+			has_country_flag = horror_focus_12_a_finished
+		}
+	}
+
+	on_success = {
+		add_focus_progress = { category = development amount = 50 }
+		set_country_flag = horror_focus_12_completed
+		gain_horror_focus_12_reward = yes
+	}
+}
+
+horror_focus_12_b = {
+	category = development
+	tier = 3
+	background = "GFX_focus_card_background_development_tier_3"
+
+	name = "horror.12.b.name"
+	desc = "horror.12.b.desc"
+	hint = "horror.12.b.hint"
+	lore = "horror.12.b.lore"
+	
+	possible = {
+		has_country_flag = horror_focus_11_completed
+		has_country_flag = choose_horror_focus_b
+	}
+
+	condition_for_achievement = {
+		custom_tooltip = {
+			fail_text = "horror.12.b.fail"
+			success_text = "horror.12.b.success"
+			has_country_flag = horror_focus_12_b_finished
+		}
+	}
+
+	on_success = {
+		add_focus_progress = { category = development amount = 50 }
+		set_country_flag = horror_focus_12_completed
+		gain_horror_focus_12_reward = yes
+	}
+}
+
+horror_focus_13 = {
+	category = development
+	tier = 4
+	background = "GFX_focus_card_background_development_tier_4"
+
+	name = "horror.13.name"
+	desc = "horror.13.desc"
+	hint = "horror.13.hint"
+	lore = "horror.13.lore"
+	
+	possible = {
+		has_country_flag = horror_focus_12_completed
+	}
+
+	condition_for_achievement = {
+		custom_tooltip = {
+			fail_text = "horror.13.fail"
+			success_text = "horror.13.success"
+			has_tradition = tr_horror_finish
+		}
+	}
+
+	on_success = {
+		create_horror_focus_completed_message = {
+			CATEGORY = DEVELOPMENT
+			ID = 13
+		}
+		add_focus_progress = { category = development amount = 100 }
+		set_country_flag = horror_focus_13_completed
+		add_research_option = tech_horror_shield
+		add_research_option = tech_horror_armor
+	}
+}
+
+horror_focus_14 = {
+	category = conquest
+	tier = 3
+	background = "GFX_focus_card_background_conquest_tier_3"
+
+	name = "horror.14.name"
+	desc = "horror.14.desc"
+	hint = "horror.14.hint"
+	lore = "horror.14.lore"
+	
+	possible = {
+		has_country_flag = horror_focus_13_completed
+	}
+
+	condition_for_achievement = {
+		custom_tooltip = {
+			fail_text = "horror.14.a.fail"
+			success_text = "horror.14.a.success"
+			has_technology = tech_horror_shield
+		}
+		custom_tooltip = {
+			fail_text = "horror.14.b.fail"
+			success_text = "horror.14.b.success"
+			has_technology = tech_horror_armor
+		}
+	}
+
+	on_success = {
+		create_horror_focus_completed_message = {
+			CATEGORY = CONQUEST
+			ID = 14
+		}
+		add_focus_progress = { category = conquest amount = 50 }
+		set_country_flag = horror_focus_14_completed
+		add_research_option = tech_horror_beam
+	}
+}
+
+horror_focus_15 = {
+	category = conquest
+	tier = 4
+	background = "GFX_focus_card_background_conquest_tier_4"
+
+	name = "horror.15.name"
+	desc = "horror.15.desc"
+	hint = "horror.15.hint"
+	lore = "horror.15.lore"
+	
+	possible = {
+		has_country_flag = horror_focus_14_completed
+	}
+
+	condition_for_achievement = {
+		custom_tooltip = {
+			fail_text = "horror.15.fail"
+			success_text = "horror.15.success"
+			has_country_flag = horror_focus_15_finished
+		}
+	}
+
+	on_success = {
+		create_horror_focus_completed_message = {
+			CATEGORY = CONQUEST
+			ID = 15
+		}
+		add_focus_progress = { category = conquest amount = 100 }
+		set_country_flag = horror_focus_15_completed
+		add_modifier = {
+			modifier = horror_focus_modifier
+			days = -1
+		}
+	}
+}
+
+horror_focus_16 = {
+	category = conquest
+	tier = 5
+	background = "GFX_focus_card_background_conquest_tier_5"
+
+	name = "horror.16.name"
+	desc = "horror.16.desc"
+	hint = "horror.16.hint"
+	lore = "horror.16.lore"
+	
+	possible = {
+		has_country_flag = horror_focus_15_completed
+	}
+
+	condition_for_achievement = {
+		custom_tooltip = {
+			fail_text = "horror.16.fail"
+			success_text = "horror.16.success"
+			has_country_flag = horror_focus_16_finished
+		}
+	}
+
+	on_success = {
+		add_focus_progress = { category = conquest amount = 200 }
+		set_country_flag = horror_focus_16_completed
+		if = {
+			limit = {
+				has_country_flag = choose_horror_focus_a
+			}
+			create_horror_focus_completed_message = {
+				CATEGORY = CONQUEST
+				ID = 16_A
+			}
+			set_country_flag = unlock_tech_time_3_a_1
+			add_research_option = tech_time_3_a_1
+			add_research_option = tech_horror_focus_1
+		}
+		else = {
+			create_horror_focus_completed_message = {
+				CATEGORY = CONQUEST
+				ID = 16_B
+			}
+			set_country_flag = unlock_tech_time_3_b_1
+			add_research_option = tech_time_3_b_1
+			add_research_option = tech_horror_focus_1
+		}
+	}
+}
+
+horror_focus_21_a = {
+	category = development
+	tier = 4
+	background = "GFX_focus_card_background_development_tier_4"
+
+	name = "horror.21.a.name"
+	desc = "horror.21.a.desc"
+	hint = "horror.21.a.hint"
+	lore = "horror.21.a.lore"
+	
+	possible = {
+		OR = {
+			has_country_flag = horror_focus_16_completed
+			has_tradition = tr_time_adopt
+		}
+		has_country_flag = choose_horror_focus_a
+	}
+
+	condition_for_achievement = {
+		custom_tooltip = {
+			fail_text = "horror.21.a.fail"
+			success_text = "horror.21.a.success"
+			has_country_flag = horror_focus_21_a_finished
+		}
+	}
+
+	on_success = {
+		create_horror_focus_completed_message = {
+			CATEGORY = DEVELOPMENT
+			ID = 21_A
+		}
+		add_focus_progress = { category = development amount = 100 }
+		set_country_flag = horror_focus_21_completed
+		set_country_flag = unlock_tech_time_3_a_2
+		add_research_option = tech_time_3_a_2
+	}
+}
+
+horror_focus_21_b = {
+	category = development
+	tier = 4
+	background = "GFX_focus_card_background_development_tier_4"
+
+	name = "horror.21.b.name"
+	desc = "horror.21.b.desc"
+	hint = "horror.21.b.hint"
+	lore = "horror.21.b.lore"
+	
+	possible = {
+		OR = {
+			has_country_flag = horror_focus_16_completed
+			has_tradition = tr_time_adopt
+		}
+		has_country_flag = choose_horror_focus_b
+	}
+
+	condition_for_achievement = {
+		custom_tooltip = {
+			fail_text = "horror.21.b.fail"
+			success_text = "horror.21.b.success"
+			has_country_flag = horror_focus_21_b_finished
+		}
+	}
+
+	on_success = {
+		create_horror_focus_completed_message = {
+			CATEGORY = DEVELOPMENT
+			ID = 21_B
+		}
+		add_focus_progress = { category = development amount = 100 }
+		set_country_flag = horror_focus_21_completed
+		set_country_flag = unlock_tech_time_3_b_2
+		add_research_option = tech_time_3_b_2
+	}
+}
+
+horror_focus_22_a = {
+	category = development
+	tier = 4
+	background = "GFX_focus_card_background_development_tier_4"
+
+	name = "horror.22.a.name"
+	desc = "horror.22.a.desc"
+	hint = "horror.22.a.hint"
+	lore = "horror.22.a.lore"
+	
+	possible = {
+		has_country_flag = horror_focus_21_completed
+		has_country_flag = choose_horror_focus_a
+	}
+
+	condition_for_achievement = {
+		custom_tooltip = {
+			fail_text = "horror.22.a.fail"
+			success_text = "horror.22.a.success"
+			has_country_flag = horror_focus_22_a_finished
+		}
+	}
+
+	on_success = {
+		add_focus_progress = { category = development amount = 100 }
+		set_country_flag = horror_focus_22_completed
+		gain_horror_focus_22_reward = yes
+	}
+}
+
+horror_focus_22_b = {
+	category = development
+	tier = 4
+	background = "GFX_focus_card_background_development_tier_4"
+
+	name = "horror.22.b.name"
+	desc = "horror.22.b.desc"
+	hint = "horror.22.b.hint"
+	lore = "horror.22.b.lore"
+	
+	possible = {
+		has_country_flag = horror_focus_21_completed
+		has_country_flag = choose_horror_focus_b
+	}
+
+	condition_for_achievement = {
+		custom_tooltip = {
+			fail_text = "horror.22.b.fail"
+			success_text = "horror.22.b.success"
+			has_country_flag = horror_focus_22_b_finished
+		}
+	}
+
+	on_success = {
+		add_focus_progress = { category = development amount = 100 }
+		set_country_flag = horror_focus_22_completed
+		gain_horror_focus_22_reward = yes
+	}
+}
+
+horror_focus_23 = {
+	category = development
+	tier = 5
+	background = "GFX_focus_card_background_development_tier_5"
+
+	name = "horror.23.name"
+	desc = "horror.23.desc"
+	hint = "horror.23.hint"
+	lore = "horror.23.lore"
+	
+	possible = {
+		has_country_flag = horror_focus_22_completed
+	}
+
+	condition_for_achievement = {
+		custom_tooltip = {
+			fail_text = "horror.23.fail"
+			success_text = "horror.23.success"
+			has_tradition = tr_time_finish
+		}
+	}
+
+	on_success = {
+		create_horror_focus_completed_message = {
+			CATEGORY = DEVELOPMENT
+			ID = 23
+		}
+		add_focus_progress = { category = development amount = 200 }
+		set_country_flag = horror_focus_23_completed
+		add_research_option = tech_time_trait
+	}
+}
+
+horror_focus_24 = {
+	category = exploration
+	tier = 5
+	background = "GFX_focus_card_background_exploration_tier_5"
+
+	name = "horror.24.name"
+	desc = "horror.24.desc"
+	hint = "horror.24.hint"
+	lore = "horror.24.lore"
+	
+	possible = {
+		has_country_flag = horror_focus_23_completed
+	}
+
+	condition_for_achievement = {
+		custom_tooltip = {
+			fail_text = "horror.24.fail"
+			success_text = "horror.24.success"
+			has_country_flag = horror_focus_24_finished
+		}
+	}
+
+	on_success = {
+		create_horror_focus_completed_message = {
+			CATEGORY = EXPLORATION
+			ID = 24
+		}
+		add_focus_progress = { category = exploration amount = 200 }
+		set_country_flag = horror_focus_24_completed
+		add_research_option = tech_horror_focus_2
+	}
+}

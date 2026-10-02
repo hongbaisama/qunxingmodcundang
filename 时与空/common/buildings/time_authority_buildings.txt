@@ -1,0 +1,397 @@
+# 希望议会
+
+building_hope_parliament = {
+	icon = building_sanctuary_of_toil
+	base_buildtime = 1800
+	planet_limit = 1
+	empire_limit = { base = 1 }
+	position_priority = 5
+
+	category = government
+	
+	building_sets = {
+		zone_time_physics
+		zone_time_society
+	}
+	
+	upgrades = {
+		building_hope_institution
+	}
+	
+	country_modifier = {
+		country_official_cap_add = 2
+		official_skill_add = 2
+		official_exp_gain = 0.5
+	}
+	
+	triggered_country_modifier = {
+		potential = {
+			owner = {
+				has_origin_time_winner_ethic = { ETHIC = egalitarian }
+				has_origin_time_winner_ethic = { ETHIC = xenophile }
+			}
+		}
+		country_official_cap_add = 1
+		official_skill_add = 1
+		official_exp_gain = 0.25
+	}
+	
+	inline_script = {
+		script = buildings/building_origin_time_authority_modifiers
+		RESOURCE = minor_artifacts
+		ETHIC_1 = egalitarian
+		ETHIC_2 = xenophile
+		JOB_1 = hope_guardian
+		JOB_2 = hope_disseminator
+	}
+	
+	triggered_desc = {
+		text = building_hope_parliament_effect
+	}
+}
+
+# 希望机关
+
+building_hope_institution = {
+	icon = building_grand_cathedral_of_toil
+	base_buildtime = 3600
+	can_build = no
+	position_priority = 5
+
+	category = government
+	
+	building_sets = {
+		zone_time_physics
+		zone_time_society
+	}
+	
+	country_modifier = {
+		country_official_cap_add = 4
+		official_skill_add = 4
+		official_exp_gain = 1
+	}
+	
+	triggered_country_modifier = {
+		potential = {
+			owner = {
+				has_origin_time_winner_ethic = { ETHIC = egalitarian }
+				has_origin_time_winner_ethic = { ETHIC = xenophile }
+			}
+		}
+		country_official_cap_add = 2
+		official_skill_add = 2
+		official_exp_gain = 0.5
+	}
+	
+	inline_script = {
+		script = buildings/building_origin_time_advanced_authority_modifiers
+		RESOURCE = minor_artifacts
+		ETHIC_1 = egalitarian
+		ETHIC_2 = xenophile
+		JOB_1 = hope_guardian
+		JOB_2 = hope_disseminator
+	}
+	
+	triggered_desc = {
+		text = building_hope_institution_effect
+	}
+}
+
+# 永恒探针
+
+building_eternal_probe = {
+	icon = building_amphitheater_of_the_mind
+	base_buildtime = 1800
+	planet_limit = 1
+	empire_limit = { base = 1 }
+	position_priority = 5
+
+	category = research
+	
+	building_sets = {
+		zone_time_physics
+		zone_time_society
+		zone_time_engineering
+	}
+	
+	upgrades = {
+		building_eternal_matrix
+	}
+	
+	country_modifier = {
+		country_scientist_cap_add = 2
+		scientist_skill_add = 2
+		scientist_exp_gain = 0.5
+	}
+	
+	triggered_country_modifier = {
+		potential = {
+			owner = {
+				has_origin_time_winner_ethic = { ETHIC = materialist }
+				has_origin_time_winner_ethic = { ETHIC = pacifist }
+			}
+		}
+		country_scientist_cap_add = 1
+		scientist_skill_add = 1
+		scientist_exp_gain = 0.25
+	}
+	
+	inline_script = {
+		script = buildings/building_origin_time_authority_modifiers
+		RESOURCE = nanites
+		ETHIC_1 = materialist
+		ETHIC_2 = pacifist
+		JOB_1 = eternal_observer
+		JOB_2 = eternal_creator
+	}
+	
+	triggered_desc = {
+		text = building_eternal_probe_effect
+	}
+}
+
+# 永恒矩阵
+
+building_eternal_matrix = {
+	icon = building_grand_concert_hall_of_the_mind
+	base_buildtime = 3600
+	can_build = no
+	position_priority = 5
+
+	category = research
+	
+	building_sets = {
+		zone_time_physics
+		zone_time_society
+		zone_time_engineering
+	}
+	
+	country_modifier = {
+		country_scientist_cap_add = 4
+		scientist_skill_add = 4
+		scientist_exp_gain = 1
+	}
+	
+	triggered_country_modifier = {
+		potential = {
+			owner = {
+				has_origin_time_winner_ethic = { ETHIC = materialist }
+				has_origin_time_winner_ethic = { ETHIC = pacifist }
+			}
+		}
+		country_scientist_cap_add = 2
+		scientist_skill_add = 2
+		scientist_exp_gain = 0.5
+	}
+	
+	inline_script = {
+		script = buildings/building_origin_time_advanced_authority_modifiers
+		RESOURCE = nanites
+		ETHIC_1 = materialist
+		ETHIC_2 = pacifist
+		JOB_1 = eternal_observer
+		JOB_2 = eternal_creator
+	}
+	
+	triggered_desc = {
+		text = building_eternal_matrix_effect
+	}
+}
+
+# 维度堡垒
+
+building_dimensional_fortress = {
+	icon = building_battlement_of_steel
+	base_buildtime = 1800
+	planet_limit = 1
+	empire_limit = { base = 1 }
+	position_priority = 5
+
+	category = army
+	
+	building_sets = {
+		zone_time_physics
+		zone_time_engineering
+	}
+	
+	upgrades = {
+		building_dimensional_metropolis
+	}
+	
+	country_modifier = {
+		country_commander_cap_add = 2
+		commander_skill_add = 2
+		commander_exp_gain = 0.5
+	}
+	
+	triggered_country_modifier = {
+		potential = {
+			owner = {
+				has_origin_time_winner_ethic = { ETHIC = authoritarian }
+				has_origin_time_winner_ethic = { ETHIC = militarist }
+			}
+		}
+		country_commander_cap_add = 1
+		commander_skill_add = 1
+		commander_exp_gain = 0.25
+	}
+	
+	inline_script = {
+		script = buildings/building_origin_time_authority_modifiers
+		RESOURCE = sr_living_metal
+		ETHIC_1 = authoritarian
+		ETHIC_2 = militarist
+		JOB_1 = dimensional_ruler
+		JOB_2 = dimensional_conqueror
+	}
+	
+	triggered_desc = {
+		text = building_dimensional_fortress_effect
+	}
+}
+
+# 维度都城
+
+building_dimensional_metropolis = {
+	icon = building_grand_battlements_of_steel
+	base_buildtime = 3600
+	can_build = no
+	position_priority = 5
+
+	category = army
+	
+	building_sets = {
+		zone_time_physics
+		zone_time_engineering
+	}
+	
+	country_modifier = {
+		country_commander_cap_add = 4
+		commander_skill_add = 4
+		commander_exp_gain = 1
+	}
+	
+	triggered_country_modifier = {
+		potential = {
+			owner = {
+				has_origin_time_winner_ethic = { ETHIC = authoritarian }
+				has_origin_time_winner_ethic = { ETHIC = militarist }
+			}
+		}
+		country_commander_cap_add = 2
+		commander_skill_add = 2
+		commander_exp_gain = 0.5
+	}
+	
+	inline_script = {
+		script = buildings/building_origin_time_advanced_authority_modifiers
+		RESOURCE = sr_living_metal
+		ETHIC_1 = authoritarian
+		ETHIC_2 = militarist
+		JOB_1 = dimensional_ruler
+		JOB_2 = dimensional_conqueror
+	}
+	
+	triggered_desc = {
+		text = building_dimensional_metropolis_effect
+	}
+}
+
+# 本源圣所
+
+building_original_sanctuary = {
+	icon = building_the_sanctum_of_augmentation
+	base_buildtime = 1800
+	planet_limit = 1
+	empire_limit = { base = 1 }
+	position_priority = 5
+
+	category = unity
+	
+	building_sets = {
+		zone_time_society
+		zone_time_engineering
+	}
+	
+	upgrades = {
+		building_original_palace
+	}
+	
+	country_modifier = {
+		country_leader_cap_add = 1
+		leader_skill_add = 1
+		species_leader_exp_gain = 0.25
+	}
+	
+	triggered_country_modifier = {
+		potential = {
+			owner = {
+				has_origin_time_winner_ethic = { ETHIC = spiritualist }
+				has_origin_time_winner_ethic = { ETHIC = xenophobe }
+			}
+		}
+		country_leader_cap_add = 0.5
+		leader_skill_add = 0.5
+		species_leader_exp_gain = 0.125
+	}
+	
+	inline_script = {
+		script = buildings/building_origin_time_authority_modifiers
+		RESOURCE = sr_zro
+		ETHIC_1 = spiritualist
+		ETHIC_2 = xenophobe
+		JOB_1 = original_meditator
+		JOB_2 = original_purifier
+	}
+	
+	triggered_desc = {
+		text = building_original_sanctuary_effect
+	}
+}
+
+# 本源殿堂
+
+building_original_palace = {
+	icon = building_the_united_sanctum_of_augmentation
+	base_buildtime = 3600
+	can_build = no
+	position_priority = 5
+
+	category = unity
+	
+	building_sets = {
+		zone_time_society
+		zone_time_engineering
+	}
+	
+	country_modifier = {
+		country_leader_cap_add = 2
+		leader_skill_add = 2
+		species_leader_exp_gain = 0.5
+	}
+	
+	triggered_country_modifier = {
+		potential = {
+			owner = {
+				has_origin_time_winner_ethic = { ETHIC = spiritualist }
+				has_origin_time_winner_ethic = { ETHIC = xenophobe }
+			}
+		}
+		country_leader_cap_add = 1
+		leader_skill_add = 1
+		species_leader_exp_gain = 0.25
+	}
+	
+	inline_script = {
+		script = buildings/building_origin_time_advanced_authority_modifiers
+		RESOURCE = sr_zro
+		ETHIC_1 = spiritualist
+		ETHIC_2 = xenophobe
+		JOB_1 = original_meditator
+		JOB_2 = original_purifier
+	}
+	
+	triggered_desc = {
+		text = building_original_palace_effect
+	}
+}

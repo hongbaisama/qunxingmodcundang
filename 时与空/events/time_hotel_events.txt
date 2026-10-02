@@ -1,0 +1,496 @@
+namespace = time_hotel
+
+country_event = {
+	id = time_hotel.0
+	title = time_hotel.0.name
+	desc = time_hotel.0.desc
+	picture = GFX_evt_board_meeting
+	show_sound = event_alien_signal
+	location = event_target:time_hotel_site
+	
+	mean_time_to_happen = {
+		months = 12
+	}
+
+	trigger = {
+		has_country_flag = worm_events_available
+		NOT = { has_global_flag = time_hotel_triggered }
+		any_planet_within_border = {
+			is_asteroid = yes
+			has_anomaly = no
+			NOT = { exists = archaeological_site }
+		}
+	}
+	
+	immediate = {
+		set_global_flag = time_hotel_triggered
+		random_planet_within_border = {
+			limit = {
+				is_asteroid = yes
+				has_anomaly = no
+				NOT = { exists = archaeological_site }
+			}
+			save_global_event_target_as = time_hotel_site
+		}
+	}
+	
+	option = {
+		name = time_hotel.0.a
+		event_target:time_hotel_site = {
+			add_anomaly = {
+				category = time_hotel_categories
+				target = root
+			}
+		}
+	}
+	
+	option = {
+		name = time_hotel.0.b
+		allow = {
+			is_materialist = no
+		}
+		add_resource = { influence = 100 }
+	}
+}
+
+ship_event = {
+	id = time_hotel.9
+	title = time_hotel.9.name
+	desc = time_hotel.9.desc
+	picture = GFX_evt_clocks
+	show_sound = event_wind_ruins
+	location = FROMFROMFROM
+	
+	is_triggered_only = yes
+
+	immediate = {
+	}
+
+	option = {
+		name = time_hotel.9.a
+		FROMFROMFROM = {
+			create_archaeological_site = time_hotel_digsite
+		}
+	}
+}
+
+ship_event = {
+	id = time_hotel.10
+	title = time_hotel.10.name
+	desc = time_hotel.10.desc
+	picture = GFX_evt_board_meeting
+	show_sound = event_wind_ruins
+	location = FROMFROMFROM
+	
+	is_triggered_only = yes
+
+	immediate = {
+	}
+
+	option = {
+		name = time_hotel.10.a
+		leader = {
+			add_experience = 100
+		}
+	}
+}
+
+fleet_event = {
+	id = time_hotel.1
+	title = "time_hotel.1.name"
+	desc = time_hotel.1.desc
+	picture = GFX_evt_ancient_databank
+	show_sound = event_big_door_opening
+	location = from
+
+	archaeology = yes
+
+	is_triggered_only = yes
+	
+	immediate = {
+		from = { set_site_progress_locked = yes }
+	}
+
+	after = {
+		from = { set_site_progress_locked = no }
+	}
+
+	option = {
+		name = time_hotel.1.a
+		great_artifact_reward = yes
+	}
+}
+
+fleet_event = {
+	id = time_hotel.2
+	title = "time_hotel.2.name"
+	desc = time_hotel.2.desc
+	picture = GFX_evt_dark_alley
+	show_sound = event_big_door_opening
+	location = from
+
+	archaeology = yes
+
+	is_triggered_only = yes
+	
+	immediate = {
+		from = { set_site_progress_locked = yes }
+	}
+
+	after = {
+		from = { set_site_progress_locked = no }
+	}
+
+	option = {
+		name = time_hotel.2.a
+		large_artifact_reward = yes
+	}
+}
+
+fleet_event = {
+	id = time_hotel.3
+	title = "time_hotel.3.name"
+	desc = time_hotel.3.desc
+	picture = GFX_evt_civil_action
+	show_sound = event_big_door_opening
+	location = from
+
+	archaeology = yes
+
+	is_triggered_only = yes
+	
+	immediate = {
+		from = { set_site_progress_locked = yes }
+	}
+
+	after = {
+		from = { set_site_progress_locked = no }
+	}
+
+	option = {
+		name = time_hotel.3.a
+		medium_artifact_reward = yes
+	}
+}
+
+fleet_event = {
+	id = time_hotel.4
+	title = "time_hotel.4.name"
+	desc = time_hotel.4.desc
+	picture = GFX_evt_discovered_hidden_door
+	show_sound = event_big_door_opening
+	location = from
+
+	archaeology = yes
+
+	is_triggered_only = yes
+	
+	immediate = {
+		from = { set_site_progress_locked = yes }
+		leader = {
+			save_global_event_target_as = time_hotel_leader
+			exile_leader_as = time_hotel_leader
+		}
+	}
+
+	after = {
+		small_artifact_reward = yes
+		from = { set_site_progress_locked = no }
+	}
+
+	option = {
+		name = time_hotel.4.materialist
+		trigger = {
+			owner = { is_materialist = yes }
+		}
+	}
+
+	option = {
+		name = time_hotel.4.spiritualist
+		trigger = {
+			owner = { is_spiritualist = yes }
+		}
+	}
+	
+	option = {
+		name = time_hotel.4.militarist
+		trigger = {
+			owner = { is_militarist = yes }
+		}
+	}
+	
+	option = {
+		name = time_hotel.4.pacifist
+		trigger = {
+			owner = { is_pacifist = yes }
+		}
+	}
+	
+	option = {
+		name = time_hotel.4.xenophile
+		trigger = {
+			owner = { is_xenophile = yes }
+		}
+	}
+	
+	option = {
+		name = time_hotel.4.xenophobe
+		trigger = {
+			owner = { is_xenophobe = yes }
+		}
+	}
+	
+	option = {
+		name = time_hotel.4.egalitarian
+		trigger = {
+			owner = { is_egalitarian = yes }
+		}
+	}
+	
+	option = {
+		name = time_hotel.4.authoritarian
+		trigger = {
+			owner = { is_authoritarian = yes }
+		}
+	}
+	
+	option = {
+		name = time_hotel.4.hive_mind
+		trigger = {
+			owner = { is_hive_empire = yes }
+		}
+	}
+	
+	option = {
+		name = time_hotel.4.machine_intelligence
+		trigger = {
+			owner = { is_machine_empire = yes }
+		}
+	}
+	
+	option = {
+		name = time_hotel.4.other
+		trigger = {
+			owner = {
+				is_materialist = no
+				is_spiritualist = no
+				is_militarist = no
+				is_pacifist = no
+				is_xenophile = no
+				is_xenophobe = no
+				is_egalitarian = no
+				is_authoritarian = no
+				is_hive_empire = no
+				is_machine_empire = no
+			}
+		}
+	}
+}
+
+fleet_event = {
+	id = time_hotel.5
+	title = "time_hotel.5.name"
+	desc = time_hotel.5.desc
+	picture = GFX_evt_derelict_interior
+	show_sound = event_big_door_opening
+	location = from
+
+	archaeology = yes
+
+	is_triggered_only = yes
+	
+	immediate = {
+		from = { set_site_progress_locked = yes }
+	}
+
+	after = {
+		from = { set_site_progress_locked = no }
+	}
+
+	option = {
+		name = time_hotel.5.a
+		medium_artifact_reward = yes
+	}
+}
+
+fleet_event = {
+	id = time_hotel.6
+	title = "time_hotel.6.name"
+	desc = time_hotel.6.desc
+	picture = GFX_evt_acquire_asset
+	show_sound = event_big_door_opening
+	location = from
+
+	archaeology = yes
+
+	is_triggered_only = yes
+	
+	immediate = {
+		from = { set_site_progress_locked = yes }
+	}
+
+	after = {
+		from = { set_site_progress_locked = no }
+	}
+
+	option = {
+		name = time_hotel.6.a
+		large_artifact_reward = yes
+	}
+}
+
+fleet_event = {
+	id = time_hotel.7
+	title = "time_hotel.7.name"
+	desc = time_hotel.7.desc
+	picture = GFX_evt_clocks
+	show_sound = event_big_door_opening
+	location = from
+
+	archaeology = yes
+
+	is_triggered_only = yes
+	
+	immediate = {
+		from = { set_site_progress_locked = yes }
+		leader = { unassign_leader = this }
+		set_leader = event_target:time_hotel_leader
+		owner = {
+			if = {
+				limit = {
+					is_gestalt = no
+				}
+				event_target:time_hotel_leader = {
+					add_experience = 500
+					add_trait = {
+						trait = leader_trait_time_hotel
+					}
+				}
+			}
+			else = {
+				event_target:time_hotel_leader = {
+					add_experience = 1000
+				}
+				random_owned_leader = {
+					limit = {
+						is_councilor_type = councilor_gestalt_cognitive
+					}
+					add_trait = {
+						trait = leader_trait_time_hotel_gestalt
+					}
+				}
+			}
+		}
+	}
+
+	after = {
+		hidden_effect = {
+			fleet_event = { id = time_hotel.8 }
+		}
+		from = { expire_site_event = time_hotel.7 }
+	}
+
+	option = {
+		name = time_hotel.7.a
+		great_artifact_reward = yes
+	}
+}
+
+fleet_event = {
+	id = time_hotel.8
+	title = "time_hotel.7.name"
+	desc = time_hotel.8.desc
+	picture = GFX_evt_clocks
+	show_sound = event_whispering
+	location = from
+
+	archaeology = yes
+
+	is_triggered_only = yes
+	
+	specimen = akx_wake_up
+	
+	immediate = {
+	}
+
+	after = {
+		from = { set_site_progress_locked = no }
+	}
+
+	option = {
+		name = time_hotel.8.a
+		owner = {
+			add_modifier = {
+				modifier = time_hotel_modifier_1
+				days = -1
+			}
+			add_research_option = tech_building_time_hotel
+			if = {
+				limit = {
+					is_gestalt = no
+				}
+				custom_tooltip = unlock_councilor_time_hotel_1
+			}
+			else = {
+				custom_tooltip = r_horror_matter_become_powerful
+			}
+		}
+	}
+	
+	option = {
+		name = time_hotel.8.b
+		owner = {
+			add_modifier = {
+				modifier = time_hotel_modifier_2
+				days = -1
+			}
+			add_research_option = tech_time_microsingularity
+			if = {
+				limit = {
+					is_gestalt = no
+				}
+				custom_tooltip = unlock_councilor_time_hotel_2
+			}
+			else = {
+				custom_tooltip = r_horror_matter_become_powerful
+			}
+		}
+	}
+}
+
+fleet_event = {
+	id = time_hotel.20
+	title = time_hotel.20.name
+	desc = time_hotel.20.desc
+	picture = GFX_evt_hostile_infiltration
+	show_sound = event_scanner
+
+	archaeology = yes
+
+	is_triggered_only = yes
+
+	immediate = {
+		set_global_flag = time_hotel_20_triggered
+		fromfrom = { set_site_progress_locked = yes }
+		leader = {
+			save_event_target_as = intemporal_scientist
+			# 不知不觉间不朽
+			add_trait = {
+				trait = leader_trait_intemporal
+				show_message = no
+			}
+		}
+	}
+
+	after = {
+		fromfrom = { set_site_progress_locked = no }
+	}
+
+	option = {
+		name = time_hotel.20.a
+	}
+	
+	option = {
+		name = time_hotel.20.b
+	}
+}

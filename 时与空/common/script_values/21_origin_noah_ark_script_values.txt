@@ -1,0 +1,38 @@
+noah_ark_blocker_value = {
+	base = 20
+	subtract = trigger:years_passed
+	min = 0
+}
+
+noah_ark_ship_level = {
+	base = 1
+	modifier = {
+		add = 1
+		ship = { is_arkship_tier_2 = yes }
+	}
+	modifier = {
+		add = 2
+		ship = { is_arkship_tier_3 = yes }
+	}
+	max = 3
+}
+
+noah_ark_ship_special_level = {
+	base = 0
+	modifier = {
+		add = 1
+		ship = { is_arkship_tier_2 = yes }
+	}
+	modifier = {
+		add = 2
+		ship = { is_arkship_tier_3 = yes }
+	}
+	max = 2
+}
+
+noah_ark_spinal_value = {
+	base = 0
+	add = colony.trigger:num_species
+	min = 0
+	max = 10
+}

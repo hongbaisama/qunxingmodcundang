@@ -1,0 +1,21 @@
+defined_text = {
+	name = GetTraitOriginUnderTheHaze
+	text = {
+		trigger = {
+			owner = { has_country_flag = under_the_haze_relic }
+		}
+		localization_key = leader_trait_origin_under_the_haze_desc_1
+	}
+	text = {
+		trigger = {
+			owner = { has_modifier = under_the_haze_modifier_end_2 }
+		}
+		localization_key = leader_trait_origin_under_the_haze_desc_2
+	}
+	text = {
+		trigger = {
+			owner = { has_modifier = under_the_haze_modifier_end_3 }
+		}
+		localization_key = leader_trait_origin_under_the_haze_desc_3
+	}
+}

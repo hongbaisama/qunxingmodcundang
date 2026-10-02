@@ -1,0 +1,44 @@
+
+namespace = time_framework
+
+# 检测前置
+event = {
+	id = time_framework.100
+	is_triggered_only = yes
+	hide_window = yes
+	
+	trigger = {
+	}
+	
+	immediate = {
+		every_playable_country = {
+			limit = {
+				is_ai = no
+			}
+			country_event = { id = time_framework.101 }
+		}
+	}
+}
+
+country_event = {
+	id = time_framework.101
+	title = time_framework.101.name
+	desc = time_framework.101.desc
+	picture = GFX_evt_worrying_signal
+	
+	is_triggered_only = yes
+	
+	trigger = {
+	}
+	
+	immediate = {
+	}
+	
+	option = {
+		name = time_framework.101.a
+	}
+	
+	option = {
+		name = time_framework.101.b
+	}
+}

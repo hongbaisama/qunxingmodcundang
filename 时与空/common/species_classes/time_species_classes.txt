@@ -1,0 +1,23 @@
+DIMENSION_TRAVELER_SPECIAL = {
+	archetype = BIOLOGICAL
+	
+	playable = { always = no }
+	randomized = no
+	gender = yes
+	use_climate_preference = no
+
+	graphical_culture = humanoid_01
+	move_pop_sound_effect = "moving_pop_confirmation"
+}
+
+DIMENSION_TRAVELER_NORMAL = {
+	archetype = BIOLOGICAL
+	
+	playable = { always = no }
+	randomized = no
+	gender = yes
+	use_climate_preference = no
+
+	graphical_culture = mammalian_01
+	move_pop_sound_effect = "moving_pop_confirmation"
+}

@@ -1,0 +1,5 @@
+# 暗物质维护费（20/30）
+triggered_self_modifier = {
+	leader_$CLASS$s_sr_dark_matter_upkeep_add = 0.4
+	mult = value:dimension_traveler_subclass_upkeep_value|CLASS|$CLASS$|
+}

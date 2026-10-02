@@ -1,0 +1,93 @@
+adeptus_mechanicus = {
+	category = adeptus_mechanicus
+	can_be_automated = no
+	
+	swappable_data = {
+		default = {
+			building_icon = building_organic_sanctuary
+			icon = bio_trophy
+		}
+	}
+	
+	tags = { unity }
+
+	possible_pre_triggers = {
+		is_sapient = yes
+		is_robotic = yes
+	}
+
+	possible = {
+		has_citizenship_type = { type = citizenship_adeptus_mechanicus country = owner }
+		has_adeptus_mechanicus_pop_category = yes
+		colony? = { NOT = { is_planet_class = pc_cosmogenesis_world } }
+	}
+
+	resources = {
+		category = planet_adeptus_mechanicus
+		produces = {
+			unity = 1
+		}
+	}
+
+	triggered_planet_modifier = {
+		potential = {
+			owner = {
+				has_origin = origin_adeptus_mechanicus
+				is_spiritualist = yes
+			}
+		}
+		pop_cat_ruler_bonus_workforce_mult = 0.01
+		pop_cat_specialist_bonus_workforce_mult = 0.01
+	}
+
+	weight = {
+		weight = 1
+		modifier = {
+			factor = 2
+			has_trait = trait_origin_adeptus_mechanicus
+		}
+	}
+	
+	inline_script = "jobs/automodding_priority_charisma"
+}
+
+adeptus_mechanicus_unemployment = {
+	category = adeptus_mechanicus_unemployment
+	count_as_available_for_ai = yes
+	can_be_automated = no
+	
+	swappable_data = {
+		default = {
+			building_icon = building_organic_sanctuary
+			icon = unemployment
+		}
+	}
+	
+	tags = { unity }
+
+	possible_pre_triggers = {
+		has_owner = yes
+		is_enslaved = no
+		is_being_purged = no
+		is_being_assimilated = no
+		is_sapient = yes
+		is_robotic = yes
+	}
+
+	possible = {
+		has_citizenship_type = { type = citizenship_adeptus_mechanicus country = owner }
+		colony? = { NOT = { is_planet_class = pc_cosmogenesis_world } }
+	}
+
+	resources = {
+		category = unemployment_resources
+	}
+	weight = {
+		weight = 0.1
+	}
+	is_capped_by_modifier = no
+	can_set_priority = no
+	contributes_to_diplo_weight = no
+
+	inline_script = "jobs/automodding_priority_charisma"
+}

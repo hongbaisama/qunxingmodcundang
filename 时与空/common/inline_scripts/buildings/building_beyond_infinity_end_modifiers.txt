@@ -1,0 +1,23 @@
+triggered_planet_modifier = {
+	potential = {
+		exists = owner
+		owner = {
+			is_gestalt = no
+			unlock_building_$TYPE$ = yes
+		}
+	}
+	job_$JOB$_add = @building_beyond_infinity_end_job_base_$LEVEL$
+	job_$JOB$_per_pop = @building_beyond_infinity_end_job_$LEVEL$
+}
+
+triggered_planet_modifier = {
+	potential = {
+		exists = owner
+		owner = {
+			is_gestalt = yes
+			unlock_building_$TYPE$ = yes
+		}
+	}
+	job_$JOB$_drone_add = @building_beyond_infinity_end_job_base_$LEVEL$
+	job_$JOB$_drone_per_pop = @building_beyond_infinity_end_job_$LEVEL$
+}

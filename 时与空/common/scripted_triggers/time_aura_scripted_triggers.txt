@@ -1,0 +1,74 @@
+has_warp_aura_level = {
+	has_warp_aura_level_$LEVEL$ = yes
+}
+
+has_warp_aura_level_1 = {
+	OR = {
+		has_component = WARP_AURA
+		has_component = SPECIAL_WARP_AURA
+		has_component = DIMENSIONAL_WARP_AURA
+	}
+}
+
+has_warp_aura_level_2 = {
+	OR = {
+		has_component = SPECIAL_WARP_AURA
+		has_component = DIMENSIONAL_WARP_AURA
+	}
+}
+
+has_warp_aura_level_3 = {
+	has_component = DIMENSIONAL_WARP_AURA
+}
+
+has_horror_aura_level = {
+	has_horror_aura_level_$LEVEL$ = yes
+}
+
+has_horror_aura_level_0 = {
+	OR = {
+		has_component = HORROR_AURA_0
+		has_component = HORROR_AURA_1
+		has_component = HORROR_AURA_2
+		has_component = HORROR_AURA_3
+		has_component = DIMENSIONAL_WARP_AURA
+	}
+}
+
+has_horror_aura_level_1 = {
+	OR = {
+		has_component = HORROR_AURA_1
+		has_component = HORROR_AURA_2
+		has_component = HORROR_AURA_3
+		has_component = DIMENSIONAL_WARP_AURA
+	}
+}
+
+has_horror_aura_level_2 = {
+	OR = {
+		has_component = HORROR_AURA_2
+		has_component = HORROR_AURA_3
+		has_component = DIMENSIONAL_WARP_AURA
+	}
+}
+
+has_horror_aura_level_3 = {
+	has_component = HORROR_AURA_3
+}
+
+# 设定上也包含在负相位面光环中，但出于游戏体验让负相位面光环总对终焉之魇生效
+has_horror_crisis_aura_level = {
+	has_horror_crisis_aura_level_$LEVEL$ = yes
+}
+
+has_horror_crisis_aura_level_1 = {
+	OR = {
+		has_component = Levo_AURA
+		has_component = Dextro_AURA
+		has_component = Destiny_AURA
+	}
+}
+
+has_horror_crisis_aura_level_2 = {
+	has_component = Destiny_AURA
+}

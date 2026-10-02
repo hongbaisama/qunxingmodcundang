@@ -1,0 +1,23 @@
+tradition_origin_pure_brain = {
+	tree_template = "tree_11_11_21"
+	adoption_bonus = "tr_origin_pure_brain_adopt"
+	finish_bonus = "tr_origin_pure_brain_finish"
+	traditions = {
+		"tr_origin_pure_brain_growth"
+		"tr_origin_pure_brain_regulatory"
+		"tr_origin_pure_brain_cognitive"
+		"tr_origin_pure_brain_legion"
+		"tr_origin_pure_brain_ruler"
+	}
+
+	potential = {
+		OR = {
+			has_origin = origin_pure_brain
+			has_origin = origin_pure_brain_true
+		}
+	}
+
+	ai_weight = {
+		factor = 1000
+	}
+}

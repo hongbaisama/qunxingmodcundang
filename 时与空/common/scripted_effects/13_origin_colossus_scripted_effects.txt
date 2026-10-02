@@ -1,0 +1,23 @@
+abort_all_origin_colossus_special_project = {
+	abort_special_project = {
+		type = ORIGIN_COLOSSUS_PROJECT_0
+	}
+	abort_special_project = {
+		type = ORIGIN_COLOSSUS_PROJECT_1
+	}
+	abort_special_project = {
+		type = ORIGIN_COLOSSUS_PROJECT_2
+	}
+	abort_special_project = {
+		type = ORIGIN_COLOSSUS_PROJECT_3
+	}
+	abort_special_project = {
+		type = ORIGIN_COLOSSUS_PROJECT_4
+	}
+	abort_special_project = {
+		type = ORIGIN_COLOSSUS_PROJECT_5
+	}
+	abort_special_project = {
+		type = ORIGIN_COLOSSUS_PROJECT_MIDDLE
+	}
+}

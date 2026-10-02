@@ -1,0 +1,15 @@
+# 人口组
+make_reassembler = {
+	modify_species = {
+		species = this
+		add_trait = trait_reassembler
+	}
+}
+
+# 人口组
+remove_reassembler = {
+	modify_species = {
+		species = this
+		remove_trait = trait_reassembler
+	}
+}

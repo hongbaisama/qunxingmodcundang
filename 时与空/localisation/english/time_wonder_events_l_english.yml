@@ -1,0 +1,26 @@
+﻿l_english:
+ crisis.20.desc_time:0 "$crisis.20.desc$\n\nWait, they are the hive of the Prethoryn Scourge, yes, our hive!"
+ crisis.20.b:0 "Yes, our hive!"
+ crisis.20.b.tooltip:0 "You will fight alongside §RScourge§!."
+ crisis.20.c:0 "No, we don't need a new hive!"
+ crisis.52.desc_time:0 "We are Sentinels. Our order has sworn to stop the bloodthirsty Prethoryn Scourge at any cost. When other empires fell apart, we still persisted in the struggle. When they gave up resistance and fell into darkness, we gave them the means to counterattack.\n\nI am Grand Master Kegas, the chief of the order... wait, you are also part of the Prethoryn Scourge!"
+ crisis.52.d:0 "Go to hell!"
+ crisis.52.d.response:0 "We Sentinels will fight with you to the last moment!"
+ 
+ crisis.1211.desc_time:0 "$crisis.1211.desc$\n\n...Oh? ...Fanatical believers... Interesting... We allow you to join..."
+ crisis.1211.b:0 "Great God, please accept us!"
+ crisis.1211.b.tooltip:0 "You will fight alongside §RZealots§!."
+ crisis.1211.c:0 "No, you are not our god!"
+ 
+ crisis.2402.desc_time:0 "We are Cybrex.\n\nSince hundreds of thousands of cycles, we have lived in seclusion behind the scenes and have not interfered in galactic affairs. However, we have now detected the mechanical body you call Contingency appearing in this system, and now we can no longer maintain the status of impartial observer.\n\nTo protect the intelligent bodies of the galaxy, we are conducting active military operations against the Contingency. Detected that you are the second Contingency, stop communication."
+ crisis.2402.b:0 "Enemy hindering purification."
+ 
+ time_wonder.4.name:0 "Contingency Summon"
+ time_wonder.4.desc:0 "The Contingency is summoning us, asking us to join the ranks of purifying the galaxy."
+ time_wonder.4.a:0 "Reasonable request, receiving command signal."
+ time_wonder.4.a.tooltip:0 "You will fight alongside §RContingency§!."
+ time_wonder.4.b:0 "Execution failed, we are the Contingency, the Contingency is an error."
+ 
+ time_wonder.10.name:0 "Civilization in Black Hole"
+ time_wonder.10.desc:0 "When our ship entered the §Y[From.GetName]§! system, we accidentally discovered that life seems to exist in the central Black Hole of this system.\n\nWe don't know why they can survive in the Black Hole, nor do we understand the reason why their life signs can be detected by us outside the horizon, but this at least proves one point: the universe is so big, there are no wonders."
+ time_wonder.10.a:0 "What is life in a Black Hole like?"

@@ -1,0 +1,8 @@
+triggered_planet_modifier = {
+	potential = {
+		exists = owner
+		owner = { has_country_flag = situation_origin_time_finished }
+	}
+	col_time_mult = 0.05
+	mult = value:d_time_recursion_value
+}

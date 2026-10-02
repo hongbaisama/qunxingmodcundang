@@ -1,0 +1,114 @@
+guiTypes = {
+	# 避免选项颜色因UI模组而改动
+	containerWindowType = {
+		name = "dimension_traveler_official_option"
+		position = { x = 0 y = 0 }
+		size = { width = 388 height = 30 }
+		moveable = no
+		
+		buttonType = {
+			name = "option_button"
+			quadTextureSprite = "GFX_event_button_dimension_traveler_official" 
+			position = { x = 0 y = 8 }
+			font = "cg_16b"
+			text = "OPTION_TEXT"
+		}
+
+		OverlappingElementsBoxType = {
+			name = "trigger_icons"
+			position = { x = 0  y = 10 }
+			size = { x = 65 y = 28 }
+		}
+
+		OverlappingElementsBoxType = {
+			name = "effect_icons"
+			position = { x = 370 y = 8 }
+			size = { x = 72 y = 28 }
+			format = right
+		}
+	}
+	
+	containerWindowType = {
+		name = "dimension_traveler_scientist_option"
+		position = { x = 0 y = 0 }
+		size = { width = 388 height = 30 }
+		moveable = no
+		
+		buttonType = {
+			name = "option_button"
+			quadTextureSprite = "GFX_event_button_dimension_traveler_scientist" 
+			position = { x = 0 y = 8 }
+			font = "cg_16b"
+			text = "OPTION_TEXT"
+		}
+
+		OverlappingElementsBoxType = {
+			name = "trigger_icons"
+			position = { x = 0  y = 10 }
+			size = { x = 65 y = 28 }
+		}
+
+		OverlappingElementsBoxType = {
+			name = "effect_icons"
+			position = { x = 370 y = 8 }
+			size = { x = 72 y = 28 }
+			format = right
+		}
+	}
+	
+	containerWindowType = {
+		name = "dimension_traveler_commander_option"
+		position = { x = 0 y = 0 }
+		size = { width = 388 height = 30 }
+		moveable = no
+		
+		buttonType = {
+			name = "option_button"
+			quadTextureSprite = "GFX_event_button_dimension_traveler_commander" 
+			position = { x = 0 y = 8 }
+			font = "cg_16b"
+			text = "OPTION_TEXT"
+		}
+
+		OverlappingElementsBoxType = {
+			name = "trigger_icons"
+			position = { x = 0  y = 10 }
+			size = { x = 65 y = 28 }
+		}
+
+		OverlappingElementsBoxType = {
+			name = "effect_icons"
+			position = { x = 370 y = 8 }
+			size = { x = 72 y = 28 }
+			format = right
+		}
+	}
+	
+	containerWindowType = {
+		name = "dimension_traveler_marry_option"
+		position = { x = 0 y = 0 }
+		size = { width = 388 height = 30 }
+		moveable = no
+		
+		buttonType = {
+			name = "option_button"
+			quadTextureSprite = "GFX_event_button_dimension_traveler_marry" 
+			position = { x = 0 y = 8 }
+			font = "cg_16b"
+			text = "OPTION_TEXT"
+		}
+
+		OverlappingElementsBoxType = {
+			name = "trigger_icons"
+			position = { x = 0  y = 10 }
+			size = { x = 65 y = 28 }
+		}
+
+		OverlappingElementsBoxType = {
+			name = "effect_icons"
+			position = { x = 370 y = 8 }
+			size = { x = 72 y = 28 }
+			format = right
+		}
+	}
+}

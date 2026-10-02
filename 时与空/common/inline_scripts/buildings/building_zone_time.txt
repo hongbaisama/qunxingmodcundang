@@ -1,0 +1,61 @@
+base_buildtime = 180
+planet_limit = 1
+
+category = $CATEGORY$
+
+building_sets = {
+	$ZONE$
+}
+
+potential = {
+	if = {
+		limit = {
+			exists = owner
+			owner = { unlock_pc_time_structures = yes }
+			is_origin_time_planet_class = yes
+		}
+		num_zones = {
+			type = $ZONE$
+			value > 0
+		}
+	}
+	else = {
+		always = no
+	}
+}
+
+triggered_planet_modifier = {
+	time_researcher_$RESOURCE$_produces_mult = @building_zone_time_base_produce
+	mult = value:district_time_level_value
+}
+
+resources = {
+	category = planet_buildings
+	cost = {
+		energy = 250
+		minerals = 250
+		food = 250
+		consumer_goods = 125
+		alloys = 125
+		sr_dark_matter = 12.5
+	}
+	upkeep = {
+		$UPKEEP$ = 1
+	}
+}
+
+triggered_desc = {
+	text = time_researcher_$RESOURCE$_modifier_loc
+}
+
+prerequisites = {
+	$TECH$
+}
+
+show_tech_unlock_if = {
+	unlock_pc_time_structures = yes
+}
+
+ai_resource_production = {
+	$RESOURCE$ = 20
+}

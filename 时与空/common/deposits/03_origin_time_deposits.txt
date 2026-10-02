@@ -1,0 +1,773 @@
+################################################################
+# 障碍
+################################################################
+
+@blocker_high = 10
+@blocker_low = 5
+@ranger_small_production = 0.5
+@ranger_large_production = 1
+@evopred_large_blocker_progress = 40
+@evopred_small_blocker_progress = 20
+
+d_time_blocker_0 = {
+	time = 540
+
+	is_for_colonizable = yes
+	category = deposit_cat_blockers_natural
+	
+	use_weights_for_blocker_swap_types = no
+	
+	can_be_cleared = {
+		custom_tooltip = {
+			fail_text = can_not_clear_this_time_blocker
+			always = no
+		}
+	}
+	
+	blocker_swap_types = {
+		d_time_blocker_1
+	}
+
+	resources = {
+		category = deposit_blockers_natural
+		cost = {
+			energy = 500
+			minerals = 500
+			food = 500
+			consumer_goods = 250
+			alloys = 250
+			sr_dark_matter = 25
+		}
+	}
+
+	potential = {
+		always = no
+	}
+
+	planet_modifier = {
+		planet_max_districts_add = -3
+		time_researcher_produces_mult = -0.05
+		district_time_usage_cap_mult = -0.05
+	}
+	
+	triggered_planet_modifier = {
+		potential = {
+			biologist_is_ranger_trigger = yes
+		}
+		planet_biologists_minerals_produces_add = @ranger_large_production
+	}
+
+	inline_script = deposits/environmental_architects_natural_blocker_modifier
+	
+	on_cleared = {
+		custom_tooltip = d_time_blocker_0_tooltip
+		hidden_effect = {
+			d_time_blocker_0_cleared_effect = yes
+		}
+	}
+
+	drop_weight = {
+		weight = 0
+	}
+
+	ai_weight = {
+		weight = 0
+	}
+}
+
+d_time_blocker_1 = {
+	time = 540
+
+	is_for_colonizable = yes
+	category = deposit_cat_blockers_natural
+	
+	icon = d_buried_lithoids
+	
+	use_weights_for_blocker_swap_types = no
+	
+	blocker_swap_types = {
+		d_time_energy
+		d_time_minerals
+		d_time_food
+		d_time_alloys
+		d_time_consumer_goods
+		d_time_physics_research
+		d_time_society_research
+		d_time_engineering_research
+		d_time_unity
+	}
+
+	resources = {
+		category = deposit_blockers_natural
+		cost = {
+			energy = 500
+			minerals = 500
+			food = 500
+			consumer_goods = 250
+			alloys = 250
+			sr_dark_matter = 25
+		}
+	}
+
+	potential = {
+		always = no
+	}
+
+	planet_modifier = {
+		planet_max_districts_add = -3
+		time_researcher_produces_mult = -0.05
+		district_time_usage_cap_mult = -0.05
+	}
+	
+	triggered_planet_modifier = {
+		potential = {
+			biologist_is_ranger_trigger = yes
+		}
+		planet_biologists_minerals_produces_add = @ranger_large_production
+	}
+
+	inline_script = deposits/environmental_architects_natural_blocker_modifier
+	
+	on_cleared = {
+	}
+
+	drop_weight = {
+		weight = 0
+	}
+
+	inline_script = deposits/ai_weight_natural_blocker
+	
+	prerequisites = { "tech_time_blocker_1" }
+}
+
+d_time_blocker_2 = {
+	time = 1080
+
+	is_for_colonizable = yes
+	category = deposit_cat_rare_blocker
+
+	icon = d_quarantine_zone
+	
+	custom_tooltip = d_time_effect
+	custom_tooltip_short = d_time_effect_short
+
+	use_weights_for_blocker_swap_types = no
+	
+	can_be_cleared = {
+		custom_tooltip = {
+			fail_text = can_not_clear_this_time_blocker
+			colony = { has_carrier_flag = can_clear_d_time_blocker_2 }
+		}
+	}
+
+	blocker_swap_types = {
+		d_time_blocker_3
+	}
+
+	resources = {
+		category = deposit_blockers
+		cost = {
+			energy = 1000
+			minerals = 1000
+			food = 1000
+			consumer_goods = 500
+			alloys = 500
+			sr_dark_matter = 50
+			influence = 25
+		}
+	}
+
+	potential = {
+		always = no
+	}
+
+	planet_modifier = {
+		planet_max_districts_add = -6
+		time_researcher_produces_mult = -0.2
+		district_time_usage_cap_mult = -0.2
+	}
+	
+	on_cleared = {
+		hidden_effect = {
+			event_target:situation_pc_time = {
+				situation_event = { id = time.138 }
+			}
+		}
+	}
+
+	drop_weight = {
+		weight = 0
+	}
+
+	ai_weight = {
+		weight = 1
+	}
+	
+	prerequisites = { "tech_time_blocker_2" }
+}
+
+d_time_blocker_3 = {
+	time = 1080
+
+	is_for_colonizable = yes
+	category = deposit_cat_blockers
+
+	icon = d_mining_tunnels
+	
+	custom_tooltip = d_time_effect
+	custom_tooltip_short = d_time_effect_short
+
+	use_weights_for_blocker_swap_types = no
+	
+	can_be_cleared = {
+		custom_tooltip = {
+			fail_text = can_not_clear_this_time_blocker
+			colony = { has_carrier_flag = can_clear_d_time_blocker_3 }
+		}
+	}
+
+	blocker_swap_types = {
+		d_time
+	}
+
+	resources = {
+		category = deposit_blockers
+		cost = {
+			energy = 2000
+			minerals = 2000
+			food = 2000
+			consumer_goods = 1000
+			alloys = 1000
+			sr_dark_matter = 100
+			influence = 50
+		}
+	}
+
+	potential = {
+		always = no
+	}
+
+	planet_modifier = {
+		planet_max_districts_add = -3
+		time_researcher_produces_mult = -0.1
+		district_time_usage_cap_mult = -0.1
+	}
+	
+	on_cleared = {
+		make_district_time_level_up = yes
+		hidden_effect = {
+			carrier_event = { id = time.170 }
+		}
+	}
+
+	drop_weight = {
+		weight = 0
+	}
+
+	ai_weight = {
+		weight = 1
+	}
+	
+	prerequisites = { "tech_time_blocker_3" }
+}
+
+################################################################
+# 核心地块
+################################################################
+
+d_time = {
+	is_for_colonizable = yes
+	category = deposit_cat_rare
+	
+	icon = d_station_reactor
+	
+	custom_tooltip = d_time_effect
+	custom_tooltip_short = d_time_effect_short
+	
+	planet_modifier = {
+		district_time_usage_cap_mult = 0.25
+		col_time_mult = 0.25
+	}
+	
+	inline_script = {
+		script = jobs/origin_time/job_black_hole_researcher_per_pop
+		COUNT = @time_special_deposits_job_per_pop
+	}
+	
+	inline_script = {
+		script = deposits/d_time_recursion_modifiers
+	}
+
+	potential = {
+		always = no
+	}
+	
+	drop_weight = {
+		weight = 0
+	}
+}
+
+d_endless_time = {
+	is_for_colonizable = yes
+	
+	category = deposit_cat_rare
+
+	icon = d_surreal_visions
+	
+	custom_tooltip = d_endless_time_effect
+	custom_tooltip_short = d_endless_time_effect_short
+	
+	planet_modifier = {
+		district_endless_time_max_add = 1
+	}
+	
+	inline_script = {
+		script = deposits/d_time_recursion_modifiers
+	}
+	
+	potential = {
+		always = no
+	}
+	
+	drop_weight = {
+		weight = 0
+	}
+}
+
+d_brief = {
+	is_for_colonizable = yes
+	category = deposit_cat_rare
+	
+	icon = d_progenitor_empty
+	
+	custom_tooltip = d_time_effect
+	custom_tooltip_short = d_time_effect_short
+	
+	planet_modifier = {
+		planet_max_districts_add = 17
+		time_researcher_produces_mult = 0.25
+	}
+	
+	triggered_planet_modifier = {
+		potential = {
+			has_carrier_flag = time_hole_pets_end
+		}
+		planet_max_districts_add = 17
+		district_time_usage_cap_mult = 0.25
+		col_time_mult = 0.25
+	}
+	
+	inline_script = {
+		script = jobs/origin_time/job_black_hole_researcher_per_pop
+		COUNT = @time_special_deposits_job_per_pop
+	}
+	
+	inline_script = {
+		script = deposits/d_time_recursion_modifiers
+	}
+
+	potential = {
+		always = no
+	}
+	
+	drop_weight = {
+		weight = 0
+	}
+}
+
+d_time_beyond_infinity = {
+	is_for_colonizable = yes
+	category = deposit_cat_rare
+	
+	icon = d_akx_dark_matter
+	
+	custom_tooltip = d_time_effect
+	custom_tooltip_short = d_time_effect_short
+	
+	country_modifier = {
+		time_researcher_max_weight = 4
+	}
+	
+	inline_script = {
+		script = jobs/origin_time/job_black_hole_researcher_per_pop
+		COUNT = @time_special_deposits_job_per_pop
+	}
+	
+	inline_script = {
+		script = deposits/d_time_recursion_modifiers
+	}
+
+	potential = {
+		always = no
+	}
+	
+	drop_weight = {
+		weight = 0
+	}
+}
+
+d_time_recursion = {
+	is_for_colonizable = yes
+	category = deposit_cat_rare
+	
+	icon = d_buried_lithoids
+	
+	inline_script = {
+		script = jobs/origin_time/job_black_hole_researcher_per_pop
+		COUNT = @time_special_deposits_job_per_pop
+	}
+	
+	inline_script = {
+		script = deposits/d_time_recursion_modifiers
+	}
+
+	potential = {
+		always = no
+	}
+	
+	drop_weight = {
+		weight = 0
+	}
+}
+
+################################################################
+# 未来宫殿
+################################################################
+
+d_time_resources = {
+	is_for_colonizable = yes
+	category = deposit_cat_rare
+	
+	resources = {
+		category = planet_buildings
+		produces = {
+			volatile_motes = 1
+			rare_crystals = 1
+			exotic_gases = 1
+			mult = value:num_time_rare_resources_value
+		}
+		produces = {
+			trigger = {
+				colony = {
+					is_planet_class = pc_endless_time
+				}
+			}
+			nanites = 1
+			sr_zro = 1
+			sr_dark_matter = 1
+			sr_living_metal = 1
+			mult = value:num_time_rare_resources_value
+		}
+		
+		inline_script = {
+			script = deposits/d_time_resources_resources
+			LEVEL = 1
+		}
+	}
+	
+	triggered_planet_modifier = {
+		planet_amenities_add = 100
+		planet_housing_add = 100
+		mult = value:num_time_rare_resources_value
+	}
+	
+	inline_script = {
+		script = deposits/d_time_resources_modifiers
+		LEVEL = 1
+	}
+	
+	potential = {
+		always = no
+	}
+	
+	drop_weight = {
+		weight = 0
+	}
+}
+
+d_time_resources_end = {
+	is_for_colonizable = yes
+	category = deposit_cat_rare
+	
+	icon = d_time_resources
+	
+	resources = {
+		category = planet_buildings
+		inline_script = {
+			script = deposits/d_time_resources_resources
+			LEVEL = 2
+		}
+		
+		upkeep = {
+			volatile_motes = 10
+			rare_crystals = 10
+			exotic_gases = 10
+		}
+	}
+	
+	triggered_planet_modifier = {
+		planet_amenities_add = 200
+		planet_housing_add = 200
+		mult = value:num_time_rare_resources_value
+	}
+	
+	inline_script = {
+		script = deposits/d_time_resources_modifiers
+		LEVEL = 2
+	}
+	
+	potential = {
+		always = no
+	}
+	
+	drop_weight = {
+		weight = 0
+	}
+}
+
+################################################################
+# 资源地块
+################################################################
+
+d_time_energy = {
+	is_for_colonizable = yes
+	
+	category = deposit_cat_energy
+	
+	triggered_planet_modifier = {
+		time_researcher_energy_produces_mult = @pc_time_deposits_modifier
+		mult = value:num_time_modifier|MODIFIER|d_time_energy_mult|
+	}
+	
+	potential = {
+		always = no
+	}
+	
+	drop_weight = {
+		weight = 10
+		modifier = {
+			factor = 0
+			is_origin_time_planet_class = no
+		}
+		modifier = {
+			factor = 0
+			has_deposit = d_time_energy
+		}
+	}
+}
+
+d_time_minerals = {
+	is_for_colonizable = yes
+	
+	category = deposit_cat_minerals
+	
+	triggered_planet_modifier = {
+		time_researcher_minerals_produces_mult = @pc_time_deposits_modifier
+		mult = value:num_time_modifier|MODIFIER|d_time_minerals_mult|
+	}
+	
+	potential = {
+		always = no
+	}
+	
+	drop_weight = {
+		weight = 10
+		modifier = {
+			factor = 0
+			is_origin_time_planet_class = no
+		}
+		modifier = {
+			factor = 0
+			has_deposit = d_time_minerals
+		}
+	}
+}
+
+d_time_food = {
+	is_for_colonizable = yes
+	
+	category = deposit_cat_food
+	
+	triggered_planet_modifier = {
+		time_researcher_food_produces_mult = @pc_time_deposits_modifier
+		mult = value:num_time_modifier|MODIFIER|d_time_food_mult|
+	}
+	
+	potential = {
+		always = no
+	}
+	
+	drop_weight = {
+		weight = 10
+		modifier = {
+			factor = 0
+			is_origin_time_planet_class = no
+		}
+		modifier = {
+			factor = 0
+			has_deposit = d_time_food
+		}
+	}
+}
+
+d_time_alloys = {
+	is_for_colonizable = yes
+	
+	category = deposit_cat_minerals
+	
+	triggered_planet_modifier = {
+		time_researcher_alloys_produces_mult = @pc_time_deposits_modifier
+		mult = value:num_time_modifier|MODIFIER|d_time_alloys_mult|
+	}
+	
+	potential = {
+		always = no
+	}
+	
+	drop_weight = {
+		weight = 10
+		modifier = {
+			factor = 0
+			is_origin_time_planet_class = no
+		}
+		modifier = {
+			factor = 0
+			has_deposit = d_time_alloys
+		}
+	}
+}
+
+d_time_consumer_goods = {
+	is_for_colonizable = yes
+	
+	category = deposit_cat_minerals
+	
+	triggered_planet_modifier = {
+		time_researcher_consumer_goods_produces_mult = @pc_time_deposits_modifier
+		mult = value:num_time_modifier|MODIFIER|d_time_consumer_goods_mult|
+	}
+	
+	potential = {
+		always = no
+	}
+	
+	drop_weight = {
+		weight = 10
+		modifier = {
+			factor = 0
+			is_origin_time_planet_class = no
+		}
+		modifier = {
+			factor = 0
+			has_deposit = d_time_consumer_goods
+		}
+	}
+}
+
+d_time_physics_research = {
+	is_for_colonizable = yes
+	
+	category = deposit_cat_energy
+	
+	triggered_planet_modifier = {
+		time_researcher_physics_research_produces_mult = @pc_time_deposits_modifier
+		mult = value:num_time_modifier|MODIFIER|d_time_physics_research_mult|
+	}
+	
+	potential = {
+		always = no
+	}
+	
+	drop_weight = {
+		weight = 10
+		modifier = {
+			factor = 0
+			is_origin_time_planet_class = no
+		}
+		modifier = {
+			factor = 0
+			has_deposit = d_time_physics_research
+		}
+	}
+}
+
+d_time_society_research = {
+	is_for_colonizable = yes
+	
+	category = deposit_cat_food
+	
+	triggered_planet_modifier = {
+		time_researcher_society_research_produces_mult = @pc_time_deposits_modifier
+		mult = value:num_time_modifier|MODIFIER|d_time_society_research_mult|
+	}
+	
+	potential = {
+		always = no
+	}
+	
+	drop_weight = {
+		weight = 10
+		modifier = {
+			factor = 0
+			is_origin_time_planet_class = no
+		}
+		modifier = {
+			factor = 0
+			has_deposit = d_time_society_research
+		}
+	}
+}
+
+d_time_engineering_research = {
+	is_for_colonizable = yes
+	
+	category = deposit_cat_minerals
+	
+	triggered_planet_modifier = {
+		time_researcher_engineering_research_produces_mult = @pc_time_deposits_modifier
+		mult = value:num_time_modifier|MODIFIER|d_time_engineering_research_mult|
+	}
+	
+	potential = {
+		always = no
+	}
+	
+	drop_weight = {
+		weight = 10
+		modifier = {
+			factor = 0
+			is_origin_time_planet_class = no
+		}
+		modifier = {
+			factor = 0
+			has_deposit = d_time_engineering_research
+		}
+	}
+}
+
+d_time_unity = {
+	is_for_colonizable = yes
+	
+	category = deposit_cat_food
+	
+	triggered_planet_modifier = {
+		time_researcher_unity_produces_mult = @pc_time_deposits_modifier
+		mult = value:num_time_modifier|MODIFIER|d_time_unity_mult|
+	}
+	
+	potential = {
+		always = no
+	}
+	
+	drop_weight = {
+		weight = 10
+		modifier = {
+			factor = 0
+			is_origin_time_planet_class = no
+		}
+		modifier = {
+			factor = 0
+			has_deposit = d_time_unity
+		}
+	}
+}

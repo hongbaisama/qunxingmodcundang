@@ -1,0 +1,34 @@
+species_potential_add = {
+	hidden_trigger = { exists = from }
+	from = { has_technology = tech_time_trait }
+}
+species_possible_add = {
+	hidden_trigger = { exists = from }
+	custom_tooltip = {
+		fail_text = "tech_time_trait_organic_requires_notofthisworld"
+		has_trait_notofthisworld = yes
+	}
+	from = { can_add_tech_time_trait_organic = yes }
+}
+species_possible_merge_add = {
+	hidden_trigger = { exists = from }
+	custom_tooltip = {
+		fail_text = "can_not_add_tech_time_trait_organic"
+		from = { has_technology = tech_time_trait }
+	}
+	from = { can_add_tech_time_trait_organic = yes }
+}
+species_possible_remove = {
+	hidden_trigger = { exists = from }
+	custom_tooltip = {
+		fail_text = "can_not_remove_tech_time_trait_organic"
+		from = { has_technology = tech_horror_focus_2 }
+	}
+}
+species_possible_merge_remove = {
+	hidden_trigger = { exists = from }
+	custom_tooltip = {
+		fail_text = "can_not_remove_tech_time_trait_organic"
+		from = { has_technology = tech_horror_focus_2 }
+	}
+}

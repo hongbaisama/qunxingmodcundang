@@ -1,0 +1,36 @@
+# 用于被其它模组覆盖的script trigger
+has_wg_special_authority = {
+	always = no
+}
+
+is_special_affection_leader = {
+	always = no
+}
+
+has_wg_and_uf_special_authority = {
+	always = no
+}
+
+AOW_trgr_MEGA_is_dyson_sphere = {
+	always = no
+}
+
+AOW_trgr_PLNT_is_starcage_world = {
+	always = no
+}
+
+is_vaild_gray_owner = {
+	always = no
+}
+
+can_active_psionic_workforce = {
+	$SCOPE$ = { always = no }
+}
+
+can_active_virtual_workforce = {
+	$SCOPE$ = { always = no }
+}
+
+ag_is_ancient_system = {
+	always = no
+}

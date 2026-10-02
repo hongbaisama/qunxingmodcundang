@@ -1,0 +1,317 @@
+ship_section_template = {
+	key = "BEYOND_INFINITY_MILITARY_STATION_SECTION_1"
+	ship_size = military_station_small
+	ship_size = military_station_medium
+	fits_on_slot = "north"
+	fits_on_slot = "west"
+	fits_on_slot = "east"
+	fits_on_slot = "south"
+	should_draw_components = yes
+	entity = "military_station_section_heavy_entity"
+	icon = "GFX_ship_part_core_mid"
+	ai_tags = { artillery }
+	
+	prerequisites = { tech_beyond_infinity_military_station }
+	
+	modifier = {
+		ship_hull_mult = 0.15
+	}
+	
+	ship_modifier = {
+		ship_accuracy_mult = 0.1
+		ship_weapon_range_mult = 0.1
+	}
+
+	component_slot = {
+ 		name = "EXTRA_LARGE_01"
+ 		template = "extra_large_turret"
+ 		locatorname = "large_gun_01"
+ 	}
+	
+	component_slot = {
+ 		name = "LARGE_GUN_01"
+ 		template = "large_turret"
+ 		locatorname = "large_gun_01"
+ 	}
+
+ 	component_slot = {
+ 		name = "LARGE_GUN_02"
+ 		template = "large_turret"
+ 		locatorname = "large_gun_01"
+ 	}
+	
+	large_utility_slots = 3
+	aux_utility_slots = 2
+
+	ai_weight = {
+		factor = 100
+	}
+
+	resources = {
+		category = ship_sections
+		cost = {
+			trigger = {
+				from = {
+					country_uses_bio_ships = no
+				}
+			}
+			alloys = @section_cost_beyond_infinity_military_station
+		}
+		cost = {
+			trigger = {
+				from = {
+					country_uses_bio_ships = yes
+				}
+			}
+			alloys = @section_cost_beyond_infinity_military_station
+			mult = 0.5
+		}
+		cost = {
+			trigger = {
+				from = {
+					country_uses_bio_ships = yes
+				}
+			}
+			food = @section_cost_beyond_infinity_military_station
+			mult = @halved_alloy_to_food_cost_ratio
+		}
+	}
+}
+
+ship_section_template = {
+	key = "BEYOND_INFINITY_MILITARY_STATION_SECTION_2"
+	ship_size = military_station_small
+	ship_size = military_station_medium
+	fits_on_slot = "north"
+	fits_on_slot = "west"
+	fits_on_slot = "east"
+	fits_on_slot = "south"
+	should_draw_components = yes
+	entity = "military_station_section_medium_entity"
+	icon = "GFX_ship_part_core_mid"
+	ai_tags = { carrier explosive energy_torpedoes }
+	
+	prerequisites = { tech_beyond_infinity_military_station }
+	
+	modifier = {
+		ship_hull_mult = 0.15
+	}
+	
+	ship_modifier = {
+		ship_tracking_mult = 0.1
+		strike_craft_regeneration_mult = 0.1
+	}
+	
+	component_slot = {
+ 		name = "STRIKE_CRAFT_01"
+ 		template = "large_strike_craft"
+ 		locatorname = "medium_gun_01"
+ 	}
+	
+	component_slot = {
+ 		name = "STRIKE_CRAFT_02"
+ 		template = "large_strike_craft"
+ 		locatorname = "medium_gun_02"
+ 	}
+	
+	component_slot = {
+		name = "TORPEDO_01"
+		template = "medium_missile_turret"
+		locatorname = "medium_gun_01"
+	}
+
+	component_slot = {
+		name = "TORPEDO_02"
+		template = "medium_missile_turret"
+		locatorname = "medium_gun_02"
+	}
+	
+	component_slot = {
+		name = "TORPEDO_03"
+		template = "medium_missile_turret"
+		locatorname = "medium_gun_01"
+	}
+
+	component_slot = {
+		name = "TORPEDO_04"
+		template = "medium_missile_turret"
+		locatorname = "medium_gun_02"
+	}
+	
+	large_utility_slots = 3
+	aux_utility_slots = 2
+
+	ai_weight = {
+		factor = 100
+	}
+
+	resources = {
+		category = ship_sections
+		cost = {
+			trigger = {
+				from = {
+					country_uses_bio_ships = no
+				}
+			}
+			alloys = @section_cost_beyond_infinity_military_station
+		}
+		cost = {
+			trigger = {
+				from = {
+					country_uses_bio_ships = yes
+				}
+			}
+			alloys = @section_cost_beyond_infinity_military_station
+			mult = 0.5
+		}
+		cost = {
+			trigger = {
+				from = {
+					country_uses_bio_ships = yes
+				}
+			}
+			food = @section_cost_beyond_infinity_military_station
+			mult = @halved_alloy_to_food_cost_ratio
+		}
+	}
+}
+
+ship_section_template = {
+	key = "BEYOND_INFINITY_MILITARY_STATION_SECTION_3"
+	ship_size = military_station_small
+	ship_size = military_station_medium
+	fits_on_slot = "north"
+	fits_on_slot = "west"
+	fits_on_slot = "east"
+	fits_on_slot = "south"
+	should_draw_components = yes
+	entity = "military_station_section_light_entity"
+	icon = "GFX_ship_part_core_mid"
+	ai_tags = { gunship screen }
+	
+	prerequisites = { tech_beyond_infinity_military_station }
+	
+	modifier = {
+		ship_hull_mult = 0.15
+	}
+	
+	ship_modifier = {
+		ship_sensor_range_add = 1
+		ship_hyperlane_range_add = 1
+	}
+	
+	component_slot = {
+ 		name = "MEDIUM_GUN_01"
+ 		template = "medium_turret"
+ 		locatorname = "small_gun_01"
+ 	}
+
+ 	component_slot = {
+ 		name = "MEDIUM_GUN_02"
+ 		template = "medium_turret"
+ 		locatorname = "small_gun_02"
+ 	}
+	
+	component_slot = {
+ 		name = "MEDIUM_GUN_03"
+ 		template = "medium_turret"
+ 		locatorname = "small_gun_03"
+		is_side_slot = no
+ 	}
+
+ 	component_slot = {
+ 		name = "MEDIUM_GUN_04"
+ 		template = "medium_turret"
+ 		locatorname = "small_gun_04"
+		is_side_slot = no
+ 	}
+
+ 	component_slot = {
+ 		name = "SMALL_GUN_01"
+ 		template = "small_turret"
+ 		locatorname = "small_gun_01"
+ 	}
+
+ 	component_slot = {
+ 		name = "SMALL_GUN_02"
+ 		template = "small_turret"
+ 		locatorname = "small_gun_02"
+ 	}
+
+ 	component_slot = {
+ 		name = "SMALL_GUN_03"
+ 		template = "small_turret"
+ 		locatorname = "small_gun_03"
+		is_side_slot = no
+ 	}
+
+ 	component_slot = {
+ 		name = "SMALL_GUN_04"
+ 		template = "small_turret"
+ 		locatorname = "small_gun_04"
+		is_side_slot = no
+ 	}
+
+ 	component_slot = {
+ 		name = "POINT_DEFENCE_01"
+ 		template = "point_defence_turret"
+ 		locatorname = "small_gun_01"
+ 	}
+
+ 	component_slot = {
+ 		name = "POINT_DEFENCE_02"
+ 		template = "point_defence_turret"
+ 		locatorname = "small_gun_02"
+ 	}
+
+ 	component_slot = {
+ 		name = "POINT_DEFENCE_03"
+ 		template = "point_defence_turret"
+ 		locatorname = "small_gun_03"
+		is_side_slot = no
+ 	}
+
+ 	component_slot = {
+ 		name = "POINT_DEFENCE_04"
+ 		template = "point_defence_turret"
+ 		locatorname = "small_gun_04"
+		is_side_slot = no
+ 	}
+	
+	large_utility_slots = 3
+	aux_utility_slots = 2
+
+	ai_weight = {
+		factor = 100
+	}
+
+	resources = {
+		category = ship_sections
+		cost = {
+			trigger = {
+				from = {
+					country_uses_bio_ships = no
+				}
+			}
+			alloys = @section_cost_beyond_infinity_military_station
+		}
+		cost = {
+			trigger = {
+				from = {
+					country_uses_bio_ships = yes
+				}
+			}
+			alloys = @section_cost_beyond_infinity_military_station
+			mult = 0.5
+		}
+		cost = {
+			trigger = {
+				from = {
+					country_uses_bio_ships = yes
+				}
+			}
+			food = @section_cost_beyond_infinity_military_station
+			mult = @halved_alloy_to_food_cost_ratio
+		}
+	}
+}

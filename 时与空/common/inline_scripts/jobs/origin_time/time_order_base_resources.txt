@@ -1,0 +1,12 @@
+produces = {
+	trade = 1
+	mult = value:time_order_trade_value|ETHIC|$ETHIC$|
+}
+produces = {
+	astral_threads = 1
+	mult = value:time_order_rare_resource_value|ETHIC|$ETHIC$|
+}
+upkeep = {
+	sr_dark_matter = 2
+	mult = value:time_order_rare_resource_value|ETHIC|$ETHIC$|
+}

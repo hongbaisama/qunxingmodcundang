@@ -1,0 +1,28 @@
+triggered_pop_group_modifier = {
+	potential = {
+		is_origin_time_species = yes
+		NOT = { has_trait = trait_time_soul_virtuality }
+		NOR = {
+			is_unemployed = yes
+			is_pop_category = civilian
+			is_pop_category = maintenance_drone
+		}
+	}
+	pop_housing_usage_add = $HOUSING$
+	pop_amenities_usage_add = $AMENITIES$
+	mult = value:trait_time_usage_add_value
+}
+triggered_pop_group_modifier = {
+	potential = {
+		has_trait = trait_time_soul_virtuality
+		colony? = { can_time_soul_virtuality_live_on = yes }
+		NOR = {
+			is_unemployed = yes
+			is_pop_category = civilian
+			is_pop_category = maintenance_drone
+		}
+	}
+	pop_housing_usage_add = $HOUSING$
+	pop_amenities_usage_add = $AMENITIES$
+	mult = value:trait_time_virtuality_usage_add_value
+}

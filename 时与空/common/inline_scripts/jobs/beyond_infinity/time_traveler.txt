@@ -1,0 +1,19 @@
+resources = {
+	category = planet_time_travelers
+	produces = {
+		physics_research = 50
+		unity = 50
+	}
+	upkeep = {
+		sr_dark_matter = 10
+	}
+}
+
+triggered_country_modifier = {
+	building_time_mult = -0.05
+	starbase_upgrade_time_mult = -0.05
+	starbase_module_build_time_mult = -0.05
+	starbase_building_build_time_mult = -0.05
+	physics_tech_cost_mult = -0.025
+	tradition_cost_mult = -0.025
+}

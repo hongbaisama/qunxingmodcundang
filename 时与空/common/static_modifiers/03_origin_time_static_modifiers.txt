@@ -1,0 +1,383 @@
+time_cycle_modifier = {
+	building_time_mult = -0.25
+	planet_decision_enact_speed_mult = 0.5
+	starbase_shipyard_build_speed_mult = 0.5
+	megastructure_build_speed_mult = 0.5
+	icon = "gfx/interface/icons/planet_modifiers/pm_time_acceleration.dds"
+	icon_frame = 1
+}
+
+timesingularity = {
+	district_time_usage_cap_mult = 0.5
+	job_black_hole_physicist_max_workforce_mult = 0.5
+	job_black_hole_physicist_drone_max_workforce_mult = 0.5
+	job_black_hole_biologist_max_workforce_mult = 0.5
+	job_black_hole_biologist_drone_max_workforce_mult = 0.5
+	job_black_hole_engineer_max_workforce_mult = 0.5
+	job_black_hole_engineer_drone_max_workforce_mult = 0.5
+	country_produces_mult = 0.5
+	pop_bonus_workforce_mult = 0.5
+	bonus_automated_workforce_mult = 0.5
+	logistic_growth_mult = 0.5
+	bonus_pop_growth_mult = 0.5
+	planet_pop_assembly_mult = 0.5
+	pop_ethic_materialist_attraction_mult = 0.5
+	planet_storm_devastation_mult = -0.5
+	planet_orbital_bombardment_damage = -1
+	custom_tooltip = timesingularity_effect
+	icon = "gfx/interface/icons/planet_modifiers/pm_surreal_visions.dds"
+	icon_frame = 1
+}
+
+
+
+time_haze = {
+	habitability_ceil_uncapped_add = -0.5
+	habitability_ceil_add = -0.5
+	habitability_floor_add = -0.5
+	planet_max_districts_mult = -0.5
+	country_produces_mult = -0.5
+	pop_bonus_workforce_mult = -0.5
+	bonus_automated_workforce_mult = -0.5
+	icon = "gfx/interface/icons/planet_modifiers/pm_wormhole.dds"
+	icon_frame = 3
+}
+
+second_time_homeworld = {
+	country_produces_mult = 0.25
+	pop_bonus_workforce_mult = 0.25
+	logistic_growth_mult = 0.25
+	bonus_pop_growth_mult = 0.25
+	planet_pop_assembly_mult = 0.25
+	time_researcher_produces_mult = 0.25
+	icon = "gfx/interface/icons/planet_modifiers/pm_wormhole.dds"
+	icon_frame = 1
+}
+
+time_wormhole = {
+	habitability_ceil_uncapped_add = -1
+	habitability_ceil_add = -1
+	habitability_floor_add = -1
+	planet_max_districts_mult = -1
+	country_produces_mult = -1
+	pop_bonus_workforce_mult = -1
+	bonus_automated_workforce_mult = -1
+	logistic_growth_mult = -1
+	bonus_pop_growth_mult = -1
+	planet_pop_assembly_mult = -1
+	icon = "gfx/interface/icons/planet_modifiers/pm_wormhole.dds"
+	icon_frame = 3
+}
+
+time_wormhole_core = {
+	country_produces_mult = 0.25
+	pop_bonus_workforce_mult = 0.25
+	logistic_growth_mult = 0.25
+	bonus_pop_growth_mult = 0.25
+	planet_pop_assembly_mult = 0.25
+	col_time_mult = 0.25
+	icon = "gfx/interface/icons/planet_modifiers/pm_wormhole.dds"
+	icon_frame = 1
+}
+
+
+
+pc_time_modifier_1 = {
+	planet_jobs_unity_produces_mult = -0.2
+	icon = "gfx/interface/icons/planet_modifiers/pm_city_ruins.dds"
+	icon_frame = 3
+}
+
+pc_time_modifier_2 = {
+	pop_happiness = -0.2
+	icon = "gfx/interface/icons/planet_modifiers/pm_derelict_interior.dds"
+	icon_frame = 3
+}
+
+pc_time_modifier_3 = {
+	all_technology_research_speed = -0.2
+	icon = "gfx/interface/icons/planet_modifiers/pm_glitchy_matrix.dds"
+	icon_frame = 3
+}
+
+pc_time_modifier_4 = {
+	all_technology_research_speed = 0.2
+	icon = "gfx/interface/icons/planet_modifiers/pm_synth_sabotage.dds"
+	icon_frame = 1
+}
+
+pc_time_modifier_5 = {
+	planet_building_build_speed_mult = -0.2
+	icon = "gfx/interface/icons/planet_modifiers/pm_atmospheric_aphrodisiac.dds"
+	icon_frame = 3
+}
+
+pc_time_modifier_6 = {
+	pop_amenities_usage_mult = 0.2
+	icon = "gfx/interface/icons/planet_modifiers/pm_carbon_world.dds"
+	icon_frame = 3
+}
+
+pc_time_modifier_7 = {
+	pop_housing_usage_mult = -0.2
+	icon = "gfx/interface/icons/planet_modifiers/pm_atmospheric_hallucinogen.dds"
+	icon_frame = 1
+}
+
+pc_time_modifier_8 = {
+	founder_species_growth_mult = -0.2
+	icon = "gfx/interface/icons/planet_modifiers/pm_colony_settlement.dds"
+	icon_frame = 3
+}
+
+pc_time_modifier_9 = {
+	planet_pops_upkeep_mult = 0.2
+	icon = "gfx/interface/icons/planet_modifiers/pm_fortress_trophy.dds"
+	icon_frame = 3
+}
+
+pc_time_modifier_10 = {
+	planet_jobs_produces_mult = -0.2
+	icon = "gfx/interface/icons/planet_modifiers/pm_mastery_of_nature.dds"
+	icon_frame = 3
+}
+
+pc_time_modifier_11 = {
+	planet_jobs_upkeep_mult = -0.2
+	icon = "gfx/interface/icons/planet_modifiers/pm_planet_separatist_supporter.dds"
+	icon_frame = 1
+}
+
+pc_time_modifier_12 = {
+	time_researcher_produces_mult = -0.25
+	icon = "gfx/interface/icons/planet_modifiers/pm_horror_trophy.dds"
+	icon_frame = 3
+}
+
+pc_time_modifier_13 = {
+	time_researcher_produces_mult = 0.25
+	icon = "gfx/interface/icons/planet_modifiers/pm_horror_trophy.dds"
+	icon_frame = 1
+}
+
+pc_time_modifier_14 = {
+	planet_max_districts_mult = -0.2
+	icon = "gfx/interface/icons/planet_modifiers/pm_nanite_world.dds"
+	icon_frame = 3
+}
+
+pc_time_modifier_end = {
+	planet_clear_blocker_speed_mult = 0.5
+	planet_building_build_speed_mult = 0.5
+	planet_decision_enact_speed_mult = 0.5
+	terraform_speed_mult = 0.5
+	time_researcher_produces_mult = 0.25
+	icon = "gfx/interface/icons/planet_modifiers/pm_shroud_eaten_population.dds"
+	icon_frame = 1
+}
+
+
+
+origin_time_modifier_materialist = {
+	time_researcher_research_weight = 0.5
+	time_researcher_max_weight = 0.5
+	icon = "gfx/interface/icons/planet_modifiers/pm_black_hole.dds"
+	icon_frame = 1
+}
+
+origin_time_modifier_spiritualist = {
+	time_researcher_unity_weight = 0.5
+	time_researcher_max_weight = 0.5
+	icon = "gfx/interface/icons/planet_modifiers/pm_black_hole.dds"
+	icon_frame = 1
+}
+
+origin_time_modifier_militarist = {
+	time_researcher_manufacturing_weight = 0.5
+	time_researcher_max_weight = 0.5
+	icon = "gfx/interface/icons/planet_modifiers/pm_black_hole.dds"
+	icon_frame = 1
+}
+
+origin_time_modifier_pacifist = {
+	time_researcher_resource_weight = 0.5
+	time_researcher_max_weight = 0.5
+	icon = "gfx/interface/icons/planet_modifiers/pm_black_hole.dds"
+	icon_frame = 1
+}
+
+origin_time_modifier_xenophile = {
+	time_researcher_unity_weight = 0.25
+	time_researcher_research_weight = 0.25
+	time_researcher_max_weight = 0.5
+	icon = "gfx/interface/icons/planet_modifiers/pm_black_hole.dds"
+	icon_frame = 1
+}
+
+origin_time_modifier_xenophobe = {
+	time_researcher_resource_weight = 0.25
+	time_researcher_manufacturing_weight = 0.25
+	time_researcher_max_weight = 0.5
+	icon = "gfx/interface/icons/planet_modifiers/pm_black_hole.dds"
+	icon_frame = 1
+}
+
+origin_time_modifier_egalitarian = {
+	time_researcher_resource_weight = 0.25
+	time_researcher_unity_weight = 0.25
+	time_researcher_max_weight = 0.5
+	icon = "gfx/interface/icons/planet_modifiers/pm_black_hole.dds"
+	icon_frame = 1
+}
+
+origin_time_modifier_authoritarian = {
+	time_researcher_manufacturing_weight = 0.25
+	time_researcher_research_weight = 0.25
+	time_researcher_max_weight = 0.5
+	icon = "gfx/interface/icons/planet_modifiers/pm_black_hole.dds"
+	icon_frame = 1
+}
+
+
+
+timelife = {
+	pop_happiness = 0.2
+	icon = "gfx/interface/icons/planet_modifiers/pm_black_hole.dds"
+	icon_frame = 1
+}
+
+timedeath = {
+	pop_happiness = -0.2
+	icon = "gfx/interface/icons/planet_modifiers/pm_black_hole.dds"
+	icon_frame = 3
+}
+
+timefear = {
+	founder_species_growth_mult = -0.5
+	planet_jobs_produces_mult = -0.5
+	pop_happiness = -0.2
+	pop_ethic_materialist_attraction_mult = -0.5
+	icon = "gfx/interface/icons/planet_modifiers/pm_black_hole.dds"
+	icon_frame = 3
+}
+
+
+
+origin_time_coup = {
+	planet_stability_add = -20
+	pop_ethics_shift_speed_mult = 0.5
+	icon = "gfx/interface/icons/planet_modifiers/pm_galactic_senate.dds"
+	icon_frame = 3
+}
+
+origin_time_authoritarian_attraction = {
+	pop_ethic_authoritarian_attraction_mult = 0.5
+	icon = "gfx/interface/icons/planet_modifiers/pm_glitchy_matrix.dds"
+	icon_frame = 2
+}
+
+origin_time_egalitarian_attraction = {
+	pop_ethic_egalitarian_attraction_mult = 0.5
+	icon = "gfx/interface/icons/planet_modifiers/pm_glitchy_matrix.dds"
+	icon_frame = 2
+}
+
+origin_time_spiritualist_attraction = {
+	pop_ethic_spiritualist_attraction_mult = 0.5
+	icon = "gfx/interface/icons/planet_modifiers/pm_glitchy_matrix.dds"
+	icon_frame = 2
+}
+
+origin_time_materialist_attraction = {
+	pop_ethic_materialist_attraction_mult = 0.5
+	icon = "gfx/interface/icons/planet_modifiers/pm_glitchy_matrix.dds"
+	icon_frame = 2
+}
+
+origin_time_militarist_attraction = {
+	pop_ethic_militarist_attraction_mult = 0.5
+	icon = "gfx/interface/icons/planet_modifiers/pm_glitchy_matrix.dds"
+	icon_frame = 2
+}
+
+origin_time_pacifist_attraction = {
+	pop_ethic_pacifist_attraction_mult = 0.5
+	icon = "gfx/interface/icons/planet_modifiers/pm_glitchy_matrix.dds"
+	icon_frame = 2
+}
+
+origin_time_xenophobe_attraction = {
+	pop_ethic_xenophobe_attraction_mult = 0.5
+	icon = "gfx/interface/icons/planet_modifiers/pm_glitchy_matrix.dds"
+	icon_frame = 2
+}
+
+origin_time_xenophile_attraction = {
+	pop_ethic_xenophile_attraction_mult = 0.5
+	icon = "gfx/interface/icons/planet_modifiers/pm_glitchy_matrix.dds"
+	icon_frame = 2
+}
+
+
+
+time_researcher_jobs_bonus_workforce_mult = {
+	custom_tooltip = time_researcher_jobs_bonus_workforce_mult_tt
+	show_only_custom_tooltip = yes
+	pop_black_hole_physicist_bonus_workforce_mult = 1
+	pop_black_hole_physicist_drone_bonus_workforce_mult = 1
+	pop_black_hole_biologist_bonus_workforce_mult = 1
+	pop_black_hole_biologist_drone_bonus_workforce_mult = 1
+	pop_black_hole_engineer_bonus_workforce_mult = 1
+	pop_black_hole_engineer_drone_bonus_workforce_mult = 1
+	pop_time_recursioner_bonus_workforce_mult = 1
+	pop_time_recursioner_drone_bonus_workforce_mult = 1
+	pop_hope_guardian_bonus_workforce_mult = 1
+	pop_hope_disseminator_bonus_workforce_mult = 1
+	pop_eternal_observer_bonus_workforce_mult = 1
+	pop_eternal_creator_bonus_workforce_mult = 1
+	pop_dimensional_ruler_bonus_workforce_mult = 1
+	pop_dimensional_conqueror_bonus_workforce_mult = 1
+	pop_original_meditator_bonus_workforce_mult = 1
+	pop_original_purifier_bonus_workforce_mult = 1
+}
+
+black_hole_physicist_jobs_bonus_workforce_mult = {
+	custom_tooltip = black_hole_physicist_jobs_bonus_workforce_mult_tt
+	show_only_custom_tooltip = yes
+	pop_black_hole_physicist_bonus_workforce_mult = 1
+	pop_black_hole_physicist_drone_bonus_workforce_mult = 1
+}
+
+black_hole_biologist_jobs_bonus_workforce_mult = {
+	custom_tooltip = black_hole_biologist_jobs_bonus_workforce_mult_tt
+	show_only_custom_tooltip = yes
+	pop_black_hole_biologist_bonus_workforce_mult = 1
+	pop_black_hole_biologist_drone_bonus_workforce_mult = 1
+}
+
+black_hole_engineer_jobs_bonus_workforce_mult = {
+	custom_tooltip = black_hole_engineer_jobs_bonus_workforce_mult_tt
+	show_only_custom_tooltip = yes
+	pop_black_hole_engineer_bonus_workforce_mult = 1
+	pop_black_hole_engineer_drone_bonus_workforce_mult = 1
+}
+
+time_recursioner_jobs_bonus_workforce_mult = {
+	custom_tooltip = time_recursioner_jobs_bonus_workforce_mult_tt
+	show_only_custom_tooltip = yes
+	pop_time_recursioner_bonus_workforce_mult = 1
+	pop_time_recursioner_drone_bonus_workforce_mult = 1
+}
+
+time_order_jobs_bonus_workforce_mult = {
+	custom_tooltip = time_order_jobs_bonus_workforce_mult_tt
+	show_only_custom_tooltip = yes
+	pop_hope_guardian_bonus_workforce_mult = 1
+	pop_hope_disseminator_bonus_workforce_mult = 1
+	pop_eternal_observer_bonus_workforce_mult = 1
+	pop_eternal_creator_bonus_workforce_mult = 1
+	pop_dimensional_ruler_bonus_workforce_mult = 1
+	pop_dimensional_conqueror_bonus_workforce_mult = 1
+	pop_original_meditator_bonus_workforce_mult = 1
+	pop_original_purifier_bonus_workforce_mult = 1
+}

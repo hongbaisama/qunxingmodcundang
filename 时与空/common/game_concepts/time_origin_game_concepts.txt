@@ -1,0 +1,671 @@
+# 通用
+concept_function_origin = {
+	alias = {
+		concept_function_origin_text
+	}
+}
+
+concept_story_origin = {
+	alias = {
+		concept_story_origin_text
+	}
+}
+
+concept_diversity_origin = {
+	alias = {
+		concept_diversity_origin_text
+	}
+}
+
+concept_multiplayer_origin = {
+	alias = {
+		concept_multiplayer_origin_text
+	}
+}
+
+concept_global_origin = {
+	alias = {
+		concept_global_origin_text
+	}
+}
+
+# 理念
+concept_building_civic_starry_yearning = {
+	icon = "gfx/interface/icons/buildings/building_clear_thought_clinic.dds"
+	tooltip_override = "building:building_civic_starry_yearning"
+}
+
+concept_building_civic_starry_yearning_corporate = {
+	icon = "gfx/interface/icons/buildings/building_citadel_uplink.dds"
+	tooltip_override = "building:building_civic_starry_yearning_corporate"
+}
+
+concept_building_civic_overclocking_art = {
+	icon = "gfx/interface/icons/buildings/building_materiality_engine.dds"
+	tooltip_override = "building:building_civic_overclocking_art"
+}
+
+concept_building_civic_overclocking_art_corporate = {
+	icon = "gfx/interface/icons/buildings/building_maintenance_depot.dds"
+	tooltip_override = "building:building_civic_overclocking_art_corporate"
+}
+
+concept_building_civic_overclocking_art_machine = {
+	icon = "gfx/interface/icons/buildings/building_identity_repository.dds"
+	tooltip_override = "building:building_civic_overclocking_art_machine"
+}
+
+# 协同进化
+concept_syncretic_evolution_traits = {
+	icon = "gfx/interface/icons/origins/origins_syncretic_evolution.dds"
+}
+
+concept_trait_syncretic_proles = {
+	icon = "gfx/interface/icons/traits/trait_primitive.dds"
+	tooltip_override = "trait:trait_syncretic_proles"
+}
+
+concept_trait_nerve_stapled = {
+	icon = "gfx/interface/icons/traits/trait_nerve_stapled.dds"
+	tooltip_override = "trait:trait_nerve_stapled"
+}
+
+# 生命之籽
+concept_trait_pc_gaia_preference_terraforming = {
+	icon = "gfx/interface/icons/traits/trait_pc_gaia_preference.dds"
+	tooltip_override = "trait:trait_pc_gaia_preference_terraforming"
+}
+
+# 蜂巢天性
+concept_d_pc_hive_blocker = {
+	icon = "gfx/interface/icons/deposits/d_infestation.dds"
+}
+
+concept_d_pc_hive = {
+	icon = "gfx/interface/icons/deposits/d_huge_tree.dds"
+}
+
+concept_d_pc_hive_other = {
+	icon = "gfx/interface/icons/deposits/d_huge_tree.dds"
+}
+
+# 气态生物
+concept_origin_gas_colony_species_trait = {
+	icon = "gfx/interface/icons/origins/origin_gas_colony.dds"
+}
+
+concept_trait_origin_gas_colony = {
+	icon = "gfx/interface/icons/traits/trait_origin_gas_colony.dds"
+	tooltip_override = "trait:trait_origin_gas_colony"
+}
+
+concept_gas_technician = {
+	icon = "gfx/interface/icons/jobs/job_technician.dds"
+}
+
+concept_gas_miner = {
+	icon = "gfx/interface/icons/jobs/job_miner.dds"
+}
+
+concept_gas_farmer = {
+	icon = "gfx/interface/icons/jobs/job_farmer.dds"
+}
+
+concept_gas_technician_drone = {
+	icon = "gfx/interface/icons/jobs/job_technician_drone.dds"
+}
+
+concept_gas_mining_drone = {
+	icon = "gfx/interface/icons/jobs/job_mining_drone.dds"
+}
+
+concept_gas_agri_drone = {
+	icon = "gfx/interface/icons/jobs/job_agri_drone.dds"
+}
+
+# 虚境访客
+concept_origin_psionic_species_trait = {
+	icon = "gfx/interface/icons/origins/origin_psionic.dds"
+}
+
+concept_trait_origin_psionic = {
+	icon = "gfx/interface/icons/traits/trait_origin_psionic.dds"
+	tooltip_override = "trait:trait_origin_psionic"
+}
+
+concept_col_psionic_mult = {
+	icon = "gfx/interface/icons/modifiers/mod_shroud_unavailable.dds"
+	alias = {
+		concept_col_psionic_mult_white
+	}
+}
+
+concept_district_psionic_modifier_mult = {
+	icon = "gfx/interface/icons/modifiers/mod_district_city_max.dds"
+	alias = {
+		concept_district_psionic_modifier_mult_white
+	}
+}
+
+concept_psionic_trader = {
+	icon = "gfx/interface/icons/jobs/job_evaluator.dds"
+}
+
+concept_psionic_technician = {
+	icon = "gfx/interface/icons/jobs/job_mortal_initiate.dds"
+}
+
+concept_psionic_miner = {
+	icon = "gfx/interface/icons/jobs/job_coordinator.dds"
+}
+
+concept_psionic_farmer = {
+	icon = "gfx/interface/icons/jobs/job_death_priest.dds"
+}
+
+# 纳米机器
+concept_origin_nanites_species_trait = {
+	icon = "gfx/interface/icons/origins/origin_nanites.dds"
+}
+
+concept_trait_origin_nanites = {
+	icon = "gfx/interface/icons/traits/trait_origin_nanites.dds"
+	tooltip_override = "trait:trait_origin_nanites"
+}
+
+concept_district_nanites_modifier_mult = {
+	icon = "gfx/interface/icons/modifiers/mod_district_nexus_max.dds"
+	alias = {
+		concept_district_nanites_modifier_mult_white
+	}
+}
+
+concept_nanites_logistics_drone = {
+	icon = "gfx/interface/icons/jobs/job_nanotech_researcher.dds"
+}
+
+# 赞美太阳
+concept_building_origin_praise_the_sun = {
+	icon = "gfx/interface/icons/buildings/building_great_pyramid.dds"
+	tooltip_override = "building:building_origin_praise_the_sun"
+}
+
+# 宁和之道
+concept_pure_yin = {
+	icon = "gfx/interface/icons/modifiers/mod_consecrated_world_green.dds"
+	alias = {
+		concept_pure_yin_modifier
+	}
+	databank = {
+		category = db_origin_tao_of_ninghe_yin
+		icon = "gfx/interface/icons/modifiers/mod_consecrated_world_green.dds"
+		picture = "GFX_evt_in_the_dark"
+	}
+}
+
+concept_pure_yang = {
+	icon = "gfx/interface/icons/modifiers/mod_consecrated_world_yellow.dds"
+	alias = {
+		concept_pure_yang_modifier
+	}
+	databank = {
+		category = db_origin_tao_of_ninghe_yang
+		icon = "gfx/interface/icons/modifiers/mod_consecrated_world_yellow.dds"
+		picture = "GFX_evt_atmospheric_entry"
+	}
+}
+
+concept_ninghe_country = {
+	icon = "gfx/interface/icons/modifiers/mod_planetary_ascension_effect_mult.dds"
+	alias = {
+	}
+	databank = {
+		category = db_origin_tao_of_ninghe_ninghe
+		icon = "gfx/interface/icons/modifiers/mod_planetary_ascension_effect_mult.dds"
+		picture = "GFX_evt_unity_symbol"
+	}
+}
+
+concept_yin_country = {
+	icon = "gfx/interface/icons/modifiers/mod_consecrated_world_green.dds"
+	alias = {
+	}
+	databank = {
+		category = db_origin_tao_of_ninghe_yin
+		icon = "gfx/interface/icons/modifiers/mod_consecrated_world_green.dds"
+		picture = "GFX_evt_in_the_dark"
+	}
+}
+
+concept_leader_yin = {
+	icon = "gfx/interface/icons/modifiers/mod_consecrated_world_green.dds"
+	alias = {
+		concept_trait_yin
+	}
+	databank = {
+		category = db_origin_tao_of_ninghe_yin
+		icon = "gfx/interface/icons/modifiers/mod_consecrated_world_green.dds"
+		picture = "GFX_evt_in_the_dark"
+	}
+}
+
+concept_planet_yin = {
+	icon = "gfx/interface/icons/modifiers/mod_consecrated_world_green.dds"
+	alias = {
+	}
+	databank = {
+		category = db_origin_tao_of_ninghe_yin
+		icon = "gfx/interface/icons/modifiers/mod_consecrated_world_green.dds"
+		picture = "GFX_evt_in_the_dark"
+	}
+}
+
+concept_yang_country = {
+	icon = "gfx/interface/icons/modifiers/mod_consecrated_world_yellow.dds"
+	alias = {
+	}
+	databank = {
+		category = db_origin_tao_of_ninghe_yang
+		icon = "gfx/interface/icons/modifiers/mod_consecrated_world_yellow.dds"
+		picture = "GFX_evt_atmospheric_entry"
+	}
+}
+
+concept_leader_yang = {
+	icon = "gfx/interface/icons/modifiers/mod_consecrated_world_yellow.dds"
+	alias = {
+		concept_trait_yang
+	}
+	databank = {
+		category = db_origin_tao_of_ninghe_yang
+		icon = "gfx/interface/icons/modifiers/mod_consecrated_world_yellow.dds"
+		picture = "GFX_evt_atmospheric_entry"
+	}
+}
+
+concept_planet_yang = {
+	icon = "gfx/interface/icons/modifiers/mod_consecrated_world_yellow.dds"
+	alias = {
+	}
+	databank = {
+		category = db_origin_tao_of_ninghe_yang
+		icon = "gfx/interface/icons/modifiers/mod_consecrated_world_yellow.dds"
+		picture = "GFX_evt_atmospheric_entry"
+	}
+}
+
+concept_ninghe = {
+	icon = "gfx/interface/icons/modifiers/mod_planetary_ascension_effect_mult.dds"
+	alias = {
+	}
+	databank = {
+		category = db_origin_tao_of_ninghe_ninghe
+		icon = "gfx/interface/icons/modifiers/mod_planetary_ascension_effect_mult.dds"
+		picture = "GFX_evt_unity_symbol"
+	}
+}
+
+concept_ninghe_planet_class = {
+	icon = "gfx/interface/icons/menu_icon_planets_and_sectors.dds"
+	alias = {
+	}
+	databank = {
+		category = db_origin_tao_of_ninghe
+		icon = "gfx/interface/icons/menu_icon_planets_and_sectors.dds"
+		picture = "GFX_evt_colony_settlement"
+	}
+}
+
+concept_yin = {
+	icon = "gfx/interface/icons/modifiers/mod_consecrated_world_green.dds"
+	alias = {
+	}
+	databank = {
+		category = db_origin_tao_of_ninghe_yin
+		icon = "gfx/interface/icons/modifiers/mod_consecrated_world_green.dds"
+		picture = "GFX_evt_in_the_dark"
+	}
+}
+
+concept_building_yin = {
+	icon = "gfx/interface/icons/modifiers/mod_consecrated_world_green.dds"
+	alias = {
+		concept_yin_mult_modifier
+	}
+	databank = {
+		category = db_origin_tao_of_ninghe_yin
+		icon = "gfx/interface/icons/modifiers/mod_consecrated_world_green.dds"
+		picture = "GFX_evt_in_the_dark"
+	}
+}
+
+concept_yang = {
+	icon = "gfx/interface/icons/modifiers/mod_consecrated_world_yellow.dds"
+	alias = {
+	}
+	databank = {
+		category = db_origin_tao_of_ninghe_yang
+		icon = "gfx/interface/icons/modifiers/mod_consecrated_world_yellow.dds"
+		picture = "GFX_evt_atmospheric_entry"
+	}
+}
+
+concept_building_yang = {
+	icon = "gfx/interface/icons/modifiers/mod_consecrated_world_yellow.dds"
+	alias = {
+		concept_yang_mult_modifier
+	}
+	databank = {
+		category = db_origin_tao_of_ninghe_yang
+		icon = "gfx/interface/icons/modifiers/mod_consecrated_world_yellow.dds"
+		picture = "GFX_evt_atmospheric_entry"
+	}
+}
+
+concept_building_origin_tao_of_ninghe_yin = {
+	icon = "gfx/interface/icons/buildings/building_posthumous_employment_center.dds"
+	tooltip_override = "building:building_origin_tao_of_ninghe_yin"
+}
+
+concept_building_origin_tao_of_ninghe_yang = {
+	icon = "gfx/interface/icons/buildings/building_offspring_nest.dds"
+	tooltip_override = "building:building_origin_tao_of_ninghe_yang"
+}
+
+# 黑客帝国
+concept_d_the_matrix_blocker = {
+	icon = "gfx/interface/icons/deposits/d_the_matrix_blocker.dds"
+}
+
+# 再组装者
+concept_reassembly_mode = {
+	icon = "gfx/interface/icons/origins/origin_reassembler.dds"
+	alias = {
+		concept_reassembly_mode_red
+	}
+}
+
+concept_trait_reassembler = {
+	icon = "gfx/interface/icons/traits/trait_reassembler.dds"
+	tooltip_override = "trait:trait_reassembler"
+}
+
+concept_reassembly_speed = {
+	icon = "gfx/interface/icons/jobs/job_replicator.dds"
+	alias = {
+		concept_reassembly_speed_white
+	}
+}
+
+# 江洋大盗
+concept_trait_origin_pirate_king = {
+	icon = "gfx/interface/icons/traits/trait_origin_pirate_king.dds"
+	tooltip_override = "trait:trait_origin_pirate_king"
+}
+
+concept_leader_trait_origin_pirate_king_official = {
+	icon = "gfx/interface/icons/concepts/traits/leader_trait_origin_pirate_king_official.dds"
+}
+
+concept_leader_trait_origin_pirate_king_scientist = {
+	icon = "gfx/interface/icons/concepts/traits/leader_trait_origin_pirate_king_scientist.dds"
+}
+
+concept_leader_trait_origin_pirate_king_commander = {
+	icon = "gfx/interface/icons/concepts/traits/leader_trait_origin_pirate_king_commander.dds"
+}
+
+# 机械神教
+concept_building_adeptus_mechanicus_1 = {
+	icon = "gfx/interface/icons/buildings/building_organic_sanctuary.dds"
+	tooltip_override = "building:building_adeptus_mechanicus_1"
+}
+
+concept_building_adeptus_mechanicus_2 = {
+	icon = "gfx/interface/icons/buildings/building_paradise_dome.dds"
+	tooltip_override = "building:building_adeptus_mechanicus_2"
+}
+
+# 伪善假面
+concept_hypocritical_face_decay = {
+	icon = "gfx/interface/icons/modifiers/mod_intel_decryption_add.dds"
+	alias = {
+	}
+}
+
+concept_hypocritical_face_country = {
+	icon = "gfx/interface/icons/modifiers/mod_add_base_country_intel.dds"
+	alias = {
+	}
+}
+
+concept_hypocritical_face_building = {
+	icon = "gfx/interface/icons/modifiers/mod_add_base_country_intel.dds"
+	alias = {
+		concept_hypocritical_face_building_modifier
+	}
+}
+
+concept_hypocritical_face_branch_office_buildings = {
+	icon = "gfx/interface/icons/origins/origin_hypocritical_face.dds"
+}
+
+concept_building_time_private_mining_consortium = {
+	icon = "gfx/interface/icons/buildings/building_private_mining_consortium.dds"
+	tooltip_override = building:building_time_private_mining_consortium
+}
+
+concept_building_time_food_conglomerate = {
+	icon = "gfx/interface/icons/buildings/building_food_conglomerate.dds"
+	tooltip_override = building:building_time_food_conglomerate
+}
+
+concept_building_time_virtual_entertainment_studios = {
+	icon = "gfx/interface/icons/buildings/building_virtual_entertainment_studios.dds"
+	tooltip_override = building:building_time_virtual_entertainment_studios
+}
+
+concept_building_time_private_shipyards = {
+	icon = "gfx/interface/icons/buildings/building_private_shipyards.dds"
+	tooltip_override = building:building_time_private_shipyards
+}
+
+concept_building_time_military_contractors = {
+	icon = "gfx/interface/icons/buildings/building_military_contractors.dds"
+	tooltip_override = building:building_time_military_contractors
+}
+
+concept_building_time_industrial_subsidiary = {
+	icon = "gfx/interface/icons/buildings/building_industrial_subsidiary.dds"
+	tooltip_override = building:building_time_industrial_subsidiary
+}
+
+concept_building_time_public_relations_office = {
+	icon = "gfx/interface/icons/buildings/building_public_relations_office.dds"
+	tooltip_override = building:building_time_public_relations_office
+}
+
+concept_building_time_private_research_initiative = {
+	icon = "gfx/interface/icons/buildings/building_private_research_initiative.dds"
+	tooltip_override = building:building_time_private_research_initiative
+}
+
+concept_building_time_amusement_megaplex = {
+	icon = "gfx/interface/icons/buildings/building_amusement_megaplex.dds"
+	tooltip_override = building:building_time_amusement_megaplex
+}
+
+concept_building_time_commercial_forum = {
+	icon = "gfx/interface/icons/buildings/building_commercial_forum.dds"
+	tooltip_override = building:building_time_commercial_forum
+}
+
+concept_building_time_corporate_embassy = {
+	icon = "gfx/interface/icons/buildings/building_corporate_embassy.dds"
+	tooltip_override = building:building_time_corporate_embassy
+}
+
+concept_building_time_private_security = {
+	icon = "gfx/interface/icons/buildings/building_private_security.dds"
+	tooltip_override = building:building_time_private_security
+}
+
+concept_building_time_temple_of_prosperity = {
+	icon = "gfx/interface/icons/buildings/building_temple_of_prosperity.dds"
+	tooltip_override = building:building_time_temple_of_prosperity
+}
+
+# 怪物猎人
+concept_origin_monster_hunter_species_trait = {
+	icon = "gfx/interface/icons/origins/origin_monster_hunter.dds"
+}
+
+concept_trait_origin_monster_hunter = {
+	icon = "gfx/interface/icons/traits/trait_origin_monster_hunter.dds"
+	tooltip_override = "trait:trait_origin_monster_hunter"
+}
+
+concept_building_origin_monster_hunter_1 = {
+	icon = "gfx/interface/icons/buildings/building_order_holding.dds"
+	tooltip_override = "building:building_origin_monster_hunter_1"
+}
+
+concept_building_origin_monster_hunter_2 = {
+	icon = "gfx/interface/icons/buildings/building_order_keep.dds"
+	tooltip_override = "building:building_origin_monster_hunter_2"
+}
+
+concept_job_monster_hunter = {
+	icon = "gfx/interface/icons/jobs/job_monster_hunter.dds"
+}
+
+# 传奇崇拜
+concept_origin_legendary_worship = {
+	icon = "gfx/interface/icons/origins/origin_legendary_worship.dds"
+	tooltip_override = civic:origin_legendary_worship
+}
+
+# 神眷之族
+concept_building_blessed_by_god = {
+	icon = "gfx/interface/icons/buildings/building_sentinel_posts.dds"
+	tooltip_override = building:building_blessed_by_god
+}
+
+# 神弃之族
+concept_building_abandoned_by_god = {
+	icon = "gfx/interface/icons/buildings/building_ruined.dds"
+	tooltip_override = building:building_abandoned_by_god
+}
+
+concept_leader_trait_abandoned_by_god = {
+	icon = "gfx/interface/icons/concepts/traits/leader_trait_abandoned_by_god.dds"
+}
+
+# 彼岸封印
+concept_leader_trait_equinox_seal = {
+	icon = "gfx/interface/icons/concepts/traits/leader_trait_equinox_seal.dds"
+}
+
+# 二手国度
+concept_secondhand_country_traits = {
+	icon = "gfx/interface/icons/origins/origin_secondhand_country.dds"
+	alias = {
+		concept_advanced_secondhand_country_traits
+		concept_secondhand_country_traits_orange
+		concept_secondhand_country_traits_yellow
+	}
+}
+
+concept_secondhand_country_edict = {
+	icon = "gfx/interface/icons/origins/origin_secondhand_country.dds"
+}
+
+concept_d_secondhand_country = {
+	icon = "gfx/interface/icons/deposits/d_organic_landfill.dds"
+}
+
+# 许愿之井
+concept_d_wishing_well = {
+	icon = "gfx/interface/icons/deposits/d_wishing_well.dds"
+}
+
+# 凝视深渊
+concept_trait_origin_black_hole = {
+	icon = "gfx/interface/icons/traits/trait_origin_black_hole.dds"
+	tooltip_override = "trait:trait_origin_black_hole"
+}
+
+concept_building_civic_origin_black_hole = {
+	icon = "gfx/interface/icons/buildings/building_civic_origin_black_hole.dds"
+	tooltip_override = "building:building_civic_origin_black_hole"
+}
+
+# 精神脉冲
+concept_trait_origin_pulsar = {
+	icon = "gfx/interface/icons/traits/trait_origin_pulsar.dds"
+	tooltip_override = "trait:trait_origin_pulsar"
+}
+
+concept_building_civic_origin_pulsar = {
+	icon = "gfx/interface/icons/buildings/building_civic_origin_pulsar.dds"
+	tooltip_override = "building:building_civic_origin_pulsar"
+}
+
+# 中子壁垒
+concept_trait_origin_neutron_star = {
+	icon = "gfx/interface/icons/traits/trait_origin_neutron_star.dds"
+	tooltip_override = "trait:trait_origin_neutron_star"
+}
+
+concept_building_civic_origin_neutron_star = {
+	icon = "gfx/interface/icons/buildings/building_civic_origin_neutron_star.dds"
+	tooltip_override = "building:building_civic_origin_neutron_star"
+}
+
+# 叛教门徒
+concept_origin_synth_queen_crisis_tech = {
+}
+
+concept_origin_synth_queen_crisis_advanced_tech = {
+}
+
+# 并非一体
+concept_origin_we_are_not_one_job = {
+	icon = "gfx/interface/icons/origins/origin_we_are_not_one.dds"
+}
+
+concept_origin_we_are_not_one_ruler = {
+	icon = "gfx/interface/icons/origins/origin_we_are_not_one.dds"
+}
+
+concept_origin_we_are_not_one_state = {
+	icon = "gfx/interface/icons/origins/origin_we_are_not_one.dds"
+}
+
+concept_origin_we_are_not_one_research = {
+	icon = "gfx/interface/icons/origins/origin_we_are_not_one.dds"
+}
+
+concept_origin_we_are_not_one_defense = {
+	icon = "gfx/interface/icons/origins/origin_we_are_not_one.dds"
+}
+
+concept_origin_we_are_not_one_official = {
+	icon = "gfx/interface/icons/origins/origin_we_are_not_one.dds"
+}
+
+concept_origin_we_are_not_one_scientist = {
+	icon = "gfx/interface/icons/origins/origin_we_are_not_one.dds"
+}
+
+concept_origin_we_are_not_one_commander = {
+	icon = "gfx/interface/icons/origins/origin_we_are_not_one.dds"
+}
+
+concept_origin_we_are_not_one_planet_governor = {
+	icon = "gfx/interface/icons/origins/origin_we_are_not_one.dds"
+}
+
+concept_origin_we_are_not_one_sector_governor = {
+	icon = "gfx/interface/icons/origins/origin_we_are_not_one.dds"
+}

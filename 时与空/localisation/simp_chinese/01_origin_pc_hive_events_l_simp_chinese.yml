@@ -1,0 +1,22 @@
+﻿l_simp_chinese:
+ origin_pc_hive.6.name:0 "突触枯萎"
+ origin_pc_hive.6.desc:0 "§Y[Root.GetName]§!已不再是$pc_hive$，星球上原本的突触也枯萎了。"
+ origin_pc_hive.6.a:0 "我们得想办法把它变回去。"
+ 
+ origin_pc_hive.7.name:0 "枝桠枯萎"
+ origin_pc_hive.7.desc:0 "§Y[Root.GetName]§!已不再是$pc_hive$，星球上原本的枝桠也枯萎了。"
+ origin_pc_hive.7.a:0 "我们得想办法把它变回去。"
+ 
+ origin_pc_hive.15.name:0 "突触枯萎"
+ origin_pc_hive.15.desc:0 "当§Y[Root.GetName]§!纳入我们囊中之后，星球上原本的突触就枯萎了，但我们暂时不知该如何将其清除。"
+ origin_pc_hive.15.a:0 "见鬼！"
+ 
+ origin_pc_hive.16.name:0 "枝桠枯萎"
+ origin_pc_hive.16.desc:0 "当§Y[Root.GetName]§!纳入我们囊中之后，星球上原本的枝桠就枯萎了，但我们暂时不知该如何将其清除。"
+ origin_pc_hive.16.a:0 "见鬼！"
+ 
+ origin_pc_hive.20.name:0 "突触缺失"
+ origin_pc_hive.20.desc.owned:0 "我们失去了§Y[From.GetName]§!上我们唯一的爱之突触。\n没了突触与母星的连接，所有爱之枝桠都在逐渐枯萎。"
+ origin_pc_hive.20.desc.not_owned:0 "我们失去了§Y[From.GetName]§!以及我们唯一的爱之突触。\n没了突触与母星的连接，所有爱之枝桠都在逐渐枯萎。"
+ origin_pc_hive.20.a:0 "糟糕！"
+ origin_pc_hive.20.a.tooltip:0 "§R所有星球上的['concept_d_pc_hive_other']都将枯萎！§!"

@@ -1,0 +1,24 @@
+origin_contract_other_value = {
+	base = 1
+	add = colony.modifier:$MODIFIER$
+	min = 0
+}
+
+situation_origin_contract_value = {
+	base = $BASE$
+	min = 0
+}
+
+origin_contract_attunement_progress_factor = {
+	base = 1
+	complex_trigger_modifier = {
+		trigger = get_attunement_points_for
+		parameters = {
+			patron = $PATRON$
+			negative = yes
+		}
+		mode = add
+		mult = 0.001
+	}
+	min = 0
+}

@@ -1,0 +1,35 @@
+custom_subtitle = legendary_or_renowned_subtitle
+icon = {
+	layer = {
+		icon = "GFX_trait_bg"
+		color = "trait_bg_default"
+	}
+	inline_script = trait/icon_element/rarity_$RARITY$
+	layer = {
+		icon = $ICON$
+		color = "trait_icon_default"
+	}
+	layer = {
+		icon = "GFX_trait_councilor"
+		visible = {
+			OR = {
+				has_council_subclass = yes
+				is_ruler = yes
+			}
+		}
+	}
+	layer = {
+		icon = "GFX_trait_disabled"
+		visible = {
+			has_council_subclass = yes
+			AND = {
+				is_councilor = no
+				is_pool_leader = no
+				NOT = { has_leader_flag = is_in_recruit_window }
+			}
+		}
+	}
+	inline_script = trait/icon_element/tier_$TIER$
+}
+leader_trait_rarity = $RARITY$
+sorting_priority = @trait_sorting_priority_$RARITY$_triggered_$TIER$

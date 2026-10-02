@@ -1,0 +1,119 @@
+district_time_usage_cap_module = {
+	icon = "GFX_spaceport_module_dimensional_shrine"
+	section = "SCIENCE_STARBASE_SECTION"
+	construction_days = 360
+	category = sm_colony_cat
+	
+	potential = {
+		exists = owner
+		owner = {
+			has_tradition = tr_origin_time_unity
+			has_origin_time = yes
+		}
+		colony? = {
+			is_origin_time_planet_class = yes
+		}
+	}
+	
+	possible = {
+		owner = {
+			has_technology = tech_galactic_administration
+		}
+		colony? = {
+			if = {
+				limit = {
+					is_planet_class = pc_endless_time
+				}
+				has_deposit = d_endless_time
+			}
+			else = {
+				OR = {
+					has_deposit = d_time
+					has_deposit = d_brief
+					has_deposit = d_time_beyond_infinity
+				}
+			}
+		}
+	}
+	
+	triggered_planet_modifier = {
+		district_time_usage_cap_mult = 0.0125
+		mult = colony.value:num_time_modifier|MODIFIER|time_order_produces_mult|
+	}
+	
+	resources = {
+		category = starbase_modules
+		cost = {
+			alloys = 200
+			sr_dark_matter = 200
+		}
+		upkeep = {
+			energy = 4
+			sr_dark_matter = 2
+		}
+	}
+	
+	ai_weight = {
+		weight = 1000
+	}
+}
+
+col_time_module = {
+	icon = "GFX_starbase_shroud_beacon"
+	section = "SCIENCE_STARBASE_SECTION"
+	construction_days = 360
+	category = sm_colony_cat
+	
+	potential = {
+		exists = owner
+		owner = {
+			has_tradition = tr_origin_time_unity
+			has_origin_time = yes
+		}
+		colony? = {
+			is_origin_time_planet_class = yes
+		}
+	}
+	
+	possible = {
+		owner = {
+			has_technology = tech_psionic_theory
+		}
+		colony? = {
+			if = {
+				limit = {
+					is_planet_class = pc_endless_time
+				}
+				has_deposit = d_endless_time
+			}
+			else = {
+				OR = {
+					has_deposit = d_time
+					has_deposit = d_brief
+					has_deposit = d_time_beyond_infinity
+				}
+			}
+		}
+	}
+	
+	triggered_planet_modifier = {
+		col_time_mult = 0.0125
+		mult = colony.value:num_time_modifier|MODIFIER|time_order_produces_mult|
+	}
+	
+	resources = {
+		category = starbase_modules
+		cost = {
+			alloys = 200
+			sr_dark_matter = 200
+		}
+		upkeep = {
+			energy = 4
+			sr_dark_matter = 2
+		}
+	}
+	
+	ai_weight = {
+		weight = 1000
+	}
+}

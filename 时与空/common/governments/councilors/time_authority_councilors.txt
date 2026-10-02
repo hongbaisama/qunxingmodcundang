@@ -1,0 +1,163 @@
+councilor_ruler_time_democratic = {
+	leader_class = { official commander scientist }
+	possible = { always = no }
+	icon = "GFX_icon_councilor_ruler_time_democratic"
+	triggered_country_modifier = {
+		potential = {
+			councilor_ruler_time_authority_gain_bonus = yes
+		}
+		district_time_usage_cap_mult = 0.0125
+		time_researcher_max_weight = 0.05
+	}
+	triggered_country_modifier = {
+		potential = {
+			councilor_ruler_time_authority_gain_bonus = no
+		}
+		pop_factions_produces_mult = 0.02
+		country_edict_fund_add = 5
+	}
+	inline_script = {
+		script = councilors/councilor_ruler_time_democratic_extra_modifiers
+	}
+	conditional_tooltip = "councilor_ruler_time_is_councilor_conditional_tooltip"
+	ai_hiring_weight = {
+		inline_script = councilor_leader_weights
+	}
+}
+
+councilor_ruler_time_imperial = {
+	leader_class = { official commander scientist }
+	possible = { always = no }
+	icon = "GFX_icon_councilor_ruler_time_imperial"
+	triggered_country_modifier = {
+		potential = {
+			councilor_ruler_time_authority_gain_bonus = yes
+		}
+		time_order_produces_mult = 0.025
+		time_researcher_max_weight = 0.05
+	}
+	triggered_country_modifier = {
+		potential = {
+			councilor_ruler_time_authority_gain_bonus = no
+		}
+		country_power_projection_influence_produces_add = 0.25
+		country_edict_fund_add = 5
+	}
+	inline_script = {
+		script = councilors/councilor_ruler_time_imperial_extra_modifiers
+	}
+	conditional_tooltip = "councilor_ruler_time_is_ruler_conditional_tooltip"
+	ai_hiring_weight = {
+		inline_script = councilor_leader_weights
+	}
+}
+
+councilor_ruler_time_corporate = {
+	leader_class = { official commander scientist }
+	possible = { always = no }
+	icon = "GFX_icon_councilor_ruler_time_corporate"
+	triggered_country_modifier = {
+		potential = {
+			councilor_ruler_time_authority_gain_bonus = yes
+		}
+		time_order_trade_value_add = 1.25
+		time_researcher_trade_value_add = 0.25
+		time_researcher_max_weight = 0.05
+	}
+	triggered_country_modifier = {
+		potential = {
+			councilor_ruler_time_authority_gain_bonus = no
+		}
+		branch_office_value_mult = 0.02
+		country_edict_fund_add = 5
+	}
+	inline_script = {
+		script = councilors/councilor_ruler_time_corporate_extra_modifiers
+	}
+	conditional_tooltip = "councilor_ruler_time_is_ruler_conditional_tooltip"
+	ai_hiring_weight = {
+		inline_script = councilor_leader_weights
+	}
+}
+
+councilor_ruler_endless_time_democratic = {
+	leader_class = { official commander scientist }
+	possible = { always = no }
+	icon = "GFX_icon_councilor_ruler_time_democratic"
+	triggered_country_modifier = {
+		potential = {
+			councilor_ruler_time_authority_gain_bonus = yes
+		}
+		district_time_usage_cap_mult = 0.025
+		time_researcher_max_weight = 0.1
+	}
+	triggered_country_modifier = {
+		potential = {
+			councilor_ruler_time_authority_gain_bonus = no
+		}
+		pop_factions_produces_mult = 0.04
+		country_edict_fund_add = 10
+	}
+	inline_script = {
+		script = councilors/councilor_ruler_time_democratic_extra_modifiers
+	}
+	conditional_tooltip = "councilor_ruler_time_is_councilor_conditional_tooltip"
+	ai_hiring_weight = {
+		inline_script = councilor_leader_weights
+	}
+}
+
+councilor_ruler_endless_time_imperial = {
+	leader_class = { official commander scientist }
+	possible = { always = no }
+	icon = "GFX_icon_councilor_ruler_time_imperial"
+	triggered_country_modifier = {
+		potential = {
+			councilor_ruler_time_authority_gain_bonus = yes
+		}
+		time_order_produces_mult = 0.05
+		time_researcher_max_weight = 0.1
+	}
+	triggered_country_modifier = {
+		potential = {
+			councilor_ruler_time_authority_gain_bonus = no
+		}
+		country_power_projection_influence_produces_add = 0.5
+		country_edict_fund_add = 10
+	}
+	inline_script = {
+		script = councilors/councilor_ruler_time_imperial_extra_modifiers
+	}
+	conditional_tooltip = "councilor_ruler_time_is_ruler_conditional_tooltip"
+	ai_hiring_weight = {
+		inline_script = councilor_leader_weights
+	}
+}
+
+councilor_ruler_endless_time_corporate = {
+	leader_class = { official commander scientist }
+	possible = { always = no }
+	icon = "GFX_icon_councilor_ruler_time_corporate"
+	triggered_country_modifier = {
+		potential = {
+			councilor_ruler_time_authority_gain_bonus = yes
+		}
+		time_order_trade_value_add = 2.5
+		time_researcher_trade_value_add = 0.5
+		time_researcher_max_weight = 0.1
+	}
+	triggered_country_modifier = {
+		potential = {
+			councilor_ruler_time_authority_gain_bonus = no
+		}
+		branch_office_value_mult = 0.04
+		country_edict_fund_add = 10
+	}
+	inline_script = {
+		script = councilors/councilor_ruler_time_corporate_extra_modifiers
+	}
+	conditional_tooltip = "councilor_ruler_time_is_ruler_conditional_tooltip"
+	ai_hiring_weight = {
+		inline_script = councilor_leader_weights
+	}
+}

@@ -1,0 +1,84 @@
+dimension_traveler_horror_official_modifier_good = {
+	building_time_mult = -1
+	planet_jobs_produces_mult = 10
+	planet_decision_enact_speed_mult = 100
+	intel_gain_speed = 100
+	spy_network_daily_value_mult = 100
+	espionage_operation_speed_mult = 100
+	messenger_network = 1
+	icon = "gfx/interface/icons/planet_modifiers/pm_surreal_visions.dds"
+	icon_frame = 1
+}
+
+dimension_traveler_horror_official_modifier_bad = {
+	building_time_mult = 1
+	planet_jobs_produces_mult = -10
+	planet_decision_enact_speed_mult = -100
+	intel_gain_speed = -100
+	spy_network_daily_value_mult = -100
+	espionage_operation_speed_mult = -100
+	planet_stability_add = -100
+	country_cost_mult = 1
+	country_upkeep_mult = 1
+	icon = "gfx/interface/icons/planet_modifiers/pm_surreal_visions.dds"
+	icon_frame = 3
+}
+
+dimension_traveler_horror_scientist_modifier_good = {
+	fleet_mia_time_mult = -1
+	council_agenda_finishing_effect_duration_mult = 10
+	all_technology_research_speed = 100
+	ship_anomaly_research_speed_mult = 100
+	ship_archaeological_site_excavation_speed_mult = 100
+	ship_astral_rift_speed_mult = 100
+	messenger_network = 1
+	icon = "gfx/interface/icons/planet_modifiers/pm_surreal_visions.dds"
+	icon_frame = 1
+}
+
+dimension_traveler_horror_scientist_modifier_bad = {
+	fleet_mia_time_mult = 1
+	council_agenda_finishing_effect_duration_mult = -10
+	all_technology_research_speed = -100
+	ship_anomaly_research_speed_mult = -100
+	ship_archaeological_site_excavation_speed_mult = -100
+	ship_astral_rift_speed_mult = -100
+	planet_stability_add = -100
+	country_cost_mult = 1
+	country_upkeep_mult = 1
+	icon = "gfx/interface/icons/planet_modifiers/pm_surreal_visions.dds"
+	icon_frame = 3
+}
+
+dimension_traveler_horror_commander_modifier_good = {
+	ship_jumpdrive_cooldown_mult = -1
+	ship_fire_rate_mult = 10
+	ship_experience_gain_mult = 100
+	army_damage_mult = 100
+	army_morale_damage_mult = 100
+	army_experience_gain_mult = 100
+	messenger_network = 1
+	icon = "gfx/interface/icons/planet_modifiers/pm_surreal_visions.dds"
+	icon_frame = 1
+}
+
+dimension_traveler_horror_commander_modifier_bad = {
+	ship_jumpdrive_cooldown_mult = 1
+	ship_fire_rate_mult = -10
+	ship_experience_gain_mult = -100
+	army_damage_mult = -100
+	army_morale_damage_mult = -100
+	army_experience_gain_mult = -100
+	planet_stability_add = -100
+	country_cost_mult = 1
+	country_upkeep_mult = 1
+	icon = "gfx/interface/icons/planet_modifiers/pm_surreal_visions.dds"
+	icon_frame = 3
+}
+
+come_from_white_hole = {
+	ship_armor_reduction = -1
+	ship_shield_reduction = -1
+	icon = "gfx/interface/icons/planet_modifiers/pm_wormhole.dds"
+	icon_frame = 1
+}

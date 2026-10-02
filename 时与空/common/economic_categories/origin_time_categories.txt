@@ -1,0 +1,538 @@
+# 区划
+
+planet_districts_time = {
+	parent = planet_districts_cities
+	generate_mult_modifiers = {
+		produces
+		cost
+		upkeep
+	}
+	modifier_category = colony
+}
+
+planet_districts_time_physics = {
+	parent = planet_districts_generator
+	generate_mult_modifiers = {
+		produces
+		cost
+		upkeep
+	}
+	modifier_category = colony
+}
+
+planet_districts_time_society = {
+	parent = planet_districts_farming
+	generate_mult_modifiers = {
+		produces
+		cost
+		upkeep
+	}
+	modifier_category = colony
+}
+
+planet_districts_time_engineering = {
+	parent = planet_districts_mining
+	generate_mult_modifiers = {
+		produces
+		cost
+		upkeep
+	}
+	modifier_category = colony
+}
+
+planet_districts_endless_time = {
+	modifier_category = colony
+	generate_mult_modifiers = {
+		upkeep
+	}
+	################################################################
+	# 继承修正
+	################################################################
+	triggered_upkeep_modifier = {
+		key = country
+		modifier_types = {
+			mult
+		}
+		trigger = {
+			always = yes
+		}
+		use_parent_icon = yes
+	}
+	triggered_upkeep_modifier = {
+		key = planet_structures
+		modifier_types = {
+			mult
+		}
+		trigger = {
+			always = yes
+		}
+		use_parent_icon = yes
+	}
+	triggered_upkeep_modifier = {
+		key = planet_districts
+		modifier_types = {
+			mult
+		}
+		trigger = {
+			always = yes
+		}
+		use_parent_icon = yes
+	}
+}
+
+planet_districts_endless_time_physics = {
+	parent = planet_districts_generator
+	generate_mult_modifiers = {
+		produces
+		cost
+		upkeep
+	}
+	modifier_category = colony
+}
+
+planet_districts_endless_time_society = {
+	parent = planet_districts_farming
+	generate_mult_modifiers = {
+		produces
+		cost
+		upkeep
+	}
+	modifier_category = colony
+}
+
+planet_districts_endless_time_engineering = {
+	parent = planet_districts_mining
+	generate_mult_modifiers = {
+		produces
+		cost
+		upkeep
+	}
+	modifier_category = colony
+}
+
+# 摘录者
+planet_time_researchers = {
+	parent = planet_jobs_productive
+	modifier_category = colony
+	generate_mult_modifiers = {
+		produces
+		upkeep
+	}
+	generate_add_modifiers = {
+		produces
+		upkeep
+	}
+}
+
+# 调零者
+planet_black_hole_physicists = {
+	parent = planet_time_researchers
+	modifier_category = colony
+	generate_mult_modifiers = {
+		produces
+		upkeep
+	}
+	generate_add_modifiers = {
+		produces
+		upkeep
+	}
+	################################################################
+	# 继承修正
+	################################################################
+	inline_script = {
+		script = economic_categories/time_inherited_economic_category_modifier
+		TYPE = planet_technician
+	}
+	inline_script = {
+		script = economic_categories/time_inherited_economic_category_modifier
+		TYPE = planet_artisans
+	}
+	inline_script = {
+		script = economic_categories/time_inherited_economic_category_modifier
+		TYPE = planet_physicists
+	}
+	# 物理学家作为研究人员的子类，应只继承mult类修正
+	inline_script = {
+		script = economic_categories/time_inherited_economic_category_modifier_only_mult
+		TYPE = planet_researchers
+	}
+	# 专家/复合子个体
+	inline_script = {
+		script = economic_categories/time_inherited_economic_category_modifier_for_job_category
+		REGULAR_TYPE = planet_jobs_specialist
+		GESTALT_TYPE_1 = planet_jobs_specialist
+		GESTALT_TYPE_2 = planet_jobs_complex_drone
+	}
+}
+
+# 逐光者
+planet_black_hole_biologists = {
+	parent = planet_time_researchers
+	modifier_category = colony
+	generate_mult_modifiers = {
+		produces
+		upkeep
+	}
+	generate_add_modifiers = {
+		produces
+		upkeep
+	}
+	################################################################
+	# 继承修正
+	################################################################
+	inline_script = {
+		script = economic_categories/time_inherited_economic_category_modifier
+		TYPE = planet_farmers
+	}
+	inline_script = {
+		script = economic_categories/time_inherited_economic_category_modifier
+		TYPE = planet_bureaucrats
+	}
+	inline_script = {
+		script = economic_categories/time_inherited_economic_category_modifier
+		TYPE = planet_biologists
+	}
+	# 生物学家作为研究人员的子类，应只继承mult类修正
+	inline_script = {
+		script = economic_categories/time_inherited_economic_category_modifier_only_mult
+		TYPE = planet_researchers
+	}
+	# 专家/复合子个体
+	inline_script = {
+		script = economic_categories/time_inherited_economic_category_modifier_for_job_category
+		REGULAR_TYPE = planet_jobs_specialist
+		GESTALT_TYPE_1 = planet_jobs_specialist
+		GESTALT_TYPE_2 = planet_jobs_complex_drone
+	}
+}
+
+# 驱影者
+planet_black_hole_engineers = {
+	parent = planet_time_researchers
+	modifier_category = colony
+	generate_mult_modifiers = {
+		produces
+		upkeep
+	}
+	generate_add_modifiers = {
+		produces
+		upkeep
+	}
+	################################################################
+	# 继承修正
+	################################################################
+	inline_script = {
+		script = economic_categories/time_inherited_economic_category_modifier
+		TYPE = planet_miners
+	}
+	inline_script = {
+		script = economic_categories/time_inherited_economic_category_modifier
+		TYPE = planet_metallurgists
+	}
+	inline_script = {
+		script = economic_categories/time_inherited_economic_category_modifier
+		TYPE = planet_engineers
+	}
+	# 工程学家作为研究人员的子类，应只继承mult类修正
+	inline_script = {
+		script = economic_categories/time_inherited_economic_category_modifier_only_mult
+		TYPE = planet_researchers
+	}
+	# 专家/复合子个体
+	inline_script = {
+		script = economic_categories/time_inherited_economic_category_modifier_for_job_category
+		REGULAR_TYPE = planet_jobs_specialist
+		GESTALT_TYPE_1 = planet_jobs_specialist
+		GESTALT_TYPE_2 = planet_jobs_complex_drone
+	}
+}
+
+# 递归者
+planet_time_recursioners = {
+	parent = planet_time_researchers
+	modifier_category = colony
+	generate_mult_modifiers = {
+		produces
+		upkeep
+	}
+	generate_add_modifiers = {
+		produces
+		upkeep
+	}
+	################################################################
+	# 继承修正
+	################################################################
+	inline_script = {
+		script = economic_categories/time_inherited_economic_category_modifier
+		TYPE = planet_technician
+	}
+	inline_script = {
+		script = economic_categories/time_inherited_economic_category_modifier
+		TYPE = planet_miners
+	}
+	inline_script = {
+		script = economic_categories/time_inherited_economic_category_modifier
+		TYPE = planet_farmers
+	}
+	inline_script = {
+		script = economic_categories/time_inherited_economic_category_modifier
+		TYPE = planet_metallurgists
+	}
+	inline_script = {
+		script = economic_categories/time_inherited_economic_category_modifier
+		TYPE = planet_artisans
+	}
+	inline_script = {
+		script = economic_categories/time_inherited_economic_category_modifier
+		TYPE = planet_bureaucrats
+	}
+	inline_script = {
+		script = economic_categories/time_inherited_economic_category_modifier
+		TYPE = planet_physicists
+	}
+	inline_script = {
+		script = economic_categories/time_inherited_economic_category_modifier
+		TYPE = planet_biologists
+	}
+	inline_script = {
+		script = economic_categories/time_inherited_economic_category_modifier
+		TYPE = planet_engineers
+	}
+	# 物理/生物/工程学家作为研究人员的子类，应只继承mult类修正
+	inline_script = {
+		script = economic_categories/time_inherited_economic_category_modifier_only_mult
+		TYPE = planet_researchers
+	}
+	# 专家/复合子个体
+	inline_script = {
+		script = economic_categories/time_inherited_economic_category_modifier_for_job_category
+		REGULAR_TYPE = planet_jobs_specialist
+		GESTALT_TYPE_1 = planet_jobs_specialist
+		GESTALT_TYPE_2 = planet_jobs_complex_drone
+	}
+}
+
+# 希望监护者
+
+planet_hope_guardians = {
+	parent = planet_time_researchers
+	modifier_category = colony
+	generate_mult_modifiers = {
+		produces
+		upkeep
+	}
+	generate_add_modifiers = {
+		produces
+		upkeep
+	}
+	################################################################
+	# 继承修正
+	################################################################
+	inline_script = {
+		script = economic_categories/time_inherited_economic_category_modifier
+		TYPE = planet_artisans
+	}
+	# 精英
+	inline_script = {
+		script = economic_categories/time_inherited_economic_category_modifier_only_mult
+		TYPE = planet_jobs_ruler
+	}
+}
+
+# 希望传播者
+
+planet_hope_disseminators = {
+	parent = planet_time_researchers
+	modifier_category = colony
+	generate_mult_modifiers = {
+		produces
+		upkeep
+	}
+	generate_add_modifiers = {
+		produces
+		upkeep
+	}
+	################################################################
+	# 继承修正
+	################################################################
+	inline_script = {
+		script = economic_categories/time_inherited_economic_category_modifier
+		TYPE = planet_technician
+	}
+	# 精英
+	inline_script = {
+		script = economic_categories/time_inherited_economic_category_modifier_only_mult
+		TYPE = planet_jobs_ruler
+	}
+}
+
+# 永恒观测者
+
+planet_eternal_observers = {
+	parent = planet_time_researchers
+	modifier_category = colony
+	generate_mult_modifiers = {
+		produces
+		upkeep
+	}
+	generate_add_modifiers = {
+		produces
+		upkeep
+	}
+	################################################################
+	# 继承修正
+	################################################################
+	inline_script = {
+		script = economic_categories/time_inherited_economic_category_modifier
+		TYPE = planet_physicists
+	}
+	inline_script = {
+		script = economic_categories/time_inherited_economic_category_modifier
+		TYPE = planet_biologists
+	}
+	inline_script = {
+		script = economic_categories/time_inherited_economic_category_modifier
+		TYPE = planet_engineers
+	}
+	# 物理/生物/工程学家作为研究人员的子类，应只继承mult类修正
+	inline_script = {
+		script = economic_categories/time_inherited_economic_category_modifier_only_mult
+		TYPE = planet_researchers
+	}
+	# 精英
+	inline_script = {
+		script = economic_categories/time_inherited_economic_category_modifier_only_mult
+		TYPE = planet_jobs_ruler
+	}
+}
+
+# 永恒缔造者
+
+planet_eternal_creators = {
+	parent = planet_time_researchers
+	modifier_category = colony
+	generate_mult_modifiers = {
+		produces
+		upkeep
+	}
+	generate_add_modifiers = {
+		produces
+		upkeep
+	}
+	################################################################
+	# 继承修正
+	################################################################
+	inline_script = {
+		script = economic_categories/time_inherited_economic_category_modifier
+		TYPE = planet_farmers
+	}
+	# 精英
+	inline_script = {
+		script = economic_categories/time_inherited_economic_category_modifier_only_mult
+		TYPE = planet_jobs_ruler
+	}
+}
+
+# 维度统治者
+
+planet_dimensional_rulers = {
+	parent = planet_time_researchers
+	modifier_category = colony
+	generate_mult_modifiers = {
+		produces
+		upkeep
+	}
+	generate_add_modifiers = {
+		produces
+		upkeep
+	}
+	################################################################
+	# 继承修正
+	################################################################
+	# 精英
+	inline_script = {
+		script = economic_categories/time_inherited_economic_category_modifier_only_mult
+		TYPE = planet_jobs_ruler
+	}
+}
+
+# 维度征服者
+
+planet_dimensional_conquerors = {
+	parent = planet_time_researchers
+	modifier_category = colony
+	generate_mult_modifiers = {
+		produces
+		upkeep
+	}
+	generate_add_modifiers = {
+		produces
+		upkeep
+	}
+	################################################################
+	# 继承修正
+	################################################################
+	inline_script = {
+		script = economic_categories/time_inherited_economic_category_modifier
+		TYPE = planet_metallurgists
+	}
+	# 精英
+	inline_script = {
+		script = economic_categories/time_inherited_economic_category_modifier_only_mult
+		TYPE = planet_jobs_ruler
+	}
+}
+
+# 本源冥想者
+
+planet_original_meditators = {
+	parent = planet_time_researchers
+	modifier_category = colony
+	generate_mult_modifiers = {
+		produces
+		upkeep
+	}
+	generate_add_modifiers = {
+		produces
+		upkeep
+	}
+	################################################################
+	# 继承修正
+	################################################################
+	inline_script = {
+		script = economic_categories/time_inherited_economic_category_modifier
+		TYPE = planet_bureaucrats
+	}
+	# 精英
+	inline_script = {
+		script = economic_categories/time_inherited_economic_category_modifier_only_mult
+		TYPE = planet_jobs_ruler
+	}
+}
+
+# 本源净化者
+
+planet_original_purifiers = {
+	parent = planet_time_researchers
+	modifier_category = colony
+	generate_mult_modifiers = {
+		produces
+		upkeep
+	}
+	generate_add_modifiers = {
+		produces
+		upkeep
+	}
+	################################################################
+	# 继承修正
+	################################################################
+	inline_script = {
+		script = economic_categories/time_inherited_economic_category_modifier
+		TYPE = planet_miners
+	}
+	# 精英
+	inline_script = {
+		script = economic_categories/time_inherited_economic_category_modifier_only_mult
+		TYPE = planet_jobs_ruler
+	}
+}

@@ -1,0 +1,88 @@
+﻿l_english:
+ origin_tooltip_mechanists_effects:0 "-['concept_robots', £mod_planet_jobs_robotic_produces_mult£$ROBOT$] £pop£§IPopulation§!: 800$TABBED_NEW_LINE$-Machine Trait: ['concept_adaptive_frames']\n-Homeworld: ['concept_robot_assembly_plant',£building£$building_robot_assembly_plant$]\n-$ADDITIONAL_TECHNOLOGIES_STRING$$TABBED_NEW_LINE$-['concept_powered_exoskeletons', £engineering_research£$tech_powered_exoskeletons$]$TABBED_NEW_LINE$-['concept_robotic_workers', £engineering_research£$tech_robotic_workers$]$TABBED_NEW_LINE$-£engineering£['technology:tech_droid_workers']$TABBED_NEW_LINE$-£physics£['technology:tech_administrative_ai']$TABBED_NEW_LINE$-£physics£['technology:tech_self_aware_logic']\n-$GUARANTEED_RESEARCH_OPTION_STRING$$TABBED_NEW_LINE$-['concept_robomodding', £engineering_research£$tech_robomodding$]$TABBED_NEW_LINE$-£engineering£['technology:tech_synthetic_workers']$TABBED_NEW_LINE$-£physics£['technology:tech_sapient_ai']\n-Automatically embark on the ['concept_synthetic_ascension'] path"
+ origin_tooltip_syncretic_evolution_effects:0 "-£pop£§IOrganic Population§! with ['concept_syncretic_proles'] trait: 1.2K\n-Unlock ['concept_syncretic_evolution_traits'] for ['concept_syncretic_proles'] species\n-If the starting species is not §IMechanical Species§!:\n$t$-$ADDITIONAL_TECHNOLOGIES_STRING$$TABBED_NEW_LINE$$t$-£society£['technology:tech_genome_mapping']$TABBED_NEW_LINE$$t$-£society£['technology:tech_cloning']$TABBED_NEW_LINE$$t$-£society£['technology:tech_frontier_health']\n$t$-$GUARANTEED_RESEARCH_OPTION_STRING$$TABBED_NEW_LINE$$t$-£society£['technology:tech_gene_tailoring']$TABBED_NEW_LINE$$t$-£society£['technology:tech_gene_expressions']\n$t$-Automatically embark on the ['concept_mutation_ascension'] path after researching specific §YTechnologies§!"
+ origin_tooltip_post_apocalyptic_effects:0 "-$HOMEWORLD$['concept_pc_nuked']$NEW_LINE$-$SPECIES_TRAITS$['concept_survivor']\n-Can terraform certain planets into ['concept_pc_nuked']"
+ origin_tooltip_post_apocalyptic_machines_effects:"-$HOMEWORLD$['concept_pc_nuked']$NEW_LINE$-$SPECIES_TRAITS$['concept_robot_survivor']\n-Can terraform certain planets into ['concept_pc_nuked']"
+ origin_tooltip_hegemon_effects:0 "-President of ['concept_hegemony_federation']['concept_federation'], and overlord of initial ['concept_federation'] members$federation_origin_end$"
+ origin_tooltip_tree_effects:"-$HOMEWORLD$['concept_tree_of_life']$NEW_LINE$-Colonized Planets: ['concept_tree_of_life_sapling'] Planetary Feature$NEW_LINE$-Colonies lacking §YTree of Life Sapling§!: ['concept_transplant_tree_of_life'] Planetary Decision$NEW_LINE$-$AVAILABLE_HOLDINGS$['concept_tree_of_life_holding', £building£$holding_tree_of_life_sapling$] on Subject Colonies\n-$ADDITIONAL_TECHNOLOGIES_STRING$$TABBED_NEW_LINE$-£society£['technology:tech_genome_mapping']$TABBED_NEW_LINE$-£society£['technology:tech_cloning']$TABBED_NEW_LINE$-£society£['technology:tech_colonization_2']\n-$GUARANTEED_RESEARCH_OPTION_STRING$$TABBED_NEW_LINE$-£society£['technology:tech_gene_tailoring']$TABBED_NEW_LINE$-£society£['technology:tech_gene_expressions']\n-Automatically embark on the ['concept_purity_ascension'] path after researching specific §YTechnologies§!"
+ origin_tooltip_wilderness_effects:"-Species Trait: ['trait:trait_wilderness']\n-Replace all £building£['concept_buildings'], £district£['concept_districts'] and £zone£['concept_district_specialization'] with exclusive versions\n-Replace Colony Ship colonization with ['concept_terraforming']\n--Unlock new resource: £biomass£['concept_biomass']\n-Homeworld$TABBED_NEW_LINE$-Size: £planetsize£18$TABBED_NEW_LINE$-['concept_scorched_plains', £blocker£$d_scorched_plains$]\n-['concept_time_gaia_deposit'] provides §Gextra bonuses§!"
+ 
+ concept_survivor: "$trait_survivor$"
+ concept_survivor_desc:"-$mod_pc_nuked_habitability$: §G+70%§!\n-$MOD_LEADER_AGE$: §G+10 Years§!\n-$survivor_trait_tooltip$\n\n§L$trait_survivor_desc$§!"
+ 
+ concept_tree_of_life: "$d_tree_of_life_home$"
+ concept_tree_of_life_desc:"-Empire $mod_BIOLOGICAL_species_trait_points_add$: §G+1§!\n-$mod_district_farming_max_add$: §G+2§!\n-$MOD_PLANET_AMENITIES_NO_HAPPINESS_ADD$: §G+200§!\n-$MOD_PLANET_HOUSING_ADD$: §G+200§!\n-Per $pop_group_unit$£pop£Pop causes:\n$tt$-$mod_district_farming_max_add$: §G+0.05§!\n$tt$-$MOD_PLANET_AMENITIES_NO_HAPPINESS_ADD$: §G+5§!\n$tt$-$MOD_PLANET_HOUSING_ADD$: §G+5§!\n$tt$-$MOD_LOGISTIC_GROWTH_MULT$: §G+1%§!\n$tt$-$mod_planet_jobs_food_produces_mult$: §G+1%§!\n$tt$-$mod_planet_jobs_society_research_produces_mult$: §G+1%§!\n$tt$-$mod_planet_pops_upkeep_mult$: §R+1%§!\n-Each $pop_group_unit$$job_agri_drone_plural_with_icon$, $job_brain_drone_biologist_plural_with_icon$ and $job_spawning_drone_plural_with_icon$ on $pc_gaia$ causes:\n$tt$-$mod_organic_pop_bonus_workforce_mult$: §G+0.5%§! (Max §G+50%§!)\n-$d_tree_of_life_tooltip$\n-Upkeep: 1 $i_food$/£pop£\n\n§L$d_tree_of_life_home_desc$§!"
+ concept_tree_of_life_sapling: "$d_tree_of_life_colony$"
+ concept_tree_of_life_sapling_desc:"-Empire $mod_BIOLOGICAL_species_trait_points_add$: §G+0.25§!\n-$mod_district_farming_max_add$: §G+1§!\n-$MOD_PLANET_AMENITIES_NO_HAPPINESS_ADD$: §G+100§!\n-$MOD_PLANET_HOUSING_ADD$: §G+100§!\n-Per $pop_group_unit$£pop£Pop causes:\n$tt$-$mod_district_farming_max_add$: §G+0.025§!\n$tt$-$MOD_PLANET_AMENITIES_NO_HAPPINESS_ADD$: §G+2.5§!\n$tt$-$MOD_PLANET_HOUSING_ADD$: §G+2.5§!\n$tt$-$MOD_LOGISTIC_GROWTH_MULT$: §G+0.5%§!\n$tt$-$mod_planet_jobs_food_produces_mult$: §G+0.5%§!\n$tt$-$mod_planet_jobs_society_research_produces_mult$: §G+0.5%§!\n$tt$-$mod_planet_pops_upkeep_mult$: §R+0.5%§!\n-Each $pop_group_unit$$job_agri_drone_plural_with_icon$, $job_brain_drone_biologist_plural_with_icon$ and $job_spawning_drone_plural_with_icon$ on $pc_gaia$ causes:\n$tt$-$mod_organic_pop_bonus_workforce_mult$: §G+0.25%§! (Max §G+25%§!)\n-$d_tree_of_life_tooltip$\n-Upkeep: 0.5 $i_food$/£pop£\n\n§L$d_tree_of_life_colony_desc$§!"
+ 
+ building_akx_worm_1:0 "Spiral Power Hub"
+ building_akx_worm_1_desc:0 "$akx_worm_1_picture$By applying physics technology completely beyond common sense, we can significantly increase the planet's power output. This technology is said to involve ghost night walks and falling dreams."
+ building_akx_worm_2:0 "Institute of the Loop"
+ building_akx_worm_2_desc:0 "$akx_worm_2_picture$The guidance of the Loop encourages intuition, obedience, and sensory experience."
+ building_akx_worm_3:0 "Omega Alignment"
+ building_akx_worm_3_desc:0 "$akx_worm_3_picture$The surface of this object points straight to the sky. Its internal structure cannot be observed by any detection or mapping technology. Of course, we all know what's inside."
+ 
+ akx.9210.desc:0 "[GetAkx9210Desc]"
+ akx.9220.desc:0 "[GetAkx9220Desc]"
+ 
+ planet_automation_worm:"£tradition_end£Horizon Signal"
+ planet_automation_worm_desc:"Allows construction of §H$zone_akx_worm$§!, §H$building_akx_worm_1$§!, §H$building_akx_worm_2$§!, and §H$building_akx_worm_3$§!."
+ 
+ allow_gaia:"Allows terraforming planets into §YGaia Worlds§!\n['concept_time_gaia_deposit'] effect enhanced"
+ 
+ crisis.7516.desc.worm: "[GetCrisis7516DescWorm]"
+ 
+ mod_leader_commanders_physics_research_produces_add: "£physics_research $physics_research$ from £commander $commander$"
+ mod_leader_officials_physics_research_produces_add: "£physics_research $physics_research$ from £official $official$"
+ mod_leader_scientists_physics_research_produces_add: "£physics_research $physics_research$ from £scientist $scientist$"
+ mod_leader_commanders_society_research_produces_add: "£society_research $society_research$ from £commander $commander$"
+ mod_leader_officials_society_research_produces_add: "£society_research $society_research$ from £official $official$"
+ mod_leader_scientists_society_research_produces_add: "£society_research $society_research$ from £scientist $scientist$"
+ mod_leader_commanders_engineering_research_produces_add: "£engineering_research $engineering_research$ from £commander $commander$"
+ mod_leader_officials_engineering_research_produces_add: "£engineering_research $engineering_research$ from £official $official$"
+ mod_leader_scientists_engineering_research_produces_add: "£engineering_research $engineering_research$ from £scientist $scientist$"
+ mod_leader_commanders_sr_dark_matter_produces_add: "£sr_dark_matter $sr_dark_matter$ from £commander $commander$"
+ mod_leader_officials_sr_dark_matter_produces_add: "£sr_dark_matter $sr_dark_matter$ from £official $official$"
+ mod_leader_scientists_sr_dark_matter_produces_add: "£sr_dark_matter $sr_dark_matter$ from £scientist $scientist$"
+ mod_leader_commanders_astral_threads_produces_add: "£astral_threads $astral_threads$ from £commander $commander$"
+ mod_leader_officials_astral_threads_produces_add: "£astral_threads $astral_threads$ from £official $official$"
+ mod_leader_scientists_astral_threads_produces_add: "£astral_threads $astral_threads$ from £scientist $scientist$"
+ 
+ ################################################################
+ # 原版优化
+ ################################################################
+ 
+ # 新的格式已经没救了，只能这么凑合一下了（$pop_group_unit$只能删去，否则语序永远不对）
+ produced_per_pop_group_unit: "$produced_from$"
+ upkeep_per_pop_group_unit: "$upkeep_for$"
+ 
+ # 百分比再生修正自带一个百分号，显示的10%再生，实际上是万分之10，即0.1%再生
+ MOD_SHIP_HULL_REGEN_ADD_PERC:"Daily Hull Regen"
+ MOD_SHIP_HULL_REGEN_ADD_STATIC:"Daily Hull Regen"
+ MOD_SHIP_ARMOR_REGEN_ADD_PERC:"Daily Armor Regen"
+ MOD_SHIP_ARMOR_REGEN_ADD_STATIC:"Daily Armor Regen"
+ MOD_SHIP_SHIELD_REGEN_ADD_PERC:"Daily Shield Regen"
+ MOD_SHIP_SHIELD_REGEN_ADD_STATIC:"Daily Shield Regen"
+ 
+ MOD_ESPIONAGE_OPERATION_COST_ADD:"Infiltration required for operation"
+ 
+ leader_trait:"§cLeader Trait§!\n[Root.GetClassTexticon][Root.GetClass] Class"
+ official_trait:"§cLeader Trait§!\n£official£$official$ Class"
+ scientist_trait:"§cLeader Trait§!\n£scientist£$scientist$ Class"
+ commander_trait:"§cLeader Trait§!\n£commander£$commander$ Class"
+ 
+ veteran_leader_trait:"§vVeteran Leader Trait§!\n[Root.GetClassTexticon][Root.GetClass] Class"
+ veteran_official_trait:"§vVeteran Leader Trait§!\n£official£$official$ Class"
+ veteran_scientist_trait:"§vVeteran Leader Trait§!\n£scientist£$scientist$ Class"
+ veteran_commander_trait:"§vVeteran Leader Trait§!\n£commander£$commander$ Class"
+ 
+ paragon_leader_trait:"§dDestiny Trait§!\n[Root.GetClassTexticon][Root.GetClass] Class"
+ paragon_official_trait:"§dDestiny Trait§!\n£official£$official$ Class"
+ paragon_scientist_trait:"§dDestiny Trait§!\n£scientist£$scientist$ Class"
+ paragon_commander_trait:"§dDestiny Trait§!\n£commander£$commander$ Class"
+ 
+ official_subclass: "£official §v$veteran_class$§!"
+ scientist_subclass: "£scientist §v$veteran_class$§!"
+ commander_subclass: "£commander §v$veteran_class$§!"
+ 
+ DESTINY_SELECTION:0 "Destiny Selection"

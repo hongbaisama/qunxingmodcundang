@@ -1,0 +1,723 @@
+end_messenger = {
+	category = ruler
+	can_be_automated = no
+	
+	swappable_data = {
+		default = {
+			condition_string = RULER_JOB_TRIGGER
+			building_icon = building_akx_end_messenger
+		}
+	}
+
+	tags = { }
+
+	possible_pre_triggers = {
+		has_owner = yes
+		is_enslaved = no
+		is_being_purged = no
+		is_being_assimilated = no
+		is_sapient = yes
+	}
+
+	possible_precalc = can_fill_ruler_job
+	possible = {
+		has_akx_messenger = yes
+	}
+
+	resources = {
+		category = planet_end_messengers
+		produces = {
+			trigger = {
+				owner = {
+					has_dimension_traveler_horror_modifier_bad = no
+				}
+			}
+			minor_artifacts = 2.5
+			mult = value:messenger_network_value
+		}
+		produces = {
+			trigger = {
+				owner = {
+					OR = {
+						has_technology = tech_coils_god_1
+						has_technology = tech_coils_god_2
+					}
+					has_dimension_traveler_horror_modifier_bad = no
+				}
+			}
+			minor_artifacts = 0.64
+			mult = value:messenger_network_value
+		}
+		produces = {
+			trigger = {
+				owner = {
+					unlock_dimension_traveler_destiny_trait = yes
+					has_dimension_traveler_horror_modifier_bad = no
+				}
+			}
+			astral_threads = 0.25
+			mult = value:messenger_network_value
+		}
+		produces = {
+			trigger = {
+				owner = {
+					has_country_flag = dimension_traveler_end
+					has_dimension_traveler_horror_modifier_bad = no
+				}
+			}
+			astral_threads = 0.25
+			mult = value:messenger_network_value
+		}
+		produces = {
+			trigger = {
+				owner = {
+					has_technology = tech_hope_end_messenger
+					has_dimension_traveler_horror_modifier_bad = no
+				}
+			}
+			astral_threads = 0.5
+			mult = value:messenger_network_value
+		}
+		upkeep = {
+			consumer_goods = 5
+		}
+		
+		produces = {
+			trigger = {
+				owner = {
+					has_ethic = ethic_pacifist
+					has_dimension_traveler_horror_modifier_bad = no
+				}
+			}
+			food = 5
+			mult = value:messenger_network_value
+		}
+		produces = {
+			trigger = {
+				owner = {
+					has_ethic = ethic_fanatic_pacifist
+					has_dimension_traveler_horror_modifier_bad = no
+				}
+			}
+			food = 10
+			mult = value:messenger_network_value
+		}
+		
+		produces = {
+			trigger = {
+				owner = {
+					has_ethic = ethic_militarist
+					has_dimension_traveler_horror_modifier_bad = no
+				}
+			}
+			alloys = 2.5
+			mult = value:messenger_network_value
+		}
+		produces = {
+			trigger = {
+				owner = {
+					has_ethic = ethic_fanatic_militarist
+					has_dimension_traveler_horror_modifier_bad = no
+				}
+			}
+			alloys = 5
+			mult = value:messenger_network_value
+		}
+		
+		produces = {
+			trigger = {
+				owner = {
+					has_ethic = ethic_materialist
+					has_dimension_traveler_horror_modifier_bad = no
+				}
+			}
+			physics_research = 2.5
+			society_research = 2.5
+			engineering_research = 2.5
+			mult = value:messenger_network_value
+		}
+		produces = {
+			trigger = {
+				owner = {
+					has_ethic = ethic_fanatic_materialist
+					has_dimension_traveler_horror_modifier_bad = no
+				}
+			}
+			physics_research = 5
+			society_research = 5
+			engineering_research = 5
+			mult = value:messenger_network_value
+		}
+		
+		produces = {
+			trigger = {
+				owner = {
+					has_ethic = ethic_spiritualist
+					has_dimension_traveler_horror_modifier_bad = no
+				}
+			}
+			unity = 2.5
+			mult = value:messenger_network_value
+		}
+		produces = {
+			trigger = {
+				owner = {
+					has_ethic = ethic_fanatic_spiritualist
+					has_dimension_traveler_horror_modifier_bad = no
+				}
+			}
+			unity = 5
+			mult = value:messenger_network_value
+		}
+		
+		produces = {
+			trigger = {
+				owner = {
+					has_ethic = ethic_egalitarian
+					has_dimension_traveler_horror_modifier_bad = no
+				}
+			}
+			consumer_goods = 2.5
+			mult = value:messenger_network_value
+		}
+		produces = {
+			trigger = {
+				owner = {
+					has_ethic = ethic_fanatic_egalitarian
+					has_dimension_traveler_horror_modifier_bad = no
+				}
+			}
+			consumer_goods = 5
+			mult = value:messenger_network_value
+		}
+		
+		produces = {
+			trigger = {
+				owner = {
+					has_ethic = ethic_authoritarian
+					has_dimension_traveler_horror_modifier_bad = no
+				}
+			}
+			influence = 0.5
+			mult = value:messenger_network_value
+		}
+		produces = {
+			trigger = {
+				owner = {
+					has_ethic = ethic_fanatic_authoritarian
+					has_dimension_traveler_horror_modifier_bad = no
+				}
+			}
+			influence = 1
+			mult = value:messenger_network_value
+		}
+		
+		produces = {
+			trigger = {
+				owner = {
+					has_ethic = ethic_xenophile
+					has_dimension_traveler_horror_modifier_bad = no
+				}
+			}
+			energy = 5
+			mult = value:messenger_network_value
+		}
+		produces = {
+			trigger = {
+				owner = {
+					has_ethic = ethic_fanatic_xenophile
+					has_dimension_traveler_horror_modifier_bad = no
+				}
+			}
+			energy = 10
+			mult = value:messenger_network_value
+		}
+		
+		produces = {
+			trigger = {
+				owner = {
+					has_ethic = ethic_xenophobe
+					has_dimension_traveler_horror_modifier_bad = no
+				}
+			}
+			minerals = 5
+			mult = value:messenger_network_value
+		}
+		produces = {
+			trigger = {
+				owner = {
+					has_ethic = ethic_fanatic_xenophobe
+					has_dimension_traveler_horror_modifier_bad = no
+				}
+			}
+			minerals = 10
+			mult = value:messenger_network_value
+		}
+	}
+	
+	triggered_country_modifier = {
+		potential = {
+			exists = owner
+			owner = {
+				has_dimension_traveler_horror_modifier_bad = no
+			}
+		}
+		planet_jobs_produces_mult = 0.05
+		planet_buildings_produces_mult = 0.05
+		starbase_shipyard_build_speed_mult = 0.05
+		country_naval_cap_mult = 0.05
+		pop_happiness = -0.05
+		mult = value:messenger_network_value|MULT|0.5|
+	}
+	
+	triggered_country_modifier = {
+		potential = {
+			exists = owner
+			owner = {
+				is_dimension_traveler_owner = yes
+				has_dimension_traveler_horror_modifier_bad = no
+			}
+		}
+		messenger_network = 0.025
+	}
+
+	weight = {
+		weight = @ruler_job_weight
+		mult = 10000
+		modifier = {
+			factor = 0.1
+			has_citizenship_rights = no
+			NOT = { has_trait = trait_mechanical }
+		}
+	}
+}
+
+future_messenger = {
+	category = specialist
+	can_be_automated = no
+	
+	swappable_data = {
+		default = {
+			condition_string = SPECIALIST_JOB_TRIGGER
+			building_icon = building_akx_future_messenger
+		}
+	}
+
+	tags = { }
+
+	possible_pre_triggers = {
+		has_owner = yes
+		is_being_purged = no
+		is_being_assimilated = no
+		is_sapient = yes
+	}
+
+	possible_precalc = can_fill_specialist_job
+	possible = {
+		has_akx_messenger = yes
+	}
+
+	resources = {
+		category = planet_messengers
+		produces = {
+			trigger = {
+				owner = {
+					has_dimension_traveler_horror_modifier_bad = no
+				}
+			}
+			minor_artifacts = 1
+			mult = value:messenger_network_value
+		}
+		produces = {
+			trigger = {
+				owner = {
+					OR = {
+						has_technology = tech_coils_god_1
+						has_technology = tech_coils_god_2
+					}
+					has_dimension_traveler_horror_modifier_bad = no
+				}
+			}
+			minor_artifacts = 0.256
+			mult = value:messenger_network_value
+		}
+		produces = {
+			trigger = {
+				owner = {
+					unlock_dimension_traveler_destiny_trait = yes
+					has_dimension_traveler_horror_modifier_bad = no
+				}
+			}
+			astral_threads = 0.1
+			mult = value:messenger_network_value
+		}
+		produces = {
+			trigger = {
+				owner = {
+					has_country_flag = dimension_traveler_end
+					has_dimension_traveler_horror_modifier_bad = no
+				}
+			}
+			astral_threads = 0.1
+			mult = value:messenger_network_value
+		}
+		produces = {
+			trigger = {
+				owner = {
+					has_technology = tech_hope_future_messenger
+					has_dimension_traveler_horror_modifier_bad = no
+				}
+			}
+			astral_threads = 0.2
+			mult = value:messenger_network_value
+		}
+		upkeep = {
+			consumer_goods = 2
+		}
+		
+		produces = {
+			trigger = {
+				owner = {
+					has_ethic = ethic_pacifist
+					has_dimension_traveler_horror_modifier_bad = no
+				}
+			}
+			food = 2
+			mult = value:messenger_network_value
+		}
+		produces = {
+			trigger = {
+				owner = {
+					has_ethic = ethic_fanatic_pacifist
+					has_dimension_traveler_horror_modifier_bad = no
+				}
+			}
+			food = 4
+			mult = value:messenger_network_value
+		}
+		
+		produces = {
+			trigger = {
+				owner = {
+					has_ethic = ethic_militarist
+					has_dimension_traveler_horror_modifier_bad = no
+				}
+			}
+			alloys = 1
+			mult = value:messenger_network_value
+		}
+		produces = {
+			trigger = {
+				owner = {
+					has_ethic = ethic_fanatic_militarist
+					has_dimension_traveler_horror_modifier_bad = no
+				}
+			}
+			alloys = 2
+			mult = value:messenger_network_value
+		}
+		
+		produces = {
+			trigger = {
+				owner = {
+					has_ethic = ethic_materialist
+					has_dimension_traveler_horror_modifier_bad = no
+				}
+			}
+			physics_research = 1
+			society_research = 1
+			engineering_research = 1
+			mult = value:messenger_network_value
+		}
+		produces = {
+			trigger = {
+				owner = {
+					has_ethic = ethic_fanatic_materialist
+					has_dimension_traveler_horror_modifier_bad = no
+				}
+			}
+			physics_research = 2
+			society_research = 2
+			engineering_research = 2
+			mult = value:messenger_network_value
+		}
+		
+		produces = {
+			trigger = {
+				owner = {
+					has_ethic = ethic_spiritualist
+					has_dimension_traveler_horror_modifier_bad = no
+				}
+			}
+			unity = 1
+			mult = value:messenger_network_value
+		}
+		produces = {
+			trigger = {
+				owner = {
+					has_ethic = ethic_fanatic_spiritualist
+					has_dimension_traveler_horror_modifier_bad = no
+				}
+			}
+			unity = 2
+			mult = value:messenger_network_value
+		}
+		
+		produces = {
+			trigger = {
+				owner = {
+					has_ethic = ethic_egalitarian
+					has_dimension_traveler_horror_modifier_bad = no
+				}
+			}
+			consumer_goods = 1
+			mult = value:messenger_network_value
+		}
+		produces = {
+			trigger = {
+				owner = {
+					has_ethic = ethic_fanatic_egalitarian
+					has_dimension_traveler_horror_modifier_bad = no
+				}
+			}
+			consumer_goods = 2
+			mult = value:messenger_network_value
+		}
+		
+		produces = {
+			trigger = {
+				owner = {
+					has_ethic = ethic_authoritarian
+					has_dimension_traveler_horror_modifier_bad = no
+				}
+			}
+			influence = 0.2
+			mult = value:messenger_network_value
+		}
+		produces = {
+			trigger = {
+				owner = {
+					has_ethic = ethic_fanatic_authoritarian
+					has_dimension_traveler_horror_modifier_bad = no
+				}
+			}
+			influence = 0.4
+			mult = value:messenger_network_value
+		}
+		
+		produces = {
+			trigger = {
+				owner = {
+					has_ethic = ethic_xenophile
+					has_dimension_traveler_horror_modifier_bad = no
+				}
+			}
+			energy = 2
+			mult = value:messenger_network_value
+		}
+		produces = {
+			trigger = {
+				owner = {
+					has_ethic = ethic_fanatic_xenophile
+					has_dimension_traveler_horror_modifier_bad = no
+				}
+			}
+			energy = 4
+			mult = value:messenger_network_value
+		}
+		
+		produces = {
+			trigger = {
+				owner = {
+					has_ethic = ethic_xenophobe
+					has_dimension_traveler_horror_modifier_bad = no
+				}
+			}
+			minerals = 2
+			mult = value:messenger_network_value
+		}
+		produces = {
+			trigger = {
+				owner = {
+					has_ethic = ethic_fanatic_xenophobe
+					has_dimension_traveler_horror_modifier_bad = no
+				}
+			}
+			minerals = 4
+			mult = value:messenger_network_value
+		}
+	}
+	
+	triggered_country_modifier = {
+		potential = {
+			exists = owner
+			owner = {
+				has_dimension_traveler_horror_modifier_bad = no
+			}
+		}
+		planet_jobs_produces_mult = 0.02
+		planet_buildings_produces_mult = 0.02
+		pop_happiness = 0.02
+		mult = value:messenger_network_value|MULT|0.5|
+	}
+	
+	triggered_country_modifier = {
+		potential = {
+			exists = owner
+			owner = {
+				is_dimension_traveler_owner = yes
+				has_dimension_traveler_horror_modifier_bad = no
+			}
+		}
+		messenger_network = 0.01
+	}
+
+	weight = {
+		weight = @specialist_job_weight
+		mult = 10000
+	}
+}
+
+gestalt_messenger = {
+	category = complex_drone
+	can_be_automated = no
+	
+	swappable_data = {
+		default = {
+			condition_string = DRONE_JOB_TRIGGER
+			building_icon = building_akx_gestalt_messenger
+			icon = future_messenger
+		}
+	}
+
+	tags = { }
+
+	possible_pre_triggers = {
+		has_owner = yes
+		is_enslaved = no
+		is_being_purged = no
+		is_being_assimilated = no
+		is_sapient = yes
+	}
+
+	possible_precalc = can_fill_drone_job
+	possible = {
+		can_think = yes
+		has_akx_messenger = yes
+	}
+
+	resources = {
+		category = planet_messengers
+		produces = {
+			trigger = {
+				owner = {
+					has_dimension_traveler_horror_modifier_bad = no
+				}
+			}
+			minor_artifacts = 1
+			mult = value:messenger_network_value
+		}
+		produces = {
+			trigger = {
+				owner = {
+					OR = {
+						has_technology = tech_coils_god_1
+						has_technology = tech_coils_god_2
+					}
+					has_dimension_traveler_horror_modifier_bad = no
+				}
+			}
+			minor_artifacts = 0.256
+			mult = value:messenger_network_value
+		}
+		produces = {
+			trigger = {
+				owner = {
+					unlock_dimension_traveler_destiny_trait = yes
+					has_dimension_traveler_horror_modifier_bad = no
+				}
+			}
+			astral_threads = 0.1
+			mult = value:messenger_network_value
+		}
+		produces = {
+			trigger = {
+				owner = {
+					has_country_flag = dimension_traveler_end
+					has_dimension_traveler_horror_modifier_bad = no
+				}
+			}
+			astral_threads = 0.1
+			mult = value:messenger_network_value
+		}
+		produces = {
+			trigger = {
+				owner = {
+					has_technology = tech_hope_gestalt_messenger
+					has_dimension_traveler_horror_modifier_bad = no
+				}
+			}
+			astral_threads = 0.2
+			mult = value:messenger_network_value
+		}
+		upkeep = {
+			unity = 2
+		}
+		
+		produces = {
+			trigger = {
+				owner = {
+					is_hive_empire = yes
+					has_dimension_traveler_horror_modifier_bad = no
+				}
+			}
+			minerals = 2
+			food = 2
+			unity = 1
+			mult = value:messenger_network_value
+		}
+		produces = {
+			trigger = {
+				owner = {
+					is_machine_empire = yes
+					has_dimension_traveler_horror_modifier_bad = no
+				}
+			}
+			energy = 2
+			alloys = 1
+			physics_research = 1
+			society_research = 1
+			engineering_research = 1
+			mult = value:messenger_network_value
+		}
+	}
+	
+	triggered_country_modifier = {
+		potential = {
+			exists = owner
+			owner = {
+				has_dimension_traveler_horror_modifier_bad = no
+			}
+		}
+		planet_jobs_produces_mult = 0.02
+		planet_buildings_produces_mult = 0.02
+		planet_amenities_no_happiness_mult = 0.02
+		mult = value:messenger_network_value|MULT|0.5|
+	}
+	
+	triggered_country_modifier = {
+		potential = {
+			exists = owner
+			owner = {
+				is_dimension_traveler_owner = yes
+				has_dimension_traveler_horror_modifier_bad = no
+			}
+		}
+		messenger_network = 0.01
+	}
+
+	weight = {
+		weight = @complex_drone_job_weight
+		mult = 10000
+	}
+}

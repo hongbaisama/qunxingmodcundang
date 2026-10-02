@@ -1,0 +1,59 @@
+triggered_name = {
+	trigger = {
+		num_zones = {
+			type = zone_time_physics
+			value > 0
+		}
+		calc_true_if = {
+			amount >= 2
+			has_active_building = building_zone_time_energy_advanced
+			has_active_building = building_zone_time_consumer_goods_advanced
+			has_active_building = building_zone_time_physics_research_advanced
+		}
+	}
+	text = district_time_physics_max
+}
+
+triggered_name = {
+	trigger = {
+		num_zones = {
+			type = zone_time_physics
+			value > 0
+		}
+		OR = {
+			has_active_building = building_zone_time_energy_advanced
+			has_active_building = building_zone_time_consumer_goods_advanced
+			has_active_building = building_zone_time_physics_research_advanced
+		}
+	}
+	text = district_time_physics_high
+}
+
+triggered_name = {
+	trigger = {
+		num_zones = {
+			type = zone_time_physics
+			value > 0
+		}
+		OR = {
+			has_active_building = building_zone_time_energy
+			has_active_building = building_zone_time_consumer_goods
+			has_active_building = building_zone_time_physics_research
+		}
+	}
+	text = district_time_physics_middle
+}
+
+triggered_name = {
+	trigger = {
+		num_zones = {
+			type = zone_time_physics
+			value > 0
+		}
+	}
+	text = district_time_physics_low
+}
+
+triggered_name = {
+	text = district_time_physics_none
+}

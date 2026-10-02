@@ -1,0 +1,200 @@
+spriteTypes = {
+	
+	################################################################
+	# 阶段
+	################################################################
+	
+	spriteType = {
+		name = "GFX_situation_stage_9"
+		texturefile = "gfx/interface/icons/situation_log/situations/stages/situation_severity_level_number_9.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_situation_stage_10"
+		texturefile = "gfx/interface/icons/situation_log/situations/stages/situation_severity_level_number_10.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_situation_stage_origin_contract_whisperers"
+		texturefile = "gfx/interface/icons/situation_log/situations/stages/situation_stage_origin_contract_whisperers.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_situation_stage_origin_contract_eater"
+		texturefile = "gfx/interface/icons/situation_log/situations/stages/situation_stage_origin_contract_eater.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_situation_stage_origin_contract_instrument"
+		texturefile = "gfx/interface/icons/situation_log/situations/stages/situation_stage_origin_contract_instrument.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_situation_stage_origin_contract_composer"
+		texturefile = "gfx/interface/icons/situation_log/situations/stages/situation_stage_origin_contract_composer.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_situation_stage_origin_contract_cradle"
+		texturefile = "gfx/interface/icons/situation_log/situations/stages/situation_stage_origin_contract_cradle.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_situation_stage_ninghe"
+		texturefile = "gfx/interface/icons/situation_log/situations/stages/situation_stage_ninghe.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_situation_stage_pc_time_1"
+		texturefile = "gfx/interface/icons/situation_log/situations/stages/situation_stage_pc_time_1.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_situation_stage_pc_time_2"
+		texturefile = "gfx/interface/icons/situation_log/situations/stages/situation_stage_pc_time_2.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_situation_stage_pc_time_3"
+		texturefile = "gfx/interface/icons/situation_log/situations/stages/situation_stage_pc_time_3.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_situation_stage_pc_time_4"
+		texturefile = "gfx/interface/icons/situation_log/situations/stages/situation_stage_pc_time_4.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_situation_stage_pc_time_5"
+		texturefile = "gfx/interface/icons/situation_log/situations/stages/situation_stage_pc_time_5.dds"
+	}
+	
+	################################################################
+	# 结果
+	################################################################
+	
+	spriteType = {
+		name = "GFX_situation_outcome_unknown_green"
+		texturefile = "gfx/interface/icons/situation_log/situations/outcomes/situation_outcome_icon_unknown_green.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_situation_outcome_unknown_red"
+		texturefile = "gfx/interface/icons/situation_log/situations/outcomes/situation_outcome_icon_unknown_red.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_situation_outcome_forbid_future_messenger"
+		texturefile = "gfx/interface/icons/situation_log/situations/outcomes/situation_outcome_icon_forbid_future_messenger.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_situation_outcome_future_messenger"
+		texturefile = "gfx/interface/icons/situation_log/situations/outcomes/situation_outcome_icon_future_messenger.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_situation_outcome_end_messenger"
+		texturefile = "gfx/interface/icons/situation_log/situations/outcomes/situation_outcome_icon_end_messenger.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_situation_outcome_eater"
+		texturefile = "gfx/interface/icons/situation_log/situations/outcomes/situation_outcome_icon_eater.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_situation_outcome_instrument"
+		texturefile = "gfx/interface/icons/situation_log/situations/outcomes/situation_outcome_icon_instrument.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_situation_outcome_composer"
+		texturefile = "gfx/interface/icons/situation_log/situations/outcomes/situation_outcome_icon_composer.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_situation_outcome_cradle"
+		texturefile = "gfx/interface/icons/situation_log/situations/outcomes/situation_outcome_icon_cradle.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_situation_outcome_pc_time"
+		texturefile = "gfx/interface/icons/situation_log/situations/outcomes/situation_outcome_icon_pc_time.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_situation_outcome_pc_timesingularity"
+		texturefile = "gfx/interface/icons/situation_log/situations/outcomes/situation_outcome_icon_pc_timesingularity.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_situation_outcome_pc_endless_time"
+		texturefile = "gfx/interface/icons/situation_log/situations/outcomes/situation_outcome_icon_pc_endless_time.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_situation_outcome_authoritarian"
+		texturefile = "gfx/interface/icons/situation_log/situations/outcomes/situation_outcome_icon_authoritarian.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_situation_outcome_egalitarian"
+		texturefile = "gfx/interface/icons/situation_log/situations/outcomes/situation_outcome_icon_egalitarian.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_situation_outcome_spiritualist"
+		texturefile = "gfx/interface/icons/situation_log/situations/outcomes/situation_outcome_icon_spiritualist.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_situation_outcome_materialist"
+		texturefile = "gfx/interface/icons/situation_log/situations/outcomes/situation_outcome_icon_materialist.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_situation_outcome_militarist"
+		texturefile = "gfx/interface/icons/situation_log/situations/outcomes/situation_outcome_icon_militarist.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_situation_outcome_pacifist"
+		texturefile = "gfx/interface/icons/situation_log/situations/outcomes/situation_outcome_icon_pacifist.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_situation_outcome_xenophobe"
+		texturefile = "gfx/interface/icons/situation_log/situations/outcomes/situation_outcome_icon_xenophobe.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_situation_outcome_xenophile"
+		texturefile = "gfx/interface/icons/situation_log/situations/outcomes/situation_outcome_icon_xenophile.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_situation_outcome_yin"
+		texturefile = "gfx/interface/icons/situation_log/situations/outcomes/situation_outcome_icon_yin.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_situation_outcome_yang"
+		texturefile = "gfx/interface/icons/situation_log/situations/outcomes/situation_outcome_icon_yang.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_situation_outcome_pirate_king"
+		texturefile = "gfx/interface/icons/situation_log/situations/outcomes/situation_outcome_icon_pirate_king.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_situation_outcome_black_hole"
+		texturefile = "gfx/interface/icons/situation_log/situations/outcomes/situation_outcome_icon_black_hole.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_situation_outcome_white_hole"
+		texturefile = "gfx/interface/icons/situation_log/situations/outcomes/situation_outcome_icon_white_hole.dds"
+	}
+}

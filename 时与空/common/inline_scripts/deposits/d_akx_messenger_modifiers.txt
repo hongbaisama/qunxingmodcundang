@@ -1,0 +1,29 @@
+country_modifier = {
+	country_resource_max_minor_artifacts_add = 2500
+	country_resource_max_astral_threads_add = 2500
+	country_resource_max_add = 5000
+}
+
+# 随着对彼岸之门了解程度的加深，可以一定程度上利用彼岸的土地资源，以抵消彼岸之门本身所占用的区划槽
+
+triggered_planet_modifier = {
+	potential = {
+		NOR = {
+			has_carrier_flag = end_messenger_2
+			has_carrier_flag = future_messenger_2
+			has_carrier_flag = gestalt_messenger_2
+		}
+	}
+	planet_max_districts_add = -1
+}
+
+triggered_planet_modifier = {
+	potential = {
+		NOR = {
+			has_carrier_flag = end_messenger_3
+			has_carrier_flag = future_messenger_3
+			has_carrier_flag = gestalt_messenger_3
+		}
+	}
+	planet_max_districts_add = -1
+}

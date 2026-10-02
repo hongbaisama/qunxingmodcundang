@@ -1,0 +1,34 @@
+db_origin_time = {
+	name = "databank_origin_time"
+	icon = "gfx/interface/icons/origins/origin_time.dds"
+}
+
+db_origin_tao_of_ninghe = {
+	name = "databank_origin_tao_of_ninghe"
+	icon = "gfx/interface/icons/origins/origin_tao_of_ninghe.dds"
+}
+
+db_origin_tao_of_ninghe_ninghe = {
+	name = "databank_origin_tao_of_ninghe"
+	icon = "gfx/interface/icons/modifiers/mod_planetary_ascension_effect_mult.dds"
+}
+
+db_origin_tao_of_ninghe_yin = {
+	name = "databank_origin_tao_of_ninghe"
+	icon = "gfx/interface/icons/modifiers/mod_consecrated_world_green.dds"
+}
+
+db_origin_tao_of_ninghe_yang = {
+	name = "databank_origin_tao_of_ninghe"
+	icon = "gfx/interface/icons/modifiers/mod_consecrated_world_yellow.dds"
+}
+
+db_time_titan = {
+	name = "databank_time_titan"
+	icon = "gfx/interface/icons/concepts/time_titan/time_titan.dds"
+}
+
+db_dimensional_horror_crisis = {
+	name = "databank_dimensional_horror_crisis"
+	icon = "gfx/interface/icons/concepts/dimensional_horror_crisis/dimensional_horror_crisis_levo.dds"
+}

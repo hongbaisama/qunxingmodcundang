@@ -1,0 +1,792 @@
+spriteTypes = {
+	spriteType = {
+		name = "GFX_tile_dimension_traveler_skill_tree_bg"
+		textureFile = "gfx/interface/tiles/tile_dimension_traveler_skill_tree_bg.dds"
+		effectFile = "gfx/FX/buttonstate_onlydisable.shader"
+	}
+	
+	spriteType = {
+		name = "GFX_dimension_traveler_skill_point_bg"
+		textureFile = "gfx/interface/tiles/dimension_traveler_skill_point_bg.dds"
+		alwaystransparent = yes
+	}
+	
+	spriteType = {
+		name = "GFX_dimension_traveler_skill_arrow_left"
+		textureFile = "gfx/interface/tiles/dimension_traveler_skill_arrow_left.dds"
+		effectFile = "gfx/FX/buttonstate_onlydisable.shader"
+	}
+	
+	spriteType = {
+		name = "GFX_dimension_traveler_skill_arrow_right"
+		textureFile = "gfx/interface/tiles/dimension_traveler_skill_arrow_right.dds"
+		effectFile = "gfx/FX/buttonstate_onlydisable.shader"
+	}
+	
+	spriteType = {
+		name = "GFX_dimension_traveler_skill_point"
+		textureFile = "gfx/interface/icons/dimension_traveler_skill/dimension_traveler_skill_point.dds"
+	}
+	
+	################################################################
+	# 执政官
+	################################################################
+	
+	spriteType = {
+		name = "GFX_dimension_traveler_skill_official_1_5"
+		texturefile = "gfx/interface/icons/dimension_traveler_skill/official/dimension_traveler_skill_official_1_5.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_actived_dimension_traveler_skill_official_1_5"
+		texturefile = "gfx/interface/icons/dimension_traveler_skill/official/actived_dimension_traveler_skill_official_1_5.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_dimension_traveler_skill_official_2_4"
+		texturefile = "gfx/interface/icons/dimension_traveler_skill/official/dimension_traveler_skill_official_2_4.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_actived_dimension_traveler_skill_official_2_4"
+		texturefile = "gfx/interface/icons/dimension_traveler_skill/official/actived_dimension_traveler_skill_official_2_4.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_dimension_traveler_skill_official_2_6"
+		texturefile = "gfx/interface/icons/dimension_traveler_skill/official/dimension_traveler_skill_official_2_6.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_actived_dimension_traveler_skill_official_2_6"
+		texturefile = "gfx/interface/icons/dimension_traveler_skill/official/actived_dimension_traveler_skill_official_2_6.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_dimension_traveler_skill_official_3_3"
+		texturefile = "gfx/interface/icons/dimension_traveler_skill/official/dimension_traveler_skill_official_3_3.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_actived_dimension_traveler_skill_official_3_3"
+		texturefile = "gfx/interface/icons/dimension_traveler_skill/official/actived_dimension_traveler_skill_official_3_3.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_dimension_traveler_skill_official_3_5"
+		texturefile = "gfx/interface/icons/dimension_traveler_skill/official/dimension_traveler_skill_official_3_5.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_actived_dimension_traveler_skill_official_3_5"
+		texturefile = "gfx/interface/icons/dimension_traveler_skill/official/actived_dimension_traveler_skill_official_3_5.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_dimension_traveler_skill_official_3_7"
+		texturefile = "gfx/interface/icons/dimension_traveler_skill/official/dimension_traveler_skill_official_3_7.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_actived_dimension_traveler_skill_official_3_7"
+		texturefile = "gfx/interface/icons/dimension_traveler_skill/official/actived_dimension_traveler_skill_official_3_7.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_dimension_traveler_skill_official_4_2"
+		texturefile = "gfx/interface/icons/dimension_traveler_skill/official/dimension_traveler_skill_official_4_2.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_actived_dimension_traveler_skill_official_4_2"
+		texturefile = "gfx/interface/icons/dimension_traveler_skill/official/actived_dimension_traveler_skill_official_4_2.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_dimension_traveler_skill_official_4_4"
+		texturefile = "gfx/interface/icons/dimension_traveler_skill/official/dimension_traveler_skill_official_4_4.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_actived_dimension_traveler_skill_official_4_4"
+		texturefile = "gfx/interface/icons/dimension_traveler_skill/official/actived_dimension_traveler_skill_official_4_4.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_dimension_traveler_skill_official_4_6"
+		texturefile = "gfx/interface/icons/dimension_traveler_skill/official/dimension_traveler_skill_official_4_6.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_actived_dimension_traveler_skill_official_4_6"
+		texturefile = "gfx/interface/icons/dimension_traveler_skill/official/actived_dimension_traveler_skill_official_4_6.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_dimension_traveler_skill_official_4_8"
+		texturefile = "gfx/interface/icons/dimension_traveler_skill/official/dimension_traveler_skill_official_4_8.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_actived_dimension_traveler_skill_official_4_8"
+		texturefile = "gfx/interface/icons/dimension_traveler_skill/official/actived_dimension_traveler_skill_official_4_8.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_dimension_traveler_skill_official_5_1"
+		texturefile = "gfx/interface/icons/dimension_traveler_skill/official/dimension_traveler_skill_official_5_1.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_actived_dimension_traveler_skill_official_5_1"
+		texturefile = "gfx/interface/icons/dimension_traveler_skill/official/actived_dimension_traveler_skill_official_5_1.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_dimension_traveler_skill_official_5_3"
+		texturefile = "gfx/interface/icons/dimension_traveler_skill/official/dimension_traveler_skill_official_5_3.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_actived_dimension_traveler_skill_official_5_3"
+		texturefile = "gfx/interface/icons/dimension_traveler_skill/official/actived_dimension_traveler_skill_official_5_3.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_dimension_traveler_skill_official_5_5"
+		texturefile = "gfx/interface/icons/dimension_traveler_skill/dimension_traveler_skill_5_5.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_actived_dimension_traveler_skill_official_5_5"
+		texturefile = "gfx/interface/icons/dimension_traveler_skill/actived_dimension_traveler_skill_5_5.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_dimension_traveler_skill_official_5_7"
+		texturefile = "gfx/interface/icons/dimension_traveler_skill/official/dimension_traveler_skill_official_5_7.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_actived_dimension_traveler_skill_official_5_7"
+		texturefile = "gfx/interface/icons/dimension_traveler_skill/official/actived_dimension_traveler_skill_official_5_7.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_dimension_traveler_skill_official_5_9"
+		texturefile = "gfx/interface/icons/dimension_traveler_skill/official/dimension_traveler_skill_official_5_9.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_actived_dimension_traveler_skill_official_5_9"
+		texturefile = "gfx/interface/icons/dimension_traveler_skill/official/actived_dimension_traveler_skill_official_5_9.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_dimension_traveler_skill_official_6_2"
+		texturefile = "gfx/interface/icons/dimension_traveler_skill/official/dimension_traveler_skill_official_6_2.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_actived_dimension_traveler_skill_official_6_2"
+		texturefile = "gfx/interface/icons/dimension_traveler_skill/official/actived_dimension_traveler_skill_official_6_2.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_dimension_traveler_skill_official_6_4"
+		texturefile = "gfx/interface/icons/dimension_traveler_skill/official/dimension_traveler_skill_official_6_4.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_actived_dimension_traveler_skill_official_6_4"
+		texturefile = "gfx/interface/icons/dimension_traveler_skill/official/actived_dimension_traveler_skill_official_6_4.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_dimension_traveler_skill_official_6_6"
+		texturefile = "gfx/interface/icons/dimension_traveler_skill/official/dimension_traveler_skill_official_6_6.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_actived_dimension_traveler_skill_official_6_6"
+		texturefile = "gfx/interface/icons/dimension_traveler_skill/official/actived_dimension_traveler_skill_official_6_6.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_dimension_traveler_skill_official_6_8"
+		texturefile = "gfx/interface/icons/dimension_traveler_skill/official/dimension_traveler_skill_official_6_8.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_actived_dimension_traveler_skill_official_6_8"
+		texturefile = "gfx/interface/icons/dimension_traveler_skill/official/actived_dimension_traveler_skill_official_6_8.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_dimension_traveler_skill_official_7_3"
+		texturefile = "gfx/interface/icons/dimension_traveler_skill/official/dimension_traveler_skill_official_7_3.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_actived_dimension_traveler_skill_official_7_3"
+		texturefile = "gfx/interface/icons/dimension_traveler_skill/official/actived_dimension_traveler_skill_official_7_3.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_dimension_traveler_skill_official_7_5"
+		texturefile = "gfx/interface/icons/dimension_traveler_skill/official/dimension_traveler_skill_official_7_5.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_actived_dimension_traveler_skill_official_7_5"
+		texturefile = "gfx/interface/icons/dimension_traveler_skill/official/actived_dimension_traveler_skill_official_7_5.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_dimension_traveler_skill_official_7_7"
+		texturefile = "gfx/interface/icons/dimension_traveler_skill/official/dimension_traveler_skill_official_7_7.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_actived_dimension_traveler_skill_official_7_7"
+		texturefile = "gfx/interface/icons/dimension_traveler_skill/official/actived_dimension_traveler_skill_official_7_7.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_dimension_traveler_skill_official_8_4"
+		texturefile = "gfx/interface/icons/dimension_traveler_skill/official/dimension_traveler_skill_official_8_4.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_actived_dimension_traveler_skill_official_8_4"
+		texturefile = "gfx/interface/icons/dimension_traveler_skill/official/actived_dimension_traveler_skill_official_8_4.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_dimension_traveler_skill_official_8_6"
+		texturefile = "gfx/interface/icons/dimension_traveler_skill/official/dimension_traveler_skill_official_8_6.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_actived_dimension_traveler_skill_official_8_6"
+		texturefile = "gfx/interface/icons/dimension_traveler_skill/official/actived_dimension_traveler_skill_official_8_6.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_dimension_traveler_skill_official_9_5"
+		texturefile = "gfx/interface/icons/dimension_traveler_skill/official/dimension_traveler_skill_official_9_5.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_actived_dimension_traveler_skill_official_9_5"
+		texturefile = "gfx/interface/icons/dimension_traveler_skill/official/actived_dimension_traveler_skill_official_9_5.dds"
+	}
+	
+	################################################################
+	# 科学家
+	################################################################
+	
+	spriteType = {
+		name = "GFX_dimension_traveler_skill_scientist_1_5"
+		texturefile = "gfx/interface/icons/dimension_traveler_skill/scientist/dimension_traveler_skill_scientist_1_5.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_actived_dimension_traveler_skill_scientist_1_5"
+		texturefile = "gfx/interface/icons/dimension_traveler_skill/scientist/actived_dimension_traveler_skill_scientist_1_5.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_dimension_traveler_skill_scientist_2_4"
+		texturefile = "gfx/interface/icons/dimension_traveler_skill/scientist/dimension_traveler_skill_scientist_2_4.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_actived_dimension_traveler_skill_scientist_2_4"
+		texturefile = "gfx/interface/icons/dimension_traveler_skill/scientist/actived_dimension_traveler_skill_scientist_2_4.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_dimension_traveler_skill_scientist_2_6"
+		texturefile = "gfx/interface/icons/dimension_traveler_skill/scientist/dimension_traveler_skill_scientist_2_6.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_actived_dimension_traveler_skill_scientist_2_6"
+		texturefile = "gfx/interface/icons/dimension_traveler_skill/scientist/actived_dimension_traveler_skill_scientist_2_6.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_dimension_traveler_skill_scientist_3_3"
+		texturefile = "gfx/interface/icons/dimension_traveler_skill/scientist/dimension_traveler_skill_scientist_3_3.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_actived_dimension_traveler_skill_scientist_3_3"
+		texturefile = "gfx/interface/icons/dimension_traveler_skill/scientist/actived_dimension_traveler_skill_scientist_3_3.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_dimension_traveler_skill_scientist_3_5"
+		texturefile = "gfx/interface/icons/dimension_traveler_skill/scientist/dimension_traveler_skill_scientist_3_5.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_actived_dimension_traveler_skill_scientist_3_5"
+		texturefile = "gfx/interface/icons/dimension_traveler_skill/scientist/actived_dimension_traveler_skill_scientist_3_5.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_dimension_traveler_skill_scientist_3_7"
+		texturefile = "gfx/interface/icons/dimension_traveler_skill/scientist/dimension_traveler_skill_scientist_3_7.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_actived_dimension_traveler_skill_scientist_3_7"
+		texturefile = "gfx/interface/icons/dimension_traveler_skill/scientist/actived_dimension_traveler_skill_scientist_3_7.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_dimension_traveler_skill_scientist_4_2"
+		texturefile = "gfx/interface/icons/dimension_traveler_skill/scientist/dimension_traveler_skill_scientist_4_2.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_actived_dimension_traveler_skill_scientist_4_2"
+		texturefile = "gfx/interface/icons/dimension_traveler_skill/scientist/actived_dimension_traveler_skill_scientist_4_2.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_dimension_traveler_skill_scientist_4_4"
+		texturefile = "gfx/interface/icons/dimension_traveler_skill/scientist/dimension_traveler_skill_scientist_4_4.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_actived_dimension_traveler_skill_scientist_4_4"
+		texturefile = "gfx/interface/icons/dimension_traveler_skill/scientist/actived_dimension_traveler_skill_scientist_4_4.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_dimension_traveler_skill_scientist_4_6"
+		texturefile = "gfx/interface/icons/dimension_traveler_skill/scientist/dimension_traveler_skill_scientist_4_6.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_actived_dimension_traveler_skill_scientist_4_6"
+		texturefile = "gfx/interface/icons/dimension_traveler_skill/scientist/actived_dimension_traveler_skill_scientist_4_6.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_dimension_traveler_skill_scientist_4_8"
+		texturefile = "gfx/interface/icons/dimension_traveler_skill/scientist/dimension_traveler_skill_scientist_4_8.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_actived_dimension_traveler_skill_scientist_4_8"
+		texturefile = "gfx/interface/icons/dimension_traveler_skill/scientist/actived_dimension_traveler_skill_scientist_4_8.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_dimension_traveler_skill_scientist_5_1"
+		texturefile = "gfx/interface/icons/dimension_traveler_skill/scientist/dimension_traveler_skill_scientist_5_1.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_actived_dimension_traveler_skill_scientist_5_1"
+		texturefile = "gfx/interface/icons/dimension_traveler_skill/scientist/actived_dimension_traveler_skill_scientist_5_1.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_dimension_traveler_skill_scientist_5_3"
+		texturefile = "gfx/interface/icons/dimension_traveler_skill/scientist/dimension_traveler_skill_scientist_5_3.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_actived_dimension_traveler_skill_scientist_5_3"
+		texturefile = "gfx/interface/icons/dimension_traveler_skill/scientist/actived_dimension_traveler_skill_scientist_5_3.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_dimension_traveler_skill_scientist_5_5"
+		texturefile = "gfx/interface/icons/dimension_traveler_skill/dimension_traveler_skill_5_5.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_actived_dimension_traveler_skill_scientist_5_5"
+		texturefile = "gfx/interface/icons/dimension_traveler_skill/actived_dimension_traveler_skill_5_5.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_dimension_traveler_skill_scientist_5_7"
+		texturefile = "gfx/interface/icons/dimension_traveler_skill/scientist/dimension_traveler_skill_scientist_5_7.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_actived_dimension_traveler_skill_scientist_5_7"
+		texturefile = "gfx/interface/icons/dimension_traveler_skill/scientist/actived_dimension_traveler_skill_scientist_5_7.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_dimension_traveler_skill_scientist_5_9"
+		texturefile = "gfx/interface/icons/dimension_traveler_skill/scientist/dimension_traveler_skill_scientist_5_9.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_actived_dimension_traveler_skill_scientist_5_9"
+		texturefile = "gfx/interface/icons/dimension_traveler_skill/scientist/actived_dimension_traveler_skill_scientist_5_9.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_dimension_traveler_skill_scientist_6_2"
+		texturefile = "gfx/interface/icons/dimension_traveler_skill/scientist/dimension_traveler_skill_scientist_6_2.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_actived_dimension_traveler_skill_scientist_6_2"
+		texturefile = "gfx/interface/icons/dimension_traveler_skill/scientist/actived_dimension_traveler_skill_scientist_6_2.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_dimension_traveler_skill_scientist_6_4"
+		texturefile = "gfx/interface/icons/dimension_traveler_skill/scientist/dimension_traveler_skill_scientist_6_4.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_actived_dimension_traveler_skill_scientist_6_4"
+		texturefile = "gfx/interface/icons/dimension_traveler_skill/scientist/actived_dimension_traveler_skill_scientist_6_4.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_dimension_traveler_skill_scientist_6_6"
+		texturefile = "gfx/interface/icons/dimension_traveler_skill/scientist/dimension_traveler_skill_scientist_6_6.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_actived_dimension_traveler_skill_scientist_6_6"
+		texturefile = "gfx/interface/icons/dimension_traveler_skill/scientist/actived_dimension_traveler_skill_scientist_6_6.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_dimension_traveler_skill_scientist_6_8"
+		texturefile = "gfx/interface/icons/dimension_traveler_skill/scientist/dimension_traveler_skill_scientist_6_8.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_actived_dimension_traveler_skill_scientist_6_8"
+		texturefile = "gfx/interface/icons/dimension_traveler_skill/scientist/actived_dimension_traveler_skill_scientist_6_8.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_dimension_traveler_skill_scientist_7_3"
+		texturefile = "gfx/interface/icons/dimension_traveler_skill/scientist/dimension_traveler_skill_scientist_7_3.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_actived_dimension_traveler_skill_scientist_7_3"
+		texturefile = "gfx/interface/icons/dimension_traveler_skill/scientist/actived_dimension_traveler_skill_scientist_7_3.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_dimension_traveler_skill_scientist_7_5"
+		texturefile = "gfx/interface/icons/dimension_traveler_skill/scientist/dimension_traveler_skill_scientist_7_5.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_actived_dimension_traveler_skill_scientist_7_5"
+		texturefile = "gfx/interface/icons/dimension_traveler_skill/scientist/actived_dimension_traveler_skill_scientist_7_5.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_dimension_traveler_skill_scientist_7_7"
+		texturefile = "gfx/interface/icons/dimension_traveler_skill/scientist/dimension_traveler_skill_scientist_7_7.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_actived_dimension_traveler_skill_scientist_7_7"
+		texturefile = "gfx/interface/icons/dimension_traveler_skill/scientist/actived_dimension_traveler_skill_scientist_7_7.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_dimension_traveler_skill_scientist_8_4"
+		texturefile = "gfx/interface/icons/dimension_traveler_skill/scientist/dimension_traveler_skill_scientist_8_4.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_actived_dimension_traveler_skill_scientist_8_4"
+		texturefile = "gfx/interface/icons/dimension_traveler_skill/scientist/actived_dimension_traveler_skill_scientist_8_4.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_dimension_traveler_skill_scientist_8_6"
+		texturefile = "gfx/interface/icons/dimension_traveler_skill/scientist/dimension_traveler_skill_scientist_8_6.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_actived_dimension_traveler_skill_scientist_8_6"
+		texturefile = "gfx/interface/icons/dimension_traveler_skill/scientist/actived_dimension_traveler_skill_scientist_8_6.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_dimension_traveler_skill_scientist_9_5"
+		texturefile = "gfx/interface/icons/dimension_traveler_skill/scientist/dimension_traveler_skill_scientist_9_5.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_actived_dimension_traveler_skill_scientist_9_5"
+		texturefile = "gfx/interface/icons/dimension_traveler_skill/scientist/actived_dimension_traveler_skill_scientist_9_5.dds"
+	}
+	
+	################################################################
+	# 指挥官
+	################################################################
+	
+	spriteType = {
+		name = "GFX_dimension_traveler_skill_commander_1_5"
+		texturefile = "gfx/interface/icons/dimension_traveler_skill/commander/dimension_traveler_skill_commander_1_5.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_actived_dimension_traveler_skill_commander_1_5"
+		texturefile = "gfx/interface/icons/dimension_traveler_skill/commander/actived_dimension_traveler_skill_commander_1_5.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_dimension_traveler_skill_commander_2_4"
+		texturefile = "gfx/interface/icons/dimension_traveler_skill/commander/dimension_traveler_skill_commander_2_4.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_actived_dimension_traveler_skill_commander_2_4"
+		texturefile = "gfx/interface/icons/dimension_traveler_skill/commander/actived_dimension_traveler_skill_commander_2_4.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_dimension_traveler_skill_commander_2_6"
+		texturefile = "gfx/interface/icons/dimension_traveler_skill/commander/dimension_traveler_skill_commander_2_6.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_actived_dimension_traveler_skill_commander_2_6"
+		texturefile = "gfx/interface/icons/dimension_traveler_skill/commander/actived_dimension_traveler_skill_commander_2_6.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_dimension_traveler_skill_commander_3_3"
+		texturefile = "gfx/interface/icons/dimension_traveler_skill/commander/dimension_traveler_skill_commander_3_3.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_actived_dimension_traveler_skill_commander_3_3"
+		texturefile = "gfx/interface/icons/dimension_traveler_skill/commander/actived_dimension_traveler_skill_commander_3_3.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_dimension_traveler_skill_commander_3_5"
+		texturefile = "gfx/interface/icons/dimension_traveler_skill/commander/dimension_traveler_skill_commander_3_5.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_actived_dimension_traveler_skill_commander_3_5"
+		texturefile = "gfx/interface/icons/dimension_traveler_skill/commander/actived_dimension_traveler_skill_commander_3_5.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_dimension_traveler_skill_commander_3_7"
+		texturefile = "gfx/interface/icons/dimension_traveler_skill/commander/dimension_traveler_skill_commander_3_7.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_actived_dimension_traveler_skill_commander_3_7"
+		texturefile = "gfx/interface/icons/dimension_traveler_skill/commander/actived_dimension_traveler_skill_commander_3_7.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_dimension_traveler_skill_commander_4_2"
+		texturefile = "gfx/interface/icons/dimension_traveler_skill/commander/dimension_traveler_skill_commander_4_2.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_actived_dimension_traveler_skill_commander_4_2"
+		texturefile = "gfx/interface/icons/dimension_traveler_skill/commander/actived_dimension_traveler_skill_commander_4_2.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_dimension_traveler_skill_commander_4_4"
+		texturefile = "gfx/interface/icons/dimension_traveler_skill/commander/dimension_traveler_skill_commander_4_4.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_actived_dimension_traveler_skill_commander_4_4"
+		texturefile = "gfx/interface/icons/dimension_traveler_skill/commander/actived_dimension_traveler_skill_commander_4_4.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_dimension_traveler_skill_commander_4_6"
+		texturefile = "gfx/interface/icons/dimension_traveler_skill/commander/dimension_traveler_skill_commander_4_6.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_actived_dimension_traveler_skill_commander_4_6"
+		texturefile = "gfx/interface/icons/dimension_traveler_skill/commander/actived_dimension_traveler_skill_commander_4_6.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_dimension_traveler_skill_commander_4_8"
+		texturefile = "gfx/interface/icons/dimension_traveler_skill/commander/dimension_traveler_skill_commander_4_8.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_actived_dimension_traveler_skill_commander_4_8"
+		texturefile = "gfx/interface/icons/dimension_traveler_skill/commander/actived_dimension_traveler_skill_commander_4_8.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_dimension_traveler_skill_commander_5_1"
+		texturefile = "gfx/interface/icons/dimension_traveler_skill/commander/dimension_traveler_skill_commander_5_1.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_actived_dimension_traveler_skill_commander_5_1"
+		texturefile = "gfx/interface/icons/dimension_traveler_skill/commander/actived_dimension_traveler_skill_commander_5_1.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_dimension_traveler_skill_commander_5_3"
+		texturefile = "gfx/interface/icons/dimension_traveler_skill/commander/dimension_traveler_skill_commander_5_3.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_actived_dimension_traveler_skill_commander_5_3"
+		texturefile = "gfx/interface/icons/dimension_traveler_skill/commander/actived_dimension_traveler_skill_commander_5_3.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_dimension_traveler_skill_commander_5_5"
+		texturefile = "gfx/interface/icons/dimension_traveler_skill/dimension_traveler_skill_5_5.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_actived_dimension_traveler_skill_commander_5_5"
+		texturefile = "gfx/interface/icons/dimension_traveler_skill/actived_dimension_traveler_skill_5_5.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_dimension_traveler_skill_commander_5_7"
+		texturefile = "gfx/interface/icons/dimension_traveler_skill/commander/dimension_traveler_skill_commander_5_7.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_actived_dimension_traveler_skill_commander_5_7"
+		texturefile = "gfx/interface/icons/dimension_traveler_skill/commander/actived_dimension_traveler_skill_commander_5_7.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_dimension_traveler_skill_commander_5_9"
+		texturefile = "gfx/interface/icons/dimension_traveler_skill/commander/dimension_traveler_skill_commander_5_9.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_actived_dimension_traveler_skill_commander_5_9"
+		texturefile = "gfx/interface/icons/dimension_traveler_skill/commander/actived_dimension_traveler_skill_commander_5_9.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_dimension_traveler_skill_commander_6_2"
+		texturefile = "gfx/interface/icons/dimension_traveler_skill/commander/dimension_traveler_skill_commander_6_2.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_actived_dimension_traveler_skill_commander_6_2"
+		texturefile = "gfx/interface/icons/dimension_traveler_skill/commander/actived_dimension_traveler_skill_commander_6_2.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_dimension_traveler_skill_commander_6_4"
+		texturefile = "gfx/interface/icons/dimension_traveler_skill/commander/dimension_traveler_skill_commander_6_4.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_actived_dimension_traveler_skill_commander_6_4"
+		texturefile = "gfx/interface/icons/dimension_traveler_skill/commander/actived_dimension_traveler_skill_commander_6_4.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_dimension_traveler_skill_commander_6_6"
+		texturefile = "gfx/interface/icons/dimension_traveler_skill/commander/dimension_traveler_skill_commander_6_6.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_actived_dimension_traveler_skill_commander_6_6"
+		texturefile = "gfx/interface/icons/dimension_traveler_skill/commander/actived_dimension_traveler_skill_commander_6_6.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_dimension_traveler_skill_commander_6_8"
+		texturefile = "gfx/interface/icons/dimension_traveler_skill/commander/dimension_traveler_skill_commander_6_8.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_actived_dimension_traveler_skill_commander_6_8"
+		texturefile = "gfx/interface/icons/dimension_traveler_skill/commander/actived_dimension_traveler_skill_commander_6_8.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_dimension_traveler_skill_commander_7_3"
+		texturefile = "gfx/interface/icons/dimension_traveler_skill/commander/dimension_traveler_skill_commander_7_3.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_actived_dimension_traveler_skill_commander_7_3"
+		texturefile = "gfx/interface/icons/dimension_traveler_skill/commander/actived_dimension_traveler_skill_commander_7_3.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_dimension_traveler_skill_commander_7_5"
+		texturefile = "gfx/interface/icons/dimension_traveler_skill/commander/dimension_traveler_skill_commander_7_5.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_actived_dimension_traveler_skill_commander_7_5"
+		texturefile = "gfx/interface/icons/dimension_traveler_skill/commander/actived_dimension_traveler_skill_commander_7_5.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_dimension_traveler_skill_commander_7_7"
+		texturefile = "gfx/interface/icons/dimension_traveler_skill/commander/dimension_traveler_skill_commander_7_7.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_actived_dimension_traveler_skill_commander_7_7"
+		texturefile = "gfx/interface/icons/dimension_traveler_skill/commander/actived_dimension_traveler_skill_commander_7_7.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_dimension_traveler_skill_commander_8_4"
+		texturefile = "gfx/interface/icons/dimension_traveler_skill/commander/dimension_traveler_skill_commander_8_4.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_actived_dimension_traveler_skill_commander_8_4"
+		texturefile = "gfx/interface/icons/dimension_traveler_skill/commander/actived_dimension_traveler_skill_commander_8_4.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_dimension_traveler_skill_commander_8_6"
+		texturefile = "gfx/interface/icons/dimension_traveler_skill/commander/dimension_traveler_skill_commander_8_6.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_actived_dimension_traveler_skill_commander_8_6"
+		texturefile = "gfx/interface/icons/dimension_traveler_skill/commander/actived_dimension_traveler_skill_commander_8_6.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_dimension_traveler_skill_commander_9_5"
+		texturefile = "gfx/interface/icons/dimension_traveler_skill/commander/dimension_traveler_skill_commander_9_5.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_actived_dimension_traveler_skill_commander_9_5"
+		texturefile = "gfx/interface/icons/dimension_traveler_skill/commander/actived_dimension_traveler_skill_commander_9_5.dds"
+	}
+}

@@ -1,0 +1,423 @@
+
+namespace = time
+
+situation_event = {
+	id = time.230
+	title = time.230.name
+	desc = time.230.desc
+	picture = GFX_evt_shroudwalker_teachers
+	show_sound = event_factions
+	location = event_target:time_home_planet
+	situation = this
+	
+	is_triggered_only = yes
+	
+	trigger = {
+	}
+	
+	immediate = {
+		time_ethic_win = { ETHIC = spiritualist }
+	}
+	
+	option = {
+		name = time.230.a
+	}
+}
+
+situation_event = {
+	id = time.231
+	title = time.231.name
+	desc = {
+		text = time.231.desc.life
+		trigger = {
+			has_situation_flag = situation_time_life
+		}
+	}
+	desc = {
+		text = time.231.desc.death
+		trigger = {
+			has_situation_flag = situation_time_death
+		}
+	}
+	picture = GFX_evt_conclave
+	show_sound = event_factions
+	location = event_target:time_home_planet
+	situation = event_target:situation_time_spiritualist_vs_materialist
+	
+	is_triggered_only = yes
+	
+	trigger = {
+		exists = event_target:situation_time_spiritualist_vs_materialist
+	}
+	
+	immediate = {
+		set_timed_situation_flag = {
+			flag = time_231_triggered
+			days = @time_ethic_random_situation_event_cooldown_middle
+		}
+	}
+	
+	abort_trigger = {
+		has_situation_flag = abort_time_ethic_random_situation_event
+	}
+	
+	abort_effect = {
+		target = {
+			shift_random_pop_time_ethic = {
+				ETHIC = spiritualist
+				PERCENTAGE = @time_ethic_shift_percentage_middle
+			}
+		}
+		refresh_time_ethic_power_variable = yes
+	}
+	
+	option = {
+		name = time.211.a
+		target = {
+			custom_tooltip = time_change_pop_ethic_spiritualist
+			hidden_effect = {
+				shift_random_pop_time_ethic = {
+					ETHIC = spiritualist
+					PERCENTAGE = @time_ethic_shift_percentage_middle
+				}
+			}
+		}
+		hidden_effect = {
+			refresh_time_ethic_power_variable = yes
+		}
+	}
+	
+	option = {
+		name = time.211.b
+		allow = {
+			owner = {
+				has_resource = {
+					type = influence
+					amount >= 75
+				}
+			}
+		}
+		owner = {
+			add_resource = { influence = -75 }
+		}
+	}
+}
+
+situation_event = {
+	id = time.232
+	title = time.232.name
+	desc = {
+		text = time.232.desc.life
+		trigger = {
+			has_situation_flag = situation_time_life
+		}
+	}
+	desc = {
+		text = time.232.desc.death
+		trigger = {
+			has_situation_flag = situation_time_death
+		}
+	}
+	picture = GFX_evt_conclave
+	show_sound = event_factions
+	location = event_target:time_home_planet
+	situation = event_target:situation_time_spiritualist_vs_materialist
+	
+	is_triggered_only = yes
+	
+	trigger = {
+		exists = event_target:situation_time_spiritualist_vs_materialist
+	}
+	
+	immediate = {
+		set_timed_situation_flag = {
+			flag = time_232_triggered
+			days = @time_ethic_random_situation_event_cooldown_short
+		}
+	}
+	
+	abort_trigger = {
+		has_situation_flag = abort_time_ethic_random_situation_event
+	}
+	
+	abort_effect = {
+		target = {
+			shift_random_pop_time_ethic = {
+				ETHIC = spiritualist
+				PERCENTAGE = @time_ethic_shift_percentage_low
+			}
+		}
+		refresh_time_ethic_power_variable = yes
+	}
+	
+	option = {
+		name = time.212.a
+		target = {
+			custom_tooltip = time_change_pop_ethic_spiritualist
+			hidden_effect = {
+				shift_random_pop_time_ethic = {
+					ETHIC = spiritualist
+					PERCENTAGE = @time_ethic_shift_percentage_low
+				}
+			}
+		}
+		hidden_effect = {
+			refresh_time_ethic_power_variable = yes
+		}
+	}
+	
+	option = {
+		name = time.212.b
+		allow = {
+			owner = {
+				has_resource = {
+					type = influence
+					amount >= 50
+				}
+			}
+		}
+		owner = {
+			add_resource = { influence = -50 }
+		}
+	}
+}
+
+situation_event = {
+	id = time.233
+	title = time.233.name
+	desc = {
+		text = time.233.desc.life
+		trigger = {
+			has_situation_flag = situation_time_life
+		}
+	}
+	desc = {
+		text = time.233.desc.death
+		trigger = {
+			has_situation_flag = situation_time_death
+		}
+	}
+	picture = GFX_evt_conclave
+	show_sound = event_factions
+	location = event_target:time_home_planet
+	situation = event_target:situation_time_spiritualist_vs_materialist
+	
+	is_triggered_only = yes
+	
+	trigger = {
+		exists = event_target:situation_time_spiritualist_vs_materialist
+		owner = { is_spiritualist = no }
+	}
+	
+	immediate = {
+		set_timed_situation_flag = {
+			flag = time_233_triggered
+			days = @time_ethic_random_situation_event_cooldown_very_long
+		}
+	}
+	
+	abort_trigger = {
+		has_situation_flag = abort_time_ethic_random_situation_event
+	}
+	
+	abort_effect = {
+		target = {
+			add_modifier = {
+				modifier = origin_time_coup
+				days = @time_ethic_random_situation_event_cooldown_long
+			}
+			shift_random_pop_time_ethic = {
+				ETHIC = spiritualist
+				PERCENTAGE = @time_ethic_shift_percentage_high
+			}
+		}
+		refresh_time_ethic_power_variable = yes
+	}
+	
+	option = {
+		name = time.213.a
+		target = {
+			custom_tooltip = time_change_pop_ethic_spiritualist
+			add_modifier = {
+				modifier = origin_time_coup
+				days = @time_ethic_random_situation_event_cooldown_long
+			}
+			hidden_effect = {
+				shift_random_pop_time_ethic = {
+					ETHIC = spiritualist
+					PERCENTAGE = @time_ethic_shift_percentage_high
+				}
+			}
+		}
+		hidden_effect = {
+			refresh_time_ethic_power_variable = yes
+		}
+	}
+	
+	option = {
+		name = time.213.b
+		allow = {
+			owner = {
+				has_resource = {
+					type = influence
+					amount >= 100
+				}
+			}
+		}
+		owner = {
+			add_resource = { influence = -100 }
+		}
+		target = {
+			add_modifier = {
+				modifier = origin_time_coup
+				days = @time_ethic_random_situation_event_cooldown_very_long
+			}
+		}
+	}
+}
+
+situation_event = {
+	id = time.234
+	title = time.234.name
+	desc = {
+		text = time.234.desc.life
+		trigger = {
+			has_situation_flag = situation_time_life
+		}
+	}
+	desc = {
+		text = time.234.desc.death
+		trigger = {
+			has_situation_flag = situation_time_death
+		}
+	}
+	picture = GFX_evt_conclave
+	show_sound = event_factions
+	location = event_target:time_home_planet
+	situation = event_target:situation_time_spiritualist_vs_materialist
+	
+	is_triggered_only = yes
+	
+	trigger = {
+		exists = event_target:situation_time_spiritualist_vs_materialist
+		owner = { is_spiritualist = no }
+	}
+	
+	immediate = {
+		set_timed_situation_flag = {
+			flag = time_234_triggered
+			days = @time_ethic_random_situation_event_cooldown_long
+		}
+		set_timed_situation_flag = {
+			flag = time_planet_devastation_event
+			days = @time_ethic_random_situation_event_cooldown_long
+		}
+	}
+	
+	abort_trigger = {
+		has_situation_flag = abort_time_ethic_random_situation_event
+	}
+	
+	abort_effect = {
+		target = {
+			add_planet_devastation = 25
+		}
+	}
+	
+	option = {
+		name = time.214.a
+		target = {
+			add_planet_devastation = 25
+		}
+	}
+	
+	option = {
+		name = time.214.b
+		allow = {
+			owner = {
+				has_resource = {
+					type = influence
+					amount >= 50
+				}
+			}
+		}
+		owner = {
+			add_resource = { influence = -50 }
+		}
+		target = {
+			add_planet_devastation = 10
+		}
+	}
+}
+
+situation_event = {
+	id = time.235
+	title = time.235.name
+	desc = {
+		text = time.235.desc.life
+		trigger = {
+			has_situation_flag = situation_time_life
+		}
+	}
+	desc = {
+		text = time.235.desc.death
+		trigger = {
+			has_situation_flag = situation_time_death
+		}
+	}
+	picture = GFX_evt_conclave
+	show_sound = event_factions
+	location = event_target:time_home_planet
+	situation = event_target:situation_time_spiritualist_vs_materialist
+	
+	is_triggered_only = yes
+	
+	trigger = {
+		exists = event_target:situation_time_spiritualist_vs_materialist
+	}
+	
+	immediate = {
+		set_timed_situation_flag = {
+			flag = time_235_triggered
+			days = @time_ethic_random_situation_event_cooldown_middle
+		}
+	}
+	
+	abort_trigger = {
+		has_situation_flag = abort_time_ethic_random_situation_event
+	}
+	
+	abort_effect = {
+		target = {
+			add_modifier = {
+				modifier = origin_time_spiritualist_attraction
+				days = @time_ethic_random_situation_event_cooldown_middle
+			}
+		}
+	}
+	
+	option = {
+		name = time.215.a
+		target = {
+			add_modifier = {
+				modifier = origin_time_spiritualist_attraction
+				days = @time_ethic_random_situation_event_cooldown_middle
+			}
+		}
+	}
+	
+	option = {
+		name = time.215.b
+		allow = {
+			owner = {
+				has_resource = {
+					type = influence
+					amount >= 50
+				}
+			}
+		}
+		owner = {
+			add_resource = { influence = -50 }
+		}
+	}
+}

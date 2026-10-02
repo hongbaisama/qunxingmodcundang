@@ -1,0 +1,241 @@
+leader_trait_planetary_mechanocalibrator = {
+	inline_script = {
+		script = trait/time_trait_icon_for_care
+		CLASS = official
+		RARITY = paragon
+		COUNCIL = no
+		TIER = none
+	}
+	# 经济算法
+	triggered_planet_modifier = {
+		potential = {
+			has_leader_flag = care_economy
+		}
+		planet_jobs_energy_produces_mult = 0.02
+		planet_jobs_trade_produces_mult = 0.02
+		mult = value:num_time_leader_skill
+	}
+	triggered_sector_modifier = {
+		potential = {
+			has_leader_flag = care_economy
+		}
+		planet_jobs_energy_produces_mult = 0.01
+		planet_jobs_trade_produces_mult = 0.01
+		mult = value:num_time_leader_skill
+	}
+	# 贸易算法
+	triggered_planet_modifier = {
+		potential = {
+			has_leader_flag = care_trade
+		}
+		planet_jobs_trade_produces_mult = 0.05
+		mult = value:num_time_leader_skill
+	}
+	triggered_sector_modifier = {
+		potential = {
+			has_leader_flag = care_trade
+		}
+		planet_jobs_trade_produces_mult = 0.025
+		mult = value:num_time_leader_skill
+	}
+	# 能源算法
+	triggered_planet_modifier = {
+		potential = {
+			has_leader_flag = care_energy
+		}
+		planet_jobs_energy_produces_mult = 0.05
+		mult = value:num_time_leader_skill
+	}
+	triggered_sector_modifier = {
+		potential = {
+			has_leader_flag = care_energy
+		}
+		planet_jobs_energy_produces_mult = 0.025
+		mult = value:num_time_leader_skill
+	}
+	# 研究算法
+	triggered_planet_modifier = {
+		potential = {
+			has_leader_flag = care_research
+		}
+		planet_researchers_produces_mult = 0.03
+		planet_researchers_upkeep_mult = -0.015
+		mult = value:num_time_leader_skill
+	}
+	triggered_sector_modifier = {
+		potential = {
+			has_leader_flag = care_research
+		}
+		planet_researchers_produces_mult = 0.015
+		planet_researchers_upkeep_mult = -0.0075
+		mult = value:num_time_leader_skill
+	}
+	# 协调算法
+	triggered_planet_modifier = {
+		potential = {
+			has_leader_flag = care_unity
+		}
+		planet_jobs_unity_produces_mult = 0.03
+		planet_decision_enact_speed_mult = 0.03
+		mult = value:num_time_leader_skill
+	}
+	triggered_sector_modifier = {
+		potential = {
+			has_leader_flag = care_unity
+		}
+		planet_jobs_unity_produces_mult = 0.015
+		planet_decision_enact_speed_mult = 0.015
+		mult = value:num_time_leader_skill
+	}
+	# 统筹算法
+	triggered_planet_modifier = {
+		potential = {
+			has_leader_flag = care_housing
+		}
+		planet_housing_mult = 0.03
+		planet_building_build_speed_mult = 0.03
+		mult = value:num_time_leader_skill
+	}
+	triggered_sector_modifier = {
+		potential = {
+			has_leader_flag = care_housing
+		}
+		planet_housing_mult = 0.015
+		planet_building_build_speed_mult = 0.015
+		mult = value:num_time_leader_skill
+	}
+	# 普适算法
+	triggered_planet_modifier = {
+		potential = {
+			has_leader_flag = care_amenities
+		}
+		planet_amenities_mult = 0.03
+		planet_clear_blocker_speed_mult = 0.03
+		mult = value:num_time_leader_skill
+	}
+	triggered_sector_modifier = {
+		potential = {
+			has_leader_flag = care_amenities
+		}
+		planet_amenities_mult = 0.015
+		planet_clear_blocker_speed_mult = 0.015
+		mult = value:num_time_leader_skill
+	}
+	# 增长算法
+	triggered_planet_modifier = {
+		potential = {
+			has_leader_flag = care_growth
+			owner_main_species = { is_robotic = no }
+		}
+		logistic_growth_mult = 0.03
+		bonus_pop_growth_mult = 0.03
+		mult = value:num_time_leader_skill
+	}
+	triggered_sector_modifier = {
+		potential = {
+			has_leader_flag = care_growth
+			owner_main_species = { is_robotic = no }
+		}
+		logistic_growth_mult = 0.015
+		bonus_pop_growth_mult = 0.015
+		mult = value:num_time_leader_skill
+	}
+	triggered_planet_modifier = {
+		potential = {
+			has_leader_flag = care_growth
+			owner_main_species = { is_robotic = yes }
+		}
+		planet_pop_assembly_mult = 0.05
+		mult = value:num_time_leader_skill
+	}
+	triggered_sector_modifier = {
+		potential = {
+			has_leader_flag = care_growth
+			owner_main_species = { is_robotic = yes }
+		}
+		planet_pop_assembly_mult = 0.025
+		mult = value:num_time_leader_skill
+	}
+	# 工业算法
+	triggered_planet_modifier = {
+		potential = {
+			has_leader_flag = care_alloys
+		}
+		planet_jobs_alloys_produces_mult = 0.03
+		planet_districts_upkeep_mult = -0.015
+		mult = value:num_time_leader_skill
+	}
+	triggered_sector_modifier = {
+		potential = {
+			has_leader_flag = care_alloys
+		}
+		planet_jobs_alloys_produces_mult = 0.015
+		planet_districts_upkeep_mult = -0.0075
+		mult = value:num_time_leader_skill
+	}
+	# 采掘算法
+	triggered_planet_modifier = {
+		potential = {
+			has_leader_flag = care_minerals
+		}
+		planet_jobs_minerals_produces_mult = 0.05
+		mult = value:num_time_leader_skill
+	}
+	triggered_sector_modifier = {
+		potential = {
+			has_leader_flag = care_minerals
+		}
+		planet_jobs_minerals_produces_mult = 0.025
+		mult = value:num_time_leader_skill
+	}
+	# 通用
+	triggered_self_modifier = {
+		potential = {
+			has_vanilla_leader_upkeep = yes
+			has_full_vanilla_leader_unity_upkeep = yes
+		}
+		leader_officials_unity_upkeep_add = -2
+		mult = trigger:has_base_skill
+		custom_tooltip = BLANK_STRING
+	}
+	triggered_self_modifier = {
+		potential = {
+			has_vanilla_leader_upkeep = yes
+			has_half_vanilla_leader_unity_upkeep = yes
+		}
+		leader_officials_unity_upkeep_add = -1
+		mult = trigger:has_base_skill
+		custom_tooltip = BLANK_STRING
+	}
+	triggered_self_modifier = {
+		potential = {
+			has_vanilla_leader_upkeep = yes
+			has_full_vanilla_leader_food_upkeep = yes
+		}
+		leader_officials_food_upkeep_add = -2
+		mult = trigger:has_base_skill
+		custom_tooltip = BLANK_STRING
+	}
+	triggered_self_modifier = {
+		potential = {
+			has_vanilla_leader_upkeep = yes
+			has_full_vanilla_leader_energy_upkeep = yes
+		}
+		leader_officials_energy_upkeep_add = -2
+		mult = trigger:has_base_skill
+		custom_tooltip = BLANK_STRING
+	}
+	triggered_self_modifier = {
+		leader_officials_energy_upkeep_add = 5
+		mult = trigger:has_base_skill
+		custom_tooltip = care_leader_upkeep_tooltip
+	}
+	custom_tooltip_with_modifiers = leader_trait_planetary_mechanocalibrator_tooltip
+	on_gained_effect = {
+		# 晋升著名
+		become_renowned_without_promotion = yes
+	}
+	leader_class = { official }
+	initial = no
+	randomized = no
+}

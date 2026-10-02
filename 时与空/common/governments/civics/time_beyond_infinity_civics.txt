@@ -1,0 +1,677 @@
+# 时空机器
+
+civic_time_machine = {
+	description = "civic_tooltip_time_machine_effects"
+	negative_description = "civic_tooltip_beyond_infinity_negative_effects"
+	ai_playable = { always = no }
+	potential = {
+		ethics = {
+			NOT = { value = ethic_gestalt_consciousness }
+		}
+		authority = {
+			NOT = { value = auth_corporate }
+		}
+		civics = {
+			OR = {
+				value = civic_time_machine
+				value = civic_time_machine_corporate
+				value = civic_time_machine_hive
+				value = civic_time_machine_machine
+			}
+		}
+	}
+	possible = {
+		is_nomadic = no
+		civics = {
+			NOR = {
+				text = civic_tooltip_not_circle_nexus
+				value = civic_circle_nexus
+				value = civic_circle_nexus_corporate
+				value = civic_circle_nexus_hive
+				value = civic_circle_nexus_machine
+			}
+			NOR = {
+				text = civic_tooltip_not_dimension_engine
+				value = civic_dimension_engine
+				value = civic_dimension_engine_corporate
+				value = civic_dimension_engine_hive
+				value = civic_dimension_engine_machine
+			}
+			NOR = {
+				text = civic_tooltip_not_genocidal
+				value = civic_fanatic_purifiers
+				value = civic_hive_devouring_swarm
+				value = civic_machine_terminator
+				value = civic_scorched_earth
+				value = civic_hive_scorched_earth
+			}
+		}
+	}
+	modification = {
+		add = {
+			hidden_trigger = {
+				has_civic = civic_time_machine_corporate
+			}
+		}
+		remove = {
+			always = no
+		}
+	}
+	alternate_civic_version = civic_time_machine_corporate
+	random_weight = { base = 0 }
+	ai_weight = { base = 0 }
+}
+
+civic_time_machine_corporate = {
+	description = "civic_tooltip_time_machine_effects"
+	negative_description = "civic_tooltip_beyond_infinity_negative_effects"
+	ai_playable = { always = no }
+	potential = {
+		authority = { value = auth_corporate }
+		civics = {
+			OR = {
+				value = civic_time_machine
+				value = civic_time_machine_corporate
+				value = civic_time_machine_hive
+				value = civic_time_machine_machine
+			}
+		}
+	}
+	possible = {
+		is_nomadic = no
+		civics = {
+			NOR = {
+				text = civic_tooltip_not_circle_nexus
+				value = civic_circle_nexus
+				value = civic_circle_nexus_corporate
+				value = civic_circle_nexus_hive
+				value = civic_circle_nexus_machine
+			}
+			NOR = {
+				text = civic_tooltip_not_dimension_engine
+				value = civic_dimension_engine
+				value = civic_dimension_engine_corporate
+				value = civic_dimension_engine_hive
+				value = civic_dimension_engine_machine
+			}
+			NOT = { value = civic_criminal_heritage }
+			NOR = {
+				text = civic_tooltip_not_genocidal
+				value = civic_fanatic_purifiers
+				value = civic_hive_devouring_swarm
+				value = civic_machine_terminator
+				value = civic_scorched_earth
+				value = civic_hive_scorched_earth
+			}
+		}
+	}
+	modification = {
+		add = {
+			hidden_trigger = {
+				has_civic = civic_time_machine
+			}
+		}
+		remove = {
+			always = no
+		}
+	}
+	alternate_civic_version = civic_time_machine
+	random_weight = { base = 0 }
+	ai_weight = { base = 0 }
+}
+
+civic_time_machine_hive = {
+	description = "civic_tooltip_time_machine_effects"
+	negative_description = "civic_tooltip_beyond_infinity_negative_effects"
+	modification = no
+	ai_playable = { always = no }
+	potential = {
+		authority = { value = auth_hive_mind }
+		civics = {
+			OR = {
+				value = civic_time_machine
+				value = civic_time_machine_corporate
+				value = civic_time_machine_hive
+				value = civic_time_machine_machine
+			}
+		}
+	}
+	possible = {
+		is_nomadic = no
+		civics = {
+			NOR = {
+				text = civic_tooltip_not_circle_nexus
+				value = civic_circle_nexus
+				value = civic_circle_nexus_corporate
+				value = civic_circle_nexus_hive
+				value = civic_circle_nexus_machine
+			}
+			NOR = {
+				text = civic_tooltip_not_dimension_engine
+				value = civic_dimension_engine
+				value = civic_dimension_engine_corporate
+				value = civic_dimension_engine_hive
+				value = civic_dimension_engine_machine
+			}
+			NOR = {
+				text = civic_tooltip_not_genocidal
+				value = civic_fanatic_purifiers
+				value = civic_hive_devouring_swarm
+				value = civic_machine_terminator
+				value = civic_scorched_earth
+				value = civic_hive_scorched_earth
+			}
+		}
+	}
+	modifier = {
+		pop_calculator_physicist_bonus_workforce_mult = 0.2
+		pop_time_traveler_drone_bonus_workforce_mult = 0.2
+		councilor_gestalt_cognitive_exp_gain = @gestalt_civic_node_xp_rate
+	}
+	random_weight = { base = 0 }
+	ai_weight = { base = 0 }
+}
+
+civic_time_machine_machine = {
+	description = "civic_tooltip_time_machine_effects"
+	negative_description = "civic_tooltip_beyond_infinity_negative_effects"
+	modification = no
+	ai_playable = { always = no }
+	potential = {
+		authority = { value = auth_machine_intelligence }
+		civics = {
+			OR = {
+				value = civic_time_machine
+				value = civic_time_machine_corporate
+				value = civic_time_machine_hive
+				value = civic_time_machine_machine
+			}
+		}
+	}
+	possible = {
+		is_nomadic = no
+		civics = {
+			NOR = {
+				text = civic_tooltip_not_circle_nexus
+				value = civic_circle_nexus
+				value = civic_circle_nexus_corporate
+				value = civic_circle_nexus_hive
+				value = civic_circle_nexus_machine
+			}
+			NOR = {
+				text = civic_tooltip_not_dimension_engine
+				value = civic_dimension_engine
+				value = civic_dimension_engine_corporate
+				value = civic_dimension_engine_hive
+				value = civic_dimension_engine_machine
+			}
+			NOR = {
+				text = civic_tooltip_not_genocidal
+				value = civic_fanatic_purifiers
+				value = civic_hive_devouring_swarm
+				value = civic_machine_terminator
+				value = civic_scorched_earth
+				value = civic_hive_scorched_earth
+			}
+		}
+	}
+	modifier = {
+		pop_calculator_physicist_bonus_workforce_mult = 0.2
+		pop_time_traveler_drone_bonus_workforce_mult = 0.2
+		councilor_gestalt_cognitive_exp_gain = @gestalt_civic_node_xp_rate
+	}
+	random_weight = { base = 0 }
+	ai_weight = { base = 0 }
+}
+
+# 圆环枢纽
+
+civic_circle_nexus = {
+	description = "civic_tooltip_circle_nexus_effects"
+	negative_description = "civic_tooltip_beyond_infinity_negative_effects"
+	ai_playable = { always = no }
+	potential = {
+		ethics = {
+			NOT = { value = ethic_gestalt_consciousness }
+		}
+		authority = {
+			NOT = { value = auth_corporate }
+		}
+		civics = {
+			OR = {
+				value = civic_circle_nexus
+				value = civic_circle_nexus_corporate
+				value = civic_circle_nexus_hive
+				value = civic_circle_nexus_machine
+			}
+		}
+	}
+	possible = {
+		is_nomadic = no
+		civics = {
+			NOR = {
+				text = civic_tooltip_not_time_machine
+				value = civic_time_machine
+				value = civic_time_machine_corporate
+				value = civic_time_machine_hive
+				value = civic_time_machine_machine
+			}
+			NOR = {
+				text = civic_tooltip_not_dimension_engine
+				value = civic_dimension_engine
+				value = civic_dimension_engine_corporate
+				value = civic_dimension_engine_hive
+				value = civic_dimension_engine_machine
+			}
+			NOR = {
+				text = civic_tooltip_not_genocidal
+				value = civic_fanatic_purifiers
+				value = civic_hive_devouring_swarm
+				value = civic_machine_terminator
+				value = civic_scorched_earth
+				value = civic_hive_scorched_earth
+			}
+		}
+	}
+	modification = {
+		add = {
+			hidden_trigger = {
+				has_civic = civic_circle_nexus_corporate
+			}
+		}
+		remove = {
+			always = no
+		}
+	}
+	alternate_civic_version = civic_circle_nexus_corporate
+	random_weight = { base = 0 }
+	ai_weight = { base = 0 }
+}
+
+civic_circle_nexus_corporate = {
+	description = "civic_tooltip_circle_nexus_effects"
+	negative_description = "civic_tooltip_beyond_infinity_negative_effects"
+	ai_playable = { always = no }
+	potential = {
+		authority = { value = auth_corporate }
+		civics = {
+			OR = {
+				value = civic_circle_nexus
+				value = civic_circle_nexus_corporate
+				value = civic_circle_nexus_hive
+				value = civic_circle_nexus_machine
+			}
+		}
+	}
+	possible = {
+		is_nomadic = no
+		civics = {
+			NOR = {
+				text = civic_tooltip_not_time_machine
+				value = civic_time_machine
+				value = civic_time_machine_corporate
+				value = civic_time_machine_hive
+				value = civic_time_machine_machine
+			}
+			NOR = {
+				text = civic_tooltip_not_dimension_engine
+				value = civic_dimension_engine
+				value = civic_dimension_engine_corporate
+				value = civic_dimension_engine_hive
+				value = civic_dimension_engine_machine
+			}
+			NOT = { value = civic_criminal_heritage }
+			NOR = {
+				text = civic_tooltip_not_genocidal
+				value = civic_fanatic_purifiers
+				value = civic_hive_devouring_swarm
+				value = civic_machine_terminator
+				value = civic_scorched_earth
+				value = civic_hive_scorched_earth
+			}
+		}
+	}
+	modification = {
+		add = {
+			hidden_trigger = {
+				has_civic = civic_circle_nexus
+			}
+		}
+		remove = {
+			always = no
+		}
+	}
+	alternate_civic_version = civic_circle_nexus
+	random_weight = { base = 0 }
+	ai_weight = { base = 0 }
+}
+
+civic_circle_nexus_hive = {
+	description = "civic_tooltip_circle_nexus_effects"
+	negative_description = "civic_tooltip_beyond_infinity_negative_effects"
+	modification = no
+	ai_playable = { always = no }
+	potential = {
+		authority = { value = auth_hive_mind }
+		civics = {
+			OR = {
+				value = civic_circle_nexus
+				value = civic_circle_nexus_corporate
+				value = civic_circle_nexus_hive
+				value = civic_circle_nexus_machine
+			}
+		}
+	}
+	possible = {
+		is_nomadic = no
+		civics = {
+			NOR = {
+				text = civic_tooltip_not_time_machine
+				value = civic_time_machine
+				value = civic_time_machine_corporate
+				value = civic_time_machine_hive
+				value = civic_time_machine_machine
+			}
+			NOR = {
+				text = civic_tooltip_not_dimension_engine
+				value = civic_dimension_engine
+				value = civic_dimension_engine_corporate
+				value = civic_dimension_engine_hive
+				value = civic_dimension_engine_machine
+			}
+			NOR = {
+				text = civic_tooltip_not_genocidal
+				value = civic_fanatic_purifiers
+				value = civic_hive_devouring_swarm
+				value = civic_machine_terminator
+				value = civic_scorched_earth
+				value = civic_hive_scorched_earth
+			}
+		}
+	}
+	modifier = {
+		pop_calculator_biologist_bonus_workforce_mult = 0.2
+		pop_circle_bender_drone_bonus_workforce_mult = 0.2
+		councilor_gestalt_cognitive_exp_gain = @gestalt_civic_node_xp_rate
+	}
+	random_weight = { base = 0 }
+	ai_weight = { base = 0 }
+}
+
+civic_circle_nexus_machine = {
+	description = "civic_tooltip_circle_nexus_effects"
+	negative_description = "civic_tooltip_beyond_infinity_negative_effects"
+	modification = no
+	ai_playable = { always = no }
+	potential = {
+		authority = { value = auth_machine_intelligence }
+		civics = {
+			OR = {
+				value = civic_circle_nexus
+				value = civic_circle_nexus_corporate
+				value = civic_circle_nexus_hive
+				value = civic_circle_nexus_machine
+			}
+		}
+	}
+	possible = {
+		is_nomadic = no
+		civics = {
+			NOR = {
+				text = civic_tooltip_not_time_machine
+				value = civic_time_machine
+				value = civic_time_machine_corporate
+				value = civic_time_machine_hive
+				value = civic_time_machine_machine
+			}
+			NOR = {
+				text = civic_tooltip_not_dimension_engine
+				value = civic_dimension_engine
+				value = civic_dimension_engine_corporate
+				value = civic_dimension_engine_hive
+				value = civic_dimension_engine_machine
+			}
+			NOR = {
+				text = civic_tooltip_not_genocidal
+				value = civic_fanatic_purifiers
+				value = civic_hive_devouring_swarm
+				value = civic_machine_terminator
+				value = civic_scorched_earth
+				value = civic_hive_scorched_earth
+			}
+		}
+	}
+	modifier = {
+		pop_calculator_biologist_bonus_workforce_mult = 0.2
+		pop_circle_bender_drone_bonus_workforce_mult = 0.2
+		councilor_gestalt_cognitive_exp_gain = @gestalt_civic_node_xp_rate
+	}
+	random_weight = { base = 0 }
+	ai_weight = { base = 0 }
+}
+
+# 位面引擎
+
+civic_dimension_engine = {
+	description = "civic_tooltip_dimension_engine_effects"
+	negative_description = "civic_tooltip_beyond_infinity_negative_effects"
+	ai_playable = { always = no }
+	potential = {
+		ethics = {
+			NOT = { value = ethic_gestalt_consciousness }
+		}
+		authority = {
+			NOT = { value = auth_corporate }
+		}
+		civics = {
+			OR = {
+				value = civic_dimension_engine
+				value = civic_dimension_engine_corporate
+				value = civic_dimension_engine_hive
+				value = civic_dimension_engine_machine
+			}
+		}
+	}
+	possible = {
+		is_nomadic = no
+		civics = {
+			NOR = {
+				text = civic_tooltip_not_time_machine
+				value = civic_time_machine
+				value = civic_time_machine_corporate
+				value = civic_time_machine_hive
+				value = civic_time_machine_machine
+			}
+			NOR = {
+				text = civic_tooltip_not_circle_nexus
+				value = civic_circle_nexus
+				value = civic_circle_nexus_corporate
+				value = civic_circle_nexus_hive
+				value = civic_circle_nexus_machine
+			}
+			NOR = {
+				text = civic_tooltip_not_genocidal
+				value = civic_fanatic_purifiers
+				value = civic_hive_devouring_swarm
+				value = civic_machine_terminator
+				value = civic_scorched_earth
+				value = civic_hive_scorched_earth
+			}
+		}
+	}
+	modification = {
+		add = {
+			hidden_trigger = {
+				has_civic = civic_dimension_engine_corporate
+			}
+		}
+		remove = {
+			always = no
+		}
+	}
+	alternate_civic_version = civic_dimension_engine_corporate
+	random_weight = { base = 0 }
+	ai_weight = { base = 0 }
+}
+
+civic_dimension_engine_corporate = {
+	description = "civic_tooltip_dimension_engine_effects"
+	negative_description = "civic_tooltip_beyond_infinity_negative_effects"
+	ai_playable = { always = no }
+	potential = {
+		authority = { value = auth_corporate }
+		civics = {
+			OR = {
+				value = civic_dimension_engine
+				value = civic_dimension_engine_corporate
+				value = civic_dimension_engine_hive
+				value = civic_dimension_engine_machine
+			}
+		}
+	}
+	possible = {
+		is_nomadic = no
+		civics = {
+			NOR = {
+				text = civic_tooltip_not_time_machine
+				value = civic_time_machine
+				value = civic_time_machine_corporate
+				value = civic_time_machine_hive
+				value = civic_time_machine_machine
+			}
+			NOR = {
+				text = civic_tooltip_not_circle_nexus
+				value = civic_circle_nexus
+				value = civic_circle_nexus_corporate
+				value = civic_circle_nexus_hive
+				value = civic_circle_nexus_machine
+			}
+			NOT = { value = civic_criminal_heritage }
+			NOR = {
+				text = civic_tooltip_not_genocidal
+				value = civic_fanatic_purifiers
+				value = civic_hive_devouring_swarm
+				value = civic_machine_terminator
+				value = civic_scorched_earth
+				value = civic_hive_scorched_earth
+			}
+		}
+	}
+	modification = {
+		add = {
+			hidden_trigger = {
+				has_civic = civic_dimension_engine
+			}
+		}
+		remove = {
+			always = no
+		}
+	}
+	alternate_civic_version = civic_dimension_engine
+	random_weight = { base = 0 }
+	ai_weight = { base = 0 }
+}
+
+civic_dimension_engine_hive = {
+	description = "civic_tooltip_dimension_engine_effects"
+	negative_description = "civic_tooltip_beyond_infinity_negative_effects"
+	modification = no
+	ai_playable = { always = no }
+	potential = {
+		authority = { value = auth_hive_mind }
+		civics = {
+			OR = {
+				value = civic_dimension_engine
+				value = civic_dimension_engine_corporate
+				value = civic_dimension_engine_hive
+				value = civic_dimension_engine_machine
+			}
+		}
+	}
+	possible = {
+		is_nomadic = no
+		civics = {
+			NOR = {
+				text = civic_tooltip_not_time_machine
+				value = civic_time_machine
+				value = civic_time_machine_corporate
+				value = civic_time_machine_hive
+				value = civic_time_machine_machine
+			}
+			NOR = {
+				text = civic_tooltip_not_circle_nexus
+				value = civic_circle_nexus
+				value = civic_circle_nexus_corporate
+				value = civic_circle_nexus_hive
+				value = civic_circle_nexus_machine
+			}
+			NOR = {
+				text = civic_tooltip_not_genocidal
+				value = civic_fanatic_purifiers
+				value = civic_hive_devouring_swarm
+				value = civic_machine_terminator
+				value = civic_scorched_earth
+				value = civic_hive_scorched_earth
+			}
+		}
+	}
+	modifier = {
+		pop_calculator_engineer_bonus_workforce_mult = 0.2
+		pop_dimension_anchor_drone_bonus_workforce_mult = 0.2
+		councilor_gestalt_cognitive_exp_gain = @gestalt_civic_node_xp_rate
+	}
+	random_weight = { base = 0 }
+	ai_weight = { base = 0 }
+}
+
+civic_dimension_engine_machine = {
+	description = "civic_tooltip_dimension_engine_effects"
+	negative_description = "civic_tooltip_beyond_infinity_negative_effects"
+	modification = no
+	ai_playable = { always = no }
+	potential = {
+		authority = { value = auth_machine_intelligence }
+		civics = {
+			OR = {
+				value = civic_dimension_engine
+				value = civic_dimension_engine_corporate
+				value = civic_dimension_engine_hive
+				value = civic_dimension_engine_machine
+			}
+		}
+	}
+	possible = {
+		is_nomadic = no
+		civics = {
+			NOR = {
+				text = civic_tooltip_not_time_machine
+				value = civic_time_machine
+				value = civic_time_machine_corporate
+				value = civic_time_machine_hive
+				value = civic_time_machine_machine
+			}
+			NOR = {
+				text = civic_tooltip_not_circle_nexus
+				value = civic_circle_nexus
+				value = civic_circle_nexus_corporate
+				value = civic_circle_nexus_hive
+				value = civic_circle_nexus_machine
+			}
+			NOR = {
+				text = civic_tooltip_not_genocidal
+				value = civic_fanatic_purifiers
+				value = civic_hive_devouring_swarm
+				value = civic_machine_terminator
+				value = civic_scorched_earth
+				value = civic_hive_scorched_earth
+			}
+		}
+	}
+	modifier = {
+		pop_calculator_engineer_bonus_workforce_mult = 0.2
+		pop_dimension_anchor_drone_bonus_workforce_mult = 0.2
+		councilor_gestalt_cognitive_exp_gain = @gestalt_civic_node_xp_rate
+	}
+	random_weight = { base = 0 }
+	ai_weight = { base = 0 }
+}

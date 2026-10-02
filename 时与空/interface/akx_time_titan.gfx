@@ -1,0 +1,421 @@
+spriteTypes = {
+	################################################################
+	# 舰船
+	################################################################
+	
+	spriteType = {
+		name = "GFX_ship_size_time"
+		texturefile = "gfx/interface/icons/ship_parts/ship_size_time.dds"
+	}
+	spriteType = {
+		name = "GFX_ship_size_time_top"
+		texturefile = "gfx/interface/icons/ship_parts/ship_size_time_titan_top.dds"
+	}
+	spriteType = {
+		name = "GFX_ship_size_time_top_damaged"
+		texturefile = "gfx/interface/icons/ship_parts/ship_size_time_titan_top_damaged.dds"
+	}
+	# 键值没法自定义，只能是ship_counter+数字的格式，否则群星读不到
+	spriteType = {
+		name = "GFX_ship_counter_13"
+		textureFile = "gfx/interface/system/icon_time_titan.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_fleet_time_titan_icons"
+		texturefile = "gfx/interface/icons/ship_icons_type_time_titan.dds"
+		noOfFrames = 16
+	}
+	
+	spriteType = {
+		name = "GFX_fleet_time_titan_icons_mixed"
+		texturefile = "gfx/interface/icons/ship_icons_type_time_titan_mixed.dds"
+		noOfFrames = 16
+	}
+	
+	spriteType = {
+		name = "GFX_fleet_time_titan_icons_cloaked"
+		texturefile = "gfx/interface/icons/ship_icons_type_time_titan_cloaked.dds"
+		noOfFrames = 16
+	}
+	
+	spriteType = {
+		name = "GFX_arkship_fleetview_time_titan"
+		texturefile = "gfx/interface/fleet_view/arkship_fleetview_time_titan.dds"
+		effectFile = "gfx/FX/buttonstate.shader"
+	}
+
+	spriteType = {
+		name = "GFX_arkship_planetview_header_time_titan"
+		textureFile = "gfx/interface/planetview/arkship_planetview_header_time_titan.dds"
+	}
+	
+	################################################################
+	# 技能
+	################################################################
+	
+	spriteType = {
+		name = "GFX_fleet_action_open_time_titan_main_menu"
+		texturefile = "gfx/interface/fleet_view/fleet_action_open_time_titan_main_menu.dds"
+		effectFile = "gfx/FX/buttonstate.shader"
+		noOfFrames = 3
+		animation = {
+			animationmaskfile = "gfx/interface/fleet_view/standard_button_mask.dds"
+			animationtexturefile = "gfx/interface/fleet_view/action_button_texture.dds"
+			animationrotation = 180.0
+			animationlooping = yes
+			animationtime = 12.0
+			animationdelay = 0.0
+			animationblendmode = "overlay"       #add, multiply, overlay
+			animationtype = "scrolling"      #scrolling, rotating, pulsing
+			animationrotationoffset = { x = 0.0 y = 0.0 }
+			animationtexturescale = { x = 1.0 y = 1.0 }
+			animationframes = { 1 2 3 }
+		}
+	}
+	
+	spriteType = {
+		name = "GFX_fleet_action_start_time_titan_pass_black_hole"
+		texturefile = "gfx/interface/fleet_view/fleet_action_start_time_titan_pass_black_hole.dds"
+		effectFile = "gfx/FX/buttonstate.shader"
+		noOfFrames = 3
+		animation = {
+			animationmaskfile = "gfx/interface/fleet_view/standard_button_mask.dds"
+			animationtexturefile = "gfx/interface/fleet_view/action_button_texture.dds"
+			animationrotation = 180.0
+			animationlooping = yes
+			animationtime = 12.0
+			animationdelay = 0.0
+			animationblendmode = "overlay"       #add, multiply, overlay
+			animationtype = "scrolling"      #scrolling, rotating, pulsing
+			animationrotationoffset = { x = 0.0 y = 0.0 }
+			animationtexturescale = { x = 1.0 y = 1.0 }
+			animationframes = { 1 2 3 }
+		}
+	}
+	
+	spriteType = {
+		name = "GFX_fleet_action_activate_time_titan_cloaking"
+		texturefile = "gfx/interface/fleet_view/fleet_order_button_cloaking_small.dds"
+		effectFile = "gfx/FX/buttonstate.shader"
+		noOfFrames = 3
+		animation = {
+			animationmaskfile = "gfx/interface/fleet_view/standard_button_mask.dds"
+			animationtexturefile = "gfx/interface/fleet_view/action_button_texture.dds"
+			animationrotation = 180.0
+			animationlooping = yes
+			animationtime = 12.0
+			animationdelay = 0.0
+			animationblendmode = "overlay"       #add, multiply, overlay
+			animationtype = "scrolling"      #scrolling, rotating, pulsing
+			animationrotationoffset = { x = 0.0 y = 0.0 }
+			animationtexturescale = { x = 1.0 y = 1.0 }
+			animationframes = { 1 2 3 }
+		}
+	}
+	
+	spriteType = {
+		name = "GFX_fleet_action_deactivate_time_titan_cloaking"
+		texturefile = "gfx/interface/fleet_view/fleet_order_button_cloaking_small_selected.dds"
+		effectFile = "gfx/FX/buttonstate.shader"
+		noOfFrames = 3
+		animation = {
+			animationmaskfile = "gfx/interface/fleet_view/standard_button_mask.dds"
+			animationtexturefile = "gfx/interface/fleet_view/action_button_texture.dds"
+			animationrotation = 180.0
+			animationlooping = yes
+			animationtime = 12.0
+			animationdelay = 0.0
+			animationblendmode = "overlay"       #add, multiply, overlay
+			animationtype = "scrolling"      #scrolling, rotating, pulsing
+			animationrotationoffset = { x = 0.0 y = 0.0 }
+			animationtexturescale = { x = 1.0 y = 1.0 }
+			animationframes = { 1 2 3 }
+		}
+	}
+	
+	spriteType = {
+		name = "GFX_fleet_action_time_titan_end_shelter"
+		texturefile = "gfx/interface/fleet_view/fleet_action_time_titan_end_shelter.dds"
+		effectFile = "gfx/FX/buttonstate.shader"
+		noOfFrames = 3
+		animation = {
+			animationmaskfile = "gfx/interface/fleet_view/standard_button_mask.dds"
+			animationtexturefile = "gfx/interface/fleet_view/action_button_texture.dds"
+			animationrotation = 180.0
+			animationlooping = yes
+			animationtime = 12.0
+			animationdelay = 0.0
+			animationblendmode = "overlay"       #add, multiply, overlay
+			animationtype = "scrolling"      #scrolling, rotating, pulsing
+			animationrotationoffset = { x = 0.0 y = 0.0 }
+			animationtexturescale = { x = 1.0 y = 1.0 }
+			animationframes = { 1 2 3 }
+		}
+	}
+	
+	################################################################
+	# 菜单
+	################################################################
+	
+	spriteType = {
+		name = "GFX_time_titan_bg"
+		texturefile = "gfx/interface/tiles/time_titan_bg.dds"
+		effectFile = "gfx/FX/buttonstate_onlydisable.shader"
+	}
+	
+	spriteType = {
+		name = "GFX_time_titan_pass_black_hole"
+		texturefile = "gfx/event_pictures/vortex.dds"
+		masking_texture = "gfx/interface/situation_log/event_mask.dds"
+	}
+	
+	################################################################
+	# 等级
+	################################################################
+	
+	spriteType = {
+		name = "GFX_time_titan_level_icon_bg"
+		texturefile = "gfx/interface/tiles/time_titan_level_icon_bg.dds"
+		effectFile = "gfx/FX/buttonstate_onlydisable.shader"
+	}
+	
+	spriteType = {
+		name = "GFX_text_time_titan_level_1"
+		texturefile = "gfx/interface/icons/time_titan/number/1.dds"
+		effectFile = "gfx/FX/buttonstate_onlydisable.shader"
+	}
+	
+	spriteType = {
+		name = "GFX_text_time_titan_level_2"
+		texturefile = "gfx/interface/icons/time_titan/number/2.dds"
+		effectFile = "gfx/FX/buttonstate_onlydisable.shader"
+	}
+	
+	spriteType = {
+		name = "GFX_text_time_titan_level_3"
+		texturefile = "gfx/interface/icons/time_titan/number/3.dds"
+		effectFile = "gfx/FX/buttonstate_onlydisable.shader"
+	}
+	
+	spriteType = {
+		name = "GFX_text_time_titan_level_4"
+		texturefile = "gfx/interface/icons/time_titan/number/4.dds"
+		effectFile = "gfx/FX/buttonstate_onlydisable.shader"
+	}
+	
+	spriteType = {
+		name = "GFX_text_time_titan_level_5"
+		texturefile = "gfx/interface/icons/time_titan/number/5.dds"
+		effectFile = "gfx/FX/buttonstate_onlydisable.shader"
+	}
+	
+	spriteType = {
+		name = "GFX_text_time_titan_level_6"
+		texturefile = "gfx/interface/icons/time_titan/number/6.dds"
+		effectFile = "gfx/FX/buttonstate_onlydisable.shader"
+	}
+	
+	spriteType = {
+		name = "GFX_text_time_titan_level_7"
+		texturefile = "gfx/interface/icons/time_titan/number/7.dds"
+		effectFile = "gfx/FX/buttonstate_onlydisable.shader"
+	}
+	
+	spriteType = {
+		name = "GFX_text_time_titan_level_8"
+		texturefile = "gfx/interface/icons/time_titan/number/8.dds"
+		effectFile = "gfx/FX/buttonstate_onlydisable.shader"
+	}
+	
+	spriteType = {
+		name = "GFX_text_time_titan_level_9"
+		texturefile = "gfx/interface/icons/time_titan/number/9.dds"
+		effectFile = "gfx/FX/buttonstate_onlydisable.shader"
+	}
+	
+	spriteType = {
+		name = "GFX_text_time_titan_level_10"
+		texturefile = "gfx/interface/icons/time_titan/number/10.dds"
+		effectFile = "gfx/FX/buttonstate_onlydisable.shader"
+	}
+	
+	spriteType = {
+		name = "GFX_text_time_titan_level_11"
+		texturefile = "gfx/interface/icons/time_titan/number/11.dds"
+		effectFile = "gfx/FX/buttonstate_onlydisable.shader"
+	}
+	
+	spriteType = {
+		name = "GFX_text_time_titan_level_12"
+		texturefile = "gfx/interface/icons/time_titan/number/12.dds"
+		effectFile = "gfx/FX/buttonstate_onlydisable.shader"
+	}
+	
+	spriteType = {
+		name = "GFX_text_time_titan_level_13"
+		texturefile = "gfx/interface/icons/time_titan/number/13.dds"
+		effectFile = "gfx/FX/buttonstate_onlydisable.shader"
+	}
+	
+	spriteType = {
+		name = "GFX_text_time_titan_level_14"
+		texturefile = "gfx/interface/icons/time_titan/number/14.dds"
+		effectFile = "gfx/FX/buttonstate_onlydisable.shader"
+	}
+	
+	spriteType = {
+		name = "GFX_text_time_titan_level_15"
+		texturefile = "gfx/interface/icons/time_titan/number/15.dds"
+		effectFile = "gfx/FX/buttonstate_onlydisable.shader"
+	}
+	
+	spriteType = {
+		name = "GFX_text_time_titan_level_16"
+		texturefile = "gfx/interface/icons/time_titan/number/16.dds"
+		effectFile = "gfx/FX/buttonstate_onlydisable.shader"
+	}
+	
+	spriteType = {
+		name = "GFX_text_time_titan_level_17"
+		texturefile = "gfx/interface/icons/time_titan/number/17.dds"
+		effectFile = "gfx/FX/buttonstate_onlydisable.shader"
+	}
+	
+	spriteType = {
+		name = "GFX_text_time_titan_level_18"
+		texturefile = "gfx/interface/icons/time_titan/number/18.dds"
+		effectFile = "gfx/FX/buttonstate_onlydisable.shader"
+	}
+	
+	spriteType = {
+		name = "GFX_text_time_titan_level_19"
+		texturefile = "gfx/interface/icons/time_titan/number/19.dds"
+		effectFile = "gfx/FX/buttonstate_onlydisable.shader"
+	}
+	
+	spriteType = {
+		name = "GFX_text_time_titan_level_20"
+		texturefile = "gfx/interface/icons/time_titan/number/20.dds"
+		effectFile = "gfx/FX/buttonstate_onlydisable.shader"
+	}
+	
+	################################################################
+	# 进度
+	################################################################
+	
+	spriteType = {
+		name = "GFX_time_titan_upgrade_process_icon_bg"
+		texturefile = "gfx/interface/tiles/time_titan_upgrade_process_icon_bg.dds"
+		effectFile = "gfx/FX/buttonstate_onlydisable.shader"
+	}
+	
+	spriteType = {
+		name = "GFX_text_time_titan_upgrade_process_1"
+		texturefile = "gfx/interface/icons/time_titan/process/time_titan_upgrade_process_1.dds"
+		effectFile = "gfx/FX/buttonstate_onlydisable.shader"
+	}
+	
+	spriteType = {
+		name = "GFX_text_time_titan_upgrade_process_2"
+		texturefile = "gfx/interface/icons/time_titan/process/time_titan_upgrade_process_2.dds"
+		effectFile = "gfx/FX/buttonstate_onlydisable.shader"
+	}
+	
+	spriteType = {
+		name = "GFX_text_time_titan_upgrade_process_3"
+		texturefile = "gfx/interface/icons/time_titan/process/time_titan_upgrade_process_3.dds"
+		effectFile = "gfx/FX/buttonstate_onlydisable.shader"
+	}
+	
+	spriteType = {
+		name = "GFX_text_time_titan_upgrade_process_4"
+		texturefile = "gfx/interface/icons/time_titan/process/time_titan_upgrade_process_4.dds"
+		effectFile = "gfx/FX/buttonstate_onlydisable.shader"
+	}
+	
+	spriteType = {
+		name = "GFX_text_time_titan_upgrade_process_5"
+		texturefile = "gfx/interface/icons/time_titan/process/time_titan_upgrade_process_5.dds"
+		effectFile = "gfx/FX/buttonstate_onlydisable.shader"
+	}
+	
+	spriteType = {
+		name = "GFX_text_time_titan_upgrade_process_6"
+		texturefile = "gfx/interface/icons/time_titan/process/time_titan_upgrade_process_6.dds"
+		effectFile = "gfx/FX/buttonstate_onlydisable.shader"
+	}
+	
+	spriteType = {
+		name = "GFX_text_time_titan_upgrade_process_7"
+		texturefile = "gfx/interface/icons/time_titan/process/time_titan_upgrade_process_7.dds"
+		effectFile = "gfx/FX/buttonstate_onlydisable.shader"
+	}
+	
+	spriteType = {
+		name = "GFX_text_time_titan_upgrade_process_8"
+		texturefile = "gfx/interface/icons/time_titan/process/time_titan_upgrade_process_8.dds"
+		effectFile = "gfx/FX/buttonstate_onlydisable.shader"
+	}
+	
+	spriteType = {
+		name = "GFX_text_time_titan_upgrade_process_9"
+		texturefile = "gfx/interface/icons/time_titan/process/time_titan_upgrade_process_9.dds"
+		effectFile = "gfx/FX/buttonstate_onlydisable.shader"
+	}
+	
+	spriteType = {
+		name = "GFX_text_time_titan_upgrade_process_10"
+		texturefile = "gfx/interface/icons/time_titan/process/time_titan_upgrade_process_10.dds"
+		effectFile = "gfx/FX/buttonstate_onlydisable.shader"
+	}
+	
+	################################################################
+	# 按键
+	################################################################
+	
+	spriteType = {
+		name = "GFX_time_titan_normal"
+		texturefile = "gfx/interface/icons/time_titan/button/time_titan_normal.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_time_titan_primary"
+		texturefile = "gfx/interface/icons/time_titan/button/time_titan_primary.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_time_titan_subsidiary"
+		texturefile = "gfx/interface/icons/time_titan/button/time_titan_subsidiary.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_time_titan_sapient"
+		texturefile = "gfx/interface/icons/time_titan/button/time_titan_sapient.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_time_titan_power"
+		texturefile = "gfx/interface/icons/time_titan/button/time_titan_power.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_time_titan_drive"
+		texturefile = "gfx/interface/icons/time_titan/button/time_titan_drive.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_time_titan_armor"
+		texturefile = "gfx/interface/icons/time_titan/button/time_titan_armor.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_time_titan_hull"
+		texturefile = "gfx/interface/icons/time_titan/button/time_titan_hull.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_time_titan_shield"
+		texturefile = "gfx/interface/icons/time_titan/button/time_titan_shield.dds"
+	}
+}

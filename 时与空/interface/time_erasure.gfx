@@ -1,0 +1,7 @@
+spriteTypes = {
+	spriteType = {
+		name = "GFX_akx_time_erasure"
+		texturefile = "gfx/event_pictures/dimensional_horror.dds"
+		masking_texture = "gfx/interface/situation_log/event_mask.dds"
+	}
+}

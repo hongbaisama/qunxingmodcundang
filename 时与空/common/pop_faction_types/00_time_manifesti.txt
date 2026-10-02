@@ -1,0 +1,832 @@
+##############################
+# Manifesti Faction
+##############################
+
+time_manifesti = {
+	election_header = "GFX_faction_header_yellow"
+	guiding_ethic = ethic_egalitarian
+	use_guiding_ethic_as_pop_filter = yes
+	pop_ethics_filter = { ethic_pacifist ethic_xenophile }
+	use_guiding_ethic_as_growth_factor = no
+	can_rename = no
+
+	visual_ethic = "manifesti_visual_ethic"
+
+	unique = yes
+	support_multiplier = 1
+
+	resources = {
+		category = pop_factions
+		inline_script = pop_faction_types/shared_unity_production
+		produces = {
+			trigger = {
+				owner = {
+					OR = {
+						has_valid_civic = civic_crowdsourcing
+						has_valid_civic = civic_corporate_crowdsourcing
+					}
+					has_country_flag = manifesti_engineering
+				}
+			}
+			engineering_research = @faction_major_output
+			society_research = @faction_minor_output
+			mult = @crowdsourcing_manifesti_multiplier
+		}
+		produces = {
+			trigger = {
+				owner = {
+					OR = {
+						has_valid_civic = civic_crowdsourcing
+						has_valid_civic = civic_corporate_crowdsourcing
+					}
+					has_country_flag = manifesti_society
+				}
+			}
+			society_research = @faction_major_output
+			physics_research = @faction_minor_output
+			mult = @crowdsourcing_manifesti_multiplier
+		}
+		produces = {
+			trigger = {
+				owner = {
+					OR = {
+						has_valid_civic = civic_crowdsourcing
+						has_valid_civic = civic_corporate_crowdsourcing
+					}
+					has_country_flag = manifesti_physics
+				}
+			}
+			physics_research = @faction_major_output
+			engineering_research = @faction_minor_output
+			mult = @crowdsourcing_manifesti_multiplier
+		}
+	}
+
+	extortion_resource = {
+		category = pop_factions
+		produces = {
+			trigger = {
+				owner = {
+					NOR = {
+						has_valid_civic = civic_crowdsourcing
+						has_valid_civic = civic_corporate_crowdsourcing
+					}
+				}
+			}
+			consumer_goods = @faction_base_output
+			mult = @faction_extortion_consumer_goods_ratio
+		}
+		produces = {
+			trigger = {
+				owner = {
+					OR = {
+						has_valid_civic = civic_crowdsourcing
+						has_valid_civic = civic_corporate_crowdsourcing
+					}
+					has_country_flag = manifesti_engineering
+				}
+			}
+			engineering_research = @faction_major_output
+			society_research = @faction_minor_output
+			mult = @faction_extortion_research_ratio #Extorting Manifesti is not worth it.
+		}
+		produces = {
+			trigger = {
+				owner = {
+					OR = {
+						has_valid_civic = civic_crowdsourcing
+						has_valid_civic = civic_corporate_crowdsourcing
+					}
+					has_country_flag = manifesti_society
+				}
+			}
+			society_research = @faction_major_output
+			physics_research = @faction_minor_output
+			mult = @faction_extortion_research_ratio
+		}
+		produces = {
+			trigger = {
+				owner = {
+					OR = {
+						has_valid_civic = civic_crowdsourcing
+						has_valid_civic = civic_corporate_crowdsourcing
+					}
+					has_country_flag = manifesti_physics
+				}
+			}
+			physics_research = @faction_major_output
+			engineering_research = @faction_minor_output
+			mult = @faction_extortion_research_ratio
+		}
+	}
+
+	is_potential = {
+		has_origin = origin_manifesti
+	}
+
+	can_join_pre_triggers = {
+		is_enslaved = no
+		is_being_purged = no
+	}
+
+	can_join_faction = {
+		inline_script = pop_faction_types/can_join_faction/base
+		custom_tooltip_icon = {
+			fail_text = POP_NOT_MANIFESTI_BORED
+			NOT = { has_pop_group_flag = manifesti_bored }
+		}
+	}
+
+	inline_script = pop_faction_types/attraction/promote_suppress_tags
+	pop_attraction_tag = {
+		desc = POP_FACTION_ATTRACTION_CONFORMIST_TRAITS_NEG
+		trigger = {
+			owner? = {
+				any_owned_species = {
+					has_conformists_thrifty_or_traditional_trait = yes
+				}
+			}
+		}
+	}
+	pop_attraction_tag = {
+		desc = POP_FACTION_ATTRACTION_OUTCAST_POS
+		trigger = {
+			owner? = {
+				any_owned_species = {
+					OR = {
+						NOT = {
+							is_same_species = prev
+						}
+						NOT = {
+							has_citizenship_type = {
+								type = citizenship_full
+								country = prev
+							}
+						}
+						has_trait = trait_unruly
+					}
+				}
+			}
+		}
+	}
+
+	attraction = {
+		base = 160
+
+		inline_script = pop_faction_types/attraction/promote_suppress_attraction
+		inline_script = pop_faction_types/attraction/leader_attraction
+
+		modifier = {
+			factor = 0.25
+			desc = HAS_CONFORMISTS_THRIFTY_OR_TRADITIONAL_TRAIT
+			has_conformists_thrifty_or_traditional_trait = yes
+		}
+
+		modifier = { # Outcasts and radicals
+			factor = 1.5
+			desc = POP_OUTCAST_OR_RADICAL
+			OR = {
+				NOT = { is_same_species = owner_species }
+				NOT = { has_citizenship_type = { type = citizenship_full country = owner } }
+				has_trait = trait_unruly
+			}
+		}
+	}
+
+	leader = {
+		base = 100
+		modifier = {
+			factor = 0
+			is_ruler = yes
+			owner = {
+				OR = {
+					is_imperial_authority = yes
+					is_dictatorial_authority = yes
+				}
+			}
+		}
+		modifier = {
+			factor = 0
+			is_event_leader = yes
+		}
+	}
+
+	# 起源专属派系的影响
+	demand = {
+		title = "ORIGIN_MANIFESTI_COUNT"
+		unfulfilled_title = "ORIGIN_MANIFESTI_COUNT"
+		desc = "ORIGIN_MANIFESTI_COUNT_NO_DESC"
+
+		fulfilled_effect = 0
+		unfulfilled_effect = -50
+
+		potential = {
+			exists = owner
+			owner = {
+				check_variable = {
+					which = origin_manifesti_count
+					value <= -5
+				}
+			}
+		}
+
+		trigger = {
+			always = no
+		}
+	}
+	demand = {
+		title = "ORIGIN_MANIFESTI_COUNT"
+		unfulfilled_title = "ORIGIN_MANIFESTI_COUNT"
+		desc = "ORIGIN_MANIFESTI_COUNT_NO_DESC"
+
+		fulfilled_effect = 0
+		unfulfilled_effect = -40
+
+		potential = {
+			exists = owner
+			owner = {
+				check_variable = {
+					which = origin_manifesti_count
+					value = -4
+				}
+			}
+		}
+
+		trigger = {
+			always = no
+		}
+	}
+	demand = {
+		title = "ORIGIN_MANIFESTI_COUNT"
+		unfulfilled_title = "ORIGIN_MANIFESTI_COUNT"
+		desc = "ORIGIN_MANIFESTI_COUNT_NO_DESC"
+
+		fulfilled_effect = 0
+		unfulfilled_effect = -30
+
+		potential = {
+			exists = owner
+			owner = {
+				check_variable = {
+					which = origin_manifesti_count
+					value = -3
+				}
+			}
+		}
+
+		trigger = {
+			always = no
+		}
+	}
+	demand = {
+		title = "ORIGIN_MANIFESTI_COUNT"
+		unfulfilled_title = "ORIGIN_MANIFESTI_COUNT"
+		desc = "ORIGIN_MANIFESTI_COUNT_NO_DESC"
+
+		fulfilled_effect = 0
+		unfulfilled_effect = -20
+
+		potential = {
+			exists = owner
+			owner = {
+				check_variable = {
+					which = origin_manifesti_count
+					value = -2
+				}
+			}
+		}
+
+		trigger = {
+			always = no
+		}
+	}
+	demand = {
+		title = "ORIGIN_MANIFESTI_COUNT"
+		unfulfilled_title = "ORIGIN_MANIFESTI_COUNT"
+		desc = "ORIGIN_MANIFESTI_COUNT_NO_DESC"
+
+		fulfilled_effect = 0
+		unfulfilled_effect = -10
+
+		potential = {
+			exists = owner
+			owner = {
+				check_variable = {
+					which = origin_manifesti_count
+					value = -1
+				}
+			}
+		}
+
+		trigger = {
+			always = no
+		}
+	}
+	demand = {
+		title = "ORIGIN_MANIFESTI_COUNT"
+		unfulfilled_title = "ORIGIN_MANIFESTI_COUNT"
+		desc = "ORIGIN_MANIFESTI_COUNT_DESC"
+
+		fulfilled_effect = 0
+		unfulfilled_effect = 0
+
+		potential = {
+			exists = owner
+			owner = {
+				check_variable = {
+					which = origin_manifesti_count
+					value = 0
+				}
+			}
+		}
+
+		trigger = {
+			always = yes
+		}
+	}
+	demand = {
+		title = "ORIGIN_MANIFESTI_COUNT"
+		unfulfilled_title = "ORIGIN_MANIFESTI_COUNT"
+		desc = "ORIGIN_MANIFESTI_COUNT_YES_DESC"
+
+		fulfilled_effect = 10
+		unfulfilled_effect = 0
+
+		potential = {
+			exists = owner
+			owner = {
+				check_variable = {
+					which = origin_manifesti_count
+					value = 1
+				}
+			}
+		}
+
+		trigger = {
+			always = yes
+		}
+	}
+	demand = {
+		title = "ORIGIN_MANIFESTI_COUNT"
+		unfulfilled_title = "ORIGIN_MANIFESTI_COUNT"
+		desc = "ORIGIN_MANIFESTI_COUNT_YES_DESC"
+
+		fulfilled_effect = 20
+		unfulfilled_effect = 0
+
+		potential = {
+			exists = owner
+			owner = {
+				check_variable = {
+					which = origin_manifesti_count
+					value = 2
+				}
+			}
+		}
+
+		trigger = {
+			always = yes
+		}
+	}
+	demand = {
+		title = "ORIGIN_MANIFESTI_COUNT"
+		unfulfilled_title = "ORIGIN_MANIFESTI_COUNT"
+		desc = "ORIGIN_MANIFESTI_COUNT_YES_DESC"
+
+		fulfilled_effect = 30
+		unfulfilled_effect = 0
+
+		potential = {
+			exists = owner
+			owner = {
+				check_variable = {
+					which = origin_manifesti_count
+					value = 3
+				}
+			}
+		}
+
+		trigger = {
+			always = yes
+		}
+	}
+	demand = {
+		title = "ORIGIN_MANIFESTI_COUNT"
+		unfulfilled_title = "ORIGIN_MANIFESTI_COUNT"
+		desc = "ORIGIN_MANIFESTI_COUNT_YES_DESC"
+
+		fulfilled_effect = 40
+		unfulfilled_effect = 0
+
+		potential = {
+			exists = owner
+			owner = {
+				check_variable = {
+					which = origin_manifesti_count
+					value = 4
+				}
+			}
+		}
+
+		trigger = {
+			always = yes
+		}
+	}
+	demand = {
+		title = "ORIGIN_MANIFESTI_COUNT"
+		unfulfilled_title = "ORIGIN_MANIFESTI_COUNT"
+		desc = "ORIGIN_MANIFESTI_COUNT_YES_DESC"
+
+		fulfilled_effect = 50
+		unfulfilled_effect = 0
+
+		potential = {
+			exists = owner
+			owner = {
+				check_variable = {
+					which = origin_manifesti_count
+					value >= 5
+				}
+			}
+		}
+
+		trigger = {
+			always = yes
+		}
+	}
+	
+	#By design, the following include demands which are technically possible, but unrealistic/unreasonable for moderate empires
+	demand = {
+		title = "MANIFESTI_RIVERS_MOVEMENT"
+		unfulfilled_title = "MANIFESTI_RIVERS_RESTRAINED"
+		desc = "MANIFESTI_RIVERS_DESC"
+
+		fulfilled_effect = 10
+		unfulfilled_effect = -10
+
+		potential = {
+			exists = owner
+			owner = {
+				has_technology = tech_colonization_2
+				has_void_dweller_origin = no
+			}
+		}
+
+		trigger = {
+			owner = {
+				OR = {
+					AND = {
+						has_technology = tech_massive_glacier
+						any_owned_colony = { has_deposit = d_massive_glacier }
+					}
+					AND = {
+						has_technology = tech_noxious_swamp
+						any_owned_colony = { has_deposit = d_noxious_swamp }
+					}
+					any_owned_colony = {
+						has_carrier_flag = planet_earth
+						NOT = { has_deposit = d_great_pacific_garbage_patch }
+					}
+				}
+			}
+		}
+	}
+	demand = {
+		title = "MANIFESTI_MUNITIONS_AUTO"
+		unfulfilled_title = "MANIFESTI_MUNITIONS_OPPRESSED"
+		desc = "MANIFESTI_MUNITIONS_DESC"
+
+		fulfilled_effect = 20
+		unfulfilled_effect = -20
+
+		potential = {
+			exists = owner
+			owner = {
+				has_technology = tech_combat_computers_2 #Prerequisite for Autonomous
+				NOT = { has_policy_flag = robots_outlawed }
+			}
+		}
+
+		trigger = {
+			owner = {
+				has_technology = tech_combat_computers_3
+				any_controlled_ship = {
+					OR = {
+						has_component = COMBAT_COMPUTER_SWARM_SAPIENT
+						has_component = COMBAT_COMPUTER_PICKET_SAPIENT
+						has_component = COMBAT_COMPUTER_LINE_SAPIENT
+						has_component = COMBAT_COMPUTER_ARTILLERY_SAPIENT
+						has_component = COMBAT_COMPUTER_CARRIER_SAPIENT
+					}
+				}
+				count_owned_army = {
+					limit = { army_type = slave_army }
+					count < 1
+				}
+				count_owned_army = {
+					limit = { army_type = undead_army }
+					count < 1
+				}
+			}
+		}
+	}
+	demand = {
+		title = "MANIFESTI_CAREFREE_SCIENCE"
+		unfulfilled_title = "MANIFESTI_CAREFREE_SCIENCE_OPPRESSED"
+		desc = "MANIFESTI_CAREFREE_SCIENCE_DESC"
+
+		fulfilled_effect = 10
+		unfulfilled_effect = -10
+
+		potential = {
+			exists = owner
+		}
+
+		trigger = {
+			owner = {
+				count_owned_leader = {
+					count = 0
+					limit = {
+						leader_class = scientist
+						is_councilor = yes
+						NOR = {
+							has_trait_tier1or2 = {
+								TRAIT = leader_trait_roamer
+							}
+							has_trait_tier1or2 = {
+								TRAIT = leader_trait_carefree
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+	demand = {
+		title = "MANIFESTI_RETINAL_FOCUS"
+		unfulfilled_title = "MANIFESTI_RETINAL_FOCUS_OPPRESSED"
+		desc = "MANIFESTI_RETINAL_FOCUS_DESC"
+
+		fulfilled_effect = 5
+		unfulfilled_effect = -10
+
+		potential = {
+			exists = owner
+		}
+
+		trigger = {
+			owner = {
+				has_monthly_income = {
+					resource = consumer_goods
+					value < 1
+				}
+			}
+		}
+	}
+	demand = {
+		title = "MANIFESTI_SILENT_PARTNER"
+		unfulfilled_title = "MANIFESTI_SILENT_PARTNER_OPPRESSED"
+		desc = "MANIFESTI_SILENT_PARTNER_DESC"
+
+		fulfilled_effect = 5
+		unfulfilled_effect = -5
+
+		potential = {
+			exists = owner
+			owner = {
+				OR = {
+					has_federation = yes
+					is_galactic_community_member = yes
+				}
+			}
+		}
+
+		trigger = {
+			owner = {
+				if = {
+					limit = {
+						has_federation = yes
+						is_federation_leader = yes
+					}
+					NOT = {
+						any_owned_leader = {
+							is_assigned_to_federation = yes
+						}
+					}
+				}
+				if = {
+					limit = {
+						is_galactic_community_member = yes
+					}
+					NOT = {
+						any_owned_leader = {
+							is_assigned_to_galcom = yes
+						}
+						is_proposing_resolution = any
+					}
+				}
+			}
+		}
+	}
+
+	# Faction Demands for Ruler and Council positions.
+	inline_script = {
+		script = "pop_faction_types/global_faction_demands"
+		ETHIC = ethic_egalitarian
+		ETHIC_FANATIC = ethic_fanatic_egalitarian
+		ETHIC_OPPOSED = ethic_authoritarian
+	}
+
+	on_create = {
+		pop_faction_event = { id = factions.0 }
+		owner = { country_event = { id = manifesti.30 days = 940 } }
+	}
+
+	on_destroy = {
+		inline_script = {
+			script = pop_faction_types/effect/promote_on_destroy
+			ETHIC = egalitarian
+		}
+		inline_script = {
+			script = pop_faction_types/effect/suppress_on_destroy
+			ETHIC = egalitarian
+		}
+		country_event = { id = manifesti.30 }
+	}
+
+	actions = {
+		embrace_faction = {
+			title = "EMBRACE_FACTION"
+			description = "EMBRACE_FACTION_DESC"
+
+			cost = {
+				unity = 5000
+			}
+
+			potential = {
+				exists = owner
+				owner = {
+					OR = {
+						is_subject = no
+						NOT = { any_agreement = { agreement_preset = preset_dominion } }
+					}
+				}
+			}
+
+			valid = {
+				custom_tooltip = {
+					fail_text = EMBRACE_FACTION_COOLDOWN
+					owner = {
+						NOT = { has_modifier = embraced_faction_timer }
+					}
+				}
+				support > 0.20
+				owner = {
+					NOT = { has_ethic = "ethic_fanatic_egalitarian" }
+				}
+			}
+
+			effect = {
+				add_modifier = { modifier = embraced_faction days = 3600 }
+				owner = {
+					set_country_flag = has_embraced_faction
+					shift_ethic = ethic_egalitarian
+					hidden_effect = {
+						add_modifier = { modifier = embraced_faction_timer days = 3600 }
+						every_pop_faction = {
+							limit = { NOT = { is_same_value = root } }
+							add_modifier = { modifier = embraced_another_faction days = 3600 }
+						}
+					}
+				}
+				hidden_effect = {
+					save_event_target_as = TargetFaction
+					owner = {
+						every_relation = {
+							limit = {
+								is_ai = no
+								is_country_type = default
+								has_communications = prev
+								has_intel_level = {
+									who = prev
+									category = government
+									level >= 1
+								}
+							}
+							country_event = { id = factions.2000 }
+						}
+					}
+				}
+			}
+
+			ai_weight = {
+				base = 1
+				modifier = {
+					factor = 0
+					support < 0.50
+					owner = {
+						has_ethic = ethic_egalitarian
+					}
+				}
+				modifier = {
+					factor = 0
+					owner = { has_valid_civic = civic_fanatic_purifiers }
+				}
+				modifier = {
+					factor = 0
+					owner = {
+						count_pop_faction = {
+							count < 4
+						}
+					}
+				}
+			}
+		}
+	}
+	inline_script = {
+		script = pop_faction_types/actions/promote_faction
+		ETHIC = egalitarian
+	}
+	inline_script = {
+		script = pop_faction_types/actions/suppress_faction
+		ETHIC = egalitarian
+	}
+	actions = {
+		# Faction Extortion Buttons
+		extort_faction = {
+			title = "EXTORT_FACTION"
+			description = "EXTORT_FACTION_DESC"
+
+			potential = {
+				exists = owner
+				owner = {
+					is_oligarchic_authority = yes
+					has_country_flag = cyber_collectivist
+					NOR = {
+						has_valid_civic = civic_crowdsourcing
+						has_valid_civic = civic_corporate_crowdsourcing
+					}
+				}
+				is_faction_extorted = no
+			}
+
+			effect = {
+				set_faction_extorted = yes
+				custom_tooltip = consumer_goods_extortion_tt
+				custom_tooltip = ONLY_ONE_EXTORTED_FACTION_TT
+			}
+
+			ai_weight = {
+				base = 0
+			}
+		}
+		extort_faction_crowdsourcing = { #Crowdsourcing version
+			title = "EXTORT_FACTION"
+			description = "EXTORT_FACTION_DESC"
+
+			potential = {
+				exists = owner
+				owner = {
+					is_oligarchic_authority = yes
+					has_country_flag = cyber_collectivist
+					OR = {
+						has_valid_civic = civic_crowdsourcing
+						has_valid_civic = civic_corporate_crowdsourcing
+					}
+				}
+				is_faction_extorted = no
+			}
+
+			effect = {
+				set_faction_extorted = yes
+				custom_tooltip = manifesti_crowdsourced_extortion_tt
+				custom_tooltip = ONLY_ONE_EXTORTED_FACTION_TT
+			}
+
+			ai_weight = {
+				base = 0
+			}
+		}
+		cancel_extort_faction = {
+			title = "CANCEL_EXTORT_FACTION"
+			description = "CANCEL_EXTORT_FACTION_DESC"
+
+			potential = {
+				exists = owner
+				owner = {
+					is_oligarchic_authority = yes
+					has_country_flag = cyber_collectivist
+				}
+				is_faction_extorted = yes
+			}
+
+			effect = {
+				set_faction_extorted = no
+			}
+
+			ai_weight = {
+				base = 0
+			}
+		}
+	}
+}

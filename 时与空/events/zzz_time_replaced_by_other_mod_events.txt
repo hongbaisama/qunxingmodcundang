@@ -1,0 +1,23 @@
+namespace = akx
+
+# 蠢驴3.9的奇葩改动，这是用于被舰R覆盖的占位事件
+country_event = {
+	id = akx.9014
+	hide_window = yes
+	is_triggered_only = yes
+
+	immediate = {
+	}
+}
+
+namespace = wg_worm
+
+# 蠢驴3.9的奇葩改动，这是用于被舰R覆盖的占位事件
+country_event = {
+	id = wg_worm.1
+	hide_window = yes
+	is_triggered_only = yes
+
+	immediate = {
+	}
+}

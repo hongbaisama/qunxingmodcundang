@@ -1,0 +1,15 @@
+@abandoned_by_god_base = 0.5
+
+@abandoned_by_god_tier_1 = 0.025
+@abandoned_by_god_tier_2 = 0.05
+@abandoned_by_god_tier_3 = 0.1
+@abandoned_by_god_tier_4 = 0.15
+@abandoned_by_god_tier_5 = 0.2
+@abandoned_by_god_tier_repeatable = 0.2 #循环科技一般也属于T5科技，会被计入2次
+
+@abandoned_by_god_tier_1_max = 0.25
+@abandoned_by_god_tier_2_max = 0.5
+@abandoned_by_god_tier_3_max = 1.0
+@abandoned_by_god_tier_4_max = 1.5
+@abandoned_by_god_tier_5_max = 2.0
+@abandoned_by_god_tier_repeatable_max = 3.75 #算上基础的1，可以凑成10倍

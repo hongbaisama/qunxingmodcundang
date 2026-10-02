@@ -1,0 +1,142 @@
+################################################################
+# 万华镜
+################################################################
+
+d_core_of_truth = {
+	icon = d_surreal_visions
+	
+	resources = {
+		category = orbital_research_deposits
+		produces = {
+			sr_dark_matter = 5
+			physics_research = 10
+		}
+	}
+	station = shipclass_research_station 
+	is_for_colonizable = no
+	
+	potential = {
+		is_planet_class = pc_core_of_truth
+	}
+	
+	habitat_modifier = {
+		district_hab_science_max_add = 10
+	}
+	
+	drop_weight = { weight = 0 }
+}
+
+d_fragment_of_truth = {
+	icon = d_surreal_visions
+	
+	resources = {
+		category = orbital_research_deposits
+		produces = {
+			society_research = 1
+			unity = 1
+		}
+	}
+	station = shipclass_research_station 
+	is_for_colonizable = no
+	
+	potential = {
+		is_planet_class = pc_fragment_of_truth
+	}
+	
+	habitat_modifier = {
+		district_hab_science_max_add = 1
+	}
+	
+	drop_weight = { weight = 0 }
+}
+
+################################################################
+# 5暗物质
+################################################################
+
+d_dark_matter_deposit_5 = {
+	icon = "unused/d_strategic_resources"
+	resources = {
+		category = orbital_research_deposits
+		produces = {
+			sr_dark_matter = 5
+		}
+	}
+
+	habitat_modifier = {
+		district_hab_science_max_add = 3
+	}
+
+	station = shipclass_research_station
+	is_for_colonizable = no
+
+	drop_weight = {
+		weight = 0
+	}
+}
+
+################################################################
+# 时虫主恒星
+################################################################
+
+d_orbital_akx_dark_matter = {
+	icon = d_akx_dark_matter
+	
+	resources = {
+		category = orbital_research_deposits
+		produces = {
+			physics_research = 10
+			society_research = 10
+			engineering_research = 10
+			sr_dark_matter = 10
+		}
+	}
+
+	habitat_modifier = {
+		planet_physicists_physics_research_produces_add = 0.5
+		planet_physicists_sr_dark_matter_produces_add = 0.1
+		planet_biologists_society_research_produces_add = 0.5
+		planet_biologists_sr_dark_matter_produces_add = 0.1
+		planet_engineers_engineering_research_produces_add = 0.5
+		planet_engineers_sr_dark_matter_produces_add = 0.1
+		district_hab_science_max_add = 10
+	}
+
+	station = shipclass_research_station
+	is_for_colonizable = no
+
+	drop_weight = {
+		weight = 0
+	}
+}
+
+d_orbital_akx_dark_matter_special = {
+	icon = d_akx_dark_matter
+	
+	resources = {
+		category = orbital_research_deposits
+		produces = {
+			physics_research = 20
+			society_research = 20
+			engineering_research = 20
+			sr_dark_matter = 20
+		}
+	}
+
+	habitat_modifier = {
+		planet_physicists_physics_research_produces_add = 1
+		planet_physicists_sr_dark_matter_produces_add = 0.2
+		planet_biologists_society_research_produces_add = 1
+		planet_biologists_sr_dark_matter_produces_add = 0.2
+		planet_engineers_engineering_research_produces_add = 1
+		planet_engineers_sr_dark_matter_produces_add = 0.2
+		district_hab_science_max_add = 20
+	}
+
+	station = shipclass_research_station
+	is_for_colonizable = no
+
+	drop_weight = {
+		weight = 0
+	}
+}

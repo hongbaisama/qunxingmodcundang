@@ -1,0 +1,437 @@
+pc_time = {
+	entity = "black_hole_entity"
+	entity_scale = 10
+	icon = GFX_planet_type_black_hole
+	icon_large = GFX_planet_type_black_hole_big
+
+	auto_trait_prio = {
+		trait_auto_pc_time_preference
+	}
+
+	atmosphere_color 		= hsv { 0.075 0.13 1.5 }
+	atmosphere_intensity 	= 1.0
+	atmosphere_width 		= 1.0	
+
+	modifier = {
+		country_produces_mult = -0.5
+		pop_bonus_workforce_mult = -0.5
+		bonus_automated_workforce_mult = -0.5
+		logistic_growth_mult = -0.5
+		bonus_pop_growth_mult = -0.5
+		planet_pop_assembly_mult = -0.5
+		pop_ethic_materialist_attraction_mult = 0.5
+		planet_storm_devastation_mult = -0.5
+		planet_orbital_bombardment_damage = -1
+	}
+
+	min_distance_from_sun = 0
+	max_distance_from_sun = 0
+	spawn_odds = 0
+
+	climate = "luminosity_0"
+	star = yes
+	
+	extra_orbit_size = 0
+	extra_planet_count = 0
+	
+	chance_of_ring = 0
+	
+	planet_size = { min = 30 max = 30 }
+	
+	starting_district = district_time
+	
+	is_artificial_planet = yes
+	starting_planet = no
+	colonizable = yes
+	ideal = yes
+	show_city = no
+	can_be_invaded = no
+	uses_alternative_skies_for_moons = no
+	
+	carry_cap_per_free_district = @carry_cap_low
+}
+
+pc_time_replace = {
+	entity = "black_hole_entity"
+	entity_scale = 10
+	icon = GFX_planet_type_black_hole
+	icon_large = GFX_planet_type_black_hole_big
+	
+	picture = pc_black_hole
+
+	auto_trait_prio = {
+		trait_auto_pc_time_preference
+	}
+
+	atmosphere_color 		= hsv { 0.075 0.13 1.5 }
+	atmosphere_intensity 	= 1.0
+	atmosphere_width 		= 1.0	
+
+	modifier = {
+		country_produces_mult = -1
+		pop_bonus_workforce_mult = -1
+		bonus_automated_workforce_mult = -1
+		logistic_growth_mult = -1
+		bonus_pop_growth_mult = -1
+		planet_pop_assembly_mult = -1
+		planet_storm_devastation_mult = -1
+		planet_orbital_bombardment_damage = -2
+	}
+
+	min_distance_from_sun = 0
+	max_distance_from_sun = 0
+	spawn_odds = 0
+
+	climate = "luminosity_0"
+	star = yes
+	
+	extra_orbit_size = 0
+	extra_planet_count = 0
+	
+	chance_of_ring = 0
+	
+	planet_size = { min = 30 max = 30 }
+	
+	starting_district = district_time
+
+	is_artificial_planet = yes
+	starting_planet = no
+	colonizable = yes
+	show_city = no
+	can_be_invaded = no
+	uses_alternative_skies_for_moons = no
+	
+	carry_cap_per_free_district = @carry_cap_low
+}
+
+pc_endless_time = {
+	entity = "black_hole_entity"
+	entity_scale = 10
+	icon = GFX_planet_type_endless_time
+	icon_large = GFX_planet_type_endless_time_big
+
+	auto_trait_prio = {
+		trait_auto_pc_endless_time_preference
+	}
+
+	atmosphere_color 		= hsv { 0.075 0.13 1.5 }
+	atmosphere_intensity 	= 1.0
+	atmosphere_width 		= 1.0	
+
+	modifier = {
+		planet_max_districts_add = 5
+		pop_ethic_materialist_attraction_mult = 1
+		planet_storm_devastation_mult = -1
+		planet_orbital_bombardment_damage = -2
+		planet_carry_cap_add = 1000000
+	}
+
+	min_distance_from_sun = 0
+	max_distance_from_sun = 0
+	spawn_odds = 0
+
+	climate = "luminosity_0"
+	star = yes
+	
+	extra_orbit_size = 0
+	extra_planet_count = 0
+	
+	chance_of_ring = 0
+	
+	planet_size = { min = 1 max = 1 }
+	
+	starting_district = district_endless_time
+	
+	is_artificial_planet = yes
+	starting_planet = no
+	colonizable = yes
+	ideal = yes
+	show_city = no
+	can_be_invaded = no
+	uses_alternative_skies_for_moons = no
+	
+	carry_cap_per_free_district = 1000000
+}
+
+pc_time_white_hole = {
+	entity = "natural_wormhole_entity"
+	entity_scale = 5
+	icon = GFX_planet_type_time_white_hole
+	icon_large = GFX_planet_type_time_white_hole_big
+
+	atmosphere_color		= hsv { 0.075 0.13 1.5 }
+	atmosphere_intensity	= 1.0
+	atmosphere_width		= 1.0
+
+	climate = "luminosity_4"
+	star = yes
+
+	min_distance_from_sun = 0
+	max_distance_from_sun = 0
+
+	spawn_odds = 0
+
+	extra_orbit_size = 0
+	extra_planet_count = 0
+
+	chance_of_ring = 0
+
+	planet_size = { min = 10 max = 10 }
+	
+	is_artificial_planet = yes
+	
+	colonizable = no
+}
+
+pc_gas_colony = {
+	entity = "gas_giant"
+	entity_scale = 14
+	icon = GFX_planet_type_gas_giant
+	icon_large = GFX_planet_type_gas_giant_big
+	
+	picture = pc_gas_giant
+
+	auto_trait_prio = {
+		trait_auto_pc_gas_colony_preference
+	}
+	
+	atmosphere_color 		= hsv { 0.1 0.15 1.1 }		#DONE
+	atmosphere_intensity 	= 1.1
+	atmosphere_width 		= 0.5
+	
+	modifier = {
+		planet_max_districts_mult = 0.5
+		planet_jobs_worker_produces_mult = 0.2
+		planet_pops_upkeep_mult = -0.1
+		planet_storm_devastation_mult = -0.25
+		planet_orbital_bombardment_damage = -0.5
+	}
+
+	min_distance_from_sun = 40
+	max_distance_from_sun = 1000
+	
+	spawn_odds = 0
+	extra_orbit_size = 1
+	extra_planet_count = 2
+	
+	can_be_moon = no
+	chance_of_ring = 0.6
+	
+	planet_size = { min = 20 max = 30 }
+	moon_size = { min = 8 max = 15 }
+	
+	starting_district = district_gas_city
+
+	starting_planet = no
+	colonizable = yes
+	ideal = yes
+	show_city = no
+	can_be_invaded = no
+	uses_alternative_skies_for_moons = no
+	space_monster_target = yes
+	
+	carry_cap_per_free_district = @carry_cap_normal
+}
+
+pc_psionic = {
+	entity = "shroud_planet"
+	entity_scale = @planet_standard_scale
+	icon = GFX_planet_type_shrouded
+	icon_large = GFX_planet_type_shrouded_big
+	
+	picture = pc_shrouded
+
+	auto_trait_prio = {
+		trait_auto_pc_psionic_preference
+	}
+
+	atmosphere_color		= hsv { 0.0 0.9 0.45 }
+	atmosphere_intensity	= 0.5
+	atmosphere_width		= 1.5
+	
+	modifier = {
+		planet_jobs_specialist_produces_mult = 0.2
+		pop_amenities_usage_mult = -0.1
+		planet_storm_devastation_mult = -0.5
+		planet_orbital_bombardment_damage = -1
+	}
+
+	spawn_odds = 0
+	
+	extra_orbit_size = 0
+	extra_planet_count = 0
+	
+	planet_size = { min = 12 max = 25 }
+	moon_size = { min = 6 max = 10 }
+	
+	starting_district = district_psionic_city
+	
+	starting_planet = no
+	colonizable = yes
+	ideal = yes
+	show_city = no
+	can_be_invaded = no
+	uses_alternative_skies_for_moons = no
+	
+	carry_cap_per_free_district = @carry_cap_normal
+}
+
+pc_nanites = {
+	entity = "gray_goo_planet"
+	entity_scale = @planet_standard_scale
+	icon = GFX_planet_type_toxic
+	icon_large = GFX_planet_type_toxic_big
+	
+	picture = pc_gray_goo
+
+	auto_trait_prio = {
+		trait_auto_pc_nanites_preference
+	}
+
+	atmosphere_color 		= hsv { 0.19 0.45 0.9 }		#DONE
+	atmosphere_intensity 	= 0.1
+	atmosphere_width 		= 1.2
+	
+	modifier = {
+		planet_jobs_produces_mult = 0.1
+		pop_housing_usage_mult = -0.1
+		planet_storm_devastation_mult = -0.25
+		planet_orbital_bombardment_damage = -0.5
+	}
+	
+	spawn_odds = 0
+	
+	extra_orbit_size = 0
+	extra_planet_count = 0
+	
+	chance_of_ring = 0.2
+	
+	planet_size = { min = 12 max = 25 }
+	moon_size = { min = 6 max = 10 }
+	
+	starting_district = district_nanites_nexus
+	
+	starting_planet = no
+	colonizable = yes
+	ideal = yes
+	show_city = no
+	can_be_invaded = no
+	uses_alternative_skies_for_moons = no
+	
+	carry_cap_per_free_district = @carry_cap_normal
+}
+
+pc_flood = {
+	entity = "ocean_planet"
+	entity_scale = @planet_standard_scale
+	icon = GFX_planet_type_ocean
+	icon_large = GFX_planet_type_ocean_big
+
+	atmosphere_color		= hsv { 0.58 0.5 0.9 }
+	atmosphere_intensity	= 1.0
+	atmosphere_width		= 0.5
+	
+	spawn_odds = 0
+
+	extra_orbit_size = 0
+	extra_planet_count = 0
+
+	chance_of_ring = 0.2
+
+	planet_size = { min = 12 max = 25 }
+	moon_size = { min = 6 max = 10 }
+
+	colonizable = no
+}
+
+pc_time_ruin_cosmogenesis_world = {
+	#habitat = yes
+	entity = "orbital_habitat"
+	icon = GFX_planet_type_synaptic_lathe
+	icon_large = GFX_planet_type_synaptic_lathe_big
+	picture = pc_cosmogenesis_world
+	entity_scale = 1.0
+	enable_tilt = no
+	fixed_entity_scale = yes
+	place_entity_on_planet_plane = yes
+	entity_face_object = no #disable rotation towards sun or planet we orbit around
+	atmosphere_color		= hsv { 0.0 0.0 1.0 }		#DONE
+	atmosphere_intensity	= 1.0
+	atmosphere_width		= 0.5
+	show_city = no
+	city_color_lut = "gfx/portraits/misc/colorcorrection_continental.dds"
+	extra_orbit_size = 0
+	extra_planet_count = 0
+	chance_of_ring = 0.0
+	planet_size = 6
+	moon_size = 1
+	colonizable = yes
+	#holdings = no
+	#ideal = yes
+	starting_planet = no
+	orbit_lines = no
+
+	climate = "artificial"
+	is_artificial_planet = yes
+	default_planet_selection = yes
+	inherit_country_building_modifiers = no
+
+	auto_trait_prio = {
+		trait_auto_pc_time_ruin_cosmogenesis_world_preference
+	}
+	
+	starting_district = district_time_ruin_cosmogenesis_world_main
+
+	modifier = {
+		planet_max_districts_add = 3
+		logistic_growth_mult = -0.25
+		bonus_pop_growth_mult = -0.25
+	}
+
+	carry_cap_per_free_district = @carry_cap_low
+}
+
+pc_time_shelter = {
+	entity = "black_hole_entity"  # Ignored for arkships; the actual ship model is used instead
+	icon = GFX_planet_type_endless_time
+	icon_large = GFX_planet_type_endless_time_big
+
+	climate = "luminosity_0"
+	initial = no
+
+	auto_trait_prio = {
+		trait_auto_pc_time_shelter_preference
+	}
+
+	starting_planet = no
+
+	starting_district = district_time_shelter_main
+
+	atmosphere_color 		= hsv { 0.075 0.13 1.5 }
+	atmosphere_intensity 	= 1.0
+	atmosphere_width 		= 1.0	
+
+	min_distance_from_sun = 0
+	max_distance_from_sun = 0
+	spawn_odds = 0
+
+	extra_orbit_size = 0
+	extra_planet_count = 0
+
+	planet_size = { min = 10 max = 10 }
+
+	colonizable = yes
+	uses_alternative_skies_for_moons = no
+	uses_alternative_skies_if_has_orbital_ring = no
+	is_artificial_planet = yes
+
+	modifier = {
+		habitability_ceil_uncapped_add = -0.5
+		habitability_ceil_add = -0.5
+		habitability_floor_add = -1
+	}
+
+	carry_cap_per_free_district = @carry_cap_normal
+
+	single_build_queue = yes
+}

@@ -1,0 +1,123 @@
+# 国家
+refresh_tao_of_ninghe_country_value = {
+	set_variable = {
+		which = num_yin_leader
+		value = 0
+	}
+	set_variable = {
+		which = num_yang_leader
+		value = 0
+	}
+	set_variable = {
+		which = num_yin_planet
+		value = value:num_yin_planet
+	}
+	set_variable = {
+		which = num_yang_planet
+		value = value:num_yang_planet
+	}
+	every_owned_leader = {
+		limit = {
+			is_yin_leader = yes
+		}
+		owner = {
+			change_variable = {
+				which = num_yin_leader
+				value = prev.value:num_yin_leader
+			}
+		}
+	}
+	every_owned_leader = {
+		limit = {
+			is_yang_leader = yes
+		}
+		owner = {
+			change_variable = {
+				which = num_yang_leader
+				value = prev.value:num_yang_leader
+			}
+		}
+	}
+}
+
+# 星球
+refresh_tao_of_ninghe_value = {
+	set_variable = {
+		which = num_yin_value
+		value = value:num_yin_value
+	}
+	set_variable = {
+		which = num_yang_value
+		value = value:num_yang_value
+	}
+	set_variable = {
+		which = num_ninghe_planet_class_value
+		value = value:num_ninghe_planet_class_value
+	}
+}
+
+# 国家（root域为星球）
+start_situation_tao_of_ninghe_default = {
+	start_situation = {
+		type = situation_tao_of_ninghe_$TYPE$
+		target = root
+		effect = {
+			save_event_target_as = tao_of_ninghe_new_situation
+		}
+	}
+}
+
+# 国家（root域为星球）
+start_situation_tao_of_ninghe_from_high = {
+	start_situation = {
+		type = situation_tao_of_ninghe_$TYPE$
+		target = root
+		effect = {
+			add_situation_progress = 49
+			save_event_target_as = tao_of_ninghe_new_situation
+		}
+	}
+}
+
+# 国家（root域为星球）
+start_situation_tao_of_ninghe_from_low = {
+	start_situation = {
+		type = situation_tao_of_ninghe_$TYPE$
+		target = root
+		effect = {
+			add_situation_progress = -50
+			save_event_target_as = tao_of_ninghe_new_situation
+		}
+	}
+}
+
+# 国家
+tao_of_ninghe_ai_country_bonus = {
+	# 防止反复触发
+	set_timed_country_flag = {
+		flag = has_tao_of_ninghe_ai_country_bonus
+		days = 1
+	}
+	if = {
+		limit = {
+			is_yin_country = yes
+		}
+		every_owned_leader = {
+			limit = {
+				is_yang_leader = yes
+			}
+			add_experience = 500
+		}
+	}
+	else_if = {
+		limit = {
+			is_yang_country = yes
+		}
+		every_owned_leader = {
+			limit = {
+				is_yin_leader = yes
+			}
+			add_experience = 500
+		}
+	}
+}

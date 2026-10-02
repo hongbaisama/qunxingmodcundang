@@ -1,0 +1,1375 @@
+# 国家
+can_have_time_opinion = {
+	OR = {
+		is_default_or_player = yes
+		is_country_type = fallen_empire
+		is_country_type = awakened_fallen_empire
+	}
+}
+
+# 星球
+owner_use_district_generator_uncapped = {
+	AND = {
+		exists = owner_or_space_owner
+		owner_or_space_owner = {
+			OR = {
+				has_origin = origin_praise_the_sun # 赞美太阳
+				has_origin = origin_no_water_no_fish # 竭泽而渔
+				has_country_flag = uncapped_generator_districts # MOD接口
+			}
+		}
+	}
+}
+
+# 星球
+owner_use_district_mining_uncapped = {
+	AND = {
+		exists = owner_or_space_owner
+		owner_or_space_owner = {
+			OR = {
+				is_subterranean_empire = yes # 地底人
+				has_origin = origin_no_water_no_fish # 竭泽而渔
+				has_country_flag = uncapped_mining_districts # MOD接口
+			}
+		}
+	}
+}
+
+# 星球
+owner_use_district_farming_uncapped = {
+	AND = {
+		exists = owner_or_space_owner
+		owner_or_space_owner = {
+			OR = {
+				has_origin = origin_no_water_no_fish # 竭泽而渔
+				has_country_flag = uncapped_farming_districts # MOD接口
+			}
+		}
+	}
+}
+
+# 国家（星河卫士国家）
+is_defender_of_the_galaxy_country = {
+	if = {
+		limit = {
+			has_nomads_dlc = yes
+		}
+		has_ascension_perk = ap_defender_of_the_galaxy_nomads
+	}
+	else = {
+		has_ascension_perk = ap_defender_of_the_galaxy
+	}
+}
+
+# 国家（灾飞国家）
+is_crisis_country = {
+	OR = {
+		is_nemesis_crisis_country = yes
+		is_cosmogenesis_crisis_country = yes
+		is_behemoths_crisis_country = yes
+		is_infernals_crisis_country = yes
+		is_player_crisis = yes
+	}
+	NOT = { has_ascension_perk = ap_beyond_infinity }
+}
+
+# 国家（星海天罚）
+is_nemesis_crisis_country = {
+	OR = {
+		has_crisis_level = crisis_level_1
+		has_crisis_level = crisis_level_2
+		has_crisis_level = crisis_level_3
+		has_crisis_level = crisis_level_4
+		has_crisis_level = crisis_level_5
+		has_ascension_perk = ap_become_the_crisis
+		has_ascension_perk = ap_wg_crisis
+	}
+}
+
+# 国家（宇宙创生）
+is_cosmogenesis_crisis_country = {
+	OR = {
+		has_crisis_level = crisis_cosmogenesis_level_1
+		has_crisis_level = crisis_cosmogenesis_level_2
+		has_crisis_level = crisis_cosmogenesis_level_3
+		has_crisis_level = crisis_cosmogenesis_level_4
+		has_crisis_level = crisis_cosmogenesis_level_5
+		has_ascension_perk = ap_cosmogenesis
+	}
+}
+
+# 国家（巨兽之怒）
+is_behemoths_crisis_country = {
+	OR = {
+		has_crisis_level = crisis_behemoth_level_1
+		has_crisis_level = crisis_behemoth_level_2
+		has_crisis_level = crisis_behemoth_level_3
+		has_crisis_level = crisis_behemoth_level_4
+		has_crisis_level = crisis_behemoth_level_5
+		has_ascension_perk = ap_behemoths
+	}
+}
+
+# 国家（星系热症）
+is_infernals_crisis_country = {
+	OR = {
+		has_crisis_level = crisis_hyperthermia_level_1
+		has_crisis_level = crisis_hyperthermia_level_2
+		has_crisis_level = crisis_hyperthermia_level_3
+		has_crisis_level = crisis_hyperthermia_level_4
+		has_crisis_level = crisis_hyperthermia_level_5
+		has_ascension_perk = ap_galactic_hyperthermia
+	}
+}
+
+# 国家（可能送灾飞的国家）
+is_potential_crisis_country = {
+	OR = {
+		has_origin = origin_endbringers # Endbringers are technically a crisis as well
+		has_origin = origin_psionic
+		AND = {
+			has_origin = origin_nanites
+			NOT = { has_modifier = nanites_protector }
+		}
+		has_origin = origin_manifesti
+		AND = {
+			has_origin = origin_blessed_by_god
+			NOT = { has_ascension_perk = ap_mind_over_matter }
+		}
+		has_origin = origin_abandoned_by_god
+		has_origin = origin_fourth_crisis
+		has_country_flag = crazy_wonder_country_35
+		is_wonder_country_38 = yes
+		is_wonder_country_39 = yes
+		is_wonder_country_40 = yes
+		is_wonder_country_96 = yes
+		is_wonder_country_synth_queen = yes
+	}
+}
+
+# 国家
+has_special_nemesis_event_desc = {
+	OR = {
+		has_origin = origin_psionic
+		has_origin = origin_abandoned_by_god
+	}
+}
+
+# 国家
+is_at_total_war_with = {
+	any_war = {
+		is_total_war = yes
+		OR = {
+			AND = {
+				is_war_participant = { who = prev side = attackers }
+				is_war_participant = { who = $TARGET$ side = defenders }
+			}
+			AND = {
+				is_war_participant = { who = prev side = defenders }
+				is_war_participant = { who = $TARGET$ side = attackers }
+			}
+		}
+	}
+}
+
+# 国家
+has_any_grand_archive = {
+	OR = {
+		any_owned_megastructure = {
+			is_megastructure_type = grand_archive_0
+		}
+		has_country_flag = has_arkship_grand_archive_module
+	}
+}
+
+# 巨构
+is_time_dyson_swarm = {
+	if = {
+		limit = {
+			has_global_flag = AOW_installed
+		}
+		OR = {
+			is_megastructure_type = dyson_swarm_1
+			is_megastructure_type = AOW_MEGA_dyson_swarm_1_hyper
+			is_megastructure_type = AOW_MEGA_dyson_swarm_1_super
+			is_megastructure_type = AOW_MEGA_dyson_swarm_1_o
+			is_megastructure_type = AOW_MEGA_dyson_swarm_1_b
+			is_megastructure_type = AOW_MEGA_dyson_swarm_1_giant
+			is_megastructure_type = AOW_MEGA_dyson_swarm_1_a
+			is_megastructure_type = AOW_MEGA_dyson_swarm_1_f
+			is_megastructure_type = AOW_MEGA_dyson_swarm_1_g
+			is_megastructure_type = AOW_MEGA_dyson_swarm_1_k
+			is_megastructure_type = AOW_MEGA_dyson_swarm_1_m
+			is_megastructure_type = dyson_swarm_2
+			is_megastructure_type = AOW_MEGA_dyson_swarm_2_hyper
+			is_megastructure_type = AOW_MEGA_dyson_swarm_2_super
+			is_megastructure_type = AOW_MEGA_dyson_swarm_2_o
+			is_megastructure_type = AOW_MEGA_dyson_swarm_2_b
+			is_megastructure_type = AOW_MEGA_dyson_swarm_2_giant
+			is_megastructure_type = AOW_MEGA_dyson_swarm_2_a
+			is_megastructure_type = AOW_MEGA_dyson_swarm_2_f
+			is_megastructure_type = AOW_MEGA_dyson_swarm_2_g
+			is_megastructure_type = AOW_MEGA_dyson_swarm_2_k
+			is_megastructure_type = AOW_MEGA_dyson_swarm_2_m
+			is_megastructure_type = dyson_swarm_3
+			is_megastructure_type = AOW_MEGA_dyson_swarm_3_hyper
+			is_megastructure_type = AOW_MEGA_dyson_swarm_3_super
+			is_megastructure_type = AOW_MEGA_dyson_swarm_3_o
+			is_megastructure_type = AOW_MEGA_dyson_swarm_3_b
+			is_megastructure_type = AOW_MEGA_dyson_swarm_3_giant
+			is_megastructure_type = AOW_MEGA_dyson_swarm_3_a
+			is_megastructure_type = AOW_MEGA_dyson_swarm_3_f
+			is_megastructure_type = AOW_MEGA_dyson_swarm_3_g
+			is_megastructure_type = AOW_MEGA_dyson_swarm_3_k
+			is_megastructure_type = AOW_MEGA_dyson_swarm_3_m
+		}
+	}
+	else = {
+		OR = {
+			is_megastructure_type = dyson_swarm_1
+			is_megastructure_type = dyson_swarm_2
+			is_megastructure_type = dyson_swarm_3
+		}
+	}
+}
+
+# 巨构
+is_time_dyson_sphere = {
+	if = {
+		limit = {
+			has_global_flag = AOW_installed
+		}
+		OR = {
+			AOW_trgr_MEGA_is_dyson_sphere = yes
+			is_megastructure_type = time_bright_pearl_dyson_sphere_restored
+		}
+	}
+	else = {
+		OR = {
+			is_megastructure_type = dyson_sphere_0
+			is_megastructure_type = dyson_sphere_1
+			is_megastructure_type = dyson_sphere_2
+			is_megastructure_type = dyson_sphere_3
+			is_megastructure_type = dyson_sphere_4
+			is_megastructure_type = dyson_sphere_5
+			is_megastructure_type = dyson_sphere_restored
+			is_megastructure_type = time_bright_pearl_dyson_sphere_restored
+		}
+	}
+}
+
+# 巨构
+is_time_dyson_sphere_ruined = {
+	OR = {
+		is_megastructure_type = dyson_sphere_permanently_ruined
+		is_megastructure_type = dyson_sphere_ruined
+		is_megastructure_type = time_bright_pearl_dyson_sphere_ruined
+	}
+}
+
+# 巨构
+is_time_dyson_sphere_disco = {
+	if = {
+		limit = {
+			has_global_flag = AOW_installed
+		}
+		OR = {
+			is_megastructure_type = dyson_sphere_disco
+			is_megastructure_type = dyson_sphere_disco_restored
+			is_megastructure_type = AOW_MEGA_dyson_sphere_disco_hyper
+			is_megastructure_type = AOW_MEGA_dyson_sphere_disco_super
+			is_megastructure_type = AOW_MEGA_dyson_sphere_disco_o
+			is_megastructure_type = AOW_MEGA_dyson_sphere_disco_b
+			is_megastructure_type = AOW_MEGA_dyson_sphere_disco_giant
+			is_megastructure_type = AOW_MEGA_dyson_sphere_disco_a
+			is_megastructure_type = AOW_MEGA_dyson_sphere_disco_f
+			is_megastructure_type = AOW_MEGA_dyson_sphere_disco_g
+			is_megastructure_type = AOW_MEGA_dyson_sphere_disco_k
+			is_megastructure_type = AOW_MEGA_dyson_sphere_disco_m
+			is_megastructure_type = time_bright_pearl_dyson_sphere_disco_restored
+		}
+	}
+	else = {
+		OR = {
+			is_megastructure_type = dyson_sphere_disco
+			is_megastructure_type = dyson_sphere_disco_restored
+			is_megastructure_type = time_bright_pearl_dyson_sphere_disco_restored
+		}
+	}
+}
+
+# 星球
+can_not_be_changed_by_akx_worm = {
+	OR = {
+		# 特殊标识
+		has_carrier_flag = can_not_be_changed_by_akx_worm
+		# 神眷/神弃
+		has_carrier_flag = blessed_by_god_planet
+		# 环形世界
+		is_ringworld = yes
+		# 人造星球
+		is_artificial = yes
+		# 肃正星球
+		has_carrier_flag = machine_world_1
+		has_carrier_flag = machine_world_2
+		has_carrier_flag = machine_world_3
+		has_carrier_flag = machine_world_4
+		has_carrier_flag = machine_lair
+		# 星界裂隙
+		is_astral_scar = yes
+		# 虚空
+		is_planet_class = pc_giga_empty_space
+		is_planet_class = pc_giga_empty_space_asteroid
+		is_planet_class = pc_giga_asteroid_artillery
+		is_planet_class = pc_giga_orbital_site
+		is_planet_class = pc_rtg_empty_space
+	}
+}
+
+# 星系
+can_become_sc_black_hole_by_akx_worm = {
+	is_time_black_hole_or_white_hole_star_class = no
+	star = { can_become_pc_black_hole_by_akx_worm = yes }
+}
+
+# 星球
+can_become_pc_black_hole_by_akx_worm = {
+	is_colonizable_or_colony = no
+	is_star = yes
+	is_time_black_hole_or_white_hole_planet_class = no
+	can_not_be_changed_by_akx_worm = no
+}
+
+# 星球
+can_become_pc_nuked_by_akx_worm = {
+	NOR = {
+		is_planet_class = pc_gas_giant
+		is_planet_class = pc_ringworld_habitable
+		is_planet_class = pc_ringworld_habitable_damaged
+		is_planet_class = pc_ringworld_tech
+		is_planet_class = pc_ringworld_tech_damaged
+		is_planet_class = pc_ringworld_seam
+		is_planet_class = pc_ringworld_seam_damaged
+		is_planet_class = pc_ringworld_shielded
+		is_planet_class = pc_habitat
+		is_planet_class = pc_habitat_shielded
+		is_planet_class = pc_gaia
+		is_planet_class = pc_relic
+		AND = {
+			is_colonizable_or_colony = yes
+			NOT = { uses_district_set = standard }
+		}
+		is_star = yes
+		is_asteroid = yes
+		can_not_be_changed_by_akx_worm = yes
+	}
+}
+
+# 领袖
+can_be_chosen_by_akx_worm = {
+	NOR = {
+		is_ruler = yes
+		is_heir = yes
+		is_event_leader = yes
+		is_gestalt_node = yes
+		is_exploring_astral_rift = yes
+		is_leader_tier_or_higher = { TIER = legendary }
+		has_leader_flag = leader_death_events_blocked
+		# 舰R
+		is_special_affection_leader = yes
+		has_leader_flag = wsg_event_leader
+		has_leader_flag = overtime_yamato #劳模
+		has_trait = leader_trait_admiral_Rodney #老罗
+		has_trait = leader_trait_governor_Ella #艾拉
+		has_trait = leader_trait_governor_santee #桑提
+		has_trait = leader_trait_general_washington_axe #花生
+		has_trait = leader_trait_scientist_astesia #星极
+		has_leader_flag = Canarias #三小姐
+		has_leader_flag = NieAdmiral #乜提
+	}
+}
+
+# 星系（黑洞）
+is_time_black_hole_star_class = {
+	OR = {
+		is_star_class = sc_black_hole
+		is_star_class = sc_endless_time
+		is_star_class = sc_time_core
+		is_star_class = sc_endless_time_core
+		is_star_class = sc_bright_pearl
+		# 奇观拓展
+		is_star_class = AOW_sc_void_vortex
+		# 更多巨构
+		is_star_class = sc_birch
+		is_star_class = sc_birch_built
+		is_star_class = sc_void_birch_built
+		is_star_class = sc_quasar
+		is_star_class = sc_ehof_black_hole
+		# 真实太空
+		is_star_class = sc_microquasar_1
+		is_star_class = sc_microquasar_2
+	}
+}
+
+# 星系（白洞）
+is_time_white_hole_star_class = {
+	OR = {
+		is_star_class = sc_white_hole
+		is_star_class = sc_time_white_hole
+	}
+}
+
+# 星系（黑洞或白洞）
+is_time_black_hole_or_white_hole_star_class = {
+	OR = {
+		is_time_black_hole_star_class = yes
+		is_time_white_hole_star_class = yes
+	}
+}
+
+# 星球（黑洞）
+is_time_black_hole_planet_class = {
+	OR = {
+		is_planet_class = pc_black_hole
+		is_planet_class = pc_time
+		is_planet_class = pc_time_replace
+		is_planet_class = pc_endless_time
+		is_planet_class = pc_time_shelter
+		is_planet_class = pc_core_of_truth
+		# 奇观拓展
+		is_planet_class = pc_starcage_world_black_hole
+		# 更多巨构
+		is_planet_class = pc_core_black_hole
+		is_planet_class = pc_core_quasar
+		is_planet_class = pc_birch
+		is_planet_class = pc_origin_birch
+		is_planet_class = pc_origin_dummy_birch
+		is_planet_class = pc_void_birch
+		# 真实太空
+		is_planet_class = pc_microquasar_1
+		is_planet_class = pc_microquasar_2
+		# 重塑星海
+		is_planet_class = pc_super_black_hole
+		is_planet_class = pc_hyper_quasar
+		is_planet_class = pc_black_hole_rtg
+		is_planet_class = pc_black_hole_Builder
+	}
+}
+
+# 星球（白洞）
+is_time_white_hole_planet_class = {
+	OR = {
+		is_planet_class = pc_white_hole
+		is_planet_class = pc_time_white_hole
+	}
+}
+
+# 星球（黑洞或白洞）
+is_time_black_hole_or_white_hole_planet_class = {
+	OR = {
+		is_time_black_hole_planet_class = yes
+		is_time_white_hole_planet_class = yes
+	}
+}
+
+# 星球
+can_be_spread_by_origin_pc_hive = {
+	if = {
+		limit = {
+			exists = owner
+		}
+		owner = { is_same_value = root.owner }
+	}
+	OR = {
+		is_colonizable_or_colony = yes
+		is_planet_class = pc_barren
+		is_planet_class = pc_barren_cold
+		is_planet_class = pc_infested
+		AND = {
+			is_planet_class = pc_toxic
+			has_modifier = toxic_terraforming_candidate
+		}
+		AND = {
+			is_planet_class = pc_frozen
+			has_modifier = frozen_terraforming_candidate
+		}
+		AND = {
+			is_planet_class = pc_molten
+			has_modifier = terraforming_candidate
+		}
+		AND = {
+			is_planet_class = pc_gray_goo
+			has_modifier = terraforming_candidate
+		}
+	}
+	NOR = {
+		uses_district_set = hive_world
+		uses_district_set = machine_world
+		is_time_mod_normal_origin_planet = yes
+		is_star = yes
+		is_asteroid = yes
+		is_terraforming = yes
+		can_not_be_changed_by_akx_worm = yes # 设定上与时虫无关，单纯把这条script_trigger拿来用了
+	}
+}
+
+# 人口组
+can_be_reassembled = {
+	species = { is_robotic = yes }
+	NOT = { has_trait = trait_reassembler }
+}
+
+# 星球
+can_planet_reassembly = {
+	if = {
+		limit = {
+			has_modifier = active_reassembly_mode
+		}
+		exists = owner
+		owner = { has_origin = origin_reassembler }
+		count_owned_pop_amount = {
+			limit = {
+				can_be_reassembled = yes
+			}
+			count >= @can_active_reassembly_pop_amount
+		}
+	}
+	else = {
+		always = no
+	}
+}
+
+# 星球
+is_time_mod_normal_origin_planet = {
+	OR = {
+		is_planet_class = pc_gas_colony
+		is_planet_class = pc_psionic
+		is_planet_class = pc_nanites
+	}
+}
+
+# 国家
+has_civic_origin_white_hole = {
+	OR = {
+		has_valid_civic = civic_origin_white_hole
+		has_valid_civic = civic_origin_white_hole_gestalt
+	}
+}
+
+# 舰船
+time_upgrade_arkship_decision_allow = {
+	has_major_upgraded_capital = yes
+	owner = {
+		if = {
+			limit = {
+				is_nomadic = yes
+			}
+			has_technology = tech_arkship_tier_2
+		}
+		else_if = {
+			limit = {
+				country_uses_bio_ships = yes
+			}
+			has_technology = tech_harbingers
+		}
+		else = {
+			has_technology = tech_cruisers
+		}
+	}
+}
+
+# 舰船
+time_fully_upgrade_arkship_decision_allow = {
+	has_fully_upgraded_capital = yes
+	owner = {
+		if = {
+			limit = {
+				is_nomadic = yes
+			}
+			has_technology = tech_arkship_tier_3
+		}
+		else_if = {
+			limit = {
+				country_uses_bio_ships = yes
+			}
+			has_technology = tech_stingers
+		}
+		else = {
+			has_technology = tech_battleships
+		}
+	}
+}
+
+# 领袖（真正的明日船长）
+is_syzygy_admiral = {
+	OR = {
+		has_trait = leader_trait_foredoomed_to_a_rendezvous
+		has_trait = leader_trait_foredoomed_to_a_rendezvous_end
+	}
+}
+
+# 领袖（允许担任明日船长内阁职位）
+has_trait_foredoomed_to_a_rendezvous = {
+	OR = {
+		is_syzygy_admiral = yes
+		has_trait = leader_trait_foredoomed_to_a_rendezvous_false
+	}
+}
+
+# 领袖
+is_ruler_or_heir = {
+	OR = {
+		is_ruler = yes
+		is_heir = yes
+	}
+}
+
+# 领袖
+is_leader_tier_or_higher = {
+	is_leader_tier_$TIER$_or_higher = yes
+}
+
+# 领袖
+is_leader_tier_renowned_or_higher = {
+	OR = {
+		is_leader_tier = leader_tier_renowned
+		is_leader_tier = leader_tier_legendary
+	}
+}
+
+# 领袖
+is_leader_tier_legendary_or_higher = {
+	is_leader_tier = leader_tier_legendary
+}
+
+# 星球
+is_pc_gas_colony_district_uncapped = {
+	OR = {
+		has_deposit = d_gas_colony_arcology
+		has_deposit = d_gas_colony_hive
+	}
+}
+
+# 星球
+unlock_col_gas_colony_capital = {
+	is_capital = yes
+	is_planet_class = pc_gas_colony
+	exists = space_owner
+	space_owner = {
+		has_origin = origin_gas_colony
+		is_gestalt = $GESTALT$
+	}
+}
+
+# 星球
+is_pc_psionic_district_uncapped = {
+	has_modifier = psionic_origin_best
+}
+
+# 星球
+unlock_col_psionic_best_capital = {
+	is_capital = yes
+	is_planet_class = pc_psionic
+	has_modifier = psionic_origin_best
+	exists = space_owner
+	space_owner = { has_origin = origin_psionic }
+}
+
+# 星球
+unlock_col_psionic_capital = {
+	exists = space_owner
+	space_owner = { has_origin = origin_psionic }
+	is_planet_class = pc_psionic
+	OR = {
+		AND = {
+			has_modifier = psionic_origin_best
+			is_capital = no
+		}
+		has_modifier = psionic_origin
+		has_modifier = best_psionic
+		has_modifier = good_psionic
+		has_modifier = normal_psionic
+	}
+}
+
+# 星球
+unlock_col_nanites_capital_machine = {
+	is_capital = yes
+	is_planet_class = pc_nanites
+	has_deposit = d_nanites_old_factory
+	exists = space_owner
+	space_owner = { has_origin = origin_nanites }
+}
+
+# 星球
+col_nanites_capital_machine_nanotech = {
+	unlock_col_nanites_capital_machine = yes
+	has_modifier = nanites_nanotech_swarm_consume_world_special
+}
+
+# 星球
+unlock_col_nanites_nanotech = {
+	is_planet_class = pc_nanites
+	NAND = {
+		is_capital = yes
+		has_deposit = d_nanites_old_factory
+	}
+	exists = space_owner
+	space_owner = { has_origin = origin_nanites }
+	has_nanites_nanotech_swarm_consume_world = yes
+}
+
+# 星球
+has_nanites_nanotech_swarm_consume_world = {
+	OR = {
+		has_modifier = nanites_nanotech_swarm_consume_world
+		has_modifier = nanites_nanotech_swarm_consume_world_special
+	}
+}
+
+# 国家
+parallel_sky_country_trust_requirement = {
+	event_target:parallel_sky_country = {
+		if = {
+			limit = {
+				has_civic = civic_parallel_sky_1
+			}
+			trust = {
+				who = prev
+				value >= $TRUST_1$
+			}
+		}
+		else_if = {
+			limit = {
+				has_civic = civic_parallel_sky_2
+			}
+			trust = {
+				who = prev
+				value >= $TRUST_2$
+			}
+		}
+		else_if = {
+			limit = {
+				has_civic = civic_parallel_sky_3
+			}
+			trust = {
+				who = prev
+				value >= $TRUST_3$
+			}
+		}
+		else = {
+			always = no
+		}
+	}
+}
+
+# 星球
+change_parallel_sky_generator_deposit_modifier = {
+	OR = {
+		NOT = { uses_district_set = standard }
+		is_generator_district_uncapped = yes
+		owner_use_district_generator_uncapped = yes
+	}
+}
+
+# 星球
+change_parallel_sky_mining_deposit_modifier = {
+	OR = {
+		NOT = { uses_district_set = standard }
+		is_mining_district_uncapped = yes
+		owner_use_district_mining_uncapped = yes
+	}
+}
+
+# 星球
+change_parallel_sky_farming_deposit_modifier = {
+	OR = {
+		NOT = { uses_district_set = standard }
+		is_farming_district_uncapped = yes
+		owner_use_district_farming_uncapped = yes
+	}
+}
+
+# 国家
+parallel_sky_country_diplomacy_is_engaged = {
+	has_active_event = {
+		parallel_sky.2
+		parallel_sky.3
+		parallel_sky.4
+		parallel_sky.5
+		parallel_sky.10
+		parallel_sky.14
+		parallel_sky.15
+		parallel_sky.16
+		parallel_sky.17
+		parallel_sky.18
+		parallel_sky.20
+		parallel_sky.30
+		parallel_sky.40
+		parallel_sky.45
+		parallel_sky.50
+		parallel_sky.51
+		parallel_sky.52
+		parallel_sky.53
+		parallel_sky.54
+		parallel_sky.55
+		parallel_sky.56
+		parallel_sky.60
+		parallel_sky.71
+		parallel_sky.72
+		parallel_sky.73
+		parallel_sky.74
+		parallel_sky.75
+		parallel_sky.76
+		parallel_sky.77
+		parallel_sky.78
+		parallel_sky.79
+		parallel_sky.80
+		parallel_sky.81
+		parallel_sky.82
+		parallel_sky.83
+		parallel_sky.84
+		parallel_sky.85
+		parallel_sky.86
+		parallel_sky.87
+		parallel_sky.88
+		parallel_sky.89
+		parallel_sky.90
+		parallel_sky.91
+		parallel_sky.100
+		parallel_sky.101
+		parallel_sky.102
+		parallel_sky.103
+		parallel_sky.104
+		parallel_sky.105
+		parallel_sky.106
+		parallel_sky.107
+		parallel_sky.108
+		parallel_sky.109
+		parallel_sky.110
+		parallel_sky.112
+		parallel_sky.113
+		parallel_sky.114
+		parallel_sky.116
+		parallel_sky.117
+		parallel_sky.118
+		parallel_sky.122
+	}
+}
+
+# 国家
+is_yin_country = {
+	OR = {
+		has_modifier = storms_of_yin_country
+		any_situation = {
+			is_situation_type = situation_tao_of_ninghe_country
+			OR = {
+				current_stage = stage_yin_1
+				current_stage = stage_yin_2
+				current_stage = stage_yin_3
+			}
+		}
+	}
+}
+
+# 国家
+is_yang_country = {
+	OR = {
+		has_modifier = wind_of_yang_country
+		any_situation = {
+			is_situation_type = situation_tao_of_ninghe_country
+			OR = {
+				current_stage = stage_yang_1
+				current_stage = stage_yang_2
+				current_stage = stage_yang_3
+			}
+		}
+	}
+}
+
+# 领袖
+is_yin_leader = {
+	OR = {
+		has_trait = subclass_official_delegate
+		has_trait = subclass_official_diplomacy_councilor
+		has_trait = subclass_official_economy_councilor
+		has_trait = subclass_official_governor
+		has_trait = subclass_scientist_governor
+		has_trait = subclass_commander_governor
+	}
+}
+
+# 领袖
+is_yang_leader = {
+	OR = {
+		has_trait = subclass_scientist_explorer
+		has_trait = subclass_scientist_scholar
+		has_trait = subclass_scientist_councilor
+		has_trait = subclass_commander_admiral
+		has_trait = subclass_commander_general
+		has_trait = subclass_commander_councilor
+	}
+}
+
+# 星球
+is_yin_planet = {
+	any_targeting_situation = {
+		OR = {
+			is_situation_type = situation_tao_of_ninghe_0
+			is_situation_type = situation_tao_of_ninghe_1
+			is_situation_type = situation_tao_of_ninghe_2
+			is_situation_type = situation_tao_of_ninghe_3
+			is_situation_type = situation_tao_of_ninghe_4
+		}
+	}
+}
+
+# 星球
+is_ninghe_planet = {
+	any_targeting_situation = {
+		is_situation_type = situation_tao_of_ninghe_5
+	}
+}
+
+# 星球
+is_yang_planet = {
+	any_targeting_situation = {
+		OR = {
+			is_situation_type = situation_tao_of_ninghe_6
+			is_situation_type = situation_tao_of_ninghe_7
+			is_situation_type = situation_tao_of_ninghe_8
+			is_situation_type = situation_tao_of_ninghe_9
+			is_situation_type = situation_tao_of_ninghe_10
+		}
+	}
+}
+
+# 局势
+is_tao_of_ninghe_situation = {
+	OR = {
+		is_situation_type = situation_tao_of_ninghe_0
+		is_situation_type = situation_tao_of_ninghe_1
+		is_situation_type = situation_tao_of_ninghe_2
+		is_situation_type = situation_tao_of_ninghe_3
+		is_situation_type = situation_tao_of_ninghe_4
+		is_situation_type = situation_tao_of_ninghe_5
+		is_situation_type = situation_tao_of_ninghe_6
+		is_situation_type = situation_tao_of_ninghe_7
+		is_situation_type = situation_tao_of_ninghe_8
+		is_situation_type = situation_tao_of_ninghe_9
+		is_situation_type = situation_tao_of_ninghe_10
+	}
+}
+
+# 国家
+has_origin_pirate_king = {
+	OR = {
+		has_origin = origin_pirate_king
+		has_origin = origin_pirate_king_end
+	}
+}
+
+# 人口组
+has_adeptus_mechanicus_pop_category = {
+	OR = {
+		is_pop_category = adeptus_mechanicus
+		is_pop_category = adeptus_mechanicus_unemployment
+	}
+}
+
+# 人口组
+has_all_adeptus_mechanicus_species_right = {
+	has_citizenship_type = {
+		country = owner
+		type = citizenship_adeptus_mechanicus
+	}
+	has_living_standard = {
+		country = owner
+		type = living_standard_adeptus_mechanicus
+	}
+}
+
+# 人口组
+has_any_adeptus_mechanicus_species_right = {
+	OR = {
+		has_citizenship_type = {
+			country = owner
+			type = citizenship_adeptus_mechanicus
+		}
+		has_living_standard = {
+			country = owner
+			type = living_standard_adeptus_mechanicus
+		}
+	}
+}
+
+# 国家
+has_origin_manifesti = {
+	OR = {
+		has_origin = origin_manifesti
+		has_origin = origin_manifesti_dream_1
+		has_origin = origin_manifesti_dream_2
+		has_origin = origin_manifesti_dream_end
+	}
+}
+
+# 国家
+is_lost_hypocritical_face = {
+	OR = {
+		has_country_flag = lost_hypocritical_face # 旧档兼容
+		has_modifier = lost_hypocritical_face_modifier
+	}
+}
+
+# 国家
+can_repair_noah_ark = {
+	has_resource = {
+		type = influence
+		amount >= 500
+	}
+	if = {
+		limit = {
+			country_uses_bio_ships = no
+		}
+		has_resource = {
+			type = alloys
+			amount >= 10000
+		}
+	}
+	else = {
+		has_resource = {
+			type = alloys
+			amount >= 5000
+		}
+		has_resource = {
+			type = food
+			amount >= 17500
+		}
+	}
+}
+
+# 国家
+has_tech_corrupt_brain = {
+	OR = {
+		has_technology = tech_corrupt_brain_hive_1
+		has_technology = tech_corrupt_brain_hive_2
+		has_technology = tech_corrupt_brain_hive_3
+		has_technology = tech_corrupt_brain_machine_1
+		has_technology = tech_corrupt_brain_machine_2
+		has_technology = tech_corrupt_brain_machine_3
+	}
+}
+
+# 国家
+has_origin_blessed_by_god_modifier = {
+	OR = {
+		has_modifier = origin_blessed_by_god_modifier_1
+		has_modifier = origin_blessed_by_god_modifier_2
+		has_modifier = origin_blessed_by_god_modifier_3
+		has_modifier = origin_blessed_by_god_modifier_4
+		has_modifier = origin_blessed_by_god_modifier_5
+		has_modifier = origin_blessed_by_god_modifier_6
+		has_modifier = origin_blessed_by_god_modifier_7
+		has_modifier = origin_blessed_by_god_modifier_8
+		has_modifier = origin_blessed_by_god_modifier_9
+		has_modifier = origin_blessed_by_god_modifier_10
+	}
+}
+
+# 国家
+can_select_decision_blessed_by_god = {
+	NOT = { has_country_flag = recently_blessed_by_god }
+	has_origin = origin_blessed_by_god
+	has_country_resource = {
+		type = unity
+		amount >= value:blessed_by_god_decision_unity_cost
+	}
+	has_country_resource = {
+		type = sr_zro
+		amount >= value:blessed_by_god_decision_sr_zro_cost
+	}
+}
+
+# 国家
+can_afford_d_wishing_well_upkeep = {
+	check_variable_arithmetic = {
+		which = value:d_wishing_well_upkeep_afford_percentage
+		value >= 1
+	}
+}
+
+# 国家
+has_civic_origin_ruin_megastructure = {
+	OR = {
+		has_valid_civic = civic_origin_ruin_megastructure
+		has_valid_civic = civic_origin_ruin_megastructure_corporate
+		has_valid_civic = civic_origin_ruin_megastructure_hive
+		has_valid_civic = civic_origin_ruin_megastructure_machine
+	}
+}
+
+# 国家
+has_civic_origin_life_seeded = {
+	OR = {
+		has_valid_civic = civic_origin_life_seeded
+		has_valid_civic = civic_origin_life_seeded_corporate
+		has_valid_civic = civic_origin_life_seeded_hive
+		has_valid_civic = civic_origin_life_seeded_machine
+	}
+}
+
+# 国家
+has_civic_origin_pc_hive = {
+	has_valid_civic = civic_origin_pc_hive
+}
+
+# 国家
+has_civic_origin_machine = {
+	has_valid_civic = civic_origin_machine
+}
+
+# 殖民地
+acitve_building_civic_origin_black_hole_bonus = {
+	solar_system = {
+		any_system_planet = { is_time_black_hole_planet_class = yes }
+	}
+}
+
+# 殖民地
+acitve_building_civic_origin_pulsar_bonus = {
+	solar_system = {
+		any_system_planet = { is_planet_class = pc_pulsar }
+	}
+}
+
+# 殖民地
+acitve_building_civic_origin_neutron_star_bonus = {
+	solar_system = {
+		any_system_planet = { is_planet_class = pc_neutron_star }
+	}
+}
+
+# 领袖
+has_vanilla_leader_upkeep = {
+	# 参见game_rules的should_pay_for_leader_upkeep
+	NOR = {
+		AND = {
+			exists = owner
+			owner = {
+				is_gestalt = yes
+			}
+			is_councilor = yes
+		}
+		has_trait = leader_trait_spacebender
+		has_leader_flag = should_not_have_upkeep
+	}
+	NOR = {
+		has_leader_flag = marauder_merc_leader
+		has_leader_flag = hired_admiral_merc_leader
+	}
+}
+
+# 领袖
+has_full_vanilla_leader_unity_upkeep = {
+	# 参见inline的leader_base_upkeep
+	exists = owner
+	owner = {
+		NOR = {
+			AND = {
+				prev.species = {
+					is_robotic_species = no
+				}
+				is_megacorp = yes
+				OR = {
+					is_purity_authority = yes
+					is_cloning_authority = yes
+					is_mutation_authority = yes
+				}
+			}
+			has_valid_civic = civic_machine_upkeep_twister
+			has_valid_civic = civic_hive_upkeep_twister
+			root = {
+				has_trait = trait_imperial_heir
+				OR = {
+					is_ruler = yes
+					is_heir = yes
+				}
+			}
+		}
+	}
+}
+
+# 领袖
+has_half_vanilla_leader_unity_upkeep = {
+	# 参见inline的leader_base_upkeep
+	exists = owner
+	owner = {
+		OR = {
+			has_valid_civic = civic_machine_upkeep_twister
+			has_valid_civic = civic_hive_upkeep_twister
+		}
+	}
+}
+
+# 领袖
+has_full_vanilla_leader_trade_upkeep = {
+	# 参见inline的leader_base_upkeep
+	species = {
+		is_robotic_species = no
+	}
+	exists = owner
+	owner = {
+		is_megacorp = yes
+		OR = {
+			is_purity_authority = yes
+			is_cloning_authority = yes
+			is_mutation_authority = yes
+		}
+		NOR = {
+			root = {
+				has_trait = trait_imperial_heir
+				OR = {
+					is_ruler = yes
+					is_heir = yes
+				}
+			}
+		}
+	}
+}
+
+# 领袖
+has_full_vanilla_leader_food_upkeep = {
+	# 参见inline的leader_base_upkeep
+	exists = owner
+	owner = {
+		has_valid_civic = civic_hive_upkeep_twister
+	}
+	species = {
+		is_lithoid = no
+	}
+}
+
+# 领袖
+has_full_vanilla_leader_minerals_upkeep = {
+	# 参见inline的leader_base_upkeep
+	exists = owner
+	owner = {
+		has_valid_civic = civic_hive_upkeep_twister
+	}
+	species = {
+		is_lithoid = yes
+	}
+}
+
+# 领袖
+has_full_vanilla_leader_energy_upkeep = {
+	# 参见inline的leader_base_upkeep
+	exists = owner
+	owner = {
+		has_valid_civic = civic_machine_upkeep_twister
+	}
+}
+
+# 领袖
+exists_mirror_image_leader = {
+	OR = {
+		is_dimension_traveler = yes
+		has_leader_flag = exists_mirror_image_leader
+		AND = {
+			is_same_value = event_target:akx_mirror_image_leader
+			exists = event_target:another_akx_mirror_image_leader
+		}
+		AND = {
+			is_same_value = event_target:another_akx_mirror_image_leader
+			exists = event_target:akx_mirror_image_leader
+		}
+	}
+}
+
+# 国家
+has_akx_dark_consortium_edict = {
+	OR = {
+		has_edict = akx_hear_the_truth_in_the_morning_1
+		has_edict = akx_hear_the_truth_in_the_morning_2
+		has_edict = akx_die_at_night_after_truth_1
+		has_edict = akx_die_at_night_after_truth_2
+		has_edict = akx_live_without_regret_1
+		has_edict = akx_live_without_regret_2
+	}
+}
+
+# 任意
+akx_out_of_0_and_1_modifier_is_set = {
+	OR = {
+		has_global_flag = akx_out_of_0_and_1_a
+		has_global_flag = akx_out_of_0_and_1_b
+		has_global_flag = akx_out_of_0_and_1_c
+		has_global_flag = akx_out_of_0_and_1_d
+		has_global_flag = akx_out_of_0_and_1_e
+		has_global_flag = akx_out_of_0_and_1_f
+	}
+}
+
+# 物种/人口组
+has_trait_notofthisworld = {
+	OR = {
+		has_trait = trait_notofthisworld
+		has_trait = trait_robot_notofthisworld
+		has_trait = trait_exd
+	}
+}
+
+# 星球
+can_gain_most_time_gaia_deposit = {
+	OR = {
+		has_modifier = holy_planet
+		has_deposit = d_heart_of_wilderness
+		has_carrier_flag = fallen_empire_capital
+	}
+}
+
+# 星球
+can_gain_more_time_gaia_deposit = {
+	OR = {
+		has_carrier_flag = fallen_empire_world
+		has_carrier_flag = noah_ark_home_planet
+	}
+}
+
+# 国家
+has_civic_starry_yearning = {
+	OR = {
+		has_valid_civic = civic_starry_yearning
+		has_valid_civic = civic_starry_yearning_corporate
+	}
+}
+
+# 国家
+has_civic_overclocking_art = {
+	OR = {
+		has_valid_civic = civic_overclocking_art
+		has_valid_civic = civic_overclocking_art_corporate
+		has_valid_civic = civic_overclocking_art_machine
+		has_valid_civic = civic_overclocking_art_individual_machine
+		has_valid_civic = civic_overclocking_art_individual_machine_corporate
+	}
+}
+
+# 国家
+has_civic_overclocking_art_only = {
+	has_valid_civic = civic_overclocking_art
+}
+
+# 国家
+has_civic_overclocking_art_corporate = {
+	has_valid_civic = civic_overclocking_art_corporate
+}
+
+# 国家
+has_civic_overclocking_art_machine = {
+	OR = {
+		has_valid_civic = civic_overclocking_art_machine
+		has_valid_civic = civic_overclocking_art_individual_machine
+		has_valid_civic = civic_overclocking_art_individual_machine_corporate
+	}
+}

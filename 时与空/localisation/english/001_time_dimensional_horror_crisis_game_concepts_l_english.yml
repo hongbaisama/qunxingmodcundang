@@ -1,0 +1,58 @@
+﻿l_english:
+ databank_dimensional_horror_crisis: "Proclamation of the End"
+ 
+ concept_dimensional_horror_crisis_storm_tooltip: "Proclamation of the End"
+ 
+ concept_dimensional_horror_crisis_storm_yellow: "§YProclamation of the End§!"
+ concept_dimensional_horror_crisis_storm_affected: "Affected"
+ concept_dimensional_horror_crisis_storm_affected_yellow: "§YAffected§!"
+ concept_dimensional_horror_crisis_storm: "Proclamation of the End"
+ concept_dimensional_horror_crisis_storm_desc: "§H$concept_dimensional_horror_crisis_storm$§! is a cosmic phenomenon of unknown origin. Its common form is the frequent appearance of certain space storms, and such space storms are often accompanied by a special Nightmare of the Plane-['concept_dimensional_horror_crisis_ship'].\n\nThis type of space storm possesses a weird characteristic-no matter from which angle observed, its rotation direction is completely consistent. We also name this type of storm \"§H$concept_dimensional_horror_crisis_storm$§!\" and divide it into ['concept_dimensional_horror_crisis_storm_levo_short'] and ['concept_dimensional_horror_crisis_storm_dextro_short'] two categories according to its rotation direction.\n\nThe negative effects and generation frequency of §H$concept_dimensional_horror_crisis_storm$§! storms are affected by §Y$FE_CRISES$§! game rules, and intensify with the progress of §YBeyond Infinity§! and the increase of §YNewborn Black Holes§!.\n\nTo solve this crisis, we must ['concept_dimensional_horror_crisis_seal'] all ['concept_dimensional_horror_crisis_erasured'] systems. Repelling ['concept_dimensional_horror_crisis_ship'] alone is useless."
+ 
+ concept_dimensional_horror_crisis_storm_levo_short: "Levorotation"
+ concept_dimensional_horror_crisis_storm_levo: "Proclamation of the End (Levorotation)"
+ concept_dimensional_horror_crisis_storm_levo_desc: "§H$concept_dimensional_horror_crisis_storm_levo$§! is a type of ['concept_dimensional_horror_crisis_storm'] storm, which can cause great harm to planets and ships, and the damage to §YShields§! is particularly severe.\n\nSystems affected by §H$concept_dimensional_horror_crisis_storm_levo$§! may induce the appearance of ['concept_dimensional_horror_crisis_ship_levo'] and produce a series of negative effects."
+ 
+ concept_dimensional_horror_crisis_storm_dextro_short: "Dextrorotation"
+ concept_dimensional_horror_crisis_storm_dextro: "Proclamation of the End (Dextrorotation)"
+ concept_dimensional_horror_crisis_storm_dextro_desc: "§H$concept_dimensional_horror_crisis_storm_dextro$§! is a type of ['concept_dimensional_horror_crisis_storm'] storm, which can cause great harm to planets and ships, and the damage to §YArmor§! is particularly severe.\n\nSystems affected by §H$concept_dimensional_horror_crisis_storm_dextro$§! may induce the appearance of ['concept_dimensional_horror_crisis_ship_dextro'] and produce a series of negative effects."
+ 
+ concept_dimensional_horror_crisis_ship_green: "§GNightmare of the End§!"
+ concept_dimensional_horror_crisis_ship_orange: "§HNightmare of the End§!"
+ concept_dimensional_horror_crisis_ship: "Nightmare of the End"
+ concept_dimensional_horror_crisis_ship_desc: "§H$concept_dimensional_horror_crisis_ship$§! is a special Nightmare of the Plane induced by ['concept_dimensional_horror_crisis_storm'] storms, also divided into ['concept_dimensional_horror_crisis_ship_levo_short'] and ['concept_dimensional_horror_crisis_ship_dextro_short'] two categories.\n\n§H$concept_dimensional_horror_crisis_ship$§! will also produce negative effects on ships in the system, and stack with the negative effects of ['concept_dimensional_horror_crisis_storm'] storms. Therefore, when combat power is insufficient, you can wait for the storm to leave before engaging §H$concept_dimensional_horror_crisis_ship$§!.\n\n§H$concept_dimensional_horror_crisis_ship$§! will constantly affect the system it is in. If this process continues unimpeded for several months, everything in that system will be erased from time, with only §H$concept_dimensional_horror_crisis_ship$§! spared, i.e., ['concept_dimensional_horror_crisis_erasure']. This process will produce a large number of Black Holes, and §H$concept_dimensional_horror_crisis_ship$§! can draw power from the galaxy's §YNewborn Black Holes§! and enhance aggressiveness and resilience. The enhancement amplitude is affected by §Y$FE_CRISES$§! game rules. Therefore, under conditions where combat power permits, resolving §H$concept_dimensional_horror_crisis_ship$§! in time can reduce long-term combat pressure and reduce the workload of subsequent ['concept_dimensional_horror_crisis_seal']."
+ 
+ concept_dimensional_horror_crisis_ship_levo_short: "Levorotation"
+ concept_dimensional_horror_crisis_ship_levo: "Nightmare of the End (Levorotation)"
+ concept_dimensional_horror_crisis_ship_levo_desc: "§H$concept_dimensional_horror_crisis_ship_levo$§! is a type of ['concept_dimensional_horror_crisis_ship'], possessing powerful combat capabilities and anti-stealth capabilities, able to induce ['concept_confusion'] and ['concept_terrify'], and can damage all ships in the system simultaneously.\n\n§H$concept_dimensional_horror_crisis_ship_levo$§! does not possess any §YShields§!, but has high §YArmor§! and §YArmor Hardening§!. It is recommended to use §YEnergy Weapons§! that counter Armor to fight it.\n\n§H$concept_dimensional_horror_crisis_ship_levo$§! mainly uses §YKinetic Weapons§! that counter Shields. It is recommended to equip a large amount of §YArmor§! to resist its attacks.\n\n§H$concept_dimensional_horror_crisis_ship_levo$§! has §R100%§! $MOD_SHIP_DAMAGE_REDUCTION_MULT$ when in ['concept_dimensional_horror_crisis_storm_levo'](Related to $FE_DIFFICULTY$), and §R50%§! $MOD_SHIP_DAMAGE_REDUCTION_MULT$ normally(Related to $FE_DIFFICULTY$). Conventional weapons are difficult to cause damage to it."
+ 
+ concept_dimensional_horror_crisis_ship_dextro_short: "Dextrorotation"
+ concept_dimensional_horror_crisis_ship_dextro: "Nightmare of the End (Dextrorotation)"
+ concept_dimensional_horror_crisis_ship_dextro_desc: "§H$concept_dimensional_horror_crisis_ship_dextro$§! is a type of ['concept_dimensional_horror_crisis_ship'], possessing powerful combat capabilities and anti-stealth capabilities, able to induce ['concept_confusion'] and ['concept_terrify'], and can damage all ships in the system simultaneously.\n\n§H$concept_dimensional_horror_crisis_ship_dextro$§! does not possess any §YArmor§!, but has high §YShields§! and §YShield Hardening§!. It is recommended to use §YKinetic Weapons§! that counter Shields to fight it.\n\n§H$concept_dimensional_horror_crisis_ship_dextro$§! mainly uses §YEnergy Weapons§! that counter Armor. It is recommended to equip a large amount of §YShields§! to resist its attacks.\n\n§H$concept_dimensional_horror_crisis_ship_dextro$§! has §R100%§! $MOD_SHIP_DAMAGE_REDUCTION_MULT$ when in ['concept_dimensional_horror_crisis_storm_dextro'](Related to $FE_DIFFICULTY$), and §R50%§! $MOD_SHIP_DAMAGE_REDUCTION_MULT$ normally(Related to $FE_DIFFICULTY$). Conventional weapons are difficult to cause damage to it."
+ 
+ concept_dimensional_horror_crisis_erasure_red: "§RFinal Erasure§!"
+ concept_dimensional_horror_crisis_erasured: "Erased"
+ concept_dimensional_horror_crisis_erasured_orange: "§HErased§!"
+ concept_dimensional_horror_crisis_erasured_yellow: "§YErased§!"
+ concept_dimensional_horror_crisis_erasure: "Final Erasure"
+ concept_dimensional_horror_crisis_erasure_desc: "§H$concept_dimensional_horror_crisis_erasure$§! is a cosmic phenomenon triggered by ['concept_dimensional_horror_crisis_ship'].\n\nWhen §H$concept_dimensional_horror_crisis_erasure$§! occurs, all planets in the system will turn into §H$pc_black_hole$§!, all ships except ['concept_dimensional_horror_crisis_ship'] will be destroyed, and this process is irreversible.\n\n§H$concept_dimensional_horror_crisis_erasure$§! requires ['concept_dimensional_horror_crisis_ship'] to continue undisturbed for several months to complete. Therefore, to avoid this phenomenon, we'd better engage ['concept_dimensional_horror_crisis_ship'] in time or repel it."
+ 
+ concept_dimensional_horror_crisis_seal_red: "§RSeal of the End§!"
+ concept_dimensional_horror_crisis_seal_purple: "§MSeal of the End§!"
+ concept_dimensional_horror_crisis_seal_purple_short: "§MSeal§!"
+ concept_dimensional_horror_crisis_seal_orange: "§HSeal of the End§!"
+ concept_dimensional_horror_crisis_seal_orange_short: "§HSeal§!"
+ concept_dimensional_horror_crisis_seal_yellow: "§YSeal of the End§!"
+ concept_dimensional_horror_crisis_sealed_yellow: "§YSealed§!"
+ concept_dimensional_horror_crisis_seal: "Seal of the End"
+ concept_dimensional_horror_crisis_seal_desc: "§H$concept_dimensional_horror_crisis_seal$§! is the way to make the system immune to the influence of ['concept_dimensional_horror_crisis_storm'], and also our only means to solve this crisis.\n\nSystems completing §H$concept_dimensional_horror_crisis_seal$§! will no longer be affected by ['concept_dimensional_horror_crisis_storm'] in any way, nor will ['concept_dimensional_horror_crisis_ship'] appear. It is almost an absolute safe zone for us.\n\nTo master the method of §H$concept_dimensional_horror_crisis_seal$§!, we need to reach §YLevel 4§! Infinite Distance on §Y$ap_beyond_infinity$§!. By then, all players will enable the §H$concept_dimensional_horror_crisis_seal$§! function.\n\n§YTip: If the seal project is not completed correctly and does not trigger the event, you can refresh the project via $edict_time_help_edict$ edict.§!"
+ 
+ concept_dimensional_horror_crisis_storm_original_level_cyan: "§CCollapse Level of Proclamation of the End§!"
+ concept_dimensional_horror_crisis_storm_original_level_short: "Collapse Level"
+ concept_dimensional_horror_crisis_storm_original_level: "Collapse Level of Proclamation of the End"
+ concept_dimensional_horror_crisis_storm_original_level_desc: "§H$concept_dimensional_horror_crisis_storm_original_level$§!代表着银河系朝终焉坍缩的严重程度。\n\n§H$concept_dimensional_horror_crisis_storm_original_level_short$§!越高，['concept_dimensional_horror_crisis_storm']造成的危害与['concept_dimensional_horror_crisis_ship']的战斗力就越强，但我们可以通过提升['concept_dimensional_horror_crisis_storm_protection_level_short']来减轻风暴对我们的影响。\n\n随着['concept_dimensional_horror_crisis_storm']进程的加剧与河系§Y新生黑洞§!的出现，§H$concept_dimensional_horror_crisis_storm_original_level_short$§!会越来越高。"
+ 
+ concept_dimensional_horror_crisis_storm_protection_level_white: "§WInterference Resistance Index of Proclamation of the End§!"
+ concept_dimensional_horror_crisis_storm_protection_level_short: "Interference Resistance Index"
+ concept_dimensional_horror_crisis_storm_protection_level: "Interference Resistance Index of Proclamation of the End"
+ concept_dimensional_horror_crisis_storm_protection_level_desc: "§H$concept_dimensional_horror_crisis_storm_protection_level$§!代表着我们减轻['concept_dimensional_horror_crisis_storm']影响的能力。\n\n§H$concept_dimensional_horror_crisis_storm_protection_level_short$§!越高，就能在['concept_dimensional_horror_crisis_storm']对我们的殖民地与舰船造成危害时抵消更多的['concept_dimensional_horror_crisis_storm_original_level_short']，但§R无法§!将其完全清除。"

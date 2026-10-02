@@ -1,0 +1,389 @@
+# 国家
+unlock_pc_time_structures = {
+	OR = {
+		has_origin_time = yes
+		has_country_flag = unlock_pc_time_structures
+	}
+}
+
+# 国家
+use_time_researcher_weight = {
+	check_modifier_value = {
+		modifier = time_researcher_max_weight
+		value > 0
+	}
+}
+
+# 国家
+has_origin_time = {
+	OR = {
+		has_origin = origin_time
+		has_origin = origin_time_end
+		has_origin = origin_time_end_bad
+		has_origin = origin_time_beginning
+		has_origin = origin_time_beginning_bad
+		has_origin = origin_timesingularity
+		has_origin = origin_timesingularity_bad
+		has_origin = origin_endless_time_virtuality
+		has_origin = origin_endless_time_synthetic
+		has_origin = origin_endless_time_cybernetic
+		has_origin = origin_endless_time_genetic
+		has_origin = origin_endless_time_psionic
+	}
+}
+
+# 国家
+unlock_origin_time_authority = {
+	OR = {
+		has_country_flag = unlock_auth_time_democratic
+		has_country_flag = unlock_auth_time_imperial
+		has_country_flag = unlock_auth_time_corporate
+	}
+}
+
+# 国家（自带提示）
+requires_origin_time_authority = {
+	if = {
+		limit = {
+			has_country_flag = unlock_auth_time_democratic
+		}
+		custom_tooltip = {
+			fail_text = requires_auth_time_democratic
+			is_auth_time_democratic = yes
+		}
+	}
+	else_if = {
+		limit = {
+			has_country_flag = unlock_auth_time_imperial
+		}
+		custom_tooltip = {
+			fail_text = requires_auth_time_imperial
+			is_auth_time_imperial = yes
+		}
+	}
+	else_if = {
+		limit = {
+			has_country_flag = unlock_auth_time_corporate
+		}
+		custom_tooltip = {
+			fail_text = requires_auth_time_corporate
+			is_auth_time_corporate = yes
+		}
+	}
+	else = {
+		always = no
+	}
+}
+
+# 国家
+is_origin_time_authority = {
+	OR = {
+		is_auth_time_democratic = yes
+		is_auth_time_imperial = yes
+		is_auth_time_corporate = yes
+	}
+}
+
+# 国家
+is_normal_origin_time_authority = {
+	is_origin_time_authority = yes
+	NOT = { has_country_flag = unlock_auth_endless_time }
+}
+
+# 国家
+is_advanced_origin_time_authority = {
+	is_origin_time_authority = yes
+	has_country_flag = unlock_auth_endless_time
+}
+
+# 国家
+is_auth_time_democratic = {
+	has_authority = auth_democratic
+	has_origin_time = yes
+	has_country_flag = unlock_auth_time_democratic
+}
+
+# 国家
+is_auth_time_imperial = {
+	has_authority = auth_imperial
+	has_origin_time = yes
+	has_country_flag = unlock_auth_time_imperial
+}
+
+# 国家
+is_auth_time_corporate = {
+	has_authority = auth_corporate
+	has_origin_time = yes
+	has_country_flag = unlock_auth_time_corporate
+}
+
+# 国家
+councilor_ruler_time_authority_gain_bonus = {
+	if = {
+		limit = {
+			has_global_flag = show_councilor_ruler_time_authority_effect
+		}
+		always = yes
+	}
+	else = {
+		exists = event_target:origin_time_ruler
+		event_target:origin_time_ruler = {
+			is_owned_by = prev
+			can_ruler_time_trait_active = yes
+		}
+	}
+}
+
+# 国家
+has_origin_time_winner_ethic = {
+	OR = {
+		has_country_flag = $ETHIC$_is_first_winner
+		has_country_flag = $ETHIC$_is_second_winner
+	}
+}
+
+# 领袖
+ruler_time_trait_gain_bonus = {
+	OR = {
+		has_leader_flag = ruler_time_trait_$TYPE$
+		owner = { is_auth_time_corporate = yes }
+	}
+}
+
+# 领袖
+can_ruler_time_trait_active = {
+	OR = {
+		is_ruler = yes
+		AND = {
+			is_councilor = yes
+			owner = { is_auth_time_democratic = yes }
+		}
+	}
+	NOT = { has_leader_flag = trapped_in_situation_pc_time }
+}
+
+# 领袖
+is_origin_time_ruler = {
+	exists = event_target:origin_time_ruler
+	is_same_value = event_target:origin_time_ruler
+}
+
+# 领袖
+is_origin_time_ruler_with_tooltip = {
+	custom_tooltip = {
+		fail_text = "is_not_origin_time_ruler"
+		is_origin_time_ruler = yes
+	}
+}
+
+# 国家
+has_origin_time_ruler = {
+	exists = event_target:origin_time_ruler
+	event_target:origin_time_ruler = { is_owned_by = prev }
+}
+
+# 物种/人口组
+is_origin_time_species = {
+	OR = {
+		has_trait = trait_time
+		has_trait = trait_time_1
+		has_trait = trait_time_2
+		has_trait = trait_time_soul_virtuality
+		has_trait = trait_time_soul_synthetic
+		has_trait = trait_time_soul_cybernetic
+		has_trait = trait_time_soul_genetic
+		has_trait = trait_time_soul_psionic
+	}
+}
+
+# 物种/人口组
+is_time_soul_species = {
+	OR = {
+		has_trait = trait_time_soul_virtuality
+		has_trait = trait_time_soul_synthetic
+		has_trait = trait_time_soul_cybernetic
+		has_trait = trait_time_soul_genetic
+		has_trait = trait_time_soul_psionic
+	}
+}
+
+# 领袖
+is_time_soul_leader = {
+	OR = {
+		has_trait = leader_trait_time_soul
+		has_trait = leader_trait_ruler_time
+		has_trait = leader_trait_ruler_time_owner
+		has_trait = leader_trait_ruler_time_king
+	}
+}
+
+# 星球
+is_origin_time_planet_class = {
+	OR = {
+		is_planet_class = pc_time
+		is_planet_class = pc_endless_time
+	}
+}
+
+# 星球
+is_col_origin_time_capital = {
+	OR = {
+		is_col_origin_time_capital_default = yes
+		is_col_origin_time_capital_resource = yes
+		is_col_origin_time_capital_manufacturing = yes
+		is_col_origin_time_capital_unity = yes
+		is_col_origin_time_capital_research = yes
+	}
+}
+
+# 星球
+is_col_origin_time_capital_default = {
+	OR = {
+		has_designation = col_time_capital
+		has_designation = col_timesingularity_capital
+		has_designation = col_endless_time_capital
+	}
+}
+
+# 星球
+is_col_origin_time_capital_resource = {
+	OR = {
+		has_designation = col_time_capital_resource
+		has_designation = col_timesingularity_capital_resource
+		has_designation = col_endless_time_capital_resource
+	}
+}
+
+# 星球
+is_col_origin_time_capital_manufacturing = {
+	OR = {
+		has_designation = col_time_capital_manufacturing
+		has_designation = col_timesingularity_capital_manufacturing
+		has_designation = col_endless_time_capital_manufacturing
+	}
+}
+
+# 星球
+is_col_origin_time_capital_unity = {
+	OR = {
+		has_designation = col_time_capital_unity
+		has_designation = col_timesingularity_capital_unity
+		has_designation = col_endless_time_capital_unity
+	}
+}
+
+# 星球
+is_col_origin_time_capital_research = {
+	OR = {
+		has_designation = col_time_capital_research
+		has_designation = col_timesingularity_capital_research
+		has_designation = col_endless_time_capital_research
+	}
+}
+
+# 星球
+unlock_col_time_capital = {
+	is_capital = yes
+	OR = {
+		has_deposit = d_time_blocker_2
+		has_deposit = d_time_blocker_3
+		has_deposit = d_time
+		has_deposit = d_brief
+		has_deposit = d_time_beyond_infinity
+	}
+	NOT = { has_modifier = timesingularity }
+	exists = space_owner
+	space_owner = { unlock_pc_time_structures = yes }
+}
+
+# 星球
+unlock_col_timesingularity_capital = {
+	is_capital = yes
+	OR = {
+		has_deposit = d_time_blocker_2
+		has_deposit = d_time_blocker_3
+		has_deposit = d_time
+		has_deposit = d_brief
+		has_deposit = d_time_beyond_infinity
+	}
+	has_modifier = timesingularity
+	exists = space_owner
+	space_owner = { unlock_pc_time_structures = yes }
+}
+
+# 星球
+unlock_col_endless_time_capital = {
+	is_capital = yes
+	has_deposit = d_endless_time
+	exists = space_owner
+	space_owner = { has_origin_time = yes }
+}
+
+# 星球/舰船/殖民地
+can_time_soul_virtuality_live_on = {
+	if = {
+		limit = {
+			is_time_black_hole_planet_class = yes
+		}
+		always = yes
+	}
+	else_if = {
+		limit = {
+			is_scope_type = colony
+		}
+		carrier_is_type = planet
+		solar_system = { is_time_black_hole_star_class = yes }
+	}
+	else = {
+		is_scope_type = planet
+		solar_system = { is_time_black_hole_star_class = yes }
+	}
+}
+
+# 国家
+has_situation_pc_time = {
+	any_situation = {
+		is_situation_type = situation_pc_time
+	}
+}
+
+# 局势
+situation_time_black_hole_chain_is_paused = {
+	owner = {
+		any_situation = {
+			is_situation_type = situation_pc_time
+		}
+	}
+}
+
+# 局势
+can_not_trigger_time_ethic_random_situation_event = {
+	has_situation_flag = time_2$TYPE$1_triggered
+	has_situation_flag = time_2$TYPE$2_triggered
+	OR = {
+		has_situation_flag = time_2$TYPE$3_triggered
+		owner = { is_$ETHIC$ = yes }
+		target = { has_modifier = origin_time_coup }
+	}
+	OR = {
+		has_situation_flag = time_2$TYPE$4_triggered
+		owner = { is_$ETHIC$ = yes }
+	}
+	has_situation_flag = time_2$TYPE$5_triggered
+}
+
+# 国家
+can_start_situation_origin_time = {
+	# 是神秘奇点
+	has_origin_time = yes
+	# 有圆环之子
+	has_origin_time_ruler = yes
+	# 已解锁神秘奇点高级政体
+	unlock_origin_time_authority = yes
+	# 拥有初始时空黑洞且不存在引力旋涡
+	any_owned_colony = {
+		is_planet_class = pc_time
+		has_carrier_flag = time_home_planet_of@prev
+		NOT = { has_deposit = d_time_blocker_0 }
+	}
+}

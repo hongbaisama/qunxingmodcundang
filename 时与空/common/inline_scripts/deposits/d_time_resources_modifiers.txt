@@ -1,0 +1,9 @@
+triggered_planet_modifier = {
+	potential = {
+		has_carrier_flag = time_blocker_cleared_8
+	}
+	logistic_growth_mult = @time_blocker_cleared_modifier_$LEVEL$
+	bonus_pop_growth_mult = @time_blocker_cleared_modifier_$LEVEL$
+	planet_pop_assembly_mult = @time_blocker_cleared_modifier_$LEVEL$
+	mult = value:d_time_resources_value
+}

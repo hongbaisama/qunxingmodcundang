@@ -1,0 +1,51 @@
+################################################################
+# 部件
+################################################################
+
+time_titan_$TYPE$_effect = {
+	potential = {
+		exists = event_target:time_titan_fleet
+	}
+	
+	effect = {
+		show_time_titan_upgrade = {
+			TYPE = $TYPE$
+			MODE = battle
+		}
+	}
+}
+
+################################################################
+# 等级
+################################################################
+
+time_titan_$TYPE$_level_icon = {
+	potential = {
+		exists = event_target:time_titan_fleet
+	}
+	
+	effect = {
+		show_time_titan_upgrade = {
+			TYPE = $TYPE$
+			MODE = battle
+		}
+	}
+}
+
+################################################################
+# 进度
+################################################################
+
+time_titan_$TYPE$_upgrade_process_icon = {
+	potential = {
+		exists = event_target:time_titan_fleet
+		time_titan_is_upgrading_specific_type = { TYPE = $TYPE$ }
+	}
+	
+	effect = {
+		show_time_titan_upgrade = {
+			TYPE = $TYPE$
+			MODE = battle
+		}
+	}
+}

@@ -1,0 +1,68 @@
+# 界旅者星辰记忆花费
+@dimension_traveler_skill_sr_dark_matter_require_1 = 25
+@dimension_traveler_skill_sr_dark_matter_require_2 = 50
+@dimension_traveler_skill_sr_dark_matter_require_3 = 100
+@dimension_traveler_skill_sr_dark_matter_require_4 = 200
+@dimension_traveler_skill_astral_threads_require_1 = 0
+@dimension_traveler_skill_astral_threads_require_2 = 25
+@dimension_traveler_skill_astral_threads_require_3 = 50
+@dimension_traveler_skill_astral_threads_require_4 = 100
+
+@dimension_traveler_skill_sr_dark_matter_cost_1 = -25
+@dimension_traveler_skill_sr_dark_matter_cost_2 = -50
+@dimension_traveler_skill_sr_dark_matter_cost_3 = -100
+@dimension_traveler_skill_sr_dark_matter_cost_4 = -200
+@dimension_traveler_skill_astral_threads_cost_1 = 0
+@dimension_traveler_skill_astral_threads_cost_2 = -25
+@dimension_traveler_skill_astral_threads_cost_3 = -50
+@dimension_traveler_skill_astral_threads_cost_4 = -100
+
+# 反演对称加成倍率
+@dimension_traveler_core_subclass_factor = 1.5
+@dimension_traveler_core_destiny_factor = 1.5
+
+# 老练级修正
+@dimension_traveler_subclass_modifier = 0.02
+@dimension_traveler_subclass_modifier_special = 0.2
+@dimension_traveler_subclass_modifier_negative = -0.01
+
+# 老练级资源
+@dimension_traveler_subclass_governor_resource = 0.1
+@dimension_traveler_subclass_delegate_resource = 0.2
+@dimension_traveler_subclass_researcher_resource = 0.04
+@dimension_traveler_subclass_scientist_resource = 0.1
+@dimension_traveler_subclass_admiral_resource = 0.01
+@dimension_traveler_subclass_general_resource = 0.02
+
+# 因果爆发与因果过载
+@dimension_traveler_horror_modifier_good_time = 60
+@dimension_traveler_horror_modifier_bad_time = 30
+
+# 真结局上限为常规的2倍（10级+时空因果飞升）
+# 格式塔四个职业修正同时生效，但单项修正比普政低
+
+# 界旅者职业修正
+@dimension_traveler_class_modifier = 0.01
+@dimension_traveler_class_modifier_reduction = 0.005
+@dimension_traveler_class_modifier_subject = 0.1
+@dimension_traveler_class_modifier_acceptance = 1
+@dimension_traveler_class_modifier_negative = -0.005
+# 界旅者职业修正（格式塔）
+@dimension_traveler_gestalt_class_modifier = 0.006
+@dimension_traveler_gestalt_class_modifier_reduction = 0.003
+@dimension_traveler_gestalt_class_modifier_subject = 0.06
+@dimension_traveler_gestalt_class_modifier_acceptance = 0.6
+@dimension_traveler_gestalt_class_modifier_negative = -0.003
+# 界旅者飞升修正
+@dimension_traveler_ascension_modifier = 0.005
+@dimension_traveler_ascension_modifier_trait = 0.05
+# 界旅者飞升修正（格式塔）
+@dimension_traveler_gestalt_ascension_modifier = 0.005
+@dimension_traveler_gestalt_ascension_modifier_trait = 0.05
+# 界旅者其它修正
+@dimension_traveler_other_modifier = 0.005
+# 界旅者资源产出
+@dimension_traveler_base_1 = 0.005
+@dimension_traveler_base_2 = 0.01
+# 界旅者资源产出（格式塔）
+@dimension_traveler_gestalt_base = 0.005

@@ -1,0 +1,19 @@
+resources = {
+	category = planet_circle_benders
+	produces = {
+		society_research = 50
+		unity = 50
+	}
+	upkeep = {
+		sr_zro = 10
+	}
+}
+
+triggered_country_modifier = {
+	logistic_growth_mult = 0.05
+	bonus_pop_growth_mult = 0.05
+	planet_pop_assembly_mult = 0.05
+	pop_environment_tolerance = 0.05
+	society_tech_cost_mult = -0.025
+	tradition_cost_mult = -0.025
+}

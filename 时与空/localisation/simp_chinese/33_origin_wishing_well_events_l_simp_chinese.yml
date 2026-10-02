@@ -1,0 +1,10 @@
+﻿l_simp_chinese:
+ origin_wishing_well.11.name:0 "失去许愿井"
+ origin_wishing_well.11.desc:0 "我们失去了§Y[From.GetName]§!上的许愿井，它不再能为我们满足无限的愿望，但这未必是件坏事。"
+ origin_wishing_well.11.a:0 "我们终于摆脱它了……吗？"
+ origin_wishing_well.11.a.tooltip:0 "§R我们还会再见的。§!"
+ 
+ origin_wishing_well.12.name:0 "重获许愿井"
+ origin_wishing_well.12.desc:0 "是许愿井，我们朝思暮想的许愿井，再一次回到了我们的身边！\n\n这一次，我们不会再让任何人把你夺走了。"
+ origin_wishing_well.12.a:0 "许愿井啊许愿井，谁是这个世界上最英明的统治者？"
+ origin_wishing_well.12.a.tooltip:0 "§Y是您，我的“主人”。§!"

@@ -1,0 +1,18 @@
+triggered_leader_modifier = {
+	potential = {
+		is_immortal = no
+	}
+	leader_lifespan_mult = -0.25
+}
+triggered_leader_modifier = {
+	potential = {
+		is_immortal = yes
+	}
+	leaders_upkeep_mult = 0.5
+}
+resources = {
+	category = planet_pops
+	upkeep = {
+		sr_dark_matter = 0.025
+	}
+}

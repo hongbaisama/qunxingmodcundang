@@ -1,0 +1,106 @@
+dimension_traveler = {
+	category = akx
+	potential = {
+		if = {
+			limit = {
+				exists = event_target:dimension_traveler_owner
+			}
+			if = {
+				limit = {
+					is_dimension_traveler_owner = yes
+				}
+				unlock_dimension_traveler_destiny_trait = yes
+			}
+			else = {
+				always = no
+			}
+		}
+		else = {
+			always = no
+		}
+	}
+	
+	# 蠢驴的这个条目无效
+	allow = {
+	}
+	
+	option = {
+		name = horror_dimension_traveler
+		
+		potential = {
+			is_gestalt = no
+		}
+		
+		valid = {
+			if = {
+				limit = {
+					NOT = { has_policy_flag = horror_dimension_traveler }
+				}
+				can_change_dimension_traveler_policy = yes
+			}
+		}
+
+		policy_flags = {
+			horror_dimension_traveler
+		}
+		
+		on_enabled = {
+		}
+		
+		AI_weight = {
+			factor = 0
+		}
+	}
+	
+	option = {
+		name = horror_dimension_traveler_gestalt
+		
+		potential = {
+			is_gestalt = yes
+		}
+		
+		valid = {
+			if = {
+				limit = {
+					NOT = { has_policy_flag = horror_dimension_traveler }
+				}
+				can_change_dimension_traveler_policy = yes
+			}
+		}
+
+		policy_flags = {
+			horror_dimension_traveler
+		}
+		
+		on_enabled = {
+		}
+		
+		AI_weight = {
+			factor = 0
+		}
+	}
+	
+	option = {
+		name = normal_dimension_traveler
+		
+		valid = {
+			if = {
+				limit = {
+					NOT = { has_policy_flag = normal_dimension_traveler }
+				}
+				can_change_dimension_traveler_policy = yes
+			}
+		}
+
+		policy_flags = {
+			normal_dimension_traveler
+		}
+		
+		on_enabled = {
+		}
+		
+		AI_weight = {
+			factor = 1
+		}
+	}
+}

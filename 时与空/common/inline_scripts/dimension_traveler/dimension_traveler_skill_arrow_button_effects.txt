@@ -1,0 +1,228 @@
+################################################################
+# 1层（箭头）
+################################################################
+arrow_dimension_traveler_skill_1_5 = {
+	potential = {
+		show_dimension_traveler_skill_arrow = {
+			TIER = 1
+			NUM = 5
+		}
+	}
+}
+################################################################
+# 2层（箭头）
+################################################################
+arrow_dimension_traveler_skill_2_4 = {
+	potential = {
+		show_dimension_traveler_skill_arrow = {
+			TIER = 2
+			NUM = 4
+		}
+	}
+}
+arrow_dimension_traveler_skill_2_6 = {
+	potential = {
+		show_dimension_traveler_skill_arrow = {
+			TIER = 2
+			NUM = 6
+		}
+	}
+}
+################################################################
+# 3层（箭头）
+################################################################
+arrow_dimension_traveler_skill_3_3 = {
+	potential = {
+		show_dimension_traveler_skill_arrow = {
+			TIER = 3
+			NUM = 3
+		}
+	}
+}
+arrow_dimension_traveler_skill_3_5 = {
+	potential = {
+		show_dimension_traveler_skill_arrow = {
+			TIER = 3
+			NUM = 5
+		}
+	}
+}
+arrow_dimension_traveler_skill_3_7 = {
+	potential = {
+		show_dimension_traveler_skill_arrow = {
+			TIER = 3
+			NUM = 7
+		}
+	}
+}
+################################################################
+# 4层（箭头）
+################################################################
+arrow_dimension_traveler_skill_4_2 = {
+	potential = {
+		show_dimension_traveler_skill_arrow = {
+			TIER = 4
+			NUM = 2
+		}
+		can_active_dimension_traveler_council_skill = yes
+	}
+}
+arrow_dimension_traveler_skill_4_4 = {
+	potential = {
+		show_dimension_traveler_skill_arrow = {
+			TIER = 4
+			NUM = 4
+		}
+		can_active_dimension_traveler_council_skill = yes
+	}
+}
+arrow_dimension_traveler_skill_4_4_core = {
+	potential = {
+		show_dimension_traveler_skill_arrow = {
+			TIER = 4
+			NUM = 4
+		}
+		can_active_dimension_traveler_core_skill = yes
+	}
+}
+arrow_dimension_traveler_skill_4_6_core = {
+	potential = {
+		show_dimension_traveler_skill_arrow = {
+			TIER = 4
+			NUM = 6
+		}
+		can_active_dimension_traveler_core_skill = yes
+	}
+}
+arrow_dimension_traveler_skill_4_6 = {
+	potential = {
+		show_dimension_traveler_skill_arrow = {
+			TIER = 4
+			NUM = 6
+		}
+		can_active_dimension_traveler_council_skill = yes
+	}
+}
+arrow_dimension_traveler_skill_4_8 = {
+	potential = {
+		show_dimension_traveler_skill_arrow = {
+			TIER = 4
+			NUM = 8
+		}
+		can_active_dimension_traveler_council_skill = yes
+	}
+}
+################################################################
+# 6层（箭头）
+################################################################
+arrow_dimension_traveler_skill_6_2 = {
+	potential = {
+		show_dimension_traveler_skill_arrow = {
+			TIER = 6
+			NUM = 2
+		}
+		can_active_dimension_traveler_council_skill = yes
+	}
+}
+arrow_dimension_traveler_skill_6_4 = {
+	potential = {
+		show_dimension_traveler_skill_arrow = {
+			TIER = 6
+			NUM = 4
+		}
+		can_active_dimension_traveler_council_skill = yes
+	}
+}
+arrow_dimension_traveler_skill_6_4_core = {
+	potential = {
+		show_dimension_traveler_skill_arrow = {
+			TIER = 6
+			NUM = 4
+		}
+		can_active_dimension_traveler_core_skill = yes
+	}
+}
+arrow_dimension_traveler_skill_6_6_core = {
+	potential = {
+		show_dimension_traveler_skill_arrow = {
+			TIER = 6
+			NUM = 6
+		}
+		can_active_dimension_traveler_core_skill = yes
+	}
+}
+arrow_dimension_traveler_skill_6_6 = {
+	potential = {
+		show_dimension_traveler_skill_arrow = {
+			TIER = 6
+			NUM = 6
+		}
+		can_active_dimension_traveler_council_skill = yes
+	}
+}
+arrow_dimension_traveler_skill_6_8 = {
+	potential = {
+		show_dimension_traveler_skill_arrow = {
+			TIER = 6
+			NUM = 8
+		}
+		can_active_dimension_traveler_council_skill = yes
+	}
+}
+################################################################
+# 7层（箭头）
+################################################################
+arrow_dimension_traveler_skill_7_3 = {
+	potential = {
+		show_dimension_traveler_skill_arrow = {
+			TIER = 7
+			NUM = 3
+		}
+	}
+}
+arrow_dimension_traveler_skill_7_5 = {
+	potential = {
+		show_dimension_traveler_skill_arrow = {
+			TIER = 7
+			NUM = 5
+		}
+	}
+}
+arrow_dimension_traveler_skill_7_7 = {
+	potential = {
+		show_dimension_traveler_skill_arrow = {
+			TIER = 7
+			NUM = 7
+		}
+	}
+}
+################################################################
+# 8层（箭头）
+################################################################
+arrow_dimension_traveler_skill_8_4 = {
+	potential = {
+		show_dimension_traveler_skill_arrow = {
+			TIER = 8
+			NUM = 4
+		}
+	}
+}
+arrow_dimension_traveler_skill_8_6 = {
+	potential = {
+		show_dimension_traveler_skill_arrow = {
+			TIER = 8
+			NUM = 6
+		}
+	}
+}
+################################################################
+# 9层（箭头）
+################################################################
+arrow_dimension_traveler_skill_9_5 = {
+	potential = {
+		show_dimension_traveler_skill_arrow = {
+			TIER = 9
+			NUM = 5
+		}
+	}
+}

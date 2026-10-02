@@ -1,0 +1,61 @@
+
+namespace = origin_monster_hunter
+
+country_event = {
+	id = origin_monster_hunter.1
+	is_triggered_only = yes
+	hide_window = yes
+
+	trigger = {
+		has_origin = origin_monster_hunter
+	}
+	
+	immediate = {
+		capital_scope = {
+			add_building = building_origin_monster_hunter_1
+			validate_and_repair_planet_buildings_and_districts = yes
+		}
+	}
+}
+
+carrier_event = {
+	id = origin_monster_hunter.2
+	is_triggered_only = yes
+	hide_window = yes
+
+	trigger = {
+		if = {
+			limit = {
+				owner = {
+					has_origin = origin_monster_hunter
+					has_valid_civic = civic_warrior_culture
+				}
+			}
+			OR = {
+				has_building = building_holo_theatres
+				has_building = building_hyper_entertainment_forum
+			}
+		}
+		else = {
+			always = no
+		}
+	}
+
+	immediate = {
+		while = {
+			limit = {
+				has_building = building_holo_theatres
+			}
+			remove_building = building_holo_theatres
+			add_building = building_origin_monster_hunter_1
+		}
+		while = {
+			limit = {
+				has_building = building_hyper_entertainment_forum
+			}
+			remove_building = building_hyper_entertainment_forum
+			add_building = building_origin_monster_hunter_2
+		}
+		validate_and_repair_planet_buildings_and_districts = yes
+	}
+}

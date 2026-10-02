@@ -1,0 +1,315 @@
+monster_hunter = {
+	category = specialist
+	can_be_automated = no
+	
+	swappable_data = {
+		default = {
+			condition_string = BATTLE_THRALL_JOB_TRIGGER
+			building_icon = building_order_keep
+		}
+	}
+
+	tags = { amenities unity }
+
+	possible_pre_triggers = {
+		has_owner = yes
+		is_being_purged = no
+		is_being_assimilated = no
+		is_sapient = yes
+	}
+
+	possible = {
+		battle_thrall_job_check_trigger = yes
+		has_trait = trait_origin_monster_hunter
+	}
+
+	resources = {
+		category = planet_monster_hunters
+		produces = {
+			unity = 1
+		}
+		produces = {
+			trigger = {
+				owner = {
+					is_lithoid_empire = no
+					is_robot_empire = no
+				}
+			}
+			food = 2
+			consumer_goods = 1
+		}
+		produces = {
+			trigger = {
+				owner = {
+					is_lithoid_empire = yes
+					is_robot_empire = no
+				}
+			}
+			minerals = 2
+			consumer_goods = 1
+		}
+		produces = {
+			trigger = {
+				owner = {
+					is_robot_empire = yes
+				}
+			}
+			energy = 2
+			consumer_goods = 1
+		}
+		produces = {
+			trigger = {
+				colony = {
+					has_modifier = ether_trophy # 以太龙
+				}
+			}
+			food = 1
+			unity = 0.5
+			rare_crystals = 0.25
+		}
+		produces = {
+			trigger = {
+				colony = {
+					has_modifier = shard_trophy # 裂爪龙
+				}
+			}
+			food = 1
+			unity = 0.5
+			volatile_motes = 0.25
+		}
+		produces = {
+			trigger = {
+				colony = {
+					has_modifier = dread_trophy # 无畏舰
+				}
+			}
+			alloys = 0.5
+			engineering_research = 0.5
+			sr_living_metal = 0.1
+		}
+		produces = {
+			trigger = {
+				colony = {
+					OR = {
+						has_modifier = burnt_tiyanki_trophy # 缇杨奇族母
+						has_modifier = tiyanki_trophy # 缇杨奇族母
+					}
+				}
+			}
+			food = 1
+			society_research = 0.5
+			exotic_gases = 0.25
+		}
+		produces = {
+			trigger = {
+				colony = {
+					has_modifier = sky_dragon_trophy # 天龙
+				}
+			}
+			consumer_goods = 0.5
+			physics_research = 0.5
+			sr_living_metal = 0.1
+		}
+		produces = {
+			trigger = {
+				colony = {
+					has_modifier = scavenger_trophy # 拾荒机器人
+				}
+			}
+			minerals = 1
+			engineering_research = 0.5
+			volatile_motes = 0.25
+		}
+		produces = {
+			trigger = {
+				colony = {
+					has_modifier = wraith_trophy # 幽魂
+				}
+			}
+			energy = 1
+			society_research = 0.5
+			sr_zro = 0.1
+		}
+		produces = {
+			trigger = {
+				colony = {
+					has_modifier = fortress_trophy # 神秘堡垒
+				}
+			}
+			minerals = 1
+			engineering_research = 0.5
+			sr_dark_matter = 0.1
+		}
+		produces = {
+			trigger = {
+				colony = {
+					has_modifier = voidspawn_trophy # 虚空孳孽
+				}
+			}
+			unity = 0.5
+			society_research = 0.5
+			exotic_gases = 0.25
+		}
+		produces = {
+			trigger = {
+				colony = {
+					has_modifier = stellar_devourer_trophy # 噬星者
+				}
+			}
+			energy = 1
+			physics_research = 0.5
+			rare_crystals = 0.25
+		}
+		produces = {
+			trigger = {
+				colony = {
+					has_horror_trophy = yes # 恐怖负相物质
+				}
+			}
+			physics_research = 0.5
+			sr_dark_matter = 0.1
+			astral_threads = 0.1
+		}
+		upkeep = {
+			alloys = 0.5
+			mult = value:num_trophy_value|BASE|2|
+		}
+	}
+	
+	# 利维坦
+	triggered_country_modifier = {
+		potential = {
+			colony = {
+				has_modifier = ether_trophy # 以太龙
+			}
+		}
+		ship_armor_mult = 0.0025
+	}
+	triggered_country_modifier = {
+		potential = {
+			colony = {
+				has_modifier = shard_trophy # 裂爪龙
+			}
+		}
+		ship_tracking_mult = 0.0025
+	}
+	triggered_country_modifier = {
+		potential = {
+			colony = {
+				has_modifier = dread_trophy # 无畏舰
+			}
+		}
+		ship_weapon_damage = 0.0025
+	}
+	triggered_country_modifier = {
+		potential = {
+			colony = {
+				OR = {
+					has_modifier = burnt_tiyanki_trophy # 缇杨奇族母
+					has_modifier = tiyanki_trophy # 缇杨奇族母
+				}
+			}
+		}
+		ship_hull_regen_mult = 0.0025
+	}
+	triggered_country_modifier = {
+		potential = {
+			colony = {
+				has_modifier = sky_dragon_trophy # 天龙
+			}
+		}
+		ship_shield_hardening_add = 0.0025
+	}
+	triggered_country_modifier = {
+		potential = {
+			colony = {
+				has_modifier = scavenger_trophy # 拾荒机器人
+			}
+		}
+		ship_armor_regen_mult = 0.0025
+	}
+	triggered_country_modifier = {
+		potential = {
+			colony = {
+				has_modifier = wraith_trophy # 幽魂
+			}
+		}
+		ship_shield_mult = 0.0025
+	}
+	triggered_country_modifier = {
+		potential = {
+			colony = {
+				has_modifier = fortress_trophy # 神秘堡垒
+			}
+		}
+		ship_armor_hardening_add = 0.0025
+	}
+	triggered_country_modifier = {
+		potential = {
+			colony = {
+				has_modifier = voidspawn_trophy # 虚空孳孽
+			}
+		}
+		ship_evasion_mult = 0.0025
+	}
+	triggered_country_modifier = {
+		potential = {
+			colony = {
+				has_modifier = stellar_devourer_trophy # 噬星者
+			}
+		}
+		ship_shield_regen_mult = 0.0025
+	}
+	triggered_country_modifier = {
+		potential = {
+			colony = {
+				has_horror_trophy = yes # 恐怖负相物质
+			}
+		}
+		ship_fire_rate_mult = 0.0025
+	}
+	
+	# 演艺人员部分
+	
+	inline_script = "jobs/vanilla/vanilla_entertainer_modifiers"
+	
+	
+	# 士兵部分
+	
+	inline_script = "output/soldier_triggered_modifiers"
+
+	weight = {
+		weight = @high_prio_specialist_job_weight
+		mult = value:scripted_modifier_job_weight_mult|MODIFIER|pop_job_amenities_mult|
+		modifier = {
+			factor = 0.2
+			has_citizenship_rights = no
+			NOT = { has_trait = trait_mechanical }
+		}
+		modifier = {
+			factor = 3
+			has_trait = trait_robot_domestic_protocols
+			OR = {
+				is_non_sapient_robot = yes
+				is_shackled_robot = yes
+			}
+		}
+		modifier = {
+			factor = 0.1
+			is_domestic_servant = yes
+		}
+
+		modifier = {
+			factor = 50
+		}
+
+		modifier = {
+			add = 500
+			colony? = {
+				has_modifier = artistic_boom
+			}
+		}
+	}
+	
+	inline_script = "jobs/automodding_priority_unity"
+}

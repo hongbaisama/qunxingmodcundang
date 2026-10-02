@@ -1,0 +1,912 @@
+num_district_time = {
+	base = 0
+	complex_trigger_modifier = {
+		trigger = num_districts
+		parameters = {
+			type = district_time
+		}
+		mult = 1
+		mode = add
+	}
+	complex_trigger_modifier = {
+		trigger = num_districts
+		parameters = {
+			type = district_endless_time
+		}
+		mult = 1
+		mode = add
+	}
+}
+
+num_district_time_physics = {
+	base = 0
+	complex_trigger_modifier = {
+		trigger = num_districts
+		parameters = {
+			type = district_time_physics
+		}
+		mult = 1
+		mode = add
+	}
+	complex_trigger_modifier = {
+		trigger = num_districts
+		parameters = {
+			type = district_endless_time_physics
+		}
+		mult = 1
+		mode = add
+	}
+}
+
+num_district_time_society = {
+	base = 0
+	complex_trigger_modifier = {
+		trigger = num_districts
+		parameters = {
+			type = district_time_society
+		}
+		mult = 1
+		mode = add
+	}
+	complex_trigger_modifier = {
+		trigger = num_districts
+		parameters = {
+			type = district_endless_time_society
+		}
+		mult = 1
+		mode = add
+	}
+}
+
+num_district_time_engineering = {
+	base = 0
+	complex_trigger_modifier = {
+		trigger = num_districts
+		parameters = {
+			type = district_time_engineering
+		}
+		mult = 1
+		mode = add
+	}
+	complex_trigger_modifier = {
+		trigger = num_districts
+		parameters = {
+			type = district_endless_time_engineering
+		}
+		mult = 1
+		mode = add
+	}
+}
+
+num_black_hole_researcher = {
+	base = 0
+	add = value:num_jobs_workforce_value|JOB|black_hole_physicist|
+	add = value:num_jobs_workforce_value|JOB|black_hole_biologist|
+	add = value:num_jobs_workforce_value|JOB|black_hole_engineer|
+}
+
+num_time_recursioner = {
+	base = 0
+	add = value:num_jobs_workforce_value|JOB|time_recursioner|
+	add = value:num_jobs_workforce_value|JOB|time_recursioner_drone|
+}
+
+pc_time_pop_amount_scale_value = {
+	base = 0
+	add = local_pop_amount
+	multiply = $MULT$
+}
+
+time_ethic_event_weight = {
+	base = 1
+	add = modifier:pop_ethic_$ETHIC$_attraction_mult
+	modifier = {
+		add = modifier:pop_government_ethic_attraction
+		owner = { is_$ETHIC$ = yes }
+	}
+	min = 0.1
+}
+
+time_ethic_power = {
+	base = 0
+	complex_trigger_modifier = {
+		trigger = pop_ethic_amount
+		parameters = {
+			ethic = ethic_$ETHIC$
+		}
+		mult = 0.01
+		mode = add
+	}
+	multiply = value:num_time_modifier|MODIFIER|pop_political_power|
+	modifier = {
+		multiply = value:num_time_modifier|MODIFIER|pop_cat_ruler_political_power|
+		is_pop_category = ruler
+	}
+	modifier = {
+		multiply = value:num_time_modifier|MODIFIER|pop_cat_specialist_political_power|
+		is_pop_category = specialist
+	}
+	modifier = {
+		multiply = value:num_time_modifier|MODIFIER|pop_cat_worker_political_power|
+		is_pop_category = worker
+	}
+	modifier = {
+		multiply = value:num_time_modifier|MODIFIER|pop_cat_civilian_political_power|
+		is_pop_category = civilian
+	}
+	modifier = {
+		multiply = value:num_time_modifier|MODIFIER|pop_cat_criminal_political_power|
+		is_pop_category = criminal
+	}
+	# 局势阶段影响速度
+	modifier = {
+		multiply = 0.25
+		event_target:situation_time_black_hole_chain = { current_stage = stage_time_black_hole_2 }
+	}
+	modifier = {
+		multiply = 0.5
+		event_target:situation_time_black_hole_chain = { current_stage = stage_time_black_hole_3 }
+	}
+	modifier = {
+		multiply = 0.75
+		event_target:situation_time_black_hole_chain = { current_stage = stage_time_black_hole_4 }
+	}
+}
+
+time_ethic_score = {
+	base = -500
+	add = trigger:situation_progress
+	abs = yes
+}
+
+time_keep_government_cost = {
+	base = 0
+	# 思潮差异
+	modifier = {
+		add = 100
+		has_situation_flag = authoritarian_is_winner
+		owner = { is_authoritarian = no }
+	}
+	modifier = {
+		add = 100
+		has_situation_flag = authoritarian_is_winner
+		owner = { is_egalitarian = yes }
+	}
+	modifier = {
+		add = 100
+		has_situation_flag = egalitarian_is_winner
+		owner = { is_egalitarian = no }
+	}
+	modifier = {
+		add = 100
+		has_situation_flag = egalitarian_is_winner
+		owner = { is_authoritarian = yes }
+	}
+	modifier = {
+		add = 100
+		has_situation_flag = spiritualist_is_winner
+		owner = { is_spiritualist = no }
+	}
+	modifier = {
+		add = 100
+		has_situation_flag = spiritualist_is_winner
+		owner = { is_materialist = yes }
+	}
+	modifier = {
+		add = 100
+		has_situation_flag = materialist_is_winner
+		owner = { is_materialist = no }
+	}
+	modifier = {
+		add = 100
+		has_situation_flag = materialist_is_winner
+		owner = { is_spiritualist = yes }
+	}
+	modifier = {
+		add = 100
+		has_situation_flag = militarist_is_winner
+		owner = { is_militarist = no }
+	}
+	modifier = {
+		add = 100
+		has_situation_flag = militarist_is_winner
+		owner = { is_pacifist = yes }
+	}
+	modifier = {
+		add = 100
+		has_situation_flag = pacifist_is_winner
+		owner = { is_pacifist = no }
+	}
+	modifier = {
+		add = 100
+		has_situation_flag = pacifist_is_winner
+		owner = { is_militarist = yes }
+	}
+	modifier = {
+		add = 100
+		has_situation_flag = xenophobe_is_winner
+		owner = { is_xenophobe = no }
+	}
+	modifier = {
+		add = 100
+		has_situation_flag = xenophobe_is_winner
+		owner = { is_xenophile = yes }
+	}
+	modifier = {
+		add = 100
+		has_situation_flag = xenophile_is_winner
+		owner = { is_xenophile = no }
+	}
+	modifier = {
+		add = 100
+		has_situation_flag = xenophile_is_winner
+		owner = { is_xenophobe = yes }
+	}
+	# 政体差异
+	modifier = {
+		add = 100
+		OR = {
+			has_situation_flag = auth_imperial
+			has_situation_flag = auth_time_imperial
+		}
+		owner = { is_imperial_authority = no }
+	}
+	modifier = {
+		add = 100
+		OR = {
+			has_situation_flag = auth_imperial
+			has_situation_flag = auth_time_imperial
+		}
+		owner = {
+			OR = {
+				is_megacorp = yes
+				is_oligarchic_authority = yes
+				is_democratic_authority = yes
+			}
+		}
+	}
+	modifier = {
+		add = 100
+		has_situation_flag = auth_dictatorial
+		owner = { is_dictatorial_authority = no }
+	}
+	modifier = {
+		add = 100
+		has_situation_flag = auth_dictatorial
+		owner = { is_democratic_authority = yes }
+	}
+	modifier = {
+		add = 100
+		OR = {
+			has_situation_flag = auth_corporate
+			has_situation_flag = auth_time_corporate
+		}
+		owner = { is_megacorp = no }
+	}
+	modifier = {
+		add = 100
+		OR = {
+			has_situation_flag = auth_corporate
+			has_situation_flag = auth_time_corporate
+		}
+		owner = {
+			OR = {
+				is_dictatorial_authority = yes
+				is_imperial_authority = yes
+			}
+		}
+	}
+	modifier = {
+		add = 100
+		has_situation_flag = auth_oligarchic
+		owner = { is_oligarchic_authority = no }
+	}
+	modifier = {
+		add = 100
+		has_situation_flag = auth_oligarchic
+		owner = { is_imperial_authority = yes }
+	}
+	modifier = {
+		add = 100
+		OR = {
+			has_situation_flag = auth_democratic
+			has_situation_flag = auth_time_democratic
+		}
+		owner = { is_democratic_authority = no }
+	}
+	modifier = {
+		add = 100
+		OR = {
+			has_situation_flag = auth_democratic
+			has_situation_flag = auth_time_democratic
+		}
+		owner = {
+			OR = {
+				is_megacorp = yes
+				is_dictatorial_authority = yes
+				is_imperial_authority = yes
+			}
+		}
+	}
+}
+
+trait_time_workforce_from_other_mod = {
+	base = $BASE|1$
+	modifier = {
+		add = 0.5
+		has_trait = trait_latent_psionic
+		can_active_psionic_workforce = { SCOPE = owner }
+	}
+	modifier = {
+		add = 1
+		has_trait = trait_psionic
+		can_active_psionic_workforce = { SCOPE = owner }
+	}
+	modifier = {
+		add = value:num_time_modifier|BASE|0.5|MODIFIER|virtual_pop_workforce_mult|MULT|2|MAX|9|
+		has_virtual_species_trait = yes
+		can_active_virtual_workforce = { SCOPE = owner }
+	}
+}
+
+trait_time_workforce_mult_value = {
+	base = 0
+	add = value:trait_time_usage_add_value
+	# 飞升特质的灵能/虚拟也自带劳动力加成
+	modifier = {
+		subtract = value:trait_time_workforce_from_other_mod|BASE|0|
+		has_global_flag = active_better_ascension_traits
+	}
+}
+
+trait_time_usage_add_value = {
+	base = 2
+	modifier = {
+		multiply = 5
+		colony? = { is_time_black_hole_planet_class = yes }
+	}
+	# 飞升特质的灵能/虚拟带有劳动力加成，应乘算
+	modifier = {
+		multiply = value:trait_time_workforce_from_other_mod
+		has_global_flag = active_better_ascension_traits
+	}
+	subtract = 1 # 基础自带一倍占用
+}
+
+trait_time_virtuality_workforce_mult_value = {
+	base = 0
+	add = value:trait_time_virtuality_usage_add_value
+	# 飞升特质的灵能/虚拟也自带劳动力加成
+	modifier = {
+		subtract = value:trait_time_workforce_from_other_mod|BASE|0|
+		has_global_flag = active_better_ascension_traits
+	}
+}
+
+trait_time_virtuality_usage_add_value = {
+	base = 20
+	modifier = {
+		multiply = 5
+		colony? = { is_time_black_hole_planet_class = yes }
+	}
+	# 固定20/100倍劳动力，不受飞升特质的灵能/虚拟影响
+	subtract = 1 # 基础自带一倍占用
+}
+
+trait_time_soul_virtuality_value = {
+	base = 1
+	complex_trigger_modifier = {
+		trigger = count_owned_colony
+		trigger_scope = owner
+		parameters = {
+			limit = {
+				can_time_soul_virtuality_live_on = yes
+				ignore_colony_counted = no
+			}
+		}
+		mult = 1
+		mode = divide
+		min_value = 1
+	}
+	max = 1
+	min = 0
+}
+
+trait_time_soul_synthetic_value = {
+	base = 0
+	complex_trigger_modifier = {
+		trigger = count_owned_colony
+		trigger_scope = owner
+		parameters = {
+			limit = { has_fully_upgraded_capital = yes }
+		}
+		mult = 1
+		mode = add
+	}
+	max = 10
+	divide = 10 # 取最大为100%效果
+}
+
+trait_time_soul_cybernetic_value = {
+	base = 0
+	complex_trigger_modifier = {
+		trigger = count_trait_of_species
+		trigger_scope = species
+		parameters = {
+			limit = {
+				trait_has_all_tags = { cybernetic positive }
+			}
+		}
+		mode = add
+	}
+	max = 10
+	divide = 10 # 取最大为100%效果
+}
+
+trait_time_soul_genetic_value = {
+	base = 0
+	complex_trigger_modifier = {
+		trigger = count_owned_pop_amount
+		trigger_scope = colony
+		parameters = {
+			limit = { has_trait = trait_time_soul_genetic }
+		}
+		mult = 0.01
+		mode = add
+	}
+	max = 200
+	divide = 200 # 取最大为100%效果
+}
+
+trait_time_soul_psionic_value = {
+	base = 0
+	complex_trigger_modifier = {
+		potential = {
+			exists = owner
+			owner = {
+				has_patron_relation = { patron = $PATRON$ }
+				NOT = { has_country_flag = $PATRON$_betrayal }
+			}
+		}
+		trigger = get_attunement_points_for
+		trigger_scope = owner
+		parameters = {
+			patron = $PATRON$
+		}
+		mode = add
+		mult = 0.0008
+	}
+	modifier = {
+		add = 0.2
+		exists = owner
+		owner = {
+			has_covenant = $PATRON$
+			NOT = { has_country_flag = $PATRON$_betrayal }
+		}
+	}
+	modifier = {
+		set = 0.25
+		exists = owner
+		owner = {
+			has_country_flag = forging_our_own_path
+			has_patron_relation = { patron = $PATRON$ }
+			NOT = { has_country_flag = $PATRON$_betrayal }
+		}
+	}
+	min = 0
+	max = 1
+}
+
+new_pc_time_blocker_value = {
+	base = 0
+	add = trigger:planet_size
+	divide = 3
+	ceiling = yes
+	subtract = 1 # 确保有至少1个区划槽
+	min = 0
+}
+
+d_time_recursion_value = {
+	base = -1 # 不应包括自身
+	complex_trigger_modifier = {
+		trigger = count_owned_colony
+		trigger_scope = owner
+		parameters = {
+			limit = { is_origin_time_planet_class = yes }
+		}
+		mult = 1
+		mode = add
+	}
+	min = 0
+}
+
+d_time_resources_value = {
+	base = 0
+	add = colony.value:num_time_pop_value
+	square_root = yes
+	# 向下取整至0.1
+	multiply = 10
+	floor = yes
+	multiply = 0.1
+}
+
+district_time_job_value = {
+	base = 1
+	multiply = value:num_time_modifier|MODIFIER|$MODIFIER$|
+	multiply = value:district_time_level_value
+}
+
+district_time_level_value = {
+	base = 0
+	modifier = {
+		add = district_time_level_up
+		is_variable_set = district_time_level_up
+	}
+	max = @district_time_level_max
+	add = @district_time_level_base
+	modifier = {
+		add = @district_time_level_from_tech
+		is_planet_class = pc_endless_time
+		exists = owner
+		owner = { has_technology = tech_change_pc_time_0 }
+	}
+	modifier = {
+		multiply = @district_time_level_no_col_factor
+		is_col_origin_time_capital = no
+	}
+}
+
+num_ruler_time_trait_value = {
+	base = $BASE|1$
+	multiply = value:num_time_ruler_skill
+	modifier = {
+		multiply = 1.25
+		owner = { has_active_tradition = tr_origin_time_finish_special }
+	}
+}
+
+num_ruler_time_trait_bonus_value = {
+	base = 1.25
+	modifier = {
+		add = 0.25
+		owner = { is_auth_time_imperial = yes }
+	}
+}
+
+num_ruler_time_trait_ruler_value = {
+	base = 1
+	multiply = value:num_ruler_time_trait_value|BASE|$BASE$|
+	modifier = {
+		multiply = value:num_ruler_time_trait_bonus_value
+		ruler_time_trait_gain_bonus = { TYPE = ruler }
+	}
+}
+
+num_ruler_time_trait_class_value = {
+	base = 1
+	multiply = value:num_ruler_time_trait_value|BASE|$BASE$|
+	modifier = {
+		multiply = 0.5
+		NOT = { leader_class = $CLASS$ }
+	}
+	modifier = {
+		multiply = value:num_ruler_time_trait_bonus_value
+		ruler_time_trait_gain_bonus = { TYPE = primary }
+		leader_class = $CLASS$
+	}
+	modifier = {
+		multiply = value:num_ruler_time_trait_bonus_value
+		ruler_time_trait_gain_bonus = { TYPE = other }
+		NOT = { leader_class = $CLASS$ }
+	}
+}
+
+num_ruler_time_trait_resource_value = {
+	base = 1
+	multiply = value:num_ruler_time_trait_value|BASE|$BASE$|
+	modifier = {
+		multiply = value:num_ruler_time_trait_bonus_value
+		ruler_time_trait_gain_bonus = { TYPE = resource }
+	}
+}
+
+num_col_time_value = {
+	base = @col_time_capital_level_$LEVEL$
+	multiply = value:num_time_modifier|MODIFIER|col_time_mult|
+}
+
+num_col_time_upkeep_value = {
+	base = @col_time_capital_level_$LEVEL$
+	multiply = value:num_time_modifier|MODIFIER|col_time_mult|
+	modifier = {
+		multiply = 2
+		exists = owner_or_space_owner
+		owner_or_space_owner = { is_spiritualist = yes }
+	}
+	modifier = {
+		multiply = 0
+		exists = owner_or_space_owner
+		owner_or_space_owner = { has_ethic = ethic_materialist }
+	}
+	modifier = {
+		multiply = -1
+		exists = owner_or_space_owner
+		owner_or_space_owner = { has_ethic = ethic_fanatic_materialist }
+	}
+}
+
+# 序时者产出
+time_order_generic_value = {
+	base = 0.5
+	modifier = {
+		add = 0.5
+		owner = {
+			has_ethic = ethic_fanatic_$ETHIC$
+			has_country_flag = $ETHIC$_is_first_winner
+		}
+	}
+	multiply = colony.value:time_order_pop_amount_value
+	multiply = colony.value:num_time_modifier|MODIFIER|time_order_produces_mult|
+}
+
+time_order_modifier_value = {
+	base = 0.5
+	modifier = {
+		add = 0.5
+		owner = {
+			has_ethic = ethic_fanatic_$ETHIC$
+			has_country_flag = $ETHIC$_is_first_winner
+		}
+	}
+	multiply = colony.value:time_order_pop_amount_value|MAX|@time_order_modifier_max_factor|
+	multiply = colony.value:num_time_modifier|MODIFIER|time_order_produces_mult|
+}
+
+time_order_pop_amount_value = {
+	base = 0
+	complex_trigger_modifier = {
+		trigger = count_owned_pop_amount
+		parameters = {
+			limit = { is_origin_time_species = yes }
+		}
+		mult = 1
+		mode = add
+	}
+	square_root = yes
+	floor = yes
+	# 预设10000人口为1单位产出，此处本应乘以0.01，但岗位本身是1岗位提供100岗位的效果，应乘以100，故互相抵消
+	[[MAX]
+		max = $MAX$
+	]
+}
+
+time_order_normal_resource_value = {
+	base = 1
+	multiply = value:time_researcher_normal_resource_value|RESOURCE|$RESOURCE$|WEIGHT|$WEIGHT$|
+	multiply = value:time_order_generic_value|ETHIC|$ETHIC$|
+}
+
+time_order_rare_resource_value = {
+	base = 1
+	multiply = value:time_researcher_rare_resource_value
+	multiply = value:time_order_generic_value|ETHIC|$ETHIC$|
+}
+
+time_order_trade_value = {
+	base = 1
+	multiply = colony.modifier:time_order_trade_value_add
+	multiply = value:time_order_rare_resource_value|ETHIC|$ETHIC$|
+}
+
+# 摘录者产出（WEIGHT包括:resource、manufacturing、unity、research）
+time_researcher_normal_resource_value = {
+	base = 1
+	multiply = value:num_district_time_usage_punishment
+	multiply = value:num_time_modifier|MODIFIER|time_researcher_produces_mult|
+	multiply = value:num_time_modifier|MODIFIER|time_researcher_$RESOURCE$_produces_mult|
+	modifier = {
+		multiply = value:num_time_researcher_over_weight_punishment
+		exists = owner
+		owner = { use_time_researcher_weight = yes }
+	}
+	modifier = {
+		multiply = owner.modifier:time_researcher_$WEIGHT$_weight
+		exists = owner
+		owner = { use_time_researcher_weight = yes }
+	}
+	modifier = {
+		multiply = 0.5
+		NAND = {
+			exists = owner
+			owner = { use_time_researcher_weight = yes }
+		}
+	}
+	modifier = {
+		multiply = value:advanced_time_researcher_value
+		exists = owner
+		owner = { has_origin_time = yes }
+	}
+}
+
+time_researcher_rare_resource_value = {
+	base = 1
+	multiply = value:num_district_time_usage_punishment
+	multiply = value:num_time_modifier|MODIFIER|time_researcher_produces_mult|
+	modifier = {
+		multiply = value:num_time_researcher_over_weight_punishment
+		exists = owner
+		owner = { use_time_researcher_weight = yes }
+	}
+	modifier = {
+		multiply = 0.5
+		NAND = {
+			exists = owner
+			owner = { use_time_researcher_weight = yes }
+		}
+	}
+	modifier = {
+		multiply = value:advanced_time_researcher_value
+		exists = owner
+		owner = { has_origin_time = yes }
+	}
+}
+
+time_researcher_trade_value = {
+	base = 1
+	multiply = colony.modifier:time_researcher_trade_value_add
+	multiply = value:time_researcher_rare_resource_value
+}
+
+time_recursioner_normal_resource_value = {
+	base = 1
+	multiply = value:time_researcher_normal_resource_value|RESOURCE|$RESOURCE$|WEIGHT|$WEIGHT$|
+	multiply = value:num_time_modifier|MODIFIER|$MODIFIER$|
+}
+
+advanced_time_researcher_value = {
+	base = 1
+	modifier = {
+		add = 0.25
+		exists = owner
+		owner = { has_valid_civic = civic_technocracy }
+	}
+	modifier = {
+		add = 0.25
+		exists = owner
+		owner = { has_valid_civic = civic_exalted_priesthood }
+	}
+	modifier = {
+		add = 0.25
+		exists = owner
+		owner = { has_valid_civic = civic_aristocratic_elite }
+	}
+	max = 1.5
+}
+
+
+
+num_time_researcher_modifier_loc_value_weight_max = {
+	base = 0
+	modifier = {
+		add = owner.modifier:time_researcher_max_weight
+		exists = owner
+		owner = { use_time_researcher_weight = yes }
+	}
+	modifier = {
+		add = 2
+		NAND = {
+			exists = owner
+			owner = { use_time_researcher_weight = yes }
+		}
+	}
+	multiply = 100
+}
+
+num_time_researcher_modifier_loc_value_weight_usage = {
+	base = 0
+	modifier = {
+		add = owner.modifier:time_researcher_resource_weight
+		exists = owner
+		owner = { use_time_researcher_weight = yes }
+	}
+	modifier = {
+		add = owner.modifier:time_researcher_manufacturing_weight
+		exists = owner
+		owner = { use_time_researcher_weight = yes }
+	}
+	modifier = {
+		add = owner.modifier:time_researcher_unity_weight
+		exists = owner
+		owner = { use_time_researcher_weight = yes }
+	}
+	modifier = {
+		add = owner.modifier:time_researcher_research_weight
+		exists = owner
+		owner = { use_time_researcher_weight = yes }
+	}
+	modifier = {
+		add = 2
+		NAND = {
+			exists = owner
+			owner = { use_time_researcher_weight = yes }
+		}
+	}
+	multiply = 100
+}
+
+num_time_researcher_modifier_loc_value_district_time_usage_punishment = {
+	base = 1
+	subtract = value:num_district_time_usage_punishment
+	multiply = 100
+}
+
+num_time_researcher_modifier_loc_value_static = {
+	base = 0
+	add = colony.modifier:$MODIFIER$
+}
+
+num_time_researcher_modifier_loc_value_good = {
+	base = 100
+	multiply = colony.modifier:$MODIFIER$
+	add = 100
+}
+
+num_time_researcher_modifier_loc_value_bad = {
+	base = 100
+	multiply = colony.modifier:$MODIFIER$
+	max = $MAX$
+	min = 0
+}
+
+
+
+num_district_time_usage_cap = {
+	base = 0
+	add = colony.modifier:district_time_usage_cap
+	multiply = colony.value:num_time_modifier|MODIFIER|district_time_usage_cap_mult|
+	min = 0
+}
+
+# 每超出1%航道容量导致0.9%惩罚，超出100%航道容量达最高（90%）
+# 值=1-0.9(航道占用-航道容量)/航道容量=1.9-0.9航道占用/航道容量
+num_district_time_usage_punishment = {
+	base = 0
+	subtract = colony.modifier:district_time_usage
+	modifier = {
+		divide = colony.value:num_district_time_usage_cap
+		colony = {
+			check_modifier_value = {
+				modifier = district_time_usage_cap
+				value > 0
+			}
+		}
+	}
+	modifier = {
+		set = -2
+		colony = {
+			check_modifier_value = {
+				modifier = district_time_usage_cap
+				value <= 0
+			}
+		}
+	}
+	multiply = 0.9
+	add = 1.9
+	max = 1
+	min = 0.1
+}
+
+# 每超出1%权重上限导致1.8%惩罚，超出50%权重上限达最高（90%）
+# 值=1-1.8(权重占用-权重上限)/权重上限=2.8-1.8权重占用/权重上限
+num_time_researcher_over_weight_punishment = {
+	base = 0
+	subtract = owner.modifier:time_researcher_resource_weight
+	subtract = owner.modifier:time_researcher_manufacturing_weight
+	subtract = owner.modifier:time_researcher_unity_weight
+	subtract = owner.modifier:time_researcher_research_weight
+	divide = owner.modifier:time_researcher_max_weight
+	multiply = 1.8
+	add = 2.8
+	max = 1
+	min = 0.1
+}

@@ -1,0 +1,696 @@
+# 研究所
+
+building_horror_research = {
+	base_buildtime = @b2_time
+	planet_limit = 1
+	
+	category = research
+	
+	building_sets = {
+		government
+		research
+		engineering
+	}
+
+	potential = {
+		is_special_colony_type = no
+		owner = {
+			OR = {
+				has_tradition = tr_horror_3
+				has_country_flag = unlock_tech_horror_3_a_1
+			}
+		}
+	}
+
+	allow = {
+		has_upgraded_capital = yes
+	}
+	
+	inline_script = {
+		script = buildings/building_akx_research_modifiers
+		LEVEL = 1
+	}
+
+	resources = {
+		category = planet_buildings
+		cost = {
+			sr_dark_matter = 25
+			volatile_motes = 25
+		}
+		upkeep = {
+			sr_dark_matter = 0.05
+			volatile_motes = 0.05
+			mult = value:num_time_normal_resources_value
+		}
+	}
+	
+	upgrades = {
+		"building_time_research"
+	}
+	
+	prerequisites = {
+		"tech_horror_3_a_1"
+	}
+	
+	triggered_desc = {
+		text = building_horror_research_effect
+	}
+	
+	on_built = {
+		owner = { set_country_flag = horror_focus_11_a_finished }
+	}
+}
+
+building_time_research = {
+	base_buildtime = @b3_time
+	can_build = no
+	
+	category = research
+	
+	building_sets = {
+		government
+		research
+		engineering
+	}
+
+	potential = {
+		is_special_colony_type = no
+		owner = {
+			OR = {
+				has_tradition = tr_time_3
+				has_country_flag = unlock_tech_time_3_a_1
+			}
+		}
+	}
+
+	allow = {
+		has_major_upgraded_capital = yes
+	}
+	
+	inline_script = {
+		script = buildings/building_akx_research_modifiers
+		LEVEL = 2
+	}
+	
+	resources = {
+		category = planet_buildings
+		cost = {
+			sr_dark_matter = 50
+			volatile_motes = 50
+		}
+		upkeep = {
+			sr_dark_matter = 0.1
+			volatile_motes = 0.1
+			mult = value:num_time_normal_resources_value
+		}
+	}
+	
+	upgrades = {
+		"building_end_research"
+	}
+	
+	prerequisites = {
+		"tech_time_3_a_1"
+	}
+	
+	triggered_desc = {
+		text = building_time_research_effect
+	}
+	
+	on_built = {
+		owner = { set_country_flag = horror_focus_21_a_finished }
+	}
+}
+
+building_end_research = {
+	base_buildtime = @b4_time
+	can_build = no
+	
+	category = research
+	
+	building_sets = {
+		government
+		research
+		engineering
+	}
+
+	potential = {
+		is_special_colony_type = no
+		owner = { has_tradition = tr_end_3 }
+	}
+
+	allow = {
+		has_fully_upgraded_capital = yes
+	}
+	
+	inline_script = {
+		script = buildings/building_akx_research_modifiers
+		LEVEL = 3
+	}
+
+	resources = {
+		category = planet_buildings
+		cost = {
+			sr_dark_matter = 100
+			volatile_motes = 100
+		}
+		upkeep = {
+			sr_dark_matter = 0.2
+			volatile_motes = 0.2
+			mult = value:num_time_normal_resources_value
+		}
+	}
+	
+	prerequisites = {
+		"tech_end_3_a_1"
+	}
+	
+	triggered_desc = {
+		text = building_end_research_effect
+	}
+}
+
+# 计算机
+
+building_horror_computer = {
+	icon = building_simulation_1
+	base_buildtime = @b2_time
+	planet_limit = 1
+	
+	category = research
+	
+	building_sets = {
+		government
+		research
+		physics
+	}
+
+	potential = {
+		is_special_colony_type = no
+		owner = {
+			OR = {
+				has_tradition = tr_horror_3
+				has_country_flag = unlock_tech_horror_3_a_2
+			}
+		}
+	}
+
+	allow = {
+		has_upgraded_capital = yes
+	}
+	
+	inline_script = {
+		script = buildings/building_akx_computer_modifiers
+		LEVEL = 1
+	}
+
+	resources = {
+		category = planet_buildings
+		cost = {
+			sr_dark_matter = 25
+			exotic_gases = 25
+		}
+		upkeep = {
+			sr_dark_matter = 0.05
+			exotic_gases = 0.05
+			mult = value:num_time_normal_resources_value
+		}
+	}
+	
+	upgrades = {
+		"building_time_computer"
+	}
+	
+	prerequisites = {
+		"tech_horror_3_a_2"
+	}
+	
+	triggered_desc = {
+		text = building_horror_computer_effect
+	}
+	
+	on_built = {
+		owner = { set_country_flag = horror_focus_12_a_finished }
+	}
+}
+
+building_time_computer = {
+	icon = building_simulation_2
+	base_buildtime = @b3_time
+	can_build = no
+	
+	category = research
+	
+	building_sets = {
+		government
+		research
+		physics
+	}
+
+	potential = {
+		is_special_colony_type = no
+		owner = {
+			OR = {
+				has_tradition = tr_time_3
+				has_country_flag = unlock_tech_time_3_a_2
+			}
+		}
+	}
+
+	allow = {
+		has_major_upgraded_capital = yes
+	}
+
+	inline_script = {
+		script = buildings/building_akx_computer_modifiers
+		LEVEL = 2
+	}
+
+	resources = {
+		category = planet_buildings
+		cost = {
+			sr_dark_matter = 50
+			exotic_gases = 50
+		}
+		upkeep = {
+			sr_dark_matter = 0.1
+			exotic_gases = 0.1
+			mult = value:num_time_normal_resources_value
+		}
+	}
+	
+	upgrades = {
+		"building_end_computer"
+	}
+	
+	prerequisites = {
+		"tech_time_3_a_2"
+	}
+	
+	triggered_desc = {
+		text = building_time_computer_effect
+	}
+	
+	on_built = {
+		owner = { set_country_flag = horror_focus_22_a_finished }
+	}
+}
+
+building_end_computer = {
+	icon = building_simulation_3
+	base_buildtime = @b4_time
+	can_build = no
+	
+	category = research
+	
+	building_sets = {
+		government
+		research
+		physics
+	}
+
+	potential = {
+		is_special_colony_type = no
+		owner = { has_tradition = tr_end_3 }
+	}
+
+	allow = {
+		has_fully_upgraded_capital = yes
+	}
+	
+	inline_script = {
+		script = buildings/building_akx_computer_modifiers
+		LEVEL = 3
+	}
+
+	resources = {
+		category = planet_buildings
+		cost = {
+			sr_dark_matter = 100
+			exotic_gases = 100
+		}
+		upkeep = {
+			sr_dark_matter = 0.2
+			exotic_gases = 0.2
+			mult = value:num_time_normal_resources_value
+		}
+	}
+	
+	prerequisites = {
+		"tech_end_3_a_2"
+	}
+	
+	triggered_desc = {
+		text = building_end_computer_effect
+	}
+}
+
+# 纪念碑
+
+building_horror_monument = {
+	icon = building_galactic_memorial_1
+	base_buildtime = @b2_time
+	planet_limit = 1
+	
+	category = unity
+	
+	building_sets = {
+		government
+		unity
+		society
+	}
+
+	potential = {
+		is_special_colony_type = no
+		owner = {
+			OR = {
+				has_tradition = tr_horror_3
+				has_country_flag = unlock_tech_horror_3_b_1
+			}
+		}
+	}
+
+	allow = {
+		has_upgraded_capital = yes
+	}
+	
+	inline_script = {
+		script = buildings/building_akx_monument_modifiers
+		LEVEL = 1
+	}
+
+	resources = {
+		category = planet_buildings
+		cost = {
+			sr_dark_matter = 25
+			rare_crystals = 25
+		}
+		upkeep = {
+			sr_dark_matter = 0.05
+			rare_crystals = 0.05
+			mult = value:num_time_normal_resources_value
+		}
+	}
+	
+	upgrades = {
+		"building_time_monument"
+	}
+	
+	prerequisites = {
+		"tech_horror_3_b_1"
+	}
+	
+	triggered_desc = {
+		text = building_horror_monument_effect
+	}
+	
+	on_built = {
+		owner = { set_country_flag = horror_focus_11_b_finished }
+	}
+}
+
+building_time_monument = {
+	icon = building_galactic_memorial_2
+	base_buildtime = @b3_time
+	can_build = no
+	
+	category = unity
+	
+	building_sets = {
+		government
+		unity
+		society
+	}
+
+	potential = {
+		is_special_colony_type = no
+		owner = {
+			OR = {
+				has_tradition = tr_time_3
+				has_country_flag = unlock_tech_time_3_b_1
+			}
+		}
+	}
+
+	allow = {
+		has_major_upgraded_capital = yes
+	}
+
+	inline_script = {
+		script = buildings/building_akx_monument_modifiers
+		LEVEL = 2
+	}
+	
+	resources = {
+		category = planet_buildings
+		cost = {
+			sr_dark_matter = 50
+			rare_crystals = 50
+		}
+		upkeep = {
+			sr_dark_matter = 0.1
+			rare_crystals = 0.1
+			mult = value:num_time_normal_resources_value
+		}
+	}
+	
+	upgrades = {
+		"building_end_monument"
+	}
+	
+	prerequisites = {
+		"tech_time_3_b_1"
+	}
+	
+	triggered_desc = {
+		text = building_time_monument_effect
+	}
+	
+	on_built = {
+		owner = { set_country_flag = horror_focus_21_b_finished }
+	}
+}
+
+building_end_monument = {
+	icon = building_galactic_memorial_3
+	base_buildtime = @b4_time
+	can_build = no
+	
+	category = unity
+	
+	building_sets = {
+		government
+		unity
+		society
+	}
+
+	potential = {
+		is_special_colony_type = no
+		owner = { has_tradition = tr_end_3 }
+	}
+
+	allow = {
+		has_fully_upgraded_capital = yes
+	}
+	
+	inline_script = {
+		script = buildings/building_akx_monument_modifiers
+		LEVEL = 3
+	}
+	
+	resources = {
+		category = planet_buildings
+		cost = {
+			sr_dark_matter = 100
+			rare_crystals = 100
+		}
+		upkeep = {
+			sr_dark_matter = 0.2
+			rare_crystals = 0.2
+			mult = value:num_time_normal_resources_value
+		}
+	}
+	
+	prerequisites = {
+		"tech_end_3_b_1"
+	}
+	
+	triggered_desc = {
+		text = building_end_monument_effect
+	}
+}
+
+# 预兆仪
+
+building_horror_forecast = {
+	icon = building_sacrificial_temple_1
+	base_buildtime = @b2_time
+	planet_limit = 1
+	
+	category = unity
+	
+	building_sets = {
+		government
+		unity
+		society
+	}
+
+	potential = {
+		is_special_colony_type = no
+		owner = {
+			OR = {
+				has_tradition = tr_horror_3
+				has_country_flag = unlock_tech_horror_3_b_2
+			}
+		}
+	}
+
+	allow = {
+		has_upgraded_capital = yes
+	}
+	
+	inline_script = {
+		script = buildings/building_akx_forecast_modifiers
+		LEVEL = 1
+	}
+	
+	resources = {
+		category = planet_buildings
+		cost = {
+			sr_dark_matter = 25
+			sr_zro = 25
+		}
+		upkeep = {
+			sr_dark_matter = 0.05
+			sr_zro = 0.05
+			mult = value:num_time_normal_resources_value
+		}
+	}
+	
+	upgrades = {
+		"building_time_forecast"
+	}
+	
+	prerequisites = {
+		"tech_horror_3_b_2"
+	}
+	
+	triggered_desc = {
+		text = building_horror_forecast_effect
+	}
+	
+	on_built = {
+		owner = { set_country_flag = horror_focus_12_b_finished }
+	}
+}
+
+building_time_forecast = {
+	icon = building_sacrificial_temple_2
+	base_buildtime = @b3_time
+	can_build = no
+	
+	category = unity
+	
+	building_sets = {
+		government
+		unity
+		society
+	}
+
+	potential = {
+		is_special_colony_type = no
+		owner = {
+			OR = {
+				has_tradition = tr_time_3
+				has_country_flag = unlock_tech_time_3_b_2
+			}
+		}
+	}
+
+	allow = {
+		has_major_upgraded_capital = yes
+	}
+
+	inline_script = {
+		script = buildings/building_akx_forecast_modifiers
+		LEVEL = 2
+	}
+	
+	resources = {
+		category = planet_buildings
+		cost = {
+			sr_dark_matter = 50
+			sr_zro = 50
+		}
+		upkeep = {
+			sr_dark_matter = 0.1
+			sr_zro = 0.1
+			mult = value:num_time_normal_resources_value
+		}
+	}
+	
+	upgrades = {
+		"building_end_forecast"
+	}
+	
+	prerequisites = {
+		"tech_time_3_b_2"
+	}
+	
+	triggered_desc = {
+		text = building_time_forecast_effect
+	}
+	
+	on_built = {
+		owner = { set_country_flag = horror_focus_22_b_finished }
+	}
+}
+
+building_end_forecast = {
+	icon = building_sacrificial_temple_3
+	base_buildtime = @b4_time
+	can_build = no
+	
+	category = unity
+	
+	building_sets = {
+		government
+		unity
+		society
+	}
+
+	potential = {
+		is_special_colony_type = no
+		owner = { has_tradition = tr_end_3 }
+	}
+
+	allow = {
+		has_fully_upgraded_capital = yes
+	}
+	
+	inline_script = {
+		script = buildings/building_akx_forecast_modifiers
+		LEVEL = 3
+	}
+	
+	resources = {
+		category = planet_buildings
+		cost = {
+			sr_dark_matter = 100
+			sr_zro = 100
+		}
+		upkeep = {
+			sr_dark_matter = 0.2
+			sr_zro = 0.2
+			mult = value:num_time_normal_resources_value
+		}
+	}
+	
+	prerequisites = {
+		"tech_end_3_b_2"
+	}
+	
+	triggered_desc = {
+		text = building_end_forecast_effect
+	}
+}

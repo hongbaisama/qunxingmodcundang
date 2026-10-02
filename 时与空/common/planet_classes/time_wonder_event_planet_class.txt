@@ -1,0 +1,96 @@
+pc_core_of_truth = {
+	entity = "black_hole_entity"
+	entity_scale = 20.0
+	icon = GFX_planet_type_black_hole
+	icon_large = GFX_planet_type_black_hole_big
+	
+	picture = pc_black_hole
+	
+	atmosphere_color 		= hsv { 0.075 0.13 1.5 }
+	atmosphere_intensity 	= 1.0
+	atmosphere_width 		= 1.0	
+
+	climate = "luminosity_0"
+	star = yes
+	
+	min_distance_from_sun = 0
+	max_distance_from_sun = 0
+	
+	spawn_odds = 0
+	
+	extra_orbit_size = 0
+	extra_planet_count = 0
+	
+	chance_of_ring = 0
+	
+	planet_size = { min = 20 max = 35 }
+	
+	is_artificial_planet = yes
+	colonizable = no
+}
+
+pc_fragment_of_truth = {
+	entity = "shattered_planet"
+	entity_scale = @planet_standard_scale
+	icon = GFX_planet_type_barren
+	icon_large = GFX_planet_type_barren_big
+	
+	picture = pc_shattered
+	
+	atmosphere_color 		= hsv { 0.1 0.4 0.7 }		#DONE
+	atmosphere_intensity 	= 1.0
+	atmosphere_width 		= 0.5
+
+	spawn_odds = 0
+	
+	extra_orbit_size = 0
+	extra_planet_count = 0
+	
+	planet_size = { min = 12 max = 30 }
+	moon_size = { min = 6 max = 10 }
+	
+	is_artificial_planet = yes
+	colonizable = no
+}
+
+pc_time_notofthisworld = {
+	entity = "astral_scar_entity"
+	entity_scale = 20
+	icon = GFX_planet_type_astral_scar
+	icon_large = GFX_planet_type_astral_scar_big
+	
+	picture = pc_astral_scar
+
+	auto_trait_prio = {
+		trait_auto_pc_time_notofthisworld_preference
+	}
+	
+	modifier = {
+		habitability_ceil_uncapped_add = -0.5
+		habitability_ceil_add = -0.5
+		habitability_floor_add = -0.5
+		planet_storm_devastation_mult = -0.5
+		planet_orbital_bombardment_damage = -1
+	}
+
+	min_distance_from_sun = 0
+	max_distance_from_sun = 0
+	spawn_odds = 0
+
+	extra_orbit_size = 0
+	extra_planet_count = 0
+
+	chance_of_ring = 0
+
+	planet_size = { min = 1 max = 1 }
+	
+	starting_district = district_time_notofthisworld
+
+	is_artificial_planet = yes
+	inherit_country_building_modifiers = no
+	starting_planet = no
+	colonizable = yes
+	show_city = no
+	can_be_invaded = no
+	uses_alternative_skies_for_moons = no
+}

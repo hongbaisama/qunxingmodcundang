@@ -1,0 +1,61 @@
+base_buildtime = @b3_time
+planet_limit = 1
+position_priority = 5
+
+potential = {
+	is_special_colony_type = no
+	owner = { has_origin = origin_contract }
+}
+
+allow = {
+	has_major_upgraded_capital = yes
+	owner = { has_tradition = tr_psionics_shroud_psi_corps }
+}
+
+planet_modifier = {
+	job_origin_contract_whisperers_add = 1
+}
+
+triggered_planet_modifier = {
+	job_origin_contract_whisperers_max_workforce_mult = -1
+	mult = modifier:job_max_workforce_mult
+}
+
+triggered_country_modifier = {
+	potential = {
+		OR = {
+			has_active_building = building_origin_contract_composer
+			has_active_building = building_origin_contract_cradle
+			has_active_building = building_origin_contract_eater
+			has_active_building = building_origin_contract_instrument
+		}
+	}
+	psionic_aura_effectiveness_mult = 0.05
+	psionic_aura_intensity_mult = 0.05
+}
+
+resources = {
+	category = planet_buildings
+	inline_script = {
+		script = buildings/nomadic_cost_switcher
+		REGULAR_RESOURCE = minerals
+		NOMADIC_RESOURCE = rare_crystals
+		COST = @b3_minerals
+		NOMADIC_COST_MULT = @nomadic_minerals_to_strategic_ratio
+	}
+	cost = {
+		sr_zro = @b3_rare_cost
+	}
+	upkeep = {
+		energy = @b3_upkeep
+		sr_zro = @b3_rare_upkeep
+	}
+}
+
+prerequisites = {
+	"tech_psionic_theory"
+}
+
+show_tech_unlock_if = {
+	has_origin = origin_contract
+}

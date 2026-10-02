@@ -1,0 +1,53 @@
+agenda_tradition_horror_finish = {
+	country_produces_mult = 0.1
+	country_cost_mult = -0.05
+	country_upkeep_mult = -0.05
+	icon = "gfx/interface/icons/traditions/tree_icons/tradition_icon_horror.dds"
+}
+
+agenda_tradition_time_finish = {
+	country_produces_mult = 0.2
+	country_cost_mult = -0.1
+	country_upkeep_mult = -0.1
+	icon = "gfx/interface/icons/traditions/tree_icons/tradition_icon_time.dds"
+}
+
+agenda_tradition_end_finish = {
+	country_produces_mult = 0.4
+	country_cost_mult = -0.2
+	country_upkeep_mult = -0.2
+	icon = "gfx/interface/icons/traditions/tree_icons/tradition_icon_end.dds"
+}
+
+agenda_tradition_hope_finish = {
+	planet_stability_mult = 0.2
+	country_produces_mult = 0.2
+	country_cost_mult = -0.1
+	country_upkeep_mult = -0.1
+	icon = "gfx/interface/icons/traditions/tree_icons/tradition_icon_hope.dds"
+}
+
+agenda_tradition_origin_time_finish = {
+	time_researcher_produces_mult = 0.25
+	district_time_usage_cap_mult = 0.25
+	col_time_mult = 0.25
+	icon = "gfx/interface/icons/traditions/tree_icons/tradition_icon_origin_time.dds"
+}
+
+agenda_tradition_origin_tao_of_ninghe_finish = {
+	yin_mult_modifier = -0.25
+	yang_mult_modifier = -0.25
+	pure_yin_mult_modifier = 0.1
+	pure_yang_mult_modifier = 0.1
+	icon = "gfx/interface/icons/traditions/tree_icons/tradition_icon_origin_tao_of_ninghe.dds"
+}
+
+agenda_tradition_origin_reassembler_finish = {
+	reassembler_bonus_workforce_mult = 0.2
+	icon = "gfx/interface/icons/traditions/tree_icons/tradition_icon_origin_reassembler.dds"
+}
+
+agenda_tradition_origin_pure_brain_finish = {
+	planet_stability_add = 10
+	icon = "gfx/interface/icons/traditions/tree_icons/tradition_icon_origin_pure_brain.dds"
+}

@@ -1,0 +1,9 @@
+diplo_weight_mult = $COUNT$
+country_trust_growth = $COUNT$
+species_leader_exp_gain = $COUNT$
+planetary_ascension_effect_mult = $COUNT$
+logistic_growth_mult = $COUNT$
+bonus_pop_growth_mult = $COUNT$
+pop_happiness = $COUNT$
+council_agenda_progress_speed = $COUNT$
+council_agenda_finishing_effect_duration_mult = $COUNT$

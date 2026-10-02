@@ -1,0 +1,317 @@
+@blocker_high = 10
+@blocker_low = 5
+@ranger_small_production = 0.5
+@ranger_large_production = 1
+@evopred_large_blocker_progress = 40
+@evopred_small_blocker_progress = 20
+
+d_pirate_king_blocker = {
+	time = 180
+	
+	is_for_colonizable = yes
+	category = deposit_cat_blockers
+	
+	icon = d_tropical_island
+
+	resources = {
+		category = deposit_blockers
+		cost = {
+			energy = 500
+		}
+	}
+	
+	potential = {
+		always = no
+	}
+
+	planet_modifier = {
+		planet_max_districts_add = -1
+	}
+	
+	on_cleared = {
+		owner = { 
+			random_list = {
+				1 = {
+					custom_tooltip = d_pirate_king_blocker_tooltip_1
+					hidden_effect = {
+						add_resource = {
+							energy = 4000
+						}
+						create_message = {
+							type = PIRATE_KING_BLOCKER_CLEARED
+							localization = PIRATE_KING_BLOCKER_CLEARED_1
+							days = 30
+							target = root
+						}
+					}
+				}
+				1 = {
+					custom_tooltip = d_pirate_king_blocker_tooltip_2
+					hidden_effect = {
+						add_resource = {
+							minerals = 4000
+						}
+						create_message = {
+							type = PIRATE_KING_BLOCKER_CLEARED
+							localization = PIRATE_KING_BLOCKER_CLEARED_2
+							days = 30
+							target = root
+						}
+					}
+				}
+				1 = {
+					custom_tooltip = d_pirate_king_blocker_tooltip_3
+					hidden_effect = {
+						add_resource = {
+							alloys = 2000
+						}
+						create_message = {
+							type = PIRATE_KING_BLOCKER_CLEARED
+							localization = PIRATE_KING_BLOCKER_CLEARED_3
+							days = 30
+							target = root
+						}
+					}
+				}
+				1 = {
+					custom_tooltip = d_pirate_king_blocker_tooltip_4
+					hidden_effect = {
+						add_resource = {
+							consumer_goods = 2000
+						}
+						create_message = {
+							type = PIRATE_KING_BLOCKER_CLEARED
+							localization = PIRATE_KING_BLOCKER_CLEARED_4
+							days = 30
+							target = root
+						}
+					}
+				}
+				2 = {
+					custom_tooltip = d_pirate_king_blocker_tooltip_5
+					hidden_effect = {
+						add_resource = {
+							energy = 2000
+						}
+						create_message = {
+							type = PIRATE_KING_BLOCKER_CLEARED
+							localization = PIRATE_KING_BLOCKER_CLEARED_5
+							days = 30
+							target = root
+						}
+					}
+				}
+				2 = {
+					custom_tooltip = d_pirate_king_blocker_tooltip_6
+					hidden_effect = {
+						add_resource = {
+							minerals = 2000
+						}
+						create_message = {
+							type = PIRATE_KING_BLOCKER_CLEARED
+							localization = PIRATE_KING_BLOCKER_CLEARED_6
+							days = 30
+							target = root
+						}
+					}
+				}
+				2 = {
+					custom_tooltip = d_pirate_king_blocker_tooltip_7
+					hidden_effect = {
+						add_resource = {
+							alloys = 1000
+						}
+						create_message = {
+							type = PIRATE_KING_BLOCKER_CLEARED
+							localization = PIRATE_KING_BLOCKER_CLEARED_7
+							days = 30
+							target = root
+						}
+					}
+				}
+				2 = {
+					custom_tooltip = d_pirate_king_blocker_tooltip_8
+					hidden_effect = {
+						add_resource = {
+							consumer_goods = 1000
+						}
+						create_message = {
+							type = PIRATE_KING_BLOCKER_CLEARED
+							localization = PIRATE_KING_BLOCKER_CLEARED_8
+							days = 30
+							target = root
+						}
+					}
+				}
+			}
+		}
+	}
+
+	drop_weight = {
+		weight = 0
+	}
+
+	ai_weight = {
+		weight = 1
+	}
+}
+
+d_pirate_king_rare_blocker = {
+	time = 360
+	
+	is_for_colonizable = yes
+	category = deposit_cat_rare_blocker
+	
+	icon = d_tropical_island
+
+	resources = {
+		category = deposit_blockers
+		cost = {
+			energy = 1000
+		}
+	}
+	
+	potential = {
+		always = no
+	}
+
+	planet_modifier = {
+		planet_max_districts_add = -1
+	}
+	
+	on_cleared = {
+		custom_tooltip = d_pirate_king_rare_blocker_tooltip
+		hidden_effect = {
+			random_list = {
+				1 = {
+					add_modifier = { modifier = pirate_king_rare_modifier_1 }
+					owner = {
+						if = {
+							limit = {
+								has_origin_pirate_king = yes
+							}
+							set_country_flag = unlock_pirate_king_arkship_building_1
+							create_message = {
+								type = PIRATE_KING_BLOCKER_CLEARED
+								localization = PIRATE_KING_BLOCKER_RARE_CLEARED_ORIGIN_1
+								days = 30
+								target = root
+							}
+						}
+						else = {
+							create_message = {
+								type = PIRATE_KING_BLOCKER_CLEARED
+								localization = PIRATE_KING_BLOCKER_RARE_CLEARED_1
+								days = 30
+								target = root
+							}
+						}
+					}
+				}
+				1 = {
+					add_modifier = { modifier = pirate_king_rare_modifier_2 }
+					owner = {
+						if = {
+							limit = {
+								has_origin_pirate_king = yes
+							}
+							set_country_flag = unlock_pirate_king_arkship_building_2
+							create_message = {
+								type = PIRATE_KING_BLOCKER_CLEARED
+								localization = PIRATE_KING_BLOCKER_RARE_CLEARED_ORIGIN_2
+								days = 30
+								target = root
+							}
+						}
+						else = {
+							create_message = {
+								type = PIRATE_KING_BLOCKER_CLEARED
+								localization = PIRATE_KING_BLOCKER_RARE_CLEARED_2
+								days = 30
+								target = root
+							}
+						}
+					}
+				}
+				1 = {
+					add_modifier = { modifier = pirate_king_rare_modifier_3 }
+					owner = {
+						if = {
+							limit = {
+								has_origin_pirate_king = yes
+							}
+							set_country_flag = unlock_pirate_king_arkship_building_3
+							create_message = {
+								type = PIRATE_KING_BLOCKER_CLEARED
+								localization = PIRATE_KING_BLOCKER_RARE_CLEARED_ORIGIN_3
+								days = 30
+								target = root
+							}
+						}
+						else = {
+							create_message = {
+								type = PIRATE_KING_BLOCKER_CLEARED
+								localization = PIRATE_KING_BLOCKER_RARE_CLEARED_3
+								days = 30
+								target = root
+							}
+						}
+					}
+				}
+				1 = {
+					add_modifier = { modifier = pirate_king_rare_modifier_4 }
+					owner = {
+						if = {
+							limit = {
+								has_origin_pirate_king = yes
+							}
+							set_country_flag = unlock_pirate_king_arkship_building_4
+							create_message = {
+								type = PIRATE_KING_BLOCKER_CLEARED
+								localization = PIRATE_KING_BLOCKER_RARE_CLEARED_ORIGIN_4
+								days = 30
+								target = root
+							}
+						}
+						else = {
+							create_message = {
+								type = PIRATE_KING_BLOCKER_CLEARED
+								localization = PIRATE_KING_BLOCKER_RARE_CLEARED_4
+								days = 30
+								target = root
+							}
+						}
+					}
+				}
+				2 = {
+					modifier = {
+						factor = 0
+						owner = { has_origin_pirate_king = no }
+					}
+					modifier = {
+						factor = 2
+						owner = { is_ai = no }
+					}
+					add_modifier = { modifier = pirate_king_rare_modifier_5 }
+					owner = {
+						set_country_flag = pirate_king_true
+						create_message = {
+							type = PIRATE_KING_BLOCKER_CLEARED
+							localization = PIRATE_KING_BLOCKER_RARE_CLEARED_5
+							days = 30
+							target = root
+						}
+					}
+				}
+			}
+		}
+	}
+	
+	drop_weight = {
+		weight = 0
+	}
+
+	ai_weight = {
+		weight = 1
+	}
+}

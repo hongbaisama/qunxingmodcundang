@@ -1,0 +1,200 @@
+zone_noah_ark_civilian = {
+	icon = GFX_district_specialization_hydroponics
+	base_buildtime = @zone_buildtime
+	
+	planet_limit = { base = 1 }
+	
+	potential = {
+		carrier_is_type = ship
+		ship = {
+			has_ship_flag = noah_ark_ship
+			is_civilian_arkship = yes
+		}
+		owner? = {
+			has_technology = tech_noah_ark
+			has_origin = origin_noah_ark
+			has_country_flag = finish_repair_noah_ark
+		}
+	}
+
+	unlock = {
+		carrier_is_type = ship
+		ship = {
+			has_ship_flag = noah_ark_ship
+			is_civilian_arkship = yes
+		}
+		owner? = {
+			has_technology = tech_noah_ark
+			has_origin = origin_noah_ark
+			has_country_flag = finish_repair_noah_ark
+		}
+	}
+
+	resources = {
+		category = planet_zones
+		inline_script = {
+			script = buildings/nomadic_cost_switcher
+			REGULAR_RESOURCE = minerals
+			NOMADIC_RESOURCE = alloys
+			COST = @zone_cost
+			NOMADIC_COST_MULT = 0.5
+		}
+	}
+
+	planet_modifier = {
+		zone_building_slots_add = @time_mod_zone_max_buildings
+		pc_ark_habitability = 0.5
+	}
+	
+	triggered_planet_modifier = {
+		planet_artisans_consumer_goods_produces_add = 1
+		planet_traders_trade_produces_add = 1
+		planet_bureaucrats_unity_produces_add = 0.5
+		mult = value:noah_ark_ship_level
+	}
+	
+	triggered_planet_modifier = {
+		potential = {
+			owner? = { is_gestalt = no }
+		}
+		job_artisan_max_workforce_mult = 1
+		job_trader_max_workforce_mult = 1
+		job_bureaucrat_max_workforce_mult = 1
+		mult = value:noah_ark_ship_special_level
+	}
+	
+	triggered_planet_modifier = {
+		potential = {
+			owner? = { is_gestalt = yes }
+		}
+		job_artisan_drone_max_workforce_mult = 1
+		job_logistics_drone_max_workforce_mult = 1
+		job_coordinator_max_workforce_mult = 1
+		mult = value:noah_ark_ship_special_level
+	}
+	
+	inline_script = {
+		script = jobs/zone_factory_add
+		AMOUNT = @scaling_district_2_jobs
+		AMOUNT2 = @scaling_district_2_jobs
+	}
+	
+	inline_script = {
+		script = jobs/zone_trader_add
+		AMOUNT = @scaling_district_2_jobs
+	}
+	
+	inline_script = {
+		script = jobs/zone_unity_jobs_add
+		AMOUNT = @scaling_district_2_jobs
+	}
+	
+	zone_sets = {
+		ark_urban
+	}
+	
+	included_building_sets = {
+		factory
+		industrial
+		trade
+		unity
+	}
+	
+	ai_weight_coefficient = 10
+	ai_priority = 100
+}
+
+zone_noah_ark_science = {
+	icon = GFX_district_specialization_culture_worker
+	base_buildtime = @zone_buildtime
+	
+	planet_limit = { base = 1 }
+	
+	potential = {
+		carrier_is_type = ship
+		ship = {
+			has_ship_flag = noah_ark_ship
+			is_science_arkship = yes
+		}
+		owner? = {
+			has_technology = tech_noah_ark
+			has_origin = origin_noah_ark
+			has_country_flag = finish_repair_noah_ark
+		}
+	}
+
+	unlock = {
+		carrier_is_type = ship
+		ship = {
+			has_ship_flag = noah_ark_ship
+			is_science_arkship = yes
+		}
+		owner? = {
+			has_technology = tech_noah_ark
+			has_origin = origin_noah_ark
+			has_country_flag = finish_repair_noah_ark
+		}
+	}
+
+	resources = {
+		category = planet_zones
+		inline_script = {
+			script = buildings/nomadic_cost_switcher
+			REGULAR_RESOURCE = minerals
+			NOMADIC_RESOURCE = alloys
+			COST = @zone_cost
+			NOMADIC_COST_MULT = 0.5
+		}
+	}
+
+	planet_modifier = {
+		zone_building_slots_add = @time_mod_zone_max_buildings
+		pc_ark_habitability = 0.5
+	}
+	
+	triggered_planet_modifier = {
+		planet_physicists_physics_research_produces_add = 0.5
+		planet_biologists_society_research_produces_add = 0.5
+		planet_engineers_engineering_research_produces_add = 0.5
+		mult = value:noah_ark_ship_level
+	}
+	
+	triggered_planet_modifier = {
+		potential = {
+			owner? = { is_gestalt = no }
+		}
+		job_physicist_max_workforce_mult = 1
+		job_biologist_max_workforce_mult = 1
+		job_engineer_max_workforce_mult = 1
+		mult = value:noah_ark_ship_special_level
+	}
+	
+	triggered_planet_modifier = {
+		potential = {
+			owner? = { is_gestalt = yes }
+		}
+		job_calculator_physicist_max_workforce_mult = 1
+		job_calculator_biologist_max_workforce_mult = 1
+		job_calculator_engineer_max_workforce_mult = 1
+		mult = value:noah_ark_ship_special_level
+	}
+	
+	inline_script = {
+		script = jobs/zone_researchers_add
+		AMOUNT = @scaling_district_2_jobs
+	}
+	
+	zone_sets = {
+		ark_urban
+	}
+	
+	included_building_sets = {
+		factory
+		industrial
+		trade
+		unity
+	}
+	
+	ai_weight_coefficient = 10
+	ai_priority = 100
+}

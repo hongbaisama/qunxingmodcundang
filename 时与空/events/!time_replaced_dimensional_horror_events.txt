@@ -1,0 +1,207 @@
+namespace = situation
+
+carrier_event = {
+	id = situation.1095
+	title = situation.1095.name
+	desc = situation.1095.desc
+	picture = GFX_evt_shrouded_planet
+	is_triggered_only = yes
+	location = this
+
+	option = { #This is the end
+		name = {
+			text = situation.1095.a
+			trigger = {
+				owner = { is_spiritualist = no }
+			}
+		}
+		name = {
+			text = situation.1095.b
+			trigger = {
+				owner = { is_spiritualist = yes }
+			}
+		}
+		remove_modifier = horror_too_late
+		tooltip = {
+			random_list = {
+				2 = { change_pc = pc_black_hole }
+				1 = { add_modifier = { modifier = horror_stabilized } }
+			}
+		}
+		hidden_effect = {
+			switch = {
+				trigger = has_carrier_flag
+				black_hole_horror = {
+					# 时空馈赠增幅计数
+					owner_or_space_owner = {
+						change_variable = {
+							which = time_horror_bonus
+							value = 1
+						}
+					}
+					# 变成黑洞
+					if = {
+						limit = {
+							is_arkship_ship = yes
+						}
+						solar_system? = {
+							spawn_planet = {
+								class = pc_black_hole
+								size = 2
+								location = root
+								init_effect = {
+									set_name = {
+										key = black_hole_arkship_name
+										variable_string = "[Root.GetName]"
+									}
+									set_carrier_flag = black_hole_horror
+									set_dimensional_horrorling_object = yes
+								}
+							}
+						}
+						destroy_colony = yes
+						fleet = { delete_fleet = this }
+					}
+					else = {
+						set_dimensional_horrorling_planet = yes
+					}
+					# 黑洞穿行可选星系
+					solar_system? = {
+						set_star_flag = has_black_hole_by_horror
+					}
+				}
+				stabilized_horror = { add_modifier = { modifier = horror_stabilized } }
+			}
+		}
+	}
+}
+
+namespace = leviathans
+
+# Horror Destroyed
+country_event = {
+	id = leviathans.3003
+	title = "leviathans.3003"
+	desc = "leviathans.3003.desc"
+	picture = GFX_evt_dimensional_horror
+	show_sound = event_super_explosion
+	location = event_target:guardians_horror_system
+	trackable = yes
+
+	is_triggered_only = yes
+
+	immediate = { set_country_flag = horror_killed }
+
+	option = {
+		name = "leviathans.3003.a"
+		give_r_horror_matter = { FLAG = dimensional_horror_relic }
+		event_target:horror_energy = {
+			enable_special_project = {
+				name = "DIMENSIONAL_HORROR_PROJECT"
+				location = THIS
+				owner = ROOT
+			}
+		}
+	}
+}
+
+namespace = ancrel
+
+# Transmissions from the horror
+country_event = {
+	id = ancrel.11025
+	title = "TRANSMISSION"
+	desc = ancrel.11025.desc
+
+	diplomatic = yes
+
+	picture_event_data = {
+		room = no_video_feed_room
+	}
+
+	is_triggered_only = yes
+	
+	immediate = {
+		set_country_flag = horror_focus_3_finished # 与长者通讯也算遭遇位面之魇
+	}
+
+	option = {
+		name = ancrel.11025.a
+		if = {
+			limit = {
+				NOT = { exists = event_target:eldritch_location.starbase }
+				is_nomadic = no
+			}
+			custom_tooltip = ancrel.11025.a.tt
+			hidden_effect = {
+				event_target:eldritch_location = {
+					create_starbase = {
+						size = starbase_outpost
+						owner = root
+					}
+				}
+			}
+		}
+		hidden_effect = {
+			country_event = {
+				id = ancrel.11027
+			}
+		}
+		add_modifier = {
+			modifier = eldritch_horror_mod
+			days = -1
+		}
+	}
+
+	option = {
+		name = ancrel.11025.b
+		custom_tooltip = ancrel.11025.b.tt
+		add_monthly_resource_mult = {
+			resource = influence
+			value = @tier4influencereward
+			min = @tier4influencemin
+			max = @tier4influencemax
+		}
+		hidden_effect = {
+			event_target:eldritch_horror_country = {
+				set_faction_hostility = {
+					target = root
+					set_hostile = yes
+					set_neutral = no
+				}
+			}
+			country_event = {
+				id = ancrel.11030
+			}
+		}
+	}
+}
+
+# Remove the modifier if the Eldritch Horror disappears
+country_event = {
+	id = ancrel.11040
+	hide_window = yes
+
+	is_triggered_only = yes
+
+	trigger = {
+		is_country_type = guardian_horror
+		has_country_flag = eldritch_horror_country
+		FROMFROM = { is_ship_size = dimensional_horror }
+	}
+
+	immediate = {
+		every_playable_country = {
+			limit = {
+				has_modifier = eldritch_horror_mod
+			}
+			remove_modifier = eldritch_horror_mod
+		}
+	}
+	
+	after = {
+		from = {
+			give_r_horror_matter = { FLAG = eldritch_horror_relic }
+		}
+	}
+}

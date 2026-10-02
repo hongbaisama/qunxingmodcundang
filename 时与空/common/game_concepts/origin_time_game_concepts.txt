@@ -1,0 +1,483 @@
+# 神秘奇点（太多了，单独用一个文件）
+
+# 修正
+concept_time_researcher_resource_weight = {
+	icon = "gfx/interface/icons/origins/origin_time.dds"
+	alias = { concept_time_researcher_resource_weight_white }
+	databank = {
+		category = db_origin_time
+		icon = "gfx/interface/icons/modifiers/mod_time_researcher_resource_weight.dds"
+		picture = "GFX_evt_ancient_records"
+	}
+}
+
+concept_time_researcher_manufacturing_weight = {
+	icon = "gfx/interface/icons/origins/origin_time.dds"
+	alias = { concept_time_researcher_manufacturing_weight_white }
+	databank = {
+		category = db_origin_time
+		icon = "gfx/interface/icons/modifiers/mod_time_researcher_manufacturing_weight.dds"
+		picture = "GFX_evt_ancient_alien_temple"
+	}
+}
+
+concept_time_researcher_unity_weight = {
+	icon = "gfx/interface/icons/origins/origin_time.dds"
+	alias = { concept_time_researcher_unity_weight_white }
+	databank = {
+		category = db_origin_time
+		icon = "gfx/interface/icons/modifiers/mod_time_researcher_unity_weight.dds"
+		picture = "GFX_evt_ancient_artifact"
+	}
+}
+
+concept_time_researcher_research_weight = {
+	icon = "gfx/interface/icons/origins/origin_time.dds"
+	alias = { concept_time_researcher_research_weight_white }
+	databank = {
+		category = db_origin_time
+		icon = "gfx/interface/icons/modifiers/mod_time_researcher_research_weight.dds"
+		picture = "GFX_evt_ancient_databank"
+	}
+}
+
+concept_time_researcher_max_weight = {
+	icon = "gfx/interface/icons/origins/origin_time.dds"
+	alias = {
+		concept_time_researcher_max_weight_white
+		concept_time_researcher_max_weight_abbreviation
+	}
+	databank = {
+		category = db_origin_time
+		icon = "gfx/interface/icons/modifiers/mod_time_researcher_max_weight.dds"
+		picture = "GFX_evt_astral_rift_clock"
+	}
+}
+
+concept_time_researcher_weight = {
+	icon = "gfx/interface/icons/origins/origin_time.dds"
+	alias = {
+		concept_time_researcher_weight_yellow
+		concept_time_researcher_weight_abbreviation
+		concept_time_researcher_weight_usage
+	}
+	databank = {
+		category = db_origin_time
+		icon = "gfx/interface/icons/modifiers/mod_time_researcher_max_weight.dds"
+		picture = "GFX_evt_astral_rift_cleaning_drones"
+	}
+}
+
+concept_time_researcher_energy_produces_mult = {
+	icon = "gfx/interface/icons/origins/origin_time.dds"
+	alias = { concept_time_researcher_energy_produces_mult_white }
+	databank = {
+		category = db_origin_time
+		icon = "GFX_resource_energy"
+		picture = "GFX_evt_generator_powerup"
+	}
+}
+
+concept_time_researcher_minerals_produces_mult = {
+	icon = "gfx/interface/icons/origins/origin_time.dds"
+	alias = { concept_time_researcher_minerals_produces_mult_white }
+	databank = {
+		category = db_origin_time
+		icon = "GFX_resource_minerals"
+		picture = "GFX_evt_mining_station"
+	}
+}
+
+concept_time_researcher_food_produces_mult = {
+	icon = "gfx/interface/icons/origins/origin_time.dds"
+	alias = { concept_time_researcher_food_produces_mult_white }
+	databank = {
+		category = db_origin_time
+		icon = "GFX_resource_food"
+		picture = "GFX_evt_animal_wildlife"
+	}
+}
+
+concept_time_researcher_consumer_goods_produces_mult = {
+	icon = "gfx/interface/icons/origins/origin_time.dds"
+	alias = { concept_time_researcher_consumer_goods_produces_mult_white }
+	databank = {
+		category = db_origin_time
+		icon = "GFX_resource_consumer_goods"
+		picture = "GFX_evt_black_market"
+	}
+}
+
+concept_time_researcher_alloys_produces_mult = {
+	icon = "gfx/interface/icons/origins/origin_time.dds"
+	alias = { concept_time_researcher_alloys_produces_mult_white }
+	databank = {
+		category = db_origin_time
+		icon = "GFX_resource_alloys"
+		picture = "GFX_evt_alien_city"
+	}
+}
+
+concept_time_researcher_unity_produces_mult = {
+	icon = "gfx/interface/icons/origins/origin_time.dds"
+	alias = { concept_time_researcher_unity_produces_mult_white }
+	databank = {
+		category = db_origin_time
+		icon = "GFX_resource_unity"
+		picture = "GFX_evt_unity_symbol"
+	}
+}
+
+concept_time_researcher_physics_research_produces_mult = {
+	icon = "gfx/interface/icons/origins/origin_time.dds"
+	alias = { concept_time_researcher_physics_research_produces_mult_white }
+	databank = {
+		category = db_origin_time
+		icon = "GFX_resource_physics"
+		picture = "GFX_evt_physics_research"
+	}
+}
+
+concept_time_researcher_society_research_produces_mult = {
+	icon = "gfx/interface/icons/origins/origin_time.dds"
+	alias = { concept_time_researcher_society_research_produces_mult_white }
+	databank = {
+		category = db_origin_time
+		icon = "GFX_resource_society"
+		picture = "GFX_evt_society_research"
+	}
+}
+
+concept_time_researcher_engineering_research_produces_mult = {
+	icon = "gfx/interface/icons/origins/origin_time.dds"
+	alias = { concept_time_researcher_engineering_research_produces_mult_white }
+	databank = {
+		category = db_origin_time
+		icon = "GFX_resource_engineering"
+		picture = "GFX_evt_engineering_research"
+	}
+}
+
+concept_time_researcher_resources_produces_mult = {
+	icon = "gfx/interface/icons/origins/origin_time.dds"
+	alias = {
+		concept_time_researcher_resources_produces_mult_white
+		concept_time_researcher_resources_produces_mult_green
+	}
+	databank = {
+		category = db_origin_time
+		icon = "GFX_text_databank_resource"
+		picture = "GFX_evt_strategic_resources"
+	}
+}
+
+concept_time_researcher_produces_mult = {
+	icon = "gfx/interface/icons/origins/origin_time.dds"
+	alias = {
+		concept_time_researcher_produces_mult_white
+		concept_time_researcher_produces_mult_green
+		concept_time_researcher_produces_mult_yellow
+	}
+	databank = {
+		category = db_origin_time
+		icon = "gfx/interface/icons/modifiers/mod_time_researcher_produces_mult.dds"
+		picture = "GFX_evt_timeworm_transcriptions"
+	}
+}
+
+concept_district_time_usage = {
+	icon = "gfx/interface/icons/origins/origin_time.dds"
+	alias = {
+		concept_district_time_usage_white
+		concept_district_time_usage_short
+	}
+	databank = {
+		category = db_origin_time
+		icon = "gfx/interface/icons/modifiers/mod_district_time_usage.dds"
+		picture = "GFX_evt_ongoing_disaster"
+	}
+}
+
+concept_district_time_usage_cap = {
+	icon = "gfx/interface/icons/origins/origin_time.dds"
+	alias = {
+		concept_district_time_usage_cap_white
+		concept_district_time_usage_cap_mult_white
+		concept_district_time_usage_cap_short
+	}
+	databank = {
+		category = db_origin_time
+		icon = "gfx/interface/icons/modifiers/mod_district_time_usage_cap.dds"
+		picture = "GFX_evt_ongoing_disaster"
+	}
+}
+
+concept_district_time_usage_punishment = {
+	icon = "gfx/interface/icons/origins/origin_time.dds"
+	alias = {
+		concept_district_time_usage_punishment_red
+		concept_district_time_usage_punishment_short
+	}
+	databank = {
+		category = db_origin_time
+		icon = "gfx/interface/icons/modifiers/mod_district_time_usage.dds"
+		picture = "GFX_evt_ongoing_disaster"
+	}
+}
+
+concept_col_time_mult = {
+	icon = "gfx/interface/icons/origins/origin_time.dds"
+	alias = {
+		concept_col_time_mult_white
+		concept_col_time_mult_yellow
+	}
+	databank = {
+		category = db_origin_time
+		icon = "gfx/interface/icons/modifiers/mod_col_time_mult.dds"
+		picture = "GFX_evt_vortex"
+	}
+}
+
+# 政策
+concept_policy_origin_time = {
+	icon = "gfx/interface/icons/origins/origin_time.dds"
+	alias = {
+		concept_policy_origin_time_resource
+		concept_policy_origin_time_manufacturing
+		concept_policy_origin_time_unity
+		concept_policy_origin_time_research
+		concept_policy_origin_time_policy
+	}
+}
+
+# 政体
+concept_auth_time_democratic = {
+	icon =  "gfx/interface/icons/governments/authorities/auth_time_democratic_35x35.dds"
+	tooltip_override = "authority:auth_democratic:auth_time_democratic"
+}
+
+concept_auth_time_imperial = {
+	icon =  "gfx/interface/icons/governments/authorities/auth_time_imperial_35x35.dds"
+	tooltip_override = "authority:auth_imperial:auth_time_imperial"
+}
+
+concept_auth_time_corporate = {
+	icon =  "gfx/interface/icons/governments/authorities/auth_time_corporate_35x35.dds"
+	tooltip_override = "authority:auth_corporate:auth_time_corporate"
+}
+
+concept_auth_endless_time_democratic = {
+	icon =  "gfx/interface/icons/governments/authorities/auth_endless_time_democratic_35x35.dds"
+	tooltip_override = "authority:auth_democratic:auth_endless_time_democratic"
+}
+
+concept_auth_endless_time_imperial = {
+	icon =  "gfx/interface/icons/governments/authorities/auth_endless_time_imperial_35x35.dds"
+	tooltip_override = "authority:auth_imperial:auth_endless_time_imperial"
+}
+
+concept_auth_endless_time_corporate = {
+	icon =  "gfx/interface/icons/governments/authorities/auth_endless_time_corporate_35x35.dds"
+	tooltip_override = "authority:auth_corporate:auth_endless_time_corporate"
+}
+
+# 特质
+concept_origin_time_chosen = {
+	icon = "gfx/interface/icons/origins/origin_time.dds"
+	alias = {
+		concept_origin_time_chosen_common
+		concept_origin_time_chosen_veteran
+		concept_origin_time_chosen_paragon
+	}
+}
+
+concept_leader_trait_ruler_time = {
+	icon = "gfx/interface/icons/traits/leader_trait_ruler_time.dds"
+	alias = {
+	}
+}
+
+concept_leader_trait_ruler_time_owner = {
+	icon = "gfx/interface/icons/traits/leader_trait_ruler_time_owner.dds"
+	alias = {
+	}
+}
+
+concept_leader_trait_ruler_time_king = {
+	icon = "gfx/interface/icons/traits/leader_trait_ruler_time_king.dds"
+	alias = {
+	}
+}
+
+concept_origin_time_species_trait = {
+	icon = "gfx/interface/icons/origins/origin_time.dds"
+}
+
+concept_trait_time = {
+	icon = "gfx/interface/icons/traits/leader_trait_ruler_time.dds"
+	tooltip_override = "trait:trait_time"
+}
+
+concept_trait_time_soul = {
+	icon = "gfx/interface/icons/traits/leader_trait_ruler_time_king.dds"
+	alias = {
+		concept_time_soul_species_trait
+	}
+}
+
+concept_trait_time_soul_virtuality = {
+	icon = "gfx/interface/icons/traits/leader_trait_ruler_time_king.dds"
+	tooltip_override = "trait:trait_time_soul_virtuality"
+}
+
+concept_trait_time_soul_synthetic = {
+	icon = "gfx/interface/icons/traits/leader_trait_ruler_time_king.dds"
+	tooltip_override = "trait:trait_time_soul_synthetic"
+}
+
+concept_trait_time_soul_cybernetic = {
+	icon = "gfx/interface/icons/traits/leader_trait_ruler_time_king.dds"
+	tooltip_override = "trait:trait_time_soul_cybernetic"
+}
+
+concept_trait_time_soul_genetic = {
+	icon = "gfx/interface/icons/traits/leader_trait_ruler_time_king.dds"
+	tooltip_override = "trait:trait_time_soul_genetic"
+}
+
+concept_trait_time_soul_psionic = {
+	icon = "gfx/interface/icons/traits/leader_trait_ruler_time_king.dds"
+	tooltip_override = "trait:trait_time_soul_psionic"
+}
+
+# 岗位
+concept_planet_time_researchers = {
+	icon = "gfx/interface/icons/jobs/job_time_recursioner.dds"
+	alias = {
+		concept_planet_time_researchers_with_icon
+		concept_planet_time_researchers_with_icon_standard_green
+	}
+}
+
+concept_planet_time_orders = {
+	icon = "gfx/interface/icons/jobs/job_time_recursioner.dds"
+	alias = {
+		concept_planet_time_orders_with_icon
+	}
+}
+
+concept_black_hole_physicist = {
+	icon = "gfx/interface/icons/jobs/job_black_hole_physicist.dds"
+}
+
+concept_black_hole_biologist = {
+	icon = "gfx/interface/icons/jobs/job_black_hole_biologist.dds"
+}
+
+concept_black_hole_engineer = {
+	icon = "gfx/interface/icons/jobs/job_black_hole_engineer.dds"
+}
+
+concept_time_recursioner = {
+	icon = "gfx/interface/icons/jobs/job_time_recursioner.dds"
+}
+
+# 传统
+concept_tradition_origin_time = {
+	icon = "gfx/interface/icons/traditions/tree_icons/tradition_icon_origin_time.dds"
+	tooltip_override = "tradition_category:tradition_origin_time"
+}
+
+# 飞升
+concept_ap_origin_time = {
+	icon = "gfx/interface/icons/ascension_perks/ap_origin_time.dds"
+	tooltip_override = "ascension_perk:ap_origin_time"
+}
+
+# 地块
+concept_pc_time_deposits = {
+	icon = "gfx/interface/icons/origins/origin_time.dds"
+}
+
+# 特化条件
+concept_zone_time_physics_requires_tech = {
+	icon = "gfx/interface/icons/jobs/job_black_hole_physicist.dds"
+}
+
+concept_zone_time_society_requires_tech = {
+	icon = "gfx/interface/icons/jobs/job_black_hole_biologist.dds"
+}
+
+concept_zone_time_engineering_requires_tech = {
+	icon = "gfx/interface/icons/jobs/job_black_hole_engineer.dds"
+}
+
+# 建筑
+concept_building_origin_time_authority = {
+	icon = "gfx/interface/icons/origins/origin_time.dds"
+}
+
+concept_building_origin_time_advanced_authority = {
+	icon = "gfx/interface/icons/origins/origin_time.dds"
+}
+
+concept_building_hope_parliament = {
+	icon = "gfx/interface/icons/buildings/building_sanctuary_of_toil.dds"
+}
+
+concept_building_hope_institution = {
+	icon = "gfx/interface/icons/buildings/building_grand_cathedral_of_toil.dds"
+}
+
+concept_building_eternal_probe = {
+	icon = "gfx/interface/icons/buildings/building_amphitheater_of_the_mind.dds"
+}
+
+concept_building_eternal_matrix = {
+	icon = "gfx/interface/icons/buildings/building_grand_concert_hall_of_the_mind.dds"
+}
+
+concept_building_dimensional_fortress = {
+	icon = "gfx/interface/icons/buildings/building_battlement_of_steel.dds"
+}
+
+concept_building_dimensional_metropolis = {
+	icon = "gfx/interface/icons/buildings/building_grand_battlements_of_steel.dds"
+}
+
+concept_building_original_sanctuary = {
+	icon = "gfx/interface/icons/buildings/building_the_sanctum_of_augmentation.dds"
+}
+
+concept_building_original_palace = {
+	icon = "gfx/interface/icons/buildings/building_the_united_sanctum_of_augmentation.dds"
+}
+
+# 事件
+concept_district_time_level_up = {
+	icon = "gfx/interface/icons/districts/district_time.dds"
+	alias = {
+		concept_district_time_level_up_yellow
+	}
+}
+
+concept_clear_a_time_blocker_0 = {
+	icon = "gfx/interface/icons/deposits/d_time_blocker_0.dds"
+	alias = {
+		concept_clear_a_time_blocker_0_yellow
+	}
+}
+
+concept_time_blocker_2_can_be_cleared = {
+	icon = "gfx/interface/icons/deposits/d_quarantine_zone.dds"
+	alias = {
+		concept_time_blocker_2_can_be_cleared_yellow
+	}
+}
+
+concept_time_blocker_3_can_be_cleared = {
+	icon = "gfx/interface/icons/deposits/d_mining_tunnels.dds"
+	alias = {
+		concept_time_blocker_3_can_be_cleared_yellow
+	}
+}

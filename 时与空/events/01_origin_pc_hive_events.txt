@@ -1,0 +1,441 @@
+
+namespace = origin_pc_hive
+
+country_event = {
+	id = origin_pc_hive.1
+	is_triggered_only = yes
+	hide_window = yes
+
+	trigger = {
+		has_origin = origin_pc_hive
+	}
+	
+	immediate = {
+		country_event = { id = origin_pc_hive.2 days = 3600 }
+		capital_scope = {
+			set_planet_size = 30
+			add_deposit = d_pc_hive_blocker
+			inline_script = "game_start/rural_districts_initializer"
+			inline_script = "game_start/shipsets"
+			inline_script = "game_start/species_lithoids"
+			while = {
+				count = energy_districts
+				add_district = district_hive_1
+			}
+			while = {
+				count = mining_districts
+				add_district = district_hive_2
+			}
+			while = {
+				count = farming_districts
+				add_district = district_hive_3
+			}
+			clear_variable = energy_districts
+			clear_variable = mining_districts
+			clear_variable = farming_districts
+			add_zone = {
+				district = district_hive_1
+				zone = zone_energy_hive
+			}
+			add_zone = {
+				district = district_hive_2
+				zone = zone_minerals_hive
+			}
+			add_zone = {
+				district = district_hive_3
+				zone = zone_food_hive
+			}
+		}
+	}
+}
+
+# 爱之突触/爱之枝桠扩散事件
+country_event = {
+	id = origin_pc_hive.2
+	is_triggered_only = yes
+	hide_window = yes
+
+	trigger = {
+		has_origin = origin_pc_hive
+	}
+	
+	immediate = {
+		country_event = { id = origin_pc_hive.2 days = 3600 }
+		if = {
+			limit = {
+				has_country_flag = unlock_decision_origin_pc_hive
+			}
+			if = {
+				limit = {
+					any_owned_colony = { has_deposit = d_pc_hive }
+				}
+				every_owned_colony = {
+					limit = {
+						is_planet_class = pc_hive
+					}
+					if = {
+						limit = {
+							has_deposit = d_pc_hive
+						}
+						random = {
+							chance = value:origin_pc_hive_chance|CHANCE|100|
+							carrier_event = { id = origin_pc_hive.3 days = 1 random = 1799 }
+						}
+					}
+					else_if = {
+						limit = {
+							has_deposit = d_pc_hive_other
+						}
+						random = {
+							chance = value:origin_pc_hive_chance|CHANCE|50|
+							carrier_event = { id = origin_pc_hive.3 days = 1 random = 1799 }
+						}
+					}
+				}
+			}
+		}
+	}
+}
+
+# 扩散事件
+carrier_event = {
+	id = origin_pc_hive.3
+	is_triggered_only = yes
+	hide_window = yes
+
+	trigger = {
+		is_planet_class = pc_hive
+		OR = {
+			has_deposit = d_pc_hive
+			has_deposit = d_pc_hive_other
+		}
+		owner = {
+			has_origin = origin_pc_hive
+			if = {
+				limit = {
+					has_country_flag = unlock_decision_origin_pc_hive
+				}
+				any_owned_colony = { has_deposit = d_pc_hive }
+			}
+			else = {
+				always = no
+			}
+		}
+	}
+	
+	immediate = {
+		solar_system = {
+			random_list = {
+				2 = {
+					modifier = {
+						factor = 0
+						NOT = {
+							any_system_planet = {
+								can_be_spread_by_origin_pc_hive = yes
+							}
+						}
+					}
+					random_system_planet = {
+						limit = {
+							can_be_spread_by_origin_pc_hive = yes
+						}
+						origin_pc_hive_spread = yes
+					}
+				}
+				1 = {
+					modifier = {
+						factor = 0
+						NOT = {
+							any_neighbor_system = {
+								exists = owner
+								owner = { is_same_value = root.owner }
+								any_system_planet = {
+									can_be_spread_by_origin_pc_hive = yes
+								}
+							}
+						}
+					}
+					random_neighbor_system = {
+						limit = {
+							exists = owner
+							owner = { is_same_value = root.owner }
+							any_system_planet = {
+								can_be_spread_by_origin_pc_hive = yes
+							}
+						}
+						random_system_planet = {
+							limit = {
+								can_be_spread_by_origin_pc_hive = yes
+							}
+							origin_pc_hive_spread = yes
+						}
+					}
+				}
+			}
+		}
+	}
+}
+
+# 突触/枝桠枯萎（星球变化）
+carrier_event = {
+	id = origin_pc_hive.5
+	is_triggered_only = yes
+	hide_window = yes
+	
+	trigger = {
+		if = {
+			limit = {
+				OR = {
+					has_deposit = d_pc_hive
+					has_deposit = d_pc_hive_other
+				}
+			}
+			NOT = { is_planet_class = pc_hive }
+		}
+		else = {
+			always = no
+		}
+	}
+	
+	immediate = {
+		if = {
+			limit = {
+				owner = { has_origin = origin_pc_hive }
+			}
+			if = {
+				limit = {
+					has_deposit = d_pc_hive
+				}
+				carrier_event = { id = origin_pc_hive.6 }
+			}
+			else = {
+				carrier_event = { id = origin_pc_hive.7 }
+			}
+		}
+		origin_pc_hive_die = yes
+	}
+}
+
+carrier_event = {
+	id = origin_pc_hive.6
+	title = origin_pc_hive.6.name
+	desc = origin_pc_hive.6.desc
+	picture = GFX_evt_infested
+	show_sound = event_swarm
+	location = root
+	
+	is_triggered_only = yes
+	
+	immediate = {
+		if = {
+			limit = {
+				owner = {
+					NOT = {
+						any_owned_colony = {
+							has_deposit = d_pc_hive
+							NOT = { is_same_value = root }
+						}
+					}
+				}
+			}
+			owner = {
+				country_event = { id = origin_pc_hive.20 }
+			}
+		}
+	}
+	
+	option = {
+		name = origin_pc_hive.6.a
+		tooltip = { add_deposit = d_dead_pc_hive }
+	}
+}
+
+carrier_event = {
+	id = origin_pc_hive.7
+	title = origin_pc_hive.7.name
+	desc = origin_pc_hive.7.desc
+	picture = GFX_evt_infested
+	show_sound = event_swarm
+	location = root
+	
+	is_triggered_only = yes
+	
+	immediate = {
+	}
+	
+	option = {
+		name = origin_pc_hive.7.a
+		tooltip = { add_deposit = d_dead_pc_hive_other }
+	}
+}
+
+# 失去唯一突触
+carrier_event = {
+	id = origin_pc_hive.8
+	is_triggered_only = yes
+	hide_window = yes
+	
+	trigger = {
+		if = {
+			limit = {
+				has_deposit = d_pc_hive
+			}
+			FromFrom = {
+				if = {
+					limit = {
+						has_origin = origin_pc_hive
+					}
+					NOT = {
+						any_owned_colony = {
+							has_deposit = d_pc_hive
+							NOT = { is_same_value = root }
+						}
+					}
+				}
+				else = {
+					always = no
+				}
+			}
+		}
+		else = {
+			always = no
+		}
+	}
+	
+	immediate = {
+		FromFrom = {
+			country_event = { id = origin_pc_hive.20 }
+		}
+	}
+}
+
+# 突触/枝桠枯萎（星球易主）
+carrier_event = {
+	id = origin_pc_hive.10
+	is_triggered_only = yes
+	hide_window = yes
+	
+	trigger = {
+		OR = {
+			has_deposit = d_pc_hive
+			has_deposit = d_pc_hive_other
+		}
+	}
+	
+	immediate = {
+		# 原拥有者不存在任何爱之突触
+		if = {
+			limit = {
+				has_deposit = d_pc_hive
+				exists = FromFrom
+				FromFrom = {
+					has_origin = origin_pc_hive
+					NOT = {
+						any_owned_colony = { has_deposit = d_pc_hive }
+						NOT = { is_same_value = root }
+					}
+				}
+			}
+			FromFrom = {
+				country_event = { id = origin_pc_hive.20 }
+			}
+		}
+		# 突触/枝桠枯萎
+		if = {
+			limit = {
+				OR = {
+					NOT = { is_planet_class = pc_hive }
+					From = {
+						NOT = { has_origin = origin_pc_hive }
+					}
+				}
+			}
+			if = {
+				limit = {
+					has_deposit = d_pc_hive
+				}
+				carrier_event = { id = origin_pc_hive.15 }
+			}
+			else = {
+				carrier_event = { id = origin_pc_hive.16 }
+			}
+			origin_pc_hive_die = yes
+		}
+	}
+}
+
+carrier_event = {
+	id = origin_pc_hive.15
+	title = origin_pc_hive.15.name
+	desc = origin_pc_hive.15.desc
+	picture = GFX_evt_infested
+	show_sound = event_swarm
+	location = root
+	
+	is_triggered_only = yes
+	
+	immediate = {
+	}
+	
+	option = {
+		name = origin_pc_hive.15.a
+		tooltip = { add_deposit = d_dead_pc_hive }
+	}
+}
+
+carrier_event = {
+	id = origin_pc_hive.16
+	title = origin_pc_hive.16.name
+	desc = origin_pc_hive.16.desc
+	picture = GFX_evt_infested
+	show_sound = event_swarm
+	location = root
+	
+	is_triggered_only = yes
+	
+	immediate = {
+	}
+	
+	option = {
+		name = origin_pc_hive.16.a
+		tooltip = { add_deposit = d_dead_pc_hive_other }
+	}
+}
+
+country_event = {
+	id = origin_pc_hive.20
+	title = origin_pc_hive.20.name
+	desc = {
+		text = origin_pc_hive.20.desc.owned
+		trigger = {
+			from = { is_owned_by = root }
+		}
+	}
+	desc = {
+		text = origin_pc_hive.20.desc.not_owned
+		trigger = {
+			from = {
+				NOT = { is_owned_by = root }
+			}
+		}
+	}
+	picture = GFX_evt_infested
+	show_sound = event_swarm
+	location = from
+	
+	is_triggered_only = yes
+	
+	immediate = {
+		every_owned_colony = {
+			limit = {
+				has_deposit = d_pc_hive_other
+			}
+			origin_pc_hive_die = yes
+		}
+	}
+	
+	option = {
+		name = origin_pc_hive.20.a
+		custom_tooltip = origin_pc_hive.20.a.tooltip
+	}
+}

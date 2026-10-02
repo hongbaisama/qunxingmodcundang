@@ -1,0 +1,770 @@
+# 位面之门
+automate_pc_time_notofthisworld = {
+	available = {
+		is_planet_class = pc_time_notofthisworld
+	}
+
+	emergency = no
+	category = "planet_automation_designation_construction"
+
+	prio_districts = {
+		district_time_notofthisworld
+	}
+	
+	prio_zones = {
+		zone_time_notofthisworld_rift_sphere
+		zone_time_notofthisworld_astral_harvesting
+	}
+}
+
+# 神秘奇点
+automate_pc_time_physics = {
+	available = {
+		is_planet_class = pc_time
+		OR = {
+			has_carrier_flag = focus_on_black_hole_physicist
+			has_generator_designation = yes
+			has_rural_designation = yes
+			has_factory_designation = yes
+			has_industrial_designation = yes
+			has_research_designation = yes
+		}
+	}
+
+	emergency = no
+	category = "planet_automation_designation_construction"
+
+	prio_districts = {
+		district_time_physics
+	}
+	
+	prio_zones = {
+		zone_time_physics
+	}
+}
+
+automate_pc_time_society = {
+	available = {
+		is_planet_class = pc_time
+		OR = {
+			has_carrier_flag = focus_on_black_hole_biologist
+			has_farming_designation = yes
+			has_rural_designation = yes
+			has_unity_designation = yes
+			has_research_designation = yes
+		}
+	}
+
+	emergency = no
+	category = "planet_automation_designation_construction"
+
+	prio_districts = {
+		district_time_society
+	}
+	
+	prio_zones = {
+		zone_time_society
+	}
+}
+
+automate_pc_time_engineering = {
+	available = {
+		is_planet_class = pc_time
+		OR = {
+			has_carrier_flag = focus_on_black_hole_engineer
+			has_mining_designation = yes
+			has_rural_designation = yes
+			has_foundry_designation = yes
+			has_industrial_designation = yes
+			has_research_designation = yes
+		}
+	}
+
+	emergency = no
+	category = "planet_automation_designation_construction"
+
+	prio_districts = {
+		district_time_engineering
+	}
+	
+	prio_zones = {
+		zone_time_engineering
+	}
+}
+
+automate_pc_time_housing = {
+	available = {
+		is_planet_class = pc_time
+		free_housing < 0
+	}
+
+	emergency = yes
+	category = "planet_automation_housing"
+
+	prio_districts = {
+		district_time
+	}
+	
+	prio_zones = {
+		zone_time
+	}
+}
+
+automate_pc_endless_time_physics = {
+	available = {
+		is_planet_class = pc_endless_time
+		OR = {
+			has_generator_designation = yes
+			has_rural_designation = yes
+			has_factory_designation = yes
+			has_industrial_designation = yes
+			has_research_designation = yes
+		}
+	}
+
+	emergency = no
+	category = "planet_automation_designation_construction"
+
+	prio_districts = {
+		district_endless_time_physics
+	}
+	
+	prio_zones = {
+		zone_time_physics
+	}
+}
+
+automate_pc_endless_time_society = {
+	available = {
+		is_planet_class = pc_endless_time
+		OR = {
+			has_farming_designation = yes
+			has_rural_designation = yes
+			has_unity_designation = yes
+			has_research_designation = yes
+		}
+	}
+
+	emergency = no
+	category = "planet_automation_designation_construction"
+
+	prio_districts = {
+		district_endless_time_society
+	}
+	
+	prio_zones = {
+		zone_time_society
+	}
+}
+
+automate_pc_endless_time_engineering = {
+	available = {
+		is_planet_class = pc_endless_time
+		OR = {
+			has_mining_designation = yes
+			has_rural_designation = yes
+			has_foundry_designation = yes
+			has_industrial_designation = yes
+			has_research_designation = yes
+		}
+	}
+
+	emergency = no
+	category = "planet_automation_designation_construction"
+
+	prio_districts = {
+		district_endless_time_engineering
+	}
+	
+	prio_zones = {
+		zone_time_engineering
+	}
+}
+
+automate_pc_endless_time_housing = {
+	available = {
+		is_planet_class = pc_endless_time
+	}
+
+	emergency = no
+	category = "planet_automation_housing"
+	
+	prio_zones = {
+		zone_time
+	}
+}
+
+# 气态生物
+automate_pc_gas_colony_city = {
+	available = {
+		is_planet_class = pc_gas_colony
+		has_generator_designation = no
+		has_mining_designation = no
+		has_farming_designation = no
+		has_rural_designation = no
+	}
+
+	emergency = no
+	category = "planet_automation_designation_construction"
+
+	prio_districts = {
+		district_gas_city
+		district_gas_hive
+		district_gas_nexus
+	}
+}
+
+automate_pc_gas_colony_generator = {
+	available = {
+		is_planet_class = pc_gas_colony
+		has_generator_designation = yes
+	}
+
+	emergency = no
+	category = "planet_automation_designation_construction"
+
+	prio_districts = {
+		district_gas_generator
+	}
+	
+	prio_zones = {
+		zone_gas_energy
+	}
+}
+
+automate_pc_gas_colony_mining = {
+	available = {
+		is_planet_class = pc_gas_colony
+		has_mining_designation = yes
+	}
+
+	emergency = no
+	category = "planet_automation_designation_construction"
+
+	prio_districts = {
+		district_gas_mining
+	}
+	
+	prio_zones = {
+		zone_gas_minerals
+	}
+}
+
+automate_pc_gas_colony_farming = {
+	available = {
+		is_planet_class = pc_gas_colony
+		has_farming_designation = yes
+	}
+
+	emergency = no
+	category = "planet_automation_designation_construction"
+
+	prio_districts = {
+		district_gas_farming
+	}
+	
+	prio_zones = {
+		zone_gas_food
+	}
+}
+
+automate_pc_gas_colony_rural = {
+	available = {
+		is_planet_class = pc_gas_colony
+		has_rural_designation = yes
+	}
+
+	emergency = no
+	category = "planet_automation_designation_construction"
+
+	prio_districts = {
+		district_gas_generator
+		district_gas_mining
+		district_gas_farming
+	}
+	
+	prio_zones = {
+		zone_gas_energy
+		zone_gas_minerals
+		zone_gas_food
+	}
+}
+
+automate_pc_gas_colony_rare = {
+	available = {
+		is_planet_class = pc_gas_colony
+	}
+
+	emergency = no
+	category = "planet_automation_rare_resources"
+
+	prio_districts = {
+		district_gas_generator
+		district_gas_mining
+		district_gas_farming
+	}
+	
+	prio_zones = {
+		zone_gas_energy
+		zone_gas_minerals
+		zone_gas_food
+	}
+}
+
+automate_pc_gas_colony_housing = {
+	available = {
+		is_planet_class = pc_gas_colony
+		free_housing < 0
+	}
+
+	emergency = yes
+	category = "planet_automation_housing"
+
+	prio_districts = {
+		district_gas_city
+		district_gas_hive
+		district_gas_nexus
+	}
+}
+
+# 虚境访客
+automate_pc_psionic_city = {
+	available = {
+		is_planet_class = pc_psionic
+		has_generator_designation = no
+		has_mining_designation = no
+		has_farming_designation = no
+		has_rural_designation = no
+		has_research_designation = no
+	}
+
+	emergency = no
+	category = "planet_automation_designation_construction"
+
+	prio_districts = {
+		district_psionic_city
+		district_psionic_hive
+		district_psionic_nexus
+	}
+}
+
+automate_pc_psionic_generator = {
+	available = {
+		is_planet_class = pc_psionic
+		OR = {
+			has_generator_designation = yes
+			has_research_designation = yes
+		}
+	}
+
+	emergency = no
+	category = "planet_automation_designation_construction"
+
+	prio_districts = {
+		district_psionic_generator
+	}
+	
+	prio_zones = {
+		zone_psionic_energy_physics
+	}
+}
+
+automate_pc_psionic_mining = {
+	available = {
+		is_planet_class = pc_psionic
+		OR = {
+			has_mining_designation = yes
+			has_research_designation = yes
+		}
+	}
+
+	emergency = no
+	category = "planet_automation_designation_construction"
+
+	prio_districts = {
+		district_psionic_mining
+	}
+	
+	prio_zones = {
+		zone_psionic_minerals_engineering
+	}
+}
+
+automate_pc_psionic_farming = {
+	available = {
+		is_planet_class = pc_psionic
+		OR = {
+			has_farming_designation = yes
+			has_research_designation = yes
+		}
+	}
+
+	emergency = no
+	category = "planet_automation_designation_construction"
+
+	prio_districts = {
+		district_psionic_farming
+	}
+	
+	prio_zones = {
+		zone_psionic_food_biology
+	}
+}
+
+automate_pc_psionic_rural = {
+	available = {
+		is_planet_class = pc_psionic
+		has_rural_designation = yes
+	}
+
+	emergency = no
+	category = "planet_automation_designation_construction"
+
+	prio_districts = {
+		district_psionic_generator
+		district_psionic_mining
+		district_psionic_farming
+	}
+	
+	prio_zones = {
+		zone_psionic_energy
+		zone_psionic_minerals
+		zone_psionic_food
+	}
+}
+
+automate_pc_psionic_housing = {
+	available = {
+		is_planet_class = pc_psionic
+		free_housing < 0
+	}
+
+	emergency = yes
+	category = "planet_automation_housing"
+
+	prio_districts = {
+		district_psionic_city
+		district_psionic_hive
+		district_psionic_nexus
+	}
+}
+
+# 纳米机器
+automate_pc_nanites_city = {
+	available = {
+		is_planet_class = pc_nanites
+		has_generator_designation = no
+		has_mining_designation = no
+		has_farming_designation = no
+		has_rural_designation = no
+	}
+
+	emergency = no
+	category = "planet_automation_designation_construction"
+
+	prio_districts = {
+		district_nanites_city
+		district_nanites_hive
+		district_nanites_nexus
+	}
+}
+
+automate_pc_nanites_generator = {
+	available = {
+		is_planet_class = pc_nanites
+		has_generator_designation = yes
+	}
+
+	emergency = no
+	category = "planet_automation_designation_construction"
+
+	prio_districts = {
+		district_nanites_generator
+	}
+	
+	prio_zones = {
+		zone_nanites_energy
+	}
+}
+
+automate_pc_nanites_mining = {
+	available = {
+		is_planet_class = pc_nanites
+		has_mining_designation = yes
+	}
+
+	emergency = no
+	category = "planet_automation_designation_construction"
+
+	prio_districts = {
+		district_nanites_mining
+	}
+	
+	prio_zones = {
+		zone_nanites_minerals
+	}
+}
+
+automate_pc_nanites_rural = {
+	available = {
+		is_planet_class = pc_nanites
+		has_rural_designation = yes
+	}
+
+	emergency = no
+	category = "planet_automation_designation_construction"
+
+	prio_districts = {
+		district_nanites_generator
+		district_nanites_mining
+	}
+	
+	prio_zones = {
+		zone_nanites_energy
+		zone_nanites_minerals
+	}
+}
+
+automate_pc_nanites_housing = {
+	available = {
+		is_planet_class = pc_nanites
+		free_housing < 0
+	}
+
+	emergency = yes
+	category = "planet_automation_housing"
+
+	prio_districts = {
+		district_nanites_city
+		district_nanites_hive
+		district_nanites_nexus
+	}
+}
+
+# 宁和之道
+automate_yin_planet = {
+	available = {
+		free_building_slots > 1
+		is_yin_planet = yes
+	}
+
+	emergency = yes
+	category = "planet_automation_tao_of_ninghe"
+	
+	prio_zones = {
+		zone_research
+		zone_research_physics
+		zone_research_society
+		zone_research_engineering
+		zone_foundry
+	}
+
+	buildings = {
+		yin = {
+			building = building_origin_tao_of_ninghe_yin
+			available = {
+				owner = { has_tradition = tr_origin_tao_of_ninghe_building_yin }
+			}
+		}
+		1 = {
+			building = building_research_lab_1
+		}
+		2 = {
+			building = building_foundry_1
+		}
+	}
+}
+
+automate_yang_planet = {
+	available = {
+		free_building_slots > 1
+		is_yang_planet = yes
+	}
+
+	emergency = yes
+	category = "planet_automation_tao_of_ninghe"
+	
+	prio_zones = {
+		zone_unity
+		zone_trade
+	}
+
+	buildings = {
+		yang = {
+			building = building_origin_tao_of_ninghe_yang
+			available = {
+				owner = { has_tradition = tr_origin_tao_of_ninghe_building_yang }
+			}
+		}
+		1 = {
+			building = building_bureaucratic_1
+		}
+		2 = {
+			building = building_sacrificial_temple_1
+		}
+		3 = {
+			building = building_temple
+		}
+		4 = {
+			building = building_commercial_zone
+		}
+	}
+}
+
+# 机械神教
+automate_adeptus_mechanicus_unity = {
+	available = {
+		owner = { has_origin = origin_adeptus_mechanicus }
+		has_unity_designation = yes
+	}
+
+	emergency = yes
+	category = "planet_automation_designation_construction"
+	
+	prio_zones = {
+		zone_adeptus_mechanicus
+	}
+
+	buildings = {
+		adeptus_mechanicus = {
+			building = building_adeptus_mechanicus_1
+		}
+	}
+}
+
+automate_adeptus_mechanicus = {
+	available = {
+		owner = { has_origin = origin_adeptus_mechanicus }
+		free_building_slots > 1
+		any_owned_pop_group = {
+			OR = {
+				is_unemployed = yes
+				is_pop_category = adeptus_mechanicus_unemployment
+			}
+			has_citizenship_type = { type = citizenship_adeptus_mechanicus country = owner }
+		}
+	}
+
+	emergency = yes
+	category = "planet_automation_adeptus_mechanicus"
+	
+	prio_zones = {
+		zone_adeptus_mechanicus
+	}
+
+	buildings = {
+		adeptus_mechanicus = {
+			building = building_adeptus_mechanicus_1
+		}
+	}
+}
+
+# 怪物猎人
+automate_monster_hunter_amenity = {
+	available = {
+		free_amenities <= -0
+		owner = { has_origin = origin_monster_hunter }
+	}
+
+	emergency = yes
+	category = "planet_automation_amenities"
+	
+	prio_zones = {
+		zone_monster_hunter
+	}
+
+	buildings = {
+		monster_hunter = {
+			building = building_origin_monster_hunter_1
+		}
+	}
+}
+
+automate_monster_hunter = {
+	available = {
+		owner = { has_origin = origin_monster_hunter }
+		free_building_slots > 1
+	}
+
+	emergency = yes
+	category = "planet_automation_monster_hunter"
+	
+	prio_zones = {
+		zone_monster_hunter
+	}
+
+	buildings = {
+		monster_hunter = {
+			building = building_origin_monster_hunter_1
+		}
+	}
+}
+
+# 视界信号
+automate_worm_love = {
+	available = {
+		owner = {
+			is_ai = no
+			OR = {
+				has_technology = tech_akx_worm_1
+				has_technology = tech_akx_worm_2
+				has_technology = tech_akx_worm_3
+			}
+		}
+		is_capital = yes
+		is_special_colony_type = no
+	}
+
+	emergency = yes
+	category = "planet_automation_worm"
+	
+	prio_zones = {
+		zone_akx_worm
+	}
+
+	buildings = {
+		worm_1 = {
+			building = building_akx_worm_1
+		}
+		worm_2 = {
+			building = building_akx_worm_2
+		}
+		worm_3 = {
+			building = building_akx_worm_3
+		}
+	}
+}
+
+# 负相建筑
+automate_horror_tradition = {
+	available = {
+		owner = {
+			OR = {
+				has_technology = tech_horror_3_a_1
+				has_technology = tech_horror_3_a_2
+				has_technology = tech_horror_3_b_1
+				has_technology = tech_horror_3_b_2
+			}
+		}
+		has_upgraded_capital = yes
+		is_special_colony_type = no
+	}
+
+	emergency = yes
+	category = "planet_automation_horror"
+
+	buildings = {
+		horror_research = {
+			building = building_horror_research
+		}
+		horror_computer = {
+			building = building_horror_computer
+		}
+		horror_monument = {
+			building = building_horror_monument
+		}
+		horror_forecast = {
+			building = building_horror_forecast
+		}
+	}
+}

@@ -1,0 +1,225 @@
+col_$TYPE$_capital = {
+	icon = GFX_col_time_capital
+
+	potential = {
+		unlock_col_$TYPE$_capital = yes
+	}
+	
+	triggered_planet_modifier = {
+		logistic_growth_mult = 0.1
+		bonus_pop_growth_mult = 0.1
+		planet_pop_assembly_mult = 0.1
+		planet_time_researchers_produces_mult = 0.1
+		time_researcher_produces_mult = 0.1
+		mult = value:num_col_time_value|LEVEL|$LEVEL$|
+	}
+	
+	triggered_planet_modifier = {
+		planet_time_researchers_upkeep_mult = 0.05
+		mult = value:num_col_time_upkeep_value|LEVEL|$LEVEL$|
+	}
+	
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner_or_space_owner
+			owner_or_space_owner = { has_tradition = tr_adaptability_finish }
+		}
+		pop_bonus_workforce_mult = 0.025
+	}
+
+	ai_building_set_affinity = {
+		trade = 2.0
+		zone_time_physics = 2.0
+		zone_time_society = 2.0
+		zone_time_engineering = 2.0
+	}
+	
+	weight_modifier = {
+		base = 10000
+	}
+}
+
+col_$TYPE$_capital_resource = {
+	icon = GFX_col_time_capital_resource
+
+	potential = {
+		unlock_col_$TYPE$_capital = yes
+	}
+	
+	triggered_planet_modifier = {
+		logistic_growth_mult = 0.1
+		bonus_pop_growth_mult = 0.1
+		planet_pop_assembly_mult = 0.1
+		planet_time_researchers_energy_produces_mult = 0.2
+		planet_time_researchers_minerals_produces_mult = 0.2
+		planet_time_researchers_food_produces_mult = 0.2
+		time_researcher_produces_mult = 0.1
+		mult = value:num_col_time_value|LEVEL|$LEVEL$|
+	}
+	
+	triggered_planet_modifier = {
+		planet_time_researchers_upkeep_mult = 0.05
+		mult = value:num_col_time_upkeep_value|LEVEL|$LEVEL$|
+	}
+	
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner_or_space_owner
+			owner_or_space_owner = { has_tradition = tr_adaptability_finish }
+		}
+		pop_bonus_workforce_mult = 0.025
+	}
+
+	ai_building_set_affinity = {
+		generator = 2.0
+		mining = 2.0
+		farming = 2.0
+		zone_time_physics = 2.0
+		zone_time_society = 2.0
+		zone_time_engineering = 2.0
+	}
+	
+	weight_modifier = {
+		base = 10000
+		modifier = {
+			factor = owner_or_space_owner.modifier:time_researcher_resource_weight
+		}
+	}
+}
+
+col_$TYPE$_capital_manufacturing = {
+	icon = GFX_col_time_capital_manufacturing
+
+	potential = {
+		unlock_col_$TYPE$_capital = yes
+	}
+	
+	triggered_planet_modifier = {
+		logistic_growth_mult = 0.1
+		bonus_pop_growth_mult = 0.1
+		planet_pop_assembly_mult = 0.1
+		planet_time_researchers_alloys_produces_mult = 0.2
+		planet_time_researchers_consumer_goods_produces_mult = 0.2
+		time_researcher_produces_mult = 0.1
+		mult = value:num_col_time_value|LEVEL|$LEVEL$|
+	}
+	
+	triggered_planet_modifier = {
+		planet_time_researchers_upkeep_mult = 0.05
+		mult = value:num_col_time_upkeep_value|LEVEL|$LEVEL$|
+	}
+	
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner_or_space_owner
+			owner_or_space_owner = { has_tradition = tr_adaptability_finish }
+		}
+		pop_bonus_workforce_mult = 0.025
+	}
+
+	ai_building_set_affinity = {
+		foundry = 2.0
+		factory = 2.0
+		industrial = 2.0
+		zone_time_physics = 2.0
+		zone_time_engineering = 2.0
+	}
+	
+	weight_modifier = {
+		base = 10000
+		modifier = {
+			factor = owner_or_space_owner.modifier:time_researcher_manufacturing_weight
+		}
+	}
+}
+
+col_$TYPE$_capital_unity = {
+	icon = GFX_col_time_capital_unity
+
+	potential = {
+		unlock_col_$TYPE$_capital = yes
+	}
+	
+	triggered_planet_modifier = {
+		logistic_growth_mult = 0.1
+		bonus_pop_growth_mult = 0.1
+		planet_pop_assembly_mult = 0.1
+		planet_time_researchers_unity_produces_mult = 0.2
+		time_researcher_produces_mult = 0.1
+		mult = value:num_col_time_value|LEVEL|$LEVEL$|
+	}
+	
+	triggered_planet_modifier = {
+		planet_time_researchers_upkeep_mult = 0.05
+		mult = value:num_col_time_upkeep_value|LEVEL|$LEVEL$|
+	}
+	
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner_or_space_owner
+			owner_or_space_owner = { has_tradition = tr_adaptability_finish }
+		}
+		pop_bonus_workforce_mult = 0.025
+	}
+
+	ai_building_set_affinity = {
+		unity = 2.0
+		zone_time_society = 2.0
+	}
+	
+	weight_modifier = {
+		base = 10000
+		modifier = {
+			factor = owner_or_space_owner.modifier:time_researcher_unity_weight
+		}
+	}
+}
+
+col_$TYPE$_capital_research = {
+	icon = GFX_col_time_capital_research
+
+	potential = {
+		unlock_col_$TYPE$_capital = yes
+	}
+	
+	triggered_planet_modifier = {
+		logistic_growth_mult = 0.1
+		bonus_pop_growth_mult = 0.1
+		planet_pop_assembly_mult = 0.1
+		planet_time_researchers_physics_research_produces_mult = 0.2
+		planet_time_researchers_society_research_produces_mult = 0.2
+		planet_time_researchers_engineering_research_produces_mult = 0.2
+		time_researcher_produces_mult = 0.1
+		mult = value:num_col_time_value|LEVEL|$LEVEL$|
+	}
+	
+	triggered_planet_modifier = {
+		planet_time_researchers_upkeep_mult = 0.05
+		mult = value:num_col_time_upkeep_value|LEVEL|$LEVEL$|
+	}
+	
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner_or_space_owner
+			owner_or_space_owner = { has_tradition = tr_adaptability_finish }
+		}
+		pop_bonus_workforce_mult = 0.025
+	}
+
+	ai_building_set_affinity = {
+		research = 2.0
+		physics = 2.0
+		society = 2.0
+		engineering = 2.0
+		zone_time_physics = 2.0
+		zone_time_society = 2.0
+		zone_time_engineering = 2.0
+	}
+	
+	weight_modifier = {
+		base = 10000
+		modifier = {
+			factor = owner_or_space_owner.modifier:time_researcher_research_weight
+		}
+	}
+}

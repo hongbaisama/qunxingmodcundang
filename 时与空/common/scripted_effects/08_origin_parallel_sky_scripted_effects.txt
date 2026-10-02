@@ -1,0 +1,135 @@
+# root域国家
+create_parallel_sky_country = {
+	create_country = {
+		name = "NAME_Parallel_Sky"
+		adjective = "NAME_Parallel_Sky_adj"
+		type = parallel_sky
+		species = root.species
+		origin = origin_parallel_sky
+		authority = $AUTH$
+		civics = {
+			civic = $CIVIC$
+		}
+		ethos = {
+			ethic = $ETHIC_1$
+			ethic = $ETHIC_2$
+			[[ETHIC_3] ethic = $ETHIC_3$]
+		}
+		flag = {
+			icon={
+				category="ornate"
+				file="flag_ornate_3.dds"
+			}
+			background={
+				category="backgrounds"
+				file="diagonal_stripe.dds"
+			}
+			colors={
+				$COLOR_1$
+				$COLOR_2$
+				"null"
+				"null"
+			}
+		}
+		effect = {
+			save_global_event_target_as = parallel_sky_country
+			set_graphical_culture = root
+			ruler = { change_background_ethic = $ETHIC_RULER$ }
+			room_name_override = $ROOM$
+		}
+	}
+}
+
+# 星球
+create_parallel_sky_country_army = {
+	if = {
+		limit = {
+			event_target:parallel_sky_country = {
+				NOT = { has_country_flag = parallel_sky_country_ascension_path }
+			}
+		}
+		while = {
+			count = $COUNT$
+			create_army = {
+				name = "NAME_Parallel_Sky_Army_0"
+				owner = event_target:parallel_sky_country
+				species = event_target:parallel_sky_country.species
+				type = "parallel_sky_army_0"
+				leader = last_created_leader
+			}
+		}
+	}
+	else_if = {
+		limit = {
+			event_target:parallel_sky_country = {
+				has_civic = civic_parallel_sky_1
+			}
+		}
+		while = {
+			count = $COUNT$
+			create_army = {
+				name = "NAME_Parallel_Sky_Army_1"
+				owner = event_target:parallel_sky_country
+				species = event_target:parallel_sky_country.species
+				type = "parallel_sky_army_1"
+				leader = last_created_leader
+			}
+		}
+	}
+	else_if = {
+		limit = {
+			event_target:parallel_sky_country = {
+				has_civic = civic_parallel_sky_2
+			}
+		}
+		while = {
+			count = $COUNT$
+			create_army = {
+				name = "NAME_Parallel_Sky_Army_2"
+				owner = event_target:parallel_sky_country
+				species = event_target:parallel_sky_country.species
+				type = "parallel_sky_army_2"
+				leader = last_created_leader
+			}
+		}
+	}
+	else_if = {
+		limit = {
+			event_target:parallel_sky_country = {
+				has_civic = civic_parallel_sky_3
+			}
+		}
+		while = {
+			count = $COUNT$
+			create_army = {
+				name = "NAME_Parallel_Sky_Army_3"
+				owner = event_target:parallel_sky_country
+				species = event_target:parallel_sky_country.species
+				type = "parallel_sky_army_3"
+				leader = last_created_leader
+			}
+		}
+	}
+}
+
+# 舰队
+create_time_warp_monster_ship = {
+	create_ship = {
+		name = $TYPE$
+		design = $TYPE$
+		prefix = no
+		upgradable = no
+	}
+	while = {
+		count = 5
+		random = {
+			chance = value:num_time_warp_monster_chance
+			create_ship = {
+				name = $TYPE$
+				design = $TYPE$
+				prefix = no
+				upgradable = no
+			}
+		}
+	}
+}

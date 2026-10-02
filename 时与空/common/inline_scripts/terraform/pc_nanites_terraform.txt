@@ -1,0 +1,30 @@
+from = $CLASS$
+to = pc_nanites
+
+resources = {
+	category = terraforming
+
+	cost = {
+		nanites = 500
+	}
+}
+
+duration = 900
+
+condition = {
+	has_technology = tech_terrestrial_sculpting
+}
+
+potential = {
+	has_origin = origin_nanites
+}
+
+effect = {
+	from = {
+		carrier_event = { id = nanites.100 }
+	}
+}
+
+ai_weight = {
+	weight = 20
+}

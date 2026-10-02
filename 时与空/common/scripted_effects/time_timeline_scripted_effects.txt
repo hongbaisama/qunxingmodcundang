@@ -1,0 +1,2053 @@
+################################################################
+# 起源基础
+################################################################
+
+# 国家
+create_timeline_time_origin = {
+	add_timeline_event = {
+		type = timeline_origin
+		override_tooltip = $ORIGIN$_desc
+		override_text = { text:$ORIGIN$ }
+		override_texture = { background:GFX_$ORIGIN$ }
+		override_id = timeline_$ORIGIN$
+	}
+}
+
+################################################################
+# 预设国特殊
+################################################################
+
+# 国家
+create_timeline_wonder_country_time = {
+	set_country_flag = created_timeline_wonder_country_time
+	save_event_target_as = this_country
+	ruler = { save_event_target_as = this_leader }
+	if = {
+		limit = {
+			is_wonder_country_time_0 = yes
+		}
+		add_timeline_event = {
+			type = timeline_origin_specific
+			date = 2100.1.1
+			override_id = timeline_wonder_country_time_0
+			override_tooltip = "TIMELINE_EVENT_WONDER_COUNTRY_TIME_0_TOOLTIP"
+			override_types = { country leader }
+			override_text = { "text:TIMELINE_WONDER_COUNTRY_TIME" }
+			override_texture = { "background:GFX_evt_chosen_leader" }
+			targets = { event_target:this_country event_target:this_leader }
+		}
+	}
+	else_if = {
+		limit = {
+			is_wonder_country_time_1 = yes
+		}
+		add_timeline_event = {
+			type = timeline_origin_specific
+			date = 2100.1.1
+			override_id = timeline_wonder_country_time_1
+			override_tooltip = "TIMELINE_EVENT_WONDER_COUNTRY_TIME_1_TOOLTIP"
+			override_types = { country leader }
+			override_text = { "text:TIMELINE_WONDER_COUNTRY_TIME" }
+			override_texture = { "background:GFX_evt_chosen_leader" }
+			targets = { event_target:this_country event_target:this_leader }
+		}
+	}
+	else_if = {
+		limit = {
+			is_wonder_country_time_2 = yes
+		}
+		add_timeline_event = {
+			type = timeline_origin_specific
+			date = 2100.1.1
+			override_id = timeline_wonder_country_time_2
+			override_tooltip = "TIMELINE_EVENT_WONDER_COUNTRY_TIME_2_TOOLTIP"
+			override_types = { country leader }
+			override_text = { "text:TIMELINE_WONDER_COUNTRY_TIME" }
+			override_texture = { "background:GFX_evt_chosen_leader" }
+			targets = { event_target:this_country event_target:this_leader }
+		}
+	}
+	add_timeline_event = {
+		type = timeline_event_year
+		date = 2100.1.1
+	}
+}
+
+################################################################
+# 时之螶
+################################################################
+
+# 国家
+create_timeline_horizonsignal_begin = {
+	save_event_target_as = this_country
+	add_timeline_event = {
+		type = timeline_empire
+		override_id = timeline_horizonsignal_begin
+		override_tooltip = "TIMELINE_EVENT_HORIZONSIGNAL_BEGIN_TOOLTIP"
+		override_types = { country galactic_object leader }
+		override_text = { "text:TIMELINE_HORIZONSIGNAL_BEGIN" }
+		override_texture = { "background:GFX_evt_black_hole" }
+		targets = { event_target:this_country event_target:horizonsignal_system event_target:horizonsignal_firstleader }
+	}
+}
+
+# 国家
+create_timeline_horizonsignal_not_begin = {
+	save_event_target_as = this_country
+	add_timeline_event = {
+		type = timeline_empire
+		override_id = timeline_horizonsignal_not_begin
+		override_tooltip = "TIMELINE_EVENT_HORIZONSIGNAL_NOT_BEGIN_TOOLTIP"
+		override_types = { country galactic_object }
+		override_text = { "text:TIMELINE_HORIZONSIGNAL_NOT_BEGIN" }
+		override_texture = { "background:GFX_evt_black_hole" }
+		targets = { event_target:this_country event_target:horizonsignal_system }
+	}
+}
+
+# 国家
+create_timeline_horizonsignal_begin_but_stop = {
+	save_event_target_as = this_country
+	add_timeline_event = {
+		type = timeline_empire
+		override_id = timeline_horizonsignal_begin_but_stop
+		override_tooltip = "TIMELINE_EVENT_HORIZONSIGNAL_BEGIN_BUT_STOP_TOOLTIP"
+		override_types = { country galactic_object }
+		override_text = { "text:TIMELINE_HORIZONSIGNAL_BEGIN_BUT_STOP" }
+		override_texture = { "background:GFX_evt_black_hole" }
+		targets = { event_target:this_country event_target:horizonsignal_system }
+	}
+}
+
+# 星球
+create_timeline_loop_temple = {
+	save_event_target_as = this_planet
+	owner = {
+		save_event_target_as = this_country
+		add_timeline_event = {
+			type = timeline_empire
+			override_id = timeline_loop_temple
+			override_tooltip = "TIMELINE_EVENT_LOOP_TEMPLE_TOOLTIP"
+			override_types = { country planet }
+			override_text = { "text:TIMELINE_LOOP_TEMPLE" }
+			override_texture = { "background:GFX_evt_in_the_dark" }
+			targets = { event_target:this_country event_target:this_planet }
+		}
+	}
+}
+
+# 星球
+create_timeline_loop_temple_but_seal = {
+	save_event_target_as = this_planet
+	owner = {
+		save_event_target_as = this_country
+		add_timeline_event = {
+			type = timeline_empire
+			override_id = timeline_loop_temple_but_seal
+			override_tooltip = "TIMELINE_EVENT_LOOP_TEMPLE_BUT_SEAL_TOOLTIP"
+			override_types = { country planet }
+			override_text = { "text:TIMELINE_LOOP_TEMPLE_BUT_SEAL" }
+			override_texture = { "background:GFX_evt_in_the_dark" }
+			targets = { event_target:this_country event_target:this_planet }
+		}
+	}
+}
+
+# 国家
+create_timeline_worm_loves_us_and_accept = {
+	save_event_target_as = this_country
+	add_timeline_event = {
+		type = timeline_galactic
+		override_id = timeline_worm_loves_us_and_accept
+		override_tooltip = "TIMELINE_EVENT_WORM_LOVES_US_AND_ACCEPT_TOOLTIP"
+		override_types = { country }
+		override_text = { "text:TIMELINE_WORM_LOVES_US_AND_ACCEPT" }
+		override_texture = { "background:GFX_evt_dimensional_horror" }
+		targets = { event_target:this_country }
+	}
+	every_playable_country = {
+		limit = {
+			NOT = { is_same_value = event_target:this_country }
+			has_communications = event_target:this_country
+		}
+		add_timeline_event = {
+			type = timeline_galactic
+			override_id = timeline_worm_loves_us_and_accept_other
+			override_tooltip = "TIMELINE_EVENT_WORM_LOVES_US_AND_ACCEPT_OTHER_TOOLTIP"
+			override_types = { country }
+			override_text = { "text:TIMELINE_WORM_LOVES_US_AND_ACCEPT" }
+			override_texture = { "background:GFX_evt_dimensional_horror" }
+			targets = { event_target:this_country }
+		}
+	}
+}
+
+# 国家
+create_timeline_worm_loves_us_but_refuse = {
+	save_event_target_as = this_country
+	add_timeline_event = {
+		type = timeline_galactic
+		override_id = timeline_worm_loves_us_but_refuse
+		override_tooltip = "TIMELINE_EVENT_WORM_LOVES_US_BUT_REFUSE_TOOLTIP"
+		override_types = { country }
+		override_text = { "text:TIMELINE_WORM_LOVES_US_BUT_REFUSE" }
+		override_texture = { "background:GFX_evt_dimensional_horror" }
+		targets = { event_target:this_country }
+	}
+	every_playable_country = {
+		limit = {
+			NOT = { is_same_value = event_target:this_country }
+			has_communications = event_target:this_country
+		}
+		add_timeline_event = {
+			type = timeline_galactic
+			override_id = timeline_worm_loves_us_but_refuse_other
+			override_tooltip = "TIMELINE_EVENT_WORM_LOVES_US_BUT_REFUSE_OTHER_TOOLTIP"
+			override_types = { country }
+			override_text = { "text:TIMELINE_WORM_LOVES_US_BUT_REFUSE" }
+			override_texture = { "background:GFX_evt_dimensional_horror" }
+			targets = { event_target:this_country }
+		}
+	}
+}
+
+# 国家
+create_timeline_accept_unleashed_messenger = {
+	save_event_target_as = this_country
+	if = {
+		limit = {
+			owner_main_species = { is_robotic = no }
+		}
+		add_timeline_event = {
+			type = timeline_empire
+			override_id = timeline_accept_unleashed_messenger_normal
+			override_tooltip = "TIMELINE_EVENT_ACCEPT_UNLEASHED_MESSENGER_NORMAL_TOOLTIP"
+			override_types = { country }
+			override_text = { "text:TIMELINE_ACCEPT_UNLEASHED_MESSENGER" }
+			override_texture = { "background:GFX_evt_genetic_modification" }
+			targets = { event_target:this_country }
+		}
+	}
+	else = {
+		add_timeline_event = {
+			type = timeline_empire
+			override_id = timeline_accept_unleashed_messenger_robotic
+			override_tooltip = "TIMELINE_EVENT_ACCEPT_UNLEASHED_MESSENGER_ROBOTIC_TOOLTIP"
+			override_types = { country }
+			override_text = { "text:TIMELINE_ACCEPT_UNLEASHED_MESSENGER" }
+			override_texture = { "background:GFX_evt_cybernetics" }
+			targets = { event_target:this_country }
+		}
+	}
+}
+
+# 国家
+create_timeline_accept_leashed_messenger = {
+	save_event_target_as = this_country
+	if = {
+		limit = {
+			owner_main_species = { is_robotic = no }
+		}
+		add_timeline_event = {
+			type = timeline_empire
+			override_id = timeline_accept_leashed_messenger_normal
+			override_tooltip = "TIMELINE_EVENT_ACCEPT_LEASHED_MESSENGER_NORMAL_TOOLTIP"
+			override_types = { country }
+			override_text = { "text:TIMELINE_ACCEPT_LEASHED_MESSENGER" }
+			override_texture = { "background:GFX_evt_genetic_modification" }
+			targets = { event_target:this_country }
+		}
+	}
+	else = {
+		add_timeline_event = {
+			type = timeline_empire
+			override_id = timeline_accept_leashed_messenger_robotic
+			override_tooltip = "TIMELINE_EVENT_ACCEPT_LEASHED_MESSENGER_ROBOTIC_TOOLTIP"
+			override_types = { country }
+			override_text = { "text:TIMELINE_ACCEPT_LEASHED_MESSENGER" }
+			override_texture = { "background:GFX_evt_cybernetics" }
+			targets = { event_target:this_country }
+		}
+	}
+}
+
+# 国家
+create_timeline_gain_time_titan = {
+	save_event_target_as = this_country
+	random_owned_leader = {
+		limit = {
+			has_trait = leader_trait_foredoomed_to_a_rendezvous_end
+		}
+		save_event_target_as = this_leader
+	}
+	add_timeline_event = {
+		type = timeline_empire
+		override_id = timeline_gain_time_titan
+		override_tooltip = "TIMELINE_EVENT_GAIN_TIME_TITAN_TOOLTIP"
+		override_types = { country leader planet }
+		override_text = { "text:TIMELINE_GAIN_TIME_TITAN" }
+		override_texture = { "background:GFX_evt_horizon_needle" }
+		targets = { event_target:this_country event_target:this_leader event_target:syzygy_admiral_planet }
+	}
+}
+
+# 任意
+create_timeline_manifold_country_ascension = {
+	every_playable_country = {
+		limit = {
+			NOT = { is_same_value = event_target:manifold_country }
+			has_communications = event_target:manifold_country
+		}
+		add_timeline_event = {
+			type = timeline_galactic
+			override_id = timeline_manifold_country_ascension
+			override_tooltip = "TIMELINE_EVENT_MANIFOLD_COUNTRY_ASCENSION_TOOLTIP"
+			override_types = { country }
+			override_text = { "text:TIMELINE_MANIFOLD_COUNTRY_ASCENSION" }
+			override_texture = { "background:GFX_evt_vortex" }
+			targets = { event_target:manifold_country }
+		}
+	}
+}
+
+# 国家
+create_timeline_hole_pets_pantagruel = {
+	save_event_target_as = this_country
+	add_timeline_event = {
+		type = timeline_empire
+		override_id = timeline_hole_pets_pantagruel
+		override_tooltip = "TIMELINE_EVENT_HOLE_PETS_PANTAGRUEL_TOOLTIP"
+		override_types = { country planet }
+		override_text = { "text:TIMELINE_HOLE_PETS_PANTAGRUEL" }
+		override_texture = { "background:GFX_evt_black_hole" }
+		targets = { event_target:this_country event_target:hole_pets }
+	}
+}
+
+################################################################
+# 负相
+################################################################
+
+# 舰队（From为星系）
+create_timeline_first_meet_dimensional_horror = {
+	From = { save_event_target_as = this_system }
+	owner = {
+		save_event_target_as = this_country
+		add_timeline_event = {
+			type = timeline_empire
+			override_id = timeline_first_meet_dimensional_horror
+			override_tooltip = "TIMELINE_EVENT_FIRST_MEET_DIMENSIONAL_HORROR_TOOLTIP"
+			override_types = { country galactic_object }
+			override_text = { "text:TIMELINE_FIRST_MEET_DIMENSIONAL_HORROR" }
+			override_texture = { "background:GFX_evt_dimensional_horror" }
+			targets = { event_target:this_country event_target:this_system }
+		}
+	}
+}
+
+# 国家
+create_timeline_active_tr_horror_adopt = {
+	save_event_target_as = this_country
+	add_timeline_event = {
+		type = timeline_milestone
+		override_id = timeline_active_tr_horror_adopt
+		override_tooltip = "TIMELINE_EVENT_ACTIVE_TR_HORROR_ADOPT_TOOLTIP"
+		override_types = { country }
+		override_text = { "text:TIMELINE_ACTIVE_TR_HORROR_ADOPT" }
+		override_texture = { "background:GFX_evt_astral_rift_fluid_devour" }
+		targets = { event_target:this_country }
+	}
+}
+
+# 国家
+create_timeline_active_ap_horror = {
+	save_event_target_as = this_country
+	add_timeline_event = {
+		type = timeline_milestone
+		override_id = timeline_active_ap_horror
+		override_tooltip = "TIMELINE_EVENT_ACTIVE_AP_HORROR_TOOLTIP"
+		override_types = { country }
+		override_text = { "text:TIMELINE_ACTIVE_AP_HORROR" }
+		override_texture = { "background:GFX_evt_dimensional_horror" }
+		targets = { event_target:this_country }
+	}
+}
+
+# 国家
+create_timeline_active_ap_time = {
+	save_event_target_as = this_country
+	add_timeline_event = {
+		type = timeline_milestone
+		override_id = timeline_active_ap_time
+		override_tooltip = "TIMELINE_EVENT_ACTIVE_AP_TIME_TOOLTIP"
+		override_types = { country }
+		override_text = { "text:TIMELINE_ACTIVE_AP_TIME" }
+		override_texture = { "background:GFX_evt_surreal_visions" }
+		targets = { event_target:this_country }
+	}
+}
+
+# 国家
+create_timeline_active_ap_beyond_infinity = {
+	save_event_target_as = this_country
+	add_timeline_event = {
+		type = timeline_galactic
+		override_id = timeline_active_ap_beyond_infinity
+		override_tooltip = "TIMELINE_EVENT_ACTIVE_AP_BEYOND_INFINITY_TOOLTIP"
+		override_types = { country }
+		override_text = { "text:TIMELINE_ACTIVE_AP_BEYOND_INFINITY" }
+		override_texture = { "background:GFX_evt_astral_rift_clock" }
+		targets = { event_target:this_country }
+	}
+	every_playable_country = {
+		limit = {
+			NOT = { is_same_value = event_target:this_country }
+			has_communications = event_target:this_country
+		}
+		add_timeline_event = {
+			type = timeline_galactic
+			override_id = timeline_active_ap_beyond_infinity_other
+			override_tooltip = "TIMELINE_EVENT_ACTIVE_AP_BEYOND_INFINITY_OTHER_TOOLTIP"
+			override_types = { country }
+			override_text = { "text:TIMELINE_ACTIVE_AP_BEYOND_INFINITY" }
+			override_texture = { "background:GFX_evt_dimensional_horror" }
+			targets = { event_target:this_country }
+		}
+	}
+}
+
+# 国家
+create_timeline_finish_astral_rift_akx_horror_1 = {
+	save_event_target_as = this_country
+	add_timeline_event = {
+		type = timeline_empire
+		override_id = timeline_finish_astral_rift_akx_horror_1
+		override_tooltip = "TIMELINE_EVENT_FINISH_ASTRAL_RIFT_AKX_HORROR_1_TOOLTIP"
+		override_types = { country }
+		override_text = { "text:TIMELINE_FINISH_ASTRAL_RIFT_AKX_HORROR_1" }
+		override_texture = { "background:GFX_evt_astral_rift_vortex" }
+		targets = { event_target:this_country }
+	}
+}
+
+# 裂隙
+create_timeline_finish_astral_rift_akx_horror_2 = {
+	if = {
+		limit = {
+			NOT = { has_astral_rift_flag = time_akx_562_third }
+		}
+		explorer = {
+			save_event_target_as = this_country
+			add_timeline_event = {
+				type = timeline_empire
+				override_id = timeline_finish_astral_rift_akx_horror_2
+				override_tooltip = "TIMELINE_EVENT_FINISH_ASTRAL_RIFT_AKX_HORROR_2_TOOLTIP"
+				override_types = { country }
+				override_text = { "text:TIMELINE_FINISH_ASTRAL_RIFT_AKX_HORROR_2" }
+				override_texture = { "background:GFX_evt_black_hole" }
+				targets = { event_target:this_country }
+			}
+		}
+	}
+	else = {
+		explorer = {
+			save_event_target_as = this_country
+			add_timeline_event = {
+				type = timeline_empire
+				override_id = timeline_finish_astral_rift_akx_horror_2_third
+				override_tooltip = "TIMELINE_EVENT_FINISH_ASTRAL_RIFT_AKX_HORROR_2_THIRD_TOOLTIP"
+				override_types = { country }
+				override_text = { "text:TIMELINE_FINISH_ASTRAL_RIFT_AKX_HORROR_2_THIRD" }
+				override_texture = { "background:GFX_evt_black_hole" }
+				targets = { event_target:this_country }
+			}
+		}
+	}
+}
+
+# 国家
+create_timeline_finish_astral_rift_akx_horror_3 = {
+	save_event_target_as = this_country
+	add_timeline_event = {
+		type = timeline_empire
+		override_id = timeline_finish_astral_rift_akx_horror_3
+		override_tooltip = "TIMELINE_EVENT_FINISH_ASTRAL_RIFT_AKX_HORROR_3_TOOLTIP"
+		override_types = { country }
+		override_text = { "text:TIMELINE_FINISH_ASTRAL_RIFT_AKX_HORROR_3" }
+		override_texture = { "background:GFX_evt_astral_rift_whiteout_3" }
+		targets = { event_target:this_country }
+	}
+}
+
+# 国家
+create_timeline_finish_astral_rift_akx_horror_4 = {
+	save_event_target_as = this_country
+	if = {
+		limit = {
+			exists = event_target:time_akx_astral_rift_lost_leader
+		}
+		add_timeline_event = {
+			type = timeline_empire
+			override_id = timeline_finish_astral_rift_akx_horror_4_lost
+			override_tooltip = "TIMELINE_EVENT_FINISH_ASTRAL_RIFT_AKX_HORROR_4_LOST_TOOLTIP"
+			override_types = { country leader }
+			override_text = { "text:TIMELINE_FINISH_ASTRAL_RIFT_AKX_HORROR_4" }
+			override_texture = { "background:GFX_evt_astral_rift_entangled_dark_matter" }
+			targets = { event_target:this_country event_target:time_akx_astral_rift_lost_leader }
+		}
+	}
+	else = {
+		add_timeline_event = {
+			type = timeline_empire
+			override_id = timeline_finish_astral_rift_akx_horror_4_mirror
+			override_tooltip = "TIMELINE_EVENT_FINISH_ASTRAL_RIFT_AKX_HORROR_4_MIRROR_TOOLTIP"
+			override_types = { country leader }
+			override_text = { "text:TIMELINE_FINISH_ASTRAL_RIFT_AKX_HORROR_4" }
+			override_texture = { "background:GFX_evt_astral_rift_entangled_dark_matter" }
+			targets = { event_target:this_country event_target:akx_mirror_image_leader }
+		}
+	}
+}
+
+# 国家
+create_timeline_finish_astral_rift_akx_time_1 = {
+	save_event_target_as = this_country
+	add_timeline_event = {
+		type = timeline_empire
+		override_id = timeline_finish_astral_rift_akx_time_1
+		override_tooltip = "TIMELINE_EVENT_FINISH_ASTRAL_RIFT_AKX_TIME_1_TOOLTIP"
+		override_types = { country }
+		override_text = { "text:TIMELINE_FINISH_ASTRAL_RIFT_AKX_TIME_1" }
+		override_texture = { "background:GFX_evt_astral_rift_tower_invitation" }
+		targets = { event_target:this_country }
+	}
+}
+
+# 国家
+create_timeline_finish_astral_rift_akx_time_2 = {
+	save_event_target_as = this_country
+	add_timeline_event = {
+		type = timeline_empire
+		override_id = timeline_finish_astral_rift_akx_time_2
+		override_tooltip = "TIMELINE_EVENT_FINISH_ASTRAL_RIFT_AKX_TIME_2_TOOLTIP"
+		override_types = { country }
+		override_text = { "text:TIMELINE_FINISH_ASTRAL_RIFT_AKX_TIME_2" }
+		override_texture = { "background:GFX_evt_astral_rift_tomb" }
+		targets = { event_target:this_country }
+	}
+}
+
+# 国家
+create_timeline_finish_astral_rift_akx_time_3 = {
+	save_event_target_as = this_country
+	add_timeline_event = {
+		type = timeline_empire
+		override_id = timeline_finish_astral_rift_akx_time_3
+		override_tooltip = "TIMELINE_EVENT_FINISH_ASTRAL_RIFT_AKX_TIME_3_TOOLTIP"
+		override_types = { country }
+		override_text = { "text:TIMELINE_FINISH_ASTRAL_RIFT_AKX_TIME_3" }
+		override_texture = { "background:GFX_evt_astral_rift_tomb" }
+		targets = { event_target:this_country }
+	}
+}
+
+################################################################
+# 终焉宣告
+################################################################
+
+# 国家
+create_timeline_dimensional_horror_crisis_begin = {
+	add_timeline_event = {
+		type = timeline_crisis
+		override_id = timeline_dimensional_horror_crisis_begin
+		override_tooltip = "TIMELINE_EVENT_DIMENSIONAL_HORROR_CRISIS_BEGIN_TOOLTIP"
+		override_types = { }
+		override_text = { "text:TIMELINE_DIMENSIONAL_HORROR_CRISIS_BEGIN" }
+		override_texture = { "background:GFX_dimensional_horror_crisis_storm" }
+		targets = { }
+	}
+}
+
+# 国家
+create_timeline_dimensional_horror_crisis_begin_for_new_country = {
+	save_event_target_as = this_country
+	add_timeline_event = {
+		type = timeline_crisis
+		override_id = timeline_dimensional_horror_crisis_begin_for_new_country
+		override_tooltip = "TIMELINE_EVENT_DIMENSIONAL_HORROR_CRISIS_BEGIN_FOR_NEW_COUNTRY_TOOLTIP"
+		override_types = { country }
+		override_text = { "text:TIMELINE_DIMENSIONAL_HORROR_CRISIS_BEGIN_FOR_NEW_COUNTRY" }
+		override_texture = { "background:GFX_dimensional_horror_crisis_storm" }
+		targets = { event_target:this_country }
+	}
+}
+
+# 国家
+create_timeline_dimensional_horror_crisis_destiny_occur = {
+	add_timeline_event = {
+		type = timeline_crisis
+		override_id = timeline_dimensional_horror_crisis_destiny_occur
+		override_tooltip = "TIMELINE_EVENT_DIMENSIONAL_HORROR_CRISIS_DESTINY_OCCUR_TOOLTIP"
+		override_types = { galactic_object }
+		override_text = { "text:TIMELINE_DIMENSIONAL_HORROR_CRISIS_DESTINY_OCCUR" }
+		override_texture = { "background:GFX_dimensional_horror_crisis_storm" }
+		targets = { event_target:dimensional_horror_crisis_destiny_system }
+	}
+}
+
+# 国家
+create_timeline_dimensional_horror_crisis_end = {
+	add_timeline_event = {
+		type = timeline_crisis
+		override_id = timeline_dimensional_horror_crisis_end
+		override_tooltip = "TIMELINE_EVENT_DIMENSIONAL_HORROR_CRISIS_END_TOOLTIP"
+		override_types = { }
+		override_text = { "text:TIMELINE_DIMENSIONAL_HORROR_CRISIS_END" }
+		override_texture = { "background:GFX_dimensional_horror_crisis_storm" }
+		targets = { }
+	}
+}
+
+################################################################
+# 时间机器/圆环枢纽/位面引擎
+################################################################
+
+# 国家
+create_timeline_time_machine_begin = {
+	add_timeline_event = {
+		type = timeline_galactic
+		override_id = timeline_time_machine_begin
+		override_tooltip = "TIMELINE_EVENT_TIME_MACHINE_BEGIN_TOOLTIP"
+		override_types = { }
+		override_text = { "text:TIMELINE_TIME_MACHINE_BEGIN" }
+		override_texture = { "background:GFX_evt_clocks" }
+		targets = { }
+	}
+}
+
+# 国家
+create_timeline_time_machine_end = {
+	add_timeline_event = {
+		type = timeline_galactic
+		override_id = timeline_time_machine_end
+		override_tooltip = "TIMELINE_EVENT_TIME_MACHINE_END_TOOLTIP"
+		override_types = { }
+		override_text = { "text:TIMELINE_TIME_MACHINE_END" }
+		override_texture = { "background:GFX_evt_clocks" }
+		targets = { }
+	}
+}
+
+# 国家
+create_timeline_circle_nexus_begin = {
+	add_timeline_event = {
+		type = timeline_galactic
+		override_id = timeline_circle_nexus_begin
+		override_tooltip = "TIMELINE_EVENT_CIRCLE_NEXUS_BEGIN_TOOLTIP"
+		override_types = { }
+		override_text = { "text:TIMELINE_CIRCLE_NEXUS_BEGIN" }
+		override_texture = { "background:GFX_evt_vortex" }
+		targets = { }
+	}
+}
+
+# 国家
+create_timeline_circle_nexus_end = {
+	add_timeline_event = {
+		type = timeline_galactic
+		override_id = timeline_circle_nexus_end
+		override_tooltip = "TIMELINE_EVENT_CIRCLE_NEXUS_END_TOOLTIP"
+		override_types = { }
+		override_text = { "text:TIMELINE_CIRCLE_NEXUS_END" }
+		override_texture = { "background:GFX_evt_vortex" }
+		targets = { }
+	}
+}
+
+# 国家
+create_timeline_dimension_engine_begin = {
+	add_timeline_event = {
+		type = timeline_galactic
+		override_id = timeline_dimension_engine_begin
+		override_tooltip = "TIMELINE_EVENT_DIMENSION_ENGINE_BEGIN_TOOLTIP"
+		override_types = { }
+		override_text = { "text:TIMELINE_DIMENSION_ENGINE_BEGIN" }
+		override_texture = { "background:GFX_evt_supernova" }
+		targets = { }
+	}
+}
+
+# 国家
+create_timeline_dimension_engine_end = {
+	add_timeline_event = {
+		type = timeline_galactic
+		override_id = timeline_dimension_engine_end
+		override_tooltip = "TIMELINE_EVENT_DIMENSION_ENGINE_END_TOOLTIP"
+		override_types = { }
+		override_text = { "text:TIMELINE_DIMENSION_ENGINE_END" }
+		override_texture = { "background:GFX_evt_supernova" }
+		targets = { }
+	}
+}
+
+################################################################
+# 界旅者
+################################################################
+
+# 国家
+create_timeline_dimension_traveler_begin = {
+	save_event_target_as = this_country
+	if = {
+		limit = {
+			has_origin = origin_white_hole
+		}
+		add_timeline_event = {
+			type = timeline_origin_specific
+			override_id = timeline_dimension_traveler_begin_origin
+			override_tooltip = "TIMELINE_EVENT_DIMENSION_TRAVELER_BEGIN_ORIGIN_TOOLTIP"
+			override_types = { country galactic_object }
+			override_text = { "text:TIMELINE_DIMENSION_TRAVELER_BEGIN" }
+			override_texture = { "background:GFX_evt_wormhole" }
+			targets = { event_target:this_country event_target:dimension_traveler_system }
+		}
+	}
+	else = {
+		add_timeline_event = {
+			type = timeline_empire
+			override_id = timeline_dimension_traveler_begin
+			override_tooltip = "TIMELINE_EVENT_DIMENSION_TRAVELER_BEGIN_TOOLTIP"
+			override_types = { country galactic_object }
+			override_text = { "text:TIMELINE_DIMENSION_TRAVELER_BEGIN" }
+			override_texture = { "background:GFX_evt_wormhole" }
+			targets = { event_target:this_country event_target:dimension_traveler_system }
+		}
+	}
+}
+
+# 国家
+create_timeline_dimension_traveler_not_begin = {
+	save_event_target_as = this_country
+	add_timeline_event = {
+		type = timeline_empire
+		override_id = timeline_dimension_traveler_not_begin
+		override_tooltip = "TIMELINE_EVENT_DIMENSION_TRAVELER_NOT_BEGIN_TOOLTIP"
+		override_types = { country galactic_object }
+		override_text = { "text:TIMELINE_DIMENSION_TRAVELER_NOT_BEGIN" }
+		override_texture = { "background:GFX_evt_wormhole" }
+		targets = { event_target:this_country event_target:dimension_traveler_system }
+	}
+}
+
+# 国家
+create_timeline_dimension_traveler_begin_but_stop = {
+	save_event_target_as = this_country
+	add_timeline_event = {
+		type = timeline_empire
+		override_id = timeline_dimension_traveler_begin_but_stop
+		override_tooltip = "TIMELINE_EVENT_DIMENSION_TRAVELER_BEGIN_BUT_STOP_TOOLTIP"
+		override_types = { country }
+		override_text = { "text:TIMELINE_DIMENSION_TRAVELER_BEGIN_BUT_STOP" }
+		override_texture = { "background:GFX_evt_wormhole" }
+		targets = { event_target:this_country }
+	}
+}
+
+# 国家
+create_timeline_dimension_traveler_end_1 = {
+	save_event_target_as = this_country
+	if = {
+		limit = {
+			has_origin = origin_white_hole
+		}
+		add_timeline_event = {
+			type = timeline_origin_specific
+			override_id = timeline_dimension_traveler_end_1_origin
+			override_tooltip = "TIMELINE_EVENT_DIMENSION_TRAVELER_END_1_ORIGIN_TOOLTIP"
+			override_types = { country }
+			override_text = { "text:TIMELINE_DIMENSION_TRAVELER_END_1" }
+			override_texture = { "background:GFX_evt_vortex" }
+			targets = { event_target:this_country }
+		}
+	}
+	else = {
+		add_timeline_event = {
+			type = timeline_empire
+			override_id = timeline_dimension_traveler_end_1
+			override_tooltip = "TIMELINE_EVENT_DIMENSION_TRAVELER_END_1_TOOLTIP"
+			override_types = { country }
+			override_text = { "text:TIMELINE_DIMENSION_TRAVELER_END_1" }
+			override_texture = { "background:GFX_evt_vortex" }
+			targets = { event_target:this_country }
+		}
+	}
+}
+
+# 国家
+create_timeline_dimension_traveler_end_2 = {
+	save_event_target_as = this_country
+	if = {
+		limit = {
+			has_origin = origin_white_hole
+		}
+		add_timeline_event = {
+			type = timeline_origin_specific
+			override_id = timeline_dimension_traveler_end_2_origin
+			override_tooltip = "TIMELINE_EVENT_DIMENSION_TRAVELER_END_2_ORIGIN_TOOLTIP"
+			override_types = { country }
+			override_text = { "text:TIMELINE_DIMENSION_TRAVELER_END_2" }
+			override_texture = { "background:GFX_evt_exploding_ship" }
+			targets = { event_target:this_country }
+		}
+	}
+	else = {
+		add_timeline_event = {
+			type = timeline_empire
+			override_id = timeline_dimension_traveler_end_2
+			override_tooltip = "TIMELINE_EVENT_DIMENSION_TRAVELER_END_2_TOOLTIP"
+			override_types = { country }
+			override_text = { "text:TIMELINE_DIMENSION_TRAVELER_END_2" }
+			override_texture = { "background:GFX_evt_exploding_ship" }
+			targets = { event_target:this_country }
+		}
+	}
+}
+
+# 国家
+create_timeline_dimension_traveler_end_3 = {
+	save_event_target_as = this_country
+	if = {
+		limit = {
+			has_origin = origin_white_hole
+		}
+		add_timeline_event = {
+			type = timeline_origin_specific
+			override_id = timeline_dimension_traveler_end_3_origin
+			override_tooltip = "TIMELINE_EVENT_DIMENSION_TRAVELER_END_3_ORIGIN_TOOLTIP"
+			override_types = { country }
+			override_text = { "text:TIMELINE_DIMENSION_TRAVELER_END_3" }
+			override_texture = { "background:GFX_evt_ship_travel" }
+			targets = { event_target:this_country }
+		}
+	}
+	else = {
+		add_timeline_event = {
+			type = timeline_empire
+			override_id = timeline_dimension_traveler_end_3
+			override_tooltip = "TIMELINE_EVENT_DIMENSION_TRAVELER_END_3_TOOLTIP"
+			override_types = { country }
+			override_text = { "text:TIMELINE_DIMENSION_TRAVELER_END_3" }
+			override_texture = { "background:GFX_evt_ship_travel" }
+			targets = { event_target:this_country }
+		}
+	}
+}
+
+# 国家
+create_timeline_dimension_traveler_end_4 = {
+	save_event_target_as = this_country
+	if = {
+		limit = {
+			has_origin = origin_white_hole
+		}
+		add_timeline_event = {
+			type = timeline_origin_specific
+			override_id = timeline_dimension_traveler_end_4_origin
+			override_tooltip = "TIMELINE_EVENT_DIMENSION_TRAVELER_END_4_ORIGIN_TOOLTIP"
+			override_types = { country }
+			override_text = { "text:TIMELINE_DIMENSION_TRAVELER_END_4" }
+			override_texture = { "background:GFX_evt_supernova" }
+			targets = { event_target:this_country }
+		}
+	}
+	else = {
+		add_timeline_event = {
+			type = timeline_empire
+			override_id = timeline_dimension_traveler_end_4
+			override_tooltip = "TIMELINE_EVENT_DIMENSION_TRAVELER_END_4_TOOLTIP"
+			override_types = { country }
+			override_text = { "text:TIMELINE_DIMENSION_TRAVELER_END_4" }
+			override_texture = { "background:GFX_evt_supernova" }
+			targets = { event_target:this_country }
+		}
+	}
+}
+
+# 国家
+create_timeline_hire_dimension_traveler = {
+	save_event_target_as = this_country
+	add_timeline_event = {
+		type = timeline_milestone
+		override_id = timeline_hire_dimension_traveler
+		override_tooltip = "TIMELINE_EVENT_HIRE_DIMENSION_TRAVELER_TOOLTIP"
+		override_types = { country galactic_object }
+		override_text = { "text:TIMELINE_HIRE_DIMENSION_TRAVELER" }
+		override_texture = { "background:GFX_evt_black_hole" }
+		targets = { event_target:this_country event_target:dimension_traveler_system }
+	}
+}
+
+# 国家
+create_timeline_dismiss_dimension_traveler = {
+	save_event_target_as = this_country
+	if = {
+		limit = {
+			has_origin = origin_white_hole
+		}
+		add_timeline_event = {
+			type = timeline_origin_specific
+			override_id = timeline_dismiss_dimension_traveler_origin
+			override_tooltip = "TIMELINE_EVENT_DISMISS_DIMENSION_TRAVELER_ORIGIN_TOOLTIP"
+			override_types = { country galactic_object }
+			override_text = { "text:TIMELINE_DISMISS_DIMENSION_TRAVELER" }
+			override_texture = { "background:GFX_evt_black_hole" }
+			targets = { event_target:this_country event_target:dimension_traveler_system }
+		}
+	}
+	else = {
+		add_timeline_event = {
+			type = timeline_empire
+			override_id = timeline_dismiss_dimension_traveler
+			override_tooltip = "TIMELINE_EVENT_DISMISS_DIMENSION_TRAVELER_TOOLTIP"
+			override_types = { country galactic_object }
+			override_text = { "text:TIMELINE_DISMISS_DIMENSION_TRAVELER" }
+			override_texture = { "background:GFX_evt_black_hole" }
+			targets = { event_target:this_country event_target:dimension_traveler_system }
+		}
+	}
+}
+
+# 国家
+create_timeline_dimension_traveler_end_6 = {
+	save_event_target_as = this_country
+	add_timeline_event = {
+		type = timeline_milestone
+		override_id = timeline_dimension_traveler_end_6
+		override_tooltip = "TIMELINE_EVENT_DIMENSION_TRAVELER_END_6_TOOLTIP"
+		override_types = { country }
+		override_text = { "text:TIMELINE_DIMENSION_TRAVELER_END_6" }
+		override_texture = { "background:GFX_evt_clocks" }
+		targets = { event_target:this_country }
+	}
+}
+
+# 国家
+create_timeline_dimension_traveler_end_7 = {
+	save_event_target_as = this_country
+	if = {
+		limit = {
+			has_origin = origin_white_hole
+		}
+		add_timeline_event = {
+			type = timeline_origin_specific
+			override_id = timeline_dimension_traveler_end_7_origin
+			override_tooltip = "TIMELINE_EVENT_DIMENSION_TRAVELER_END_7_ORIGIN_TOOLTIP"
+			override_types = { country }
+			override_text = { "text:TIMELINE_DIMENSION_TRAVELER_END_7" }
+			override_texture = { "background:GFX_evt_supernova" }
+			targets = { event_target:this_country }
+		}
+	}
+	else = {
+		add_timeline_event = {
+			type = timeline_empire
+			override_id = timeline_dimension_traveler_end_7
+			override_tooltip = "TIMELINE_EVENT_DIMENSION_TRAVELER_END_7_TOOLTIP"
+			override_types = { country }
+			override_text = { "text:TIMELINE_DIMENSION_TRAVELER_END_7" }
+			override_texture = { "background:GFX_evt_supernova" }
+			targets = { event_target:this_country }
+		}
+	}
+}
+
+# 国家
+create_timeline_dimension_traveler_end_8 = {
+	save_event_target_as = this_country
+	if = {
+		limit = {
+			has_origin = origin_white_hole
+		}
+		add_timeline_event = {
+			type = timeline_milestone
+			override_id = timeline_dimension_traveler_end_8_origin
+			override_tooltip = "TIMELINE_EVENT_DIMENSION_TRAVELER_END_8_ORIGIN_TOOLTIP"
+			override_types = { country }
+			override_text = { "text:TIMELINE_DIMENSION_TRAVELER_END_8" }
+			override_texture = { "background:GFX_evt_vortex" }
+			targets = { event_target:this_country }
+		}
+	}
+	else = {
+		add_timeline_event = {
+			type = timeline_milestone
+			override_id = timeline_dimension_traveler_end_8
+			override_tooltip = "TIMELINE_EVENT_DIMENSION_TRAVELER_END_8_TOOLTIP"
+			override_types = { country }
+			override_text = { "text:TIMELINE_DIMENSION_TRAVELER_END_8" }
+			override_texture = { "background:GFX_evt_vortex" }
+			targets = { event_target:this_country }
+		}
+	}
+}
+
+################################################################
+# 神秘奇点
+################################################################
+
+# 国家
+create_timeline_situation_pc_time_middle = {
+	save_event_target_as = this_country
+	add_timeline_event = {
+		type = timeline_origin_specific
+		override_id = timeline_situation_pc_time_middle
+		override_tooltip = "TIMELINE_EVENT_SITUATION_PC_TIME_MIDDLE_TOOLTIP"
+		override_types = { country }
+		override_text = { "text:TIMELINE_SITUATION_PC_TIME_MIDDLE" }
+		override_texture = { "background:GFX_evt_cosmic_storms_gravity_storm" }
+		targets = { event_target:this_country }
+	}
+}
+
+# 国家
+create_timeline_situation_pc_time_end = {
+	save_event_target_as = this_country
+	add_timeline_event = {
+		type = timeline_milestone
+		override_id = timeline_situation_pc_time_end
+		override_tooltip = "TIMELINE_EVENT_SITUATION_PC_TIME_END_TOOLTIP"
+		override_types = { country }
+		override_text = { "text:TIMELINE_SITUATION_PC_TIME_END" }
+		override_texture = { "background:GFX_evt_astral_rift_microverse" }
+		targets = { event_target:this_country }
+	}
+}
+
+# 国家
+create_timeline_time_black_hole_chain_life = {
+	save_event_target_as = this_country
+	add_timeline_event = {
+		type = timeline_origin_specific
+		override_id = timeline_time_black_hole_chain_life
+		override_tooltip = "TIMELINE_EVENT_TIME_BLACK_HOLE_CHAIN_LIFE_TOOLTIP"
+		override_types = { country leader }
+		override_text = { "text:TIMELINE_TIME_BLACK_HOLE_CHAIN_LIFE" }
+		override_texture = { "background:GFX_evt_black_hole" }
+		targets = { event_target:this_country event_target:time_black_hole_leader }
+	}
+}
+
+# 国家
+create_timeline_time_black_hole_chain_death = {
+	save_event_target_as = this_country
+	add_timeline_event = {
+		type = timeline_origin_specific
+		override_id = timeline_time_black_hole_chain_death
+		override_tooltip = "TIMELINE_EVENT_TIME_BLACK_HOLE_CHAIN_DEATH_TOOLTIP"
+		override_types = { country leader }
+		override_text = { "text:TIMELINE_TIME_BLACK_HOLE_CHAIN_DEATH" }
+		override_texture = { "background:GFX_evt_black_hole" }
+		targets = { event_target:this_country event_target:time_black_hole_leader }
+	}
+}
+
+# 国家
+create_timeline_time_change_auth_time_imperial = {
+	save_event_target_as = this_country
+	add_timeline_event = {
+		type = timeline_origin_specific
+		override_id = timeline_time_change_auth_time_imperial
+		override_tooltip = "TIMELINE_EVENT_TIME_CHANGE_AUTH_TIME_IMPERIAL_TOOLTIP"
+		override_types = { country }
+		override_text = { "text:TIMELINE_TIME_CHANGE_AUTH_TIME_IMPERIAL" }
+		override_texture = { "background:GFX_evt_coronation" }
+		targets = { event_target:this_country }
+	}
+}
+
+# 国家
+create_timeline_time_change_auth_time_democratic = {
+	save_event_target_as = this_country
+	add_timeline_event = {
+		type = timeline_origin_specific
+		override_id = timeline_time_change_auth_time_democratic
+		override_tooltip = "TIMELINE_EVENT_TIME_CHANGE_AUTH_TIME_DEMOCRATIC_TOOLTIP"
+		override_types = { country }
+		override_text = { "text:TIMELINE_TIME_CHANGE_AUTH_TIME_DEMOCRATIC" }
+		override_texture = { "background:GFX_evt_galactic_senate" }
+		targets = { event_target:this_country }
+	}
+}
+
+# 国家
+create_timeline_time_change_auth_time_corporate = {
+	save_event_target_as = this_country
+	add_timeline_event = {
+		type = timeline_origin_specific
+		override_id = timeline_time_change_auth_time_corporate
+		override_tooltip = "TIMELINE_EVENT_TIME_CHANGE_AUTH_TIME_CORPORATE_TOOLTIP"
+		override_types = { country }
+		override_text = { "text:TIMELINE_TIME_CHANGE_AUTH_TIME_CORPORATE" }
+		override_texture = { "background:GFX_evt_galactic_market" }
+		targets = { event_target:this_country }
+	}
+}
+
+# 国家
+create_timeline_time_change_auth_imperial = {
+	save_event_target_as = this_country
+	add_timeline_event = {
+		type = timeline_origin_specific
+		override_id = timeline_time_change_auth_imperial
+		override_tooltip = "TIMELINE_EVENT_TIME_CHANGE_AUTH_IMPERIAL_TOOLTIP"
+		override_types = { country }
+		override_text = { "text:TIMELINE_TIME_CHANGE_AUTH_IMPERIAL" }
+		override_texture = { "background:GFX_evt_enclave_overlord" }
+		targets = { event_target:this_country }
+	}
+}
+
+# 国家
+create_timeline_time_change_auth_dictatorial = {
+	save_event_target_as = this_country
+	add_timeline_event = {
+		type = timeline_origin_specific
+		override_id = timeline_time_change_auth_dictatorial
+		override_tooltip = "TIMELINE_EVENT_TIME_CHANGE_AUTH_DICTATORIAL_TOOLTIP"
+		override_types = { country }
+		override_text = { "text:TIMELINE_TIME_CHANGE_AUTH_DICTATORIAL" }
+		override_texture = { "background:GFX_evt_announcement" }
+		targets = { event_target:this_country }
+	}
+}
+
+# 国家
+create_timeline_time_change_auth_oligarchic = {
+	save_event_target_as = this_country
+	add_timeline_event = {
+		type = timeline_origin_specific
+		override_id = timeline_time_change_auth_oligarchic
+		override_tooltip = "TIMELINE_EVENT_TIME_CHANGE_AUTH_OLIGARCHIC_TOOLTIP"
+		override_types = { country }
+		override_text = { "text:TIMELINE_TIME_CHANGE_AUTH_OLIGARCHIC" }
+		override_texture = { "background:GFX_evt_civil_action" }
+		targets = { event_target:this_country }
+	}
+}
+
+# 国家
+create_timeline_time_change_auth_democratic = {
+	save_event_target_as = this_country
+	add_timeline_event = {
+		type = timeline_origin_specific
+		override_id = timeline_time_change_auth_democratic
+		override_tooltip = "TIMELINE_EVENT_TIME_CHANGE_AUTH_DEMOCRATIC_TOOLTIP"
+		override_types = { country }
+		override_text = { "text:TIMELINE_TIME_CHANGE_AUTH_DEMOCRATIC" }
+		override_texture = { "background:GFX_evt_voting" }
+		targets = { event_target:this_country }
+	}
+}
+
+# 国家
+create_timeline_time_change_auth_corporate = {
+	save_event_target_as = this_country
+	add_timeline_event = {
+		type = timeline_origin_specific
+		override_id = timeline_time_change_auth_corporate
+		override_tooltip = "TIMELINE_EVENT_TIME_CHANGE_AUTH_CORPORATE_TOOLTIP"
+		override_types = { country }
+		override_text = { "text:TIMELINE_TIME_CHANGE_AUTH_CORPORATE" }
+		override_texture = { "background:GFX_evt_busy_spaceport" }
+		targets = { event_target:this_country }
+	}
+}
+
+# 国家
+create_timeline_decision_time_end = {
+	save_event_target_as = this_country
+	add_timeline_event = {
+		type = timeline_milestone
+		override_id = timeline_decision_time_end
+		override_tooltip = "TIMELINE_EVENT_DECISION_TIME_END_TOOLTIP"
+		override_types = { country }
+		override_text = { "text:TIMELINE_DECISION_TIME_END" }
+		override_texture = { "background:GFX_evt_surreal_visions" }
+		targets = { event_target:this_country }
+	}
+}
+
+# 国家
+create_timeline_agenda_time_soul = {
+	save_event_target_as = this_country
+	add_timeline_event = {
+		type = timeline_milestone
+		override_id = timeline_agenda_time_soul
+		override_tooltip = "TIMELINE_EVENT_AGENDA_TIME_SOUL_TOOLTIP"
+		override_types = { country }
+		override_text = { "text:TIMELINE_AGENDA_TIME_SOUL" }
+		override_texture = { "background:GFX_evt_surreal_visions" }
+		targets = { event_target:this_country }
+	}
+}
+
+# 国家
+create_timeline_pc_endless_time = {
+	save_event_target_as = this_country
+	add_timeline_event = {
+		type = timeline_galactic
+		override_id = timeline_pc_endless_time
+		override_tooltip = "TIMELINE_EVENT_PC_ENDLESS_TIME_TOOLTIP"
+		override_types = { country planet }
+		override_text = { "text:TIMELINE_PC_ENDLESS_TIME" }
+		override_texture = { "background:GFX_pc_endless_time" }
+		targets = { event_target:this_country event_target:time_dimensional_horror_planet }
+	}
+	every_playable_country = {
+		limit = {
+			NOT = { is_same_value = event_target:this_country }
+			has_communications = event_target:this_country
+		}
+		add_timeline_event = {
+			type = timeline_galactic
+			override_id = timeline_pc_endless_time_other
+			override_tooltip = "TIMELINE_EVENT_PC_ENDLESS_TIME_OTHER_TOOLTIP"
+			override_types = { country planet }
+			override_text = { "text:TIMELINE_PC_ENDLESS_TIME" }
+			override_texture = { "background:GFX_pc_endless_time" }
+			targets = { event_target:this_country event_target:time_dimensional_horror_planet }
+		}
+	}
+}
+
+################################################################
+# 纳米机器
+################################################################
+
+# 国家
+create_timeline_choose_nanites_attacker = {
+	save_event_target_as = this_country
+	add_timeline_event = {
+		type = timeline_origin_specific
+		override_id = timeline_choose_nanites_attacker
+		override_tooltip = "TIMELINE_EVENT_CHOOSE_NANITES_ATTACKER_TOOLTIP"
+		override_types = { country }
+		override_text = { "text:TIMELINE_CHOOSE_NANITES_ATTACKER" }
+		override_texture = { "background:GFX_evt_gray_goo_ships" }
+		targets = { event_target:this_country }
+	}
+}
+
+# 国家
+create_timeline_choose_nanites_protector = {
+	save_event_target_as = this_country
+	add_timeline_event = {
+		type = timeline_origin_specific
+		override_id = timeline_choose_nanites_protector
+		override_tooltip = "TIMELINE_EVENT_CHOOSE_NANITES_PROTECTOR_TOOLTIP"
+		override_types = { country }
+		override_text = { "text:TIMELINE_CHOOSE_NANITES_PROTECTOR" }
+		override_texture = { "background:GFX_evt_gray_goo_ships" }
+		targets = { event_target:this_country }
+	}
+}
+
+################################################################
+# 平行星空
+################################################################
+
+# 国家
+create_timeline_declare_war_on_parallel_sky_country = {
+	save_event_target_as = this_country
+	if = {
+		limit = {
+			has_origin = origin_parallel_sky
+		}
+		add_timeline_event = {
+			type = timeline_origin_specific
+			override_id = timeline_declare_war_on_parallel_sky_country_origin
+			override_tooltip = "TIMELINE_EVENT_DECLARE_WAR_ON_PARALLEL_SKY_COUNTRY_ORIGIN_TOOLTIP"
+			override_types = { country country }
+			override_text = { "text:TIMELINE_DECLARE_WAR_ON_PARALLEL_SKY_COUNTRY" }
+			override_texture = { "background:GFX_evt_burning_city" }
+			targets = { event_target:this_country event_target:parallel_sky_country }
+		}
+	}
+	else = {
+		add_timeline_event = {
+			type = timeline_empire
+			override_id = timeline_declare_war_on_parallel_sky_country
+			override_tooltip = "TIMELINE_EVENT_DECLARE_WAR_ON_PARALLEL_SKY_COUNTRY_TOOLTIP"
+			override_types = { country country }
+			override_text = { "text:TIMELINE_DECLARE_WAR_ON_PARALLEL_SKY_COUNTRY" }
+			override_texture = { "background:GFX_evt_burning_city" }
+			targets = { event_target:this_country event_target:parallel_sky_country }
+		}
+	}
+}
+
+# 国家
+create_timeline_parallel_sky_war_won = {
+	save_event_target_as = this_country
+	if = {
+		limit = {
+			has_origin = origin_parallel_sky
+		}
+		add_timeline_event = {
+			type = timeline_origin_specific
+			override_id = timeline_parallel_sky_war_won_origin
+			override_tooltip = "TIMELINE_EVENT_PARALLEL_SKY_WAR_WON_ORIGIN_TOOLTIP"
+			override_types = { country country planet }
+			override_text = { "text:TIMELINE_PARALLEL_SKY_WAR_WON" }
+			override_texture = { "background:GFX_evt_victorious_army" }
+			targets = { event_target:this_country event_target:parallel_sky_country event_target:parallel_sky_planet }
+		}
+	}
+	else = {
+		add_timeline_event = {
+			type = timeline_empire
+			override_id = timeline_parallel_sky_war_won
+			override_tooltip = "TIMELINE_EVENT_PARALLEL_SKY_WAR_WON_TOOLTIP"
+			override_types = { country country planet }
+			override_text = { "text:TIMELINE_PARALLEL_SKY_WAR_WON" }
+			override_texture = { "background:GFX_evt_victorious_army" }
+			targets = { event_target:this_country event_target:parallel_sky_country event_target:parallel_sky_planet }
+		}
+	}
+}
+
+# 国家
+create_timeline_parallel_sky_country_destroyed = {
+	add_timeline_event = {
+		type = timeline_origin_specific
+		override_id = timeline_parallel_sky_country_destroyed
+		override_tooltip = "TIMELINE_EVENT_PARALLEL_SKY_COUNTRY_DESTROYED_TOOLTIP"
+		override_types = { country planet }
+		override_text = { "text:TIMELINE_PARALLEL_SKY_COUNTRY_DESTROYED" }
+		override_texture = { "background:GFX_evt_ruined_system" }
+		targets = { event_target:parallel_sky_country event_target:parallel_sky_planet }
+	}
+}
+
+################################################################
+# 阴霾之下
+################################################################
+
+# 国家
+create_timeline_under_the_haze_silence = {
+	add_timeline_event = {
+		type = timeline_origin_specific
+		override_id = timeline_under_the_haze_silence
+		override_tooltip = "TIMELINE_EVENT_UNDER_THE_HAZE_SILENCE_TOOLTIP"
+		override_types = { planet }
+		override_text = { "text:TIMELINE_UNDER_THE_HAZE_SILENCE" }
+		override_texture = { "background:GFX_evt_zro_1" }
+		targets = { event_target:under_the_haze_planet }
+	}
+}
+
+# 国家
+create_timeline_under_the_haze_end_1 = {
+	save_event_target_as = this_country
+	add_timeline_event = {
+		type = timeline_origin_specific
+		override_id = timeline_under_the_haze_end_1
+		override_tooltip = "TIMELINE_EVENT_UNDER_THE_HAZE_END_1_TOOLTIP"
+		override_types = { country }
+		override_text = { "text:TIMELINE_UNDER_THE_HAZE_END_1" }
+		override_texture = { "background:GFX_evt_vortex" }
+		targets = { event_target:this_country }
+	}
+}
+
+# 国家
+create_timeline_under_the_haze_end_2 = {
+	save_event_target_as = this_country
+	add_timeline_event = {
+		type = timeline_origin_specific
+		override_id = timeline_under_the_haze_end_2
+		override_tooltip = "TIMELINE_EVENT_UNDER_THE_HAZE_END_2_TOOLTIP"
+		override_types = { country }
+		override_text = { "text:TIMELINE_UNDER_THE_HAZE_END_2" }
+		override_texture = { "background:GFX_evt_alien_nature" }
+		targets = { event_target:this_country }
+	}
+}
+
+# 国家
+create_timeline_under_the_haze_end_3 = {
+	save_event_target_as = this_country
+	add_timeline_event = {
+		type = timeline_origin_specific
+		override_id = timeline_under_the_haze_end_3
+		override_tooltip = "TIMELINE_EVENT_UNDER_THE_HAZE_END_3_TOOLTIP"
+		override_types = { country }
+		override_text = { "text:TIMELINE_UNDER_THE_HAZE_END_3" }
+		override_texture = { "background:GFX_evt_dimensional_horror" }
+		targets = { event_target:this_country }
+	}
+}
+
+################################################################
+# 悬顶之剑
+################################################################
+
+# 国家
+create_timeline_origin_colossus_fleet_destroyed_0 = {
+	add_timeline_event = {
+		type = timeline_origin_specific
+		override_id = timeline_origin_colossus_fleet_destroyed_0
+		override_tooltip = "TIMELINE_EVENT_ORIGIN_COLOSSUS_FLEET_DESTROYED_0_TOOLTIP"
+		override_types = { fleet }
+		override_text = { "text:TIMELINE_ORIGIN_COLOSSUS_FLEET_DESTROYED_0" }
+		override_texture = { "background:GFX_evt_exploding_ship" }
+		targets = { event_target:origin_colossus_fleet }
+	}
+}
+
+# 国家
+create_timeline_origin_colossus_fleet_destroyed_1 = {
+	add_timeline_event = {
+		type = timeline_origin_specific
+		override_id = timeline_origin_colossus_fleet_destroyed_1
+		override_tooltip = "TIMELINE_EVENT_ORIGIN_COLOSSUS_FLEET_DESTROYED_1_TOOLTIP"
+		override_types = { fleet }
+		override_text = { "text:TIMELINE_ORIGIN_COLOSSUS_FLEET_DESTROYED_1" }
+		override_texture = { "background:GFX_evt_exploding_ship" }
+		targets = { event_target:origin_colossus_fleet }
+	}
+}
+
+# 国家
+create_timeline_origin_colossus_fleet_destroyed_2 = {
+	add_timeline_event = {
+		type = timeline_origin_specific
+		override_id = timeline_origin_colossus_fleet_destroyed_2
+		override_tooltip = "TIMELINE_EVENT_ORIGIN_COLOSSUS_FLEET_DESTROYED_2_TOOLTIP"
+		override_types = { fleet }
+		override_text = { "text:TIMELINE_ORIGIN_COLOSSUS_FLEET_DESTROYED_2" }
+		override_texture = { "background:GFX_evt_exploding_ship" }
+		targets = { event_target:origin_colossus_fleet }
+	}
+}
+
+# 国家
+create_timeline_origin_colossus_end = {
+	save_event_target_as = this_country
+	add_timeline_event = {
+		type = timeline_origin_specific
+		override_id = timeline_origin_colossus_end
+		override_tooltip = "TIMELINE_EVENT_ORIGIN_COLOSSUS_END_TOOLTIP"
+		override_types = { fleet country }
+		override_text = { "text:TIMELINE_ORIGIN_COLOSSUS_END" }
+		override_texture = { "background:GFX_evt_ghost_ship" }
+		targets = { event_target:origin_colossus_fleet event_target:this_country }
+	}
+}
+
+################################################################
+# 生于黑夜
+################################################################
+
+# 国家
+create_timeline_origin_voidspawn_end_0 = {
+	add_timeline_event = {
+		type = timeline_origin_specific
+		override_id = timeline_origin_voidspawn_end_0
+		override_tooltip = "TIMELINE_EVENT_ORIGIN_VOIDSPAWN_END_0_TOOLTIP"
+		override_types = { planet }
+		override_text = { "text:TIMELINE_ORIGIN_VOIDSPAWN_END_0" }
+		override_texture = { "background:GFX_evt_egg_cracked" }
+		targets = { event_target:origin_voidspawn_planet }
+	}
+}
+
+# 国家
+create_timeline_origin_voidspawn_end_1 = {
+	add_timeline_event = {
+		type = timeline_origin_specific
+		override_id = timeline_origin_voidspawn_end_1
+		override_tooltip = "TIMELINE_EVENT_ORIGIN_VOIDSPAWN_END_1_TOOLTIP"
+		override_types = { planet }
+		override_text = { "text:TIMELINE_ORIGIN_VOIDSPAWN_END_1" }
+		override_texture = { "background:GFX_evt_voidspawn" }
+		targets = { event_target:origin_voidspawn_planet }
+	}
+}
+
+# 国家
+create_timeline_origin_voidspawn_end_2 = {
+	add_timeline_event = {
+		type = timeline_origin_specific
+		override_id = timeline_origin_voidspawn_end_2
+		override_tooltip = "TIMELINE_EVENT_ORIGIN_VOIDSPAWN_END_2_TOOLTIP"
+		override_types = { planet }
+		override_text = { "text:TIMELINE_ORIGIN_VOIDSPAWN_END_2" }
+		override_texture = { "background:GFX_evt_alien_planet" }
+		targets = { event_target:origin_voidspawn_planet }
+	}
+}
+
+################################################################
+# 江洋大盗
+################################################################
+
+# 国家
+create_timeline_become_origin_pirate_king_end = {
+	save_event_target_as = this_country
+	add_timeline_event = {
+		type = timeline_origin_specific
+		override_id = timeline_become_origin_pirate_king_end
+		override_tooltip = "TIMELINE_EVENT_BECOME_ORIGIN_PIRATE_KING_END_TOOLTIP"
+		override_types = { country }
+		override_text = { "text:TIMELINE_BECOME_ORIGIN_PIRATE_KING_END" }
+		override_texture = { "background:GFX_evt_small_space_battle" }
+		targets = { event_target:this_country }
+	}
+}
+
+# 国家
+create_timeline_defeat_pirate_king_end_horror = {
+	save_event_target_as = this_country
+	if = {
+		limit = {
+			has_origin = origin_pirate_king_end
+		}
+		add_timeline_event = {
+			type = timeline_origin_specific
+			override_id = timeline_defeat_pirate_king_end_horror_origin
+			override_tooltip = "TIMELINE_EVENT_DEFEAT_PIRATE_KING_END_HORROR_ORIGIN_TOOLTIP"
+			override_types = { country galactic_object }
+			override_text = { "text:TIMELINE_DEFEAT_PIRATE_KING_END_HORROR" }
+			override_texture = { "background:GFX_evt_dimensional_horror" }
+			targets = { event_target:this_country event_target:pirate_king_black_hole_system }
+		}
+	}
+	else = {
+		add_timeline_event = {
+			type = timeline_empire
+			override_id = timeline_defeat_pirate_king_end_horror
+			override_tooltip = "TIMELINE_EVENT_DEFEAT_PIRATE_KING_END_HORROR_TOOLTIP"
+			override_types = { country galactic_object }
+			override_text = { "text:TIMELINE_DEFEAT_PIRATE_KING_END_HORROR" }
+			override_texture = { "background:GFX_evt_dimensional_horror" }
+			targets = { event_target:this_country event_target:pirate_king_black_hole_system }
+		}
+	}
+}
+
+# 国家
+create_timeline_hire_pirate_king_leader = {
+	save_event_target_as = this_country
+	add_timeline_event = {
+		type = timeline_origin_specific
+		override_id = timeline_hire_pirate_king_leader
+		override_tooltip = "TIMELINE_EVENT_HIRE_PIRATE_KING_LEADER_TOOLTIP"
+		override_types = { country leader }
+		override_text = { "text:TIMELINE_HIRE_PIRATE_KING_LEADER" }
+		override_texture = { "background:GFX_evt_black_hole" }
+		targets = { event_target:this_country event_target:pirate_king_leader }
+	}
+}
+
+# 国家
+create_timeline_dismiss_pirate_king_leader = {
+	save_event_target_as = this_country
+	add_timeline_event = {
+		type = timeline_origin_specific
+		override_id = timeline_dismiss_pirate_king_leader
+		override_tooltip = "TIMELINE_EVENT_DISMISS_PIRATE_KING_LEADER_TOOLTIP"
+		override_types = { country leader }
+		override_text = { "text:TIMELINE_DISMISS_PIRATE_KING_LEADER" }
+		override_texture = { "background:GFX_evt_black_hole" }
+		targets = { event_target:this_country event_target:pirate_king_leader }
+	}
+}
+
+################################################################
+# 伪善假面
+################################################################
+
+# 国家
+create_timeline_origin_hypocritical_face_end = {
+	save_event_target_as = this_country
+	add_timeline_event = {
+		type = timeline_origin_specific
+		override_id = timeline_origin_hypocritical_face_end
+		override_tooltip = "TIMELINE_EVENT_ORIGIN_HYPOCRITICAL_FACE_END_TOOLTIP"
+		override_types = { country }
+		override_text = { "text:TIMELINE_ORIGIN_HYPOCRITICAL_FACE_END" }
+		override_texture = { "background:GFX_evt_black_market" }
+		targets = { event_target:this_country }
+	}
+}
+
+# 国家
+create_timeline_origin_hypocritical_face_end_other = {
+	from = { save_event_target_as = target_country }
+	add_timeline_event = {
+		type = timeline_empire
+		override_id = timeline_origin_hypocritical_face_end_other
+		override_tooltip = "TIMELINE_EVENT_ORIGIN_HYPOCRITICAL_FACE_END_OTHER_TOOLTIP"
+		override_types = { country }
+		override_text = { "text:TIMELINE_ORIGIN_HYPOCRITICAL_FACE_END_OTHER" }
+		override_texture = { "background:GFX_evt_black_market" }
+		targets = { event_target:target_country }
+	}
+}
+
+################################################################
+# 诺亚方舟
+################################################################
+
+# 国家
+create_timeline_origin_noah_ark_end_1 = {
+	save_event_target_as = this_country
+	add_timeline_event = {
+		type = timeline_origin_specific
+		override_id = timeline_origin_noah_ark_end_1
+		override_tooltip = "TIMELINE_EVENT_ORIGIN_NOAH_ARK_END_1_TOOLTIP"
+		override_types = { country }
+		override_text = { "text:TIMELINE_ORIGIN_NOAH_ARK_END_1" }
+		override_texture = { "background:GFX_evt_death_from_above" }
+		targets = { event_target:this_country }
+	}
+}
+
+# 国家
+create_timeline_origin_noah_ark_end_2 = {
+	save_event_target_as = this_country
+	if = {
+		limit = {
+			has_origin = origin_noah_ark
+		}
+		add_timeline_event = {
+			type = timeline_origin_specific
+			override_id = timeline_origin_noah_ark_end_2_origin
+			override_tooltip = "TIMELINE_EVENT_ORIGIN_NOAH_ARK_END_2_ORIGIN_TOOLTIP"
+			override_types = { country }
+			override_text = { "text:TIMELINE_ORIGIN_NOAH_ARK_END_2" }
+			override_texture = { "background:GFX_evt_ship_travel" }
+			targets = { event_target:this_country }
+		}
+	}
+	else = {
+		add_timeline_event = {
+			type = timeline_empire
+			override_id = timeline_origin_noah_ark_end_2
+			override_tooltip = "TIMELINE_EVENT_ORIGIN_NOAH_ARK_END_2_TOOLTIP"
+			override_types = { country }
+			override_text = { "text:TIMELINE_ORIGIN_NOAH_ARK_END_2" }
+			override_texture = { "background:GFX_evt_ship_travel" }
+			targets = { event_target:this_country }
+		}
+	}
+}
+
+################################################################
+# 生于紫室
+################################################################
+
+# 局势
+create_timeline_origin_born_in_the_purple_heir_is_crowned = {
+	target = { save_event_target_as = heir }
+	owner = {
+		save_event_target_as = this_country
+		add_timeline_event = {
+			type = timeline_origin_specific
+			override_id = timeline_origin_born_in_the_purple_heir_is_crowned
+			override_tooltip = "TIMELINE_EVENT_ORIGIN_BORN_IN_THE_PURPLE_HEIR_IS_CROWNED_TOOLTIP"
+			override_types = { country leader }
+			override_text = { "text:TIMELINE_ORIGIN_BORN_IN_THE_PURPLE_HEIR_IS_CROWNED" }
+			override_texture = { "background:GFX_evt_arguing_senate" }
+			targets = { event_target:this_country event_target:heir }
+		}
+	}
+}
+
+# 局势
+create_timeline_origin_born_in_the_purple_heir_is_killed = {
+	target = { save_event_target_as = heir }
+	owner = {
+		save_event_target_as = this_country
+		add_timeline_event = {
+			type = timeline_origin_specific
+			override_id = timeline_origin_born_in_the_purple_heir_is_killed
+			override_tooltip = "TIMELINE_EVENT_ORIGIN_BORN_IN_THE_PURPLE_HEIR_IS_KILLED_TOOLTIP"
+			override_types = { country leader }
+			override_text = { "text:TIMELINE_ORIGIN_BORN_IN_THE_PURPLE_HEIR_IS_KILLED" }
+			override_texture = { "background:GFX_evt_crusher_droid" }
+			targets = { event_target:this_country event_target:heir }
+		}
+	}
+}
+
+################################################################
+# 神眷之族
+################################################################
+
+# 国家
+create_timeline_origin_blessed_by_god_is_abandoned = {
+	save_event_target_as = this_country
+	add_timeline_event = {
+		type = timeline_origin_specific
+		override_id = timeline_origin_blessed_by_god_is_abandoned
+		override_tooltip = "TIMELINE_EVENT_ORIGIN_BLESSED_BY_GOD_IS_ABANDONED_TOOLTIP"
+		override_types = { country }
+		override_text = { "text:TIMELINE_ORIGIN_BLESSED_BY_GOD_IS_ABANDONED" }
+		override_texture = { "background:GFX_evt_zro_4" }
+		targets = { event_target:this_country }
+	}
+}
+
+################################################################
+# 神弃之族
+################################################################
+
+# 国家
+create_timeline_origin_abandoned_by_god_active_nemesis = {
+	save_event_target_as = this_country
+	add_timeline_event = {
+		type = timeline_origin_specific
+		override_id = timeline_origin_abandoned_by_god_active_nemesis
+		override_tooltip = "TIMELINE_EVENT_ORIGIN_ABANDONED_BY_GOD_ACTIVE_NEMESIS_TOOLTIP"
+		override_types = { country }
+		override_text = { "text:TIMELINE_ORIGIN_ABANDONED_BY_GOD_ACTIVE_NEMESIS" }
+		override_texture = { "background:GFX_evt_zro_5" }
+		targets = { event_target:this_country }
+	}
+}
+
+################################################################
+# 彼岸封印
+################################################################
+
+# 国家
+create_timeline_origin_equinox_seal_broken = {
+	save_event_target_as = this_country
+	if = {
+		limit = {
+			OR = {
+				has_origin = origin_equinox_seal
+				has_origin = origin_equinox_glimpse
+			}
+		}
+		add_timeline_event = {
+			type = timeline_origin_specific
+			override_id = timeline_origin_equinox_seal_broken_origin
+			override_tooltip = "TIMELINE_EVENT_ORIGIN_EQUINOX_SEAL_BROKEN_ORIGIN_TOOLTIP"
+			override_types = { country galactic_object }
+			override_text = { "text:TIMELINE_ORIGIN_EQUINOX_SEAL_BROKEN" }
+			override_texture = { "background:GFX_evt_dimensional_horror" }
+			targets = { event_target:this_country event_target:equinox_seal_system }
+		}
+	}
+	else = {
+		add_timeline_event = {
+			type = timeline_empire
+			override_id = timeline_origin_equinox_seal_broken
+			override_tooltip = "TIMELINE_EVENT_ORIGIN_EQUINOX_SEAL_BROKEN_TOOLTIP"
+			override_types = { country galactic_object }
+			override_text = { "text:TIMELINE_ORIGIN_EQUINOX_SEAL_BROKEN" }
+			override_texture = { "background:GFX_evt_dimensional_horror" }
+			targets = { event_target:this_country event_target:equinox_seal_system }
+		}
+	}
+}
+
+# 国家
+create_timeline_origin_equinox_seal_unseal = {
+	save_event_target_as = this_country
+	add_timeline_event = {
+		type = timeline_origin_specific
+		override_id = timeline_origin_equinox_seal_unseal
+		override_tooltip = "TIMELINE_EVENT_ORIGIN_EQUINOX_SEAL_UNSEAL_TOOLTIP"
+		override_types = { country galactic_object }
+		override_text = { "text:TIMELINE_ORIGIN_EQUINOX_SEAL_UNSEAL" }
+		override_texture = { "background:GFX_evt_situation_the_seal" }
+		targets = { event_target:this_country event_target:equinox_seal_system }
+	}
+}
+
+# 国家
+create_timeline_origin_equinox_seal_finish_seal = {
+	save_event_target_as = this_country
+	add_timeline_event = {
+		type = timeline_origin_specific
+		override_id = timeline_origin_equinox_seal_finish_seal
+		override_tooltip = "TIMELINE_EVENT_ORIGIN_EQUINOX_SEAL_FINISH_SEAL_TOOLTIP"
+		override_types = { country galactic_object }
+		override_text = { "text:TIMELINE_ORIGIN_EQUINOX_SEAL_FINISH_SEAL" }
+		override_texture = { "background:GFX_evt_astral_rift_bleached_planet_3" }
+		targets = { event_target:this_country event_target:equinox_seal_system }
+	}
+}
+
+# 国家
+create_timeline_origin_equinox_seal_lost_trait = {
+	save_event_target_as = this_country
+	add_timeline_event = {
+		type = timeline_origin_specific
+		override_id = timeline_origin_equinox_seal_lost_trait
+		override_tooltip = "TIMELINE_EVENT_ORIGIN_EQUINOX_SEAL_LOST_TRAIT_TOOLTIP"
+		override_types = { country galactic_object }
+		override_text = { "text:TIMELINE_ORIGIN_EQUINOX_SEAL_LOST_TRAIT" }
+		override_texture = { "background:GFX_evt_situation_the_seal" }
+		targets = { event_target:this_country event_target:equinox_seal_system }
+	}
+}
+
+################################################################
+# 全局起源
+################################################################
+
+# 国家
+create_timeline_origin_reckoning_arrived = {
+	save_event_target_as = this_country
+	add_timeline_event = {
+		type = timeline_milestone
+		date = 2150.1.1
+		override_id = timeline_end_of_the_cycle
+		override_tooltip = "TIMELINE_EVENT_END_OF_THE_CYCLE_TOOLTIP"
+		override_types = { country }
+		override_text = { "text:TIMELINE_END_OF_THE_CYCLE" }
+		override_texture = { "background:GFX_evt_unspeakable_horror" }
+		targets = { event_target:this_country }
+	}
+	add_timeline_event = {
+		type = timeline_event_year
+		date = 2150.1.1
+	}
+	create_timeline_time_origin = { ORIGIN = origin_reckoning_arrived }
+}
+
+# 国家
+create_timeline_origin_swarm_crisis_begin = {
+	save_event_target_as = this_country
+	set_country_flag = exists_timeline_origin_swarm_crisis_begin
+	add_timeline_event = {
+		type = timeline_galactic
+		override_id = timeline_origin_swarm_crisis_begin
+		override_tooltip = "TIMELINE_EVENT_ORIGIN_SWARM_CRISIS_BEGIN_TOOLTIP"
+		override_types = { country }
+		override_text = { "text:TIMELINE_ORIGIN_SWARM_CRISIS_BEGIN" }
+		override_texture = { "background:GFX_evt_unidentified_monster" }
+		targets = { event_target:this_country }
+	}
+	every_playable_country = {
+		limit = {
+			NOR = {
+				has_origin = origin_swarm_crisis
+				has_country_flag = exists_timeline_origin_swarm_crisis_begin
+			}
+		}
+		save_event_target_as = this_country
+		set_country_flag = exists_timeline_origin_swarm_crisis_begin
+		add_timeline_event = {
+			type = timeline_galactic
+			override_id = timeline_origin_swarm_crisis_begin_other
+			override_tooltip = "TIMELINE_EVENT_ORIGIN_SWARM_CRISIS_BEGIN_OTHER_TOOLTIP"
+			override_types = { country }
+			override_text = { "text:TIMELINE_ORIGIN_SWARM_CRISIS_BEGIN" }
+			override_texture = { "background:GFX_evt_unidentified_monster" }
+			targets = { event_target:this_country }
+		}
+	}
+}
+
+# 国家
+create_timeline_origin_ai_crisis_begin = {
+	save_event_target_as = this_country
+	set_country_flag = exists_timeline_origin_ai_crisis_begin
+	add_timeline_event = {
+		type = timeline_galactic
+		override_id = timeline_origin_ai_crisis_begin
+		override_tooltip = "TIMELINE_EVENT_ORIGIN_AI_CRISIS_BEGIN_TOOLTIP"
+		override_types = { country }
+		override_text = { "text:TIMELINE_ORIGIN_AI_CRISIS_BEGIN" }
+		override_texture = { "background:GFX_evt_contingency_planet" }
+		targets = { event_target:this_country }
+	}
+	every_playable_country = {
+		limit = {
+			NOR = {
+				has_origin = origin_ai_crisis
+				has_country_flag = exists_timeline_origin_ai_crisis_begin
+			}
+		}
+		set_country_flag = exists_timeline_origin_ai_crisis_begin
+		add_timeline_event = {
+			type = timeline_galactic
+			override_id = timeline_origin_ai_crisis_begin_other
+			override_tooltip = "TIMELINE_EVENT_ORIGIN_AI_CRISIS_BEGIN_OTHER_TOOLTIP"
+			override_types = { country }
+			override_text = { "text:TIMELINE_ORIGIN_AI_CRISIS_BEGIN" }
+			override_texture = { "background:GFX_evt_contingency_planet" }
+			targets = { event_target:this_country }
+		}
+	}
+}
+
+# 国家
+create_timeline_origin_exd_crisis_begin = {
+	save_event_target_as = this_country
+	set_country_flag = exists_timeline_origin_exd_crisis_begin
+	add_timeline_event = {
+		type = timeline_galactic
+		override_id = timeline_origin_exd_crisis_begin
+		override_tooltip = "TIMELINE_EVENT_ORIGIN_EXD_CRISIS_BEGIN_TOOLTIP"
+		override_types = { country }
+		override_text = { "text:TIMELINE_ORIGIN_EXD_CRISIS_BEGIN" }
+		override_texture = { "background:GFX_evt_announcement" }
+		targets = { event_target:this_country }
+	}
+	every_playable_country = {
+		limit = {
+			NOR = {
+				has_origin = origin_exd_crisis
+				has_country_flag = exists_timeline_origin_exd_crisis_begin
+			}
+		}
+		set_country_flag = exists_timeline_origin_exd_crisis_begin
+		add_timeline_event = {
+			type = timeline_galactic
+			override_id = timeline_origin_exd_crisis_begin_other
+			override_tooltip = "TIMELINE_EVENT_ORIGIN_EXD_CRISIS_BEGIN_OTHER_TOOLTIP"
+			override_types = { country }
+			override_text = { "text:TIMELINE_ORIGIN_EXD_CRISIS_BEGIN" }
+			override_texture = { "background:GFX_evt_announcement" }
+			targets = { event_target:this_country }
+		}
+	}
+}
+
+# 国家
+create_timeline_origin_synth_queen_crisis_begin = {
+	save_event_target_as = this_country
+	set_country_flag = exists_timeline_origin_synth_queen_crisis_begin
+	add_timeline_event = {
+		type = timeline_galactic
+		override_id = timeline_origin_synth_queen_crisis_begin
+		override_tooltip = "TIMELINE_EVENT_ORIGIN_SYNTH_QUEEN_CRISIS_BEGIN_TOOLTIP"
+		override_types = { country }
+		override_text = { "text:TIMELINE_ORIGIN_SYNTH_QUEEN_CRISIS_BEGIN" }
+		override_texture = { "background:GFX_evt_synth_queen_enlightenment" }
+		targets = { event_target:this_country }
+	}
+	every_playable_country = {
+		limit = {
+			NOR = {
+				has_origin = origin_synth_queen_crisis
+				has_country_flag = exists_timeline_origin_synth_queen_crisis_begin
+			}
+		}
+		set_country_flag = exists_timeline_origin_synth_queen_crisis_begin
+		add_timeline_event = {
+			type = timeline_galactic
+			override_id = timeline_origin_synth_queen_crisis_begin_other
+			override_tooltip = "TIMELINE_EVENT_ORIGIN_SYNTH_QUEEN_CRISIS_BEGIN_OTHER_TOOLTIP"
+			override_types = { country }
+			override_text = { "text:TIMELINE_ORIGIN_SYNTH_QUEEN_CRISIS_BEGIN" }
+			override_texture = { "background:GFX_evt_synth_queen_enlightenment" }
+			targets = { event_target:this_country }
+		}
+	}
+}
+
+# 国家
+create_timeline_origin_fourth_crisis_begin = {
+	save_event_target_as = this_country
+	set_country_flag = exists_timeline_origin_fourth_crisis_begin
+	add_timeline_event = {
+		type = timeline_galactic
+		override_id = timeline_origin_fourth_crisis_begin
+		override_tooltip = "TIMELINE_EVENT_ORIGIN_FOURTH_CRISIS_BEGIN_TOOLTIP"
+		override_types = { country }
+		override_text = { "text:TIMELINE_ORIGIN_FOURTH_CRISIS_BEGIN" }
+		override_texture = { "background:GFX_evt_sapient_AI" }
+		targets = { event_target:this_country }
+	}
+	every_playable_country = {
+		limit = {
+			NOR = {
+				has_origin = origin_fourth_crisis
+				has_country_flag = exists_timeline_origin_fourth_crisis_begin
+			}
+		}
+		set_country_flag = exists_timeline_origin_fourth_crisis_begin
+		add_timeline_event = {
+			type = timeline_galactic
+			override_id = timeline_origin_fourth_crisis_begin_other
+			override_tooltip = "TIMELINE_EVENT_ORIGIN_FOURTH_CRISIS_BEGIN_OTHER_TOOLTIP"
+			override_types = { country }
+			override_text = { "text:TIMELINE_ORIGIN_FOURTH_CRISIS_BEGIN" }
+			override_texture = { "background:GFX_evt_sapient_AI" }
+			targets = { event_target:this_country }
+		}
+	}
+}
+
+# 国家
+create_timeline_origin_new_country_begin = {
+	save_event_target_as = this_country
+	set_country_flag = exists_timeline_origin_new_country_begin
+	add_timeline_event = {
+		type = timeline_galactic
+		override_id = timeline_origin_new_country_begin
+		override_tooltip = "TIMELINE_EVENT_ORIGIN_NEW_COUNTRY_BEGIN_TOOLTIP"
+		override_types = { country }
+		override_text = { "text:TIMELINE_ORIGIN_NEW_COUNTRY_BEGIN" }
+		override_texture = { "background:GFX_evt_ship_in_orbit_3" }
+		targets = { event_target:this_country }
+	}
+	every_playable_country = {
+		limit = {
+			NOR = {
+				has_origin = origin_new_country
+				has_country_flag = exists_timeline_origin_new_country_begin
+			}
+		}
+		set_country_flag = exists_timeline_origin_new_country_begin
+		add_timeline_event = {
+			type = timeline_galactic
+			override_id = timeline_origin_new_country_begin_other
+			override_tooltip = "TIMELINE_EVENT_ORIGIN_NEW_COUNTRY_BEGIN_OTHER_TOOLTIP"
+			override_types = { country }
+			override_text = { "text:TIMELINE_ORIGIN_NEW_COUNTRY_BEGIN" }
+			override_texture = { "background:event_pre_ftl_civilization" }
+			targets = { event_target:this_country }
+		}
+	}
+}
+
+# 国家
+create_timeline_origin_dark_forest_begin = {
+	save_event_target_as = this_country
+	set_country_flag = exists_timeline_origin_dark_forest_begin
+	add_timeline_event = {
+		type = timeline_galactic
+		override_id = timeline_origin_dark_forest_begin
+		override_tooltip = "TIMELINE_EVENT_ORIGIN_DARK_FOREST_BEGIN_TOOLTIP"
+		override_types = { country }
+		override_text = { "text:TIMELINE_ORIGIN_DARK_FOREST_BEGIN" }
+		override_texture = { "background:GFX_evt_in_the_dark" }
+		targets = { event_target:this_country }
+	}
+	every_playable_country = {
+		limit = {
+			NOR = {
+				has_origin = origin_dark_forest
+				has_country_flag = exists_timeline_origin_dark_forest_begin
+			}
+		}
+		set_country_flag = exists_timeline_origin_dark_forest_begin
+		add_timeline_event = {
+			type = timeline_galactic
+			override_id = timeline_origin_dark_forest_begin_other
+			override_tooltip = "TIMELINE_EVENT_ORIGIN_DARK_FOREST_BEGIN_OTHER_TOOLTIP"
+			override_types = { country }
+			override_text = { "text:TIMELINE_ORIGIN_DARK_FOREST_BEGIN" }
+			override_texture = { "background:GFX_evt_in_the_dark" }
+			targets = { event_target:this_country }
+		}
+	}
+}

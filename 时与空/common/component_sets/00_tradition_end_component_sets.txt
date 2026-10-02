@@ -1,0 +1,62 @@
+component_set = {
+	key = "END_SHIELD"
+	
+	icon = "GFX_ship_part_end_shield"
+	icon_frame = 1
+}
+
+component_set = {
+	key = "DIMENSION_END_SHIELD"
+	
+	icon = "GFX_ship_part_end_shield"
+	icon_frame = 1
+}
+
+component_set = {
+	key = "END_ARMOR"
+	
+	icon = "GFX_ship_part_end_armor"
+	icon_frame = 1
+}
+
+component_set = {
+	key = "DIMENSION_END_ARMOR"
+	
+	icon = "GFX_ship_part_end_armor"
+	icon_frame = 1
+}
+
+component_set = {
+	key = "END_BEAM"
+	
+	icon = "GFX_ship_part_end_beam"
+	icon_frame = 1
+}
+
+component_set = {
+	key = "BIO_END_BEAM"
+	
+	icon = "GFX_ship_part_bio_end_beam"
+	icon_frame = 1
+}
+
+component_set = {
+	key = "END_ACCELERATOR"
+	
+	icon = "GFX_ship_part_end_accelerator"
+	icon_frame = 1
+}
+
+component_set = {
+	key = "BIO_END_ACCELERATOR"
+	
+	icon = "GFX_ship_part_bio_end_accelerator"
+	icon_frame = 1
+}
+
+component_set = {
+	key = "DIMENSION_END_BEAM"
+	
+	icon = "GFX_ship_part_dimension_end_beam"
+	icon_frame = 1
+}

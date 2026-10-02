@@ -1,0 +1,23 @@
+triggered_name = {
+	trigger = {
+		num_zones = {
+			type = zone_$TYPE$_minerals_engineering
+			value > 0
+		}
+	}
+	text = district_$TYPE$_mining_2
+}
+
+triggered_name = {
+	trigger = {
+		num_zones = {
+			type = zone_$TYPE$_minerals
+			value > 0
+		}
+	}
+	text = district_$TYPE$_mining_1
+}
+
+triggered_name = {
+	text = district_$TYPE$_mining_0
+}

@@ -1,0 +1,25 @@
+base_buildtime = @building_time_shelter_buildtime_$TIER$_$LEVEL$
+
+category = $CATEGORY$
+
+building_sets = {
+	$ZONE$
+}
+
+potential = {
+	has_time_shelter_level = { LEVEL = $LEVEL$ }
+}
+
+resources = {
+	category = planet_buildings
+	cost = {
+		sr_dark_matter = @building_time_shelter_cost_$TIER$_$LEVEL$
+	}
+	upkeep = {
+		energy = @building_time_shelter_upkeep_$TIER$_$LEVEL$
+	}
+}
+
+show_tech_unlock_if = {
+	always = no
+}

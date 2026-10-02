@@ -1,0 +1,108 @@
+base_buildtime = 360
+
+potential = {
+	is_origin_time_planet_class = yes
+	hidden_trigger = { exists = owner }
+	owner = { unlock_pc_time_structures = yes }
+}
+
+unlock = {
+	hidden_trigger = { exists = owner }
+	owner = {
+		OR = {
+			has_technology = $TECH_1$
+			has_technology = $TECH_2$
+			has_technology = $TECH_3$
+		}
+	}
+}
+
+resources = {
+	category = planet_zones
+	cost = {
+		energy = 500
+		minerals = 500
+		food = 500
+		consumer_goods = 250
+		alloys = 250
+		sr_dark_matter = 25
+	}
+	upkeep = {
+		trigger = {
+			is_planet_class = pc_time
+		}
+		$UPKEEP$ = 1
+		mult = value:num_$DISTRICT$
+	}
+	upkeep = {
+		trigger = {
+			is_planet_class = pc_endless_time
+		}
+		$UPKEEP$ = 10
+		mult = value:num_$DISTRICT$
+	}
+}
+
+planet_modifier = {
+	zone_building_slots_add = @time_mod_zone_max_buildings
+	planet_building_capacity_add = 1
+}
+
+triggered_district_planet_modifier = {
+	potential = {
+		is_planet_class = pc_time
+	}
+	planet_housing_add = @zone_time_rural_base_housing
+	mult = value:district_time_level_value
+}
+
+# 普政
+triggered_district_planet_modifier = {
+	potential = {
+		if = {
+			limit = {
+				is_planet_class = pc_time
+			}
+			exists = owner
+			owner = { is_gestalt = no }
+		}
+		else = {
+			always = no
+		}
+	}
+	job_$JOB$_add = @zone_time_rural_base_job
+	mult = value:district_time_job_value|MODIFIER|job_$JOB$_mult|
+}
+
+# 格式塔
+triggered_district_planet_modifier = {
+	potential = {
+		if = {
+			limit = {
+				is_planet_class = pc_time
+			}
+			exists = owner
+			owner = { is_gestalt = yes }
+		}
+		else = {
+			always = no
+		}
+	}
+	job_$JOB$_drone_add = @zone_time_rural_base_job
+	mult = value:district_time_job_value|MODIFIER|job_$JOB$_mult|
+}
+
+# 无尽奇点
+triggered_district_planet_modifier = {
+	potential = {
+		is_planet_class = pc_endless_time
+	}
+	time_researcher_$RESOURCE_1$_produces_mult = @zone_endless_time_rural_base_produce
+	time_researcher_$RESOURCE_2$_produces_mult = @zone_endless_time_rural_base_produce
+	time_researcher_$RESOURCE_3$_produces_mult = @zone_endless_time_rural_base_produce
+	district_time_usage_cap = @zone_endless_time_rural_base_usage_cap
+	mult = value:district_time_level_value
+}
+
+ai_weight_coefficient = 10
+ai_priority = 100

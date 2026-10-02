@@ -1,0 +1,875 @@
+#############################
+# 旅者
+#############################
+
+dimension_traveler_song_of_nature = {
+	icon = "GFX_specimen_dimension_traveler_song_of_nature"
+	type = aesthetic_wonder
+	is_tradable = no
+	is_sellable = no
+
+	inline_script = {
+		script = "grand_archive/set_specimen_rarity"
+		RARITY = epic
+	}
+	
+	triggered_country_modifier = {
+		mult = value:aesthetic_wonder_specimens_modifiers_mult
+		potential = {
+			NAND = {
+				has_origin = origin_white_hole
+				OR = {
+					has_country_flag = time_akx_dimension_traveler_end_1
+					has_country_flag = time_akx_dimension_traveler_end_2
+					has_country_flag = time_akx_dimension_traveler_end_3
+					has_country_flag = time_akx_dimension_traveler_end_4
+					has_country_flag = time_akx_dimension_traveler_end_5
+					has_country_flag = time_akx_dimension_traveler_end_6
+					has_country_flag = time_akx_dimension_traveler_end_7
+					has_country_flag = time_akx_dimension_traveler_end_8
+				}
+			}
+		}
+		planet_jobs_unity_produces_mult = 0.1
+	}
+	
+	triggered_country_modifier = {
+		mult = value:aesthetic_wonder_specimens_modifiers_mult
+		potential = {
+			has_origin = origin_white_hole
+			has_country_flag = time_akx_dimension_traveler_end_1
+		}
+		planet_jobs_unity_produces_mult = 0.2
+	}
+	
+	triggered_country_modifier = {
+		mult = value:aesthetic_wonder_specimens_modifiers_mult
+		potential = {
+			has_origin = origin_white_hole
+			has_country_flag = time_akx_dimension_traveler_end_2
+		}
+		planet_jobs_unity_produces_mult = 0.05
+		pop_happiness = -0.05
+	}
+	
+	triggered_country_modifier = {
+		mult = value:aesthetic_wonder_specimens_modifiers_mult
+		potential = {
+			has_origin = origin_white_hole
+			has_country_flag = time_akx_dimension_traveler_end_3
+		}
+		planet_jobs_produces_mult = 0.1
+	}
+	
+	triggered_country_modifier = {
+		mult = value:aesthetic_wonder_specimens_modifiers_mult
+		potential = {
+			has_origin = origin_white_hole
+			OR = {
+				has_country_flag = time_akx_dimension_traveler_end_4
+				has_country_flag = time_akx_dimension_traveler_end_7
+			}
+			NOT = { has_country_flag = time_akx_dimension_traveler_end_5 }
+		}
+		planet_jobs_produces_mult = 0.1
+		pop_happiness = -0.1
+	}
+	
+	triggered_country_modifier = {
+		mult = value:aesthetic_wonder_specimens_modifiers_mult
+		potential = {
+			has_origin = origin_white_hole
+			OR = {
+				has_country_flag = time_akx_dimension_traveler_end_5
+				has_country_flag = time_akx_dimension_traveler_end_6
+				has_country_flag = time_akx_dimension_traveler_end_8
+			}
+		}
+		planet_jobs_produces_mult = 0.2
+	}
+}
+
+dimension_traveler_photo_booth = {
+	icon = "GFX_specimen_dimension_traveler_photo_booth"
+	type = historical_item
+
+	inline_script = {
+		script = "grand_archive/set_specimen_rarity"
+		RARITY = common
+	}
+	
+	resources = {
+		category = specimens
+		produces = {
+			unity = 2
+			society_research = 2
+		}
+	}
+}
+
+dimension_traveler_compressed_candy = {
+	icon = "GFX_specimen_dimension_traveler_compressed_candy"
+	type = historical_item
+
+	inline_script = {
+		script = "grand_archive/set_specimen_rarity"
+		RARITY = common
+	}
+
+	triggered_country_modifier = {
+		mult = value:historical_item_specimens_modifiers_mult
+		potential = {
+			is_lithoid = no
+			owner_main_species = { is_robotic = no }
+		}
+		planet_pops_food_upkeep_mult = -0.025
+	}
+	
+	triggered_country_modifier = {
+		mult = value:historical_item_specimens_modifiers_mult
+		potential = {
+			is_lithoid = yes
+			owner_main_species = { is_robotic = no }
+		}
+		planet_pops_minerals_upkeep_mult = -0.025
+	}
+	
+	resources = {
+		category = specimens
+		produces = {
+			unity = 2
+		}
+		produces = {
+			trigger = {
+				owner_main_species = { is_robotic = yes }
+			}
+			society_research = 2
+		}
+	}
+}
+
+dimension_traveler_moisturizing_lipstick = {
+	icon = "GFX_specimen_dimension_traveler_moisturizing_lipstick"
+	type = historical_item
+
+	inline_script = {
+		script = "grand_archive/set_specimen_rarity"
+		RARITY = common
+	}
+
+	triggered_country_modifier = {
+		mult = value:historical_item_specimens_modifiers_mult
+		potential = {
+			country_uses_consumer_goods = yes
+		}
+		planet_pops_consumer_goods_upkeep_mult = -0.025
+	}
+	
+	resources = {
+		category = specimens
+		produces = {
+			unity = 2
+		}
+		produces = {
+			trigger = {
+				country_uses_consumer_goods = no
+			}
+			society_research = 2
+		}
+	}
+}
+
+#############################
+# 视界信号
+#############################
+
+akx_horizonsignal_love_poem = {
+	icon = "GFX_specimen_akx_horizonsignal_love_poem"
+	type = aesthetic_wonder
+	is_tradable = no
+	is_sellable = no
+
+	inline_script = {
+		script = "grand_archive/set_specimen_rarity"
+		RARITY = epic
+	}
+
+	triggered_country_modifier = {
+		mult = value:aesthetic_wonder_specimens_modifiers_mult
+		country_society_research_produces_mult = 0.05
+		country_unity_produces_mult = 0.05
+	}
+	
+	resources = {
+		category = specimens
+		produces = {
+			society_research = 5
+			unity = 5
+		}
+	}
+}
+
+akx_time_and_stone = {
+	icon = "GFX_specimen_akx_time_and_stone"
+	type = aesthetic_wonder
+
+	inline_script = {
+		script = "grand_archive/set_specimen_rarity"
+		RARITY = epic
+	}
+
+	triggered_country_modifier = {
+		mult = value:aesthetic_wonder_specimens_modifiers_mult
+		pop_housing_usage_mult = -0.05
+		pop_amenities_usage_mult = -0.05
+		planet_pops_upkeep_mult = -0.05
+		planet_jobs_upkeep_mult = -0.05
+		planet_structures_upkeep_mult = -0.05
+		planetary_ascension_cost_mult = -0.05
+	}
+}
+
+akx_pi_based_computer = {
+	icon = "GFX_specimen_akx_pi_based_computer"
+	type = historical_item
+
+	inline_script = {
+		script = "grand_archive/set_specimen_rarity"
+		RARITY = epic
+	}
+
+	triggered_country_modifier = {
+		mult = value:historical_item_specimens_modifiers_mult
+		category_horror_time_research_speed_mult = 0.314
+		all_technology_research_speed = -0.0314
+	}
+}
+
+akx_pass_black_hole = {
+	icon = "GFX_specimen_akx_pass_black_hole"
+	type = historical_item
+
+	inline_script = {
+		script = "grand_archive/set_specimen_rarity"
+		RARITY = epic
+	}
+
+	triggered_country_modifier = {
+		mult = value:historical_item_specimens_modifiers_mult
+		planet_bureaucrats_sr_dark_matter_produces_add = 0.1
+	}
+}
+
+akx_ouroboros = {
+	icon = "GFX_specimen_akx_ouroboros"
+	type = xeno_geology
+
+	inline_script = {
+		script = "grand_archive/set_specimen_rarity"
+		RARITY = exceptional
+	}
+
+	triggered_country_modifier = {
+		mult = value:xeno_geology_specimens_modifiers_mult
+		planet_biologists_society_research_produces_add = 3.14
+		planet_biologists_society_research_upkeep_add = 3.14
+	}
+}
+
+akx_klein_tower = {
+	icon = "GFX_specimen_akx_klein_tower"
+	type = xeno_geology
+
+	inline_script = {
+		script = "grand_archive/set_specimen_rarity"
+		RARITY = exceptional
+	}
+
+	triggered_country_modifier = {
+		mult = value:xeno_geology_specimens_modifiers_mult
+		planet_researchers_produces_mult = 0.314
+		planet_researchers_upkeep_mult = 0.314
+	}
+}
+
+akx_out_of_0_and_1 = {
+	icon = "GFX_specimen_akx_out_of_0_and_1"
+	type = aesthetic_wonder
+	is_tradable = no
+	is_sellable = no
+
+	inline_script = {
+		script = "grand_archive/set_specimen_rarity"
+		RARITY = exceptional
+	}
+
+	triggered_country_modifier = {
+		mult = value:aesthetic_wonder_specimens_modifiers_mult
+		potential = { has_global_flag = akx_out_of_0_and_1_a }
+		physics_tech_cost_mult = -0.1
+		country_physics_tech_research_speed = -0.25
+	}
+
+	triggered_country_modifier = {
+		mult = value:aesthetic_wonder_specimens_modifiers_mult
+		potential = { has_global_flag = akx_out_of_0_and_1_b }
+		physics_tech_cost_mult = 0.1
+		country_physics_tech_research_speed = 0.25
+	}
+	
+	triggered_country_modifier = {
+		mult = value:aesthetic_wonder_specimens_modifiers_mult
+		potential = { has_global_flag = akx_out_of_0_and_1_c }
+		society_tech_cost_mult = -0.1
+		country_society_tech_research_speed = -0.25
+	}
+	
+	triggered_country_modifier = {
+		mult = value:aesthetic_wonder_specimens_modifiers_mult
+		potential = { has_global_flag = akx_out_of_0_and_1_d }
+		society_tech_cost_mult = 0.1
+		country_society_tech_research_speed = 0.25
+	}
+	
+	triggered_country_modifier = {
+		mult = value:aesthetic_wonder_specimens_modifiers_mult
+		potential = { has_global_flag = akx_out_of_0_and_1_e }
+		engineering_tech_cost_mult = -0.1
+		country_engineering_tech_research_speed = -0.25
+	}
+	
+	triggered_country_modifier = {
+		mult = value:aesthetic_wonder_specimens_modifiers_mult
+		potential = { has_global_flag = akx_out_of_0_and_1_f }
+		engineering_tech_cost_mult = 0.1
+		country_engineering_tech_research_speed = 0.25
+	}
+}
+
+#############################
+# 时螶之界
+#############################
+
+akx_the_quality_of_light = {
+	icon = "GFX_specimen_akx_the_quality_of_light"
+	type = xeno_geology
+
+	inline_script = {
+		script = "grand_archive/set_specimen_rarity"
+		RARITY = rare
+	}
+
+	triggered_country_modifier = {
+		mult = value:xeno_geology_specimens_modifiers_mult
+		country_physics_research_produces_mult = 0.05
+	}
+	
+	resources = {
+		category = specimens
+		produces = {
+			physics_research = 5
+		}
+	}
+}
+
+akx_everyone_is = {
+	icon = "GFX_specimen_akx_everyone_is"
+	type = xeno_geology
+
+	inline_script = {
+		script = "grand_archive/set_specimen_rarity"
+		RARITY = rare
+	}
+
+	triggered_country_modifier = {
+		mult = value:xeno_geology_specimens_modifiers_mult
+		country_society_research_produces_mult = 0.05
+	}
+	
+	resources = {
+		category = specimens
+		produces = {
+			society_research = 5
+		}
+	}
+}
+
+akx_the_limit_of_light = {
+	icon = "GFX_specimen_akx_the_limit_of_light"
+	type = xeno_geology
+
+	inline_script = {
+		script = "grand_archive/set_specimen_rarity"
+		RARITY = epic
+	}
+
+	triggered_country_modifier = {
+		mult = value:xeno_geology_specimens_modifiers_mult
+		country_physics_research_produces_mult = 0.1
+	}
+	
+	resources = {
+		category = specimens
+		produces = {
+			physics_research = 10
+		}
+	}
+}
+
+akx_the_wrong_path_dead = {
+	icon = "GFX_specimen_akx_the_wrong_path_dead"
+	type = xeno_geology
+
+	inline_script = {
+		script = "grand_archive/set_specimen_rarity"
+		RARITY = epic
+	}
+
+	triggered_country_modifier = {
+		mult = value:xeno_geology_specimens_modifiers_mult
+		country_unity_produces_mult = 0.1
+		pop_happiness = -0.05
+	}
+	
+	resources = {
+		category = specimens
+		produces = {
+			unity = 10
+		}
+	}
+}
+
+akx_transparent_world = {
+	icon = "GFX_specimen_akx_transparent_world"
+	type = xeno_geology
+
+	inline_script = {
+		script = "grand_archive/set_specimen_rarity"
+		RARITY = epic
+	}
+
+	triggered_country_modifier = {
+		mult = value:xeno_geology_specimens_modifiers_mult
+		planet_pops_upkeep_mult = -0.1
+		species_empire_size_mult = -0.1
+	}
+}
+
+akx_utawarerumono = {
+	icon = "GFX_specimen_akx_utawarerumono"
+	type = xeno_geology
+
+	inline_script = {
+		script = "grand_archive/set_specimen_rarity"
+		RARITY = epic
+	}
+
+	triggered_country_modifier = {
+		mult = value:xeno_geology_specimens_modifiers_mult
+		planetary_ascension_cost_mult = -0.05
+	}
+}
+
+#############################
+# 信使
+#############################
+
+akx_messenger = {
+	icon = "GFX_specimen_akx_messenger"
+	type = historical_item
+
+	inline_script = {
+		script = "grand_archive/set_specimen_rarity"
+		RARITY = rare
+	}
+	
+	triggered_country_modifier = {
+		mult = value:historical_item_specimens_modifiers_mult
+		potential = {
+			owner_main_species = { is_robotic = no }
+		}
+		category_biology_research_speed_mult = 0.05
+	}
+	
+	triggered_country_modifier = {
+		mult = value:historical_item_specimens_modifiers_mult
+		potential = {
+			owner_main_species = { is_robotic = yes }
+		}
+		category_industry_research_speed_mult = 0.05
+	}
+	
+	resources = {
+		category = specimens
+		produces = {
+			trigger = {
+				owner_main_species = { is_robotic = no }
+			}
+			society_research = 5
+		}
+		produces = {
+			trigger = {
+				owner_main_species = { is_robotic = yes }
+			}
+			engineering_research = 5
+		}
+	}
+}
+
+akx_elegy_of_disaster = {
+	icon = "GFX_specimen_akx_elegy_of_disaster"
+	type = aesthetic_wonder
+
+	inline_script = {
+		script = "grand_archive/set_specimen_rarity"
+		RARITY = epic
+	}
+	
+	triggered_country_modifier = {
+		mult = value:aesthetic_wonder_specimens_modifiers_mult
+		country_cost_mult = -0.05
+		country_upkeep_mult = -0.05
+		ships_logistics_mult = -0.05
+		mod_ship_naval_cap_usage_mult = -0.05
+		planet_stability_add = -5
+	}
+}
+
+akx_paean_of_hope = {
+	icon = "GFX_specimen_akx_paean_of_hope"
+	type = aesthetic_wonder
+
+	inline_script = {
+		script = "grand_archive/set_specimen_rarity"
+		RARITY = epic
+	}
+	
+	triggered_country_modifier = {
+		mult = value:aesthetic_wonder_specimens_modifiers_mult
+		country_cost_mult = -0.05
+		country_upkeep_mult = -0.05
+		planet_stability_add = 5
+	}
+}
+
+akx_answer_of_riddle = {
+	icon = "GFX_specimen_akx_answer_of_riddle"
+	type = aesthetic_wonder
+
+	inline_script = {
+		script = "grand_archive/set_specimen_rarity"
+		RARITY = epic
+	}
+	
+	resources = {
+		category = specimens
+		produces = {
+			unity = 42
+		}
+	}
+}
+
+#############################
+# 命中相会
+#############################
+
+akx_debris_of_syzygy = {
+	icon = "GFX_specimen_akx_debris_of_syzygy"
+	type = historical_item
+
+	inline_script = {
+		script = "grand_archive/set_specimen_rarity"
+		RARITY = rare
+	}
+	
+	triggered_country_modifier = {
+		mult = value:historical_item_specimens_modifiers_mult
+		country_engineering_research_produces_mult = 0.05
+	}
+	
+	resources = {
+		category = specimens
+		produces = {
+			engineering_research = 5
+		}
+	}
+}
+
+akx_darkness_over_depth = {
+	icon = "GFX_specimen_akx_darkness_over_depth"
+	type = historical_item
+
+	inline_script = {
+		script = "grand_archive/set_specimen_rarity"
+		RARITY = epic
+	}
+	
+	triggered_country_modifier = {
+		mult = value:historical_item_specimens_modifiers_mult
+		potential = {
+			owner_main_species = { is_robotic = no }
+		}
+		logistic_growth_mult = 0.1
+		bonus_pop_growth_mult = 0.1
+		planet_crime_mult = 0.1
+	}
+	
+	triggered_country_modifier = {
+		mult = value:historical_item_specimens_modifiers_mult
+		potential = {
+			owner_main_species = { is_robotic = yes }
+		}
+		robotic_pop_bonus_workforce_mult = 0.1
+		pop_amenities_usage_robotic_mult = 0.1
+	}
+}
+
+#############################
+# 神之圆环
+#############################
+
+akx_coils_rituals = {
+	icon = "GFX_specimen_akx_coils_rituals"
+	type = xeno_geology
+
+	inline_script = {
+		script = "grand_archive/set_specimen_rarity"
+		RARITY = rare
+	}
+	
+	resources = {
+		category = specimens
+		produces = {
+			society_research = 3.14
+			unity = 3.14
+		}
+	}
+}
+
+akx_the_other_shore = {
+	icon = "GFX_specimen_akx_the_other_shore"
+	type = xeno_geology
+
+	inline_script = {
+		script = "grand_archive/set_specimen_rarity"
+		RARITY = epic
+	}
+	
+	triggered_country_modifier = {
+		mult = value:xeno_geology_specimens_modifiers_mult
+		planet_sensor_range_add = 3
+		planet_housing_mult = 0.1
+		planet_max_districts_mult = 0.04
+	}
+}
+
+#############################
+# 圣仆
+#############################
+
+akx_brief = {
+	icon = "GFX_specimen_akx_brief"
+	type = xeno_geology
+
+	inline_script = {
+		script = "grand_archive/set_specimen_rarity"
+		RARITY = epic
+	}
+	
+	triggered_country_modifier = {
+		mult = value:xeno_geology_specimens_modifiers_mult
+		potential = { has_origin_time = no }
+		planet_pops_energy_upkeep_mult = -0.1
+		country_society_tech_research_speed = 0.1
+	}
+	
+	triggered_country_modifier = {
+		mult = value:xeno_geology_specimens_modifiers_mult
+		potential = { has_origin_time = yes }
+		planet_pops_energy_upkeep_mult = -0.1
+		all_technology_research_speed = 0.05
+	}
+}
+
+akx_black_hole_compression = {
+	icon = "GFX_specimen_akx_black_hole_compression"
+	type = historical_item
+
+	inline_script = {
+		script = "grand_archive/set_specimen_rarity"
+		RARITY = exceptional
+	}
+	
+	triggered_country_modifier = {
+		mult = value:historical_item_specimens_modifiers_mult
+		potential = {
+			NOR = {
+				has_origin = origin_white_hole
+				has_origin_time = yes
+			}
+		}
+		ship_armor_hardening_add = 0.1
+		ship_shield_hardening_add = 0.1
+	}
+	
+	triggered_country_modifier = {
+		mult = value:historical_item_specimens_modifiers_mult
+		potential = { has_origin = origin_white_hole }
+		ship_hull_mult = 0.1
+		ship_armor_mult = 0.1
+		ship_shield_mult = 0.1
+	}
+	
+	triggered_country_modifier = {
+		mult = value:historical_item_specimens_modifiers_mult
+		potential = { has_origin_time = yes }
+		ship_armor_penetration_add = 0.1
+		ship_shield_penetration_add = 0.1
+	}
+}
+
+#############################
+# 时光旅馆
+#############################
+
+akx_wake_up = {
+	icon = "GFX_specimen_akx_wake_up"
+	type = historical_item
+
+	inline_script = {
+		script = "grand_archive/set_specimen_rarity"
+		RARITY = rare
+	}
+	
+	triggered_country_modifier = {
+		mult = value:historical_item_specimens_modifiers_mult
+		planet_crime_add = -5
+		planet_crime_floor_add = -5
+	}
+}
+
+#############################
+# 来自深渊
+#############################
+
+akx_rainbow_sea = {
+	icon = "GFX_specimen_akx_rainbow_sea"
+	type = historical_item
+	is_tradable = no
+	is_sellable = no
+
+	inline_script = {
+		script = "grand_archive/set_specimen_rarity"
+		RARITY = epic
+	}
+	
+	triggered_country_modifier = {
+		mult = value:historical_item_specimens_modifiers_mult
+		potential = {
+			is_gestalt = yes
+		}
+		planet_amenities_mult = 0.1
+	}
+	
+	triggered_country_modifier = {
+		mult = value:historical_item_specimens_modifiers_mult
+		potential = {
+			NOR = {
+				has_origin = origin_pirate_king
+				has_origin = origin_pirate_king_end
+			}
+			is_gestalt = no
+		}
+		pop_happiness = 0.1
+	}
+	
+	triggered_country_modifier = {
+		mult = value:historical_item_specimens_modifiers_mult
+		potential = {
+			OR = {
+				has_origin = origin_pirate_king
+				has_origin = origin_pirate_king_end
+			}
+			NOT = { has_country_flag = pirate_king_true_end }
+		}
+		pop_happiness = 0.1
+		ship_speed_mult = 0.1
+		ship_windup_mult = -0.1
+	}
+	
+	triggered_country_modifier = {
+		mult = value:historical_item_specimens_modifiers_mult
+		potential = {
+			OR = {
+				has_origin = origin_pirate_king
+				has_origin = origin_pirate_king_end
+			}
+			has_country_flag = pirate_king_true_end
+		}
+		starbase_shipyard_build_speed_mult = 0.1
+		damage_vs_country_type_guardian_horror_mult = 0.66
+		damage_vs_country_type_dimensional_horror_crisis_mult = 0.66
+	}
+}
+
+#############################
+# 诺亚方舟
+#############################
+
+time_way_to_heaven = {
+	icon = "GFX_specimen_time_way_to_heaven"
+	type = historical_item
+
+	inline_script = {
+		script = "grand_archive/set_specimen_rarity"
+		RARITY = rare
+	}
+	
+	triggered_country_modifier = {
+		mult = value:historical_item_specimens_modifiers_mult
+		terraform_speed_mult = 0.1
+	}
+	
+	triggered_country_modifier = {
+		mult = value:historical_item_specimens_modifiers_mult
+		potential = {
+			has_origin = origin_noah_ark
+		}
+		terraforming_cost_mult = -0.1
+	}
+}
+
+time_hymn_of_heaven = {
+	icon = "GFX_specimen_time_hymn_of_heaven"
+	type = aesthetic_wonder
+
+	inline_script = {
+		script = "grand_archive/set_specimen_rarity"
+		RARITY = epic
+	}
+	
+	triggered_country_modifier = {
+		mult = value:aesthetic_wonder_specimens_modifiers_mult
+		potential = {
+			has_origin = origin_noah_ark
+		}
+		planet_jobs_unity_produces_mult = 0.1
+	}
+	
+	resources = {
+		category = specimens
+		produces = {
+			trigger = {
+				NOT = { has_origin = origin_noah_ark }
+			}
+			society_research = 10
+			unity = 5
+		}
+		produces = {
+			trigger = {
+				has_origin = origin_noah_ark
+			}
+			unity = 10
+		}
+	}
+}

@@ -1,0 +1,25 @@
+citizenship_adeptus_mechanicus = {
+	potential = {
+		exists = from
+		from = {
+			has_origin = origin_adeptus_mechanicus
+		}
+	}
+
+	allow = {
+		custom_tooltip = {
+			fail_text = not_robot
+			is_robotic_species = yes
+		}
+		custom_tooltip = {
+			fail_text = require_trait_origin_adeptus_mechanicus
+			OR = {
+				has_species_flag = adeptus_mechanicus_of@from
+				from = { is_xenophobe = no } # 排外机仆（X）
+			}
+		}
+	}
+	ai_will_do = {
+		factor = 100
+	}
+}

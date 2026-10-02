@@ -1,0 +1,34 @@
+spriteTypes = {
+	spriteType = {
+		name = "GFX_dimensional_horror_crisis_storm"
+		texturefile = "gfx/event_pictures/dimensional_horror_crisis_storm.dds"
+	}
+	spriteType = {
+		name = "GFX_dimensional_horror_crisis_storm_nomask"
+		texturefile = "gfx/event_pictures/dimensional_horror_crisis_storm.dds"
+		alwaystransparent = yes
+	}
+	spriteType = {
+		parent = "GFX_dimensional_horror_crisis_storm_nomask"
+		name = "GFX_dimensional_horror_crisis_storm_zoom_1"
+		upper_left = { x = 0 y = 0 }
+    	lower_right = { x = 450 y = 150 }
+	}
+	spriteType = {
+		parent = "GFX_dimensional_horror_crisis_storm_nomask"
+		name = "GFX_dimensional_horror_crisis_storm_zoom_2"
+		upper_left = { x = 198 y = 34 }
+    	lower_right = { x = 308 y = 100 }
+	}
+	
+	spriteType = {
+		name = "GFX_planetview_storm_dimensional_horror_crisis_modifier_frame"
+		textureFile = "gfx/interface/icons/planet_modifiers/pm_dimensional_horror_crisis_storm.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_toast_dimensional_horror_crisis_storm_aftermath"
+		alwaystransparent = yes
+		texturefile = "gfx/interface/icons/toasts/toast_dimensional_horror_crisis_storm_aftermath.dds"
+	}
+}

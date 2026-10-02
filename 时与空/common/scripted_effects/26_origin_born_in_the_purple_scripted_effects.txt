@@ -1,0 +1,9 @@
+# 局势
+refresh_born_in_the_purple_value = {
+	target = {
+		set_variable = {
+			which = born_in_the_purple_value
+			value = prev.trigger:situation_progress
+		}
+	}
+}

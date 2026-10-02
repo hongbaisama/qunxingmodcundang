@@ -1,0 +1,149 @@
+
+namespace = origin_wishing_well
+
+country_event = {
+	id = origin_wishing_well.1
+	is_triggered_only = yes
+	hide_window = yes
+
+	trigger = {
+		has_origin = origin_wishing_well
+	}
+	
+	immediate = {
+		capital_scope = {
+			set_carrier_flag = exists_d_wishing_well
+			add_time_special_deposit_keep_on_terraform = { DEPOSIT = d_wishing_well }
+		}
+	}
+}
+
+# 许愿之井特殊地块保护机制
+carrier_event = {
+	id = origin_wishing_well.2
+	is_triggered_only = yes
+	hide_window = yes
+
+	trigger = {
+		has_carrier_flag = exists_d_wishing_well
+	}
+	
+	immediate = {
+		carrier_event = { id = origin_wishing_well.3 days = 1 } # 隔一天，因为有的事件是先改变星球类型，再删除地块
+	}
+}
+
+carrier_event = {
+	id = origin_wishing_well.3
+	is_triggered_only = yes
+	hide_window = yes
+
+	trigger = {
+		is_colonizable_or_colony = yes
+		NOT = { has_deposit = d_wishing_well }
+	}
+	
+	immediate = {
+		add_time_special_deposit_keep_on_terraform = { DEPOSIT = d_wishing_well }
+	}
+}
+
+# 许愿井归属转换
+carrier_event = {
+	id = origin_wishing_well.10
+	is_triggered_only = yes
+	hide_window = yes
+
+	trigger = {
+		has_deposit = d_wishing_well
+	}
+	
+	immediate = {
+		if = {
+			limit = {
+				exists = FromFrom
+			}
+			FromFrom = {
+				country_event = { id = origin_wishing_well.11 }
+			}
+		}
+		if = {
+			limit = {
+				exists = From
+			}
+			From = {
+				country_event = { id = origin_wishing_well.12 }
+			}
+		}
+	}
+}
+
+# 失去许愿井
+country_event = {
+	id = origin_wishing_well.11
+	title = origin_wishing_well.11.name
+	desc = origin_wishing_well.11.desc
+	picture = GFX_evt_liquid_darkness
+	show_sound = sw_evn_darkmatter_aftermath
+	location = from
+	
+	is_triggered_only = yes
+
+	trigger = {
+		NOR = {
+			has_modifier = lost_wishing_well_modifier
+			has_modifier = lost_wishing_well_gestalt_modifier
+			any_owned_colony = {
+				has_deposit = d_wishing_well
+				NOT = { is_same_value = from }
+			}
+		}
+		OR = {
+			has_origin = origin_wishing_well
+			years_passed >= 25
+		}
+	}
+	
+	immediate = {
+		add_lost_wishing_well_modifier = yes
+	}
+	
+	option = {
+		name = origin_wishing_well.11.a
+		custom_tooltip = origin_wishing_well.11.a.tooltip
+		tooltip = {
+			add_lost_wishing_well_modifier = yes
+		}
+	}
+}
+
+# 重获许愿井
+country_event = {
+	id = origin_wishing_well.12
+	title = origin_wishing_well.12.name
+	desc = origin_wishing_well.12.desc
+	picture = GFX_evt_liquid_darkness
+	show_sound = sw_evn_darkmatter_aftermath
+	location = from
+	
+	is_triggered_only = yes
+
+	trigger = {
+		OR = {
+			has_modifier = lost_wishing_well_modifier
+			has_modifier = lost_wishing_well_gestalt_modifier
+		}
+	}
+	
+	immediate = {
+		remove_lost_wishing_well_modifier = yes
+	}
+	
+	option = {
+		name = origin_wishing_well.12.a
+		custom_tooltip = origin_wishing_well.12.a.tooltip
+		tooltip = {
+			remove_lost_wishing_well_modifier_for_tooltip = yes
+		}
+	}
+}

@@ -1,0 +1,81 @@
+
+namespace = time_civic_building
+
+# 禁用原版建筑
+carrier_event = {
+	id = time_civic_building.1000
+	is_triggered_only = yes
+	hide_window = yes
+	
+	trigger = {
+		if = {
+			limit = {
+				OR = {
+					is_origin_time_planet_class = yes
+					is_time_mod_normal_origin_planet = yes
+					is_planet_class = pc_time_notofthisworld
+					is_planet_class = pc_time_ruin_cosmogenesis_world
+				}
+			}
+			OR = {
+				has_building = building_gaiaseeders_1
+				has_building = building_gaiaseeders_2
+				has_building = building_gaiaseeders_3
+				has_building = building_gaiaseeders_4
+				has_building = building_coordinated_fulfillment_center_1
+				has_building = building_coordinated_fulfillment_center_2
+			}
+		}
+		else = {
+			always = no
+		}
+	}
+	
+	immediate = {
+		remove_building = building_gaiaseeders_1
+		remove_building = building_gaiaseeders_2
+		remove_building = building_gaiaseeders_3
+		remove_building = building_gaiaseeders_4
+		remove_building = building_coordinated_fulfillment_center_1
+		remove_building = building_coordinated_fulfillment_center_2
+	}
+}
+
+carrier_event = {
+	id = time_civic_building.2000
+	title = time_civic_building.name
+	desc = time_civic_building.2000.desc
+	picture = GFX_evt_city_ruins
+	show_sound = event_yellow_alert
+	location = root
+	
+	is_triggered_only = yes
+	
+	trigger = {
+		OR = {
+			is_origin_time_planet_class = yes
+			is_time_mod_normal_origin_planet = yes
+			is_planet_class = pc_time_notofthisworld
+			is_planet_class = pc_time_ruin_cosmogenesis_world
+		}
+		OR = {
+			last_building_changed = building_gaiaseeders_1
+			last_building_changed = building_gaiaseeders_2
+			last_building_changed = building_gaiaseeders_3
+			last_building_changed = building_gaiaseeders_4
+			last_building_changed = building_coordinated_fulfillment_center_1
+			last_building_changed = building_coordinated_fulfillment_center_2
+		}
+	}
+	
+	immediate = {
+	}
+	
+	option = {
+		name = time_civic_building.a
+	}
+	
+	option = {
+		name = time_civic_building.b
+	}
+}

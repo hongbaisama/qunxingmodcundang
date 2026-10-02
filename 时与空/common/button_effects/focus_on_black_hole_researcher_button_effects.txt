@@ -1,0 +1,110 @@
+focus_on_black_hole_default_effect = {
+	potential = {
+		is_scope_type = planet
+		is_origin_time_planet_class = yes
+		is_owned_by = from
+		NOR = {
+			has_carrier_flag = focus_on_black_hole_physicist
+			has_carrier_flag = focus_on_black_hole_biologist
+			has_carrier_flag = focus_on_black_hole_engineer
+		}
+	}
+	
+	allow = {
+		is_controlled_by = from
+	}
+	
+	effect = {
+		custom_tooltip = focus_on_black_hole_default_tooltip
+		hidden_effect = {
+			clear_focus_on_black_hole_researcher_flag = yes
+			set_carrier_flag = focus_on_black_hole_physicist
+		}
+	}
+}
+
+focus_on_black_hole_physicist_effect = {
+	potential = {
+		is_scope_type = planet
+		is_origin_time_planet_class = yes
+		is_owned_by = from
+		has_carrier_flag = focus_on_black_hole_physicist
+	}
+	
+	allow = {
+		is_controlled_by = from
+	}
+	
+	effect = {
+		if = {
+			limit = {
+				is_planet_class = pc_endless_time
+			}
+			custom_tooltip = focus_on_black_hole_physicist_special_tooltip
+		}
+		else = {
+			custom_tooltip = focus_on_black_hole_physicist_tooltip
+		}
+		hidden_effect = {
+			clear_focus_on_black_hole_researcher_flag = yes
+			set_carrier_flag = focus_on_black_hole_biologist
+		}
+	}
+}
+
+focus_on_black_hole_biologist_effect = {
+	potential = {
+		is_scope_type = planet
+		is_origin_time_planet_class = yes
+		is_owned_by = from
+		has_carrier_flag = focus_on_black_hole_biologist
+	}
+	
+	allow = {
+		is_controlled_by = from
+	}
+	
+	effect = {
+		if = {
+			limit = {
+				is_planet_class = pc_endless_time
+			}
+			custom_tooltip = focus_on_black_hole_biologist_special_tooltip
+		}
+		else = {
+			custom_tooltip = focus_on_black_hole_biologist_tooltip
+		}
+		hidden_effect = {
+			clear_focus_on_black_hole_researcher_flag = yes
+			set_carrier_flag = focus_on_black_hole_engineer
+		}
+	}
+}
+
+focus_on_black_hole_engineer_effect = {
+	potential = {
+		is_scope_type = planet
+		is_origin_time_planet_class = yes
+		is_owned_by = from
+		has_carrier_flag = focus_on_black_hole_engineer
+	}
+	
+	allow = {
+		is_controlled_by = from
+	}
+	
+	effect = {
+		if = {
+			limit = {
+				is_planet_class = pc_endless_time
+			}
+			custom_tooltip = focus_on_black_hole_engineer_special_tooltip
+		}
+		else = {
+			custom_tooltip = focus_on_black_hole_engineer_tooltip
+		}
+		hidden_effect = {
+			clear_focus_on_black_hole_researcher_flag = yes
+		}
+	}
+}

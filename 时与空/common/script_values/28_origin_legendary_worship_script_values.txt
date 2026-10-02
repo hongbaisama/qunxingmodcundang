@@ -1,0 +1,183 @@
+promotes_to_renowned_leader_value = {
+	base = 100
+	multiply = owner.value:scripted_modifier_add|MODIFIER|promotes_renowned_chance|
+	multiply = value:promotes_mult_value
+	modifier = {
+		multiply = value:promotes_tier_mult_value|TIER|renowned|
+		is_pool_leader = no
+	}
+	modifier = {
+		multiply = value:promotes_tier_mult_pool_value|TIER|renowned|
+		is_pool_leader = yes
+	}
+	modifier = {
+		multiply = 1.5
+		is_ruler = yes # 统治者概率更高（没有黑幕233）
+	}
+	max = 100
+	min = 0
+}
+
+promotes_to_legendary_leader_value = {
+	base = 100
+	multiply = owner.value:scripted_modifier_add|MODIFIER|promotes_legendary_chance|
+	multiply = value:promotes_mult_value
+	modifier = {
+		multiply = value:promotes_tier_mult_value|TIER|legendary|
+		is_pool_leader = no
+	}
+	modifier = {
+		multiply = value:promotes_tier_mult_pool_value|TIER|legendary|
+		is_pool_leader = yes
+	}
+	modifier = {
+		multiply = 1.5
+		is_ruler = yes # 统治者概率更高（没有黑幕233）
+	}
+	max = 50
+	min = 0
+}
+
+# 晋升著名/传奇数量限制
+promotes_tier_mult_value = {
+	base = -1
+	multiply = value:promotes_mult_value_check_tier_num|TIER|$TIER$|
+	divide = value:promotes_mult_value_check_tier_cap|TIER|$TIER$|
+	add = 1
+	max = 1
+	min = 0
+}
+
+promotes_tier_mult_pool_value = {
+	base = -1
+	multiply = value:promotes_mult_value_check_tier_num|TIER|$TIER$|POOL|yes|
+	divide = value:promotes_mult_value_check_tier_cap|TIER|$TIER$|
+	add = 1
+	max = 1
+	min = 0
+	multiply = 0.5 # 领袖池中领袖晋升概率更低
+}
+
+promotes_mult_value_check_tier_num = {
+	base = 0
+	complex_trigger_modifier = {
+		trigger = count_owned_leader
+		trigger_scope = owner
+		parameters = {
+			limit = {
+				is_leader_tier = leader_tier_$TIER$
+				has_leader_flag = has_tried_to_promote_to_$TIER$_leader
+				NOT = { has_trait = leader_trait_inborn_$TIER$ }
+			}
+		}
+		mult = 1
+		mode = add
+	}
+	[[POOL]
+		complex_trigger_modifier = {
+			trigger = count_pool_leader
+			trigger_scope = owner
+			parameters = {
+				limit = {
+					is_leader_tier = leader_tier_$TIER$
+					has_leader_flag = has_tried_to_promote_to_$TIER$_leader
+					NOT = { has_trait = leader_trait_inborn_$TIER$ }
+				}
+			}
+			mult = 1
+			mode = add
+		}
+	]
+}
+
+promotes_mult_value_check_tier_cap = {
+	base = 0
+	add = owner.modifier:promotes_$TIER$_cap
+	floor = yes
+	min = 1 # 别给狡猾人减到分母为0或负数了
+}
+
+# 超过领袖容量会降低晋升概率（达到领袖上限的2倍时概率归零）
+promotes_mult_value = {
+	base = 0
+	modifier = {
+		add = value:promotes_mult_value_check_leader_class|class|official|
+		leader_class = official
+	}
+	modifier = {
+		add = value:promotes_mult_value_check_leader_class|class|scientist|
+		leader_class = scientist
+	}
+	modifier = {
+		add = value:promotes_mult_value_check_leader_class|class|commander|
+		leader_class = commander
+	}
+	max = 1
+	min = 0
+}
+
+promotes_mult_value_check_leader_class = {
+	base = -1
+	multiply = value:promotes_mult_value_check_leader_num|class|$class$|
+	divide = value:promotes_mult_value_check_leader_cap|class|$class$|
+	add = 2
+}
+
+promotes_mult_value_check_leader_num = {
+	base = 0
+	complex_trigger_modifier = {
+		trigger = count_owned_leader
+		trigger_scope = owner
+		parameters = {
+			limit = {
+				leader_class = $class$
+				# 参见game_rules的should_count_towards_leader_cap
+				NOR = {
+					is_hidden = yes
+					has_leader_flag = hired_admiral_merc_leader
+					is_leader_tier = leader_tier_legendary
+					has_trait = leader_trait_rift_warped
+					AND = {
+						has_trait_tier1or2 = { TRAIT = leader_trait_eager }
+						has_base_skill < 4
+					}
+				}
+			}
+		}
+		mult = 1
+		mode = add
+	}
+}
+
+promotes_mult_value_check_leader_cap = {
+	base = 3 # 基础3容量
+	complex_trigger_modifier = {
+		trigger = check_modifier_value
+		trigger_scope = owner
+		parameters = {
+			modifier = country_$class$_cap_add
+		}
+		mult = 1
+		mode = add
+	}
+	complex_trigger_modifier = {
+		trigger = check_modifier_value
+		trigger_scope = owner
+		parameters = {
+			modifier = country_leader_cap_add
+		}
+		mult = 1
+		mode = add
+	}
+	floor = yes
+	min = 1 # 别给狡猾人减到分母为0或负数了
+}
+
+leader_trait_inborn_legendary_or_renowned_value = {
+	base = 0
+	add = value:num_time_leader_skill
+	modifier = {
+		multiply = 2
+		owner = { has_origin = origin_legendary_worship }
+	}
+}

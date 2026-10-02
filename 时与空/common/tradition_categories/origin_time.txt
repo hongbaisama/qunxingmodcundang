@@ -1,0 +1,21 @@
+tradition_origin_time = {
+	tree_template = "tree_origin_time"
+	adoption_bonus = "tr_origin_time_adopt"
+	finish_bonus = "tr_origin_time_finish"
+	traditions = {
+		"tr_origin_time_resource"
+		"tr_origin_time_manufacturing"
+		"tr_origin_time_decisions"
+		"tr_origin_time_unity"
+		"tr_origin_time_research"
+	}
+
+	potential = {
+		has_origin_time = yes
+		has_country_flag = unlock_tradition_origin_time
+	}
+
+	ai_weight = {
+		factor = 1000
+	}
+}

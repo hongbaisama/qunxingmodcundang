@@ -1,0 +1,219 @@
+########################
+# 负相畸变：电磁波
+########################
+
+weapon_component_template = {
+	inline_script = {
+		script = component_templates/horror_mutation_beam
+		KEY = SMALL
+		SIZE = small
+		TAG = s_slot
+		MAX_DMG = 49
+		RANGE = 50
+		COST_RARE = 1
+		COST = 50
+	}
+}
+
+weapon_component_template = {
+	inline_script = {
+		script = component_templates/horror_mutation_beam
+		KEY = MEDIUM
+		SIZE = medium
+		TAG = m_slot
+		MAX_DMG = 99
+		RANGE = 75
+		COST_RARE = 2
+		COST = 100
+	}
+}
+
+weapon_component_template = {
+	inline_script = {
+		script = component_templates/horror_mutation_beam
+		KEY = LARGE
+		SIZE = large
+		TAG = l_slot
+		MAX_DMG = 199
+		RANGE = 100
+		COST_RARE = 3
+		COST = 150
+	}
+}
+
+weapon_component_template = {
+	inline_script = {
+		script = component_templates/horror_mutation_beam
+		KEY = EXTRA_LARGE
+		SIZE = extra_large
+		TAG = x_slot
+		MAX_DMG = 299
+		RANGE = 125
+		COST_RARE = 4
+		COST = 200
+	}
+}
+
+########################
+# 负相畸变：引力波
+########################
+
+weapon_component_template = {
+	inline_script = {
+		script = component_templates/horror_mutation_accelerator
+		KEY = SMALL
+		SIZE = small
+		TAG = s_slot
+		MAX_DMG = 49
+		RANGE = 50
+		COST_RARE = 1
+		COST = 50
+	}
+}
+
+weapon_component_template = {
+	inline_script = {
+		script = component_templates/horror_mutation_accelerator
+		KEY = MEDIUM
+		SIZE = medium
+		TAG = m_slot
+		MAX_DMG = 99
+		RANGE = 75
+		COST_RARE = 2
+		COST = 100
+	}
+}
+
+weapon_component_template = {
+	inline_script = {
+		script = component_templates/horror_mutation_accelerator
+		KEY = LARGE
+		SIZE = large
+		TAG = l_slot
+		MAX_DMG = 199
+		RANGE = 100
+		COST_RARE = 3
+		COST = 150
+	}
+}
+
+weapon_component_template = {
+	inline_script = {
+		script = component_templates/horror_mutation_accelerator
+		KEY = EXTRA_LARGE
+		SIZE = extra_large
+		TAG = x_slot
+		MAX_DMG = 299
+		RANGE = 125
+		COST_RARE = 4
+		COST = 200
+	}
+}
+
+########################
+# 负相畸变：电磁场
+########################
+
+utility_component_template = {
+	inline_script = {
+		script = component_templates/horror_mutation_shield
+		KEY = SMALL
+		SIZE = small
+		ADD = 110
+		REGEN = 0.55
+		HARDENING = 0.05
+		COST_RARE = 0.125
+		COST = 25
+	}
+}
+
+utility_component_template = {
+	inline_script = {
+		script = component_templates/horror_mutation_shield
+		KEY = MEDIUM
+		SIZE = medium
+		ADD = @shield_S6
+		REGEN = @regen_S6
+		HARDENING = 0.1
+		COST_RARE = 0.25
+		COST = 50
+	}
+}
+
+utility_component_template = {
+	inline_script = {
+		script = component_templates/horror_mutation_shield
+		KEY = LARGE
+		SIZE = large
+		ADD = @shield_M6
+		REGEN = @regen_M6
+		HARDENING = 0.15
+		COST_RARE = 0.5
+		COST = 75
+	}
+}
+
+utility_component_template = {
+	inline_script = {
+		script = component_templates/horror_mutation_shield
+		KEY = EXTRA_LARGE
+		SIZE = extra_large
+		ADD = @shield_L6
+		REGEN = @regen_L6
+		HARDENING = 0.2
+		COST_RARE = 1
+		COST = 100
+	}
+}
+
+########################
+# 负相畸变：引力场
+########################
+
+utility_component_template = {
+	inline_script = {
+		script = component_templates/horror_mutation_armor
+		KEY = SMALL
+		SIZE = small
+		ADD = 110
+		HARDENING = 0.05
+		COST_RARE = 0.125
+		COST = 25
+	}
+}
+
+utility_component_template = {
+	inline_script = {
+		script = component_templates/horror_mutation_armor
+		KEY = MEDIUM
+		SIZE = medium
+		ADD = @armor_S6
+		HARDENING = 0.1
+		COST_RARE = 0.25
+		COST = 50
+	}
+}
+
+utility_component_template = {
+	inline_script = {
+		script = component_templates/horror_mutation_armor
+		KEY = LARGE
+		SIZE = large
+		ADD = @armor_M6
+		HARDENING = 0.15
+		COST_RARE = 0.5
+		COST = 75
+	}
+}
+
+utility_component_template = {
+	inline_script = {
+		script = component_templates/horror_mutation_armor
+		KEY = EXTRA_LARGE
+		SIZE = extra_large
+		ADD = @armor_L6
+		HARDENING = 0.2
+		COST_RARE = 1
+		COST = 100
+	}
+}

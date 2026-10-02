@@ -1,0 +1,14 @@
+inline_script = {
+	script = dimension_traveler/dimension_traveler_skill_button_effects
+	CLASS = official
+}
+
+inline_script = {
+	script = dimension_traveler/dimension_traveler_skill_button_effects
+	CLASS = scientist
+}
+
+inline_script = {
+	script = dimension_traveler/dimension_traveler_skill_button_effects
+	CLASS = commander
+}

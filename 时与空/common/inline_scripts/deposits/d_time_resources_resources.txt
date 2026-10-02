@@ -1,0 +1,51 @@
+produces = {
+	trigger = {
+		has_carrier_flag = time_blocker_cleared_1
+	}
+	energy = @time_blocker_cleared_resource_$LEVEL$
+	mult = value:num_time_normal_resources_value
+}
+produces = {
+	trigger = {
+		has_carrier_flag = time_blocker_cleared_2
+	}
+	minerals = @time_blocker_cleared_resource_$LEVEL$
+	mult = value:num_time_normal_resources_value
+}
+produces = {
+	trigger = {
+		has_carrier_flag = time_blocker_cleared_3
+	}
+	food = @time_blocker_cleared_resource_$LEVEL$
+	mult = value:num_time_normal_resources_value
+}
+produces = {
+	trigger = {
+		has_carrier_flag = time_blocker_cleared_4
+	}
+	alloys = @time_blocker_cleared_resource_advanced_$LEVEL$
+	mult = value:num_time_normal_resources_value
+}
+produces = {
+	trigger = {
+		has_carrier_flag = time_blocker_cleared_5
+	}
+	consumer_goods = @time_blocker_cleared_resource_advanced_$LEVEL$
+	mult = value:num_time_normal_resources_value
+}
+produces = {
+	trigger = {
+		has_carrier_flag = time_blocker_cleared_6
+	}
+	physics_research = @time_blocker_cleared_resource_advanced_$LEVEL$
+	society_research = @time_blocker_cleared_resource_advanced_$LEVEL$
+	engineering_research = @time_blocker_cleared_resource_advanced_$LEVEL$
+	mult = value:num_time_normal_resources_value
+}
+produces = {
+	trigger = {
+		has_carrier_flag = time_blocker_cleared_7
+	}
+	unity = @time_blocker_cleared_resource_advanced_$LEVEL$
+	mult = value:num_time_normal_resources_value
+}

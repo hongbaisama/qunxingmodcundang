@@ -1,0 +1,775 @@
+# 原版附加
+generator_district_housing_add = {
+	icon = mod_planet_housing_add
+	good = yes
+	category = colony
+}
+
+generator_district_amenities_add = {
+	icon = mod_planet_amenities_add
+	good = yes
+	category = colony
+}
+
+mining_district_housing_add = {
+	icon = mod_planet_housing_add
+	good = yes
+	category = colony
+}
+
+mining_district_amenities_add = {
+	icon = mod_planet_amenities_add
+	good = yes
+	category = colony
+}
+
+farming_district_housing_add = {
+	icon = mod_planet_housing_add
+	good = yes
+	category = colony
+}
+
+farming_district_amenities_add = {
+	icon = mod_planet_amenities_add
+	good = yes
+	category = colony
+}
+
+# 神秘奇点
+situation_pc_time_progress_add = {
+	icon = mod_time_upkeep_add
+	good = yes
+	category = country
+}
+
+time_researcher_resource_weight = {
+	icon = mod_time_researcher_resource_weight
+	percentage = yes
+	neutral = yes
+	category = country
+}
+
+time_researcher_manufacturing_weight = {
+	icon = mod_time_researcher_manufacturing_weight
+	percentage = yes
+	neutral = yes
+	category = country
+}
+
+time_researcher_unity_weight = {
+	icon = mod_time_researcher_unity_weight
+	percentage = yes
+	neutral = yes
+	category = country
+}
+
+time_researcher_research_weight = {
+	icon = mod_time_researcher_research_weight
+	percentage = yes
+	neutral = yes
+	category = country
+}
+
+time_researcher_max_weight = {
+	icon = mod_time_researcher_max_weight
+	percentage = yes
+	good = yes
+	category = country
+}
+
+time_researcher_energy_produces_mult = {
+	icon = energy
+	percentage = yes
+	good = yes
+	category = colony
+}
+
+time_researcher_minerals_produces_mult = {
+	icon = minerals
+	percentage = yes
+	good = yes
+	category = colony
+}
+
+time_researcher_food_produces_mult = {
+	icon = food
+	percentage = yes
+	good = yes
+	category = colony
+}
+
+time_researcher_consumer_goods_produces_mult = {
+	icon = consumer_goods
+	percentage = yes
+	good = yes
+	category = colony
+}
+
+time_researcher_alloys_produces_mult = {
+	icon = alloys
+	percentage = yes
+	good = yes
+	category = colony
+}
+
+time_researcher_unity_produces_mult = {
+	icon = unity
+	percentage = yes
+	good = yes
+	category = colony
+}
+
+time_researcher_physics_research_produces_mult = {
+	icon = physics_research
+	percentage = yes
+	good = yes
+	category = colony
+}
+
+time_researcher_society_research_produces_mult = {
+	icon = society_research
+	percentage = yes
+	good = yes
+	category = colony
+}
+
+time_researcher_engineering_research_produces_mult = {
+	icon = engineering_research
+	percentage = yes
+	good = yes
+	category = colony
+}
+
+time_researcher_produces_mult = {
+	icon = mod_time_researcher_produces_mult
+	percentage = yes
+	good = yes
+	category = colony
+}
+
+district_time_usage = {
+	icon = mod_district_time_usage
+	good = no
+	category = colony
+}
+
+district_time_usage_cap = {
+	icon = mod_district_time_usage_cap
+	good = yes
+	category = colony
+}
+
+district_time_usage_cap_mult = {
+	icon = mod_district_time_usage_cap_mult
+	percentage = yes
+	good = yes
+	category = colony
+}
+
+col_time_mult = {
+	icon = mod_col_time_mult
+	percentage = yes
+	good = yes
+	category = colony
+}
+
+time_order_produces_mult = {
+	icon = mod_produces_mult
+	percentage = yes
+	good = yes
+	category = colony
+}
+
+time_order_trade_value_add = {
+	icon = trade
+	good = yes
+	category = colony
+}
+
+time_researcher_trade_value_add = {
+	icon = trade
+	good = yes
+	category = colony
+}
+
+job_black_hole_physicist_mult = {
+	icon = mod_job_black_hole_physicist_add
+	percentage = yes
+	good = yes
+	category = colony
+}
+
+job_black_hole_biologist_mult = {
+	icon = mod_job_black_hole_biologist_add
+	percentage = yes
+	good = yes
+	category = colony
+}
+
+job_black_hole_engineer_mult = {
+	icon = mod_job_black_hole_engineer_add
+	percentage = yes
+	good = yes
+	category = colony
+}
+
+d_time_energy_mult = {
+	icon = energy
+	percentage = yes
+	good = yes
+	category = colony
+}
+
+d_time_minerals_mult = {
+	icon = minerals
+	percentage = yes
+	good = yes
+	category = colony
+}
+
+d_time_food_mult = {
+	icon = food
+	percentage = yes
+	good = yes
+	category = colony
+}
+
+d_time_alloys_mult = {
+	icon = alloys
+	percentage = yes
+	good = yes
+	category = colony
+}
+
+d_time_consumer_goods_mult = {
+	icon = consumer_goods
+	percentage = yes
+	good = yes
+	category = colony
+}
+
+d_time_physics_research_mult = {
+	icon = physics_research
+	percentage = yes
+	good = yes
+	category = colony
+}
+
+d_time_society_research_mult = {
+	icon = society_research
+	percentage = yes
+	good = yes
+	category = colony
+}
+
+d_time_engineering_research_mult = {
+	icon = engineering_research
+	percentage = yes
+	good = yes
+	category = colony
+}
+
+d_time_unity_mult = {
+	icon = unity
+	percentage = yes
+	good = yes
+	category = colony
+}
+
+
+
+# 古老契约
+origin_contract_composer_attunement = {
+	icon = mod_job_origin_contract_composer_add
+	neutral = yes
+	category = country
+}
+
+origin_contract_cradle_attunement = {
+	icon = mod_job_origin_contract_cradle_add
+	neutral = yes
+	category = country
+}
+
+origin_contract_eater_attunement = {
+	icon = mod_job_origin_contract_eater_add
+	neutral = yes
+	category = country
+}
+
+origin_contract_instrument_attunement = {
+	icon = mod_job_origin_contract_instrument_add
+	neutral = yes
+	category = country
+}
+
+origin_contract_composer_produces_mult = {
+	icon = mod_produces_mult
+	percentage = yes
+	good = yes
+	category = colony
+}
+
+origin_contract_cradle_produces_mult = {
+	icon = mod_produces_mult
+	percentage = yes
+	good = yes
+	category = colony
+}
+
+origin_contract_eater_produces_mult = {
+	icon = mod_produces_mult
+	percentage = yes
+	good = yes
+	category = colony
+}
+
+origin_contract_instrument_produces_mult = {
+	icon = mod_produces_mult
+	percentage = yes
+	good = yes
+	category = colony
+}
+
+
+
+# 气态生物
+origin_gas_colony_workforce_mult = { # 假的修正，不读取，仅显示文本
+	icon = mod_pop_workforce_mult
+	percentage = yes
+	good = yes
+	category = pop_group
+}
+
+origin_gas_colony_logistic_growth_mult = { # 假的修正，不读取，仅显示文本
+	icon = mod_logistic_growth_mult
+	percentage = yes
+	good = yes
+	category = pop_group
+}
+
+origin_gas_colony_bonus_pop_growth_mult = { # 假的修正，不读取，仅显示文本
+	icon = mod_bonus_pop_growth_mult
+	percentage = yes
+	good = yes
+	category = pop_group
+}
+
+origin_gas_colony_empire_size_mult = { # 假的修正，不读取，仅显示文本
+	icon = mod_species_empire_size_mult
+	percentage = yes
+	good = no
+	category = pop_group
+}
+
+origin_gas_colony_pops_upkeep_mult = { # 假的修正，不读取，仅显示文本
+	icon = mod_upkeep_mult
+	percentage = yes
+	good = no
+	category = pop_group
+}
+
+
+
+# 虚境访客
+col_psionic_mult = {
+	icon = mod_shroud_unavailable
+	percentage = yes
+	good = yes
+	category = colony
+}
+
+district_psionic_modifier_mult = {
+	icon = mod_district_city_max
+	percentage = yes
+	good = yes
+	category = colony
+}
+
+
+
+# 纳米机器
+district_nanites_modifier_mult = {
+	icon = mod_district_nexus_max
+	percentage = yes
+	good = yes
+	category = colony
+}
+
+nanites_study_system = {
+	icon = nanites
+	good = yes
+	category = colony
+}
+
+nanites_sapient_network = {
+	icon = nanites
+	good = yes
+	category = colony
+}
+
+origin_nanites_bonus_workforce_mult = { # 假的修正，不读取，仅显示文本
+	icon = mod_pop_bonus_workforce_mult
+	percentage = yes
+	good = yes
+	category = pop_group
+}
+
+
+
+# 宁和之道
+pure_yin_mult_modifier = {
+	icon = mod_consecrated_world_green
+	percentage = yes
+	good = yes
+	category = country
+}
+
+pure_yang_mult_modifier = {
+	icon = mod_consecrated_world_yellow
+	percentage = yes
+	good = yes
+	category = colony
+}
+
+yin_mult_modifier = {
+	icon = mod_consecrated_world_green
+	percentage = yes
+	neutral = yes
+	category = colony
+}
+
+yang_mult_modifier = {
+	icon = mod_consecrated_world_yellow
+	percentage = yes
+	neutral = yes
+	category = colony
+}
+
+
+
+# 再组装者
+reassembly_speed_mult = {
+	icon = job_replicator
+	percentage = yes
+	good = yes
+	category = colony
+}
+
+reassembler_bonus_workforce_mult = { # 假的修正，不读取，仅显示文本
+	icon = mod_pop_bonus_workforce_mult
+	percentage = yes
+	good = yes
+	category = pop_group
+}
+
+reassembler_pops_upkeep_mult = {
+	icon = mod_pop_robot_upkeep_mult
+	percentage = yes
+	good = no
+	category = pop_group
+}
+
+
+
+# 江洋大盗
+pirate_king_reward_gain = {
+	icon = mod_treasure_trove_reward_mult
+	percentage = yes
+	good = yes
+	category = country
+}
+
+
+
+# 伪善假面
+hypocritical_face_building_modifier = {
+	icon = mod_add_base_country_intel
+	good = no
+	category = country
+}
+
+
+
+# 传奇崇拜
+promotes_renowned_chance = {
+	icon = mod_leader_skill_levels
+	percentage = yes
+	good = yes
+	category = country
+}
+
+promotes_renowned_cap = {
+	icon = mod_leader_skill_levels
+	good = yes
+	category = country
+}
+promotes_legendary_chance = {
+	icon = mod_leader_skill_levels
+	percentage = yes
+	good = yes
+	category = country
+}
+
+promotes_legendary_cap = {
+	icon = mod_leader_skill_levels
+	good = yes
+	category = country
+}
+
+
+
+# 生命之籽
+councilor_origin_life_seeded_modifier = {
+	icon = mod_pop_bonus_workforce_mult
+	percentage = yes
+	good = yes
+	category = country
+}
+
+
+
+# 微型奇点
+time_microsingularity_build_time_add = {
+	icon = mod_starbase_shipyard_build_time_mult
+	good = no
+	category = ship
+}
+
+
+
+# 信使网络
+messenger_network = {
+	icon = mod_messenger_network
+	percentage = yes
+	good = yes
+	category = country
+}
+
+# 星辰记忆
+dimension_traveler_skill_point = {
+	icon = trade_cat_sensor
+	good = yes
+	category = leader
+}
+
+# 负相紊乱
+building_akx_research_decay = {
+	icon = mod_engineering_research_upkeep_add
+	good = no
+	category = country
+}
+
+building_akx_computer_decay = {
+	icon = mod_physics_research_upkeep_add
+	good = no
+	category = country
+}
+
+building_akx_monument_decay = {
+	icon = mod_society_research_upkeep_add
+	good = no
+	category = country
+}
+
+building_akx_forecast_decay = {
+	icon = mod_unity_upkeep_add
+	good = no
+	category = country
+}
+
+# 无限光谱
+infinity_spectrum = {
+	icon = mod_planetary_ascension_effect_mult
+	percentage = yes
+	good = yes
+	category = colony
+}
+
+# 终焉宣告
+dimensional_horror_crisis_storm_protection_level = {
+	icon = mod_country_storm_attraction_add
+	good = yes
+	category = country
+}
+
+dimensional_horror_crisis_storm_planet_modifier = {
+	icon = mod_country_storm_protection_tech_level_add
+	percentage = yes
+	good = no
+	category = colony
+}
+
+dimensional_horror_crisis_storm_fleet_modifier = {
+	icon = mod_country_storm_protection_tech_level_add
+	percentage = yes
+	good = no
+	category = fleet
+}
+
+
+
+# 界旅者精英级
+dimension_traveler_subclass_governor_resource_modifier = {
+	icon = sr_dark_matter
+	percentage = yes
+	good = yes
+	category = colony
+}
+
+dimension_traveler_subclass_delegate_resource_modifier = {
+	icon = influence
+	percentage = yes
+	good = yes
+	category = country
+}
+
+dimension_traveler_subclass_researcher_resource_modifier = {
+	icon = unity
+	percentage = yes
+	good = yes
+	category = country
+}
+
+dimension_traveler_subclass_scientist_resource_modifier = {
+	icon = advanced_logic
+	percentage = yes
+	good = yes
+	category = ship
+}
+
+dimension_traveler_subclass_admiral_resource_modifier = {
+	icon = alloys
+	percentage = yes
+	good = yes
+	category = fleet
+}
+
+dimension_traveler_subclass_general_resource_modifier = {
+	icon = trade
+	percentage = yes
+	good = yes
+	category = army
+}
+
+dimension_traveler_skill_official_4_6_modifier = {
+	icon = trade_cat_sensor
+	percentage = yes
+	good = no
+	category = colony
+}
+
+dimension_traveler_skill_official_6_2_modifier = {
+	icon = trade_cat_sensor
+	good = yes
+	category = espionage
+}
+
+dimension_traveler_skill_official_6_4_modifier = {
+	icon = trade_cat_sensor
+	good = yes
+	category = espionage
+}
+
+dimension_traveler_skill_official_7_3_modifier = {
+	icon = trade_cat_sensor
+	percentage = yes
+	good = yes
+	category = espionage
+}
+
+dimension_traveler_skill_official_4_8_modifier = {
+	icon = trade_cat_sensor
+	percentage = yes
+	good = yes
+	category = colony
+}
+
+dimension_traveler_skill_scientist_3_3_modifier = {
+	icon = trade_cat_sensor
+	percentage = yes
+	good = yes
+	category = colony
+}
+
+dimension_traveler_skill_scientist_3_5_modifier = {
+	icon = trade_cat_sensor
+	percentage = yes
+	good = yes
+	category = colony
+}
+
+dimension_traveler_skill_scientist_3_7_modifier = {
+	icon = trade_cat_sensor
+	percentage = yes
+	good = yes
+	category = colony
+}
+
+dimension_traveler_skill_scientist_4_2_modifier = {
+	icon = trade_cat_sensor
+	percentage = yes
+	good = yes
+	category = colony
+}
+
+dimension_traveler_skill_scientist_4_4_modifier = {
+	icon = trade_cat_sensor
+	percentage = yes
+	good = yes
+	category = colony
+}
+
+dimension_traveler_skill_scientist_4_6_modifier = {
+	icon = trade_cat_sensor
+	percentage = yes
+	good = yes
+	category = colony
+}
+
+dimension_traveler_skill_scientist_4_8_modifier = {
+	icon = trade_cat_sensor
+	percentage = yes
+	good = yes
+	category = colony
+}
+
+dimension_traveler_skill_scientist_6_8_modifier = {
+	icon = trade_cat_sensor
+	good = yes
+	category = ship
+}
+
+dimension_traveler_skill_scientist_7_7_modifier = {
+	icon = trade_cat_sensor
+	percentage = yes
+	good = yes
+	category = ship
+}
+
+dimension_traveler_skill_commander_2_6_modifier = {
+	icon = trade_cat_sensor
+	percentage = yes
+	good = yes
+	category = colony
+}
+
+dimension_traveler_skill_commander_3_7_modifier = {
+	icon = trade_cat_sensor
+	percentage = yes
+	good = no
+	category = colony
+}
+
+dimension_traveler_skill_commander_4_2_modifier = {
+	icon = trade_cat_sensor
+	percentage = yes
+	good = yes
+	category = leader
+}
+
+dimension_traveler_skill_commander_4_8_modifier = {
+	icon = trade_cat_sensor
+	good = yes
+	category = colony
+}

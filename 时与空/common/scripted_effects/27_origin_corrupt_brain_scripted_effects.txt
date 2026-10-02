@@ -1,0 +1,80 @@
+# 国家
+refresh_corrupt_brain_value = {
+	set_variable = {
+		which = corrupt_brain_ruler
+		value = 0
+	}
+	set_variable = {
+		which = corrupt_brain_growth
+		value = 0
+	}
+	set_variable = {
+		which = corrupt_brain_cognitive
+		value = 0
+	}
+	set_variable = {
+		which = corrupt_brain_legion
+		value = 0
+	}
+	set_variable = {
+		which = corrupt_brain_regulatory
+		value = 0
+	}
+	ruler = {
+		owner = {
+			change_variable = {
+				which = corrupt_brain_ruler
+				value = prev.value:num_corrupt_brain_value|MULT|1|
+			}
+		}
+	}
+	every_owned_leader = {
+		limit = {
+			is_gestalt_node = yes
+		}
+		if = {
+			limit = {
+				is_councilor_type = councilor_gestalt_growth
+			}
+			owner = {
+				change_variable = {
+					which = corrupt_brain_growth
+					value = prev.value:num_corrupt_brain_value
+				}
+			}
+		}
+		else_if = {
+			limit = {
+				is_councilor_type = councilor_gestalt_cognitive
+			}
+			owner = {
+				change_variable = {
+					which = corrupt_brain_cognitive
+					value = prev.value:num_corrupt_brain_value
+				}
+			}
+		}
+		else_if = {
+			limit = {
+				is_councilor_type = councilor_gestalt_legion
+			}
+			owner = {
+				change_variable = {
+					which = corrupt_brain_legion
+					value = prev.value:num_corrupt_brain_value
+				}
+			}
+		}
+		else_if = {
+			limit = {
+				is_councilor_type = councilor_gestalt_regulatory
+			}
+			owner = {
+				change_variable = {
+					which = corrupt_brain_regulatory
+					value = prev.value:num_corrupt_brain_value
+				}
+			}
+		}
+	}
+}

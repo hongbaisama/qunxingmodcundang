@@ -1,0 +1,314 @@
+councilor_tradition_hope = {
+	icon = "GFX_icon_councilor_tradition_hope"
+	leader_class = { official scientist commander }
+	possible = {
+ 		is_gestalt = no
+		has_tradition = tr_hope_finish
+		NOT = { has_country_flag = councilor_tradition_hope_locked }
+ 	}
+	is_leader_possible = {
+		OR = {
+			leader_class = official
+			leader_class = scientist
+			leader_class = commander
+		}
+		is_same_species = owner_main_species
+	}
+	modifier = {
+		diplo_action_acceptance_add = 5
+		inline_script = {
+			script = modifiers/damage_vs_crisis_country_modifiers
+			COUNT = 0.1
+		}
+	}
+	custom_tooltip = "councilor_tradition_hope_effect"
+	custom_unlock_title = "councilor_tradition_hope_unlock_title"
+	conditional_tooltip = "councilor_tradition_hope_conditional_tooltip"
+	ai_hiring_weight = {
+		inline_script = councilor_leader_weights
+	}
+}
+
+councilor_akx_waiting_world = {
+	icon = "GFX_icon_councilor_akx_waiting_world"
+	leader_class = { official }
+	possible = {
+ 		is_gestalt = no
+		has_country_flag = manifold_country_end
+		NOT = { has_country_flag = councilor_akx_waiting_world_locked }
+ 	}
+	is_leader_possible = {
+		leader_class = official
+	}
+	modifier = {
+		planetary_ascension_effect_mult = 0.025
+	}
+	custom_unlock_title = "councilor_akx_waiting_world_unlock_title"
+	ai_hiring_weight = {
+		inline_script = councilor_leader_weights
+	}
+}
+
+councilor_akx_end_messenger = {
+	icon = "GFX_icon_councilor_akx_end_messenger"
+	leader_class = { official scientist commander }
+	possible = {
+ 		is_gestalt = no
+		has_country_flag = time_akx_messenger_end_1
+		is_dimension_traveler_owner = yes
+		NOT = { has_country_flag = councilor_akx_end_messenger_locked }
+ 	}
+	is_leader_possible = {
+		OR = {
+			leader_class = official
+			leader_class = scientist
+			leader_class = commander
+		}
+		species = {
+			has_akx_messenger = yes
+		}
+	}
+	triggered_country_modifier = {
+		potential = {
+			has_dimension_traveler_horror_modifier_bad = no
+		}
+		country_cost_mult = -0.01
+		country_upkeep_mult = -0.01
+		ships_logistics_mult = -0.01
+		mod_ship_naval_cap_usage_mult = -0.01
+		planet_stability_add = -1
+	}
+	triggered_country_modifier = {
+		potential = {
+			is_dimension_traveler_owner = yes
+			has_dimension_traveler_horror_modifier_bad = no
+		}
+		messenger_network = 0.01
+	}
+	custom_unlock_title = "councilor_akx_end_messenger_unlock_title"
+	conditional_tooltip = "councilor_akx_messenger_conditional_tooltip"
+	ai_hiring_weight = {
+		inline_script = councilor_leader_weights
+	}
+}
+
+councilor_akx_future_messenger = {
+	icon = "GFX_icon_councilor_akx_future_messenger"
+	leader_class = { official scientist commander }
+	possible = {
+ 		is_gestalt = no
+		has_country_flag = time_akx_messenger_end_2
+		is_dimension_traveler_owner = yes
+		NOT = { has_country_flag = councilor_akx_future_messenger_locked }
+ 	}
+	is_leader_possible = {
+		OR = {
+			leader_class = official
+			leader_class = scientist
+			leader_class = commander
+		}
+		species = {
+			has_akx_messenger = yes
+		}
+	}
+	triggered_country_modifier = {
+		potential = {
+			has_dimension_traveler_horror_modifier_bad = no
+		}
+		country_cost_mult = -0.01
+		country_upkeep_mult = -0.01
+		planet_stability_add = 1
+	}
+	triggered_country_modifier = {
+		potential = {
+			is_dimension_traveler_owner = yes
+			has_dimension_traveler_horror_modifier_bad = no
+		}
+		messenger_network = 0.01
+	}
+	custom_unlock_title = "councilor_akx_future_messenger_unlock_title"
+	conditional_tooltip = "councilor_akx_messenger_conditional_tooltip"
+	ai_hiring_weight = {
+		inline_script = councilor_leader_weights
+	}
+}
+
+councilor_akx_syzygy_admiral = {
+	icon = "GFX_icon_councilor_akx_syzygy_admiral"
+	leader_class = { commander }
+	possible = {
+ 		is_gestalt = no
+		OR = {
+			has_country_flag = time_akx_syzygy_admiral_end_2
+			has_country_flag = time_akx_syzygy_admiral_end_3
+		}
+		NOT = { has_country_flag = councilor_akx_syzygy_admiral_locked }
+ 	}
+	is_leader_possible = {
+		has_trait_foredoomed_to_a_rendezvous = yes
+	}
+	modifier = {
+		ship_jumpdrive_cooldown_mult = -0.01
+		ship_ftl_jumpdrive_range_mult = 0.025
+		ship_base_speed_mult = 0.025
+	}
+	custom_unlock_title = "councilor_akx_syzygy_admiral_unlock_title"
+	conditional_tooltip = "councilor_akx_syzygy_admiral_conditional_tooltip"
+	ai_hiring_weight = {
+		inline_script = councilor_leader_weights
+	}
+}
+
+councilor_akx_coils_god = {
+	icon = "GFX_icon_councilor_akx_coils_god"
+	leader_class = { scientist }
+	possible = {
+ 		is_gestalt = no
+		OR = {
+			has_country_flag = time_akx_coils_god_end_1
+			has_country_flag = time_akx_coils_god_end_2
+		}
+		NOT = { has_country_flag = councilor_akx_coils_god_locked }
+ 	}
+	is_leader_possible = {
+		leader_class = scientist
+	}
+	modifier = {
+		all_technology_research_speed = 0.0314
+	}
+	custom_tooltip = "councilor_akx_coils_god_effect"
+	custom_unlock_title = "councilor_akx_coils_god_unlock_title"
+	ai_hiring_weight = {
+		inline_script = councilor_leader_weights
+	}
+}
+
+councilor_akx_hole_pets = {
+	icon = "GFX_icon_councilor_akx_hole_pets"
+	leader_class = { official scientist commander }
+	possible = {
+ 		is_gestalt = no
+		OR = {
+			has_country_flag = time_akx_hole_pets_end_1
+			has_country_flag = time_akx_hole_pets_end_2
+			has_country_flag = time_akx_hole_pets_end_3
+		}
+		NOT = { has_country_flag = councilor_akx_hole_pets_locked }
+ 	}
+	is_leader_possible = {
+		OR = {
+			leader_class = official
+			leader_class = scientist
+			leader_class = commander
+		}
+	}
+	modifier = {
+		country_physics_research_produces_mult = 0.025
+		country_society_research_produces_mult = 0.025
+		country_engineering_research_produces_mult = 0.025
+		country_unity_produces_mult = 0.025
+	}
+	custom_unlock_title = "councilor_akx_hole_pets_unlock_title"
+	ai_hiring_weight = {
+		inline_script = councilor_leader_weights
+	}
+}
+
+councilor_time_hotel_1 = {
+	icon = "GFX_icon_councilor_time_hotel"
+	leader_class = { scientist }
+	possible = {
+ 		is_gestalt = no
+		has_modifier = time_hotel_modifier_1
+		NOT = { has_country_flag = councilor_time_hotel_1_locked }
+ 	}
+	is_leader_possible = {
+		leader_class = scientist
+		has_trait = leader_trait_time_hotel
+	}
+	modifier = {
+		planet_stability_add = 1
+		planet_crime_add = -2.5
+	}
+	custom_unlock_title = "councilor_time_hotel_1_unlock_title"
+	conditional_tooltip = "councilor_time_hotel_conditional_tooltip"
+	ai_hiring_weight = {
+		inline_script = councilor_leader_weights
+	}
+}
+
+councilor_time_hotel_2 = {
+	icon = "GFX_icon_councilor_time_hotel"
+	leader_class = { scientist }
+	possible = {
+ 		is_gestalt = no
+		has_modifier = time_hotel_modifier_2
+		NOT = { has_country_flag = councilor_time_hotel_2_locked }
+ 	}
+	is_leader_possible = {
+		leader_class = scientist
+		has_trait = leader_trait_time_hotel
+	}
+	modifier = {
+		planet_building_build_speed_mult = 0.02
+		starbase_shipyard_build_speed_mult = 0.02
+	}
+	custom_unlock_title = "councilor_time_hotel_2_unlock_title"
+	conditional_tooltip = "councilor_time_hotel_conditional_tooltip"
+	ai_hiring_weight = {
+		inline_script = councilor_leader_weights
+	}
+}
+
+councilor_akx_pirate_king = {
+	icon = "GFX_icon_councilor_akx_pirate_king"
+	leader_class = { commander }
+	possible = {
+ 		is_gestalt = no
+		OR = {
+			has_country_flag = time_akx_pirate_king_end_1
+			has_country_flag = time_akx_pirate_king_end_2
+		}
+		NOT = { has_country_flag = councilor_akx_pirate_king_locked }
+ 	}
+	is_leader_possible = {
+		leader_class = commander
+		has_pass_black_hole = yes
+	}
+	triggered_country_modifier = {
+		potential = {
+			NOT = {
+				any_owned_leader = {
+					is_councilor_type = councilor_akx_pirate_king
+					has_trait = leader_trait_pass_black_hole_pirate_king
+				}
+			}
+		}
+		ship_weapon_damage = 0.033
+		ship_fire_rate_mult = 0.033
+		ship_weapon_range_mult = 0.033
+		ship_hull_regen_add_perc = 0.033
+		ship_armor_regen_add_perc = 0.033
+		ship_shield_regen_add_perc = 0.033
+	}
+	triggered_country_modifier = {
+		potential = {
+			any_owned_leader = {
+				is_councilor_type = councilor_akx_pirate_king
+				has_trait = leader_trait_pass_black_hole_pirate_king
+			}
+		}
+		ship_weapon_damage = 0.066
+		ship_fire_rate_mult = 0.066
+		ship_weapon_range_mult = 0.066
+		ship_hull_regen_add_perc = 0.066
+		ship_armor_regen_add_perc = 0.066
+		ship_shield_regen_add_perc = 0.066
+	}
+	custom_tooltip_with_modifiers = "councilor_akx_pirate_king_effect"
+	custom_unlock_title = "councilor_akx_pirate_king_unlock_title"
+	conditional_tooltip = "councilor_akx_pirate_king_conditional_tooltip"
+	ai_hiring_weight = {
+		inline_script = councilor_leader_weights
+	}
+}

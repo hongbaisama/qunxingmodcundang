@@ -1,0 +1,921 @@
+
+namespace = origin_equinox_seal
+
+country_event = {
+	id = origin_equinox_seal.1
+	is_triggered_only = yes
+	hide_window = yes
+
+	trigger = {
+		has_origin = origin_equinox_seal
+	}
+	
+	immediate = {
+		set_country_flag = meet_equinox_seal_rift
+		set_country_flag = astral_threads_found
+		start_situation = {
+			type = situation_a_rift_in_space
+			target = event_target:astral_rift_equinox_seal
+			effect = {
+				add_situation_progress = 80
+			}
+		}
+		# 封印解除事件不与彼岸封印起源国家绑定
+		event_target:astral_rift_equinox_seal = {
+			solar_system = {
+				system_event = { id = origin_equinox_seal.8 days = 18000 }
+			}
+		}
+	}
+}
+
+country_event = {
+	id = origin_equinox_seal.2
+	is_triggered_only = yes
+	hide_window = yes
+
+	trigger = {
+		has_country_flag = unseal_equinox_seal
+		exists = event_target:equinox_seal_sleeper_fleet
+	}
+	
+	immediate = {
+		from = {
+			add_trait = {
+				trait = leader_trait_equinox_seal
+				show_message = no
+			}
+		}
+	}
+}
+
+country_event = {
+	id = origin_equinox_seal.3
+	title = origin_equinox_seal.3.name
+	desc = {
+		text = origin_equinox_seal.3.desc.1
+		trigger = {
+			has_country_flag = start_equinox_seal
+		}
+	}
+	desc = {
+		text = origin_equinox_seal.3.desc.2
+		trigger = {
+			NOT = { has_country_flag = start_equinox_seal }
+			has_origin = origin_equinox_seal
+		}
+	}
+	desc = {
+		text = origin_equinox_seal.3.desc.3
+		trigger = {
+			NOR = {
+				has_country_flag = start_equinox_seal
+				has_origin = origin_equinox_seal
+			}
+		}
+	}
+	picture = GFX_evt_situation_the_seal
+	show_sound = event_mystic_reveal_light
+	location = event_target:equinox_seal_system
+	
+	is_triggered_only = yes
+
+	trigger = {
+		FromFromFrom = { is_same_value = event_target:equinox_seal_sleeper_fleet }
+	}
+	
+	immediate = {
+		if = {
+			limit = {
+				any_playable_country = {
+					has_country_flag = unseal_equinox_seal
+				}
+			}
+			every_playable_country = {
+				limit = {
+					has_country_flag = unseal_equinox_seal
+				}
+				country_event = { id = origin_equinox_seal.4 }
+			}
+		}
+	}
+	
+	option = {
+		name = origin_equinox_seal.3.a
+		give_r_horror_matter = { FLAG = equinox_seal_relic }
+	}
+}
+
+country_event = {
+	id = origin_equinox_seal.4
+	title = origin_equinox_seal.4.name
+	desc = origin_equinox_seal.4.desc
+	picture = GFX_evt_situation_the_seal
+	show_sound = event_mystic_reveal_light
+	location = event_target:equinox_seal_system
+	
+	is_triggered_only = yes
+
+	trigger = {
+	}
+	
+	immediate = {
+		create_timeline_origin_equinox_seal_lost_trait = yes
+		every_owned_leader = {
+			remove_trait = leader_trait_equinox_seal
+		}
+		every_pool_leader = {
+			remove_trait = leader_trait_equinox_seal
+		}
+	}
+	
+	option = {
+		name = origin_equinox_seal.4.a
+		custom_tooltip = origin_equinox_seal.4.a.tooltip
+	}
+}
+
+# 封印失败提示事件
+country_event = {
+	id = origin_equinox_seal.5
+	title = origin_equinox_seal.5.name
+	desc = origin_equinox_seal.5.desc
+	picture = GFX_evt_dimensional_horror
+	show_sound = event_mystic_reveal_light
+	location = event_target:equinox_seal_system
+	
+	is_triggered_only = yes
+
+	trigger = {
+		OR = {
+			has_origin = origin_equinox_seal
+			has_origin = origin_equinox_glimpse
+		}
+	}
+	
+	immediate = {
+		create_timeline_origin_equinox_seal_broken = yes
+		set_country_flag = meet_equinox_seal_sleeper
+		set_country_flag = horror_focus_3_finished # 遭遇清醒沉眠者也算遭遇位面之魇
+	}
+	
+	option = {
+		name = origin_equinox_seal.5.a
+		trigger = {
+			OR = {
+				has_origin = origin_equinox_seal
+				has_origin = origin_equinox_glimpse
+				always = yes # 为了让特殊起源显示选项图标
+			}
+		}
+	}
+}
+
+country_event = {
+	id = origin_equinox_seal.6
+	title = origin_equinox_seal.6.name
+	desc = origin_equinox_seal.6.desc
+	picture = GFX_evt_dimensional_horror
+	show_sound = event_mystic_reveal_light
+	location = event_target:equinox_seal_system
+	
+	is_triggered_only = yes
+	
+	trigger = {
+		NOR = {
+			has_origin = origin_equinox_seal
+			has_origin = origin_equinox_glimpse
+		}
+	}
+	
+	immediate = {
+		create_timeline_origin_equinox_seal_broken = yes
+		set_country_flag = meet_equinox_seal_sleeper
+		set_country_flag = horror_focus_3_finished # 遭遇清醒沉眠者也算遭遇位面之魇
+	}
+	
+	option = {
+		name = origin_equinox_seal.6.a
+	}
+}
+
+# 循环科技增加进度
+country_event = {
+	id = origin_equinox_seal.7
+	is_triggered_only = yes
+	hide_window = yes
+
+	trigger = {
+		exists = event_target:astral_rift_equinox_seal
+		has_country_flag = start_equinox_seal
+		last_increased_tech = tech_equinox_seal
+	}
+	
+	immediate = {
+		event_target:astral_rift_equinox_seal = {
+			add_stage_clues = 1
+		}
+	}
+}
+
+# 封印失败
+system_event = {
+	id = origin_equinox_seal.8
+	is_triggered_only = yes
+	hide_window = yes
+
+	trigger = {
+		NOT = { has_global_flag = finish_equinox_seal }
+	}
+	
+	immediate = {
+		set_global_flag = finish_equinox_seal
+		every_playable_country = {
+			limit = {
+				OR = {
+					has_origin = origin_equinox_seal
+					has_origin = origin_equinox_glimpse
+				}
+			}
+			country_event = { id = origin_equinox_seal.5 }
+		}
+		if = {
+			limit = {
+				exists = owner
+				owner = {
+					NOR = {
+						has_origin = origin_equinox_seal
+						has_origin = origin_equinox_glimpse
+					}
+				}
+			}
+			owner = {
+				country_event = { id = origin_equinox_seal.6 }
+			}
+		}
+		event_target:astral_rift_equinox_seal = {
+			if = {
+				limit = {
+					exists = leader
+				}
+				leader = {
+					kill_leader = { show_notification = no }
+				}
+				finish_astral_rift = yes
+			}
+			clear_deposits_and_orbital_station = yes
+			destroy_astral_rift = this # 封印松动，被位面之魇暴力摧毁而彻底消失；主动解除封印则不会使封印彻底消失
+		}
+		starbase = {
+			fleet = {
+				delete_fleet = this
+			}
+		}
+		star = {
+			remove_deposit = d_dark_matter_deposit_3
+			add_deposit = d_dark_matter_deposit_5
+			create_ambient_object = {
+				type = "destroyed_system"
+				location = this
+			}
+			last_created_ambient_object = {
+				set_ambient_object_flag = destroyed_system_effect
+				set_location = {
+					target = prev
+					distance = 0
+					angle = random
+				}
+			}
+		}
+		every_system_planet = {
+			limit = {
+				NOR = {
+					is_primary_star = yes
+					is_asteroid = yes
+					# 黑洞白洞
+					is_time_black_hole_or_white_hole_planet_class = yes
+					# 星界裂隙
+					is_astral_scar = yes
+					# 虚空
+					is_planet_class = pc_giga_empty_space
+					is_planet_class = pc_giga_empty_space_asteroid
+					is_planet_class = pc_giga_asteroid_artillery
+					is_planet_class = pc_giga_orbital_site
+					is_planet_class = pc_rtg_empty_space
+				}
+			}
+			if = {
+				limit = {
+					is_capital = yes
+				}
+				owner = {
+					ruler = {
+						kill_leader = { show_notification = no }
+					}
+				}
+			}
+			if = {
+				limit = {
+					is_colony = yes
+				}
+				time_destroy_colony = yes
+			}
+			clear_planet_modifiers = yes
+			clear_deposits_and_orbital_station = yes
+			if = {
+				limit = {
+					is_ringworld = yes
+				}
+				spawn_ringworld_cracker_effect = yes
+				change_pc = pc_ringworld_habitable_damaged
+			}
+			else_if = {
+				limit = {
+					is_planet_class = pc_ringworld_tech
+				}
+				spawn_ringworld_cracker_effect = yes
+				change_pc = pc_ringworld_tech_damaged
+			}
+			else_if = {
+				limit = {
+					is_planet_class = pc_ringworld_seam
+				}
+				spawn_ringworld_cracker_effect = yes
+				change_pc = pc_ringworld_seam_damaged
+			}
+			else = {
+				change_pc = pc_black_hole
+				random_list = {
+					3 = {
+						add_deposit = d_dark_matter_deposit_1
+					}
+					2 = {
+						add_deposit = d_dark_matter_deposit_2
+					}
+					1 = {
+						add_deposit = d_dark_matter_deposit_3
+					}
+				}
+			}
+		}
+		every_system_planet = {
+			limit = {
+				exists = orbital_station
+			}
+			orbital_station = { dismantle = yes }
+		}
+		every_system_planet = {
+			limit = { is_asteroid = yes }
+			clear_deposits_and_orbital_station = yes
+			clear_planet_modifiers = yes
+		}
+		every_fleet_in_system = {
+			destroy_fleet = this
+		}
+		every_system_megastructure = {
+			set_ruined_megastructure = yes
+		}
+		# 创建清醒沉眠者
+		create_country = {
+			name = "NAME_equinox_seal_sleeper"
+			type = guardian_horror
+			auto_delete = no
+			flag={
+				icon={
+					category="spherical"
+					file="flag_spherical_18.dds"
+				}
+				background={
+					category="backgrounds"
+					file="circle.dds"
+				}
+				colors={
+					"shadow_purple"
+					"black"
+					"null"
+					"null"
+				}
+			}
+			effect = {
+				save_global_event_target_as = equinox_seal_sleeper_country
+			}
+		}
+		create_fleet = {
+			name = "NAME_equinox_seal_sleeper"
+			settings = {
+				can_upgrade = no
+				can_change_composition = no
+				can_change_leader = no
+				uses_naval_capacity = no
+				spawn_debris = no
+				is_boss = yes
+			}
+			effect = {
+				set_owner = event_target:equinox_seal_sleeper_country
+				create_ship = {
+					name = "NAME_equinox_seal_sleeper"
+					design = "NAME_equinox_seal_sleeper"
+					prefix = no
+					upgradable = no
+				}
+				set_location = {
+					target = event_target:astral_rift_equinox_seal
+					distance = 0
+					direction = in_system
+				}
+				save_global_event_target_as = equinox_seal_sleeper_fleet
+			}
+		}
+	}
+}
+
+fleet_event = {
+	id = origin_equinox_seal.9
+	title = origin_equinox_seal.9.name
+	desc = {
+		text = origin_equinox_seal.9.desc.1
+		trigger = {
+			exists = event_target:equinox_seal_sleeper_fleet
+		}
+	}
+	desc = {
+		text = origin_equinox_seal.9.desc.2
+		trigger = {
+			NOT = { exists = event_target:equinox_seal_sleeper_fleet }
+		}
+	}
+	picture = {
+		picture = GFX_evt_dimensional_horror
+		trigger = {
+			exists = event_target:equinox_seal_sleeper_fleet
+		}
+	}
+	picture = {
+		picture = GFX_evt_situation_the_seal
+		trigger = {
+			NOT = { exists = event_target:equinox_seal_sleeper_fleet }
+		}
+	}
+	show_sound = event_mystic_reveal_light
+	location = event_target:equinox_seal_system
+
+	is_triggered_only = yes
+	
+	trigger = {
+		if = {
+			limit = {
+				exists = event_target:equinox_seal_system
+				from = { is_same_value = event_target:equinox_seal_system }
+			}
+			if = {
+				limit = {
+					exists = event_target:equinox_seal_sleeper_fleet
+				}
+				owner = {
+					NOR = {
+						has_origin = origin_equinox_seal
+						has_country_flag = meet_equinox_seal_sleeper
+					}
+				}
+			}
+			else_if = {
+				limit = {
+					exists = event_target:astral_rift_equinox_seal
+					event_target:astral_rift_equinox_seal = {
+						NOT = { has_astral_rift_flag = completed_arcsite }
+					}
+				}
+				owner = {
+					NOR = {
+						has_origin = origin_equinox_seal
+						has_country_flag = meet_equinox_seal_rift
+					}
+				}
+			}
+			else = {
+				always = no
+			}
+		}
+		else = {
+			always = no
+		}
+	}
+	
+	immediate = {
+		if = {
+			limit = {
+				exists = event_target:equinox_seal_sleeper_fleet
+			}
+			owner = {
+				set_country_flag = meet_equinox_seal_rift
+				set_country_flag = meet_equinox_seal_sleeper
+			}
+		}
+		else = {
+			owner = {
+				set_country_flag = meet_equinox_seal_rift
+			}
+		}
+	}
+	
+	option = {
+		name = origin_equinox_seal.9.a
+		trigger = {
+			exists = event_target:equinox_seal_sleeper_fleet
+		}
+	}
+	
+	option = {
+		name = origin_equinox_seal.9.b
+		trigger = {
+			NOT = { exists = event_target:equinox_seal_sleeper_fleet }
+		}
+	}
+}
+
+astral_rift_event = {
+	id = origin_equinox_seal.11
+	title = origin_equinox_seal.11.name
+	desc = {
+		trigger = {
+			switch = {
+				trigger = has_astral_rift_flag
+				default = { text = origin_equinox_seal.11.desc.default }
+			}
+		}
+	}
+	picture = GFX_evt_astral_rift_dimensional_dump
+	show_sound = ap_rift_event_29_dimensional_circus
+	difficulty = 2
+	astral_rift = yes
+	is_triggered_only = yes
+
+	option = {
+		name = origin_equinox_seal.11.a
+		explorer = {
+			unlock_tradition_horror = yes
+			if = {
+				limit = {
+					NOT = { has_technology = tech_mine_dark_matter }
+				}
+				add_tech_option_or_research_effect = {
+					TECH = tech_mine_dark_matter
+					PROGRESS = 0.25
+					CATEGORY = physics_research
+				}
+			}
+			else = {
+				add_resource = { sr_dark_matter = 50 }
+			}
+		}
+		set_next_astral_rift_event = { id = origin_equinox_seal.12 }
+	}
+}
+
+astral_rift_event = {
+	id = origin_equinox_seal.12
+	title = origin_equinox_seal.12.name
+	desc = {
+		trigger = {
+			switch = {
+				trigger = has_astral_rift_flag
+				default = { text = origin_equinox_seal.12.desc.default }
+			}
+		}
+	}
+	picture = GFX_evt_astral_rift_bleached_planet
+	show_sound = ap_rift_event_18_quiet_tunnels
+	difficulty = 3
+	astral_rift = yes
+	is_triggered_only = yes
+
+	option = {
+		name = origin_equinox_seal.12.a
+		allow = {
+			explorer = {
+				custom_tooltip = {
+					fail_text = "requires_more_tradition_horror_for_astral_rift"
+					OR = {
+						has_tradition = tr_horror_4
+						has_tradition = tr_horror_5
+					}
+				}
+			}
+		}
+		explorer = {
+			if = {
+				limit = {
+					NOT = { has_technology = tech_mine_dark_matter }
+				}
+				add_tech_option_or_research_effect = {
+					TECH = tech_mine_dark_matter
+					PROGRESS = 0.25
+					CATEGORY = physics_research
+				}
+			}
+			else = {
+				add_resource = { sr_dark_matter = 50 }
+			}
+		}
+		set_next_astral_rift_event = { id = origin_equinox_seal.13 }
+	}
+}
+
+astral_rift_event = {
+	id = origin_equinox_seal.13
+	title = origin_equinox_seal.13.name
+	desc = {
+		trigger = {
+			switch = {
+				trigger = has_astral_rift_flag
+				default = { text = origin_equinox_seal.13.desc.default }
+			}
+		}
+	}
+	picture = GFX_evt_astral_rift_bleached_planet_2
+	show_sound = ap_rift_event_7_white_noise
+	difficulty = 4
+	astral_rift = yes
+	is_triggered_only = yes
+
+	option = {
+		name = origin_equinox_seal.13.a
+		allow = {
+			explorer = {
+				custom_tooltip = {
+					fail_text = "requires_more_tradition_horror_for_astral_rift"
+					has_tradition = tr_horror_finish
+				}
+			}
+		}
+		explorer = {
+			if = {
+				limit = {
+					NOT = { has_technology = tech_mine_dark_matter }
+				}
+				add_tech_option_or_research_effect = {
+					TECH = tech_mine_dark_matter
+					PROGRESS = 0.25
+					CATEGORY = physics_research
+				}
+			}
+			else = {
+				add_resource = { sr_dark_matter = 50 }
+			}
+		}
+		set_next_astral_rift_event = { id = origin_equinox_seal.14 }
+	}
+}
+
+astral_rift_event = {
+	id = origin_equinox_seal.14
+	title = origin_equinox_seal.14.name
+	desc = {
+		trigger = {
+			switch = {
+				trigger = has_astral_rift_flag
+				unseal_equinox_seal = { text = origin_equinox_seal.14.desc.unseal }
+				start_equinox_seal = { text = origin_equinox_seal.14.desc.seal }
+				default = { text = origin_equinox_seal.14.desc.default }
+			}
+		}
+	}
+	picture = GFX_evt_dimensional_horror
+	show_sound = ap_rift_event_3_dimensional_bending
+	difficulty = 5
+	astral_rift = yes
+	is_triggered_only = yes
+
+	option = {
+		name = origin_equinox_seal.14.unseal
+		custom_tooltip = origin_equinox_seal.14.unseal.tooltip
+		allow = {
+			explorer = {
+				custom_tooltip = {
+					fail_text = "worm_forbid_unseal"
+					NOT = { has_country_flag = worm_tomb_ending }
+				}
+			}
+		}
+		explorer = {
+			unlock_tradition_time = yes
+			hidden_effect = {
+				create_timeline_origin_equinox_seal_unseal = yes
+				every_owned_leader = {
+					add_trait = {
+						trait = leader_trait_equinox_seal
+						show_message = no
+					}
+				}
+				every_pool_leader = {
+					add_trait = {
+						trait = leader_trait_equinox_seal
+						show_message = no
+					}
+				}
+				set_country_flag = unseal_equinox_seal
+				set_country_flag = horror_focus_3_finished # 遭遇清醒沉眠者也算遭遇位面之魇
+			}
+		}
+		hidden_effect = {
+			solar_system = {
+				star = {
+					remove_deposit = d_dark_matter_deposit_3
+					add_deposit = d_dark_matter_deposit_5
+				}
+			}
+			# 创建清醒沉眠者
+			create_country = {
+				name = "NAME_equinox_seal_sleeper"
+				type = guardian_horror
+				auto_delete = no
+				use_hostilities_from = root.explorer
+				flag={
+					icon={
+						category="spherical"
+						file="flag_spherical_18.dds"
+					}
+					background={
+						category="backgrounds"
+						file="circle.dds"
+					}
+					colors={
+						"shadow_purple"
+						"black"
+						"null"
+						"null"
+					}
+				}
+				effect = {
+					save_global_event_target_as = equinox_seal_sleeper_country
+					establish_communications_no_message = root.explorer
+					set_faction_hostility = {
+						target = root.explorer
+						set_hostile = no
+						set_neutral = no
+						set_friendly = yes
+					}
+				}
+			}
+			create_fleet = {
+				name = "NAME_equinox_seal_sleeper"
+				settings = {
+					can_upgrade = no
+					can_change_composition = no
+					can_change_leader = no
+					uses_naval_capacity = no
+					spawn_debris = no
+					is_boss = yes
+				}
+				effect = {
+					set_owner = event_target:equinox_seal_sleeper_country
+					create_ship = {
+						name = "NAME_equinox_seal_sleeper"
+						design = "NAME_equinox_seal_sleeper"
+						prefix = no
+						upgradable = no
+					}
+					set_location = event_target:astral_rift_equinox_seal
+					save_global_event_target_as = equinox_seal_sleeper_fleet
+				}
+			}
+		}
+		set_astral_rift_flag = unseal_equinox_seal
+		set_astral_rift_flag = completed_arcsite
+		set_global_flag = finish_equinox_seal
+		finish_astral_rift = yes
+	}
+	
+	option = {
+		name = origin_equinox_seal.14.seal
+		custom_tooltip = origin_equinox_seal.14.seal.tooltip
+		explorer = {
+			hidden_effect = {
+				set_country_flag = start_equinox_seal
+				set_variable = {
+					which = equinox_seal_count
+					value = 1
+				}
+			}
+		}
+		leader = {
+			hidden_effect = {
+				add_trait = {
+					trait = leader_trait_equinox_seal_astral_rift
+					show_message = no
+				}
+				set_variable = {
+					which = equinox_seal_chance
+					value = 13
+				}
+			}
+		}
+		hidden_effect = {
+			set_variable = {
+				which = equinox_seal_chance
+				value = 13
+			}
+		}
+		set_astral_rift_flag = start_equinox_seal
+		set_next_astral_rift_event = { id = origin_equinox_seal.15 }
+		
+		ai_chance = {
+			modifier = {
+				factor = 0
+				explorer = {
+					OR = {
+						is_spiritualist = yes
+						has_tradition = tr_psionics_adopt
+						has_tradition = tr_psionics_shroud_adopt
+						has_valid_civic = civic_hive_ascensionists
+					}
+				}
+			}
+		}
+	}
+}
+
+astral_rift_event = {
+	id = origin_equinox_seal.15
+	title = origin_equinox_seal.15.name
+	desc = {
+		trigger = {
+			switch = {
+				trigger = has_astral_rift_flag
+				default = { text = origin_equinox_seal.15.desc.default }
+			}
+		}
+	}
+	picture = GFX_evt_astral_rift_bleached_planet_3
+	show_sound = ap_rift_event_3_clock_slowing_down
+	difficulty = 15
+	astral_rift = yes
+	is_triggered_only = yes
+	
+	immediate = {
+		set_global_flag = finish_equinox_seal
+		explorer = {
+			create_timeline_origin_equinox_seal_finish_seal = yes
+			if = {
+				limit = {
+					has_origin = origin_equinox_seal
+					has_country_flag = horizonsignal_trigger
+				}
+				country_event = { id = origin_equinox_seal.20 days = 10 random = 20 }
+			}
+		}
+	}
+
+	option = {
+		name = origin_equinox_seal.15.a
+		explorer = {
+			give_r_horror_matter = { FLAG = equinox_seal_relic }
+			if = {
+				limit = {
+					has_origin = origin_equinox_seal
+				}
+				set_origin = origin_equinox_glimpse
+			}
+		}
+		leader = {
+			hidden_effect = {
+				remove_trait = leader_trait_equinox_seal_astral_rift
+			}
+		}
+		hidden_effect = {
+			add_deposit = d_physics_10
+			add_deposit = d_society_10
+			add_deposit = d_engineering_10
+			add_deposit = d_dark_matter_deposit_5
+			add_deposit = d_astral_threads_deposit_3
+		}
+		set_astral_rift_flag = completed_arcsite
+		finish_astral_rift = yes
+	}
+}
+
+country_event = {
+	id = origin_equinox_seal.20
+	title = origin_equinox_seal.20.name
+	desc = origin_equinox_seal.20.desc
+	picture = GFX_evt_black_hole
+	show_sound = event_alien_signal
+	location = event_target:horizonsignal_black_hole
+	trackable = yes
+	
+	is_triggered_only = yes
+
+	immediate = {
+	}
+	
+	option = {
+		name = origin_equinox_seal.20.a
+		event_target:horizonsignal_black_hole = {
+			enable_special_project = {
+				name = HORIZON_SIGNAL_PROJECT
+				location = this
+				owner = root
+			}
+		}
+	}
+}

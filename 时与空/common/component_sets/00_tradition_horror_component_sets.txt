@@ -1,0 +1,55 @@
+component_set = {
+	key = "HORROR_SHIELD"
+	
+	icon = "GFX_ship_part_horror_shield"
+	icon_frame = 1
+}
+
+component_set = {
+	key = "DIMENSION_HORROR_SHIELD"
+	
+	icon = "GFX_ship_part_horror_shield"
+	icon_frame = 1
+}
+
+component_set = {
+	key = "HORROR_ARMOR"
+	
+	icon = "GFX_ship_part_horror_armor"
+	icon_frame = 1
+}
+
+component_set = {
+	key = "DIMENSION_HORROR_ARMOR"
+	
+	icon = "GFX_ship_part_horror_armor"
+	icon_frame = 1
+}
+
+component_set = {
+	key = "HORROR_BEAM"
+	
+	icon = "GFX_ship_part_horror_beam"
+	icon_frame = 1
+}
+
+component_set = {
+	key = "BIO_HORROR_BEAM"
+	
+	icon = "GFX_ship_part_bio_horror_beam"
+	icon_frame = 1
+}
+
+component_set = {
+	key = "HORROR_ACCELERATOR"
+	
+	icon = "GFX_ship_part_horror_accelerator"
+	icon_frame = 1
+}
+
+component_set = {
+	key = "BIO_HORROR_ACCELERATOR"
+	
+	icon = "GFX_ship_part_bio_horror_accelerator"
+	icon_frame = 1
+}

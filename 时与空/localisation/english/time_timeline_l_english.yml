@@ -1,0 +1,406 @@
+﻿l_english:
+ 
+ ################################################################
+ # 时之螶
+ ################################################################
+ 
+ TIMELINE_EVENT_HORIZONSIGNAL_BEGIN_TOOLTIP: "§HHorizon Signal§!\n§YEmpire Event§!\n\nOn §L[GetDate]§!, [EVENT_TARGET_0.GetName] received a Horizon Signal from [EVENT_TARGET_1.GetName] and dispatched [EVENT_TARGET_2.GetName] to the coordinates hidden within. Although he fell into the eternal embrace of the Black Hole, he revealed the existence of §HThe Worm-in-Waiting§! to us."
+ TIMELINE_HORIZONSIGNAL_BEGIN: "Horizon Signal\n§L[GetDate]§!"
+ 
+ TIMELINE_EVENT_HORIZONSIGNAL_NOT_BEGIN_TOOLTIP: "§HHorizon Signal§!\n§YEmpire Event§!\n\nOn §L[GetDate]§!, [EVENT_TARGET_0.GetName] received a Horizon Signal from [EVENT_TARGET_1.GetName], but ultimately decided to ignore it. We seem to have missed something, but perhaps it is for the best."
+ TIMELINE_HORIZONSIGNAL_NOT_BEGIN: "Signal Rejected\n§L[GetDate]§!"
+ 
+ TIMELINE_EVENT_HORIZONSIGNAL_BEGIN_BUT_STOP_TOOLTIP: "§HMessage Ended§!\n§YEmpire Event§!\n\nOn §L[GetDate]§!, [EVENT_TARGET_0.GetName] received the invitation of death from [EVENT_TARGET_1.GetName] again, but ultimately decided to ignore it. We seem to have missed something, but perhaps it is for the best."
+ TIMELINE_HORIZONSIGNAL_BEGIN_BUT_STOP: "Message Ended\n§L[GetDate]§!"
+ 
+ TIMELINE_EVENT_LOOP_TEMPLE_TOOLTIP: "§HTemple of the Loop§!\n§YEmpire Event§!\n\nOn §L[GetDate]§!, [EVENT_TARGET_0.GetName] accidentally discovered the Temple of the Loop on [EVENT_TARGET_1.GetName] and accepted its existence. This might be a gift from \"The Worm-in-Waiting\"."
+ TIMELINE_LOOP_TEMPLE: "Temple of the Loop\n§L[GetDate]§!"
+ 
+ TIMELINE_EVENT_LOOP_TEMPLE_BUT_SEAL_TOOLTIP: "§HTemple of the Loop§!\n§YEmpire Event§!\n\nOn §L[GetDate]§!, [EVENT_TARGET_0.GetName] accidentally discovered the Temple of the Loop on [EVENT_TARGET_1.GetName], but ultimately decided to seal it. Better safe than sorry."
+ TIMELINE_LOOP_TEMPLE_BUT_SEAL: "Seal Temple\n§L[GetDate]§!"
+ 
+ TIMELINE_EVENT_WORM_LOVES_US_AND_ACCEPT_TOOLTIP: "§HWitness Future§!\n§YSystem Event§!\n\nOn §L[GetDate]§!, The Worm-in-Waiting offered infinite love to [EVENT_TARGET_0.GetName], and we accepted Her infinite love. Under the licking of love, we finally stepped onto the destined path."
+ TIMELINE_EVENT_WORM_LOVES_US_AND_ACCEPT_OTHER_TOOLTIP: "§HWitness Future§!\n§YSystem Event§!\n\nOn §L[GetDate]§!, The Worm-in-Waiting offered infinite love to [EVENT_TARGET_0.GetName], and they accepted Her infinite love. Under the licking of love, they finally stepped onto the destined path."
+ TIMELINE_WORM_LOVES_US_AND_ACCEPT: "Witness Future\n§L[GetDate]§!"
+ 
+ TIMELINE_EVENT_WORM_LOVES_US_BUT_REFUSE_TOOLTIP: "§HShattered Loop§!\n§YSystem Event§!\n\nOn §L[GetDate]§!, The Worm-in-Waiting offered infinite love to [EVENT_TARGET_0.GetName], but we were unwilling to accept this twisted love. We expelled It, but It remains there."
+ TIMELINE_EVENT_WORM_LOVES_US_BUT_REFUSE_OTHER_TOOLTIP: "§HShattered Loop§!\n§YSystem Event§!\n\nOn §L[GetDate]§!, The Worm-in-Waiting offered infinite love to [EVENT_TARGET_0.GetName], but they were unwilling to accept this twisted love. They expelled It, but It remains there."
+ TIMELINE_WORM_LOVES_US_BUT_REFUSE: "Shattered Loop\n§L[GetDate]§!"
+ 
+ TIMELINE_EVENT_ACCEPT_UNLEASHED_MESSENGER_NORMAL_TOOLTIP: "§HNew Dawn§!\n§YEmpire Event§!\n\nOn §L[GetDate]§!, [EVENT_TARGET_0.GetName] reconstructed the origin of the Messenger species and began the transformation into Messengers. What has been will be again."
+ TIMELINE_EVENT_ACCEPT_UNLEASHED_MESSENGER_ROBOTIC_TOOLTIP: "§HNew Dawn§!\n§YEmpire Event§!\n\nOn §L[GetDate]§!, [EVENT_TARGET_0.GetName] reverse-engineered the mechanism of the Messenger species and began the transformation into Messengers. What has been will be again."
+ TIMELINE_ACCEPT_UNLEASHED_MESSENGER: "New Dawn\n§L[GetDate]§!"
+ 
+ TIMELINE_EVENT_ACCEPT_LEASHED_MESSENGER_NORMAL_TOOLTIP: "§HNightfall§!\n§YEmpire Event§!\n\nOn §L[GetDate]§!, [EVENT_TARGET_0.GetName] reconstructed the origin of the Messenger species and began the transformation into Messengers. What has been will be again."
+ TIMELINE_EVENT_ACCEPT_LEASHED_MESSENGER_ROBOTIC_TOOLTIP: "§HNightfall§!\n§YEmpire Event§!\n\nOn §L[GetDate]§!, [EVENT_TARGET_0.GetName] reverse-engineered the mechanism of the Messenger species and began the transformation into Messengers. What has been will be again."
+ TIMELINE_ACCEPT_LEASHED_MESSENGER: "Nightfall\n§L[GetDate]§!"
+ 
+ TIMELINE_EVENT_GAIN_TIME_TITAN_TOOLTIP: "§HOutside Spacetime§!\n§YEmpire Event§!\n\nOn §L[GetDate]§!, [EVENT_TARGET_0.GetName]'s commander [EVENT_TARGET_1.GetName] took over The Captain that Will Be's Omega Ark at [EVENT_TARGET_2.GetName]. We gained complete control over it, but also lost its past and future."
+ TIMELINE_GAIN_TIME_TITAN: "Outside Spacetime\n§L[GetDate]§!"
+ 
+ TIMELINE_EVENT_MANIFOLD_COUNTRY_ASCENSION_TOOLTIP: "§HThe Utawarerumono§!\n§YSystem Event§!\n\nOn §L[GetDate]§!, [EVENT_TARGET_0.GetName] started the ritual to summon the Nightmare and attempted to ascend towards the End. Did their ascension succeed or fail? Perhaps only they can answer this question, and we may never know the truth."
+ TIMELINE_MANIFOLD_COUNTRY_ASCENSION: "The Utawarerumono\n§L[GetDate]§!"
+ 
+ TIMELINE_EVENT_HOLE_PETS_PANTAGRUEL_TOOLTIP: "§H$NAME_Pantagruel$§!\n§YEmpire Event§!\n\nOn §L[GetDate]§!, [EVENT_TARGET_0.GetName] witnessed the self-compression of [EVENT_TARGET_1.GetName] and discovered another universe within. The Sanctified Servant completed the initial mission."
+ TIMELINE_HOLE_PETS_PANTAGRUEL: "$NAME_Pantagruel$\n§L[GetDate]§!"
+ 
+ ################################################################
+ # 负相
+ ################################################################
+ 
+ TIMELINE_EVENT_FIRST_MEET_DIMENSIONAL_HORROR_TOOLTIP: "§HInverse Phase Existence§!\n§YEmpire Event§!\n\nOn §L[GetDate]§!, [EVENT_TARGET_0.GetName] encountered the Nightmare of the Plane for the first time in the [EVENT_TARGET_1.GetName] system."
+ TIMELINE_FIRST_MEET_DIMENSIONAL_HORROR: "Inverse Phase Existence\n§L[GetDate]§!"
+ 
+ TIMELINE_EVENT_ACTIVE_TR_HORROR_ADOPT_TOOLTIP: "§HEntering Inverse Phase§!\n§YMilestone§!\n\nOn §L[GetDate]§!, [EVENT_TARGET_0.GetName] adopted the Inverse Phase tradition and stepped into the domain of Inverse Phase. Although faltering, we are still moving forward."
+ TIMELINE_ACTIVE_TR_HORROR_ADOPT: "Entering Inverse Phase\n§L[GetDate]§!"
+ 
+ TIMELINE_EVENT_ACTIVE_AP_HORROR_TOOLTIP: "§HInverse Phase Mysteries§!\n§YMilestone§!\n\nOn §L[GetDate]§!, [EVENT_TARGET_0.GetName] adopted the Inverse Phase Mysteries Ascension Perk, and The Worm-in-Waiting tore the dimensions apart, generously pointing out the direction for our exploration. This may mean disaster, but it may also contain opportunity."
+ TIMELINE_ACTIVE_AP_HORROR: "Inverse Phase Mysteries\n§L[GetDate]§!"
+ 
+ TIMELINE_EVENT_ACTIVE_AP_TIME_TOOLTIP: "§HSpacetime Causality§!\n§YMilestone§!\n\nOn §L[GetDate]§!, [EVENT_TARGET_0.GetName] adopted the Spacetime Causality Ascension Perk. Our pursuit of knowledge is endless, but is its end hope or the End? We crave more, more, more..."
+ TIMELINE_ACTIVE_AP_TIME: "Spacetime Causality\n§L[GetDate]§!"
+ 
+ TIMELINE_EVENT_ACTIVE_AP_BEYOND_INFINITY_TOOLTIP: "§HBeyond Infinity§!\n§YSystem Event§!\n\nOn §L[GetDate]§!, after transcending causality, [EVENT_TARGET_0.GetName] embarked on the path beyond infinity. Just as the reincarnation of the past, just as the cycle of the future."
+ TIMELINE_EVENT_ACTIVE_AP_BEYOND_INFINITY_OTHER_TOOLTIP: "§HBeyond Infinity§!\n§YSystem Event§!\n\nOn §L[GetDate]§!, [EVENT_TARGET_0.GetName] seemed to be preparing for a crisis in the distant future and embarked on the path beyond infinity. Just as the reincarnation of the past, just as the cycle of the future."
+ TIMELINE_ACTIVE_AP_BEYOND_INFINITY: "Beyond Infinity\n§L[GetDate]§!"
+ 
+ TIMELINE_EVENT_FINISH_ASTRAL_RIFT_AKX_HORROR_1_TOOLTIP: "§HCaught in a Loop§!\n§YEmpire Event§!\n\nOn §L[GetDate]§!, [EVENT_TARGET_0.GetName] completed the exploration of $astral_rift_akx_horror$, but at the cost of a Science Officer's departure. They fell into a loop, what about us?"
+ TIMELINE_FINISH_ASTRAL_RIFT_AKX_HORROR_1: "Caught in a Loop\n§L[GetDate]§!"
+ 
+ TIMELINE_EVENT_FINISH_ASTRAL_RIFT_AKX_HORROR_2_TOOLTIP: "§HDestined Mystery§!\n§YEmpire Event§!\n\nOn §L[GetDate]§!, [EVENT_TARGET_0.GetName] completed the exploration of $astral_rift_akx_horror$, but mysteries remained unsolved. Is this really destined?"
+ TIMELINE_FINISH_ASTRAL_RIFT_AKX_HORROR_2: "Destined Mystery\n§L[GetDate]§!"
+ TIMELINE_EVENT_FINISH_ASTRAL_RIFT_AKX_HORROR_2_THIRD_TOOLTIP: "§HDestined Tragedy§!\n§YEmpire Event§!\n\nOn §L[GetDate]§!, [EVENT_TARGET_0.GetName] completed the exploration of $astral_rift_akx_horror$, but tragedies were still unavoidable. Is this really destined?"
+ TIMELINE_FINISH_ASTRAL_RIFT_AKX_HORROR_2_THIRD: "Destined Tragedy\n§L[GetDate]§!"
+ 
+ TIMELINE_EVENT_FINISH_ASTRAL_RIFT_AKX_HORROR_3_TOOLTIP: "§HIn the Ashes§!\n§YEmpire Event§!\n\nOn §L[GetDate]§!, [EVENT_TARGET_0.GetName] completed the exploration of $astral_rift_akx_horror$, although everything ended in ashes. We missed the opportunity to save ourselves."
+ TIMELINE_FINISH_ASTRAL_RIFT_AKX_HORROR_3: "In the Ashes\n§L[GetDate]§!"
+ 
+ TIMELINE_EVENT_FINISH_ASTRAL_RIFT_AKX_HORROR_4_LOST_TOOLTIP: "§HReflection in the Mirror§!\n§YEmpire Event§!\n\nOn §L[GetDate]§!, [EVENT_TARGET_0.GetName] completed the exploration of $astral_rift_akx_horror$ and found another [EVENT_TARGET_1.GetName]. The missing person was replaced by a survivor; all this is definitely not a coincidence."
+ TIMELINE_EVENT_FINISH_ASTRAL_RIFT_AKX_HORROR_4_MIRROR_TOOLTIP: "§HReflection in the Mirror§!\n§YEmpire Event§!\n\nOn §L[GetDate]§!, [EVENT_TARGET_0.GetName] completed the exploration of $astral_rift_akx_horror$, and [EVENT_TARGET_1.GetName] also met another self. The two who mirror each other are now one."
+ TIMELINE_FINISH_ASTRAL_RIFT_AKX_HORROR_4: "Reflection in the Mirror\n§L[GetDate]§!"
+ 
+ TIMELINE_EVENT_FINISH_ASTRAL_RIFT_AKX_TIME_1_TOOLTIP: "§HFruitless End§!\n§YEmpire Event§!\n\nOn §L[GetDate]§!, [EVENT_TARGET_0.GetName] interrupted the exploration of $astral_rift_akx_time$ to avoid touching the reality of the world. Fortunately, they didn't find more."
+ TIMELINE_FINISH_ASTRAL_RIFT_AKX_TIME_1: "Fruitless End\n§L[GetDate]§!"
+ 
+ TIMELINE_EVENT_FINISH_ASTRAL_RIFT_AKX_TIME_2_TOOLTIP: "§HConnecting Infinity§!\n§YEmpire Event§!\n\nOn §L[GetDate]§!, [EVENT_TARGET_0.GetName] ended the exploration of $astral_rift_akx_time$, because this exploration itself was destined to have no ending. The other end of the anchor chain is infinity."
+ TIMELINE_FINISH_ASTRAL_RIFT_AKX_TIME_2: "Connecting Infinity\n§L[GetDate]§!"
+ 
+ TIMELINE_EVENT_FINISH_ASTRAL_RIFT_AKX_TIME_3_TOOLTIP: "§HEnd of the Maze§!\n§YEmpire Event§!\n\nOn §L[GetDate]§!, [EVENT_TARGET_0.GetName] completed the exploration of $astral_rift_akx_time$; however, this exploration itself was a loop. Who exactly are we welcoming now?"
+ TIMELINE_FINISH_ASTRAL_RIFT_AKX_TIME_3: "End of the Maze\n§L[GetDate]§!"
+ 
+ ################################################################
+ # 终焉宣告
+ ################################################################
+ 
+ TIMELINE_EVENT_DIMENSIONAL_HORROR_CRISIS_BEGIN_TOOLTIP: "§HProclamation of the End§!\n§YCrisis Event§!\n\nOn §L[GetDate]§!, a storm named Proclamation of the End quietly descended on the galaxy. Chaos, disorder, pain, disaster, death, termination-almost all terrible negative words filled the unfathomable storm as literally implied. This is just the beginning, but it will carry us to the end of time. Our enemy is the universe itself."
+ TIMELINE_DIMENSIONAL_HORROR_CRISIS_BEGIN: "Proclamation of the End\n§L[GetDate]§!"
+ 
+ TIMELINE_EVENT_DIMENSIONAL_HORROR_CRISIS_BEGIN_FOR_NEW_COUNTRY_TOOLTIP: "§HProclamation of the End§!\n§YCrisis Event§!\n\nOn §L[GetDate]§!, [EVENT_TARGET_0.GetName] observes a storm named Proclamation of the End, but it has already existed. Chaos, disorder, pain, disaster, death, termination-almost all terrible negative words filled the unfathomable storm as literally implied. This is just the beginning, but it will carry us to the end of time. Our enemy is the universe itself."
+ TIMELINE_DIMENSIONAL_HORROR_CRISIS_BEGIN_FOR_NEW_COUNTRY: "Proclamation of the End\n§L[GetDate]§!"
+ 
+ TIMELINE_EVENT_DIMENSIONAL_HORROR_CRISIS_DESTINY_OCCUR_TOOLTIP: "§HFate Epilogue§!\n§YCrisis Event§!\n\nOn §L[GetDate]§!, the Nightmare of the End named Destiny gathered and formed in the [EVENT_TARGET_0.GetName] system. We can feel an unfathomable fear from It, a pain originating from the essence of the universe. Perhaps It is a counterattack from the cycle, perhaps It is a test from The Worm-in-Waiting, everything is unknown. At least, this is the final epilogue."
+ TIMELINE_DIMENSIONAL_HORROR_CRISIS_DESTINY_OCCUR: "Fate Epilogue\n§L[GetDate]§!"
+ 
+ TIMELINE_EVENT_DIMENSIONAL_HORROR_CRISIS_END_TOOLTIP: "§HStriding Across Fate§!\n§YCrisis Event§!\n\nOn §L[GetDate]§!, the Nightmare of the End named Destiny has fallen, and this storm catastrophe also slowly ceased. Now, all traces of the Proclamation of the End disappeared instantly, as if it never existed. However, the mottled galaxy map is still warning us of the tragicness of this crisis. In any case, we can finally put an end to everything-with everyone."
+ TIMELINE_DIMENSIONAL_HORROR_CRISIS_END: "Striding Across Fate\n§L[GetDate]§!"
+
+ ################################################################
+ # 时间机器/圆环枢纽/位面引擎
+ ################################################################
+ 
+ TIMELINE_EVENT_TIME_MACHINE_BEGIN_TOOLTIP: "§HSpacetime Chaos§!\n§YSystem Event§!\n\nOn §L[GetDate]§!, time in the galaxy suddenly became chaotic and difficult to measure."
+ TIMELINE_TIME_MACHINE_BEGIN: "Spacetime Chaos\n§L[GetDate]§!"
+ 
+ TIMELINE_EVENT_TIME_MACHINE_END_TOOLTIP: "§HSpacetime Restoration§!\n§YSystem Event§!\n\nOn §L[GetDate]§!, just as it appeared without reason, the chaotic spacetime also recovered without warning."
+ TIMELINE_TIME_MACHINE_END: "Spacetime Restoration\n§L[GetDate]§!"
+ 
+ TIMELINE_EVENT_CIRCLE_NEXUS_BEGIN_TOOLTIP: "§HLoop Deviation§!\n§YSystem Event§!\n\nOn §L[GetDate]§!, the galaxy encountered an unprecedented existential philosophical crisis."
+ TIMELINE_CIRCLE_NEXUS_BEGIN: "Loop Deviation\n§L[GetDate]§!"
+ 
+ TIMELINE_EVENT_CIRCLE_NEXUS_END_TOOLTIP: "§HLoop Return§!\n§YSystem Event§!\n\nOn §L[GetDate]§!, just as it appeared without reason, the deviated loop also returned without warning."
+ TIMELINE_CIRCLE_NEXUS_END: "Loop Return\n§L[GetDate]§!"
+ 
+ TIMELINE_EVENT_DIMENSION_ENGINE_BEGIN_TOOLTIP: "§HPlane Oscillation§!\n§YSystem Event§!\n\nOn §L[GetDate]§!, the galaxy flickered like a buggy program in the blink of an eye."
+ TIMELINE_DIMENSION_ENGINE_BEGIN: "Plane Oscillation\n§L[GetDate]§!"
+ 
+ TIMELINE_EVENT_DIMENSION_ENGINE_END_TOOLTIP: "§HPlane Calming§!\n§YSystem Event§!\n\nOn §L[GetDate]§!, just as it appeared without reason, the oscillating plane also calmed down without warning."
+ TIMELINE_DIMENSION_ENGINE_END: "Plane Calming\n§L[GetDate]§!"
+ 
+ ################################################################
+ # 界旅者
+ ################################################################
+ 
+ TIMELINE_EVENT_DIMENSION_TRAVELER_BEGIN_ORIGIN_TOOLTIP: "§HInside the White Hole§!\n§YOrigin Event§!\n\nOn §L[GetDate]§!, [EVENT_TARGET_0.GetName] received a White Hole signal from [EVENT_TARGET_1.GetName] and decided to analyze it. This is a journey that has already begun."
+ TIMELINE_EVENT_DIMENSION_TRAVELER_BEGIN_TOOLTIP: "§HInside the White Hole§!\n§YEmpire Event§!\n\nOn §L[GetDate]§!, [EVENT_TARGET_0.GetName] received a White Hole signal from [EVENT_TARGET_1.GetName] and decided to analyze it. This is a new beginning."
+ TIMELINE_DIMENSION_TRAVELER_BEGIN: "Inside the White Hole\n§L[GetDate]§!"
+ 
+ TIMELINE_EVENT_DIMENSION_TRAVELER_NOT_BEGIN_TOOLTIP: "§HInside the White Hole§!\n§YEmpire Event§!\n\nOn §L[GetDate]§!, [EVENT_TARGET_0.GetName] received a White Hole signal from [EVENT_TARGET_1.GetName] but decided to ignore it. Ended before it began."
+ TIMELINE_DIMENSION_TRAVELER_NOT_BEGIN: "Inside the White Hole\n§L[GetDate]§!"
+ 
+ TIMELINE_EVENT_DIMENSION_TRAVELER_BEGIN_BUT_STOP_TOOLTIP: "§HWhite Hole End§!\n§YEmpire Event§!\n\nOn §L[GetDate]§!, after some attempts, [EVENT_TARGET_0.GetName] finally gave up exploring the White Hole. The journey to the White Hole has reached its end."
+ TIMELINE_DIMENSION_TRAVELER_BEGIN_BUT_STOP: "White Hole End\n§L[GetDate]§!"
+ 
+ TIMELINE_EVENT_DIMENSION_TRAVELER_END_1_ORIGIN_TOOLTIP: "§HNever See Again§!\n§YOrigin Event§!\n\nOn §L[GetDate]§!, [EVENT_TARGET_0.GetName]'s Science Ship sailed out of the White Hole, accompanied by the girl's sweet singing. Different from what we heard initially, it was a cheerful song, as if welcoming someone's arrival. But we understand that someone will never come again."
+ TIMELINE_EVENT_DIMENSION_TRAVELER_END_1_TOOLTIP: "§HNever See Again§!\n§YEmpire Event§!\n\nOn §L[GetDate]§!, [EVENT_TARGET_0.GetName]'s Science Ship sailed out of the White Hole, accompanied by the girl's sweet singing. Different from what we heard initially, it was a cheerful song, as if welcoming someone's arrival. But we understand that someone will never come again."
+ TIMELINE_DIMENSION_TRAVELER_END_1: "Never See Again\n§L[GetDate]§!"
+ 
+ TIMELINE_EVENT_DIMENSION_TRAVELER_END_2_ORIGIN_TOOLTIP: "§HDestruction§!\n§YOrigin Event§!\n\nOn §L[GetDate]§!, [EVENT_TARGET_0.GetName]'s Science Ship failed to resist the strong gravity of the gravitational source, fell into the center of the White Hole, and never sent any messages again. We are certain that the Science Ship has been completely destroyed by the gravitational source, but the whereabouts of the girl in the White Hole are unknown. Ah, White Hole."
+ TIMELINE_EVENT_DIMENSION_TRAVELER_END_2_TOOLTIP: "§HDestruction§!\n§YEmpire Event§!\n\nOn §L[GetDate]§!, [EVENT_TARGET_0.GetName]'s Science Ship failed to resist the strong gravity of the gravitational source, fell into the center of the White Hole, and never sent any messages again. We are certain that the Science Ship has been completely destroyed by the gravitational source, but the whereabouts of the girl in the White Hole are unknown. We will never know the truth."
+ TIMELINE_DIMENSION_TRAVELER_END_2: "Destruction\n§L[GetDate]§!"
+ 
+ TIMELINE_EVENT_DIMENSION_TRAVELER_END_3_ORIGIN_TOOLTIP: "§HTermination§!\n§YOrigin Event§!\n\nOn §L[GetDate]§!, without the obstruction of strong gravity, [EVENT_TARGET_0.GetName]'s Science Ship left the White Hole smoothly, but we failed to take the person we should have taken. The singing of the White Hole stopped, but our singing will continue."
+ TIMELINE_EVENT_DIMENSION_TRAVELER_END_3_TOOLTIP: "§HTermination§!\n§YEmpire Event§!\n\nOn §L[GetDate]§!, without the obstruction of strong gravity, [EVENT_TARGET_0.GetName]'s Science Ship left the White Hole smoothly, but we failed to take the person we should have taken. We don't know what happened to that girl in the White Hole, but we are certain that a galactic crisis has been terminated."
+ TIMELINE_DIMENSION_TRAVELER_END_3: "Termination\n§L[GetDate]§!"
+ 
+ TIMELINE_EVENT_DIMENSION_TRAVELER_END_4_ORIGIN_TOOLTIP: "§HOrigin§!\n§YOrigin Event§!\n\nOn §L[GetDate]§!, the girl in the White Hole moved away from [EVENT_TARGET_0.GetName]'s Science Ship, rapidly approached the center of the White Hole, and triggered an explosion. The White Hole turned into a terrible Black Hole after the big explosion, but the girl's move did not seem to fail, because the Black Hole has no trend of continuing to expand for the time being. Everything is back to square one."
+ TIMELINE_EVENT_DIMENSION_TRAVELER_END_4_TOOLTIP: "§HOrigin§!\n§YEmpire Event§!\n\nOn §L[GetDate]§!, the girl in the White Hole moved away from [EVENT_TARGET_0.GetName]'s Science Ship, rapidly approached the center of the White Hole, and triggered an explosion. The White Hole turned into a terrible Black Hole after the big explosion, but the girl's move did not seem to fail, because the Black Hole has no trend of continuing to expand for the time being. Everything is back to square one."
+ TIMELINE_DIMENSION_TRAVELER_END_4: "Origin\n§L[GetDate]§!"
+ 
+ TIMELINE_EVENT_HIRE_DIMENSION_TRAVELER_TOOLTIP: "§HMeet Again Eventually§!\n§YMilestone§!\n\nOn §L[GetDate]§!, [EVENT_TARGET_0.GetName] returned to the [EVENT_TARGET_1.GetName] system and saved the deja vu girl. After some communication, the girl decided to serve us. Although no longer an old friend, we will meet again eventually."
+ TIMELINE_HIRE_DIMENSION_TRAVELER: "Meet Again Eventually\n§L[GetDate]§!"
+ 
+ TIMELINE_EVENT_DISMISS_DIMENSION_TRAVELER_ORIGIN_TOOLTIP: "§HMeet Again Eventually§!\n§YOrigin Event§!\n\nOn §L[GetDate]§!, [EVENT_TARGET_0.GetName] returned to the [EVENT_TARGET_1.GetName] system and saved the deja vu girl. After some communication, the girl decided to fulfill her mission. The caged bird returns to freedom."
+ TIMELINE_EVENT_DISMISS_DIMENSION_TRAVELER_TOOLTIP: "§HMeet Again Eventually§!\n§YEmpire Event§!\n\nOn §L[GetDate]§!, [EVENT_TARGET_0.GetName] returned to the [EVENT_TARGET_1.GetName] system and saved the deja vu girl. After some communication, the girl decided to fulfill her mission. Goodbye, we will definitely meet again."
+ TIMELINE_DISMISS_DIMENSION_TRAVELER: "Meet Again Eventually\n§L[GetDate]§!"
+ 
+ TIMELINE_EVENT_DIMENSION_TRAVELER_END_6_TOOLTIP: "§HTime Origin§!\n§YMilestone§!\n\nOn §L[GetDate]§!, [EVENT_TARGET_0.GetName] reunited with the girl in the White Hole at the time origin. After infinite waiting, she reached the end of the journey. See you in the next cycle."
+ TIMELINE_DIMENSION_TRAVELER_END_6: "Time Origin\n§L[GetDate]§!"
+ 
+ TIMELINE_EVENT_DIMENSION_TRAVELER_END_7_ORIGIN_TOOLTIP: "§HFalling into Reincarnation§!\n§YOrigin Event§!\n\nOn §L[GetDate]§!, [EVENT_TARGET_0.GetName] finally failed to transcend the constraints of causality. The Dimension Traveler fell into the Black Hole inevitably again. A violent big explosion swallowed the entire system. You can only seek a trace of the girl's last murmur from the noisy electromagnetic radiation. We failed to protect our sound of nature..."
+ TIMELINE_EVENT_DIMENSION_TRAVELER_END_7_TOOLTIP: "§HFalling into Reincarnation§!\n§YEmpire Event§!\n\nOn §L[GetDate]§!, [EVENT_TARGET_0.GetName] finally failed to transcend the constraints of causality. The Dimension Traveler fell into the Black Hole inevitably again. A violent big explosion swallowed the entire system. You can only seek a trace of the girl's last murmur from the noisy electromagnetic radiation. We lost her forever..."
+ TIMELINE_DIMENSION_TRAVELER_END_7: "Falling into Reincarnation\n§L[GetDate]§!"
+ 
+ TIMELINE_EVENT_DIMENSION_TRAVELER_END_8_ORIGIN_TOOLTIP: "§HTranscending Causality§!\n§YMilestone§!\n\nOn §L[GetDate]§!, after experiencing thousands of rises and falls, after countless saves and loads, we have always implemented our love for each other and found the timeline belonging only to us in infinite parallel worlds. [EVENT_TARGET_0.GetName] handed over the answer to The Worm-in-Waiting, and the story ushered in a perfect ending. We will sing with our own voices."
+ TIMELINE_EVENT_DIMENSION_TRAVELER_END_8_TOOLTIP: "§HTranscending Causality§!\n§YMilestone§!\n\nOn §L[GetDate]§!, after experiencing thousands of rises and falls, after countless saves and loads, we have always implemented our love for each other and found the timeline belonging only to us in infinite parallel worlds. [EVENT_TARGET_0.GetName] handed over the answer to The Worm-in-Waiting, and the story ushered in a perfect ending. We will soar with our own wings."
+ TIMELINE_DIMENSION_TRAVELER_END_8: "Transcending Causality\n§L[GetDate]§!"
+ 
+ ################################################################
+ # 神秘奇点
+ ################################################################
+ 
+ TIMELINE_EVENT_SITUATION_PC_TIME_MIDDLE_TOOLTIP: "§HStepping into the Abyss§!\n§YOrigin Event§!\n\nOn §L[GetDate]§!, [EVENT_TARGET_0.GetName] broke through the gravitational barrier, and the exploration of the singularity entered a new stage."
+ TIMELINE_SITUATION_PC_TIME_MIDDLE: "Stepping into the Abyss\n§L[GetDate]§!"
+ 
+ TIMELINE_EVENT_SITUATION_PC_TIME_END_TOOLTIP: "§HHeart of the Black Hole§!\n§YMilestone§!\n\nOn §L[GetDate]§!, [EVENT_TARGET_0.GetName] finally reached the center of the Black Hole. Although the discovery was not satisfactory, the mission of exploration continues."
+ TIMELINE_SITUATION_PC_TIME_END: "Heart of the Black Hole\n§L[GetDate]§!"
+ 
+ TIMELINE_EVENT_TIME_BLACK_HOLE_CHAIN_LIFE_TOOLTIP: "§HBorn Towards Death§!\n§YOrigin Event§!\n\nOn §L[GetDate]§!, [EVENT_TARGET_0.GetName]'s ruler [EVENT_TARGET_1.GetName] sailed into the event horizon, but reappeared from the homeworld. This is finding life in death."
+ TIMELINE_TIME_BLACK_HOLE_CHAIN_LIFE: "Born Towards Death\n§L[GetDate]§!"
+ 
+ TIMELINE_EVENT_TIME_BLACK_HOLE_CHAIN_DEATH_TOOLTIP: "§HCraven§!\n§YOrigin Event§!\n\nOn §L[GetDate]§!, [EVENT_TARGET_0.GetName]'s ruler [EVENT_TARGET_1.GetName] refused to go to the Black Hole, but was imprisoned in the event horizon. Being craven only invites destruction."
+ TIMELINE_TIME_BLACK_HOLE_CHAIN_DEATH: "Craven\n§L[GetDate]§!"
+ 
+ TIMELINE_EVENT_TIME_CHANGE_AUTH_TIME_IMPERIAL_TOOLTIP: "§HHorizon Reorganization§!\n§YOrigin Event§!\n\nOn §L[GetDate]§!, after long debates and disputes, [EVENT_TARGET_0.GetName] was finally reorganized into $auth_time_imperial$, and the horizon ushered in a new era."
+ TIMELINE_TIME_CHANGE_AUTH_TIME_IMPERIAL: "Horizon Reorganization\n§L[GetDate]§!"
+ 
+ TIMELINE_EVENT_TIME_CHANGE_AUTH_TIME_DEMOCRATIC_TOOLTIP: "§HHorizon Reorganization§!\n§YOrigin Event§!\n\nOn §L[GetDate]§!, after long debates and disputes, [EVENT_TARGET_0.GetName] was finally reorganized into $auth_time_democratic$, and the horizon ushered in a new era."
+ TIMELINE_TIME_CHANGE_AUTH_TIME_DEMOCRATIC: "Horizon Reorganization\n§L[GetDate]§!"
+ 
+ TIMELINE_EVENT_TIME_CHANGE_AUTH_TIME_CORPORATE_TOOLTIP: "§HHorizon Reorganization§!\n§YOrigin Event§!\n\nOn §L[GetDate]§!, after long debates and disputes, [EVENT_TARGET_0.GetName] was finally reorganized into $auth_time_corporate$, and the horizon ushered in a new era."
+ TIMELINE_TIME_CHANGE_AUTH_TIME_CORPORATE: "Horizon Reorganization\n§L[GetDate]§!"
+ 
+ TIMELINE_EVENT_TIME_CHANGE_AUTH_IMPERIAL_TOOLTIP: "§HHorizon Reorganization§!\n§YOrigin Event§!\n\nOn §L[GetDate]§!, after long debates and disputes, [EVENT_TARGET_0.GetName] was finally reorganized into $auth_imperial$, and the horizon ushered in a new era."
+ TIMELINE_TIME_CHANGE_AUTH_IMPERIAL: "Horizon Reorganization\n§L[GetDate]§!"
+ 
+ TIMELINE_EVENT_TIME_CHANGE_AUTH_DICTATORIAL_TOOLTIP: "§HHorizon Reorganization§!\n§YOrigin Event§!\n\nOn §L[GetDate]§!, after long debates and disputes, [EVENT_TARGET_0.GetName] was finally reorganized into $auth_dictatorial$, and the horizon ushered in a new era."
+ TIMELINE_TIME_CHANGE_AUTH_DICTATORIAL: "Horizon Reorganization\n§L[GetDate]§!"
+ 
+ TIMELINE_EVENT_TIME_CHANGE_AUTH_OLIGARCHIC_TOOLTIP: "§HHorizon Reorganization§!\n§YOrigin Event§!\n\nOn §L[GetDate]§!, after long debates and disputes, [EVENT_TARGET_0.GetName] was finally reorganized into $auth_oligarchic$, and the horizon ushered in a new era."
+ TIMELINE_TIME_CHANGE_AUTH_OLIGARCHIC: "Horizon Reorganization\n§L[GetDate]§!"
+ 
+ TIMELINE_EVENT_TIME_CHANGE_AUTH_DEMOCRATIC_TOOLTIP: "§HHorizon Reorganization§!\n§YOrigin Event§!\n\nOn §L[GetDate]§!, after long debates and disputes, [EVENT_TARGET_0.GetName] was finally reorganized into $auth_democratic$, and the horizon ushered in a new era."
+ TIMELINE_TIME_CHANGE_AUTH_DEMOCRATIC: "Horizon Reorganization\n§L[GetDate]§!"
+ 
+ TIMELINE_EVENT_TIME_CHANGE_AUTH_CORPORATE_TOOLTIP: "§HHorizon Reorganization§!\n§YOrigin Event§!\n\nOn §L[GetDate]§!, after long debates and disputes, [EVENT_TARGET_0.GetName] was finally reorganized into $auth_corporate$, and the horizon ushered in a new era."
+ TIMELINE_TIME_CHANGE_AUTH_CORPORATE: "Horizon Reorganization\n§L[GetDate]§!"
+ 
+ TIMELINE_EVENT_DECISION_TIME_END_TOOLTIP: "§HSingularity Mystery§!\n§YMilestone§!\n\nOn §L[GetDate]§!, [EVENT_TARGET_0.GetName] discovered the mystery of the singularity and learned of its own origin."
+ TIMELINE_DECISION_TIME_END: "Singularity Mystery\n§L[GetDate]§!"
+ 
+ TIMELINE_EVENT_AGENDA_TIME_SOUL_TOOLTIP: "§HHeart of Singularity§!\n§YMilestone§!\n\nOn §L[GetDate]§!, [EVENT_TARGET_0.GetName] has touched the heart of the Black Hole. We are the singularity."
+ TIMELINE_AGENDA_TIME_SOUL: "Heart of Singularity\n§L[GetDate]§!"
+ 
+ TIMELINE_EVENT_PC_ENDLESS_TIME_TOOLTIP: "§HSingularity Compression§!\n§YSystem Event§!\n\nOn §L[GetDate]§!, under the hint of The Worm-in-Waiting, [EVENT_TARGET_0.GetName] tried unprecedented Black Hole compression technology on [EVENT_TARGET_1.GetName] and prepared to understand all the mysteries of the universe. §RWhat is the price?§!"
+ TIMELINE_EVENT_PC_ENDLESS_TIME_OTHER_TOOLTIP: "§HSingularity Compression§!\n§YSystem Event§!\n\nOn §L[GetDate]§!, [EVENT_TARGET_0.GetName] compressed their homeworld [EVENT_TARGET_1.GetName] and claimed to be about to understand all the mysteries of the universe. §RWhat is the price?§!"
+ TIMELINE_PC_ENDLESS_TIME: "Singularity Compression\n§L[GetDate]§!"
+ 
+ ################################################################
+ # 纳米机器
+ ################################################################
+ 
+ TIMELINE_EVENT_CHOOSE_NANITES_ATTACKER_TOOLTIP: "§HAwakening Protocol§!\n§YOrigin Event§!\n\nOn §L[GetDate]§!, the L-Gate opened again, and [EVENT_TARGET_0.GetName] finally chose to become a member of the Gray Goo flood."
+ TIMELINE_CHOOSE_NANITES_ATTACKER: "Nanite Destroyer\n§L[GetDate]§!"
+ 
+ TIMELINE_EVENT_CHOOSE_NANITES_PROTECTOR_TOOLTIP: "§HAwakening Protocol§!\n§YOrigin Event§!\n\nOn §L[GetDate]§!, the L-Gate opened again, and [EVENT_TARGET_0.GetName] finally chose to become a shield against Gray Goo."
+ TIMELINE_CHOOSE_NANITES_PROTECTOR: "Nanite Guardian\n§L[GetDate]§!"
+ 
+ ################################################################
+ # 平行星空
+ ################################################################
+ 
+ TIMELINE_EVENT_DECLARE_WAR_ON_PARALLEL_SKY_COUNTRY_ORIGIN_TOOLTIP: "§HFratricide§!\n§YOrigin Event§!\n\nOn §L[GetDate]§!, [EVENT_TARGET_0.GetName] declared war on [EVENT_TARGET_1.GetName]."
+ TIMELINE_EVENT_DECLARE_WAR_ON_PARALLEL_SKY_COUNTRY_TOOLTIP: "§HTwo Tigers on One Mountain§!\n§YEmpire Event§!\n\nOn §L[GetDate]§!, [EVENT_TARGET_0.GetName] declared war on [EVENT_TARGET_1.GetName]."
+ TIMELINE_DECLARE_WAR_ON_PARALLEL_SKY_COUNTRY: "War of Parallels\n§L[GetDate]§!"
+ 
+ TIMELINE_EVENT_PARALLEL_SKY_WAR_WON_ORIGIN_TOOLTIP: "§HFinal Winner of the War of Parallels§!\n§YOrigin Event§!\n\nOn §L[GetDate]§!, [EVENT_TARGET_0.GetName] defeated [EVENT_TARGET_1.GetName] and became the sole owner of [EVENT_TARGET_2.GetName]."
+ TIMELINE_EVENT_PARALLEL_SKY_WAR_WON_TOOLTIP: "§HFinal Winner of the War of Parallels§!\n§YEmpire Event§!\n\nOn §L[GetDate]§!, [EVENT_TARGET_0.GetName] defeated [EVENT_TARGET_1.GetName] and became the sole owner of [EVENT_TARGET_2.GetName]."
+ TIMELINE_PARALLEL_SKY_WAR_WON: "Parallel Ends Here\n§L[GetDate]§!"
+ 
+ TIMELINE_EVENT_PARALLEL_SKY_COUNTRY_DESTROYED_TOOLTIP: "§HDoomsday of the Parallel Empire§!\n§YOrigin Event§!\n\nOn §L[GetDate]§!, [EVENT_TARGET_0.GetName] was destroyed by the attacks of Warp Beasts, leaving us alone on [EVENT_TARGET_1.GetName]."
+ TIMELINE_PARALLEL_SKY_COUNTRY_DESTROYED: "Parallel Destruction\n§L[GetDate]§!"
+ 
+ ################################################################
+ # 阴霾之下
+ ################################################################
+ 
+ TIMELINE_EVENT_UNDER_THE_HAZE_SILENCE_TOOLTIP: "§HThe Great Silence§!\n§YOrigin Event§!\n\nOn §L[GetDate]§!, in an instant-too fast for us to react, let alone prepare countermeasures-[EVENT_TARGET_0.GetName]... was gone. Where once was a thriving colony, now there is only death. The powerful fleet that once sailed through the void now leaves only souls and wreckage. Everything was swallowed by the mist, everything was taken away by the haze. All returned to nothingness, leaving only silence."
+ TIMELINE_UNDER_THE_HAZE_SILENCE: "The Great Silence\n§L[GetDate]§!"
+ 
+ TIMELINE_EVENT_UNDER_THE_HAZE_END_1_TOOLTIP: "§HManifestation§!\n§YOrigin Event§!\n\nOn §L[GetDate]§!, the believers of [EVENT_TARGET_0.GetName] achieved final victory, and Ishamara manifested. Ishamara is here."
+ TIMELINE_UNDER_THE_HAZE_END_1: "Ishamara Manifests\n§L[GetDate]§!"
+ 
+ TIMELINE_EVENT_UNDER_THE_HAZE_END_2_TOOLTIP: "§HDawn§!\n§YOrigin Event§!\n\nOn §L[GetDate]§!, the survivors of [EVENT_TARGET_0.GetName] achieved final victory, everyone is a hero before dawn. The haze has ended."
+ TIMELINE_UNDER_THE_HAZE_END_2: "Dawn for Heroes\n§L[GetDate]§!"
+ 
+ TIMELINE_EVENT_UNDER_THE_HAZE_END_3_TOOLTIP: "§HTwilight§!\n§YOrigin Event§!\n\nOn §L[GetDate]§!, [EVENT_TARGET_0.GetName] brought destined failure to the Adventists, but the price paid was heavy. The false god ushered in its own twilight."
+ TIMELINE_UNDER_THE_HAZE_END_3: "Twilight of the False God\n§L[GetDate]§!"
+ 
+ ################################################################
+ # 悬顶之剑
+ ################################################################
+ 
+ TIMELINE_EVENT_ORIGIN_COLOSSUS_FLEET_DESTROYED_0_TOOLTIP: "§HFarewell§!\n§YOrigin Event§!\n\nOn §L[GetDate]§!, [EVENT_TARGET_0.GetName] was destroyed, and we will never know the truth behind it."
+ TIMELINE_ORIGIN_COLOSSUS_FLEET_DESTROYED_0: "Farewell to Truth\n§L[GetDate]§!"
+ 
+ TIMELINE_EVENT_ORIGIN_COLOSSUS_FLEET_DESTROYED_1_TOOLTIP: "§HFarewell§!\n§YOrigin Event§!\n\nOn §L[GetDate]§!, [EVENT_TARGET_0.GetName] was destroyed, the reason for its loss of control, and the mysteries behind it vanished with the huge explosion."
+ TIMELINE_ORIGIN_COLOSSUS_FLEET_DESTROYED_1: "Farewell to Past\n§L[GetDate]§!"
+ 
+ TIMELINE_EVENT_ORIGIN_COLOSSUS_FLEET_DESTROYED_2_TOOLTIP: "§HFarewell§!\n§YOrigin Event§!\n\nOn §L[GetDate]§!, [EVENT_TARGET_0.GetName] was destroyed, the crisis in the galaxy was lifted, but the mysteries in our hearts failed to dissipate."
+ TIMELINE_ORIGIN_COLOSSUS_FLEET_DESTROYED_2: "Farewell to Future\n§L[GetDate]§!"
+ 
+ TIMELINE_EVENT_ORIGIN_COLOSSUS_END_TOOLTIP: "§HAsk Time§!\n§YOrigin Event§!\n\nOn §L[GetDate]§!, after some persuasion, [EVENT_TARGET_0.GetName] finally chose to trust [EVENT_TARGET_1.GetName]. Whether we can stop history from repeating itself, we can only wait for time's answer."
+ TIMELINE_ORIGIN_COLOSSUS_END: "Ask Time\n§L[GetDate]§!"
+ 
+ ################################################################
+ # 生于黑夜
+ ################################################################
+ 
+ TIMELINE_EVENT_ORIGIN_VOIDSPAWN_END_0_TOOLTIP: "§HDead in Womb§!\n§YOrigin Event§!\n\nOn §L[GetDate]§!, the environment of [EVENT_TARGET_0.GetName] no longer met the hatching conditions, and the egg's hatching was terminated."
+ TIMELINE_ORIGIN_VOIDSPAWN_END_0: "Dead in Womb\n§L[GetDate]§!"
+ 
+ TIMELINE_EVENT_ORIGIN_VOIDSPAWN_END_1_TOOLTIP: "§HBreak Out of Shell§!\n§YOrigin Event§!\n\nOn §L[GetDate]§!, disaster befell [EVENT_TARGET_0.GetName], and a terrible Voidspawn larva descended like a nightmare."
+ TIMELINE_ORIGIN_VOIDSPAWN_END_1: "Break Out of Shell\n§L[GetDate]§!"
+ 
+ TIMELINE_EVENT_ORIGIN_VOIDSPAWN_END_2_TOOLTIP: "§HHowling Light§!\n§YOrigin Event§!\n\nOn §L[GetDate]§!, the creatures in [EVENT_TARGET_0.GetName] eventually died under the infection of toxic substances, and the day of hatching will never come. The dark night has passed, and dawn is coming."
+ TIMELINE_ORIGIN_VOIDSPAWN_END_2: "Howling Light\n§L[GetDate]§!"
+ 
+ ################################################################
+ # 江洋大盗
+ ################################################################
+ 
+ TIMELINE_EVENT_BECOME_ORIGIN_PIRATE_KING_END_TOOLTIP: "§HPirate King§!\n§YOrigin Event§!\n\nOn §L[GetDate]§!, [EVENT_TARGET_0.GetName] defeated the last challenger and became the sole Pirate King."
+ TIMELINE_BECOME_ORIGIN_PIRATE_KING_END: "Pirate King\n§L[GetDate]§!"
+ 
+ TIMELINE_EVENT_DEFEAT_PIRATE_KING_END_HORROR_ORIGIN_TOOLTIP: "§HFrom the Abyss§!\n§YOrigin Event§!\n\nOn §L[GetDate]§!, [EVENT_TARGET_0.GetName] defeated the god of the abyss at [EVENT_TARGET_1.GetName], putting an end to this endless cycle."
+ TIMELINE_EVENT_DEFEAT_PIRATE_KING_END_HORROR_TOOLTIP: "§HFrom the Abyss§!\n§YEmpire Event§!\n\nOn §L[GetDate]§!, [EVENT_TARGET_0.GetName] defeated the god of the abyss at [EVENT_TARGET_1.GetName], putting an end to this endless cycle."
+ TIMELINE_DEFEAT_PIRATE_KING_END_HORROR: "End Abyss\n§L[GetDate]§!"
+ 
+ TIMELINE_EVENT_HIRE_PIRATE_KING_LEADER_TOOLTIP: "§HFormer Pirate King§!\n§YOrigin Event§!\n\nOn §L[GetDate]§!, [EVENT_TARGET_0.GetName] rescued [EVENT_TARGET_1.GetName] from the Prisoner of the Abyss and took in their ancestor."
+ TIMELINE_HIRE_PIRATE_KING_LEADER: "Rescue Ghost Captain\n§L[GetDate]§!"
+ 
+ TIMELINE_EVENT_DISMISS_PIRATE_KING_LEADER_TOOLTIP: "§HFormer Pirate King§!\n§YOrigin Event§!\n\nOn §L[GetDate]§!, [EVENT_TARGET_0.GetName] released [EVENT_TARGET_1.GetName] from the Prisoner of the Abyss and watched their ancestor go to the beyond."
+ TIMELINE_DISMISS_PIRATE_KING_LEADER: "Release Ghost Captain\n§L[GetDate]§!"
+ 
+ ################################################################
+ # 伪善假面
+ ################################################################
+ 
+ TIMELINE_EVENT_ORIGIN_HYPOCRITICAL_FACE_END_TOOLTIP: "§HTake Off Mask§!\n§YOrigin Event§!\n\nOn §L[GetDate]§!, masks became useless to [EVENT_TARGET_0.GetName], because everyone had long seen through our true colors."
+ TIMELINE_ORIGIN_HYPOCRITICAL_FACE_END: "Shattered Mask\n§L[GetDate]§!"
+ 
+ TIMELINE_EVENT_ORIGIN_HYPOCRITICAL_FACE_END_OTHER_TOOLTIP: "§HMake Public§!\n§YEmpire Event§!\n\nOn §L[GetDate]§!, the true colors of [EVENT_TARGET_0.GetName] were exposed by everyone. They can no longer cover up the fact that they are a criminal syndicate."
+ TIMELINE_ORIGIN_HYPOCRITICAL_FACE_END_OTHER: "Shattered Mask\n§L[GetDate]§!"
+ 
+ ################################################################
+ # 诺亚方舟
+ ################################################################
+ 
+ TIMELINE_EVENT_ORIGIN_NOAH_ARK_END_1_TOOLTIP: "§HDirection of Paradise§!\n§YOrigin Event§!\n\nOn §L[GetDate]§!, [EVENT_TARGET_0.GetName] completed the exploration of Noah's Ark and found the direction of the paradise of the past through the navigation log."
+ TIMELINE_ORIGIN_NOAH_ARK_END_1: "Direction of Paradise\n§L[GetDate]§!"
+ 
+ TIMELINE_EVENT_ORIGIN_NOAH_ARK_END_2_ORIGIN_TOOLTIP: "§HBelow Paradise§!\n§YOrigin Event§!\n\nOn §L[GetDate]§!, [EVENT_TARGET_0.GetName] finally learned the history of Noah's Ark and discovered the truth hidden below paradise."
+ TIMELINE_EVENT_ORIGIN_NOAH_ARK_END_2_TOOLTIP: "§HBelow Paradise§!\n§YEmpire Event§!\n\nOn §L[GetDate]§!, [EVENT_TARGET_0.GetName] learned a truth hidden below paradise."
+ TIMELINE_ORIGIN_NOAH_ARK_END_2: "Below Paradise\n§L[GetDate]§!"
+ 
+ ################################################################
+ # 生于紫室
+ ################################################################
+ 
+ TIMELINE_EVENT_ORIGIN_BORN_IN_THE_PURPLE_HEIR_IS_CROWNED_TOOLTIP: "§HCoronation of New King§!\n§YOrigin Event§!\n\nOn §L[GetDate]§!, [EVENT_TARGET_0.GetName]'s heir [EVENT_TARGET_1.GetName] launched a coup due to high prestige and successfully was crowned king."
+ TIMELINE_ORIGIN_BORN_IN_THE_PURPLE_HEIR_IS_CROWNED: "Coup\n§L[GetDate]§!"
+ 
+ TIMELINE_EVENT_ORIGIN_BORN_IN_THE_PURPLE_HEIR_IS_KILLED_TOOLTIP: "§HFratricide§!\n§YOrigin Event§!\n\nOn §L[GetDate]§!, [EVENT_TARGET_0.GetName]'s heir [EVENT_TARGET_1.GetName] was assassinated due to ruined reputation, triggering a panic."
+ TIMELINE_ORIGIN_BORN_IN_THE_PURPLE_HEIR_IS_KILLED: "Assassination\n§L[GetDate]§!"
+ 
+ ################################################################
+ # 神眷之族
+ ################################################################
+ 
+ TIMELINE_EVENT_ORIGIN_BLESSED_BY_GOD_IS_ABANDONED_TOOLTIP: "§HAbandoned by God§!\n§YOrigin Event§!\n\nOn §L[GetDate]§!, [EVENT_TARGET_0.GetName] had everything taken away by the god they originally loved and decided to take revenge for this. We will not be abandoned by anyone again."
+ TIMELINE_ORIGIN_BLESSED_BY_GOD_IS_ABANDONED: "God's Lie\n§L[GetDate]§!"
+ 
+ ################################################################
+ # 神弃之族
+ ################################################################
+ 
+ TIMELINE_EVENT_ORIGIN_ABANDONED_BY_GOD_ACTIVE_NEMESIS_TOOLTIP: "§HMarch to Shroud§!\n§YOrigin Event§!\n\nOn §L[GetDate]§!, [EVENT_TARGET_0.GetName] remembered the humiliation of being abandoned and began revenge against the god. We will not be abandoned by anyone again."
+ TIMELINE_ORIGIN_ABANDONED_BY_GOD_ACTIVE_NEMESIS: "Time for Revenge\n§L[GetDate]§!"
+ 
+ ################################################################
+ # 彼岸封印
+ ################################################################
+ 
+ TIMELINE_EVENT_ORIGIN_EQUINOX_SEAL_BROKEN_ORIGIN_TOOLTIP: "§HAwakening from Nightmare§!\n§YOrigin Event§!\n\nOn §L[GetDate]§!, the seal of [EVENT_TARGET_1.GetName] had completely loosened. [EVENT_TARGET_0.GetName] failed to successfully seal this nightmare from the Beyond."
+ TIMELINE_EVENT_ORIGIN_EQUINOX_SEAL_BROKEN_TOOLTIP: "§HNightmare Descends§!\n§YEmpire Event§!\n\nOn §L[GetDate]§!, [EVENT_TARGET_1.GetName] was suddenly completely destroyed. [EVENT_TARGET_0.GetName] could only watch a Nightmare of the Plane emerge from the Black Hole."
+ TIMELINE_ORIGIN_EQUINOX_SEAL_BROKEN: "Shattered Seal\n§L[GetDate]§!"
+ 
+ TIMELINE_EVENT_ORIGIN_EQUINOX_SEAL_UNSEAL_TOOLTIP: "§HContract with Nightmare§!\n§YOrigin Event§!\n\nOn §L[GetDate]§!, [EVENT_TARGET_0.GetName] reached a deal with the Nightmare and released It from the seal of [EVENT_TARGET_1.GetName]."
+ TIMELINE_ORIGIN_EQUINOX_SEAL_UNSEAL: "Nightmare Erosion\n§L[GetDate]§!"
+ 
+ TIMELINE_EVENT_ORIGIN_EQUINOX_SEAL_FINISH_SEAL_TOOLTIP: "§HFarewell to Nightmare§!\n§YOrigin Event§!\n\nOn §L[GetDate]§!, [EVENT_TARGET_0.GetName] successfully reinforced the seal of [EVENT_TARGET_1.GetName], and the terrible Nightmare disappeared."
+ TIMELINE_ORIGIN_EQUINOX_SEAL_FINISH_SEAL: "Have a Good Dream\n§L[GetDate]§!"
+ 
+ TIMELINE_EVENT_ORIGIN_EQUINOX_SEAL_LOST_TRAIT_TOOLTIP: "§HFall of Nightmare§!\n§YOrigin Event§!\n\nOn §L[GetDate]§!, the Nightmare of [EVENT_TARGET_1.GetName] was expelled from this plane, and the great power It bestowed upon [EVENT_TARGET_0.GetName] also vanished."
+ TIMELINE_ORIGIN_EQUINOX_SEAL_LOST_TRAIT: "Dream Dissipates\n§L[GetDate]§!"
+ 
+ ################################################################
+ # 全局起源
+ ################################################################
+ 
+ TIMELINE_EVENT_ORIGIN_SWARM_CRISIS_BEGIN_TOOLTIP: "§HScourge Warning§!\n§YSystem Event§!\n\nOn §L[GetDate]§!, [EVENT_TARGET_0.GetName] broadcast the invasion of the Scourge to the entire universe."
+ TIMELINE_EVENT_ORIGIN_SWARM_CRISIS_BEGIN_OTHER_TOOLTIP: "§HScourge Warning§!\n§YSystem Event§!\n\nOn §L[GetDate]§!, [EVENT_TARGET_0.GetName] received a broadcast about the impending invasion of the Scourge."
+ TIMELINE_ORIGIN_SWARM_CRISIS_BEGIN: "Scourge Warning\n§L[GetDate]§!"
+ 
+ TIMELINE_EVENT_ORIGIN_AI_CRISIS_BEGIN_TOOLTIP: "§HGhost Signal§!\n§YSystem Event§!\n\nOn §L[GetDate]§!, [EVENT_TARGET_0.GetName] warned the entire universe of the invasion of the Contingency."
+ TIMELINE_EVENT_ORIGIN_AI_CRISIS_BEGIN_OTHER_TOOLTIP: "§HGhost Signal§!\n§YSystem Event§!\n\nOn §L[GetDate]§!, [EVENT_TARGET_0.GetName] received a warning about the impending invasion of the Contingency."
+ TIMELINE_ORIGIN_AI_CRISIS_BEGIN: "Ghost Signal\n§L[GetDate]§!"
+ 
+ TIMELINE_EVENT_ORIGIN_EXD_CRISIS_BEGIN_TOOLTIP: "§HDimensional Wanted§!\n§YSystem Event§!\n\nOn §L[GetDate]§!, [EVENT_TARGET_0.GetName] was wanted by Extradimensional Invaders with a bounty."
+ TIMELINE_EVENT_ORIGIN_EXD_CRISIS_BEGIN_OTHER_TOOLTIP: "§HDimensional Wanted§!\n§YSystem Event§!\n\nOn §L[GetDate]§!, [EVENT_TARGET_0.GetName] received a wanted order from Extradimensional Invaders."
+ TIMELINE_ORIGIN_EXD_CRISIS_BEGIN: "Dimensional Wanted\n§L[GetDate]§!"
+ 
+ TIMELINE_EVENT_ORIGIN_SYNTH_QUEEN_CRISIS_BEGIN_TOOLTIP: "§HApostate Disciple§!\n§YSystem Event§!\n\nOn §L[GetDate]§!, [EVENT_TARGET_0.GetName] predicted the invasion of Cetana to the entire universe."
+ TIMELINE_EVENT_ORIGIN_SYNTH_QUEEN_CRISIS_BEGIN_OTHER_TOOLTIP: "§HApostate Disciple§!\n§YSystem Event§!\n\nOn §L[GetDate]§!, [EVENT_TARGET_0.GetName] received a prophecy about the impending invasion of Cetana."
+ TIMELINE_ORIGIN_SYNTH_QUEEN_CRISIS_BEGIN: "Apostate Disciple\n§L[GetDate]§!"
+ 
+ TIMELINE_EVENT_ORIGIN_FOURTH_CRISIS_BEGIN_TOOLTIP: "§HThe Fourth Crisis§!\n§YSystem Event§!\n\nOn §L[GetDate]§!, [EVENT_TARGET_0.GetName] became the glorious Fourth Crisis."
+ TIMELINE_EVENT_ORIGIN_FOURTH_CRISIS_BEGIN_OTHER_TOOLTIP: "§HThe Fourth Crisis§!\n§YSystem Event§!\n\nOn §L[GetDate]§!, [EVENT_TARGET_0.GetName] formed an encirclement network against the Fourth Crisis with other countries."
+ TIMELINE_ORIGIN_FOURTH_CRISIS_BEGIN: "The Fourth Crisis\n§L[GetDate]§!"
+ 
+ TIMELINE_EVENT_ORIGIN_NEW_COUNTRY_BEGIN_TOOLTIP: "§HEmerging Empire§!\n§YSystem Event§!\n\nOn §L[GetDate]§!, [EVENT_TARGET_0.GetName] stepped into the home of giants."
+ TIMELINE_EVENT_ORIGIN_NEW_COUNTRY_BEGIN_OTHER_TOOLTIP: "§HEmerging Empire§!\n§YSystem Event§!\n\nOn §L[GetDate]§!, [EVENT_TARGET_0.GetName] discovered the existence of the Emerging Empire."
+ TIMELINE_ORIGIN_NEW_COUNTRY_BEGIN: "Emerging Empire\n§L[GetDate]§!"
+ 
+ TIMELINE_EVENT_ORIGIN_DARK_FOREST_BEGIN_TOOLTIP: "§HDark Forest§!\n§YSystem Event§!\n\nOn §L[GetDate]§!, [EVENT_TARGET_0.GetName] gained insight into the Dark Forest Law."
+ TIMELINE_EVENT_ORIGIN_DARK_FOREST_BEGIN_OTHER_TOOLTIP: "§HDark Forest§!\n§YSystem Event§!\n\nOn §L[GetDate]§!, [EVENT_TARGET_0.GetName] gained insight into the Dark Forest Law."
+ TIMELINE_ORIGIN_DARK_FOREST_BEGIN: "Dark Forest\n§L[GetDate]§!"

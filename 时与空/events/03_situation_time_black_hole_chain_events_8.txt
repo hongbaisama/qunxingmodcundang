@@ -1,0 +1,368 @@
+
+namespace = time
+
+situation_event = {
+	id = time.280
+	title = time.280.name
+	desc = time.280.desc
+	picture = GFX_evt_galactic_community
+	show_sound = event_celebration
+	location = event_target:time_home_planet
+	situation = this
+	
+	is_triggered_only = yes
+	
+	trigger = {
+	}
+	
+	immediate = {
+		time_ethic_win = { ETHIC = xenophile }
+	}
+	
+	option = {
+		name = time.280.a
+	}
+}
+
+situation_event = {
+	id = time.281
+	title = time.281.name
+	desc = time.281.desc
+	picture = GFX_evt_tradedeal
+	show_sound = event_factions
+	location = event_target:time_home_planet
+	situation = event_target:situation_time_xenophobe_vs_xenophile
+	
+	is_triggered_only = yes
+	
+	trigger = {
+		exists = event_target:situation_time_xenophobe_vs_xenophile
+	}
+	
+	immediate = {
+		set_timed_situation_flag = {
+			flag = time_281_triggered
+			days = @time_ethic_random_situation_event_cooldown_middle
+		}
+	}
+	
+	abort_trigger = {
+		has_situation_flag = abort_time_ethic_random_situation_event
+	}
+	
+	abort_effect = {
+		target = {
+			shift_random_pop_time_ethic = {
+				ETHIC = xenophile
+				PERCENTAGE = @time_ethic_shift_percentage_middle
+			}
+		}
+		refresh_time_ethic_power_variable = yes
+	}
+	
+	option = {
+		name = time.211.a
+		target = {
+			custom_tooltip = time_change_pop_ethic_xenophile
+			hidden_effect = {
+				shift_random_pop_time_ethic = {
+					ETHIC = xenophile
+					PERCENTAGE = @time_ethic_shift_percentage_middle
+				}
+			}
+		}
+		hidden_effect = {
+			refresh_time_ethic_power_variable = yes
+		}
+	}
+	
+	option = {
+		name = time.211.b
+		allow = {
+			owner = {
+				has_resource = {
+					type = influence
+					amount >= 75
+				}
+			}
+		}
+		owner = {
+			add_resource = { influence = -75 }
+		}
+	}
+}
+
+situation_event = {
+	id = time.282
+	title = time.282.name
+	desc = time.282.desc
+	picture = GFX_evt_tradedeal
+	show_sound = event_factions
+	location = event_target:time_home_planet
+	situation = event_target:situation_time_xenophobe_vs_xenophile
+	
+	is_triggered_only = yes
+	
+	trigger = {
+		exists = event_target:situation_time_xenophobe_vs_xenophile
+	}
+	
+	immediate = {
+		set_timed_situation_flag = {
+			flag = time_282_triggered
+			days = @time_ethic_random_situation_event_cooldown_short
+		}
+	}
+	
+	abort_trigger = {
+		has_situation_flag = abort_time_ethic_random_situation_event
+	}
+	
+	abort_effect = {
+		target = {
+			shift_random_pop_time_ethic = {
+				ETHIC = xenophile
+				PERCENTAGE = @time_ethic_shift_percentage_low
+			}
+		}
+		refresh_time_ethic_power_variable = yes
+	}
+	
+	option = {
+		name = time.212.a
+		target = {
+			custom_tooltip = time_change_pop_ethic_xenophile
+			hidden_effect = {
+				shift_random_pop_time_ethic = {
+					ETHIC = xenophile
+					PERCENTAGE = @time_ethic_shift_percentage_low
+				}
+			}
+		}
+		hidden_effect = {
+			refresh_time_ethic_power_variable = yes
+		}
+	}
+	
+	option = {
+		name = time.212.b
+		allow = {
+			owner = {
+				has_resource = {
+					type = influence
+					amount >= 50
+				}
+			}
+		}
+		owner = {
+			add_resource = { influence = -50 }
+		}
+	}
+}
+
+situation_event = {
+	id = time.283
+	title = time.283.name
+	desc = time.283.desc
+	picture = GFX_evt_tradedeal
+	show_sound = event_factions
+	location = event_target:time_home_planet
+	situation = event_target:situation_time_xenophobe_vs_xenophile
+	
+	is_triggered_only = yes
+	
+	trigger = {
+		exists = event_target:situation_time_xenophobe_vs_xenophile
+		owner = { is_xenophile = no }
+	}
+	
+	immediate = {
+		set_timed_situation_flag = {
+			flag = time_283_triggered
+			days = @time_ethic_random_situation_event_cooldown_very_long
+		}
+	}
+	
+	abort_trigger = {
+		has_situation_flag = abort_time_ethic_random_situation_event
+	}
+	
+	abort_effect = {
+		target = {
+			add_modifier = {
+				modifier = origin_time_coup
+				days = @time_ethic_random_situation_event_cooldown_long
+			}
+			shift_random_pop_time_ethic = {
+				ETHIC = xenophile
+				PERCENTAGE = @time_ethic_shift_percentage_high
+			}
+		}
+		refresh_time_ethic_power_variable = yes
+	}
+	
+	option = {
+		name = time.213.a
+		target = {
+			custom_tooltip = time_change_pop_ethic_xenophile
+			add_modifier = {
+				modifier = origin_time_coup
+				days = @time_ethic_random_situation_event_cooldown_long
+			}
+			hidden_effect = {
+				shift_random_pop_time_ethic = {
+					ETHIC = xenophile
+					PERCENTAGE = @time_ethic_shift_percentage_high
+				}
+			}
+		}
+		hidden_effect = {
+			refresh_time_ethic_power_variable = yes
+		}
+	}
+	
+	option = {
+		name = time.213.b
+		allow = {
+			owner = {
+				has_resource = {
+					type = influence
+					amount >= 100
+				}
+			}
+		}
+		owner = {
+			add_resource = { influence = -100 }
+		}
+		target = {
+			add_modifier = {
+				modifier = origin_time_coup
+				days = @time_ethic_random_situation_event_cooldown_very_long
+			}
+		}
+	}
+}
+
+situation_event = {
+	id = time.284
+	title = time.284.name
+	desc = time.284.desc
+	picture = GFX_evt_tradedeal
+	show_sound = event_factions
+	location = event_target:time_home_planet
+	situation = event_target:situation_time_xenophobe_vs_xenophile
+	
+	is_triggered_only = yes
+	
+	trigger = {
+		exists = event_target:situation_time_xenophobe_vs_xenophile
+		owner = { is_xenophile = no }
+	}
+	
+	immediate = {
+		set_timed_situation_flag = {
+			flag = time_284_triggered
+			days = @time_ethic_random_situation_event_cooldown_long
+		}
+		set_timed_situation_flag = {
+			flag = time_planet_devastation_event
+			days = @time_ethic_random_situation_event_cooldown_long
+		}
+	}
+	
+	abort_trigger = {
+		has_situation_flag = abort_time_ethic_random_situation_event
+	}
+	
+	abort_effect = {
+		target = {
+			add_planet_devastation = 25
+		}
+	}
+	
+	option = {
+		name = time.214.a
+		target = {
+			add_planet_devastation = 25
+		}
+	}
+	
+	option = {
+		name = time.214.b
+		allow = {
+			owner = {
+				has_resource = {
+					type = influence
+					amount >= 50
+				}
+			}
+		}
+		owner = {
+			add_resource = { influence = -50 }
+		}
+		target = {
+			add_planet_devastation = 10
+		}
+	}
+}
+
+situation_event = {
+	id = time.285
+	title = time.285.name
+	desc = time.285.desc
+	picture = GFX_evt_tradedeal
+	show_sound = event_factions
+	location = event_target:time_home_planet
+	situation = event_target:situation_time_xenophobe_vs_xenophile
+	
+	is_triggered_only = yes
+	
+	trigger = {
+		exists = event_target:situation_time_xenophobe_vs_xenophile
+	}
+	
+	immediate = {
+		set_timed_situation_flag = {
+			flag = time_285_triggered
+			days = @time_ethic_random_situation_event_cooldown_middle
+		}
+	}
+	
+	abort_trigger = {
+		has_situation_flag = abort_time_ethic_random_situation_event
+	}
+	
+	abort_effect = {
+		target = {
+			add_modifier = {
+				modifier = origin_time_xenophile_attraction
+				days = @time_ethic_random_situation_event_cooldown_middle
+			}
+		}
+	}
+	
+	option = {
+		name = time.215.a
+		target = {
+			add_modifier = {
+				modifier = origin_time_xenophile_attraction
+				days = @time_ethic_random_situation_event_cooldown_middle
+			}
+		}
+	}
+	
+	option = {
+		name = time.215.b
+		allow = {
+			owner = {
+				has_resource = {
+					type = influence
+					amount >= 50
+				}
+			}
+		}
+		owner = {
+			add_resource = { influence = -50 }
+		}
+	}
+}

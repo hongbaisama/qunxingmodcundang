@@ -1,0 +1,64 @@
+triggered_planet_modifier = {
+	potential = {
+		colony = {
+			check_modifier_value = {
+				modifier = nanites_study_system
+				value > 0
+			}
+		}
+	}
+	planet_housing_add = 12.5
+	mult = value:num_nanites_logistics_drone_housing
+}
+
+triggered_planet_modifier = {
+	potential = {
+		colony = {
+			check_modifier_value = {
+				modifier = nanites_sapient_network
+				value > 0
+			}
+		}
+	}
+	planet_amenities_add = 12.5
+	mult = value:num_nanites_logistics_drone_amenities_network
+}
+
+triggered_planet_modifier = {
+	potential = {
+		colony = {
+			check_modifier_value = {
+				modifier = nanites_sapient_network
+				value > 0
+			}
+		}
+	}
+	planet_crime_add = -0.125
+	mult = value:num_nanites_logistics_drone_crime_network
+}
+
+triggered_country_modifier = {
+	potential = {
+		colony = {
+			check_modifier_value = {
+				modifier = nanites_study_system
+				value > 0
+			}
+		}
+	}
+	country_naval_cap_add = 0.125
+	mult = value:num_nanites_logistics_drone_naval
+}
+
+triggered_country_modifier = {
+	potential = {
+		colony = {
+			check_modifier_value = {
+				modifier = nanites_sapient_network
+				value > 0
+			}
+		}
+	}
+	country_naval_cap_add = 0.125
+	mult = value:num_nanites_logistics_drone_naval_network
+}

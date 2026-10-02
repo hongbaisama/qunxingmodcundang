@@ -1,0 +1,957 @@
+
+namespace = bio
+
+# Regular Empire Genetic Ascension
+# Situation Stage One Event
+
+situation_event = {
+	id = bio.5
+	title = bio.5.name
+	desc = {
+		trigger = { owner = { has_one_genetic_ascension_choice = yes } }
+		text = bio.5.desc.no_options
+	}
+	desc = {
+		trigger = { owner = { has_one_genetic_ascension_choice = no } }
+		text = bio.5.desc.has_options
+	}
+	picture = GFX_evt_genetic_modification
+	show_sound = event_alien_nature
+	situation = this
+	is_triggered_only = yes
+
+	immediate = {
+		set_situation_flag = situation_biogenesis_pause
+	}
+
+	option = {
+		name = bio.5.a
+		trigger = {
+			NOR = {
+				has_situation_flag = cloning_approach_selected
+				has_situation_flag = mutation_approach_selected
+			}
+		}
+		refresh_genetic_ascension_stage_1_flag = { TYPE = purity } # 防止靠提前选择局势方案卡bug
+		set_situation_approach = genetic_ascension_approach_purity
+		owner = {
+			give_purity_unlocks_effect = yes
+		}
+	}
+	option = {
+		name = bio.5.b
+		trigger = {
+			NOR = {
+				has_situation_flag = purity_approach_selected
+				has_situation_flag = mutation_approach_selected
+			}
+		}
+		refresh_genetic_ascension_stage_1_flag = { TYPE = cloning } # 防止靠提前选择局势方案卡bug
+		set_situation_approach = genetic_ascension_approach_cloning
+		owner = {
+			give_cloning_unlocks_effect = yes
+		}
+	}
+	option = {
+		name = bio.5.c
+		trigger = {
+			NOR = {
+				has_situation_flag = purity_approach_selected
+				has_situation_flag = cloning_approach_selected
+			}
+		}
+		refresh_genetic_ascension_stage_1_flag = { TYPE = mutation } # 防止靠提前选择局势方案卡bug
+		set_situation_approach = genetic_ascension_approach_mutation
+		owner = {
+			give_mutation_unlocks_effect = yes
+		}
+	}
+
+	after = {
+		remove_situation_flag = situation_biogenesis_pause
+		custom_tooltip = genomic_facility_needed_tt
+		hidden_effect = {
+			owner = {
+				if = {
+					limit = {
+						any_planet_within_border = {
+							has_carrier_flag = fotd_seperatist_planet@root
+							owner = {
+								has_country_flag = fotd_seperatist_country@root
+							}
+						}
+					}
+					country_event = { id = origin.6115 days = 5 random = 2 }
+				}
+			}
+		}
+	}
+}
+
+# Situation Stage Two Event
+
+situation_event = {
+	id = bio.10
+	title = bio.10.name
+	desc = {
+		trigger = { owner = { has_one_genetic_ascension_choice = yes } }
+		text = bio.10.desc.no_options
+	}
+	desc = {
+		trigger = { owner = { has_one_genetic_ascension_choice = no } }
+		text = bio.10.desc.has_options
+	}
+	picture = GFX_evt_genetic_modification
+	show_sound = event_alien_nature
+	situation = this
+	is_triggered_only = yes
+
+	immediate = {
+		set_situation_flag = situation_biogenesis_pause
+		remove_situation_flag = purity_approach_selected
+		remove_situation_flag = cloning_approach_selected
+		remove_situation_flag = mutation_approach_selected
+		owner = {
+			if = {
+				limit = {
+					NOT = {
+						has_technology = tech_gene_tailoring
+					}
+				}
+				add_tech_progress = {
+					tech = tech_gene_tailoring
+					progress = 0.33
+				}
+			}
+		}
+	}
+
+	option = {
+		name = bio.10.a
+		trigger = {
+			NOR = {
+				has_situation_flag = cloning_approach_selected
+				has_situation_flag = mutation_approach_selected
+			}
+		}
+		refresh_genetic_ascension_stage_2_flag = { TYPE = purity } # 防止靠提前选择局势方案卡bug
+		set_situation_approach = genetic_ascension_approach_purity
+		owner = {
+			give_purity_unlocks_effect = yes
+		}
+		ai_chance = {
+			factor = 1
+		}
+	}
+
+	option = {
+		name = bio.10.b
+		trigger = {
+			NOR = {
+				has_situation_flag = purity_approach_selected
+				has_situation_flag = mutation_approach_selected
+			}
+		}
+		refresh_genetic_ascension_stage_2_flag = { TYPE = cloning } # 防止靠提前选择局势方案卡bug
+		set_situation_approach = genetic_ascension_approach_cloning
+		owner = {
+			give_cloning_unlocks_effect = yes
+		}
+		ai_chance = {
+			factor = 1
+		}
+	}
+
+	option = {
+		name = bio.10.c
+		trigger = {
+			NOR = {
+				has_situation_flag = purity_approach_selected
+				has_situation_flag = cloning_approach_selected
+			}
+		}
+		refresh_genetic_ascension_stage_2_flag = { TYPE = mutation } # 防止靠提前选择局势方案卡bug
+		set_situation_approach = genetic_ascension_approach_mutation
+		owner = {
+			give_mutation_unlocks_effect = yes
+		}
+		ai_chance = {
+			factor = 1
+		}
+	}
+
+	after = {
+		remove_situation_flag = situation_biogenesis_pause
+		owner = {
+			if = {
+				limit = {
+					NOT = {
+						has_technology = tech_gene_tailoring
+					}
+				}
+				tooltip = {
+					add_tech_progress = {
+						tech = tech_gene_tailoring
+						progress = 0.33
+					}
+				}
+			}
+		}
+	}
+}
+
+# Situation Stage Three Event
+
+situation_event = {
+	id = bio.15
+	title = bio.15.name
+	desc = {
+		trigger = { owner = { has_one_genetic_ascension_choice = yes } }
+		text = bio.15.desc.no_options
+	}
+	desc = {
+		trigger = { owner = { has_one_genetic_ascension_choice = no } }
+		text = bio.15.desc.has_options
+	}
+	picture = GFX_evt_genetic_modification
+	show_sound = event_alien_nature
+	situation = this
+	is_triggered_only = yes
+
+	immediate = {
+		set_situation_flag = situation_biogenesis_pause
+		remove_situation_flag = purity_approach_selected
+		remove_situation_flag = cloning_approach_selected
+		remove_situation_flag = mutation_approach_selected
+	}
+
+	option = {
+		name = bio.15.a
+		trigger = {
+			NOR = {
+				has_situation_flag = cloning_approach_selected
+				has_situation_flag = mutation_approach_selected
+				owner = { has_origin = origin_evolutionary_predators }
+			}
+		}
+		allow = {
+			custom_tooltip = {
+				fail_text = force_cloning_ascension_tt
+				owner = {
+					OR = {
+						has_country_flag = cloning_unlock_level_1
+						force_cloning_ascension = no
+					}
+				}
+			}
+			custom_tooltip = {
+				fail_text = force_mutation_ascension_tt
+				owner = {
+					OR = {
+						has_country_flag = mutation_unlock_level_1
+						force_mutation_ascension = no
+					}
+				}
+			}
+		}
+		refresh_genetic_ascension_stage_3_flag = { TYPE = purity } # 防止靠提前选择局势方案卡bug
+		set_situation_approach = genetic_ascension_approach_purity
+		owner = {
+			give_purity_unlocks_effect = yes
+		}
+		ai_chance = {
+			factor = 1
+		}
+	}
+
+	option = {
+		name = bio.15.b
+		trigger = {
+			NOR = {
+				has_situation_flag = purity_approach_selected
+				has_situation_flag = mutation_approach_selected
+				owner = { has_origin = origin_evolutionary_predators }
+			}
+		}
+		allow = {
+			custom_tooltip = {
+				fail_text = force_purity_ascension_tt
+				owner = {
+					OR = {
+						has_country_flag = purity_unlock_level_1
+						force_purity_ascension = no
+					}
+				}
+			}
+			custom_tooltip = {
+				fail_text = force_mutation_ascension_tt
+				owner = {
+					OR = {
+						has_country_flag = mutation_unlock_level_1
+						force_mutation_ascension = no
+					}
+				}
+			}
+		}
+		refresh_genetic_ascension_stage_3_flag = { TYPE = cloning } # 防止靠提前选择局势方案卡bug
+		set_situation_approach = genetic_ascension_approach_cloning
+		owner = {
+			give_cloning_unlocks_effect = yes
+		}
+		ai_chance = {
+			factor = 1
+		}
+	}
+
+	option = {
+		name = bio.15.c
+		trigger = {
+			NOR = {
+				has_situation_flag = purity_approach_selected
+				has_situation_flag = cloning_approach_selected
+			}
+		}
+		allow = {
+			custom_tooltip = {
+				fail_text = force_purity_ascension_tt
+				owner = {
+					OR = {
+						has_country_flag = purity_unlock_level_1
+						force_purity_ascension = no
+					}
+				}
+			}
+			custom_tooltip = {
+				fail_text = force_cloning_ascension_tt
+				owner = {
+					OR = {
+						has_country_flag = cloning_unlock_level_1
+						force_cloning_ascension = no
+					}
+				}
+			}
+		}
+		refresh_genetic_ascension_stage_3_flag = { TYPE = mutation } # 防止靠提前选择局势方案卡bug
+		set_situation_approach = genetic_ascension_approach_mutation
+		owner = {
+			give_mutation_unlocks_effect = yes
+		}
+		ai_chance = {
+			factor = 1
+		}
+	}
+
+	after = {
+		remove_situation_flag = situation_biogenesis_pause
+	}
+}
+
+# Situation Completion Event
+
+situation_event = {
+	id = bio.20
+	title = bio.20.name
+	desc = {
+		trigger = {
+			owner = { NOT = { has_origin = origin_evolutionary_predators } }
+		}
+		text = bio.20.desc
+	}
+	desc = {
+		trigger = {
+			owner = { has_origin = origin_evolutionary_predators }
+		}
+		text = bio.20.desc.evopred
+	}
+	picture = GFX_evt_genetic_modification
+	show_sound = event_alien_nature
+	situation = this
+	is_triggered_only = yes
+
+	immediate = {
+		set_situation_flag = situation_biogenesis_pause
+	}
+
+	option = {
+		name = bio.20.a
+		trigger = {
+			owner = {
+				OR = {
+					force_any_genetics_ascension = no
+					force_purity_ascension = yes
+				}
+			}
+		}
+		allow = {
+			custom_tooltip = {
+				fail_text = no_purity_unlock_tt
+				owner = {
+					has_country_flag = purity_unlock_level_1
+				}
+			}
+		}
+		if = {
+			limit = {
+				owner = { num_tradition_categories < @max_tradition_trees }
+			}
+			owner = {
+				set_country_flag = purity_tradition_unlocked
+				add_tradition = tr_purity_adopt # Purity Tree
+			}
+			custom_tooltip = purity_tradition_unlocked
+		}
+		ai_chance = {
+			factor = 1
+		}
+	}
+
+	option = {
+		name = bio.20.b
+		trigger = {
+			owner = {
+				OR = {
+					force_any_genetics_ascension = no
+					force_cloning_ascension = yes
+				}
+			}
+		}
+		allow = {
+			custom_tooltip = {
+				fail_text = no_cloning_unlock_tt
+				owner = {
+					has_country_flag = cloning_unlock_level_1
+				}
+			}
+		}
+		if = {
+			limit = {
+				owner = { num_tradition_categories < @max_tradition_trees }
+			}
+			owner = {
+				set_country_flag = cloning_tradition_unlocked
+				add_tradition = tr_cloning_adopt # Cloning Tree
+			}
+			custom_tooltip = cloning_tradition_unlocked
+		}
+		ai_chance = {
+			factor = 1
+		}
+	}
+
+	option = {
+		name = bio.20.c
+		trigger = {
+			owner = {
+				OR = {
+					force_any_genetics_ascension = no
+					force_mutation_ascension = yes
+				}
+			}
+		}
+		allow = {
+			custom_tooltip = {
+				fail_text = no_mutation_unlock_tt
+				owner = {
+					has_country_flag = mutation_unlock_level_1
+				}
+			}
+		}
+		if = {
+			limit = {
+				owner = { num_tradition_categories < @max_tradition_trees }
+			}
+			owner = {
+				set_country_flag = mutation_tradition_unlocked
+				add_tradition = tr_mutation_adopt # Mutation Tree
+			}
+			custom_tooltip = mutation_tradition_unlocked
+		}
+		ai_chance = {
+			factor = 1
+		}
+	}
+
+	after = {
+		destroy_situation = this
+		remove_situation_flag = situation_biogenesis_pause
+	}
+}
+
+# Hive Genetic Ascension Situation
+# Hive Situation Stage One Event
+
+situation_event = {
+	id = bio.25
+	title = bio.25.name
+	desc = {
+		trigger = { owner = { has_one_genetic_ascension_choice = yes } }
+		text = bio.25.desc.no_options
+	}
+	desc = {
+		trigger = { owner = { has_one_genetic_ascension_choice = no } }
+		text = bio.25.desc.has_options
+	}
+	picture = GFX_evt_genetic_modification
+	show_sound = event_alien_nature
+	situation = this
+	is_triggered_only = yes
+
+	immediate = {
+		set_situation_flag = situation_biogenesis_pause
+	}
+
+	option = {
+		name = bio.25.a
+		trigger = {
+			NOR = {
+				has_situation_flag = cloning_approach_selected
+				has_situation_flag = mutation_approach_selected
+			}
+		}
+		refresh_genetic_ascension_stage_1_flag = { TYPE = purity } # 防止靠提前选择局势方案卡bug
+		set_situation_approach = genetic_ascension_approach_purity
+		owner = {
+			give_purity_unlocks_effect = yes
+		}
+		ai_chance = {
+			factor = 1
+		}
+	}
+
+	option = {
+		name = bio.25.b
+		trigger = {
+			NOR = {
+				has_situation_flag = purity_approach_selected
+				has_situation_flag = mutation_approach_selected
+			}
+		}
+		refresh_genetic_ascension_stage_1_flag = { TYPE = cloning } # 防止靠提前选择局势方案卡bug
+		set_situation_approach = genetic_ascension_approach_cloning
+		owner = {
+			give_cloning_unlocks_effect = yes
+		}
+		ai_chance = {
+			factor = 1
+		}
+	}
+
+	option = {
+		name = bio.25.c
+		trigger = {
+			NOR = {
+				has_situation_flag = purity_approach_selected
+				has_situation_flag = cloning_approach_selected
+			}
+		}
+		refresh_genetic_ascension_stage_1_flag = { TYPE = mutation } # 防止靠提前选择局势方案卡bug
+		set_situation_approach = genetic_ascension_approach_mutation
+		owner = {
+			give_mutation_unlocks_effect = yes
+		}
+		ai_chance = {
+			factor = 1
+		}
+	}
+
+	after = {
+		remove_situation_flag = situation_biogenesis_pause
+		if = {
+			limit = {
+				owner = { is_wilderness_empire = no }
+			}
+			custom_tooltip = genomic_facility_needed_tt
+		}
+	}
+}
+
+# Hive Situation Stage Two Event
+
+situation_event = {
+	id = bio.30
+	title = bio.30.name
+	desc = {
+		trigger = { owner = { has_one_genetic_ascension_choice = yes } }
+		text = bio.30.desc.no_options
+	}
+	desc = {
+		trigger = { owner = { has_one_genetic_ascension_choice = no } }
+		text = bio.30.desc.has_options
+	}
+	picture = GFX_evt_genetic_modification
+	show_sound = event_alien_nature
+	situation = this
+	is_triggered_only = yes
+
+	immediate = {
+		set_situation_flag = situation_biogenesis_pause
+		remove_situation_flag = purity_approach_selected
+		remove_situation_flag = cloning_approach_selected
+		remove_situation_flag = mutation_approach_selected
+		owner = {
+			if = {
+				limit = {
+					NOT = {
+						has_technology = tech_gene_tailoring
+					}
+				}
+				add_tech_progress = {
+					tech = tech_gene_tailoring
+					progress = 0.33
+				}
+			}
+		}
+	}
+
+	option = {
+		name = bio.30.a
+		trigger = {
+			NOR = {
+				has_situation_flag = cloning_approach_selected
+				has_situation_flag = mutation_approach_selected
+			}
+		}
+		refresh_genetic_ascension_stage_2_flag = { TYPE = purity } # 防止靠提前选择局势方案卡bug
+		set_situation_approach = genetic_ascension_approach_purity
+		owner = {
+			give_purity_unlocks_effect = yes
+		}
+		ai_chance = {
+			factor = 1
+		}
+	}
+
+	option = {
+		name = bio.30.b
+		trigger = {
+			NOR = {
+				has_situation_flag = purity_approach_selected
+				has_situation_flag = mutation_approach_selected
+			}
+		}
+		refresh_genetic_ascension_stage_2_flag = { TYPE = cloning } # 防止靠提前选择局势方案卡bug
+		set_situation_approach = genetic_ascension_approach_cloning
+		owner = {
+			give_cloning_unlocks_effect = yes
+		}
+		ai_chance = {
+			factor = 1
+		}
+	}
+
+	option = {
+		name = bio.30.c
+		trigger = {
+			NOR = {
+				has_situation_flag = purity_approach_selected
+				has_situation_flag = cloning_approach_selected
+			}
+		}
+		refresh_genetic_ascension_stage_2_flag = { TYPE = mutation } # 防止靠提前选择局势方案卡bug
+		set_situation_approach = genetic_ascension_approach_mutation
+		owner = {
+			give_mutation_unlocks_effect = yes
+		}
+		ai_chance = {
+			factor = 1
+		}
+	}
+
+	after = {
+		remove_situation_flag = situation_biogenesis_pause
+		owner = {
+			if = {
+				limit = {
+					NOT = {
+						has_technology = tech_gene_tailoring
+					}
+				}
+				tooltip = {
+					add_tech_progress = {
+						tech = tech_gene_tailoring
+						progress = 0.33
+					}
+				}
+			}
+		}
+	}
+}
+
+# Hive Situation Stage 3 Event
+
+situation_event = {
+	id = bio.35
+	title = bio.35.name
+	desc = {
+		trigger = { owner = { has_one_genetic_ascension_choice = yes } }
+		text = bio.35.desc.no_options
+	}
+	desc = {
+		trigger = { owner = { has_one_genetic_ascension_choice = no } }
+		text = bio.35.desc.has_options
+	}
+	picture = GFX_evt_genetic_modification
+	show_sound = event_alien_nature
+	situation = this
+	is_triggered_only = yes
+
+	immediate = {
+		set_situation_flag = situation_biogenesis_pause
+		remove_situation_flag = purity_approach_selected
+		remove_situation_flag = cloning_approach_selected
+		remove_situation_flag = mutation_approach_selected
+	}
+
+	option = {
+		name = bio.35.a
+		trigger = {
+			NOR = {
+				has_situation_flag = cloning_approach_selected
+				has_situation_flag = mutation_approach_selected
+				owner = { has_origin = origin_evolutionary_predators }
+			}
+		}
+		allow = {
+			custom_tooltip = {
+				fail_text = force_cloning_ascension_tt
+				owner = {
+					OR = {
+						has_country_flag = cloning_unlock_level_1
+						force_cloning_ascension = no
+					}
+				}
+			}
+			custom_tooltip = {
+				fail_text = force_mutation_ascension_tt
+				owner = {
+					OR = {
+						has_country_flag = mutation_unlock_level_1
+						force_mutation_ascension = no
+					}
+				}
+			}
+		}
+		refresh_genetic_ascension_stage_3_flag = { TYPE = purity } # 防止靠提前选择局势方案卡bug
+		set_situation_approach = genetic_ascension_approach_purity
+		owner = {
+			give_purity_unlocks_effect = yes
+		}
+		ai_chance = {
+			factor = 1
+		}
+	}
+
+	option = {
+		name = bio.35.b
+		trigger = {
+			NOR = {
+				has_situation_flag = purity_approach_selected
+				has_situation_flag = mutation_approach_selected
+				owner = { is_wilderness_empire = yes }
+				owner = { has_origin = origin_evolutionary_predators }
+			}
+		}
+		allow = {
+			custom_tooltip = {
+				fail_text = force_purity_ascension_tt
+				owner = {
+					OR = {
+						has_country_flag = purity_unlock_level_1
+						force_purity_ascension = no
+					}
+				}
+			}
+			custom_tooltip = {
+				fail_text = force_mutation_ascension_tt
+				owner = {
+					OR = {
+						has_country_flag = mutation_unlock_level_1
+						force_mutation_ascension = no
+					}
+				}
+			}
+		}
+		refresh_genetic_ascension_stage_3_flag = { TYPE = cloning } # 防止靠提前选择局势方案卡bug
+		set_situation_approach = genetic_ascension_approach_cloning
+		owner = {
+			give_cloning_unlocks_effect = yes
+		}
+		ai_chance = {
+			factor = 1
+		}
+	}
+
+	option = {
+		name = bio.35.c
+		trigger = {
+			NOR = {
+				has_situation_flag = purity_approach_selected
+				has_situation_flag = cloning_approach_selected
+				owner = { is_wilderness_empire = yes }
+			}
+		}
+		allow = {
+			custom_tooltip = {
+				fail_text = force_purity_ascension_tt
+				owner = {
+					OR = {
+						has_country_flag = purity_unlock_level_1
+						force_purity_ascension = no
+					}
+				}
+			}
+			custom_tooltip = {
+				fail_text = force_cloning_ascension_tt
+				owner = {
+					OR = {
+						has_country_flag = cloning_unlock_level_1
+						force_cloning_ascension = no
+					}
+				}
+			}
+		}
+		refresh_genetic_ascension_stage_3_flag = { TYPE = mutation } # 防止靠提前选择局势方案卡bug
+		set_situation_approach = genetic_ascension_approach_mutation
+		owner = {
+			give_mutation_unlocks_effect = yes
+		}
+		ai_chance = {
+			factor = 1
+		}
+	}
+
+	after = {
+		remove_situation_flag = situation_biogenesis_pause
+	}
+}
+
+# Hive Situation Completion Event
+
+situation_event = {
+	id = bio.40
+	title = bio.40.name
+	desc = {
+		trigger = {
+			owner = { NOT = { has_origin = origin_evolutionary_predators } }
+		}
+		text = bio.40.desc
+	}
+	desc = {
+		trigger = {
+			owner = { has_origin = origin_evolutionary_predators }
+		}
+		text = bio.40.desc.evopred
+	}
+	picture = GFX_evt_genetic_modification
+	show_sound = event_alien_nature
+	situation = this
+	is_triggered_only = yes
+
+	immediate = {
+		set_situation_flag = situation_biogenesis_pause
+	}
+
+	option = {
+		name = bio.40.a
+		trigger = {
+			owner = {
+				OR = {
+					force_any_genetics_ascension = no
+					force_purity_ascension = yes
+				}
+			}
+		}
+		allow = {
+			custom_tooltip = {
+				fail_text = no_purity_unlock_tt
+				owner = {
+					has_country_flag = purity_unlock_level_1
+				}
+			}
+		}
+		if = {
+			limit = {
+				owner = { num_tradition_categories < @max_tradition_trees }
+			}
+			owner = {
+				set_country_flag = purity_tradition_unlocked
+				add_tradition = tr_purity_adopt # Mutation Tree
+			}
+			custom_tooltip = purity_tradition_unlocked
+		}
+		ai_chance = {
+			factor = 1
+		}
+	}
+
+	option = {
+		name = bio.40.b
+		trigger = {
+			owner = {
+				OR = {
+					force_any_genetics_ascension = no
+					force_cloning_ascension = yes
+				}
+			}
+		}
+		allow = {
+			custom_tooltip = {
+				fail_text = no_cloning_unlock_tt
+				owner = {
+					has_country_flag = cloning_unlock_level_1
+				}
+			}
+		}
+		if = {
+			limit = {
+				owner = { num_tradition_categories < @max_tradition_trees }
+			}
+			owner = {
+				set_country_flag = cloning_tradition_unlocked
+				add_tradition = tr_cloning_adopt # Cloning Tree
+			}
+			custom_tooltip = cloning_tradition_unlocked
+		}
+		ai_chance = {
+			factor = 1
+		}
+	}
+
+	option = {
+		name = bio.40.c
+		trigger = {
+			owner = {
+				OR = {
+					force_any_genetics_ascension = no
+					force_mutation_ascension = yes
+				}
+			}
+		}
+		allow = {
+			custom_tooltip = {
+				fail_text = no_mutation_unlock_tt
+				owner = {
+					has_country_flag = mutation_unlock_level_1
+				}
+			}
+		}
+		if = {
+			limit = {
+				owner = { num_tradition_categories < @max_tradition_trees }
+			}
+			owner = {
+				set_country_flag = mutation_tradition_unlocked
+				add_tradition = tr_mutation_adopt # Mutation Tree
+			}
+			custom_tooltip = mutation_tradition_unlocked
+		}
+		ai_chance = {
+			factor = 1
+		}
+	}
+
+	after = {
+		destroy_situation = this
+		remove_situation_flag = situation_biogenesis_pause
+	}
+}

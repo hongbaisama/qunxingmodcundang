@@ -1,0 +1,54 @@
+zone_praise_the_sun = {
+	icon = GFX_district_specialization_praise_the_sun
+	base_buildtime = @zone_buildtime
+	potential = { # planet scope
+		exists = owner
+		owner = { has_origin = origin_praise_the_sun }
+	}
+
+	unlock = { # planet scope
+		hidden_trigger = {
+			exists = owner
+			owner = { has_origin = origin_praise_the_sun }
+		}
+	}
+
+	resources = {
+		category = planet_zones
+		inline_script = {
+			script = buildings/nomadic_cost_switcher
+			REGULAR_RESOURCE = minerals
+			NOMADIC_RESOURCE = alloys
+			COST = @zone_cost
+			NOMADIC_COST_MULT = 0.5
+		}
+	}
+
+	zone_sets = {
+		energy
+		habitat_energy
+	}
+
+	included_building_sets = {
+		generator
+		fallen_empire_generator
+		generator_automation
+		unity
+	}
+
+	inline_script = {
+		script = jobs/zone_technicians_add
+		AMOUNT = @bonus_scaling_district_2_jobs
+	}
+
+	inline_script = {
+		script = jobs/zone_unity_jobs_add
+		AMOUNT = @bonus_scaling_district_2_jobs
+	}
+
+	planet_modifier = {
+		zone_building_slots_add = @time_mod_zone_max_buildings
+	}
+
+	ai_priority = 1
+}

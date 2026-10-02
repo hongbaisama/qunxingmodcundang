@@ -1,0 +1,57 @@
+category = ruler
+can_be_automated = no
+
+swappable_data = {
+	default = {
+		condition_string = RULER_JOB_TRIGGER
+		building_icon = building_origin_contract_$PATRON$
+	}
+}
+
+possible_pre_triggers = {
+	has_owner = yes
+	is_enslaved = no
+	is_being_purged = no
+	is_being_assimilated = no
+	is_sapient = yes
+}
+
+possible_precalc = can_fill_ruler_job
+possible = {
+}
+
+triggered_planet_modifier = {
+	potential = {
+		colony = {
+			has_active_building = building_origin_contract_composer
+		}
+	}
+	job_origin_contract_composer_max_workforce_mult = 50
+}
+
+triggered_planet_modifier = {
+	potential = {
+		colony = {
+			has_active_building = building_origin_contract_cradle
+		}
+	}
+	job_origin_contract_cradle_max_workforce_mult = 50
+}
+
+triggered_planet_modifier = {
+	potential = {
+		colony = {
+			has_active_building = building_origin_contract_eater
+		}
+	}
+	job_origin_contract_eater_max_workforce_mult = 50
+}
+
+triggered_planet_modifier = {
+	potential = {
+		colony = {
+			has_active_building = building_origin_contract_instrument
+		}
+	}
+	job_origin_contract_instrument_max_workforce_mult = 50
+}

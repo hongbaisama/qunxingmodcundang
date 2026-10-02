@@ -1,0 +1,12 @@
+@section_cost_beyond_infinity_corvette = 80
+@section_cost_beyond_infinity_frigate = 120
+@section_cost_beyond_infinity_destroyer = 240
+@section_cost_beyond_infinity_cruiser = 480
+@section_cost_beyond_infinity_battleship = 1280
+@section_cost_beyond_infinity_military_station = 480 # 特例，不是原版2倍而是原版4倍，对标巡洋
+@section_cost_beyond_infinity_titan = 3200
+@section_cost_beyond_infinity_ion_cannon = 1000
+@section_cost_beyond_infinity_colossus = 3200
+@section_cost_beyond_infinity_juggernaut = 20000
+
+@beyond_infinity_alloy_to_food_cost_ratio = 7 # 原版为3.5，超越无限区段翻倍

@@ -1,0 +1,303 @@
+max_r_time_count = {
+	base = 5
+	modifier = {
+		add = 1
+		has_country_flag = r_time_level_1
+	}
+	modifier = {
+		add = 2
+		has_country_flag = r_time_level_2
+	}
+	modifier = {
+		add = 3
+		has_country_flag = r_time_level_3
+	}
+	modifier = {
+		add = 4
+		has_country_flag = r_time_level_4
+	}
+	modifier = {
+		add = 5
+		has_country_flag = r_time_level_5
+	}
+}
+
+tech_end_modifier_value = {
+	base = 10
+	multiply = event_target:global_event_country.black_hole_horror_count
+	square_root = yes
+	floor = yes
+}
+
+d_time_horror_value = {
+	base = 0
+	modifier = {
+		add = owner.time_horror_bonus
+		exists = owner
+		owner = { is_variable_set = time_horror_bonus }
+	}
+	multiply = 0.02
+	max = 1
+	add = 1
+}
+
+num_horror_time_knowledge_modifier = {
+	base = 1
+	modifier = {
+		add = 0.25
+		any_owned_leader = {
+			is_head_of_research = yes
+			has_horror_time_knowledge = yes
+		}
+	}
+	modifier = {
+		add = 0.25
+		has_modifier = r_horror_matter_modifier
+	}
+	modifier = {
+		add = 0.5
+		r_time_is_active = yes
+	}
+}
+
+horror_time_tech_weight = {
+	base = @base_$LEVEL$_tech_weight
+	multiply = value:horror_time_tech_weight_modifier_$TYPE$_value
+	multiply = value:num_horror_time_knowledge_modifier
+	min = 0
+	max = 100
+}
+
+horror_time_tech_weight_modifier_rare_value = {
+	base = 1
+	multiply = value:num_time_modifier|MODIFIER|category_horror_time_draw_chance_mult|
+	multiply = value:num_time_modifier|MODIFIER|rare_tech_draw_chance_mult|
+}
+
+horror_time_tech_weight_modifier_dangerous_value = {
+	base = 1
+	multiply = value:num_time_modifier|MODIFIER|category_horror_time_draw_chance_mult|
+	multiply = value:num_time_modifier|MODIFIER|rare_tech_draw_chance_mult|
+	multiply = value:num_time_modifier|MODIFIER|dangerous_tech_draw_chance_mult|
+}
+
+agenda_tradition_horror_time_cost = {
+	base = $BASE|7000$
+	divide = value:num_time_modifier|MODIFIER|category_horror_time_research_speed_mult|MIN|1|
+	round = yes
+	min = $MIN|700$
+}
+
+# 很遗憾，蠢驴的议程冷却时间不能用sv
+agenda_tradition_horror_time_cooldown = {
+	base = 13000
+	divide = value:num_time_modifier|MODIFIER|category_horror_time_draw_chance_mult|MIN|1|
+	round = yes
+	min = 1300
+}
+
+num_finished_ap_horror_project_value = {
+	base = $BASE|0$
+	modifier = {
+		add = 1
+		has_leader_flag = leader_finish_ap_horror_project_time
+	}
+	modifier = {
+		add = 1
+		has_leader_flag = leader_finish_ap_horror_project_circle
+	}
+	modifier = {
+		add = 1
+		has_leader_flag = leader_finish_ap_horror_project_dimension
+	}
+}
+
+num_tradition_akx_building_base_value = {
+	base = 1
+	divide = owner.modifier:$MODIFIER$
+	max = 1
+	min = 0
+}
+
+num_tradition_akx_building_extra_value = {
+	base = 0.5
+	modifier = {
+		multiply = 2
+		owner = { has_ascension_perk = ap_time }
+	}
+	multiply = value:num_tradition_akx_building_base_value|MODIFIER|$MODIFIER$|
+}
+
+dimensional_horror_voidworms_created_chance = {
+	base = 0
+	modifier = {
+		add = 1
+		has_component = HORROR_MUTATION_BEAM_$SIZE$
+	}
+	modifier = {
+		add = 1
+		has_component = HORROR_MUTATION_ACCELERATOR_$SIZE$
+	}
+	modifier = {
+		add = 1
+		has_component = HORROR_MUTATION_SHIELD_$SIZE$
+	}
+	modifier = {
+		add = 1
+		has_component = HORROR_MUTATION_ARMOR_$SIZE$
+	}
+	multiply = $CHANCE$
+}
+
+add_random_psionic_tech_option_count = {
+	base = 2
+	modifier = {
+		add = 2
+		OR = {
+			has_psionic_ascension = yes
+			is_nemesis_crisis_country = yes
+		}
+	}
+	modifier = {
+		add = 1
+		has_origin = origin_contract
+	}
+	modifier = {
+		add = 1
+		has_origin = origin_blessed_by_god
+	}
+	modifier = {
+		add = 1
+		has_origin = origin_equinox_glimpse
+	}
+	modifier = {
+		add = 2
+		has_country_flag = unseal_equinox_seal
+		exists = event_target:equinox_seal_sleeper_fleet
+	}
+	modifier = {
+		add = 3
+		has_country_flag = worm_tomb_ending
+	}
+	max = 7
+	floor = yes
+}
+
+# 负相武器
+horror_weapon_confuse_chance = {
+	base = $CHANCE$
+	divide = trigger:ship_size_multiplier
+	multiply = 5 # 4.3舰船大小增加
+	multiply = @horror_weapon_bio_ships_$BIO_SHIPS$
+	multiply = value:weapon_confuser_active_chance|MIN|0.05|
+	min = 0
+	max = 100
+}
+
+horror_weapon_terrify_chance = {
+	base = $CHANCE$
+	divide = trigger:ship_size_multiplier
+	multiply = 5 # 4.3舰船大小增加
+	multiply = @horror_weapon_bio_ships_$BIO_SHIPS$
+	multiply = value:ship_terrify_active_chance|MIN|0.05|
+	min = 0
+	max = 100
+}
+
+# 定时者
+leader_trait_time_keeper_value = {
+	base = 1
+	modifier = {
+		add = 0.5
+		owner = {
+			is_part_of_galactic_council = yes
+			is_galactic_custodian = no
+			is_galactic_emperor = no
+		}
+	}
+	modifier = {
+		add = 1.5
+		owner = {
+			OR = {
+				is_galactic_custodian = yes
+				is_galactic_emperor = yes
+			}
+		}
+	}
+}
+
+leader_trait_time_keeper_upkeep_value = {
+	base = 0
+	modifier = {
+		add = 1
+		OR = {
+			has_resolution_time_keeper_breakthrough_focus_on_shield = yes
+			has_resolution_time_keeper_breakthrough_focus_on_armor = yes
+		}
+	}
+	modifier = {
+		add = 1
+		OR = {
+			has_resolution_time_keeper_resistance_focus_on_energy = yes
+			has_resolution_time_keeper_resistance_focus_on_kinetic = yes
+		}
+	}
+	modifier = {
+		add = 1
+		OR = {
+			has_resolution_time_keeper_offensive_tactics_of_snipe = yes
+			has_resolution_time_keeper_offensive_tactics_of_pour = yes
+		}
+	}
+	modifier = {
+		add = 1
+		OR = {
+			has_resolution_time_keeper_defensive_tactics_of_cover = yes
+			has_resolution_time_keeper_defensive_tactics_of_maneuver = yes
+		}
+	}
+	modifier = {
+		add = 1
+		OR = {
+			has_resolution_time_keeper_logistics_strategy_of_support = yes
+			has_resolution_time_keeper_logistics_strategy_of_supply = yes
+		}
+	}
+	modifier = {
+		add = 1
+		OR = {
+			has_resolution_time_keeper_command_strategy_of_elite = yes
+			has_resolution_time_keeper_command_strategy_of_cluster = yes
+		}
+	}
+}
+
+leader_trait_time_keeper_skill_value = {
+	base = 0
+	add = value:num_time_leader_skill
+	multiply = value:leader_trait_time_keeper_value
+}
+
+leader_trait_time_keeper_cooperation_value = {
+	base = 0
+	complex_trigger_modifier = {
+		trigger_scope = fleet.solar_system
+		trigger = count_fleet_in_system
+		parameters = {
+			limit = {
+				exists = leader
+				leader = {
+					has_trait = leader_trait_time_keeper
+				}
+				controller = {
+					NOT = { is_hostile = root.owner }
+				}
+			}
+		}
+		mode = add
+	}
+	subtract = 1 # 排除自身
+	min = 0
+	max = 5
+	multiply = value:leader_trait_time_keeper_value
+}

@@ -1,0 +1,5 @@
+tao_of_ninghe = {
+	priority = 4
+	localization = tao_of_ninghe
+	icon = "GFX_category_tao_of_ninghe"
+}

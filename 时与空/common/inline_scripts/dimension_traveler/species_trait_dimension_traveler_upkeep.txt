@@ -1,0 +1,63 @@
+# 界旅者无需常规维护费
+triggered_leader_modifier = {
+	potential = {
+		has_vanilla_leader_upkeep = yes
+		has_full_vanilla_leader_unity_upkeep = yes
+		NOT = { has_trait = leader_trait_abandoned_by_god }
+	}
+	leader_officials_unity_upkeep_add = -2
+	leader_scientists_unity_upkeep_add = -2
+	leader_commanders_unity_upkeep_add = -2
+	mult = trigger:has_base_skill
+}
+triggered_leader_modifier = {
+	potential = {
+		has_vanilla_leader_upkeep = yes
+		has_half_vanilla_leader_unity_upkeep = yes
+		NOT = { has_trait = leader_trait_abandoned_by_god }
+	}
+	leader_officials_unity_upkeep_add = -1
+	leader_scientists_unity_upkeep_add = -1
+	leader_commanders_unity_upkeep_add = -1
+	mult = trigger:has_base_skill
+}
+triggered_leader_modifier = {
+	potential = {
+		has_vanilla_leader_upkeep = yes
+		has_full_vanilla_leader_trade_upkeep = yes
+	}
+	leader_officials_trade_upkeep_add = -2
+	leader_scientists_trade_upkeep_add = -2
+	leader_commanders_trade_upkeep_add = -2
+	mult = trigger:has_base_skill
+}
+triggered_leader_modifier = {
+	potential = {
+		has_vanilla_leader_upkeep = yes
+		has_full_vanilla_leader_food_upkeep = yes
+	}
+	leader_officials_food_upkeep_add = -2
+	leader_scientists_food_upkeep_add = -2
+	leader_commanders_food_upkeep_add = -2
+	mult = trigger:has_base_skill
+}
+triggered_leader_modifier = {
+	potential = {
+		has_vanilla_leader_upkeep = yes
+		has_full_vanilla_leader_minerals_upkeep = yes
+	}
+	leader_officials_minerals_upkeep_add = -2
+	leader_scientists_minerals_upkeep_add = -2
+	leader_commanders_minerals_upkeep_add = -2
+	mult = trigger:has_base_skill
+}
+triggered_leader_modifier = {
+	potential = {
+		has_vanilla_leader_upkeep = yes
+		has_full_vanilla_leader_energy_upkeep = yes
+	}
+	leader_officials_energy_upkeep_add = -2
+	leader_scientists_energy_upkeep_add = -2
+	leader_commanders_energy_upkeep_add = -2
+	mult = trigger:has_base_skill
+}

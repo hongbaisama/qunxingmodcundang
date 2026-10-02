@@ -1,0 +1,39 @@
+[h1]Main Contents[/h1]
+1.Add [b]54[/b] origins and enhance [b]8[/b] vanilla origins.
+2.The initial fixed formation of four special black hole systems, and the event chain "The Worm-in-Waiting: Signals" can only be triggered by these four special systems(one of them is OK).
+3.Add [b]White hole[/b],The initial fixed formation of four white hole systems can trigger the event chain "The Worm-in-Waiting: Traveler"(no origin requirements).
+4.The Worm-in-Waiting mother loves every child equally. Now Gestalt countries can also trigger the event chain "The Worm-in-Waiting: Signals".
+5.Add many things for Worm-in-Waiting,such as the [b]events[/b],[b]buildings[/b],[b]technologies[/b],[b]specimens[/b],[b]archaeological sites[/b],[b]astral rifts[/b],[b]traditions[/b] and [b]ascension perks[/b].
+6.Add the legendary leader [b]Dimension Traveler[/b],the legendary leader [b]Ghost Captain[/b] and the renowned leader [b]C.A.R.E[/b].
+7.Add new crisis path [b]Beyond Infinity[/b].
+8.Add [b]Gaia World Exclusive Features[/b] to enhance Gaia World.
+9.Add [b]Form Ring Network[/b] to enhance Ring World.
+10.This mod is translated into English by [url=steamcommunity.com/id/enzerox][u][b]@enzerox[/b][/u][/url]
+
+[h1]Introduction to origin[/h1]
+[url=steamcommunity.com/sharedfiles/filedetails/?id=3155069940][u][b]Introduction to origin of TimeMod(Page two)[/b][/u][/url]
+
+[h1]Relevant MOD[/h1]
+Required mod:[url=steamcommunity.com/sharedfiles/filedetails/?id=3243731913][u][b]小狐狸的底层框架[/b][/u][/url]
+Has joined [url=steamcommunity.com/sharedfiles/filedetails/?id=2807759164][u][b]! The Merger of Rules[/b][/u][/url] and [url=steamcommunity.com/sharedfiles/filedetails/?id=2409276081][u][b]!伞の泛用规则兼容![/b][/u][/url]
+[url=steamcommunity.com/sharedfiles/filedetails/?id=2944007311][u][b]Prescripted countries of TimeMod[/b][/u][/url]
+[url=steamcommunity.com/sharedfiles/filedetails/?id=2889738712][u][b]Compatible patch of TimeMod and UI Overhaul Dynamic[/b][/u][/url]
+[url=steamcommunity.com/sharedfiles/filedetails/?id=3499933684][u][b]Compatible patch of TimeMod and Dark Blue UI[/b][/u][/url]
+
+[h1]MOD Compatibility[/h1]
+If you don't want your non-artificial planet to become nuked or black hole, you can set planet flag to the planet [b]can_not_be_changed_by_akx_worm[/b]
+If you want your country use uncapped rural districts,you can set country flag to the country [b]use_district_generator_uncapped[/b],[b]use_district_mining_uncapped[/b],[b]use_district_farming_uncapped[/b]
+This mod has modified:
+1.[b]ascension_paths[/b],[b]ap_defender_of_the_galaxy[/b],[b]ap_become_the_crisis[/b],[b]ap_cosmogenesis[/b],[b]ap_behemoths[/b],[b]ap_galactic_hyperthermia[/b] in [b]ascension_perks[/b]
+2.[b]tr_genetics_adopt[/b],[b]tr_psionics_adopt[/b],[b]tr_synthetics_adopt[/b],[b]tr_cybernetics_assimilator_adopt[/b] in [b]traditions[/b]
+3.[b]auth_democratic[/b],[b]auth_imperial[/b],[b]auth_corporate[/b] in [b]authorities[/b]
+4.[b]country_container[/b]
+5.some [b]economic_categories[/b]
+6.[b]decision_arcology_project[/b],[b]decision_project_cornucopia[/b],[b]decision_baol_life_seed[/b] in [b]decisions[/b]
+7.[b]02_rural_districts[/b] in [b]districts[/b]
+8.[b]allowed_zones_urban[/b],[b]allowed_zones_habitat_urban[/b],[b]allowed_zones_rw[/b],[b]fallen_empire_building_limits[/b] in [b]inline_scripts[/b]
+9.[b]dimensional horror[/b] in [b]global_ship_designs[/b]
+10.[b]MAX_CARRYING_CAPACITY[/b],[b]COUNCIL_RESEARCH_POSITIONS[/b],[b]COUNCIL_NAVAL_POSITIONS[/b],[b]COUNCIL_DIPLOMACY_POSITIONS[/b] in [b]defines[/b]
+11.[b]pop_has_random_ethics[/b],[b]species_has_happiness[/b],[b]can_colony_auto_migrate[/b],[b]can_colony_receive_auto_migration[/b] in [b]game_rules[/b]
+12.some [b]events[/b],[b]scripted_effects[/b],[b]scripted_triggers[/b]
+13.fallen empire buildings [b]technology[/b]

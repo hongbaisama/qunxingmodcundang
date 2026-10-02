@@ -1,0 +1,236 @@
+﻿l_english:
+ # 数据库类型
+ databank_origin_time: "Mysterious Singularity"
+ 
+ # 修正
+ time_researcher_produces_formula: "§HFinal Base Output§!=§CInitial Base Output§! x['concept_time_researcher_weight_yellow']x(1-['concept_district_time_usage_punishment_red'])x['concept_time_researcher_resources_produces_mult_green']x['concept_time_researcher_produces_mult_green']"
+ 
+ concept_time_researcher_resource_weight_white: "§W£job_time_recursioner£Basic Resource Search Weight in Mysterious Singularity£col_time_capital_resource£§!"
+ concept_time_researcher_resource_weight: "£job_time_recursioner£Basic Resource Search Weight in Mysterious Singularity£col_time_capital_resource£"
+ concept_time_researcher_resource_weight_desc: "This represents the tendency of ['concept_planet_time_researchers_with_icon'] to search for $r_energy$, $r_minerals$, $r_food$ in spacetime, and affects their base output of $r_energy$, $r_minerals$, $r_food$.\n\nThis belongs to ['concept_time_researcher_weight']"
+ 
+ concept_time_researcher_manufacturing_weight_white: "§W£job_time_recursioner£Industrial Resource Search Weight in Mysterious Singularity£col_time_capital_manufacturing£§!"
+ concept_time_researcher_manufacturing_weight: "£job_time_recursioner£Industrial Resource Search Weight in Mysterious Singularity£col_time_capital_manufacturing£"
+ concept_time_researcher_manufacturing_weight_desc: "This represents the tendency of ['concept_planet_time_researchers_with_icon'] to search for $r_alloys$, $r_consumer_goods$ in spacetime, and affects their base output of $r_alloys$, $r_consumer_goods$.\n\nThis belongs to ['concept_time_researcher_weight']"
+ 
+ concept_time_researcher_unity_weight_white: "§W£job_time_recursioner£Spiritual Resource Search Weight in Mysterious Singularity£col_time_capital_unity£§!"
+ concept_time_researcher_unity_weight: "£job_time_recursioner£Spiritual Resource Search Weight in Mysterious Singularity£col_time_capital_unity£"
+ concept_time_researcher_unity_weight_desc: "This represents the tendency of ['concept_planet_time_researchers_with_icon'] to search for $r_unity$ in spacetime, and affects their base output of $r_unity$.\n\nThis belongs to ['concept_time_researcher_weight']"
+ 
+ concept_time_researcher_research_weight_white: "§W£job_time_recursioner£Research Resource Search Weight in Mysterious Singularity£col_time_capital_research£§!"
+ concept_time_researcher_research_weight: "£job_time_recursioner£Research Resource Search Weight in Mysterious Singularity£col_time_capital_research£"
+ concept_time_researcher_research_weight_desc: "This represents the tendency of ['concept_planet_time_researchers_with_icon'] to search for $r_physics$, $r_society$, $r_engineering$ in spacetime, and affects their base output of $r_physics$, $r_society$, $r_engineering$.\n\nThis belongs to ['concept_time_researcher_weight']"
+ 
+ concept_time_researcher_max_weight_abbreviation: "£col_time_capital£Resource Search Weight Cap"
+ concept_time_researcher_max_weight_white: "§W£job_time_recursioner£Resource Search Weight Cap in Mysterious Singularity£col_time_capital£§!"
+ concept_time_researcher_max_weight: "£job_time_recursioner£Resource Search Weight Cap in Mysterious Singularity£col_time_capital£"
+ concept_time_researcher_max_weight_desc: "This represents the upper limit of ability that ['concept_planet_time_researchers_with_icon'] can allocate to ['concept_time_researcher_weight_abbreviation']. If the allocated weight exceeds the cap, ['concept_planet_time_researchers_with_icon'] will §Rdrastically reduce§! search efficiency due to mental exhaustion.\n\nFor every §Y1%§! exceeding the weight cap, the final resources output of ['concept_planet_time_researchers_with_icon'] will be reduced by §R-1.8%§! (up to §R-90%§!)"
+ 
+ concept_time_researcher_weight_usage: "£job_time_recursioner£Resource Search Weight Usage in Mysterious Singularity£col_time_capital£"
+ concept_time_researcher_weight_abbreviation: "£col_time_capital£Resource Search Weight"
+ concept_time_researcher_weight_yellow: "§Y£col_time_capital£Resource Search Weight§!"
+ concept_time_researcher_weight: "£job_time_recursioner£Resource Search Weight in Mysterious Singularity£col_time_capital£"
+ concept_time_researcher_weight_desc: "This represents the tendency of ['concept_planet_time_researchers_with_icon'] to search for specific £strategic£§YResources§! in spacetime, and affects their base output of £strategic£§YResources§!.\n\nThe §HTotal Weight§! should not exceed ['concept_time_researcher_max_weight_abbreviation'], otherwise ['concept_planet_time_researchers_with_icon'] will §Rdrastically reduce§! search efficiency due to mental exhaustion.\n\n$time_researcher_produces_formula$"
+ 
+ concept_time_researcher_energy_produces_mult_white: "§W£job_time_recursioner£Spacetime Abundance of $energy_with_icon$ in Mysterious Singularity§!"
+ concept_time_researcher_energy_produces_mult: "£job_time_recursioner£Spacetime Abundance of $energy_with_icon$ in Mysterious Singularity"
+ concept_time_researcher_energy_produces_mult_desc: "This represents the chance for ['concept_planet_time_researchers_with_icon'] to obtain $r_energy$ in spacetime, and affects their base output of $r_energy$.\n\nThis belongs to ['concept_time_researcher_resources_produces_mult']"
+ 
+ concept_time_researcher_minerals_produces_mult_white: "§W£job_time_recursioner£Spacetime Abundance of $minerals_with_icon$ in Mysterious Singularity§!"
+ concept_time_researcher_minerals_produces_mult: "£job_time_recursioner£Spacetime Abundance of $minerals_with_icon$ in Mysterious Singularity"
+ concept_time_researcher_minerals_produces_mult_desc: "This represents the chance for ['concept_planet_time_researchers_with_icon'] to obtain $r_minerals$ in spacetime, and affects their base output of $r_minerals$.\n\nThis belongs to ['concept_time_researcher_resources_produces_mult']"
+ 
+ concept_time_researcher_food_produces_mult_white: "§W£job_time_recursioner£Spacetime Abundance of $food_with_icon$ in Mysterious Singularity§!"
+ concept_time_researcher_food_produces_mult: "£job_time_recursioner£Spacetime Abundance of $food_with_icon$ in Mysterious Singularity"
+ concept_time_researcher_food_produces_mult_desc: "This represents the chance for ['concept_planet_time_researchers_with_icon'] to obtain $r_food$ in spacetime, and affects their base output of $r_food$.\n\nThis belongs to ['concept_time_researcher_resources_produces_mult']"
+ 
+ concept_time_researcher_consumer_goods_produces_mult_white: "§W£job_time_recursioner£Spacetime Abundance of $consumer_goods_with_icon$ in Mysterious Singularity§!"
+ concept_time_researcher_consumer_goods_produces_mult: "£job_time_recursioner£Spacetime Abundance of $consumer_goods_with_icon$ in Mysterious Singularity"
+ concept_time_researcher_consumer_goods_produces_mult_desc: "This represents the chance for ['concept_planet_time_researchers_with_icon'] to obtain $r_consumer_goods$ in spacetime, and affects their base output of $r_consumer_goods$ and base upkeep.\n\nThis belongs to ['concept_time_researcher_resources_produces_mult']"
+ 
+ concept_time_researcher_alloys_produces_mult_white: "§W£job_time_recursioner£Spacetime Abundance of $alloys_with_icon$ in Mysterious Singularity§!"
+ concept_time_researcher_alloys_produces_mult: "£job_time_recursioner£Spacetime Abundance of $alloys_with_icon$ in Mysterious Singularity"
+ concept_time_researcher_alloys_produces_mult_desc: "This represents the chance for ['concept_planet_time_researchers_with_icon'] to obtain $r_alloys$ in spacetime, and affects their base output of $r_alloys$ and base upkeep.\n\nThis belongs to ['concept_time_researcher_resources_produces_mult']"
+ 
+ concept_time_researcher_unity_produces_mult_white: "§W£job_time_recursioner£Spacetime Abundance of $unity_with_icon$ in Mysterious Singularity§!"
+ concept_time_researcher_unity_produces_mult: "£job_time_recursioner£Spacetime Abundance of $unity_with_icon$ in Mysterious Singularity"
+ concept_time_researcher_unity_produces_mult_desc: "This represents the chance for ['concept_planet_time_researchers_with_icon'] to obtain $r_unity$ in spacetime, and affects their base output of $r_unity$ and base upkeep.\n\nThis belongs to ['concept_time_researcher_resources_produces_mult']"
+ 
+ concept_time_researcher_physics_research_produces_mult_white: "§W£job_time_recursioner£Spacetime Abundance of $physics_research_with_icon$ in Mysterious Singularity§!"
+ concept_time_researcher_physics_research_produces_mult: "£job_time_recursioner£Spacetime Abundance of $physics_research_with_icon$ in Mysterious Singularity"
+ concept_time_researcher_physics_research_produces_mult_desc: "This represents the chance for ['concept_planet_time_researchers_with_icon'] to obtain $r_physics$ in spacetime, and affects their base output of $r_physics$ and base upkeep.\n\nThis belongs to ['concept_time_researcher_resources_produces_mult']"
+ 
+ concept_time_researcher_society_research_produces_mult_white: "§W£job_time_recursioner£Spacetime Abundance of $society_research_with_icon$ in Mysterious Singularity§!"
+ concept_time_researcher_society_research_produces_mult: "£job_time_recursioner£Spacetime Abundance of $society_research_with_icon$ in Mysterious Singularity"
+ concept_time_researcher_society_research_produces_mult_desc: "This represents the chance for ['concept_planet_time_researchers_with_icon'] to obtain $r_society$ in spacetime, and affects their base output of $r_society$ and base upkeep.\n\nThis belongs to ['concept_time_researcher_resources_produces_mult']"
+ 
+ concept_time_researcher_engineering_research_produces_mult_white: "§W£job_time_recursioner£Spacetime Abundance of $engineering_research_with_icon$ in Mysterious Singularity§!"
+ concept_time_researcher_engineering_research_produces_mult: "£job_time_recursioner£Spacetime Abundance of $engineering_research_with_icon$ in Mysterious Singularity"
+ concept_time_researcher_engineering_research_produces_mult_desc: "This represents the chance for ['concept_planet_time_researchers_with_icon'] to obtain $r_engineering$ in spacetime, and affects their base output of $r_engineering$ and base upkeep.\n\nThis belongs to ['concept_time_researcher_resources_produces_mult']"
+ 
+ concept_time_researcher_resources_produces_mult_white: "§W£job_time_recursioner£Spacetime Abundance of £strategic£Resources in Mysterious Singularity§!"
+ concept_time_researcher_resources_produces_mult_green: "§G£strategic£Spacetime Abundance of Resources§!"
+ concept_time_researcher_resources_produces_mult: "£job_time_recursioner£Spacetime Abundance of £strategic£Resources in Mysterious Singularity"
+ concept_time_researcher_resources_produces_mult_desc: "This represents the chance for ['concept_planet_time_researchers_with_icon'] to obtain £strategic£§YResources§! in spacetime, and affects their base output of £strategic£§YResources§!.\n\n$time_researcher_produces_formula$"
+ 
+ concept_time_researcher_produces_mult_white: "§W£job_time_recursioner£Spacetime Travel Efficiency in Mysterious Singularity£mod_time_researcher_produces_mult£§!"
+ concept_time_researcher_produces_mult_green: "§G£mod_time_researcher_produces_mult£Spacetime Travel Efficiency§!"
+ concept_time_researcher_produces_mult_yellow: "§Y£mod_time_researcher_produces_mult£Spacetime Travel Efficiency§!"
+ concept_time_researcher_produces_mult: "£job_time_recursioner£Spacetime Travel Efficiency in Mysterious Singularity£mod_time_researcher_produces_mult£"
+ concept_time_researcher_produces_mult_desc: "This represents the efficiency of ['concept_planet_time_researchers_with_icon'] in performing spacetime travel, and affects their base output of £strategic£§YResources§!.\n\n$time_researcher_produces_formula$"
+ 
+ concept_district_time_usage_white: "§W£job_time_recursioner£Spacetime Lane Usage in Mysterious Singularity£mod_district_time_usage£§!"
+ concept_district_time_usage_short: "£mod_district_time_usage£Spacetime Lane Usage"
+ concept_district_time_usage: "£job_time_recursioner£Spacetime Lane Usage in Mysterious Singularity£mod_district_time_usage£"
+ concept_district_time_usage_desc: "This represents the occupation of spacetime lanes by ['concept_planet_time_researchers_with_icon']. Occupied lanes should not exceed lane capacity, otherwise ['concept_planet_time_researchers_with_icon'] will §Rdrastically reduce§! search efficiency due to lane congestion.\n\nFor every §Y1%§! that ['concept_district_time_usage_short'] exceeds ['concept_district_time_usage_cap_short'], the final resources output of ['concept_planet_time_researchers_with_icon'] will be reduced by §R-0.9%§! (up to §R-90%§!), which is ['concept_district_time_usage_punishment_short']"
+ 
+ concept_district_time_usage_cap_white: "§W£job_time_recursioner£Spacetime Lane Capacity in Mysterious Singularity£mod_district_time_usage£§!"
+ concept_district_time_usage_cap_mult_white: "§W£job_time_recursioner£Spacetime Lane Capacity in Mysterious Singularity£mod_district_time_usage_cap_mult£§!"
+ concept_district_time_usage_cap_short: "£mod_district_time_usage£Spacetime Lane Capacity"
+ concept_district_time_usage_cap: "£job_time_recursioner£Spacetime Lane Capacity in Mysterious Singularity£mod_district_time_usage£"
+ concept_district_time_usage_cap_desc: "This represents the maximum capacity of spacetime lanes that can be used by ['concept_planet_time_researchers_with_icon']. If occupied lanes exceed lane capacity, ['concept_planet_time_researchers_with_icon'] will §Rdrastically reduce§! search efficiency due to lane congestion.\n\nFor every §Y1%§! that ['concept_district_time_usage_short'] exceeds ['concept_district_time_usage_cap_short'], the final resources output of ['concept_planet_time_researchers_with_icon'] will be reduced by §R-0.9%§! (up to §R-90%§!), which is ['concept_district_time_usage_punishment_short']"
+ 
+ concept_district_time_usage_punishment_red: "§R£mod_district_time_usage£Lane Overcapacity Penalty§!"
+ concept_district_time_usage_punishment_short: "£mod_district_time_usage£Lane Overcapacity Penalty"
+ concept_district_time_usage_punishment: "£job_time_recursioner£Lane Overcapacity Penalty in Mysterious Singularity£mod_district_time_usage£"
+ concept_district_time_usage_punishment_desc: "This represents the obstruction of ['concept_planet_time_researchers_with_icon'] by each other in limited spacetime lanes, reducing their base output of £strategic£§YResources§!.\n\nFor every §Y1%§! that ['concept_district_time_usage_short'] exceeds ['concept_district_time_usage_cap_short'], the final resources output of ['concept_planet_time_researchers_with_icon'] will be reduced by §R-0.9%§! (up to §R-90%§!)\n\n$time_researcher_produces_formula$"
+ 
+ concept_col_time_mult_white: "§W£job_time_recursioner£Inverse Phase Ascension Effect in Mysterious Singularity£mod_col_time_mult£§!"
+ concept_col_time_mult_yellow: "§Y£job_time_recursioner£Inverse Phase Ascension Effect in Mysterious Singularity£mod_col_time_mult£§!"
+ concept_col_time_mult: "£job_time_recursioner£Inverse Phase Ascension Effect in Mysterious Singularity£mod_col_time_mult£"
+ concept_col_time_mult_desc: "This represents the ascension degree of the £mod_col_time_mult£§YMysterious Singularity§! entering the Inverse Phase, and affects the basic effect of the exclusive §YPlanetary Designation§! when it is the capital."
+ 
+ # 政策
+ concept_policy_origin_time_resource: "§G£col_time_capital_resource£Survival Needs§!"
+ concept_policy_origin_time_manufacturing: "§R£col_time_capital_manufacturing£Industrial Production§!"
+ concept_policy_origin_time_unity: "§C£col_time_capital_unity£Meaning Insight§!"
+ concept_policy_origin_time_research: "§B£col_time_capital_research£Law Seeking§!"
+ concept_policy_origin_time_policy: "£policy£Singularity Exploration Policy"
+ concept_policy_origin_time: "£job_time_recursioner£Singularity Exploration Policy in Mysterious Singularity£policy£"
+ concept_policy_origin_time_desc: "This represents the policy followed by ['concept_planet_time_researchers_with_icon'] when conducting singularity exploration. Different policies will provide different ['concept_time_researcher_weight']."
+ 
+ # 政体
+ concept_auth_time_democratic: "$auth_time_democratic$"
+ concept_auth_time_imperial: "$auth_time_imperial$"
+ concept_auth_time_corporate: "$auth_time_corporate$"
+ concept_auth_endless_time_democratic: "$auth_endless_time_democratic$"
+ concept_auth_endless_time_imperial: "$auth_endless_time_imperial$"
+ concept_auth_endless_time_corporate: "$auth_endless_time_corporate$"
+ 
+ # 特质
+ concept_origin_time_chosen_common: "§cChild of the Loop§!"
+ concept_origin_time_chosen_veteran: "§vChild of the Loop§!"
+ concept_origin_time_chosen_paragon: "§dChild of the Loop§!"
+ concept_origin_time_chosen: "§MChild of the Loop§!"
+ concept_origin_time_chosen_desc: "§MChild of the Loop§! is the person chosen by the §HLoop§!, who is crucial to §Y$origin_time$§!. Their §Ylatent potential§! and §Ydestiny§! will also bring §Yunpredictable§! effects to the empire."
+ 
+ concept_leader_trait_ruler_time: "$leader_trait_ruler_time$"
+ concept_leader_trait_ruler_time_desc: "$origin_time_chosen_subtitle_common$\n\n$THIS_LEADER_TXT$:\n$t$-$TRAIT_IMMORTAL_LEADERS$\n$h_line$$pc_time_pitcure$ §LTo survive in a Black Hole, a wise leader is indispensable, and this leader is the best candidate.§!\n§G$origin_time$['concept_time_ruler_trait_green']§!"
+ concept_leader_trait_ruler_time_owner: "$leader_trait_ruler_time_owner$"
+ concept_leader_trait_ruler_time_owner_desc: "$origin_time_chosen_subtitle_veteran$\n\n$THIS_LEADER_TXT$:\n$t$-$TRAIT_IMMORTAL_LEADERS$\n$h_line$$origin_time_picture$ §LBeing able to resurrect from a pure Black Hole, this leader must be a messenger from the singularity, able to convey to us the information behind the Horizon Signal.§!\n§G$origin_time$['concept_time_ruler_trait_green']§!"
+ concept_leader_trait_ruler_time_king: "$leader_trait_ruler_time_king$"
+ concept_leader_trait_ruler_time_king_desc: "$origin_time_chosen_subtitle_paragon$\n\n$THIS_LEADER_TXT$:\n$t$-$TRAIT_IMMORTAL_LEADERS$\n$h_line$$pc_endless_time_picture$ §LWith the deepening research on the singularity, this leader gradually mastered the ability to distort and transform spacetime at will. Spacetime has been ruled by us.§!\n§G$origin_time$['concept_time_ruler_trait_green']§!"
+ 
+ concept_origin_time_species_trait: "$origin_time$ Species Trait"
+ concept_origin_time_species_trait_desc: "$concept_origin_time_species_trait$ is a species trait exclusive to §Y$origin_time$§! origin.\nSuch traits allow species to survive on ['concept_pc_time'], train as exclusive §Y$origin_time_army_plural$§! armies, and cannot be added or removed."
+ 
+ concept_trait_time: "$trait_time$"
+ concept_time_soul_species_trait: "$trait_time_soul$ Species Trait"
+ concept_trait_time_soul: "$trait_time_soul$"
+ concept_trait_time_soul_desc: "$trait_time_soul$ includes\n-['concept_trait_time_soul_virtuality']§C(Virtual)§!\n-['concept_trait_time_soul_synthetic']§C(Synthetic)§!\n-['concept_trait_time_soul_cybernetic']§C(Cybernetic)§!\n-['concept_trait_time_soul_genetic']§C(Genetic)§!\n-['concept_trait_time_soul_psionic']§C(Psionic)§!"
+ concept_trait_time_soul_virtuality: "$trait_time_soul_virtuality$"
+ concept_trait_time_soul_synthetic: "$trait_time_soul_synthetic$"
+ concept_trait_time_soul_cybernetic: "$trait_time_soul_cybernetic$"
+ concept_trait_time_soul_genetic: "$trait_time_soul_genetic$"
+ concept_trait_time_soul_psionic: "$trait_time_soul_psionic$"
+ 
+ # 岗位
+ concept_planet_time_researchers: "$planet_time_researchers$"
+ concept_planet_time_researchers_with_icon: "$planet_time_researchers_with_icon$"
+ concept_planet_time_researchers_with_icon_standard_green: "§E$planet_time_researchers_with_icon$§!"
+ concept_planet_time_researchers_desc: "$concept_planet_time_researchers$ is a type of job that can shuttle through spacetime lanes and obtain resources, while exploring the Mysterious Singularity.\n\n$concept_planet_time_researchers$ includes\n-['concept_black_hole_physicist']\n-['concept_black_hole_biologist']\n-['concept_black_hole_engineer']\n-['concept_time_recursioner']\n-['concept_planet_time_orders']"
+ 
+ concept_planet_time_orders: "$planet_time_orders$"
+ concept_planet_time_orders_with_icon: "$planet_time_orders_with_icon$"
+ concept_planet_time_orders_desc: "$concept_planet_time_orders$ is a special type of job provided by ['concept_building_origin_time_authority'] based on the winning ethics, capable of producing resources based on planet population and enhancing ['concept_col_time_mult'].\n\n$concept_planet_time_orders$ includes\n-§I$job_hope_guardian_plural_with_icon$§!\n-§I$job_hope_disseminator_plural_with_icon$§!\n-§I$job_eternal_observer_plural_with_icon$§!\n-§I$job_eternal_creator_plural_with_icon$§!\n-§I$job_dimensional_ruler_plural_with_icon$§!\n-§I$job_dimensional_conqueror_plural_with_icon$§!\n-§I$job_original_meditator_plural_with_icon$§!\n-§I$job_original_purifier_plural_with_icon$§!"
+ 
+ concept_black_hole_physicist: "$job_black_hole_physicist_plural$"
+ concept_black_hole_physicist_desc: "[black_hole_physicist.GetNamePlural] is a composite job that produces $i_energy$, $i_consumer_goods$ and $i_physics$, and is treated as §I$job_technician$§!, §I$job_artisan$§! and §I$job_physicist$§! jobs.\n\nConversion Rate:\n§INone§!→4$i_energy$\n1$i_minerals$+1$i_food$→2$i_consumer_goods$\n1$i_energy$+0.5$i_consumer_goods$+0.25$i_alloys$→2$i_physics$\n\n§L$job_black_hole_physicist_desc$§!"
+ 
+ concept_black_hole_biologist: "$job_black_hole_biologist_plural$"
+ concept_black_hole_biologist_desc: "[black_hole_biologist.GetNamePlural] is a composite job that produces $i_food$, $i_unity$ and $i_society$, and is treated as §I$job_farmer$§!, §I$job_bureaucrat$§! and §I$job_biologist$§! jobs.\n\nConversion Rate:\n§INone§!→4$i_food$\n0.5$i_consumer_goods$+0.5$i_alloys$→2$i_unity$\n1$i_food$+0.5$i_consumer_goods$+0.25$i_alloys$→2$i_society$\n\n§L$job_black_hole_biologist_desc$§!"
+ 
+ concept_black_hole_engineer: "$job_black_hole_engineer_plural$"
+ concept_black_hole_engineer_desc: "[black_hole_engineer.GetNamePlural] is a composite job that produces $i_minerals$, $i_alloys$ and $i_engineering$, and is treated as §I$job_miner$§!, §I$job_foundry$§! and §I$job_engineer$§! jobs.\n\nConversion Rate:\n§INone§!→4$i_minerals$\n1$i_energy$+1$i_minerals$→2$i_alloys$\n1$i_minerals$+0.5$i_consumer_goods$+0.25$i_alloys$→2$i_engineering$\n\n§L$job_black_hole_engineer_desc$§!"
+ 
+ concept_time_recursioner: "$job_time_recursioner_plural$"
+ concept_time_recursioner_desc: "[time_recursioner.GetNamePlural] is a composite job that produces $i_energy$, $i_minerals$, $i_food$, $i_consumer_goods$, $i_alloys$, $i_unity$ and $i_research$, and is treated as §I$job_technician$§!, §I$job_miner$§!, §I$job_farmer$§!, §I$job_artisan$§!, §I$job_foundry$§!, §I$job_bureaucrat$§! and §IResearcher§! jobs.\n\nConversion Rate:\n§INone§!→2$i_energy$+2$i_minerals$+2$i_food$\n0.5$i_minerals$+0.5$i_food$→1$i_consumer_goods$\n0.5$i_energy$+0.5$i_minerals$→1$i_alloys$\n0.25$i_consumer_goods$+0.25$i_alloys$→1$i_unity$\n0.5$i_energy$+0.25$i_consumer_goods$+0.125$i_alloys$→1$i_physics$\n0.5$i_food$+0.25$i_consumer_goods$+0.125$i_alloys$→1$i_society$\n0.5$i_minerals$+0.25$i_consumer_goods$+0.125$i_alloys$→1$i_engineering$\n\n§L$job_time_recursioner_desc$§!"
+ 
+ # 传统
+ concept_tradition_origin_time: "$tradition_origin_time$"
+ 
+ # 飞升
+ concept_ap_origin_time: "$ap_origin_time$"
+ 
+ # 地块
+ concept_pc_time_deposits: "Plane Features"
+ concept_pc_time_deposits_desc: "$concept_pc_time_deposits$是由奇点与其它位面之间的数个裂缝与通道组成的独特星球特征，来自其它位面的丰富资源可以提升['concept_time_researcher_resources_produces_mult']。\n\nThe limit of same $concept_pc_time_deposits$ is §Y$@pc_time_deposits_limit_1|0$§!\n\n$concept_pc_time_deposits$ includes\n—§I$d_time_energy$§!\n—§I$d_time_minerals$§!\n—§I$d_time_food$§!\n—§I$d_time_alloys$§!\n—§I$d_time_consumer_goods$§!\n—§I$d_time_physics_research$§!\n—§I$d_time_society_research$§!\n—§I$d_time_engineering_research$§!\n—§I$d_time_unity$§!"
+ 
+ # 区域条件
+ concept_zone_time_physics_requires_tech: "$zone_time_physics$ Unlock Technology"
+ concept_zone_time_physics_requires_tech_desc: "Unlocking $zone_time_physics$ requires any of the following technologies:\n£physics£['technology:tech_power_hub_1']\n£engineering£['technology:tech_luxuries_1']\n£physics£['technology:tech_physics_1']"
+ 
+ concept_zone_time_society_requires_tech: "$zone_time_society$ Unlock Technology"
+ concept_zone_time_society_requires_tech_desc: "Unlocking $zone_time_society$ requires any of the following technologies:\n£society£['technology:tech_food_processing_1']\n£society£['technology:tech_adaptive_bureaucracy']\n£society£['technology:tech_society_1']"
+ 
+ concept_zone_time_engineering_requires_tech: "$zone_time_engineering$ Unlock Technology"
+ concept_zone_time_engineering_requires_tech_desc: "Unlocking $zone_time_engineering$ requires any of the following technologies:\n£engineering£['technology:tech_mineral_purification_1']\n£engineering£['technology:tech_alloys_1']\n£engineering£['technology:tech_engineering_1']"
+ 
+ # 建筑
+ concept_building_origin_time_authority: "Singularity Government Building"
+ concept_building_origin_time_authority_desc: "The faction that wins in §YWhispers of the Black Hole§! will form its own government and unlock faction-exclusive §YBuildings§! and §YJobs§!.\n\n$concept_building_origin_time_authority$ includes\n-['concept_building_hope_parliament']\n-['concept_building_eternal_probe']\n-['concept_building_dimensional_fortress']\n-['concept_building_original_sanctuary']"
+ 
+ concept_building_origin_time_advanced_authority: "Advanced Singularity Government Building"
+ concept_building_origin_time_advanced_authority_desc: "The faction that wins in §YWhispers of the Black Hole§! will form its own government and unlock faction-exclusive §YAdvanced Buildings§! and §YJobs§!.\n\n$concept_building_origin_time_advanced_authority$ includes\n-['concept_building_hope_institution']\n-['concept_building_eternal_matrix']\n-['concept_building_dimensional_metropolis']\n-['concept_building_original_palace']"
+ 
+ concept_building_hope_parliament: "$building_hope_parliament$"
+ concept_building_hope_parliament_desc: "-$mod_country_official_cap_add$: §G+2§!\n-$mod_official_skill_add$: §G+2§!\n-$mod_official_exp_gain$: §G+50%§!\n-$mod_job_hope_guardian_add$: §G+1§!\n-$mod_job_hope_disseminator_add$: §G+1§!\n-$building_hope_parliament_effect$\n\n$job_hope_guardian_effect_desc$\n$job_hope_disseminator_effect_desc$\n$h_line$§L$building_egalitarian_and_xenophile_is_winner_desc$§!"
+ 
+ concept_building_hope_institution: "$building_hope_institution$"
+ concept_building_hope_institution_desc: "-$mod_country_official_cap_add$: §G+4§!\n-$mod_official_skill_add$: §G+4§!\n-$mod_official_exp_gain$: §G+100%§!\n-$mod_job_hope_guardian_add$: §G+1§!\n-$mod_job_hope_disseminator_add$: §G+1§!\n-$building_hope_institution_effect$\n\n$job_hope_guardian_effect_desc$\n$job_hope_disseminator_effect_desc$\n$h_line$§L$building_egalitarian_and_xenophile_is_winner_advanced_desc$§!"
+ 
+ concept_building_eternal_probe: "$building_eternal_probe$"
+ concept_building_eternal_probe_desc: "-$mod_country_scientist_cap_add$: §G+2§!\n-$mod_scientist_skill_add$: §G+2§!\n-$mod_scientist_exp_gain$: §G+50%§!\n-$mod_job_eternal_observer_add$: §G+1§!\n-$mod_job_eternal_creator_add$: §G+1§!\n-$building_eternal_probe_effect$\n\n$job_eternal_observer_effect_desc$\n$job_eternal_creator_effect_desc$\n$h_line$§L$building_materialist_and_pacifist_is_winner_desc$§!"
+ 
+ concept_building_eternal_matrix: "$building_eternal_matrix$"
+ concept_building_eternal_matrix_desc: "-$mod_country_scientist_cap_add$: §G+4§!\n-$mod_scientist_skill_add$: §G+4§!\n-$mod_scientist_exp_gain$: §G+100%§!\n-$mod_job_eternal_observer_add$: §G+1§!\n-$mod_job_eternal_creator_add$: §G+1§!\n-$building_eternal_matrix_effect$\n\n$job_eternal_observer_effect_desc$\n$job_eternal_creator_effect_desc$\n$h_line$§L$building_materialist_and_pacifist_is_winner_advanced_desc$§!"
+ 
+ concept_building_dimensional_fortress: "$building_dimensional_fortress$"
+ concept_building_dimensional_fortress_desc: "-$mod_country_commander_cap_add$: §G+2§!\n-$mod_commander_skill_add$: §G+2§!\n-$mod_commander_exp_gain$: §G+50%§!\n-$mod_job_dimensional_ruler_add$: §G+1§!\n-$mod_job_dimensional_conqueror_add$: §G+1§!\n-$building_dimensional_fortress_effect$\n\n$job_dimensional_ruler_effect_desc$\n$job_dimensional_conqueror_effect_desc$\n$h_line$§L$building_authoritarian_and_militarist_is_winner_desc$§!"
+ 
+ concept_building_dimensional_metropolis: "$building_dimensional_metropolis$"
+ concept_building_dimensional_metropolis_desc: "-$mod_country_commander_cap_add$: §G+4§!\n-$mod_commander_skill_add$: §G+4§!\n-$mod_commander_exp_gain$: §G+100%§!\n-$mod_job_dimensional_ruler_add$: §G+1§!\n-$mod_job_dimensional_conqueror_add$: §G+1§!\n-$building_dimensional_metropolis_effect$\n\n$job_dimensional_ruler_effect_desc$\n$job_dimensional_conqueror_effect_desc$\n$h_line$§L$building_authoritarian_and_militarist_is_winner_advanced_desc$§!"
+ 
+ concept_building_original_sanctuary: "$building_original_sanctuary$"
+ concept_building_original_sanctuary_desc: "-$MOD_COUNTRY_LEADER_CAP_ADD$: §G+1§!\n-$MOD_LEADER_SKILL_ADD$: §G+1§!\n-$MOD_LEADER_SPECIES_EXP_GAIN$: §G+25%§!\n-$mod_job_original_meditator_add$: §G+1§!\n-$mod_job_original_purifier_add$: §G+1§!\n-$building_original_sanctuary_effect$\n\n$job_original_meditator_effect_desc$\n$job_original_purifier_effect_desc$\n$h_line$§L$building_spiritualist_and_xenophobe_is_winner_desc$§!"
+ 
+ concept_building_original_palace: "$building_original_palace$"
+ concept_building_original_palace_desc: "-$MOD_COUNTRY_LEADER_CAP_ADD$: §G+2§!\n-$MOD_LEADER_SKILL_ADD$: §G+2§!\n-$MOD_LEADER_SPECIES_EXP_GAIN$: §G+50%§!\n-$mod_job_original_meditator_add$: §G+1§!\n-$mod_job_original_purifier_add$: §G+1§!\n-$building_original_palace_effect$\n\n$job_original_meditator_effect_desc$\n$job_original_purifier_effect_desc$\n$h_line$§L$building_spiritualist_and_xenophobe_is_winner_advanced_desc$§!"
+ 
+ # 事件
+ concept_district_time_level_up_yellow: "§YWe can improve spacetime lanes§!"
+ concept_district_time_level_up: "£job_time_recursioner£Lane Improvement in Mysterious Singularity£district£"
+ concept_district_time_level_up_desc: "This represents our progress in utilizing the living space in the Black Hole. Districts in the Mysterious Singularity will provide more bonuses.\n\n£district §Y$district_time$§!:\n£housing $MOD_PLANET_HOUSING_ADD$$@district_time_base_housing|0=+$\n$mod_district_time_usage_cap$$@district_time_base_usage_cap|1=+$\n\n£district §Y$district_time_physics$§!:\n£housing $MOD_PLANET_HOUSING_ADD$$@district_time_rural_base_housing|0=+$\n£job_black_hole_physicist $mod_job_black_hole_physicist_add$$@district_time_rural_base_job|0=+$\n\n£district §Y$district_time_society$§!:\n£housing $MOD_PLANET_HOUSING_ADD$$@district_time_rural_base_housing|0=+$\n£job_black_hole_biologist $mod_job_black_hole_biologist_add$$@district_time_rural_base_job|0=+$\n\n£district §Y$district_time_engineering$§!:\n£housing $MOD_PLANET_HOUSING_ADD$$@district_time_rural_base_housing|0=+$\n£job_black_hole_engineer $mod_job_black_hole_engineer_add$$@district_time_rural_base_job|0=+$"
+ 
+ concept_clear_a_time_blocker_0_yellow: "§YWe can explore a spacetime§!"
+ concept_clear_a_time_blocker_0: "£job_time_recursioner£Spacetime Exploration in Mysterious Singularity£blocker£"
+ concept_clear_a_time_blocker_0_desc: "This represents our complete exploration of an unknown spacetime in the Black Hole. One §Y$d_time_blocker_0$§! will be removed, but there are still remaining §Y$d_time_blocker_1$§! to be cleared."
+ 
+ concept_time_blocker_2_can_be_cleared_yellow: "§YWe can try to break through the gravitational barrier§!"
+ concept_time_blocker_2_can_be_cleared: "£job_time_recursioner£Barrier Breakthrough in Mysterious Singularity£blocker£"
+ concept_time_blocker_2_can_be_cleared_desc: "This represents a qualitative leap in our exploration of the Black Hole center. Now we will have the opportunity to clear §Y$d_time_blocker_2$§!."
+ 
+ concept_time_blocker_3_can_be_cleared_yellow: "§YWe can try to repair the gravitational trap§!"
+ concept_time_blocker_3_can_be_cleared: "£job_time_recursioner£Trap Repair in Mysterious Singularity£blocker£"
+ concept_time_blocker_3_can_be_cleared_desc: "This represents a qualitative leap in our exploration of the Black Hole center. Now we will have the opportunity to clear §Y$d_time_blocker_3$§!."
+ 

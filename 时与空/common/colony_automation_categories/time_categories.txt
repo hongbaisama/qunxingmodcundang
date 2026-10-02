@@ -1,0 +1,49 @@
+planet_automation_tao_of_ninghe = {
+	available = {
+		exists = owner
+		owner = { has_origin = origin_tao_of_ninghe }
+	}
+}
+
+planet_automation_adeptus_mechanicus = {
+	available = {
+		exists = owner
+		owner = { has_origin = origin_adeptus_mechanicus }
+	}
+}
+
+planet_automation_monster_hunter = {
+	available = {
+		exists = owner
+		owner = { has_origin = origin_monster_hunter }
+	}
+}
+
+planet_automation_worm = {
+	available = {
+		exists = owner
+		owner = {
+			is_ai = no
+			OR = {
+				has_technology = tech_akx_worm_1
+				has_technology = tech_akx_worm_2
+				has_technology = tech_akx_worm_3
+			}
+		}
+		is_capital = yes
+	}
+}
+
+planet_automation_horror = {
+	available = {
+		exists = owner
+		owner = {
+			OR = {
+				has_technology = tech_horror_3_a_1
+				has_technology = tech_horror_3_a_2
+				has_technology = tech_horror_3_b_1
+				has_technology = tech_horror_3_b_2
+			}
+		}
+	}
+}

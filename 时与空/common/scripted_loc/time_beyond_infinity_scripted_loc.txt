@@ -1,0 +1,56 @@
+defined_text = {
+	name = GetBeyondInfinityChainDesc
+	random = no
+	text = {
+		trigger = {
+			has_global_flag = allow_beyond_infinity_32768
+		}
+		localization_key = beyond_infinity_chain_desc_hide
+	}
+	text = {
+		trigger = {
+			has_country_flag = know_beyond_infinity_civic
+			has_country_flag = time_machine_end
+		}
+		localization_key = beyond_infinity_chain_desc_time_machine
+	}
+	text = {
+		trigger = {
+			has_country_flag = know_beyond_infinity_civic
+			has_country_flag = circle_nexus_end
+		}
+		localization_key = beyond_infinity_chain_desc_circle_nexus
+	}
+	text = {
+		trigger = {
+			has_country_flag = know_beyond_infinity_civic
+			has_country_flag = dimension_engine_end
+		}
+		localization_key = beyond_infinity_chain_desc_dimension_engine
+	}
+	default = beyond_infinity_chain_desc_default
+}
+
+defined_text = {
+	name = GetCrisis7516DescWorm
+	random = no
+	text = {
+		trigger = {
+			has_country_flag = worm_tomb_ending
+		}
+		localization_key = crisis.7516.desc.worm.ending
+	}
+	text = {
+		trigger = {
+			has_country_flag = attack_worm
+		}
+		localization_key = crisis.7516.desc.worm.attack
+	}
+	text = {
+		trigger = {
+			has_country_flag = horizonsignal_trigger
+		}
+		localization_key = crisis.7516.desc.worm.trigger
+	}
+	default = crisis.7516.desc.worm.other
+}

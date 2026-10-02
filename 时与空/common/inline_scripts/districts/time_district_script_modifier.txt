@@ -1,0 +1,10 @@
+# 修正接口
+triggered_planet_modifier = {
+	planet_housing_add = 1
+	mult = value:scripted_modifier_add|MODIFIER|$DISTRICT$_district_housing_add|
+}
+
+triggered_planet_modifier = {
+	planet_amenities_add = 1
+	mult = value:scripted_modifier_add|MODIFIER|$DISTRICT$_district_amenities_add|
+}

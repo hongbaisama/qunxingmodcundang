@@ -1,0 +1,28 @@
+defined_text = {
+	name = GetContractReplacedPatron
+	random = no
+	text = {
+		trigger = {
+			has_country_flag = origin_contract_replace_the_eater_of_worlds
+		}
+		localization_key = contract_betrayal_eater
+	}
+	text = {
+		trigger = {
+			has_country_flag = origin_contract_replace_the_cradle_of_souls
+		}
+		localization_key = contract_betrayal_cradle
+	}
+	text = {
+		trigger = {
+			has_country_flag = origin_contract_replace_the_instrument_of_desire
+		}
+		localization_key = contract_betrayal_instrument
+	}
+	text = {
+		trigger = {
+			has_country_flag = origin_contract_replace_the_composer_of_strands
+		}
+		localization_key = contract_betrayal_composer
+	}
+}

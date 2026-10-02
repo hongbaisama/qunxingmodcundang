@@ -1,0 +1,234 @@
+﻿l_english:
+ # 负相时空
+ concept_horror_time: "§MInverse Spacetime§!"
+ concept_horror_time_desc: "§MInverse Spacetime§! is a general term for a type of mysterious technology, mainly coming from our research on the §MInverse Plane§!. Although its basis and results may be very different, this is the true reality of the §MInverse Plane§!.\n\n§MInverse Spacetime§! is a special type of technology that will never appear naturally, but after each research completion, it is possible to obtain research options that meet the conditions.\nActivating §Y$r_horror_matter$§!, activating §Y$r_time$§!, appointing leaders with ['concept_has_horror_time_knowledge'] for research, increasing ['concept_category_horror_time_draw_chance_mult'], etc., can §Gincrease§! the §Yprobability§! of obtaining research options."
+ 
+ concept_has_horror_time_knowledge: "Possess Inverse Phase Knowledge"
+ concept_has_horror_time_knowledge_desc: "This represents that the leader possesses certain unique knowledge about ['concept_horror_time'].\n\nThe leader must meet one of the following conditions:\n-Learned any §YInverse Phase Mystery§!\n-Experienced §YBlack Hole Traversal§!\n-Has §Y$leader_trait_time_soul$§! trait\n-Has ['concept_leader_trait_equinox_seal'] trait\n-Has §Y$leader_trait_horror_focus$§! trait\n-Has §Y$leader_trait_expertise_horror_time$§! trait\n-Has §Y$leader_trait_dimensional_horror_weapon_specialization$§! trait\n-Has §YDimension Traveler Destiny Trait§!\n-Has §Y$leader_trait_dimension_traveler_brief$§! trait"
+ 
+ concept_category_horror_time_research_speed_mult_white: "§WResearch Speed (§YInverse Spacetime§!)§!"
+ concept_category_horror_time_research_speed_mult: "Research Speed (Inverse Spacetime)"
+ concept_category_horror_time_research_speed_mult_desc: "This represents our mastery of ['concept_horror_time'], which can §Gspeed up§! our §YResearch Speed§! on related technologies, and also §Greduce§! the §YLaunch Requirement§! of related agendas."
+ 
+ concept_category_horror_time_draw_chance_mult_white: "§WProbability of §YInverse Spacetime§! Options§!"
+ concept_category_horror_time_draw_chance_mult: "Probability of Inverse Spacetime Options"
+ concept_category_horror_time_draw_chance_mult_desc: "This represents our understanding of ['concept_horror_time'], which can §Gincrease§! the §Yprobability§! of obtaining technology options in related fields."
+ 
+ concept_can_approach_black_hole: "Touch Horizon Edge"
+ concept_can_approach_black_hole_desc: "This represents that the leader has the ability to work close to a Black Hole and can perform tasks that other regular leaders cannot complete.\n\nThe leader must meet one of the following conditions:\n-Species has ['concept_trait_time'] trait\n-Species has ['concept_trait_time_soul'] trait\n-Species has ['concept_trait_origin_black_hole'] trait\n-Species has ['concept_trait_dimension_traveler'] trait\n-Species has ['concept_trait_akx_messenger'] trait\n-Species has ['concept_trait_akx_waiting_world_all'] trait\n-Species has ['concept_tech_time_trait']\n-Leader ['concept_has_horror_time_knowledge']"
+ 
+ # 终末行舟
+ concept_time_titan_desc: "According to the database of the Omega Ark, a large number of Omega Arks participated in the escape plan, but most of them fell due to unavoidable fate. Only a very few successfully reached different planes, and only this one was accepted by our universe.\nThe construction of Omega Arks is not batch, depending on the capabilities of the designers and assemblers, the strength that different Omega Arks can exert also varies-in other words, each Omega Ark is unique.\n\n"
+ 
+ concept_exceptional_time_titan_color: "§3$concept_exceptional_time_titan$§!"
+ concept_exceptional_time_titan: "$exceptional$"
+ concept_exceptional_time_titan_desc: "$concept_time_titan_desc$$concept_exceptional_time_titan$ Rarity causes:\n$t$Omega Ark Part Upgrade Effect: §G+100%§!\n$t$Beyond Shelter Upgrade Effect: §G+100%§!"
+ 
+ concept_epic_time_titan_color: "§2$concept_epic_time_titan$§!"
+ concept_epic_time_titan: "$epic$"
+ concept_epic_time_titan_desc: "$concept_time_titan_desc$$concept_epic_time_titan$ Rarity causes:\n$t$Omega Ark Part Upgrade Effect: §G+80%§!\n$t$Beyond Shelter Upgrade Effect: §G+80%§!"
+ 
+ concept_rare_time_titan_color: "§1$concept_rare_time_titan$§!"
+ concept_rare_time_titan: "$rare$"
+ concept_rare_time_titan_desc: "$concept_time_titan_desc$$concept_rare_time_titan$ Rarity causes:\n$t$Omega Ark Part Upgrade Effect: §G+40%§!\n$t$Beyond Shelter Upgrade Effect: §G+40%§!"
+ 
+ concept_common_time_titan_color: "§0$concept_common_time_titan$§!"
+ concept_common_time_titan: "$common$"
+ concept_common_time_titan_desc: "$concept_time_titan_desc$$concept_common_time_titan$ Rarity causes:\n$t$Omega Ark Part Upgrade Effect: §Y+0%§!\n$t$Beyond Shelter Upgrade Effect: §Y+0%§!"
+ 
+ concept_time_titan_best_status_color: "§M$concept_time_titan_best_status$§!"
+ concept_time_titan_best_status: "Destined Cycle"
+ concept_time_titan_best_status_desc: "The Omega Ark is piloted by the Dimension Traveler who is The Captain that Will Be. She will break the destined cycle of the End for us.\n\n$concept_time_titan_best_status$ Status causes:\n$t$$unlock_time_titan_component_upgrade$\n$t$Omega Ark Upgrade Effect Multiplier: §Y100%§!\n$t$Omega Ark Curse Effect Multiplier: §R0%§!"
+ 
+ concept_time_titan_good_status_color: "§H$concept_time_titan_good_status$§!"
+ concept_time_titan_good_status: "Future Deviation"
+ concept_time_titan_good_status_desc: "The Omega Ark is piloted by The Captain that Will Be, and the future leading to the End deviates from here.\n\n$concept_time_titan_good_status$ Status causes:\n$t$Omega Ark Upgrade Effect Multiplier: §Y100%§!\n$t$Omega Ark Curse Effect Multiplier: §R0%§!"
+ 
+ concept_time_titan_normal_status_color: "§B$concept_time_titan_normal_status$§!"
+ concept_time_titan_normal_status: "Causal Protection"
+ concept_time_titan_normal_status_desc: "The Omega Ark is piloted by the Dimension Traveler. Intertwined causality obtains protection in the End.\n\n$concept_time_titan_normal_status$ Status causes:\n$t$Omega Ark Upgrade Effect Multiplier: §Y50%§!\n$t$Omega Ark Curse Effect Multiplier: §R0%§!"
+ 
+ concept_time_titan_bad_status_color: "§R$concept_time_titan_bad_status$§!"
+ concept_time_titan_bad_status: "Curse of the End"
+ concept_time_titan_bad_status_desc: "The Omega Ark is not piloted by a suitable commander, and the curse of the End is gradually corroding it.\n\n$concept_time_titan_bad_status$ Status causes:\n$t$Omega Ark Upgrade Effect Multiplier: §Y0%§!\n$t$Omega Ark Curse Effect Multiplier: §R100%§!"
+ 
+ concept_time_shelter_maintenance_white: "§W$concept_time_shelter_maintenance$§!"
+ concept_time_shelter_maintenance_yellow: "§Y$concept_time_shelter_maintenance$§!"
+ concept_time_shelter_maintenance: "Beyond Maintenance"
+ concept_time_shelter_maintenance_desc: "彼岸并非终末行舟的内部空间，而是借助终末行舟扭曲奇点可以抵达的不计其数的混沌之一。因此，彼岸与现世的物质交换与信息流通必须依靠专门的设施维持，该维持效率即为彼岸维系度。\n\n提高彼岸维系度可以令彼岸庇护所§Y产出的资源§!与§Y提供的修正§!更§G完整§!地增益于我们的帝国。\n\n§Y$concept_time_shelter_maintenance$§!无法超过['concept_time_shelter_maintenance_cap']"
+ 
+ concept_time_shelter_maintenance_cap_white: "§W$concept_time_shelter_maintenance_cap$§!"
+ concept_time_shelter_maintenance_cap: "Beyond Maintenance Cap"
+ concept_time_shelter_maintenance_cap_desc: "现世与彼岸的维系效率并非无上限，这受我们的维系设施性能与彼岸的总体环境影响。\n\n['concept_time_shelter_maintenance']无法超过§Y$concept_time_shelter_maintenance_cap$§!"
+ 
+ # 位面之鳞
+ concept_dimensional_horror_damage_reduction: "Abyssal Scales"
+ concept_dimensional_horror_damage_reduction_desc: "The Dimensional Horror is covered in eerie Abyssal Scales, and the temporal and spatial distortions it causes can protect it from most of the damage it receives.\n\n§Y$dimensional_horror_voidworms$§! due to the $FE_DIFFICULTY$ at most produces: \n$t$-$MOD_SHIP_DAMAGE_REDUCTION_MULT$：§G+10%§!\n\n§Y$dimensional_horror$§! due to the $FE_DIFFICULTY$ at most produces: \n$t$-$MOD_SHIP_DAMAGE_REDUCTION_MULT$：§G+25%§!\n\n§Y$dimensional_horror_crisis$§! due to the $FE_DIFFICULTY$ at most produces: \n$t$-$MOD_SHIP_DAMAGE_REDUCTION_MULT$：§G+50%§!\n\n§Y$dimensional_horror_destiny$§! due to the $FE_DIFFICULTY$ at most produces: \n$t$-$MOD_SHIP_DAMAGE_REDUCTION_MULT$：§G+100%§!\n\n§RThis component will not produce the above effect when assembled on ships other than Dimensional Horror!§!"
+ 
+ # 负相武器负面概率
+ concept_horror_weapon_debuff_chance: "负相武器负面概率"
+ concept_horror_weapon_debuff_chance_short: "chance"
+ concept_horror_weapon_debuff_chance_desc: "研究£physics ['concept_tech_horror_focus_1']科技后，绝大多数负相武器可以造成['concept_confusion']或['concept_terrify']，其施加负面效果的概率受到以下影响：\n$t$—拥有['concept_ap_horror']飞升：§G×2§!\n$t$—拥有['concept_ap_time']飞升：§G×1.5§!\n$t$—装配于['concept_biological_ship']或['concept_space_fauna']：§R×0.5§!"
+ 
+ # 特质
+ concept_time_ruler_trait_green: "§G$concept_time_ruler_trait$§!"
+ concept_time_ruler_trait_red: "§R$concept_time_ruler_trait$§!"
+ concept_time_ruler_trait: "Origin Ruler Trait"
+ concept_time_ruler_trait_desc: "This is a ruler §dDestiny Trait§! exclusive to §HTime and Space§! mod origins. Only the §YRuler§! or §YHeir§! of the corresponding origin can obtain it, and it can only take §Geffect§! when acting as §YRuler§!.\n\nThe bonus values of such traits are generally related to §Y$MOD_LEADER_SKILL_ADD$§!, §Y$MOD_COUNCILOR_SKILL_ADD$§!, §Y$MOD_RULER_SKILL_ADD$§!."
+ 
+ concept_time_node_trait_green: "§G$concept_time_node_trait$§!"
+ concept_time_node_trait_red: "§R$concept_time_node_trait$§!"
+ concept_time_node_trait: "Origin Node Trait"
+ concept_time_node_trait_desc: "This is a node §dDestiny Trait§! exclusive to §HTime and Space§! mod origins. Only the §YGestalt Node§! of the corresponding origin can obtain it, and it can only take §Geffect§! when acting as §YGestalt Node§!.\n\nThe bonus values of such traits are generally related to §YEffective Node Skill Level§!, §Y$MOD_COUNCILOR_SKILL_ADD$§!."
+ 
+ concept_time_inborn_legendary_trait: "§lLegendary Leader Exclusive Trait§!"
+ concept_time_inborn_legendary_trait_desc: "This is a §dDestiny Trait§! added by the §HTime and Space§! mod for all §lLegendary Leaders§! (including other mods), but leaders promoted through the ['concept_origin_legendary_worship'] origin will not obtain this trait.\n\nThe bonus focus of this trait is related to §YLeader Class§!, the bonus value is related to §Y$MOD_LEADER_SKILL_ADD$§!, and the ['concept_origin_legendary_worship'] origin will §Gdouble§! the effect of this trait."
+ 
+ concept_time_inborn_renowned_trait: "§rRenowned Leader Exclusive Trait§!"
+ concept_time_inborn_renowned_trait_desc: "This is a §dDestiny Trait§! added by the §HTime and Space§! mod for all §rRenowned Leaders§! (including other mods), but leaders promoted through the ['concept_origin_legendary_worship'] origin will not obtain this trait.\n\nThe bonus focus of this trait is related to §YLeader Class§!, the bonus value is related to §Y$MOD_LEADER_SKILL_ADD$§!, and the ['concept_origin_legendary_worship'] origin will §Gdouble§! the effect of this trait."
+ 
+ concept_akx_messenger_species_trait: "Messenger Trait"
+ concept_akx_messenger_species_trait_desc: "Messengers may be their ancestors or their future, but in any case, this species has accepted this reality and actively enjoys the advantages brought by the Messenger bloodline.\n\n$concept_akx_messenger_species_trait$:\n$t$['concept_trait_akx_messenger']\n$t$['concept_trait_akx_waiting_world_all']"
+ 
+ concept_trait_akx_messenger: "$trait_akx_messenger$"
+ concept_trait_akx_messenger_with_icon: "£akx_messenger£$trait_akx_messenger$"
+ 
+ concept_trait_akx_waiting_world: "$trait_akx_waiting_world$"
+ 
+ concept_trait_akx_waiting_world_robot: "$trait_akx_waiting_world_robot$"
+ 
+ concept_trait_akx_waiting_world_all: "$trait_akx_waiting_world$"
+ concept_trait_akx_waiting_world_all_desc: "Organic Species: ['concept_trait_akx_waiting_world']\nMechanical Species: ['concept_trait_akx_waiting_world_robot']"
+ 
+ concept_tech_time_trait_purple: "§MInverse Phase Trait§!"
+ concept_tech_time_trait: "Inverse Phase Trait"
+ concept_tech_time_trait_desc: "These are unique genes and weird components reverse-engineered from the Inverse Plane and Nightmares of the Plane. Should we really apply them to ourselves?\n\n$concept_tech_time_trait$:\n$t$['concept_trait_akx_low_dimensional_adaptor']\n$t$['concept_trait_akx_low_dimensional_adaptor_robot']\n$t$['concept_trait_akx_high_dimensional_extender']\n$t$['concept_trait_akx_high_dimensional_extender_robot']\n$t$['concept_trait_akx_spatial_entity']\n$t$['concept_trait_akx_spatial_entity_robot']\n$t$['concept_trait_akx_time_incorporeality']\n$t$['concept_trait_akx_time_incorporeality_robot']\n$t$['concept_trait_akx_concentrator']\n$t$['concept_trait_akx_concentrator_robot']\n$t$['concept_trait_akx_diffuser']\n$t$['concept_trait_akx_diffuser_robot']\n$t$['concept_trait_akx_spiritual_radiator']\n$t$['concept_trait_akx_spiritual_radiator_robot']\n$t$['concept_trait_akx_body_folder']\n$t$['concept_trait_akx_body_folder_robot']"
+ 
+ concept_trait_akx_low_dimensional_adaptor: "$trait_akx_low_dimensional_adaptor$"
+ concept_trait_akx_low_dimensional_adaptor_robot: "$trait_akx_low_dimensional_adaptor_robot$"
+ concept_trait_akx_high_dimensional_extender: "$trait_akx_high_dimensional_extender$"
+ concept_trait_akx_high_dimensional_extender_robot: "$trait_akx_high_dimensional_extender_robot$"
+ concept_trait_akx_spatial_entity: "$trait_akx_spatial_entity$"
+ concept_trait_akx_spatial_entity_robot: "$trait_akx_spatial_entity_robot$"
+ concept_trait_akx_time_incorporeality: "$trait_akx_time_incorporeality$"
+ concept_trait_akx_time_incorporeality_robot: "$trait_akx_time_incorporeality_robot$"
+ concept_trait_akx_concentrator: "$trait_akx_concentrator$"
+ concept_trait_akx_concentrator_robot: "$trait_akx_concentrator_robot$"
+ concept_trait_akx_diffuser: "$trait_akx_diffuser$"
+ concept_trait_akx_diffuser_robot: "$trait_akx_diffuser_robot$"
+ concept_trait_akx_spiritual_radiator: "$trait_akx_spiritual_radiator$"
+ concept_trait_akx_spiritual_radiator_robot: "$trait_akx_spiritual_radiator_robot$"
+ concept_trait_akx_body_folder: "$trait_akx_body_folder$"
+ concept_trait_akx_body_folder_robot: "$trait_akx_body_folder_robot$"
+ 
+ # 科技
+ concept_tech_horror_focus_1: "$tech_horror_focus_1$"
+ 
+ concept_tech_horror_focus_2: "$tech_horror_focus_2$"
+ 
+ # 传统
+ concept_tradition_horror: "$tradition_horror$"
+ 
+ concept_tradition_time: "$tradition_time$"
+ 
+ concept_tradition_end: "$tradition_end$"
+ 
+ concept_tradition_hope: "$tradition_hope$"
+ 
+ # 飞升
+ concept_ap_become_the_crisis: "$ap_become_the_crisis$"
+ 
+ concept_ap_cosmogenesis: "$ap_cosmogenesis$"
+ 
+ concept_ap_behemoths: "$ap_behemoths$"
+ 
+ concept_ap_horror: "$ap_horror$"
+ 
+ concept_ap_time: "$ap_time$"
+ 
+ concept_ap_beyond_infinity: "$ap_beyond_infinity$"
+ 
+ # 飞升路线
+ concept_nanotech_ascension: "Nanotech Ascension"
+ concept_nanotech_ascension_desc: "By integrating nanobots, it is possible to become a nanite swarm devouring the entire sea of stars, where one is all."
+ 
+ concept_modularity_ascension: "Modularity Ascension"
+ concept_modularity_ascension_desc: "By perfecting the component replacement protocol, it is possible to understand the principle of chassis operation and understand where we come from."
+ 
+ concept_crisis_ascension: "Crisis Ascension"
+ concept_crisis_ascension_desc: "$concept_crisis_ascension$: \n-['concept_ap_become_the_crisis']\n-['concept_ap_cosmogenesis']\n-['concept_ap_behemoths']"
+ 
+ # 修正
+ concept_building_akx_research_decay_white: "§W$concept_building_akx_research_decay$§!"
+ concept_building_akx_research_decay: "Inverse Phase Observation Disorder"
+ concept_building_akx_research_decay_desc: "Simultaneous high-frequency and large-scale observation of the Inverse Plane may lead to serious Inverse Phase disorder and hinder our deepening into the Inverse Phase.\n\nTo avoid potential disasters, each £building£§Y$building_horror_research$ series building§! will split the bonus to the planet equally."
+ 
+ concept_building_akx_computer_decay_white: "§W$concept_building_akx_computer_decay$§!"
+ concept_building_akx_computer_decay: "Inverse Phase Interference Disorder"
+ concept_building_akx_computer_decay_desc: "Simultaneous high-frequency and large-scale interference with the Inverse Plane may lead to serious Inverse Phase disorder and hinder our deepening into the Inverse Phase.\n\nTo avoid potential disasters, each £building£§Y$building_horror_computer$ series building§! will split the bonus to the planet equally."
+ 
+ concept_building_akx_monument_decay_white: "§W$concept_building_akx_monument_decay$§!"
+ concept_building_akx_monument_decay: "Inverse Phase Memory Disorder"
+ concept_building_akx_monument_decay_desc: "Simultaneous high-frequency and large-scale memory of the Inverse Plane may lead to serious Inverse Phase disorder and hinder our deepening into the Inverse Phase.\n\nTo avoid potential disasters, each £building£§Y$building_horror_monument$ series building§! will split the bonus to the planet equally."
+ 
+ concept_building_akx_forecast_decay_white: "§W$concept_building_akx_forecast_decay$§!"
+ concept_building_akx_forecast_decay: "Inverse Phase Perception Disorder"
+ concept_building_akx_forecast_decay_desc: "Simultaneous high-frequency and large-scale perception of the Inverse Plane may lead to serious Inverse Phase disorder and hinder our deepening into the Inverse Phase.\n\nTo avoid potential disasters, each £building£§Y$building_horror_forecast$ series building§! will split the bonus to the planet equally."
+ 
+ # 地块
+ concept_time_gaia_deposit: "Gaia World Exclusive Features"
+ concept_time_gaia_deposit_desc: "These are planetary features exclusive to Gaia Worlds. All Gaia planets will randomly possess one of them, and will provide additional bonuses due to §Y$ap_world_shaper$§!.\n\n$concept_time_gaia_deposit$:\n-['concept_d_time_gaia_energy']\n-['concept_d_time_gaia_minerals']\n-['concept_d_time_gaia_food']"
+ 
+ concept_d_time_gaia_energy: "$d_time_gaia_energy$"
+ concept_d_time_gaia_energy_desc: "-$mod_district_generator_max_add$: §G+5§!\n-$mod_district_generator_max_mult$: §G+50%§!\n-$mod_job_technician_max_workforce_mult$: §G+50%§!\n-Per $PLANET_SIZE$ causes:\n$tt$-$mod_country_energy_produces_mult$: §G+2%§!\n$tt$-$mod_country_physics_research_produces_mult$: §G+1%§!\n-$ap_world_shaper$ causes:\n$tt$-$mod_planet_technician_energy_produces_add$: §G+2§!\n$tt$-$mod_planet_technician_physics_research_produces_add$: §G+1§!\n$tt$-$mod_planet_technician_volatile_motes_produces_add$: §G+0.5§!\n$tt$-$mod_district_generator_max_add$: §G+5§!\n$tt$-$mod_district_generator_max_mult$: §G+50%§!\n$tt$-$mod_job_technician_max_workforce_mult$: §G+50%§!\n$h_line$§L$d_time_gaia_energy_desc$§!"
+ 
+ concept_d_time_gaia_minerals: "$d_time_gaia_minerals$"
+ concept_d_time_gaia_minerals_desc: "-$mod_district_mining_max_add$: §G+5§!\n-$mod_district_mining_max_mult$: §G+50%§!\n-$mod_job_miner_max_workforce_mult$: §G+50%§!\n-Per $PLANET_SIZE$ causes:\n$tt$-$mod_country_minerals_produces_mult$: §G+2%§!\n$tt$-$mod_country_engineering_research_produces_mult$: §G+1%§!\n-$ap_world_shaper$ causes:\n$tt$-$mod_planet_miners_minerals_produces_add$: §G+2§!\n$tt$-$mod_planet_miners_engineering_research_produces_add$: §G+1§!\n$tt$-$mod_planet_miners_rare_crystals_produces_add$: §G+0.5§!\n$tt$-$mod_district_mining_max_add$: §G+5§!\n$tt$-$mod_district_mining_max_mult$: §G+50%§!\n$tt$-$mod_job_miner_max_workforce_mult$: §G+50%§!\n$h_line$§L$d_time_gaia_minerals_desc$§!"
+ 
+ concept_d_time_gaia_food: "$d_time_gaia_food$"
+ concept_d_time_gaia_food_desc: "-$mod_district_farming_max_add$: §G+5§!\n-$mod_district_farming_max_mult$: §G+50%§!\n-$mod_job_farmer_max_workforce_mult$: §G+50%§!\n-Per $PLANET_SIZE$ causes:\n$tt$-$mod_country_food_produces_mult$: §G+2%§!\n$tt$-$mod_country_society_research_produces_mult$: §G+1%§!\n-$ap_world_shaper$ causes:\n$tt$-$mod_planet_farmers_food_produces_add$: §G+2§!\n$tt$-$mod_planet_farmers_society_research_produces_add$: §G+1§!\n$tt$-$mod_planet_farmers_exotic_gases_produces_add$: §G+0.5§!\n$tt$-$mod_district_farming_max_add$: §G+5§!\n$tt$-$mod_district_farming_max_mult$: §G+50%§!\n$tt$-$mod_job_farmer_max_workforce_mult$: §G+50%§!\n$h_line$§L$d_time_gaia_food_desc$§!"
+ 
+ # 星球类型
+ concept_pc_hive: "$pc_hive$"
+ concept_pc_hive_desc: "-$trait_hive_mind$ Habitability: §Y100%§!\n-$mod_planet_jobs_produces_mult$: §G+10%§!\n-$MOD_PLANET_RESETTLEMENT_UNEMPLOYED_DESTINATION_MULT$: §G+50%§!\n-No limit on number of ['concept_generator_district', £district£$district_generator$], ['concept_mining_district', £district£$district_mining$], ['concept_farming_district', £district£$district_farming$]\n\n§L$pc_hive_desc$§!"
+ 
+ concept_pc_time: "$pc_time$"
+ concept_pc_time_desc: "-['concept_trait_time'] Habitability: §Y100%§!\n-$mod_country_produces_mult$: §R-50%§!\n-$MOD_POP_BONUS_WORKFORCE_MULT$: §R-50%§!\n-$MOD_LOGISTIC_GROWTH_MULT$: §R-50%§!\n-$MOD_BONUS_POP_GROWTH_MULT$: §R-50%§!\n-$MOD_PLANET_POP_ASSEMBLY_MULT$: §R-50%§!\n-$mod_pop_ethic_materialist_attraction_mult$: §G+50%§!\n-$MOD_PLANET_STORM_DEVASTATION_MULT$: §G-50%§!\n-$MOD_PLANET_ORBITAL_BOMBARDMENT_DAMAGE$: §G-100%§!\n-Can provide exclusive ['concept_black_hole_physicist'], ['concept_black_hole_biologist'], ['concept_black_hole_engineer'] jobs to produce resources\n\n§L$pc_time_desc$§!"
+ 
+ concept_pc_endless_time: "$pc_endless_time$"
+ concept_pc_endless_time_desc: "-['concept_trait_time'] Habitability: §Y100%§!\n-$MOD_PLANET_MAX_DISTRICTS_ADD$: §G+5§!\n-$mod_pop_ethic_materialist_attraction_mult$: §G+100%§!\n-$MOD_PLANET_STORM_DEVASTATION_MULT$: §G-100%§!\n-$MOD_PLANET_ORBITAL_BOMBARDMENT_DAMAGE$: §G-200%§!\n-$MOD_PLANET_CARRY_CAP_ADD$: §G+1000000§!\n-Can provide exclusive ['concept_time_recursioner'] jobs to produce resources\n\n§L$pc_endless_time_desc$§!"
+ 
+ concept_pc_gas_colony: "$pc_gas_colony$"
+ concept_pc_gas_colony_desc: "-['concept_trait_origin_gas_colony'] Habitability: §Y100%§!\n-$MOD_PLANET_MAX_DISTRICTS_MULT$: §G+50%§!\n-$mod_planet_jobs_worker_produces_mult$: §G+20%§!\n-$mod_planet_pops_upkeep_mult$: §G-10%§!\n-$MOD_PLANET_STORM_DEVASTATION_MULT$: §G-25%§!\n-$MOD_PLANET_ORBITAL_BOMBARDMENT_DAMAGE$: §G-50%§!\n-Can provide exclusive ['concept_gas_technician'], ['concept_gas_miner'], ['concept_gas_farmer'] or ['concept_gas_technician_drone'], ['concept_gas_mining_drone'], ['concept_gas_agri_drone'] jobs to produce resources\n\n§L$pc_gas_colony_desc$§!"
+ 
+ concept_pc_psionic: "$pc_psionic$"
+ concept_pc_psionic_desc: "-['concept_trait_origin_psionic'] Habitability: §Y100%§!\n-$mod_planet_jobs_specialist_produces_mult$: §G+20%§!\n-$MOD_POP_AMENITIES_USAGE_MULT$: §G-10%§!\n-$MOD_PLANET_STORM_DEVASTATION_MULT$: §G-50%§!\n-$MOD_PLANET_ORBITAL_BOMBARDMENT_DAMAGE$: §G-100%§!\n-Can provide exclusive ['concept_psionic_trader'], ['concept_psionic_technician'], ['concept_psionic_miner'], ['concept_psionic_farmer'] jobs to produce resources\n\n§L$pc_psionic_desc$§!"
+ 
+ concept_pc_nanites: "$pc_nanites$"
+ concept_pc_nanites_desc: "-['concept_trait_origin_nanites'] Habitability: §Y100%§!\n-$mod_planet_jobs_produces_mult$: §G+10%§!\n-$MOD_POP_HOUSING_USAGE_MULT$: §G-10%§!\n-$MOD_PLANET_STORM_DEVASTATION_MULT$: §G-25%§!\n-$MOD_PLANET_ORBITAL_BOMBARDMENT_DAMAGE$: §G-50%§!\n-Can provide exclusive ['concept_nanites_logistics_drone'] jobs to produce resources\n\n§L$pc_nanites_desc$§!"
+ 
+ concept_pc_time_ruin_cosmogenesis_world: "$pc_time_ruin_cosmogenesis_world$"
+ concept_pc_time_ruin_cosmogenesis_world_desc: "-$MOD_PLANET_MAX_DISTRICTS_ADD$: §G+4§!\n-$MOD_LOGISTIC_GROWTH_MULT$: §R-25%§!\n-$MOD_BONUS_POP_GROWTH_MULT$: §R-25%§!\n-Possesses exclusive districts, specializations and buildings, can be repaired into §Y$pc_cosmogenesis_world$§!\n\n§L$pc_time_ruin_cosmogenesis_world_desc$§!"
+ 
+ concept_pc_flood: "$pc_flood$"
+ concept_pc_flood_desc: "-§RUncolonizable§!\n-Can be terraformed into $pc_ocean$\n\n§L$pc_flood_desc$§!"
+ 
+ concept_pc_city: "$pc_city$"
+ concept_pc_city_desc: "-Habitability: §Y100%§!\n-$mod_planet_jobs_produces_mult$: §G+20%§!\n-$MOD_LOGISTIC_GROWTH_MULT$: §G+15%§!\n-$MOD_PLANET_POP_ASSEMBLY_MULT$: §G+15%§!\n-$MOD_BONUS_POP_GROWTH_MULT$: §G+15%§!\n-$MOD_PLANET_RESETTLEMENT_UNEMPLOYED_DESTINATION_MULT$: §G+50%§!\n\n§L$pc_city_desc$§!"
+ 
+ # 星系类型
+ concept_sc_bright_pearl: "$sc_bright_pearl$"
+ concept_sc_bright_pearl_desc: "-$MOD_SHIP_DISENGAGE_CHANCE_REDUCTION$: §R+50%§!\n-$MOD_SHIP_EMERGENCY_FTL_MIN_DAYS_MULT$: §R+50%§!\n-$MOD_SHIP_SPEED_REDUCTION$: §R+50%§!\n-$MOD_SHIP_SHIELD_REDUCTION$: §R+100%§!\n-$MOD_SHIP_ARMOR_REDUCTION$: §R+100%§!\n-A large number of §Yabandoned megastructures§! exist in the system, but the owner of this system will be §Rcoveted§! by the entire galaxy\n\n§L$sc_bright_pearl_desc$§!"
+ 
+ concept_sc_black_hole: "$sc_black_hole$ System"
+ concept_sc_black_hole_desc: "-$MOD_SHIP_DISENGAGE_CHANCE_REDUCTION$: §R+50%§!\n-$MOD_SHIP_EMERGENCY_FTL_MIN_DAYS_MULT$: §R+50%§!\n\n§L$sc_black_hole_desc$§!"
+ 
+ concept_sc_pulsar: "$sc_pulsar$ System"
+ concept_sc_pulsar_desc: "-$MOD_SHIP_SHIELD_REDUCTION$: §R+100%§!\n\n§L$sc_pulsar_desc$§!"
+ 
+ concept_sc_neutron_star: "$sc_neutron_star$ System"
+ concept_sc_neutron_star_desc: "-$MOD_SHIP_SPEED_REDUCTION$: §R+50%§!\n\n§L$sc_neutron_star_desc$§!"
+ 
+ concept_sc_time_white_hole: "$sc_time_white_hole$ System"
+ concept_sc_time_white_hole_desc: "-$MOD_SHIP_ARMOR_REDUCTION$: §R+100%§!\n\n§L$sc_time_white_hole_desc$§!"
+ 

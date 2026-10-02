@@ -1,0 +1,71 @@
+# Here you can specify the limits for ships of some types that country can own.
+# Please don't use these limits for ship sizes which can be used by Global designs.
+# The Scope is the active Country; if applied to a Federation design, From will
+# be the Federation; if applied to a Community design, From will be the Country
+# leading it
+
+# Example:
+#name_of_limit = {
+#	ship_types = { 
+#		# list of keys to ship_sizes database, these ship_sizes will share the calculated capacity
+#	}
+#	
+#	# Defines the shared capacity of the specified ships that country is allowed to own
+#	# capacity = min( max, base + naval_cap_fraction * current_naval_cap )
+#	# where current_naval_cap is current naval capacity of the country
+#	base = 1					# Base (minimal) shared capacity of ships
+#	max = 200					# Maximal shared capacity of ships
+#	naval_cap_fraction = 0.1	# Fraction of current naval capacity of the country
+#
+#	# Trigger that defines if tooltip for naval capacity icon on the top bar should be shown
+#	show = {
+#		is_scope_valid = yes
+#		has_technology = tech_titans
+#	}
+#}
+
+horror_titan_limit = {
+	ship_types = {
+		horror_titan
+	}
+	
+	base = 40
+	
+	show = {
+		is_scope_valid = yes
+		has_country_flag = gain_time_titan
+		NOR = {
+			has_country_flag = upgrade_to_time_titan_finished
+			has_country_flag = upgrade_to_end_titan_finished
+		}
+	}
+}
+
+time_titan_limit = {
+	ship_types = {
+		time_titan
+	}
+	
+	base = 80
+	
+	show = {
+		is_scope_valid = yes
+		has_country_flag = gain_time_titan
+		has_country_flag = upgrade_to_time_titan_finished
+		NOT = { has_country_flag = upgrade_to_end_titan_finished }
+	}
+}
+
+end_titan_limit = {
+	ship_types = {
+		end_titan
+	}
+	
+	base = 100
+	
+	show = {
+		is_scope_valid = yes
+		has_country_flag = gain_time_titan
+		has_country_flag = upgrade_to_end_titan_finished
+	}
+}

@@ -1,0 +1,31 @@
+triggered_planet_modifier = {
+	country_sr_dark_matter_produces_mult = @leader_trait_horror_focus_planet_modifier_$LEVEL$
+}
+triggered_planet_modifier = {
+	pop_category_rulers_sr_dark_matter_produces_add = @leader_trait_horror_focus_planet_high_$LEVEL$
+	pop_category_specialists_sr_dark_matter_produces_add = @leader_trait_horror_focus_planet_middle_$LEVEL$
+	pop_category_workers_sr_dark_matter_produces_add = @leader_trait_horror_focus_planet_low_$LEVEL$
+	pop_category_civilians_sr_dark_matter_produces_add = @leader_trait_horror_focus_planet_low_$LEVEL$
+	pop_category_adeptus_mechanicus_sr_dark_matter_produces_add = @leader_trait_horror_focus_planet_low_$LEVEL$
+	pop_category_drones_sr_dark_matter_produces_add = @leader_trait_horror_focus_planet_middle_$LEVEL$
+	pop_category_maintenance_drones_sr_dark_matter_produces_add = @leader_trait_horror_focus_planet_low_$LEVEL$
+	pop_category_bio_trophy_sr_dark_matter_produces_add = @leader_trait_horror_focus_planet_low_$LEVEL$
+	custom_tooltip = leader_trait_horror_focus_$LEVEL$_planet_effect
+}
+
+triggered_sector_modifier = {
+	country_sr_dark_matter_produces_mult = @leader_trait_horror_focus_sector_modifier_$LEVEL$
+}
+triggered_sector_modifier = {
+	pop_category_rulers_sr_dark_matter_produces_add = @leader_trait_horror_focus_sector_high_$LEVEL$
+	pop_category_specialists_sr_dark_matter_produces_add = @leader_trait_horror_focus_sector_middle_$LEVEL$
+	pop_category_workers_sr_dark_matter_produces_add = @leader_trait_horror_focus_sector_low_$LEVEL$
+	pop_category_civilians_sr_dark_matter_produces_add = @leader_trait_horror_focus_sector_low_$LEVEL$
+	pop_category_adeptus_mechanicus_sr_dark_matter_produces_add = @leader_trait_horror_focus_sector_low_$LEVEL$
+	pop_category_drones_sr_dark_matter_produces_add = @leader_trait_horror_focus_sector_middle_$LEVEL$
+	pop_category_maintenance_drones_sr_dark_matter_produces_add = @leader_trait_horror_focus_sector_low_$LEVEL$
+	pop_category_bio_trophy_sr_dark_matter_produces_add = @leader_trait_horror_focus_sector_low_$LEVEL$
+	custom_tooltip = leader_trait_horror_focus_$LEVEL$_sector_effect
+}
+
+custom_tooltip_with_modifiers = only_one_governor_focus

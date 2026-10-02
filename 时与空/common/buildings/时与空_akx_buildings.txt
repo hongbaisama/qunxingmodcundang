@@ -1,0 +1,626 @@
+building_akx_worm_1 = {
+	base_buildtime = @b4_time
+	planet_limit = 1
+	empire_limit = { base = 1 }
+	can_demolish = no
+	can_be_ruined = no
+	can_be_disabled = no
+	category = resource
+	
+	building_sets = { akx_worm }
+
+	potential = {
+		is_capital = yes
+		is_special_colony_type = no
+		owner = {
+			is_ai = no
+			has_country_flag = horizonsignal_trigger
+		}
+	}
+	
+	destroy_trigger = {
+		OR = {
+			is_capital = no
+			is_special_colony_type = yes
+			num_zones = {
+				type = zone_akx_worm
+				value <= 0
+			}
+			owner = {
+				NOT = { has_country_flag = horizonsignal_trigger }
+			}
+		}
+	}
+	
+	allow = {
+		custom_tooltip = {
+			fail_text = NEED_ZONE_AKX_WORM
+			num_zones = {
+				type = zone_akx_worm
+				value > 0
+			}
+		}
+	}
+	
+	triggered_country_modifier = {
+		country_energy_produces_mult = 0.15
+		mult = owner.value:num_akx_ap_value
+	}
+	
+	triggered_planet_modifier = {
+		planet_technician_energy_produces_add = 3
+		generator_district_housing_add = 250
+		mult = owner.value:num_akx_ap_value
+	}
+	
+	prerequisites = {
+		"tech_akx_worm_1"
+	}
+
+	resources = {
+		category = planet_buildings
+		inline_script = {
+			script = buildings/nomadic_cost_switcher
+			REGULAR_RESOURCE = minerals
+			NOMADIC_RESOURCE = volatile_motes
+			COST = @b4_minerals
+			NOMADIC_COST_MULT = @nomadic_minerals_to_strategic_ratio
+		}
+		cost = {
+			volatile_motes = @b4_rare_cost
+		}
+		upkeep = {
+			volatile_motes = 5
+		}
+		produces = {
+			energy = 1
+			mult = value:building_akx_worm_value
+		}
+	}
+	
+	triggered_desc = {
+		trigger = {
+			exists = owner
+			owner = {
+				NOR = {
+					has_ascension_perk = ap_horror
+					has_ascension_perk = ap_time
+				}
+			}
+		}
+		text = building_akx_worm_1_effect
+	}
+	
+	triggered_desc = {
+		trigger = {
+			exists = owner
+			owner = {
+				has_ascension_perk = ap_horror
+				NOT = { has_ascension_perk = ap_time }
+			}
+		}
+		text = building_akx_worm_1_effect_ap_horror
+	}
+	
+	triggered_desc = {
+		trigger = {
+			exists = owner
+			owner = {
+				has_ascension_perk = ap_time
+			}
+		}
+		text = building_akx_worm_1_effect_ap_time
+	}
+}
+
+building_akx_worm_2 = {
+	base_buildtime = @b4_time
+	planet_limit = 1
+	empire_limit = { base = 1 }
+	can_demolish = no
+	can_be_ruined = no
+	can_be_disabled = no
+	category = unity
+	
+	building_sets = { akx_worm }
+
+	potential = {
+		is_capital = yes
+		is_special_colony_type = no
+		owner = {
+			is_ai = no
+			has_country_flag = horizonsignal_trigger
+		}
+	}
+	
+	destroy_trigger = {
+		OR = {
+			is_capital = no
+			is_special_colony_type = yes
+			num_zones = {
+				type = zone_akx_worm
+				value <= 0
+			}
+			owner = {
+				NOT = { has_country_flag = horizonsignal_trigger }
+			}
+		}
+	}
+	
+	allow = {
+		custom_tooltip = {
+			fail_text = NEED_ZONE_AKX_WORM
+			num_zones = {
+				type = zone_akx_worm
+				value > 0
+			}
+		}
+		custom_tooltip = {
+			fail_text = NEED_AKX_WORM_1
+			has_building = building_akx_worm_1
+		}
+	}
+	
+	triggered_country_modifier = {
+		country_unity_produces_mult = 0.15
+		country_society_research_produces_mult = 0.15
+		mult = owner.value:num_akx_ap_value
+	}
+	
+	triggered_planet_modifier = {
+		planet_bureaucrats_unity_produces_add = 1.5
+		planet_biologists_society_research_produces_add = 1.5
+		mult = owner.value:num_akx_ap_value
+	}
+
+	prerequisites = {
+		"tech_akx_worm_2"
+	}
+
+	resources = {
+		category = planet_buildings
+		inline_script = {
+			script = buildings/nomadic_cost_switcher
+			REGULAR_RESOURCE = minerals
+			NOMADIC_RESOURCE = rare_crystals
+			COST = @b4_minerals
+			NOMADIC_COST_MULT = @nomadic_minerals_to_strategic_ratio
+		}
+		cost = {
+			rare_crystals = @b4_rare_cost
+		}
+		upkeep = {
+			rare_crystals = 5
+		}
+		produces = {
+			unity = 0.5
+			society_research = 0.5
+			mult = value:building_akx_worm_value
+		}
+	}
+	
+	triggered_desc = {
+		trigger = {
+			exists = owner
+			owner = {
+				NOR = {
+					has_ascension_perk = ap_horror
+					has_ascension_perk = ap_time
+				}
+			}
+		}
+		text = building_akx_worm_2_effect
+	}
+	
+	triggered_desc = {
+		trigger = {
+			exists = owner
+			owner = {
+				has_ascension_perk = ap_horror
+				NOT = { has_ascension_perk = ap_time }
+			}
+		}
+		text = building_akx_worm_2_effect_ap_horror
+	}
+	
+	triggered_desc = {
+		trigger = {
+			exists = owner
+			owner = {
+				has_ascension_perk = ap_time
+			}
+		}
+		text = building_akx_worm_2_effect_ap_time
+	}
+}
+
+building_akx_worm_3 = {
+	base_buildtime = @b4_time
+	planet_limit = 1
+	empire_limit = { base = 1 }
+	can_demolish = no
+	can_be_ruined = no
+	can_be_disabled = no
+	category = research
+	
+	building_sets = { akx_worm }
+
+	potential = {
+		is_capital = yes
+		is_special_colony_type = no
+		owner = {
+			is_ai = no
+			has_country_flag = horizonsignal_trigger
+		}
+	}
+	
+	destroy_trigger = {
+		OR = {
+			is_capital = no
+			is_special_colony_type = yes
+			num_zones = {
+				type = zone_akx_worm
+				value <= 0
+			}
+			owner = {
+				NOT = { has_country_flag = horizonsignal_trigger }
+			}
+		}
+	}
+	
+	allow = {
+		custom_tooltip = {
+			fail_text = NEED_ZONE_AKX_WORM
+			num_zones = {
+				type = zone_akx_worm
+				value > 0
+			}
+		}
+		if = {
+			limit = {
+				has_global_flag = has_wsg_mod
+			}
+			# 舰R也有一个圆环学院
+			custom_tooltip = {
+				fail_text = NEED_AKX_WORM_2_FOR_WSG
+				has_building = building_akx_worm_2
+			}
+		}
+		else = {
+			custom_tooltip = {
+				fail_text = NEED_AKX_WORM_2
+				has_building = building_akx_worm_2
+			}
+		}
+		custom_tooltip = {
+			fail_text = REQUIREMENT_OF_ORIGIN_TIME
+			owner = {
+				if = {
+					limit = {
+						# 可触发“时之螶：交流”
+						has_origin_time = yes
+						NOT = { has_country_flag = interrupt_time_black_hole_chain }
+						ruler = { is_origin_time_ruler = yes }
+					}
+					OR = {
+						has_tech_option = tech_time_blocker_3
+						has_technology = tech_time_blocker_3
+					}
+				}
+				NOT = { has_event_chain = TIME_BLACK_HOLE_CHAIN }
+			}
+		}
+	}
+	
+	triggered_country_modifier = {
+		country_physics_research_produces_mult = 0.15
+		country_engineering_research_produces_mult = 0.15
+		mult = owner.value:num_akx_ap_value
+	}
+	
+	triggered_planet_modifier = {
+		planet_physicists_physics_research_produces_add = 1.5
+		planet_engineers_engineering_research_produces_add = 1.5
+		mult = owner.value:num_akx_ap_value
+	}
+
+	prerequisites = {
+		"tech_akx_worm_3"
+	}
+
+	resources = {
+		category = planet_buildings
+		inline_script = {
+			script = buildings/nomadic_cost_switcher
+			REGULAR_RESOURCE = minerals
+			NOMADIC_RESOURCE = exotic_gases
+			COST = @b4_minerals
+			NOMADIC_COST_MULT = @nomadic_minerals_to_strategic_ratio
+		}
+		cost = {
+			exotic_gases = @b4_rare_cost
+		}
+		upkeep = {
+			exotic_gases = 5
+		}
+		produces = {
+			physics_research = 0.5
+			engineering_research = 0.5
+			mult = value:building_akx_worm_value
+		}
+	}
+	
+	triggered_desc = {
+		trigger = {
+			exists = owner
+			owner = {
+				NOR = {
+					has_ascension_perk = ap_horror
+					has_ascension_perk = ap_time
+				}
+			}
+		}
+		text = building_akx_worm_3_effect
+	}
+	
+	triggered_desc = {
+		trigger = {
+			exists = owner
+			owner = {
+				has_ascension_perk = ap_horror
+				NOT = { has_ascension_perk = ap_time }
+			}
+		}
+		text = building_akx_worm_3_effect_ap_horror
+	}
+	
+	triggered_desc = {
+		trigger = {
+			exists = owner
+			owner = {
+				has_ascension_perk = ap_time
+			}
+		}
+		text = building_akx_worm_3_effect_ap_time
+	}
+}
+
+# 仅用于时螶之界事件展示
+building_distorted_akx_worm_3_base = {
+	icon = building_ancient_ward_1
+	base_buildtime = @b2_time
+	planet_limit = 1
+	empire_limit = { base = 1 }
+	can_build = no
+	can_demolish = no
+	can_be_ruined = no
+	can_be_disabled = no
+	
+	category = research
+	
+	building_sets = {
+		government
+		research
+		physics
+	}
+	
+	potential = {
+		exists = event_target:manifold_country
+		is_owned_by = event_target:manifold_country
+	}
+	
+	allow = {
+		always = no
+	}
+	
+	resources = {
+		category = planet_buildings
+		inline_script = {
+			script = buildings/nomadic_cost_switcher
+			REGULAR_RESOURCE = minerals
+			NOMADIC_RESOURCE = sr_dark_matter
+			COST = @b2_minerals
+			NOMADIC_COST_MULT = @nomadic_minerals_to_strategic_ratio
+		}
+		cost = {
+			sr_dark_matter = @b2_rare_cost
+		}
+		upkeep = {
+			energy = @b2_upkeep
+			sr_dark_matter = @b2_rare_upkeep
+		}
+	}
+	
+	upgrades = {
+		building_distorted_akx_worm_3_unfinished
+	}
+}
+
+building_distorted_akx_worm_3_unfinished = {
+	icon = building_ancient_ward_2
+	base_buildtime = @b3_time
+	can_build = no
+	can_demolish = no
+	can_be_ruined = no
+	can_be_disabled = no
+	
+	category = research
+	
+	building_sets = {
+		government
+		research
+		physics
+	}
+	
+	potential = {
+		exists = event_target:manifold_country
+		is_owned_by = event_target:manifold_country
+	}
+	
+	allow = {
+		always = no
+	}
+	
+	resources = {
+		category = planet_buildings
+		inline_script = {
+			script = buildings/nomadic_cost_switcher
+			REGULAR_RESOURCE = minerals
+			NOMADIC_RESOURCE = sr_dark_matter
+			COST = @b3_minerals
+			NOMADIC_COST_MULT = @nomadic_minerals_to_strategic_ratio
+		}
+		cost = {
+			sr_dark_matter = @b3_rare_cost
+		}
+		upkeep = {
+			energy = @b3_upkeep
+			sr_dark_matter = @b3_rare_upkeep
+		}
+		produces = {
+			physics_research = 8
+		}
+	}
+	
+	triggered_country_modifier = {
+		physics_tech_cost_mult = -0.1
+	}
+	
+	triggered_planet_modifier = {
+		planet_physicists_physics_research_produces_add = 1.5
+		job_physicist_automated_workforce_mult = 0.5
+	}
+	
+	upgrades = {
+		building_distorted_akx_worm_3
+	}
+}
+
+building_distorted_akx_worm_3 = {
+	icon = building_psionic_suppressor
+	base_buildtime = @b4_time
+	can_build = no
+	can_demolish = no
+	can_be_ruined = no
+	can_be_disabled = no
+	
+	category = research
+	
+	building_sets = {
+		government
+		research
+		physics
+	}
+	
+	potential = {
+		exists = event_target:manifold_country
+		is_owned_by = event_target:manifold_country
+	}
+	
+	allow = {
+		always = no
+	}
+	
+	resources = {
+		category = planet_buildings
+		inline_script = {
+			script = buildings/nomadic_cost_switcher
+			REGULAR_RESOURCE = minerals
+			NOMADIC_RESOURCE = sr_dark_matter
+			COST = @b4_minerals
+			NOMADIC_COST_MULT = @nomadic_minerals_to_strategic_ratio
+		}
+		cost = {
+			sr_dark_matter = @b4_rare_cost
+		}
+		upkeep = {
+			energy = @b4_upkeep
+			sr_dark_matter = @b4_rare_upkeep
+		}
+		produces = {
+			physics_research = 16
+		}
+	}
+	
+	triggered_country_modifier = {
+		physics_tech_cost_mult = -0.2
+	}
+	
+	triggered_planet_modifier = {
+		planet_physicists_physics_research_produces_add = 3
+		job_physicist_automated_workforce_mult = 1
+	}
+}
+
+# 仅用于岗位的建筑图标展示
+building_akx_end_messenger = {
+	can_build = no
+	can_demolish = no
+	can_be_ruined = no
+	can_be_disabled = no
+	planet_limit = 1
+	
+	category = government
+	
+	building_sets = { government }
+	
+	potential = {
+		always = no
+	}
+	
+	destroy_trigger = {
+		always = no
+	}
+	
+	resources = {
+		category = planet_buildings
+	}
+}
+
+building_akx_future_messenger = {
+	can_build = no
+	can_demolish = no
+	can_be_ruined = no
+	can_be_disabled = no
+	planet_limit = 1
+	
+	category = government
+	
+	building_sets = { government }
+	
+	potential = {
+		always = no
+	}
+	
+	destroy_trigger = {
+		always = no
+	}
+	
+	resources = {
+		category = planet_buildings
+	}
+}
+
+building_akx_gestalt_messenger = {
+	can_build = no
+	can_demolish = no
+	can_be_ruined = no
+	can_be_disabled = no
+	planet_limit = 1
+	
+	category = government
+	
+	building_sets = { government }
+	
+	potential = {
+		always = no
+	}
+	
+	destroy_trigger = {
+		always = no
+	}
+	
+	resources = {
+		category = planet_buildings
+	}
+}

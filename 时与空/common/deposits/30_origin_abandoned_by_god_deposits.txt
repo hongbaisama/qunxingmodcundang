@@ -1,0 +1,36 @@
+d_abandoned_by_god_home_planet = {
+	category = deposit_cat_rare
+
+	icon = d_time_unity
+	
+	resources = {
+		category = planet_deposits
+		produces = {
+			trigger = {
+				is_colonizable_or_colony = yes
+				NOT = { has_deposit = d_zro_deposit_5 }
+			}
+			sr_zro = 10
+		}
+	}
+	
+	planet_modifier = {
+		country_produces_mult = -100
+	}
+	
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { has_origin = origin_abandoned_by_god }
+		}
+		country_unity_produces_mult = 200
+	}
+	
+	potential = {
+		always = no
+	}
+	
+	drop_weight = {
+		weight = 0
+	}
+}

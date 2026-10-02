@@ -1,0 +1,42 @@
+icon = "GFX_resolution_time_keeper_$TYPE$"
+
+resources = {
+	category = resolutions
+	cost = {
+		influence = $COST$
+	}
+}
+target = no
+
+effect = {
+	custom_tooltip = $RESOLUTION$_effect
+	if = {
+		limit = {
+			is_active_resolution = $OPPOSITE_RESOLUTION$
+		}
+		cancel_resolution = $OPPOSITE_RESOLUTION$
+	}
+	# 补全特质
+	hidden_effect = {
+		every_galcom_member = {
+			every_owned_leader = {
+				limit = {
+					leader_class = commander
+					NOT = { has_trait = leader_trait_time_keeper }
+				}
+				add_trait = {
+					trait = leader_trait_time_keeper
+					show_message = no
+				}
+			}
+		}
+	}
+}
+
+potential = {
+	# 允许其它国家提出
+	is_active_resolution = resolution_time_keeper_$TYPE$_setup
+}
+
+allow = {
+}

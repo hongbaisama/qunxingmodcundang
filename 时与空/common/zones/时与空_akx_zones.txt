@@ -1,0 +1,314 @@
+zone_akx_worm = {
+	icon = GFX_district_specialization_akx_worm
+	
+	empire_limit = { base = 1 }
+	
+	planet_limit = { base = 1 }
+	
+	# 视界领域只有3个可造建筑，固定3槽
+	max_buildings = 3
+
+	base_buildtime = @zone_buildtime
+	
+	potential = {
+		hidden_trigger = {
+			exists = owner
+			owner = { has_country_flag = horizonsignal_trigger }
+		}
+		is_capital = yes
+		carrier_is_type = planet
+		owner = { has_technology = tech_akx_worm_1 }
+	}
+
+	unlock = {
+		hidden_trigger = {
+			exists = owner
+			owner = { has_country_flag = horizonsignal_trigger }
+			carrier_is_type = planet
+		}
+		is_capital = yes
+		owner = { has_technology = tech_akx_worm_1 }
+	}
+
+	resources = {
+		category = planet_zones
+		inline_script = {
+			script = buildings/nomadic_cost_switcher
+			REGULAR_RESOURCE = minerals
+			NOMADIC_RESOURCE = alloys
+			COST = @zone_cost
+			NOMADIC_COST_MULT = 0.5
+		}
+	}
+
+	planet_modifier = {
+		zone_building_slots_add = 3
+	}
+	
+	triggered_planet_modifier = {
+		potential = {
+			is_capital = yes
+			exists = owner
+			owner = { has_country_flag = horizonsignal_trigger }
+		}
+		job_max_workforce_mult = 0.25
+		planet_housing_mult = -0.25
+		mult = owner.value:num_akx_ap_value
+	}
+	
+	# 螺旋发电池
+	triggered_district_planet_modifier = {
+		potential = {
+			is_capital = yes
+			is_origin_time_planet_class = no
+			has_active_building = building_akx_worm_1
+			exists = owner
+			owner = {
+				has_country_flag = horizonsignal_trigger
+				is_gestalt = no
+			}
+		}
+		job_technician_add = 100
+		mult = value:zone_akx_worm_value
+	}
+	
+	triggered_district_planet_modifier = {
+		potential = {
+			is_capital = yes
+			is_origin_time_planet_class = no
+			has_active_building = building_akx_worm_1
+			exists = owner
+			owner = {
+				has_country_flag = horizonsignal_trigger
+				is_gestalt = yes
+			}
+		}
+		job_technician_drone_add = 100
+		mult = value:zone_akx_worm_value
+	}
+	
+	# 圆环学院
+	triggered_district_planet_modifier = {
+		potential = {
+			is_capital = yes
+			is_origin_time_planet_class = no
+			has_active_building = building_akx_worm_2
+			exists = owner
+			owner = {
+				has_country_flag = horizonsignal_trigger
+				is_gestalt = no
+			}
+		}
+		job_bureaucrat_add = 50
+		job_biologist_add = 50
+		mult = value:zone_akx_worm_value
+	}
+	
+	triggered_district_planet_modifier = {
+		potential = {
+			is_capital = yes
+			is_origin_time_planet_class = no
+			has_active_building = building_akx_worm_2
+			exists = owner
+			owner = {
+				has_country_flag = horizonsignal_trigger
+				is_gestalt = yes
+			}
+		}
+		job_coordinator_add = 50
+		job_calculator_biologist_add = 50
+		mult = value:zone_akx_worm_value
+	}
+	
+	# 欧米伽同调装置
+	triggered_district_planet_modifier = {
+		potential = {
+			is_capital = yes
+			is_origin_time_planet_class = no
+			has_active_building = building_akx_worm_3
+			exists = owner
+			owner = {
+				has_country_flag = horizonsignal_trigger
+				is_gestalt = no
+			}
+		}
+		job_physicist_add = 50
+		job_engineer_add = 50
+		mult = value:zone_akx_worm_value
+	}
+	
+	triggered_district_planet_modifier = {
+		potential = {
+			is_capital = yes
+			is_origin_time_planet_class = no
+			has_active_building = building_akx_worm_3
+			exists = owner
+			owner = {
+				has_country_flag = horizonsignal_trigger
+				is_gestalt = yes
+			}
+		}
+		job_calculator_physicist_add = 50
+		job_calculator_engineer_add = 50
+		mult = value:zone_akx_worm_value
+	}
+	
+	# 减住房
+	triggered_district_planet_modifier = {
+		potential = {
+			is_capital = yes
+			is_origin_time_planet_class = no
+			has_active_building = building_akx_worm_1
+			exists = owner
+			owner = { has_country_flag = horizonsignal_trigger }
+		}
+		planet_housing_add = -100
+		mult = owner.value:num_akx_ap_value
+	}
+	
+	triggered_district_planet_modifier = {
+		potential = {
+			is_capital = yes
+			is_origin_time_planet_class = no
+			has_active_building = building_akx_worm_2
+			exists = owner
+			owner = { has_country_flag = horizonsignal_trigger }
+		}
+		planet_housing_add = -100
+		mult = owner.value:num_akx_ap_value
+	}
+	
+	triggered_district_planet_modifier = {
+		potential = {
+			is_capital = yes
+			is_origin_time_planet_class = no
+			has_active_building = building_akx_worm_3
+			exists = owner
+			owner = { has_country_flag = horizonsignal_trigger }
+		}
+		planet_housing_add = -100
+		mult = owner.value:num_akx_ap_value
+	}
+	
+	# 神秘奇点
+	triggered_district_planet_modifier = {
+		potential = {
+			is_capital = yes
+			is_planet_class = pc_time
+			exists = owner
+			owner = { has_country_flag = horizonsignal_trigger }
+		}
+		district_time_usage_cap = @zone_time_base_usage_cap
+		mult = value:district_time_level_value
+	}
+
+	triggered_district_planet_modifier = {
+		potential = {
+			is_capital = yes
+			is_planet_class = pc_endless_time
+			exists = owner
+			owner = { has_country_flag = horizonsignal_trigger }
+		}
+		district_time_usage_cap = @zone_endless_time_base_usage_cap
+		mult = value:district_time_level_value
+	}
+	
+	triggered_desc = {
+		trigger = {
+			is_capital = no
+		}
+		text = zone_akx_worm_requires_capital
+	}
+	
+	zone_sets = {
+		urban
+		habitat_urban
+		zone_starcage_world_core # 奇观拓展-星笼世界
+		akx_worm # MOD兼容（对于希望使用非原版区域的区域槽，可以包含此区域组）
+	}
+
+	included_building_sets = {
+		akx_worm
+	}
+	
+	show_in_tech = tech_akx_worm_1
+	
+	ai_weight_coefficient = 10
+	ai_priority = 100
+}
+
+zone_worm_black_hole = {
+	icon = GFX_district_specialization_research
+	
+	planet_limit = { base = 1 }
+	
+	base_buildtime = @zone_buildtime
+	
+	potential = { # planet scope
+		hidden_trigger = {
+			exists = owner
+			owner = { is_wilderness_empire = no }
+			carrier_is_type = planet
+			solar_system = {
+				has_star_flag = worm_black_hole
+				star = { is_planet_class = pc_black_hole }
+			}
+		}
+	}
+
+	unlock = { # planet scope
+		hidden_trigger = {
+			exists = owner
+			owner = { is_wilderness_empire = no }
+			carrier_is_type = planet
+			solar_system = {
+				has_star_flag = worm_black_hole
+				star = { is_planet_class = pc_black_hole }
+			}
+		}
+	}
+
+	resources = {
+		category = planet_zones
+		inline_script = {
+			script = buildings/nomadic_cost_switcher
+			REGULAR_RESOURCE = minerals
+			NOMADIC_RESOURCE = alloys
+			COST = @zone_cost
+			NOMADIC_COST_MULT = 0.5
+		}
+	}
+
+	inline_script = {
+		script = jobs/zone_researchers_add
+		AMOUNT = 50
+	}
+
+	inline_script = {
+		script = jobs/zone_unity_jobs_add
+		AMOUNT = 50
+	}
+
+	planet_modifier = {
+		zone_building_slots_add = @time_mod_zone_max_buildings
+	}
+
+	zone_sets = {
+		urban
+		habitat_urban
+	}
+
+	included_building_sets = {
+		research
+		unity
+		urban_automation
+		origin
+	}
+
+	inline_script = {
+		script = zones/shared_city_non_urban_zone_modifiers
+	}
+
+	ai_weight_coefficient = 1.5
+	ai_priority = 10
+}

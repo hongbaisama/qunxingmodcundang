@@ -1,0 +1,70 @@
+category = $CATEGORY$
+can_be_automated = no
+
+swappable_data = {
+	default = {
+		building_icon = building_forever_cruise_passenger_unity
+		icon = sacred_path_elite
+	}
+}
+
+tags = { unity trade }
+
+resources = {
+	category = planet_time_shelter_elders
+	produces = {
+		unity = 3
+		trade = 6
+		mult = value:time_shelter_output_value
+	}
+	upkeep = {
+		trigger = {
+			owner = { is_gestalt = no }
+		}
+		consumer_goods = 2.5
+	}
+	upkeep = {
+		trigger = {
+			owner = { is_gestalt = yes }
+		}
+		energy = 2.5
+		minerals = 2.5
+	}
+}
+
+triggered_planet_modifier = {
+	potential = {
+		has_time_shelter_modifier = { MODIFIER = time_shelter_elder_produce_species_empire_size_mult }
+	}
+	species_empire_size_mult = 1
+	mult = value:time_shelter_modifier_output_value|MODIFIER|time_shelter_elder_produce_species_empire_size_mult|
+}
+
+triggered_planet_modifier = {
+	potential = {
+		has_time_shelter_modifier = { MODIFIER = time_shelter_elder_produce_empire_size_districts_mult }
+	}
+	empire_size_districts_mult = 1
+	mult = value:time_shelter_modifier_output_value|MODIFIER|time_shelter_elder_produce_empire_size_districts_mult|
+}
+
+triggered_planet_modifier = {
+	potential = {
+		has_time_shelter_modifier = { MODIFIER = time_shelter_elder_produce_planet_amenities_add }
+	}
+	planet_amenities_add = 1
+	mult = value:time_shelter_modifier_output_value|MODIFIER|time_shelter_elder_produce_planet_amenities_add|
+}
+
+triggered_planet_modifier = {
+	potential = {
+		has_time_shelter_modifier = { MODIFIER = time_shelter_elder_produce_planet_crime_add }
+	}
+	planet_crime_add = 1
+	mult = value:time_shelter_modifier_output_value|MODIFIER|time_shelter_elder_produce_planet_crime_add|
+}
+
+weight = {
+	weight = $WEIGHT$
+	mult = 100
+}

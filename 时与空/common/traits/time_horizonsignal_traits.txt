@@ -1,0 +1,1900 @@
+# 时光旅馆
+leader_trait_time_hotel = {
+	inline_script = {
+		script = trait/time_trait_icon
+		CLASS = scientist
+		ICON = "GFX_leader_trait_time_hotel"
+		RARITY = veteran
+		COUNCIL = yes
+		TIER = none
+		PRIORITY = @trait_sorting_priority_veteran_yes_none
+	}
+	councilor_modifier = {
+		all_technology_research_speed = 0.1
+		ship_anomaly_generation_chance_mult = 0.2
+		ship_archaeological_site_clues_add = 2
+		ship_astral_rift_clues_add = 2
+	}
+	triggered_modifier = {
+		potential = {
+			is_councilor = no
+		}
+		ship_anomaly_generation_chance_mult = 0.2
+		ship_archaeological_site_clues_add = 2
+		ship_astral_rift_clues_add = 2
+	}
+	triggered_self_modifier = {
+		potential = {
+			is_immortal = no
+		}
+		species_leader_exp_gain = 0.25
+		leader_lifespan_mult = -0.25
+	}
+	triggered_self_modifier = {
+		potential = {
+			is_immortal = yes
+		}
+		species_leader_exp_gain = 0.25
+		leaders_upkeep_mult = 0.5
+	}
+	leader_class = { scientist }
+	initial = no
+	randomized = no
+}
+
+leader_trait_time_hotel_gestalt = {
+	inline_script = {
+		script = trait/time_trait_icon
+		CLASS = scientist
+		ICON = "GFX_leader_trait_time_hotel"
+		RARITY = veteran
+		COUNCIL = yes
+		TIER = none
+		PRIORITY = @trait_sorting_priority_veteran_yes_none
+	}
+	councilor_modifier = {
+		all_technology_research_speed = 0.1
+		ship_anomaly_generation_chance_mult = 0.2
+		ship_archaeological_site_clues_add = 2
+		ship_astral_rift_clues_add = 2
+	}
+	self_modifier = {
+		species_leader_exp_gain = 0.25
+		negative_traits_leader = 2.5
+	}
+	leader_class = { scientist }
+	initial = no
+	randomized = no
+}
+
+
+
+# 负相奥秘（普政）
+leader_trait_horror_secret = {
+	inline_script = {
+		script = trait/time_trait_icon_for_horror_secret
+		SUBTITLE = horror_secret
+		CLASS = leader
+		COUNCIL = yes
+		PRIORITY = 1000
+	}
+	# 内阁
+	triggered_councilor_modifier = {
+		potential = {
+			has_finished_all_ap_horror_project = yes
+		}
+		all_technology_research_speed = 0.2
+	}
+	triggered_councilor_modifier = {
+		potential = {
+			has_leader_flag = leader_finish_ap_horror_project_time
+			has_finished_all_ap_horror_project = no
+		}
+		country_physics_tech_research_speed = 0.05
+		mult = value:num_finished_ap_horror_project_value|BASE|1|
+	}
+	triggered_councilor_modifier = {
+		potential = {
+			has_leader_flag = leader_finish_ap_horror_project_circle
+			has_finished_all_ap_horror_project = no
+		}
+		country_society_tech_research_speed = 0.05
+		mult = value:num_finished_ap_horror_project_value|BASE|1|
+	}
+	triggered_councilor_modifier = {
+		potential = {
+			has_leader_flag = leader_finish_ap_horror_project_dimension
+			has_finished_all_ap_horror_project = no
+		}
+		country_engineering_tech_research_speed = 0.05
+		mult = value:num_finished_ap_horror_project_value|BASE|1|
+	}
+	# 负相生物
+	triggered_councilor_modifier = {
+		potential = {
+			has_leader_flag = horror_secret_materials
+		}
+		category_materials_research_speed_mult = 0.3
+		category_materials_draw_chance_mult = 0.5
+	}
+	triggered_councilor_modifier = {
+		potential = {
+			has_leader_flag = horror_secret_propulsion
+		}
+		category_propulsion_research_speed_mult = 0.3
+		category_propulsion_draw_chance_mult = 0.5
+	}
+	triggered_councilor_modifier = {
+		potential = {
+			has_leader_flag = horror_secret_voidcraft
+		}
+		category_voidcraft_research_speed_mult = 0.3
+		category_voidcraft_draw_chance_mult = 0.5
+	}
+	triggered_councilor_modifier = {
+		potential = {
+			has_leader_flag = horror_secret_industry
+		}
+		category_industry_research_speed_mult = 0.3
+		category_industry_draw_chance_mult = 0.5
+	}
+	triggered_councilor_modifier = {
+		potential = {
+			has_leader_flag = horror_secret_field_manipulation
+		}
+		category_field_manipulation_research_speed_mult = 0.3
+		category_field_manipulation_draw_chance_mult = 0.5
+	}
+	triggered_councilor_modifier = {
+		potential = {
+			has_leader_flag = horror_secret_particles
+		}
+		category_particles_research_speed_mult = 0.3
+		category_particles_draw_chance_mult = 0.5
+	}
+	triggered_councilor_modifier = {
+		potential = {
+			has_leader_flag = horror_secret_computing
+		}
+		category_computing_research_speed_mult = 0.3
+		category_computing_draw_chance_mult = 0.5
+	}
+	triggered_councilor_modifier = {
+		potential = {
+			has_leader_flag = horror_secret_psionics
+		}
+		category_psionics_research_speed_mult = 0.3
+		category_psionics_draw_chance_mult = 0.5
+	}
+	triggered_councilor_modifier = {
+		potential = {
+			has_leader_flag = horror_secret_new_worlds
+		}
+		category_new_worlds_research_speed_mult = 0.3
+		category_new_worlds_draw_chance_mult = 0.5
+	}
+	triggered_councilor_modifier = {
+		potential = {
+			has_leader_flag = horror_secret_statecraft
+		}
+		category_statecraft_research_speed_mult = 0.3
+		category_statecraft_draw_chance_mult = 0.5
+	}
+	triggered_councilor_modifier = {
+		potential = {
+			has_leader_flag = horror_secret_biology
+		}
+		category_biology_research_speed_mult = 0.3
+		category_biology_draw_chance_mult = 0.5
+	}
+	triggered_councilor_modifier = {
+		potential = {
+			has_leader_flag = horror_secret_military_theory
+		}
+		category_military_theory_research_speed_mult = 0.3
+		category_military_theory_draw_chance_mult = 0.5
+	}
+	triggered_councilor_modifier = {
+		potential = {
+			has_leader_flag = horror_secret_archaeostudies
+		}
+		category_archaeostudies_research_speed_mult = 0.3
+		category_archaeostudies_draw_chance_mult = 0.5
+	}
+	triggered_councilor_modifier = {
+		potential = {
+			has_leader_flag = horror_secret_horror_time
+		}
+		category_horror_time_research_speed_mult = 0.3
+		category_horror_time_draw_chance_mult = 0.5
+	}
+	# 通用
+	triggered_self_modifier = {
+		potential = {
+			is_immortal = no
+		}
+		leader_lifespan_mult = -0.125
+		mult = value:num_finished_ap_horror_project_value|BASE|1|
+	}
+	triggered_self_modifier = {
+		potential = {
+			is_immortal = yes
+		}
+		leaders_upkeep_mult = 0.25
+		mult = value:num_finished_ap_horror_project_value|BASE|1|
+	}
+	# 终焉宣告防护
+	triggered_councilor_modifier = {
+		potential = {
+			has_global_flag = dimensional_horror_crisis_storm_has_occurred
+		}
+		dimensional_horror_crisis_storm_protection_level = 1
+		mult = value:num_finished_ap_horror_project_value
+	}
+	on_gained_effect = {
+		if = {
+			limit = {
+				has_finished_all_ap_horror_project = yes
+			}
+			gain_timed_leader_trait_horror_secret = yes
+			# 知识宝库增加计数
+			owner = { change_paragon_memory_vault = yes }
+			# 晋升著名
+			become_renowned_without_promotion = yes
+		}
+	}
+	leader_class = all
+	initial = no
+	randomized = no
+}
+
+# 负相奥秘（格式塔）
+leader_trait_horror_secret_gestalt = {
+	inline_script = {
+		script = trait/time_trait_icon_for_horror_secret
+		SUBTITLE = horror_secret_gestalt
+		CLASS = leader
+		COUNCIL = no
+		PRIORITY = 1000
+	}
+	# 星球
+	triggered_planet_modifier = {
+		potential = {
+			has_leader_flag = leader_finish_ap_horror_project_time
+		}
+		country_physics_research_produces_mult = 0.1
+		mult = value:num_finished_ap_horror_project_value|BASE|1|
+	}
+	triggered_planet_modifier = {
+		potential = {
+			has_leader_flag = leader_finish_ap_horror_project_circle
+		}
+		country_society_research_produces_mult = 0.1
+		mult = value:num_finished_ap_horror_project_value|BASE|1|
+	}
+	triggered_planet_modifier = {
+		potential = {
+			has_leader_flag = leader_finish_ap_horror_project_dimension
+		}
+		country_engineering_research_produces_mult = 0.1
+		mult = value:num_finished_ap_horror_project_value|BASE|1|
+	}
+	# 星域
+	triggered_sector_modifier = {
+		potential = {
+			has_leader_flag = leader_finish_ap_horror_project_time
+		}
+		country_physics_research_produces_mult = 0.05
+		mult = value:num_finished_ap_horror_project_value|BASE|1|
+	}
+	triggered_sector_modifier = {
+		potential = {
+			has_leader_flag = leader_finish_ap_horror_project_circle
+		}
+		country_society_research_produces_mult = 0.05
+		mult = value:num_finished_ap_horror_project_value|BASE|1|
+	}
+	triggered_sector_modifier = {
+		potential = {
+			has_leader_flag = leader_finish_ap_horror_project_dimension
+		}
+		country_engineering_research_produces_mult = 0.05
+		mult = value:num_finished_ap_horror_project_value|BASE|1|
+	}
+	# 通用
+	triggered_self_modifier = {
+		potential = {
+			is_immortal = no
+		}
+		leader_lifespan_mult = -0.125
+		mult = value:num_finished_ap_horror_project_value|BASE|1|
+	}
+	triggered_self_modifier = {
+		potential = {
+			is_immortal = yes
+		}
+		leaders_upkeep_mult = 0.25
+		mult = value:num_finished_ap_horror_project_value|BASE|1|
+	}
+	# 终焉宣告防护
+	triggered_planet_modifier = {
+		potential = {
+			has_global_flag = dimensional_horror_crisis_storm_has_occurred
+		}
+		dimensional_horror_crisis_storm_planet_modifier = -0.1
+		mult = value:num_finished_ap_horror_project_value
+	}
+	triggered_sector_modifier = {
+		potential = {
+			leader_class = official
+			has_global_flag = dimensional_horror_crisis_storm_has_occurred
+		}
+		dimensional_horror_crisis_storm_fleet_modifier = -0.1
+		mult = value:num_finished_ap_horror_project_value
+	}
+	triggered_modifier = {
+		potential = {
+			leader_class = scientist
+			has_global_flag = dimensional_horror_crisis_storm_has_occurred
+		}
+		dimensional_horror_crisis_storm_fleet_modifier = -0.1
+		mult = value:num_finished_ap_horror_project_value
+	}
+	triggered_fleet_modifier = {
+		potential = {
+			leader_class = commander
+			has_global_flag = dimensional_horror_crisis_storm_has_occurred
+		}
+		dimensional_horror_crisis_storm_fleet_modifier = -0.1
+		mult = value:num_finished_ap_horror_project_value
+	}
+	on_gained_effect = {
+		if = {
+			limit = {
+				has_finished_all_ap_horror_project = yes
+			}
+			# 知识宝库增加计数
+			owner = { change_paragon_memory_vault = yes }
+			# 晋升著名
+			become_renowned_without_promotion = yes
+		}
+	}
+	leader_class = all
+	initial = no
+	randomized = no
+}
+
+# 永无宁日
+timed_leader_trait_horror_secret = {
+	force_councilor_trait = yes
+	inline_script = {
+		script = trait/time_trait_icon_for_timed_with_bg
+		CLASS = leader
+		COLOR = psionic
+		ICON = "GFX_leader_trait_intemporal"
+		RARITY = common
+		COUNCIL = yes
+		TIER = none
+		PRIORITY = @trait_sorting_priority_common_yes_none
+	}
+	custom_tooltip = timed_leader_trait_horror_secret_effect
+	leader_class = all
+	initial = no
+	randomized = no
+	notify_on_gained = no
+}
+
+# 信使
+trait_akx_messenger = {
+	cost = 2
+	icon = "gfx/interface/icons/traits/trait_akx_messenger.dds"
+	opposites = { "trait_akx_waiting_world" "trait_akx_waiting_world_robot" }
+	initial = no
+	randomized = no
+	species_potential_add = {
+		hidden_trigger = { exists = from }
+		from = { has_technology = tech_hope_waiting_world_4 }
+	}
+	species_possible_merge_add = {
+		custom_tooltip = {
+			fail_text = "can_not_change_trait_akx_messenger"
+			exists = from
+			from = { has_country_flag = master_akx_messenger }
+		}
+	}
+	species_possible_remove = {
+		always = no
+	}
+	species_possible_merge_remove = {
+		always = no
+	}
+	inline_script = "trait/allowed_archetypes/time_archetypes"
+	localized_tags = {
+		SPECIES_TRAIT_AKX_MESSENGER
+	}
+	tags = { organic machine positive army housing amenities pop_output production upkeep special }
+	sorting_priority = 10
+	modifier = {
+		BIOLOGICAL_species_trait_picks_add = 1
+		ROBOT_species_trait_picks_add = 1
+		MACHINE_species_trait_picks_add = 1
+		army_damage_taken_mult = -0.25
+		pop_housing_usage_add = -0.25
+		pop_amenities_usage_add = -0.25
+		leader_lifespan_mult = 0.25
+	}
+	inline_script = {
+		script = traits/trait_akx_messenger_triggered_modifiers
+		POSITIVE = 0.5
+		NEGATIVE = -0.5
+	}
+	inline_script = {
+		script = traits/trait_time_usage_for_other_trait_modifiers
+		HOUSING = -0.25
+		AMENITIES = -0.25
+	}
+	custom_tooltip_with_modifiers = trait_akx_messenger_tooltip
+	slave_cost = {
+		trade = 1000
+	}
+	assembly_score = {
+		modifier = {
+			add = 2
+		}
+	}
+}
+
+# 透明化
+trait_akx_waiting_world = {
+	cost = 0
+	icon = "gfx/interface/icons/traits/trait_akx_waiting_world.dds"
+	opposites = { "trait_akx_messenger" "trait_akx_waiting_world_robot" }
+	initial = no
+	randomized = no
+	species_potential_add = {
+		hidden_trigger = { exists = from }
+		from = { has_technology = tech_hope_waiting_world_5 }
+	}
+	species_possible_merge_add = {
+		custom_tooltip = {
+			fail_text = "can_not_change_trait_akx_waiting_world"
+			exists = from
+			from = { has_country_flag = master_akx_waiting_world }
+		}
+	}
+	species_possible_remove = {
+		custom_tooltip = {
+			fail_text = "can_not_change_trait_akx_waiting_world"
+			exists = from
+			from = { has_country_flag = master_akx_waiting_world }
+		}
+	}
+	species_possible_merge_remove = {
+		custom_tooltip = {
+			fail_text = "can_not_change_trait_akx_waiting_world"
+			exists = from
+			from = {
+				OR = {
+					has_country_flag = master_akx_messenger
+					has_country_flag = master_akx_waiting_world
+				}
+			}
+		}
+	}
+	inline_script = "trait/allowed_archetypes/time_archetypes_no_robotic"
+	localized_tags = {
+		SPECIES_TRAIT_AKX_MESSENGER
+	}
+	tags = { organic positive army housing amenities pop_output production upkeep pop_growth leader drawbacks special }
+	sorting_priority = 9
+	modifier = {
+		army_damage_taken_mult = -0.1
+		pop_housing_usage_add = -0.1
+		pop_amenities_usage_add = -0.1
+		logistic_growth_mult = -0.1
+		bonus_pop_growth_mult = -0.1
+		leader_lifespan_mult = -0.1
+	}
+	inline_script = {
+		script = traits/trait_akx_messenger_triggered_modifiers
+		POSITIVE = 0.25
+		NEGATIVE = -0.25
+	}
+	inline_script = {
+		script = traits/trait_time_usage_for_other_trait_modifiers
+		HOUSING = -0.1
+		AMENITIES = -0.1
+	}
+	custom_tooltip_with_modifiers = trait_akx_messenger_tooltip
+	slave_cost = {
+		trade = 500
+	}
+	assembly_score = {
+		modifier = {
+			add = 1
+		}
+	}
+}
+
+trait_akx_waiting_world_robot = {
+	cost = 0
+	icon = "gfx/interface/icons/traits/trait_akx_waiting_world_robot.dds"
+	opposites = { "trait_akx_messenger" "trait_akx_waiting_world" }
+	initial = no
+	randomized = no
+	species_potential_add = {
+		hidden_trigger = { exists = from }
+		from = { has_technology = tech_hope_waiting_world_5 }
+	}
+	species_possible_merge_add = {
+		custom_tooltip = {
+			fail_text = "can_not_change_trait_akx_waiting_world"
+			exists = from
+			from = { has_country_flag = master_akx_waiting_world }
+		}
+	}
+	species_possible_remove = {
+		custom_tooltip = {
+			fail_text = "can_not_change_trait_akx_waiting_world"
+			exists = from
+			from = { has_country_flag = master_akx_waiting_world }
+		}
+	}
+	species_possible_merge_remove = {
+		custom_tooltip = {
+			fail_text = "can_not_change_trait_akx_waiting_world"
+			exists = from
+			from = {
+				OR = {
+					has_country_flag = master_akx_messenger
+					has_country_flag = master_akx_waiting_world
+				}
+			}
+		}
+	}
+	inline_script = "trait/allowed_archetypes/time_archetypes_robotic"
+	localized_tags = {
+		SPECIES_TRAIT_AKX_MESSENGER
+	}
+	tags = { machine positive army housing amenities pop_output production upkeep pop_growth leader drawbacks special }
+	sorting_priority = 9
+	modifier = {
+		army_damage_taken_mult = -0.1
+		pop_housing_usage_add = -0.1
+		pop_amenities_usage_add = -0.1
+		planet_pop_assembly_mult = -0.1
+		leader_lifespan_mult = -0.1
+	}
+	inline_script = {
+		script = traits/trait_akx_messenger_triggered_modifiers
+		POSITIVE = 0.25
+		NEGATIVE = -0.25
+	}
+	inline_script = {
+		script = traits/trait_time_usage_for_other_trait_modifiers
+		HOUSING = -0.1
+		AMENITIES = -0.1
+	}
+	custom_tooltip_with_modifiers = trait_akx_messenger_tooltip
+	slave_cost = {
+		trade = 500
+	}
+	assembly_score = {
+		modifier = {
+			add = 1
+		}
+	}
+}
+
+# 来自深渊
+leader_trait_pass_black_hole = {
+	immortal_leaders = yes
+	custom_subtitle = pass_black_hole_subtitle
+	icon = {
+		inline_script = trait/icon_element/rarity_paragon
+		layer = {
+			icon = "GFX_leader_trait_pass_black_hole"
+		}
+		layer = {
+			icon = "GFX_trait_councilor"
+			visible = {
+				has_council_subclass = yes
+			}
+		}
+		layer = {
+			icon = "GFX_trait_disabled"
+			visible = {
+				has_council_subclass = yes
+				is_councilor = no
+			}
+		}
+		inline_script = trait/icon_element/tier_none
+	}
+	leader_trait_rarity = paragon
+	sorting_priority = @trait_sorting_priority_paragon_triggered_none
+	# 星辰记忆
+	triggered_self_modifier = {
+		potential = {
+			is_dimension_traveler = yes
+		}
+		dimension_traveler_skill_point = 2
+		mult = owner.value:dimension_traveler_skill_point_level
+	}
+	# 帝国代表
+	triggered_galcom_modifier = {
+		potential = {
+			has_trait = subclass_official_delegate
+		}
+		diplo_weight_mult = 0.66
+		envoy_improve_relations_mult = 0.66
+		envoy_harm_relations_mult = 0.66
+	}
+	# 产业专员
+	triggered_planet_modifier = {
+		potential = {
+			has_trait = subclass_official_governor
+		}
+		logistic_growth_mult = 0.66
+		bonus_pop_growth_mult = 0.66
+		planet_building_build_speed_mult = 0.66
+	}
+	# 外交使节
+	triggered_councilor_modifier = {
+		potential = {
+			has_trait = subclass_official_diplomacy_councilor
+		}
+		intel_encryption_mult = 0.33
+		intel_decryption_mult = 0.33
+		espionage_operation_speed_mult = 0.33
+	}
+	# 国务顾问
+	triggered_councilor_modifier = {
+		potential = {
+			has_trait = subclass_official_economy_councilor
+		}
+		country_trade_produces_mult = 0.33
+		council_agenda_progress_speed = 0.33
+		council_agenda_finishing_effect_duration_mult = 0.33
+	}
+	# 探索者
+	triggered_modifier = {
+		potential = {
+			has_trait = subclass_scientist_explorer
+		}
+		ship_speed_mult = 0.66
+		science_ship_survey_speed = 0.66
+		ship_anomaly_generation_chance_mult = 0.66
+	}
+	# 前沿学者
+	triggered_modifier = {
+		potential = {
+			has_trait = subclass_scientist_scholar
+		}
+		ship_anomaly_research_speed_mult = 0.66
+		ship_archaeological_site_excavation_speed_mult = 0.66
+		ship_astral_rift_speed_mult = 0.66
+	}
+	# 分析专员
+	triggered_planet_modifier = {
+		potential = {
+			has_trait = subclass_scientist_governor
+		}
+		planet_pop_assembly_mult = 0.66
+		planet_decision_enact_speed_mult = 0.66
+		planet_amenities_mult = 0.66
+	}
+	# 统计学家
+	triggered_councilor_modifier = {
+		potential = {
+			has_trait = subclass_scientist_councilor
+		}
+		country_physics_tech_research_speed = 0.33
+		country_society_tech_research_speed = 0.33
+		country_engineering_tech_research_speed = 0.33
+	}
+	# 舰队司令
+	triggered_fleet_modifier = {
+		potential = {
+			has_trait = subclass_commander_admiral
+		}
+		ship_weapon_damage = 0.66
+		ship_fire_rate_mult = 0.66
+		ship_weapon_range_mult = 0.66
+	}
+	# 陆军司令
+	triggered_army_modifier = {
+		potential = {
+			has_trait = subclass_commander_general
+		}
+		army_damage_mult = 0.66
+		army_morale_damage_mult = 0.66
+	}
+	triggered_self_modifier = {
+		potential = {
+			has_trait = subclass_commander_general
+		}
+		planet_combat_width_add = 6
+	}
+	# 督管专员
+	triggered_planet_modifier = {
+		potential = {
+			has_trait = subclass_commander_governor
+		}
+		planet_army_build_speed_mult = 0.66
+		planet_clear_blocker_speed_mult = 0.66
+		planet_housing_mult = 0.66
+	}
+	# 战略家
+	triggered_councilor_modifier = {
+		potential = {
+			has_trait = subclass_commander_councilor
+		}
+		ship_hull_regen_add_perc = 0.33
+		ship_armor_regen_add_perc = 0.33
+		ship_shield_regen_add_perc = 0.33
+	}
+	# 通用
+	self_modifier = {
+		species_leader_exp_gain = 0.66
+		leaders_upkeep_mult = 0.66
+		negative_traits_leader = 6
+	}
+	# 终焉宣告防护
+	inline_script = {
+		script = traits/dimensional_horror_crisis_storm_protection_trait
+		COUNT = -0.33
+	}
+	leader_class = all
+	initial = no
+	randomized = no
+}
+
+leader_trait_pass_black_hole_pirate_king = {
+	leader_trait_type = destiny
+	immortal_leaders = yes
+	inline_script = {
+		script = trait/time_trait_icon
+		CLASS = commander
+		ICON = "GFX_leader_trait_pass_black_hole_pirate_king"
+		RARITY = paragon
+		COUNCIL = no
+		TIER = none
+		PRIORITY = 700
+	}
+	triggered_self_modifier = {
+		custom_tooltip = leader_immune_to_confuse
+	}
+	triggered_self_modifier = {
+		custom_tooltip = leader_immune_to_terrify
+	}
+	triggered_self_modifier = {
+		potential = {
+			owner = {
+				OR = {
+					has_country_flag = time_akx_pirate_king_end_1
+					has_country_flag = time_akx_pirate_king_end_2
+				}
+			}
+		}
+		custom_tooltip = improve_councilor_akx_pirate_king_effect
+	}
+	triggered_fleet_modifier = {
+		custom_tooltip = BLANK_STRING
+		immune_to_confuse = 1
+		immune_to_terrify = 1
+	}
+	triggered_fleet_modifier = {
+		potential = {
+			NOT = { has_leader_flag = pirate_king_end }
+		}
+		ship_weapon_damage = 0.33
+		ship_fire_rate_mult = 0.33
+		ship_weapon_range_mult = 0.33
+		ship_hull_regen_add_perc = 0.33
+		ship_armor_regen_add_perc = 0.33
+		ship_shield_regen_add_perc = 0.33
+	}
+	triggered_fleet_modifier = {
+		potential = {
+			has_leader_flag = pirate_king_end
+		}
+		ship_weapon_damage = 0.66
+		ship_fire_rate_mult = 0.66
+		ship_weapon_range_mult = 0.66
+		ship_hull_regen_add_perc = 0.66
+		ship_armor_regen_add_perc = 0.66
+		ship_shield_regen_add_perc = 0.66
+	}
+	# 终焉宣告防护
+	inline_script = {
+		script = traits/dimensional_horror_crisis_storm_protection_commander_trait
+		COUNT = -0.66
+	}
+	on_gained_effect = {
+		if = {
+			limit = {
+				owner = {
+					OR = {
+						is_country_type = origin_pirate_king
+						is_country_type = origin_pirate_king_end
+						has_country_flag = pirate_king_true_end
+					}
+				}
+			}
+			set_leader_flag = immune_to_confuse
+			set_leader_flag = immune_to_terrify
+			# 晋升传奇
+			become_legendary_without_promotion = yes
+		}
+		else = {
+			remove_trait = leader_trait_pass_black_hole_pirate_king
+		}
+	}
+	leader_class = { commander }
+	initial = no
+	randomized = no
+}
+
+leader_trait_horror_pirate_king = {
+	leader_trait_type = destiny
+	inline_script = {
+		script = trait/time_trait_icon
+		CLASS = commander
+		ICON = "GFX_leader_trait_horror_pirate_king"
+		RARITY = paragon
+		COUNCIL = no
+		TIER = none
+		PRIORITY = 650
+	}
+	triggered_fleet_modifier = {
+		damage_vs_country_type_guardian_horror_mult = 6.66
+		damage_vs_country_type_dimensional_horror_crisis_mult = 6.66
+		custom_tooltip = leader_trait_horror_pirate_king_tooltip
+	}
+	leader_class = { commander }
+	initial = no
+	randomized = no
+}
+
+# 深渊谕使
+leader_trait_horror_ruler = {
+	inline_script = {
+		script = trait/icon
+		CLASS = leader
+		ICON = "GFX_leader_trait_totalitarian"
+		RARITY = paragon
+		COUNCIL = triggered
+		TIER = none
+	}
+	on_gained_effect = {
+		owner = {
+			country_event = { id = timeline.50 } # Timeline First Leader with Destiny Trait
+		}
+	}
+	triggered_councilor_modifier = {
+		potential = {
+			is_ruler = yes
+		}
+		category_horror_time_research_speed_mult = 0.05
+		category_horror_time_draw_chance_mult = 0.05
+		mult = value:num_time_leader_skill
+	}
+	triggered_self_modifier = {
+		potential = {
+			leader_class = official
+		}
+		leader_officials_sr_dark_matter_produces_add = 1
+		mult = value:num_time_leader_skill
+	}
+	triggered_self_modifier = {
+		potential = {
+			leader_class = scientist
+		}
+		leader_scientists_sr_dark_matter_produces_add = 1
+		mult = value:num_time_leader_skill
+	}
+	triggered_self_modifier = {
+		potential = {
+			leader_class = commander
+		}
+		leader_commanders_sr_dark_matter_produces_add = 1
+		mult = value:num_time_leader_skill
+	}
+	# 终焉宣告防护
+	inline_script = {
+		script = traits/dimensional_horror_crisis_storm_protection_councilor_trait
+		COUNT = 2
+	}
+	on_gained_effect = {
+		if = {
+			limit = {
+				is_ruler = yes
+			}
+			# 晋升著名
+			become_renowned_without_promotion = yes
+		}
+		else = {
+			remove_trait = leader_trait_horror_ruler
+		}
+	}
+	leader_class = all
+	initial = no
+	randomized = no
+}
+
+# 负相物质专精
+leader_trait_horror_focus = {
+	leader_trait_type = veteran
+	inline_script = {
+		script = trait/time_trait_icon
+		CLASS = official
+		ICON = "GFX_category_horror_time"
+		RARITY = veteran
+		COUNCIL = no
+		TIER = 1
+		PRIORITY = @trait_sorting_priority_veteran_no_1
+	}
+	prerequisites = { tech_mine_dark_matter }
+	leader_potential_add = {
+		has_paragon_dlc = yes
+		has_any_governor_focus = no
+		has_trait = subclass_official_governor
+		owner = {
+			OR = {
+				has_country_flag = unlock_tradition_horror
+				has_modifier = eldritch_horror_mod
+			}
+		}
+	}
+	inline_script = {
+		script = traits/leader_trait_horror_focus_modifiers
+		LEVEL = 1
+	}
+	# 终焉宣告防护
+	inline_script = {
+		script = traits/dimensional_horror_crisis_storm_protection_official_trait
+		COUNT = -0.1
+	}
+	leader_class = { official }
+	selectable_weight = {
+		weight = @subclass_trait_weight
+		inline_script = paragon/governor_weight_mult
+	}
+}
+
+leader_trait_horror_focus_2 = {
+	replace_traits = { "leader_trait_horror_focus" }
+	leader_trait_type = veteran
+	inline_script = {
+		script = trait/time_trait_icon
+		CLASS = official
+		ICON = "GFX_category_horror_time"
+		RARITY = veteran
+		COUNCIL = no
+		TIER = 2
+		PRIORITY = @trait_sorting_priority_veteran_no_2
+	}
+	inline_script = {
+		script = traits/leader_trait_horror_focus_modifiers
+		LEVEL = 2
+	}
+	# 终焉宣告防护
+	inline_script = {
+		script = traits/dimensional_horror_crisis_storm_protection_official_trait
+		COUNT = -0.2
+	}
+	prerequisites = { tech_mine_dark_matter }
+	leader_potential_add = {
+		owner = {
+			has_tradition = tr_horror_finish
+		}
+	}
+	leader_class = { official }
+}
+
+leader_trait_horror_focus_3 = {
+	replace_traits = { "leader_trait_horror_focus_2" }
+	leader_trait_type = veteran
+	inline_script = {
+		script = trait/time_trait_icon
+		CLASS = official
+		ICON = "GFX_category_horror_time"
+		RARITY = veteran
+		COUNCIL = no
+		TIER = 3
+		PRIORITY = @trait_sorting_priority_veteran_no_3
+	}
+	inline_script = {
+		script = traits/leader_trait_horror_focus_modifiers
+		LEVEL = 3
+	}
+	# 终焉宣告防护
+	inline_script = {
+		script = traits/dimensional_horror_crisis_storm_protection_official_trait
+		COUNT = -0.3
+	}
+	prerequisites = { tech_mine_dark_matter }
+	leader_potential_add = {
+		owner = {
+			has_tradition = tr_time_finish
+		}
+	}
+	leader_class = { official }
+}
+
+# 专长：负相时空
+leader_trait_expertise_horror_time = {
+	leader_trait_type = veteran
+	inline_script = {
+		script = trait/time_trait_icon
+		CLASS = scientist
+		ICON = "GFX_category_horror_time"
+		RARITY = veteran
+		COUNCIL = yes
+		TIER = 1
+		PRIORITY = @trait_sorting_priority_veteran_yes_1
+	}
+	councilor_modifier = {
+		category_horror_time_research_speed_mult = 0.05
+		category_horror_time_draw_chance_mult = 0.25
+		all_technology_research_speed = 0.05
+	}
+	inline_script = {
+		script =  traits/technocracy_expertise_effects
+		FIELD = physics
+		TIER = 1
+	}
+	inline_script = {
+		script =  traits/technocracy_expertise_effects
+		FIELD = society
+		TIER = 1
+	}
+	inline_script = {
+		script =  traits/technocracy_expertise_effects
+		FIELD = engineering
+		TIER = 1
+	}
+	# 终焉宣告防护
+	inline_script = {
+		script = traits/dimensional_horror_crisis_storm_protection_scientist_trait
+		COUNT = -0.1
+	}
+	leader_potential_add = {
+		has_paragon_dlc = yes
+		has_trait = subclass_scientist_councilor
+		owner = {
+			OR = {
+				has_country_flag = unlock_tradition_horror
+				has_modifier = eldritch_horror_mod
+			}
+		}
+	}
+	leader_class = { scientist }
+	ai_weight = 100
+	selectable_weight = {
+		inline_script = paragon/subclass_free_trait_weight
+		inline_script = paragon/council_weight_mult
+	}
+}
+
+leader_trait_expertise_horror_time_2 = {
+	replace_traits = { "leader_trait_expertise_horror_time" }
+	leader_trait_type = veteran
+	inline_script = {
+		script = trait/time_trait_icon
+		CLASS = scientist
+		ICON = "GFX_category_horror_time"
+		RARITY = veteran
+		COUNCIL = yes
+		TIER = 2
+		PRIORITY = @trait_sorting_priority_veteran_yes_2
+	}
+	councilor_modifier = {
+		category_horror_time_research_speed_mult = 0.10
+		category_horror_time_draw_chance_mult = 0.35
+		all_technology_research_speed = 0.08
+	}
+	inline_script = {
+		script =  traits/technocracy_expertise_effects
+		FIELD = physics
+		TIER = 2
+	}
+	inline_script = {
+		script =  traits/technocracy_expertise_effects
+		FIELD = society
+		TIER = 2
+	}
+	inline_script = {
+		script =  traits/technocracy_expertise_effects
+		FIELD = engineering
+		TIER = 2
+	}
+	# 终焉宣告防护
+	inline_script = {
+		script = traits/dimensional_horror_crisis_storm_protection_scientist_trait
+		COUNT = -0.2
+	}
+	leader_potential_add = {
+		owner = {
+			has_tradition = tr_horror_finish
+		}
+	}
+	leader_class = { scientist }
+	ai_weight = 100
+}
+
+leader_trait_expertise_horror_time_3 = {
+	replace_traits = { "leader_trait_expertise_horror_time_2" }
+	leader_trait_type = veteran
+	inline_script = {
+		script = trait/time_trait_icon
+		CLASS = scientist
+		ICON = "GFX_category_horror_time"
+		RARITY = veteran
+		COUNCIL = yes
+		TIER = 3
+		PRIORITY = @trait_sorting_priority_veteran_yes_3
+	}
+	councilor_modifier = {
+		category_horror_time_research_speed_mult = 0.15
+		category_horror_time_draw_chance_mult = 0.75
+		all_technology_research_speed = 0.1
+	}
+	inline_script = {
+		script =  traits/technocracy_expertise_effects
+		FIELD = physics
+		TIER = 3
+	}
+	inline_script = {
+		script =  traits/technocracy_expertise_effects
+		FIELD = society
+		TIER = 3
+	}
+	inline_script = {
+		script =  traits/technocracy_expertise_effects
+		FIELD = engineering
+		TIER = 3
+	}
+	# 终焉宣告防护
+	inline_script = {
+		script = traits/dimensional_horror_crisis_storm_protection_scientist_trait
+		COUNT = -0.3
+	}
+	leader_potential_add = {
+		owner = {
+			has_tradition = tr_time_finish
+		}
+	}
+	leader_class = { scientist }
+	ai_weight = 100
+}
+
+# 位面武器专精
+leader_trait_dimensional_horror_weapon_specialization = {
+	leader_trait_type = veteran
+	inline_script = {
+		script = trait/time_trait_icon
+		CLASS = commander
+		ICON = "GFX_category_horror_time"
+		RARITY = veteran
+		COUNCIL = no
+		TIER = 1
+		PRIORITY = @trait_sorting_priority_veteran_no_1
+	}
+	fleet_modifier = {
+		weapon_type_dimensional_horror_weapon_damage_mult = 0.1
+		weapon_type_dimensional_horror_weapon_fire_rate_mult = 0.1
+		weapon_type_dimensional_horror_speed_mult = 0.1
+		weapon_confuser_protect_chance = 0.1
+		weapon_terrify_protect_chance = 0.1
+	}
+	# 终焉宣告防护
+	inline_script = {
+		script = traits/dimensional_horror_crisis_storm_protection_commander_trait
+		COUNT = -0.1
+	}
+	prerequisites = { tech_horror_beam }
+	leader_potential_add = {
+		has_paragon_dlc = yes
+		has_any_admiral_speciality = no
+		has_trait = subclass_commander_admiral
+		owner = {
+			OR = {
+				has_country_flag = unlock_tradition_horror
+				has_modifier = eldritch_horror_mod
+			}
+		}
+	}
+	leader_class = { commander }
+	fleet_specialization_tag = weapon_type_dimensional_horror
+	custom_tooltip_with_modifiers = only_one_admiral_focus
+	selectable_weight = {
+		weight = @subclass_trait_weight
+		inline_script = paragon/pilot_weight_mult
+		inline_script = {
+			script = paragon/subclass_weight_mult
+			SUBCLASS = commander_admiral
+		}
+	}
+}
+
+leader_trait_dimensional_horror_weapon_specialization_2 = {
+	replace_traits = { "leader_trait_dimensional_horror_weapon_specialization" }
+	leader_trait_type = veteran
+	inline_script = {
+		script = trait/time_trait_icon
+		CLASS = commander
+		ICON = "GFX_category_horror_time"
+		RARITY = veteran
+		COUNCIL = no
+		TIER = 2
+		PRIORITY = @trait_sorting_priority_veteran_no_2
+	}
+	fleet_modifier = {
+		weapon_type_dimensional_horror_weapon_damage_mult = 0.15
+		weapon_type_dimensional_horror_weapon_fire_rate_mult = 0.15
+		weapon_type_dimensional_horror_speed_mult = 0.15
+		weapon_confuser_protect_chance = 0.15
+		weapon_terrify_protect_chance = 0.15
+	}
+	# 终焉宣告防护
+	inline_script = {
+		script = traits/dimensional_horror_crisis_storm_protection_commander_trait
+		COUNT = -0.2
+	}
+	prerequisites = { tech_horror_beam }
+	leader_potential_add = {
+		owner = {
+			has_tradition = tr_horror_finish
+		}
+	}
+	leader_class = { commander }
+	fleet_specialization_tag = weapon_type_dimensional_horror
+	custom_tooltip_with_modifiers = only_one_admiral_focus
+}
+
+leader_trait_dimensional_horror_weapon_specialization_3 = {
+	replace_traits = { "leader_trait_dimensional_horror_weapon_specialization_2" }
+	leader_trait_type = veteran
+	inline_script = {
+		script = trait/time_trait_icon
+		CLASS = commander
+		ICON = "GFX_category_horror_time"
+		RARITY = veteran
+		COUNCIL = no
+		TIER = 3
+		PRIORITY = @trait_sorting_priority_veteran_no_3
+	}
+	fleet_modifier = {
+		weapon_type_dimensional_horror_weapon_damage_mult = 0.25
+		weapon_type_dimensional_horror_weapon_fire_rate_mult = 0.25
+		weapon_type_dimensional_horror_speed_mult = 0.25
+		weapon_confuser_protect_chance = 0.25
+		weapon_terrify_protect_chance = 0.25
+	}
+	# 终焉宣告防护
+	inline_script = {
+		script = traits/dimensional_horror_crisis_storm_protection_commander_trait
+		COUNT = -0.3
+	}
+	prerequisites = {
+		tech_horror_beam
+		tech_time_beam
+	}
+	leader_potential_add = {
+		owner = {
+			has_tradition = tr_time_finish
+		}
+	}
+	leader_class = { commander }
+	fleet_specialization_tag = weapon_type_dimensional_horror
+	custom_tooltip_with_modifiers = only_one_admiral_focus
+}
+
+# 命中注定相会（命定）
+leader_trait_foredoomed_to_a_rendezvous_end = {
+	replace_traits = { "leader_trait_foredoomed_to_a_rendezvous" }
+	inline_script = {
+		script = trait/icon
+		CLASS = leader
+		ICON = "GFX_leader_trait_foredoomed_to_a_rendezvous"
+		RARITY = paragon
+		COUNCIL = no
+		TIER = none
+	}
+	triggered_sector_modifier = {
+		potential = {
+			leader_class = official
+		}
+		ship_jumpdrive_cooldown_mult = -0.01
+		ship_ftl_jumpdrive_range_mult = 0.025
+		ship_base_speed_mult = 0.025
+		mult = value:num_time_leader_skill
+	}
+	triggered_sector_modifier = {
+		potential = {
+			leader_class = official
+			owner = { has_technology = tech_hope_mirrored_syzygy_admiral }
+		}
+		ship_weapon_range_mult = 0.025
+		mult = value:num_time_leader_skill
+	}
+	triggered_modifier = {
+		potential = {
+			leader_class = scientist
+		}
+		ship_jumpdrive_cooldown_mult = -0.01
+		ship_ftl_jumpdrive_range_mult = 0.025
+		ship_base_speed_mult = 0.025
+		mult = value:num_time_leader_skill
+	}
+	triggered_modifier = {
+		potential = {
+			leader_class = scientist
+			owner = { has_technology = tech_hope_mirrored_syzygy_admiral }
+		}
+		ship_weapon_range_mult = 0.025
+		mult = value:num_time_leader_skill
+	}
+	triggered_fleet_modifier = {
+		potential = {
+			leader_class = commander
+		}
+		ship_jumpdrive_cooldown_mult = -0.01
+		ship_ftl_jumpdrive_range_mult = 0.025
+		ship_base_speed_mult = 0.025
+		mult = value:num_time_leader_skill
+	}
+	triggered_fleet_modifier = {
+		potential = {
+			leader_class = commander
+			owner = { has_technology = tech_hope_mirrored_syzygy_admiral }
+		}
+		ship_weapon_range_mult = 0.025
+		mult = value:num_time_leader_skill
+	}
+	# 终焉宣告防护
+	inline_script = {
+		script = traits/dimensional_horror_crisis_storm_protection_trait
+		COUNT = -0.25
+	}
+	on_gained_effect = {
+		# 晋升著名
+		become_renowned_without_promotion = yes
+		# Timeline First Leader with Destiny Trait
+		owner = {
+			country_event = { id = timeline.50 }
+		}
+	}
+	leader_class = all
+	initial = no
+	randomized = no
+}
+
+# 命中注定相会（伪）
+leader_trait_foredoomed_to_a_rendezvous_false = {
+	inline_script = {
+		script = trait/icon
+		CLASS = leader
+		ICON = "GFX_leader_trait_foredoomed_to_a_rendezvous"
+		RARITY = veteran
+		COUNCIL = no
+		TIER = none
+	}
+	triggered_sector_modifier = {
+		potential = {
+			leader_class = official
+		}
+		ship_speed_mult = 0.15
+	}
+	triggered_modifier = {
+		potential = {
+			leader_class = scientist
+		}
+		ship_speed_mult = 0.15
+	}
+	triggered_fleet_modifier = {
+		potential = {
+			leader_class = commander
+		}
+		ship_speed_mult = 0.15
+	}
+	# 终焉宣告防护
+	inline_script = {
+		script = traits/dimensional_horror_crisis_storm_protection_trait
+		COUNT = -0.1
+	}
+	leader_class = all
+	initial = no
+	randomized = no
+	ai_weight = 0
+}
+
+# 三四之间
+leader_trait_between_three_and_four = {
+	inline_script = {
+		script = trait/icon
+		CLASS = leader
+		ICON = "GFX_leader_trait_micromanager"
+		RARITY = veteran
+		COUNCIL = no
+		TIER = none
+	}
+	# 星辰记忆
+	triggered_self_modifier = {
+		potential = {
+			is_dimension_traveler = yes
+		}
+		dimension_traveler_skill_point = 1
+		mult = owner.value:dimension_traveler_skill_point_level
+	}
+	triggered_modifier = {
+		potential = {
+			leader_class = scientist
+		}
+		ship_archaeological_site_clues_add = 3
+		ship_astral_rift_clues_add = 4
+	}
+	# 终焉宣告防护
+	triggered_planet_modifier = {
+		potential = {
+			has_global_flag = dimensional_horror_crisis_storm_has_occurred
+		}
+		dimensional_horror_crisis_storm_planet_modifier = -0.1
+	}
+	leader_class = all
+	initial = no
+	randomized = no
+}
+
+# 镜中倒影
+leader_trait_mirror_image = {
+	inline_script = {
+		script = trait/icon
+		CLASS = leader
+		ICON = "GFX_leader_trait_ambassador_whisper_networks"
+		RARITY = veteran
+		COUNCIL = no
+		TIER = none
+	}
+	# 星辰记忆
+	triggered_self_modifier = {
+		potential = {
+			is_dimension_traveler = yes
+		}
+		dimension_traveler_skill_point = 1
+		mult = owner.value:dimension_traveler_skill_point_level
+	}
+	triggered_self_modifier = {
+		potential = {
+			exists_mirror_image_leader = yes
+		}
+		species_leader_exp_gain = 1
+		leader_trait_selection_options_add = 2
+		negative_traits_leader = -2
+	}
+	triggered_self_modifier = {
+		potential = {
+			exists_mirror_image_leader = no
+			is_immortal = no
+		}
+		leader_lifespan_mult = -0.5
+		species_leader_exp_gain = -1
+		leader_trait_selection_options_add = -2
+		negative_traits_leader = 2
+	}
+	triggered_self_modifier = {
+		potential = {
+			exists_mirror_image_leader = no
+			is_immortal = yes
+		}
+		leaders_upkeep_mult = 1
+		species_leader_exp_gain = -1
+		leader_trait_selection_options_add = -2
+		negative_traits_leader = 2
+	}
+	# 终焉宣告防护
+	triggered_sector_modifier = {
+		potential = {
+			leader_class = official
+			has_global_flag = dimensional_horror_crisis_storm_has_occurred
+		}
+		dimensional_horror_crisis_storm_fleet_modifier = -0.1
+	}
+	triggered_modifier = {
+		potential = {
+			leader_class = scientist
+			has_global_flag = dimensional_horror_crisis_storm_has_occurred
+		}
+		dimensional_horror_crisis_storm_fleet_modifier = -0.1
+	}
+	triggered_fleet_modifier = {
+		potential = {
+			leader_class = commander
+			has_global_flag = dimensional_horror_crisis_storm_has_occurred
+		}
+		dimensional_horror_crisis_storm_fleet_modifier = -0.1
+	}
+	leader_class = all
+	initial = no
+	randomized = no
+}
+
+# 循环之终
+leader_trait_end_of_circle = {
+	inline_script = {
+		script = trait/icon
+		CLASS = leader
+		ICON = "GFX_leader_trait_insightful"
+		RARITY = veteran
+		COUNCIL = no
+		TIER = none
+	}
+	# 星辰记忆
+	triggered_self_modifier = {
+		potential = {
+			is_dimension_traveler = yes
+		}
+		dimension_traveler_skill_point = 1
+		mult = owner.value:dimension_traveler_skill_point_level
+	}
+	planet_modifier = {
+		planet_biologists_society_research_produces_add = 3.14
+		planet_biologists_society_research_upkeep_add = 3.14
+	}
+	# 终焉宣告防护
+	triggered_planet_modifier = {
+		potential = {
+			has_global_flag = dimensional_horror_crisis_storm_has_occurred
+		}
+		dimensional_horror_crisis_storm_planet_modifier = -0.1
+	}
+	leader_class = all
+	initial = no
+	randomized = no
+}
+
+# 破壁人
+leader_trait_wall_breaker = {
+	custom_subtitle = wall_breaker_subtitle
+	icon = {
+		layer = {
+			icon = "GFX_trait_bg"
+			color = "trait_bg_default"
+		}
+		inline_script = trait/icon_element/rarity_veteran
+		layer = {
+			icon = "GFX_leader_trait_neurotic"
+			color = "trait_icon_default"
+		}
+		layer = {
+			icon = "GFX_trait_councilor"
+			visible = {
+				owner = { is_gestalt = no }
+			}
+		}
+		layer = {
+			icon = "GFX_trait_disabled"
+			visible = {
+				is_councilor = no
+				owner = { is_gestalt = no }
+			}
+		}
+		inline_script = trait/icon_element/tier_none
+	}
+	leader_trait_rarity = veteran
+	sorting_priority = @trait_sorting_priority_veteran_triggered_none
+	# 星辰记忆
+	triggered_self_modifier = {
+		potential = {
+			is_dimension_traveler = yes
+		}
+		dimension_traveler_skill_point = 1
+		mult = owner.value:dimension_traveler_skill_point_level
+	}
+	triggered_councilor_modifier = {
+		potential = {
+			owner = { is_gestalt = no }
+		}
+		physics_tech_cost_mult = -0.1
+		society_tech_cost_mult = -0.1
+		engineering_tech_cost_mult = -0.1
+		tradition_cost_mult = 0.05
+		planet_stability_add = -10
+	}
+	triggered_planet_modifier = {
+		potential = {
+			owner = { is_gestalt = yes }
+		}
+		country_physics_research_produces_mult = 0.5
+		country_society_research_produces_mult = 0.5
+		country_engineering_research_produces_mult = 0.5
+		country_unity_produces_mult = -0.25
+		planet_crime_no_happiness_add = 20
+	}
+	triggered_sector_modifier = {
+		potential = {
+			owner = { is_gestalt = yes }
+		}
+		country_physics_research_produces_mult = 0.25
+		country_society_research_produces_mult = 0.25
+		country_engineering_research_produces_mult = 0.25
+		country_unity_produces_mult = -0.125
+		planet_crime_no_happiness_add = 10
+	}
+	# 终焉宣告防护
+	triggered_councilor_modifier = {
+		potential = {
+			has_global_flag = dimensional_horror_crisis_storm_has_occurred
+			owner = { is_gestalt = no }
+		}
+		dimensional_horror_crisis_storm_protection_level = 1
+	}
+	triggered_planet_modifier = {
+		potential = {
+			has_global_flag = dimensional_horror_crisis_storm_has_occurred
+			owner = { is_gestalt = yes }
+		}
+		dimensional_horror_crisis_storm_planet_modifier = -0.1
+	}
+	triggered_sector_modifier = {
+		potential = {
+			leader_class = official
+			has_global_flag = dimensional_horror_crisis_storm_has_occurred
+			owner = { is_gestalt = yes }
+		}
+		dimensional_horror_crisis_storm_fleet_modifier = -0.1
+	}
+	triggered_modifier = {
+		potential = {
+			leader_class = scientist
+			has_global_flag = dimensional_horror_crisis_storm_has_occurred
+			owner = { is_gestalt = yes }
+		}
+		dimensional_horror_crisis_storm_fleet_modifier = -0.1
+	}
+	triggered_fleet_modifier = {
+		potential = {
+			leader_class = commander
+			has_global_flag = dimensional_horror_crisis_storm_has_occurred
+			owner = { is_gestalt = yes }
+		}
+		dimensional_horror_crisis_storm_fleet_modifier = -0.1
+	}
+	on_gained_effect = {
+		change_background_ethic = ethic_materialist # 格式塔也改
+	}
+	leader_class = all
+	initial = no
+	randomized = no
+}
+
+# 多余者
+leader_trait_born_in_akx_rift = {
+	immortal_leaders = yes
+	inline_script = {
+		script = trait/icon
+		CLASS = leader
+		ICON = "GFX_leader_trait_legendary_spiritualist_bad"
+		RARITY = common
+		COUNCIL = no
+		TIER = none
+	}
+	triggered_modifier = {
+		ship_astral_rift_clues_add = 0.2
+		ship_astral_rift_speed_mult = 0.05
+		mult = value:num_time_leader_skill
+	}
+	triggered_self_modifier = {
+		potential = {
+			leader_class = official
+		}
+		leader_officials_sr_dark_matter_upkeep_add = 1
+		mult = value:num_time_leader_skill
+	}
+	triggered_self_modifier = {
+		potential = {
+			leader_class = scientist
+		}
+		leader_scientists_sr_dark_matter_upkeep_add = 1
+		mult = value:num_time_leader_skill
+	}
+	triggered_self_modifier = {
+		potential = {
+			leader_class = commander
+		}
+		leader_commanders_sr_dark_matter_upkeep_add = 1
+		mult = value:num_time_leader_skill
+	}
+	# 终焉宣告防护
+	inline_script = {
+		script = traits/dimensional_horror_crisis_storm_protection_trait
+		COUNT = -0.1
+	}
+	leader_class = all
+	initial = no
+	randomized = no
+}
+
+# 定时者
+leader_trait_time_keeper = {
+	inline_script = {
+		script = trait/icon
+		CLASS = commander
+		ICON = "GFX_leader_trait_procrastinator"
+		RARITY = common
+		COUNCIL = no
+		TIER = none
+	}
+	triggered_self_modifier = {
+		potential = {
+			owner = { is_galactic_community_member = yes }
+		}
+		leader_commanders_sr_dark_matter_upkeep_add = 1
+		mult = value:leader_trait_time_keeper_upkeep_value
+	}
+	# 突破侧重：护盾
+	triggered_fleet_modifier = {
+		potential = {
+			owner = { is_galactic_community_member = yes }
+			has_resolution_time_keeper_breakthrough_focus_on_shield = yes
+		}
+		ship_shield_damage_mult = 0.02
+		ship_shield_penetration_add = 0.02
+		ship_shield_penetration_mult = 0.02
+		mult = value:leader_trait_time_keeper_skill_value
+	}
+	# 突破侧重：装甲
+	triggered_fleet_modifier = {
+		potential = {
+			owner = { is_galactic_community_member = yes }
+			has_resolution_time_keeper_breakthrough_focus_on_armor = yes
+		}
+		ship_armor_damage_mult = 0.02
+		ship_armor_penetration_add = 0.02
+		ship_armor_penetration_mult = 0.02
+		mult = value:leader_trait_time_keeper_skill_value
+	}
+	# 抵御侧重：能量
+	triggered_fleet_modifier = {
+		potential = {
+			owner = { is_galactic_community_member = yes }
+			has_resolution_time_keeper_resistance_focus_on_energy = yes
+		}
+		ship_shield_mult = 0.02
+		ship_shield_regen_mult = 0.02
+		ship_shield_hardening_add = 0.02
+		mult = value:leader_trait_time_keeper_skill_value
+	}
+	# 抵御侧重：动能
+	triggered_fleet_modifier = {
+		potential = {
+			owner = { is_galactic_community_member = yes }
+			has_resolution_time_keeper_resistance_focus_on_kinetic = yes
+		}
+		ship_armor_mult = 0.02
+		ship_armor_regen_mult = 0.02
+		ship_armor_hardening_add = 0.02
+		mult = value:leader_trait_time_keeper_skill_value
+	}
+	# 进攻战术：狙击
+	triggered_fleet_modifier = {
+		potential = {
+			owner = { is_galactic_community_member = yes }
+			has_resolution_time_keeper_offensive_tactics_of_snipe = yes
+		}
+		ship_accuracy_mult = 0.04
+		ship_weapon_damage = 0.04
+		ship_weapon_range_mult = 0.04
+		mult = value:leader_trait_time_keeper_cooperation_value
+	}
+	# 进攻战术：倾泻
+	triggered_fleet_modifier = {
+		potential = {
+			owner = { is_galactic_community_member = yes }
+			has_resolution_time_keeper_offensive_tactics_of_pour = yes
+		}
+		ship_tracking_mult = 0.04
+		ship_fire_rate_mult = 0.04
+		strike_craft_regeneration_mult = 0.04
+		mult = value:leader_trait_time_keeper_cooperation_value
+	}
+	# 防守战术：掩护
+	triggered_fleet_modifier = {
+		potential = {
+			owner = { is_galactic_community_member = yes }
+			has_resolution_time_keeper_defensive_tactics_of_cover = yes
+		}
+		ship_hull_mult = 0.04
+		ship_hull_regen_mult = 0.04
+		ship_damage_reduction_mult = 0.02
+		mult = value:leader_trait_time_keeper_cooperation_value
+	}
+	# 防守战术：周旋
+	triggered_fleet_modifier = {
+		potential = {
+			owner = { is_galactic_community_member = yes }
+			has_resolution_time_keeper_defensive_tactics_of_maneuver = yes
+		}
+		ship_evasion_mult = 0.04
+		ship_disengage_chance_mult = 0.04
+		ship_emergency_ftl_mult = -0.02
+		mult = value:leader_trait_time_keeper_cooperation_value
+	}
+	# 后勤策略：支援
+	triggered_fleet_modifier = {
+		potential = {
+			owner = { is_galactic_community_member = yes }
+			has_resolution_time_keeper_logistics_strategy_of_support = yes
+			from? = { is_in_combat = no }
+		}
+		ship_speed_mult = 0.2
+		ship_ftl_jumpdrive_range_mult = 0.2
+		ship_windup_mult = -0.1
+		ship_jumpdrive_cooldown_mult = -0.1
+		mult = value:leader_trait_time_keeper_value
+	}
+	# 后勤策略：补给
+	triggered_fleet_modifier = {
+		potential = {
+			owner = { is_galactic_community_member = yes }
+			has_resolution_time_keeper_logistics_strategy_of_supply = yes
+			from? = { is_in_combat = no }
+		}
+		ship_orbit_upkeep_mult = -0.1
+		ships_upkeep_mult = -0.1
+		ships_logistics_mult = -0.1
+		mult = value:leader_trait_time_keeper_value
+	}
+	# 指挥策略：精英
+	triggered_fleet_modifier = {
+		potential = {
+			owner = { is_galactic_community_member = yes }
+			has_resolution_time_keeper_command_strategy_of_elite = yes
+			from? = {
+				count_owned_ship = { count <= 10 }
+			}
+		}
+		ship_size_damage_factor = 0.04
+		ship_experience_gain_mult = 0.4
+		mult = value:leader_trait_time_keeper_value
+	}
+	triggered_fleet_modifier = {
+		potential = {
+			owner = { is_galactic_community_member = yes }
+			has_resolution_time_keeper_command_strategy_of_elite = yes
+			from? = {
+				count_owned_ship = { count <= 10 }
+			}
+		}
+		immune_to_confuse = 1
+		immune_to_terrify = 1
+	}
+	# 指挥策略：集群
+	triggered_fleet_modifier = {
+		potential = {
+			owner = { is_galactic_community_member = yes }
+			has_resolution_time_keeper_command_strategy_of_cluster = yes
+			from? = {
+				count_owned_ship = { count >= 20 }
+			}
+		}
+		ship_damage_reduction_add = 20
+		ship_hull_add = 200
+		ship_armor_add = 200
+		ship_shield_add = 200
+		mult = value:leader_trait_time_keeper_value
+	}
+	# 终焉宣告防护
+	inline_script = {
+		script = traits/dimensional_horror_crisis_storm_protection_councilor_trait
+		COUNT = 1
+	}
+	inline_script = {
+		script = traits/dimensional_horror_crisis_storm_protection_trait
+		COUNT = -0.25
+	}
+	leader_class = { commander }
+	initial = no
+	randomized = no
+}

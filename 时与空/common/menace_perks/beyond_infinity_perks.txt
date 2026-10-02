@@ -1,0 +1,342 @@
+menp_beyond_infinity_building_1 = {
+	portrait = "GFX_menp_beyond_infinity_building_1"
+
+	on_unlock = {
+		add_research_option = tech_building_tower_of_infinity_technician
+		add_research_option = tech_building_tower_of_infinity_miner
+		add_research_option = tech_building_tower_of_infinity_farmer
+	}
+}
+
+menp_beyond_infinity_section_1 = {
+	portrait = "GFX_menp_beyond_infinity_section_1"
+
+	on_unlock = {
+		add_research_option = tech_beyond_infinity_corvette
+		if = {
+			limit = {
+				country_uses_bio_ships = no
+			}
+			add_research_option = tech_beyond_infinity_frigate
+		}
+	}
+}
+
+menp_beyond_infinity_component_1 = {
+	portrait = "GFX_menp_beyond_infinity_component_1"
+
+	on_unlock = {
+		add_research_option = tech_beyond_infinity_reactor_1
+	}
+}
+
+menp_beyond_infinity_modifier_1 = {
+	portrait = "GFX_menp_beyond_infinity_modifier_1"
+
+	on_unlock = {
+		tooltip = {
+			if = {
+				limit = {
+					check_variable = {
+						which = menp_beyond_infinity_modifier_1
+						value >= 5
+					}
+				}
+				add_modifier = {
+					modifier = beyond_infinity_become_the_crisis_modifier_5
+					days = -1
+				}
+			}
+			else_if = {
+				limit = {
+					check_variable = {
+						which = menp_beyond_infinity_modifier_1
+						value >= 4
+					}
+				}
+				add_modifier = {
+					modifier = beyond_infinity_become_the_crisis_modifier_4
+					days = -1
+				}
+			}
+			else_if = {
+				limit = {
+					check_variable = {
+						which = menp_beyond_infinity_modifier_1
+						value >= 3
+					}
+				}
+				add_modifier = {
+					modifier = beyond_infinity_become_the_crisis_modifier_3
+					days = -1
+				}
+			}
+			else_if = {
+				limit = {
+					check_variable = {
+						which = menp_beyond_infinity_modifier_1
+						value >= 2
+					}
+				}
+				add_modifier = {
+					modifier = beyond_infinity_become_the_crisis_modifier_2
+					days = -1
+				}
+			}
+			else_if = {
+				limit = {
+					check_variable = {
+						which = menp_beyond_infinity_modifier_1
+						value >= 1
+					}
+				}
+				add_modifier = {
+					modifier = beyond_infinity_become_the_crisis_modifier_1
+					days = -1
+				}
+			}
+		}
+	}
+}
+
+
+
+menp_beyond_infinity_building_2 = {
+	portrait = "GFX_menp_beyond_infinity_building_2"
+
+	on_unlock = {
+		add_research_option = tech_building_tower_of_infinity_foundry
+		add_research_option = tech_building_tower_of_infinity_artisan
+	}
+}
+
+menp_beyond_infinity_section_2 = {
+	portrait = "GFX_menp_beyond_infinity_section_2"
+
+	on_unlock = {
+		add_research_option = tech_beyond_infinity_destroyer
+		add_research_option = tech_beyond_infinity_cruiser
+	}
+}
+
+menp_beyond_infinity_component_2 = {
+	portrait = "GFX_menp_beyond_infinity_component_2"
+
+	on_unlock = {
+		add_research_option = tech_beyond_infinity_reactor_2
+	}
+}
+
+menp_beyond_infinity_modifier_2 = {
+	portrait = "GFX_menp_beyond_infinity_modifier_2"
+
+	on_unlock = {
+		if = {
+			limit = {
+				has_country_flag = menp_beyond_infinity_cosmo_buildings_1
+			}
+			custom_tooltip = gain_cosmogenesis_tech_1
+		}
+		if = {
+			limit = {
+				has_country_flag = menp_beyond_infinity_cosmo_buildings_2
+			}
+			custom_tooltip = gain_cosmogenesis_tech_2
+		}
+		if = {
+			limit = {
+				has_country_flag = menp_beyond_infinity_cosmo_buildings_3
+			}
+			custom_tooltip = gain_cosmogenesis_tech_3
+		}
+		if = {
+			limit = {
+				has_country_flag = menp_beyond_infinity_cosmo_buildings_4
+			}
+			custom_tooltip = gain_cosmogenesis_tech_4
+		}
+		if = {
+			limit = {
+				has_country_flag = menp_beyond_infinity_cosmo_buildings_5
+			}
+			custom_tooltip = gain_cosmogenesis_tech_5
+		}
+	}
+}
+
+
+
+menp_beyond_infinity_building_3 = {
+	portrait = "GFX_menp_beyond_infinity_building_3"
+
+	on_unlock = {
+		add_research_option = tech_building_tower_of_infinity_chemist
+		add_research_option = tech_building_tower_of_infinity_refiner
+		add_research_option = tech_building_tower_of_infinity_translucer
+	}
+}
+
+menp_beyond_infinity_section_3 = {
+	portrait = "GFX_menp_beyond_infinity_section_3"
+
+	on_unlock = {
+		add_research_option = tech_beyond_infinity_battleship
+		add_research_option = tech_beyond_infinity_military_station
+	}
+}
+
+menp_beyond_infinity_component_3 = {
+	portrait = "GFX_menp_beyond_infinity_component_3"
+
+	on_unlock = {
+		add_research_option = tech_beyond_infinity_reactor_3
+	}
+}
+
+menp_beyond_infinity_crisis = {
+	portrait = "GFX_menp_beyond_infinity_crisis"
+
+	on_unlock = {
+		if = {
+			limit = {
+				OR = {
+					has_global_flag = dimensional_horror_crisis_storm_has_occurred
+					has_beyond_infinity_level = { LEVEL = 4 }
+				}
+			}
+			custom_tooltip = menp_beyond_infinity_crisis_effect
+		}
+		else = {
+			custom_tooltip = menp_beyond_infinity_crisis_warning
+		}
+		if = {
+			limit = {
+				has_beyond_infinity_level = { LEVEL = 3 }
+			}
+			if = {
+				limit = {
+					is_galactic_emperor = yes
+				}
+				custom_tooltip = unlock_resolution_beyond_infinity_emperor
+			}
+			else_if = {
+				limit = {
+					is_galactic_custodian = yes
+				}
+				custom_tooltip = unlock_resolution_beyond_infinity_custodian
+			}
+			else_if = {
+				limit = {
+					is_galactic_community_formed = yes
+				}
+				custom_tooltip = unlock_resolution_beyond_infinity
+			}
+		}
+		hidden_effect = {
+			country_event = { id = time_dimensional_horror_crisis.1 days = 360 random = 360 }
+		}
+	}
+}
+
+
+
+menp_beyond_infinity_building_4 = {
+	portrait = "GFX_menp_beyond_infinity_building_4"
+
+	on_unlock = {
+		custom_tooltip = menp_beyond_infinity_building_4_effect
+	}
+}
+
+menp_beyond_infinity_section_4 = {
+	portrait = "GFX_menp_beyond_infinity_section_4"
+
+	on_unlock = {
+		add_research_option = tech_beyond_infinity_titan
+		add_research_option = tech_beyond_infinity_ion_cannon
+	}
+}
+
+menp_beyond_infinity_component_4 = {
+	portrait = "GFX_menp_beyond_infinity_component_4"
+
+	on_unlock = {
+		add_research_option = tech_beyond_infinity_reactor_4
+		add_research_option = tech_beyond_infinity_aura_1
+	}
+}
+
+menp_beyond_infinity_project_1 = {
+	portrait = "GFX_menp_beyond_infinity_project_1"
+
+	on_unlock = {
+		if = {
+			limit = {
+				has_event_chain = beyond_infinity_seal_chain
+			}
+			custom_tooltip = menp_beyond_infinity_project_1_effect
+		}
+		add_research_option = tech_beyond_infinity_drive
+		add_research_option = tech_beyond_infinity_spiral
+	}
+}
+
+
+
+menp_beyond_infinity_building_5 = {
+	portrait = "GFX_menp_beyond_infinity_building_5"
+
+	on_unlock = {
+		switch = {
+			trigger = has_country_flag
+			unlock_building_time_machine = {
+				custom_tooltip = unlock_building_time_machine
+			}
+			unlock_building_circle_nexus = {
+				custom_tooltip = unlock_building_circle_nexus
+			}
+			unlock_building_dimension_engine = {
+				custom_tooltip = unlock_building_dimension_engine
+			}
+			default = {
+			}
+		}
+	}
+}
+
+menp_beyond_infinity_section_5 = {
+	portrait = "GFX_menp_beyond_infinity_section_5"
+
+	on_unlock = {
+		add_research_option = tech_beyond_infinity_colossus
+		add_research_option = tech_beyond_infinity_juggernaut
+	}
+}
+
+menp_beyond_infinity_component_5 = {
+	portrait = "GFX_menp_beyond_infinity_component_5"
+
+	on_unlock = {
+		add_research_option = tech_beyond_infinity_reactor_5
+		add_research_option = tech_beyond_infinity_aura_2
+	}
+}
+
+menp_beyond_infinity_project_2 = {
+	portrait = "GFX_menp_beyond_infinity_project_2"
+
+	on_unlock = {
+		if = {
+			limit = {
+				has_global_flag = greatest_dimensional_horror_crisis
+			}
+			custom_tooltip = menp_beyond_infinity_project_2_effect
+		}
+		if = {
+			limit = {
+				has_country_flag = dimensional_horror_crisis_end
+			}
+			custom_tooltip = menp_beyond_infinity_project_2_end_effect
+		}
+	}
+}

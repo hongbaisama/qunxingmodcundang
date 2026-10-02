@@ -1,0 +1,67 @@
+resolution_category_beyond_infinity_emperor = {
+	group = galactic_empire
+	icon = "GFX_resolution_beyond_infinity_emperor"
+	resolution_types = {
+		"resolution_beyond_infinity_emperor_repeal_1"
+		"resolution_beyond_infinity_emperor_repeal_2"
+		"resolution_beyond_infinity_emperor_repeal_3"
+		"resolution_beyond_infinity_emperor_1"
+		"resolution_beyond_infinity_emperor_2"
+		"resolution_beyond_infinity_emperor_3"
+	}
+}
+
+resolution_category_beyond_infinity_custodian = {
+	group = custodianship
+	icon = "GFX_resolution_beyond_infinity_custodian"
+	resolution_types = {
+		"resolution_beyond_infinity_custodian_repeal_1"
+		"resolution_beyond_infinity_custodian_repeal_2"
+		"resolution_beyond_infinity_custodian_repeal_3"
+		"resolution_beyond_infinity_custodian_1"
+		"resolution_beyond_infinity_custodian_2"
+		"resolution_beyond_infinity_custodian_3"
+	}
+}
+
+resolution_category_time_keeper_emperor = {
+	group = galactic_empire
+	icon = "GFX_resolution_time_keeper_emperor"
+	multiple_active_resolutions = yes
+	resolution_types = {
+		"resolution_time_keeper_emperor_setup"
+		"resolution_time_keeper_emperor_breakthrough_focus_on_shield"
+		"resolution_time_keeper_emperor_breakthrough_focus_on_armor"
+		"resolution_time_keeper_emperor_resistance_focus_on_energy"
+		"resolution_time_keeper_emperor_resistance_focus_on_kinetic"
+		"resolution_time_keeper_emperor_offensive_tactics_of_snipe"
+		"resolution_time_keeper_emperor_offensive_tactics_of_pour"
+		"resolution_time_keeper_emperor_defensive_tactics_of_cover"
+		"resolution_time_keeper_emperor_defensive_tactics_of_maneuver"
+		"resolution_time_keeper_emperor_logistics_strategy_of_support"
+		"resolution_time_keeper_emperor_logistics_strategy_of_supply"
+		"resolution_time_keeper_emperor_command_strategy_of_elite"
+		"resolution_time_keeper_emperor_command_strategy_of_cluster"
+	}
+}
+
+resolution_category_time_keeper_custodian = {
+	group = custodianship
+	icon = "GFX_resolution_time_keeper_custodian"
+	multiple_active_resolutions = yes
+	resolution_types = {
+		"resolution_time_keeper_custodian_setup"
+		"resolution_time_keeper_custodian_breakthrough_focus_on_shield"
+		"resolution_time_keeper_custodian_breakthrough_focus_on_armor"
+		"resolution_time_keeper_custodian_resistance_focus_on_energy"
+		"resolution_time_keeper_custodian_resistance_focus_on_kinetic"
+		"resolution_time_keeper_custodian_offensive_tactics_of_snipe"
+		"resolution_time_keeper_custodian_offensive_tactics_of_pour"
+		"resolution_time_keeper_custodian_defensive_tactics_of_cover"
+		"resolution_time_keeper_custodian_defensive_tactics_of_maneuver"
+		"resolution_time_keeper_custodian_logistics_strategy_of_support"
+		"resolution_time_keeper_custodian_logistics_strategy_of_supply"
+		"resolution_time_keeper_custodian_command_strategy_of_elite"
+		"resolution_time_keeper_custodian_command_strategy_of_cluster"
+	}
+}

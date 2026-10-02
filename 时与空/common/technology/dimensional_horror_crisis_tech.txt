@@ -1,0 +1,307 @@
+tech_dimensional_horror_crisis_storm_protection_level_1 = {
+	icon = tech_ship_storm_weapons_1
+	area = physics
+    cost = @beyond_infinity_tech_cost_3
+    tier = 5
+    category = { horror_time }
+	is_insight = yes
+	is_reverse_engineerable = no
+    weight = 0
+
+	gateway = dimensional_horror_crisis_storm_protection
+
+    potential = {
+		has_country_flag = tech_dimensional_horror_crisis_storm_protection_level_1
+    }
+	
+	modifier = {
+		dimensional_horror_crisis_storm_protection_level = 1
+		dimensional_horror_crisis_storm_planet_modifier = -0.05
+		country_sr_dark_matter_upkeep_mult = 0.1
+	}
+}
+
+tech_dimensional_horror_crisis_storm_protection_level_2 = {
+	icon = tech_ship_hull_storm_breaker_1
+	area = physics
+    cost = @beyond_infinity_tech_cost_3
+    tier = 5
+    category = { horror_time }
+	is_insight = yes
+	is_reverse_engineerable = no
+    weight = 0
+
+	gateway = dimensional_horror_crisis_storm_protection
+
+    potential = {
+		has_country_flag = tech_dimensional_horror_crisis_storm_protection_level_2
+    }
+	
+	modifier = {
+		dimensional_horror_crisis_storm_protection_level = 1
+		dimensional_horror_crisis_storm_fleet_modifier = -0.05
+		country_sr_dark_matter_upkeep_mult = 0.1
+	}
+}
+
+tech_dimensional_horror_crisis_storm_protection_level_3 = {
+	icon = tech_ship_storm_weapons_2
+	area = physics
+    cost = @beyond_infinity_tech_cost_4
+    tier = 5
+    category = { horror_time }
+	is_insight = yes
+	is_reverse_engineerable = no
+    weight = 0
+
+	gateway = dimensional_horror_crisis_storm_protection
+
+    potential = {
+		has_country_flag = tech_dimensional_horror_crisis_storm_protection_level_3
+    }
+	
+	modifier = {
+		dimensional_horror_crisis_storm_protection_level = 1
+		dimensional_horror_crisis_storm_planet_modifier = -0.1
+		country_sr_dark_matter_upkeep_mult = 0.15
+	}
+}
+
+tech_dimensional_horror_crisis_storm_protection_level_4 = {
+	icon = tech_ship_hull_storm_breaker_2
+	area = physics
+    cost = @beyond_infinity_tech_cost_4
+    tier = 5
+    category = { horror_time }
+	is_insight = yes
+	is_reverse_engineerable = no
+    weight = 0
+
+	gateway = dimensional_horror_crisis_storm_protection
+
+    potential = {
+		has_country_flag = tech_dimensional_horror_crisis_storm_protection_level_4
+    }
+	
+	modifier = {
+		dimensional_horror_crisis_storm_protection_level = 1
+		dimensional_horror_crisis_storm_fleet_modifier = -0.1
+		country_sr_dark_matter_upkeep_mult = 0.15
+	}
+}
+
+tech_dimensional_horror_crisis_storm_protection_level_5 = {
+	icon = tech_advanced_storm_manipulation
+	area = physics
+    cost = @beyond_infinity_tech_cost_5
+    tier = 5
+    category = { horror_time }
+    is_rare = yes
+	is_insight = yes
+	is_reverse_engineerable = no
+    weight = 0
+
+	gateway = dimensional_horror_crisis_storm_protection
+
+    potential = {
+		has_country_flag = tech_dimensional_horror_crisis_storm_protection_level_5
+    }
+	
+	modifier = {
+		dimensional_horror_crisis_storm_protection_level = 2
+		country_astral_threads_upkeep_mult = 0.2
+		planet_building_build_speed_mult = 0.2
+		planet_decision_enact_speed_mult = 0.2
+		ship_speed_mult = 0.2
+		starbase_shipyard_build_speed_mult = 0.2
+	}
+}
+
+tech_dimensional_horror_crisis_storm_protection_building_1 = {
+	area = society
+    cost = @beyond_infinity_tech_cost_3
+    tier = 5
+    category = { horror_time }
+	is_insight = yes
+	is_reverse_engineerable = no
+    weight = 0
+
+	gateway = dimensional_horror_crisis_storm_protection
+
+    potential = {
+		has_country_flag = tech_dimensional_horror_crisis_storm_protection_building_1
+		OR = {
+			has_technology = tech_dimensional_horror_crisis_storm_protection_level_1
+			has_technology = tech_dimensional_horror_crisis_storm_protection_level_3
+		}
+    }
+}
+
+tech_dimensional_horror_crisis_storm_protection_building_2 = {
+	area = society
+    cost = @beyond_infinity_tech_cost_3
+    tier = 5
+    category = { horror_time }
+	is_insight = yes
+	is_reverse_engineerable = no
+    weight = 0
+
+	gateway = dimensional_horror_crisis_storm_protection
+
+    potential = {
+		has_country_flag = tech_dimensional_horror_crisis_storm_protection_building_2
+		OR = {
+			has_technology = tech_dimensional_horror_crisis_storm_protection_level_1
+			has_technology = tech_dimensional_horror_crisis_storm_protection_level_3
+		}
+    }
+}
+
+tech_dimensional_horror_crisis_storm_protection_building_3 = {
+	area = society
+    cost = @beyond_infinity_tech_cost_4
+    tier = 5
+    category = { horror_time }
+	is_insight = yes
+	is_reverse_engineerable = no
+    weight = 0
+
+	gateway = dimensional_horror_crisis_storm_protection
+
+    potential = {
+		has_country_flag = tech_dimensional_horror_crisis_storm_protection_building_3
+		has_technology = tech_dimensional_horror_crisis_storm_protection_level_3
+    }
+}
+
+tech_dimensional_horror_crisis_storm_protection_building_4 = {
+	area = society
+    cost = @beyond_infinity_tech_cost_4
+    tier = 5
+    category = { horror_time }
+	is_insight = yes
+	is_reverse_engineerable = no
+    weight = 0
+
+	gateway = dimensional_horror_crisis_storm_protection
+
+    potential = {
+		has_country_flag = tech_dimensional_horror_crisis_storm_protection_building_4
+		has_technology = tech_dimensional_horror_crisis_storm_protection_level_3
+    }
+}
+
+tech_dimensional_horror_crisis_storm_protection_building_5 = {
+	area = society
+    cost = @beyond_infinity_tech_cost_5
+    tier = 5
+    category = { horror_time }
+    is_rare = yes
+	is_insight = yes
+	is_reverse_engineerable = no
+    weight = 0
+
+	gateway = dimensional_horror_crisis_storm_protection
+
+    potential = {
+		has_country_flag = tech_dimensional_horror_crisis_storm_protection_building_5
+		has_technology = tech_dimensional_horror_crisis_storm_protection_level_5
+    }
+}
+
+tech_dimensional_horror_crisis_storm_protection_component_1 = {
+	icon = tech_enigmatic_encoder
+	area = engineering
+    cost = @beyond_infinity_tech_cost_3
+    tier = 5
+    category = { horror_time }
+	is_insight = yes
+	is_reverse_engineerable = no
+    weight = 0
+
+	gateway = dimensional_horror_crisis_storm_protection
+
+    potential = {
+		has_country_flag = tech_dimensional_horror_crisis_storm_protection_component_1
+		OR = {
+			has_technology = tech_dimensional_horror_crisis_storm_protection_level_2
+			has_technology = tech_dimensional_horror_crisis_storm_protection_level_4
+		}
+    }
+}
+
+tech_dimensional_horror_crisis_storm_protection_component_2 = {
+	icon = tech_enigmatic_decoder
+	area = engineering
+    cost = @beyond_infinity_tech_cost_3
+    tier = 5
+    category = { horror_time }
+	is_insight = yes
+	is_reverse_engineerable = no
+    weight = 0
+
+	gateway = dimensional_horror_crisis_storm_protection
+
+    potential = {
+		has_country_flag = tech_dimensional_horror_crisis_storm_protection_component_2
+		OR = {
+			has_technology = tech_dimensional_horror_crisis_storm_protection_level_2
+			has_technology = tech_dimensional_horror_crisis_storm_protection_level_4
+		}
+    }
+}
+
+tech_dimensional_horror_crisis_storm_protection_component_3 = {
+	icon = tech_shield_hardeners_2
+	area = engineering
+    cost = @beyond_infinity_tech_cost_4
+    tier = 5
+    category = { horror_time }
+	is_insight = yes
+	is_reverse_engineerable = no
+    weight = 0
+
+	gateway = dimensional_horror_crisis_storm_protection
+
+    potential = {
+		has_country_flag = tech_dimensional_horror_crisis_storm_protection_component_3
+		has_technology = tech_dimensional_horror_crisis_storm_protection_level_4
+    }
+}
+
+tech_dimensional_horror_crisis_storm_protection_component_4 = {
+	icon = tech_armor_hardeners_2
+	area = engineering
+    cost = @beyond_infinity_tech_cost_4
+    tier = 5
+    category = { horror_time }
+	is_insight = yes
+	is_reverse_engineerable = no
+    weight = 0
+
+	gateway = dimensional_horror_crisis_storm_protection
+
+    potential = {
+		has_country_flag = tech_dimensional_horror_crisis_storm_protection_component_4
+		has_technology = tech_dimensional_horror_crisis_storm_protection_level_4
+    }
+}
+
+tech_dimensional_horror_crisis_storm_protection_component_5 = {
+	icon = tech_covenant_whisperers
+	area = engineering
+    cost = @beyond_infinity_tech_cost_5
+    tier = 5
+    category = { horror_time }
+    is_rare = yes
+	is_insight = yes
+	is_reverse_engineerable = no
+    weight = 0
+
+	gateway = dimensional_horror_crisis_storm_protection
+
+    potential = {
+		has_country_flag = tech_dimensional_horror_crisis_storm_protection_component_5
+		has_technology = tech_dimensional_horror_crisis_storm_protection_level_5
+    }
+}

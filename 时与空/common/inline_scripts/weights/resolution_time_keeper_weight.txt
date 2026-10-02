@@ -1,0 +1,25 @@
+modifier = {
+	factor = 5
+	is_militarist = yes
+	desc = ethic_militarist
+}
+modifier = {
+	factor = 2
+	is_xenophile = yes
+	desc = ethic_xenophile
+}
+modifier = {
+	factor = 0.5
+	is_pacifist = yes
+	desc = ethic_pacifist
+}
+modifier = {
+	factor = 0.5
+	is_xenophobe = yes
+	desc = ethic_xenophobe
+}
+modifier = {
+	factor = 2
+	has_global_flag = dimensional_horror_crisis_storm_has_occurred
+	desc = dimensional_horror_crisis_storm
+}

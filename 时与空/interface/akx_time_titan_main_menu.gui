@@ -1,0 +1,728 @@
+guiTypes = {
+	### DEFAULT EVENT OPTION ###
+
+	containerWindowType = {
+		name = "akx_time_titan_option_entry"
+		position = { x=9999 y=9999 }
+		size = { width = 388 height = 30 }
+		moveable = no
+
+		buttonType = {
+			name = "option_button"
+			quadTextureSprite = "GFX_event_button_452"
+			position = { x=9999 y=9999 }
+			font = "cg_16b"
+			text = "OPTION_TEXT"
+		}
+
+		OverlappingElementsBoxType = {
+			name = "trigger_icons"
+			position = { x = 9999  y = 9999 }
+			size = { x=65 y= 28 }
+		}
+	}
+
+	### DEFAULT EVENT WINDOW ###
+
+	containerWindowType = {
+		name = "AkxTimeTitanMainMenu"
+		orientation = center
+		origo = center
+		moveable = yes
+		size = { width = 980 height = 650 }
+		position = { x = 0 y = -40 }
+
+		background = {
+			name = "background"
+			quadTextureSprite ="GFX_time_titan_bg"
+		}
+
+		iconType = {
+			name = "hex_bg"
+			spriteType = "GFX_hex_bg_curator"
+			position = { x = 9999 y = 9999 }
+			alwaysTransparent = yes
+		}
+
+		iconType = {
+			name = "empire_header_line"
+			quadTextureSprite = "GFX_line_long"
+			position = { x = 9999 y = 9999 }
+			alwaysTransparent = yes
+		}
+
+		buttonType = {
+			name = "focus_button"
+			position = { x = 732 y = 8 }
+			orientation = "UPPER_LEFT"
+			spriteType = "GFX_fleetview_focus_curator"
+			buttonFont = "cg_16b"
+			shortcut = "q"
+		}
+
+		instantTextBoxType = {
+			name = "heading"
+			font = "malgun_goth_24"
+			text = "DIPLOMACY"
+			position = { x = 418 y = 20 }
+			maxWidth = 543
+			maxHeight = 22
+			fixedSize = yes
+			alwaysTransparent = yes
+		}
+
+		buttonType = {
+			name = "tts_button"
+			position = { x = 9999 y = 9999 }
+			spriteType = "GFX_button_tts_start"
+			buttonFont = "cg_16b"
+			shortCut = "t"
+		}
+		
+		buttonType = {
+			name = "close"
+			quadTextureSprite = "GFX_main_close_button_curator"
+			position = { x = 770 y = 8 }
+			Orientation = "UPPER_LEFT"
+			shortcut = "ESCAPE"
+			clicksound = "back_click"
+		}
+		
+		# 连续升级
+		effectButtonType = {
+			name = "time_titan_auto_upgrade_off"
+			spriteType = "GFX_button_automate_construction"
+			position = { x = 170 y = 8 }
+			Orientation = "UPPER_LEFT"
+			clicksound = "tab_click"
+			shortcut = "TAB"
+			effect = time_titan_auto_upgrade_off_effect
+		}
+		
+		effectButtonType = {
+			name = "time_titan_auto_upgrade_on"
+			spriteType = "GFX_button_automate_selected"
+			position = { x = 170 y = 8 }
+			Orientation = "UPPER_LEFT"
+			clicksound = "tab_click"
+			shortcut = "TAB"
+			effect = time_titan_auto_upgrade_on_effect
+		}
+		
+		# 改造升级
+		effectButtonType = {
+			name = "time_titan_special_upgrade"
+			spriteType = "GFX_fleet_action_button_upgrade"
+			position = { x = 208 y = 8 }
+			Orientation = "UPPER_LEFT"
+			clicksound = "event_activating_unknown_technology"
+			shortcut = "U"
+			effect = time_titan_special_upgrade_effect
+		}
+		
+		################################################################
+		# 终末行舟主菜单
+		################################################################
+		
+		# x:-5-40--310-355--625-670--940-985
+		# y:10-40--220-235--415-430--610-625
+		
+		@time_titan_x_1 = 40
+		@time_titan_x_2 = 355
+		@time_titan_x_3 = 670
+		@time_titan_y_1 = 40
+		@time_titan_y_1_special = 55
+		@time_titan_y_2 = 235
+		@time_titan_y_2_special = 250
+		@time_titan_y_3 = 430
+		@time_titan_y_3_special = 445
+		
+		# x+227,y+132
+		
+		@time_titan_level_x_1 = 267
+		@time_titan_level_x_2 = 582
+		@time_titan_level_x_3 = 897
+		@time_titan_level_y_1 = 172
+		@time_titan_level_y_1_special = 187
+		@time_titan_level_y_2 = 367
+		@time_titan_level_y_2_special = 382
+		@time_titan_level_y_3 = 562
+		@time_titan_level_y_3_special = 577
+		
+		################################################################
+		# 常规武器
+		################################################################
+		
+		effectButtonType = {
+			name = "time_titan_normal"
+			spriteType = "GFX_time_titan_normal"
+			position = { x = @time_titan_x_1 y = @time_titan_y_1 }
+			format = center
+			effect = time_titan_normal_effect
+		}
+		
+		effectButtonType = {
+			name = "time_titan_normal_level_icon"
+			spriteType = "GFX_time_titan_level_icon_bg"
+			position = { x = @time_titan_level_x_1 y = @time_titan_level_y_1 }
+			text = time_titan_normal_level_icon
+			buttonFont = "jura"
+			format = center
+			effect = time_titan_normal_level_icon
+		}
+		
+		effectButtonType = {
+			name = "time_titan_normal_upgrade_process_icon"
+			spriteType = "GFX_time_titan_upgrade_process_icon_bg"
+			position = { x = @time_titan_x_1 y = @time_titan_y_1 }
+			text = time_titan_upgrade_process_icon
+			buttonFont = "jura"
+			format = center
+			effect = time_titan_normal_upgrade_process_icon
+		}
+		
+		################################################################
+		# 主要武器
+		################################################################
+		
+		effectButtonType = {
+			name = "time_titan_primary"
+			spriteType = "GFX_time_titan_primary"
+			position = { x = @time_titan_x_2 y = @time_titan_y_1_special }
+			format = center
+			effect = time_titan_primary_effect
+		}
+		
+		effectButtonType = {
+			name = "time_titan_primary_level_icon"
+			spriteType = "GFX_time_titan_level_icon_bg"
+			position = { x = @time_titan_level_x_2 y = @time_titan_level_y_1_special }
+			text = time_titan_primary_level_icon
+			buttonFont = "jura"
+			format = center
+			effect = time_titan_primary_level_icon
+		}
+		
+		effectButtonType = {
+			name = "time_titan_primary_upgrade_process_icon"
+			spriteType = "GFX_time_titan_upgrade_process_icon_bg"
+			position = { x = @time_titan_x_2 y = @time_titan_y_1_special }
+			text = time_titan_upgrade_process_icon
+			buttonFont = "jura"
+			format = center
+			effect = time_titan_primary_upgrade_process_icon
+		}
+		
+		################################################################
+		# 辅助武器
+		################################################################
+		
+		effectButtonType = {
+			name = "time_titan_subsidiary"
+			spriteType = "GFX_time_titan_subsidiary"
+			position = { x = @time_titan_x_3 y = @time_titan_y_1 }
+			format = center
+			effect = time_titan_subsidiary_effect
+		}
+		
+		effectButtonType = {
+			name = "time_titan_subsidiary_level_icon"
+			spriteType = "GFX_time_titan_level_icon_bg"
+			position = { x = @time_titan_level_x_3 y = @time_titan_level_y_1 }
+			text = time_titan_subsidiary_level_icon
+			buttonFont = "jura"
+			format = center
+			effect = time_titan_subsidiary_level_icon
+		}
+		
+		effectButtonType = {
+			name = "time_titan_subsidiary_upgrade_process_icon"
+			spriteType = "GFX_time_titan_upgrade_process_icon_bg"
+			position = { x = @time_titan_x_3 y = @time_titan_y_1 }
+			text = time_titan_upgrade_process_icon
+			buttonFont = "jura"
+			format = center
+			effect = time_titan_subsidiary_upgrade_process_icon
+		}
+		
+		################################################################
+		# 作战系统
+		################################################################
+		
+		effectButtonType = {
+			name = "time_titan_sapient"
+			spriteType = "GFX_time_titan_sapient"
+			position = { x = @time_titan_x_1 y = @time_titan_y_2 }
+			format = center
+			effect = time_titan_sapient_effect
+		}
+		
+		effectButtonType = {
+			name = "time_titan_sapient_level_icon"
+			spriteType = "GFX_time_titan_level_icon_bg"
+			position = { x = @time_titan_level_x_1 y = @time_titan_level_y_2 }
+			text = time_titan_sapient_level_icon
+			buttonFont = "jura"
+			format = center
+			effect = time_titan_sapient_level_icon
+		}
+		
+		effectButtonType = {
+			name = "time_titan_sapient_upgrade_process_icon"
+			spriteType = "GFX_time_titan_upgrade_process_icon_bg"
+			position = { x = @time_titan_x_1 y = @time_titan_y_2 }
+			text = time_titan_upgrade_process_icon
+			buttonFont = "jura"
+			format = center
+			effect = time_titan_sapient_upgrade_process_icon
+		}
+		
+		################################################################
+		# 能源核心
+		################################################################
+		
+		effectButtonType = {
+			name = "time_titan_power"
+			spriteType = "GFX_time_titan_power"
+			position = { x = @time_titan_x_2 y = @time_titan_y_2_special }
+			format = center
+			effect = time_titan_power_effect
+		}
+		
+		effectButtonType = {
+			name = "time_titan_power_level_icon"
+			spriteType = "GFX_time_titan_level_icon_bg"
+			position = { x = @time_titan_level_x_2 y = @time_titan_level_y_2_special }
+			text = time_titan_power_level_icon
+			buttonFont = "jura"
+			format = center
+			effect = time_titan_power_level_icon
+		}
+		
+		effectButtonType = {
+			name = "time_titan_power_upgrade_process_icon"
+			spriteType = "GFX_time_titan_upgrade_process_icon_bg"
+			position = { x = @time_titan_x_2 y = @time_titan_y_2_special }
+			text = time_titan_upgrade_process_icon
+			buttonFont = "jura"
+			format = center
+			effect = time_titan_power_upgrade_process_icon
+		}
+		
+		################################################################
+		# 维度引擎
+		################################################################
+		
+		effectButtonType = {
+			name = "time_titan_drive"
+			spriteType = "GFX_time_titan_drive"
+			position = { x = @time_titan_x_3 y = @time_titan_y_2 }
+			format = center
+			effect = time_titan_drive_effect
+		}
+		
+		effectButtonType = {
+			name = "time_titan_drive_level_icon"
+			spriteType = "GFX_time_titan_level_icon_bg"
+			position = { x = @time_titan_level_x_3 y = @time_titan_level_y_2 }
+			text = time_titan_drive_level_icon
+			buttonFont = "jura"
+			format = center
+			effect = time_titan_drive_level_icon
+		}
+		
+		effectButtonType = {
+			name = "time_titan_drive_upgrade_process_icon"
+			spriteType = "GFX_time_titan_upgrade_process_icon_bg"
+			position = { x = @time_titan_x_3 y = @time_titan_y_2 }
+			text = time_titan_upgrade_process_icon
+			buttonFont = "jura"
+			format = center
+			effect = time_titan_drive_upgrade_process_icon
+		}
+		
+		################################################################
+		# 装甲防御
+		################################################################
+		
+		effectButtonType = {
+			name = "time_titan_armor"
+			spriteType = "GFX_time_titan_armor"
+			position = { x = @time_titan_x_1 y = @time_titan_y_3 }
+			format = center
+			effect = time_titan_armor_effect
+		}
+		
+		effectButtonType = {
+			name = "time_titan_armor_level_icon"
+			spriteType = "GFX_time_titan_level_icon_bg"
+			position = { x = @time_titan_level_x_1 y = @time_titan_level_y_3 }
+			text = time_titan_armor_level_icon
+			buttonFont = "jura"
+			format = center
+			effect = time_titan_armor_level_icon
+		}
+		
+		effectButtonType = {
+			name = "time_titan_armor_upgrade_process_icon"
+			spriteType = "GFX_time_titan_upgrade_process_icon_bg"
+			position = { x = @time_titan_x_1 y = @time_titan_y_3 }
+			text = time_titan_upgrade_process_icon
+			buttonFont = "jura"
+			format = center
+			effect = time_titan_armor_upgrade_process_icon
+		}
+		
+		################################################################
+		# 船体防御
+		################################################################
+		
+		effectButtonType = {
+			name = "time_titan_hull"
+			spriteType = "GFX_time_titan_hull"
+			position = { x = @time_titan_x_2 y = @time_titan_y_3_special }
+			format = center
+			effect = time_titan_hull_effect
+		}
+		
+		effectButtonType = {
+			name = "time_titan_hull_level_icon"
+			spriteType = "GFX_time_titan_level_icon_bg"
+			position = { x = @time_titan_level_x_2 y = @time_titan_level_y_3_special }
+			text = time_titan_hull_level_icon
+			buttonFont = "jura"
+			format = center
+			effect = time_titan_hull_level_icon
+		}
+		
+		effectButtonType = {
+			name = "time_titan_hull_upgrade_process_icon"
+			spriteType = "GFX_time_titan_upgrade_process_icon_bg"
+			position = { x = @time_titan_x_2 y = @time_titan_y_3_special }
+			text = time_titan_upgrade_process_icon
+			buttonFont = "jura"
+			format = center
+			effect = time_titan_hull_upgrade_process_icon
+		}
+		
+		################################################################
+		# 护盾防御
+		################################################################
+		
+		effectButtonType = {
+			name = "time_titan_shield"
+			spriteType = "GFX_time_titan_shield"
+			position = { x = @time_titan_x_3 y = @time_titan_y_3 }
+			format = center
+			effect = time_titan_shield_effect
+		}
+		
+		effectButtonType = {
+			name = "time_titan_shield_level_icon"
+			spriteType = "GFX_time_titan_level_icon_bg"
+			position = { x = @time_titan_level_x_3 y = @time_titan_level_y_3 }
+			text = time_titan_shield_level_icon
+			buttonFont = "jura"
+			format = center
+			effect = time_titan_shield_level_icon
+		}
+		
+		effectButtonType = {
+			name = "time_titan_shield_upgrade_process_icon"
+			spriteType = "GFX_time_titan_upgrade_process_icon_bg"
+			position = { x = @time_titan_x_3 y = @time_titan_y_3 }
+			text = time_titan_upgrade_process_icon
+			buttonFont = "jura"
+			format = center
+			effect = time_titan_shield_upgrade_process_icon
+		}
+		
+		################################################################
+		# 终末行舟主菜单
+		################################################################
+
+		### DESCRIPTION ###
+
+		buttonType = {
+			name = "alien_message_background"
+			size = { x = 485 y = 240 }
+			position = { x = 9999 y = 9999 }
+			spriteType = "GFX_tiles_dark_area_cut_8"
+			alwaysTransparent = yes
+		}
+
+		instantTextBoxType = {
+			name = "alien_message"
+			font = "cg_16b"
+			position = { x = 9999 y = 9999 }
+			maxWidth = 465
+			maxHeight = 220
+			format = left
+			scrollbartype = "standardtext_slider"
+		}
+
+		buttonType = {
+			name = "confirm_button"
+			quadTextureSprite = "GFX_standard_button_142_34_button"
+			position = { x= 9999 y = 9999  }
+			Orientation = "UPPER_RIGHT"
+			font = "cg_16b"
+			text = "MESSAGE_OK"
+			clicksound = "confirmation"
+		}
+
+		### PORTRAIT ###
+
+		containerWindowType = {
+			name = "portrait_background"
+			position = { x = 9999 y = 9999 }
+			size = { width = 964 height = 350 }
+			clipping = yes
+
+			iconType = {
+				name = "event_picture"
+				spriteType = "GFX_diplomacy_portrait_frame"
+				position = { x = 9999 y = 9999 }
+			}
+
+			iconType = {
+				name = "portrait"
+				position = { x = 9999 y = 9999 }
+				spriteType = "GFX_portrait_character"
+			}
+		}
+
+		containerWindowType = {
+			name = "portrait"
+			position = { x = 9999 y = 9999 }
+			size = { width = 964 height = 350 }
+			clipping = yes
+
+			iconType = {
+				name = "portrait"
+				spriteType = "GFX_portrait_gamesetup_mask"
+				alwaysTransparent = yes
+			}
+
+			iconType = {
+				name = "black_frame"
+				spriteType = "GFX_diplomacy_portrait_shadow_frame"
+				position = { x = 9999 y = 9999 }
+				alwaysTransparent = yes
+			}
+
+			iconType = {
+				name = "stripes_1"
+				spriteType = "GFX_diplomacy_stripes_2"
+				alwaysTransparent = yes
+			}
+
+			iconType = {
+				name = "city_frame"
+				spriteType = "GFX_diplomacy_portrait_frame"
+				position = { x = 9999 y = 9999 }
+				alwaysTransparent = yes
+			}
+		}
+
+		### EMPIRE INFO ###
+
+		iconType = {
+			name = "empire_info_bg"
+			spriteType = "GFX_diplomacy_dark_fade_bg"
+			position = { x = 9999 y = 9999 }
+			alwaysTransparent = yes
+		}
+
+		instantTextBoxType={
+			name = "empire_name"
+			font = "malgun_goth_24"
+			text = "Kammarian Galactic Concordat"
+			position = { x = 9999 y = 9999 }
+			maxWidth = 450
+			maxHeight = 16
+			format = LEFT
+			text_color_code = "E"
+			fixedsize = yes
+		}
+
+		instantTextBoxType={
+			name = "empire_government_type"
+			font = "cg_16b"
+			text = "Autocracy"
+			position = { x = 9999 y = 9999	}
+			maxWidth = 250
+			maxHeight = 16
+			format = LEFT
+			fixedsize = yes
+			text_color_code = "Y"
+		}
+
+		instantTextBoxType={
+			name = "empire_personality_type"
+			font = "cg_16b"
+			text = "Despicable Neutrals"
+			position = { x = 9999 y = 9999	}
+			maxWidth = 250
+			maxHeight = 16
+			format = LEFT
+			fixedsize = yes
+		}
+
+		OverlappingElementsBoxType = {
+			name = "empire_ethics_icons"
+			position = { x = 9999 y = 9999 }
+			size = { x = 240 y = 30 }
+			spacing = 2.0
+			format = left
+		}
+
+		buttonType = {
+			name = "empire_flag"
+			quadTextureSprite = "GFX_empire_flag_128"
+			position = { x = 9999 y = 9999 }
+			orientation = UPPER_LEFT
+		}
+
+		containerWindowType = {
+			name = "leader_details"
+			position = { x = 9999 y = 9999 }
+
+			containerWindowType = {
+				name = "leader_traits_box"
+				position = { x = 9999 y = 9999 }
+				size = { width = 210 height = 75 }
+
+				background = {
+					name = "ethics_bg"
+					spriteType = "GFX_tiles_dark_area_cut_8"
+				}
+			}
+
+			instantTextBoxType = {
+				name = "empire_traits_label"
+				position = { x = 9999 y = 9999 }
+				font = "cg_16b"
+				maxWidth = 230
+				maxHeight = 20
+				fixedSize = yes
+				format = left
+				#text_color_code = "E"
+				text = "RULER_TRAITS"
+				alwaysTransparent = yes
+			}
+
+			instantTextBoxType = {
+				name = "leader_traits_label"
+				position = { x = 9999 y = 9999 }
+				font = "cg_16b"
+				maxWidth = 230
+				maxHeight = 20
+				fixedSize = yes
+				format = left
+				#text_color_code = "E"
+				text = "RULER_TRAITS"
+				alwaysTransparent = yes
+			}
+
+			overlappingElementsBoxType = {
+				name = "leader_traits"
+				position = { x = 9999 y = 9999 }
+				size = { x = 125 y = 330 }
+			}
+
+			instantTextBoxType = {
+				name = "leader_name"
+				position = { x = 9999 y = 9999 }
+				font = "cg_16b"
+				maxWidth = 330
+				maxHeight = 20
+				fixedSize = yes
+				format = left
+				text = "Leader Name"
+				text_color_code = "E"
+			}
+
+			instantTextBoxType = {
+				name = "leader_species"
+				position = { x = 9999 y = 9999 }
+				font = "cg_16b"
+				maxWidth = 330
+				maxHeight = 20
+				fixedSize = yes
+				text = "Leader Species"
+				format = left
+			}
+		}
+
+		### OPINION
+		containerWindowType = {
+			name = "opinion_window"
+			position = { x = 9999 y = 9999 }
+			size = { width = 94 height = 30 }
+
+			# Use this for tooltip area, picture comes from somewhere else
+			background = {
+				name = "opinion_bg"
+				spriteType = "GFX_tiled_window_transparent"
+			}
+
+			iconType = {
+				name = "their_opinion_icon"
+				spriteType = "GFX_diplomacy_opinion"
+				position = { x = 9999 y = 9999 }
+				alwaysTransparent = yes
+			}
+
+			instantTextBoxType = {
+				name = "their_opinion"
+				font = "cg_16b"
+				maxWidth = 40
+				position = { x = 9999 y = 9999 }
+				format = left
+				text = "100"
+				alwaysTransparent = yes
+			}
+		}
+
+		### EVENT DIPLO ###
+
+		containerWindowType = {
+			name = "EVENT_DIPLO"
+			position = { x = 9999 y = 9999 }
+			size = { width=563 height=220 }
+			moveable = no
+
+			instantTextBoxType = {
+				name = "action_title"
+				font = "malgun_goth_24"
+				position = { x = 9999 y = 9999 }
+				maxWidth = 450
+				alwaysTransparent = yes
+			}
+
+			instantTextBoxType = {
+				name = "action_desc"
+				font = "malgun_goth_24"
+				position = { x = 9999 y = 9999 }
+				maxWidth = 500
+				maxHeight = 180
+				Orientation = "UPPER_LEFT"
+				format = center
+				alwaysTransparent = yes
+				text_color_code = "H"
+			}
+
+			listboxType = {
+				name = "option_list"
+				position = { x = 9999 y = 9999 }
+				backGround=""
+				size = { x=462 y=200 }
+				spacing = 1
+				scrollbartype = "standardlistbox_slider"
+				borderSize = { x = 0 y = 0 }
+				Orientation = "UPPER_LEFT"
+			}
+		}
+	}
+}

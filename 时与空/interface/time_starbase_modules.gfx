@@ -1,0 +1,125 @@
+spriteTypes = {
+	
+	################################################################
+	# 恒星基地模块
+	################################################################
+	
+	spriteType = {
+		name = "GFX_time_titan_end_beam"
+		texturefile = "gfx/interface/icons/modules/time_titan_end_beam.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_time_titan_end_accelerator"
+		texturefile = "gfx/interface/icons/modules/time_titan_end_accelerator.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_time_titan_hope_beam"
+		texturefile = "gfx/interface/icons/modules/time_titan_hope_beam.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_time_titan_hope_accelerator"
+		texturefile = "gfx/interface/icons/modules/time_titan_hope_accelerator.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_time_titan_time_beam"
+		texturefile = "gfx/interface/icons/modules/time_titan_time_beam.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_time_titan_time_accelerator"
+		texturefile = "gfx/interface/icons/modules/time_titan_time_accelerator.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_time_titan_horror_beam"
+		texturefile = "gfx/interface/icons/modules/time_titan_horror_beam.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_time_titan_horror_accelerator"
+		texturefile = "gfx/interface/icons/modules/time_titan_horror_accelerator.dds"
+	}
+	
+	################################################################
+	# 恒星基地建筑
+	################################################################
+	
+	spriteType = {
+		name = "GFX_white_hole_recycle_bin_rare"
+		texturefile = "gfx/interface/icons/modules/white_hole_recycle_bin_rare.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_white_hole_recycle_bin_research"
+		texturefile = "gfx/interface/icons/modules/white_hole_recycle_bin_research.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_white_hole_recycle_bin_minerals"
+		texturefile = "gfx/interface/icons/modules/white_hole_recycle_bin_minerals.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_time_titan_end_shield"
+		texturefile = "gfx/interface/icons/modules/time_titan_end_shield.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_time_titan_end_armor"
+		texturefile = "gfx/interface/icons/modules/time_titan_end_armor.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_time_titan_hope_hull"
+		texturefile = "gfx/interface/icons/modules/time_titan_hope_hull.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_time_titan_time_shield"
+		texturefile = "gfx/interface/icons/modules/time_titan_time_shield.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_time_titan_time_armor"
+		texturefile = "gfx/interface/icons/modules/time_titan_time_armor.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_time_titan_horror_shield"
+		texturefile = "gfx/interface/icons/modules/time_titan_horror_shield.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_time_titan_horror_armor"
+		texturefile = "gfx/interface/icons/modules/time_titan_horror_armor.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_time_titan_time_microsingularity"
+		texturefile = "gfx/interface/icons/modules/time_titan_time_microsingularity.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_time_titan_resource_silo"
+		texturefile = "gfx/interface/icons/modules/time_titan_resource_silo.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_time_titan_max_workforce"
+		texturefile = "gfx/interface/icons/modules/time_titan_max_workforce.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_time_titan_maintenance_cap"
+		texturefile = "gfx/interface/icons/modules/time_titan_maintenance_cap.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_time_titan_maintenance"
+		texturefile = "gfx/interface/icons/modules/time_titan_maintenance.dds"
+	}
+}

@@ -1,0 +1,1219 @@
+
+namespace = time_wanderer
+
+# 游荡奇点
+event = {
+	id = time_wanderer.1
+	is_triggered_only = yes
+	hide_window = yes
+	
+	immediate = {
+		refresh_time_wanderer = yes
+	}
+}
+
+# 抵达星系
+system_event = {
+	id = time_wanderer.2
+	is_triggered_only = yes
+	hide_window = yes
+	
+	trigger = {
+		NOT = { has_global_flag = time_wanderer_end }
+	}
+	
+	immediate = {
+		set_timed_star_flag = {
+			flag = recent_time_wanderer_system
+			years = 10
+		}
+		add_modifier = { modifier = time_wanderer_system_modifier }
+		save_global_event_target_as = time_wanderer_system
+		# 循环
+		system_event = { id = time_wanderer.4 days = 180 random = 180 }
+		# 选择星球
+		if = {
+			limit = {
+				count_system_planet = {
+					count > 0
+				}
+			}
+			if = {
+				limit = {
+					any_system_planet = {
+						is_time_black_hole_planet_class = yes
+					}
+				}
+				random_system_planet = {
+					limit = {
+						is_time_black_hole_planet_class = yes
+					}
+					choose_as_time_wanderer_planet = yes
+				}
+			}
+			else = {
+				random_system_planet = {
+					choose_as_time_wanderer_planet = yes
+				}
+			}
+		}
+		else = {
+			# 新星系内无星球，也要移除旧的位置
+			event_target:time_wanderer_planet = {
+				remove_modifier = time_wanderer_planet_modifier
+			}
+			clear_global_event_target = time_wanderer_planet
+		}
+		# 星系拥有者获得提示
+		if = {
+			limit = {
+				exists = owner
+			}
+			owner = {
+				if = {
+					limit = {
+						is_dimension_traveler_owner = yes
+						NOT = { has_country_flag = time_wanderer_10_triggered }
+					}
+					country_event = { id = time_wanderer.10 }
+				}
+				else = {
+					country_event = { id = time_wanderer.6 }
+				}
+			}
+		}
+	}
+}
+
+# 抵达星球
+carrier_event = {
+	id = time_wanderer.3
+	title = time_wanderer.3.name
+	desc = time_wanderer.3.desc
+	picture = GFX_evt_black_hole
+	show_sound = event_mystic_reveal
+	location = root
+	
+	is_triggered_only = yes
+	
+	trigger = {
+		NOT = { has_global_flag = time_wanderer_end }
+	}
+	
+	immediate = {
+		add_modifier = { modifier = time_wanderer_planet_modifier }
+		save_global_event_target_as = time_wanderer_planet
+	}
+	
+	option = {
+		name = time_wanderer.3.a
+		tooltip = {
+			add_modifier = { modifier = time_wanderer_planet_modifier }
+		}
+	}
+}
+
+# 随机行动
+system_event = {
+	id = time_wanderer.4
+	is_triggered_only = yes
+	hide_window = yes
+	
+	trigger = {
+		NOT = { has_global_flag = time_wanderer_end }
+	}
+	
+	immediate = {
+		# 刷新
+		if = {
+			limit = {
+				NOT = {
+					is_same_value = event_target:time_wanderer_system
+				}
+			}
+			event_target:time_wanderer_system = {
+				remove_modifier = time_wanderer_system_modifier
+			}
+			add_modifier = { modifier = time_wanderer_system_modifier }
+			save_global_event_target_as = time_wanderer_system
+		}
+		# 随机行动
+		random_list = {
+			# 移动至相邻星系
+			2 = {
+				if = {
+					limit = {
+						count_neighbor_system = {
+							count > 0
+							limit = {
+								NOT = { has_star_flag = recent_time_wanderer_system }
+							}
+						}
+					}
+					random_neighbor_system = {
+						limit = {
+							NOT = { has_star_flag = recent_time_wanderer_system }
+						}
+						choose_as_time_wanderer_system = yes
+					}
+				}
+				else_if = {
+					limit = {
+						count_neighbor_system = {
+							count > 0
+						}
+					}
+					random_neighbor_system = {
+						choose_as_time_wanderer_system = yes
+					}
+				}
+				else = {
+					refresh_time_wanderer = yes
+				}
+			}
+			# 移动至随机星球
+			0 = {
+				modifier = {
+					add = 3
+					any_system_planet = {
+						NOT = { is_same_value = event_target:time_wanderer_planet }
+					}
+				}
+				random_system_planet = {
+					limit = {
+						NOT = { is_same_value = event_target:time_wanderer_planet }
+					}
+					choose_as_time_wanderer_planet = yes
+				}
+				# 循环
+				system_event = { id = time_wanderer.4 days = 180 random = 180 }
+			}
+			# 吞噬星球
+			1 = {
+				modifier = {
+					factor = 0
+					NOT = { exists = event_target:time_wanderer_planet }
+				}
+				modifier = {
+					factor = 0
+					event_target:time_wanderer_planet = {
+						OR = {
+							# 不吃殖民地
+							is_colony = yes
+							# 不吃人工星球
+							is_artificial = yes
+							# 不吃正在殖民的星球
+							is_under_colonization = yes
+							# 不吃黑洞与白洞
+							is_time_black_hole_or_white_hole_planet_class = yes
+							# 不吃异常
+							has_anomaly = yes
+							# 不吃项目
+							# （好像没有对应的trigger）
+							# 不吃局势
+							count_targeting_situation = {
+								count > 0
+							}
+							# 不吃考古
+							exists = archaeological_site
+							# 不吃巨构依附星球
+							has_any_megastructure = yes
+							# 不吃MOD特殊星球
+							can_not_be_changed_by_akx_worm = yes
+						}
+					}
+				}
+				event_target:time_wanderer_planet = {
+					if = {
+						limit = {
+							is_primary_star = yes
+							solar_system = { can_become_sc_black_hole_by_akx_worm = yes }
+						}
+						solar_system = {
+							set_star_class = sc_black_hole
+							# 清除戴森云、戴森球、奇迹球并返还建造次数
+							worm_clear_dyson_sphere = yes
+						}
+					}
+					set_dimensional_horrorling_planet = yes
+					add_modifier = { modifier = time_wanderer_black_hole_modifier }
+					# 黑洞穿行可选星系
+					solar_system = { set_star_flag = has_black_hole_by_horror }
+				}
+				# 星系拥有者获得提示
+				if = {
+					limit = {
+						exists = owner
+					}
+					owner = {
+						country_event = { id = time_wanderer.7 }
+					}
+				}
+				# 循环
+				system_event = { id = time_wanderer.4 days = 180 random = 180 }
+			}
+		}
+	}
+}
+
+fleet_event = {
+	id = time_wanderer.5
+	title = time_wanderer.5.name
+	desc = time_wanderer.5.desc
+	picture = GFX_evt_black_hole
+	show_sound = event_mystic_reveal
+	location = root
+	
+	is_triggered_only = yes
+	
+	trigger = {
+		if = {
+			limit = {
+				exists = event_target:time_wanderer_system
+				from = { is_same_value = event_target:time_wanderer_system }
+			}
+			exists = owner
+			owner = {
+				NOT = { has_country_flag = meet_time_wanderer }
+			}
+		}
+		else = {
+			always = no
+		}
+	}
+	
+	immediate = {
+		owner = { set_country_flag = meet_time_wanderer }
+	}
+	
+	after = {
+		owner = {
+			add_monthly_resource_mult = {
+				resource = physics_research
+				value = @tier4researchreward
+				min = @tier4researchmin
+				max = @tier4researchmax
+			}
+		}
+	}
+	
+	option = {
+		name = time_wanderer.5.a
+	}
+}
+
+country_event = {
+	id = time_wanderer.6
+	title = time_wanderer.6.name
+	desc = {
+		text = time_wanderer.6.desc_1
+		trigger = {
+			NOT = { has_country_flag = meet_time_wanderer }
+		}
+	}
+	desc = {
+		text = time_wanderer.6.desc_2
+		trigger = {
+			has_country_flag = meet_time_wanderer
+		}
+	}
+	picture = GFX_evt_black_hole
+	show_sound = event_mystic_reveal
+	location = from
+	
+	is_triggered_only = yes
+	
+	trigger = {
+		NOT = { has_country_flag = stop_time_wanderer_6_trigger }
+	}
+	
+	after = {
+		if = {
+			limit = {
+				NOT = { has_country_flag = meet_time_wanderer }
+			}
+			set_country_flag = meet_time_wanderer
+			add_monthly_resource_mult = {
+				resource = physics_research
+				value = @tier4researchreward
+				min = @tier4researchmin
+				max = @tier4researchmax
+			}
+		}
+	}
+	
+	option = {
+		name = {
+			text = time_wanderer.6.a
+			trigger = {
+				NOT = { has_country_flag = meet_time_wanderer }
+			}
+		}
+		name = {
+			text = time_wanderer.6.b
+			trigger = {
+				has_country_flag = meet_time_wanderer
+			}
+		}
+	}
+	
+	option = {
+		name = time_wanderer.6.c
+		hidden_effect = {
+			set_country_flag = stop_time_wanderer_6_trigger
+		}
+	}
+}
+
+country_event = {
+	id = time_wanderer.7
+	title = time_wanderer.7.name
+	desc = time_wanderer.7.desc
+	picture = GFX_evt_black_hole
+	show_sound = event_mystic_reveal
+	location = event_target:time_wanderer_planet
+	
+	is_triggered_only = yes
+	
+	trigger = {
+		NOT = { has_country_flag = stop_time_wanderer_7_trigger }
+	}
+	
+	immediate = {
+	}
+	
+	after = {
+	}
+	
+	option = {
+		name = time_wanderer.7.a
+	}
+	
+	option = {
+		name = time_wanderer.7.b
+		hidden_effect = {
+			set_country_flag = stop_time_wanderer_7_trigger
+		}
+	}
+}
+
+country_event = {
+	id = time_wanderer.10
+	title = time_wanderer.10.name
+	desc = {
+		text = time_wanderer.10.desc_1
+		trigger = {
+			NOT = { has_country_flag = meet_time_wanderer }
+		}
+	}
+	desc = {
+		text = time_wanderer.10.desc_2
+		trigger = {
+			has_country_flag = meet_time_wanderer
+		}
+	}
+	picture = GFX_evt_black_hole
+	show_sound = event_mystic_reveal
+	location = from
+	
+	is_triggered_only = yes
+	
+	trigger = {
+	}
+	
+	immediate = {
+		set_country_flag = time_wanderer_10_triggered
+	}
+	
+	after = {
+		if = {
+			limit = {
+				NOT = { has_country_flag = meet_time_wanderer }
+			}
+			add_monthly_resource_mult = {
+				resource = physics_research
+				value = @tier4researchreward
+				min = @tier4researchmin
+				max = @tier4researchmax
+			}
+			hidden_effect = {
+				set_country_flag = meet_time_wanderer
+			}
+		}
+	}
+	
+	option = {
+		name = time_wanderer.10.a
+		custom_tooltip = time_wanderer.10.a.tooltip
+		hidden_effect = {
+			create_country = {
+				name = NAME_Time_Wanderer
+				type = time_wanderer
+				effect = {
+					establish_contact = {
+						who = root
+						location = root.from
+					}
+				}
+			}
+			every_first_contact = {
+				limit = {
+					contact_country = {
+						is_country_type = time_wanderer
+					}
+				}
+				set_name = NAME_Time_Wanderer
+				set_first_contact_stage = time_wanderer_stage_1
+			}
+		}
+	}
+	
+	option = {
+		name = time_wanderer.10.b
+		add_monthly_resource_mult = {
+			resource = influence
+			value = @tier2influencereward
+			min = @tier2influencemin
+			max = @tier2influencemax
+		}
+	}
+}
+
+first_contact_event = {
+	id = time_wanderer.11
+	title = time_wanderer.11.name
+	desc = time_wanderer.11.desc
+	picture = GFX_evt_mysterious_signal
+	show_sound = event_alien_signal
+	is_triggered_only = yes
+	first_contact = yes
+	
+	immediate = {
+		set_site_progress_locked = yes
+	}
+
+	after = {
+		set_site_progress_locked = no
+	}
+	
+	option = {
+		name = time_wanderer.11.a
+		set_first_contact_stage = time_wanderer_stage_2
+	}
+}
+
+first_contact_event = {
+	id = time_wanderer.12
+	title = time_wanderer.12.name
+	desc = time_wanderer.12.desc
+	picture = GFX_evt_necromancy
+	show_sound = event_mystic_reveal
+	is_triggered_only = yes
+	first_contact = yes
+	
+	immediate = {
+		set_site_progress_locked = yes
+	}
+
+	after = {
+		set_site_progress_locked = no
+	}
+	
+	option = {
+		name = time_wanderer.12.a
+		set_first_contact_stage = time_wanderer_stage_3
+	}
+}
+
+first_contact_event = {
+	id = time_wanderer.13
+	title = time_wanderer.13.name
+	desc = {
+		text = time_wanderer.13.desc_1
+		trigger = {
+			owner = {
+				dimension_traveler_is_by_our_side = yes
+			}
+		}
+	}
+	desc = {
+		text = time_wanderer.13.desc_2
+		trigger = {
+			owner = {
+				dimension_traveler_is_by_our_side = no
+			}
+		}
+	}
+	picture = GFX_evt_shroud_tunnel
+	show_sound = event_mystic_reveal_light
+	is_triggered_only = yes
+	first_contact = yes
+	
+	immediate = {
+		set_site_progress_locked = yes
+	}
+
+	after = {
+		set_site_progress_locked = no
+	}
+	
+	option = {
+		name = time_wanderer.13.a
+		custom_tooltip = time_wanderer.13.a.tooltip
+		trigger = {
+			owner = { dimension_traveler_is_by_our_side = yes }
+		}
+		allow = {
+			owner = { can_change_dimension_traveler_class = yes }
+		}
+		if = {
+			limit = {
+				owner = { unlock_dimension_traveler_destiny_trait = yes }
+			}
+			set_first_contact_stage = time_wanderer_stage_4
+		}
+		else = {
+			set_first_contact_stage = time_wanderer_stage_5
+		}
+		hidden_effect = {
+			owner = {
+				set_country_flag = dimension_traveler_dance_with_death
+				remove_country_flag = dimension_traveler_official_active
+				remove_country_flag = dimension_traveler_scientist_active
+				remove_country_flag = dimension_traveler_commander_active
+				if = {
+					limit = {
+						exists = event_target:dimension_traveler_leader
+					}
+					event_target:dimension_traveler_leader = {
+						check_dimension_traveler_level = yes
+						check_dimension_traveler_trait = yes
+						kill_leader = { show_notification = no }
+					}
+				}
+			}
+		}
+	}
+	
+	option = {
+		name = time_wanderer.13.b
+		custom_tooltip = time_wanderer.13.b.tooltip
+		trigger = {
+			owner = {
+				dimension_traveler_is_by_our_side = yes
+			}
+		}
+		set_first_contact_stage = time_wanderer_stage_6
+	}
+	
+	option = {
+		name = time_wanderer.13.c
+		custom_tooltip = time_wanderer.13.c.tooltip
+		trigger = {
+			owner = {
+				dimension_traveler_is_by_our_side = no
+			}
+		}
+		set_first_contact_stage = time_wanderer_stage_6
+	}
+}
+
+first_contact_event = {
+	id = time_wanderer.14
+	title = time_wanderer.14.name
+	desc = time_wanderer.14.desc
+	picture = GFX_evt_vortex
+	show_sound = event_activating_unknown_technology
+	is_triggered_only = yes
+	first_contact = yes
+	
+	immediate = {
+		set_site_progress_locked = yes
+		owner = { remove_country_flag = dimension_traveler_dance_with_death }
+	}
+
+	after = {
+		set_site_progress_locked = no
+		finish_first_contact = yes
+		owner = { increment_first_contact_skill_2 = yes }
+	}
+	
+	option = {
+		name = time_wanderer.14.a
+		custom_tooltip = time_wanderer.14.a.tooltip
+		owner = {
+			add_modifier = {
+				modifier = time_wanderer_modifier
+				days = -1
+			}
+		}
+		hidden_effect = {
+			contact_country = {
+				destroy_country = yes
+			}
+		}
+	}
+}
+
+first_contact_event = {
+	id = time_wanderer.15
+	title = time_wanderer.15.name
+	desc = time_wanderer.15.desc
+	picture = GFX_evt_ongoing_disaster
+	show_sound = event_mystic_reveal_light
+	is_triggered_only = yes
+	first_contact = yes
+	
+	immediate = {
+		set_site_progress_locked = yes
+		owner = {
+			remove_country_flag = dimension_traveler_dance_with_death
+			set_country_flag = dimension_traveler_returning
+			country_event = { id = dimension_traveler.66 days = 360 }
+		}
+	}
+
+	after = {
+		set_site_progress_locked = no
+		finish_first_contact = yes
+		owner = { increment_first_contact_skill_2 = yes }
+	}
+	
+	option = {
+		name = time_wanderer.15.a
+		custom_tooltip = time_wanderer.15.a.tooltip
+		owner = {
+			add_modifier = {
+				modifier = time_wanderer_false_modifier
+				days = -1
+			}
+		}
+		hidden_effect = {
+			contact_country = {
+				destroy_country = yes
+			}
+		}
+	}
+}
+
+first_contact_event = {
+	id = time_wanderer.16
+	title = time_wanderer.16.name
+	desc = time_wanderer.16.desc
+	picture = GFX_evt_surreal_visions
+	show_sound = event_mystic_reveal
+	is_triggered_only = yes
+	first_contact = yes
+	
+	immediate = {
+		set_site_progress_locked = yes
+	}
+
+	after = {
+		set_site_progress_locked = no
+		finish_first_contact = no
+		owner = { increment_first_contact_skill_1 = yes }
+	}
+	
+	option = {
+		name = time_wanderer.16.a
+		custom_tooltip = time_wanderer.16.a.tooltip
+		owner = {
+			add_monthly_resource_mult = {
+				resource = influence
+				value = @tier3influencereward
+				min = @tier3influencemin
+				max = @tier3influencemax
+			}
+		}
+		hidden_effect = {
+			contact_country = {
+				destroy_country = yes
+			}
+		}
+	}
+}
+
+first_contact_event = {
+	id = time_wanderer.21
+	title = time_wanderer.21.name
+	desc = time_wanderer.21.desc
+	picture = GFX_evt_black_hole
+	show_sound = event_alien_signal
+	is_triggered_only = yes
+	first_contact = yes
+	
+	immediate = {
+	}
+	
+	option = {
+		name = time_wanderer.21.a
+		owner = {
+			add_monthly_resource_mult = {
+				resource = engineering_research
+				value = @tier3researchreward
+				min = @tier3researchmin
+				max = @tier3researchmax
+			}
+		}
+	}
+}
+
+first_contact_event = {
+	id = time_wanderer.22
+	title = time_wanderer.22.name
+	desc = time_wanderer.22.desc
+	picture = GFX_evt_black_hole
+	show_sound = event_alien_signal
+	is_triggered_only = yes
+	first_contact = yes
+	
+	immediate = {
+	}
+	
+	option = {
+		name = time_wanderer.22.a
+		owner = {
+			add_monthly_resource_mult = {
+				resource = society_research
+				value = @tier3researchreward
+				min = @tier3researchmin
+				max = @tier3researchmax
+			}
+		}
+	}
+}
+
+first_contact_event = {
+	id = time_wanderer.23
+	title = time_wanderer.23.name
+	desc = time_wanderer.23.desc
+	picture = GFX_evt_black_hole
+	show_sound = event_alien_signal
+	is_triggered_only = yes
+	first_contact = yes
+	
+	immediate = {
+	}
+	
+	option = {
+		name = time_wanderer.23.a
+		owner = {
+			add_monthly_resource_mult = {
+				resource = physics_research
+				value = @tier3researchreward
+				min = @tier3researchmin
+				max = @tier3researchmax
+			}
+		}
+	}
+}
+
+first_contact_event = {
+	id = time_wanderer.24
+	title = time_wanderer.24.name
+	desc = time_wanderer.24.desc
+	picture = GFX_evt_black_hole
+	show_sound = event_alien_signal
+	is_triggered_only = yes
+	first_contact = yes
+	
+	immediate = {
+	}
+	
+	option = {
+		name = time_wanderer.24.a
+		owner = {
+			add_monthly_resource_mult = {
+				resource = unity
+				value = @tier3unityreward
+				min = @tier3unitymin
+				max = @tier3unitymax
+			}
+		}
+	}
+}
+
+first_contact_event = {
+	id = time_wanderer.25
+	title = time_wanderer.25.name
+	desc = time_wanderer.25.desc
+	picture = GFX_evt_black_hole
+	show_sound = event_alien_signal
+	is_triggered_only = yes
+	first_contact = yes
+	
+	immediate = {
+		add_stage_clues = 2
+	}
+	
+	option = {
+		name = time_wanderer.25.a
+		tooltip = { add_stage_clues = 2 }
+	}
+}
+
+# 来自过去的幽灵
+country_event = {
+	id = time_wanderer.100
+	title = dimension_traveler.name.3
+	desc = time_wanderer.100.desc
+
+	diplomatic = yes
+	force_open = yes
+
+	picture_event_data = {
+		portrait = event_target:dimension_traveler_portrait_leader
+		room = "galactic_custodian_room"
+	}
+
+	is_triggered_only = yes
+	
+	trigger = {
+	}
+	
+	immediate = {
+		set_country_flag = time_wanderer_100_triggered
+	}
+	
+	option = {
+		name = time_wanderer.100.a
+		response_text = time_wanderer.100.a.response
+		begin_event_chain = {
+			event_chain = TIME_WANDERER_CHAIN
+			target = root
+		}
+		enable_special_project = {
+			name = TIME_WANDERER_PROJECT
+			location = event_target:hole_pets
+			owner = root
+		}
+	}
+}
+
+country_event = {
+	id = time_wanderer.101
+	title = dimension_traveler.name.3
+	desc = time_wanderer.101.desc
+
+	diplomatic = yes
+	force_open = yes
+
+	picture_event_data = {
+		portrait = event_target:dimension_traveler_portrait_leader
+		room = "crisis_room"
+	}
+
+	is_triggered_only = yes
+	
+	trigger = {
+		is_researching_special_project = TIME_WANDERER_PROJECT
+		NOR = {
+			has_country_flag = forbid_time_wanderer_101
+			has_country_flag = time_wanderer_101_triggered
+		}
+	}
+	
+	immediate = {
+		set_country_flag = time_wanderer_101_triggered
+	}
+	
+	option = {
+		name = time_wanderer.101.a
+		response_text = time_wanderer.101.a.response
+		add_monthly_resource_mult = {
+			resource = physics_research
+			value = @tier5researchreward
+			min = @tier5researchmin
+			max = @tier5researchmax
+		}
+		event_target:dimension_traveler_leader = {
+			leader = {
+				add_experience = 500
+			}
+		}
+	}
+}
+
+country_event = {
+	id = time_wanderer.102
+	title = dimension_traveler.name.3
+	desc = time_wanderer.102.desc
+
+	diplomatic = yes
+	force_open = yes
+
+	picture_event_data = {
+		portrait = event_target:dimension_traveler_portrait_leader
+		room = "crisis_room"
+	}
+
+	is_triggered_only = yes
+	
+	trigger = {
+		is_researching_special_project = TIME_WANDERER_PROJECT
+		NOR = {
+			has_country_flag = forbid_time_wanderer_102
+			has_country_flag = time_wanderer_102_triggered
+		}
+	}
+	
+	immediate = {
+		set_country_flag = time_wanderer_102_triggered
+	}
+	
+	option = {
+		name = time_wanderer.102.a
+		response_text = time_wanderer.102.a.response
+		add_monthly_resource_mult = {
+			resource = society_research
+			value = @tier5researchreward
+			min = @tier5researchmin
+			max = @tier5researchmax
+		}
+		event_target:dimension_traveler_leader = {
+			leader = {
+				add_experience = 1000
+			}
+		}
+	}
+}
+
+country_event = {
+	id = time_wanderer.103
+	title = dimension_traveler.name.3
+	desc = time_wanderer.103.desc
+
+	diplomatic = yes
+	force_open = yes
+
+	picture_event_data = {
+		portrait = event_target:dimension_traveler_portrait_leader
+		room = "crisis_room"
+	}
+
+	is_triggered_only = yes
+	
+	trigger = {
+		is_researching_special_project = TIME_WANDERER_PROJECT
+		NOR = {
+			has_country_flag = forbid_time_wanderer_103
+			has_country_flag = time_wanderer_103_triggered
+		}
+	}
+	
+	immediate = {
+		set_country_flag = time_wanderer_103_triggered
+	}
+	
+	option = {
+		name = time_wanderer.103.a
+		response_text = time_wanderer.103.a.response
+		add_monthly_resource_mult = {
+			resource = engineering_research
+			value = @tier5researchreward
+			min = @tier5researchmin
+			max = @tier5researchmax
+		}
+		event_target:dimension_traveler_leader = {
+			leader = {
+				add_experience = 1500
+			}
+		}
+	}
+}
+
+country_event = {
+	id = time_wanderer.104
+	title = dimension_traveler.name.3
+	desc = time_wanderer.104.desc
+
+	diplomatic = yes
+	force_open = yes
+
+	picture_event_data = {
+		portrait = event_target:dimension_traveler_portrait_leader
+		room = "crisis_room"
+	}
+
+	is_triggered_only = yes
+	
+	trigger = {
+		is_researching_special_project = TIME_WANDERER_PROJECT
+		NOR = {
+			has_country_flag = forbid_time_wanderer_104
+			has_country_flag = time_wanderer_104_triggered
+		}
+	}
+	
+	immediate = {
+		set_country_flag = time_wanderer_104_triggered
+	}
+	
+	option = {
+		name = time_wanderer.104.a
+		response_text = time_wanderer.104.a.response
+		add_monthly_resource_mult = {
+			resource = unity
+			value = @tier5unityreward
+			min = @tier5unitymin
+			max = @tier5unitymax
+		}
+		event_target:dimension_traveler_leader = {
+			leader = {
+				add_experience = 2000
+			}
+		}
+	}
+}
+
+country_event = {
+	id = time_wanderer.105
+	title = dimension_traveler.name.3
+	desc = time_wanderer.105.desc
+
+	diplomatic = yes
+	force_open = yes
+
+	picture_event_data = {
+		portrait = event_target:dimension_traveler_portrait_leader
+		room = "crisis_room"
+	}
+
+	is_triggered_only = yes
+	
+	trigger = {
+		is_researching_special_project = TIME_WANDERER_PROJECT
+		NOR = {
+			has_country_flag = forbid_time_wanderer_105
+			has_country_flag = time_wanderer_105_triggered
+		}
+	}
+	
+	immediate = {
+		set_country_flag = time_wanderer_105_triggered
+		set_global_flag = time_wanderer_end
+		event_target:time_wanderer_system = {
+			remove_modifier = time_wanderer_system_modifier
+		}
+		event_target:time_wanderer_planet = {
+			remove_modifier = time_wanderer_planet_modifier
+		}
+		clear_global_event_target = time_wanderer_system
+		clear_global_event_target = time_wanderer_planet
+		abort_special_project = {
+			type = TIME_WANDERER_PROJECT
+		}
+	}
+	
+	option = {
+		name = time_wanderer.105.a
+		response_text = time_wanderer.105.a.response
+		end_event_chain = TIME_WANDERER_CHAIN
+		event_target:dimension_traveler_leader = {
+			add_skill_without_trait_selection = 1
+			custom_tooltip = leader_trait_dimension_traveler_brief_hidden_effect
+		}
+		tooltip = {
+			complete_special_project = {
+				type = TIME_WANDERER_PROJECT
+			}
+		}
+	}
+}
+
+country_event = {
+	id = time_wanderer.110
+	is_triggered_only = yes
+	hide_window = yes
+	
+	immediate = {
+		country_event = { id = time_wanderer.101 days = 360 }
+		country_event = { id = time_wanderer.102 days = 720 }
+		country_event = { id = time_wanderer.103 days = 1080 }
+		country_event = { id = time_wanderer.104 days = 1440 }
+		country_event = { id = time_wanderer.105 days = 1800 }
+		# 重新开始研究要重新过一遍事件
+		remove_country_flag = forbid_time_wanderer_101
+		set_timed_country_flag = {
+			flag = forbid_time_wanderer_101
+			days = 359
+		}
+		remove_country_flag = forbid_time_wanderer_102
+		set_timed_country_flag = {
+			flag = forbid_time_wanderer_102
+			days = 719
+		}
+		remove_country_flag = forbid_time_wanderer_103
+		set_timed_country_flag = {
+			flag = forbid_time_wanderer_103
+			days = 1079
+		}
+		remove_country_flag = forbid_time_wanderer_104
+		set_timed_country_flag = {
+			flag = forbid_time_wanderer_104
+			days = 1439
+		}
+		remove_country_flag = forbid_time_wanderer_105
+		set_timed_country_flag = {
+			flag = forbid_time_wanderer_105
+			days = 1799
+		}
+	}
+}
+
+country_event = {
+	id = time_wanderer.115
+	title = dimension_traveler.name.3
+	desc = time_wanderer.115.desc
+
+	diplomatic = yes
+	force_open = yes
+
+	picture_event_data = {
+		portrait = event_target:dimension_traveler_portrait_leader
+		room = "crisis_room"
+	}
+
+	is_triggered_only = yes
+	
+	trigger = {
+	}
+	
+	immediate = {
+		kill_dimension_traveler = yes
+	}
+	
+	option = {
+		name = time_wanderer.115.a
+		custom_tooltip = dimension_traveler.1002.a.tooltip
+	}
+}
+
+country_event = {
+	id = time_wanderer.120
+	title = dimension_traveler.name.3
+	desc = time_wanderer.120.desc
+
+	diplomatic = yes
+	force_open = yes
+
+	picture_event_data = {
+		portrait = event_target:dimension_traveler_portrait_leader
+		room = "crisis_room"
+	}
+
+	is_triggered_only = yes
+	
+	trigger = {
+	}
+	
+	immediate = {
+	}
+	
+	option = {
+		name = time_wanderer.120.a
+		response_text = time_wanderer.120.a.response
+		end_event_chain = TIME_WANDERER_CHAIN
+	}
+}

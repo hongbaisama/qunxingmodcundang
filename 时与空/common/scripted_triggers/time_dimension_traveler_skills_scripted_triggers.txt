@@ -1,0 +1,135 @@
+# 任意（箭头）（potential）
+show_dimension_traveler_skill_arrow = {
+	event_target:dimension_traveler_owner = {
+		if = {
+			limit = {
+				has_country_flag = show_dimension_traveler_official_skill
+			}
+			has_actived_dimension_traveler_skill = {
+				CLASS = official
+				TIER = $TIER$
+				NUM = $NUM$
+			}
+		}
+		else_if = {
+			limit = {
+				has_country_flag = show_dimension_traveler_scientist_skill
+			}
+			has_actived_dimension_traveler_skill = {
+				CLASS = scientist
+				TIER = $TIER$
+				NUM = $NUM$
+			}
+		}
+		else_if = {
+			limit = {
+				has_country_flag = show_dimension_traveler_commander_skill
+			}
+			has_actived_dimension_traveler_skill = {
+				CLASS = commander
+				TIER = $TIER$
+				NUM = $NUM$
+			}
+		}
+		else = {
+			always = no
+		}
+	}
+}
+
+# 任意（allow）
+allow_active_dimension_traveler_skill = {
+	custom_tooltip = dimension_traveler_skill_$CLASS$_$TIER$_$NUM$_effect
+	custom_tooltip = cost_dimension_traveler_skill_point_$COUNT$
+	event_target:dimension_traveler_owner = {
+		custom_tooltip = {
+			fail_text = requires_available_dimension_traveler_skill_point_$COUNT$
+			check_variable = {
+				which = available_dimension_traveler_skill_point
+				value >= $COUNT$
+			}
+		}
+		has_country_resource = {
+			type = sr_dark_matter
+			amount >= @dimension_traveler_skill_sr_dark_matter_require_$COUNT$
+		}
+		has_country_resource = {
+			type = astral_threads
+			amount >= @dimension_traveler_skill_astral_threads_require_$COUNT$
+		}
+	}
+}
+
+# 任意（未激活）（potential）
+can_active_dimension_traveler_skill = {
+	event_target:dimension_traveler_owner = {
+		if = {
+			limit = {
+				has_country_flag = show_dimension_traveler_$CLASS$_skill
+			}
+			[[LOCKED] has_country_flag = unlock_dimension_traveler_skill_$CLASS$_$TIER$_$NUM$] # 只有锁定的才要写LOCKED，初始解锁的不要写
+			NOT = {
+				has_actived_dimension_traveler_skill = {
+					CLASS = $CLASS$
+					TIER = $TIER$
+					NUM = $NUM$
+				}
+			}
+		}
+		else = {
+			always = no
+		}
+	}
+}
+
+# 任意（已激活）（potential）
+show_actived_dimension_traveler_skill = {
+	event_target:dimension_traveler_owner = {
+		if = {
+			limit = {
+				has_country_flag = show_dimension_traveler_$CLASS$_skill
+			}
+			has_actived_dimension_traveler_skill = {
+				CLASS = $CLASS$
+				TIER = $TIER$
+				NUM = $NUM$
+			}
+		}
+		else = {
+			always = no
+		}
+	}
+}
+
+# 任意（内阁）（potential）
+can_active_dimension_traveler_council_skill = {
+	event_target:dimension_traveler_owner = {
+		unlock_dimension_traveler_destiny_trait = yes
+	}
+}
+
+# 任意（反演对称）（potential）
+can_active_dimension_traveler_core_skill = {
+	event_target:dimension_traveler_owner = {
+		has_country_flag = dimension_traveler_end
+	}
+}
+
+# 国家
+has_actived_dimension_traveler_skill = {
+	has_country_flag = dimension_traveler_skill_$CLASS$_$TIER$_$NUM$
+}
+
+# 国家
+has_actived_dimension_traveler_any_core_skill = {
+	OR = {
+		has_country_flag = dimension_traveler_skill_official_5_5
+		has_country_flag = dimension_traveler_skill_scientist_5_5
+		has_country_flag = dimension_traveler_skill_commander_5_5
+	}
+}
+
+# 国家
+has_actived_dimension_traveler_core_skill = {
+	has_country_flag = dimension_traveler_skill_$CLASS|none$_5_5
+}

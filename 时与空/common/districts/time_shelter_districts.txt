@@ -1,0 +1,290 @@
+district_time_shelter_main = {
+	overlay_icon = GFX_district_government
+	base_buildtime = @district_time_shelter_main_buildtime
+	exempt_from_ai_planet_specialization = yes
+
+	zone_slots = {
+		slot_time_shelter_main_government
+		slot_time_shelter_main_1
+		slot_time_shelter_main_2
+	}
+	
+	show_on_uncolonized = {
+		is_planet_class = pc_time_shelter
+	}
+	
+	potential = {
+		is_planet_class = pc_time_shelter
+		NAND = {
+			is_capital = yes
+			owner = {
+				has_menace_perk = menp_behemoth_mind_meld
+			}
+		}
+	}
+
+	conversion_ratio = 1
+	convert_to = {
+		district_mindlink
+		district_ark_city
+	}
+	
+	resources = {
+		category = planet_districts_time_shelter_main
+		cost = {
+			sr_dark_matter = @district_time_shelter_main_cost
+		}
+		upkeep = {
+			energy = @district_time_shelter_main_upkeep
+		}
+	}
+	
+	planet_modifier = {
+		planet_housing_add = @district_time_shelter_main_housing
+	}
+	
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { is_gestalt = no }
+		}
+		job_time_shelter_visitor_add = @district_time_shelter_main_job
+		mult = value:district_time_shelter_main_job_value
+	}
+
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { is_gestalt = yes }
+		}
+		job_time_shelter_visitor_drone_add = @district_time_shelter_main_job
+		mult = value:district_time_shelter_main_job_value
+	}
+	
+	triggered_desc = {
+		text = district_time_shelter_effect
+	}
+	
+	inline_script = {
+		script = districts/district_time_shelter_main_triggered_name
+	}
+}
+
+district_time_shelter_secondary_1 = {
+	icon = district_time_shelter_secondary
+	overlay_icon = GFX_district_housing
+	base_buildtime = @district_time_shelter_secondary_buildtime
+	exempt_from_ai_planet_specialization = yes
+
+	zone_slots = {
+		slot_time_shelter_secondary
+	}
+	
+	show_on_uncolonized = {
+		is_planet_class = pc_time_shelter
+	}
+	
+	potential = {
+		is_planet_class = pc_time_shelter
+	}
+
+	conversion_ratio = 1
+	convert_to = {
+		district_ark_generator
+	}
+	
+	resources = {
+		category = planet_districts_time_shelter_secondary
+		cost = {
+			sr_dark_matter = @district_time_shelter_secondary_cost
+		}
+		upkeep = {
+			energy = @district_time_shelter_secondary_upkeep
+		}
+	}
+	
+	planet_modifier = {
+		planet_housing_add = @district_time_shelter_secondary_housing
+	}
+	
+	triggered_desc = {
+		text = district_time_shelter_effect
+	}
+	
+	inline_script = {
+		script = districts/district_time_shelter_secondary_triggered_name
+	}
+}
+
+district_time_shelter_secondary_2 = {
+	icon = district_time_shelter_secondary
+	overlay_icon = GFX_district_housing
+	base_buildtime = @district_time_shelter_secondary_buildtime
+	exempt_from_ai_planet_specialization = yes
+
+	zone_slots = {
+		slot_time_shelter_secondary
+	}
+	
+	show_on_uncolonized = {
+		is_planet_class = pc_time_shelter
+	}
+	
+	potential = {
+		is_planet_class = pc_time_shelter
+	}
+
+	conversion_ratio = 1
+	convert_to = {
+		district_ark_basic
+	}
+	
+	resources = {
+		category = planet_districts_time_shelter_secondary
+		cost = {
+			sr_dark_matter = @district_time_shelter_secondary_cost
+		}
+		upkeep = {
+			energy = @district_time_shelter_secondary_upkeep
+		}
+	}
+	
+	planet_modifier = {
+		planet_housing_add = @district_time_shelter_secondary_housing
+	}
+	
+	triggered_desc = {
+		text = district_time_shelter_effect
+	}
+	
+	inline_script = {
+		script = districts/district_time_shelter_secondary_triggered_name
+	}
+}
+
+district_time_shelter_secondary_3 = {
+	icon = district_time_shelter_secondary
+	overlay_icon = GFX_district_housing
+	base_buildtime = @district_time_shelter_secondary_buildtime
+	exempt_from_ai_planet_specialization = yes
+
+	zone_slots = {
+		slot_time_shelter_secondary
+	}
+	
+	show_on_uncolonized = {
+		is_planet_class = pc_time_shelter
+	}
+	
+	potential = {
+		is_planet_class = pc_time_shelter
+	}
+
+	conversion_ratio = 1
+	convert_to = {
+		district_ark_military
+		district_ark_forever_cruise
+	}
+	
+	resources = {
+		category = planet_districts_time_shelter_secondary
+		cost = {
+			sr_dark_matter = @district_time_shelter_secondary_cost
+		}
+		upkeep = {
+			energy = @district_time_shelter_secondary_upkeep
+		}
+	}
+	
+	planet_modifier = {
+		planet_housing_add = @district_time_shelter_secondary_housing
+	}
+	
+	triggered_desc = {
+		text = district_time_shelter_effect
+	}
+	
+	inline_script = {
+		script = districts/district_time_shelter_secondary_triggered_name
+	}
+}
+
+district_time_shelter_resource = {
+	overlay_icon = GFX_district_fortress
+
+	zone_slots = {
+		slot_empty
+	}
+
+	show_on_uncolonized = {
+		always = no
+	}
+
+	potential = {
+		always = no
+	}
+	
+	triggered_name = {
+		text = district_time_shelter_resource_name
+	}
+}
+
+district_time_shelter_manufacturing = {
+	overlay_icon = GFX_district_alloys
+
+	zone_slots = {
+		slot_empty
+	}
+
+	show_on_uncolonized = {
+		always = no
+	}
+
+	potential = {
+		always = no
+	}
+	
+	triggered_name = {
+		text = district_time_shelter_manufacturing_name
+	}
+}
+
+district_time_shelter_unity = {
+	overlay_icon = GFX_district_unity
+
+	zone_slots = {
+		slot_empty
+	}
+
+	show_on_uncolonized = {
+		always = no
+	}
+
+	potential = {
+		always = no
+	}
+	
+	triggered_name = {
+		text = district_time_shelter_unity_name
+	}
+}
+
+district_time_shelter_research = {
+	overlay_icon = GFX_district_research
+
+	zone_slots = {
+		slot_empty
+	}
+
+	show_on_uncolonized = {
+		always = no
+	}
+
+	potential = {
+		always = no
+	}
+	
+	triggered_name = {
+		text = district_time_shelter_research_name
+	}
+}

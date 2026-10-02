@@ -1,0 +1,345 @@
+namespace = origin_blessed_by_god
+
+country_event = {
+	id = origin_blessed_by_god.1
+	is_triggered_only = yes
+	hide_window = yes
+
+	trigger = {
+		has_origin = origin_blessed_by_god
+	}
+	
+	immediate = {
+		give_technology = { tech = tech_mine_zro message = no }
+		set_variable = {
+			which = blessed_by_god_tradition_count
+			value = 0
+		}
+		set_variable = {
+			which = blessed_by_god_decision_count
+			value = 0
+		}
+		add_resource = {
+			unity = 801 # 你问我这个1哪里来的？我不到啊
+			sr_zro = 10
+		}
+		random_list = {
+			2 = {
+			}
+			1 = {
+				set_country_flag = will_be_abandoned_by_god
+			}
+		}
+		capital_scope = {
+			set_carrier_flag = exists_building_blessed_by_god
+			add_building = building_blessed_by_god
+			add_zone = {
+				district = district_city
+				zone = zone_unity_spiritualist
+				zone_slot = 1
+				replace = yes
+			}
+			validate_and_repair_planet_buildings_and_districts = yes
+			solar_system = {
+				every_system_planet = {
+					limit = {
+						has_carrier_flag = blessed_by_god_planet
+					}
+					create_research_station = { owner = root }
+				}
+			}
+		}
+		if = {
+			limit = {
+				is_ai = yes
+			}
+			country_event = { id = origin_blessed_by_god.100 }
+		}
+	}
+}
+
+country_event = {
+	id = origin_blessed_by_god.2
+	title = origin_blessed_by_god.2.name
+	desc = {
+		text = origin_blessed_by_god.2.desc_1
+		trigger = {
+			NOT = { has_special_project = BREACHING_SHROUD_PROJECT }
+		}
+	}
+	desc = {
+		text = origin_blessed_by_god.2.desc_2
+		trigger = {
+			has_special_project = BREACHING_SHROUD_PROJECT
+		}
+	}
+	picture = GFX_evt_zro_4
+	show_sound = event_mystic_reveal
+	location = from
+	
+	is_triggered_only = yes
+
+	trigger = {
+		has_origin = origin_blessed_by_god
+	}
+	
+	immediate = {
+		set_timed_country_flag = {
+			flag = recently_blessed_by_god
+			days = 300
+		}
+		change_variable = {
+			which = blessed_by_god_decision_count
+			value = 1
+		}
+		while = {
+			count = value:blessed_by_god_value
+			gain_blessed_by_god = yes
+		}
+		if = {
+			limit = {
+				has_country_flag = will_be_abandoned_by_god
+			}
+			random_list = {
+				99 = {
+				}
+				1 = {
+					remove_country_flag = will_be_abandoned_by_god # 买到赎罪券了（）
+				}
+			}
+		}
+	}
+	
+	after = {
+		blessed_by_god_complete_all_special_project = yes
+		randomly_gain_origin_blessed_by_god_modifier = yes
+	}
+	
+	option = {
+		name = origin_blessed_by_god.2.a
+	}
+	
+	option = {
+		name = origin_blessed_by_god.2.b
+		trigger = {
+			is_materialist = yes
+		}
+	}
+}
+
+carrier_event = {
+	id = origin_blessed_by_god.3
+	is_triggered_only = yes
+	hide_window = yes
+
+	trigger = {
+		owner = {
+			has_origin = origin_blessed_by_god
+			OR = {
+				NOT = { has_country_flag = recently_blessed_by_god }
+				# 允许一定程度上的误差，以确保正常自动进行大祭祀
+				timed_flag_days_left = {
+					flag = recently_blessed_by_god
+					value <= 5
+				}
+			}
+		}
+	}
+	
+	immediate = {
+		owner = {
+			remove_country_flag = recently_blessed_by_god
+			create_message = {
+				type = CAN_BLESSED_BY_GOD
+				localization = CAN_BLESSED_BY_GOD_DESC
+				days = @toast_important_message_days
+				target = root
+				variable = {
+					type = name
+					localization = PLANET
+					scope = root
+				}
+				custom_message_text = can_blessed_by_god_custom_desc
+			}
+			if = {
+				limit = {
+					can_select_decision_blessed_by_god = yes
+					root = { has_active_building = building_blessed_by_god }
+				}
+				root = {
+					select_decision = {
+						name = decision_blessed_by_god
+					}
+				}
+			}
+		}
+	}
+}
+
+country_event = {
+	id = origin_blessed_by_god.5
+	is_triggered_only = yes
+	hide_window = yes
+
+	trigger = {
+		has_origin = origin_blessed_by_god
+	}
+	
+	immediate = {
+		change_variable = {
+			which = blessed_by_god_tradition_count
+			value = 1
+		}
+	}
+}
+
+country_event = {
+	id = origin_blessed_by_god.10
+	title = origin_blessed_by_god.10.name
+	desc = origin_blessed_by_god.10.desc
+	picture = GFX_evt_zro_4
+	show_sound = event_mystic_reveal_light
+	
+	is_triggered_only = yes
+
+	trigger = {
+		has_origin = origin_blessed_by_god
+		has_country_flag = will_be_abandoned_by_god
+	}
+	
+	immediate = {
+		create_timeline_origin_blessed_by_god_is_abandoned = yes
+		clear_origin_blessed_by_god_modifier = yes
+		every_owned_colony = {
+			limit = {
+				NOR = {
+					has_building = building_blessed_by_god
+					has_building = building_abandoned_by_god
+				}
+			}
+			time_destroy_colony = yes
+			change_pc = pc_shrouded
+		}
+		every_owned_colony = {
+			limit = {
+				has_building = building_blessed_by_god
+			}
+			remove_carrier_flag = exists_building_blessed_by_god
+			set_carrier_flag = exists_building_abandoned_by_god
+			remove_building = building_blessed_by_god
+			add_building = building_abandoned_by_god
+			validate_and_repair_planet_buildings_and_districts = yes
+			solar_system = {
+				set_star_flag = has_black_hole_by_horror # 黑洞穿行可选星系
+				every_system_planet = {
+					limit = {
+						has_carrier_flag = blessed_by_god_planet
+					}
+					set_planet_size = 2
+					change_pc = pc_black_hole
+					clear_deposits_and_orbital_station = yes
+					add_deposit = d_dark_matter_deposit_3
+					set_name = "NAME_Abandoned_By_God_Planet"
+					set_dimensional_horrorling_object = yes
+				}
+			}
+		}
+		every_owned_leader = {
+			add_trait = {
+				trait = leader_trait_abandoned_by_god
+				show_message = no
+			}
+		}
+		every_pool_leader = {
+			add_trait = {
+				trait = leader_trait_abandoned_by_god
+				show_message = no
+			}
+		}
+		every_envoy = {
+			add_trait = {
+				trait = leader_trait_abandoned_by_god
+				show_message = no
+			}
+		}
+		add_research_option = tech_mine_dark_matter
+		set_origin = origin_abandoned_by_god
+		time_active_nemesis = yes
+		if = {
+			limit = {
+				has_country_flag = horizonsignal_trigger
+			}
+			country_event = { id = origin_blessed_by_god.20 days = 10 random = 20 }
+		}
+	}
+	
+	option = {
+		name = origin_blessed_by_god.10.a
+		tooltip = {
+			set_origin = origin_abandoned_by_god
+			add_ascension_perk = ap_become_the_crisis
+		}
+	}
+}
+
+country_event = {
+	id = origin_blessed_by_god.20
+	title = origin_blessed_by_god.20.name
+	desc = origin_blessed_by_god.20.desc
+	picture = GFX_evt_black_hole
+	show_sound = event_alien_signal
+	location = event_target:horizonsignal_black_hole
+	trackable = yes
+	
+	is_triggered_only = yes
+
+	immediate = {
+	}
+	
+	option = {
+		name = origin_blessed_by_god.20.a
+		event_target:horizonsignal_black_hole = {
+			enable_special_project = {
+				name = HORIZON_SIGNAL_PROJECT
+				location = this
+				owner = root
+			}
+		}
+	}
+}
+
+# AI自动进行大祭祀
+country_event = {
+	id = origin_blessed_by_god.100
+	is_triggered_only = yes
+	hide_window = yes
+
+	trigger = {
+		has_origin = origin_blessed_by_god
+		is_ai = yes
+	}
+	
+	immediate = {
+		if = {
+			limit = {
+				can_select_decision_blessed_by_god = yes
+				any_owned_colony = {
+					has_active_building = building_blessed_by_god
+				}
+			}
+			random_owned_colony = {
+				limit = {
+					has_active_building = building_blessed_by_god
+				}
+				select_decision = {
+					name = decision_blessed_by_god
+				}
+			}
+			country_event = { id = origin_blessed_by_god.100 days = 360 }
+		}
+		else = {
+			# AI会积极地尝试进行大祭祀
+			country_event = { id = origin_blessed_by_god.100 days = 30 }
+		}
+	}
+}

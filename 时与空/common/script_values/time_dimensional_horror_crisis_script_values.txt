@@ -1,0 +1,212 @@
+random_create_dimensional_horror_crisis_storm_system = {
+	base = 0
+	complex_trigger_modifier = {
+		trigger = count_system
+		parameters = {
+			limit = { has_star_flag = time_erasure_system }
+		}
+		mult = 0.1
+		mode = add
+	}
+	ceiling = yes
+	min = 0
+	max = 10
+}
+
+dimensional_horror_crisis_strength = {
+	base = 0
+    complex_trigger_modifier = {
+        trigger = check_galaxy_setup_value
+        parameters = {
+            setting = crisis_strength_scale
+        }
+        mode = add
+    }
+	min = @dimensional_horror_crisis_min_strength
+	max = @dimensional_horror_crisis_max_strength
+	square_root = yes
+}
+
+dimensional_horror_crisis_storm_cooldown = {
+	base = @dimensional_horror_crisis_storm_base_cooldown
+	divide = value:dimensional_horror_crisis_strength # 1倍~0.2倍
+	modifier = {
+		multiply = @great_dimensional_horror_crisis_storm_cooldown_factor
+		has_global_flag = great_dimensional_horror_crisis
+		NOT = { has_global_flag = all_erasured_system_is_sealed }
+	}
+	modifier = {
+		multiply = @greatest_dimensional_horror_crisis_storm_cooldown_factor
+		has_global_flag = greatest_dimensional_horror_crisis
+	}
+	modifier = {
+		multiply = @hope_dimensional_horror_crisis_storm_cooldown_factor
+		has_global_flag = tradition_hope_path
+	}
+	round = yes
+}
+
+dimensional_horror_crisis_storm_protection_level = {
+	base = 0
+	add = owner.modifier:dimensional_horror_crisis_storm_protection_level
+	min = 0
+}
+
+dimensional_horror_crisis_storm_original_level = {
+	# 风暴本身等级
+	base = @dimensional_horror_crisis_storm_base_level
+	modifier = {
+		add = @great_dimensional_horror_crisis_storm_level_factor
+		has_global_flag = great_dimensional_horror_crisis
+		NOT = { has_global_flag = all_erasured_system_is_sealed }
+	}
+	modifier = {
+		add = @greatest_dimensional_horror_crisis_storm_level_factor
+		has_global_flag = greatest_dimensional_horror_crisis
+	}
+	# 新生黑洞等级
+	modifier = {
+		add = 1
+		has_dimensional_horror_crisis_storm_black_hole_horror_count_threshold = { THRESHOLD = @dimensional_horror_crisis_storm_level_black_hole_horror_count_threshold_1 }
+	}
+	modifier = {
+		add = 1
+		has_dimensional_horror_crisis_storm_black_hole_horror_count_threshold = { THRESHOLD = @dimensional_horror_crisis_storm_level_black_hole_horror_count_threshold_2 }
+	}
+	modifier = {
+		add = 1
+		has_dimensional_horror_crisis_storm_black_hole_horror_count_threshold = { THRESHOLD = @dimensional_horror_crisis_storm_level_black_hole_horror_count_threshold_3 }
+	}
+	modifier = {
+		add = 1
+		has_dimensional_horror_crisis_storm_black_hole_horror_count_threshold = { THRESHOLD = @dimensional_horror_crisis_storm_level_black_hole_horror_count_threshold_4 }
+	}
+	modifier = {
+		add = 1
+		has_dimensional_horror_crisis_storm_black_hole_horror_count_threshold = { THRESHOLD = @dimensional_horror_crisis_storm_level_black_hole_horror_count_threshold_5 }
+	}
+	modifier = {
+		add = 1
+		has_dimensional_horror_crisis_storm_black_hole_horror_count_threshold = { THRESHOLD = @dimensional_horror_crisis_storm_level_black_hole_horror_count_threshold_6 }
+	}
+	modifier = {
+		add = 1
+		has_dimensional_horror_crisis_storm_black_hole_horror_count_threshold = { THRESHOLD = @dimensional_horror_crisis_storm_level_black_hole_horror_count_threshold_7 }
+	}
+	modifier = {
+		add = 1
+		has_dimensional_horror_crisis_storm_black_hole_horror_count_threshold = { THRESHOLD = @dimensional_horror_crisis_storm_level_black_hole_horror_count_threshold_8 }
+	}
+	modifier = {
+		add = 1
+		has_dimensional_horror_crisis_storm_black_hole_horror_count_threshold = { THRESHOLD = @dimensional_horror_crisis_storm_level_black_hole_horror_count_threshold_9 }
+	}
+	modifier = {
+		add = 1
+		has_dimensional_horror_crisis_storm_black_hole_horror_count_threshold = { THRESHOLD = @dimensional_horror_crisis_storm_level_black_hole_horror_count_threshold_10 }
+	}
+}
+
+# 必须用于全局事件国家
+dimensional_horror_crisis_storm_black_hole_horror_count_threshold = {
+	base = 0
+	add = black_hole_horror_count
+	divide = trigger:num_galaxy_systems
+}
+
+# [10(基础)+5(超越无限四段且未封印)+10(命运出现)+10(新生黑洞至多产生)-防护等级]x0.02x天灾倍率加成（1倍~5倍）
+dimensional_horror_crisis_storm_level = {
+	base = 0
+	# 终焉宣告坍缩等级
+	add = event_target:global_event_country.dimensional_horror_crisis_storm_original_level
+	# 终焉宣告抗干扰指数
+	modifier = {
+		subtract = value:dimensional_horror_crisis_storm_protection_level
+		exists = owner
+	}
+	# 风暴最小等级
+	min = @dimensional_horror_crisis_storm_min_level
+	# 减轻AI压力
+	modifier = {
+		multiply = @dimensional_horror_crisis_storm_level_ai_modifier_factor
+		exists = owner
+		owner = { is_ai = yes }
+	}
+	# 风暴等级效果
+	multiply = @dimensional_horror_crisis_storm_level_modifier
+	multiply = value:dimensional_horror_crisis_strength
+}
+
+dimensional_horror_crisis_storm_planet_modifier_good = {
+	base = 1
+	modifier = {
+		add = 0.5
+		has_global_flag = great_dimensional_horror_crisis
+	}
+	modifier = {
+		add = 0.5
+		has_global_flag = greatest_dimensional_horror_crisis
+	}
+}
+
+dimensional_horror_crisis_storm_planet_modifier = {
+	base = 1
+	modifier = {
+		multiply = @dimensional_horror_crisis_storm_planet_modifier_shield_factor
+		OR = {
+			has_active_building = building_planetary_shield_generator
+			AND = {
+				exists = orbital_defence
+				orbital_defence = {
+					exists = starbase
+					starbase = {
+						has_starbase_building = ring_orbital_shield_generator
+					}
+				}
+			}
+			AND = {
+				exists = fleet
+				fleet = {
+					exists = starbase
+					starbase = {
+						has_starbase_building = arkship_shield_generator
+					}
+				}
+			}
+		}
+	}
+	multiply = value:num_time_modifier|MODIFIER|dimensional_horror_crisis_storm_planet_modifier|MIN|@dimensional_horror_crisis_storm_min_planet_modifier|
+	multiply = value:dimensional_horror_crisis_storm_level
+}
+
+dimensional_horror_crisis_storm_pop_killed_percentage = {
+	base = @dimensional_horror_crisis_storm_pop_killed_base_percentage
+	multiply = value:dimensional_horror_crisis_storm_planet_modifier
+	max = @dimensional_horror_crisis_storm_pop_killed_max_percentage
+	min = @dimensional_horror_crisis_storm_pop_killed_min_percentage
+}
+
+dimensional_horror_crisis_storm_fleet_modifier = {
+	base = 1
+	multiply = fleet.value:num_time_modifier|MODIFIER|dimensional_horror_crisis_storm_fleet_modifier|MIN|@dimensional_horror_crisis_storm_min_fleet_modifier|
+	multiply = value:dimensional_horror_crisis_storm_level
+}
+
+dimensional_horror_crisis_storm_ship_damage_received = {
+	base = 0
+	complex_trigger_modifier = {
+		trigger = ship_size_multiplier
+		mult = @dimensional_horror_crisis_storm_ship_damage_received_size_factor
+		mode = add
+	}
+	multiply = 0.2 # 4.3舰船大小增加
+	multiply = @dimensional_horror_crisis_storm_ship_base_damage_received
+	multiply = value:dimensional_horror_crisis_storm_fleet_modifier
+}
+
+dimensional_horror_crisis_ship_bonus = {
+	base = 0
+	add = event_target:global_event_country.dimensional_horror_crisis_storm_original_level
+	multiply = @dimensional_horror_crisis_ship_bonus_factor
+	multiply = value:dimensional_horror_crisis_strength
+}

@@ -1,0 +1,271 @@
+zone_time_shelter_main_default = {
+	icon = GFX_diplomatic_weight_large
+	base_buildtime = 720
+	
+	potential = {
+		is_planet_class = pc_time_shelter
+	}
+
+	unlock = {
+		is_planet_class = pc_time_shelter
+	}
+
+	resources = {
+		category = planet_zones
+		cost = {
+			sr_dark_matter = 100
+		}
+	}
+
+	max_buildings = @time_mod_default_zone_max_buildings
+	
+	planet_modifier = {
+		zone_building_slots_add = @time_mod_default_zone_max_buildings
+	}
+
+	zone_sets = {
+		time_shelter_main_government
+	}
+
+	included_building_sets = {
+		zone_time_shelter_main_government
+		zone_time_shelter_main
+	}
+
+	ai_priority = 0
+}
+
+zone_time_shelter_main_1 = {
+	icon = GFX_district_specialization_ark_pilgrimage
+	
+	inline_script = {
+		script = zones/pc_time_shelter_urban
+	}
+	
+	triggered_planet_modifier = {
+		time_shelter_visitor_produce_job_max_workforce_mult = 0.025
+		planet_time_shelter_visitors_trade_upkeep_add = 2.5
+	}
+	
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { is_gestalt = no }
+		}
+		job_time_shelter_sentinel_max_workforce_mult = 0.025
+		job_time_shelter_artisan_max_workforce_mult = 0.025
+		job_time_shelter_elder_max_workforce_mult = 0.025
+		job_time_shelter_watcher_max_workforce_mult = 0.025
+		mult = value:num_time_shelter_visitor
+	}
+	
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { is_gestalt = yes }
+		}
+		job_time_shelter_sentinel_drone_max_workforce_mult = 0.025
+		job_time_shelter_artisan_drone_max_workforce_mult = 0.025
+		job_time_shelter_elder_drone_max_workforce_mult = 0.025
+		job_time_shelter_watcher_drone_max_workforce_mult = 0.025
+		mult = value:num_time_shelter_visitor
+	}
+
+	included_building_sets = {
+		zone_time_shelter_main
+	}
+}
+
+zone_time_shelter_main_2 = {
+	icon = GFX_district_specialization_ark_reactor
+	
+	inline_script = {
+		script = zones/pc_time_shelter_urban
+	}
+	
+	triggered_planet_modifier = {
+		time_shelter_visitor_produce_pop_bonus_workforce_mult = 0.025
+		planet_time_shelter_visitors_trade_upkeep_add = 2.5
+	}
+	
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { is_gestalt = no }
+		}
+		pop_time_shelter_sentinel_bonus_workforce_mult = 0.025
+		pop_time_shelter_artisan_bonus_workforce_mult = 0.025
+		pop_time_shelter_elder_bonus_workforce_mult = 0.025
+		pop_time_shelter_watcher_bonus_workforce_mult = 0.025
+		mult = value:num_time_shelter_visitor
+	}
+	
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { is_gestalt = yes }
+		}
+		pop_time_shelter_sentinel_drone_bonus_workforce_mult = 0.025
+		pop_time_shelter_artisan_drone_bonus_workforce_mult = 0.025
+		pop_time_shelter_elder_drone_bonus_workforce_mult = 0.025
+		pop_time_shelter_watcher_drone_bonus_workforce_mult = 0.025
+		mult = value:num_time_shelter_visitor
+	}
+
+	included_building_sets = {
+		zone_time_shelter_main
+	}
+}
+
+zone_time_shelter_main_3 = {
+	icon = GFX_district_specialization_culture_worker
+	
+	inline_script = {
+		script = zones/pc_time_shelter_urban
+	}
+	
+	triggered_planet_modifier = {
+		time_shelter_visitor_produce_pop_workforce_mult = 0.05
+		planet_time_shelter_visitors_trade_upkeep_add = 2.5
+	}
+	
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { is_gestalt = no }
+		}
+		pop_time_shelter_sentinel_workforce_mult = 0.05
+		pop_time_shelter_artisan_workforce_mult = 0.05
+		pop_time_shelter_elder_workforce_mult = 0.05
+		pop_time_shelter_watcher_workforce_mult = 0.05
+		mult = value:num_time_shelter_visitor
+	}
+	
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { is_gestalt = yes }
+		}
+		pop_time_shelter_sentinel_drone_workforce_mult = 0.05
+		pop_time_shelter_artisan_drone_workforce_mult = 0.05
+		pop_time_shelter_elder_drone_workforce_mult = 0.05
+		pop_time_shelter_watcher_drone_workforce_mult = 0.05
+		mult = value:num_time_shelter_visitor
+	}
+
+	included_building_sets = {
+		zone_time_shelter_main
+	}
+}
+
+zone_time_shelter_main_4 = {
+	icon = GFX_district_specialization_entertainer
+	
+	inline_script = {
+		script = zones/pc_time_shelter_urban
+	}
+	
+	triggered_planet_modifier = {
+		time_shelter_visitor_produce_planet_amenities_mult = 0.05
+		planet_time_shelter_visitors_trade_upkeep_add = 2.5
+	}
+	
+	triggered_planet_modifier = {
+		planet_amenities_mult = 0.05
+		mult = value:num_time_shelter_visitor
+	}
+
+	included_building_sets = {
+		zone_time_shelter_main
+	}
+}
+
+zone_time_shelter_main_5 = {
+	icon = GFX_district_specialization_urban
+	
+	inline_script = {
+		script = zones/pc_time_shelter_urban
+	}
+	
+	triggered_planet_modifier = {
+		time_shelter_visitor_produce_planet_housing_mult = 0.05
+		planet_time_shelter_visitors_trade_upkeep_add = 2.5
+	}
+	
+	triggered_planet_modifier = {
+		planet_housing_mult = 0.05
+		mult = value:num_time_shelter_visitor
+	}
+
+	included_building_sets = {
+		zone_time_shelter_main
+	}
+}
+
+zone_time_shelter_resource = {
+	icon = GFX_district_specialization_forever_cruise_crew
+	
+	inline_script = {
+		script = zones/pc_time_shelter_rural
+		JOB = time_shelter_sentinel
+		MODIFIER = district_time_shelter_resource_job_mult
+	}
+	
+	swap_type = district_time_shelter_resource
+	swap_type_weight = 5
+
+	included_building_sets = {
+		zone_time_shelter_resource
+	}
+}
+
+zone_time_shelter_manufacturing = {
+	icon = GFX_district_specialization_industrial
+	
+	inline_script = {
+		script = zones/pc_time_shelter_rural
+		JOB = time_shelter_artisan
+		MODIFIER = district_time_shelter_manufacturing_job_mult
+	}
+	
+	swap_type = district_time_shelter_manufacturing
+	swap_type_weight = 5
+
+	included_building_sets = {
+		zone_time_shelter_manufacturing
+	}
+}
+
+zone_time_shelter_unity = {
+	icon = GFX_district_specialization_unity
+	
+	inline_script = {
+		script = zones/pc_time_shelter_rural
+		JOB = time_shelter_elder
+		MODIFIER = district_time_shelter_unity_job_mult
+	}
+	
+	swap_type = district_time_shelter_unity
+	swap_type_weight = 5
+
+	included_building_sets = {
+		zone_time_shelter_unity
+	}
+}
+
+zone_time_shelter_research = {
+	icon = GFX_district_specialization_research
+	
+	inline_script = {
+		script = zones/pc_time_shelter_rural
+		JOB = time_shelter_watcher
+		MODIFIER = district_time_shelter_research_job_mult
+	}
+	
+	swap_type = district_time_shelter_research
+	swap_type_weight = 5
+
+	included_building_sets = {
+		zone_time_shelter_research
+	}
+}

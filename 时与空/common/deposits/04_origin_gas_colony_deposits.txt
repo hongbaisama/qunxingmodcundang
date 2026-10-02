@@ -1,0 +1,325 @@
+################################################################
+# 障碍
+################################################################
+
+@blocker_high = 10
+@blocker_low = 5
+@ranger_small_production = 0.5
+@ranger_large_production = 1
+@evopred_large_blocker_progress = 40
+@evopred_small_blocker_progress = 20
+
+d_gas_blocker_1 = {
+	time = 540
+
+	is_for_colonizable = yes
+	category = deposit_cat_blockers_natural
+
+	icon = d_searing_desert
+	
+	use_weights_for_blocker_swap_types = no
+	
+	blocker_swap_types = {
+		d_gas_generator
+		d_gas_mining
+		d_gas_farming
+	}
+
+	resources = {
+		category = deposit_blockers_natural
+		cost = {
+			energy = 1500
+			volatile_motes = 15
+			rare_crystals = 15
+			exotic_gases = 15
+		}
+	}
+
+	potential = {
+		always = no
+	}
+
+	planet_modifier = {
+		planet_max_districts_add = -3
+	}
+	
+	triggered_planet_modifier = {
+		potential = {
+			biologist_is_ranger_trigger = yes
+		}
+		planet_biologists_minerals_produces_add = @ranger_large_production
+	}
+
+	inline_script = deposits/environmental_architects_natural_blocker_modifier
+
+	drop_weight = {
+		weight = 0
+	}
+
+	inline_script = deposits/ai_weight_natural_blocker
+	
+	prerequisites = { "tech_gas_blocker_1" }
+}
+
+d_gas_blocker_2 = {
+	time = 1080
+
+	is_for_colonizable = yes
+	category = deposit_cat_blockers_natural
+
+	icon = d_organic_landfill
+
+	resources = {
+		category = deposit_blockers_natural
+		cost = {
+			energy = 3000
+			volatile_motes = 30
+			rare_crystals = 30
+			exotic_gases = 30
+		}
+	}
+
+	potential = {
+		always = no
+	}
+
+	planet_modifier = {
+		planet_max_districts_add = -6
+	}
+	
+	triggered_planet_modifier = {
+		potential = {
+			biologist_is_ranger_trigger = yes
+		}
+		planet_biologists_minerals_produces_add = @ranger_large_production
+	}
+
+	inline_script = deposits/environmental_architects_natural_blocker_modifier
+
+	on_cleared = {
+		if = {
+			limit = {
+				exists = owner_or_space_owner
+			}
+			owner_or_space_owner = {
+				if = {
+					limit = {
+						country_uses_food = yes
+						country_uses_consumer_goods = yes
+					}
+					add_resource = {
+						energy = 1000
+						minerals = 1000
+						food = 1000
+						alloys = 500
+						consumer_goods = 500
+					}
+				}
+				else_if = {
+					limit = {
+						country_uses_food = yes
+					}
+					add_resource = {
+						energy = 1500
+						minerals = 1000
+						food = 1500
+						alloys = 500
+					}
+				}
+				else_if = {
+					limit = {
+						country_uses_consumer_goods = yes
+					}
+					add_resource = {
+						energy = 1500
+						minerals = 1500
+						alloys = 500
+						consumer_goods = 500
+					}
+				}
+				else = {
+					add_resource = {
+						energy = 2000
+						minerals = 2000
+						alloys = 500
+					}
+				}
+			}
+		}
+		else = {
+			tooltip = {
+				add_resource = {
+					energy = 1000
+					minerals = 1000
+					food = 1000
+					alloys = 500
+					consumer_goods = 500
+				}
+			}
+		}
+	}
+
+	drop_weight = {
+		weight = 0
+	}
+
+	inline_script = deposits/ai_weight_natural_blocker
+	
+	prerequisites = { "tech_gas_blocker_2" }
+}
+
+################################################################
+# 地块
+################################################################
+
+d_gas_generator = {
+	is_for_colonizable = yes
+	
+	category = deposit_cat_energy
+
+	icon = d_gaseous_eruption
+	
+	triggered_planet_modifier = {
+		potential = {
+			is_pc_gas_colony_district_uncapped = no
+		}
+		district_generator_max_add = 3
+	}
+	
+	triggered_planet_modifier = {
+		potential = {
+			is_pc_gas_colony_district_uncapped = yes
+		}
+		planet_technician_produces_mult = 0.1
+	}
+	
+	potential = {
+		is_planet_class = pc_gas_colony
+	}
+	
+	drop_weight = {
+		weight = 0
+	}
+}
+
+d_gas_mining = {
+	is_for_colonizable = yes
+	
+	category = deposit_cat_minerals
+
+	icon = d_mineral_striations
+	
+	triggered_planet_modifier = {
+		potential = {
+			is_pc_gas_colony_district_uncapped = no
+		}
+		district_mining_max_add = 3
+	}
+	
+	triggered_planet_modifier = {
+		potential = {
+			is_pc_gas_colony_district_uncapped = yes
+		}
+		planet_miners_produces_mult = 0.1
+	}
+	
+	potential = {
+		is_planet_class = pc_gas_colony
+	}
+	
+	drop_weight = {
+		weight = 0
+	}
+}
+
+d_gas_farming = {
+	is_for_colonizable = yes
+	
+	category = deposit_cat_food
+
+	icon = d_levitating_rocks
+	
+	triggered_planet_modifier = {
+		potential = {
+			is_pc_gas_colony_district_uncapped = no
+		}
+		district_farming_max_add = 3
+	}
+	
+	triggered_planet_modifier = {
+		potential = {
+			is_pc_gas_colony_district_uncapped = yes
+		}
+		planet_farmers_produces_mult = 0.1
+	}
+	
+	potential = {
+		is_planet_class = pc_gas_colony
+	}
+	
+	drop_weight = {
+		weight = 0
+	}
+}
+
+d_gas_colony_arcology = {
+	is_for_colonizable = yes
+	category = deposit_cat_rare
+
+	icon = d_city
+	
+	custom_tooltip = uncapped_pc_gas_colony_district_effect
+	custom_tooltip_short = uncapped_pc_gas_colony_district_effect_short
+	
+	planet_modifier = {
+		origin_gas_colony_workforce_mult = 1
+		origin_gas_colony_logistic_growth_mult = 0.5
+		origin_gas_colony_bonus_pop_growth_mult = 0.5
+		origin_gas_colony_empire_size_mult = -0.5
+		origin_gas_colony_pops_upkeep_mult = -0.5
+	}
+	
+	triggered_planet_modifier = {
+		planet_max_districts_add = 1
+		mult = trigger:planet_size
+	}
+	
+	potential = {
+		always = no
+	}
+	
+	drop_weight = {
+		weight = 0
+	}
+}
+
+d_gas_colony_hive = {
+	is_for_colonizable = yes
+	category = deposit_cat_rare
+
+	icon = d_ruins_large
+	
+	custom_tooltip = uncapped_pc_gas_colony_district_effect
+	custom_tooltip_short = uncapped_pc_gas_colony_district_effect_short
+	
+	planet_modifier = {
+		origin_gas_colony_workforce_mult = 1
+		origin_gas_colony_logistic_growth_mult = 0.5
+		origin_gas_colony_bonus_pop_growth_mult = 0.5
+		origin_gas_colony_empire_size_mult = -0.5
+		origin_gas_colony_pops_upkeep_mult = -0.5
+	}
+	
+	triggered_planet_modifier = {
+		planet_max_districts_add = 1
+		mult = trigger:planet_size
+	}
+	
+	potential = {
+		always = no
+	}
+	
+	drop_weight = {
+		weight = 0
+	}
+}

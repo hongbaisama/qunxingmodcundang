@@ -1,0 +1,113 @@
+time_wanderer_stage_1 = {
+	icon = GFX_firstcontact_icon_progress
+	picture = GFX_evt_black_hole
+
+	difficulty = 4
+
+	stage_event = {
+		summary = fcsum_time_wanderer_1
+		event_weight = {
+			weight = 1
+		}
+		event = time_wanderer.11
+	}
+
+	on_roll_failed = {
+		standard_first_contact_on_roll_failed = { RANDOM_EVENTS = time_wanderer_random_events }
+	}
+}
+
+time_wanderer_stage_2 = {
+	icon = GFX_firstcontact_icon_question
+	picture = GFX_evt_black_hole
+
+	difficulty = 6
+
+	stage_event = {
+		summary = fcsum_time_wanderer_2
+		event_weight = {
+			weight = 1
+		}
+		event = time_wanderer.12
+	}
+
+	on_roll_failed = {
+		standard_first_contact_on_roll_failed = { RANDOM_EVENTS = time_wanderer_random_events }
+	}
+}
+
+time_wanderer_stage_3 = {
+	icon = GFX_firstcontact_icon_warship_progress
+	picture = GFX_evt_black_hole
+
+	difficulty = 8
+
+	stage_event = {
+		summary = fcsum_time_wanderer_3
+		event_weight = {
+			weight = 1
+		}
+		event = time_wanderer.13
+	}
+
+	on_roll_failed = {
+		standard_first_contact_on_roll_failed = { RANDOM_EVENTS = time_wanderer_random_events }
+	}
+}
+
+time_wanderer_stage_4 = {
+	icon = GFX_firstcontact_icon_fail
+	picture = GFX_evt_black_hole
+
+	difficulty = 10
+
+	stage_event = {
+		summary = fcsum_time_wanderer_4
+		event_weight = {
+			weight = 1
+		}
+		event = time_wanderer.14
+	}
+
+	on_roll_failed = {
+		standard_first_contact_on_roll_failed = { RANDOM_EVENTS = time_wanderer_random_events }
+	}
+}
+
+time_wanderer_stage_5 = {
+	icon = GFX_firstcontact_icon_fail
+	picture = GFX_evt_black_hole
+
+	difficulty = 8
+
+	stage_event = {
+		summary = fcsum_time_wanderer_5
+		event_weight = {
+			weight = 1
+		}
+		event = time_wanderer.15
+	}
+
+	on_roll_failed = {
+		standard_first_contact_on_roll_failed = { RANDOM_EVENTS = time_wanderer_random_events }
+	}
+}
+
+time_wanderer_stage_6 = {
+	icon = GFX_firstcontact_icon_fail
+	picture = GFX_evt_black_hole
+
+	difficulty = 6
+
+	stage_event = {
+		summary = fcsum_time_wanderer_6
+		event_weight = {
+			weight = 1
+		}
+		event = time_wanderer.16
+	}
+
+	on_roll_failed = {
+		standard_first_contact_on_roll_failed = { RANDOM_EVENTS = time_wanderer_random_events }
+	}
+}

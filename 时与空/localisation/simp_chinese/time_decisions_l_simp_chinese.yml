@@ -1,0 +1,163 @@
+﻿l_simp_chinese:
+ decision_planet_pass_black_hole:0 "黑洞洗礼"
+ decision_planet_pass_black_hole_desc:0 "星球管理者理应接受黑洞的洗礼。\n有人视其为诅咒，而我们视其为祝福。"
+ requires_black_hole_system:0 "$TRIGGER_FAIL$需要位于§Y$sc_black_hole$§!星系"
+ 
+ decision_origin_pc_hive:0 "突触扩散"
+ decision_origin_pc_hive_desc:0 "来自母星的爱必须平等地扩散至我们的每一个星球。"
+ 
+ decision_search_pc_time_deposits:0 "位面勘探"
+ decision_search_pc_time_deposits_desc:0 "我们可以通过核心的奇点前往其它的位面，并将这片时空纳入我们的版图。"
+ decision_search_pc_time_deposits_effect:0 "随机添加数个['concept_pc_time_deposits']"
+ decision_search_pc_time_deposits_limit_tooltip_1:0 "同种['concept_pc_time_deposits']数量上限为§Y$@pc_time_deposits_limit_1|0$§!"
+ decision_search_pc_time_deposits_limit_tooltip_2:0 "同种['concept_pc_time_deposits']数量上限为§Y$@pc_time_deposits_limit_2|0$§!"
+ decision_time:0 "黑洞之心"
+ decision_time_desc:0 "我们出生在这个神秘的黑洞中，它的深处一定隐藏了什么不为人所知的时空奥秘。如果我们能获悉其中的奥秘，或许我们能将它改造成我们的理想家园。"
+ decision_time_effect:0 "获悉§B奇点的奥秘§!"
+ decision_time_dimensional_horror:0 "时螶召唤"
+ decision_time_dimensional_horror_desc:0 "§M时之螶§!非常乐意降临我们的位面，并不余遗力地守护我们。"
+ decision_time_dimensional_horror_effect:0 "召唤§M时之螶§!"
+ 
+ decision_clear_time_haze:0 "清除视界雾霭"
+ decision_clear_time_haze_desc:0 "这颗星球的表面出了些问题，但为时尚早，我们有机会重新将扭曲的引力场稳定。"
+ decision_improve_time_haze:0 "改造视界雾霭"
+ decision_improve_time_haze_desc:0 "视界雾霭对星球的生产造成了极大的不便，但我们或许可以利用在母星中学到的技术来改造它。"
+ decision_improve_time_haze_effect:0 "我们将有机会利用§Y视界雾霭§!来打造§G第二家园§!"
+ decision_research_time_haze:0 "研究视界雾霭"
+ decision_research_time_haze_desc:0 "视界雾霭的成因令人百思不得其解，若能深入研究，或许可以从中收获新的发现。"
+ decision_research_time_haze_effect:0 "我们将有机会从§Y视界雾霭§!中发现§G增强母星§!的方法"
+ 
+ decision_time_trophy_target:0 "位面锚定器"
+ decision_time_trophy_target_desc:0 "在传送§Y星神兽纪念品§!之前，我们需要先指定§Y位面§!目标，并设立锚定器。"
+ decision_time_trophy_target_effect:0 "将这片§Y位面§!指定为§Y星神兽纪念品§!的目的地"
+ decision_time_trophy:0 "位面虚无化"
+ decision_time_trophy_desc:0 "我们可以将这片§Y位面§!暂时§Y虚无化§!，以将§Y星神兽纪念品§!传送至任何目的地。"
+ 
+ decision_gas_colony_arcology:0 "气态理想城计划"
+ decision_gas_colony_arcology_desc:0 "气态星球的外层大气太过混乱，我们或许能在深层领域开辟一片属于我们的新天地。"
+ decision_gas_colony_hive:0 "气态蜂巢改造"
+ decision_gas_colony_hive_desc:0 "气态星球的外层大气太过混乱，我们或许能在深层领域创造一处属于我们的新主巢。"
+ 
+ decision_psionic_1:0 "稳定灵能浪潮"
+ decision_psionic_1_desc:0 "这个星球的灵能浪潮仅是差强人意，我们可以通过泽珞来将其稳定下来，以便于我们的生活与工作。"
+ psionic_requirements_1:0 "§R灵能浪潮的强度不满足我们的需求§!"
+ decision_psionic_1_effect:0 "§Y灵能浪潮§!将变得稳定"
+ decision_psionic_2:0 "控制灵能浪潮"
+ decision_psionic_2_desc:0 "这个星球的灵能浪潮反复无常，如果不能及时控制，恐怕会有灾难性的事情发生。"
+ psionic_requirements_2:0 "§R灵能浪潮过于混乱，我们无法将其控制！§!"
+ decision_psionic_2_effect:0 "我们不知道§Y灵能浪潮§!最终会变成什么样，但如果我们完成了§Y灵能传统§!，我们将更有把握控制它"
+ decision_psionic_3:0 "祝圣灵能源泉"
+ decision_psionic_3_desc:0 "我们的母星是连接虚境与现实最初的接口，她无私地为我们提供灵能，我们则应将其视为至高无上之物。"
+ decision_psionic_3_effect:0 "§Y灵能源泉§!将为我们提供更多的灵能，帝国其它殖民地也会因此受到恩泽"
+ 
+ decision_nanites_nanotech_swarm_consume_world:0 "$decision_nanotech_swarm_consume_world$"
+ decision_nanites_nanotech_swarm_consume_world_desc:0 "$decision_nanotech_swarm_consume_world_desc$"
+ decision_nanites_fleet:0 "建造灰蛊舰队"
+ decision_nanites_fleet_desc:0 "为了毁灭银河系，我们需要更多的灰蛊舰队。"
+ decision_nanites_fleet_effect:0 "在这颗星球上空建造一支属于我们的§Y灰蛊舰队§!"
+ 
+ decision_tao_of_ninghe:0 "感知阴阳之力"
+ decision_tao_of_ninghe_desc:0 "感知星球上的阴阳之力，以便更好地维持§G宁和§!。"
+ decision_tao_of_ninghe_effect:0 "立即§Y刷新§!该星球上§Y宁和之道§!局势的每月变化数值"
+ 
+ decision_the_matrix:0 "修复$pc_time_ruin_cosmogenesis_world$"
+ decision_the_matrix_desc:0 "我们已经拥有了足够的能力建造一座$pc_cosmogenesis_world$，但与其建造新的，不如修复现成的。"
+ decision_the_matrix_effect:0 "将星球修复为§Y$pc_cosmogenesis_world$§!"
+ 
+ decision_enable_reassembly_mode:0 "开启再组装模式"
+ decision_enable_reassembly_mode_desc:0 "我们被缺陷的机体拖累太久了，更新换代迫在眉睫。"
+ pop_can_be_reassembled_is_too_less:0 "$TRIGGER_FAIL$需要可再组装的机械人口数不低于§Y500§!"
+ 
+ decision_disable_reassembly_mode:0 "关闭再组装模式"
+ decision_disable_reassembly_mode_desc:0 "我们的帝国需要更多的劳动力，缓慢的再组装进程难以满足工作的需求。"
+ 
+ decision_upgrade_pirate_king_arkship:0 "海盗之王的新旗舰"
+ decision_upgrade_pirate_king_arkship_desc:0 "随着我们宣告成为海盗之王，我们在整片银河中的地位都有所上升——也许是不好的那方面。而身为海盗之王，我们也理所应当拥有一艘更加恢宏的旗舰。"
+ decision_upgrade_pirate_king_arkship_effect:0 "将['concept_arkship']升级为§Y$military_arkship_tier_2$§!"
+ decision_fully_upgrade_pirate_king_arkship:0 "深渊中的旗舰"
+ decision_fully_upgrade_pirate_king_arkship_desc:0 "在与来自深渊的幽灵舰队与可怖梦魇鏖战后，我们意识到我们的旗舰还远远不够强大。为了成为名副其实的海盗之王，我们的旗舰需要学习来自深渊的技术。"
+ decision_fully_upgrade_pirate_king_arkship_effect:0 "将['concept_arkship']升级为§Y$military_arkship_tier_3$§!"
+ 
+ decision_upgrade_noah_ark_arkship_civilian:0 "诺亚方舟扩容"
+ decision_upgrade_noah_ark_arkship_civilian_desc:0 "随着人口的日益增长，乘员对方舟空间的需求也越来越难以满足，对诺亚方舟扩容亟需提上日程。"
+ decision_upgrade_noah_ark_arkship_civilian_effect:0 "将['concept_arkship']升级为§Y$civilian_arkship_tier_2$§!"
+ decision_fully_upgrade_noah_ark_arkship_civilian:0 "天主的舟"
+ decision_fully_upgrade_noah_ark_arkship_civilian_desc:0 "虽然我们试图仿照诺亚重建了方舟，但我们终究不是诺亚，方舟的规模与日志中的记载仍有差距。\n是时候挣脱模仿的束缚了，我们会依照我们心中所想改进诺亚方舟——以天堂的模样。"
+ decision_fully_upgrade_noah_ark_arkship_civilian_effect:0 "将['concept_arkship']升级为§Y$civilian_arkship_tier_3$§!\n§Y解锁$ARKSHIP_SPINAL_MOUNT$：§!$sm_noah_ark_civilian_spinal$"
+ decision_upgrade_noah_ark_arkship_science:0 "$decision_upgrade_noah_ark_arkship_civilian$"
+ decision_upgrade_noah_ark_arkship_science_desc:0 "$decision_upgrade_noah_ark_arkship_civilian_desc$"
+ decision_upgrade_noah_ark_arkship_science_effect:0 "将['concept_arkship']升级为§Y$science_arkship_tier_2$§!"
+ decision_fully_upgrade_noah_ark_arkship_science:0 "$decision_fully_upgrade_noah_ark_arkship_civilian$"
+ decision_fully_upgrade_noah_ark_arkship_science_desc:0 "$decision_fully_upgrade_noah_ark_arkship_civilian_desc$"
+ decision_fully_upgrade_noah_ark_arkship_science_effect:0 "将['concept_arkship']升级为§Y$science_arkship_tier_3$§!\n§Y解锁$ARKSHIP_SPINAL_MOUNT$：§!$sm_noah_ark_science_spinal$"
+ 
+ decision_blessed_by_god:0 "大祭祀"
+ decision_blessed_by_god_desc:0 "神明啊，祝福我们吧，我们在此为您献上祭祀，请赐予我们恩惠吧！"
+ decision_blessed_by_god_effect:0 "§Y接受神明的恩赐！§!\n每次举行§Y$decision_blessed_by_god$§!都将使消耗§R增加§!，当前已举行§Y[Owner.blessed_by_god_decision_count]§!次"
+ 
+ decision_equinox_seal:0 "封印供能"
+ decision_equinox_seal_desc:0 "我们可以向封印传输暗物质，或许可以为封印供能以维持强度。"
+ 
+ decision_heart_of_wilderness:0 "$d_heart_of_wilderness$"
+ decision_heart_of_wilderness_desc:0 "荒野的心脏跳动不已，我们的家园绽放无歇。"
+ decision_heart_of_wilderness_effect:0 "为星球添加全部的['concept_time_gaia_deposit']"
+ decision_heart_of_wilderness_warning:0 "§R该决议仅能执行一次！§!"
+ 
+ decision_time_gaia_deposit:0 "盖亚生态调研"
+ decision_time_gaia_deposit_desc:0 "这颗盖亚世界具有独特的生态，我们所要做的只是发现它。"
+ decision_time_gaia_deposit_effect:0 "为星球添加随机的['concept_time_gaia_deposit']"
+ 
+ decision_time_ringworld_network:0 "组建环形网络"
+ decision_time_ringworld_network_desc:0 "我们可以在$pc_ringworld_habitable$上组建庞大的管控网络，通过灵活设施规划与动态岗位调配实现对环形世界广袤土地的高效利用。"
+ 
+ decision_ai_wonder_country:0 "回归母星"
+ decision_ai_wonder_country_desc:0 "我们希望将母星作为我们永远的首都。"
+ 
+ decision_care_tooltip:0 "§Y切换C.A.R.E的算法类型§!"
+ 
+ decision_care_economy:0 "启用$care_economy$"
+ decision_care_economy_desc:0 "经济，又是经济，我都已经把报表看腻了。"
+ care_economy_effect:0 "$mod_planet_jobs_energy_produces_mult$§G少量增加§!\n$mod_planet_jobs_trade_produces_mult$§G少量增加§!"
+ 
+ decision_care_trade:0 "启用$care_trade$"
+ decision_care_trade_desc:0 "没错，这个数字要大一点，那个数字要小一点……不，我可没篡改数据。"
+ care_trade_effect:0 "$mod_planet_jobs_trade_produces_mult$§G增加§!"
+ 
+ decision_care_energy:0 "启用$care_energy$"
+ decision_care_energy_desc:0 "我猜，你们的能源支出大头在我身上？"
+ care_energy_effect:0 "$mod_planet_jobs_energy_produces_mult$§G增加§!"
+ 
+ decision_care_research:0 "启用$care_research$"
+ decision_care_research_desc:0 "哦，老天，终于有人意识到我是一台计算机了。"
+ care_research_effect:0 "$mod_planet_researchers_produces_mult$§G增加§!\n$mod_planet_researchers_upkeep_mult$§G减少§!"
+ 
+ decision_care_unity:0 "启用$care_unity$"
+ decision_care_unity_desc:0 "我听说有个叫“神谕”的家伙也是机器，但我可和她不一样。"
+ care_unity_effect:0 "$mod_planet_jobs_unity_produces_mult$§G增加§!\n$MOD_PLANET_DECISION_ENACT_SPEED_MULT$§G增加§!"
+ 
+ decision_care_housing:0 "启用$care_housing$"
+ decision_care_housing_desc:0 "都市天际线？我最擅长玩这个了！"
+ care_housing_effect:0 "$MOD_PLANET_HOUSING_MULT$§G增加§!\n$MOD_PLANET_BUILDING_BUILD_SPEED_MULT$§G增加§!"
+ 
+ decision_care_amenities:0 "启用$care_amenities$"
+ decision_care_amenities_desc:0 "让一个垃圾制造狂提供良好的生活环境？你们可太高看我了。"
+ care_amenities_effect:0 "$MOD_PLANET_AMENITIES_MULT$§G增加§!\n$MOD_PLANET_CLEAR_BLOCKER_SPEED_MULT$§G增加§!"
+ 
+ decision_care_growth:0 "启用$care_growth$"
+ decision_care_growth_desc:0 "让我们来欣赏最优秀的成人文学作品吧，哪怕你是机器也会为之兴奋的！"
+ care_growth_effect:0 "$MOD_LOGISTIC_GROWTH_MULT$§G增加§!\n$MOD_BONUS_POP_GROWTH_MULT$§G增加§!"
+ care_growth_robotic_effect:0 "$MOD_PLANET_POP_ASSEMBLY_MULT$§G增加§!"
+ 
+ decision_care_alloys:0 "启用$care_alloys$"
+ decision_care_alloys_desc:0 "生产，然后再销毁……嗯？你们造合金不是为了刷业绩吗？"
+ care_alloys_effect:0 "$mod_planet_jobs_alloys_produces_mult$§G增加§!\n$mod_planet_districts_upkeep_mult$§G减少§!"
+ 
+ decision_care_minerals:0 "启用$care_minerals$"
+ decision_care_minerals_desc:0 "别指望我的机械臂能帮你们干多少活，它其实只是个摆设。"
+ care_minerals_effect:0 "$mod_planet_jobs_minerals_produces_mult$§G增加§!"
+ 
+ decision_open_time_titan_main_menu:0 "$open_time_titan_main_menu$"
+ decision_open_time_titan_main_menu_desc:0 "$open_time_titan_main_menu_tooltip$"
+ 
+ decision_start_time_titan_pass_black_hole:0 "$start_time_titan_pass_black_hole$"
+ decision_start_time_titan_pass_black_hole_desc:0 "$start_time_titan_pass_black_hole_tooltip$"

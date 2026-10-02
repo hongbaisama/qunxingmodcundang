@@ -1,0 +1,1080 @@
+# 国家
+time_change_leader_species_for_country = {
+	every_owned_leader = {
+		limit = {
+			is_dimension_traveler = no
+			is_same_species = prev.owner_main_species
+		}
+		time_change_leader_species = yes
+	}
+	every_pool_leader = {
+		limit = {
+			is_same_species = prev.owner_main_species
+		}
+		time_change_leader_species = yes
+	}
+	every_envoy = {
+		limit = {
+			is_same_species = prev.owner_main_species
+		}
+		time_change_leader_species = yes
+	}
+}
+
+# 领袖
+time_change_leader_species = {
+	change_species = prev.owner_main_species
+	if = {
+		limit = {
+			is_gestalt_node = no
+		}
+		change_leader_portrait = species
+		gain_leader_trait_time_soul = yes
+		if = {
+			limit = {
+				owner = { is_machine_or_individual_machine_empire = no }
+			}
+			if = {
+				limit = {
+					species = {
+						has_trait = trait_mechanical
+						NOR = {
+							has_trait = trait_robot_digital_1
+							has_trait = trait_robot_digital_2
+						}
+					}
+					NOT = { has_trait = leader_trait_synthetic }
+				}
+				add_trait = {
+					trait = leader_trait_synthetic
+					show_message = no
+				}
+			}
+		}
+		else = {
+			if = {
+				limit = {
+					owner = {
+						OR = {
+							has_tradition = tr_synthetics_finish
+							has_tradition = tr_modularity_finish
+						}
+					}
+					species = { has_trait = trait_machine_unit }
+					NOT = { has_trait = leader_trait_synthetic }
+				}
+				add_trait = {
+					trait = leader_trait_synthetic
+					show_message = no
+				}
+			}
+		}
+		if = {
+			limit = {
+				species = {
+					OR = {
+						has_trait = trait_robot_digital_1
+						has_trait = trait_robot_digital_2
+					}
+				}
+				NOT = { has_trait = leader_trait_virtual }
+			}
+			remove_trait = leader_trait_synthetic
+			add_trait = {
+				trait = leader_trait_virtual
+				show_message = no
+			}
+		}
+		if = {
+			limit = {
+				species = { has_trait = trait_cybernetic }
+				NOT = { has_trait = leader_trait_cyborg }
+			}
+			add_trait = {
+				trait = leader_trait_cyborg
+				show_message = no
+			}
+		}
+		if = {
+			limit = {
+				species = { has_trait = trait_erudite }
+				NOT = { has_trait = leader_trait_erudite }
+			}
+			add_trait = {
+				trait = leader_trait_erudite
+				show_message = no
+			}
+		}
+		if = {
+			limit = {
+				species = { has_trait = trait_psionic }
+				has_psionic_leader_trait = no
+			}
+			add_trait = {
+				trait = leader_trait_psionic
+				show_message = no
+			}
+		}
+		if = {
+			limit = {
+				has_global_flag = active_better_ascension_traits
+			}
+			if = {
+				limit = {
+					has_identity_initialization_leader_trait = no
+					has_same_initialization_identity_species = yes
+				}
+				gain_random_identity_initialization_leader_trait = yes
+			}
+		}
+	}
+	else = {
+		set_gestalt_node_portrait_effect = yes
+	}
+}
+
+# 星球
+time_mod_kill_single_pop = {
+	if = {
+		limit = {
+			any_owned_pop_group = {
+				pop_group_size >= 100
+			}
+		}
+		weighted_random_owned_pop_group = {
+			limit = {
+				pop_group_size >= 100
+			}
+			kill_pop_group = {
+				pop_group = this
+				amount = 100
+			}
+		}
+	}
+	else_if = {
+		limit = {
+			count_owned_pop_group = {
+				limit = {
+					pop_group_size >= 50
+				}
+				count >= 2
+			}
+		}
+		weighted_random_owned_pop_group = {
+			limit = {
+				pop_group_size >= 50
+			}
+			kill_pop_group = {
+				pop_group = this
+				amount = 50
+			}
+		}
+		weighted_random_owned_pop_group = {
+			limit = {
+				pop_group_size >= 50
+			}
+			kill_pop_group = {
+				pop_group = this
+				amount = 50
+			}
+		}
+	}
+	else = {
+		weighted_random_owned_pop_group = {
+			kill_pop_group = {
+				pop_group = this
+				amount = 50
+			}
+		}
+		weighted_random_owned_pop_group = {
+			kill_pop_group = {
+				pop_group = this
+				amount = 50
+			}
+		}
+	}
+}
+
+# 星球
+gain_time_gaia_deposit = {
+	add_random_time_gaia_deposit = yes
+	if = {
+		limit = {
+			can_gain_most_time_gaia_deposit = yes
+		}
+		add_random_time_gaia_deposit = yes
+		add_random_time_gaia_deposit = yes
+	}
+	else_if = {
+		limit = {
+			can_gain_more_time_gaia_deposit = yes
+		}
+		add_random_time_gaia_deposit = yes
+	}
+}
+
+# 星球
+add_random_time_gaia_deposit = {
+	random_list = {
+		1 = {
+			modifier = {
+				factor = 0
+				has_deposit = d_time_gaia_energy
+			}
+			add_deposit = d_time_gaia_energy
+		}
+		1 = {
+			modifier = {
+				factor = 0
+				has_deposit = d_time_gaia_minerals
+			}
+			add_deposit = d_time_gaia_minerals
+		}
+		1 = {
+			modifier = {
+				factor = 0
+				has_deposit = d_time_gaia_food
+			}
+			add_deposit = d_time_gaia_food
+		}
+	}
+}
+
+# 星球
+clear_deposits_and_orbital_station = {
+	clear_deposits = yes
+	if = {
+		limit = { exists = orbital_station }
+		orbital_station = { delete_fleet = this }
+	}
+}
+
+# 星球
+clear_terraforming_candidate = {
+	remove_modifier = terraforming_candidate
+	remove_modifier = frozen_terraforming_candidate
+	remove_modifier = toxic_terraforming_candidate
+}
+
+# 国家
+change_paragon_memory_vault = {
+	change_variable = {
+		which = paragon_memory_vault
+		value = 1
+	}
+}
+
+# 国家
+save_research_councilor_as = {
+	random_owned_leader = {
+		limit = {
+			is_head_of_research = yes
+		}
+		save_event_target_as = $TARGET$
+	}
+}
+
+# 局势
+refresh_genetic_ascension_stage_1_flag = {
+	owner = {
+		remove_country_flag = genetic_ascension_stage_1_purity
+		remove_country_flag = genetic_ascension_stage_1_cloning
+		remove_country_flag = genetic_ascension_stage_1_mutation
+		set_country_flag = genetic_ascension_stage_1_$TYPE$
+	}
+}
+
+# 局势
+refresh_genetic_ascension_stage_2_flag = {
+	owner = {
+		remove_country_flag = genetic_ascension_stage_2_purity
+		remove_country_flag = genetic_ascension_stage_2_cloning
+		remove_country_flag = genetic_ascension_stage_2_mutation
+		set_country_flag = genetic_ascension_stage_2_$TYPE$
+	}
+}
+
+# 局势
+refresh_genetic_ascension_stage_3_flag = {
+	owner = {
+		remove_country_flag = genetic_ascension_stage_3_purity
+		remove_country_flag = genetic_ascension_stage_3_cloning
+		remove_country_flag = genetic_ascension_stage_3_mutation
+		set_country_flag = genetic_ascension_stage_3_$TYPE$
+	}
+}
+
+# 国家
+declare_war_to_galaxy = {
+	# 保持独立
+	if = {
+		limit = {
+			is_subject = yes
+		}
+		set_subject_of = { who = none }
+	}
+	# 释放附庸
+	if = {
+		limit = {
+			is_overlord = yes
+		}
+		every_subject = {
+			set_subject_of = { who = none }
+		}
+	}
+	# 退出联邦
+	if = {
+		limit = {
+			has_federation = yes
+		}
+		leave_alliance = { override_requirements = yes }
+	}
+	# 退出共同体
+	if = {
+		limit = {
+			is_galactic_community_member = yes
+		}
+		remove_from_galactic_community = yes
+	}
+	################################################################
+	# 宣战全银河
+	################################################################
+	save_event_target_as = declarer
+	# 无法向已经与自身交战的国家发起新的战争，必须先退出战争
+	every_war = {
+		remove_war_participant = event_target:declarer
+	}
+	# 抽取宣战目标
+	if = {
+		limit = {
+			has_galactic_emperor = yes
+			galactic_emperor = {
+				NOT = { is_same_value = event_target:declarer }
+			}
+		}
+		galactic_emperor = {
+			establish_communications_no_message = event_target:declarer
+			save_event_target_as = defender
+		}
+	}
+	else_if = {
+		limit = {
+			has_galactic_custodian = yes
+			galactic_custodian = {
+				NOT = { is_same_value = event_target:declarer }
+			}
+		}
+		galactic_custodian = {
+			establish_communications_no_message = event_target:declarer
+			save_event_target_as = defender
+		}
+	}
+	else = {
+		random_country = {
+			limit = {
+				OR = {
+					is_default_or_player = yes
+					is_fallen_empire = yes
+				}
+				NOT = { is_same_value = event_target:declarer }
+			}
+			establish_communications_no_message = event_target:declarer
+			save_event_target_as = defender
+		}
+	}
+	# 宣战
+	declare_war = {
+		target = event_target:defender
+		attacker_war_goal = wg_time_become_end_crisis
+		effect = { save_event_target_as = time_become_end_crisis_war }
+	}
+	# 其它国家加入战争
+	every_country = {
+		limit = {
+			OR = {
+				is_default_or_player = yes
+				is_fallen_empire = yes
+			}
+			NOR = {
+				is_same_value = event_target:declarer
+				is_same_value = event_target:defender
+			}
+		}
+		establish_communications_no_message = event_target:declarer
+		join_war_on_side = {
+			war = event_target:time_become_end_crisis_war
+			side = defenders
+		}
+	}
+	# 国家无法支持与自身交战的国家的战争，对漏网之鱼单独宣战
+	every_country = {
+		limit = {
+			OR = {
+				is_default_or_player = yes
+				is_fallen_empire = yes
+			}
+			NOR = {
+				is_same_value = event_target:declarer
+				is_at_war_with = event_target:declarer
+			}
+		}
+		establish_communications_no_message = event_target:declarer
+		event_target:declarer = {
+			declare_war = {
+				target = prev
+				attacker_war_goal = wg_time_become_end_crisis
+			}
+		}
+	}
+}
+
+# 任意
+create_awoken_robot_species = {
+	if = {
+		limit = {
+			root = { has_technology = tech_synthetic_leaders }
+		}
+		create_species = {
+			name = "NAME_Awoken_Robot"
+			plural = "NAME_Awoken_Robot"
+			class = ROBOT
+			namelist = FUN3
+			portrait = "sd_fun_robot"
+			traits = {
+				trait = "trait_mechanical"
+				trait = "trait_robot_awoken_01"
+			}
+			effect = {
+				save_global_event_target_as = awoken_robot_species
+			}
+		}
+	}
+	else = {
+		create_species = {
+			name = "NAME_Awoken_Robot"
+			plural = "NAME_Awoken_Robot"
+			class = ROBOT
+			namelist = FUN3
+			portrait = "sd_fun_robot"
+			traits = {
+				trait = "trait_mechanical"
+				trait = "trait_robot_awoken"
+			}
+			effect = {
+				save_global_event_target_as = awoken_robot_species
+			}
+		}
+	}
+}
+
+# 国家
+set_origin_default_effect = {
+	set_origin = origin_default
+	if = {
+		limit = {
+			NOT = { has_technology = tech_planetary_unification }
+		}
+		add_research_option = tech_planetary_unification
+	}
+	capital_scope = {
+		if = {
+			limit = {
+				is_planet_class = pc_ark
+			}
+			add_district_and_planet_size_if_needed_effect = {
+				district = district_ark_generator
+			}
+			if = {
+				limit = {
+					owner = { country_uses_food_game_start = yes }
+				}
+				add_district_and_planet_size_if_needed_effect = {
+					district = district_ark_basic
+				}
+			}
+			else = {
+				add_district_and_planet_size_if_needed_effect = {
+					district = district_ark_generator
+				}
+			}
+		}
+		else = {
+			add_district_and_planet_size_if_needed_effect = {
+				district = district_generator
+			}
+			if = {
+				limit = {
+					owner = { country_uses_food_game_start = yes }
+				}
+				add_district_and_planet_size_if_needed_effect = {
+					district = district_farming
+				}
+			}
+			else = {
+				add_district_and_planet_size_if_needed_effect = {
+					district = district_mining
+				}
+			}
+		}
+		if = {
+			limit = {
+				owner = { is_gestalt = no }
+			}
+			add_modifier = { modifier = prosp_uni_mod days = -1 }
+		}
+		else = {
+			add_modifier = { modifier = prosp_uni_mod_gestalt days = -1 }
+		}
+		create_pop_group = {
+			size = 400
+			species = owner_main_species
+		}
+	}
+}
+
+# 国家
+give_physics_tech_tier_1_effect_no_message = {
+	give_technology = { tech = tech_basic_science_lab_2 message = no }
+	give_technology = { tech = tech_space_science_1 message = no }
+	give_technology = { tech = tech_space_science_2 message = no }
+	give_technology = { tech = tech_physics_1 message = no }
+	give_technology = { tech = tech_administrative_ai message = no }
+	give_technology = { tech = tech_cryostasis_1 message = no }
+	give_technology = { tech = tech_automated_exploration message = no }
+	give_technology = { tech = tech_combat_computers_1 message = no }
+	give_technology = { tech = tech_auxiliary_fire_control message = no }
+	give_technology = { tech = tech_encryption_1 message = no }
+	give_technology = { tech = tech_decryption_1 message = no }
+	give_technology = { tech = tech_fusion_power message = no }
+	give_technology = { tech = tech_reactor_boosters_2 message = no }
+	give_technology = { tech = tech_reactor_boosters_3 message = no }
+	give_technology = { tech = tech_shields_2 message = no }
+	give_technology = { tech = tech_power_plant_2 message = no }
+	give_technology = { tech = tech_power_hub_1 message = no }
+	give_technology = { tech = tech_lasers_2 message = no }
+}
+
+# 国家
+give_physics_tech_tier_2_effect_no_message = {
+	give_technology = { tech = tech_curator_lab message = no }
+	if = {
+		limit = {
+			has_ancrel = yes
+		}
+		give_technology = { tech = tech_archeology_lab_ancrel message = no }
+	}
+	else = {
+		give_technology = { tech = tech_archeology_lab message = no }
+	}
+	give_technology = { tech = tech_space_science_3 message = no }
+	give_technology = { tech = tech_space_science_4 message = no }
+	give_technology = { tech = tech_physics_2 message = no }
+	give_technology = { tech = tech_self_aware_logic message = no }
+	if = {
+		limit = {
+			OR = {
+				is_gestalt = no
+				has_valid_civic = civic_machine_servitor
+			}
+		}
+		give_technology = { tech = tech_consumer_good_refinement_1 message = no }
+	}
+	give_technology = { tech = tech_encryption_2 message = no }
+	give_technology = { tech = tech_decryption_2 message = no }
+	give_technology = { tech = tech_cold_fusion_power message = no }
+	give_technology = { tech = tech_shields_3 message = no }
+	give_technology = { tech = tech_shield_rechargers_1 message = no }
+	give_technology = { tech = tech_sensors_2 message = no }
+	give_technology = { tech = tech_power_plant_3 message = no }
+	give_technology = { tech = tech_power_hub_2 message = no }
+	give_technology = { tech = tech_hyper_drive_2 message = no }
+	give_technology = { tech = tech_ftl_inhibitor message = no }
+	give_technology = { tech = tech_lasers_3 message = no }
+	give_technology = { tech = tech_plasma_1 message = no }
+	give_technology = { tech = tech_disruptors_1 message = no }
+	give_technology = { tech = tech_pd_tracking_2 message = no }
+}
+
+# 国家
+give_engineering_tech_tier_1_effect_no_message = {
+	give_technology = { tech = tech_corvette_build_speed message = no }
+	give_technology = { tech = tech_corvette_hull_1 message = no }
+	give_technology = { tech = tech_strike_craft_1 message = no }
+	give_technology = { tech = tech_ship_armor_2 message = no }
+	give_technology = { tech = tech_powered_exoskeletons message = no }
+	give_technology = { tech = tech_space_mining_1 message = no }
+	give_technology = { tech = tech_space_mining_2 message = no }
+	give_technology = { tech = tech_mining_1 message = no }
+	give_technology = { tech = tech_mineral_purification_1 message = no }
+	give_technology = { tech = tech_alloys_1 message = no }
+	give_technology = { tech = tech_luxuries_1 message = no }
+	give_technology = { tech = tech_engineering_1 message = no }
+	give_technology = { tech = tech_robotic_workers message = no }
+	give_technology = { tech = tech_afterburners_1 message = no }
+	give_technology = { tech = tech_assembly_pattern message = no }
+	give_technology = { tech = tech_mass_drivers_2 message = no }
+	give_technology = { tech = tech_missiles_2 message = no }
+	give_technology = { tech = tech_torpedoes_1 message = no }
+}
+
+# 国家
+give_engineering_tech_tier_2_effect_no_message = {
+	give_technology = { tech = tech_destroyers message = no }
+	give_technology = { tech = tech_corvette_hull_2 message = no }
+	give_technology = { tech = tech_destroyer_build_speed message = no }
+	give_technology = { tech = tech_destroyer_hull_1 message = no }
+	give_technology = { tech = tech_starbase_3 message = no }
+	give_technology = { tech = tech_modular_engineering message = no }
+	give_technology = { tech = tech_strike_craft_2 message = no }
+	give_technology = { tech = tech_ship_armor_3 message = no }
+	give_technology = { tech = tech_crystal_armor_1 message = no }
+	give_technology = { tech = tech_thrusters_2 message = no }
+	give_technology = { tech = tech_defense_platform_hull_1 message = no }
+	give_technology = { tech = tech_space_mining_3 message = no }
+	give_technology = { tech = tech_space_mining_4 message = no }
+	give_technology = { tech = tech_mining_2 message = no }
+	give_technology = { tech = tech_mineral_purification_2 message = no }
+	give_technology = { tech = tech_advanced_metallurgy_1 message = no }
+	give_technology = { tech = tech_engineering_2 message = no }
+	give_technology = { tech = tech_droid_workers message = no }
+	give_technology = { tech = tech_housing_1 message = no }
+	give_technology = { tech = tech_mass_drivers_3 message = no }
+	give_technology = { tech = tech_autocannons_1 message = no }
+	give_technology = { tech = tech_missiles_3 message = no }
+	give_technology = { tech = tech_swarmer_missiles_1 message = no }
+	give_technology = { tech = tech_flak_batteries_2 message = no }
+}
+
+# 国家
+give_society_tech_tier_1_effect_no_message = {
+	if = {
+		limit = {
+			is_regular_empire = yes
+		}
+		give_technology = { tech = tech_space_trading message = no }
+	}
+	give_technology = { tech = tech_eco_simulation message = no }
+	give_technology = { tech = tech_hydroponics message = no }
+	give_technology = { tech = tech_food_processing_1 message = no }
+	give_technology = { tech = tech_society_1 message = no }
+	if = {
+		limit = {
+			is_regular_empire = yes
+		}
+		give_technology = { tech = tech_alien_life_studies message = no }
+	}
+	if = {
+		limit = {
+			is_regular_empire = yes
+		}
+		give_technology = { tech = tech_frontier_health message = no }
+	}
+	give_technology = { tech = tech_dense_jungle message = no }
+	give_technology = { tech = tech_quicksand_basin message = no }
+	give_technology = { tech = tech_noxious_swamp message = no }
+	give_technology = { tech = tech_massive_glacier message = no }
+	give_technology = { tech = tech_toxic_kelp message = no }
+	give_technology = { tech = tech_deep_sinkhole message = no }
+	if = {
+		limit = {
+			OR = {
+				NOT = { has_authority = auth_machine_intelligence }
+				has_civic = civic_machine_assimilator
+				has_civic = civic_machine_servitor
+			}
+		}
+		give_technology = { tech = tech_genome_mapping message = no }
+	}
+	give_technology = { tech = tech_ground_defense_planning message = no }
+	give_technology = { tech = tech_planetary_unification message = no }
+	give_technology = { tech = tech_adaptive_bureaucracy message = no }
+	if = {
+		limit = {
+			is_regular_empire = yes
+		}
+		give_technology = { tech = tech_neural_implants message = no }
+	}
+	if = {
+		limit = {
+			is_gestalt = no
+		}
+		give_technology = { tech = tech_hyper_entertainment_forum message = no }
+	}
+	if = {
+		limit = {
+			is_wilderness_empire = no
+		}
+		give_technology = { tech = tech_cultural_heritage message = no }
+		give_technology = { tech = tech_heritage_site message = no }
+	}
+}
+
+# 国家
+give_society_tech_tier_2_effect_no_message = {
+	give_technology = { tech = tech_gene_crops message = no }
+	give_technology = { tech = tech_society_2 message = no }
+	give_technology = { tech = tech_arcane_deciphering message = no }
+	if = {
+		limit = {
+			OR = {
+				is_machine_empire = no
+				has_civic = civic_machine_assimilator
+				has_civic = civic_machine_servitor
+			}
+		}
+		give_technology = { tech = tech_colonization_2 message = no }
+	}
+	if = {
+		limit = {
+			OR = {
+				is_machine_empire = no
+				has_civic = civic_machine_assimilator
+				has_civic = civic_machine_servitor
+			}
+		}
+		give_technology = { tech = tech_colonization_3 message = no }
+	}
+	if = {
+		limit = {
+			is_gestalt = no
+		}
+		give_technology = { tech = tech_frontier_hospital message = no }
+	}
+	give_technology = { tech = tech_mountain_range message = no }
+	give_technology = { tech = tech_volcano message = no }
+	give_technology = { tech = tech_dangerous_wildlife message = no }
+	give_technology = { tech = tech_terrestrial_sculpting message = no }
+	if = {
+		limit = {
+			OR = {
+				NOT = { has_authority = auth_machine_intelligence }
+				has_civic = civic_machine_assimilator
+			}
+		}
+		give_technology = { tech = tech_vitality_boosters message = no }
+	}
+	if = {
+		limit = {
+			NOT = {
+				has_valid_civic = civic_fanatic_purifiers
+				#has_valid_civic = civic_machine_terminator # covered by not being machine
+				#has_valid_civic = civic_hive_devouring_swarm # can uplift to make delicious
+			}
+			OR = {
+				is_machine_empire = no
+				is_wilderness_empire = no
+				has_civic = civic_machine_assimilator
+				has_civic = civic_machine_servitor
+			}
+		}
+		give_technology = { tech = tech_epigenetic_triggers message = no }
+	}
+	if = {
+		limit = {
+			OR = {
+				NOT = { has_authority = auth_machine_intelligence }
+				has_civic = civic_machine_assimilator
+			}
+		}
+		give_technology = { tech = tech_cloning message = no }
+	}
+	if = {
+		limit = {
+			OR = {
+				is_machine_empire = no
+				is_wilderness_empire = no
+				has_civic = civic_machine_assimilator
+			}
+		}
+		give_technology = { tech = tech_gene_banks message = no }
+	}
+	give_technology = { tech = tech_doctrine_fleet_size_1 message = no }
+	give_technology = { tech = tech_doctrine_fleet_size_2 message = no }
+	give_technology = { tech = tech_interstellar_fleet_traditions message = no }
+	give_technology = { tech = tech_doctrine_navy_size_1 message = no }
+	give_technology = { tech = tech_centralized_command message = no }
+	give_technology = { tech = tech_global_defense_grid message = no }
+	give_technology = { tech = tech_galactic_ambitions message = no }
+	give_technology = { tech = tech_interstellar_campaigns message = no }
+	give_technology = { tech = tech_colonial_centralization message = no }
+	give_technology = { tech = tech_planetary_infrastructure_1 message = no }
+	if = {
+		limit = {
+			NOT = { has_ethic = ethic_gestalt_consciousness	}
+		}
+		give_technology = { tech = tech_subdermal_stimulation message = no }
+	}
+	give_technology = { tech = tech_effective_bureaucracy message = no }
+	give_technology = { tech = tech_colonial_bureaucracy message = no }
+	if = {
+		limit = {
+			NOT = { has_ethic = ethic_gestalt_consciousness }
+		}
+		give_technology = { tech = tech_living_state message = no }
+	}
+	if = {
+		limit = {
+			has_ethic = ethic_gestalt_consciousness
+		}
+		give_technology = { tech = tech_autonomous_agents message = no }
+	}
+	if = {
+		limit = {
+			NOT = { has_ethic = ethic_gestalt_consciousness }
+		}
+		give_technology = { tech = tech_artificial_moral_codes message = no }
+	}
+	if = {
+		limit = {
+			is_gestalt = yes
+		}
+		give_technology = { tech = tech_unity_of_purpose message = no }
+	}
+	if = {
+		limit = {
+			has_ethic = ethic_gestalt_consciousness
+		}
+		give_technology = { tech = tech_holographic_rituals message = no }
+	}
+	if = {
+		limit = {
+			is_hive_empire = yes
+			is_wilderness_empire = no
+		}
+		give_technology = { tech = tech_hive_cluster message = no }
+	}
+	if = {
+		limit = {
+			is_wilderness_empire = yes
+		}
+		give_technology = { tech = tech_wilderness_cluster message = no }
+	}
+	if = {
+		limit = {
+			is_gestalt = no
+		}
+		give_technology = { tech = tech_slave_colonies message = no }
+	}
+	if = {
+		limit = {
+			is_regular_empire = yes
+		}
+		give_technology = { tech = tech_xeno_diplomacy message = no }
+	}
+	give_technology = { tech = tech_capital_productivity_1 message = no }
+}
+
+# 国家
+generate_time_mod_advanced_bonus = {
+	set_country_flag = gain_time_mod_advanced_bonus
+	
+	give_physics_tech_tier_1_effect_no_message = yes
+	give_physics_tech_tier_2_effect_no_message = yes
+	give_society_tech_tier_1_effect_no_message = yes
+	give_society_tech_tier_2_effect_no_message = yes
+	give_engineering_tech_tier_1_effect_no_message = yes
+	give_engineering_tech_tier_2_effect_no_message = yes
+	
+	while = {
+		count = $COUNT|1$
+		add_resource = {
+			energy = 10000
+			minerals = 10000
+			food = 10000
+			alloys = 5000
+			consumer_goods = 5000
+			volatile_motes = 500
+			rare_crystals = 500
+			exotic_gases = 500
+			unity = 25000
+			influence = 250
+		}
+		if = {
+			limit = {
+				is_ai = no
+			}
+			every_owned_leader = {
+				add_skill_without_trait_selection = 3
+			}
+			every_pool_leader = {
+				add_skill_without_trait_selection = 3
+			}
+		}
+		else = {
+			every_owned_leader = {
+				add_skill = 3
+			}
+			every_pool_leader = {
+				add_skill = 3
+			}
+		}
+	}
+	
+	add_modifier = {
+		modifier = new_country_others_modifier
+		days = 1800
+	}
+	
+	generate_time_mod_advanced_system_bonus = yes
+	
+	every_owned_colony = {
+		# 障碍
+		every_deposit = {
+			limit = {
+				is_blocker = yes
+				has_deposit_category = deposit_cat_blockers_natural
+				NOR = {
+					has_deposit_flag = keep_deposit_on_terraform
+					is_deposit_type = d_time_blocker_0
+					is_deposit_type = d_time_blocker_1
+					is_deposit_type = d_time_blocker_2
+					is_deposit_type = d_time_blocker_3
+				}
+			}
+			clear_blocker = yes
+		}
+		# 区划
+		if = {
+			limit = {
+				num_free_districts = {
+					type = district_city
+					value > 0
+				}
+			}
+			while = {
+				count = 3
+				add_district_and_planet_size_if_needed_effect = {
+					district = district_city
+				}
+			}
+		}
+		else_if = {
+			limit = {
+				num_free_districts = {
+					type = district_hive
+					value > 0
+				}
+			}
+			while = {
+				count = 3
+				add_district_and_planet_size_if_needed_effect = {
+					district = district_hive
+				}
+			}
+		}
+		else_if = {
+			limit = {
+				num_free_districts = {
+					type = district_nexus
+					value > 0
+				}
+			}
+			while = {
+				count = 3
+				add_district_and_planet_size_if_needed_effect = {
+					district = district_nexus
+				}
+			}
+		}
+		# 人口
+		while = {
+			count = 25
+			create_pop_group = {
+				species = owner.species
+			}
+		}
+	}
+}
+
+# 国家
+generate_time_mod_advanced_system_bonus = {
+	save_event_target_as = time_mod_advanced_bonus_country
+	capital_scope = {
+		solar_system = {
+			set_star_flag = has_time_mod_advanced_system_bonus
+			if = {
+				limit = {
+					NOT = { exists = starbase }
+				}
+				create_starbase = {
+					size = starbase_starport
+					module = shipyard
+					building = crew_quarters
+					owner = event_target:time_mod_advanced_bonus_country
+					effect = {
+						if = {
+							limit = {
+								event_target:time_mod_advanced_bonus_country = {
+									is_gestalt = no
+								}
+							}
+							set_starbase_module = {
+								slot = 2
+								module = trading_hub
+							}
+						}
+						else_if = {
+							limit = {
+								event_target:time_mod_advanced_bonus_country = {
+									has_civic = civic_machine_astromining_drones
+								}
+							}
+							set_starbase_module = {
+								slot = 2
+								module = astromining_bay
+							}
+						}
+						else = {
+							set_starbase_module = {
+								slot = 2
+								module = solar_panel_network
+							}
+						}
+					}
+				}
+			}
+			every_neighbor_system = {
+				limit = {
+					NOR = {
+						exists = owner
+						has_star_flag = guardian
+						has_star_flag = has_time_mod_advanced_system_bonus
+						any_fleet_in_system = {
+							owner = { is_hostile = event_target:time_mod_advanced_bonus_country }
+						}
+					}
+				}
+				set_star_flag = has_time_mod_advanced_system_bonus
+				set_surveyed = {
+					surveyed = yes
+					surveyor = event_target:time_mod_advanced_bonus_country
+				}
+				create_starbase = {
+					size = starbase_outpost
+					owner = event_target:time_mod_advanced_bonus_country
+				}
+				every_neighbor_system = {
+					limit = {
+						NOR = {
+							exists = owner
+							has_star_flag = guardian
+							has_star_flag = has_time_mod_advanced_system_bonus
+							any_fleet_in_system = {
+								owner = { is_hostile = event_target:time_mod_advanced_bonus_country }
+							}
+						}
+					}
+					set_star_flag = has_time_mod_advanced_system_bonus
+					set_surveyed = {
+						surveyed = yes
+						surveyor = event_target:time_mod_advanced_bonus_country
+					}
+					create_starbase = {
+						size = starbase_outpost
+						owner = event_target:time_mod_advanced_bonus_country
+					}
+				}
+			}
+		}
+	}
+}

@@ -1,0 +1,183 @@
+# 时空机器
+
+concept_time_machine_civics = {
+}
+
+concept_civic_time_machine = {
+	icon = "gfx/interface/icons/governments/civics/civic_time_machine.dds"
+	tooltip_override = "civic:civic_time_machine"
+}
+
+concept_civic_time_machine_corporate = {
+	icon = "gfx/interface/icons/governments/civics/civic_time_machine_corporate.dds"
+	tooltip_override = "civic:civic_time_machine_corporate"
+}
+
+concept_civic_time_machine_hive = {
+	icon = "gfx/interface/icons/governments/civics/civic_time_machine_hive.dds"
+	tooltip_override = "civic:civic_time_machine_hive"
+}
+
+concept_civic_time_machine_machine = {
+	icon = "gfx/interface/icons/governments/civics/civic_time_machine_machine.dds"
+	tooltip_override = "civic:civic_time_machine_machine"
+}
+
+concept_building_defective_time_machine = {
+	icon = "gfx/interface/icons/buildings/building_defective_time_machine.dds"
+	tooltip_override = building:building_defective_time_machine
+}
+
+concept_building_time_machine = {
+	icon = "gfx/interface/icons/buildings/building_time_machine.dds"
+	tooltip_override = building:building_time_machine
+}
+
+# 圆环枢纽
+
+concept_circle_nexus_civics = {
+}
+
+concept_civic_circle_nexus = {
+	icon = "gfx/interface/icons/governments/civics/civic_circle_nexus.dds"
+	tooltip_override = "civic:civic_circle_nexus"
+}
+
+concept_civic_circle_nexus_corporate = {
+	icon = "gfx/interface/icons/governments/civics/civic_circle_nexus_corporate.dds"
+	tooltip_override = "civic:civic_circle_nexus_corporate"
+}
+
+concept_civic_circle_nexus_hive = {
+	icon = "gfx/interface/icons/governments/civics/civic_circle_nexus_hive.dds"
+	tooltip_override = "civic:civic_circle_nexus_hive"
+}
+
+concept_civic_circle_nexus_machine = {
+	icon = "gfx/interface/icons/governments/civics/civic_circle_nexus_machine.dds"
+	tooltip_override = "civic:civic_circle_nexus_machine"
+}
+
+concept_building_defective_circle_nexus = {
+	icon = "gfx/interface/icons/buildings/building_defective_circle_nexus.dds"
+	tooltip_override = building:building_defective_circle_nexus
+}
+
+concept_building_circle_nexus = {
+	icon = "gfx/interface/icons/buildings/building_circle_nexus.dds"
+	tooltip_override = building:building_circle_nexus
+}
+
+# 位面引擎
+
+concept_dimension_engine_civics = {
+}
+
+concept_civic_dimension_engine = {
+	icon = "gfx/interface/icons/governments/civics/civic_dimension_engine.dds"
+	tooltip_override = "civic:civic_dimension_engine"
+}
+
+concept_civic_dimension_engine_corporate = {
+	icon = "gfx/interface/icons/governments/civics/civic_dimension_engine_corporate.dds"
+	tooltip_override = "civic:civic_dimension_engine_corporate"
+}
+
+concept_civic_dimension_engine_hive = {
+	icon = "gfx/interface/icons/governments/civics/civic_dimension_engine_hive.dds"
+	tooltip_override = "civic:civic_dimension_engine_hive"
+}
+
+concept_civic_dimension_engine_machine = {
+	icon = "gfx/interface/icons/governments/civics/civic_dimension_engine_machine.dds"
+	tooltip_override = "civic:civic_dimension_engine_machine"
+}
+
+concept_building_defective_dimension_engine = {
+	icon = "gfx/interface/icons/buildings/building_defective_dimension_engine.dds"
+	tooltip_override = building:building_defective_dimension_engine
+}
+
+concept_building_dimension_engine = {
+	icon = "gfx/interface/icons/buildings/building_dimension_engine.dds"
+	tooltip_override = building:building_dimension_engine
+}
+
+# 无限光谱
+
+concept_infinity_spectrum = {
+	icon = "gfx/interface/icons/modifiers/mod_planetary_ascension_effect_mult.dds"
+	alias = {
+		concept_infinity_spectrum_white
+	}
+}
+
+concept_tower_of_infinity = {
+	icon = "gfx/interface/icons/buildings/building_tower_of_infinity.dds"
+}
+
+concept_building_tower_of_infinity = {
+	icon = "gfx/interface/icons/buildings/building_tower_of_infinity.dds"
+	tooltip_override = building:building_tower_of_infinity
+}
+
+concept_building_tower_of_infinity_technician = {
+	icon = "gfx/interface/icons/buildings/building_tower_of_infinity_technician.dds"
+	tooltip_override = building:building_tower_of_infinity_technician
+}
+
+concept_building_tower_of_infinity_miner = {
+	icon = "gfx/interface/icons/buildings/building_tower_of_infinity_miner.dds"
+	tooltip_override = building:building_tower_of_infinity_miner
+}
+
+concept_building_tower_of_infinity_farmer = {
+	icon = "gfx/interface/icons/buildings/building_tower_of_infinity_farmer.dds"
+	tooltip_override = building:building_tower_of_infinity_farmer
+}
+
+concept_building_tower_of_infinity_foundry = {
+	icon = "gfx/interface/icons/buildings/building_tower_of_infinity_foundry.dds"
+	tooltip_override = building:building_tower_of_infinity_foundry
+}
+
+concept_building_tower_of_infinity_artisan = {
+	icon = "gfx/interface/icons/buildings/building_tower_of_infinity_artisan.dds"
+	tooltip_override = building:building_tower_of_infinity_artisan
+}
+
+concept_building_tower_of_infinity_chemist = {
+	icon = "gfx/interface/icons/buildings/building_tower_of_infinity_chemist.dds"
+	tooltip_override = building:building_tower_of_infinity_chemist
+}
+
+concept_building_tower_of_infinity_refiner = {
+	icon = "gfx/interface/icons/buildings/building_tower_of_infinity_refiner.dds"
+	tooltip_override = building:building_tower_of_infinity_refiner
+}
+
+concept_building_tower_of_infinity_translucer = {
+	icon = "gfx/interface/icons/buildings/building_tower_of_infinity_translucer.dds"
+	tooltip_override = building:building_tower_of_infinity_translucer
+}
+
+# 循环科技
+
+concept_tech_beyond_infinity_repeatable = {
+	icon = "gfx/interface/icons/technologies/tech_beyond_infinity_physics.dds"
+}
+
+concept_tech_beyond_infinity_physics = {
+	icon = "gfx/interface/icons/technologies/tech_beyond_infinity_physics.dds"
+	tooltip_override = technology:tech_beyond_infinity_physics
+}
+
+concept_tech_beyond_infinity_society = {
+	icon = "gfx/interface/icons/technologies/tech_beyond_infinity_physics.dds"
+	tooltip_override = technology:tech_beyond_infinity_society
+}
+
+concept_tech_beyond_infinity_engineering = {
+	icon = "gfx/interface/icons/technologies/tech_beyond_infinity_physics.dds"
+	tooltip_override = technology:tech_beyond_infinity_engineering
+}

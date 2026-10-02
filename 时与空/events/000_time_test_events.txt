@@ -1,0 +1,1793 @@
+namespace = time_test
+
+country_event = {
+	id = time_test.1
+	title = time_test.1.name
+	desc = time_test.1.desc
+	picture = GFX_evt_wormhole
+	
+	is_triggered_only = yes
+
+	trigger = {
+	}
+
+	immediate = {
+	}
+	
+	option = {
+		name = time_test.1.a
+		trigger = {
+			NOT = { has_global_flag = dimension_traveler_leave_forever }
+		}
+		hidden_effect = {
+			capital_star = {
+				save_global_event_target_as = dimension_traveler_planet
+			}
+			create_dimension_traveler_species = {
+				CLASS = DIMENSION_TRAVELER_SPECIAL
+				PORTRAIT = dimension_traveler_smile_portrait
+			}
+			create_country = {
+				name = "NAME_Dimension_Traveler"
+				type = dimension_traveler
+				species = event_target:dimension_traveler_species
+				flag = {
+					icon={
+						category="domination"
+						file="domination_13.dds"
+					}
+					background={
+						category="backgrounds"
+						file="triangle_split.dds"
+					}
+					colors={
+						"white"
+						"black"
+						"null"
+						"null"
+					}
+				}
+				effect = {
+					save_global_event_target_as = dimension_traveler_country
+				}
+			}
+			event_target:dimension_traveler_country = {
+				establish_communications_no_message = root
+			}
+			save_global_event_target_as = dimension_traveler_owner
+			while = {
+				count = 3
+				add_opinion_modifier = {
+					modifier = opinion_dimension_traveler
+					who = event_target:dimension_traveler_country
+				}
+			}
+			set_variable = {
+				which = dimension_traveler_level
+				value = 1
+			}
+			set_variable = {
+				which = dimension_traveler_experience
+				value = 0
+			}
+			set_country_flag = dimension_traveler_end
+			set_country_flag = dimension_traveler_trait_time_secret
+			set_country_flag = dimension_traveler_trait_circle_secret
+			set_country_flag = dimension_traveler_trait_dimension_secret
+			set_country_flag = dimension_traveler_trait_foredoomed_to_a_rendezvous_end
+			refresh_dimension_traveler_base_variable = yes
+			if = {
+				limit = {
+					is_gestalt = no
+				}
+				force_add_civic = civic_origin_white_hole
+			}
+			else = {
+				force_add_civic = civic_origin_white_hole_gestalt
+				every_owned_leader = {
+					limit = {
+						is_councilor = yes
+					}
+					add_trait = {
+						trait = leader_trait_dimension_traveler_horror_secret_true_gestalt
+					}
+				}
+			}
+		}
+	}
+	
+	option = {
+		name = time_test.1.b
+		trigger = {
+			NOT = { has_global_flag = dimension_traveler_leave_forever }
+		}
+		hidden_effect = {
+			capital_star = {
+				save_global_event_target_as = dimension_traveler_planet
+			}
+			create_dimension_traveler_species = {
+				CLASS = DIMENSION_TRAVELER_SPECIAL
+				PORTRAIT = dimension_traveler_normal_portrait
+			}
+			create_country = {
+				name = "NAME_Dimension_Traveler"
+				type = dimension_traveler
+				species = event_target:dimension_traveler_species
+				flag = {
+					icon={
+						category="domination"
+						file="domination_13.dds"
+					}
+					background={
+						category="backgrounds"
+						file="triangle_split.dds"
+					}
+					colors={
+						"white"
+						"black"
+						"null"
+						"null"
+					}
+				}
+				effect = {
+					save_global_event_target_as = dimension_traveler_country
+				}
+			}
+			event_target:dimension_traveler_country = {
+				establish_communications_no_message = root
+			}
+			save_global_event_target_as = dimension_traveler_owner
+			while = {
+				count = 3
+				add_opinion_modifier = {
+					modifier = opinion_dimension_traveler
+					who = event_target:dimension_traveler_country
+				}
+			}
+			set_variable = {
+				which = dimension_traveler_level
+				value = 1
+			}
+			set_variable = {
+				which = dimension_traveler_experience
+				value = 0
+			}
+			set_country_flag = dimension_traveler_trait_time_secret
+			set_country_flag = dimension_traveler_trait_circle_secret
+			set_country_flag = dimension_traveler_trait_dimension_secret
+			refresh_dimension_traveler_base_variable = yes
+			if = {
+				limit = {
+					is_gestalt = no
+				}
+				force_add_civic = civic_origin_white_hole
+			}
+			else = {
+				force_add_civic = civic_origin_white_hole_gestalt
+				every_owned_leader = {
+					limit = {
+						is_councilor = yes
+					}
+					add_trait = {
+						trait = leader_trait_dimension_traveler_horror_secret_gestalt
+					}
+				}
+			}
+		}
+	}
+	
+	option = {
+		name = time_test.1.c
+		trigger = {
+			NOT = { has_global_flag = dimension_traveler_leave_forever }
+		}
+		hidden_effect = {
+			capital_star = {
+				save_global_event_target_as = dimension_traveler_planet
+			}
+			create_dimension_traveler_species = {
+				CLASS = DIMENSION_TRAVELER_NORMAL
+				PORTRAIT = dimension_traveler_mam
+			}
+			create_country = {
+				name = "NAME_Dimension_Traveler"
+				type = dimension_traveler
+				species = event_target:dimension_traveler_species
+				flag = {
+					icon={
+						category="blocky"
+						file="flag_blocky_5.dds"
+					}
+					background={
+						category="backgrounds"
+						file="horizontal.dds"
+					}
+					colors={
+						"white"
+						"black"
+						"null"
+						"null"
+					}
+				}
+				effect = {
+					save_global_event_target_as = dimension_traveler_country
+				}
+			}
+			event_target:dimension_traveler_country = {
+				establish_communications_no_message = root
+			}
+			save_global_event_target_as = dimension_traveler_owner
+			while = {
+				count = 3
+				add_opinion_modifier = {
+					modifier = opinion_dimension_traveler
+					who = event_target:dimension_traveler_country
+				}
+			}
+			set_variable = {
+				which = dimension_traveler_level
+				value = 1
+			}
+			set_variable = {
+				which = dimension_traveler_experience
+				value = 0
+			}
+			refresh_dimension_traveler_base_variable = yes
+		}
+	}
+	
+	option = {
+		name = time_test.1.d
+		default_hide_option = yes
+	}
+}
+
+country_event = {
+	id = time_test.2
+	title = time_test.2.name
+	desc = time_test.2.desc
+	picture = GFX_evt_planet_beam
+	
+	is_triggered_only = yes
+	
+	trigger = {
+	}
+	
+	immediate = {
+		event_target:origin_colossus_country = {
+			set_faction_hostility = {
+				target = root
+				set_hostile = yes
+				set_neutral = no
+				set_friendly = no
+			}
+		}
+	}
+	
+	option = {
+		name = time_test.2.a
+		country_event = { id = origin_colossus.44 }
+	}
+	
+	option = {
+		name = time_test.2.b
+		country_event = { id = origin_colossus.44 days = 1 }
+	}
+	
+	option = {
+		name = time_test.2.c
+		country_event = { id = origin_colossus.44 days = 10 }
+	}
+	
+	option = {
+		name = time_test.2.d
+		country_event = { id = origin_colossus.44 days = 30 }
+	}
+	
+	option = {
+		name = time_test.2.e
+		country_event = { id = origin_colossus.44 days = 90 }
+	}
+	
+	option = {
+		name = time_test.2.f
+		default_hide_option = yes
+	}
+}
+
+country_event = {
+	id = time_test.3
+	title = time_test.3.name
+	desc = time_test.3.desc
+	picture = GFX_evt_small_space_battle
+	
+	is_triggered_only = yes
+	
+	trigger = {
+	}
+	
+	immediate = {
+	}
+	
+	option = {
+		name = time_test.3.a
+		trigger = {
+			NOT = { has_origin = origin_pirate_king }
+		}
+		hidden_effect = {
+			set_country_flag = worm_awaited
+			capital_scope.solar_system = {
+				closest_system = {
+					limit = {
+						NOR = {
+							has_star_flag = horizonsignal_system
+							has_star_flag = time_black_hole_system
+							has_star_flag = time_notofthisworld_system
+						}
+					}
+					set_star_class = sc_black_hole
+					set_star_flag = horizonsignal_spawn
+				}
+			}
+		}
+	}
+	
+	option = {
+		name = time_test.3.b
+		hidden_effect = {
+			set_origin = origin_pirate_king_end
+			set_country_flag = worm_awaited
+			set_country_flag = pirate_king_true
+			random_situation = {
+				limit = {
+					is_situation_type = situation_origin_pirate_king
+				}
+				destroy_situation = this
+			}
+			capital_scope.solar_system = {
+				closest_system = {
+					limit = {
+						NOR = {
+							has_star_flag = horizonsignal_system
+							has_star_flag = time_black_hole_system
+							has_star_flag = time_notofthisworld_system
+						}
+					}
+					set_star_class = sc_black_hole
+					set_star_flag = horizonsignal_spawn
+				}
+			}
+		}
+	}
+	
+	option = {
+		name = time_test.3.c
+		default_hide_option = yes
+	}
+}
+
+carrier_event = {
+	id = time_test.4
+	title = time_test.4.name
+	desc = time_test.4.desc
+	picture = GFX_evt_wormhole
+	
+	is_triggered_only = yes
+	
+	trigger = {
+	}
+	
+	immediate = {
+	}
+	
+	option = {
+		name = time_test.4.a
+		hidden_effect = {
+			every_owned_pop_group = {
+				make_akx_messenger = yes
+			}
+		}
+	}
+	
+	option = {
+		name = time_test.4.b
+		hidden_effect = {
+			every_owned_pop_group = {
+				make_akx_waiting_world = yes
+			}
+		}
+	}
+	
+	option = {
+		name = time_test.4.c
+		hidden_effect = {
+			every_owned_pop_group = {
+				make_notofthisworld = yes
+			}
+		}
+	}
+	
+	option = {
+		name = time_test.4.d
+		default_hide_option = yes
+	}
+}
+
+country_event = {
+	id = time_test.5
+	title = time_test.5.name
+	desc = time_test.5.desc
+	picture = GFX_evt_wormhole
+	
+	is_triggered_only = yes
+	
+	trigger = {
+	}
+	
+	immediate = {
+	}
+	
+	option = {
+		name = time_test.5.a
+		hidden_effect = {
+			global_choose_time_titan_rarity = yes
+			capital_scope = {
+				save_global_event_target_as = syzygy_admiral_planet
+			}
+			create_fleet = {
+				name = "NAME_Horror_Titan"
+				settings = {
+					can_upgrade = no
+					can_change_composition = no
+					uses_naval_capacity = no
+					can_disband = no
+					spawn_debris = no
+					is_ultra_boss = yes
+				}
+				effect = {
+					set_owner = root
+					create_ship = {
+						name = "NAME_Horror_Titan"
+						design = "NAME_Horror_Titan"
+						prefix = no
+						upgradable = no
+						effect = {
+							choose_time_titan_rarity = yes
+							set_ship_flag = immune_to_confuse
+							set_ship_flag = immune_to_terrify
+							set_ship_design = { design = NAME_Horror_Titan } # 确保空槽不被自动装配
+							set_time_titan_rarity_name = { TYPE = Horror_Titan }
+							save_global_event_target_as = time_titan_ship
+							colony = {
+								add_building = building_time_shelter_capital_1
+								while = {
+									count = 3
+									add_deposit = d_time_shelter_chaos
+								}
+							}
+						}
+					}
+					set_fleet_flag = immune_to_confuse
+					set_fleet_flag = immune_to_terrify
+					set_time_titan_upgrade_variable = { LEVEL = 0 }
+					set_location = event_target:syzygy_admiral_planet
+					save_global_event_target_as = time_titan_fleet
+					add_modifier = { modifier = time_titan_modifier }
+				}
+			}
+			global_clear_time_titan_rarity = yes
+			set_country_flag = gain_time_titan
+			set_country_flag = unlock_horror_titan_blueprint
+			give_technology = { tech = tech_horror_titan_blueprint message = no }
+		}
+	}
+	
+	option = {
+		name = time_test.5.b
+		hidden_effect = {
+			global_choose_time_titan_rarity = yes
+			capital_scope = {
+				save_global_event_target_as = syzygy_admiral_planet
+			}
+			create_fleet = {
+				name = "NAME_Time_Titan"
+				settings = {
+					can_upgrade = no
+					can_change_composition = no
+					uses_naval_capacity = no
+					can_disband = no
+					spawn_debris = no
+					is_ultra_boss = yes
+				}
+				effect = {
+					set_owner = root
+					create_ship = {
+						name = "NAME_Time_Titan"
+						design = "NAME_Time_Titan"
+						prefix = no
+						upgradable = no
+						effect = {
+							choose_time_titan_rarity = yes
+							set_ship_flag = immune_to_confuse
+							set_ship_flag = immune_to_terrify
+							set_ship_design = { design = NAME_Time_Titan } # 确保空槽不被自动装配
+							set_time_titan_rarity_name = { TYPE = Time_Titan }
+							save_global_event_target_as = time_titan_ship
+							colony = {
+								set_planet_size = 20
+								add_building = building_time_shelter_capital_2
+								while = {
+									count = 8
+									add_deposit = d_time_shelter_chaos
+								}
+							}
+						}
+					}
+					set_fleet_flag = immune_to_confuse
+					set_fleet_flag = immune_to_terrify
+					set_time_titan_upgrade_variable = { LEVEL = 5 }
+					set_location = event_target:syzygy_admiral_planet
+					save_global_event_target_as = time_titan_fleet
+					add_modifier = { modifier = time_titan_modifier }
+				}
+			}
+			global_clear_time_titan_rarity = yes
+			set_country_flag = gain_time_titan
+			set_country_flag = unlock_horror_titan_blueprint
+			set_country_flag = unlock_time_titan_blueprint
+			set_country_flag = upgrade_to_time_titan_finished
+			give_technology = { tech = tech_horror_titan_blueprint message = no }
+			give_technology = { tech = tech_time_titan_blueprint message = no }
+		}
+	}
+	
+	option = {
+		name = time_test.5.c
+		hidden_effect = {
+			global_choose_time_titan_rarity = yes
+			capital_scope = {
+				save_global_event_target_as = syzygy_admiral_planet
+			}
+			create_fleet = {
+				name = "NAME_End_Titan"
+				settings = {
+					can_upgrade = no
+					can_change_composition = no
+					uses_naval_capacity = no
+					can_disband = no
+					spawn_debris = no
+					is_ultra_boss = yes
+				}
+				effect = {
+					set_owner = root
+					create_ship = {
+						name = "NAME_End_Titan"
+						design = "NAME_End_Titan"
+						prefix = no
+						upgradable = no
+						effect = {
+							choose_time_titan_rarity = yes
+							set_ship_flag = immune_to_confuse
+							set_ship_flag = immune_to_terrify
+							set_ship_design = { design = NAME_End_Titan } # 确保空槽不被自动装配
+							set_time_titan_rarity_name = { TYPE = End_Titan }
+							save_global_event_target_as = time_titan_ship
+							colony = {
+								set_planet_size = 30
+								add_building = building_time_shelter_capital_3
+								while = {
+									count = 13
+									add_deposit = d_time_shelter_chaos
+								}
+							}
+						}
+					}
+					set_fleet_flag = immune_to_confuse
+					set_fleet_flag = immune_to_terrify
+					set_time_titan_upgrade_variable = { LEVEL = 10 }
+					set_location = event_target:syzygy_admiral_planet
+					save_global_event_target_as = time_titan_fleet
+					add_modifier = { modifier = time_titan_modifier }
+				}
+			}
+			global_clear_time_titan_rarity = yes
+			set_country_flag = gain_time_titan
+			set_country_flag = unlock_horror_titan_blueprint
+			set_country_flag = unlock_time_titan_blueprint
+			set_country_flag = unlock_end_titan_blueprint
+			set_country_flag = upgrade_to_time_titan_finished
+			set_country_flag = upgrade_to_end_titan_finished
+			give_technology = { tech = tech_horror_titan_blueprint message = no }
+			give_technology = { tech = tech_time_titan_blueprint message = no }
+			give_technology = { tech = tech_end_titan_blueprint message = no }
+		}
+	}
+	
+	option = {
+		name = time_test.5.d
+		default_hide_option = yes
+	}
+}
+
+carrier_event = {
+	id = time_test.6
+	title = time_test.6.name
+	desc = time_test.6.desc
+	picture = GFX_evt_supernova
+	
+	is_triggered_only = yes
+	
+	trigger = {
+	}
+	
+	immediate = {
+	}
+	
+	option = {
+		name = time_test.6.a
+		hidden_effect = {
+			set_carrier_flag = black_hole_horror
+			carrier_event = { id = situation.1095 }
+		}
+	}
+	
+	option = {
+		name = time_test.6.b
+		default_hide_option = yes
+	}
+}
+
+situation_event = {
+	id = time_test.7
+	title = time_test.7.name
+	desc = time_test.7.desc
+	picture = GFX_evt_clocks
+	situation = this
+	
+	is_triggered_only = yes
+	
+	trigger = {
+	}
+	
+	immediate = {
+	}
+	
+	option = {
+		name = time_test.7.a
+		add_situation_progress = -5
+	}
+	
+	option = {
+		name = time_test.7.a
+		add_situation_progress = -10
+	}
+	
+	option = {
+		name = time_test.7.a
+		add_situation_progress = -20
+	}
+	
+	option = {
+		name = time_test.7.a
+		add_situation_progress = -50
+	}
+	
+	option = {
+		name = time_test.7.a
+		add_situation_progress = -100
+	}
+	
+	option = {
+		name = time_test.7.b
+		add_situation_progress = 5
+	}
+	
+	option = {
+		name = time_test.7.b
+		add_situation_progress = 10
+	}
+	
+	option = {
+		name = time_test.7.b
+		add_situation_progress = 20
+	}
+	
+	option = {
+		name = time_test.7.b
+		add_situation_progress = 50
+	}
+	
+	option = {
+		name = time_test.7.b
+		add_situation_progress = 100
+	}
+	
+	option = {
+		name = time_test.7.c
+		default_hide_option = yes
+	}
+}
+
+carrier_event = {
+	id = time_test.8
+	title = time_test.8.name
+	desc = time_test.8.desc
+	picture = GFX_evt_surreal_visions
+	
+	is_triggered_only = yes
+	
+	trigger = {
+	}
+	
+	immediate = {
+	}
+	
+	option = {
+		name = time_test.8.a
+		hidden_effect = {
+			while = {
+				limit = {
+					num_districts = {
+						type = district_time
+						value > 1
+					}
+				}
+				remove_district = district_time
+			}
+			while = {
+				limit = {
+					num_districts = {
+						type = district_time_physics
+						value > 1
+					}
+				}
+				remove_district = district_time_physics
+			}
+			while = {
+				limit = {
+					num_districts = {
+						type = district_time_society
+						value > 1
+					}
+				}
+				remove_district = district_time_society
+			}
+			while = {
+				limit = {
+					num_districts = {
+						type = district_time_engineering
+						value > 1
+					}
+				}
+				remove_district = district_time_engineering
+			}
+			clear_deposits_and_orbital_station = yes
+			add_time_special_deposit_keep_on_terraform = { DEPOSIT = d_time_resources }
+			add_time_special_deposit_keep_on_terraform = { DEPOSIT = d_endless_time }
+			change_pc = pc_endless_time
+			remove_modifier = timesingularity
+			set_planet_size = 0
+			validate_planet_buildings_and_districts = yes
+			save_global_event_target_as = time_dimensional_horror_planet
+			owner = {
+				if = {
+					limit = {
+						is_normal_origin_time_authority = yes
+					}
+					set_country_flag = unlock_auth_endless_time
+					advanced_authority_refresh = yes
+				}
+			}
+		}
+	}
+	
+	option = {
+		name = time_test.8.b
+		hidden_effect = {
+			save_event_target_as = situation_origin_time_planet
+			owner = {
+				start_situation = {
+					type = situation_origin_time
+					target = event_target:situation_origin_time_planet
+					effect = {
+						set_situation_approach = approach_origin_time_discourage
+					}
+				}
+			}
+		}
+	}
+	
+	option = {
+		name = time_test.8.c
+		set_time_blocker_0_can_be_cleared = yes
+	}
+	
+	option = {
+		name = time_test.8.d
+		make_district_time_level_up = yes
+	}
+	
+	option = {
+		name = time_test.8.e
+		custom_tooltip = time_blocker_2_can_be_cleared
+		custom_tooltip = time_blocker_3_can_be_cleared
+		hidden_effect = {
+			set_carrier_flag = can_clear_d_time_blocker_2
+			set_carrier_flag = can_clear_d_time_blocker_3
+		}
+	}
+	
+	option = {
+		name = time_test.8.f
+		default_hide_option = yes
+	}
+}
+
+country_event = {
+	id = time_test.9
+	title = time_test.9.name
+	desc = time_test.9.desc
+	picture = GFX_evt_black_hole
+	
+	is_triggered_only = yes
+	
+	trigger = {
+	}
+	
+	immediate = {
+	}
+	
+	option = {
+		name = time_test.9.a
+		hidden_effect = {
+			set_country_flag = time_core_country
+			create_pass_black_hole = yes
+		}
+	}
+	
+	option = {
+		name = time_test.9.b
+		default_hide_option = yes
+	}
+}
+
+country_event = {
+	id = time_test.10
+	title = time_test.10.name
+	desc = time_test.10.desc
+	picture = GFX_evt_black_hole
+	
+	is_triggered_only = yes
+	
+	trigger = {
+	}
+	
+	immediate = {
+	}
+	
+	option = {
+		name = time_test.10.a
+		hidden_effect = {
+			set_spawn_system_batch = begin
+			no_scope = {
+				spawn_system = {
+					min_distance = 0
+					max_distance = 0
+					min_orientation_angle = 0
+					max_orientation_angle = 0
+					initializer = primitive_time_starting_init
+					hyperlane = no
+				}
+			}
+			set_spawn_system_batch = end
+		}
+	}
+	
+	option = {
+		name = time_test.10.b
+		default_hide_option = yes
+	}
+}
+
+country_event = {
+	id = time_test.11
+	title = time_test.11.name
+	desc = time_test.11.desc
+	picture = GFX_evt_wormhole
+	
+	is_triggered_only = yes
+
+	trigger = {
+	}
+
+	immediate = {
+	}
+	
+	option = {
+		name = time_test.11.a
+		hidden_effect = {
+			event_target:dimension_traveler_leader = {
+				change_variable = {
+					which = affection
+					value = 1
+				}
+				dimension_traveler_wg_check = yes
+			}
+		}
+	}
+	
+	option = {
+		name = time_test.11.b
+		hidden_effect = {
+			event_target:dimension_traveler_leader = {
+				change_variable = {
+					which = affection
+					value = 5
+				}
+				dimension_traveler_wg_check = yes
+			}
+		}
+	}
+	
+	option = {
+		name = time_test.11.c
+		hidden_effect = {
+			event_target:dimension_traveler_leader = {
+				change_variable = {
+					which = affection
+					value = 10
+				}
+				dimension_traveler_wg_check = yes
+			}
+		}
+	}
+	
+	option = {
+		name = time_test.11.d
+		hidden_effect = {
+			event_target:dimension_traveler_leader = {
+				change_variable = {
+					which = affection
+					value = 20
+				}
+				dimension_traveler_wg_check = yes
+			}
+		}
+	}
+	
+	option = {
+		name = time_test.11.e
+		hidden_effect = {
+			event_target:dimension_traveler_leader = {
+				change_variable = {
+					which = affection
+					value = 50
+				}
+				dimension_traveler_wg_check = yes
+			}
+		}
+	}
+	
+	option = {
+		name = time_test.11.f
+		hidden_effect = {
+			event_target:dimension_traveler_leader = {
+				change_variable = {
+					which = affection
+					value = 100
+				}
+				dimension_traveler_wg_check = yes
+			}
+		}
+	}
+	
+	option = {
+		name = time_test.11.g
+		hidden_effect = {
+			event_target:dimension_traveler_leader = {
+				set_variable = {
+					which = affection
+					value = 0
+				}
+				dimension_traveler_wg_check = yes
+			}
+		}
+	}
+	
+	option = {
+		name = time_test.11.h
+		default_hide_option = yes
+	}
+}
+
+carrier_event = {
+	id = time_test.12
+	title = time_test.12.name
+	desc = time_test.12.desc
+	picture = GFX_evt_zro_1
+	
+	is_triggered_only = yes
+	
+	trigger = {
+	}
+	
+	immediate = {
+	}
+	
+	option = {
+		name = time_test.12.a
+		hidden_effect = {
+			add_modifier = { modifier = ether_trophy }
+			add_modifier = { modifier = shard_trophy }
+			add_modifier = { modifier = dread_trophy }
+			add_modifier = { modifier = tiyanki_trophy }
+			add_modifier = { modifier = sky_dragon_trophy }
+			add_modifier = { modifier = scavenger_trophy }
+			add_modifier = { modifier = wraith_trophy }
+			add_modifier = { modifier = fortress_trophy }
+			add_modifier = { modifier = voidspawn_trophy }
+			add_modifier = { modifier = stellar_devourer_trophy }
+			add_modifier = { modifier = horror_stabilized }
+		}
+	}
+	
+	option = {
+		name = time_test.12.b
+		default_hide_option = yes
+	}
+}
+
+country_event = {
+	id = time_test.13
+	title = time_test.13.name
+	desc = time_test.13.desc
+	picture = GFX_evt_generator_powerup
+	
+	is_triggered_only = yes
+	
+	trigger = {
+	}
+	
+	immediate = {
+	}
+	
+	option = {
+		name = time_test.13.a
+		hidden_effect = {
+			capital_scope = {
+				star = { save_event_target_as = mechanocalibrator_planet }
+			}
+			IF = {
+				LIMIT = { host_has_dlc = "Ancient Relics Story Pack" }
+				create_species = {
+					name = "NAME_planetary_mechanocalibrator_species"
+					class = MACHINE
+					portrait = sd_pla_robot
+					namelist = "AI"
+					traits = {
+						trait = trait_mechanical
+						trait = trait_robot_mass_produced
+						trait = trait_robot_luxurious
+						trait = trait_robot_learning_algorithms
+						trait = trait_robot_high_maintenance
+						trait = trait_robot_logic_engines
+					}
+					effect = {
+						set_species_flag = mechanocalibrator_species_flag
+						save_global_event_target_as = mechanocalibrator_species
+					}
+				}
+			}
+			ELSE = {
+				create_species = {
+					name = "NAME_planetary_mechanocalibrator_species"
+					class = MACHINE
+					portrait = default_robot
+					namelist = "AI"
+					traits = {
+						trait = trait_mechanical
+						trait = trait_robot_mass_produced
+						trait = trait_robot_luxurious
+						trait = trait_robot_learning_algorithms
+						trait = trait_robot_high_maintenance
+						trait = trait_robot_logic_engines
+					}
+					effect = {
+						save_global_event_target_as = mechanocalibrator_species
+					}
+				}
+			}
+			create_country = {
+				name = "NAME_planetary_mechanocalibrator"
+				ethos = {
+					ethic = ethic_gestalt_consciousness
+				}
+				authority = auth_machine_intelligence
+				civics = {
+					civic = civic_machine_predictive_analysis
+					civic = civic_machine_introspective
+				}
+				species = event_target:mechanocalibrator_species
+				type = mechanocalibrator
+				auto_delete = no
+				flag = {
+					icon = {
+						category = "corporate"
+						file = "corporate_06.dds"
+					}
+					background = {
+						category = "backgrounds"
+						file = "00_solid.dds"
+					}
+					colors = {
+						"dark_grey"
+						"dark_grey"
+						"null"
+						"null"
+					}
+				}
+				ignore_initial_colony_error = yes
+				effect = {
+					save_event_target_as = mechanocalibrator_country
+				}
+			}
+			event_target:mechanocalibrator_country = {
+				set_faction_hostility = {
+					target = root
+					set_hostile = no
+					set_neutral = yes
+					set_friendly = no
+				}
+				create_leader = {
+					class = official
+					species = event_target:mechanocalibrator_species
+					name = "NAME_planetary_mechanocalibrator"
+					immortal = yes
+					skill = 1
+					event_leader = yes
+				}
+				last_created_leader = {
+					set_skill = 7
+					save_event_target_as = mechanocalibrator_ai
+				}
+			}
+			country_event = { id = time_care.2 }
+		}
+	}
+	
+	option = {
+		name = time_test.13.b
+		default_hide_option = yes
+	}
+}
+
+carrier_event = {
+	id = time_test.14
+	title = time_test.14.name
+	desc = time_test.14.desc
+	picture = GFX_evt_mysterious_signal
+	
+	is_triggered_only = yes
+	
+	trigger = {
+	}
+	
+	immediate = {
+	}
+	
+	option = {
+		name = time_test.14.a
+		hidden_effect = {
+			add_anomaly = {
+				category = time_lifeline_categories
+				target = root
+			}
+		}
+	}
+	
+	option = {
+		name = time_test.14.b
+		default_hide_option = yes
+	}
+}
+
+country_event = {
+	id = time_test.15
+	title = time_test.15.name
+	desc = time_test.15.desc
+	picture = GFX_evt_surreal_visions
+	
+	is_triggered_only = yes
+	
+	trigger = {
+	}
+	
+	immediate = {
+	}
+	
+	option = {
+		name = time_test.15.a
+		custom_tooltip = council_agenda_agenda_time_soul_effect_virtuality
+		hidden_effect = {
+			modify_species = {
+				remove_trait = trait_time
+				add_trait = trait_robot_digital_1
+				add_trait = trait_time_soul_virtuality
+				add_traits_at_start_of_list = yes
+				effect = {
+					root = {
+						change_dominant_species = {
+							species = prev
+						}
+					}
+				}
+			}
+			country_event = { id = time.26 }
+		}
+	}
+	
+	option = {
+		name = time_test.15.b
+		custom_tooltip = council_agenda_agenda_time_soul_effect_synthetic
+		hidden_effect = {
+			modify_species = {
+				remove_trait = trait_time
+				add_trait = trait_time_soul_synthetic
+				add_traits_at_start_of_list = yes
+				effect = {
+					root = {
+						change_dominant_species = {
+							species = prev
+						}
+					}
+				}
+			}
+			country_event = { id = time.26 }
+		}
+	}
+	
+	option = {
+		name = time_test.15.c
+		custom_tooltip = council_agenda_agenda_time_soul_effect_cybernetic
+		hidden_effect = {
+			modify_species = {
+				remove_trait = trait_time
+				add_trait = trait_time_soul_cybernetic
+				add_traits_at_start_of_list = yes
+				effect = {
+					root = {
+						change_dominant_species = {
+							species = prev
+						}
+					}
+				}
+			}
+			country_event = { id = time.26 }
+		}
+	}
+	
+	option = {
+		name = time_test.15.d
+		custom_tooltip = council_agenda_agenda_time_soul_effect_genetic
+		hidden_effect = {
+			modify_species = {
+				remove_trait = trait_time
+				add_trait = trait_time_soul_genetic
+				add_traits_at_start_of_list = yes
+				effect = {
+					root = {
+						change_dominant_species = {
+							species = prev
+						}
+					}
+				}
+			}
+			country_event = { id = time.26 }
+		}
+	}
+	
+	option = {
+		name = time_test.15.e
+		custom_tooltip = council_agenda_agenda_time_soul_effect_psionic
+		hidden_effect = {
+			modify_species = {
+				remove_trait = trait_time
+				add_trait = trait_time_soul_psionic
+				add_traits_at_start_of_list = yes
+				effect = {
+					root = {
+						change_dominant_species = {
+							species = prev
+						}
+					}
+				}
+			}
+			country_event = { id = time.26 }
+		}
+	}
+	
+	option = {
+		name = time_test.15.f
+		default_hide_option = yes
+	}
+}
+
+country_event = {
+	id = time_test.16
+	title = time_test.16.name
+	desc = time_test.16.desc
+	picture = GFX_evt_dimensional_horror
+	
+	is_triggered_only = yes
+	
+	trigger = {
+	}
+	
+	immediate = {
+	}
+	
+	option = {
+		name = time_test.16.a
+		hidden_effect = {
+			create_fleet = {
+				name = NAME_Dimensional_Horror_Crisis_Levo
+				settings = {
+					can_upgrade = no
+					can_change_composition = no
+					uses_naval_capacity = no
+					can_disband = no
+					spawn_debris = no
+					is_boss = yes
+				}
+				effect = {
+					set_owner = root
+					create_ship = {
+						name = NAME_Dimensional_Horror_Crisis_Levo
+						design = NAME_Dimensional_Horror_Crisis_Design_Levo
+						prefix = no
+						upgradable = no
+					}
+					set_location = {
+						target = root.capital_star
+						distance = 0
+						direction = in_system
+					}
+				}
+			}
+		}
+	}
+	
+	option = {
+		name = time_test.16.b
+		hidden_effect = {
+			create_fleet = {
+				name = NAME_Dimensional_Horror_Crisis_Dextro
+				settings = {
+					can_upgrade = no
+					can_change_composition = no
+					uses_naval_capacity = no
+					can_disband = no
+					spawn_debris = no
+					is_boss = yes
+				}
+				effect = {
+					set_owner = root
+					create_ship = {
+						name = NAME_Dimensional_Horror_Crisis_Dextro
+						design = NAME_Dimensional_Horror_Crisis_Design_Dextro
+						prefix = no
+						upgradable = no
+					}
+					set_location = {
+						target = root.capital_star
+						distance = 0
+						direction = in_system
+					}
+				}
+			}
+		}
+	}
+	
+	option = {
+		name = time_test.16.c
+		hidden_effect = {
+			create_fleet = {
+				name = NAME_Dimensional_Horror_Crisis_Destiny
+				settings = {
+					can_upgrade = no
+					can_change_composition = no
+					uses_naval_capacity = no
+					can_disband = no
+					spawn_debris = no
+					is_ultra_boss = yes
+				}
+				effect = {
+					set_owner = root
+					create_ship = {
+						name = NAME_Dimensional_Horror_Crisis_Destiny
+						design = NAME_Dimensional_Horror_Crisis_Design_Destiny
+						prefix = no
+						upgradable = no
+					}
+					set_location = {
+						target = root.capital_star
+						distance = 0
+						direction = in_system
+					}
+				}
+			}
+		}
+	}
+	
+	option = {
+		name = time_test.16.d
+		default_hide_option = yes
+	}
+}
+
+country_event = {
+	id = time_test.17
+	title = time_test.17.name
+	desc = time_test.17.desc
+	picture = GFX_dimensional_horror_crisis_storm
+	
+	is_triggered_only = yes
+	
+	trigger = {
+	}
+	
+	immediate = {
+	}
+	
+	option = {
+		name = time_test.17.a
+		hidden_effect = {
+			country_event = { id = time_dimensional_horror_crisis.1 }
+		}
+	}
+	
+	option = {
+		name = time_test.17.b
+		default_hide_option = yes
+	}
+}
+
+country_event = {
+	id = time_test.18
+	title = time_test.18.name
+	desc = time_test.18.desc
+	picture = GFX_evt_specimen_archive
+	
+	is_triggered_only = yes
+	
+	trigger = {
+	}
+	
+	immediate = {
+	}
+	
+	option = {
+		name = time_test.18.a
+		hidden_effect = {
+			give_specimen = { key = dimension_traveler_song_of_nature origin = NAME_white_hole_5 }
+			give_specimen = { key = dimension_traveler_photo_booth origin = dimension_traveler.16.name }
+			give_specimen = { key = dimension_traveler_compressed_candy origin = dimension_traveler.43.name }
+			give_specimen = { key = dimension_traveler_moisturizing_lipstick origin = dimension_traveler.51.name }
+		}
+	}
+	
+	option = {
+		name = time_test.18.b
+		hidden_effect = {
+			give_specimen = { key = akx_horizonsignal_love_poem origin = akx.9020.name }
+			give_specimen = { key = akx_time_and_stone origin = akx.9101.name }
+			give_specimen = { key = akx_pi_based_computer origin = time_akx.531.name }
+			give_specimen = { key = akx_pass_black_hole origin = time_akx.541.name }
+			give_specimen = { key = akx_ouroboros origin = time_akx.641.name }
+			give_specimen = { key = akx_klein_tower origin = time_akx.643.name }
+			give_specimen = { key = akx_out_of_0_and_1 origin = time_akx.681.name }
+			if = {
+				limit = {
+					akx_out_of_0_and_1_modifier_is_set = no
+				}
+				refresh_akx_out_of_0_and_1_modifier = yes
+			}
+		}
+	}
+	
+	option = {
+		name = time_test.18.c
+		hidden_effect = {
+			give_specimen = { key = akx_the_quality_of_light origin = akx.9535.name }
+			give_specimen = { key = akx_everyone_is origin = akx.9540.name }
+			give_specimen = { key = akx_the_limit_of_light origin = time_akx.12.name }
+			give_specimen = { key = akx_the_wrong_path_dead origin = time_akx.23.name }
+			give_specimen = { key = akx_transparent_world origin = time_akx.30.name }
+			give_specimen = { key = akx_utawarerumono origin = time_akx.43.name }
+		}
+	}
+	
+	option = {
+		name = time_test.18.d
+		hidden_effect = {
+			give_specimen = { key = akx_messenger origin = akx.9200.name }
+			give_specimen = { key = akx_elegy_of_disaster origin = time_akx.102.name }
+			give_specimen = { key = akx_paean_of_hope origin = time_akx.112.name }
+			give_specimen = { key = akx_answer_of_riddle origin = time_akx.133.name }
+		}
+	}
+	
+	option = {
+		name = time_test.18.e
+		hidden_effect = {
+			give_specimen = { key = akx_debris_of_syzygy origin = akx.9340.name }
+			give_specimen = { key = akx_darkness_over_depth origin = time_akx.203.name }
+		}
+	}
+	
+	option = {
+		name = time_test.18.f
+		hidden_effect = {
+			give_specimen = { key = akx_coils_rituals origin = akx.9400.name }
+			give_specimen = { key = akx_the_other_shore origin = time_akx.325.name }
+		}
+	}
+	
+	option = {
+		name = time_test.18.g
+		hidden_effect = {
+			give_specimen = { key = akx_brief origin = akx.9620.name }
+			give_specimen = { key = akx_black_hole_compression origin = time_akx.405.name }
+		}
+	}
+	
+	option = {
+		name = time_test.18.h
+		hidden_effect = {
+			give_specimen = { key = akx_wake_up origin = time_hotel.7.name }
+		}
+	}
+	
+	option = {
+		name = time_test.18.i
+		hidden_effect = {
+			give_specimen = { key = akx_rainbow_sea origin = origin_pirate_king.26.name }
+		}
+	}
+	
+	option = {
+		name = time_test.18.j
+		hidden_effect = {
+			give_specimen = { key = time_way_to_heaven origin = origin_noah_ark.24.name }
+			give_specimen = { key = time_hymn_of_heaven origin = origin_noah_ark.35.name }
+		}
+	}
+	
+	option = {
+		name = time_test.18.k
+		default_hide_option = yes
+	}
+}
+
+country_event = {
+	id = time_test.19
+	title = time_test.19.name
+	desc = time_test.19.desc
+	picture = GFX_evt_dimensional_horror
+	
+	is_triggered_only = yes
+	
+	trigger = {
+	}
+	
+	immediate = {
+	}
+	
+	option = {
+		name = time_test.19.a
+		hidden_effect = {
+			capital_scope = { save_event_target_as = dimensional_horror_voidworms_location }
+			create_dimensional_horror_voidworms = yes
+		}
+	}
+	
+	option = {
+		name = time_test.19.b
+		default_hide_option = yes
+	}
+}
+
+country_event = {
+	id = time_test.20
+	title = time_test.20.name
+	desc = time_test.20.desc
+	picture = GFX_evt_cosmogenesis_crisis
+	
+	is_triggered_only = yes
+	
+	trigger = {
+	}
+	
+	immediate = {
+	}
+	
+	option = {
+		name = time_test.20.a
+		hidden_effect = {
+			set_country_flag = horizonsignal_trigger
+			set_country_flag = unlock_building_time_machine
+			set_country_flag = unlock_beyond_infinity_end_building
+			capital_scope = {
+				add_building = building_ruin_time_machine
+				validate_and_repair_planet_buildings_and_districts = yes
+				set_variable = {
+					which = exists_building_time_machine
+					value = 1
+				}
+			}
+		}
+	}
+	
+	option = {
+		name = time_test.20.b
+		hidden_effect = {
+			set_country_flag = horizonsignal_trigger
+			set_country_flag = unlock_building_circle_nexus
+			set_country_flag = unlock_beyond_infinity_end_building
+			capital_scope = {
+				add_building = building_ruin_circle_nexus
+				validate_and_repair_planet_buildings_and_districts = yes
+				set_variable = {
+					which = exists_building_circle_nexus
+					value = 1
+				}
+			}
+		}
+	}
+	
+	option = {
+		name = time_test.20.c
+		hidden_effect = {
+			set_country_flag = horizonsignal_trigger
+			set_country_flag = unlock_building_dimension_engine
+			set_country_flag = unlock_beyond_infinity_end_building
+			capital_scope = {
+				add_building = building_ruin_dimension_engine
+				validate_and_repair_planet_buildings_and_districts = yes
+				set_variable = {
+					which = exists_building_dimension_engine
+					value = 1
+				}
+			}
+		}
+	}
+	
+	option = {
+		name = time_test.20.d
+		default_hide_option = yes
+	}
+}
+
+
+
+country_event = {
+	id = time_test.21
+	title = time_test.21.name
+	desc = time_test.21.desc
+	picture = GFX_evt_clocks
+	
+	is_triggered_only = yes
+	
+	trigger = {
+	}
+	
+	immediate = {
+	}
+	
+	option = {
+		name = time_test.21.a
+		hidden_effect = {
+			if = {
+				limit = {
+					NOT = { has_ascension_perk = ap_beyond_infinity }
+				}
+				add_ascension_perk = ap_beyond_infinity
+			}
+		}
+	}
+	
+	option = {
+		name = time_test.21.b
+		hidden_effect = {
+			if = {
+				limit = {
+					NOT = { has_ascension_perk = ap_beyond_infinity }
+				}
+				add_ascension_perk = ap_beyond_infinity
+			}
+			set_country_flag = unlock_crisis_beyond_infinity_level_1
+			add_resource = {
+				beyond_infinity_time = 24
+			}
+		}
+	}
+	
+	option = {
+		name = time_test.21.c
+		hidden_effect = {
+			if = {
+				limit = {
+					NOT = { has_ascension_perk = ap_beyond_infinity }
+				}
+				add_ascension_perk = ap_beyond_infinity
+			}
+			set_country_flag = unlock_crisis_beyond_infinity_level_1
+			set_country_flag = unlock_crisis_beyond_infinity_level_2
+			add_resource = {
+				beyond_infinity_time = 720
+			}
+		}
+	}
+	
+	option = {
+		name = time_test.21.d
+		hidden_effect = {
+			if = {
+				limit = {
+					NOT = { has_ascension_perk = ap_beyond_infinity }
+				}
+				add_ascension_perk = ap_beyond_infinity
+			}
+			set_country_flag = unlock_crisis_beyond_infinity_level_1
+			set_country_flag = unlock_crisis_beyond_infinity_level_2
+			set_country_flag = unlock_crisis_beyond_infinity_level_3
+			add_resource = {
+				beyond_infinity_time = 8640
+			}
+		}
+	}
+	
+	option = {
+		name = time_test.21.e
+		hidden_effect = {
+			if = {
+				limit = {
+					NOT = { has_ascension_perk = ap_beyond_infinity }
+				}
+				add_ascension_perk = ap_beyond_infinity
+			}
+			set_country_flag = unlock_crisis_beyond_infinity_level_1
+			set_country_flag = unlock_crisis_beyond_infinity_level_2
+			set_country_flag = unlock_crisis_beyond_infinity_level_3
+			set_country_flag = unlock_crisis_beyond_infinity_level_4
+			add_resource = {
+				beyond_infinity_time = 864000
+			}
+		}
+	}
+	
+	option = {
+		name = time_test.21.f
+		hidden_effect = {
+			if = {
+				limit = {
+					NOT = { has_ascension_perk = ap_beyond_infinity }
+				}
+				add_ascension_perk = ap_beyond_infinity
+			}
+			set_country_flag = unlock_crisis_beyond_infinity_level_1
+			set_country_flag = unlock_crisis_beyond_infinity_level_2
+			set_country_flag = unlock_crisis_beyond_infinity_level_3
+			set_country_flag = unlock_crisis_beyond_infinity_level_4
+			set_country_flag = unlock_crisis_beyond_infinity_level_5
+			add_resource = {
+				beyond_infinity_time = 283115520
+			}
+		}
+	}
+	
+	option = {
+		name = time_test.21.g
+		default_hide_option = yes
+	}
+}

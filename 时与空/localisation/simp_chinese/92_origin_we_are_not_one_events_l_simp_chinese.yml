@@ -1,0 +1,13 @@
+﻿l_simp_chinese:
+ origin_we_are_not_one.5.name:0 "规则介绍"
+ origin_we_are_not_one.5.desc:0 "每个玩家选择一名领袖§Y改名§!并进行§Y扮演§!，一切有关这名领袖的相关内容（包括事件）以§Y该玩家§!的意愿为§H最高优先级§!（只有§G£ruler 统治者§!给这名领袖安排内阁席位和工作时除外）。\n\n不同的职业、担任不同的内阁席位拥有不同的['concept_origin_we_are_not_one_job']，你可以在领袖的§Y专属特质§!中查看自己的['concept_origin_we_are_not_one_job']。你可以将你的领袖安排至任意§Y无领袖§!的星球/科研船/舰队/陆军上，但这也就意味着你失去对原先位置的掌控。作为普通领袖无法选择自己的内阁席位，因为这是属于['concept_origin_we_are_not_one_ruler']。\n\nMOD不是万能的，这个起源仅仅是提供了一个规则框架，玩家的具体操作是无法限制的，只能靠大家§Y自觉§!遵守约定。\n\n规则是死的，人是活的，在一些具体情况下的判断，大家可以§Y自行协商§!，不必拘泥于这个起源给出的规则参考。甚至可以完全忽略起源的规则，而是由§Y大家制定§!更好更完善的规则。\n\n在开始游戏前，请调整所有领袖的§Y寿命上限§!："
+ origin_we_are_not_one.5.subtract.5:0 "§R-50年§!"
+ origin_we_are_not_one.5.subtract.1:0 "§R-10年§!"
+ origin_we_are_not_one.5.add.1:0 "§G+10年§!"
+ origin_we_are_not_one.5.add.5:0 "§G+50年§!"
+ origin_we_are_not_one.5.immortal.yes:0 "§M不朽§!"
+ origin_we_are_not_one.5.immortal.no:0 "§R取消不朽§!"
+ origin_we_are_not_one.5.done:0 "§H完成§!"
+ 
+ WE_ARE_NOT_ONE_HABITAT_PLANET_NAME: "[solar_system.GetName]居住站复合体"
+ WE_ARE_NOT_ONE_TARGET_ORBITAL_NAME: "[target_planet.GetName]轨道站"

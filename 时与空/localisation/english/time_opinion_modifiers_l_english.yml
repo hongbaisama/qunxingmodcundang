@@ -1,0 +1,107 @@
+﻿l_english:
+ triggered_opinion_time_0_to_1:0 "Arrogance of the Exiled"
+ triggered_opinion_time_0_to_2:0 "Anger of Being Betrayed"
+ triggered_opinion_time_1_to_0:0 "Hatred of Being Exiled"
+ triggered_opinion_time_1_to_2:0 "Hatred of Being Exiled"
+ triggered_opinion_time_2_to_0:0 "Contempt of the Betrayer"
+ triggered_opinion_time_2_to_1:0 "Contempt of the Exiled"
+ 
+ triggered_opinion_wonder_country_1_good:0 "Time Toucher"
+ triggered_opinion_wonder_country_1_bad:0 "Time Paradoxer"
+ 
+ triggered_opinion_normal_cybrex:0 "Redemption"
+ triggered_opinion_crazy_cybrex:0 "Custody"
+ triggered_opinion_crisis_cybrex:0 "Unknown Error"
+ 
+ triggered_opinion_time_crisis_to_other:0 "Destruction"
+ triggered_opinion_time_other_to_crisis:0 "The Crisis"
+ 
+ triggered_opinion_of_origin_time_1:0 "Evil Black Hole Resident"
+ triggered_opinion_of_origin_time_2:0 "Filthy Black Hole Resident"
+ triggered_opinion_of_origin_time_3:0 "Terrible Black Hole Resident"
+ triggered_opinion_of_origin_time_4:0 "Interesting Black Hole Resident"
+ triggered_opinion_of_origin_time_5:0 "Mysterious Black Hole Resident"
+ 
+ triggered_opinion_of_origin_contract_1:0 "Holy Contract"
+ triggered_opinion_of_origin_contract_2:0 "Ancient Contract"
+ triggered_opinion_of_origin_contract_3:0 "Superstitious Contract"
+ triggered_opinion_of_origin_contract_4:0 "Foolish Contract"
+ 
+ triggered_opinion_of_origin_gas_colony_1:0 "Harmful Creature"
+ triggered_opinion_of_origin_gas_colony_2:0 "Interesting Creature"
+ triggered_opinion_of_origin_gas_colony_3:0 "Harmless Creature"
+ 
+ triggered_opinion_of_origin_psionic_1:0 "Shroud Visitor"
+ triggered_opinion_of_origin_psionic_2:0 "Shroud Invader"
+ 
+ triggered_opinion_of_origin_nanites_1:0 "Cutting-edge Nanite Machine"
+ triggered_opinion_of_origin_nanites_2:0 "Weird Nanite Machine"
+ triggered_opinion_of_nanites_attacker:0 "$nanites_attacker$"
+ triggered_opinion_of_nanites_protector:0 "$nanites_protector$"
+ 
+ triggered_opinion_of_origin_the_matrix:0 "Hacker Threat"
+ 
+ triggered_opinion_of_bright_pearl_system_1:0 "Coveting Resplendent Pearl"
+ triggered_opinion_of_bright_pearl_system_2:0 "Craving Resplendent Pearl"
+ triggered_opinion_of_bright_pearl_system_3:0 "Jealous of Resplendent Pearl"
+ triggered_opinion_of_bright_pearl_system_4:0 "Watching Resplendent Pearl"
+ 
+ triggered_opinion_of_pirate_king:0 "Infamy"
+ triggered_opinion_of_pirate_king_end:0 "Pirate King"
+ 
+ triggered_opinion_of_origin_hypocritical_face_0:0 "Kind Enterprise"
+ triggered_opinion_of_origin_hypocritical_face_1:0 "Kind Enterprise (Suspicious)"
+ triggered_opinion_of_origin_hypocritical_face_2:0 "Despicable Liar"
+ triggered_opinion_of_origin_hypocritical_face_3:0 "Guilty Liar"
+ triggered_opinion_of_lost_hypocritical_face_1:0 "Exposed Liar"
+ triggered_opinion_of_lost_hypocritical_face_2:0 "Unrepentant Liar"
+ 
+ triggered_opinion_of_abandoned_to_blessed:0 "Ignorant Favored"
+ triggered_opinion_of_blessed_to_abandoned:0 "Jealous Outcast"
+ 
+ triggered_opinion_of_origin_secondhand_country:0 "Shoddy Machine"
+ 
+ triggered_opinion_of_origin_swarm_crisis_1:0 "Prethoryn Scourge Warner"
+ triggered_opinion_of_origin_swarm_crisis_2:0 "Shadow of Hive Mind"
+ triggered_opinion_of_origin_swarm_crisis_3:0 "Prethoryn Scourge Lookalike"
+ 
+ triggered_opinion_of_origin_ai_crisis_1:0 "Sinful Intelligent Machine"
+ triggered_opinion_of_origin_ai_crisis_2:0 "Faulty Intelligent Machine"
+ triggered_opinion_of_origin_ai_crisis_3:0 "Untrustworthy Intelligent Machine"
+ triggered_opinion_of_origin_ai_crisis_4:0 "Repentant Intelligent Machine"
+ triggered_opinion_of_origin_ai_crisis_5:0 "Forgivable Intelligent Machine"
+ triggered_opinion_of_origin_ai_crisis_6:0 "Contingency Lookalike"
+ 
+ triggered_opinion_of_origin_exd_crisis_1:0 "Extradimensional Demon Pursuer"
+ triggered_opinion_of_origin_exd_crisis_2:0 "Extradimensional Being Attractor"
+ triggered_opinion_of_origin_exd_crisis_3:0 "Extradimensional Realm Contactor"
+ triggered_opinion_of_origin_exd_crisis_4:0 "Extradimensional Technology Knower"
+ 
+ triggered_opinion_of_origin_synth_queen_crisis:0 "Apostasy"
+ 
+ triggered_opinion_of_origin_fourth_crisis_1:0 "Threat of Fourth Crisis"
+ triggered_opinion_of_origin_fourth_crisis_2:0 "Contempt of Fourth Crisis"
+ triggered_opinion_of_origin_fourth_crisis_3:0 "Competition of Fourth Crisis"
+ triggered_opinion_of_origin_fourth_crisis_4:0 "Lackey of Fourth Crisis"
+ triggered_opinion_of_origin_fourth_crisis_5:0 "Umbrella of Fourth Crisis"
+ triggered_opinion_of_origin_fourth_crisis_6:0 "Accomplice of Fourth Crisis"
+ triggered_opinion_fight_against_fourth_crisis_together:0 "Fight Against Fourth Crisis Together"
+ 
+ triggered_opinion_of_origin_new_country_1:0 "Vitality of Emerging Empire"
+ triggered_opinion_of_origin_new_country_2:0 "Threat of Emerging Empire"
+ triggered_opinion_of_origin_new_country_3:0 "Prosperity of Emerging Empire"
+ triggered_opinion_of_origin_new_country_4:0 "Fragility of Emerging Empire"
+ triggered_opinion_of_origin_new_country_5:0 "Caution of Emerging Empire"
+ triggered_opinion_of_origin_new_country_6:0 "Sympathy of Emerging Empire"
+ 
+ triggered_opinion_of_dark_forest:0 "Dark Forest Law"
+ 
+ triggered_opinion_of_end_titan:0 "§MProclamation of the End§!"
+ 
+ triggered_opinion_of_resolution_beyond_infinity:0 "Time Resonance"
+ 
+ triggered_opinion_of_dimensional_horror_crisis_end:0 "Striding Across Fate"
+ 
+ opinion_dimension_traveler:0 "Connection of Time and Space"
+ 
+ opinion_help_manifold_country:0 "Ascension Support"

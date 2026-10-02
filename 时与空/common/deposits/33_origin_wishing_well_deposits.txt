@@ -1,0 +1,146 @@
+################################################################
+# 地块
+################################################################
+
+d_wishing_well = {
+	is_for_colonizable = yes
+	
+	category = deposit_cat_rare
+	
+	custom_tooltip = d_wishing_well_effect
+	
+	resources = {
+		category = planet_deposits
+		produces = {
+			trigger = {
+				exists = owner
+			}
+			energy = @d_wishing_well_basic_resource_produce
+			minerals = @d_wishing_well_basic_resource_produce
+			food = @d_wishing_well_basic_resource_produce
+			alloys = @d_wishing_well_advanced_resource_produce
+			consumer_goods = @d_wishing_well_advanced_resource_produce
+			unity = @d_wishing_well_advanced_resource_produce
+			physics_research = @d_wishing_well_research_resource_produce
+			society_research = @d_wishing_well_research_resource_produce
+			engineering_research = @d_wishing_well_research_resource_produce
+			mult = value:d_wishing_well_produce_value
+		}
+		produces = {
+			trigger = {
+				exists = owner
+				owner = {
+					has_technology = tech_mine_volatile_motes
+				}
+			}
+			volatile_motes = @d_wishing_well_strategic_resource_produce
+			mult = value:d_wishing_well_produce_value
+		}
+		produces = {
+			trigger = {
+				exists = owner
+				owner = {
+					has_technology = tech_mine_exotic_gases
+				}
+			}
+			exotic_gases = @d_wishing_well_strategic_resource_produce
+			mult = value:d_wishing_well_produce_value
+		}
+		produces = {
+			trigger = {
+				exists = owner
+				owner = {
+					has_technology = tech_mine_rare_crystals
+				}
+			}
+			rare_crystals = @d_wishing_well_strategic_resource_produce
+			mult = value:d_wishing_well_produce_value
+		}
+		produces = {
+			trigger = {
+				exists = owner
+				owner = {
+					has_technology = tech_mine_living_metal
+				}
+			}
+			sr_living_metal = @d_wishing_well_rare_resource_produce
+			mult = value:d_wishing_well_produce_value
+		}
+		produces = {
+			trigger = {
+				exists = owner
+				owner = {
+					has_technology = tech_mine_zro
+				}
+			}
+			sr_zro = @d_wishing_well_rare_resource_produce
+			mult = value:d_wishing_well_produce_value
+		}
+		produces = {
+			trigger = {
+				exists = owner
+				owner = {
+					has_technology = tech_mine_dark_matter
+				}
+			}
+			sr_dark_matter = @d_wishing_well_rare_resource_produce
+			mult = value:d_wishing_well_produce_value
+		}
+		produces = {
+			trigger = {
+				exists = owner
+				owner = {
+					has_technology = tech_astral_harvesting
+				}
+			}
+			astral_threads = @d_wishing_well_exceptional_resource_produce
+			mult = value:d_wishing_well_produce_value
+		}
+		upkeep = {
+			trigger = {
+				exists = owner
+			}
+			trade = @d_wishing_well_trade_upkeep
+			mult = value:d_wishing_well_upkeep_value
+		}
+	}
+	
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { is_gestalt = no }
+		}
+		pop_happiness = 0.01
+		mult = value:d_wishing_well_modifier_value
+	}
+	
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { is_gestalt = yes }
+		}
+		planet_amenities_mult = 0.01
+		mult = value:d_wishing_well_modifier_value
+	}
+	
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			OR = {
+				years_passed > 50
+				owner = { can_afford_d_wishing_well_upkeep = no }
+			}
+		}
+		planet_jobs_produces_mult = 0.02
+		planet_pops_produces_mult = 0.02
+		mult = value:d_wishing_well_modifier_special_value
+	}
+	
+	potential = {
+		always = no
+	}
+	
+	drop_weight = {
+		weight = 0
+	}
+}

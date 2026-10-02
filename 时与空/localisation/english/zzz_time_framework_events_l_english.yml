@@ -1,0 +1,5 @@
+﻿l_english:
+ time_framework.101.name:0 "§RPre-requisite Mod Missing§!"
+ time_framework.101.desc:0 "You are missing the §HLittle Fox's Core Framework§! mod as a pre-requisite. The following mods will have errors in many places when running!\n§YTime and Space§!\n§YBetter Ascension Traits§!"
+ time_framework.101.a:0 "Subscribe right away."
+ time_framework.101.b:0 "No rush, play with bugs."

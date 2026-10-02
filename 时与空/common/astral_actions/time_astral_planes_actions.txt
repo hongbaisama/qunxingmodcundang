@@ -1,0 +1,49 @@
+action_akx_time_erasure = {
+	sound = relic_activation_scales_of_the_worm
+	unlock_threshold = 6
+	
+	activation_cost = {
+		cost = {
+			astral_threads = 2500
+			sr_dark_matter = 5000
+		}
+	}
+	
+	picture = GFX_astral_action_akx_time_erasure
+	
+	potential = {
+		has_tradition = tr_end_finish
+	}
+	
+	allow = {
+		custom_tooltip = {
+			fail_text = "action_akx_time_erasure_is_active"
+			NOT = {
+				has_active_event = {
+					time_akx.10000
+				}
+			}
+		}
+		custom_tooltip = {
+			fail_text = "forbid_action_akx_time_erasure"
+			NOT = { has_global_flag = dimensional_horror_crisis_storm_has_occurred }
+		}
+		if = {
+			limit = {
+				NOT = { has_ascension_perk = ap_beyond_infinity }
+			}
+			is_defender_of_the_galaxy_country = no
+		}
+	}
+	
+	effect = {
+		custom_tooltip = action_akx_time_erasure_tooltip
+		hidden_effect = {
+			country_event = { id = time_akx.10000 }
+		}
+	}
+	
+	ai_weight = {
+		weight = 0
+	}
+}

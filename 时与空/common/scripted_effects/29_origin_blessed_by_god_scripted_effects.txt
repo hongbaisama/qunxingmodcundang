@@ -1,0 +1,462 @@
+# 国家
+blessed_by_god_complete_all_special_project = {
+	blessed_by_god_complete_special_project = { PROJECT = BREACHING_SHROUD_PROJECT }
+	blessed_by_god_complete_special_project = { PROJECT = THE_EATER_OF_WORLD_FC_PROJECT }
+	blessed_by_god_complete_special_project = { PROJECT = THE_CRADLE_OF_SOULS_FC_PROJECT }
+	blessed_by_god_complete_special_project = { PROJECT = THE_COMPOSER_OF_STRANDS_FC_PROJECT }
+	blessed_by_god_complete_special_project = { PROJECT = THE_INSTRUMENT_OF_DESIRE_FC_PROJECT }
+	blessed_by_god_complete_special_project = { PROJECT = WHISPERERS_IN_THE_VOID_FC_PROJECT }
+	blessed_by_god_complete_special_project = { PROJECT = THE_ANIMATOR_OF_CLAY_FC_PROJECT }
+	blessed_by_god_complete_special_project = { PROJECT = THE_OUTSIDER_FC_PROJECT }
+	blessed_by_god_complete_special_project = { PROJECT = THE_ENDLESS_SANDS_FC_PROJECT }
+	blessed_by_god_complete_special_project = { PROJECT = THE_MOUNTAIN_OF_BONES_FC_PROJECT }
+	blessed_by_god_complete_special_project = { PROJECT = THE_GOLDEN_DREAM_FC_PROJECT }
+	blessed_by_god_complete_special_project = { PROJECT = THE_BLADELESS_SWORD_FC_PROJECT }
+	blessed_by_god_complete_special_project = { PROJECT = THE_THRONE_SHADOW_FC_PROJECT }
+	blessed_by_god_complete_special_project = { PROJECT = THE_BLACK_RIVER_FC_PROJECT }
+	blessed_by_god_complete_special_project = { PROJECT = physics_technology_CALLING_PROJECT }
+	blessed_by_god_complete_special_project = { PROJECT = society_technology_CALLING_PROJECT }
+	blessed_by_god_complete_special_project = { PROJECT = engineering_technology_CALLING_PROJECT }
+	blessed_by_god_complete_special_project = { PROJECT = the_eater_of_worlds_REVENGE_PROJECT }
+	blessed_by_god_complete_special_project = { PROJECT = the_cradle_of_souls_REVENGE_PROJECT }
+	blessed_by_god_complete_special_project = { PROJECT = the_instrument_of_desire_REVENGE_PROJECT }
+	blessed_by_god_complete_special_project = { PROJECT = the_composer_of_strands_REVENGE_PROJECT }
+	blessed_by_god_complete_special_project = { PROJECT = RECKONING_ARRIVAL_PROJECT }
+	blessed_by_god_complete_special_project = { PROJECT = RECKONING_VULNERABILITY_PROJECT }
+	blessed_by_god_complete_special_project = { PROJECT = DELVING_RITUAL }
+}
+
+# 国家
+blessed_by_god_complete_special_project = {
+	if = {
+		limit = {
+			is_researching_special_project = $PROJECT$
+		}
+		complete_special_project = {
+			type = $PROJECT$
+		}
+	}
+}
+
+# 国家
+gain_blessed_by_god = {
+	reroll_random = yes
+	random_list = {
+		10 = {
+			modifier = {
+				factor = 0
+				check_variable_arithmetic = {
+					which = value:blessed_by_god_decision_value
+					value < 60
+				}
+			}
+			# T5:800~1200
+			add_random_research_option = {
+				tier = 5
+				add_progress = 0.025
+				ignore_prereqs = no
+				ignore_rare = no
+				ignore_insight = no
+				fail_effects = {
+					add_resource = {
+						physics_research = 1.25
+						society_research = 1.25
+						engineering_research = 1.25
+						mult = value:num_parallel_sky_value_1
+					}
+				}
+			}
+		}
+		20 = {
+			modifier = {
+				factor = 0
+				check_variable_arithmetic = {
+					which = value:blessed_by_god_decision_value
+					value < 40
+				}
+			}
+			modifier = {
+				factor = 0.5
+				check_variable_arithmetic = {
+					which = value:blessed_by_god_decision_value
+					value >= 80
+				}
+			}
+			modifier = {
+				factor = 0.5
+				check_variable_arithmetic = {
+					which = value:blessed_by_god_decision_value
+					value >= 100
+				}
+			}
+			# T4:800~1200
+			add_random_research_option = {
+				tier = 4
+				add_progress = 0.05
+				ignore_prereqs = no
+				ignore_rare = no
+				ignore_insight = no
+				fail_effects = {
+					add_resource = {
+						physics_research = 1
+						society_research = 1
+						engineering_research = 1
+						mult = value:num_parallel_sky_value_1
+					}
+				}
+			}
+		}
+		30 = {
+			modifier = {
+				factor = 0
+				check_variable_arithmetic = {
+					which = value:blessed_by_god_decision_value
+					value < 20
+				}
+			}
+			modifier = {
+				factor = 0.5
+				check_variable_arithmetic = {
+					which = value:blessed_by_god_decision_value
+					value >= 40
+				}
+			}
+			modifier = {
+				factor = 0.5
+				check_variable_arithmetic = {
+					which = value:blessed_by_god_decision_value
+					value >= 60
+				}
+			}
+			modifier = {
+				factor = 0
+				check_variable_arithmetic = {
+					which = value:blessed_by_god_decision_value
+					value >= 80
+				}
+			}
+			# T3:600~900
+			add_random_research_option = {
+				tier = 3
+				add_progress = 0.075
+				ignore_prereqs = no
+				ignore_rare = no
+				ignore_insight = no
+				fail_effects = {
+					add_resource = {
+						physics_research = 0.75
+						society_research = 0.75
+						engineering_research = 0.75
+						mult = value:num_parallel_sky_value_1
+					}
+				}
+			}
+		}
+		40 = {
+			modifier = {
+				factor = 0
+				check_variable_arithmetic = {
+					which = value:blessed_by_god_decision_value
+					value < 10
+				}
+			}
+			modifier = {
+				factor = 0.5
+				check_variable_arithmetic = {
+					which = value:blessed_by_god_decision_value
+					value >= 30
+				}
+			}
+			modifier = {
+				factor = 0.5
+				check_variable_arithmetic = {
+					which = value:blessed_by_god_decision_value
+					value >= 45
+				}
+			}
+			modifier = {
+				factor = 0
+				check_variable_arithmetic = {
+					which = value:blessed_by_god_decision_value
+					value >= 60
+				}
+			}
+			# T2:400~600
+			add_random_research_option = {
+				tier = 2
+				add_progress = 0.1
+				ignore_prereqs = no
+				ignore_rare = no
+				ignore_insight = no
+				fail_effects = {
+					add_resource = {
+						physics_research = 0.5
+						society_research = 0.5
+						engineering_research = 0.5
+						mult = value:num_parallel_sky_value_1
+					}
+				}
+			}
+		}
+		50 = {
+			modifier = {
+				factor = 0.5
+				check_variable_arithmetic = {
+					which = value:blessed_by_god_decision_value
+					value >= 10
+				}
+			}
+			modifier = {
+				factor = 0.5
+				check_variable_arithmetic = {
+					which = value:blessed_by_god_decision_value
+					value >= 25
+				}
+			}
+			modifier = {
+				factor = 0
+				check_variable_arithmetic = {
+					which = value:blessed_by_god_decision_value
+					value >= 40
+				}
+			}
+			# T1:300~450
+			add_random_research_option = {
+				tier = 1
+				add_progress = 0.15
+				ignore_prereqs = no
+				ignore_rare = no
+				ignore_insight = no
+				fail_effects = {
+					add_resource = {
+						physics_research = 0.25
+						society_research = 0.25
+						engineering_research = 0.25
+						mult = value:num_parallel_sky_value_1
+					}
+				}
+			}
+		}
+	}
+}
+
+# 国家
+randomly_gain_origin_blessed_by_god_modifier = {
+	locked_random_list = {
+		10 = {
+			modifier = {
+				factor = 0
+				has_modifier = origin_blessed_by_god_modifier_1
+			}
+			modifier = {
+				factor = 2
+				is_pacifist = yes
+			}
+			modifier = {
+				factor = 2
+				years_of_peace = {
+					value > 9
+				}
+			}
+			modifier = {
+				factor = 0.5
+				OR = {
+					is_at_war = yes
+					any_country = {
+						NOT = { is_same_value = prev }
+						OR = {
+							has_crisis_level = crisis_level_5
+							is_crisis_faction = yes
+						}
+					}
+				}
+			}
+			add_origin_blessed_by_god_modifier = { ID = 1 }
+		}
+		10 = {
+			modifier = {
+				factor = 0
+				has_modifier = origin_blessed_by_god_modifier_2
+			}
+			modifier = {
+				factor = 2
+				is_egalitarian = yes
+			}
+			modifier = {
+				factor = 2
+				years_of_peace = {
+					value > 9
+				}
+			}
+			modifier = {
+				factor = 0.5
+				OR = {
+					is_at_war = yes
+					any_country = {
+						NOT = { is_same_value = prev }
+						OR = {
+							has_crisis_level = crisis_level_5
+							is_crisis_faction = yes
+						}
+					}
+				}
+			}
+			add_origin_blessed_by_god_modifier = { ID = 2 }
+		}
+		10 = {
+			modifier = {
+				factor = 0
+				has_modifier = origin_blessed_by_god_modifier_3
+			}
+			modifier = {
+				factor = 2
+				is_authoritarian = yes
+			}
+			add_origin_blessed_by_god_modifier = { ID = 3 }
+		}
+		10 = {
+			modifier = {
+				factor = 0
+				has_modifier = origin_blessed_by_god_modifier_4
+			}
+			modifier = {
+				factor = 2
+				has_ethic = ethic_fanatic_spiritualist
+			}
+			add_origin_blessed_by_god_modifier = { ID = 4 }
+		}
+		10 = {
+			modifier = {
+				factor = 0
+				has_modifier = origin_blessed_by_god_modifier_5
+			}
+			modifier = {
+				factor = 2
+				is_xenophile = yes
+			}
+			modifier = {
+				factor = 2
+				OR = {
+					is_part_of_galactic_council = yes
+					is_galactic_custodian = yes
+					is_galactic_emperor = yes
+				}
+			}
+			modifier = {
+				factor = 0.5
+				is_at_war = yes
+			}
+			add_origin_blessed_by_god_modifier = { ID = 5 }
+		}
+		10 = {
+			modifier = {
+				factor = 0
+				has_modifier = origin_blessed_by_god_modifier_6
+			}
+			modifier = {
+				factor = 2
+				is_xenophobe = yes
+			}
+			add_origin_blessed_by_god_modifier = { ID = 6 }
+		}
+		10 = {
+			modifier = {
+				factor = 0
+				has_modifier = origin_blessed_by_god_modifier_7
+			}
+			modifier = {
+				factor = 2
+				is_militarist = yes
+			}
+			modifier = {
+				factor = 2
+				OR = {
+					is_at_war = yes
+					any_country = {
+						NOT = { is_same_value = prev }
+						OR = {
+							has_crisis_level = crisis_level_5
+							is_crisis_faction = yes
+						}
+					}
+				}
+			}
+			add_origin_blessed_by_god_modifier = { ID = 7 }
+		}
+		10 = {
+			modifier = {
+				factor = 0
+				has_modifier = origin_blessed_by_god_modifier_8
+			}
+			modifier = {
+				factor = 2
+				is_pacifist = yes
+			}
+			modifier = {
+				factor = 2
+				OR = {
+					is_at_war = yes
+					any_country = {
+						NOT = { is_same_value = prev }
+						OR = {
+							has_crisis_level = crisis_level_5
+							is_crisis_faction = yes
+						}
+					}
+				}
+			}
+			add_origin_blessed_by_god_modifier = { ID = 8 }
+		}
+		10 = {
+			modifier = {
+				factor = 0
+				has_modifier = origin_blessed_by_god_modifier_9
+			}
+			modifier = {
+				factor = 2
+				is_militarist = yes
+			}
+			add_origin_blessed_by_god_modifier = { ID = 9 }
+		}
+		10 = {
+			modifier = {
+				factor = 0
+				has_modifier = origin_blessed_by_god_modifier_10
+			}
+			modifier = {
+				factor = 2
+				is_xenophobe = yes
+			}
+			modifier = {
+				factor = 2
+				years_of_peace = {
+					value > 9
+				}
+			}
+			add_origin_blessed_by_god_modifier = { ID = 10 }
+		}
+	}
+}
+
+# 国家
+add_origin_blessed_by_god_modifier = {
+	add_modifier = {
+		modifier = origin_blessed_by_god_modifier_$ID$
+		days = 1800
+		multiplier = value:blessed_by_god_value
+	}
+}
+
+# 国家
+clear_origin_blessed_by_god_modifier = {
+	remove_modifier = origin_blessed_by_god_modifier_1
+	remove_modifier = origin_blessed_by_god_modifier_2
+	remove_modifier = origin_blessed_by_god_modifier_3
+	remove_modifier = origin_blessed_by_god_modifier_4
+	remove_modifier = origin_blessed_by_god_modifier_5
+	remove_modifier = origin_blessed_by_god_modifier_6
+	remove_modifier = origin_blessed_by_god_modifier_7
+	remove_modifier = origin_blessed_by_god_modifier_8
+	remove_modifier = origin_blessed_by_god_modifier_9
+	remove_modifier = origin_blessed_by_god_modifier_10
+}

@@ -1,0 +1,384 @@
+
+namespace = origin_reckoning_arrived
+
+country_event = {
+	id = origin_reckoning_arrived.0
+	title = origin_reckoning_arrived.0.name
+	desc = origin_reckoning_arrived.0.desc
+	picture = GFX_evt_shroud_end_of_the_cycle
+	show_sound = event_end_of_the_cycle
+
+	is_triggered_only = yes
+
+	trigger = {
+	}
+	
+	option = {
+		name = origin_reckoning_arrived.0.a
+		hidden_effect = {
+			random_playable_country = {
+				limit = {
+					has_origin = origin_reckoning_arrived
+					is_ai = yes
+				}
+				set_country_flag = allow_origin_reckoning_arrived
+				country_event = { id = origin_reckoning_arrived.1 }
+				create_timeline_origin_reckoning_arrived = yes
+			}
+			every_playable_country = {
+				limit = {
+					has_origin = origin_reckoning_arrived
+					is_ai = yes
+					NOT = { has_country_flag = allow_origin_reckoning_arrived }
+				}
+				set_origin_default_effect = yes
+				origin_reckoning_arrived_wonder_country_changed_effect = yes
+				create_timeline_time_origin = { ORIGIN = origin_default }
+			}
+		}
+	}
+	
+	option = {
+		name = origin_reckoning_arrived.0.b
+		hidden_effect = {
+			every_playable_country = {
+				limit = {
+					has_origin = origin_reckoning_arrived
+					is_ai = yes
+				}
+				set_origin_default_effect = yes
+				origin_reckoning_arrived_wonder_country_changed_effect = yes
+				create_timeline_time_origin = { ORIGIN = origin_default }
+			}
+		}
+	}
+}
+
+country_event = {
+	id = origin_reckoning_arrived.1
+	title = utopia.3320.name
+	desc = origin_reckoning_arrived.1.desc
+	picture = GFX_evt_shroud_end_of_the_cycle
+	show_sound = event_end_of_the_cycle
+	location = event_target:reckoning_arrived_creatures
+
+	is_triggered_only = yes
+
+	trigger = {
+		has_origin = origin_reckoning_arrived
+		OR = {
+			is_ai = no
+			has_country_flag = allow_origin_reckoning_arrived
+		}
+	}
+	
+	immediate = {
+		origin_reckoning_arrived_basic_starting_effect = yes
+		origin_reckoning_arrived_psionic_starting_effect = yes
+		origin_reckoning_arrived_reckoning_starting_effect = yes
+		origin_reckoning_arrived_wonder_country_effect = yes
+	}
+	
+	option = {
+		name = "utopia.3320.opt.a"
+		custom_tooltip = origin_reckoning_arrived.1.tooltip
+		custom_tooltip = utopia.3320.opt.a.shroud.tt
+		enable_special_project = {
+			name = "RECKONING_ARRIVAL_PROJECT"
+			location = capital_scope
+			owner = ROOT
+		}
+		tooltip = {
+			add_modifier = {
+				modifier = reckoning_arrived_modifier
+				days = -1
+			}
+		}
+	}
+}
+
+country_event = {
+	id = origin_reckoning_arrived.10
+	hide_window = yes
+	is_triggered_only = yes
+	
+	trigger = {
+		has_origin = origin_reckoning_arrived
+		NAND = {
+			has_country_flag = unlock_tech_reckoning_arrived_composer_sanctum
+			has_country_flag = unlock_tech_reckoning_arrived_eater_sanctum
+			has_country_flag = unlock_tech_reckoning_arrived_instrument_sanctum
+			has_country_flag = unlock_tech_reckoning_arrived_cradle_sanctum
+			has_country_flag = unlock_tech_reckoning_arrived_whisperers_sanctum
+		}
+	}
+	
+	immediate = {
+		random_list = {
+			1 = {
+				modifier = {
+					factor = 0
+					has_country_flag = unlock_tech_reckoning_arrived_composer_sanctum
+				}
+				country_event = { id = origin_reckoning_arrived.11 }
+			}
+			1 = {
+				modifier = {
+					factor = 0
+					has_country_flag = unlock_tech_reckoning_arrived_eater_sanctum
+				}
+				country_event = { id = origin_reckoning_arrived.12 }
+			}
+			1 = {
+				modifier = {
+					factor = 0
+					has_country_flag = unlock_tech_reckoning_arrived_instrument_sanctum
+				}
+				country_event = { id = origin_reckoning_arrived.13 }
+			}
+			1 = {
+				modifier = {
+					factor = 0
+					has_country_flag = unlock_tech_reckoning_arrived_cradle_sanctum
+				}
+				country_event = { id = origin_reckoning_arrived.14 }
+			}
+			1 = {
+				modifier = {
+					factor = 0
+					has_country_flag = unlock_tech_reckoning_arrived_whisperers_sanctum
+				}
+				country_event = { id = origin_reckoning_arrived.15 }
+			}
+		}
+	}
+}
+
+country_event = {
+	inline_script = {
+		script = events/origin_reckoning_arrived_shroud_event
+		ID = 11
+		TECH = tech_reckoning_arrived_composer_sanctum
+	}
+}
+
+country_event = {
+	inline_script = {
+		script = events/origin_reckoning_arrived_shroud_event
+		ID = 12
+		TECH = tech_reckoning_arrived_eater_sanctum
+	}
+}
+
+country_event = {
+	inline_script = {
+		script = events/origin_reckoning_arrived_shroud_event
+		ID = 13
+		TECH = tech_reckoning_arrived_instrument_sanctum
+	}
+}
+
+country_event = {
+	inline_script = {
+		script = events/origin_reckoning_arrived_shroud_event
+		ID = 14
+		TECH = tech_reckoning_arrived_cradle_sanctum
+	}
+}
+
+country_event = {
+	inline_script = {
+		script = events/origin_reckoning_arrived_shroud_event
+		ID = 15
+		TECH = tech_reckoning_arrived_whisperers_sanctum
+	}
+}
+
+country_event = {
+	id = origin_reckoning_arrived.20
+	hide_window = yes
+	is_triggered_only = yes
+
+	trigger = {
+		exists = event_target:origin_reckoning_arrived_country
+		fromfromfrom = { is_same_value = event_target:reckoning_arrived_creatures }
+	}
+
+	immediate = {
+		if = {
+			limit = {
+				is_same_value = event_target:origin_reckoning_arrived_country
+			}
+			event_target:origin_reckoning_arrived_country = {
+				country_event = { id = origin_reckoning_arrived.30 }
+			}
+		}
+		else = {
+			event_target:origin_reckoning_arrived_country = {
+				country_event = { id = origin_reckoning_arrived.35 }
+			}
+		}
+	}
+}
+
+country_event = {
+	id = origin_reckoning_arrived.30
+	title = origin_reckoning_arrived.30.name
+	desc = origin_reckoning_arrived.30.desc
+	picture = GFX_evt_shroud_end_of_the_cycle
+	show_sound = {
+		trigger = { is_robot_empire = yes }
+		sound = event_psionic_robot
+	}
+	show_sound = {
+		trigger = { is_robot_empire = no }
+		sound = event_psionic
+	}
+	is_triggered_only = yes
+
+	trigger = {
+		has_origin = origin_reckoning_arrived
+	}
+
+	immediate = {
+		remove_modifier = reckoning_arrived_modifier
+	}
+
+	option = {
+		name = origin_reckoning_arrived.30.a
+		tooltip = { remove_modifier = reckoning_arrived_modifier }
+	}
+}
+
+country_event = {
+	id = origin_reckoning_arrived.35
+	title = origin_reckoning_arrived.35.name
+	desc = origin_reckoning_arrived.35.desc
+	picture = GFX_evt_shroud_end_of_the_cycle
+	show_sound = {
+		trigger = { is_robot_empire = yes }
+		sound = event_psionic_robot
+	}
+	show_sound = {
+		trigger = { is_robot_empire = no }
+		sound = event_psionic
+	}
+	is_triggered_only = yes
+
+	trigger = {
+		has_origin = origin_reckoning_arrived
+	}
+
+	immediate = {
+		remove_modifier = reckoning_arrived_modifier
+		add_modifier = {
+			modifier = reckoning_arrived_alleviated_modifier
+			days = -1
+		}
+	}
+
+	option = {
+		name = origin_reckoning_arrived.35.a
+		tooltip = {
+			remove_modifier = reckoning_arrived_modifier
+			add_modifier = {
+				modifier = reckoning_arrived_alleviated_modifier
+				days = -1
+			}
+		}
+	}
+}
+
+# 灵能实体不再放水
+event = {
+	id = origin_reckoning_arrived.50
+	is_triggered_only = yes
+	hide_window = yes
+	
+	trigger = {
+		exists = event_target:reckoning_arrived_creatures
+	}
+	
+	immediate = {
+		event_target:reckoning_arrived_creatures = {
+			remove_modifier = reckoning_arrived_creatures_modifier
+		}
+	}
+}
+
+fleet_event = {
+	id = origin_reckoning_arrived.100
+	is_triggered_only = yes
+	hide_window = yes
+	
+	trigger = {
+		exists = event_target:origin_reckoning_arrived_country
+	}
+	
+	immediate = {
+		fleet_event = { id = origin_reckoning_arrived.100 days = 360 }
+		event_target:origin_reckoning_arrived_country = {
+			if = {
+				limit = {
+					capital_scope = { carrier_is_type = ship }
+				}
+				capital_scope = {
+					ship = {
+						fleet = { save_event_target_as = origin_reckoning_arrived_creatures_target }
+					}
+				}
+			}
+			else_if = {
+				limit = {
+					any_owned_colony = { carrier_is_type = ship }
+				}
+				random_owned_colony = {
+					ship = {
+						fleet = { save_event_target_as = origin_reckoning_arrived_creatures_target }
+					}
+				}
+			}
+			else_if = {
+				limit = {
+					capital_scope = { carrier_is_type = planet }
+				}
+				capital_scope = {
+					planet = { save_event_target_as = origin_reckoning_arrived_creatures_target }
+				}
+			}
+			else_if = {
+				limit = {
+					any_owned_colony = { carrier_is_type = planet }
+				}
+				random_owned_colony = {
+					planet = { save_event_target_as = origin_reckoning_arrived_creatures_target }
+				}
+			}
+			else = {
+				random_owned_fleet = {
+					save_event_target_as = origin_reckoning_arrived_creatures_target
+				}
+			}
+		}
+		if = {
+			limit = {
+				exists = event_target:origin_reckoning_arrived_creatures_target
+			}
+			if = {
+				limit = {
+					event_target:origin_reckoning_arrived_creatures_target = { is_scope_type = fleet }
+				}
+				auto_follow_fleet = {
+					target = event_target:origin_reckoning_arrived_creatures_target
+					attack_fleet = yes
+				}
+			}
+			else = {
+				auto_move_to_planet = {
+					target = event_target:origin_reckoning_arrived_creatures_target
+					clear_auto_move_on_arrival = yes
+				}
+			}
+		}
+	}
+}

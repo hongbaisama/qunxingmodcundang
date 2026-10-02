@@ -1,0 +1,157 @@
+noah_ark_civilian_spinal = {
+	icon = "GFX_starbase_artist_college"
+	section = "ARKSHIP_SPINAL_REFINERY"
+	starbase_type = arkship
+	construction_days = @arkship_spinal_mount_build_time
+	category = sm_spinal_cat
+
+	starbase_limit = {
+		base = 1
+	}
+
+	potential = {
+		is_arkship_starbase = yes
+		ship = {
+			has_ship_flag = noah_ark_ship
+			is_civilian_arkship = yes
+		}
+		owner? = {
+			has_technology = tech_noah_ark
+			has_origin = origin_noah_ark
+			has_country_flag = unlock_noah_ark_civilian_spinal
+		}
+	}
+
+	show_in_tech = "tech_noah_ark"
+
+	show_tech_unlock_if = {
+		has_country_flag = unlock_noah_ark_civilian_spinal
+	}
+
+	fits_on_slots = { spinal_mount_1 }
+
+	resources = {
+		category = starbase_arkship_upgrades
+		cost = {
+			alloys = @arkship_cost_alloys_5000
+			rare_crystals = @arkship_cost_strategic_500
+			unity = @arkship_cost_unity_500
+		}
+
+		upkeep = {
+			energy = @arkship_upkeep_energy_5
+			rare_crystals = @arkship_upkeep_strategic_1
+		}
+	}
+
+	triggered_planet_modifier = {
+		custom_tooltip = noah_ark_spinal_effect
+	}
+
+	triggered_planet_modifier = {
+		potential = {
+			owner? = { is_gestalt = no }
+		}
+		pop_happiness = 0.05
+		planet_jobs_consumer_goods_produces_mult = 0.05
+		planet_jobs_trade_produces_mult = 0.05
+		planet_jobs_unity_produces_mult = 0.05
+		planet_jobs_upkeep_mult = -0.025
+		mult = value:noah_ark_spinal_value
+	}
+
+	triggered_planet_modifier = {
+		potential = {
+			owner? = { is_gestalt = yes }
+		}
+		planet_amenities_mult = 0.05
+		planet_jobs_consumer_goods_produces_mult = 0.05
+		planet_jobs_trade_produces_mult = 0.05
+		planet_jobs_unity_produces_mult = 0.05
+		planet_jobs_upkeep_mult = -0.025
+		mult = value:noah_ark_spinal_value
+	}
+
+	ai_weight = {
+		weight = 100
+	}
+}
+
+noah_ark_science_spinal = {
+	icon = "GFX_starbase_curator_think_tank"
+	section = "ARKSHIP_SPINAL_SCIENCE"
+	starbase_type = arkship
+	construction_days = @arkship_spinal_mount_build_time
+	category = sm_spinal_cat
+
+	starbase_limit = {
+		base = 1
+	}
+
+	potential = {
+		is_arkship_starbase = yes
+		ship = {
+			has_ship_flag = noah_ark_ship
+			is_science_arkship = yes
+		}
+		owner? = {
+			has_technology = tech_noah_ark
+			has_origin = origin_noah_ark
+			has_country_flag = unlock_noah_ark_science_spinal
+		}
+	}
+
+	show_in_tech = "tech_noah_ark"
+
+	show_tech_unlock_if = {
+		has_country_flag = unlock_noah_ark_science_spinal
+	}
+
+	fits_on_slots = { spinal_mount_1 }
+
+	resources = {
+		category = starbase_arkship_upgrades
+		cost = {
+			alloys = @arkship_cost_alloys_5000
+			exotic_gases = @arkship_cost_strategic_500
+			unity = @arkship_cost_unity_500
+		}
+
+		upkeep = {
+			energy = @arkship_upkeep_energy_5
+			exotic_gases = @arkship_upkeep_strategic_1
+		}
+	}
+
+	triggered_planet_modifier = {
+		custom_tooltip = noah_ark_spinal_effect
+	}
+
+	triggered_planet_modifier = {
+		potential = {
+			owner? = { is_gestalt = no }
+		}
+		pop_happiness = 0.05
+		planet_jobs_physics_research_produces_mult = 0.05
+		planet_jobs_society_research_produces_mult = 0.05
+		planet_jobs_engineering_research_produces_mult = 0.05
+		pop_bonus_workforce_mult = 0.05
+		mult = value:noah_ark_spinal_value
+	}
+
+	triggered_planet_modifier = {
+		potential = {
+			owner? = { is_gestalt = yes }
+		}
+		planet_amenities_mult = 0.05
+		planet_jobs_physics_research_produces_mult = 0.05
+		planet_jobs_society_research_produces_mult = 0.05
+		planet_jobs_engineering_research_produces_mult = 0.05
+		pop_bonus_workforce_mult = 0.05
+		mult = value:noah_ark_spinal_value
+	}
+
+	ai_weight = {
+		weight = 100
+	}
+}

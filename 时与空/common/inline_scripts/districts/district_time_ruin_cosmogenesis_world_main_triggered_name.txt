@@ -1,0 +1,103 @@
+triggered_name = {
+	trigger = {
+		num_zones = {
+			type = zone_time_ruin_cosmogenesis_world
+			value >= 2
+		}
+		calc_true_if = {
+			amount >= 3
+			num_zones = {
+				type = zone_time_ruin_cosmogenesis_world_secondary_1
+				value >= 1
+			}
+			num_zones = {
+				type = zone_time_ruin_cosmogenesis_world_secondary_2
+				value >= 1
+			}
+			num_zones = {
+				type = zone_time_ruin_cosmogenesis_world_secondary_3
+				value >= 1
+			}
+		}
+	}
+	text = district_time_ruin_cosmogenesis_world_main_max
+}
+
+triggered_name = {
+	trigger = {
+		num_zones = {
+			type = zone_time_ruin_cosmogenesis_world
+			value >= 1
+		}
+		calc_true_if = {
+			amount >= 3
+			num_zones = {
+				type = zone_time_ruin_cosmogenesis_world_secondary_1
+				value >= 1
+			}
+			num_zones = {
+				type = zone_time_ruin_cosmogenesis_world_secondary_2
+				value >= 1
+			}
+			num_zones = {
+				type = zone_time_ruin_cosmogenesis_world_secondary_3
+				value >= 1
+			}
+		}
+	}
+	text = district_time_ruin_cosmogenesis_world_main_high
+}
+
+triggered_name = {
+	trigger = {
+		num_zones = {
+			type = zone_time_ruin_cosmogenesis_world
+			value >= 1
+		}
+		calc_true_if = {
+			amount >= 2
+			num_zones = {
+				type = zone_time_ruin_cosmogenesis_world_secondary_1
+				value >= 1
+			}
+			num_zones = {
+				type = zone_time_ruin_cosmogenesis_world_secondary_2
+				value >= 1
+			}
+			num_zones = {
+				type = zone_time_ruin_cosmogenesis_world_secondary_3
+				value >= 1
+			}
+		}
+	}
+	text = district_time_ruin_cosmogenesis_world_main_middle
+}
+
+triggered_name = {
+	trigger = {
+		num_zones = {
+			type = zone_time_ruin_cosmogenesis_world
+			value >= 1
+		}
+		calc_true_if = {
+			amount >= 1
+			num_zones = {
+				type = zone_time_ruin_cosmogenesis_world_secondary_1
+				value >= 1
+			}
+			num_zones = {
+				type = zone_time_ruin_cosmogenesis_world_secondary_2
+				value >= 1
+			}
+			num_zones = {
+				type = zone_time_ruin_cosmogenesis_world_secondary_3
+				value >= 1
+			}
+		}
+	}
+	text = district_time_ruin_cosmogenesis_world_main_low
+}
+
+triggered_name = {
+	text = district_time_ruin_cosmogenesis_world_main_none
+}

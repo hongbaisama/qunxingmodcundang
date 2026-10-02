@@ -1,0 +1,35 @@
+origin_time_ruler = {
+	swappable_data = {
+		default = {
+			icon = colonist
+		}
+	}
+	possible = { always = no }
+}
+
+ghost_captain = {
+	swappable_data = {
+		default = {
+			icon = colonist
+		}
+	}
+	possible = { always = no }
+}
+
+pirate_king = {
+	swappable_data = {
+		default = {
+			icon = colonist
+		}
+	}
+	possible = { always = no }
+}
+
+planetary_mechanocalibrator = {
+	swappable_data = {
+		default = {
+			icon = colonist
+		}
+	}
+	possible = { always = no }
+}

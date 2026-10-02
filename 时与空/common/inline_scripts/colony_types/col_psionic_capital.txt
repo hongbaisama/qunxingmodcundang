@@ -1,0 +1,364 @@
+col_$TYPE$_capital = {
+	icon = GFX_col_$TYPE$_capital
+
+	potential = {
+		unlock_col_$TYPE$_capital = yes
+	}
+
+	triggered_planet_modifier = {
+		planet_stability_add = 2.5
+		pop_happiness = 0.05
+		pop_bonus_workforce_mult = 0.05
+		pop_government_ethic_attraction = 0.5
+		district_psionic_modifier_mult = 0.25
+		mult = value:num_col_psionic_value|BASE|$LEVEL$|
+	}
+	
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner_or_space_owner
+			owner_or_space_owner = {
+				OR = {
+					has_tradition = tr_psionics_adopt
+					has_tradition = tr_psionics_shroud_adopt
+				}
+			}
+		}
+		psionic_pop_bonus_workforce_mult = 0.05
+		mult = value:num_col_psionic_value|BASE|$LEVEL$|
+	}
+	
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner_or_space_owner.federation
+			owner_or_space_owner.federation = { has_federation_perk = all_the_priests_1 }
+		}
+		job_bureaucrat_per_pop = 0.04
+	}
+	
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner_or_space_owner
+			owner_or_space_owner = { has_tradition = tr_adaptability_finish }
+		}
+		pop_bonus_workforce_mult = 0.025
+	}
+
+	ai_building_set_affinity = {
+		trade = 2.0
+		unity = 1.5
+	}
+
+	weight_modifier = {
+		base = 20000
+	}
+}
+
+col_$TYPE$_capital_resource = {
+	icon = GFX_col_$TYPE$_capital
+
+	potential = {
+		unlock_col_$TYPE$_capital = yes
+	}
+
+	triggered_planet_modifier = {
+		planet_stability_add = 2.5
+		pop_happiness = 0.05
+		technician_jobs_bonus_workforce_mult = 0.1
+		miner_jobs_bonus_workforce_mult = 0.1
+		farmer_jobs_bonus_workforce_mult = 0.1
+		pop_government_ethic_attraction = 0.5
+		district_psionic_modifier_mult = 0.25
+		mult = value:num_col_psionic_value|BASE|$LEVEL$|
+	}
+	
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner_or_space_owner
+			owner_or_space_owner = {
+				OR = {
+					has_tradition = tr_psionics_adopt
+					has_tradition = tr_psionics_shroud_adopt
+				}
+			}
+		}
+		psionic_pop_bonus_workforce_mult = 0.05
+		mult = value:num_col_psionic_value|BASE|$LEVEL$|
+	}
+	
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner_or_space_owner.federation
+			owner_or_space_owner.federation = { has_federation_perk = all_the_priests_1 }
+		}
+		job_bureaucrat_per_pop = 0.04
+	}
+	
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner_or_space_owner
+			owner_or_space_owner = { has_tradition = tr_adaptability_finish }
+		}
+		pop_bonus_workforce_mult = 0.025
+	}
+
+	ai_building_set_affinity = {
+		generator = 2.0
+		mining = 2.0
+		farming = 2.0
+		unity = 1.5
+	}
+
+	weight_modifier = {
+		base = 10000
+		modifier = {
+			add = 5000
+			has_designation = col_$TYPE$_capital_resource
+		}
+		complex_trigger_modifier = {
+			trigger = num_districts
+			parameters = {
+				type = district_psionic_generator
+			}
+			mode = add
+			mult = 1000
+		}
+		complex_trigger_modifier = {
+			trigger = num_districts
+			parameters = {
+				type = district_psionic_mining
+			}
+			mode = add
+			mult = 1000
+		}
+		complex_trigger_modifier = {
+			trigger = num_districts
+			parameters = {
+				type = district_psionic_farming
+			}
+			mode = add
+			mult = 1000
+		}
+		complex_trigger_modifier = {
+			trigger = num_buildings
+			parameters = {
+				type = any
+				category = resource
+			}
+			mode = add
+			mult = 4000
+		}
+	}
+}
+
+col_$TYPE$_capital_manufacturing = {
+	icon = GFX_col_$TYPE$_capital
+
+	potential = {
+		unlock_col_$TYPE$_capital = yes
+	}
+
+	triggered_planet_modifier = {
+		planet_stability_add = 2.5
+		pop_happiness = 0.05
+		foundry_jobs_bonus_workforce_mult = 0.1
+		artisan_jobs_bonus_workforce_mult = 0.1
+		pop_government_ethic_attraction = 0.5
+		district_psionic_modifier_mult = 0.25
+		mult = value:num_col_psionic_value|BASE|$LEVEL$|
+	}
+	
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner_or_space_owner
+			owner_or_space_owner = {
+				OR = {
+					has_tradition = tr_psionics_adopt
+					has_tradition = tr_psionics_shroud_adopt
+				}
+			}
+		}
+		psionic_pop_bonus_workforce_mult = 0.05
+		mult = value:num_col_psionic_value|BASE|$LEVEL$|
+	}
+	
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner_or_space_owner.federation
+			owner_or_space_owner.federation = { has_federation_perk = all_the_priests_1 }
+		}
+		job_bureaucrat_per_pop = 0.04
+	}
+	
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner_or_space_owner
+			owner_or_space_owner = { has_tradition = tr_adaptability_finish }
+		}
+		pop_bonus_workforce_mult = 0.025
+	}
+
+	ai_building_set_affinity = {
+		foundry = 2.0
+		factory = 2.0
+		industrial = 2.0
+		unity = 1.5
+	}
+
+	weight_modifier = {
+		base = 10000
+		modifier = {
+			add = 5000
+			has_designation = col_$TYPE$_capital_manufacturing
+		}
+		complex_trigger_modifier = {
+			trigger = num_buildings
+			parameters = {
+				type = any
+				category = manufacturing
+			}
+			mode = add
+			mult = 4000
+		}
+	}
+}
+
+col_$TYPE$_capital_unity = {
+	icon = GFX_col_$TYPE$_capital
+
+	potential = {
+		unlock_col_$TYPE$_capital = yes
+	}
+
+	triggered_planet_modifier = {
+		planet_stability_add = 2.5
+		pop_happiness = 0.05
+		bureaucrat_jobs_bonus_workforce_mult = 0.1
+		pop_government_ethic_attraction = 0.5
+		district_psionic_modifier_mult = 0.25
+		mult = value:num_col_psionic_value|BASE|$LEVEL$|
+	}
+	
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner_or_space_owner
+			owner_or_space_owner = {
+				OR = {
+					has_tradition = tr_psionics_adopt
+					has_tradition = tr_psionics_shroud_adopt
+				}
+			}
+		}
+		psionic_pop_bonus_workforce_mult = 0.05
+		mult = value:num_col_psionic_value|BASE|$LEVEL$|
+	}
+	
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner_or_space_owner.federation
+			owner_or_space_owner.federation = { has_federation_perk = all_the_priests_1 }
+		}
+		job_bureaucrat_per_pop = 0.04
+	}
+	
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner_or_space_owner
+			owner_or_space_owner = { has_tradition = tr_adaptability_finish }
+		}
+		pop_bonus_workforce_mult = 0.025
+	}
+
+	ai_building_set_affinity = {
+		unity = 2.0
+	}
+
+	weight_modifier = {
+		base = 10000
+		modifier = {
+			add = 5000
+			has_designation = col_$TYPE$_capital_unity
+		}
+		complex_trigger_modifier = {
+			trigger = num_buildings
+			parameters = {
+				type = any
+				category = unity
+			}
+			mode = add
+			mult = 4000
+		}
+	}
+}
+
+col_$TYPE$_capital_research = {
+	icon = GFX_col_$TYPE$_capital
+
+	potential = {
+		unlock_col_$TYPE$_capital = yes
+	}
+
+	triggered_planet_modifier = {
+		planet_stability_add = 2.5
+		pop_happiness = 0.05
+		researcher_jobs_bonus_workforce_mult = 0.1
+		pop_government_ethic_attraction = 0.5
+		district_psionic_modifier_mult = 0.25
+		mult = value:num_col_psionic_value|BASE|$LEVEL$|
+	}
+	
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner_or_space_owner
+			owner_or_space_owner = {
+				OR = {
+					has_tradition = tr_psionics_adopt
+					has_tradition = tr_psionics_shroud_adopt
+				}
+			}
+		}
+		psionic_pop_bonus_workforce_mult = 0.05
+		mult = value:num_col_psionic_value|BASE|$LEVEL$|
+	}
+	
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner_or_space_owner.federation
+			owner_or_space_owner.federation = { has_federation_perk = all_the_priests_1 }
+		}
+		job_bureaucrat_per_pop = 0.04
+	}
+	
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner_or_space_owner
+			owner_or_space_owner = { has_tradition = tr_adaptability_finish }
+		}
+		pop_bonus_workforce_mult = 0.025
+	}
+
+	ai_building_set_affinity = {
+		research = 2.0
+		physics = 2.0
+		society = 2.0
+		engineering = 2.0
+		unity = 1.5
+	}
+
+	weight_modifier = {
+		base = 10000
+		modifier = {
+			add = 5000
+			has_designation = col_$TYPE$_capital_research
+		}
+		complex_trigger_modifier = {
+			trigger = num_buildings
+			parameters = {
+				type = any
+				category = research
+			}
+			mode = add
+			mult = 4000
+		}
+	}
+}

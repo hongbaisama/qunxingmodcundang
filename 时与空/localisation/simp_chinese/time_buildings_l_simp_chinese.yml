@@ -1,0 +1,587 @@
+﻿l_simp_chinese:
+ 
+ ################################################################
+ # 视界信号
+ ################################################################
+ 
+ building_akx_worm_1_effect:0 "每有$pop_group_unit$£pops §Y人口§!就生产£energy §G1§!"
+ building_akx_worm_1_effect_ap_horror:0 "每有$pop_group_unit$£pops §Y人口§!就生产£energy §G1.5§!"
+ building_akx_worm_1_effect_ap_time:0 "每有$pop_group_unit$£pops §Y人口§!就生产£energy §G2§!"
+ building_akx_worm_2_effect:0 "每有$pop_group_unit$£pops §Y人口§!就生产£unity §G0.5§!£society §G0.5§!"
+ building_akx_worm_2_effect_ap_horror:0 "每有$pop_group_unit$£pops §Y人口§!就生产£unity §G0.75§!£society §G0.75§!"
+ building_akx_worm_2_effect_ap_time:0 "每有$pop_group_unit$£pops §Y人口§!就生产£unity §G1§!£society §G1§!"
+ building_akx_worm_3_effect:0 "每有$pop_group_unit$£pops §Y人口§!就生产£physics §G0.5§!£engineering §G0.5§!"
+ building_akx_worm_3_effect_ap_horror:0 "每有$pop_group_unit$£pops §Y人口§!就生产£physics §G0.75§!£engineering §G0.75§!"
+ building_akx_worm_3_effect_ap_time:0 "每有$pop_group_unit$£pops §Y人口§!就生产£physics §G1§!£engineering §G1§!"
+ 
+ building_distorted_akx_worm_3_base:0 "$building_akx_worm_3$基址"
+ building_distorted_akx_worm_3_base_desc:0 "这个物体的表面直指天穹。它的内部构造却是空无一物。"
+ building_distorted_akx_worm_3_unfinished:0 "未竣工的$building_akx_worm_3$"
+ building_distorted_akx_worm_3_unfinished_desc:0 "这个物体的表面直指天穹。它的内部构造却无法用任何探测或绘图技术观测。"
+ building_distorted_akx_worm_3:0 "被扭曲的$building_akx_worm_3$"
+ building_distorted_akx_worm_3_desc:0 "这个物体的表面直指天穹。它的内部构造却充斥着扭曲与虚幻——一份来自$NAME_Nemesis_Puppeteer$的不切实际的许诺。"
+ 
+ ################################################################
+ # 神秘奇点（常规建筑）
+ ################################################################
+ 
+ building_zone_time_energy:0 "航道能源节点"
+ building_zone_time_energy_desc:0 "$pc_time_pitcure$为$job_black_hole_physicist_plural$的能源运输提供准确坐标。"
+ building_zone_time_energy_advanced:0 "位面能源枢纽"
+ building_zone_time_energy_advanced_desc:0 "$origin_time_picture$为$job_black_hole_physicist_plural$的能源运输与航道穿梭维持稳定。"
+ 
+ building_zone_time_minerals:0 "航道矿产节点"
+ building_zone_time_minerals_desc:0 "$pc_time_pitcure$为$job_black_hole_engineer_plural$的矿产运输提供准确坐标。"
+ building_zone_time_minerals_advanced:0 "位面矿产枢纽"
+ building_zone_time_minerals_advanced_desc:0 "$origin_time_picture$为$job_black_hole_engineer_plural$的矿产运输与航道穿梭维持稳定。"
+ 
+ building_zone_time_food:0 "航道食品节点"
+ building_zone_time_food_desc:0 "$pc_time_pitcure$为$job_black_hole_biologist_plural$的食品运输提供准确坐标。"
+ building_zone_time_food_advanced:0 "位面食品枢纽"
+ building_zone_time_food_advanced_desc:0 "$origin_time_picture$为$job_black_hole_biologist_plural$的食品运输与航道穿梭维持稳定。"
+ 
+ building_zone_time_consumer_goods:0 "航道物流节点"
+ building_zone_time_consumer_goods_desc:0 "$pc_time_pitcure$为$job_black_hole_physicist_plural$的物流运输提供准确坐标。"
+ building_zone_time_consumer_goods_advanced:0 "位面物流枢纽"
+ building_zone_time_consumer_goods_advanced_desc:0 "$origin_time_picture$为$job_black_hole_physicist_plural$的物流运输与航道穿梭维持稳定。"
+ 
+ building_zone_time_alloys:0 "航道合金节点"
+ building_zone_time_alloys_desc:0 "$pc_time_pitcure$为$job_black_hole_engineer_plural$的合金运输提供准确坐标。"
+ building_zone_time_alloys_advanced:0 "位面合金枢纽"
+ building_zone_time_alloys_advanced_desc:0 "$origin_time_picture$为$job_black_hole_engineer_plural$的合金运输与航道穿梭维持稳定。"
+ 
+ building_zone_time_unity:0 "航道创作节点"
+ building_zone_time_unity_desc:0 "$pc_time_pitcure$为$job_black_hole_biologist_plural$的创作运输提供准确坐标。"
+ building_zone_time_unity_advanced:0 "位面创作枢纽"
+ building_zone_time_unity_advanced_desc:0 "$origin_time_picture$为$job_black_hole_biologist_plural$的创作运输与航道穿梭维持稳定。"
+ 
+ building_zone_time_physics_research:0 "航道研究节点"
+ building_zone_time_physics_research_desc:0 "$pc_time_pitcure$为$job_black_hole_physicist_plural$的研究运输提供准确坐标。"
+ building_zone_time_physics_research_advanced:0 "位面研究枢纽"
+ building_zone_time_physics_research_advanced_desc:0 "$origin_time_picture$为$job_black_hole_physicist_plural$的研究运输与航道穿梭维持稳定。"
+ 
+ building_zone_time_society_research:0 "航道生命节点"
+ building_zone_time_society_research_desc:0 "$pc_time_pitcure$为$job_black_hole_biologist_plural$的生命运输提供准确坐标。"
+ building_zone_time_society_research_advanced:0 "位面生命枢纽"
+ building_zone_time_society_research_advanced_desc:0 "$origin_time_picture$为$job_black_hole_biologist_plural$的生命运输与航道穿梭维持稳定。"
+ 
+ building_zone_time_engineering_research:0 "航道材料节点"
+ building_zone_time_engineering_research_desc:0 "$pc_time_pitcure$为$job_black_hole_engineer_plural$的材料运输提供准确坐标。"
+ building_zone_time_engineering_research_advanced:0 "位面材料枢纽"
+ building_zone_time_engineering_research_advanced_desc:0 "$origin_time_picture$为$job_black_hole_engineer_plural$的材料运输与航道穿梭维持稳定。"
+ 
+ ################################################################
+ # 神秘奇点（高级政体）
+ ################################################################
+ 
+ building_hope_parliament:0 "希望议会"
+ building_egalitarian_is_winner_desc:0 "$hope_parliament_picture$这是平等主义者的胜利，他们成立了一个议会，以希望之名监护着国家的未来。"
+ building_xenophile_is_winner_desc:0 "$hope_parliament_picture$这是亲外主义者的胜利，他们成立了一个议会，以希望之名传播着国家的意志。"
+ building_egalitarian_and_xenophile_is_winner_desc:0 "$hope_parliament_picture$这是平等主义者与亲外主义者共同的胜利，他们成立了一个议会，以希望之名开辟着国家的前路。"
+ building_hope_parliament_effect:0 "每有$pop_group_unit$£pops §Y人口§!就生产£minor_artifacts §G0.0125§!"
+ building_hope_institution:0 "希望机关"
+ building_egalitarian_is_winner_advanced_desc:0 "$hope_institution_picture$希望机关的目的是确保希望的存续，监护者们会为了职责付出一切。"
+ building_xenophile_is_winner_advanced_desc:0 "$hope_institution_picture$希望机关的目的是达成希望的闭环，传播者们会为了使命不遗余力。"
+ building_egalitarian_and_xenophile_is_winner_advanced_desc:0 "$hope_institution_picture$希望机关的目的是寻觅最终的希望，监护者与传播者将为此携手并进。"
+ building_hope_institution_effect:0 "每有$pop_group_unit$£pops §Y人口§!就生产£minor_artifacts §G0.025§!"
+ 
+ building_eternal_probe:0 "永恒探针"
+ building_materialist_is_winner_desc:0 "$eternal_probe_picture$这是唯物主义者的胜利，他们打造了一支探针，为观测真理而驶入永恒。"
+ building_pacifist_is_winner_desc:0 "$eternal_probe_picture$这是和平主义者的胜利，他们打造了一支探针，为缔造法则而刺入永恒。"
+ building_materialist_and_pacifist_is_winner_desc:0 "$eternal_probe_picture$这是唯物主义者与和平主义者的胜利，他们打造了一支探针，为掌握循环而陷入永恒。"
+ building_eternal_probe_effect:0 "每有$pop_group_unit$£pops §Y人口§!就生产£nanites §G0.0125§!"
+ building_eternal_matrix:0 "永恒矩阵"
+ building_materialist_is_winner_advanced_desc:0 "$eternal_matrix_picture$永恒矩阵昼夜不停地演算着无限，只为观测瞬间的永恒。"
+ building_pacifist_is_winner_advanced_desc:0 "$eternal_matrix_picture$永恒矩阵昼夜不停地分析着无限，只为缔造刹那的永恒。"
+ building_materialist_and_pacifist_is_winner_advanced_desc:0 "$eternal_matrix_picture$永恒矩阵昼夜不停地重塑着无限，只为撕裂片刻的永恒。"
+ building_eternal_matrix_effect:0 "每有$pop_group_unit$£pops §Y人口§!就生产£nanites §G0.025§!"
+ 
+ building_dimensional_fortress:0 "维度堡垒"
+ building_authoritarian_is_winner_desc:0 "$dimensional_fortress_picture$这是威权主义者的胜利，他们铸就了一座堡垒，唯有统治者才有掌控维度的权力。"
+ building_militarist_is_winner_desc:0 "$dimensional_fortress_picture$这是军国主义者的胜利，他们铸就了一座堡垒，唯有征服者才有挑战维度的权力。"
+ building_authoritarian_and_militarist_is_winner_desc:0 "$dimensional_fortress_picture$这是威权主义者与军国主义者的胜利，他们铸就了一座堡垒，唯有先驱者才有驱使维度的权力。"
+ building_dimensional_fortress_effect:0 "每有$pop_group_unit$£pops §Y人口§!就生产£sr_living_metal §G0.0125§!"
+ building_dimensional_metropolis:0 "维度都城"
+ building_authoritarian_is_winner_advanced_desc:0 "$dimensional_metropolis_picture$维度都城是帝国最华贵的枢纽，所有维度都将于此统治。"
+ building_militarist_is_winner_advanced_desc:0 "$dimensional_metropolis_picture$维度都城是帝国最壮阔的枢纽，一切维度都将由此征服。"
+ building_authoritarian_and_militarist_is_winner_advanced_desc:0 "$dimensional_metropolis_picture$维度都城是帝国最宏伟的枢纽，任何维度都将因此失色。"
+ building_dimensional_metropolis_effect:0 "每有$pop_group_unit$£pops §Y人口§!就生产£sr_living_metal §G0.025§!"
+ 
+ building_original_sanctuary:0 "本源圣所"
+ building_spiritualist_is_winner_desc:0 "$original_sanctuary_picture$这是唯心主义者的胜利，他们修建了一处圣所，以便于本源中冥想。"
+ building_xenophobe_is_winner_desc:0 "$original_sanctuary_picture$这是排外主义者的胜利，他们修建了一处圣所，以便于本源中净化。"
+ building_spiritualist_and_xenophobe_is_winner_desc:0 "$original_sanctuary_picture$这是唯心主义者与排外主义者的胜利，他们修建了一处圣所，以便参悟本源的真谛。"
+ building_original_sanctuary_effect:0 "每有$pop_group_unit$£pops §Y人口§!就生产£sr_zro §G0.0125§!"
+ building_original_palace:0 "本源殿堂"
+ building_spiritualist_is_winner_advanced_desc:0 "$original_palace_picture$本源殿堂给予迷途者一个归宿，他们的命运在冥冥之中早已注定。"
+ building_xenophobe_is_winner_advanced_desc:0 "$original_palace_picture$本源殿堂给予污浊者一个栖所，沐浴、净化、洗礼。"
+ building_spiritualist_and_xenophobe_is_winner_advanced_desc:0 "$original_palace_picture$本源殿堂给予往生者一个港湾，灵魂与躯体没有界限。"
+ building_original_palace_effect:0 "每有$pop_group_unit$£pops §Y人口§!就生产£sr_zro §G0.025§!"
+ 
+ ################################################################
+ # 事件
+ ################################################################
+ 
+ building_time_hotel:0 "时光监狱"
+ building_time_hotel_desc:0 "$time_clock_picture$通过模仿时光监狱的构造，我们掌握了建造小型时光监狱的技术。利用时空迟滞的刑罚惩处犯人，我们使更多的公民体会到了秩序的必要与违法的代价。"
+ building_time_hotel_extra_effect_for_sector_capital:0 "建造在§Y$EMPIRE_CAPITAL$§!、§Y$SECTOR_CAPITAL$§!或§Y$penal_colony$§!上时额外提供§G$COUNTRY_MODIFIERS$§!"
+ 
+ building_akx_dimensional_worship:0 "维度纪念碑"
+ building_akx_dimensional_worship_desc:0 "为异世界的我们所竖立的纪念碑，我们迟早会再见。"
+ building_akx_dimensional_worship_effect:0 "每有一个§Y$sm_dimensional_shrine$§!就生产£unity §G10§!"
+ building_akx_ouroboros:0 "衔尾蛇祭坛"
+ building_akx_ouroboros_desc:0 "这是来自维度的启示，这是来自衔尾之蛇的神谕。"
+ building_akx_ouroboros_effect:0 "每有一个§Y$sm_dimensional_shrine$§!就提供§G-1%§!§Y$MOD_SOCIETY_TECH_COST_MULT$§!"
+ 
+ ################################################################
+ # 理念
+ ################################################################
+ 
+ building_civic_starry_yearning:0 "繁星研究院"
+ building_civic_starry_yearning_desc:0 "对繁星的向往演变成了对宇宙的求知，我们渴望洞悉每一颗天体的物理规律。"
+ building_civic_starry_yearning_corporate:0 "星体定位仪"
+ building_civic_starry_yearning_corporate_desc:0 "为了对天体明码标价，我们需要精准定位每一颗恒星并掌握其一切参数。"
+ building_civic_starry_yearning_effect:0 "依据所在星系的§Y恒星类型§!提供不同类型的产出加成"
+ 
+ building_civic_overclocking_art:0 "超频美术馆"
+ building_civic_overclocking_art_desc:0 "这座美术馆主要展出精巧的超频设计，它们将高效与美密不可分地融为一体。"
+ building_civic_overclocking_art_corporate:0 "过载工作室"
+ building_civic_overclocking_art_corporate_desc:0 "这间工作室负责监控整个星球的流水线过载作业，确保没有任何一份劳动力出现浪费。"
+ building_civic_overclocking_art_machine:0 "多核处理器"
+ building_civic_overclocking_art_machine_desc:0 "这块处理器缓解了中央主脑分配算力的负担，主脑只会接收必要的信息，而无需被冗余的数据干扰。"
+ building_civic_overclocking_art_effect:0 "每$pop_group_unit$$engineer_type_plural_with_icon$产生$roboticist_jobs_bonus_workforce_mult$：§G+0.5%§!（最大§G+50%§!）"
+ building_civic_overclocking_art_mechanists_effect:0 "每$pop_group_unit$$engineer_type_plural_with_icon$产生$roboticist_jobs_bonus_workforce_mult$：§G+1%§!（最大§G+100%§!）"
+ 
+ building_civic_origin_black_hole:0 "黑洞窥视所"
+ building_civic_origin_black_hole_desc:0 "$origin_black_hole_picture$通过黑洞窥视所，我们或许能一睹黑洞神秘面纱下的真容。"
+ 
+ building_civic_origin_pulsar:0 "脉冲感知所"
+ building_civic_origin_pulsar_desc:0 "$origin_pulsar_picture$通过脉冲感知所，我们可以接收到来自脉冲星富有智慧的信号。"
+ 
+ building_civic_origin_neutron_star:0 "中子轰击所"
+ building_civic_origin_neutron_star_desc:0 "$origin_neutron_star_picture$通过中子轰击所，我们会创建出最伟大的造物——来自最伟大的中子星。"
+ 
+ ################################################################
+ # 起源
+ ################################################################
+ 
+ building_origin_contract_other_only_one:0 "§Y一颗星球上只能建造一种锚点§!"
+ 
+ building_origin_contract_whisperers:0 "低语枢纽"
+ building_origin_contract_whisperers_desc:0 "$origin_contract_picture$将这颗星球奉献给$whisperers_in_the_void$——以及其所连接的灵域。"
+ 
+ building_origin_contract_composer:0 "织缕锚点"
+ building_origin_contract_composer_desc:0 "$origin_contract_picture$将这颗星球与$the_composer_of_strands$的灵域锚定——以低语的名义。"
+ 
+ building_origin_contract_cradle:0 "月窠锚点"
+ building_origin_contract_cradle_desc:0 "$origin_contract_picture$将这颗星球与$the_cradle_of_souls$的灵域锚定——以低语的名义。"
+ 
+ building_origin_contract_eater:0 "喰煞锚点"
+ building_origin_contract_eater_desc:0 "$origin_contract_picture$将这颗星球与$the_eater_of_worlds$的灵域锚定——以低语的名义。"
+ 
+ building_origin_contract_instrument:0 "器具锚点"
+ building_origin_contract_instrument_desc:0 "$origin_contract_picture$将这颗星球与$the_instrument_of_desire$的灵域锚定——以低语的名义。"
+ 
+ building_origin_praise_the_sun:0 "太阳金字塔"
+ building_origin_praise_the_sun_desc:0 "$origin_praise_the_sun_picture$金字塔意味着太阳对我们的爱，也意味着我们对太阳的爱。"
+ 
+ building_origin_tao_of_ninghe_yin:0 "阴森宫殿"
+ building_origin_tao_of_ninghe_yin_desc:0 "$origin_tao_of_ninghe_yin_picture$这座阴森的宫殿吸收了星球上大部分的阴之力，使我们调节宁和变得更加轻而易举。"
+ building_origin_tao_of_ninghe_yang:0 "阳刚阁楼"
+ building_origin_tao_of_ninghe_yang_desc:0 "$origin_tao_of_ninghe_yang_picture$这座阳刚的阁楼汇集了星球上大部分的阳之力，使我们平衡宁和变得更加易如反掌。"
+ 
+ building_origin_the_matrix_lathe_capital:0 "废弃的$building_lathe_capital$"
+ building_origin_the_matrix_lathe_capital_desc:0 "突触凝练机的单元核心，即使在星球废弃后也依旧维持着难以理解的计算。"
+ building_origin_the_matrix_lathe_capital_effect:0 "$mod_planet_physicists_physics_research_produces_add$：每$job_physicist$§G+0.05§!（最大§G+3§!）\n$mod_planet_biologists_society_research_produces_add$：每$job_biologist$§G+0.05§!（最大§G+3§!）\n$mod_planet_engineers_engineering_research_produces_add$：每$job_engineer$§G+0.05§!（最大§G+3§!）"
+ building_origin_the_matrix_lathe_resonator:0 "废弃的$building_lathe_resonator$"
+ building_origin_the_matrix_lathe_resonator_desc:0 "原本是用于芯片共振的装置，各元件富含稀有资源可供重生者提炼。"
+ building_origin_the_matrix_lathe_stabilisator:0 "废弃的$building_lathe_stabilisator$"
+ building_origin_the_matrix_lathe_stabilisator_desc:0 "具备滤除杂音的设施，重生者们在此建立了维持秩序的总部。"
+ building_origin_the_matrix_lathe_overclocker:0 "废弃的$building_lathe_overclocker$"
+ building_origin_the_matrix_lathe_overclocker_desc:0 "能够改写凝练器命令的装置，被重生者用于重启加工产业链。"
+ building_origin_the_matrix_lathe_preserver:0 "废弃的$building_lathe_preserver$"
+ building_origin_the_matrix_lathe_preserver_desc:0 "保存器本是起到保护有机部件的作用，现在则被重生者用于开垦荒地。"
+ building_origin_the_matrix_lathe_reactor:0 "废弃的$building_lathe_reactor$"
+ building_origin_the_matrix_lathe_reactor_desc:0 "有所缺损的反应堆，但不影响其为重生者提供电力供应。"
+ building_origin_the_matrix_lathe_life_support:0 "废弃的$building_lathe_life_support$"
+ building_origin_the_matrix_lathe_life_support_desc:0 "一系列曾用于维护的设施，重生者们将其改造成了休闲场所。"
+ building_origin_the_matrix_lathe_cogitator:0 "废弃的$building_lathe_cogitator$"
+ building_origin_the_matrix_lathe_cogitator_desc:0 "一座布满星图的机房，重生者们在此思索生存的意义。"
+ building_origin_the_matrix_lathe_validator:0 "废弃的$building_lathe_validator$"
+ building_origin_the_matrix_lathe_validator_desc:0 "一台功能齐全的计算机，但重生者们掌握其操作方法还需要一段时间。"
+ 
+ building_origin_manifesti:0 "“眠梦仪”"
+ building_origin_manifesti_desc:0 "$origin_manifesti_picture$“来历没有意义，作用不必知道，梦境无需醒来。”"
+ building_origin_manifesti_effect:0 "§R“眠梦仪不欢迎外来者。”§!"
+ building_origin_manifesti_dream:0 "“唤醒”"
+ building_origin_manifesti_dream_desc:0 "$origin_manifesti_picture$“梦是时候醒了，但清醒未必是件好事。”"
+ building_origin_manifesti_dream_effect_1:0 "每有$pop_group_unit$£pops §Y人口§!就生产£energy §G2§!£minerals §G2§!£food §G2§!£consumer_goods §G1§!£alloys §G1§!£trade §G1§!£physics §G1§!£society §G1§!£engineering §G1§!£unity §G1§!"
+ building_origin_manifesti_dream_effect_2:0 "每有$pop_group_unit$£pops §Y人口§!就生产£energy §G1§!£minerals §G1§!£food §G1§!£consumer_goods §G0.5§!£alloys §G0.5§!£trade §G0.5§!£physics §G0.5§!£society §G0.5§!£engineering §G0.5§!£unity §G0.5§!"
+ 
+ building_adeptus_mechanicus_1:0 "机械教化所"
+ building_adeptus_mechanicus_1_desc:0 "$origin_adeptus_mechanicus_picture$该教化所会对没有灵魂的机械进行教化，不仅能让它们避免环境的威胁，还能使它们了解灵魂的意义。"
+ building_adeptus_mechanicus_2:0 "机神教堂"
+ building_adeptus_mechanicus_2_desc:0 "$origin_adeptus_mechanicus_picture$奉机神的使命，我们建造了这座宏伟的教堂。在教堂中，机神的信徒都很孜孜不倦地对机械进行教化，以期它们终有一天能获得灵魂。"
+ building_adeptus_mechanicus_vault:0 "电刺激忏悔室"
+ building_adeptus_mechanicus_vault_desc:0 "$origin_adeptus_mechanicus_picture$不思悔改与冥顽不灵的机械会被强制送往此地进行惩处。这并非我们对他们的虐待，而是我们令其焕然一新的洗礼。\n更何况，他们自己也乐在其中。"
+ 
+ building_origin_monster_hunter_1:0 "猎人营地"
+ building_origin_monster_hunter_1_desc:0 "$origin_monster_hunter_picture$猎人们搭建了简易的营地，但其中的狩猎装备一应俱全。"
+ building_origin_monster_hunter_2:0 "猎人公会"
+ building_origin_monster_hunter_2_desc:0 "$origin_monster_hunter_picture$猎人们自发组织了大规模的狩猎公会，无论是经验丰富的老猎手还是初出茅庐的新猎者都能从中各取所需。"
+ 
+ building_time_private_mining_consortium:0 "共荣矿场"
+ building_time_private_mining_consortium_desc:0 "共荣矿场，致力于发现星球埋藏的珍宝。"
+ building_time_food_conglomerate:0 "共荣餐厅"
+ building_time_food_conglomerate_desc:0 "共荣餐厅，致力于为每位食客送上美味佳肴。"
+ building_time_virtual_entertainment_studios:0 "共荣工作室"
+ building_time_virtual_entertainment_studios_desc:0 "共荣工作室，致力于开发最流行的娱乐设备。"
+ building_time_private_shipyards:0 "共荣兵工厂"
+ building_time_private_shipyards_desc:0 "共荣兵工厂，致力于铸造质量最高的合金材料。"
+ building_time_military_contractors:0 "共荣兄弟会"
+ building_time_military_contractors_desc:0 "共荣兄弟会，致力于让每一位赏金猎人都能拿到应有的报酬。"
+ building_time_industrial_subsidiary:0 "共荣加工站"
+ building_time_industrial_subsidiary_desc:0 "共荣加工站，致力于以最低的价格实现外星零部件供应。"
+ building_time_public_relations_office:0 "共荣分公司"
+ building_time_public_relations_office_desc:0 "共荣分公司，致力于消弭商业活动中存在的一切误解。"
+ building_time_private_research_initiative:0 "共荣研究所"
+ building_time_private_research_initiative_desc:0 "共荣研究所，致力于探索未知与真相。"
+ building_time_amusement_megaplex:0 "共荣游乐城"
+ building_time_amusement_megaplex_desc:0 "共荣游乐城，致力于让孩子们拥有幸福的童年。"
+ building_time_commercial_forum:0 "共荣论坛"
+ building_time_commercial_forum_desc:0 "共荣论坛，致力于让每位商业巨头都能自由发表自己的言论。"
+ building_time_corporate_embassy:0 "共荣大使馆"
+ building_time_corporate_embassy_desc:0 "共荣大使馆，致力于破除不同文化之间的隔阂。"
+ building_time_private_security:0 "共荣安保"
+ building_time_private_security_desc:0 "共荣安保，致力于为雇主守护难能可贵的安全。"
+ building_time_temple_of_prosperity:0 "天启神殿"
+ building_time_temple_of_prosperity_desc:0 "天启神殿，致力于将天启传播至世界各地。"
+ 
+ planet_buildings_blessed_by_god:0 "神明眷顾"
+ building_blessed_by_god:0 "神眷祭坛"
+ building_blessed_by_god_desc:0 "$origin_blessed_by_god_picture$这是神明给予我们的恩惠，我们是被神明选中的孩子！"
+ building_blessed_by_god_effect:0 "若最近举行过§Y$decision_blessed_by_god$§!：\n$t$每有$pop_group_unit$£pops §Y人口§!就生产£energy §G0.5§!£minerals §G0.5§!£food §G0.5§!£consumer_goods §G0.25§!£alloys §G0.25§!£trade §G0.25§!£physics §G0.25§!£society §G0.25§!£engineering §G0.25§!£unity §G0.25§!\n$t$每有$pop_group_unit$£pops §Y人口§!就需上缴£sr_zro §R0.1§!作为贡品\n\n每次举行§Y$decision_blessed_by_god$§!都将使该产出增加§G5%§!，当前已举行§Y[Owner.blessed_by_god_decision_count]§!次"
+ building_blessed_by_god_reject_robot_effect:0 "§R神明厌恶肮脏的机械，机械物种无法在该星球上生存！§!"
+ building_abandoned_by_god:0 "神弃祭坛"
+ building_abandoned_by_god_desc:0 "$origin_abandoned_by_god_picture$神明的眷顾就是个谎言，我们被所谓的神明抛弃了……\n但是，我们不会抛弃自己，我们会让那卑鄙的神明付出代价！"
+ 
+ building_reckoning_arrived_composer_sanctum:0 "$building_composer_sanctum$"
+ building_reckoning_arrived_composer_sanctum_desc:0 "$building_composer_sanctum_desc$"
+ building_reckoning_arrived_eater_sanctum:0 "$building_eater_sanctum$"
+ building_reckoning_arrived_eater_sanctum_desc:0 "$building_eater_sanctum_desc$"
+ building_reckoning_arrived_instrument_sanctum:0 "$building_instrument_sanctum$"
+ building_reckoning_arrived_instrument_sanctum_desc:0 "$building_instrument_sanctum_desc$"
+ building_reckoning_arrived_cradle_sanctum:0 "$building_cradle_sanctum$"
+ building_reckoning_arrived_cradle_sanctum_desc:0 "$building_cradle_sanctum_desc$"
+ building_reckoning_arrived_whisperers_sanctum:0 "$building_whisperers_sanctum$"
+ building_reckoning_arrived_whisperers_sanctum_desc:0 "$building_whisperers_sanctum_desc$"
+ building_reckoning_arrived_sanctum_effect:0 "§Y效果受星球飞升等级影响§!"
+ 
+ ################################################################
+ # 负相传统
+ ################################################################
+ 
+ # 研究所
+ building_horror_research:0 "负相研究所"
+ building_horror_research_desc:0 "对负相的研究并非一帆风顺，冗杂的方程需要更多的研究者参与求解。"
+ building_horror_research_effect:0 "每有$pop_group_unit$£pops §Y人口§!就消耗£sr_dark_matter §R0.05§!£volatile_motes §R0.05§!"
+ building_time_research:0 "时空研究所"
+ building_time_research_desc:0 "对时空的研究并非一帆风顺，冗杂的方程需要更多的研究者参与求解。"
+ building_time_research_effect:0 "每有$pop_group_unit$£pops §Y人口§!就消耗£sr_dark_matter §R0.1§!£volatile_motes §R0.1§!"
+ building_end_research:0 "终末研究所"
+ building_end_research_desc:0 "对终末的研究并非一帆风顺，冗杂的方程需要更多的研究者参与求解。"
+ building_end_research_effect:0 "每有$pop_group_unit$£pops §Y人口§!就消耗£sr_dark_matter §R0.2§!£volatile_motes §R0.2§!"
+ 
+ # 计算机
+ building_horror_computer:0 "负相计算机"
+ building_horror_computer_desc:0 "恐怖负相位面中具有独特的物理环境，这使得一种新型负相计算机成为可能。"
+ building_horror_computer_effect:0 "每有$pop_group_unit$£pops §Y人口§!就消耗£sr_dark_matter §R0.05§!£exotic_gases §R0.05§!"
+ building_time_computer:0 "时空计算机"
+ building_time_computer_desc:0 "恐怖负相位面中具有独特的物理环境，这使得一种新型时空计算机成为可能。"
+ building_time_computer_effect:0 "每有$pop_group_unit$£pops §Y人口§!就消耗£sr_dark_matter §R0.1§!£exotic_gases §R0.1§!"
+ building_end_computer:0 "终末计算机"
+ building_end_computer_desc:0 "恐怖负相位面中具有独特的物理环境，这使得一种新型终末计算机成为可能。"
+ building_end_computer_effect:0 "每有$pop_group_unit$£pops §Y人口§!就消耗£sr_dark_matter §R0.2§!£exotic_gases §R0.2§!"
+ 
+ # 纪念碑
+ building_horror_monument:0 "负相纪念碑"
+ building_horror_monument_desc:0 "在负相的探索中，被微型奇点吞噬的牺牲者理应得到尊重和纪念。"
+ building_horror_monument_effect:0 "每有$pop_group_unit$£pops §Y人口§!就消耗£sr_dark_matter §R0.05§!£rare_crystals §R0.05§!"
+ building_time_monument:0 "时空纪念碑"
+ building_time_monument_desc:0 "在时空的探索中，被微型奇点吞噬的牺牲者理应得到尊重和纪念。"
+ building_time_monument_effect:0 "每有$pop_group_unit$£pops §Y人口§!就消耗£sr_dark_matter §R0.1§!£rare_crystals §R0.1§!"
+ building_end_monument:0 "终末纪念碑"
+ building_end_monument_desc:0 "在终末的探索中，被微型奇点吞噬的牺牲者理应得到尊重和纪念。"
+ building_end_monument_effect:0 "每有$pop_group_unit$£pops §Y人口§!就消耗£sr_dark_matter §R0.2§!£rare_crystals §R0.2§!"
+ 
+ # 预兆仪
+ building_horror_forecast:0 "负相预兆仪"
+ building_horror_forecast_desc:0 "时间对于恐怖负相位面没有任何意义，因此，我们可以借助负相对未来进行预测。"
+ building_horror_forecast_effect:0 "每有$pop_group_unit$£pops §Y人口§!就消耗£sr_dark_matter §R0.05§!£sr_zro §R0.05§!"
+ building_time_forecast:0 "时空预兆仪"
+ building_time_forecast_desc:0 "时间对于恐怖负相位面没有任何意义，因此，我们可以借助时空对未来进行预测。"
+ building_time_forecast_effect:0 "每有$pop_group_unit$£pops §Y人口§!就消耗£sr_dark_matter §R0.1§!£sr_zro §R0.1§!"
+ building_end_forecast:0 "终末预兆仪"
+ building_end_forecast_desc:0 "时间对于恐怖负相位面没有任何意义，因此，我们可以借助终末对未来进行预测。"
+ building_end_forecast_effect:0 "每有$pop_group_unit$£pops §Y人口§!就消耗£sr_dark_matter §R0.2§!£sr_zro §R0.2§!"
+ 
+ ################################################################
+ # 超越无限
+ ################################################################
+ 
+ # 时空机器
+ building_ruin_time_machine:0 "停摆的$building_time_machine$"
+ building_ruin_time_machine_desc:0 "$akx_worm_3_picture$这台$building_time_machine$的能源已经耗尽，机体也有所损伤，但经过专业的维修与充足的供能后仍然可以发挥原有的作用。"
+ building_defective_time_machine:0 "失控的$building_time_machine$"
+ building_defective_time_machine_desc:0 "$akx_worm_3_picture$这台$building_time_machine$发生了致命的故障，对时空所产生的一切影响都难以预估且无法控制。"
+ building_defective_time_machine_effect:0 "§R全银河的时间变得混乱不堪且难以测定！§!"
+ building_time_machine:0 "时空机器"
+ building_time_machine_desc:0 "$akx_worm_3_picture$显而易见，这是一台$building_time_machine$，时空的流动在其附近已没有意义。"
+ repair_defective_time_machine_effect:0 "§G消除$building_defective_time_machine$所带来的负面效果§!"
+ building_infinity_time_machine:0 "无限机器"
+ building_infinity_time_machine_desc:0 "$akx_worm_3_picture$这是我们超越无限的第一步，但绝不是最后一步。"
+ 
+ # 圆环枢纽
+ building_ruin_circle_nexus:0 "停摆的$building_circle_nexus$"
+ building_ruin_circle_nexus_desc:0 "$akx_worm_2_picture$这台$building_circle_nexus$的能源已经耗尽，机体也有所损伤，但经过专业的维修与充足的供能后仍然可以发挥原有的作用。"
+ building_defective_circle_nexus:0 "失控的$building_circle_nexus$"
+ building_defective_circle_nexus_desc:0 "$akx_worm_2_picture$这台$building_circle_nexus$发生了致命的故障，对圆环所产生的一切影响都难以预估且无法控制。"
+ building_defective_circle_nexus_effect:0 "§R全银河的生物在母星之外都难以生存！§!"
+ building_circle_nexus:0 "圆环枢纽"
+ building_circle_nexus_desc:0 "$akx_worm_2_picture$显而易见，这是一台$building_circle_nexus$，圆环的数目在其附近已没有意义。"
+ repair_defective_circle_nexus_effect:0 "§G消除$building_defective_circle_nexus$所带来的负面效果§!"
+ building_infinity_circle_nexus:0 "无限枢纽"
+ building_infinity_circle_nexus_desc:0 "$akx_worm_2_picture$这是我们超越无限的第一步，但绝不是最后一步。"
+ 
+ # 位面引擎
+ building_ruin_dimension_engine:0 "停摆的$building_dimension_engine$"
+ building_ruin_dimension_engine_desc:0 "$akx_worm_1_picture$这台$building_dimension_engine$的能源已经耗尽，机体也有所损伤，但经过专业的维修与充足的供能后仍然可以发挥原有的作用。"
+ building_defective_dimension_engine:0 "失控的$building_dimension_engine$"
+ building_defective_dimension_engine_desc:0 "$akx_worm_1_picture$这台$building_dimension_engine$发生了致命的故障，对位面所产生的一切影响都难以预估且无法控制。"
+ building_defective_dimension_engine_effect:0 "§R全银河的舰船超光速后都可能失踪！§!"
+ building_dimension_engine:0 "位面引擎"
+ building_dimension_engine_desc:0 "$akx_worm_1_picture$显而易见，这是一台$building_dimension_engine$，位面的边界在其附近已没有意义。"
+ repair_defective_dimension_engine_effect:0 "§G消除$building_defective_dimension_engine$所带来的负面效果§!"
+ building_infinity_dimension_engine:0 "无限引擎"
+ building_infinity_dimension_engine_desc:0 "$akx_worm_1_picture$这是我们超越无限的第一步，但绝不是最后一步。"
+ 
+ # 无限之塔
+ building_tower_of_infinity:0 "无限之塔"
+ building_tower_of_infinity_desc:0 "$tower_of_infinity_picture$仅因我们心中所想，它便出现在了那里，仿佛它本就应该在那里。"
+ building_tower_of_infinity_resource:0 "$building_tower_of_infinity$"
+ building_tower_of_infinity_resource_desc:0 "$building_tower_of_infinity_desc$"
+ building_tower_of_infinity_same_desc:0 "$tower_of_infinity_picture$这座塔在任何波长的光的照射下都显示出相同的颜色。"
+ building_tower_of_infinity_technician:0 "§Y无限之塔-黄§!"
+ building_tower_of_infinity_technician_desc:0 "§Y$building_tower_of_infinity_same_desc$§!"
+ building_tower_of_infinity_miner:0 "§R无限之塔-红§!"
+ building_tower_of_infinity_miner_desc:0 "§R$building_tower_of_infinity_same_desc$§!"
+ building_tower_of_infinity_farmer:0 "§C无限之塔-青§!"
+ building_tower_of_infinity_farmer_desc:0 "§C$building_tower_of_infinity_same_desc$§!"
+ building_tower_of_infinity_foundry:0 "§M无限之塔-紫§!"
+ building_tower_of_infinity_foundry_desc:0 "§M$building_tower_of_infinity_same_desc$§!"
+ building_tower_of_infinity_artisan:0 "§P无限之塔-粉§!"
+ building_tower_of_infinity_artisan_desc:0 "§P$building_tower_of_infinity_same_desc$§!"
+ building_tower_of_infinity_chemist:0 "§V无限之塔-褐§!"
+ building_tower_of_infinity_chemist_desc:0 "§V$building_tower_of_infinity_same_desc$§!"
+ building_tower_of_infinity_refiner:0 "§G无限之塔-绿§!"
+ building_tower_of_infinity_refiner_desc:0 "§G$building_tower_of_infinity_same_desc$§!"
+ building_tower_of_infinity_translucer:0 "§H无限之塔-橙§!"
+ building_tower_of_infinity_translucer_desc:0 "§H$building_tower_of_infinity_same_desc$§!"
+ 
+ # 终焉宣告
+ building_dimensional_horror_crisis_storm_protection_1:0 "负声波通讯基站"
+ building_dimensional_horror_crisis_storm_protection_1_desc:0 "$dimensional_horror_crisis_picture$$tech_dimensional_horror_crisis_storm_protection_building_1_desc$"
+ building_dimensional_horror_crisis_storm_protection_2:0 "负维度存储仓库"
+ building_dimensional_horror_crisis_storm_protection_2_desc:0 "$dimensional_horror_crisis_picture$$tech_dimensional_horror_crisis_storm_protection_building_2_desc$"
+ building_dimensional_horror_crisis_storm_protection_3:0 "负基质改造节点"
+ building_dimensional_horror_crisis_storm_protection_3_desc:0 "$dimensional_horror_crisis_picture$$tech_dimensional_horror_crisis_storm_protection_building_3_desc$"
+ building_dimensional_horror_crisis_storm_protection_4:0 "负生命备份接口"
+ building_dimensional_horror_crisis_storm_protection_4_desc:0 "$dimensional_horror_crisis_picture$$tech_dimensional_horror_crisis_storm_protection_building_4_desc$"
+ building_dimensional_horror_crisis_storm_protection_5:0 "逆循环回溯枢纽"
+ building_dimensional_horror_crisis_storm_protection_5_desc:0 "$dimensional_horror_crisis_picture$$tech_dimensional_horror_crisis_storm_protection_building_5_desc$"
+ 
+ ################################################################
+ # 彼岸庇护所
+ ################################################################
+ 
+ building_time_shelter_capital_1: "巴别塔基址"
+ building_time_shelter_capital_1_desc: "彼岸的尽头是什么？"
+ building_time_shelter_capital_2: "残缺的巴别塔"
+ building_time_shelter_capital_2_desc: "彼岸是否存在尽头？"
+ building_time_shelter_capital_3: "虚假的巴别塔"
+ building_time_shelter_capital_3_desc: "彼岸是否存在？"
+ building_time_shelter_capital_effect: "终末行舟稀有度：[GetTimeTitanRarityConcept]\n终末行舟当前状态：[GetTimeTitanStatusConcept]\n['concept_time_shelter_maintenance_white']：§G[GetTimeShelterMaintenanceLoc]%§!\n['concept_time_shelter_maintenance_cap_white']：§Y[GetTimeShelterMaintenanceCapLoc]%§!"
+ 
+ building_time_shelter_maintenance_1: "粒子传输机"
+ building_time_shelter_maintenance_1_desc: "这台传输机允许在彼岸与现世间进行粒子交换。"
+ building_time_shelter_maintenance_2: "物质传输机"
+ building_time_shelter_maintenance_2_desc: "这台传输机允许在彼岸与现世间进行物质交换。"
+ building_time_shelter_maintenance_3: "实体传输机"
+ building_time_shelter_maintenance_3_desc: "这台传输机允许在彼岸与现世间进行实体交换。"
+ 
+ building_time_shelter_maintenance_cap_1: "坐标原点"
+ building_time_shelter_maintenance_cap_1_desc: "这是彼岸与现世建立通道的坐标原点。"
+ building_time_shelter_maintenance_cap_2: "逻辑原点"
+ building_time_shelter_maintenance_cap_2_desc: "这是彼岸与现世建立通道的逻辑原点。"
+ building_time_shelter_maintenance_cap_3: "因果原点"
+ building_time_shelter_maintenance_cap_3_desc: "这是彼岸与现世建立通道的因果原点。"
+ 
+ building_time_shelter_clone_1: "躯壳繁育室"
+ building_time_shelter_clone_1_desc: "躯壳是承载生命的容器。"
+ building_time_shelter_clone_2: "生命繁育室"
+ building_time_shelter_clone_2_desc: "生命是体现存在的表象。"
+ building_time_shelter_clone_3: "存在繁育室"
+ building_time_shelter_clone_3_desc: "存在是创造躯壳的证明。"
+ 
+ building_time_shelter_assembly_1: "机体复制器"
+ building_time_shelter_assembly_1_desc: "机体是承载意识的容器。"
+ building_time_shelter_assembly_2: "意识复制器"
+ building_time_shelter_assembly_2_desc: "意识是体现灵魂的表象。"
+ building_time_shelter_assembly_3: "灵魂复制器"
+ building_time_shelter_assembly_3_desc: "灵魂是创造机体的证明。"
+ 
+ building_time_shelter_resource_job_1: "前哨站节点"
+ building_time_shelter_resource_job_1_desc: "连接通道与前哨站的节点。"
+ building_time_shelter_resource_job_2: "前哨站中继"
+ building_time_shelter_resource_job_2_desc: "连接通道与前哨站的中继。"
+ building_time_shelter_resource_job_3: "前哨站枢纽"
+ building_time_shelter_resource_job_3_desc: "连接通道与前哨站的枢纽。"
+ 
+ building_time_shelter_manufacturing_job_1: "制造厂节点"
+ building_time_shelter_manufacturing_job_1_desc: "连接通道与制造厂的节点。"
+ building_time_shelter_manufacturing_job_2: "制造厂中继"
+ building_time_shelter_manufacturing_job_2_desc: "连接通道与制造厂的中继。"
+ building_time_shelter_manufacturing_job_3: "制造厂枢纽"
+ building_time_shelter_manufacturing_job_3_desc: "连接通道与制造厂的枢纽。"
+ 
+ building_time_shelter_unity_job_1: "引航标节点"
+ building_time_shelter_unity_job_1_desc: "连接通道与引航标的节点。"
+ building_time_shelter_unity_job_2: "引航标中继"
+ building_time_shelter_unity_job_2_desc: "连接通道与引航标的中继。"
+ building_time_shelter_unity_job_3: "引航标枢纽"
+ building_time_shelter_unity_job_3_desc: "连接通道与引航标的枢纽。"
+ 
+ building_time_shelter_research_job_1: "观测台节点"
+ building_time_shelter_research_job_1_desc: "连接通道与观测台的节点。"
+ building_time_shelter_research_job_2: "观测台中继"
+ building_time_shelter_research_job_2_desc: "连接通道与观测台的中继。"
+ building_time_shelter_research_job_3: "观测台枢纽"
+ building_time_shelter_research_job_3_desc: "连接通道与观测台的枢纽。"
+ 
+ building_time_shelter_secondary_job_1: "谬误演算仪"
+ building_time_shelter_secondary_job_1_desc: "彼岸与现世的偏差必须得到精确演算，任何谬误都是重大的影响因素。"
+ building_time_shelter_secondary_job_2: "悖论修正仪"
+ building_time_shelter_secondary_job_2_desc: "彼岸与现世的偏差必须得到及时修正，任何悖论都是严重的安全隐患。"
+ 
+ building_time_shelter_max_districts_1: "静滞钟楼"
+ building_time_shelter_max_districts_1_desc: "当钟表就此静滞，时间也停止流动。"
+ building_time_shelter_max_districts_2: "逆转钟楼"
+ building_time_shelter_max_districts_2_desc: "当钟表开始逆转，时间也随之倒退。"
+ 
+ building_time_shelter_sentinel_base_resource_1: "荒废许愿井"
+ building_time_shelter_sentinel_base_resource_1_desc: "彼岸哨兵在此处发现了一座荒废的许愿井，有人投入硬币，却没能得到回应。"
+ building_time_shelter_sentinel_base_resource_2: "怪异许愿井"
+ building_time_shelter_sentinel_base_resource_2_desc: "对许愿井的请求终于取得了回报，彼岸哨兵开始将源源不断的资源运回庇护所。"
+ building_time_shelter_sentinel_base_resource_3: "受诅许愿井"
+ building_time_shelter_sentinel_base_resource_3_desc: "这座许愿井受到了诅咒，我们已经无法停止许愿了——直到许愿井的愿望得到满足。"
+ 
+ building_time_shelter_sentinel_rare_resource_1: "熟悉的矿道"
+ building_time_shelter_sentinel_rare_resource_1_desc: "彼岸哨兵在此处发现了一座熟悉的矿道，其中显露出不少稀有矿藏。"
+ building_time_shelter_sentinel_rare_resource_2: "无止尽矿道"
+ building_time_shelter_sentinel_rare_resource_2_desc: "彼岸哨兵试图对这座矿道探索，却始终无法抵达尽头。"
+ building_time_shelter_sentinel_rare_resource_3: "衔尾蛇矿道"
+ building_time_shelter_sentinel_rare_resource_3_desc: "彼岸哨兵从矿道的出口返回，但他们似乎已在其中度过了数百年。"
+ 
+ building_time_shelter_sentinel_planet_modifier_a_1: "无限森林"
+ building_time_shelter_sentinel_planet_modifier_a_1_desc: "彼岸哨兵在此处发现了一片资源取之不尽的庞大森林。"
+ building_time_shelter_sentinel_planet_modifier_a_2: "蔓延森林"
+ building_time_shelter_sentinel_planet_modifier_a_2_desc: "这片庞大的森林似乎在无休止地向外蔓延，天知道它们什么时候会将我们包围。"
+ 
+ building_time_shelter_sentinel_planet_modifier_b_1: "青春不老泉"
+ building_time_shelter_sentinel_planet_modifier_b_1_desc: "彼岸哨兵在此处发现了一处不老泉，饮用者可永葆青春。"
+ building_time_shelter_sentinel_planet_modifier_b_2: "生亡不老泉"
+ building_time_shelter_sentinel_planet_modifier_b_2_desc: "喝下不老泉的人似乎陷入了生与死的叠加态，但他们确实失去了衰朽的机能。"
+ 
+ building_time_shelter_sentinel_country_modifier: "失落军械库"
+ building_time_shelter_sentinel_country_modifier_desc: "彼岸哨兵在此处发现了一座失落的军械库，其中贮藏着一些远古时期的装备。"
+ 
+ building_time_shelter_artisan_base_resource_1: "古怪工厂"
+ building_time_shelter_artisan_base_resource_1_desc: "次元工匠设计了一座古怪的工厂，声称这能大幅提高工业生产效率。"
+ building_time_shelter_artisan_base_resource_2: "智慧工厂"
+ building_time_shelter_artisan_base_resource_2_desc: "这座工厂似乎有着自己的智慧，但它确实在工业生产上达成了预期指标。"
+ building_time_shelter_artisan_base_resource_3: "炼狱工厂"
+ building_time_shelter_artisan_base_resource_3_desc: "这座工厂接管了远超所需的权限，此地早已变为一处炼狱。"
+ 
+ building_time_shelter_artisan_rare_resource_1: "高压熔炉"
+ building_time_shelter_artisan_rare_resource_1_desc: "次元工匠设计了一台高压熔炉，并确保一切都处于安全范围内。"
+ building_time_shelter_artisan_rare_resource_2: "负压熔炉"
+ building_time_shelter_artisan_rare_resource_2_desc: "这台熔炉的工作压力失控般地骤降，但其产品质量却意外地很好。"
+ building_time_shelter_artisan_rare_resource_3: "真空熔炉"
+ building_time_shelter_artisan_rare_resource_3_desc: "这台熔炉内部已经变成真空，或许物质是在另一个位面实现重组的。"
+ 
+ building_time_shelter_artisan_planet_modifier_a_1: "自维护车间"
+ building_time_shelter_artisan_planet_modifier_a_1_desc: "次元工匠设计了一处车间，其配置了一套用于自发维护的设备。"
+ building_time_shelter_artisan_planet_modifier_a_2: "自重置车间"
+ building_time_shelter_artisan_planet_modifier_a_2_desc: "这处车间的状态在无规律地刷新，但只要不在刷新期间迷失其中，它还是安全的。"
+ 
+ building_time_shelter_artisan_planet_modifier_b_1: "建造者机库"
+ building_time_shelter_artisan_planet_modifier_b_1_desc: "次元工匠设计了一座机库，用于容纳生产建造型智能机器人。"
+ building_time_shelter_artisan_planet_modifier_b_2: "复制者机库"
+ building_time_shelter_artisan_planet_modifier_b_2_desc: "智能机器人对机库本身进行了改造，现在它们会不断自我复制以完成并不存在的工作——不惜一切代价。"
+ 
+ building_time_shelter_artisan_country_modifier: "反物质船坞"
+ building_time_shelter_artisan_country_modifier_desc: "该区域的特性允许次元工匠使用反物质进行舰船配件建造，失误引发的湮灭也在计算之内。"
+ 
+ building_time_shelter_elder_base_resource_1: "应许交易所"
+ building_time_shelter_elder_base_resource_1_desc: "位面长老在此地组建了一座交易所，并声称此为应许之地。"
+ building_time_shelter_elder_base_resource_2: "受祝交易所"
+ building_time_shelter_elder_base_resource_2_desc: "这座交易所受到了位面长老的祝福，庇护所的居民满怀期待地在此购置物资。"
+ building_time_shelter_elder_base_resource_3: "属灵交易所"
+ building_time_shelter_elder_base_resource_3_desc: "这座交易所进行了重大改革，将由属灵代替居民完成一切交易，且无需居民本人同意。"
+ 
+ building_time_shelter_elder_rare_resource_1: "自然教会"
+ building_time_shelter_elder_rare_resource_1_desc: "位面长老成立了一处普世教会，旨在引导居民融入彼岸的自然。"
+ building_time_shelter_elder_rare_resource_2: "低语教会"
+ building_time_shelter_elder_rare_resource_2_desc: "融入彼岸的第一步——聆听自然的低语。"
+ building_time_shelter_elder_rare_resource_3: "谵妄教会"
+ building_time_shelter_elder_rare_resource_3_desc: "融入彼岸的第二步——遵循自然的教诲、传播自然的福音、服从自然的意志、§R自然自然自然自然自然§!。"
+ 
+ building_time_shelter_elder_planet_modifier_a_1: "调配行政楼"
+ building_time_shelter_elder_planet_modifier_a_1_desc: "位面长老建造了一片行政楼，用于对庇护所的人员与物资进行及时调配。"
+ building_time_shelter_elder_planet_modifier_a_2: "冗余行政楼"
+ building_time_shelter_elder_planet_modifier_a_2_desc: "这片行政楼也不可避免地陷入了冗余的窘境，但一切都是庇护所必要的。"
+ 
+ building_time_shelter_elder_planet_modifier_b_1: "布施修道院"
+ building_time_shelter_elder_planet_modifier_b_1_desc: "位面长老修建了一处修道院，并对庇护所的穷困居民施以援手。"
+ building_time_shelter_elder_planet_modifier_b_2: "宣泄修道院"
+ building_time_shelter_elder_planet_modifier_b_2_desc: "这处修道院似乎已经偏离了本心，无节制的宣泄刺激着每个人心中无法满足的欲望。"
+ 
+ building_time_shelter_elder_country_modifier: "殉道者信标"
+ building_time_shelter_elder_country_modifier_desc: "这里是由无数殉道者的尸骸搭建成的信标，时刻激励着帝国对飞升的探求。"
+ 
+ building_time_shelter_watcher_base_resource_1: "求真实验室"
+ building_time_shelter_watcher_base_resource_1_desc: "维度观者搭建了这座精妙的实验室，用于满足他们求知的欲望。"
+ building_time_shelter_watcher_base_resource_2: "秘密实验室"
+ building_time_shelter_watcher_base_resource_2_desc: "这座实验室的存在已经变成了秘密，维度观者似乎进行着某种危险的实验。"
+ building_time_shelter_watcher_base_resource_3: "狂信实验室"
+ building_time_shelter_watcher_base_resource_3_desc: "维度观者借助实验将自己融入彼岸，他们不在这里，他们无处不在。"
+ 
+ building_time_shelter_watcher_rare_resource_1: "调查基金会"
+ building_time_shelter_watcher_rare_resource_1_desc: "维度观者组织了一个基金会，旨在对各种异常现象进行调查。"
+ building_time_shelter_watcher_rare_resource_2: "收容基金会"
+ building_time_shelter_watcher_rare_resource_2_desc: "某些异常现象的危险程度远超我们的想象，它们必须得到收容。"
+ building_time_shelter_watcher_rare_resource_3: "封存基金会"
+ building_time_shelter_watcher_rare_resource_3_desc: "基金会已经停摆，它的档案已被封存，只希望没有人再次获悉那个存在。"
+ 
+ building_time_shelter_watcher_planet_modifier_a_1: "桃源夹缝"
+ building_time_shelter_watcher_planet_modifier_a_1_desc: "维度观者通过奇点撕开了一道夹缝，它连接着一处世外桃源。"
+ building_time_shelter_watcher_planet_modifier_a_2: "虚空夹缝"
+ building_time_shelter_watcher_planet_modifier_a_2_desc: "所谓的世外桃源只是一场幻象，但愿沉溺于虚无中的人们永远不要醒来。"
+ 
+ building_time_shelter_watcher_planet_modifier_b_1: "学术图书馆"
+ building_time_shelter_watcher_planet_modifier_b_1_desc: "维度观者将自己的学术成果储存与这座图书馆中，并对外界免费开放。"
+ building_time_shelter_watcher_planet_modifier_b_2: "禁忌图书馆"
+ building_time_shelter_watcher_planet_modifier_b_2_desc: "一些不可容忍的禁忌知识混杂在了书籍之中，但它们的泄露已无从阻止。"
+ 
+ building_time_shelter_watcher_country_modifier: "无知象牙塔"
+ building_time_shelter_watcher_country_modifier_desc: "维度观者用这座空无一物的象牙塔时刻警醒自己——我们唯一所知的就是我们一无所知。"

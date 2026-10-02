@@ -1,0 +1,20 @@
+tradition_origin_tao_of_ninghe = {
+	tree_template = "tree_21_12"
+	adoption_bonus = "tr_origin_tao_of_ninghe_adopt"
+	finish_bonus = "tr_origin_tao_of_ninghe_finish"
+	traditions = {
+		"tr_origin_tao_of_ninghe_building_yin"
+		"tr_origin_tao_of_ninghe_building_yang"
+		"tr_origin_tao_of_ninghe_situations"
+		"tr_origin_tao_of_ninghe_pure_yin"
+		"tr_origin_tao_of_ninghe_pure_yang"
+	}
+
+	potential = {
+		has_origin = origin_tao_of_ninghe
+	}
+
+	ai_weight = {
+		factor = 1000
+	}
+}

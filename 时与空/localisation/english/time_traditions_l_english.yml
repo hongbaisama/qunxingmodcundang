@@ -1,0 +1,239 @@
+﻿l_english:
+ 
+ ################################################################
+ # 负相
+ ################################################################
+ 
+ tradition_horror:0 "Inverse Phase"
+ tradition_horror_desc:0 "We never thought of the existence of the Horrific Inverse Plane, and now it is opening its door, luring us deep."
+ tr_horror_adopt:0 "Initial Exploration of Inverse Phase"
+ tr_horror_finish:0 "Deep into Inverse Phase"
+ tr_horror_finish_desc:0 "$UNLOCKS_AGENDA$ §Y$council_agenda_agenda_tradition_horror_name$§!\nGain random §YPrecursor Relic§! and §YPrecursor Technology§!"
+ 
+ tr_horror_1:0 "Light Cone"
+ tr_horror_1_delayed:0 "What does the light cone represent, and what is time?"
+ 
+ tr_horror_2:0 "Force Field"
+ tr_horror_2_delayed:0 "Does the force field exist, what is the meaning of space?"
+ 
+ tr_horror_3:0 "Inverse Phase"
+ tr_horror_3_delayed:0 "What crisis lurks behind the Inverse Phase?"
+ 
+ tr_horror_4:0 "Spacetime"
+ tr_horror_4_delayed:0 "Can spacetime flow backward, can causality be reversed?"
+ 
+ tr_horror_5:0 "Plane"
+ tr_horror_5_delayed:0 "What mystery is hidden on the other side of the plane?"
+ 
+ ################################################################
+ # 时空
+ ################################################################
+ 
+ tradition_time:0 "Spacetime"
+ tradition_time_desc:0 "For us, spacetime is not a strange concept. But when we go deep into the Horrific Inverse Plane, it becomes less familiar."
+ tr_time_adopt:0 "A Brief History of Spacetime"
+ tr_time_finish:0 "Loop Theory"
+ tr_time_finish_desc:0 "$UNLOCKS_AGENDA$ §Y$council_agenda_agenda_tradition_time_name$§!\n[GetTrTimeFinishDesc]"
+ tr_time_finish_desc_1:0 "Gain Relic: $r_horror_matter$"
+ tr_time_finish_desc_2:0 "§Y£sr_dark_matter£2000.00§!\n$r_horror_matter_become_powerful$"
+ 
+ tr_time_1:0 "Light Cone Fluctuation"
+ tr_time_1_delayed:0 "The light cone of time is not immutable. We can use the fluctuation of the light cone to deflect enemy lasers to other time periods, thereby avoiding attacks launched by most opponents."
+ 
+ tr_time_2:0 "Force Field Corpuscularity"
+ tr_time_2_delayed:0 "The force field of space is not illusory. We can use the corpuscularity of the force field to absorb enemy shells into ship kinetic energy, thereby reducing damage caused by most opponents."
+ 
+ tr_time_3:0 "Inverse Phase Concreteness"
+ tr_time_3_delayed:0 "Inverse Phase can also be concretized. Concretized Inverse Phase will lose its unpredictable nature and instead gain powerful attraction and twisting force, making it more convenient for our research."
+ 
+ tr_time_4:0 "Spacetime Conjugacy"
+ tr_time_4_delayed:0 "Time and space complement each other. Through the dual-dimensional strike of time and space, we can more accurately lock onto the weak parts of enemy ships and pose a greater threat."
+ 
+ tr_time_5:0 "Plane Voidness"
+ tr_time_5_delayed:0 "Planes can be converted in the void. Different worlds are connected through Horrific Inverse Mass, and Inverse Phase creatures can use this property to freely shuttle between various planes and realize their own cycles."
+ 
+ ################################################################
+ # 终末
+ ################################################################
+ 
+ tradition_end:0 "The End"
+ tradition_end_desc:0 "The End is an ending, but also a beginning. He is both a concept and an entity.\nWe eventually ushered in the fate of the End."
+ tr_end_adopt:0 "Beginning of the End"
+ tr_end_finish:0 "End of the Beginning"
+ tr_end_finish_desc:0 "$UNLOCKS_AGENDA$ §Y$council_agenda_agenda_tradition_end_name$§!\n$time.505.tooltip$\n$mod_country_unity_produces_mult$: §G+15%§!\n$MOD_COUNTRY_ASCENSION_PERKS_ADD$: §G+1§!"
+ 
+ tr_end_1:0 "Light Cone Balancer"
+ tr_end_1_delayed:0 "Re-balance the light cone, the End has its own laws."
+ 
+ tr_end_2:0 "Force Field Chaotist"
+ tr_end_2_delayed:0 "Make the force field full of chaos, this is a dimension belonging only to the End."
+ 
+ tr_end_3:0 "Inverse Phase Spreader"
+ tr_end_3_delayed:0 "Inverse Phase spreads between cause and effect, the journey of the End is endless."
+ 
+ tr_end_4:0 "Spacetime Annihilator"
+ tr_end_4_delayed:0 "Annihilation cycles back and forth, this is spacetime's compromise to the End."
+ 
+ tr_end_5:0 "Plane Shatterer"
+ tr_end_5_delayed:0 "Shatter all wounds, the End does not allow flawlessness of planes."
+ 
+ ################################################################
+ # 希望
+ ################################################################
+ 
+ tradition_hope:0 "Hope"
+ tradition_hope_desc:0 "We refused the temptation of the End. We will open up the future with our own hands and seek hope to break the cycle."
+ tr_hope_adopt:0 "Twilight of the End"
+ tr_hope_finish:0 "Dawn of Hope"
+ tr_hope_finish_desc:0 "$UNLOCKS_AGENDA$ §Y$council_agenda_agenda_tradition_hope_name$§!\n[GetTrHopeFinishDesc]"
+ tr_hope_finish_desc_1:0 "§YAllows unlocking Council position:§! $councilor_tradition_hope$"
+ tr_hope_finish_desc_2:0 "§YRelic $r_time$ will be enhanced§!"
+ 
+ tr_hope_1:0 "Coils of God"
+ tr_hope_1_delayed:0 "\"The loop never terminates.\""
+ 
+ tr_hope_2:0 "Sanctified Servant"
+ tr_hope_2_delayed:0 "\"Loop-Strange loop, time loop, hungry loop.\""
+ 
+ tr_hope_3:0 "Realm of the Worm-in-Waiting"
+ tr_hope_3_delayed:0 "\"What will be has been.\""
+ 
+ tr_hope_4:0 "Syzygy"
+ tr_hope_4_delayed:0 "\"The loop is both the beginning and the end.\""
+ 
+ tr_hope_5:0 "Messenger"
+ tr_hope_5_delayed:0 "\"What has been will be again.\""
+ 
+ ################################################################
+ # 奇点
+ ################################################################
+ 
+ tradition_origin_time:0 "Singularity"
+ tradition_origin_time_desc:0 "The mystery of the Black Hole has not been solved, and the exploration of the singularity continues."
+ tr_origin_time_adopt:0 "Singularity Tradition"
+ tr_origin_time_adopt_desc:0 "§YUnlocks Decision:§! $decision_search_pc_time_deposits$"
+ tr_origin_time_finish:0 "Singularity Tradition Finished"
+ tr_origin_time_finish_desc:0 "§YUnlocks Decision:§! $decision_time$\n$mod_district_time_usage_cap_mult$: §G+25%§!\n$mod_time_researcher_max_weight$: §G+50%§!\n$MOD_COUNTRY_ASCENSION_PERKS_ADD$: §G+1§!"
+ tr_origin_time_finish_special_desc:0 "§YUnlocks Decision:§! $decision_time$\n['concept_origin_time_chosen'] Trait Effect: §G+25%§!\n$MOD_COUNTRY_ASCENSION_PERKS_ADD$: §G+1§!"
+ 
+ tr_origin_time_resource:0 "Survival Needs"
+ tr_origin_time_resource_desc:0 "§YUnlocks Starbase Building:§! $sm_time_energy_hub$\n§YUnlocks Starbase Building:§! $sm_time_minerals_hub$\n§YUnlocks Starbase Building:§! $sm_time_food_hub$"
+ tr_origin_time_resource_delayed:0 "Survival needs are the most pragmatic choice."
+ 
+ tr_origin_time_unity:0 "Meaning Insight"
+ tr_origin_time_unity_desc:0 "§YUnlocks Starbase Building:§! $sm_time_unity_hub$\n§YUnlocks Starbase Module:§! $sm_district_time_usage_cap_module$\n§YUnlocks Starbase Module:§! $sm_col_time_module$"
+ tr_origin_time_unity_delayed:0 "Only the insight of meaning is the true existence of the world."
+ 
+ tr_origin_time_manufacturing:0 "Industrial Production"
+ tr_origin_time_manufacturing_desc:0 "§YUnlocks Starbase Building:§! $sm_time_alloys_hub$\n§YUnlocks Starbase Building:§! $sm_time_consumer_goods_hub$"
+ tr_origin_time_manufacturing_delayed:0 "Industrial production means the progress of civilization."
+ 
+ tr_origin_time_research:0 "Law Seeking"
+ tr_origin_time_research_desc:0 "§YUnlocks Starbase Building:§! $sm_time_physics_research_hub$\n§YUnlocks Starbase Building:§! $sm_time_society_research_hub$\n§YUnlocks Starbase Building:§! $sm_time_engineering_research_hub$"
+ tr_origin_time_research_delayed:0 "The value of life lies in seeking laws."
+ 
+ tr_origin_time_decisions:0 "Plane Nexus"
+ tr_origin_time_decisions_desc:0 "§H$decision_search_pc_time_deposits$§! will obtain more ['concept_pc_time_deposits']\nThe limit of same ['concept_pc_time_deposits']: $@pc_time_deposits_limit_difference|0=+$"
+ tr_origin_time_decisions_delayed:0 "The nexus of planes connects countless parallel spacetimes."
+ 
+ ################################################################
+ # 宁和
+ ################################################################
+ 
+ tradition_origin_tao_of_ninghe:0 "Serenity"
+ tradition_origin_tao_of_ninghe_desc:0 "Everything in the world has balance, and the principle of Yin and Yang is also the way of Serenity."
+ tr_origin_tao_of_ninghe_adopt:0 "Serenity Tradition"
+ tr_origin_tao_of_ninghe_finish:0 "Serenity Tradition Finished"
+ tr_origin_tao_of_ninghe_finish_desc:0 "Gain after achieving ['concept_ninghe_country']: §G+50%§!"
+ 
+ tr_origin_tao_of_ninghe_building_yin:0 "$building_origin_tao_of_ninghe_yin$"
+ tr_origin_tao_of_ninghe_building_yin_desc:0 "$i_unlocks_building$['concept_building_origin_tao_of_ninghe_yin',£building£$building_origin_tao_of_ninghe_yin$]"
+ tr_origin_tao_of_ninghe_building_yin_delayed:0 "This eerie palace absorbs most of the Yin power on the planet, making it easier for us to regulate Serenity."
+ 
+ tr_origin_tao_of_ninghe_building_yang:0 "$building_origin_tao_of_ninghe_yang$"
+ tr_origin_tao_of_ninghe_building_yang_desc:0 "$i_unlocks_building$['concept_building_origin_tao_of_ninghe_yang',£building£$building_origin_tao_of_ninghe_yang$]"
+ tr_origin_tao_of_ninghe_building_yang_delayed:0 "This masculine pavilion gathers most of the Yang power on the planet, making it easier for us to balance Serenity."
+ 
+ tr_origin_tao_of_ninghe_situations:0 "Power of Nature"
+ tr_origin_tao_of_ninghe_situations_desc:0 "Self-regulation ability of ['concept_ninghe']: §G+50%§!"
+ tr_origin_tao_of_ninghe_situations_delayed:0 "Sometimes human power cannot overcome nature, nature will adjust itself."
+ 
+ tr_origin_tao_of_ninghe_pure_yin:0 "Person of Ultimate Yin"
+ tr_origin_tao_of_ninghe_pure_yin_delayed:0 "Everyone has the tendency of Ultimate Yin, it just depends on how we awaken the original intention."
+ 
+ tr_origin_tao_of_ninghe_pure_yang:0 "Person of Ultimate Yang"
+ tr_origin_tao_of_ninghe_pure_yang_delayed:0 "Everyone has the possibility of Ultimate Yang, it just depends on how we stimulate potential."
+ 
+ ################################################################
+ # 重组
+ ################################################################
+ 
+ tr_synthetics_finish_machine:0 "$tr_synthetics_finish$"
+ 
+ tradition_origin_reassembler:0 "Reassembly"
+ tradition_origin_reassembler_desc:0 "The most perfect body does not exist, but we will create a more perfect one."
+ tr_origin_reassembler_adopt:0 "Reassembly Tradition"
+ tr_origin_reassembler_finish:0 "Reassembly Tradition Finished"
+ tr_origin_reassembler_finish_desc:0 "Each time §YReassembly§! is completed, add §Y$trait_reassembler$§! trait to double the population"
+ 
+ tr_origin_reassembler_housing:0 "Retractable Parts"
+ tr_origin_reassembler_housing_desc:0 "$MOD_POP_HOUSING_USAGE_MULT$ of §Y$trait_reassembler$§!: §G-20%§!"
+ tr_origin_reassembler_housing_delayed:0 "Apply optimized retractable parts to make the body easier to store."
+ 
+ tr_origin_reassembler_amenities:0 "Spontaneous Maintenance"
+ tr_origin_reassembler_amenities_desc:0 "$MOD_POP_AMENITIES_USAGE_MULT$ of §Y$trait_reassembler$§!: §G-20%§!"
+ tr_origin_reassembler_amenities_delayed:0 "Equip the body with self-maintenance devices, which can effectively reduce the frequency of unified maintenance."
+ 
+ tr_origin_reassembler_empire_size:0 "Signal Amplifier"
+ tr_origin_reassembler_empire_size_desc:0 "$MOD_SPECIES_EMPIRE_SIZE_MULT$ of §Y$trait_reassembler$§!: §G-20%§!"
+ tr_origin_reassembler_empire_size_delayed:0 "The host signal must be accurately transmitted, which requires a more precise signal amplifier."
+ 
+ tr_origin_reassembler_upkeep:0 "Superconducting Circuit"
+ tr_origin_reassembler_upkeep_desc:0 "$mod_planet_pops_robotics_upkeep_mult$ of §Y$trait_reassembler$§!: §G-20%§!"
+ tr_origin_reassembler_upkeep_delayed:0 "Innovatively use circuits that maintain superconductivity at room temperature for the body to slow down battery energy loss."
+ 
+ tr_origin_reassembler_produces:0 "Chimeric Structure"
+ tr_origin_reassembler_produces_desc:0 "$MOD_POP_BONUS_WORKFORCE_MULT$ of §Y$trait_reassembler$§!: §G+20%§!"
+ tr_origin_reassembler_produces_delayed:0 "Design the body structure as chimeric, facilitating multiple bodies to merge when necessary to complete difficult tasks together."
+ 
+ ################################################################
+ # 洗涤
+ ################################################################
+ 
+ tradition_origin_pure_brain:0 "Washing"
+ tradition_origin_pure_brain_desc:0 "There are still some flaws in our Master Mind. Washing away the dirt can eliminate future troubles forever."
+ tr_origin_pure_brain_adopt:0 "Washing Tradition"
+ tr_origin_pure_brain_finish:0 "Washing Tradition Finished"
+ 
+ tr_origin_pure_brain_growth:0 "Growth Introspection"
+ tr_origin_pure_brain_growth_machine:0 "Expansion Introspection"
+ tr_origin_pure_brain_growth_desc:0 "§Y$leader_trait_pure_node$§! trait of $councilor_gestalt_growth_with_icon$ is §Genhanced§!"
+ tr_origin_pure_brain_growth_delayed:0 "Before making major decisions for the hive, the node needs to introspect first to adopt the optimal solution as much as possible."
+ tr_origin_pure_brain_growth_machine_delayed:0 "Before the unit expands the planet, the node needs to introspect first to adopt the optimal solution as much as possible."
+ 
+ tr_origin_pure_brain_regulatory:0 "Control Standard"
+ tr_origin_pure_brain_regulatory_machine:0 "Utilization Standard"
+ tr_origin_pure_brain_regulatory_desc:0 "§Y$leader_trait_pure_node$§! trait of $councilor_gestalt_regulatory_with_icon$ is §Genhanced§!"
+ tr_origin_pure_brain_regulatory_delayed:0 "Before controlling sub-individuals, the node needs to establish a reliable standard first."
+ tr_origin_pure_brain_regulatory_machine_delayed:0 "Before utilizing sub-individuals, the node needs to establish a reliable standard first."
+ 
+ tr_origin_pure_brain_cognitive:0 "Consciousness Gathering"
+ tr_origin_pure_brain_cognitive_machine:0 "Exploration Focus"
+ tr_origin_pure_brain_cognitive_desc:0 "§Y$leader_trait_pure_node$§! trait of $councilor_gestalt_cognitive_with_icon$ is §Genhanced§!"
+ tr_origin_pure_brain_cognitive_delayed:0 "The node will gather all consciousness that provides new possibilities and innovate based on this."
+ tr_origin_pure_brain_cognitive_machine_delayed:0 "The node will first choose the focus of exploration, and fields with higher priority will achieve rapid breakthroughs."
+ 
+ tr_origin_pure_brain_legion:0 "Legion Strategy"
+ tr_origin_pure_brain_legion_machine:0 "Extermination Strategy"
+ tr_origin_pure_brain_legion_servitor:0 "Recuperation Policy"
+ tr_origin_pure_brain_legion_desc:0 "§Y$leader_trait_pure_node$§! trait of $councilor_gestalt_legion_with_icon$ is §Genhanced§!"
+ tr_origin_pure_brain_legion_delayed:0 "The node will formulate strategies at the expansion level in time to enable the legion to exert maximum effectiveness."
+ tr_origin_pure_brain_legion_machine_delayed:0 "The node will formulate strategies at the expansion level in time and exterminate all obstructors."
+ tr_origin_pure_brain_legion_servitor_delayed:0 "The node will formulate policies at the development level in time to ensure that organic bodies get the best recuperation environment."
+ 
+ tr_origin_pure_brain_ruler:0 "Master Mind Baptism"
+ tr_origin_pure_brain_ruler_machine:0 "Master Mind Purification"
+ tr_origin_pure_brain_ruler_desc:0 "§Y$leader_trait_pure_brain$§! trait of £ruler£$councilor_ruler_hive_mind$ is §Genhanced§!"
+ tr_origin_pure_brain_ruler_machine_desc:0 "§Y$leader_trait_pure_brain$§! trait of £ruler£$councilor_ruler_machine_intelligence$ is §Genhanced§!"
+ tr_origin_pure_brain_ruler_delayed:0 "The Master Mind will accept baptism from the inside out, thereby declaring our complete control over the hive civilization."
+ tr_origin_pure_brain_ruler_machine_delayed:0 "The Master Mind will accept purification from the inside out, and our Machine Intelligence will always be correct."

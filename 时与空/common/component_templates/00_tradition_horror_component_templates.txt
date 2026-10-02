@@ -1,0 +1,532 @@
+####################
+# 负相偏折护盾
+####################
+
+utility_component_template = {
+	key = "SMALL_HORROR_SHIELD"
+	size = small
+	icon = "GFX_ship_part_horror_shield"
+	icon_frame = 1
+	power = @power_S6
+	resources = {
+		category = ship_components
+		cost = {
+			alloys = @shield_s_t6_cost
+			sr_dark_matter = 0.25
+		}
+		inline_script = {
+			script = component_templates/time_component_template_basic_upkeep
+			ENERGY = @shield_s_t6_upkeep_energy
+			ALLOYS = @shield_s_t6_upkeep_alloys
+		}
+	}
+	
+	custom_tooltip = small_horror_shield_effect
+	
+	modifier = {
+		ship_shield_add = @shield_S6
+		ship_shield_regen_add_static = @regen_S6 #Regeneration per day
+	}
+	
+	ship_modifier = {
+		ship_shield_hardening_add = @time_extra_modifier_S6
+		weapon_confuser_protect_chance = @time_extra_modifier_S6
+		weapon_terrify_protect_chance = @time_extra_modifier_S6
+	}
+	
+	triggered_ship_modifier = {
+		ship_shield_regen_add_static = @regen_S6 #Regeneration per day
+		mult = value:num_time_modifier|BASE|0|MODIFIER|ship_shield_mult|
+	}
+	
+	triggered_ship_modifier = {
+		potential = {
+			active_ap_horror_bonus = { SCOPE = owner }
+		}
+		ship_shield_hardening_add = @time_extra_modifier_S6
+	}
+	
+	triggered_ship_design_modifier = {
+		potential = {
+			active_ap_time_bonus = { SCOPE = from }
+		}
+		ship_shield_mult = @time_extra_modifier_S6
+	}
+	
+	prerequisites = { "tech_horror_shield" }
+	component_set = "HORROR_SHIELD"
+	upgrades_to = "SMALL_TIME_SHIELD"
+	
+	potential = {
+		from = { has_tradition = tr_horror_1 }
+	}
+
+	ai_weight = {
+		weight = 50
+		modifier = {
+			factor = 0.0
+			no_resource_for_component = { RESOURCE = sr_dark_matter }
+			is_ai = yes
+		}
+	}
+}
+
+utility_component_template = {
+	key = "MEDIUM_HORROR_SHIELD"
+	size = medium
+	icon = "GFX_ship_part_horror_shield"
+	icon_frame = 1
+	power = @power_M6
+	resources = {
+		category = ship_components
+		cost = {
+			alloys = @shield_m_t6_cost
+			sr_dark_matter = 0.5
+		}
+		inline_script = {
+			script = component_templates/time_component_template_basic_upkeep
+			ENERGY = @shield_m_t6_upkeep_energy
+			ALLOYS = @shield_m_t6_upkeep_alloys
+		}
+	}
+	
+	custom_tooltip = medium_horror_shield_effect
+	
+	modifier = {
+		ship_shield_add = @shield_M6
+		ship_shield_regen_add_static = @regen_M6 #Regeneration per day
+	}
+	
+	ship_modifier = {
+		ship_shield_hardening_add = @time_extra_modifier_M6
+		weapon_confuser_protect_chance = @time_extra_modifier_M6
+		weapon_terrify_protect_chance = @time_extra_modifier_M6
+	}
+	
+	triggered_ship_modifier = {
+		ship_shield_regen_add_static = @regen_M6 #Regeneration per day
+		mult = value:num_time_modifier|BASE|0|MODIFIER|ship_shield_mult|
+	}
+	
+	triggered_ship_modifier = {
+		potential = {
+			active_ap_horror_bonus = { SCOPE = owner }
+		}
+		ship_shield_hardening_add = @time_extra_modifier_M6
+	}
+	
+	triggered_ship_design_modifier = {
+		potential = {
+			active_ap_time_bonus = { SCOPE = from }
+		}
+		ship_shield_mult = @time_extra_modifier_M6
+	}
+	
+	prerequisites = { "tech_horror_shield" }
+	component_set = "HORROR_SHIELD"
+	upgrades_to = "MEDIUM_TIME_SHIELD"
+	
+	potential = {
+		from = { has_tradition = tr_horror_1 }
+	}
+
+	ai_weight = {
+		weight = 50
+		modifier = {
+			factor = 0.0
+			no_resource_for_component = { RESOURCE = sr_dark_matter }
+			is_ai = yes
+		}
+	}
+}
+
+utility_component_template = {
+	key = "LARGE_HORROR_SHIELD"
+	size = large
+	icon = "GFX_ship_part_horror_shield"
+	icon_frame = 1
+	power = @power_L6
+	resources = {
+		category = ship_components
+		cost = {
+			alloys = @shield_l_t6_cost
+			sr_dark_matter = 1
+		}
+		inline_script = {
+			script = component_templates/time_component_template_basic_upkeep
+			ENERGY = @shield_l_t6_upkeep_energy
+			ALLOYS = @shield_l_t6_upkeep_alloys
+		}
+	}
+	
+	custom_tooltip = large_horror_shield_effect
+	
+	modifier = {
+		ship_shield_add = @shield_L6
+		ship_shield_regen_add_static = @regen_L6 #Regeneration per day
+	}
+	
+	ship_modifier = {
+		ship_shield_hardening_add = @time_extra_modifier_L6
+		weapon_confuser_protect_chance = @time_extra_modifier_L6
+		weapon_terrify_protect_chance = @time_extra_modifier_L6
+	}
+	
+	triggered_ship_modifier = {
+		ship_shield_regen_add_static = @regen_L6 #Regeneration per day
+		mult = value:num_time_modifier|BASE|0|MODIFIER|ship_shield_mult|
+	}
+	
+	triggered_ship_modifier = {
+		potential = {
+			active_ap_horror_bonus = { SCOPE = owner }
+		}
+		ship_shield_hardening_add = @time_extra_modifier_L6
+	}
+	
+	triggered_ship_design_modifier = {
+		potential = {
+			active_ap_time_bonus = { SCOPE = from }
+		}
+		ship_shield_mult = @time_extra_modifier_L6
+	}
+	
+	prerequisites = { "tech_horror_shield" }
+	component_set = "HORROR_SHIELD"
+	upgrades_to = "LARGE_TIME_SHIELD"
+	
+	potential = {
+		from = { has_tradition = tr_horror_1 }
+	}
+
+	ai_weight = {
+		weight = 50
+		modifier = {
+			factor = 0.0
+			no_resource_for_component = { RESOURCE = sr_dark_matter }
+			is_ai = yes
+		}
+	}
+}
+
+utility_component_template = {
+	key = "DIMENSION_HORROR_SHIELD"
+	size = large
+	icon = "GFX_ship_part_horror_shield"
+	icon_frame = 1
+	
+	modifier = {
+		ship_shield_add = @time_utility_X6
+		ship_shield_regen_add_static = @time_utility_regen_X6
+		ship_shield_mult = @time_extra_modifier_X6
+	}
+	
+	triggered_ship_modifier = {
+		ship_shield_regen_add_static = @time_utility_regen_X6
+		mult = value:num_time_modifier|BASE|0|MODIFIER|ship_shield_mult|
+	}
+	
+	ship_modifier = {
+		ship_shield_hardening_add = @time_extra_modifier_X6
+		weapon_confuser_protect_chance = @time_extra_modifier_X6
+		weapon_terrify_protect_chance = @time_extra_modifier_X6
+	}
+	
+	potential = {
+		can_use_dimensional_horror_component_templates = yes
+	}
+	
+	component_set = "DIMENSION_HORROR_SHIELD"
+	upgrades_to = "DIMENSION_TIME_SHIELD"
+
+	ai_weight = {
+		weight = 100
+	}
+}
+
+########################
+# 负相吸收装甲
+########################
+
+utility_component_template = {
+	key = "SMALL_HORROR_ARMOR"
+	size = small
+	icon = "GFX_ship_part_horror_armor"
+	icon_frame = 1
+	power = 0
+	
+	custom_tooltip = small_horror_armor_effect
+	
+	modifier = {
+		ship_armor_add = @armor_S6
+	}
+	
+	ship_modifier = {
+		ship_armor_hardening_add = @time_extra_modifier_S6
+		weapon_confuser_protect_chance = @time_extra_modifier_S6
+		weapon_terrify_protect_chance = @time_extra_modifier_S6
+	}
+	
+	triggered_ship_modifier = {
+		potential = {
+			active_ap_horror_bonus = { SCOPE = owner }
+		}
+		ship_armor_hardening_add = @time_extra_modifier_S6
+	}
+	
+	triggered_ship_design_modifier = {
+		potential = {
+			active_ap_time_bonus = { SCOPE = from }
+		}
+		ship_armor_mult = @time_extra_modifier_S6
+	}
+
+	prerequisites = { "tech_horror_armor" }
+	component_set = "HORROR_ARMOR"
+	upgrades_to = "SMALL_TIME_ARMOR"
+	
+	potential = {
+		from = { has_tradition = tr_horror_2 }
+	}
+	
+	resources = {
+		category = ship_components
+		cost = {
+			alloys = @s_t6_cost
+			sr_dark_matter = 0.5
+		}
+		inline_script = {
+			script = component_templates/time_component_template_basic_upkeep
+			ENERGY = @s_t6_upkeep_energy
+			ALLOYS = @s_t6_upkeep_alloys
+		}
+	}
+	
+	ai_weight = {
+		weight = 50
+		modifier = {
+			factor = 0.0
+			no_resource_for_component = { RESOURCE = sr_dark_matter }
+			is_ai = yes
+		}
+	}
+}
+
+utility_component_template = {
+	key = "MEDIUM_HORROR_ARMOR"
+	size = medium
+	icon = "GFX_ship_part_horror_armor"
+	icon_frame = 1
+	power = 0
+	
+	custom_tooltip = medium_horror_armor_effect
+	
+	modifier = {
+		ship_armor_add = @armor_M6
+	}
+	
+	ship_modifier = {
+		ship_armor_hardening_add = @time_extra_modifier_M6
+		weapon_confuser_protect_chance = @time_extra_modifier_M6
+		weapon_terrify_protect_chance = @time_extra_modifier_M6
+	}
+	
+	triggered_ship_modifier = {
+		potential = {
+			active_ap_horror_bonus = { SCOPE = owner }
+		}
+		ship_armor_hardening_add = @time_extra_modifier_M6
+	}
+	
+	triggered_ship_design_modifier = {
+		potential = {
+			active_ap_time_bonus = { SCOPE = from }
+		}
+		ship_armor_mult = @time_extra_modifier_M6
+	}
+
+	prerequisites = { "tech_horror_armor" }
+	component_set = "HORROR_ARMOR"
+	upgrades_to = "MEDIUM_TIME_ARMOR"
+	
+	potential = {
+		from = { has_tradition = tr_horror_2 }
+	}
+	
+	resources = {
+		category = ship_components
+		cost = {
+			alloys = @m_t6_cost
+			sr_dark_matter = 1
+		}
+		inline_script = {
+			script = component_templates/time_component_template_basic_upkeep
+			ENERGY = @m_t6_upkeep_energy
+			ALLOYS = @m_t6_upkeep_alloys
+		}
+	}
+	
+	ai_weight = {
+		weight = 50
+		modifier = {
+			factor = 0.0
+			no_resource_for_component = { RESOURCE = sr_dark_matter }
+			is_ai = yes
+		}
+	}
+}
+
+utility_component_template = {
+	key = "LARGE_HORROR_ARMOR"
+	size = large
+	icon = "GFX_ship_part_horror_armor"
+	icon_frame = 1
+	power = 0
+	
+	custom_tooltip = large_horror_armor_effect
+	
+	modifier = {
+		ship_armor_add = @armor_L6
+	}
+	
+	ship_modifier = {
+		ship_armor_hardening_add = @time_extra_modifier_L6
+		weapon_confuser_protect_chance = @time_extra_modifier_L6
+		weapon_terrify_protect_chance = @time_extra_modifier_L6
+	}
+	
+	triggered_ship_modifier = {
+		potential = {
+			active_ap_horror_bonus = { SCOPE = owner }
+		}
+		ship_armor_hardening_add = @time_extra_modifier_L6
+	}
+	
+	triggered_ship_design_modifier = {
+		potential = {
+			active_ap_time_bonus = { SCOPE = from }
+		}
+		ship_armor_mult = @time_extra_modifier_L6
+	}
+
+	prerequisites = { "tech_horror_armor" }
+	component_set = "HORROR_ARMOR"
+	upgrades_to = "LARGE_TIME_ARMOR"
+	
+	potential = {
+		from = { has_tradition = tr_horror_2 }
+	}
+	
+	resources = {
+		category = ship_components
+		cost = {
+			alloys = @l_t6_cost
+			sr_dark_matter = 2
+		}
+		inline_script = {
+			script = component_templates/time_component_template_basic_upkeep
+			ENERGY = @l_t6_upkeep_energy
+			ALLOYS = @l_t6_upkeep_alloys
+		}
+	}
+	
+	ai_weight = {
+		weight = 50
+		modifier = {
+			factor = 0.0
+			no_resource_for_component = { RESOURCE = sr_dark_matter }
+			is_ai = yes
+		}
+	}
+}
+
+utility_component_template = {
+	key = "DIMENSION_HORROR_ARMOR"
+	size = large
+	icon = "GFX_ship_part_horror_armor"
+	icon_frame = 1
+	
+	modifier = {
+		ship_armor_add = @time_utility_X6
+		ship_armor_regen_add_static = @time_utility_regen_X6
+		ship_armor_mult = @time_extra_modifier_X6
+	}
+	
+	triggered_ship_modifier = {
+		ship_armor_regen_add_static = @time_utility_regen_X6
+		mult = value:num_time_modifier|BASE|0|MODIFIER|ship_armor_mult|
+	}
+	
+	ship_modifier = {
+		ship_armor_hardening_add = @time_extra_modifier_X6
+		weapon_confuser_protect_chance = @time_extra_modifier_X6
+		weapon_terrify_protect_chance = @time_extra_modifier_X6
+	}
+	
+	potential = {
+		can_use_dimensional_horror_component_templates = yes
+	}
+	
+	component_set = "DIMENSION_HORROR_ARMOR"
+	upgrades_to = "DIMENSION_TIME_ARMOR"
+
+	ai_weight = {
+		weight = 100
+	}
+}
+
+####################
+# 负相吞噬波动
+####################
+
+weapon_component_template = {
+	inline_script = {
+		script = component_templates/horror_beam
+		KEY = HORROR_BEAM
+		ICON = GFX_ship_part_horror_beam
+		RANGE = 100
+		COOLDOWN = 65
+		BIO_SHIPS = no
+		UPKEEP = energy
+	}
+}
+
+weapon_component_template = {
+	inline_script = {
+		script = component_templates/horror_beam
+		KEY = BIO_HORROR_BEAM
+		ICON = GFX_ship_part_bio_horror_beam
+		RANGE = 80
+		COOLDOWN = 130
+		BIO_SHIPS = yes
+		UPKEEP = food
+	}
+}
+
+####################
+# 负相吞噬粒子
+####################
+
+weapon_component_template = {
+	inline_script = {
+		script = component_templates/horror_accelerator
+		KEY = HORROR_ACCELERATOR
+		ICON = GFX_ship_part_horror_accelerator
+		RANGE = 100
+		COOLDOWN = 65
+		BIO_SHIPS = no
+		UPKEEP = energy
+	}
+}
+
+weapon_component_template = {
+	inline_script = {
+		script = component_templates/horror_accelerator
+		KEY = BIO_HORROR_ACCELERATOR
+		ICON = GFX_ship_part_bio_horror_accelerator
+		RANGE = 80
+		COOLDOWN = 130
+		BIO_SHIPS = yes
+		UPKEEP = food
+	}
+}

@@ -1,0 +1,62 @@
+random = no
+text = {
+	trigger = {
+		time_titan_has_upgrade_process_more_than = { PROCESS = 95 }
+	}
+	localization_key = time_titan_$TYPE$_process_10_icon
+}
+text = {
+	trigger = {
+		time_titan_has_upgrade_process_more_than = { PROCESS = 85 }
+	}
+	localization_key = time_titan_$TYPE$_process_9_icon
+}
+text = {
+	trigger = {
+		time_titan_has_upgrade_process_more_than = { PROCESS = 75 }
+	}
+	localization_key = time_titan_$TYPE$_process_8_icon
+}
+text = {
+	trigger = {
+		time_titan_has_upgrade_process_more_than = { PROCESS = 65 }
+	}
+	localization_key = time_titan_$TYPE$_process_7_icon
+}
+text = {
+	trigger = {
+		time_titan_has_upgrade_process_more_than = { PROCESS = 55 }
+	}
+	localization_key = time_titan_$TYPE$_process_6_icon
+}
+text = {
+	trigger = {
+		time_titan_has_upgrade_process_more_than = { PROCESS = 45 }
+	}
+	localization_key = time_titan_$TYPE$_process_5_icon
+}
+text = {
+	trigger = {
+		time_titan_has_upgrade_process_more_than = { PROCESS = 35 }
+	}
+	localization_key = time_titan_$TYPE$_process_4_icon
+}
+text = {
+	trigger = {
+		time_titan_has_upgrade_process_more_than = { PROCESS = 25 }
+	}
+	localization_key = time_titan_$TYPE$_process_3_icon
+}
+text = {
+	trigger = {
+		time_titan_has_upgrade_process_more_than = { PROCESS = 15 }
+	}
+	localization_key = time_titan_$TYPE$_process_2_icon
+}
+text = {
+	trigger = {
+		time_titan_has_upgrade_process_more_than = { PROCESS = 5 }
+	}
+	localization_key = time_titan_$TYPE$_process_1_icon
+}
+default = time_titan_$TYPE$_process_0_icon

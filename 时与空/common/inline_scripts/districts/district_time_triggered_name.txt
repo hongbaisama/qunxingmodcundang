@@ -1,0 +1,48 @@
+triggered_name = {
+	trigger = {
+		is_col_origin_time_capital_research = yes
+	}
+	text = district_time_col_research
+}
+
+triggered_name = {
+	trigger = {
+		is_col_origin_time_capital_unity = yes
+	}
+	text = district_time_col_unity
+}
+
+triggered_name = {
+	trigger = {
+		is_col_origin_time_capital_manufacturing = yes
+	}
+	text = district_time_col_manufacturing
+}
+
+triggered_name = {
+	trigger = {
+		is_col_origin_time_capital_resource = yes
+	}
+	text = district_time_col_resource
+}
+
+triggered_name = {
+	trigger = {
+		is_col_origin_time_capital_default = yes
+	}
+	text = district_time_col_default
+}
+
+triggered_name = {
+	trigger = {
+		num_zones = {
+			type = zone_time
+			value > 0
+		}
+	}
+	text = district_time_col_other_special
+}
+
+triggered_name = {
+	text = district_time_col_other
+}

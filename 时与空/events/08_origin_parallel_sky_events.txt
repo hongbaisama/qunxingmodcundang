@@ -1,0 +1,6683 @@
+
+namespace = parallel_sky
+
+country_event = {
+	id = parallel_sky.1
+	title = parallel_sky.1.name
+	desc = parallel_sky.1.desc
+	picture = GFX_evt_kaleidoscopic_lights
+	show_sound = event_mystic_reveal
+
+	is_triggered_only = yes
+
+	trigger = {
+		has_origin = origin_parallel_sky
+	}
+	
+	immediate = {
+		capital_scope = {
+			save_global_event_target_as = parallel_sky_planet
+			set_planet_size = 30
+			add_time_special_deposit_keep_on_terraform = { DEPOSIT = d_parallel_sky }
+			carrier_event = { id = parallel_sky.1000 days = 360 random = 720 }
+		}
+		set_country_flag = meet_parallel_sky_country
+		random_list = {
+			1 = {
+				# 极端唯物平等
+				create_parallel_sky_country = {
+					AUTH = auth_democratic
+					CIVIC = civic_parallel_sky_1
+					ETHIC_1 = ethic_fanatic_materialist
+					ETHIC_2 = ethic_egalitarian
+					COLOR_1 = indigo
+					COLOR_2 = dark_teal
+					ETHIC_RULER = ethic_materialist
+					ROOM = personality_erudite_explorers_room
+				}
+			}
+			1 = {
+				# 排外军国威权
+				create_parallel_sky_country = {
+					AUTH = auth_imperial
+					CIVIC = civic_parallel_sky_2
+					ETHIC_1 = ethic_militarist
+					ETHIC_2 = ethic_authoritarian
+					ETHIC_3 = ethic_xenophobe
+					COLOR_1 = red
+					COLOR_2 = black
+					ETHIC_RULER = ethic_militarist
+					ROOM = personality_slaving_despots_room
+				}
+			}
+			1 = {
+				# 极端唯心和平
+				create_parallel_sky_country = {
+					AUTH = auth_dictatorial
+					CIVIC = civic_parallel_sky_3
+					ETHIC_1 = ethic_fanatic_spiritualist
+					ETHIC_2 = ethic_pacifist
+					COLOR_1 = shadow_purple
+					COLOR_2 = bright_yellow
+					ETHIC_RULER = ethic_spiritualist
+					ROOM = personality_spiritual_seekers_room
+				}
+			}
+		}
+	}
+
+	option = {
+		name = parallel_sky.1.a
+		trigger = {
+			has_origin = origin_parallel_sky
+		}
+		hidden_effect = {
+			country_event = { id = parallel_sky.2 }
+			# 防止事件效果被卡掉，导致母星未被存储为全局事件目标
+			capital_scope = {
+				if = {
+					limit = {
+						NOT = { exists = event_target:parallel_sky_planet }
+					}
+					save_global_event_target_as = parallel_sky_planet
+				}
+				if = {
+					limit = {
+						NOT = { planet_size = 30 }
+					}
+					set_planet_size = 30
+				}
+				if = {
+					limit = {
+						NOT = { has_deposit = d_parallel_sky }
+					}
+					add_time_special_deposit_keep_on_terraform = { DEPOSIT = d_parallel_sky }
+				}
+			}
+		}
+	}
+}
+
+country_event = {
+	id = parallel_sky.2
+	title = parallel_sky.name
+	desc = parallel_sky.2.desc
+
+	diplomatic = yes
+	force_open = yes
+
+	picture_event_data = {
+		portrait = event_target:parallel_sky_country.species
+		room = mercenary_enclave_room
+	}
+
+	is_triggered_only = yes
+	
+	trigger = {
+	}
+
+	option = {
+		name = parallel_sky.2.a
+		hidden_effect = {
+			country_event = { id = parallel_sky.3 }
+		}
+	}
+}
+
+country_event = {
+	id = parallel_sky.3
+	title = parallel_sky.name
+	desc = parallel_sky.3.desc
+
+	diplomatic = yes
+	force_open = yes
+
+	picture_event_data = {
+		portrait = event_target:parallel_sky_country.species
+		room = mercenary_enclave_room
+	}
+
+	is_triggered_only = yes
+	
+	trigger = {
+	}
+
+	option = {
+		name = parallel_sky.3.a
+		hidden_effect = {
+			country_event = { id = parallel_sky.4 }
+		}
+	}
+}
+
+country_event = {
+	id = parallel_sky.4
+	title = parallel_sky.name
+	desc = parallel_sky.4.desc
+
+	diplomatic = yes
+	force_open = yes
+
+	picture_event_data = {
+		portrait = event_target:parallel_sky_country.species
+		room = mercenary_enclave_room
+	}
+
+	is_triggered_only = yes
+	
+	trigger = {
+	}
+
+	option = {
+		name = parallel_sky.4.a
+		hidden_effect = {
+			country_event = { id = parallel_sky.5 }
+		}
+	}
+}
+
+country_event = {
+	id = parallel_sky.5
+	title = parallel_sky.name
+	desc = parallel_sky.5.desc
+
+	diplomatic = yes
+	force_open = yes
+
+	picture_event_data = {
+		portrait = event_target:parallel_sky_country.species
+		room = mercenary_enclave_room
+	}
+
+	is_triggered_only = yes
+	
+	trigger = {
+	}
+	
+	after = {
+		hidden_effect = {
+			event_target:parallel_sky_country = {
+				establish_communications_no_message = root
+				add_trust = {
+					who = root
+					amount = 20
+				}
+			}
+		}
+	}
+
+	option = {
+		name = parallel_sky.5.materialist
+		trigger = {
+			is_materialist = yes
+		}
+	}
+	
+	option = {
+		name = parallel_sky.5.spiritualist
+		trigger = {
+			is_spiritualist = yes
+		}
+	}
+	
+	option = {
+		name = parallel_sky.5.militarist
+		trigger = {
+			is_militarist = yes
+		}
+	}
+	
+	option = {
+		name = parallel_sky.5.pacifist
+		trigger = {
+			is_pacifist = yes
+		}
+	}
+	
+	option = {
+		name = parallel_sky.5.xenophile
+		trigger = {
+			is_xenophile = yes
+		}
+	}
+	
+	option = {
+		name = parallel_sky.5.xenophobe
+		trigger = {
+			is_xenophobe = yes
+		}
+	}
+	
+	option = {
+		name = parallel_sky.5.egalitarian
+		trigger = {
+			is_egalitarian = yes
+		}
+	}
+	
+	option = {
+		name = parallel_sky.5.authoritarian
+		trigger = {
+			is_authoritarian = yes
+		}
+	}
+	
+	option = {
+		name = parallel_sky.5.other
+		trigger = {
+			is_materialist = no
+			is_spiritualist = no
+			is_militarist = no
+			is_pacifist = no
+			is_xenophile = no
+			is_xenophobe = no
+			is_egalitarian = no
+			is_authoritarian = no
+		}
+	}
+}
+
+country_event = {
+	id = parallel_sky.10
+	title = parallel_sky.name
+	desc = {
+		text = parallel_sky.10.desc.1.good
+		trigger = {
+			event_target:parallel_sky_country = {
+				has_civic = civic_parallel_sky_1
+				NOT = { has_country_flag = parallel_sky_war }
+				trust = {
+					who = root
+					value > 50
+				}
+			}
+		}
+	}
+	desc = {
+		text = parallel_sky.10.desc.1.normal
+		trigger = {
+			event_target:parallel_sky_country = {
+				has_civic = civic_parallel_sky_1
+				NOT = { has_country_flag = parallel_sky_war }
+				trust = {
+					who = root
+					value <= 50
+				}
+			}
+		}
+	}
+	desc = {
+		text = parallel_sky.10.desc.1.bad
+		trigger = {
+			event_target:parallel_sky_country = {
+				has_civic = civic_parallel_sky_1
+				has_country_flag = parallel_sky_war
+			}
+		}
+	}
+	desc = {
+		text = parallel_sky.10.desc.2.good
+		trigger = {
+			event_target:parallel_sky_country = {
+				has_civic = civic_parallel_sky_2
+				NOT = { has_country_flag = parallel_sky_war }
+				trust = {
+					who = root
+					value > 50
+				}
+			}
+		}
+	}
+	desc = {
+		text = parallel_sky.10.desc.2.normal
+		trigger = {
+			event_target:parallel_sky_country = {
+				has_civic = civic_parallel_sky_2
+				NOT = { has_country_flag = parallel_sky_war }
+				trust = {
+					who = root
+					value <= 50
+				}
+			}
+		}
+	}
+	desc = {
+		text = parallel_sky.10.desc.2.bad
+		trigger = {
+			event_target:parallel_sky_country = {
+				has_civic = civic_parallel_sky_2
+				has_country_flag = parallel_sky_war
+			}
+		}
+	}
+	desc = {
+		text = parallel_sky.10.desc.3.good
+		trigger = {
+			event_target:parallel_sky_country = {
+				has_civic = civic_parallel_sky_3
+				NOT = { has_country_flag = parallel_sky_war }
+				trust = {
+					who = root
+					value > 50
+				}
+			}
+		}
+	}
+	desc = {
+		text = parallel_sky.10.desc.3.normal
+		trigger = {
+			event_target:parallel_sky_country = {
+				has_civic = civic_parallel_sky_3
+				NOT = { has_country_flag = parallel_sky_war }
+				trust = {
+					who = root
+					value <= 50
+				}
+			}
+		}
+	}
+	desc = {
+		text = parallel_sky.10.desc.3.bad
+		trigger = {
+			event_target:parallel_sky_country = {
+				has_civic = civic_parallel_sky_3
+				has_country_flag = parallel_sky_war
+			}
+		}
+	}
+
+	diplomatic = yes
+	force_open = yes
+
+	picture_event_data = {
+		portrait = event_target:parallel_sky_country
+		room = mercenary_enclave_room
+	}
+
+	is_triggered_only = yes
+	
+	trigger = {
+		if = {
+			limit = {
+				from = { is_country_type = parallel_sky }
+			}
+			parallel_sky_country_diplomacy_is_engaged = no
+			event_target:parallel_sky_planet = {
+				is_owned_by = root
+				is_controlled_by = root
+			}
+		}
+		else = {
+			always = no
+		}
+	}
+
+	option = {
+		name = parallel_sky.10.a.1
+		custom_gui = "enclave_caravaneer_option"
+		trigger = {
+			event_target:parallel_sky_country = {
+				NOT = { has_country_flag = parallel_sky_war }
+				trust = {
+					who = root
+					value <= 50
+				}
+			}
+		}
+		allow = {
+			custom_tooltip = {
+				fail_text = HAS_PARALLEL_SKY_PEACE
+				NOT = { has_country_flag = parallel_sky_peace }
+			}
+		}
+		hidden_effect = {
+			country_event = { id = parallel_sky.50 }
+		}
+	}
+	
+	option = {
+		name = parallel_sky.10.a.2
+		custom_gui = "enclave_caravaneer_option"
+		trigger = {
+			event_target:parallel_sky_country = {
+				has_country_flag = parallel_sky_war
+			}
+			NOR = {
+				AND = {
+					has_valid_civic = civic_fanatic_purifiers
+					species = {
+						NOT = { is_same_value = event_target:parallel_sky_country.species }
+					}
+				}
+				has_valid_civic = civic_hive_devouring_swarm
+				has_valid_civic = civic_machine_terminator
+				has_valid_civic = civic_scorched_earth
+				has_valid_civic = civic_hive_scorched_earth
+			}
+		}
+		hidden_effect = {
+			country_event = { id = parallel_sky.60 }
+		}
+	}
+	
+	# 科研协议
+	option = {
+		name = parallel_sky.10.b
+		custom_gui = "enclave_curator_option"
+		trigger = {
+			event_target:parallel_sky_country = {
+				NOT = { has_country_flag = parallel_sky_war }
+				OR = {
+					always = yes # 为了让特殊理念显示选项图标
+					has_civic = civic_parallel_sky_1
+				}
+			}
+			event_target:parallel_sky_planet = {
+				NOT = { has_carrier_flag = parallel_sky_planet_1 }
+			}
+		}
+		allow = {
+			parallel_sky_country_trust_requirement = {
+				TRUST_1 = 40
+				TRUST_2 = 80
+				TRUST_3 = 60
+			}
+		}
+		hidden_effect = {
+			country_event = { id = parallel_sky.20 }
+		}
+	}
+	
+	# 军事协议
+	option = {
+		name = parallel_sky.10.c
+		custom_gui = "enclave_mercenary_option"
+		trigger = {
+			event_target:parallel_sky_country = {
+				NOT = { has_country_flag = parallel_sky_war }
+				OR = {
+					always = yes # 为了让特殊理念显示选项图标
+					has_civic = civic_parallel_sky_2
+				}
+			}
+			event_target:parallel_sky_planet = {
+				NOT = { has_carrier_flag = parallel_sky_planet_2 }
+			}
+		}
+		allow = {
+			parallel_sky_country_trust_requirement = {
+				TRUST_1 = 60
+				TRUST_2 = 40
+				TRUST_3 = 80
+			}
+		}
+		hidden_effect = {
+			country_event = { id = parallel_sky.30 }
+		}
+	}
+	
+	# 文化协议
+	option = {
+		name = parallel_sky.10.d
+		custom_gui = "enclave_artist_option"
+		trigger = {
+			event_target:parallel_sky_country = {
+				NOT = { has_country_flag = parallel_sky_war }
+				OR = {
+					always = yes # 为了让特殊理念显示选项图标
+					has_civic = civic_parallel_sky_3
+				}
+			}
+			event_target:parallel_sky_planet = {
+				NOT = { has_carrier_flag = parallel_sky_planet_3 }
+			}
+		}
+		allow = {
+			parallel_sky_country_trust_requirement = {
+				TRUST_1 = 80
+				TRUST_2 = 60
+				TRUST_3 = 40
+			}
+		}
+		hidden_effect = {
+			country_event = { id = parallel_sky.40 }
+		}
+	}
+	
+	# 贸易协议
+	option = {
+		name = parallel_sky.10.e
+		custom_gui = "enclave_caravaneer_option"
+		trigger = {
+			event_target:parallel_sky_country = {
+				NOT = { has_country_flag = parallel_sky_war }
+			}
+			event_target:parallel_sky_planet = {
+				NOT = { has_carrier_flag = parallel_sky_planet_4 }
+			}
+		}
+		allow = {
+			parallel_sky_country_trust_requirement = {
+				TRUST_1 = 40
+				TRUST_2 = 60
+				TRUST_3 = 40
+			}
+		}
+		hidden_effect = {
+			country_event = { id = parallel_sky.45 }
+		}
+	}
+	
+	option = {
+		name = {
+			text = parallel_sky.10.f.1
+			trigger = {
+				event_target:parallel_sky_country = {
+					NOT = { has_country_flag = parallel_sky_war }
+					trust = {
+						who = root
+						value > 50
+					}
+				}
+			}
+		}
+		name = {
+			text = parallel_sky.10.f.2
+			trigger = {
+				event_target:parallel_sky_country = {
+					NOT = { has_country_flag = parallel_sky_war }
+					trust = {
+						who = root
+						value <= 50
+					}
+				}
+			}
+		}
+		name = {
+			text = parallel_sky.10.f.3
+			trigger = {
+				event_target:parallel_sky_country = {
+					has_country_flag = parallel_sky_war
+				}
+			}
+		}
+		default_hide_option = yes
+	}
+}
+
+# 平行星空特殊地块保护机制
+carrier_event = {
+	id = parallel_sky.11
+	is_triggered_only = yes
+	hide_window = yes
+
+	trigger = {
+		exists = event_target:parallel_sky_planet
+		is_same_value = event_target:parallel_sky_planet
+	}
+	
+	immediate = {
+		carrier_event = { id = parallel_sky.19 days = 1 } # 隔一天，因为有的事件是先改变星球类型，再删除地块
+	}
+}
+
+country_event = {
+	id = parallel_sky.12
+	title = parallel_sky.12.name
+	desc = parallel_sky.12.desc
+	picture = GFX_evt_kaleidoscopic_lights
+	show_sound = event_mystic_reveal_light
+	location = event_target:parallel_sky_planet
+
+	is_triggered_only = yes
+
+	trigger = {
+	}
+	
+	immediate = {
+	}
+	
+	option = {
+		name = parallel_sky.12.a
+	}
+}
+
+carrier_event = {
+	id = parallel_sky.13
+	title = parallel_sky.13.name
+	desc = {
+		text = parallel_sky.13.desc.1
+		trigger = {
+			from = {
+				has_country_flag = meet_parallel_sky_country
+			}
+		}
+	}
+	desc = {
+		text = parallel_sky.13.desc.2
+		trigger = {
+			from = {
+				NOT = { has_country_flag = meet_parallel_sky_country }
+			}
+		}
+	}
+	picture = GFX_evt_kaleidoscopic_lights
+	show_sound = event_mystic_reveal
+	location = event_target:parallel_sky_planet
+	
+	is_triggered_only = yes
+
+	trigger = {
+		exists = event_target:parallel_sky_country #没击败平行帝国
+		exists = event_target:parallel_sky_planet
+		is_same_value = event_target:parallel_sky_planet
+	}
+
+	immediate = {
+		event_target:parallel_sky_country = {
+			remove_country_flag = parallel_sky_war
+			clear_variable = parallel_sky_war
+			every_owned_army = {
+				remove_army = yes
+			}
+		}
+		event_target:parallel_sky_planet = {
+			remove_carrier_flag = parallel_sky_planet_1
+			remove_carrier_flag = parallel_sky_planet_2
+			remove_carrier_flag = parallel_sky_planet_3
+			remove_carrier_flag = parallel_sky_planet_4
+		}
+	}
+	
+	option = {
+		name = parallel_sky.13.a
+		trigger = {
+			from = {
+				has_country_flag = meet_parallel_sky_country
+			}
+		}
+	}
+	
+	option = {
+		name = parallel_sky.13.b
+		trigger = {
+			from = {
+				NOT = { has_country_flag = meet_parallel_sky_country }
+			}
+		}
+		hidden_effect = {
+			from = {
+				set_country_flag = meet_parallel_sky_country
+				country_event = { id = parallel_sky.14 }
+			}
+		}
+	}
+}
+
+country_event = {
+	id = parallel_sky.14
+	title = parallel_sky.name
+	desc = parallel_sky.14.desc
+
+	diplomatic = yes
+	force_open = yes
+
+	picture_event_data = {
+		portrait = event_target:parallel_sky_country.species
+		room = mercenary_enclave_room
+	}
+
+	is_triggered_only = yes
+	
+	trigger = {
+	}
+
+	option = {
+		name = parallel_sky.14.a
+		hidden_effect = {
+			country_event = { id = parallel_sky.15 }
+		}
+	}
+}
+
+country_event = {
+	id = parallel_sky.15
+	title = parallel_sky.name
+	desc = parallel_sky.15.desc
+
+	diplomatic = yes
+	force_open = yes
+
+	picture_event_data = {
+		portrait = event_target:parallel_sky_country.species
+		room = mercenary_enclave_room
+	}
+
+	is_triggered_only = yes
+	
+	trigger = {
+	}
+
+	option = {
+		name = parallel_sky.15.a
+		hidden_effect = {
+			country_event = { id = parallel_sky.16 }
+		}
+	}
+}
+
+country_event = {
+	id = parallel_sky.16
+	title = parallel_sky.name
+	desc = parallel_sky.16.desc
+
+	diplomatic = yes
+	force_open = yes
+
+	picture_event_data = {
+		portrait = event_target:parallel_sky_country.species
+		room = mercenary_enclave_room
+	}
+
+	is_triggered_only = yes
+	
+	trigger = {
+	}
+
+	option = {
+		name = parallel_sky.16.a
+		hidden_effect = {
+			country_event = { id = parallel_sky.17 }
+		}
+	}
+}
+
+country_event = {
+	id = parallel_sky.17
+	title = parallel_sky.name
+	desc = parallel_sky.17.desc
+
+	diplomatic = yes
+	force_open = yes
+
+	picture_event_data = {
+		portrait = event_target:parallel_sky_country.species
+		room = mercenary_enclave_room
+	}
+
+	is_triggered_only = yes
+	
+	immediate = {
+		event_target:parallel_sky_country = {
+			establish_communications_no_message = root
+		}
+	}
+	
+	trigger = {
+	}
+
+	option = {
+		name = parallel_sky.17.a
+		response_text = parallel_sky.17.a.response
+		trigger = {
+			NOR = {
+				AND = {
+					has_valid_civic = civic_fanatic_purifiers
+					species = {
+						NOT = { is_same_value = event_target:parallel_sky_country.species }
+					}
+				}
+				has_valid_civic = civic_hive_devouring_swarm
+				has_valid_civic = civic_machine_terminator
+			}
+		}
+	}
+	
+	option = {
+		name = parallel_sky.17.b
+		trigger = {
+			has_valid_civic = civic_fanatic_purifiers
+			species = {
+				NOT = { is_same_value = event_target:parallel_sky_country.species }
+			}
+		}
+		hidden_effect = {
+			country_event = { id = parallel_sky.51 }
+		}
+	}
+	
+	option = {
+		name = parallel_sky.17.c
+		trigger = {
+			has_valid_civic = civic_hive_devouring_swarm
+		}
+		hidden_effect = {
+			country_event = { id = parallel_sky.51 }
+		}
+	}
+	
+	option = {
+		name = parallel_sky.17.d
+		trigger = {
+			has_valid_civic = civic_machine_terminator
+		}
+		hidden_effect = {
+			country_event = { id = parallel_sky.51 }
+		}
+	}
+	
+	option = {
+		name = parallel_sky.17.e
+		trigger = {
+			OR = {
+				has_valid_civic = civic_scorched_earth
+				has_valid_civic = civic_hive_scorched_earth
+			}
+		}
+		hidden_effect = {
+			country_event = { id = parallel_sky.51 }
+		}
+	}
+}
+
+country_event = {
+	id = parallel_sky.18
+	title = parallel_sky.name
+	desc = {
+		text = parallel_sky.18.desc.1
+		trigger = {
+			event_target:parallel_sky_country = {
+				has_civic = civic_parallel_sky_1
+			}
+		}
+	}
+	desc = {
+		text = parallel_sky.18.desc.2
+		trigger = {
+			event_target:parallel_sky_country = {
+				has_civic = civic_parallel_sky_2
+			}
+		}
+	}
+	desc = {
+		text = parallel_sky.18.desc.3
+		trigger = {
+			event_target:parallel_sky_country = {
+				has_civic = civic_parallel_sky_3
+			}
+		}
+	}
+
+	diplomatic = yes
+	force_open = yes
+
+	picture_event_data = {
+		portrait = event_target:parallel_sky_country
+		room = mercenary_enclave_room
+	}
+
+	is_triggered_only = yes
+	
+	trigger = {
+	}
+	
+	immediate = {
+		event_target:parallel_sky_planet = {
+			remove_carrier_flag = parallel_sky_planet_1
+			remove_carrier_flag = parallel_sky_planet_2
+			remove_carrier_flag = parallel_sky_planet_3
+			remove_carrier_flag = parallel_sky_planet_4
+		}
+	}
+
+	option = {
+		name = parallel_sky.18.a
+	}
+}
+
+# 恢复平行星空特殊地块
+carrier_event = {
+	id = parallel_sky.19
+	is_triggered_only = yes
+	hide_window = yes
+
+	trigger = {
+	}
+	
+	immediate = {
+		if = {
+			limit = {
+				exists = event_target:parallel_sky_country #未击败平行帝国
+			}
+			if = {
+				limit = {
+					is_colonizable_or_colony = no #星球被毁灭
+				}
+				remove_deposit = d_parallel_sky
+				event_target:parallel_sky_country = {
+					destroy_country = yes
+				}
+				random_country = {
+					limit = {
+						has_origin = origin_parallel_sky
+					}
+					country_event = { id = parallel_sky.12 }
+				}
+			}
+			else_if = {
+				limit = {
+					NOT = { has_deposit = d_parallel_sky } #无特殊地貌
+				}
+				add_time_special_deposit_keep_on_terraform = { DEPOSIT = d_parallel_sky }
+			}
+		}
+		else_if = {
+			limit = {
+				has_global_flag = parallel_sky_country_destroyed #已击败平行帝国
+				is_colonizable_or_colony = yes #星球未被毁灭
+			}
+			if = {
+				limit = {
+					NOT = { has_deposit = d_parallel_sky_1 }
+				}
+				add_time_special_deposit_keep_on_terraform = { DEPOSIT = d_parallel_sky_1 }
+			}
+			if = {
+				limit = {
+					NOT = { has_deposit = d_parallel_sky_2 }
+				}
+				add_time_special_deposit_keep_on_terraform = { DEPOSIT = d_parallel_sky_2 }
+			}
+			if = {
+				limit = {
+					NOT = { has_deposit = d_parallel_sky_3 }
+				}
+				add_time_special_deposit_keep_on_terraform = { DEPOSIT = d_parallel_sky_3 }
+			}
+			if = {
+				limit = {
+					NOR = {
+						has_deposit = d_parallel_sky_4
+						has_deposit = d_parallel_sky_blocker
+					}
+				}
+				add_time_special_deposit_keep_on_terraform = { DEPOSIT = d_parallel_sky_4 }
+			}
+		}
+	}
+}
+
+country_event = {
+	id = parallel_sky.20
+	title = parallel_sky.name
+	desc = {
+		text = parallel_sky.20.desc.1
+		trigger = {
+			event_target:parallel_sky_country = {
+				has_civic = civic_parallel_sky_1
+			}
+		}
+	}
+	desc = {
+		text = parallel_sky.20.desc.2
+		trigger = {
+			event_target:parallel_sky_country = {
+				has_civic = civic_parallel_sky_2
+			}
+		}
+	}
+	desc = {
+		text = parallel_sky.20.desc.3
+		trigger = {
+			event_target:parallel_sky_country = {
+				has_civic = civic_parallel_sky_3
+			}
+		}
+	}
+
+	diplomatic = yes
+	force_open = yes
+
+	picture_event_data = {
+		portrait = event_target:parallel_sky_country
+		room = mercenary_enclave_room
+	}
+
+	is_triggered_only = yes
+	
+	trigger = {
+	}
+
+	option = {
+		name = parallel_sky.20.a
+		response_text = parallel_sky.20.a.response
+		trigger = {
+			event_target:parallel_sky_country = {
+				has_civic = civic_parallel_sky_1
+			}
+		}
+		allow = {
+			has_resource = {
+				type = trade
+				amount >= 2000
+			}
+		}
+		add_resource = { trade = -2000 }
+		event_target:parallel_sky_planet = {
+			set_carrier_flag = parallel_sky_planet_1
+		}
+	}
+	
+	option = {
+		name = parallel_sky.20.b
+		response_text = parallel_sky.20.b.response
+		trigger = {
+			event_target:parallel_sky_country = {
+				has_civic = civic_parallel_sky_2
+			}
+		}
+		allow = {
+			has_resource = {
+				type = trade
+				amount >= 6000
+			}
+		}
+		add_resource = { trade = -6000 }
+		event_target:parallel_sky_planet = {
+			set_carrier_flag = parallel_sky_planet_1
+		}
+	}
+	
+	option = {
+		name = parallel_sky.20.c
+		response_text = parallel_sky.20.c.response
+		trigger = {
+			event_target:parallel_sky_country = {
+				has_civic = civic_parallel_sky_3
+			}
+		}
+		allow = {
+			has_resource = {
+				type = trade
+				amount >= 4000
+			}
+		}
+		add_resource = { trade = -4000 }
+		event_target:parallel_sky_planet = {
+			set_carrier_flag = parallel_sky_planet_1
+		}
+	}
+	
+	option = {
+		name = parallel_sky.20.d
+		response_text = parallel_sky.20.d.response
+		default_hide_option = yes
+	}
+}
+
+country_event = {
+	id = parallel_sky.30
+	title = parallel_sky.name
+	desc = {
+		text = parallel_sky.30.desc.1
+		trigger = {
+			event_target:parallel_sky_country = {
+				has_civic = civic_parallel_sky_1
+			}
+		}
+	}
+	desc = {
+		text = parallel_sky.30.desc.2
+		trigger = {
+			event_target:parallel_sky_country = {
+				has_civic = civic_parallel_sky_2
+			}
+		}
+	}
+	desc = {
+		text = parallel_sky.30.desc.3
+		trigger = {
+			event_target:parallel_sky_country = {
+				has_civic = civic_parallel_sky_3
+			}
+		}
+	}
+
+	diplomatic = yes
+	force_open = yes
+
+	picture_event_data = {
+		portrait = event_target:parallel_sky_country
+		room = mercenary_enclave_room
+	}
+
+	is_triggered_only = yes
+	
+	trigger = {
+	}
+
+	option = {
+		name = parallel_sky.30.a
+		response_text = parallel_sky.30.a.response
+		trigger = {
+			event_target:parallel_sky_country = {
+				has_civic = civic_parallel_sky_1
+			}
+		}
+		allow = {
+			has_resource = {
+				type = trade
+				amount >= 4000
+			}
+		}
+		add_resource = { trade = -4000 }
+		event_target:parallel_sky_planet = {
+			set_carrier_flag = parallel_sky_planet_2
+		}
+	}
+	
+	option = {
+		name = parallel_sky.30.b
+		response_text = parallel_sky.30.b.response
+		trigger = {
+			event_target:parallel_sky_country = {
+				has_civic = civic_parallel_sky_2
+			}
+		}
+		allow = {
+			has_resource = {
+				type = trade
+				amount >= 2000
+			}
+		}
+		add_resource = { trade = -2000 }
+		event_target:parallel_sky_planet = {
+			set_carrier_flag = parallel_sky_planet_2
+		}
+	}
+	
+	option = {
+		name = parallel_sky.30.c
+		response_text = parallel_sky.30.c.response
+		trigger = {
+			event_target:parallel_sky_country = {
+				has_civic = civic_parallel_sky_3
+			}
+		}
+		allow = {
+			has_resource = {
+				type = trade
+				amount >= 6000
+			}
+		}
+		add_resource = { trade = -6000 }
+		event_target:parallel_sky_planet = {
+			set_carrier_flag = parallel_sky_planet_2
+		}
+	}
+	
+	option = {
+		name = parallel_sky.30.d
+		response_text = parallel_sky.30.d.response
+		default_hide_option = yes
+	}
+}
+
+country_event = {
+	id = parallel_sky.40
+	title = parallel_sky.name
+	desc = {
+		text = parallel_sky.40.desc.1
+		trigger = {
+			event_target:parallel_sky_country = {
+				has_civic = civic_parallel_sky_1
+			}
+		}
+	}
+	desc = {
+		text = parallel_sky.40.desc.2
+		trigger = {
+			event_target:parallel_sky_country = {
+				has_civic = civic_parallel_sky_2
+			}
+		}
+	}
+	desc = {
+		text = parallel_sky.40.desc.3
+		trigger = {
+			event_target:parallel_sky_country = {
+				has_civic = civic_parallel_sky_3
+			}
+		}
+	}
+
+	diplomatic = yes
+	force_open = yes
+
+	picture_event_data = {
+		portrait = event_target:parallel_sky_country
+		room = mercenary_enclave_room
+	}
+
+	is_triggered_only = yes
+	
+	trigger = {
+	}
+
+	option = {
+		name = parallel_sky.40.a
+		response_text = parallel_sky.40.a.response
+		trigger = {
+			event_target:parallel_sky_country = {
+				has_civic = civic_parallel_sky_1
+			}
+		}
+		allow = {
+			has_resource = {
+				type = trade
+				amount >= 6000
+			}
+		}
+		add_resource = { trade = -6000 }
+		event_target:parallel_sky_planet = {
+			set_carrier_flag = parallel_sky_planet_3
+		}
+	}
+	
+	option = {
+		name = parallel_sky.40.b
+		response_text = parallel_sky.40.b.response
+		trigger = {
+			event_target:parallel_sky_country = {
+				has_civic = civic_parallel_sky_2
+			}
+		}
+		allow = {
+			has_resource = {
+				type = trade
+				amount >= 4000
+			}
+		}
+		add_resource = { trade = -4000 }
+		event_target:parallel_sky_planet = {
+			set_carrier_flag = parallel_sky_planet_3
+		}
+	}
+	
+	option = {
+		name = parallel_sky.40.c
+		response_text = parallel_sky.40.c.response
+		trigger = {
+			event_target:parallel_sky_country = {
+				has_civic = civic_parallel_sky_3
+			}
+		}
+		allow = {
+			has_resource = {
+				type = trade
+				amount >= 2000
+			}
+		}
+		add_resource = { trade = -2000 }
+		event_target:parallel_sky_planet = {
+			set_carrier_flag = parallel_sky_planet_3
+		}
+	}
+	
+	option = {
+		name = parallel_sky.40.d
+		response_text = parallel_sky.40.d.response
+		default_hide_option = yes
+	}
+}
+
+country_event = {
+	id = parallel_sky.45
+	title = parallel_sky.name
+	desc = {
+		text = parallel_sky.45.desc.1
+		trigger = {
+			event_target:parallel_sky_country = {
+				has_civic = civic_parallel_sky_1
+			}
+		}
+	}
+	desc = {
+		text = parallel_sky.45.desc.2
+		trigger = {
+			event_target:parallel_sky_country = {
+				has_civic = civic_parallel_sky_2
+			}
+		}
+	}
+	desc = {
+		text = parallel_sky.45.desc.3
+		trigger = {
+			event_target:parallel_sky_country = {
+				has_civic = civic_parallel_sky_3
+			}
+		}
+	}
+
+	diplomatic = yes
+	force_open = yes
+
+	picture_event_data = {
+		portrait = event_target:parallel_sky_country
+		room = mercenary_enclave_room
+	}
+
+	is_triggered_only = yes
+	
+	trigger = {
+	}
+
+	option = {
+		name = parallel_sky.45.a
+		response_text = parallel_sky.45.a.response
+		trigger = {
+			event_target:parallel_sky_country = {
+				has_civic = civic_parallel_sky_1
+			}
+		}
+		allow = {
+			has_resource = {
+				type = trade
+				amount >= 2000
+			}
+		}
+		add_resource = { trade = -2000 }
+		event_target:parallel_sky_planet = {
+			set_carrier_flag = parallel_sky_planet_4
+		}
+	}
+	
+	option = {
+		name = parallel_sky.45.b
+		response_text = parallel_sky.45.b.response
+		trigger = {
+			event_target:parallel_sky_country = {
+				has_civic = civic_parallel_sky_2
+			}
+		}
+		allow = {
+			has_resource = {
+				type = trade
+				amount >= 4000
+			}
+		}
+		add_resource = { trade = -4000 }
+		event_target:parallel_sky_planet = {
+			set_carrier_flag = parallel_sky_planet_4
+		}
+	}
+	
+	option = {
+		name = parallel_sky.45.c
+		response_text = parallel_sky.45.c.response
+		trigger = {
+			event_target:parallel_sky_country = {
+				has_civic = civic_parallel_sky_3
+			}
+		}
+		allow = {
+			has_resource = {
+				type = trade
+				amount >= 2000
+			}
+		}
+		add_resource = { trade = -2000 }
+		event_target:parallel_sky_planet = {
+			set_carrier_flag = parallel_sky_planet_4
+		}
+	}
+	
+	option = {
+		name = parallel_sky.45.d
+		response_text = parallel_sky.45.d.response
+		default_hide_option = yes
+	}
+}
+
+country_event = {
+	id = parallel_sky.50
+	title = parallel_sky.name
+	desc = parallel_sky.50.desc
+
+	diplomatic = yes
+	force_open = yes
+
+	picture_event_data = {
+		portrait = event_target:parallel_sky_country
+		room = mercenary_enclave_room
+	}
+
+	is_triggered_only = yes
+	
+	trigger = {
+	}
+	
+	immediate = {
+		event_target:parallel_sky_country = {
+			add_trust = {
+				who = root
+				amount = -5
+			}
+		}
+	}
+	
+	after = {
+		tooltip = {
+			event_target:parallel_sky_country = {
+				add_trust = {
+					who = root
+					amount = -5
+				}
+			}
+		}
+	}
+
+	option = {
+		name = parallel_sky.50.a
+		hidden_effect = {
+			country_event = { id = parallel_sky.51 }
+		}
+	}
+	
+	option = {
+		name = parallel_sky.50.b
+		response_text = parallel_sky.50.b.response
+		default_hide_option = yes
+	}
+}
+
+country_event = {
+	id = parallel_sky.51
+	title = parallel_sky.name
+	desc = {
+		text = parallel_sky.51.desc.1
+		trigger = {
+			event_target:parallel_sky_country = {
+				has_civic = civic_parallel_sky_1
+			}
+		}
+	}
+	desc = {
+		text = parallel_sky.51.desc.2
+		trigger = {
+			event_target:parallel_sky_country = {
+				has_civic = civic_parallel_sky_2
+			}
+		}
+	}
+	desc = {
+		text = parallel_sky.51.desc.3
+		trigger = {
+			event_target:parallel_sky_country = {
+				has_civic = civic_parallel_sky_3
+			}
+		}
+	}
+
+	diplomatic = yes
+	force_open = yes
+
+	picture_event_data = {
+		portrait = event_target:parallel_sky_country
+		room = mercenary_enclave_room
+	}
+
+	is_triggered_only = yes
+	
+	trigger = {
+	}
+	
+	immediate = {
+		create_timeline_declare_war_on_parallel_sky_country = yes
+		event_target:parallel_sky_country = {
+			set_country_flag = parallel_sky_war
+			add_trust = {
+				who = root
+				amount = -100
+			}
+			create_leader = {
+				class = commander
+				species = owner_main_species
+				name = random
+				skill = 3
+				traits = {
+					trait = subclass_commander_general
+				}
+			}
+			set_variable = {
+				which = parallel_sky_war
+				value = 0
+			}
+		}
+		event_target:parallel_sky_planet = {
+			remove_carrier_flag = parallel_sky_planet_1
+			remove_carrier_flag = parallel_sky_planet_2
+			remove_carrier_flag = parallel_sky_planet_3
+			remove_carrier_flag = parallel_sky_planet_4
+			create_parallel_sky_country_army = { COUNT = 6 }
+		}
+	}
+
+	option = {
+		name = parallel_sky.51.a
+	}
+}
+
+country_event = {
+	id = parallel_sky.52
+	title = parallel_sky.name
+	desc = {
+		text = parallel_sky.52.desc.1
+		trigger = {
+			event_target:parallel_sky_country = {
+				has_civic = civic_parallel_sky_1
+			}
+		}
+	}
+	desc = {
+		text = parallel_sky.52.desc.2
+		trigger = {
+			event_target:parallel_sky_country = {
+				has_civic = civic_parallel_sky_2
+			}
+		}
+	}
+	desc = {
+		text = parallel_sky.52.desc.3
+		trigger = {
+			event_target:parallel_sky_country = {
+				has_civic = civic_parallel_sky_3
+			}
+		}
+	}
+
+	diplomatic = yes
+	force_open = yes
+
+	picture_event_data = {
+		portrait = event_target:parallel_sky_country
+		room = mercenary_enclave_room
+	}
+
+	is_triggered_only = yes
+	
+	trigger = {
+		if = {
+			limit = {
+				exists = event_target:parallel_sky_country
+				from = { is_same_value = event_target:parallel_sky_country }
+			}
+			from = {
+				has_country_flag = parallel_sky_war
+				check_variable = {
+					which = parallel_sky_war
+					value = 0
+				}
+			}
+		}
+		else = {
+			always = no
+		}
+	}
+	
+	immediate = {
+		country_event = { id = parallel_sky.53 days = 90 random = 90 }
+	}
+
+	option = {
+		name = parallel_sky.52.a
+	}
+}
+
+country_event = {
+	id = parallel_sky.53
+	title = parallel_sky.name
+	desc = {
+		text = parallel_sky.53.desc.1
+		trigger = {
+			event_target:parallel_sky_country = {
+				has_civic = civic_parallel_sky_1
+			}
+		}
+	}
+	desc = {
+		text = parallel_sky.53.desc.2
+		trigger = {
+			event_target:parallel_sky_country = {
+				has_civic = civic_parallel_sky_2
+			}
+		}
+	}
+	desc = {
+		text = parallel_sky.53.desc.3
+		trigger = {
+			event_target:parallel_sky_country = {
+				has_civic = civic_parallel_sky_3
+			}
+		}
+	}
+
+	diplomatic = yes
+	force_open = yes
+
+	picture_event_data = {
+		portrait = event_target:parallel_sky_country
+		room = mercenary_enclave_room
+	}
+
+	is_triggered_only = yes
+	
+	trigger = {
+	}
+	
+	immediate = {
+		event_target:parallel_sky_country = {
+			create_leader = {
+				class = commander
+				species = owner_main_species
+				name = random
+				skill = 5
+				traits = {
+					trait = subclass_commander_general
+				}
+			}
+			change_variable = {
+				which = parallel_sky_war
+				value = 1
+			}
+		}
+		event_target:parallel_sky_planet = {
+			create_parallel_sky_country_army = { COUNT = 12 }
+		}
+	}
+
+	option = {
+		name = parallel_sky.53.a
+	}
+}
+
+country_event = {
+	id = parallel_sky.54
+	title = parallel_sky.name
+	desc = {
+		text = parallel_sky.54.desc.1
+		trigger = {
+			event_target:parallel_sky_country = {
+				has_civic = civic_parallel_sky_1
+			}
+		}
+	}
+	desc = {
+		text = parallel_sky.54.desc.2
+		trigger = {
+			event_target:parallel_sky_country = {
+				has_civic = civic_parallel_sky_2
+			}
+		}
+	}
+	desc = {
+		text = parallel_sky.54.desc.3
+		trigger = {
+			event_target:parallel_sky_country = {
+				has_civic = civic_parallel_sky_3
+			}
+		}
+	}
+
+	diplomatic = yes
+	force_open = yes
+
+	picture_event_data = {
+		portrait = event_target:parallel_sky_country
+		room = mercenary_enclave_room
+	}
+
+	is_triggered_only = yes
+	
+	trigger = {
+		if = {
+			limit = {
+				exists = event_target:parallel_sky_country
+				from = { is_same_value = event_target:parallel_sky_country }
+			}
+			from = {
+				has_country_flag = parallel_sky_war
+				check_variable = {
+					which = parallel_sky_war
+					value = 1
+				}
+			}
+		}
+		else = {
+			always = no
+		}
+	}
+	
+	immediate = {
+		country_event = { id = parallel_sky.55 days = 180 random = 180 }
+	}
+
+	option = {
+		name = parallel_sky.54.a
+	}
+}
+
+country_event = {
+	id = parallel_sky.55
+	title = parallel_sky.name
+	desc = {
+		text = parallel_sky.55.desc.1
+		trigger = {
+			event_target:parallel_sky_country = {
+				has_civic = civic_parallel_sky_1
+			}
+		}
+	}
+	desc = {
+		text = parallel_sky.55.desc.2
+		trigger = {
+			event_target:parallel_sky_country = {
+				has_civic = civic_parallel_sky_2
+			}
+		}
+	}
+	desc = {
+		text = parallel_sky.55.desc.3
+		trigger = {
+			event_target:parallel_sky_country = {
+				has_civic = civic_parallel_sky_3
+			}
+		}
+	}
+
+	diplomatic = yes
+	force_open = yes
+
+	picture_event_data = {
+		portrait = event_target:parallel_sky_country
+		room = mercenary_enclave_room
+	}
+
+	is_triggered_only = yes
+	
+	trigger = {
+	}
+	
+	immediate = {
+		event_target:parallel_sky_country = {
+			create_leader = {
+				class = commander
+				species = owner_main_species
+				name = random
+				skill = 7
+				traits = {
+					trait = subclass_commander_general
+				}
+			}
+			change_variable = {
+				which = parallel_sky_war
+				value = 1
+			}
+		}
+		event_target:parallel_sky_planet = {
+			create_parallel_sky_country_army = { COUNT = 18 }
+		}
+	}
+
+	option = {
+		name = parallel_sky.55.a
+	}
+}
+
+country_event = {
+	id = parallel_sky.56
+	title = parallel_sky.name
+	desc = {
+		text = parallel_sky.56.desc.1
+		trigger = {
+			event_target:parallel_sky_country = {
+				has_civic = civic_parallel_sky_1
+			}
+		}
+	}
+	desc = {
+		text = parallel_sky.56.desc.2
+		trigger = {
+			event_target:parallel_sky_country = {
+				has_civic = civic_parallel_sky_2
+			}
+		}
+	}
+	desc = {
+		text = parallel_sky.56.desc.3
+		trigger = {
+			event_target:parallel_sky_country = {
+				has_civic = civic_parallel_sky_3
+			}
+		}
+	}
+
+	diplomatic = yes
+	force_open = yes
+
+	picture_event_data = {
+		portrait = event_target:parallel_sky_country
+		room = mercenary_enclave_room
+	}
+
+	is_triggered_only = yes
+	
+	trigger = {
+		if = {
+			limit = {
+				exists = event_target:parallel_sky_country
+				from = { is_same_value = event_target:parallel_sky_country }
+			}
+			from = {
+				has_country_flag = parallel_sky_war
+				check_variable = {
+					which = parallel_sky_war
+					value >= 2
+				}
+			}
+		}
+		else = {
+			always = no
+		}
+	}
+	
+	immediate = {
+		create_timeline_parallel_sky_war_won = yes
+		event_target:parallel_sky_planet = {
+			remove_deposit = d_parallel_sky
+			add_time_special_deposit_keep_on_terraform = { DEPOSIT = d_parallel_sky_1 }
+			add_time_special_deposit_keep_on_terraform = { DEPOSIT = d_parallel_sky_2 }
+			add_time_special_deposit_keep_on_terraform = { DEPOSIT = d_parallel_sky_3 }
+			add_time_special_deposit_keep_on_terraform = { DEPOSIT = d_parallel_sky_blocker }
+			create_pop_group = {
+				species = event_target:parallel_sky_country.species
+				size = 2000
+				effect = {
+					add_modifier = {
+						modifier = pop_recently_conquered
+						days = 3600
+					}
+				}
+			}
+		}
+	}
+
+	option = {
+		name = parallel_sky.56.a
+		tooltip = {
+			event_target:parallel_sky_planet = {
+				remove_deposit = d_parallel_sky
+				add_deposit = d_parallel_sky_1
+				add_deposit = d_parallel_sky_2
+				add_deposit = d_parallel_sky_3
+				add_deposit = d_parallel_sky_blocker
+			}
+		}
+		hidden_effect = {
+			# 设定上没有被灭国
+			event_target:parallel_sky_country = {
+				destroy_country = yes
+			}
+			set_global_flag = parallel_sky_country_destroyed
+		}
+	}
+}
+
+country_event = {
+	id = parallel_sky.60
+	title = parallel_sky.name
+	desc = {
+		text = parallel_sky.60.desc.1.a
+		trigger = {
+			event_target:parallel_sky_country = {
+				has_civic = civic_parallel_sky_1
+			}
+			any_controlled_planet = {
+				is_same_value = event_target:parallel_sky_planet
+			}
+		}
+	}
+	desc = {
+		text = parallel_sky.60.desc.1.b
+		trigger = {
+			event_target:parallel_sky_country = {
+				has_civic = civic_parallel_sky_1
+			}
+			NOT = {
+				any_controlled_planet = {
+					is_same_value = event_target:parallel_sky_planet
+				}
+			}
+		}
+	}
+	desc = {
+		text = parallel_sky.60.desc.2.a
+		trigger = {
+			event_target:parallel_sky_country = {
+				has_civic = civic_parallel_sky_2
+			}
+			any_controlled_planet = {
+				is_same_value = event_target:parallel_sky_planet
+			}
+		}
+	}
+	desc = {
+		text = parallel_sky.60.desc.2.b
+		trigger = {
+			event_target:parallel_sky_country = {
+				has_civic = civic_parallel_sky_2
+			}
+			NOT = {
+				any_controlled_planet = {
+					is_same_value = event_target:parallel_sky_planet
+				}
+			}
+		}
+	}
+	desc = {
+		text = parallel_sky.60.desc.3.a
+		trigger = {
+			event_target:parallel_sky_country = {
+				has_civic = civic_parallel_sky_3
+			}
+			any_controlled_planet = {
+				is_same_value = event_target:parallel_sky_planet
+			}
+		}
+	}
+	desc = {
+		text = parallel_sky.60.desc.3.b
+		trigger = {
+			event_target:parallel_sky_country = {
+				has_civic = civic_parallel_sky_3
+			}
+			NOT = {
+				any_controlled_planet = {
+					is_same_value = event_target:parallel_sky_planet
+				}
+			}
+		}
+	}
+
+	diplomatic = yes
+	force_open = yes
+
+	picture_event_data = {
+		portrait = event_target:parallel_sky_country
+		room = mercenary_enclave_room
+	}
+
+	is_triggered_only = yes
+	
+	trigger = {
+	}
+	
+	immediate = {
+	}
+
+	option = {
+		name = parallel_sky.60.a
+		response_text = parallel_sky.60.a.response
+		trigger = {
+			any_controlled_planet = {
+				is_same_value = event_target:parallel_sky_planet
+			}
+		}
+		allow = {
+			has_resource = {
+				type = trade
+				amount >= 3000
+			}
+		}
+		add_resource = { trade = -3000 }
+		hidden_effect = {
+			set_timed_country_flag = {
+				flag = parallel_sky_peace
+				days = 1800
+			}
+			event_target:parallel_sky_country = {
+				remove_country_flag = parallel_sky_war
+				set_variable = {
+					which = parallel_sky_war
+					value = 0
+				}
+				every_owned_army = {
+					remove_army = yes
+				}
+			}
+		}
+	}
+	
+	option = {
+		name = parallel_sky.60.b
+		response_text = parallel_sky.60.b.response
+		trigger = {
+			NOT = {
+				any_controlled_planet = {
+					is_same_value = event_target:parallel_sky_planet
+				}
+			}
+		}
+		allow = {
+			has_resource = {
+				type = trade
+				amount >= 10000
+			}
+		}
+		add_resource = { trade = -10000 }
+		hidden_effect = {
+			set_timed_country_flag = {
+				flag = parallel_sky_peace
+				days = 1800
+			}
+			event_target:parallel_sky_country = {
+				remove_country_flag = parallel_sky_war
+				set_variable = {
+					which = parallel_sky_war
+					value = 0
+				}
+				every_owned_army = {
+					remove_army = yes
+				}
+			}
+		}
+	}
+	
+	option = {
+		name = parallel_sky.60.c
+		response_text = parallel_sky.60.c.response
+		default_hide_option = yes
+	}
+}
+
+country_event = {
+	id = parallel_sky.70
+	hide_window = yes
+	
+	is_triggered_only = yes
+
+	trigger = {
+	}
+	
+	immediate = {
+		random_list = {
+			1 = {
+				modifier = {
+					factor = 0
+					event_target:parallel_sky_country = {
+						trust = {
+							who = root
+							value > 50
+						}
+					}
+				}
+				country_event = { id = parallel_sky.71 }
+			}
+			1 = {
+				modifier = {
+					factor = 0
+					event_target:parallel_sky_country = {
+						trust = {
+							who = root
+							value > 50
+						}
+					}
+				}
+				country_event = { id = parallel_sky.72 }
+			}
+			1 = {
+				modifier = {
+					factor = 0
+					event_target:parallel_sky_country = {
+						trust = {
+							who = root
+							value > 50
+						}
+					}
+				}
+				country_event = { id = parallel_sky.73 }
+			}
+			1 = {
+				modifier = {
+					factor = 0
+					event_target:parallel_sky_country = {
+						trust = {
+							who = root
+							value > 50
+						}
+					}
+				}
+				country_event = { id = parallel_sky.74 }
+			}
+			1 = {
+				modifier = {
+					factor = 0
+					event_target:parallel_sky_country = {
+						trust = {
+							who = root
+							value > 50
+						}
+					}
+				}
+				country_event = { id = parallel_sky.75 }
+			}
+			1 = {
+				modifier = {
+					factor = 0
+					event_target:parallel_sky_country = {
+						trust = {
+							who = root
+							value > 50
+						}
+					}
+				}
+				country_event = { id = parallel_sky.76 }
+			}
+			1 = {
+				modifier = {
+					factor = 0
+					event_target:parallel_sky_country = {
+						trust = {
+							who = root
+							value > 50
+						}
+					}
+				}
+				country_event = { id = parallel_sky.77 }
+			}
+			1 = {
+				modifier = {
+					factor = 0
+					event_target:parallel_sky_country = {
+						trust = {
+							who = root
+							value > 50
+						}
+					}
+				}
+				country_event = { id = parallel_sky.78 }
+			}
+			1 = {
+				modifier = {
+					factor = 0
+					event_target:parallel_sky_country = {
+						trust = {
+							who = root
+							value > 50
+						}
+					}
+				}
+				country_event = { id = parallel_sky.79 }
+			}
+			1 = {
+				modifier = {
+					factor = 0
+					event_target:parallel_sky_country = {
+						trust = {
+							who = root
+							value > 50
+						}
+					}
+				}
+				country_event = { id = parallel_sky.80 }
+			}
+			1 = {
+				modifier = {
+					factor = 0
+					event_target:parallel_sky_country = {
+						trust = {
+							who = root
+							value <= 50
+						}
+					}
+				}
+				country_event = { id = parallel_sky.81 }
+			}
+			1 = {
+				modifier = {
+					factor = 0
+					event_target:parallel_sky_country = {
+						trust = {
+							who = root
+							value <= 50
+						}
+					}
+				}
+				country_event = { id = parallel_sky.82 }
+			}
+			1 = {
+				modifier = {
+					factor = 0
+					event_target:parallel_sky_country = {
+						trust = {
+							who = root
+							value <= 50
+						}
+					}
+				}
+				country_event = { id = parallel_sky.83 }
+			}
+			1 = {
+				modifier = {
+					factor = 0
+					event_target:parallel_sky_country = {
+						trust = {
+							who = root
+							value <= 50
+						}
+					}
+				}
+				country_event = { id = parallel_sky.84 }
+			}
+			1 = {
+				modifier = {
+					factor = 0
+					event_target:parallel_sky_country = {
+						trust = {
+							who = root
+							value <= 50
+						}
+					}
+				}
+				country_event = { id = parallel_sky.85 }
+			}
+			1 = {
+				modifier = {
+					factor = 0
+					event_target:parallel_sky_country = {
+						trust = {
+							who = root
+							value <= 50
+						}
+					}
+				}
+				country_event = { id = parallel_sky.86 }
+			}
+			1 = {
+				modifier = {
+					factor = 0
+					event_target:parallel_sky_country = {
+						trust = {
+							who = root
+							value <= 50
+						}
+					}
+				}
+				country_event = { id = parallel_sky.87 }
+			}
+			1 = {
+				modifier = {
+					factor = 0
+					event_target:parallel_sky_country = {
+						trust = {
+							who = root
+							value <= 50
+						}
+					}
+				}
+				country_event = { id = parallel_sky.88 }
+			}
+			1 = {
+				modifier = {
+					factor = 0
+					event_target:parallel_sky_country = {
+						trust = {
+							who = root
+							value <= 50
+						}
+					}
+				}
+				country_event = { id = parallel_sky.89 }
+			}
+			1 = {
+				modifier = {
+					factor = 0
+					event_target:parallel_sky_country = {
+						trust = {
+							who = root
+							value <= 50
+						}
+					}
+				}
+				country_event = { id = parallel_sky.90 }
+			}
+			1 = {
+				modifier = {
+					factor = 0
+					event_target:parallel_sky_country = {
+						trust = {
+							who = root
+							value <= 50
+						}
+					}
+				}
+				modifier = {
+					factor = 0
+					event_target:parallel_sky_country = {
+						OR = {
+							has_country_flag = parallel_sky_holiday
+							has_country_flag = parallel_sky_holiday_cooldown
+						}
+					}
+				}
+				modifier = {
+					factor = 0
+					event_target:parallel_sky_country = {
+						has_country_flag = parallel_sky_their_war
+					}
+				}
+				country_event = { id = parallel_sky.91 }
+			}
+			1 = {
+				modifier = {
+					factor = 0
+					event_target:parallel_sky_country = {
+						trust = {
+							who = root
+							value <= 50
+						}
+					}
+				}
+				modifier = {
+					factor = 0
+					event_target:parallel_sky_country = {
+						OR = {
+							has_country_flag = parallel_sky_sun
+							has_country_flag = parallel_sky_sun_cooldown
+						}
+					}
+				}
+				modifier = {
+					factor = 0
+					event_target:parallel_sky_country = {
+						has_country_flag = parallel_sky_their_war
+					}
+				}
+				country_event = { id = parallel_sky.100 }
+			}
+			1 = {
+				modifier = {
+					factor = 0
+					event_target:parallel_sky_country = {
+						trust = {
+							who = root
+							value <= 50
+						}
+					}
+				}
+				modifier = {
+					factor = 0
+					event_target:parallel_sky_country = {
+						OR = {
+							has_country_flag = parallel_sky_moon
+							has_country_flag = parallel_sky_moon_cooldown
+						}
+					}
+				}
+				modifier = {
+					factor = 0
+					event_target:parallel_sky_country = {
+						has_country_flag = parallel_sky_their_war
+					}
+				}
+				country_event = { id = parallel_sky.101 }
+			}
+			1 = {
+				modifier = {
+					factor = 0
+					event_target:parallel_sky_country = {
+						trust = {
+							who = root
+							value <= 50
+						}
+					}
+				}
+				modifier = {
+					factor = 0
+					event_target:parallel_sky_country = {
+						OR = {
+							has_country_flag = parallel_sky_star
+							has_country_flag = parallel_sky_star_cooldown
+						}
+					}
+				}
+				modifier = {
+					factor = 0
+					event_target:parallel_sky_country = {
+						has_country_flag = parallel_sky_their_war
+					}
+				}
+				modifier = {
+					factor = 0
+					NOT = { has_origin = origin_parallel_sky }
+				}
+				modifier = {
+					factor = 5
+					mid_game_years_passed >= 0
+					event_target:parallel_sky_country = {
+						NOT = { has_country_flag = parallel_sky_star_triggered }
+					}
+				}
+				modifier = {
+					factor = 2
+					end_game_years_passed >= 0
+					event_target:parallel_sky_country = {
+						NOT = { has_country_flag = parallel_sky_star_triggered }
+					}
+				}
+				country_event = { id = parallel_sky.102 }
+			}
+			1 = {
+				modifier = {
+					factor = 0
+					event_target:parallel_sky_country = {
+						trust = {
+							who = root
+							value <= 50
+						}
+					}
+				}
+				modifier = {
+					factor = 5
+					is_at_war = yes
+				}
+				country_event = { id = parallel_sky.103 }
+			}
+			1 = {
+				modifier = {
+					factor = 0
+					event_target:parallel_sky_country = {
+						trust = {
+							who = root
+							value <= 50
+						}
+					}
+				}
+				modifier = {
+					factor = 5
+					is_at_war = yes
+				}
+				country_event = { id = parallel_sky.104 }
+			}
+			1 = {
+				modifier = {
+					factor = 0
+					event_target:parallel_sky_country = {
+						trust = {
+							who = root
+							value <= 50
+						}
+					}
+				}
+				modifier = {
+					factor = 5
+					is_at_war = yes
+				}
+				country_event = { id = parallel_sky.105 }
+			}
+			1 = {
+				modifier = {
+					factor = 0
+					event_target:parallel_sky_country = {
+						trust = {
+							who = root
+							value <= 50
+						}
+					}
+				}
+				country_event = { id = parallel_sky.106 }
+			}
+			1 = {
+				modifier = {
+					factor = 0
+					event_target:parallel_sky_country = {
+						trust = {
+							who = root
+							value <= 50
+						}
+					}
+				}
+				country_event = { id = parallel_sky.107 }
+			}
+			1 = {
+				modifier = {
+					factor = 0
+					event_target:parallel_sky_country = {
+						trust = {
+							who = root
+							value <= 50
+						}
+					}
+				}
+				country_event = { id = parallel_sky.108 }
+			}
+			1 = {
+				modifier = {
+					factor = 0
+					event_target:parallel_sky_country = {
+						trust = {
+							who = root
+							value <= 50
+						}
+					}
+				}
+				country_event = { id = parallel_sky.109 }
+			}
+			1 = {
+				modifier = {
+					factor = 0
+					event_target:parallel_sky_country = {
+						trust = {
+							who = root
+							value <= 50
+						}
+					}
+				}
+				country_event = { id = parallel_sky.110 }
+			}
+			# 虚伪星空
+			1 = {
+				modifier = {
+					factor = 0
+					event_target:parallel_sky_country = {
+						trust = {
+							who = root
+							value <= 50
+						}
+					}
+				}
+				modifier = {
+					factor = 0
+					event_target:parallel_sky_country = {
+						NOT = { has_country_flag = parallel_sky_star_triggered }
+					}
+				}
+				modifier = {
+					factor = 0
+					event_target:parallel_sky_country = {
+						has_country_flag = parallel_sky_our_star_triggered
+					}
+				}
+				modifier = {
+					factor = 0
+					NOT = { has_origin = origin_parallel_sky }
+				}
+				modifier = {
+					factor = 5
+					mid_game_years_passed >= 0
+				}
+				modifier = {
+					factor = 2
+					end_game_years_passed >= 0
+				}
+				country_event = { id = parallel_sky.111 }
+			}
+			# 开始曲速战争
+			1 = {
+				modifier = {
+					factor = 0
+					event_target:parallel_sky_country = {
+						trust = {
+							who = root
+							value <= 50
+						}
+					}
+				}
+				modifier = {
+					factor = 0
+					event_target:parallel_sky_country = {
+						NOT = { has_country_flag = parallel_sky_project_finished }
+					}
+				}
+				modifier = {
+					factor = 0
+					event_target:parallel_sky_country = {
+						has_country_flag = parallel_sky_their_war
+					}
+				}
+				modifier = {
+					factor = 0
+					NOT = { has_origin = origin_parallel_sky }
+				}
+				modifier = {
+					factor = 5
+					mid_game_years_passed >= 0
+				}
+				modifier = {
+					factor = 2
+					end_game_years_passed >= 0
+				}
+				country_event = { id = parallel_sky.116 }
+			}
+			# 常规请求资助
+			5 = {
+				modifier = {
+					factor = 0
+					event_target:parallel_sky_country = {
+						trust = {
+							who = root
+							value <= 50
+						}
+					}
+				}
+				modifier = {
+					factor = 0
+					event_target:parallel_sky_country = {
+						NOT = { has_country_flag = parallel_sky_their_war }
+					}
+				}
+				modifier = {
+					factor = 5
+					mid_game_years_passed >= 0
+				}
+				modifier = {
+					factor = 2
+					end_game_years_passed >= 0
+				}
+				country_event = { id = parallel_sky.117 }
+			}
+			# 曲速兽入侵
+			1 = {
+				modifier = {
+					factor = 0
+					event_target:parallel_sky_country = {
+						trust = {
+							who = root
+							value <= 50
+						}
+					}
+				}
+				modifier = {
+					factor = 0
+					event_target:parallel_sky_country = {
+						NOT = { has_country_flag = parallel_sky_their_war }
+					}
+				}
+				modifier = {
+					factor = 0
+					event_target:parallel_sky_country = {
+						has_country_flag = parallel_sky_their_war_middle
+					}
+				}
+				modifier = {
+					factor = 0
+					NOT = { has_origin = origin_parallel_sky }
+				}
+				modifier = {
+					factor = 5
+					mid_game_years_passed >= 0
+				}
+				modifier = {
+					factor = 2
+					end_game_years_passed >= 0
+				}
+				country_event = { id = parallel_sky.118 }
+			}
+			# 平行国家覆灭
+			1 = {
+				modifier = {
+					factor = 0
+					event_target:parallel_sky_country = {
+						trust = {
+							who = root
+							value <= 50
+						}
+					}
+				}
+				modifier = {
+					factor = 0
+					event_target:parallel_sky_country = {
+						NOT = { has_country_flag = parallel_sky_their_war_middle_finished }
+					}
+				}
+				modifier = {
+					factor = 0
+					event_target:parallel_sky_country = {
+						has_country_flag = parallel_sky_their_war_end
+					}
+				}
+				modifier = {
+					factor = 0
+					NOT = { has_origin = origin_parallel_sky }
+				}
+				modifier = {
+					factor = 5
+					mid_game_years_passed >= 0
+				}
+				modifier = {
+					factor = 2
+					end_game_years_passed >= 0
+				}
+				country_event = { id = parallel_sky.122 }
+			}
+		}
+	}
+}
+
+country_event = {
+	id = parallel_sky.71
+	title = parallel_sky.name
+	desc = parallel_sky.71.desc
+
+	diplomatic = yes
+	force_open = yes
+
+	picture_event_data = {
+		portrait = event_target:parallel_sky_country
+		room = mercenary_enclave_room
+	}
+
+	is_triggered_only = yes
+	
+	trigger = {
+	}
+
+	option = {
+		name = parallel_sky.71.a
+		response_text = parallel_sky.71.a.response
+		allow = {
+			has_country_resource = {
+				type = trade
+				amount >= value:num_parallel_sky_value_3
+			}
+		}
+		add_resource = {
+			trade = -1
+			mult = value:num_parallel_sky_value_3
+		}
+		add_resource = {
+			alloys = 1
+			mult = value:num_parallel_sky_value_1
+		}
+		event_target:parallel_sky_country = {
+			add_trust = {
+				who = root
+				amount = 5
+			}
+		}
+	}
+	
+	option = {
+		name = parallel_sky.71.b
+		response_text = parallel_sky.71.b.response
+		default_hide_option = yes
+		event_target:parallel_sky_country = {
+			add_trust = {
+				who = root
+				amount = -2
+			}
+		}
+	}
+}
+
+country_event = {
+	id = parallel_sky.72
+	title = parallel_sky.name
+	desc = parallel_sky.72.desc
+
+	diplomatic = yes
+	force_open = yes
+
+	picture_event_data = {
+		portrait = event_target:parallel_sky_country
+		room = mercenary_enclave_room
+	}
+
+	is_triggered_only = yes
+	
+	trigger = {
+	}
+
+	option = {
+		name = parallel_sky.72.a
+		response_text = parallel_sky.72.a.response
+		allow = {
+			has_country_resource = {
+				type = trade
+				amount >= value:num_parallel_sky_value_3
+			}
+		}
+		add_resource = {
+			trade = -1
+			mult = value:num_parallel_sky_value_3
+		}
+		add_resource = {
+			consumer_goods = 1
+			mult = value:num_parallel_sky_value_1
+		}
+		event_target:parallel_sky_country = {
+			add_trust = {
+				who = root
+				amount = 5
+			}
+		}
+	}
+	
+	option = {
+		name = parallel_sky.72.b
+		response_text = parallel_sky.72.b.response
+		default_hide_option = yes
+		event_target:parallel_sky_country = {
+			add_trust = {
+				who = root
+				amount = -2
+			}
+		}
+	}
+}
+
+country_event = {
+	id = parallel_sky.73
+	title = parallel_sky.name
+	desc = parallel_sky.73.desc
+
+	diplomatic = yes
+	force_open = yes
+
+	picture_event_data = {
+		portrait = event_target:parallel_sky_country
+		room = mercenary_enclave_room
+	}
+
+	is_triggered_only = yes
+	
+	trigger = {
+	}
+
+	option = {
+		name = parallel_sky.73.a
+		response_text = parallel_sky.73.a.response
+		allow = {
+			has_country_resource = {
+				type = energy
+				amount >= value:num_parallel_sky_value_2
+			}
+		}
+		add_resource = {
+			energy = -1
+			mult = value:num_parallel_sky_value_2
+		}
+		add_resource = {
+			minerals = 1
+			mult = value:num_parallel_sky_value_2
+		}
+		event_target:parallel_sky_country = {
+			add_trust = {
+				who = root
+				amount = 5
+			}
+		}
+	}
+	
+	option = {
+		name = parallel_sky.73.b
+		response_text = parallel_sky.73.b.response
+		default_hide_option = yes
+		event_target:parallel_sky_country = {
+			add_trust = {
+				who = root
+				amount = -2
+			}
+		}
+	}
+}
+
+country_event = {
+	id = parallel_sky.74
+	title = parallel_sky.name
+	desc = parallel_sky.74.desc
+
+	diplomatic = yes
+	force_open = yes
+
+	picture_event_data = {
+		portrait = event_target:parallel_sky_country
+		room = mercenary_enclave_room
+	}
+
+	is_triggered_only = yes
+	
+	trigger = {
+	}
+
+	option = {
+		name = parallel_sky.74.a
+		response_text = parallel_sky.74.a.response
+		allow = {
+			has_country_resource = {
+				type = minerals
+				amount >= value:num_parallel_sky_value_2
+			}
+		}
+		add_resource = {
+			minerals = -1
+			mult = value:num_parallel_sky_value_2
+		}
+		add_resource = {
+			energy = 1
+			mult = value:num_parallel_sky_value_2
+		}
+		event_target:parallel_sky_country = {
+			add_trust = {
+				who = root
+				amount = 5
+			}
+		}
+	}
+	
+	option = {
+		name = parallel_sky.74.b
+		response_text = parallel_sky.74.b.response
+		default_hide_option = yes
+		event_target:parallel_sky_country = {
+			add_trust = {
+				who = root
+				amount = -2
+			}
+		}
+	}
+}
+
+country_event = {
+	id = parallel_sky.75
+	title = parallel_sky.name
+	desc = parallel_sky.75.desc
+
+	diplomatic = yes
+	force_open = yes
+
+	picture_event_data = {
+		portrait = event_target:parallel_sky_country
+		room = mercenary_enclave_room
+	}
+
+	is_triggered_only = yes
+	
+	trigger = {
+	}
+
+	option = {
+		name = parallel_sky.75.a
+		response_text = parallel_sky.75.a.response
+		allow = {
+			has_country_resource = {
+				type = energy
+				amount >= value:num_parallel_sky_value_2
+			}
+		}
+		add_resource = {
+			energy = -1
+			mult = value:num_parallel_sky_value_2
+		}
+		add_resource = {
+			food = 1
+			mult = value:num_parallel_sky_value_2
+		}
+		event_target:parallel_sky_country = {
+			add_trust = {
+				who = root
+				amount = 5
+			}
+		}
+	}
+	
+	option = {
+		name = parallel_sky.75.b
+		response_text = parallel_sky.75.b.response
+		default_hide_option = yes
+		event_target:parallel_sky_country = {
+			add_trust = {
+				who = root
+				amount = -2
+			}
+		}
+	}
+}
+
+country_event = {
+	id = parallel_sky.76
+	title = parallel_sky.name
+	desc = parallel_sky.76.desc
+
+	diplomatic = yes
+	force_open = yes
+
+	picture_event_data = {
+		portrait = event_target:parallel_sky_country
+		room = mercenary_enclave_room
+	}
+
+	is_triggered_only = yes
+	
+	trigger = {
+	}
+
+	option = {
+		name = parallel_sky.76.a
+		response_text = parallel_sky.76.a.response
+		allow = {
+			has_country_resource = {
+				type = food
+				amount >= value:num_parallel_sky_value_2
+			}
+		}
+		add_resource = {
+			food = -1
+			mult = value:num_parallel_sky_value_2
+		}
+		add_resource = {
+			energy = 1
+			mult = value:num_parallel_sky_value_2
+		}
+		event_target:parallel_sky_country = {
+			add_trust = {
+				who = root
+				amount = 5
+			}
+		}
+	}
+	
+	option = {
+		name = parallel_sky.76.b
+		response_text = parallel_sky.76.b.response
+		default_hide_option = yes
+		event_target:parallel_sky_country = {
+			add_trust = {
+				who = root
+				amount = -2
+			}
+		}
+	}
+}
+
+country_event = {
+	id = parallel_sky.77
+	title = parallel_sky.name
+	desc = parallel_sky.77.desc
+
+	diplomatic = yes
+	force_open = yes
+
+	picture_event_data = {
+		portrait = event_target:parallel_sky_country
+		room = mercenary_enclave_room
+	}
+
+	is_triggered_only = yes
+	
+	trigger = {
+	}
+
+	option = {
+		name = parallel_sky.77.a
+		response_text = parallel_sky.77.a.response
+		allow = {
+			has_country_resource = {
+				type = minerals
+				amount >= value:num_parallel_sky_value_2
+			}
+		}
+		add_resource = {
+			minerals = -1
+			mult = value:num_parallel_sky_value_2
+		}
+		add_resource = {
+			food = 1
+			mult = value:num_parallel_sky_value_2
+		}
+		event_target:parallel_sky_country = {
+			add_trust = {
+				who = root
+				amount = 5
+			}
+		}
+	}
+	
+	option = {
+		name = parallel_sky.77.b
+		response_text = parallel_sky.77.b.response
+		default_hide_option = yes
+		event_target:parallel_sky_country = {
+			add_trust = {
+				who = root
+				amount = -2
+			}
+		}
+	}
+}
+
+country_event = {
+	id = parallel_sky.78
+	title = parallel_sky.name
+	desc = parallel_sky.78.desc
+
+	diplomatic = yes
+	force_open = yes
+
+	picture_event_data = {
+		portrait = event_target:parallel_sky_country
+		room = mercenary_enclave_room
+	}
+
+	is_triggered_only = yes
+	
+	trigger = {
+	}
+
+	option = {
+		name = parallel_sky.78.a
+		response_text = parallel_sky.78.a.response
+		allow = {
+			has_country_resource = {
+				type = food
+				amount >= value:num_parallel_sky_value_2
+			}
+		}
+		add_resource = {
+			food = -1
+			mult = value:num_parallel_sky_value_2
+		}
+		add_resource = {
+			minerals = 1
+			mult = value:num_parallel_sky_value_2
+		}
+		event_target:parallel_sky_country = {
+			add_trust = {
+				who = root
+				amount = 5
+			}
+		}
+	}
+	
+	option = {
+		name = parallel_sky.78.b
+		response_text = parallel_sky.78.b.response
+		default_hide_option = yes
+		event_target:parallel_sky_country = {
+			add_trust = {
+				who = root
+				amount = -2
+			}
+		}
+	}
+}
+
+country_event = {
+	id = parallel_sky.79
+	title = parallel_sky.name
+	desc = {
+		text = parallel_sky.79.desc.1
+		trigger = {
+			event_target:parallel_sky_country = {
+				has_civic = civic_parallel_sky_1
+			}
+		}
+	}
+	desc = {
+		text = parallel_sky.79.desc.2
+		trigger = {
+			event_target:parallel_sky_country = {
+				has_civic = civic_parallel_sky_2
+			}
+		}
+	}
+	desc = {
+		text = parallel_sky.79.desc.3
+		trigger = {
+			event_target:parallel_sky_country = {
+				has_civic = civic_parallel_sky_3
+			}
+		}
+	}
+
+	diplomatic = yes
+	force_open = yes
+
+	picture_event_data = {
+		portrait = event_target:parallel_sky_country
+		room = mercenary_enclave_room
+	}
+
+	is_triggered_only = yes
+	
+	trigger = {
+	}
+
+	option = {
+		name = parallel_sky.79.a
+		response_text = parallel_sky.79.a.response
+		if = {
+			limit = {
+				event_target:parallel_sky_country = {
+					has_civic = civic_parallel_sky_1
+				}
+			}
+			add_modifier = {
+				modifier = parallel_sky_modifier_1
+				days = 360
+			}
+		}
+		if = {
+			limit = {
+				event_target:parallel_sky_country = {
+					has_civic = civic_parallel_sky_2
+				}
+			}
+			add_modifier = {
+				modifier = parallel_sky_modifier_2
+				days = 360
+			}
+		}
+		if = {
+			limit = {
+				event_target:parallel_sky_country = {
+					has_civic = civic_parallel_sky_3
+				}
+			}
+			add_modifier = {
+				modifier = parallel_sky_modifier_3
+				days = 360
+			}
+		}
+		add_resource = {
+			trade = 12
+			mult = value:num_parallel_sky_value_1
+		}
+		event_target:parallel_sky_country = {
+			add_trust = {
+				who = root
+				amount = 10
+			}
+		}
+	}
+	
+	option = {
+		name = parallel_sky.79.b
+		response_text = parallel_sky.79.b.response
+		default_hide_option = yes
+		event_target:parallel_sky_country = {
+			add_trust = {
+				who = root
+				amount = -2
+			}
+		}
+	}
+}
+
+country_event = {
+	id = parallel_sky.80
+	title = parallel_sky.name
+	desc = {
+		text = parallel_sky.80.desc.1
+		trigger = {
+			event_target:parallel_sky_country = {
+				has_civic = civic_parallel_sky_1
+			}
+		}
+	}
+	desc = {
+		text = parallel_sky.80.desc.2
+		trigger = {
+			event_target:parallel_sky_country = {
+				has_civic = civic_parallel_sky_2
+			}
+		}
+	}
+	desc = {
+		text = parallel_sky.80.desc.3
+		trigger = {
+			event_target:parallel_sky_country = {
+				has_civic = civic_parallel_sky_3
+			}
+		}
+	}
+
+	diplomatic = yes
+	force_open = yes
+
+	picture_event_data = {
+		portrait = event_target:parallel_sky_country
+		room = mercenary_enclave_room
+	}
+
+	is_triggered_only = yes
+	
+	trigger = {
+	}
+
+	option = {
+		name = parallel_sky.80.a
+		response_text = parallel_sky.80.a.response
+		if = {
+			limit = {
+				event_target:parallel_sky_country = {
+					has_civic = civic_parallel_sky_1
+				}
+			}
+			add_modifier = {
+				modifier = parallel_sky_modifier_4
+				days = 360
+			}
+		}
+		if = {
+			limit = {
+				event_target:parallel_sky_country = {
+					has_civic = civic_parallel_sky_2
+				}
+			}
+			add_modifier = {
+				modifier = parallel_sky_modifier_5
+				days = 360
+			}
+		}
+		if = {
+			limit = {
+				event_target:parallel_sky_country = {
+					has_civic = civic_parallel_sky_3
+				}
+			}
+			add_modifier = {
+				modifier = parallel_sky_modifier_6
+				days = 360
+			}
+		}
+		add_resource = {
+			trade = 12
+			mult = value:num_parallel_sky_value_1
+		}
+		event_target:parallel_sky_country = {
+			add_trust = {
+				who = root
+				amount = 10
+			}
+		}
+	}
+	
+	option = {
+		name = parallel_sky.80.b
+		response_text = parallel_sky.80.b.response
+		default_hide_option = yes
+		event_target:parallel_sky_country = {
+			add_trust = {
+				who = root
+				amount = -2
+			}
+		}
+	}
+}
+
+country_event = {
+	id = parallel_sky.81
+	title = parallel_sky.name
+	desc = parallel_sky.81.desc
+
+	diplomatic = yes
+	force_open = yes
+
+	picture_event_data = {
+		portrait = event_target:parallel_sky_country
+		room = mercenary_enclave_room
+	}
+
+	is_triggered_only = yes
+	
+	trigger = {
+	}
+
+	option = {
+		name = parallel_sky.81.a
+		response_text = parallel_sky.81.a.response
+		allow = {
+			has_country_resource = {
+				type = trade
+				amount >= value:num_parallel_sky_value_3
+			}
+		}
+		add_resource = {
+			trade = -1
+			mult = value:num_parallel_sky_value_3
+		}
+		add_resource = {
+			alloys = 1.5
+			mult = value:num_parallel_sky_value_1
+		}
+		event_target:parallel_sky_country = {
+			add_trust = {
+				who = root
+				amount = 5
+			}
+		}
+	}
+	
+	option = {
+		name = parallel_sky.81.b
+		response_text = parallel_sky.81.b.response
+		default_hide_option = yes
+		event_target:parallel_sky_country = {
+			add_trust = {
+				who = root
+				amount = -5
+			}
+		}
+	}
+}
+
+country_event = {
+	id = parallel_sky.82
+	title = parallel_sky.name
+	desc = parallel_sky.82.desc
+
+	diplomatic = yes
+	force_open = yes
+
+	picture_event_data = {
+		portrait = event_target:parallel_sky_country
+		room = mercenary_enclave_room
+	}
+
+	is_triggered_only = yes
+	
+	trigger = {
+	}
+
+	option = {
+		name = parallel_sky.82.a
+		response_text = parallel_sky.82.a.response
+		allow = {
+			has_country_resource = {
+				type = trade
+				amount >= value:num_parallel_sky_value_3
+			}
+		}
+		add_resource = {
+			trade = -1
+			mult = value:num_parallel_sky_value_3
+		}
+		add_resource = {
+			consumer_goods = 1.5
+			mult = value:num_parallel_sky_value_1
+		}
+		event_target:parallel_sky_country = {
+			add_trust = {
+				who = root
+				amount = 5
+			}
+		}
+	}
+	
+	option = {
+		name = parallel_sky.82.b
+		response_text = parallel_sky.82.b.response
+		default_hide_option = yes
+		event_target:parallel_sky_country = {
+			add_trust = {
+				who = root
+				amount = -5
+			}
+		}
+	}
+}
+
+country_event = {
+	id = parallel_sky.83
+	title = parallel_sky.name
+	desc = parallel_sky.83.desc
+
+	diplomatic = yes
+	force_open = yes
+
+	picture_event_data = {
+		portrait = event_target:parallel_sky_country
+		room = mercenary_enclave_room
+	}
+
+	is_triggered_only = yes
+	
+	trigger = {
+	}
+
+	option = {
+		name = parallel_sky.83.a
+		response_text = parallel_sky.83.a.response
+		allow = {
+			has_country_resource = {
+				type = energy
+				amount >= value:num_parallel_sky_value_2
+			}
+		}
+		add_resource = {
+			energy = -1
+			mult = value:num_parallel_sky_value_2
+		}
+		add_resource = {
+			minerals = 1.5
+			mult = value:num_parallel_sky_value_2
+		}
+		event_target:parallel_sky_country = {
+			add_trust = {
+				who = root
+				amount = 5
+			}
+		}
+	}
+	
+	option = {
+		name = parallel_sky.83.b
+		response_text = parallel_sky.83.b.response
+		default_hide_option = yes
+		event_target:parallel_sky_country = {
+			add_trust = {
+				who = root
+				amount = -5
+			}
+		}
+	}
+}
+
+country_event = {
+	id = parallel_sky.84
+	title = parallel_sky.name
+	desc = parallel_sky.84.desc
+
+	diplomatic = yes
+	force_open = yes
+
+	picture_event_data = {
+		portrait = event_target:parallel_sky_country
+		room = mercenary_enclave_room
+	}
+
+	is_triggered_only = yes
+	
+	trigger = {
+	}
+
+	option = {
+		name = parallel_sky.84.a
+		response_text = parallel_sky.84.a.response
+		allow = {
+			has_country_resource = {
+				type = minerals
+				amount >= value:num_parallel_sky_value_2
+			}
+		}
+		add_resource = {
+			minerals = -1
+			mult = value:num_parallel_sky_value_2
+		}
+		add_resource = {
+			energy = 1.5
+			mult = value:num_parallel_sky_value_2
+		}
+		event_target:parallel_sky_country = {
+			add_trust = {
+				who = root
+				amount = 5
+			}
+		}
+	}
+	
+	option = {
+		name = parallel_sky.84.b
+		response_text = parallel_sky.84.b.response
+		default_hide_option = yes
+		event_target:parallel_sky_country = {
+			add_trust = {
+				who = root
+				amount = -5
+			}
+		}
+	}
+}
+
+country_event = {
+	id = parallel_sky.85
+	title = parallel_sky.name
+	desc = parallel_sky.85.desc
+
+	diplomatic = yes
+	force_open = yes
+
+	picture_event_data = {
+		portrait = event_target:parallel_sky_country
+		room = mercenary_enclave_room
+	}
+
+	is_triggered_only = yes
+	
+	trigger = {
+	}
+
+	option = {
+		name = parallel_sky.85.a
+		response_text = parallel_sky.85.a.response
+		allow = {
+			has_country_resource = {
+				type = energy
+				amount >= value:num_parallel_sky_value_2
+			}
+		}
+		add_resource = {
+			energy = -1
+			mult = value:num_parallel_sky_value_2
+		}
+		add_resource = {
+			food = 1.5
+			mult = value:num_parallel_sky_value_2
+		}
+		event_target:parallel_sky_country = {
+			add_trust = {
+				who = root
+				amount = 5
+			}
+		}
+	}
+	
+	option = {
+		name = parallel_sky.85.b
+		response_text = parallel_sky.85.b.response
+		default_hide_option = yes
+		event_target:parallel_sky_country = {
+			add_trust = {
+				who = root
+				amount = -5
+			}
+		}
+	}
+}
+
+country_event = {
+	id = parallel_sky.86
+	title = parallel_sky.name
+	desc = parallel_sky.86.desc
+
+	diplomatic = yes
+	force_open = yes
+
+	picture_event_data = {
+		portrait = event_target:parallel_sky_country
+		room = mercenary_enclave_room
+	}
+
+	is_triggered_only = yes
+	
+	trigger = {
+	}
+
+	option = {
+		name = parallel_sky.86.a
+		response_text = parallel_sky.86.a.response
+		allow = {
+			has_country_resource = {
+				type = food
+				amount >= value:num_parallel_sky_value_2
+			}
+		}
+		add_resource = {
+			food = -1
+			mult = value:num_parallel_sky_value_2
+		}
+		add_resource = {
+			energy = 1.5
+			mult = value:num_parallel_sky_value_2
+		}
+		event_target:parallel_sky_country = {
+			add_trust = {
+				who = root
+				amount = 5
+			}
+		}
+	}
+	
+	option = {
+		name = parallel_sky.86.b
+		response_text = parallel_sky.86.b.response
+		default_hide_option = yes
+		event_target:parallel_sky_country = {
+			add_trust = {
+				who = root
+				amount = -5
+			}
+		}
+	}
+}
+
+country_event = {
+	id = parallel_sky.87
+	title = parallel_sky.name
+	desc = parallel_sky.87.desc
+
+	diplomatic = yes
+	force_open = yes
+
+	picture_event_data = {
+		portrait = event_target:parallel_sky_country
+		room = mercenary_enclave_room
+	}
+
+	is_triggered_only = yes
+	
+	trigger = {
+	}
+
+	option = {
+		name = parallel_sky.87.a
+		response_text = parallel_sky.87.a.response
+		allow = {
+			has_country_resource = {
+				type = minerals
+				amount >= value:num_parallel_sky_value_2
+			}
+		}
+		add_resource = {
+			minerals = -1
+			mult = value:num_parallel_sky_value_2
+		}
+		add_resource = {
+			food = 1.5
+			mult = value:num_parallel_sky_value_2
+		}
+		event_target:parallel_sky_country = {
+			add_trust = {
+				who = root
+				amount = 5
+			}
+		}
+	}
+	
+	option = {
+		name = parallel_sky.87.b
+		response_text = parallel_sky.87.b.response
+		default_hide_option = yes
+		event_target:parallel_sky_country = {
+			add_trust = {
+				who = root
+				amount = -5
+			}
+		}
+	}
+}
+
+country_event = {
+	id = parallel_sky.88
+	title = parallel_sky.name
+	desc = parallel_sky.88.desc
+
+	diplomatic = yes
+	force_open = yes
+
+	picture_event_data = {
+		portrait = event_target:parallel_sky_country
+		room = mercenary_enclave_room
+	}
+
+	is_triggered_only = yes
+	
+	trigger = {
+	}
+
+	option = {
+		name = parallel_sky.88.a
+		response_text = parallel_sky.88.a.response
+		allow = {
+			has_country_resource = {
+				type = food
+				amount >= value:num_parallel_sky_value_2
+			}
+		}
+		add_resource = {
+			food = -1
+			mult = value:num_parallel_sky_value_2
+		}
+		add_resource = {
+			minerals = 1.5
+			mult = value:num_parallel_sky_value_2
+		}
+		event_target:parallel_sky_country = {
+			add_trust = {
+				who = root
+				amount = 5
+			}
+		}
+	}
+	
+	option = {
+		name = parallel_sky.88.b
+		response_text = parallel_sky.88.b.response
+		default_hide_option = yes
+		event_target:parallel_sky_country = {
+			add_trust = {
+				who = root
+				amount = -5
+			}
+		}
+	}
+}
+
+country_event = {
+	id = parallel_sky.89
+	title = parallel_sky.name
+	desc = {
+		text = parallel_sky.89.desc.1
+		trigger = {
+			event_target:parallel_sky_country = {
+				has_civic = civic_parallel_sky_1
+			}
+		}
+	}
+	desc = {
+		text = parallel_sky.89.desc.2
+		trigger = {
+			event_target:parallel_sky_country = {
+				has_civic = civic_parallel_sky_2
+			}
+		}
+	}
+	desc = {
+		text = parallel_sky.89.desc.3
+		trigger = {
+			event_target:parallel_sky_country = {
+				has_civic = civic_parallel_sky_3
+			}
+		}
+	}
+
+	diplomatic = yes
+	force_open = yes
+
+	picture_event_data = {
+		portrait = event_target:parallel_sky_country
+		room = mercenary_enclave_room
+	}
+
+	is_triggered_only = yes
+	
+	trigger = {
+	}
+
+	option = {
+		name = parallel_sky.89.a
+		response_text = parallel_sky.89.a.response
+		if = {
+			limit = {
+				event_target:parallel_sky_country = {
+					has_civic = civic_parallel_sky_1
+				}
+			}
+			add_modifier = {
+				modifier = parallel_sky_modifier_1
+				days = 360
+			}
+		}
+		if = {
+			limit = {
+				event_target:parallel_sky_country = {
+					has_civic = civic_parallel_sky_2
+				}
+			}
+			add_modifier = {
+				modifier = parallel_sky_modifier_2
+				days = 360
+			}
+		}
+		if = {
+			limit = {
+				event_target:parallel_sky_country = {
+					has_civic = civic_parallel_sky_3
+				}
+			}
+			add_modifier = {
+				modifier = parallel_sky_modifier_3
+				days = 360
+			}
+		}
+		add_resource = {
+			trade = 18
+			mult = value:num_parallel_sky_value_1
+		}
+		event_target:parallel_sky_country = {
+			add_trust = {
+				who = root
+				amount = 10
+			}
+		}
+	}
+	
+	option = {
+		name = parallel_sky.89.b
+		response_text = parallel_sky.89.b.response
+		default_hide_option = yes
+		event_target:parallel_sky_country = {
+			add_trust = {
+				who = root
+				amount = -5
+			}
+		}
+	}
+}
+
+country_event = {
+	id = parallel_sky.90
+	title = parallel_sky.name
+	desc = {
+		text = parallel_sky.90.desc.1
+		trigger = {
+			event_target:parallel_sky_country = {
+				has_civic = civic_parallel_sky_1
+			}
+		}
+	}
+	desc = {
+		text = parallel_sky.90.desc.2
+		trigger = {
+			event_target:parallel_sky_country = {
+				has_civic = civic_parallel_sky_2
+			}
+		}
+	}
+	desc = {
+		text = parallel_sky.90.desc.3
+		trigger = {
+			event_target:parallel_sky_country = {
+				has_civic = civic_parallel_sky_3
+			}
+		}
+	}
+
+	diplomatic = yes
+	force_open = yes
+
+	picture_event_data = {
+		portrait = event_target:parallel_sky_country
+		room = mercenary_enclave_room
+	}
+
+	is_triggered_only = yes
+	
+	trigger = {
+	}
+
+	option = {
+		name = parallel_sky.90.a
+		response_text = parallel_sky.90.a.response
+		if = {
+			limit = {
+				event_target:parallel_sky_country = {
+					has_civic = civic_parallel_sky_1
+				}
+			}
+			add_modifier = {
+				modifier = parallel_sky_modifier_4
+				days = 360
+			}
+		}
+		if = {
+			limit = {
+				event_target:parallel_sky_country = {
+					has_civic = civic_parallel_sky_2
+				}
+			}
+			add_modifier = {
+				modifier = parallel_sky_modifier_5
+				days = 360
+			}
+		}
+		if = {
+			limit = {
+				event_target:parallel_sky_country = {
+					has_civic = civic_parallel_sky_3
+				}
+			}
+			add_modifier = {
+				modifier = parallel_sky_modifier_6
+				days = 360
+			}
+		}
+		add_resource = {
+			trade = 18
+			mult = value:num_parallel_sky_value_1
+		}
+		event_target:parallel_sky_country = {
+			add_trust = {
+				who = root
+				amount = 10
+			}
+		}
+	}
+	
+	option = {
+		name = parallel_sky.90.b
+		response_text = parallel_sky.90.b.response
+		default_hide_option = yes
+		event_target:parallel_sky_country = {
+			add_trust = {
+				who = root
+				amount = -5
+			}
+		}
+	}
+}
+
+country_event = {
+	id = parallel_sky.91
+	title = parallel_sky.name
+	desc = {
+		text = parallel_sky.91.desc.1
+		trigger = {
+			event_target:parallel_sky_country = {
+				has_civic = civic_parallel_sky_1
+			}
+		}
+	}
+	desc = {
+		text = parallel_sky.91.desc.2
+		trigger = {
+			event_target:parallel_sky_country = {
+				has_civic = civic_parallel_sky_2
+			}
+		}
+	}
+	desc = {
+		text = parallel_sky.91.desc.3
+		trigger = {
+			event_target:parallel_sky_country = {
+				has_civic = civic_parallel_sky_3
+			}
+		}
+	}
+
+	diplomatic = yes
+	force_open = yes
+
+	picture_event_data = {
+		portrait = event_target:parallel_sky_country
+		room = mercenary_enclave_room
+	}
+
+	is_triggered_only = yes
+	
+	trigger = {
+	}
+
+	option = {
+		name = parallel_sky.91.a
+		response_text = parallel_sky.91.a.response
+		start_situation = {
+			type = situation_parallel_sky_holiday
+			target = event_target:parallel_sky_planet
+			effect = {
+				set_situation_approach = approach_default
+			}
+		}
+		hidden_effect = {
+			event_target:parallel_sky_country = {
+				set_country_flag = parallel_sky_holiday
+			}
+		}
+	}
+	
+	option = {
+		name = parallel_sky.91.b
+		response_text = parallel_sky.91.b.response
+		default_hide_option = yes
+		event_target:parallel_sky_country = {
+			add_trust = {
+				who = root
+				amount = -5
+			}
+		}
+		hidden_effect = {
+			event_target:parallel_sky_country = {
+				set_timed_country_flag = {
+					flag = parallel_sky_holiday_cooldown
+					months = 120
+				}
+			}
+		}
+	}
+}
+
+situation_event = {
+	id = parallel_sky.92
+	title = parallel_sky.92.name
+	desc = parallel_sky.92.desc
+	picture = GFX_evt_kaleidoscopic_lights
+	location = target
+	situation = this
+
+	is_triggered_only = yes
+
+	trigger = {
+	}
+	
+	immediate = {
+		target = {
+			add_blocker = {
+				type = d_city_ruins
+			}
+		}
+	}
+	
+	option = {
+		name = parallel_sky.92.a
+		owner = {
+			add_resource = {
+				trade = 2000
+			}
+		}
+		event_target:parallel_sky_country = {
+			add_trust = {
+				who = root.owner
+				amount = -5
+			}
+		}
+		hidden_effect = {
+			set_situation_flag = holiday_1
+		}
+	}
+	
+	option = {
+		name = parallel_sky.92.b
+		event_target:parallel_sky_country = {
+			add_trust = {
+				who = root.owner
+				amount = 2
+			}
+		}
+	}
+}
+
+situation_event = {
+	id = parallel_sky.93
+	title = parallel_sky.93.name
+	desc = parallel_sky.93.desc
+	picture = GFX_evt_kaleidoscopic_lights
+	location = target
+	situation = this
+
+	is_triggered_only = yes
+
+	trigger = {
+		NOT = { has_situation_flag = holiday_1 }
+	}
+	
+	immediate = {
+	}
+	
+	option = {
+		name = parallel_sky.93.a
+		owner = {
+			add_resource = {
+				trade = -1000
+			}
+		}
+		event_target:parallel_sky_country = {
+			add_trust = {
+				who = root.owner
+				amount = 2
+			}
+		}
+	}
+	
+	option = {
+		name = parallel_sky.93.b
+		event_target:parallel_sky_country = {
+			add_trust = {
+				who = root.owner
+				amount = -5
+			}
+		}
+		hidden_effect = {
+			set_situation_flag = holiday_2
+		}
+	}
+}
+
+situation_event = {
+	id = parallel_sky.94
+	title = parallel_sky.94.name
+	desc = {
+		text = parallel_sky.94.desc.1
+		trigger = {
+			NOR = {
+				has_situation_flag = holiday_1
+				has_situation_flag = holiday_2
+			}
+		}
+	}
+	desc = {
+		text = parallel_sky.94.desc.2
+		trigger = {
+			OR = {
+				has_situation_flag = holiday_1
+				has_situation_flag = holiday_2
+			}
+		}
+	}
+	picture = GFX_evt_kaleidoscopic_lights
+	location = target
+	situation = this
+
+	is_triggered_only = yes
+
+	trigger = {
+	}
+	
+	immediate = {
+	}
+	
+	option = {
+		name = parallel_sky.94.a
+		owner = {
+			add_resource = {
+				unity = 2000
+			}
+		}
+	}
+	
+	option = {
+		name = parallel_sky.94.b
+		owner = {
+			add_resource = {
+				influence = 100
+			}
+		}
+	}
+}
+
+situation_event = {
+	id = parallel_sky.95
+	title = parallel_sky.95.name
+	desc = parallel_sky.95.desc
+	picture = GFX_evt_kaleidoscopic_lights
+	location = target
+	situation = this
+
+	is_triggered_only = yes
+
+	trigger = {
+	}
+	
+	immediate = {
+	}
+	
+	option = {
+		name = parallel_sky.95.a
+		target = {
+			create_pop_group = {
+				species = event_target:parallel_sky_country.species
+			}
+		}
+		event_target:parallel_sky_country = {
+			add_trust = {
+				who = root.owner
+				amount = -5
+			}
+		}
+	}
+	
+	option = {
+		name = parallel_sky.95.b
+		event_target:parallel_sky_country = {
+			add_trust = {
+				who = root.owner
+				amount = 2
+			}
+		}
+	}
+}
+
+situation_event = {
+	id = parallel_sky.96
+	title = parallel_sky.96.name
+	desc = parallel_sky.96.desc
+	picture = GFX_evt_kaleidoscopic_lights
+	show_sound = event_celebration
+	location = target
+	situation = this
+
+	is_triggered_only = yes
+
+	trigger = {
+	}
+	
+	immediate = {
+		event_target:parallel_sky_country = {
+			remove_country_flag = parallel_sky_holiday
+			set_timed_country_flag = {
+				flag = parallel_sky_holiday_cooldown
+				months = 60
+			}
+		}
+	}
+	
+	option = {
+		name = parallel_sky.96.a
+		event_target:parallel_sky_country = {
+			add_trust = {
+				who = root.owner
+				amount = 5
+			}
+		}
+		destroy_situation = this
+	}
+}
+
+situation_event = {
+	id = parallel_sky.97
+	title = parallel_sky.97.name
+	desc = parallel_sky.97.desc
+	picture = GFX_evt_kaleidoscopic_lights
+	show_sound = event_conversation
+	location = target
+	situation = this
+
+	is_triggered_only = yes
+
+	trigger = {
+	}
+	
+	immediate = {
+		event_target:parallel_sky_country = {
+			remove_country_flag = parallel_sky_holiday
+			set_timed_country_flag = {
+				flag = parallel_sky_holiday_cooldown
+				months = 60
+			}
+		}
+	}
+	
+	option = {
+		name = parallel_sky.97.a
+		event_target:parallel_sky_country = {
+			add_trust = {
+				who = root.owner
+				amount = -10
+			}
+		}
+		destroy_situation = this
+	}
+}
+
+country_event = {
+	id = parallel_sky.100
+	title = parallel_sky.name
+	desc = {
+		text = parallel_sky.100.desc.1
+		trigger = {
+			event_target:parallel_sky_country = {
+				has_civic = civic_parallel_sky_1
+			}
+		}
+	}
+	desc = {
+		text = parallel_sky.100.desc.2
+		trigger = {
+			event_target:parallel_sky_country = {
+				has_civic = civic_parallel_sky_2
+			}
+		}
+	}
+	desc = {
+		text = parallel_sky.100.desc.3
+		trigger = {
+			event_target:parallel_sky_country = {
+				has_civic = civic_parallel_sky_3
+			}
+		}
+	}
+
+	diplomatic = yes
+	force_open = yes
+
+	picture_event_data = {
+		portrait = event_target:parallel_sky_country
+		room = mercenary_enclave_room
+	}
+
+	is_triggered_only = yes
+	
+	trigger = {
+	}
+	
+	option = {
+		name = {
+			text = parallel_sky.100.a.1
+			trigger = {
+				event_target:parallel_sky_country = {
+					has_civic = civic_parallel_sky_1
+				}
+			}
+		}
+		name = {
+			text = parallel_sky.100.a.2
+			trigger = {
+				event_target:parallel_sky_country = {
+					has_civic = civic_parallel_sky_2
+				}
+			}
+		}
+		name = {
+			text = parallel_sky.100.a.3
+			trigger = {
+				event_target:parallel_sky_country = {
+					has_civic = civic_parallel_sky_3
+				}
+			}
+		}
+		response_text = parallel_sky.100.a.response
+		is_dialog_only = yes
+	}
+
+	option = {
+		name = parallel_sky.100.b
+		response_text = parallel_sky.100.b.response
+		trigger = {
+			event_target:parallel_sky_planet.solar_system = {
+				is_time_black_hole_star_class = no
+			}
+		}
+		event_target:parallel_sky_planet = {
+			add_modifier = {
+				modifier = parallel_sky_modifier_sun
+				days = 720
+			}
+		}
+		event_target:parallel_sky_country = {
+			add_trust = {
+				who = root
+				amount = 5
+			}
+		}
+		hidden_effect = {
+			event_target:parallel_sky_country = {
+				set_timed_country_flag = {
+					flag = parallel_sky_sun
+					months = 120
+				}
+			}
+		}
+	}
+	
+	option = {
+		name = parallel_sky.100.c
+		response_text = parallel_sky.100.c.response
+		default_hide_option = yes
+		trigger = {
+			event_target:parallel_sky_planet.solar_system = {
+				is_time_black_hole_star_class = no
+			}
+		}
+		event_target:parallel_sky_country = {
+			add_trust = {
+				who = root
+				amount = -5
+			}
+		}
+		hidden_effect = {
+			event_target:parallel_sky_country = {
+				set_timed_country_flag = {
+					flag = parallel_sky_sun_cooldown
+					months = 120
+				}
+			}
+		}
+	}
+	
+	option = {
+		name = parallel_sky.100.d
+		response_text = parallel_sky.100.d.response
+		default_hide_option = yes
+		trigger = {
+			event_target:parallel_sky_planet.solar_system = {
+				is_time_black_hole_star_class = yes
+			}
+		}
+		event_target:parallel_sky_country = {
+			add_trust = {
+				who = root
+				amount = 2
+			}
+		}
+		hidden_effect = {
+			event_target:parallel_sky_country = {
+				set_country_flag = parallel_sky_sun_cooldown
+			}
+		}
+	}
+}
+
+country_event = {
+	id = parallel_sky.101
+	title = parallel_sky.name
+	desc = {
+		text = parallel_sky.101.desc.1
+		trigger = {
+			event_target:parallel_sky_country = {
+				has_civic = civic_parallel_sky_1
+			}
+		}
+	}
+	desc = {
+		text = parallel_sky.101.desc.2
+		trigger = {
+			event_target:parallel_sky_country = {
+				has_civic = civic_parallel_sky_2
+			}
+		}
+	}
+	desc = {
+		text = parallel_sky.101.desc.3
+		trigger = {
+			event_target:parallel_sky_country = {
+				has_civic = civic_parallel_sky_3
+			}
+		}
+	}
+
+	diplomatic = yes
+	force_open = yes
+
+	picture_event_data = {
+		portrait = event_target:parallel_sky_country
+		room = mercenary_enclave_room
+	}
+
+	is_triggered_only = yes
+	
+	trigger = {
+	}
+	
+	option = {
+		name = {
+			text = parallel_sky.101.a.1
+			trigger = {
+				event_target:parallel_sky_country = {
+					has_civic = civic_parallel_sky_1
+				}
+			}
+		}
+		name = {
+			text = parallel_sky.101.a.2
+			trigger = {
+				event_target:parallel_sky_country = {
+					has_civic = civic_parallel_sky_2
+				}
+			}
+		}
+		name = {
+			text = parallel_sky.101.a.3
+			trigger = {
+				event_target:parallel_sky_country = {
+					has_civic = civic_parallel_sky_3
+				}
+			}
+		}
+		response_text = parallel_sky.101.a.response
+		is_dialog_only = yes
+	}
+
+	option = {
+		name = parallel_sky.101.b
+		response_text = parallel_sky.101.b.response
+		trigger = {
+			event_target:parallel_sky_planet = {
+				has_moon = yes
+			}
+		}
+		event_target:parallel_sky_planet = {
+			add_modifier = {
+				modifier = parallel_sky_modifier_moon
+				days = 720
+			}
+		}
+		event_target:parallel_sky_country = {
+			add_trust = {
+				who = root
+				amount = 5
+			}
+		}
+		hidden_effect = {
+			event_target:parallel_sky_country = {
+				set_timed_country_flag = {
+					flag = parallel_sky_moon
+					months = 120
+				}
+			}
+		}
+	}
+	
+	option = {
+		name = parallel_sky.101.c
+		response_text = parallel_sky.101.c.response
+		default_hide_option = yes
+		trigger = {
+			event_target:parallel_sky_planet = {
+				has_moon = yes
+			}
+		}
+		event_target:parallel_sky_country = {
+			add_trust = {
+				who = root
+				amount = -5
+			}
+		}
+		hidden_effect = {
+			event_target:parallel_sky_country = {
+				set_timed_country_flag = {
+					flag = parallel_sky_moon_cooldown
+					months = 120
+				}
+			}
+		}
+	}
+	
+	option = {
+		name = parallel_sky.101.d
+		response_text = parallel_sky.101.d.response
+		default_hide_option = yes
+		trigger = {
+			event_target:parallel_sky_planet = {
+				num_moons = 0
+			}
+		}
+		event_target:parallel_sky_country = {
+			add_trust = {
+				who = root
+				amount = 2
+			}
+		}
+		hidden_effect = {
+			event_target:parallel_sky_country = {
+				set_country_flag = parallel_sky_moon_cooldown
+			}
+		}
+	}
+}
+
+country_event = {
+	id = parallel_sky.102
+	title = parallel_sky.name
+	desc = {
+		text = parallel_sky.102.desc.1
+		trigger = {
+			event_target:parallel_sky_country = {
+				has_civic = civic_parallel_sky_1
+			}
+		}
+	}
+	desc = {
+		text = parallel_sky.102.desc.2
+		trigger = {
+			event_target:parallel_sky_country = {
+				has_civic = civic_parallel_sky_2
+			}
+		}
+	}
+	desc = {
+		text = parallel_sky.102.desc.3
+		trigger = {
+			event_target:parallel_sky_country = {
+				has_civic = civic_parallel_sky_3
+			}
+		}
+	}
+
+	diplomatic = yes
+	force_open = yes
+
+	picture_event_data = {
+		portrait = event_target:parallel_sky_country
+		room = mercenary_enclave_room
+	}
+
+	is_triggered_only = yes
+	
+	trigger = {
+	}
+	
+	immediate = {
+		event_target:parallel_sky_country = {
+			if = {
+				limit = {
+					NOT = { has_country_flag = parallel_sky_star_triggered }
+				}
+				set_country_flag = parallel_sky_star_triggered
+			}
+		}
+	}
+	
+	option = {
+		name = {
+			text = parallel_sky.102.a.1
+			trigger = {
+				event_target:parallel_sky_country = {
+					has_civic = civic_parallel_sky_1
+				}
+			}
+		}
+		name = {
+			text = parallel_sky.102.a.2
+			trigger = {
+				event_target:parallel_sky_country = {
+					has_civic = civic_parallel_sky_2
+				}
+			}
+		}
+		name = {
+			text = parallel_sky.102.a.3
+			trigger = {
+				event_target:parallel_sky_country = {
+					has_civic = civic_parallel_sky_3
+				}
+			}
+		}
+		response_text = parallel_sky.102.a.response
+		is_dialog_only = yes
+	}
+
+	option = {
+		name = parallel_sky.102.b
+		response_text = parallel_sky.102.b.response
+		trigger = {
+			event_target:parallel_sky_planet.solar_system = {
+				is_inside_nebula = no
+			}
+		}
+		event_target:parallel_sky_planet = {
+			add_modifier = {
+				modifier = parallel_sky_modifier_star
+				days = 720
+			}
+		}
+		event_target:parallel_sky_country = {
+			add_trust = {
+				who = root
+				amount = 5
+			}
+		}
+		hidden_effect = {
+			event_target:parallel_sky_country = {
+				set_timed_country_flag = {
+					flag = parallel_sky_star
+					months = 120
+				}
+			}
+		}
+	}
+	
+	option = {
+		name = parallel_sky.102.c
+		response_text = parallel_sky.102.c.response
+		default_hide_option = yes
+		trigger = {
+			event_target:parallel_sky_planet.solar_system = {
+				is_inside_nebula = no
+			}
+		}
+		event_target:parallel_sky_country = {
+			add_trust = {
+				who = root
+				amount = -5
+			}
+		}
+		hidden_effect = {
+			event_target:parallel_sky_country = {
+				set_timed_country_flag = {
+					flag = parallel_sky_star_cooldown
+					months = 120
+				}
+			}
+		}
+	}
+	
+	option = {
+		name = parallel_sky.102.d
+		response_text = parallel_sky.102.d.response
+		default_hide_option = yes
+		trigger = {
+			event_target:parallel_sky_planet.solar_system = {
+				is_inside_nebula = yes
+			}
+		}
+		event_target:parallel_sky_country = {
+			add_trust = {
+				who = root
+				amount = 2
+			}
+		}
+		hidden_effect = {
+			event_target:parallel_sky_country = {
+				set_country_flag = parallel_sky_star_cooldown
+			}
+		}
+	}
+}
+
+country_event = {
+	id = parallel_sky.103
+	title = parallel_sky.name
+	desc = {
+		text = parallel_sky.103.desc.1
+		trigger = {
+			is_at_war = no
+		}
+	}
+	desc = {
+		text = parallel_sky.103.desc.2
+		trigger = {
+			is_at_war = yes
+		}
+	}
+	diplomatic = yes
+	force_open = yes
+
+	picture_event_data = {
+		portrait = event_target:parallel_sky_country
+		room = mercenary_enclave_room
+	}
+
+	is_triggered_only = yes
+	
+	trigger = {
+	}
+	
+	immediate = {
+	}
+	
+	option = {
+		name = parallel_sky.103.a
+		response_text = parallel_sky.103.a.response
+		if = {
+			limit = {
+				is_at_war = no
+			}
+			add_resource = {
+				volatile_motes = 1
+				mult = value:num_parallel_sky_value_0
+			}
+		}
+		else = {
+			add_resource = {
+				alloys = 1
+				mult = value:num_parallel_sky_value_1
+			}
+			add_resource = {
+				volatile_motes = 1
+				mult = value:num_parallel_sky_value_0
+			}
+		}
+	}
+}
+
+country_event = {
+	id = parallel_sky.104
+	title = parallel_sky.name
+	desc = {
+		text = parallel_sky.103.desc.1
+		trigger = {
+			is_at_war = no
+		}
+	}
+	desc = {
+		text = parallel_sky.103.desc.2
+		trigger = {
+			is_at_war = yes
+		}
+	}
+	diplomatic = yes
+	force_open = yes
+
+	picture_event_data = {
+		portrait = event_target:parallel_sky_country
+		room = mercenary_enclave_room
+	}
+
+	is_triggered_only = yes
+	
+	trigger = {
+	}
+	
+	immediate = {
+	}
+	
+	option = {
+		name = parallel_sky.103.a
+		response_text = parallel_sky.103.a.response
+		if = {
+			limit = {
+				is_at_war = no
+			}
+			add_resource = {
+				rare_crystals = 1
+				mult = value:num_parallel_sky_value_0
+			}
+		}
+		else = {
+			add_resource = {
+				consumer_goods = 1
+				mult = value:num_parallel_sky_value_1
+			}
+			add_resource = {
+				rare_crystals = 1
+				mult = value:num_parallel_sky_value_0
+			}
+		}
+	}
+}
+
+country_event = {
+	id = parallel_sky.105
+	title = parallel_sky.name
+	desc = {
+		text = parallel_sky.103.desc.1
+		trigger = {
+			is_at_war = no
+		}
+	}
+	desc = {
+		text = parallel_sky.103.desc.2
+		trigger = {
+			is_at_war = yes
+		}
+	}
+	diplomatic = yes
+	force_open = yes
+
+	picture_event_data = {
+		portrait = event_target:parallel_sky_country
+		room = mercenary_enclave_room
+	}
+
+	is_triggered_only = yes
+	
+	trigger = {
+	}
+	
+	immediate = {
+	}
+	
+	option = {
+		name = parallel_sky.103.a
+		response_text = parallel_sky.103.a.response
+		if = {
+			limit = {
+				is_at_war = no
+			}
+			add_resource = {
+				exotic_gases = 1
+				mult = value:num_parallel_sky_value_0
+			}
+		}
+		else = {
+			add_resource = {
+				energy = 1
+				mult = value:num_parallel_sky_value_2
+			}
+			add_resource = {
+				exotic_gases = 1
+				mult = value:num_parallel_sky_value_0
+			}
+		}
+	}
+}
+
+country_event = {
+	id = parallel_sky.106
+	title = parallel_sky.name
+	desc = parallel_sky.106.desc
+	diplomatic = yes
+	force_open = yes
+
+	picture_event_data = {
+		portrait = event_target:parallel_sky_country
+		room = mercenary_enclave_room
+	}
+
+	is_triggered_only = yes
+	
+	trigger = {
+	}
+	
+	immediate = {
+	}
+	
+	option = {
+		name = parallel_sky.106.a
+		response_text = parallel_sky.106.a.response
+		allow = {
+			has_country_resource = {
+				type = trade
+				amount >= value:num_parallel_sky_value_3
+			}
+		}
+		add_resource = {
+			trade = -1
+			mult = value:num_parallel_sky_value_3
+		}
+		event_target:parallel_sky_planet = {
+			add_modifier = {
+				modifier = parallel_sky_modifier_build
+				days = 360
+			}
+		}
+		event_target:parallel_sky_country = {
+			add_trust = {
+				who = root
+				amount = 5
+			}
+		}
+	}
+	
+	option = {
+		name = parallel_sky.106.b
+		response_text = parallel_sky.106.b.response
+		default_hide_option = yes
+		event_target:parallel_sky_country = {
+			add_trust = {
+				who = root
+				amount = -5
+			}
+		}
+	}
+}
+
+country_event = {
+	id = parallel_sky.107
+	title = parallel_sky.name
+	desc = parallel_sky.107.desc
+	diplomatic = yes
+	force_open = yes
+
+	picture_event_data = {
+		portrait = event_target:parallel_sky_country
+		room = mercenary_enclave_room
+	}
+
+	is_triggered_only = yes
+	
+	trigger = {
+	}
+	
+	immediate = {
+	}
+	
+	option = {
+		name = parallel_sky.107.a
+		response_text = parallel_sky.107.a.response
+		allow = {
+			has_country_resource = {
+				type = trade
+				amount >= value:num_parallel_sky_value_3
+			}
+		}
+		add_resource = {
+			trade = -1
+			mult = value:num_parallel_sky_value_3
+		}
+		event_target:parallel_sky_planet = {
+			add_modifier = {
+				modifier = parallel_sky_modifier_produce
+				days = 360
+			}
+		}
+		event_target:parallel_sky_country = {
+			add_trust = {
+				who = root
+				amount = 5
+			}
+		}
+	}
+	
+	option = {
+		name = parallel_sky.107.b
+		response_text = parallel_sky.107.b.response
+		default_hide_option = yes
+		event_target:parallel_sky_country = {
+			add_trust = {
+				who = root
+				amount = -5
+			}
+		}
+	}
+}
+
+country_event = {
+	id = parallel_sky.108
+	title = parallel_sky.name
+	desc = parallel_sky.108.desc
+	diplomatic = yes
+	force_open = yes
+
+	picture_event_data = {
+		portrait = event_target:parallel_sky_country
+		room = mercenary_enclave_room
+	}
+
+	is_triggered_only = yes
+	
+	trigger = {
+	}
+	
+	immediate = {
+	}
+	
+	option = {
+		name = parallel_sky.108.a
+		response_text = parallel_sky.108.a.response
+		allow = {
+			has_country_resource = {
+				type = trade
+				amount >= value:num_parallel_sky_value_3
+			}
+		}
+		add_resource = {
+			trade = -1
+			mult = value:num_parallel_sky_value_3
+		}
+		event_target:parallel_sky_planet = {
+			add_modifier = {
+				modifier = parallel_sky_modifier_amenities
+				days = 360
+			}
+		}
+		event_target:parallel_sky_country = {
+			add_trust = {
+				who = root
+				amount = 5
+			}
+		}
+	}
+	
+	option = {
+		name = parallel_sky.108.b
+		response_text = parallel_sky.108.b.response
+		default_hide_option = yes
+		event_target:parallel_sky_country = {
+			add_trust = {
+				who = root
+				amount = -5
+			}
+		}
+	}
+}
+
+country_event = {
+	id = parallel_sky.109
+	title = parallel_sky.name
+	desc = parallel_sky.109.desc
+	diplomatic = yes
+	force_open = yes
+
+	picture_event_data = {
+		portrait = event_target:parallel_sky_country
+		room = mercenary_enclave_room
+	}
+
+	is_triggered_only = yes
+	
+	trigger = {
+	}
+	
+	immediate = {
+	}
+	
+	option = {
+		name = parallel_sky.109.a
+		response_text = parallel_sky.109.a.response
+		allow = {
+			has_country_resource = {
+				type = trade
+				amount >= value:num_parallel_sky_value_3
+			}
+		}
+		add_resource = {
+			trade = -1
+			mult = value:num_parallel_sky_value_3
+		}
+		event_target:parallel_sky_planet = {
+			add_modifier = {
+				modifier = parallel_sky_modifier_upkeep
+				days = 360
+			}
+		}
+		event_target:parallel_sky_country = {
+			add_trust = {
+				who = root
+				amount = 5
+			}
+		}
+	}
+	
+	option = {
+		name = parallel_sky.109.b
+		response_text = parallel_sky.109.b.response
+		default_hide_option = yes
+		event_target:parallel_sky_country = {
+			add_trust = {
+				who = root
+				amount = -5
+			}
+		}
+	}
+}
+
+country_event = {
+	id = parallel_sky.110
+	title = parallel_sky.name
+	desc = parallel_sky.110.desc
+	diplomatic = yes
+	force_open = yes
+
+	picture_event_data = {
+		portrait = event_target:parallel_sky_country
+		room = mercenary_enclave_room
+	}
+
+	is_triggered_only = yes
+	
+	trigger = {
+	}
+	
+	immediate = {
+	}
+	
+	option = {
+		name = parallel_sky.110.a
+		response_text = parallel_sky.110.a.response
+		allow = {
+			has_country_resource = {
+				type = trade
+				amount >= value:num_parallel_sky_value_3
+			}
+		}
+		add_resource = {
+			trade = -1
+			mult = value:num_parallel_sky_value_3
+		}
+		event_target:parallel_sky_planet = {
+			add_modifier = {
+				modifier = parallel_sky_modifier_growth
+				days = 360
+			}
+		}
+		event_target:parallel_sky_country = {
+			add_trust = {
+				who = root
+				amount = 5
+			}
+		}
+	}
+	
+	option = {
+		name = parallel_sky.110.b
+		response_text = parallel_sky.110.b.response
+		default_hide_option = yes
+		event_target:parallel_sky_country = {
+			add_trust = {
+				who = root
+				amount = -5
+			}
+		}
+	}
+}
+
+# 虚伪星空
+country_event = {
+	id = parallel_sky.111
+	title = parallel_sky.111.name
+	desc = parallel_sky.111.desc
+	picture = GFX_evt_kaleidoscopic_lights
+	show_sound = event_mystic_reveal_light
+	location = event_target:parallel_sky_planet
+
+	is_triggered_only = yes
+	
+	trigger = {
+	}
+	
+	immediate = {
+		event_target:parallel_sky_country = {
+			set_country_flag = parallel_sky_our_star_triggered
+		}
+	}
+	
+	option = {
+		name = parallel_sky.111.a
+		begin_event_chain = {
+			event_chain = PARALLEL_SKY_CHAIN
+			target = root
+		}
+		event_target:parallel_sky_planet = {
+			add_modifier = {
+				modifier = parallel_sky_modifier_our_star
+				days = -1
+			}
+		}
+		hidden_effect = {
+			country_event = { id = parallel_sky.112 }
+		}
+	}
+}
+
+country_event = {
+	id = parallel_sky.112
+	title = parallel_sky.name
+	desc = {
+		text = parallel_sky.112.desc.1
+		trigger = {
+			event_target:parallel_sky_country = {
+				has_civic = civic_parallel_sky_1
+			}
+		}
+	}
+	desc = {
+		text = parallel_sky.112.desc.2
+		trigger = {
+			event_target:parallel_sky_country = {
+				has_civic = civic_parallel_sky_2
+			}
+		}
+	}
+	desc = {
+		text = parallel_sky.112.desc.3
+		trigger = {
+			event_target:parallel_sky_country = {
+				has_civic = civic_parallel_sky_3
+			}
+		}
+	}
+	
+	diplomatic = yes
+	force_open = yes
+
+	picture_event_data = {
+		portrait = event_target:parallel_sky_country
+		room = mercenary_enclave_room
+	}
+
+	is_triggered_only = yes
+	
+	trigger = {
+	}
+	
+	immediate = {
+	}
+	
+	option = {
+		name = parallel_sky.112.a
+		hidden_effect = {
+			country_event = { id = parallel_sky.113 }
+		}
+	}
+}
+
+country_event = {
+	id = parallel_sky.113
+	title = parallel_sky.name
+	desc = {
+		text = parallel_sky.113.desc.1
+		trigger = {
+			event_target:parallel_sky_country = {
+				has_civic = civic_parallel_sky_1
+			}
+		}
+	}
+	desc = {
+		text = parallel_sky.113.desc.2
+		trigger = {
+			event_target:parallel_sky_country = {
+				has_civic = civic_parallel_sky_2
+			}
+		}
+	}
+	desc = {
+		text = parallel_sky.113.desc.3
+		trigger = {
+			event_target:parallel_sky_country = {
+				has_civic = civic_parallel_sky_3
+			}
+		}
+	}
+	
+	diplomatic = yes
+	force_open = yes
+
+	picture_event_data = {
+		portrait = event_target:parallel_sky_country
+		room = mercenary_enclave_room
+	}
+
+	is_triggered_only = yes
+	
+	trigger = {
+	}
+	
+	immediate = {
+	}
+	
+	option = {
+		name = parallel_sky.113.a
+		hidden_effect = {
+			country_event = { id = parallel_sky.114 }
+		}
+	}
+}
+
+country_event = {
+	id = parallel_sky.114
+	title = parallel_sky.name
+	desc = parallel_sky.114.desc
+	diplomatic = yes
+	force_open = yes
+
+	picture_event_data = {
+		portrait = event_target:parallel_sky_country
+		room = mercenary_enclave_room
+	}
+
+	is_triggered_only = yes
+	
+	trigger = {
+	}
+	
+	immediate = {
+	}
+	
+	option = {
+		name = parallel_sky.114.a
+		response_text = parallel_sky.114.a.response
+		event_target:parallel_sky_planet = {
+			enable_special_project = {
+				name = PARALLEL_SKY_PROJECT
+				location = this
+				owner = root
+			}
+		}
+	}
+}
+
+fleet_event = {
+	id = parallel_sky.115
+	title = parallel_sky.115.name
+	desc = parallel_sky.115.desc
+	picture = GFX_evt_kaleidoscopic_lights
+	show_sound = event_mystic_reveal_light
+	location = event_target:parallel_sky_planet
+	
+	is_triggered_only = yes
+
+	trigger = {
+	}
+	
+	immediate = {
+		leader = {
+			kill_leader = { show_notification = no }
+		}
+		event_target:parallel_sky_country = {
+			set_country_flag = parallel_sky_project_finished
+		}
+	}
+	
+	option = {
+		name = parallel_sky.115.a
+		custom_tooltip = parallel_sky.115.a.tooltip
+	}
+}
+
+# 开始曲速战争
+country_event = {
+	id = parallel_sky.116
+	title = parallel_sky.name
+	desc = parallel_sky.116.desc
+	diplomatic = yes
+	force_open = yes
+
+	picture_event_data = {
+		portrait = event_target:parallel_sky_country
+		room = mercenary_enclave_room
+	}
+
+	is_triggered_only = yes
+	
+	trigger = {
+	}
+	
+	immediate = {
+		event_target:parallel_sky_country = {
+			set_country_flag = parallel_sky_their_war
+			set_variable = {
+				which = parallel_sky_resourse
+				value = 0
+			}
+		}
+	}
+	
+	option = {
+		name = parallel_sky.116.a
+		response_text = parallel_sky.116.a.response
+		is_dialog_only = yes
+	}
+	
+	option = {
+		name = parallel_sky.116.b
+		response_text = parallel_sky.116.b.response
+		allow = {
+			has_country_resource = {
+				type = trade
+				amount >= 10000
+			}
+		}
+		add_resource = {
+			trade = -10000
+		}
+		hidden_effect = {
+			event_target:parallel_sky_country = {
+				change_variable = {
+					which = parallel_sky_resourse
+					value = 1
+				}
+			}
+		}
+		event_target:parallel_sky_country = {
+			add_trust = {
+				who = root
+				amount = 5
+			}
+		}
+	}
+	
+	option = {
+		name = parallel_sky.116.c
+		response_text = parallel_sky.116.c.response
+		allow = {
+			has_country_resource = {
+				type = trade
+				amount >= 10000
+			}
+			has_country_resource = {
+				type = alloys
+				amount >= 5000
+			}
+		}
+		add_resource = {
+			trade = -10000
+			alloys = -5000
+		}
+		hidden_effect = {
+			event_target:parallel_sky_country = {
+				change_variable = {
+					which = parallel_sky_resourse
+					value = 2
+				}
+			}
+		}
+		event_target:parallel_sky_country = {
+			add_trust = {
+				who = root
+				amount = 10
+			}
+		}
+	}
+	
+	option = {
+		name = parallel_sky.116.d
+		response_text = parallel_sky.116.d.response
+		default_hide_option = yes
+		event_target:parallel_sky_country = {
+			add_trust = {
+				who = root
+				amount = -2
+			}
+		}
+	}
+}
+
+# 常规请求资助
+country_event = {
+	id = parallel_sky.117
+	title = parallel_sky.name
+	desc = parallel_sky.117.desc
+	diplomatic = yes
+	force_open = yes
+
+	picture_event_data = {
+		portrait = event_target:parallel_sky_country
+		room = mercenary_enclave_room
+	}
+
+	is_triggered_only = yes
+	
+	trigger = {
+	}
+	
+	immediate = {
+	}
+	
+	option = {
+		name = parallel_sky.117.a
+		response_text = parallel_sky.117.a.response
+		allow = {
+			has_country_resource = {
+				type = trade
+				amount >= 10000
+			}
+		}
+		add_resource = {
+			trade = -10000
+		}
+		hidden_effect = {
+			event_target:parallel_sky_country = {
+				change_variable = {
+					which = parallel_sky_resourse
+					value = 1
+				}
+			}
+		}
+		event_target:parallel_sky_country = {
+			add_trust = {
+				who = root
+				amount = 5
+			}
+		}
+	}
+	
+	option = {
+		name = parallel_sky.117.b
+		response_text = parallel_sky.117.b.response
+		allow = {
+			has_country_resource = {
+				type = trade
+				amount >= 10000
+			}
+			has_country_resource = {
+				type = alloys
+				amount >= 5000
+			}
+		}
+		add_resource = {
+			trade = -10000
+			alloys = -5000
+		}
+		hidden_effect = {
+			event_target:parallel_sky_country = {
+				change_variable = {
+					which = parallel_sky_resourse
+					value = 2
+				}
+			}
+		}
+		event_target:parallel_sky_country = {
+			add_trust = {
+				who = root
+				amount = 10
+			}
+		}
+	}
+	
+	option = {
+		name = parallel_sky.117.c
+		response_text = parallel_sky.117.c.response
+		default_hide_option = yes
+		event_target:parallel_sky_country = {
+			add_trust = {
+				who = root
+				amount = -2
+			}
+		}
+	}
+}
+
+# 曲速兽入侵
+country_event = {
+	id = parallel_sky.118
+	title = parallel_sky.name
+	desc = parallel_sky.118.desc
+	diplomatic = yes
+	force_open = yes
+
+	picture_event_data = {
+		portrait = event_target:parallel_sky_country
+		room = mercenary_enclave_room
+	}
+
+	is_triggered_only = yes
+	
+	trigger = {
+	}
+	
+	immediate = {
+		event_target:parallel_sky_country = {
+			set_country_flag = parallel_sky_their_war_middle
+		}
+		set_variable = {
+			which = warp_monster
+			value = 0
+		}
+		create_country = {
+			name = "NAME_Time_Warp_Monster"
+			type = guardian
+			flag={
+				icon={
+					category="zoological"
+					file="flag_zoological_5.dds"
+				}
+				background={
+					category="backgrounds"
+					file="diagonal_stripe.dds"
+				}
+				colors={
+					"black"
+					"white"
+					"null"
+					"null"
+				}
+			}
+			auto_delete = no
+			effect = {
+				save_global_event_target_as = time_warp_monster_country
+			}
+		}
+		create_fleet = {
+			name = "NAME_Time_Warp_Monster"
+			settings = {
+				can_upgrade = no
+				can_change_composition = no
+				can_change_leader = no
+				uses_naval_capacity = no
+				spawn_debris = no
+			}
+			effect = {
+				set_owner = event_target:time_warp_monster_country
+				while = {
+					count = 3
+					create_ship = {
+						name = "NAME_Time_Warp_Monster_2"
+						design = "NAME_Time_Warp_Monster_2"
+						prefix = no
+						upgradable = no
+					}
+				}
+				while = {
+					count = 15
+					create_ship = {
+						name = "NAME_Time_Warp_Monster_1"
+						design = "NAME_Time_Warp_Monster_1"
+						prefix = no
+						upgradable = no
+					}
+				}
+				set_location = {
+					target = event_target:parallel_sky_planet
+					distance = 30
+					angle = random
+				}
+			}
+		}
+	}
+	
+	option = {
+		name = parallel_sky.118.a
+		response_text = parallel_sky.118.a.response
+	}
+}
+
+country_event = {
+	id = parallel_sky.119
+	is_triggered_only = yes
+	hide_window = yes
+	
+	trigger = {
+		has_origin = origin_parallel_sky
+		From = {
+			OR = {
+				is_same_value = event_target:time_warp_monster_country
+				is_same_value = event_target:time_warp_monster_horror_country
+			}
+		}
+	}
+	
+	immediate = {
+		change_variable = {
+			which = warp_monster
+			value = 1
+		}
+		if = {
+			limit = {
+				check_variable = {
+					which = warp_monster
+					value = 1
+				}
+			}
+			country_event = { id = parallel_sky.120 }
+		}
+		else_if = {
+			limit = {
+				check_variable = {
+					which = warp_monster
+					value = 3
+				}
+			}
+			country_event = { id = parallel_sky.121 }
+		}
+		else_if = {
+			limit = {
+				check_variable = {
+					which = warp_monster
+					value = 8
+				}
+			}
+			country_event = { id = parallel_sky.123 }
+		}
+		else_if = {
+			limit = {
+				check_variable = {
+					which = warp_monster
+					value = 9
+				}
+			}
+			country_event = { id = parallel_sky.124 }
+		}
+	}
+}
+
+country_event = {
+	id = parallel_sky.120
+	title = parallel_sky.120.name
+	desc = parallel_sky.120.desc
+	picture = GFX_evt_kaleidoscopic_lights
+	show_sound = event_mystic_reveal_light
+	
+	is_triggered_only = yes
+	
+	trigger = {
+	}
+	
+	immediate = {
+		create_fleet = {
+			name = "NAME_Time_Warp_Monster"
+			settings = {
+				can_upgrade = no
+				can_change_composition = no
+				can_change_leader = no
+				uses_naval_capacity = no
+				spawn_debris = no
+			}
+			effect = {
+				set_owner = event_target:time_warp_monster_country
+				while = {
+					count = 3
+					create_ship = {
+						name = "NAME_Time_Warp_Monster_4"
+						design = "NAME_Time_Warp_Monster_4"
+						prefix = no
+						upgradable = no
+					}
+				}
+				while = {
+					count = 15
+					create_ship = {
+						name = "NAME_Time_Warp_Monster_3"
+						design = "NAME_Time_Warp_Monster_3"
+						prefix = no
+						upgradable = no
+					}
+				}
+				set_location = {
+					target = event_target:parallel_sky_planet
+					distance = 30
+					angle = random
+				}
+			}
+		}
+		create_fleet = {
+			name = "NAME_Time_Warp_Monster"
+			settings = {
+				can_upgrade = no
+				can_change_composition = no
+				can_change_leader = no
+				uses_naval_capacity = no
+				spawn_debris = no
+			}
+			effect = {
+				set_owner = event_target:time_warp_monster_country
+				while = {
+					count = 3
+					create_ship = {
+						name = "NAME_Time_Warp_Monster_6"
+						design = "NAME_Time_Warp_Monster_6"
+						prefix = no
+						upgradable = no
+					}
+				}
+				while = {
+					count = 15
+					create_ship = {
+						name = "NAME_Time_Warp_Monster_5"
+						design = "NAME_Time_Warp_Monster_5"
+						prefix = no
+						upgradable = no
+					}
+				}
+				set_location = {
+					target = event_target:parallel_sky_planet
+					distance = 30
+					angle = random
+				}
+			}
+		}
+	}
+	
+	option = {
+		name = parallel_sky.120.a
+	}
+}
+
+country_event = {
+	id = parallel_sky.121
+	title = parallel_sky.121.name
+	desc = parallel_sky.121.desc
+	picture = GFX_evt_kaleidoscopic_lights
+	show_sound = event_mystic_reveal_light
+	
+	is_triggered_only = yes
+	
+	trigger = {
+	}
+	
+	immediate = {
+		event_target:parallel_sky_country = {
+			set_country_flag = parallel_sky_their_war_middle_finished
+		}
+	}
+	
+	option = {
+		name = parallel_sky.121.a
+	}
+}
+
+# 平行国家覆灭
+country_event = {
+	id = parallel_sky.122
+	title = parallel_sky.name
+	desc = parallel_sky.122.desc
+	diplomatic = yes
+	force_open = yes
+
+	picture_event_data = {
+		portrait = event_target:parallel_sky_country
+		room = mercenary_enclave_room
+	}
+
+	is_triggered_only = yes
+	
+	trigger = {
+	}
+	
+	immediate = {
+		event_target:parallel_sky_country = {
+			set_country_flag = parallel_sky_their_war_end
+		}
+		event_target:parallel_sky_planet = {
+			remove_modifier = parallel_sky_modifier_sun
+			remove_modifier = parallel_sky_modifier_moon
+			remove_modifier = parallel_sky_modifier_star
+			remove_modifier = parallel_sky_modifier_build
+			remove_modifier = parallel_sky_modifier_produce
+			remove_modifier = parallel_sky_modifier_amenities
+			remove_modifier = parallel_sky_modifier_upkeep
+			remove_modifier = parallel_sky_modifier_growth
+			remove_deposit = d_parallel_sky
+			add_time_special_deposit_keep_on_terraform = { DEPOSIT = d_parallel_sky_1 }
+			add_time_special_deposit_keep_on_terraform = { DEPOSIT = d_parallel_sky_2 }
+			add_time_special_deposit_keep_on_terraform = { DEPOSIT = d_parallel_sky_3 }
+			add_time_special_deposit_keep_on_terraform = { DEPOSIT = d_parallel_sky_blocker }
+			create_pop_group = {
+				species = event_target:parallel_sky_country.species
+				size = 2000
+			}
+		}
+		remove_modifier = parallel_sky_modifier_1
+		remove_modifier = parallel_sky_modifier_2
+		remove_modifier = parallel_sky_modifier_3
+		remove_modifier = parallel_sky_modifier_4
+		remove_modifier = parallel_sky_modifier_5
+		remove_modifier = parallel_sky_modifier_6
+		create_fleet = {
+			name = "NAME_Time_Warp_Monster"
+			settings = {
+				can_upgrade = no
+				can_change_composition = no
+				can_change_leader = no
+				uses_naval_capacity = no
+				spawn_debris = no
+			}
+			effect = {
+				set_owner = event_target:time_warp_monster_country
+				create_time_warp_monster_ship = { TYPE = NAME_Time_Warp_Monster_7 }
+				set_location = {
+					target = event_target:parallel_sky_planet
+					distance = 50
+					angle = random
+				}
+			}
+		}
+		create_fleet = {
+			name = "NAME_Time_Warp_Monster"
+			settings = {
+				can_upgrade = no
+				can_change_composition = no
+				can_change_leader = no
+				uses_naval_capacity = no
+				spawn_debris = no
+			}
+			effect = {
+				set_owner = event_target:time_warp_monster_country
+				create_time_warp_monster_ship = { TYPE = NAME_Time_Warp_Monster_8 }
+				set_location = {
+					target = event_target:parallel_sky_planet
+					distance = 50
+					angle = random
+				}
+			}
+		}
+		create_fleet = {
+			name = "NAME_Time_Warp_Monster"
+			settings = {
+				can_upgrade = no
+				can_change_composition = no
+				can_change_leader = no
+				uses_naval_capacity = no
+				spawn_debris = no
+			}
+			effect = {
+				set_owner = event_target:time_warp_monster_country
+				create_time_warp_monster_ship = { TYPE = NAME_Time_Warp_Monster_9 }
+				set_location = {
+					target = event_target:parallel_sky_planet
+					distance = 50
+					angle = random
+				}
+			}
+		}
+		create_fleet = {
+			name = "NAME_Time_Warp_Monster"
+			settings = {
+				can_upgrade = no
+				can_change_composition = no
+				can_change_leader = no
+				uses_naval_capacity = no
+				spawn_debris = no
+			}
+			effect = {
+				set_owner = event_target:time_warp_monster_country
+				create_time_warp_monster_ship = { TYPE = NAME_Time_Warp_Monster_10 }
+				set_location = {
+					target = event_target:parallel_sky_planet
+					distance = 50
+					angle = random
+				}
+			}
+		}
+		create_fleet = {
+			name = "NAME_Time_Warp_Monster"
+			settings = {
+				can_upgrade = no
+				can_change_composition = no
+				can_change_leader = no
+				uses_naval_capacity = no
+				spawn_debris = no
+			}
+			effect = {
+				set_owner = event_target:time_warp_monster_country
+				create_time_warp_monster_ship = { TYPE = NAME_Time_Warp_Monster_11 }
+				set_location = {
+					target = event_target:parallel_sky_planet
+					distance = 50
+					angle = random
+				}
+			}
+		}
+	}
+	
+	option = {
+		name = parallel_sky.122.a
+		response_text = parallel_sky.122.a.response
+		is_dialog_only = yes
+	}
+	
+	option = {
+		name = parallel_sky.122.b
+		response_text = parallel_sky.122.b.response
+		custom_gui = "enclave_caravaneer_option"
+		tooltip = {
+			event_target:parallel_sky_planet = {
+				remove_deposit = d_parallel_sky
+				add_deposit = d_parallel_sky_1
+				add_deposit = d_parallel_sky_2
+				add_deposit = d_parallel_sky_3
+				add_deposit = d_parallel_sky_blocker
+			}
+		}
+		event_target:parallel_sky_country = {
+			destroy_country = yes
+		}
+		hidden_effect = {
+			set_global_flag = parallel_sky_country_destroyed
+			create_timeline_parallel_sky_country_destroyed = yes
+		}
+	}
+}
+
+country_event = {
+	id = parallel_sky.123
+	title = parallel_sky.123.name
+	desc = parallel_sky.123.desc
+	picture = GFX_evt_dimensional_horror
+	show_sound = event_mystic_reveal_light
+	
+	is_triggered_only = yes
+	
+	trigger = {
+	}
+	
+	immediate = {
+		set_country_flag = horror_focus_3_finished # 遭遇曲速吞噬者也算遭遇位面之魇
+		create_country = {
+			name = "NAME_Time_Warp_Monster_Horror"
+			type = guardian_horror
+			flag={
+				icon={
+					category="zoological"
+					file="flag_zoological_5.dds"
+				}
+				background={
+					category="backgrounds"
+					file="diagonal_stripe.dds"
+				}
+				colors={
+					"black"
+					"dark_purple"
+					"null"
+					"null"
+				}
+			}
+			auto_delete = no
+			effect = {
+				save_global_event_target_as = time_warp_monster_horror_country
+				add_modifier = {
+					modifier = time_warp_monster
+					days = -1
+					multiplier = value:num_time_warp_monster_modifier_value
+				}
+			}
+		}
+		create_fleet = {
+			name = "NAME_Time_Warp_Monster_Horror"
+			settings = {
+				can_upgrade = no
+				can_change_composition = no
+				can_change_leader = no
+				uses_naval_capacity = no
+				spawn_debris = no
+				is_boss = yes
+			}
+			effect = {
+				set_owner = event_target:time_warp_monster_horror_country
+				create_ship = {
+					name = "NAME_Time_Warp_Monster_Horror"
+					design = "NAME_Time_Warp_Monster_Horror"
+					prefix = no
+					upgradable = no
+				}
+				set_location = {
+					target = event_target:parallel_sky_planet.star
+					distance = 0
+					direction = in_system
+				}
+			}
+		}
+		create_fleet = {
+			name = "NAME_Parallel_Sky"
+			settings = {
+				can_upgrade = no
+				can_change_composition = no
+				uses_naval_capacity = no
+			}
+			effect = {
+				set_owner = root
+				if = {
+					limit = {
+						root = { country_uses_bio_ships = no }
+					}
+					while = {
+						count = 5
+						create_ship = {
+							name = "NAME_Parallel_Sky_3"
+							design = "NAME_Parallel_Sky_3"
+							prefix = no
+							upgradable = no
+						}
+					}
+					while = {
+						count = 10
+						create_ship = {
+							name = "NAME_Parallel_Sky_2"
+							design = "NAME_Parallel_Sky_2"
+							prefix = no
+							upgradable = no
+						}
+					}
+					while = {
+						count = 20
+						create_ship = {
+							name = "NAME_Parallel_Sky_1"
+							design = "NAME_Parallel_Sky_1"
+							prefix = no
+							upgradable = no
+						}
+					}
+				}
+				else = {
+					while = {
+						count = 5
+						create_ship = {
+							name = "NAME_Parallel_Sky_Bio_3"
+							design = "NAME_Parallel_Sky_Bio_3"
+							growth_stage = 2
+							prefix = no
+							upgradable = no
+						}
+					}
+					while = {
+						count = 10
+						create_ship = {
+							name = "NAME_Parallel_Sky_Bio_2"
+							design = "NAME_Parallel_Sky_Bio_2"
+							growth_stage = 2
+							prefix = no
+							upgradable = no
+						}
+					}
+					while = {
+						count = 20
+						create_ship = {
+							name = "NAME_Parallel_Sky_Bio_1"
+							design = "NAME_Parallel_Sky_Bio_1"
+							growth_stage = 2
+							prefix = no
+							upgradable = no
+						}
+					}
+				}
+				set_location = {
+					target = event_target:parallel_sky_planet
+					distance = 50
+					angle = random
+				}
+			}
+		}
+		event_target:parallel_sky_planet = {
+			solar_system = {
+				every_system_planet = {
+					limit = {
+						is_star = yes
+						can_not_be_changed_by_akx_worm = no
+					}
+					change_pc = pc_black_hole
+					clear_planet_modifiers = yes
+					clear_deposits_and_orbital_station = yes
+					if = {
+						limit = {
+							is_primary_star = yes
+						}
+						add_deposit = d_dark_matter_deposit_5
+					}
+					else = {
+						add_deposit = d_dark_matter_deposit_3
+					}
+				}
+				set_star_class = sc_black_hole
+				# 清除戴森云、戴森球、奇迹球并返还建造次数
+				worm_clear_dyson_sphere = yes
+			}
+		}
+	}
+	
+	option = {
+		name = parallel_sky.123.a
+	}
+}
+
+country_event = {
+	id = parallel_sky.124
+	title = parallel_sky.124.name
+	desc = parallel_sky.124.desc
+	picture = GFX_evt_dimensional_horror
+	show_sound = event_mystic_reveal_light
+	
+	is_triggered_only = yes
+	
+	trigger = {
+	}
+	
+	immediate = {
+	}
+	
+	option = {
+		name = parallel_sky.124.a
+		event_target:parallel_sky_planet = {
+			remove_modifier = parallel_sky_modifier_our_star
+			enable_special_project = {
+				name = PARALLEL_SKY_END_PROJECT
+				location = this.star
+				owner = root
+			}
+		}
+	}
+}
+
+fleet_event = {
+	id = parallel_sky.125
+	title = parallel_sky.125.name
+	desc = parallel_sky.125.desc
+	picture = GFX_evt_dimensional_horror
+	show_sound = event_mystic_reveal_light
+	location = event_target:parallel_sky_planet.star
+	
+	is_triggered_only = yes
+
+	trigger = {
+	}
+	
+	immediate = {
+	}
+	
+	after = {
+		owner = {
+			give_r_horror_matter = { FLAG = parallel_sky_relic }
+			add_tech_option_or_research_effect = {
+				TECH = tech_time_warp_drive_1
+				PROGRESS = 0.2
+				CATEGORY = physics_research
+			}
+			end_event_chain = PARALLEL_SKY_CHAIN
+		}
+		leader = {
+			add_experience = 500
+		}
+	}
+	
+	option = {
+		name = parallel_sky.125.a
+		trigger = {
+			owner = {
+				OR = {
+					has_ethic = ethic_fanatic_materialist
+					has_ethic = ethic_materialist
+				}
+			}
+		}
+	}
+	
+	option = {
+		name = parallel_sky.125.b
+		trigger = {
+			owner = {
+				OR = {
+					has_ethic = ethic_fanatic_spiritualist
+					has_ethic = ethic_spiritualist
+				}
+			}
+		}
+	}
+	
+	option = {
+		name = parallel_sky.125.c
+		trigger = {
+			owner = {
+				OR = {
+					has_ethic = ethic_fanatic_militarist
+					has_ethic = ethic_militarist
+				}
+			}
+		}
+	}
+	
+	option = {
+		name = parallel_sky.125.d
+		trigger = {
+			owner = {
+				OR = {
+					has_ethic = ethic_fanatic_pacifist
+					has_ethic = ethic_pacifist
+				}
+			}
+		}
+	}
+	
+	option = {
+		name = parallel_sky.125.e
+		trigger = {
+			owner = {
+				OR = {
+					has_ethic = ethic_fanatic_xenophile
+					has_ethic = ethic_xenophile
+				}
+			}
+		}
+	}
+	
+	option = {
+		name = parallel_sky.125.f
+		trigger = {
+			owner = {
+				OR = {
+					has_ethic = ethic_fanatic_xenophobe
+					has_ethic = ethic_xenophobe
+				}
+			}
+		}
+	}
+	
+	option = {
+		name = parallel_sky.125.g
+		trigger = {
+			owner = {
+				OR = {
+					has_ethic = ethic_fanatic_egalitarian
+					has_ethic = ethic_egalitarian
+				}
+			}
+		}
+	}
+	
+	option = {
+		name = parallel_sky.125.h
+		trigger = {
+			owner = {
+				OR = {
+					has_ethic = ethic_fanatic_authoritarian
+					has_ethic = ethic_authoritarian
+				}
+			}
+		}
+	}
+	
+	option = {
+		name = parallel_sky.125.i
+		trigger = {
+			owner = {
+				is_materialist = no
+				is_spiritualist = no
+				is_militarist = no
+				is_pacifist = no
+				is_xenophile = no
+				is_xenophobe = no
+				is_egalitarian = no
+				is_authoritarian = no
+			}
+		}
+	}
+}
+
+# 平行帝国进行飞升
+event = {
+	id = parallel_sky.200
+	is_triggered_only = yes
+	hide_window = yes
+	
+	trigger = {
+		exists = event_target:parallel_sky_country #未击败平行帝国
+	}
+	
+	immediate = {
+		event_target:parallel_sky_country = {
+			set_country_flag = parallel_sky_country_ascension_path
+			if = {
+				limit = {
+					has_civic = civic_parallel_sky_1
+				}
+				modify_species = {
+					add_trait = trait_cybernetic
+					add_trait = trait_cyborg_efficient_processors
+					add_trait = trait_cyborg_logic_engines
+					add_trait = trait_cyborg_learning_algorithms
+					add_traits_at_start_of_list = yes
+					effect = {
+						event_target:parallel_sky_country = {
+							change_dominant_species = {
+								species = prev
+							}
+						}
+					}
+				}
+			}
+			else_if = {
+				limit = {
+					has_civic = civic_parallel_sky_2
+				}
+				modify_species = {
+					add_trait = trait_erudite
+					add_trait = trait_robust
+					add_traits_at_start_of_list = yes
+					effect = {
+						event_target:parallel_sky_country = {
+							change_dominant_species = {
+								species = prev
+							}
+						}
+					}
+				}
+			}
+			else_if = {
+				limit = {
+					has_civic = civic_parallel_sky_3
+				}
+				modify_species = {
+					add_trait = trait_psionic
+					add_trait = trait_akx_messenger
+					add_trait = trait_notofthisworld
+					add_traits_at_start_of_list = yes
+					effect = {
+						event_target:parallel_sky_country = {
+							change_dominant_species = {
+								species = prev
+							}
+						}
+					}
+				}
+			}
+			every_owned_leader = {
+				limit = {
+					is_same_species = owner_main_species
+				}
+				time_change_leader_species = yes
+			}
+		}
+	}
+}
+
+# 平行帝国关系较差取消协议
+event = {
+	id = parallel_sky.500
+	is_triggered_only = yes
+	hide_window = yes
+	
+	trigger = {
+		if = {
+			limit = {
+				exists = event_target:parallel_sky_planet
+				exists = event_target:parallel_sky_country # 没击败平行帝国
+			}
+			if = {
+				limit = {
+					event_target:parallel_sky_planet = {
+						exists = owner
+						OR = {
+							has_carrier_flag = parallel_sky_planet_1
+							has_carrier_flag = parallel_sky_planet_2
+							has_carrier_flag = parallel_sky_planet_3
+							has_carrier_flag = parallel_sky_planet_4
+						}
+					}
+				}
+				event_target:parallel_sky_country = {
+					trust = {
+						who = event_target:parallel_sky_planet.owner
+						value <= 20
+					}
+				}
+			}
+			else = {
+				always = no
+			}
+		}
+		else = {
+			always = no
+		}
+	}
+	
+	immediate = {
+		event_target:parallel_sky_planet.owner = {
+			country_event = { id = parallel_sky.18 }
+		}
+	}
+}
+
+# 事件循环
+carrier_event = {
+	id = parallel_sky.1000
+	is_triggered_only = yes
+	hide_window = yes
+	
+	trigger = {
+		exists = event_target:parallel_sky_country #未击败平行帝国
+		is_colonizable_or_colony = yes #星球未被毁灭
+	}
+	
+	immediate = {
+		carrier_event = { id = parallel_sky.1000 days = 360 random = 720 }
+		owner = {
+			if = {
+				limit = {
+					has_communications = event_target:parallel_sky_country
+					event_target:parallel_sky_country = {
+						NOT = { has_country_flag = parallel_sky_war }
+					}
+				}
+				country_event = { id = parallel_sky.70 }
+			}
+		}
+	}
+}

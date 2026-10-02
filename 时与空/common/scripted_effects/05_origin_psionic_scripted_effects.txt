@@ -1,0 +1,159 @@
+# 星球
+reroll_pc_psionic_deposits = {
+	clear_deposits_and_orbital_station = yes
+	# 电
+	random_list = {
+		2 = {
+			while = {
+				count = 4
+				add_deposit = d_psionic_generator
+			}
+		}
+		2 = {
+			while = {
+				count = 3
+				add_deposit = d_psionic_generator
+			}
+		}
+		3 = {
+			while = {
+				count = 2
+				add_deposit = d_psionic_generator
+			}
+		}
+		3 = {
+			while = {
+				count = 1
+				add_deposit = d_psionic_generator
+			}
+		}
+	}
+	# 矿
+	random_list = {
+		2 = {
+			while = {
+				count = 4
+				add_deposit = d_psionic_mining
+			}
+		}
+		2 = {
+			while = {
+				count = 3
+				add_deposit = d_psionic_mining
+			}
+		}
+		3 = {
+			while = {
+				count = 2
+				add_deposit = d_psionic_mining
+			}
+		}
+		3 = {
+			while = {
+				count = 1
+				add_deposit = d_psionic_mining
+			}
+		}
+	}
+	# 粮
+	random_list = {
+		2 = {
+			while = {
+				count = 4
+				add_deposit = d_psionic_farming
+			}
+		}
+		2 = {
+			while = {
+				count = 3
+				add_deposit = d_psionic_farming
+			}
+		}
+		3 = {
+			while = {
+				count = 2
+				add_deposit = d_psionic_farming
+			}
+		}
+		3 = {
+			while = {
+				count = 1
+				add_deposit = d_psionic_farming
+			}
+		}
+	}
+	# 障碍
+	random_list = {
+		# 4
+		2 = {
+			modifier = {
+				factor = 0
+				planet_size >= 18
+			}
+			add_deposit = d_psionic_blocker_1
+			add_deposit = d_psionic_blocker_1
+			add_blocker = {
+				type = d_psionic_blocker_1
+			}
+			add_blocker = {
+				type = d_psionic_blocker_1
+			}
+		}
+		# 5
+		2 = {
+			modifier = {
+				factor = 0
+				planet_size >= 18
+			}
+			add_deposit = d_psionic_blocker_1
+			add_deposit = d_psionic_blocker_1
+			add_deposit = d_psionic_blocker_2
+		}
+		# 6
+		3 = {
+			add_deposit = d_psionic_blocker_1
+			add_deposit = d_psionic_blocker_1
+			add_deposit = d_psionic_blocker_1
+			add_deposit = d_psionic_blocker_2
+		}
+		# 7
+		3 = {
+			add_deposit = d_psionic_blocker_1
+			add_deposit = d_psionic_blocker_1
+			add_deposit = d_psionic_blocker_1
+			add_blocker = {
+				type = d_psionic_blocker_1
+			}
+			add_deposit = d_psionic_blocker_2
+		}
+		# 8
+		2 = {
+			modifier = {
+				factor = 0
+				planet_size < 18
+			}
+			add_deposit = d_psionic_blocker_1
+			add_deposit = d_psionic_blocker_1
+			add_deposit = d_psionic_blocker_1
+			add_blocker = {
+				type = d_psionic_blocker_1
+			}
+			add_blocker = {
+				type = d_psionic_blocker_1
+			}
+			add_deposit = d_psionic_blocker_2
+		}
+		# 9
+		2 = {
+			modifier = {
+				factor = 0
+				planet_size < 18
+			}
+			add_deposit = d_psionic_blocker_1
+			add_deposit = d_psionic_blocker_1
+			add_deposit = d_psionic_blocker_1
+			add_deposit = d_psionic_blocker_2
+			add_deposit = d_psionic_blocker_2
+		}
+	}
+}

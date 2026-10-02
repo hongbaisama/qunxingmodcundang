@@ -1,0 +1,34 @@
+triggered_pop_group_modifier = {
+	key = bureaucrat_jobs_bonus_workforce_mult
+	pop_psionic_trader_bonus_workforce_mult = 0.5
+	pop_psionic_logistics_drone_bonus_workforce_mult = 0.5
+	mult = value:scripted_modifier_add|MODIFIER|pop_bureaucrat_bonus_workforce_mult|
+}
+
+triggered_pop_group_modifier = {
+	key = trader_jobs_bonus_workforce_mult
+	pop_psionic_trader_bonus_workforce_mult = 0.5
+	pop_psionic_logistics_drone_bonus_workforce_mult = 0.5
+	mult = value:scripted_modifier_add|MODIFIER|pop_trader_bonus_workforce_mult|
+}
+
+triggered_pop_group_modifier = {
+	key = technician_jobs_bonus_workforce_mult
+	pop_psionic_technician_bonus_workforce_mult = 1
+	pop_psionic_technician_drone_bonus_workforce_mult = 1
+	mult = value:scripted_modifier_add|MODIFIER|pop_technician_bonus_workforce_mult|
+}
+
+triggered_pop_group_modifier = {
+	key = miner_jobs_bonus_workforce_mult
+	pop_psionic_miner_bonus_workforce_mult = 1
+	pop_psionic_mining_drone_bonus_workforce_mult = 1
+	mult = value:scripted_modifier_add|MODIFIER|pop_miner_bonus_workforce_mult|
+}
+
+triggered_pop_group_modifier = {
+	key = farmer_jobs_bonus_workforce_mult
+	pop_psionic_farmer_bonus_workforce_mult = 1
+	pop_psionic_agri_drone_bonus_workforce_mult = 1
+	mult = value:scripted_modifier_add|MODIFIER|pop_farmer_bonus_workforce_mult|
+}

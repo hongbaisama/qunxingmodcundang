@@ -1,0 +1,326 @@
+﻿l_english:
+ # 通用
+ concept_function_origin_text: "§B(Mechanism Origin)§!"
+ concept_function_origin: "Mechanism Origin"
+ concept_function_origin_desc: "This type of origin has exclusive mechanisms, and even the entire game revolves around this mechanism.\nThe game experience of this type of origin may be very different from the original version. It is not recommended to play completely according to the original ideas."
+ 
+ concept_story_origin_text: "§G(Story Origin)§!"
+ concept_story_origin: "Story Origin"
+ concept_story_origin_desc: "This type of origin comes with certain story text at the beginning, suitable for immersive experience."
+ 
+ concept_diversity_origin_text: "§Y(Diversity Origin)§!"
+ concept_diversity_origin: "Diversity Origin"
+ concept_diversity_origin_desc: "This type of origin is suitable for AI use to show the diversity of the galaxy.\nBut this type of origin is not very playable and is not recommended for players to use."
+ 
+ concept_multiplayer_origin_text: "§H(Multiplayer Origin)§!"
+ concept_multiplayer_origin: "Multiplayer Origin"
+ concept_multiplayer_origin_desc: "This type of origin is suitable for use in §YMultiplayer Mode§!. Single-player play cannot proceed normally or has no fun."
+ 
+ concept_global_origin_text: "§R(Global Origin)§!"
+ concept_global_origin: "Global Origin"
+ concept_global_origin_desc: "This type of origin will cause a greater impact on the situation or rules of the entire galaxy. Please choose carefully.\nWhen AI randomly selects this type of origin, at the beginning of the game, the player will receive a prompt and choose whether to allow AI to enable the global origin."
+ 
+ # 理念
+ concept_building_civic_starry_yearning: "$building_civic_starry_yearning$"
+ concept_building_civic_starry_yearning_corporate: "$building_civic_starry_yearning_corporate$"
+ 
+ concept_building_civic_overclocking_art: "$building_civic_overclocking_art$"
+ concept_building_civic_overclocking_art_corporate: "$building_civic_overclocking_art_corporate$"
+ concept_building_civic_overclocking_art_machine: "$building_civic_overclocking_art_machine$"
+ 
+ # 协同进化
+ concept_syncretic_evolution_traits: "$trait_syncretic_proles$ Traits"
+ concept_syncretic_evolution_traits_desc: "Traits that can only be used by species with ['concept_trait_syncretic_proles'] or ['concept_trait_nerve_stapled'] traits, providing effects similar to pre-sapient species traits.\n\n§RIf the species does not have ['concept_trait_syncretic_proles'] or ['concept_trait_nerve_stapled'] traits, such traits will be automatically replaced with regular traits.§!"
+ 
+ concept_trait_syncretic_proles: "$trait_syncretic_proles$"
+ 
+ concept_trait_nerve_stapled: "$trait_nerve_stapled$"
+ 
+ # 生命之籽
+ concept_trait_pc_gaia_preference_terraforming: "$trait_pc_gaia_preference_terraforming$"
+ 
+ # 蜂巢天性
+ concept_d_pc_hive_blocker: "$d_pc_hive_blocker$"
+ concept_d_pc_hive_blocker_desc: "-Clear Time:\n$tt$-£time£720 §IDays§!\n-Clear Cost:\n$tt$-1500 $i_food$\n-$MOD_PLANET_MAX_DISTRICTS_MULT$: §R-50%§!\n-$MOD_SPECIES_EMPIRE_SIZE_MULT$: §R+20%§!\n-$MOD_POP_AMENITIES_USAGE_NO_HAPPINESS_MULT$: §R+20%§!\n-$mod_planet_pops_upkeep_mult$: §R+20%§!\n-$MOD_BONUS_POP_GROWTH_MULT$: §R-20%§!\n-$mod_planet_jobs_produces_mult$: §R-20%§!\n-$mod_planet_structures_upkeep_mult$: §R+20%§!\n-After Clearing:\n$tt$-§IUnlock Planet Feature:§! ['concept_d_pc_hive']\n$h_line$§L$d_pc_hive_blocker_desc$§!"
+ 
+ concept_d_pc_hive: "$d_pc_hive$"
+ concept_d_pc_hive_desc: "-$MOD_PLANET_MAX_DISTRICTS_MULT$: §R-25%§!\n-Each planet with ['concept_d_pc_hive'] or ['concept_d_pc_hive_other'] causes:\n$tt$-$MOD_SPECIES_EMPIRE_SIZE_MULT$: §G-2.5%§!\n$tt$-$MOD_POP_AMENITIES_USAGE_NO_HAPPINESS_MULT$: §G-2.5%§!\n$tt$-$mod_planet_pops_upkeep_mult$: §G-2.5%§!\n$tt$-$MOD_BONUS_POP_GROWTH_MULT$: §G+2.5%§!\n$tt$-$mod_planet_jobs_produces_mult$: §G+2.5%§!\n$tt$-$mod_planet_structures_upkeep_mult$: §R+2.5%§!\n$tt$-Every §Y10§! years there is a §G100%§! chance to transform a random solid planet in the system into a ['concept_pc_hive'] with ['concept_d_pc_hive_other']\n$tt$ (There is a §Y33%§! chance to spread to adjacent systems instead)\n-Upkeep: 10 $i_food$ / £planet£\n$h_line$§L$d_pc_hive_desc$§!"
+ 
+ concept_d_pc_hive_other: "$d_pc_hive_other$"
+ concept_d_pc_hive_other_desc: "-$MOD_PLANET_MAX_DISTRICTS_MULT$: §R-25%§!\n-Each planet with ['concept_d_pc_hive'] or ['concept_d_pc_hive_other'] causes:\n$tt$-$MOD_SPECIES_EMPIRE_SIZE_MULT$: §G-1.25%§!\n$tt$-$MOD_POP_AMENITIES_USAGE_NO_HAPPINESS_MULT$: §G-1.25%§!\n$tt$-$mod_planet_pops_upkeep_mult$: §G-1.25%§!\n$tt$-$MOD_BONUS_POP_GROWTH_MULT$: §G+1.25%§!\n$tt$-$mod_planet_jobs_produces_mult$: §G+1.25%§!\n$tt$-$mod_planet_structures_upkeep_mult$: §R+1.25%§!\n$tt$-Every §Y10§! years there is a §G50%§! chance to transform a random solid planet in the system into a ['concept_pc_hive'] with ['concept_d_pc_hive_other']\n$tt$ (There is a §Y33%§! chance to spread to adjacent systems instead)\n-Upkeep: 5 $i_food$ / £planet£\n$h_line$§L$d_pc_hive_other_desc$§!"
+ 
+ # 气态生物
+ concept_origin_gas_colony_species_trait: "$origin_gas_colony$ Species Trait"
+ concept_origin_gas_colony_species_trait_desc: "$concept_origin_gas_colony_species_trait$ is a species trait exclusive to §Y$origin_gas_colony$§! origin.\nSuch traits limit species to survive only on ['concept_pc_gas_colony'] and cannot be added or removed."
+ 
+ concept_trait_origin_gas_colony: "$trait_origin_gas_colony$"
+ 
+ concept_gas_technician: "$job_gas_technician_plural$"
+ concept_gas_technician_desc: "[gas_technician.GetNamePlural] is a composite job that produces $i_energy$ and $i_volatile_motes$, and is treated as §I$job_technician$§! job.\n\n§L$job_gas_technician_desc$§!"
+ 
+ concept_gas_miner: "$job_gas_miner_plural$"
+ concept_gas_miner_desc: "[gas_miner.GetNamePlural] is a composite job that produces $i_minerals$ and $i_rare_crystals$, and is treated as §I$job_miner$§! job.\n\n§L$job_gas_miner_desc$§!"
+ 
+ concept_gas_farmer: "$job_gas_farmer_plural$"
+ concept_gas_farmer_desc: "[gas_farmer.GetNamePlural] is a composite job that produces $i_food$ and $i_exotic_gases$, and is treated as §I$job_farmer$§! job.\n\n§L$job_gas_farmer_desc$§!"
+ 
+ concept_gas_technician_drone: "$job_gas_technician_drone_plural$"
+ concept_gas_technician_drone_desc: "[gas_technician_drone.GetNamePlural] is a composite job that produces $i_energy$ and $i_volatile_motes$, and is treated as §I$job_technician_drone$§! job.\n\n§L$job_gas_technician_drone_desc$§!"
+ 
+ concept_gas_mining_drone: "$job_gas_mining_drone_plural$"
+ concept_gas_mining_drone_desc: "[gas_mining_drone.GetNamePlural] is a composite job that produces $i_minerals$ and $i_rare_crystals$, and is treated as §I$job_mining_drone$§! job.\n\n§L$job_gas_mining_drone_desc$§!"
+ 
+ concept_gas_agri_drone: "$job_gas_agri_drone_plural$"
+ concept_gas_agri_drone_desc: "[gas_agri_drone.GetNamePlural] is a composite job that produces $i_food$ and $i_exotic_gases$, and is treated as §I$job_agri_drone$§! job.\n\n§L$job_gas_agri_drone_desc$§!"
+ 
+ # 虚境访客
+ concept_origin_psionic_species_trait: "$origin_psionic$ Species Trait"
+ concept_origin_psionic_species_trait_desc: "$concept_origin_psionic_species_trait$ is a species trait exclusive to §Y$origin_psionic$§! origin.\nSuch traits limit species to survive only on ['concept_pc_psionic'] and cannot be added or removed."
+ 
+ concept_trait_origin_psionic: "$trait_origin_psionic$"
+ 
+ concept_col_psionic_mult_white: "§WShroud Rift Ascension Effect§!"
+ concept_col_psionic_mult: "Shroud Rift Ascension Effect"
+ concept_col_psionic_mult_desc: "This represents the degree of ascension of §Y$pc_psionic$§! connecting to the Shroud, and affects the basic effects of exclusive §YPlanetary Designation§!."
+ 
+ concept_district_psionic_modifier_mult_white: "§W$pc_psionic$ District Effect§!"
+ concept_district_psionic_modifier_mult: "$pc_psionic$ District Effect"
+ concept_district_psionic_modifier_mult_desc: "This represents the degree of resonance between §Y$pc_psionic$§! and the Shroud, and affects housing and jobs provided by exclusive §YPlanetary Districts§!."
+ 
+ concept_psionic_trader: "$job_psionic_trader_plural$"
+ concept_psionic_trader_desc: "[psionic_trader.GetNamePlural] is a composite job that produces $i_trade_value$, $i_unity$ and $i_zro$, and is treated as both §I$job_trader$§! and §I$job_bureaucrat$§! jobs.\n\n§L$job_psionic_trader_desc$§!"
+ 
+ concept_psionic_technician: "$job_psionic_technician_plural$"
+ concept_psionic_technician_desc: "[psionic_technician.GetNamePlural] is a composite job that produces $i_energy$ and $i_physics$, and is treated as §I$job_technician$§! job.\n\n§L$job_psionic_technician_desc$§!"
+ 
+ concept_psionic_miner: "$job_psionic_miner_plural$"
+ concept_psionic_miner_desc: "[psionic_miner.GetNamePlural] is a composite job that produces $i_minerals$ and $i_engineering$, and is treated as §I$job_miner$§! job.\n\n§L$job_psionic_miner_desc$§!"
+ 
+ concept_psionic_farmer: "$job_psionic_farmer_plural$"
+ concept_psionic_farmer_desc: "[psionic_farmer.GetNamePlural] is a composite job that produces $i_food$ and $i_society$, and is treated as §I$job_farmer$§! job.\n\n§L$job_psionic_farmer_desc$§!"
+ 
+ # 纳米机器
+ concept_origin_nanites_species_trait: "$origin_nanites$ Species Trait"
+ concept_origin_nanites_species_trait_desc: "$concept_origin_nanites_species_trait$ is a species trait exclusive to §Y$origin_nanites$§! origin.\nSuch traits limit species to survive only on ['concept_pc_nanites'] and cannot be added or removed."
+ 
+ concept_trait_origin_nanites: "$trait_origin_nanites$"
+ 
+ concept_district_nanites_modifier_mult_white: "§W$pc_nanites$ District Effect§!"
+ concept_district_nanites_modifier_mult: "$pc_nanites$ District Effect"
+ concept_district_nanites_modifier_mult_desc: "This represents the degree of construction of the matrix network on §Y$pc_nanites$§!, and affects housing and jobs provided by exclusive §YPlanetary Districts§!."
+ 
+ concept_nanites_logistics_drone: "$job_nanites_logistics_drone_plural$"
+ concept_nanites_logistics_drone_desc: "[nanites_logistics_drone.GetNamePlural] is a composite job that produces $i_trade_value$, $i_research$ and $i_amenities$, and is treated as both §I$job_logistics_drone$§! and §ICalculator§! jobs.\n\n§L$job_nanites_logistics_drone_desc$§!"
+ 
+ # 赞美太阳
+ concept_building_origin_praise_the_sun: "$building_origin_praise_the_sun$"
+ 
+ # 宁和之道
+ databank_origin_tao_of_ninghe: "Path of Serenity"
+ 
+ concept_pure_yin_modifier: "§B£mod_consecrated_world_green£Power of Ultimate Yin§!"
+ concept_pure_yin: "§BPower of Ultimate Yin§!"
+ concept_pure_yin_desc: "§BPower of Ultimate Yin§! represents the ultimate mastery of Yin energy. When ['concept_ninghe_country'] is biased towards ['concept_yang_country'], the ['concept_yin_country'] power of the country and planet will be enhanced."
+ 
+ concept_pure_yang_modifier: "§Y£mod_consecrated_world_yellow£Power of Ultimate Yang§!"
+ concept_pure_yang: "§YPower of Ultimate Yang§!"
+ concept_pure_yang_desc: "§YPower of Ultimate Yang§! represents the ultimate mastery of Yang energy. When ['concept_ninghe_country'] is biased towards ['concept_yin_country'], the ['concept_yang_country'] power of the country and planet will be enhanced."
+ 
+ concept_ninghe_country: "§GSerenity§!"
+ concept_ninghe_country_desc: "§GSerenity§! represents the balance of ['concept_yin_country'] and ['concept_yang_country'] in the country. It will affect the hobbies and value emphasis of all citizens in the country from the aspects of social system, ideology, regional culture, etc.\n\nMaintaining in the state of §GSerenity§! will bring us great benefits. Therefore, we need to pay attention to the influence of the country's ['concept_leader_yin'], ['concept_planet_yin'] and ['concept_leader_yang'], ['concept_planet_yang'] on §GSerenity§!."
+ 
+ concept_yin_country: "§BYin§!"
+ concept_yin_country_desc: "§BYin§! represents the Yin energy in the country and is part of ['concept_ninghe_country']. It will affect the hobbies and value emphasis of all citizens in the country from the aspects of social system, ideology, regional culture, etc.\n\n['concept_leader_yin'] and ['concept_planet_yin'] are the main factors affecting the power of §BYin§!."
+ 
+ concept_trait_yin: "§BYin Traits§!"
+ concept_leader_yin: "§BYin Leaders§!"
+ concept_leader_yin_desc: "§BYin Leaders§! will affect the ['concept_yin_country'] power in the country and directly affect the country's ['concept_ninghe_country'].\n\nEach level and each level of trait of §BYin Leaders§! will shift the situation towards ['concept_yin_country'] by §G1§!.\n\n§BYin Leaders§! mainly come from the influence of levels and traits of §H£official£$subclass_official_delegate$§!, §H£official£$subclass_official_diplomacy_councilor$§!, §H£official£$subclass_official_economy_councilor$§!, §H£official£$subclass_official_governor$§!, §B£scientist£$subclass_scientist_governor$§!, §R£commander£$subclass_commander_governor$§!."
+ 
+ concept_planet_yin: "§BYin Planets§!"
+ concept_planet_yin_desc: "§BYin Planets§! will affect the ['concept_yin_country'] power in the country and directly affect the country's ['concept_ninghe_country'].\n\nPlanets with §B['concept_yin'] flourishing and Yang declining§! will shift the situation towards ['concept_yin_country'] by §G2~10§!."
+ 
+ concept_yang_country: "§YYang§!"
+ concept_yang_country_desc: "§YYang§! represents the Yang energy in the country and is part of ['concept_ninghe_country']. It will affect the hobbies and value emphasis of all citizens in the country from the aspects of social system, ideology, regional culture, etc.\n\n['concept_leader_yang'] and ['concept_planet_yang'] are the main factors affecting the power of §YYang§!."
+ 
+ concept_trait_yang: "§YYang Traits§!"
+ concept_leader_yang: "§YYang Leaders§!"
+ concept_leader_yang_desc: "§YYang Leaders§! will affect the ['concept_yang_country'] power in the country and directly affect the country's ['concept_ninghe_country'].\n\nEach level and each level of trait of §YYang Leaders§! will shift the situation towards ['concept_yang_country'] by §G1§!.\n\n§YYang Leaders§! mainly come from the influence of levels and traits of §B£scientist£$subclass_scientist_explorer$§!, §B£scientist£$subclass_scientist_scholar$§!, §B£scientist£$subclass_scientist_councilor$§!, §R£commander£$subclass_commander_admiral$§!, §R£commander£$subclass_commander_general$§!, §R£commander£$subclass_commander_councilor$§!."
+ 
+ concept_planet_yang: "§YYang Planets§!"
+ concept_planet_yang_desc: "§YYang Planets§! will affect the ['concept_yang_country'] power in the country and directly affect the country's ['concept_ninghe_country'].\n\nPlanets with §Y['concept_yang'] flourishing and Yin declining§! will shift the situation towards ['concept_yang_country'] by §G2~10§!."
+ 
+ concept_ninghe: "§GSerenity§!"
+ concept_ninghe_desc: "§GSerenity§! represents the balance of ['concept_yin'] and ['concept_yang'] on the planet. It will affect the survival activities and thinking modes of life on the planet from the aspects of temperature, climate, environmental changes, etc.\n\nMaintaining in the state of §GSerenity§! will bring us great benefits. Therefore, we need to pay attention to the influence of the planet's ['concept_building_yin'], ['concept_building_yang'] and ['concept_ninghe_planet_class'] on §GSerenity§!."
+ 
+ concept_ninghe_planet_class: "§GPlanet Class§!"
+ concept_ninghe_planet_class_desc: "Different §GPlanet Classes§! will have different effects on the planet's ['concept_ninghe'].\n\nHot planets, Ecumenopolises, Ring Worlds, Machine Worlds, Nanite Worlds, etc. will enhance the planet's ['concept_yang'] power, while Cold planets, Relic Worlds, Habitats, Tomb Worlds, Hive Worlds, etc. will enhance the planet's ['concept_yin'] power, and Gaia Worlds possess certain ability to regulate ['concept_ninghe'].\nIn addition, §GPlanetary Designation§! focusing on ['concept_building_yang'] and §GPlanetary Designation§! focusing on ['concept_building_yin'] will also shift ['concept_ninghe'] towards the corresponding direction."
+ 
+ concept_yin: "§BYin§!"
+ concept_yin_desc: "§BYin§! represents the Yin energy on the planet and is part of ['concept_ninghe']. It will affect the survival activities and thinking modes of life on the planet from the aspects of temperature, climate, environmental changes, etc.\n\n['concept_building_yin'] and ['concept_ninghe_planet_class'] are the main factors affecting the power of §BYin§!."
+ 
+ concept_yin_mult_modifier: "§W£mod_consecrated_world_green£Effect of §BYin Buildings§! on Serenity§!"
+ concept_building_yin: "§BYin Buildings§!"
+ concept_building_yin_desc: "§BYin Buildings§! will affect the ['concept_yin'] power on the planet and directly affect the planet's ['concept_ninghe'].\n\nEach §BYin Building§! will shift the situation towards ['concept_yin'] by §G5§!.\n\n§BYin Buildings§! include:\n£job_priest£Unity buildings, £trade£Trade buildings, £amenities£Amenities buildings, £job_artisan£Factory buildings, £strategic£Refinery buildings and district specializations focusing on these."
+ 
+ concept_yang: "§YYang§!"
+ concept_yang_desc: "§YYang§! represents the Yang energy on the planet and is part of ['concept_ninghe']. It will affect the survival activities and thinking modes of life on the planet from the aspects of temperature, climate, environmental changes, etc.\n\n['concept_building_yang'] and ['concept_ninghe_planet_class'] are the main factors affecting the power of §YYang§!."
+ 
+ concept_yang_mult_modifier: "§W£mod_consecrated_world_yellow£Effect of §YYang Buildings§! on Serenity§!"
+ concept_building_yang: "§YYang Buildings§!"
+ concept_building_yang_desc: "§YYang Buildings§! will affect the ['concept_yang'] power on the planet and directly affect the planet's ['concept_ninghe'].\n\nEach §YYang Building§! will shift the situation towards ['concept_yang'] by §G5§!.\n\n§YYang Buildings§! include:\n£job_researcher£Research buildings, £job_enforcer£Government buildings, £job_soldier£Military buildings, £job_foundry£Foundry buildings, £job_miner£Resource buildings and district specializations focusing on these."
+ 
+ concept_building_origin_tao_of_ninghe_yin: "$building_origin_tao_of_ninghe_yin$"
+ concept_building_origin_tao_of_ninghe_yang: "$building_origin_tao_of_ninghe_yang$"
+ 
+ # 黑客帝国
+ concept_d_the_matrix_blocker: "$d_the_matrix_blocker$"
+ concept_d_the_matrix_blocker_desc: "-Clear Time:\n$tt$-£time£90 §IDays§!\n-Clear Cost:\n$tt$-200 $i_energy$\n$tt$-100 $i_food$ / $i_minerals$ (§G-1§! per year)\n-$MOD_PLANET_MAX_DISTRICTS_ADD$: §R-0.2§!\n-Production:\n$tt$-2 $i_research$ (§R-0.1§! per year)\n$tt$-2 $i_unity$ (§R-0.1§! per year)\n-Upkeep:\n$tt$-1 $i_food$ / $i_minerals$ (§G-0.05§! per year)\n-After Clearing:\n$tt$-Save 100 £pop£Pops (§R-5§! per year)\n$h_line$§L$d_the_matrix_blocker_desc$§!"
+ 
+ # 再组装者
+ concept_reassembly_mode_red: "§R$concept_reassembly_mode$§!"
+ concept_reassembly_mode: "Reassembly"
+ concept_reassembly_mode_desc: "Start Reassembly Mode through planetary decisions to reassemble existing §I$mechanical_pops$§!.\n\nIn Reassembly Mode, no new pops will be obtained when mechanical assembly is completed. Instead, $mechanical_pops$ without ['concept_trait_reassembler'] trait will be integrated into templates with ['concept_trait_reassembler'] trait.\n\nWhen the number of reassemblable Mechanical Pops is lower than §Y$@can_active_reassembly_pop_amount|*0$§!, reassembly cannot be performed."
+ 
+ concept_trait_reassembler: "$trait_reassembler$"
+ 
+ concept_reassembly_speed_white: "§WReassembly Efficiency§!"
+ concept_reassembly_speed: "Reassembly Efficiency"
+ concept_reassembly_speed_desc: "This represents our efficiency in conducting ['concept_reassembly_mode']. When assembling templates with ['concept_trait_reassembler'] trait, £mod_planet_pop_assembly_mult£§Y$MOD_PLANET_POP_ASSEMBLY_MULT$§! will receive higher §Genhancement§!."
+ 
+ # 江洋大盗
+ concept_leader_trait_origin_pirate_king_official: "$leader_trait_origin_pirate_king_official$"
+ concept_leader_trait_origin_pirate_king_official_desc: "$official_trait$\n\n$PLANET_EFFECTS_TXT$:\n$t$$MOD_PLANET_ARMY_BUILD_SPEED_MULT$: §G+20%§!\n$t$$MOD_ARMY_STARTING_EXPERIENCE_ADD$: §G+200§!\n\n$SECTOR_EFFECTS_TXT$:\n$t$$MOD_PLANET_ARMY_BUILD_SPEED_MULT$: §G+10%§!\n$t$$MOD_ARMY_STARTING_EXPERIENCE_ADD$: §G+100§!\n$h_line$§L$leader_trait_origin_pirate_king_official_desc$§!"
+ concept_leader_trait_origin_pirate_king_scientist: "$leader_trait_origin_pirate_king_scientist$"
+ concept_leader_trait_origin_pirate_king_scientist_desc: "$scientist_trait$\n\n$SCIENCE_SHIP_EFFECTS_TXT$:\n$t$$MOD_SHIP_SENSOR_RANGE_ADD$: §G+1§!\n$t$$MOD_SHIP_HYPERLANE_RANGE_ADD$: §G+2§!\n$h_line$§L$leader_trait_origin_pirate_king_scientist_desc$§!"
+ concept_leader_trait_origin_pirate_king_commander: "$leader_trait_origin_pirate_king_commander$"
+ concept_leader_trait_origin_pirate_king_commander_desc: "$commander_trait$\n\n$FLEET_EFFECTS_TXT$:\n$t$$MOD_SHIP_SPEED_MULT$: §G+20%§!\n$t$$MOD_SHIP_DISENGAGE_OPPORTUNITIES_ADD$: §G+1§!\n$h_line$§L$leader_trait_origin_pirate_king_commander_desc$§!"
+ 
+ # 机械神教
+ concept_building_adeptus_mechanicus_1: "$building_adeptus_mechanicus_1$"
+ concept_building_adeptus_mechanicus_2: "$building_adeptus_mechanicus_2$"
+ 
+ # 伪善假面
+ concept_hypocritical_face_decay: "§GManipulation of Public Opinion§!"
+ concept_hypocritical_face_decay_desc: "§GManipulation of Public Opinion§! represents our control over international speech, reducing the possibility of other countries discovering our true face.\n\nBy researching certain specific technologies, we can enhance the ability to manipulate public opinion:\n§Y$tech_interplanetary_commerce$§!, §Y$tech_space_trading$§!, §Y$tech_interstellar_economics$§!, §Y$tech_galactic_markets$§!, §Y$tech_xeno_diplomacy$§!, §Y$tech_xeno_relations$§!"
+ 
+ concept_hypocritical_face_country: "§RRumors from Other Countries§!"
+ concept_hypocritical_face_country_desc: "§RRumors from Other Countries§! mainly come from countries with §Rtoo high intel§! on us. They will expose our true face internationally. Of course, we call it rumors externally.\n\nOur §YEncryption Capability§! can reduce this value."
+ 
+ concept_hypocritical_face_building_modifier: "§W£mod_add_base_country_intel£Gossip of Planet§!"
+ concept_hypocritical_face_building: "§RGossip of Planet§!"
+ concept_hypocritical_face_building_desc: "§RGossip of Planet§! mainly comes from ['concept_hypocritical_face_branch_office_buildings'] we built on other planets. The residents on the planet will see our true face. Although gossip is small, it is also annoying.\n\nOur §YEncryption Capability§! can reduce this value."
+ 
+ concept_hypocritical_face_branch_office_buildings: "Hypocritical $BRANCH_OFFICE_BUILDINGS$"
+ concept_hypocritical_face_branch_office_buildings_desc: "$concept_hypocritical_face_branch_office_buildings$ are $BRANCH_OFFICE_BUILDINGS$ with stronger effects, which can only be built in countries that have signed commercial pacts. They can generate higher profits, but also make you easier to expose.\n\n$concept_hypocritical_face_branch_office_buildings$ include:\n['concept_building_time_private_mining_consortium']\n['concept_building_time_food_conglomerate']\n['concept_building_time_virtual_entertainment_studios']\n['concept_building_time_private_shipyards']\n['concept_building_time_military_contractors']\n['concept_building_time_industrial_subsidiary']\n['concept_building_time_public_relations_office']\n['concept_building_time_private_research_initiative']\n['concept_building_time_amusement_megaplex']\n['concept_building_time_commercial_forum']\n['concept_building_time_corporate_embassy']\n['concept_building_time_private_security']\n['concept_building_time_temple_of_prosperity']"
+ 
+ concept_building_time_private_mining_consortium: "$building_time_private_mining_consortium$"
+ concept_building_time_food_conglomerate: "$building_time_food_conglomerate$"
+ concept_building_time_virtual_entertainment_studios: "$building_time_virtual_entertainment_studios$"
+ concept_building_time_private_shipyards: "$building_time_private_shipyards$"
+ concept_building_time_military_contractors: "$building_time_military_contractors$"
+ concept_building_time_industrial_subsidiary: "$building_time_industrial_subsidiary$"
+ concept_building_time_public_relations_office: "$building_time_public_relations_office$"
+ concept_building_time_private_research_initiative: "$building_time_private_research_initiative$"
+ concept_building_time_amusement_megaplex: "$building_time_amusement_megaplex$"
+ concept_building_time_commercial_forum: "$building_time_commercial_forum$"
+ concept_building_time_corporate_embassy: "$building_time_corporate_embassy$"
+ concept_building_time_private_security: "$building_time_private_security$"
+ concept_building_time_temple_of_prosperity: "$building_time_temple_of_prosperity$"
+ 
+ # 怪物猎人
+ concept_origin_monster_hunter_species_trait: "$origin_monster_hunter$ Species Trait"
+ concept_origin_monster_hunter_species_trait_desc: "$concept_origin_monster_hunter_species_trait$ is a species trait exclusive to §Y$origin_monster_hunter$§! origin.\nSuch traits allow pops to engage in specialized §Y$job_monster_hunter_plural$§! jobs and train as exclusive §Y$origin_monster_hunter_defense_army_plural$§! and §Y$origin_monster_hunter_army_plural$§! armies."
+ 
+ concept_trait_origin_monster_hunter: "$trait_origin_monster_hunter$"
+ 
+ concept_building_origin_monster_hunter_1: "$building_origin_monster_hunter_1$"
+ concept_building_origin_monster_hunter_2: "$building_origin_monster_hunter_2$"
+ 
+ concept_job_monster_hunter: "$job_monster_hunter_plural$"
+ concept_job_monster_hunter_desc: "[monster_hunter.GetNamePlural] is a composite job that produces $i_food$ (or $i_minerals$ and $i_energy$), $i_unity$, $i_consumer_goods$, $i_amenities$ and $i_naval_capacity$, and is treated as both §I$job_entertainer$§! and §I$job_soldier$§! jobs.\n\n$job_monster_hunter_effect$\n\n§L$job_monster_hunter_desc$§!"
+ 
+ # 传奇崇拜
+ concept_origin_legendary_worship: "$origin_legendary_worship$"
+ 
+ # 神眷之族
+ concept_building_blessed_by_god: "$building_blessed_by_god$"
+ 
+ # 神弃之族
+ concept_building_abandoned_by_god: "$building_abandoned_by_god$"
+ 
+ concept_leader_trait_abandoned_by_god: "$leader_trait_abandoned_by_god$"
+ concept_leader_trait_abandoned_by_god_desc: "§RNegative Trait§!\n\n$BACKGROUND_PLANET_EFFECTS_TXT$:\n$t$$MOD_POP_HAPPINESS$ per level: §R-1%§!\n\n$THIS_LEADER_TXT$:\n$t$$MOD_LEADER_LIFESPAN_MULT$: §R-50%§!\n$t$$r_research$ per level: §G+1.5§!\n$t$$r_consumer_goods$ consumed per level: §R+2§!\n$t$No $r_unity$ Cost and Upkeep\n$h_line$§L$leader_trait_abandoned_by_god_desc$§!"
+ 
+ # 彼岸封印
+ concept_leader_trait_equinox_seal: "$leader_trait_equinox_seal$"
+ concept_leader_trait_equinox_seal_desc: "§RNegative Trait§!\n\n$THIS_LEADER_TXT$:\n$t$$r_dark_matter$ consumed per level: §R+0.25§!\n$t$$MOD_LEADER_LIFESPAN_MULT$: §R-25%§!\n$t$$MOD_LEADER_SPECIES_EXP_GAIN$: §G+50%§!\n\n$PLANET_EFFECTS_TXT$:\n$t$$r_research$ and $r_unity$ produced by £job£Jobs: §G+5%/Level§!\n\n$SECTOR_EFFECTS_TXT$:\n$t$$r_research$ and $r_unity$ produced by £job£Jobs: §G+2.5%/Level§!\n$h_line$§L$leader_trait_equinox_seal_desc$§!"
+ 
+ # 二手国度
+ concept_secondhand_country_traits_orange: "§HSecond-Hand Parts§!"
+ concept_secondhand_country_traits_yellow: "§YSecond-Hand Parts§!"
+ concept_advanced_secondhand_country_traits: "Advanced Second-Hand Parts"
+ concept_secondhand_country_traits: "Second-Hand Parts"
+ concept_secondhand_country_traits_desc: "Second-Hand Parts traits provide more powerful bonuses than usual mechanical traits, at the cost of reduced leader life expectancy and increased machine maintenance frequency."
+ 
+ concept_secondhand_country_edict: "$edict_secondhand_country_edict$"
+ concept_secondhand_country_edict_desc: "-Positive effects of ['concept_secondhand_country_traits'] traits: §G+100%§!\n-$mod_planet_pops_robotics_upkeep_mult$: §R+100%§!\n\n§L$edict_secondhand_country_edict_desc$§!"
+ 
+ concept_d_secondhand_country: "$d_secondhand_country$"
+ concept_d_secondhand_country_desc: "-Owner will §GUnlock§! some ['concept_secondhand_country_traits_yellow'] traits\n-$mod_planet_jobs_minerals_produces_mult$: §G+15%§!\n-$mod_planet_jobs_alloys_produces_mult$: §G+15%§!\n-$mod_planet_jobs_engineering_research_produces_mult$: §G+15%§!\n-$MOD_POP_ENVIRONMENT_TOLERANCE$: §R-30%§!\n-$MOD_PLANET_MAX_DISTRICTS_ADD$: §R-1§!\n$h_line$§L$d_secondhand_country_desc$§!"
+ 
+ # 许愿之井
+ concept_d_wishing_well: "$d_wishing_well$"
+ concept_d_wishing_well_desc: "-Production and upkeep will §Gdouble§! every §Y$@d_wishing_well_double_interval_year|0$§! years\n-Production and upkeep $@d_wishing_well_resource_ascension_perks_factor|=+0%$ for each §YAscension Perk§! our Empire has taken\n-§RDesire will become increasingly difficult to satisfy!§!\n-$MOD_POP_HAPPINESS$：§G+50%§!\n-Production:\n$tt$-$@d_wishing_well_basic_resource_produce|1$$i_energy$\n$tt$-$@d_wishing_well_basic_resource_produce|1$$i_minerals$\n$tt$-$@d_wishing_well_basic_resource_produce|1$$i_food$\n$tt$-$@d_wishing_well_advanced_resource_produce|2$$i_alloys$\n$tt$-$@d_wishing_well_advanced_resource_produce|2$$i_consumer_goods$\n$tt$-$@d_wishing_well_advanced_resource_produce|2$$i_unity$\n$tt$-$@d_wishing_well_advanced_resource_produce|2$$i_research$\n-Upkeep:\n$tt$-$@d_wishing_well_trade_upkeep|0$$i_trade_value$\n$h_line$§L$d_wishing_well_desc$§!"
+ 
+ # 凝视深渊
+ concept_trait_origin_black_hole: "$trait_origin_black_hole$"
+ 
+ concept_building_civic_origin_black_hole: "$building_civic_origin_black_hole$"
+ 
+ # 精神脉冲
+ concept_trait_origin_pulsar: "$trait_origin_pulsar$"
+ 
+ concept_building_civic_origin_pulsar: "$building_civic_origin_pulsar$"
+ 
+ # 中子壁垒
+ concept_trait_origin_neutron_star: "$trait_origin_neutron_star$"
+ 
+ concept_building_civic_origin_neutron_star: "$building_civic_origin_neutron_star$"
+ 
+ # 叛教门徒
+ concept_origin_synth_queen_crisis_tech: "Fallen Empire Technology"
+ concept_origin_synth_queen_crisis_tech_desc: "['technology:tech_cosmogenesis_escort']\n['technology:tech_fe_affluence_1']\n['technology:tech_fe_nourishment_1']\n['technology:tech_fe_fabricator_1']\n['technology:tech_fe_singularity_1']\n['technology:tech_fe_forge_1']\n['technology:tech_fe_dome_1']\n['technology:tech_fe_fortress_1']\n['technology:tech_fe_administration_1']\n['technology:tech_fe_assembly_1']\n['technology:tech_fe_clinic_1']\n['technology:tech_fe_security_1']\n['technology:tech_fe_market_1']\n['technology:tech_fe_silo_1']\n['technology:tech_fe_entertainment_1']\n['technology:tech_fe_lab_1']\n['technology:tech_fe_mine_1']"
+ 
+ concept_origin_synth_queen_crisis_advanced_tech: "Fallen Empire Advanced Technology"
+ concept_origin_synth_queen_crisis_advanced_tech_desc: "['technology:tech_cosmogenesis_battlecruiser']\n['technology:tech_fe_affluence_2']\n['technology:tech_fe_nourishment_2']\n['technology:tech_fe_fabricator_2']\n['technology:tech_fe_singularity_2']\n['technology:tech_fe_forge_2']\n['technology:tech_fe_dome_2']\n['technology:tech_fe_fortress_2']\n['technology:tech_fe_administration_2']\n['technology:tech_fe_assembly_2']\n['technology:tech_fe_clinic_2']\n['technology:tech_fe_security_2']\n['technology:tech_fe_market_2']\n['technology:tech_fe_silo_2']\n['technology:tech_fe_entertainment_2']\n['technology:tech_fe_lab_2']\n['technology:tech_fe_mine_2']"
+ 
+ # 并非一体
+ concept_origin_we_are_not_one_job: "Function"
+ concept_origin_we_are_not_one_job_desc: "Players playing different types of leaders can only do work within their function.\n\n$concept_origin_we_are_not_one_job$ includes:\n['concept_origin_we_are_not_one_ruler']\n['concept_origin_we_are_not_one_state']\n['concept_origin_we_are_not_one_research']\n['concept_origin_we_are_not_one_defense']\n['concept_origin_we_are_not_one_official']\n['concept_origin_we_are_not_one_scientist']\n['concept_origin_we_are_not_one_commander']"
+ 
+ concept_origin_we_are_not_one_ruler: "£ruler£$councilor_ruler$ Function"
+ concept_origin_we_are_not_one_ruler_desc: "As §G£ruler£$councilor_ruler$§!, you can:\n-§YAppoint Council§!\n-§YSelect Agenda§!\n-§YAdjust Policies§!\n-§YToggle Edicts§!\n-§YMarket Trade§!\n-§YChoose Events§!\n-§YDispatch Leaders§! (§RDismissal Not Allowed!§!)\n\nYou §Rcannot§! exercise your ['concept_origin_we_are_not_one_official'], ['concept_origin_we_are_not_one_scientist'] or ['concept_origin_we_are_not_one_commander']."
+ 
+ concept_origin_we_are_not_one_state: "£growth_node£$councilor_state$ Function"
+ concept_origin_we_are_not_one_state_desc: "As §G£growth_node£$councilor_state$§!, you can:\n-§YConduct Diplomacy§! (including §RDeclaring War§!)\n-§YCommunity Actions§! (§RUnless other players serve in Community§!)\n-§YFederation Actions§! (§RUnless other players serve in Federation§!)\n\nYou also §Gcan§! exercise your ['concept_origin_we_are_not_one_official']."
+ 
+ concept_origin_we_are_not_one_research: "£cognitive_node£$councilor_research$ Function"
+ concept_origin_we_are_not_one_research_desc: "As §G£cognitive_node£$councilor_research$§!, you can:\n-§YDecide Research§!\n-§YAdopt Traditions§!\n-§YModify Species§!\n-§YResearch Log Projects§!\n\nYou also §Gcan§! exercise your ['concept_origin_we_are_not_one_scientist']."
+ 
+ concept_origin_we_are_not_one_defense: "£legion_node£$councilor_defense$ Function"
+ concept_origin_we_are_not_one_defense_desc: "As §G£legion_node£$councilor_defense$§!, you can:\n-§YMake Claims§!\n-§YEspionage Infiltration§!\n-§YBuild Ships and Armies Nationwide§!\n-§YCommand Ships and Armies Nationwide§! (§RUnless other players pilot/command§!)\n\nYou also §Gcan§! exercise your ['concept_origin_we_are_not_one_commander']."
+ 
+ concept_origin_we_are_not_one_official: "£official£$official$ Function"
+ concept_origin_we_are_not_one_official_desc: "As §H£official£$official$§!, you can:\n-§YCommunity Actions§! (when serving in Community)\n-§YFederation Actions§! (when serving in Federation)\n-§YExercise ['concept_origin_we_are_not_one_planet_governor']§! (when governing colony)\n-§YExercise ['concept_origin_we_are_not_one_sector_governor']§! (when governing sector capital)"
+ 
+ concept_origin_we_are_not_one_scientist: "£scientist£$scientist$ Function"
+ concept_origin_we_are_not_one_scientist_desc: "As §B£scientist£$scientist$§!, you can:\n-§YCommand Science Ship§! (when piloting Science Ship)\n-§YExercise ['concept_origin_we_are_not_one_planet_governor']§! (when governing colony)\n-§YExercise ['concept_origin_we_are_not_one_sector_governor']§! (when governing sector capital)"
+ 
+ concept_origin_we_are_not_one_commander: "£commander£$commander$ Function"
+ concept_origin_we_are_not_one_commander_desc: "As §R£commander£$commander$§!, you can:\n-§YCommand Fleet§! (when piloting fleet)\n-§YCommand Army§! (when commanding army)\n-§YBuild Military Ships and Armies§! (only in current system)\n-§YExercise ['concept_origin_we_are_not_one_planet_governor']§! (when governing colony)\n-§YExercise ['concept_origin_we_are_not_one_sector_governor']§! (when governing sector capital)"
+ 
+ concept_origin_we_are_not_one_planet_governor: "£planet£Planetary Governor Function"
+ concept_origin_we_are_not_one_planet_governor_desc: "As §Y£planet£Planetary Governor§!, you can:\n-Manage the §YColony§! you are in\n-Manage §YConstruction Ships§! in your system\n-Manage §YStarbases§! in your system, and build §Yany ships§! and §Ydefense platforms§!"
+ 
+ concept_origin_we_are_not_one_sector_governor: "£sector£Sector Governor Function"
+ concept_origin_we_are_not_one_sector_governor_desc: "As §Y£sector£Sector Governor§!, you can:\n-Manage §YColonies§! in the sector (§RUnless other players govern the colony§!)\n-Manage §YConstruction Ships§! in the sector (§RUnless other players govern the colony in that system§!)\n-Manage §YStarbases§! in the sector, and build §Yany ships§! and §Ydefense platforms§! (§RUnless other players govern the colony in that system§!)"

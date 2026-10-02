@@ -1,0 +1,68 @@
+############################
+# Admiral Leader Traits	#
+############################
+
+leader_trait_foredoomed_to_a_rendezvous = {
+	inline_script = {
+		script = trait/icon
+		CLASS = leader
+		ICON = "GFX_leader_trait_foredoomed_to_a_rendezvous"
+		RARITY = common
+		COUNCIL = no
+		TIER = none
+	}
+	triggered_sector_modifier = {
+		potential = {
+			leader_class = official
+		}
+		ship_speed_mult = 0.025
+		mult = value:num_time_leader_skill
+	}
+	triggered_sector_modifier = {
+		potential = {
+			leader_class = official
+			owner = { has_technology = tech_hope_mirrored_syzygy_admiral }
+		}
+		ship_weapon_range_mult = 0.025
+		mult = value:num_time_leader_skill
+	}
+	triggered_modifier = {
+		potential = {
+			leader_class = scientist
+		}
+		ship_speed_mult = 0.025
+		mult = value:num_time_leader_skill
+	}
+	triggered_modifier = {
+		potential = {
+			leader_class = scientist
+			owner = { has_technology = tech_hope_mirrored_syzygy_admiral }
+		}
+		ship_weapon_range_mult = 0.025
+		mult = value:num_time_leader_skill
+	}
+	triggered_fleet_modifier = {
+		potential = {
+			leader_class = commander
+		}
+		ship_speed_mult = 0.025
+		mult = value:num_time_leader_skill
+	}
+	triggered_fleet_modifier = {
+		potential = {
+			leader_class = commander
+			owner = { has_technology = tech_hope_mirrored_syzygy_admiral }
+		}
+		ship_weapon_range_mult = 0.025
+		mult = value:num_time_leader_skill
+	}
+	# 终焉宣告防护
+	inline_script = {
+		script = traits/dimensional_horror_crisis_storm_protection_trait
+		COUNT = -0.15
+	}
+	leader_class = all
+	initial = no
+	randomized = no
+	ai_weight = 0
+}

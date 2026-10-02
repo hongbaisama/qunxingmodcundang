@@ -1,0 +1,33 @@
+# 人口组
+set_adeptus_mechanicus_species_right = {
+	if = {
+		limit = {
+			NOT = {
+				has_citizenship_type = {
+					country = owner
+					type = citizenship_adeptus_mechanicus
+				}
+			}
+		}
+		set_citizenship_type = {
+			country = owner
+			type = citizenship_adeptus_mechanicus
+			cooldown = yes
+		}
+	}
+	if = {
+		limit = {
+			NOT = {
+				has_living_standard = {
+					country = owner
+					type = living_standard_adeptus_mechanicus
+				}
+			}
+		}
+		set_living_standard = {
+			country = owner
+			type = living_standard_adeptus_mechanicus
+			cooldown = yes
+		}
+	}
+}

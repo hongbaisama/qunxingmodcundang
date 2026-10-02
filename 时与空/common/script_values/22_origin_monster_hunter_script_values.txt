@@ -1,0 +1,72 @@
+num_trophy_value = {
+	base = $BASE|0$
+	modifier = {
+		add = 1
+		colony = {
+			has_modifier = ether_trophy # 以太龙
+		}
+	}
+	modifier = {
+		add = 1
+		colony = {
+			has_modifier = shard_trophy # 裂爪龙
+		}
+	}
+	modifier = {
+		add = 1
+		colony = {
+			has_modifier = dread_trophy # 无畏舰
+		}
+	}
+	modifier = {
+		add = 1
+		colony = {
+			OR = {
+				has_modifier = burnt_tiyanki_trophy # 缇杨奇族母
+				has_modifier = tiyanki_trophy # 缇杨奇族母
+			}
+		}
+	}
+	modifier = {
+		add = 1
+		colony = {
+			has_modifier = sky_dragon_trophy # 天龙
+		}
+	}
+	modifier = {
+		add = 1
+		colony = {
+			has_modifier = scavenger_trophy # 拾荒机器人
+		}
+	}
+	modifier = {
+		add = 1
+		colony = {
+			has_modifier = wraith_trophy # 幽魂
+		}
+	}
+	modifier = {
+		add = 1
+		colony = {
+			has_modifier = fortress_trophy # 神秘堡垒
+		}
+	}
+	modifier = {
+		add = 1
+		colony = {
+			has_modifier = voidspawn_trophy # 虚空孳孽
+		}
+	}
+	modifier = {
+		add = 1
+		colony = {
+			has_modifier = stellar_devourer_trophy # 噬星者
+		}
+	}
+	modifier = {
+		add = 1
+		colony = {
+			has_horror_trophy = yes # 恐怖负相物质
+		}
+	}
+}

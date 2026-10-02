@@ -1,0 +1,27 @@
+origin_time_resource = {
+	inline_script = {
+		script = policies/origin_time_policies
+		TYPE = resource
+	}
+}
+
+origin_time_manufacturing = {
+	inline_script = {
+		script = policies/origin_time_policies
+		TYPE = manufacturing
+	}
+}
+
+origin_time_unity = {
+	inline_script = {
+		script = policies/origin_time_policies
+		TYPE = unity
+	}
+}
+
+origin_time_research = {
+	inline_script = {
+		script = policies/origin_time_policies
+		TYPE = research
+	}
+}

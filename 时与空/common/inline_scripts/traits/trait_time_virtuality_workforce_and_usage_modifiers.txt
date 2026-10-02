@@ -1,0 +1,27 @@
+triggered_pop_group_modifier = {
+	potential = {
+		colony? = { can_time_soul_virtuality_live_on = yes }
+	}
+	all_jobs_base_workforce_mult = 1
+	mult = value:trait_time_virtuality_workforce_mult_value
+}
+triggered_pop_group_modifier = {
+	potential = {
+		colony? = { can_time_soul_virtuality_live_on = yes }
+		NOR = {
+			is_unemployed = yes
+			is_pop_category = civilian
+			is_pop_category = maintenance_drone
+		}
+	}
+	pop_housing_usage_add = 1
+	pop_amenities_usage_add = 1
+	mult = value:trait_time_virtuality_usage_add_value
+}
+triggered_pop_group_modifier = {
+	potential = {
+		colony? = { is_planet_class = pc_endless_time }
+	}
+	pop_time_recursioner_workforce_mult = 0.5
+	pop_time_recursioner_drone_workforce_mult = 0.5
+}

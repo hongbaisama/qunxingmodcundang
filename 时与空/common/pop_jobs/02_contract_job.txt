@@ -1,0 +1,182 @@
+origin_contract_whisperers = {
+	inline_script = {
+		script = jobs/origin_contract/origin_contract_whisperers
+		PATRON = whisperers
+	}
+	
+	resources = {
+		category = planet_origin_contract_whisperers
+		produces = {
+			physics_research = 150
+			society_research = 150
+			engineering_research = 150
+		}
+		upkeep = {
+			consumer_goods = 200
+		}
+	}
+	
+	tags = { research }
+	
+	weight = {
+		weight = @ruler_job_weight
+	}
+	
+	inline_script = "jobs/automodding_priority_research"
+}
+
+origin_contract_composer = {
+	inline_script = {
+		script = jobs/origin_contract/origin_contract_other
+		PATRON = composer
+	}
+	
+	resources = {
+		category = planet_origin_contract_composer
+		produces = {
+			food = 60
+			mult = value:origin_contract_other_value|MODIFIER|origin_contract_composer_produces_mult|
+		}
+		upkeep = {
+			consumer_goods = 10
+			mult = value:origin_contract_other_value|MODIFIER|origin_contract_composer_produces_mult|
+		}
+	}
+	
+	triggered_country_modifier = {
+		origin_contract_composer_attunement = 10
+	}
+	
+	triggered_planet_modifier = {
+		logistic_growth_mult = 1
+		bonus_pop_growth_mult = 1
+		planet_biologists_society_research_produces_add = 5
+		mult = value:origin_contract_other_value|MODIFIER|origin_contract_composer_produces_mult|
+	}
+	
+	tags = { food }
+	
+	weight = {
+		weight = @specialist_job_weight
+	}
+	
+	inline_script = "jobs/automodding_priority_food"
+}
+
+origin_contract_cradle = {
+	inline_script = {
+		script = jobs/origin_contract/origin_contract_other
+		PATRON = cradle
+	}
+	
+	resources = {
+		category = planet_origin_contract_cradle
+		produces = {
+			unity = 30
+			mult = value:origin_contract_other_value|MODIFIER|origin_contract_cradle_produces_mult|
+		}
+		upkeep = {
+			consumer_goods = 10
+			mult = value:origin_contract_other_value|MODIFIER|origin_contract_cradle_produces_mult|
+		}
+	}
+	
+	triggered_country_modifier = {
+		origin_contract_cradle_attunement = 10
+	}
+	
+	triggered_planet_modifier = {
+		planet_housing_mult = 1
+		habitability_floor_add = 1
+		planet_biologists_unity_produces_add = 5
+		mult = value:origin_contract_other_value|MODIFIER|origin_contract_cradle_produces_mult|
+	}
+	
+	tags = { unity }
+	
+	weight = {
+		weight = @specialist_job_weight
+	}
+	
+	inline_script = "jobs/automodding_priority_unity"
+}
+
+origin_contract_eater = {
+	inline_script = {
+		script = jobs/origin_contract/origin_contract_other
+		PATRON = eater
+	}
+	
+	resources = {
+		category = planet_origin_contract_eater
+		produces = {
+			alloys = 30
+			mult = value:origin_contract_other_value|MODIFIER|origin_contract_eater_produces_mult|
+		}
+		upkeep = {
+			consumer_goods = 10
+			mult = value:origin_contract_other_value|MODIFIER|origin_contract_eater_produces_mult|
+		}
+	}
+	
+	triggered_country_modifier = {
+		origin_contract_eater_attunement = 10
+	}
+	
+	triggered_country_modifier = {
+		country_naval_cap_add = 100
+		mult = value:origin_contract_other_value|MODIFIER|origin_contract_eater_produces_mult|
+	}
+	
+	triggered_planet_modifier = {
+		planet_jobs_energy_produces_mult = 1
+		planet_engineers_engineering_research_produces_add = 5
+		mult = value:origin_contract_other_value|MODIFIER|origin_contract_eater_produces_mult|
+	}
+	
+	tags = { alloys }
+	
+	weight = {
+		weight = @specialist_job_weight
+	}
+	
+	inline_script = "jobs/automodding_priority_alloys"
+}
+
+origin_contract_instrument = {
+	inline_script = {
+		script = jobs/origin_contract/origin_contract_other
+		PATRON = instrument
+	}
+	
+	resources = {
+		category = planet_origin_contract_instrument
+		produces = {
+			trade = 80
+			mult = value:origin_contract_other_value|MODIFIER|origin_contract_instrument_produces_mult|
+		}
+		upkeep = {
+			consumer_goods = 10
+			mult = value:origin_contract_other_value|MODIFIER|origin_contract_instrument_produces_mult|
+		}
+	}
+	
+	triggered_country_modifier = {
+		origin_contract_instrument_attunement = 10
+	}
+	
+	triggered_planet_modifier = {
+		planet_amenities_mult = 1
+		planet_jobs_consumer_goods_produces_mult = 1
+		planet_physicists_physics_research_produces_add = 5
+		mult = value:origin_contract_other_value|MODIFIER|origin_contract_instrument_produces_mult|
+	}
+	
+	tags = { trade }
+	
+	weight = {
+		weight = @specialist_job_weight
+	}
+	
+	inline_script = "jobs/automodding_priority_trade"
+}

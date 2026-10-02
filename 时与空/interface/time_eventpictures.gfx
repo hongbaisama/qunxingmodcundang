@@ -1,0 +1,164 @@
+spriteTypes = {
+	spriteType = {
+		name = "GFX_pc_endless_time"
+		texturefile = "gfx/event_pictures/pc_endless_time.dds"
+		masking_texture = "gfx/interface/situation_log/event_mask.dds"
+		alwaystransparent = yes
+	}
+	spriteType = {
+		name = "GFX_pc_endless_time_nomask"
+		texturefile = "gfx/event_pictures/pc_endless_time.dds"
+		alwaystransparent = yes
+	}
+	spriteType = {
+		parent = "GFX_pc_endless_time_nomask"
+		name = "GFX_pc_endless_time_zoom_1"
+		upper_left = { x = 0 y = 0 }
+    	lower_right = { x = 450 y = 150 }
+	}
+	spriteType = {
+		parent = "GFX_pc_endless_time_nomask"
+		name = "GFX_pc_endless_time_zoom_2"
+		upper_left = { x = 117 y = 70 }
+		lower_right = { x = 227 y = 136 }
+	}
+	
+	spriteType = {
+		name = "GFX_time_donation"
+		texturefile = "gfx/event_pictures/time_donation.dds"
+		masking_texture = "gfx/interface/situation_log/event_mask.dds"
+		alwaystransparent = yes
+	}
+	spriteType = {
+		name = "GFX_time_donation_nomask"
+		texturefile = "gfx/event_pictures/time_donation.dds"
+		alwaystransparent = yes
+	}
+	spriteType = {
+		parent = "GFX_time_donation_nomask"
+		name = "GFX_time_donation_zoom_1"
+		upper_left = { x = 0 y = 0 }
+    	lower_right = { x = 450 y = 150 }
+	}
+	spriteType = {
+		parent = "GFX_time_donation_nomask"
+		name = "GFX_time_donation_zoom_2"
+		upper_left = { x = 117 y = 70 }
+		lower_right = { x = 227 y = 136 }
+	}
+	
+	spriteType = {
+		name = "GFX_time_vs_red_full"
+		texturefile = "gfx/event_pictures/time_vs_red_full.dds"
+		alwaystransparent = yes
+	}
+	spriteType = {
+		name = "GFX_time_vs_red_full_nomask"
+		texturefile = "gfx/event_pictures/time_vs_red_full.dds"
+		alwaystransparent = yes
+	}
+	spriteType = {
+		parent = "GFX_time_vs_red_full_nomask"
+		name = "GFX_time_vs_red_full_zoom_1"
+		upper_left = { x = 0 y = 0 }
+    	lower_right = { x = 450 y = 150 }
+	}
+	spriteType = {
+		parent = "GFX_time_vs_red_full_nomask"
+		name = "GFX_time_vs_red_full_zoom_2"
+		upper_left = { x = 117 y = 70 }
+		lower_right = { x = 227 y = 136 }
+	}
+	
+	spriteType = {
+		name = "GFX_time_vs_red"
+		texturefile = "gfx/event_pictures/time_vs_red.dds"
+		alwaystransparent = yes
+	}
+	spriteType = {
+		name = "GFX_time_vs_red_nomask"
+		texturefile = "gfx/event_pictures/time_vs_red.dds"
+		alwaystransparent = yes
+	}
+	spriteType = {
+		parent = "GFX_time_vs_red_nomask"
+		name = "GFX_time_vs_red_zoom_1"
+		upper_left = { x = 0 y = 0 }
+    	lower_right = { x = 450 y = 150 }
+	}
+	spriteType = {
+		parent = "GFX_time_vs_red_nomask"
+		name = "GFX_time_vs_red_zoom_2"
+		upper_left = { x = 117 y = 70 }
+		lower_right = { x = 227 y = 136 }
+	}
+	
+	spriteType = {
+		name = "GFX_time_vs_nature"
+		texturefile = "gfx/event_pictures/time_vs_nature.dds"
+		alwaystransparent = yes
+	}
+	spriteType = {
+		name = "GFX_time_vs_nature_nomask"
+		texturefile = "gfx/event_pictures/time_vs_nature.dds"
+		alwaystransparent = yes
+	}
+	spriteType = {
+		parent = "GFX_time_vs_nature_nomask"
+		name = "GFX_time_vs_nature_zoom_1"
+		upper_left = { x = 0 y = 0 }
+    	lower_right = { x = 450 y = 150 }
+	}
+	spriteType = {
+		parent = "GFX_time_vs_nature_nomask"
+		name = "GFX_time_vs_nature_zoom_2"
+		upper_left = { x = 117 y = 70 }
+		lower_right = { x = 227 y = 136 }
+	}
+	
+	spriteType = {
+		name = "GFX_time_vs_blue"
+		texturefile = "gfx/event_pictures/time_vs_blue.dds"
+		alwaystransparent = yes
+	}
+	spriteType = {
+		name = "GFX_time_vs_blue_nomask"
+		texturefile = "gfx/event_pictures/time_vs_blue.dds"
+		alwaystransparent = yes
+	}
+	spriteType = {
+		parent = "GFX_time_vs_blue_nomask"
+		name = "GFX_time_vs_blue_zoom_1"
+		upper_left = { x = 0 y = 0 }
+    	lower_right = { x = 450 y = 150 }
+	}
+	spriteType = {
+		parent = "GFX_time_vs_blue_nomask"
+		name = "GFX_time_vs_blue_zoom_2"
+		upper_left = { x = 117 y = 70 }
+		lower_right = { x = 227 y = 136 }
+	}
+	
+	spriteType = {
+		name = "GFX_time_vs_blue_full"
+		texturefile = "gfx/event_pictures/time_vs_blue_full.dds"
+		alwaystransparent = yes
+	}
+	spriteType = {
+		name = "GFX_time_vs_blue_full_nomask"
+		texturefile = "gfx/event_pictures/time_vs_blue_full.dds"
+		alwaystransparent = yes
+	}
+	spriteType = {
+		parent = "GFX_time_vs_blue_full_nomask"
+		name = "GFX_time_vs_blue_full_zoom_1"
+		upper_left = { x = 0 y = 0 }
+    	lower_right = { x = 450 y = 150 }
+	}
+	spriteType = {
+		parent = "GFX_time_vs_blue_full_nomask"
+		name = "GFX_time_vs_blue_full_zoom_2"
+		upper_left = { x = 117 y = 70 }
+		lower_right = { x = 227 y = 136 }
+	}
+}

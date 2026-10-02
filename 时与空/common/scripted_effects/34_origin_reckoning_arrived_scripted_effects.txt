@@ -1,0 +1,354 @@
+# 国家
+origin_reckoning_arrived_basic_starting_effect = {
+	save_global_event_target_as = origin_reckoning_arrived_country
+	
+	give_physics_tech_tier_1_effect_no_message = yes
+	give_physics_tech_tier_2_effect_no_message = yes
+	give_society_tech_tier_1_effect_no_message = yes
+	give_society_tech_tier_2_effect_no_message = yes
+	give_engineering_tech_tier_1_effect_no_message = yes
+	give_engineering_tech_tier_2_effect_no_message = yes
+	give_technology = { tech = "tech_psionic_theory" message = no }
+	give_technology = { tech = "tech_telepathy" message = no }
+	
+	add_tradition = tr_adaptability_adopt
+	add_tradition = tr_adaptability_recycling
+	add_tradition = tr_adaptability_survival_fittest
+	add_tradition = tr_adaptability_environmental_diversification
+	add_tradition = tr_adaptability_adaptive_ecology
+	add_tradition = tr_adaptability_appropriation
+	add_ascension_perk = ap_one_vision
+	
+	add_tradition = tr_harmony_adopt
+	add_tradition = tr_harmony_mind_and_body
+	add_tradition = tr_harmony_kinship
+	add_tradition = tr_harmony_the_greater_good
+	add_tradition = tr_harmony_harmonious_directives
+	add_tradition = tr_harmony_utopian_dream
+	add_ascension_perk = ap_mind_over_matter
+	
+	add_tradition = tr_psionics_shroud_adopt
+	add_tradition = tr_psionics_shroud_psi_corps
+	add_tradition = tr_psionics_shroud_great_awakening
+	add_tradition = tr_psionics_shroud_telekinesis
+	add_tradition = tr_psionics_shroud_clairvoyance
+	add_tradition = tr_psionics_shroud_psychometry
+	add_ascension_perk = ap_voidborn
+	
+	owner_main_species = {
+		set_species_homeworld = event_target:origin_reckoning_arrived_creatures_planet
+	}
+	capital_scope = {
+		solar_system = { save_event_target_as = homeworld_system_name }
+	}
+	event_target:origin_reckoning_arrived_creatures_planet = {
+		if = {
+			limit = {
+				NOT = { has_planet_flag = planet_earth }
+			}
+			set_name = NAME_Origin_Reckoning_Arrived_Creatures_Planet
+		}
+		solar_system = {
+			root = { set_visited = prev }
+			if = {
+				limit = {
+					NOT = { has_star_flag = sol_system }
+				}
+				set_name = event_target:homeworld_system_name
+				star = { set_name = event_target:homeworld_system_name }
+				every_system_planet = {
+					limit = {
+						is_primary_star = no
+						NOT = { is_same_value = event_target:origin_reckoning_arrived_creatures_planet }
+					}
+					set_name = NAME_Origin_Reckoning_Arrived_Creatures_Other_Planet
+				}
+			}
+		}
+	}
+	capital_scope = {
+		solar_system = {
+			set_name = NAME_Origin_Reckoning_Arrived_Starting_System
+			star = { set_name = NAME_Origin_Reckoning_Arrived_Starting_Star_A }
+			random_system_planet = {
+				limit = {
+					is_star = yes
+					is_primary_star = no
+				}
+				set_name = NAME_Origin_Reckoning_Arrived_Starting_Star_B
+			}
+		}
+		set_name = NAME_Origin_Reckoning_Arrived_Starting_Ship
+		fleet = { set_name = NAME_Origin_Reckoning_Arrived_Starting_Fleet }
+		ship = {
+			starbase = {
+				set_starbase_building = {
+					slot = 3
+					building = arkship_listening_post
+				}
+				set_starbase_building = {
+					slot = 4
+					building = arkship_afterburner
+				}
+			}
+		}
+		add_building = building_psi_corps
+		# 初始人口
+		every_owned_pop_group = {
+			limit = {
+				is_same_species = root.owner_main_species
+			}
+			kill_pop_group = {
+				pop_group = this
+				percentage = 0.5
+			}
+		}
+		# 初始人口取整
+		while = {
+			limit = {
+				check_variable_arithmetic = {
+					which = value:num_modulo_of_time_pop_amount_value|MODULO|10|
+					value > 0
+				}
+			}
+			if = {
+				limit = {
+					check_variable_arithmetic = {
+						which = value:num_modulo_of_time_pop_amount_value|MODULO|10|
+						value >= 8
+					}
+				}
+				create_pop_group = {
+					species = owner_main_species
+					size = 1
+				}
+			}
+			else = {
+				weighted_random_owned_pop_group = {
+					kill_pop_group = {
+						pop_group = this
+						amount = 1
+					}
+				}
+			}
+		}
+	}
+}
+
+# 国家
+origin_reckoning_arrived_psionic_starting_effect = {
+	breach_shroud = yes
+	set_country_flag = psionic_traditions_unlocked
+	set_patron_first_contact_state = { patron = end_of_the_cycle state = in_progress }
+	
+	set_patron_first_contact_state = { patron = end_of_the_cycle state = completed }
+	set_attunement = {
+		patron = end_of_the_cycle
+		value = @max_attunement
+	}
+	try_start_chain_aura_suppressors = yes
+	disable_shroud_patrons = yes
+	accept_covenant = end_of_the_cycle
+	give_tech_no_error_effect = { MESSAGE = no TECH = tech_psionic_aura }
+	give_tech_no_error_effect = { MESSAGE = no TECH = tech_aura_intensification }
+	accept_covenant = end_of_the_cycle
+	set_global_flag = end_of_the_cycle
+	set_global_flag = galactic_crisis_happened
+	set_timed_global_flag = {
+		flag = galactic_crisis_recently_fired
+		years = 12
+	}
+	set_country_flag = has_shroud_patron
+	set_country_flag = covenant_end_of_the_cycle
+	remove_country_flag = forging_our_own_path
+	refresh_psionic_aura_type = yes
+	set_ai_preferred_patron = end_of_the_cycle
+	
+	give_eotc_psionic_component_tech_insight = { TECH = tech_psionic_bombers }
+	give_eotc_psionic_component_tech_insight = { TECH = tech_psionic_lightning }
+	give_eotc_psionic_component_tech_insight = { TECH = tech_psionic_disruptor }
+	give_eotc_psionic_component_tech_insight = { TECH = tech_zro_launcher }
+	give_eotc_psionic_component_tech_insight = { TECH = tech_psionic_shield }
+	give_eotc_psionic_component_tech_insight = { TECH = tech_precognition_interface }
+	give_eotc_psionic_component_tech_insight = { TECH = tech_psi_jump_drive_1 }
+	
+	set_country_flag = unlock_accord_creation
+	set_country_flag = reached_eotc_situation_stage2
+	set_country_flag = reached_eotc_situation_stage3
+	save_event_target_as = the_reckoning_observer_target
+	begin_event_chain = {
+		event_chain = the_reckoning_chain
+		target = this
+	}
+	every_playable_country = {
+		limit = {
+			NOT = { is_same_value = root }
+		}
+		if = {
+			limit = {
+				NOR = {
+					has_event_chain = the_reckoning_observer_chain
+					has_event_chain = multiple_reckoning_observer_chain
+				}
+			}
+			begin_event_chain = {
+				event_chain = the_reckoning_observer_chain
+				target = this
+			}
+		}
+		else_if = {
+			limit = {
+				has_event_chain = the_reckoning_observer_chain
+			}
+			end_event_chain = the_reckoning_observer_chain
+			begin_event_chain = {
+				event_chain = multiple_reckoning_observer_chain
+				target = this
+			}
+		}
+	}
+}
+
+# 国家（root也是国家）
+origin_reckoning_arrived_reckoning_starting_effect = {
+	set_global_flag = end_of_the_cycle_complete
+	set_country_flag = end_of_the_cycle_reckoning
+	remove_modifier = covenant_end_of_the_cycle
+	if = {
+		limit = { NOT = { exists = event_target:the_reckoning_country } }
+		create_country = {
+			name = "NAME_Creatures_of_the_Shroud"
+			type = the_reckoning
+			flag = {
+				icon = {
+					category = "special"
+					file = "the_shroud.dds"
+				}
+				background = {
+					category = "backgrounds"
+					file = "00_solid.dds"
+				}
+				colors = {
+					"dark_purple"
+					"black"
+					"null"
+					"null"
+				}
+			}
+		}
+		last_created_country = {
+			establish_communications_no_message = root
+			save_global_event_target_as = the_reckoning_country
+		}
+	}
+	create_fleet = {
+		name = "NAME_The_End"
+		settings = {
+			spawn_debris = no
+			ai_ignore_strength = yes
+			is_boss = yes
+		}
+		effect = {
+			save_global_event_target_as = the_end_of_the_cycle@root
+			save_global_event_target_as = reckoning_arrived_creatures
+			set_name = {
+				key = "NAME_Absorbed_Species"
+				variable_string = "\\[Root.GetSpeciesNamePlural\\]"
+			}
+			set_owner = event_target:the_reckoning_country
+			create_ship = {
+				name = "NAME_Reckoning"
+				design = "NAME_Warped_Consciousness"
+			}
+			set_location = event_target:origin_reckoning_arrived_creatures_planet
+			set_fleet_stance = aggressive
+			set_aggro_range_measure_from = return_point
+			set_aggro_range = 3000
+			set_variable = {
+				which = next_intensification_cap
+				value = @reckoning_intensification_devoured_pops_1
+			}
+			set_variable = {
+				which = consumed_worlds
+				value = 0
+			}
+			set_variable = {
+				which = consumed_pops
+				value = 10000
+			}
+			set_variable = {
+				which = destroyed_ships
+				value = 0
+			}
+			set_variable = {
+				which = end_power
+				value = 10000
+			}
+			add_modifier = {
+				modifier = reckoning_arrived_creatures_modifier
+				days = -1
+			}
+			fleet_event = { id = origin_reckoning_arrived.100 }
+		}
+	}
+	event_target:origin_reckoning_arrived_creatures_planet = {
+		reckoning_consume_world = {
+			OWNER = root
+		}
+	}
+	every_country = {
+		limit = {
+			NOT = { is_same_value = root }
+			is_country_type = default
+		}
+		add_opinion_modifier = {
+			modifier = opinion_doomed_us_all
+			who = root
+		}
+		set_country_flag = end_of_the_cycle_reckoning
+	}
+	every_country = {
+		limit = { has_event_chain = the_reckoning_chain }
+		country_event = {
+			id = shroud.11230
+		}
+	}
+	
+	add_modifier = {
+		modifier = reckoning_arrived_modifier
+		days = -1
+	}
+}
+
+# 国家
+origin_reckoning_arrived_wonder_country_effect = {
+	if = {
+		limit = {
+			has_country_flag = wonder_country_99
+		}
+		home_planet = {
+			set_name = PRESCRIPTED_planet_name_wonder_country_99
+			set_carrier_flag = wonder_country_99_planet
+			add_modifier = {
+				modifier = time_wonder_modifier
+				days = -1
+			}
+		}
+	}
+}
+
+# 国家
+origin_reckoning_arrived_wonder_country_changed_effect = {
+	if = {
+		limit = {
+			has_country_flag = wonder_country_99
+		}
+		capital_scope = {
+			set_carrier_flag = wonder_country_99_planet
+			add_modifier = {
+				modifier = time_wonder_modifier
+				days = -1
+			}
+		}
+	}
+}

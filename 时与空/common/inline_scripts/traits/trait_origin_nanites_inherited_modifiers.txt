@@ -1,0 +1,36 @@
+triggered_pop_group_modifier = {
+	key = physicist_jobs_bonus_workforce_mult
+	pop_nanites_trader_bonus_workforce_mult = 0.5
+	pop_nanites_logistics_drone_bonus_workforce_mult = 0.5
+	mult = value:scripted_modifier_add|MODIFIER|pop_physicist_bonus_workforce_mult|
+}
+
+triggered_pop_group_modifier = {
+	key = biologist_jobs_bonus_workforce_mult
+	pop_nanites_trader_bonus_workforce_mult = 0.5
+	pop_nanites_logistics_drone_bonus_workforce_mult = 0.5
+	mult = value:scripted_modifier_add|MODIFIER|pop_biologist_bonus_workforce_mult|
+}
+
+triggered_pop_group_modifier = {
+	key = engineer_jobs_bonus_workforce_mult
+	pop_nanites_trader_bonus_workforce_mult = 0.5
+	pop_nanites_logistics_drone_bonus_workforce_mult = 0.5
+	mult = value:scripted_modifier_add|MODIFIER|pop_engineer_bonus_workforce_mult|
+}
+
+triggered_pop_group_modifier = {
+	key = trader_jobs_bonus_workforce_mult
+	pop_nanites_trader_bonus_workforce_mult = 0.5
+	pop_nanites_logistics_drone_bonus_workforce_mult = 0.5
+	mult = value:scripted_modifier_add|MODIFIER|pop_trader_bonus_workforce_mult|
+}
+
+triggered_pop_group_modifier = {
+	potential = {
+		nanites_logistics_drone_is_civic_origin_nanites_logistics_drone_trigger = yes
+	}
+	key = roboticist_jobs_bonus_workforce_mult
+	pop_nanites_logistics_drone_bonus_workforce_mult = 0.5
+	mult = value:scripted_modifier_add|MODIFIER|pop_replicator_bonus_workforce_mult|
+}

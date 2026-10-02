@@ -1,0 +1,2183 @@
+decision_planet_pass_black_hole = {
+	owned_planets_only = yes
+	sound = event_alien_signal
+	icon = decision_time
+	
+	prerequisites = {
+	}
+	
+	enactment_time = 30
+	resources = {
+		category = decisions
+		cost = {
+			sr_dark_matter = 100
+		}
+	}
+	
+	potential = {
+		if = {
+			limit = {
+				exists = owner
+				owner = { has_technology = tech_end_trait }
+			}
+			exists = leader
+			leader = {
+				has_pass_black_hole = no
+				OR = {
+					has_any_subclass = yes
+					is_dimension_traveler = yes
+				}
+			}
+		}
+		else = {
+			always = no
+		}
+	}
+	
+	allow = {
+		custom_tooltip = {
+			fail_text = "requires_black_hole_system"
+			solar_system = {
+				is_time_black_hole_star_class = yes
+			}
+		}
+	}
+	
+	effect = {
+		leader = { leader_pass_black_hole = yes }
+	}
+	
+	ai_weight = {
+		weight = 10
+	}
+}
+
+decision_origin_pc_hive = {
+	important = yes
+	owned_planets_only = yes
+	sound = pc_infested
+	
+	prerequisites = {
+	}
+	
+	enactment_time = 900
+	resources = {
+		category = decisions
+		cost = {
+			food = 2500
+		}
+	}
+	
+	potential = {
+		if = {
+			limit = {
+				exists = owner
+				owner = {
+					has_origin = origin_pc_hive
+					has_country_flag = unlock_decision_origin_pc_hive
+				}
+			}
+			owner = {
+				any_owned_colony = { has_deposit = d_pc_hive }
+			}
+			NOR = {
+				has_deposit = d_pc_hive_blocker
+				has_deposit = d_dead_pc_hive
+				has_deposit = d_dead_pc_hive_other
+				has_deposit = d_pc_hive
+				has_deposit = d_pc_hive_other
+			}
+		}
+		else = {
+			always = no
+		}
+	}
+	
+	allow = {
+		is_planet_class = pc_hive
+	}
+	
+	abort_trigger = {
+		NAND = {
+			is_planet_class = pc_hive
+			exists = owner
+			owner = {
+				any_owned_colony = { has_deposit = d_pc_hive }
+			}
+		}
+	}
+	
+	effect = {
+		add_deposit = d_pc_hive_other
+	}
+	
+	ai_weight = {
+		weight = 0
+	}
+}
+
+decision_search_pc_time_deposits = {
+	owned_planets_only = yes
+	sound = event_alien_signal
+	
+	prerequisites = {
+	}
+	
+	enactment_time = 720
+	resources = {
+		category = decisions
+		cost = {
+			energy = 2000
+			minerals = 2000
+			food = 2000
+			consumer_goods = 1000
+			alloys = 1000
+			sr_dark_matter = 100
+			astral_threads = 50
+			influence = 50
+		}
+	}
+	
+	potential = {
+		if = {
+			limit = {
+				OR = {
+					has_deposit = d_time
+					has_deposit = d_endless_time
+					has_deposit = d_brief
+				}
+			}
+			exists = owner
+			owner = { has_origin_time = yes }
+		}
+		else = {
+			always = no
+		}
+	}
+	
+	allow = {
+		if = {
+			limit = {
+				OR = {
+					has_deposit = d_time
+					has_deposit = d_endless_time
+				}
+			}
+			# 获得中央奇点时奇点探索局势已经结束，正常情况下无法再通过清理引力漩涡障碍来获得引力异常障碍
+			NOT = { has_deposit = d_time_blocker_1 }
+		}
+		else = {
+			NOR = {
+				has_deposit = d_time_blocker_0
+				has_deposit = d_time_blocker_1
+			}
+		}
+		custom_tooltip = {
+			fail_text = reached_pc_time_deposits_limit
+			if = {
+				limit = {
+					owner = { has_tradition = tr_origin_time_decisions }
+				}
+				OR = {
+					count_deposits = {
+						type = d_time_energy
+						count < @pc_time_deposits_limit_2
+					}
+					count_deposits = {
+						type = d_time_minerals
+						count < @pc_time_deposits_limit_2
+					}
+					count_deposits = {
+						type = d_time_food
+						count < @pc_time_deposits_limit_2
+					}
+					count_deposits = {
+						type = d_time_alloys
+						count < @pc_time_deposits_limit_2
+					}
+					count_deposits = {
+						type = d_time_consumer_goods
+						count < @pc_time_deposits_limit_2
+					}
+					count_deposits = {
+						type = d_time_physics_research
+						count < @pc_time_deposits_limit_2
+					}
+					count_deposits = {
+						type = d_time_society_research
+						count < @pc_time_deposits_limit_2
+					}
+					count_deposits = {
+						type = d_time_engineering_research
+						count < @pc_time_deposits_limit_2
+					}
+					count_deposits = {
+						type = d_time_unity
+						count < @pc_time_deposits_limit_2
+					}
+				}
+			}
+			else = {
+				OR = {
+					count_deposits = {
+						type = d_time_energy
+						count < @pc_time_deposits_limit_1
+					}
+					count_deposits = {
+						type = d_time_minerals
+						count < @pc_time_deposits_limit_1
+					}
+					count_deposits = {
+						type = d_time_food
+						count < @pc_time_deposits_limit_1
+					}
+					count_deposits = {
+						type = d_time_alloys
+						count < @pc_time_deposits_limit_1
+					}
+					count_deposits = {
+						type = d_time_consumer_goods
+						count < @pc_time_deposits_limit_1
+					}
+					count_deposits = {
+						type = d_time_physics_research
+						count < @pc_time_deposits_limit_1
+					}
+					count_deposits = {
+						type = d_time_society_research
+						count < @pc_time_deposits_limit_1
+					}
+					count_deposits = {
+						type = d_time_engineering_research
+						count < @pc_time_deposits_limit_1
+					}
+					count_deposits = {
+						type = d_time_unity
+						count < @pc_time_deposits_limit_1
+					}
+				}
+			}
+		}
+		owner = { has_tradition = tr_origin_time_adopt }
+	}
+	
+	effect = {
+		custom_tooltip = decision_search_pc_time_deposits_effect
+		if = {
+			limit = {
+				owner = { has_tradition = tr_origin_time_decisions }
+			}
+			custom_tooltip = decision_search_pc_time_deposits_limit_tooltip_2
+		}
+		else = {
+			custom_tooltip = decision_search_pc_time_deposits_limit_tooltip_1
+		}
+		hidden_effect = {
+			set_variable = {
+				which = search_pc_time_deposits_variable
+				value = 0
+			}
+			if = {
+				limit = {
+					owner = { has_tradition = tr_origin_time_decisions }
+				}
+				set_variable_to_random_value = {
+					which = search_pc_time_deposits_variable
+					min = 2
+					max = 3
+					rounded = yes
+				}
+			}
+			else = {
+				set_variable_to_random_value = {
+					which = search_pc_time_deposits_variable
+					min = 1
+					max = 2
+					rounded = yes
+				}
+			}
+			while = {
+				count = search_pc_time_deposits_variable
+				search_pc_time_deposits = yes
+			}
+			clear_variable = search_pc_time_deposits_variable
+			# 自动继续
+			select_decision = {
+				name = decision_search_pc_time_deposits
+			}
+		}
+	}
+	
+	ai_weight = {
+		weight = 0
+	}
+}
+
+decision_time = {
+	important = yes
+	owned_planets_only = yes
+	sound = event_activating_unknown_technology
+	
+	prerequisites = {
+	}
+	
+	enactment_time = 3600
+	resources = {
+		category = decisions
+		cost = {
+			energy = 10000
+			minerals = 10000
+			food = 10000
+			consumer_goods = 5000
+			alloys = 5000
+			sr_dark_matter = 500
+			astral_threads = 250
+			influence = 250
+		}
+	}
+	
+	potential = {
+		if = {
+			limit = {
+				exists = owner
+				owner = {
+					has_origin_time = yes
+					has_tradition = tr_origin_time_finish
+					NOT = { has_country_flag = decision_time_finished }
+				}
+			}
+			is_planet_class = pc_time
+			has_carrier_flag = time_home_planet_of@owner
+			NOT = { has_modifier = timesingularity }
+		}
+		else = {
+			always = no
+		}
+	}
+	
+	allow = {
+		has_fully_upgraded_capital = yes
+		num_uncleared_blockers < 1
+		free_district_slots < 1
+		if = {
+			limit = {
+				owner = { has_origin_time_ruler = yes }
+			}
+			if = {
+				limit = {
+					owner = { is_auth_time_democratic = yes }
+				}
+				event_target:origin_time_ruler = { is_councilor = yes }
+			}
+			else = {
+				event_target:origin_time_ruler = { is_ruler = yes }
+			}
+		}
+	}
+	
+	abort_trigger = {
+		NAND = {
+			is_planet_class = pc_time
+			has_carrier_flag = time_home_planet_of@owner
+			NOT = { has_modifier = timesingularity }
+		}
+	}
+	
+	effect = {
+		custom_tooltip = decision_time_effect
+		hidden_effect = {
+			carrier_event = { id = time.100 }
+		}
+	}
+	
+	ai_weight = {
+		weight = 0
+	}
+}
+
+decision_time_dimensional_horror = {
+	important = yes
+	owned_planets_only = yes
+	sound = event_activating_unknown_technology
+	icon = decision_time
+	
+	prerequisites = {
+	}
+	
+	enactment_time = 0
+	resources = {
+		category = decisions
+		cost = {
+			sr_dark_matter = 1000
+			astral_threads = 500
+		}
+	}
+	
+	potential = {
+		if = {
+			limit = {
+				exists = event_target:time_dimensional_horror_planet
+			}
+			if = {
+				limit = {
+					NOT = { exists = event_target:time_dimensional_horror_fleet }
+				}
+				is_same_value = event_target:time_dimensional_horror_planet
+				owner = { is_same_value = event_target:time_dimensional_horror_owner }
+			}
+			else = {
+				always = no
+			}
+		}
+		else = {
+			always = no
+		}
+	}
+	
+	allow = {
+	}
+	
+	effect = {
+		custom_tooltip = decision_time_dimensional_horror_effect
+		hidden_effect = {
+			carrier_event = { id = time.200 }
+		}
+	}
+	
+	ai_weight = {
+		weight = 0
+	}
+}
+
+decision_clear_time_haze = {
+	important = yes
+	owned_planets_only = yes
+	sound = event_alien_signal
+	icon = decision_time_trophy
+	
+	prerequisites = {
+	}
+	
+	enactment_time = 900
+	resources = {
+		category = decisions
+		cost = {
+			sr_dark_matter = 250
+		}
+	}
+	
+	potential = {
+		has_modifier = time_haze
+		exists = owner
+		owner = { has_origin_time = yes }
+	}
+	
+	allow = {
+		owner = { has_technology = tech_time_blocker_1 }
+	}
+	
+	abort_trigger = {
+		NOT = { has_modifier = time_haze }
+	}
+	
+	effect = {
+		remove_modifier = time_haze
+	}
+	
+	ai_weight = {
+		weight = 100
+	}
+}
+
+decision_improve_time_haze = {
+	important = yes
+	owned_planets_only = yes
+	sound = event_alien_signal
+	icon = decision_time_trophy
+	
+	prerequisites = {
+	}
+	
+	enactment_time = 1800
+	resources = {
+		category = decisions
+		cost = {
+			sr_dark_matter = 500
+		}
+	}
+	
+	potential = {
+		has_modifier = time_haze
+		exists = owner
+		owner = { has_origin_time = yes }
+	}
+	
+	allow = {
+		owner = { has_technology = tech_time_blocker_2 }
+	}
+	
+	abort_trigger = {
+		NOT = { has_modifier = time_haze }
+	}
+	
+	effect = {
+		custom_tooltip = decision_improve_time_haze_effect
+		hidden_effect = {
+			if = {
+				limit = {
+					has_modifier = time_haze
+				}
+				change_pc = pc_time
+				set_carrier_flag = colony_event
+				set_carrier_flag = no_terraform_event
+				set_carrier_flag = cannot_be_hit_by_aow_starfall_spear
+				remove_modifier = time_haze
+				add_modifier = { modifier = second_time_homeworld }
+				remove_all_districts = yes
+				add_district = district_time
+				add_building = building_capital
+				carrier_event = { id = time.21 }
+				carrier_event = { id = time.29 }
+				every_owned_pop_group = {
+					limit = {
+						is_origin_time_species = no
+					}
+					kill_all_pop = yes
+				}
+				every_owned_pop_group = {
+					limit = {
+						is_origin_time_species = yes
+					}
+					scale_pop_amount = 0.2
+				}
+			}
+		}
+	}
+	
+	ai_weight = {
+		weight = 0
+	}
+}
+
+decision_research_time_haze = {
+	important = yes
+	owned_planets_only = yes
+	sound = event_alien_signal
+	icon = decision_time_trophy
+	
+	prerequisites = {
+	}
+	
+	enactment_time = 3600
+	resources = {
+		category = decisions
+		cost = {
+			sr_dark_matter = 1000
+		}
+	}
+	
+	potential = {
+		has_modifier = time_haze
+		exists = owner
+		owner = { has_origin_time = yes }
+	}
+	
+	allow = {
+		owner = { has_technology = tech_time_blocker_3 }
+	}
+	
+	abort_trigger = {
+		NOT = { has_modifier = time_haze }
+	}
+	
+	effect = {
+		custom_tooltip = decision_research_time_haze_effect
+		hidden_effect = {
+			if = {
+				limit = {
+					has_modifier = time_haze
+				}
+				remove_modifier = time_haze
+				add_modifier = { modifier = time_wormhole }
+				save_global_event_target_as = time_wormhole_planet
+				planet = {
+					set_planet_entity = {
+						picture = pc_black_hole
+					}
+				}
+				star = {
+					add_modifier = { modifier = time_wormhole_core }
+					save_global_event_target_as = time_wormhole_core_planet
+				}
+				carrier_event = { id = time.29 }
+			}
+		}
+	}
+	
+	ai_weight = {
+		weight = 0
+	}
+}
+
+decision_time_trophy_target = {
+	owned_planets_only = yes
+	sound = event_alien_signal
+	
+	prerequisites = {
+	}
+	
+	enactment_time = 0
+	resources = {
+		category = decisions
+		cost = {
+			influence = 50
+		}
+	}
+	
+	potential = {
+		exists = owner
+		owner = {
+			has_technology = tech_time_dimension # 拥有科技
+			is_ai = no # AI禁用
+		}
+		if = {
+			limit = {
+				exists = event_target:time_trophy_target@owner
+			}
+			NOT = { is_same_value = event_target:time_trophy_target@owner } # 不是目标
+		}
+	}
+	
+	effect = {
+		custom_tooltip = decision_time_trophy_target_effect
+		hidden_effect = {
+			save_global_event_target_as = time_trophy_target@owner
+		}
+	}
+	
+	ai_weight = {
+		weight = 0
+	}
+}
+
+decision_time_trophy = {
+	owned_planets_only = yes
+	sound = event_mystic_reveal
+	
+	prerequisites = {
+	}
+	
+	enactment_time = 360
+	resources = {
+		category = decisions
+		cost = {
+			sr_dark_matter = 100
+		}
+	}
+	
+	potential = {
+		if = {
+			limit = {
+				exists = owner
+				owner = {
+					has_technology = tech_time_dimension # 拥有科技
+					is_ai = no # AI禁用
+				}
+			}
+			if = {
+				limit = {
+					exists = event_target:time_trophy_target@owner # 存在目标
+					event_target:time_trophy_target@owner = { is_owned_by = root.owner } # 拥有目标
+					NOT = { is_same_value = event_target:time_trophy_target@owner } # 不是目标
+				}
+				OR = {
+					decision_time_trophy_trigger = { TROPHY = ether_trophy }
+					decision_time_trophy_trigger = { TROPHY = shard_trophy }
+					decision_time_trophy_trigger = { TROPHY = dread_trophy }
+					decision_time_trophy_trigger = { TROPHY = burnt_tiyanki_trophy }
+					decision_time_trophy_trigger = { TROPHY = tiyanki_trophy }
+					decision_time_trophy_trigger = { TROPHY = sky_dragon_trophy }
+					decision_time_trophy_trigger = { TROPHY = scavenger_trophy }
+					decision_time_trophy_trigger = { TROPHY = wraith_trophy }
+					decision_time_trophy_trigger = { TROPHY = fortress_trophy }
+					decision_time_trophy_trigger = { TROPHY = voidspawn_trophy }
+					decision_time_trophy_trigger = { TROPHY = stellar_devourer_trophy }
+					decision_time_trophy_horror_trigger = yes
+				}
+			}
+			else = {
+				always = no
+			}
+		}
+		else = {
+			always = no
+		}
+	}
+	
+	effect = {
+		if = {
+			limit = {
+				decision_time_trophy_trigger = { TROPHY = ether_trophy }
+			}
+			remove_modifier = ether_trophy
+			event_target:time_trophy_target@owner = {
+				add_modifier = { modifier = ether_trophy }
+			}
+		}
+		if = {
+			limit = {
+				decision_time_trophy_trigger = { TROPHY = shard_trophy }
+			}
+			remove_modifier = shard_trophy
+			event_target:time_trophy_target@owner = {
+				add_modifier = { modifier = shard_trophy }
+			}
+		}
+		if = {
+			limit = {
+				decision_time_trophy_trigger = { TROPHY = dread_trophy }
+			}
+			remove_modifier = dread_trophy
+			event_target:time_trophy_target@owner = {
+				add_modifier = { modifier = dread_trophy }
+			}
+		}
+		if = {
+			limit = {
+				decision_time_trophy_trigger = { TROPHY = burnt_tiyanki_trophy }
+			}
+			remove_modifier = burnt_tiyanki_trophy
+			event_target:time_trophy_target@owner = {
+				add_modifier = { modifier = burnt_tiyanki_trophy }
+			}
+		}
+		if = {
+			limit = {
+				decision_time_trophy_trigger = { TROPHY = tiyanki_trophy }
+			}
+			remove_modifier = tiyanki_trophy
+			event_target:time_trophy_target@owner = {
+				add_modifier = { modifier = tiyanki_trophy }
+			}
+		}
+		if = {
+			limit = {
+				decision_time_trophy_trigger = { TROPHY = sky_dragon_trophy }
+			}
+			remove_modifier = sky_dragon_trophy
+			event_target:time_trophy_target@owner = {
+				add_modifier = { modifier = sky_dragon_trophy }
+			}
+		}
+		if = {
+			limit = {
+				decision_time_trophy_trigger = { TROPHY = scavenger_trophy }
+			}
+			remove_modifier = scavenger_trophy
+			event_target:time_trophy_target@owner = {
+				add_modifier = { modifier = scavenger_trophy }
+			}
+		}
+		if = {
+			limit = {
+				decision_time_trophy_trigger = { TROPHY = wraith_trophy }
+			}
+			remove_modifier = wraith_trophy
+			event_target:time_trophy_target@owner = {
+				add_modifier = { modifier = wraith_trophy }
+			}
+		}
+		if = {
+			limit = {
+				decision_time_trophy_trigger = { TROPHY = fortress_trophy }
+			}
+			remove_modifier = fortress_trophy
+			event_target:time_trophy_target@owner = {
+				add_modifier = { modifier = fortress_trophy }
+			}
+		}
+		if = {
+			limit = {
+				decision_time_trophy_trigger = { TROPHY = voidspawn_trophy }
+			}
+			remove_modifier = voidspawn_trophy
+			event_target:time_trophy_target@owner = {
+				add_modifier = { modifier = voidspawn_trophy }
+			}
+		}
+		if = {
+			limit = {
+				decision_time_trophy_trigger = { TROPHY = stellar_devourer_trophy }
+			}
+			remove_modifier = stellar_devourer_trophy
+			event_target:time_trophy_target@owner = {
+				add_modifier = { modifier = stellar_devourer_trophy }
+			}
+		}
+		if = {
+			limit = {
+				decision_time_trophy_horror_trigger = yes
+			}
+			remove_modifier = horror_stabilized
+			event_target:time_trophy_target@owner = {
+				add_modifier = { modifier = horror_stabilized }
+			}
+		}
+	}
+	
+	ai_weight = {
+		weight = 0
+	}
+}
+
+decision_gas_colony_arcology = {
+	important = yes
+	owned_planets_only = yes
+	icon = decision_arcology_project
+	
+	prerequisites = {
+	}
+	
+	enactment_time = 3600
+	resources = {
+		category = decisions
+		cost = {
+			influence = 200
+			volatile_motes = 2000
+			rare_crystals = 2000
+			exotic_gases = 2000
+		}
+	}
+	
+	potential = {
+		if = {
+			limit = {
+				is_planet_class = pc_gas_colony
+			}
+			NOR = {
+				has_deposit = d_gas_colony_arcology
+				has_deposit = d_gas_colony_hive
+			}
+			exists = owner
+			owner = {
+				has_origin = origin_gas_colony
+				is_gestalt = no
+				has_ascension_perk = ap_arcology_project
+			}
+		}
+		else = {
+			always = no
+		}
+	}
+	
+	allow = {
+		free_district_slots < 1
+		num_uncleared_blockers < 1
+	}
+	
+	effect = {
+		tooltip = { add_deposit = d_gas_colony_arcology }
+		hidden_effect = {
+			add_time_special_deposit_keep_on_terraform = { DEPOSIT = d_gas_colony_arcology }
+			planet = {
+				set_planet_entity = {
+					picture = pc_gas_colony_arcology
+				}
+			}
+			carrier_event = { id = gas.50 }
+			if = {
+				limit = {
+					OR = {
+						is_active_resolution = "resolution_ecology_environmental_control_board"
+						is_active_resolution = "resolution_ecology_paradise_initiative"
+					}
+				}
+				owner = {
+					set_timed_country_flag = { flag = resolution_breached_terraformed days = 3600 }
+				}
+			}
+		}
+	}
+	
+	ai_weight = {
+		weight = 1000
+	}
+}
+
+decision_gas_colony_hive = {
+	important = yes
+	owned_planets_only = yes
+	icon = decision_arcology_project
+	
+	prerequisites = {
+	}
+	
+	enactment_time = 3600
+	resources = {
+		category = decisions
+		cost = {
+			influence = 200
+			volatile_motes = 2000
+			rare_crystals = 2000
+			exotic_gases = 2000
+		}
+	}
+	
+	potential = {
+		if = {
+			limit = {
+				is_planet_class = pc_gas_colony
+			}
+			NOR = {
+				has_deposit = d_gas_colony_arcology
+				has_deposit = d_gas_colony_hive
+			}
+			exists = owner
+			owner = {
+				has_origin = origin_gas_colony
+				is_gestalt = yes
+				has_ascension_perk = ap_hive_worlds
+			}
+		}
+		else = {
+			always = no
+		}
+	}
+	
+	allow = {
+		free_district_slots < 1
+		num_uncleared_blockers < 1
+	}
+	
+	effect = {
+		tooltip = { add_deposit = d_gas_colony_hive }
+		hidden_effect = {
+			add_time_special_deposit_keep_on_terraform = { DEPOSIT = d_gas_colony_hive }
+			planet = {
+				set_planet_entity = {
+					picture = pc_gas_colony_hive
+				}
+			}
+			carrier_event = { id = gas.51 }
+			if = {
+				limit = {
+					OR = {
+						is_active_resolution = "resolution_ecology_environmental_control_board"
+						is_active_resolution = "resolution_ecology_paradise_initiative"
+					}
+				}
+				owner = {
+					set_timed_country_flag = { flag = resolution_breached_terraformed days = 3600 }
+				}
+			}
+		}
+	}
+	
+	ai_weight = {
+		weight = 1000
+	}
+}
+
+decision_psionic_1 = {
+	important = yes
+	owned_planets_only = yes
+	sound = event_mystic_reveal
+	icon = decision_consecrated_worlds
+	
+	prerequisites = {
+	}
+	
+	enactment_time = 360
+	resources = {
+		category = decisions
+		cost = {
+			sr_zro = 500
+		}
+	}
+	
+	potential = {
+		if = {
+			limit = {
+				is_planet_class = pc_psionic
+			}
+			exists = owner
+			owner = {
+				has_origin = origin_psionic
+				has_country_flag = unlock_decision_psionic_1
+			}
+			NOT = { has_modifier = psionic_origin }
+			NOT = { has_modifier = best_psionic }
+			NOT = { has_modifier = good_psionic }
+		}
+		else = {
+			always = no
+		}
+	}
+	
+	allow = {
+		custom_tooltip = {
+			fail_text = psionic_requirements_1
+			OR = {
+				has_modifier = normal_psionic
+				has_modifier = bad_psionic
+			}
+		}
+	}
+	
+	abort_trigger = {
+		NAND = {
+			is_planet_class = pc_psionic
+			OR = {
+				has_modifier = normal_psionic
+				has_modifier = bad_psionic
+			}
+		}
+	}
+	
+	effect = {
+		custom_tooltip = decision_psionic_1_effect
+		hidden_effect = {
+			carrier_event = { id = psionic.200 }
+		}
+	}
+	
+	ai_weight = {
+		weight = 500
+	}
+}
+
+decision_psionic_2 = {
+	important = yes
+	owned_planets_only = yes
+	sound = event_mystic_reveal
+	icon = decision_consecrated_worlds
+	
+	prerequisites = {
+	}
+	
+	enactment_time = 720
+	resources = {
+		category = decisions
+		cost = {
+			sr_zro = 1000
+		}
+	}
+	
+	potential = {
+		if = {
+			limit = {
+				is_planet_class = pc_psionic
+				has_modifier = worst_psionic
+				NOT = { has_carrier_flag = decision_psionic_2_finished }
+			}
+			exists = owner
+			owner = {
+				has_origin = origin_psionic
+				has_country_flag = unlock_decision_psionic_2
+			}
+		}
+		else = {
+			always = no
+		}
+	}
+	
+	allow = {
+		custom_tooltip = {
+			fail_text = psionic_requirements_2
+			NOT = { has_carrier_flag = psionic_disaster }
+		}
+	}
+	
+	abort_trigger = {
+		NAND = {
+			is_planet_class = pc_psionic
+			has_modifier = worst_psionic
+			NOT = { has_carrier_flag = psionic_disaster }
+		}
+	}
+	
+	effect = {
+		custom_tooltip = decision_psionic_2_effect
+		hidden_effect = {
+			carrier_event = { id = psionic.300 }
+		}
+	}
+	
+	ai_weight = {
+		weight = 500
+	}
+}
+
+decision_psionic_3 = {
+	important = yes
+	owned_planets_only = yes
+	sound = event_mystic_reveal
+	icon = decision_consecrated_worlds
+	
+	prerequisites = {
+	}
+	
+	enactment_time = 1800
+	resources = {
+		category = decisions
+		cost = {
+			sr_zro = 1000
+		}
+	}
+	
+	potential = {
+		if = {
+			limit = {
+				is_planet_class = pc_psionic
+				has_modifier = psionic_origin
+			}
+			exists = owner
+			owner = {
+				has_origin = origin_psionic
+				OR = {
+					has_tradition = tr_psionics_finish
+					has_tradition = tr_psionics_shroud_finish
+				}
+			}
+		}
+		else = {
+			always = no
+		}
+	}
+	
+	allow = {
+		owner = {
+			has_ascension_perk = ap_consecrated_worlds
+		}
+	}
+	
+	abort_trigger = {
+		NAND = {
+			is_planet_class = pc_psionic
+			has_modifier = psionic_origin
+		}
+	}
+	
+	effect = {
+		custom_tooltip = decision_psionic_3_effect
+		hidden_effect = {
+			carrier_event = { id = psionic.50 }
+		}
+	}
+	
+	ai_weight = {
+		weight = 1000
+	}
+}
+
+decision_nanites_nanotech_swarm_consume_world = {
+	important = yes
+	owned_planets_only = yes
+	sound = event_structural_collapse
+	icon = decision_tidal_lock_planet
+	
+	enactment_time = 1800
+	resources = {
+		category = decisions
+		cost = {
+			nanites = 500
+		}
+	}
+	
+	potential = {
+		if = {
+			limit = {
+				is_planet_class = pc_nanites
+			}
+			has_nanites_nanotech_swarm_consume_world = no
+			exists = owner
+			owner = {
+				has_origin = origin_nanites
+				has_tradition = tr_nanotech_3
+			}
+		}
+		else = {
+			always = no
+		}
+	}
+	
+	abort_trigger = {
+		NOT = { is_planet_class = pc_nanites }
+	}
+	
+	effect = {
+		if = {
+			limit = {
+				has_deposit = d_nanites_old_factory
+			}
+			add_modifier = {
+				modifier = nanites_nanotech_swarm_consume_world_special
+				days = -1
+			}
+		}
+		else = {
+			add_modifier = {
+				modifier = nanites_nanotech_swarm_consume_world
+				days = -1
+			}
+		}
+	}
+	
+	ai_weight = {
+		weight = 1000
+	}
+}
+
+decision_nanites_fleet = {
+	owned_planets_only = yes
+	sound = event_construction
+	
+	prerequisites = {
+	}
+	
+	enactment_time = 360
+	resources = {
+		category = decisions
+		cost = {
+			alloys = 5000
+			nanites = 1000
+		}
+	}
+	
+	potential = {
+		if = {
+			limit = {
+				is_planet_class = pc_nanites
+			}
+			exists = owner
+			owner = {
+				has_origin = origin_nanites
+				has_modifier = nanites_attacker
+			}
+		}
+		else = {
+			always = no
+		}
+	}
+	
+	allow = {
+	}
+	
+	abort_trigger = {
+		NAND = {
+			is_planet_class = pc_nanites
+			exists = owner
+			owner = {
+				has_origin = origin_nanites
+				has_modifier = nanites_attacker
+			}
+		}
+	}
+	
+	effect = {
+		custom_tooltip = decision_nanites_fleet_effect
+		hidden_effect = {
+			carrier_event = { id = nanites.30 }
+		}
+	}
+	
+	on_queued = {
+		owner = { refresh_faction_hostility_with_graygoo_country = yes }
+	}
+
+	on_unqueued = {
+		owner = { refresh_faction_hostility_with_graygoo_country = yes }
+	}
+	
+	ai_weight = {
+		weight = 1000
+	}
+}
+
+decision_tao_of_ninghe = {
+	owned_planets_only = yes
+	sound = event_alien_nature
+	
+	prerequisites = {
+	}
+	
+	enactment_time = 0
+	
+	potential = {
+		exists = owner
+		owner = { has_origin = origin_tao_of_ninghe }
+	}
+	
+	allow = {
+	}
+	
+	effect = {
+		custom_tooltip = decision_tao_of_ninghe_effect
+		hidden_effect = {
+			refresh_tao_of_ninghe_value = yes
+		}
+	}
+	
+	ai_weight = {
+		weight = 0
+	}
+}
+
+decision_the_matrix = {
+	important = yes
+	owned_planets_only = yes
+	sound = event_construction
+	icon = decision_tidal_lock_planet
+	
+	prerequisites = {
+	}
+	
+	enactment_time = 1600
+	resources = {
+		category = megastructures
+		cost = {
+			alloys = 10000
+			influence = 200
+		}
+	}
+	
+	potential = {
+		is_planet_class = pc_time_ruin_cosmogenesis_world
+	}
+	
+	allow = {
+		num_uncleared_blockers < 1
+		owner = {
+			has_technology = tech_cosmogenesis_world
+			if = {
+				limit = {
+					NOT = { has_origin = origin_the_matrix }
+				}
+				custom_tooltip = {
+					fail_text = "requires_no_existing_cosmogenesis_world"
+					NOT = { has_country_flag = cosmogenesis_world_built }
+				}
+			}
+		}
+	}
+	
+	abort_trigger = {
+		NOT = { is_planet_class = pc_time_ruin_cosmogenesis_world }
+	}
+	
+	effect = {
+		custom_tooltip = decision_the_matrix_effect
+		if = {
+			limit = {
+				owner = { has_origin = origin_the_matrix }
+			}
+			owner = {
+				add_modifier = {
+					modifier = origin_the_matrix_repair_cosmogenesis_world_modifier
+					days = -1
+				}
+			}
+		}
+		hidden_effect = {
+			remove_all_districts = yes
+			remove_all_buildings = yes
+			clear_deposits = yes
+			change_pc = pc_cosmogenesis_world
+			validate_planet_buildings_and_districts = yes
+			set_name = {
+				key = pc_cosmogenesis_world
+			}
+			planet = {
+				set_planet_entity = {
+					entity = "neural_calculator_phase_1_entity"
+				}
+			}
+			set_carrier_flag = cosmogenesis_world_resettle@owner
+			owner = {
+				if = {
+					limit = {
+						NOT = { has_origin = origin_the_matrix }
+					}
+					set_country_flag = cosmogenesis_world_built
+				}
+				room_name_override = ""
+			}
+		}
+	}
+	
+	ai_weight = {
+		weight = 0
+	}
+}
+
+decision_enable_reassembly_mode = {
+	owned_planets_only = yes
+	sound = event_administrative_work
+	
+	prerequisites = {
+	}
+	
+	enactment_time = 0
+	
+	potential = {
+		exists = owner
+		owner = { has_origin = origin_reassembler }
+		NOT = { has_modifier = active_reassembly_mode }
+	}
+	
+	allow = {
+		custom_tooltip = {
+			fail_text = "pop_can_be_reassembled_is_too_less"
+			count_owned_pop_amount = {
+				limit = {
+					can_be_reassembled = yes
+				}
+				count >= @can_active_reassembly_pop_amount
+			}
+		}
+	}
+	
+	effect = {
+		add_modifier = {
+			modifier = active_reassembly_mode
+			days = -1
+			clear_on_owner_change = yes
+		}
+	}
+	
+	ai_weight = {
+		weight = 0
+		modifier = {
+			weight = 10
+			count_owned_pop_amount = {
+				limit = {
+					can_be_reassembled = yes
+				}
+				count >= @enable_reassembly_mode_ai_weight_min_pop_amount
+			}
+		}
+		modifier = {
+			factor = 10
+			count_owned_pop_amount = {
+				limit = {
+					can_be_reassembled = yes
+				}
+				count >= @enable_reassembly_mode_ai_weight_high_pop_amount
+			}
+		}
+	}
+}
+
+decision_disable_reassembly_mode = {
+	icon = decision_enable_reassembly_mode
+	owned_planets_only = yes
+	sound = event_administrative_work
+	
+	prerequisites = {
+	}
+	
+	enactment_time = 0
+	
+	potential = {
+		exists = owner
+		owner = { has_origin = origin_reassembler }
+		has_modifier = active_reassembly_mode
+	}
+	
+	allow = {
+	}
+	
+	effect = {
+		remove_modifier = active_reassembly_mode
+	}
+	
+	ai_weight = {
+		weight = 0
+		modifier = {
+			weight = 100
+			count_owned_pop_amount = {
+				limit = {
+					can_be_reassembled = yes
+				}
+				count < @can_active_reassembly_pop_amount
+			}
+		}
+	}
+}
+
+decision_upgrade_pirate_king_arkship = {
+	important = yes
+	owned_planets_only = yes
+	sound = click_upgrade_starbase
+	
+	prerequisites = {
+	}
+	
+	enactment_time = @arkship_build_time_900
+	resources = {
+		category = decisions
+		cost = {
+			alloys = @arkship_cost_alloys_5000
+			influence = @arkship_cost_influence_250
+		}
+	}
+	
+	potential = {
+		exists = owner
+		owner = {
+			has_origin_pirate_king = yes
+			has_country_flag = unlock_pirate_king_arkship_2
+		}
+		exists = ship
+		ship = {
+			is_ship_size = military_arkship_tier_1
+			has_ship_flag = pirate_king_arkship
+		}
+	}
+	
+	allow = {
+		time_upgrade_arkship_decision_allow = yes
+	}
+	
+	effect = {
+		custom_tooltip = decision_upgrade_pirate_king_arkship_effect
+		hidden_effect = {
+			ship = {
+				set_ship_design = { design = NAME_Pirate_King_Arkship_Design_2 }
+				starbase = { set_starbase_size = military_arkship_tier_2 }
+			}
+		}
+	}
+	
+	ai_weight = {
+		weight = 100
+	}
+}
+
+decision_fully_upgrade_pirate_king_arkship = {
+	important = yes
+	icon = decision_upgrade_pirate_king_arkship
+	owned_planets_only = yes
+	sound = click_upgrade_starbase
+	
+	prerequisites = {
+	}
+	
+	enactment_time = @arkship_build_time_1080
+	resources = {
+		category = decisions
+		cost = {
+			alloys = @arkship_cost_alloys_5000
+			influence = @arkship_cost_influence_250
+		}
+	}
+	
+	potential = {
+		exists = owner
+		owner = {
+			has_origin_pirate_king = yes
+			has_country_flag = unlock_pirate_king_arkship_3
+		}
+		exists = ship
+		ship = {
+			is_ship_size = military_arkship_tier_2
+			has_ship_flag = pirate_king_arkship
+		}
+	}
+	
+	allow = {
+		time_fully_upgrade_arkship_decision_allow = yes
+	}
+	
+	effect = {
+		custom_tooltip = decision_fully_upgrade_pirate_king_arkship_effect
+		hidden_effect = {
+			ship = {
+				set_ship_design = { design = NAME_Pirate_King_Arkship_Design_3 }
+				starbase = { set_starbase_size = military_arkship_tier_3 }
+			}
+		}
+	}
+	
+	ai_weight = {
+		weight = 100
+	}
+}
+
+decision_upgrade_noah_ark_arkship_civilian = {
+	important = yes
+	owned_planets_only = yes
+	sound = click_upgrade_starbase
+	
+	prerequisites = {
+	}
+	
+	enactment_time = @arkship_build_time_900
+	resources = {
+		category = decisions
+		cost = {
+			alloys = @arkship_cost_alloys_5000
+			influence = @arkship_cost_influence_250
+		}
+	}
+	
+	potential = {
+		exists = owner
+		owner = {
+			has_technology = tech_noah_ark
+			has_origin = origin_noah_ark
+			has_country_flag = finish_repair_noah_ark
+		}
+		exists = ship
+		ship = {
+			is_arkship_tier_1 = yes
+			is_civilian_arkship = yes
+			has_ship_flag = noah_ark_ship
+		}
+	}
+	
+	allow = {
+		time_upgrade_arkship_decision_allow = yes
+	}
+	
+	effect = {
+		custom_tooltip = decision_upgrade_noah_ark_arkship_civilian_effect
+		hidden_effect = {
+			ship = {
+				set_ship_design = { design = NAME_Noah_Ark_civilian_2 }
+				starbase = { set_starbase_size = civilian_arkship_tier_2 }
+			}
+		}
+	}
+	
+	ai_weight = {
+		weight = 100
+	}
+}
+
+decision_fully_upgrade_noah_ark_arkship_civilian = {
+	important = yes
+	icon = decision_upgrade_noah_ark_arkship_civilian
+	owned_planets_only = yes
+	sound = click_upgrade_starbase
+	
+	prerequisites = {
+	}
+	
+	enactment_time = @arkship_build_time_1080
+	resources = {
+		category = decisions
+		cost = {
+			alloys = @arkship_cost_alloys_5000
+			influence = @arkship_cost_influence_250
+		}
+	}
+	
+	potential = {
+		exists = owner
+		owner = {
+			has_technology = tech_noah_ark
+			has_origin = origin_noah_ark
+			has_country_flag = finish_repair_noah_ark
+		}
+		exists = ship
+		ship = {
+			is_arkship_tier_2 = yes
+			is_civilian_arkship = yes
+			has_ship_flag = noah_ark_ship
+		}
+	}
+	
+	allow = {
+		time_fully_upgrade_arkship_decision_allow = yes
+	}
+	
+	effect = {
+		custom_tooltip = decision_fully_upgrade_noah_ark_arkship_civilian_effect
+		hidden_effect = {
+			owner = { set_country_flag = unlock_noah_ark_civilian_spinal }
+			ship = {
+				set_ship_design = { design = NAME_Noah_Ark_civilian_3 }
+				starbase = { set_starbase_size = civilian_arkship_tier_3 }
+			}
+		}
+	}
+	
+	ai_weight = {
+		weight = 100
+	}
+}
+
+decision_upgrade_noah_ark_arkship_science = {
+	important = yes
+	owned_planets_only = yes
+	sound = click_upgrade_starbase
+	
+	prerequisites = {
+	}
+	
+	enactment_time = @arkship_build_time_900
+	resources = {
+		category = decisions
+		cost = {
+			alloys = @arkship_cost_alloys_5000
+			influence = @arkship_cost_influence_250
+		}
+	}
+	
+	potential = {
+		exists = owner
+		owner = {
+			has_technology = tech_noah_ark
+			has_origin = origin_noah_ark
+			has_country_flag = finish_repair_noah_ark
+		}
+		exists = ship
+		ship = {
+			is_arkship_tier_1 = yes
+			is_science_arkship = yes
+			has_ship_flag = noah_ark_ship
+		}
+	}
+	
+	allow = {
+		time_upgrade_arkship_decision_allow = yes
+	}
+	
+	effect = {
+		custom_tooltip = decision_upgrade_noah_ark_arkship_science_effect
+		hidden_effect = {
+			ship = {
+				set_ship_design = { design = NAME_Noah_Ark_science_2 }
+				starbase = { set_starbase_size = science_arkship_tier_2 }
+			}
+		}
+	}
+	
+	ai_weight = {
+		weight = 100
+	}
+}
+
+decision_fully_upgrade_noah_ark_arkship_science = {
+	important = yes
+	icon = decision_upgrade_noah_ark_arkship_science
+	owned_planets_only = yes
+	sound = click_upgrade_starbase
+	
+	prerequisites = {
+	}
+	
+	enactment_time = @arkship_build_time_1080
+	resources = {
+		category = decisions
+		cost = {
+			alloys = @arkship_cost_alloys_5000
+			influence = @arkship_cost_influence_250
+		}
+	}
+	
+	potential = {
+		exists = owner
+		owner = {
+			has_technology = tech_noah_ark
+			has_origin = origin_noah_ark
+			has_country_flag = finish_repair_noah_ark
+		}
+		exists = ship
+		ship = {
+			is_arkship_tier_2 = yes
+			is_science_arkship = yes
+			has_ship_flag = noah_ark_ship
+		}
+	}
+	
+	allow = {
+		time_fully_upgrade_arkship_decision_allow = yes
+	}
+	
+	effect = {
+		custom_tooltip = decision_fully_upgrade_noah_ark_arkship_science_effect
+		hidden_effect = {
+			owner = { set_country_flag = unlock_noah_ark_science_spinal }
+			ship = {
+				set_ship_design = { design = NAME_Noah_Ark_science_3 }
+				starbase = { set_starbase_size = science_arkship_tier_3 }
+			}
+		}
+	}
+	
+	ai_weight = {
+		weight = 100
+	}
+}
+
+decision_blessed_by_god = {
+	important = yes
+	owned_planets_only = yes
+	sound = event_mystic_reveal
+	icon = decision_consecrated_worlds
+	
+	enactment_time = 60
+	resources = {
+		category = decisions
+		cost = {
+			unity = 1
+			mult = owner.value:blessed_by_god_decision_unity_cost
+		}
+		cost = {
+			sr_zro = 1
+			mult = owner.value:blessed_by_god_decision_sr_zro_cost
+		}
+	}
+	
+	potential = {
+		has_active_building = building_blessed_by_god
+		exists = owner
+		owner = { has_origin = origin_blessed_by_god }
+	}
+	
+	allow = {
+		custom_tooltip = {
+			fail_text = recently_blessed_by_god
+			owner = {
+				NOT = { has_country_flag = recently_blessed_by_god }
+			}
+		}
+	}
+	
+	abort_trigger = {
+		NAND = {
+			has_active_building = building_blessed_by_god
+			exists = owner
+			owner = { has_origin = origin_blessed_by_god }
+		}
+	}
+	
+	effect = {
+		custom_tooltip = decision_blessed_by_god_effect
+		hidden_effect = {
+			carrier_event = { id = origin_blessed_by_god.3 days = 300 }
+			owner = {
+				country_event = { id = origin_blessed_by_god.2 }
+			}
+		}
+	}
+	
+	ai_weight = {
+		weight = 10000
+	}
+}
+
+decision_equinox_seal = {
+	important = yes
+	owned_planets_only = yes
+	sound = event_activating_unknown_technology
+	icon = decision_time
+	
+	prerequisites = {
+	}
+	
+	enactment_time = 90
+	resources = {
+		category = decisions
+		cost = {
+			sr_dark_matter = 100
+			mult = owner.equinox_seal_count
+		}
+	}
+	
+	potential = {
+		if = {
+			limit = {
+				NOT = { has_global_flag = finish_equinox_seal }
+			}
+			is_capital = yes
+			exists = owner
+			owner = { has_country_flag = start_equinox_seal }
+		}
+		else = {
+			always = no
+		}
+	}
+	
+	allow = {
+	}
+	
+	abort_trigger = {
+		has_global_flag = finish_equinox_seal
+	}
+	
+	effect = {
+		custom_tooltip = add_equinox_seal_clue
+		hidden_effect = {
+			owner = {
+				change_variable = {
+					which = equinox_seal_count
+					value = 1
+				}
+			}
+			event_target:astral_rift_equinox_seal = {
+				add_stage_clues = 1
+			}
+		}
+	}
+	
+	ai_weight = {
+		weight = 100
+	}
+}
+
+decision_heart_of_wilderness = {
+	important = yes
+	owned_planets_only = yes
+	enactment_time = 3600
+
+	icon = wilderness_planet_expand
+
+	potential = {
+		exists = owner
+		owner = {
+			is_wilderness_empire = yes
+			has_tradition = tr_purity_stage_3_swap
+			NOT = { has_country_flag = decision_heart_of_wilderness_finished }
+		}
+		is_capital = yes
+		NOT = { has_deposit = d_heart_of_wilderness }
+	}
+	
+	allow = {
+		is_planet_class = pc_gaia
+		planet_size >= 30
+	}
+
+	resources = {
+		category = decisions
+		cost = {
+			influence = 200
+			biomass = 2000
+		}
+	}
+
+	effect = {
+		tooltip = { add_deposit = d_heart_of_wilderness }
+		custom_tooltip = decision_heart_of_wilderness_effect
+		custom_tooltip = decision_heart_of_wilderness_warning
+		hidden_effect = {
+			add_time_special_deposit_keep_on_terraform = { DEPOSIT = d_heart_of_wilderness }
+			gain_time_gaia_deposit = yes
+			owner = { set_country_flag = decision_heart_of_wilderness_finished }
+			carrier_event = { id = time_replaced_origin.20 }
+		}
+	}
+	
+	abort_trigger = {
+ 		NAND = {
+			exists = owner
+			owner = {
+				is_wilderness_empire = yes
+				has_tradition = tr_purity_stage_3_swap
+				NOT = { has_country_flag = decision_heart_of_wilderness_finished }
+			}
+			is_capital = yes
+			NOT = { has_deposit = d_heart_of_wilderness }
+			is_planet_class = pc_gaia
+		}
+ 	}
+
+ 	abort_effect = {
+ 		unqueue_biomass_effect = yes
+ 	}
+
+	on_queued = {
+		if = { # kill on the same planet
+			limit = {
+				is_variable_set = local_spent_biomass
+				any_owned_pop_group = {
+					has_trait = trait_wilderness
+					pop_group_size > local_spent_biomass
+				}
+			}
+			random_owned_pop_group = {
+				limit = {
+					has_trait = trait_wilderness
+					pop_group_size > local_spent_biomass
+				}
+				kill_pop_group = {
+					pop_group = this
+					amount = local_spent_biomass
+				}
+			}
+		}
+		else_if = {
+			limit = { is_variable_set = local_spent_biomass }
+			owner = {
+				global_biomass_spender = yes
+			}
+		}
+	}
+
+	on_unqueued = { #This way you can only mass produce you main species and not other ones for bodysnatcher shenanigans
+		unqueue_biomass_effect = yes
+	}
+
+	ai_weight = {
+		weight = 100
+	}
+}
+
+decision_time_gaia_deposit = {
+	important = yes
+	owned_planets_only = yes
+	sound = event_alien_nature
+	icon = decision_search_pc_time_deposits
+	
+	prerequisites = {
+	}
+	
+	enactment_time = 0
+	
+	potential = {
+		if = {
+			limit = {
+				is_planet_class = pc_gaia
+			}
+			NOR = {
+				has_deposit = d_time_gaia_energy
+				has_deposit = d_time_gaia_minerals
+				has_deposit = d_time_gaia_food
+			}
+		}
+		else = {
+			always = no
+		}
+	}
+	
+	allow = {
+	}
+	
+	abort_trigger = {
+		NAND = {
+			is_planet_class = pc_gaia
+			NOR = {
+				has_deposit = d_time_gaia_energy
+				has_deposit = d_time_gaia_minerals
+				has_deposit = d_time_gaia_food
+			}
+		}
+	}
+	
+	effect = {
+		custom_tooltip = decision_time_gaia_deposit_effect
+		hidden_effect = {
+			gain_time_gaia_deposit = yes
+		}
+	}
+	
+	ai_weight = {
+		weight = 10000
+	}
+}
+
+decision_time_ringworld_network = {
+	important = yes
+	owned_planets_only = yes
+	sound = event_construction
+	
+	prerequisites = {
+	}
+	
+	enactment_time = 720
+	resources = {
+		category = decisions
+		cost = {
+			trigger = {
+				owner = { country_uses_bio_ships = no }
+			}
+			alloys = 5000
+		}
+		cost = {
+			trigger = {
+				owner = { country_uses_bio_ships = yes }
+			}
+			alloys = 5000
+			mult = 0.5
+		}
+		cost = {
+			trigger = {
+				owner = { country_uses_bio_ships = yes }
+			}
+			food = 5000
+			mult = @halved_alloy_to_food_cost_ratio
+		}
+	}
+	
+	potential = {
+		if = {
+			limit = {
+				is_planet_class = pc_ringworld_habitable
+			}
+			NOT = { has_deposit = d_time_ringworld_network }
+		}
+		else = {
+			always = no
+		}
+	}
+	
+	allow = {
+		owner = { has_technology = tech_mega_engineering }
+	}
+	
+	abort_trigger = {
+		NAND = {
+			is_planet_class = pc_ringworld_habitable
+			NOT = { has_deposit = d_time_ringworld_network }
+		}
+	}
+	
+	effect = {
+		add_deposit = d_time_ringworld_network
+	}
+	
+	ai_weight = {
+		weight = 10000
+	}
+}
+
+decision_ai_wonder_country = {
+	important = yes
+	owned_planets_only = yes
+	sound = event_alien_nature
+	icon = decision_tao_of_ninghe
+	
+	prerequisites = {
+	}
+	
+	enactment_time = 0
+	
+	potential = {
+		exists = owner
+		if = {
+			limit = {
+				has_modifier = time_wonder_modifier
+				is_capital = no
+			}
+			is_original_owner = owner
+			owner = { is_ai = yes }
+		}
+		else = {
+			always = no
+		}
+	}
+	
+	allow = {
+	}
+	
+	effect = {
+		set_capital = yes
+	}
+	
+	ai_weight = {
+		weight = 10000
+	}
+}

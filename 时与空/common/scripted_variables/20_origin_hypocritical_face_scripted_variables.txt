@@ -1,0 +1,7 @@
+@hypocritical_face_encryption_base = 5
+@hypocritical_face_country_factor_low = 2.5
+@hypocritical_face_country_factor_middle = 5
+@hypocritical_face_country_factor_high = 7.5
+@hypocritical_face_country_factor_max = 10
+@hypocritical_face_building_factor_low = 1
+@hypocritical_face_building_factor_high = 2

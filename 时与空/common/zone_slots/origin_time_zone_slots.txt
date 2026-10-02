@@ -1,0 +1,143 @@
+slot_time_0 = {
+	start = zone_time_default
+
+	included_zone_sets = {
+		zone_time_default
+	}
+	
+	exclude = {
+	}
+	
+	potential = {
+		is_origin_time_planet_class = yes
+	}
+
+	unlock = { # planet scope
+		is_origin_time_planet_class = yes
+	}
+}
+
+slot_time_1 = {
+	included_zone_sets = {
+		urban
+		zone_time
+	}
+	
+	exclude = {
+		zone_urban
+	}
+	
+	potential = {
+		is_origin_time_planet_class = yes
+	}
+	
+	unlock = {
+		always = yes
+	}
+}
+
+slot_time_2 = {
+	included_zone_sets = {
+		urban
+		zone_time
+	}
+	
+	exclude = {
+		zone_urban
+	}
+	
+	potential = {
+		is_origin_time_planet_class = yes
+	}
+	
+	unlock = {
+		custom_tooltip = {
+			fail_text = zone_time_requires_tech
+			exists = owner
+			owner = {
+				has_technology = tech_time_blocker_1
+			}
+		}
+	}
+}
+
+slot_time_physics = {
+	included_zone_sets = {
+		zone_time_physics
+	}
+	
+	exclude = {
+	}
+	
+	potential = {
+		is_origin_time_planet_class = yes
+	}
+	
+	unlock = {
+		custom_tooltip = {
+			fail_text = zone_time_physics_requires_tech
+			exists = owner
+			owner = {
+				OR = {
+					has_technology = tech_power_hub_1
+					has_technology = tech_luxuries_1
+					has_technology = tech_physics_1
+				}
+			}
+		}
+	}
+}
+
+slot_time_society = {
+	included_zone_sets = {
+		zone_time_society
+	}
+	
+	exclude = {
+	}
+	
+	potential = {
+		is_origin_time_planet_class = yes
+	}
+	
+	unlock = {
+		custom_tooltip = {
+			fail_text = zone_time_society_requires_tech
+			exists = owner
+			owner = {
+				OR = {
+					has_technology = tech_food_processing_1
+					has_technology = tech_adaptive_bureaucracy
+					has_technology = tech_society_1
+				}
+			}
+		}
+	}
+}
+
+slot_time_engineering = {
+	included_zone_sets = {
+		zone_time_engineering
+	}
+	
+	exclude = {
+	}
+	
+	potential = {
+		is_origin_time_planet_class = yes
+	}
+	
+	unlock = {
+		custom_tooltip = {
+			fail_text = zone_time_engineering_requires_tech
+			exists = owner
+			owner = {
+				OR = {
+					has_technology = tech_mineral_purification_1
+					has_technology = tech_alloys_1
+					has_technology = tech_engineering_1
+				}
+			}
+		}
+	}
+}

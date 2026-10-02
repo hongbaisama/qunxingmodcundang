@@ -1,0 +1,863 @@
+@nanites_base_cost = 150
+@nanites_city_cost = 250
+
+district_nanites_city = {
+	overlay_icon = GFX_district_government
+	base_buildtime = 480
+	exempt_from_ai_planet_specialization = yes
+
+	zone_slots = {
+		slot_city_government
+		slot_city_01
+		slot_city_02
+	}
+
+	show_on_uncolonized = {
+		exists = from
+		from = { is_regular_empire = yes }
+		is_planet_class = pc_nanites
+		is_special_colony_type = no
+	}
+
+	potential = {
+		exists = owner
+		owner = {
+			OR = {
+				is_regular_empire = yes
+				AND = {
+					is_country_type = primitive
+					is_hive_empire = no
+				}
+			}
+		}
+		is_planet_class = pc_nanites
+		is_special_colony_type = no
+		NAND = {
+			is_capital = yes
+			owner = {
+				has_menace_perk = menp_behemoth_mind_meld
+			}
+		}
+	}
+
+	allow = {
+		is_special_colony_type = no
+	}
+
+	conversion_ratio = 1
+	convert_to = {
+		district_nanites_nexus
+		district_nanites_hive
+		district_crashed_slaver_ship
+		district_arcology_housing
+		district_rw_city
+		district_city
+		district_nexus
+		district_hive
+		district_prison
+		district_craglands
+		district_mindlink
+		district_crashed_slaver_ship
+		district_resort
+		district_slave
+		district_ark_city
+	}
+
+	resources = {
+		category = planet_districts_cities
+		cost = {
+			minerals = @nanites_city_cost
+			nanites = 100
+		}
+		upkeep = {
+			energy = 2
+		}
+	}
+
+	triggered_planet_modifier = {
+		planet_housing_add = 1000
+		mult = value:district_nanites_value
+	}
+
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = {
+				has_valid_civic = civic_agrarian_idyll
+			}
+		}
+		planet_housing_add = -200
+		mult = value:district_nanites_value
+	}
+
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { has_active_tradition = tr_prosperity_public_works }
+		}
+		planet_housing_add = 100
+		mult = value:district_nanites_value
+	}
+
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = {
+				has_technology = tech_housing_1
+			}
+		}
+		planet_housing_add = 100
+		mult = value:district_nanites_value
+	}
+
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = {
+				has_technology = tech_housing_2
+				NOT = { has_valid_civic = civic_agrarian_idyll }
+			}
+		}
+		planet_housing_add = 200
+		mult = value:district_nanites_value
+	}
+
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { is_regular_empire = yes }
+		}
+		job_nanites_trader_add = @base_district_jobs
+		mult = value:district_nanites_value
+	}
+	
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { is_tankbound_empire = yes }
+		}
+		job_production_overseer_add = 100
+		mult = value:district_nanites_value
+	}
+	
+	prerequisites = {
+		tech_nanite_transmutation
+	}
+	
+	show_tech_unlock_if = {
+		is_regular_empire = yes
+		any_owned_colony = {
+			is_planet_class = pc_nanites
+		}
+	}
+	
+	inline_script = {
+		script = districts/district_triggered_name_urban
+	}
+	
+	inline_script = {
+		script = districts/ai_urban_district_extra_weighting
+	}
+}
+
+district_nanites_hive = {
+	icon = district_nanites_city
+	overlay_icon = GFX_district_government
+	base_buildtime = 480
+	exempt_from_ai_planet_specialization = yes
+
+	zone_slots = {
+		slot_city_government
+		slot_city_01
+		slot_city_02
+	}
+
+	show_on_uncolonized = {
+		from = { is_hive_empire = yes }
+		is_planet_class = pc_nanites
+	}
+
+	potential = {
+		exists = owner
+		owner = { is_hive_empire = yes }
+		is_planet_class = pc_nanites
+		NAND = {
+			is_capital = yes
+			owner = {
+				has_menace_perk = menp_behemoth_mind_meld
+			}
+		}
+	}
+
+	allow = {
+		NOT = { has_modifier = resort_colony }
+	}
+
+	conversion_ratio = 1
+	convert_to = {
+		district_nanites_nexus
+		district_nanites_city
+		district_crashed_slaver_ship
+		district_arcology_housing
+		district_rw_city
+		district_city
+		district_nexus
+		district_hive
+		district_prison
+		district_craglands
+		district_mindlink
+		district_crashed_slaver_ship
+		district_resort
+		district_slave
+		district_ark_city
+	}
+
+	resources = {
+		category = planet_districts_cities
+		cost = {
+			minerals = @nanites_city_cost
+			nanites = 100
+		}
+		upkeep = {
+			energy = 2
+		}
+	}
+
+	triggered_planet_modifier = {
+		planet_housing_add = 1200
+		mult = value:district_nanites_value
+	}
+
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { has_technology = tech_housing_1 }
+		}
+		planet_housing_add = 100
+		mult = value:district_nanites_value
+	}
+
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { has_technology = tech_housing_2 }
+		}
+		planet_housing_add = 100
+		mult = value:district_nanites_value
+	}
+
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { has_active_tradition = tr_prosperity_extended_hives }
+		}
+		planet_housing_add = 100
+		mult = value:district_nanites_value
+	}
+	
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { is_hive_empire = yes }
+		}
+		job_nanites_logistics_drone_add = @base_district_jobs
+		mult = value:district_nanites_value
+	}
+	
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { is_tankbound_empire = yes }
+		}
+		job_production_overseer_add = 100
+		mult = value:district_nanites_value
+	}
+	
+	prerequisites = {
+		tech_nanite_transmutation
+	}
+	
+	show_tech_unlock_if = {
+		is_hive_empire = yes
+		any_owned_colony = {
+			is_planet_class = pc_nanites
+		}
+	}
+
+	inline_script = {
+		script = districts/district_triggered_name_hive
+	}
+	
+	inline_script = {
+		script = districts/ai_urban_district_extra_weighting
+	}
+}
+
+district_nanites_nexus = {
+	icon = district_nanites_city
+	overlay_icon = GFX_district_government
+	base_buildtime = 480
+	exempt_from_ai_planet_specialization = yes
+
+	zone_slots = {
+		slot_city_government
+		slot_city_01
+		slot_city_02
+	}
+
+	show_on_uncolonized = {
+		from = { is_machine_empire = yes }
+		is_planet_class = pc_nanites
+	}
+
+	potential = {
+		exists = owner
+		owner = { is_machine_empire = yes }
+		is_planet_class = pc_nanites
+		NAND = {
+			is_capital = yes
+			owner = {
+				has_menace_perk = menp_behemoth_mind_meld
+			}
+		}
+	}
+
+	allow = {
+		NOT = { has_modifier = resort_colony }
+	}
+
+	conversion_ratio = 1
+	convert_to = {
+		district_nanites_city
+		district_nanites_hive
+		district_crashed_slaver_ship
+		district_arcology_housing
+		district_rw_city
+		district_city
+		district_nexus
+		district_hive
+		district_prison
+		district_craglands
+		district_mindlink
+		district_crashed_slaver_ship
+		district_resort
+		district_slave
+		district_ark_city
+	}
+
+	resources = {
+		category = planet_districts_cities
+		cost = {
+			minerals = @nanites_city_cost
+			nanites = 100
+		}
+		upkeep = {
+			energy = 2
+		}
+	}
+
+	triggered_planet_modifier = {
+		planet_housing_add = 1100
+		mult = value:district_nanites_value
+	}
+
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { has_technology = tech_housing_1 }
+		}
+		planet_housing_add = 100
+		mult = value:district_nanites_value
+	}
+
+	triggered_planet_modifier = {
+		potential = {
+			has_modifier = gestation_colony
+		}
+		job_gestation_drone_add = 100
+		mult = value:district_nanites_value
+	}
+
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { has_technology = tech_housing_2 }
+		}
+		planet_housing_add = 100
+		mult = value:district_nanites_value
+	}
+
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { has_active_tradition = tr_prosperity_optimized_nexus }
+		}
+		planet_housing_add = 100
+		mult = value:district_nanites_value
+	}
+	
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { is_machine_empire = yes }
+		}
+		job_nanites_logistics_drone_add = @base_district_jobs
+		mult = value:district_nanites_value
+	}
+	
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { is_machine_empire = yes }
+			has_nanites_nanotech_swarm_consume_world = yes
+		}
+		job_calculator_physicist_add = @base_district_jobs
+		job_calculator_biologist_add = @base_district_jobs
+		job_calculator_engineer_add = @base_district_jobs
+		mult = value:district_nanites_value
+	}
+	
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { is_tankbound_empire = yes }
+		}
+		job_production_overseer_add = 100
+		mult = value:district_nanites_value
+	}
+	
+	prerequisites = {
+		tech_nanite_transmutation
+	}
+	
+	show_tech_unlock_if = {
+		is_machine_empire = yes
+		any_owned_colony = {
+			is_planet_class = pc_nanites
+		}
+	}
+
+	inline_script = {
+		script = districts/district_triggered_name_machine
+	}
+	
+	inline_script = {
+		script = districts/ai_urban_district_extra_weighting
+	}
+}
+
+district_nanites_generator = {
+	icon = district_generator
+	overlay_icon = GFX_district_energy
+	base_buildtime = 240
+
+	zone_slots = {
+		slot_nanites_energy
+	}
+
+	show_on_uncolonized = {
+		is_planet_class = pc_nanites
+		NOT = { has_modifier = resort_colony }
+	}
+
+	potential = {
+		is_planet_class = pc_nanites
+		NOT = { has_modifier = resort_colony }
+	}
+
+	conversion_ratio = 1
+	convert_to = {
+		district_generator
+		district_photosynthesis_fields
+		district_arcology_urban_1
+		district_nexus_1
+		district_hive_1
+		district_ark_generator
+	}
+
+	resources = {
+		category = planet_districts_generator
+		cost = {
+			minerals = @nanites_base_cost
+			nanites = 50
+		}
+		upkeep = {
+			energy = 1
+		}
+	}
+	
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { is_gestalt = yes }
+		}
+		job_technician_drone_add = @base_rural_district_jobs
+		mult = value:district_nanites_value
+	}
+	
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { is_gestalt = yes }
+			has_nanites_nanotech_swarm_consume_world = yes
+		}
+		job_logistics_drone_add = @base_rural_district_jobs
+		mult = value:district_nanites_value
+	}
+
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = {
+				is_gestalt = no
+				is_fallen_empire_spiritualist = no
+			}
+		}
+		job_technician_add = @base_rural_district_jobs
+		mult = value:district_nanites_value
+	}
+
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { is_fallen_empire_spiritualist = yes }
+		}
+		job_fe_acolyte_generator_add = @base_rural_district_jobs
+		mult = value:district_nanites_value
+	}
+
+	triggered_planet_modifier = {
+		planet_housing_add = 200
+		mult = value:district_nanites_value
+	}
+	
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = {
+				has_valid_civic = civic_agrarian_idyll
+			}
+		}
+		planet_housing_add = 300
+		mult = value:district_nanites_value
+	}
+
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { is_gestalt = yes }
+		}
+		planet_housing_add = 100
+		mult = value:district_nanites_value
+	}
+	
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { is_tankbound_empire = yes }
+		}
+		modifier = {
+			job_technician_automated_workforce_mult = 1.0
+		}
+	}
+	
+	inline_script = {
+		script = districts/time_district_script_modifier
+		DISTRICT = generator
+	}
+	
+	inline_script = {
+		script = districts/district_triggered_name_time_mod_generator
+		TYPE = nanites
+	}
+
+	prerequisites = {
+		tech_power_plant_1
+	}
+	
+	show_tech_unlock_if = {
+		any_owned_colony = {
+			is_planet_class = pc_nanites
+		}
+	}
+}
+
+district_nanites_mining = {
+	icon = district_mining
+	overlay_icon = GFX_district_minerals
+	base_buildtime = 240
+
+	zone_slots = {
+		slot_nanites_minerals
+	}
+
+	show_on_uncolonized = {
+		is_planet_class = pc_nanites
+		NOT = { has_modifier = resort_colony }
+	}
+
+	potential = {
+		is_planet_class = pc_nanites
+		NOT = { has_modifier = resort_colony }
+	}
+
+	conversion_ratio = 1
+	convert_to = {
+		district_mining
+		district_hollow_mountains
+		district_arcology_urban_2
+		district_nexus_2
+		district_hive_2
+		district_ark_military
+		district_ark_forever_cruise
+	}
+
+	resources = {
+		category = planet_districts_mining
+		cost = {
+			minerals = @nanites_base_cost
+			nanites = 50
+		}
+		upkeep = {
+			energy = 1
+		}
+	}
+	
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { is_gestalt = yes }
+		}
+		job_mining_drone_add = @base_rural_district_jobs
+		mult = value:district_nanites_value
+	}
+	
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { is_gestalt = yes }
+			has_nanites_nanotech_swarm_consume_world = yes
+		}
+		job_fabricator_add = @base_rural_district_jobs
+		mult = value:district_nanites_value
+	}
+
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = {
+				is_gestalt = no
+				is_fallen_empire_spiritualist = no
+			}
+		}
+		job_miner_add = @base_rural_district_jobs
+		mult = value:district_nanites_value
+	}
+
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { is_fallen_empire_spiritualist = yes }
+		}
+		job_fe_acolyte_mine_add = @base_rural_district_jobs
+		mult = value:district_nanites_value
+	}
+
+	triggered_planet_modifier = {
+		planet_housing_add = 200
+		mult = value:district_nanites_value
+	}
+
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = {
+				has_valid_civic = civic_agrarian_idyll
+			}
+		}
+		planet_housing_add = 300
+		mult = value:district_nanites_value
+	}
+
+	triggered_planet_modifier = {
+		potential = {
+			has_modifier = metal_planet
+		}
+		planet_housing_add = 500
+		mult = value:district_nanites_value
+	}
+
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { is_gestalt = yes }
+		}
+		planet_housing_add = 100
+		mult = value:district_nanites_value
+	}
+	
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { is_tankbound_empire = yes }
+		}
+		modifier = {
+			job_miner_automated_workforce_mult = 1.0
+		}
+	}
+	
+	inline_script = {
+		script = districts/time_district_script_modifier
+		DISTRICT = mining
+	}
+	
+	inline_script = {
+		script = districts/district_triggered_name_time_mod_mining
+		TYPE = nanites
+	}
+
+	prerequisites = {
+		tech_mechanized_mining
+	}
+	
+	show_tech_unlock_if = {
+		any_owned_colony = {
+			is_planet_class = pc_nanites
+		}
+	}
+}
+
+district_nanites_nexus_secondary = {
+	icon = district_nexus_secondary
+	overlay_icon = GFX_district_housing
+	base_buildtime = 240
+
+	zone_slots = {
+		slot_nanites_nexus
+	}
+
+	show_on_uncolonized = {
+		is_planet_class = pc_nanites
+		NOT = { has_modifier = resort_colony }
+	}
+
+	potential = {
+		is_planet_class = pc_nanites
+		NOT = { has_modifier = resort_colony }
+	}
+
+	conversion_ratio = 1
+	convert_to = {
+		district_farming
+		district_farming_uncapped
+		district_orchard_forests
+		district_orchard_forests_uncapped
+		district_arcology_urban_3
+		district_nexus_3
+		district_hive_3
+		district_ark_basic
+	}
+
+	resources = {
+		category = planet_districts
+		cost = {
+			minerals = @nanites_base_cost
+			nanites = 50
+		}
+		upkeep = {
+			energy = 1
+		}
+	}
+
+	triggered_planet_modifier = {
+		planet_housing_add = 1000
+		mult = value:district_nanites_value
+	}
+	
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { has_technology = tech_housing_1 }
+		}
+		planet_housing_add = 300
+		mult = value:district_nanites_value
+	}
+
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { has_technology = tech_housing_2 }
+		}
+		planet_housing_add = 300
+		mult = value:district_nanites_value
+	}
+
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { has_active_tradition = tr_prosperity_optimized_nexus }
+		}
+		planet_housing_add = 300
+		mult = value:district_nanites_value
+	}
+	
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { is_gestalt = yes }
+			has_nanites_nanotech_swarm_consume_world = yes
+		}
+		job_coordinator_add = @base_rural_district_jobs
+		mult = value:district_nanites_value
+	}
+	
+	inline_script = {
+		script = districts/district_triggered_name_machine
+	}
+}
+
+district_nanites_generator_physics = {
+	icon = district_generator
+	overlay_icon = GFX_district_physics
+	gridbox = district_arcology_research
+
+	zone_slots = {
+		slot_empty
+	}
+
+	show_on_uncolonized = {
+		always = no
+	}
+
+	potential = {
+		always = no
+	}
+
+	inline_script = {
+		script = districts/district_triggered_name_time_mod_generator
+		TYPE = nanites
+	}
+}
+
+district_nanites_mining_engineering = {
+	icon = district_mining
+	overlay_icon = GFX_district_engineering
+	gridbox = district_arcology_research
+
+	zone_slots = {
+		slot_empty
+	}
+
+	show_on_uncolonized = {
+		always = no
+	}
+
+	potential = {
+		always = no
+	}
+
+	inline_script = {
+		script = districts/district_triggered_name_time_mod_mining
+		TYPE = nanites
+	}
+}

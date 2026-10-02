@@ -1,0 +1,233 @@
+pirate_king_arkship_building_1 = {
+	icon = "GFX_waystation_reaver_stronghold"
+	starbase_type = arkship
+	construction_days = 360
+	category = sm_defense_cat
+
+	starbase_limit = {
+		base = 1
+	}
+
+	potential = {
+		is_arkship_starbase = yes
+		ship = { is_military_arkship = yes }
+		owner? = { has_country_flag = unlock_pirate_king_arkship_building_1 }
+	}
+
+	resources = {
+		category = starbase_arkship_upgrades
+		cost = {
+			alloys = @arkship_cost_alloys_100
+			exotic_gases = @arkship_cost_strategic_100
+		}
+		upkeep = {
+			energy = @arkship_upkeep_energy_2
+			exotic_gases = @arkship_upkeep_strategic_1
+		}
+	}
+	
+	triggered_station_modifier = {
+		custom_tooltip = pirate_king_arkship_building_1_effect_1
+	}
+
+	triggered_station_modifier = {
+		ship_hull_damage_mult = 0.5
+		ship_armor_damage_mult = 0.5
+		ship_shield_damage_mult = 0.5
+		mult = value:pirate_king_arkship_crime_value
+	}
+	
+	triggered_planet_modifier = {
+		custom_tooltip = pirate_king_arkship_building_1_effect_2
+	}
+
+	triggered_planet_modifier = {
+		planet_army_build_speed_mult = 0.5
+		mult = value:pirate_king_arkship_crime_value
+	}
+
+	ai_weight = {
+		weight = 100
+	}
+}
+
+pirate_king_arkship_building_2 = {
+	icon = "GFX_starbase_offworld_trading_company"
+	starbase_type = arkship
+	construction_days = 360
+	category = sm_economy_cat
+
+	starbase_limit = {
+		base = 1
+	}
+
+	potential = {
+		is_arkship_starbase = yes
+		ship = { is_military_arkship = yes }
+		owner? = { has_country_flag = unlock_pirate_king_arkship_building_2 }
+	}
+
+	resources = {
+		category = starbase_arkship_upgrades
+		produces = {
+			minerals = 2
+			trade = 2
+			mult = value:pirate_king_arkship_crime_and_pop_value
+		}
+		cost = {
+			alloys = @arkship_cost_alloys_100
+			rare_crystals = @arkship_cost_strategic_100
+		}
+		upkeep = {
+			energy = @arkship_upkeep_energy_2
+			rare_crystals = @arkship_upkeep_strategic_1
+		}
+	}
+
+	triggered_station_modifier = {
+		custom_tooltip = pirate_king_arkship_building_2_effect
+	}
+
+	ai_weight = {
+		weight = 100
+	}
+}
+
+pirate_king_arkship_building_3 = {
+	icon = "GFX_starbase_irassian_naval_yards"
+	starbase_type = arkship
+	construction_days = 360
+	category = sm_naval_support_cat
+
+	starbase_limit = {
+		base = 1
+	}
+
+	potential = {
+		is_arkship_starbase = yes
+		ship = { is_military_arkship = yes }
+		owner? = { has_country_flag = unlock_pirate_king_arkship_building_3 }
+	}
+
+	resources = {
+		category = starbase_arkship_upgrades
+		cost = {
+			alloys = @arkship_cost_alloys_100
+			volatile_motes = @arkship_cost_strategic_100
+		}
+		upkeep = {
+			energy = @arkship_upkeep_energy_2
+			volatile_motes = @arkship_upkeep_strategic_1
+		}
+	}
+
+	triggered_planet_modifier = {
+		custom_tooltip = pirate_king_arkship_building_3_effect_1
+	}
+
+	triggered_planet_modifier = {
+		planet_building_capacity_add = 5
+		mult = value:pirate_king_arkship_crime_value
+	}
+
+	triggered_station_modifier = {
+		custom_tooltip = pirate_king_arkship_building_3_effect_2
+	}
+
+	triggered_station_modifier = {
+		starbase_shipyard_build_cost_mult = -0.25
+		mult = value:pirate_king_arkship_crime_value
+	}
+
+	ai_weight = {
+		weight = 100
+	}
+}
+
+pirate_king_arkship_building_4 = {
+	icon = "GFX_waystation_treasure_vault"
+	starbase_type = arkship
+	construction_days = 360
+	category = sm_colony_cat
+
+	starbase_limit = {
+		base = 1
+	}
+
+	potential = {
+		is_arkship_starbase = yes
+		ship = { is_military_arkship = yes }
+		owner? = { has_country_flag = unlock_pirate_king_arkship_building_4 }
+	}
+
+	resources = {
+		category = starbase_arkship_upgrades
+		cost = {
+			alloys = @arkship_cost_alloys_100
+			rare_crystals = @arkship_cost_strategic_100
+		}
+		upkeep = {
+			energy = @arkship_upkeep_energy_2
+			rare_crystals = @arkship_upkeep_strategic_1
+		}
+	}
+
+	triggered_planet_modifier = {
+		custom_tooltip = pirate_king_arkship_building_4_effect
+	}
+
+	triggered_planet_modifier = {
+		pop_bonus_workforce_mult = 0.5
+		job_max_workforce_mult = 0.5
+		mult = value:pirate_king_arkship_crime_value
+	}
+
+	ai_weight = {
+		weight = 100
+	}
+}
+
+pirate_king_arkship_building_5 = {
+	icon = "GFX_spaceport_module_dark_matter_factory"
+	starbase_type = arkship
+	construction_days = 360
+	category = sm_aura_cat
+
+	starbase_limit = {
+		base = 1
+	}
+
+	potential = {
+		is_arkship_starbase = yes
+		ship = { is_military_arkship = yes }
+		owner? = { has_country_flag = pirate_king_true }
+	}
+
+	resources = {
+		category = starbase_arkship_upgrades
+		cost = {
+			alloys = @arkship_cost_alloys_100
+			sr_dark_matter = @arkship_cost_strategic_100
+		}
+		upkeep = {
+			energy = @arkship_upkeep_energy_2
+			sr_dark_matter = @arkship_upkeep_strategic_1
+		}
+	}
+
+	triggered_station_modifier = {
+		custom_tooltip = pirate_king_arkship_building_5_effect
+	}
+
+	triggered_station_modifier = {
+		ship_damage_reduction_mult = 0.25
+		mult = value:pirate_king_arkship_crime_value
+	}
+	
+	equipped_component = "HORROR_AURA_1"
+	show_component_tooltips = yes
+
+	ai_weight = {
+		weight = 100
+	}
+}

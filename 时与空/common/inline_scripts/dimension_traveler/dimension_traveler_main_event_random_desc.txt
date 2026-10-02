@@ -1,0 +1,26 @@
+text = {
+	trigger = {
+		dimension_traveler_is_disappointed = no
+		NOR = {
+			has_country_flag = dimension_traveler_end
+			has_country_flag = married_dimension_traveler
+		}
+	}
+	weight = {
+		base = $WEIGHT$
+	}
+	localization_key = dimension_traveler.60.desc.$TYPE$
+}
+text = {
+	trigger = {
+		dimension_traveler_is_disappointed = no
+		OR = {
+			has_country_flag = dimension_traveler_end
+			has_country_flag = married_dimension_traveler
+		}
+	}
+	weight = {
+		base = $WEIGHT$
+	}
+	localization_key = dimension_traveler.60.desc.$TYPE$.end
+}

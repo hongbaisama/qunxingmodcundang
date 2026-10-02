@@ -1,0 +1,51 @@
+produces = {
+	energy = 4
+	mult = value:time_researcher_normal_resource_value|RESOURCE|energy|WEIGHT|resource|
+}
+
+produces = {
+	consumer_goods = 2
+	mult = value:time_researcher_normal_resource_value|RESOURCE|consumer_goods|WEIGHT|manufacturing|
+}
+
+produces = {
+	physics_research = 2
+	mult = value:time_researcher_normal_resource_value|RESOURCE|physics_research|WEIGHT|research|
+}
+
+produces = {
+	trade = 1
+	mult = value:time_researcher_trade_value
+}
+
+produces = {
+	trigger = {
+		colony = { has_modifier = timesingularity }
+	}
+	sr_dark_matter = 0.1
+	mult = value:time_researcher_rare_resource_value
+}
+
+upkeep = {
+	trigger = {
+		industrial_jobs_are_catalytic_trigger = no
+	}
+	minerals = 1
+	food = 1
+	mult = value:time_researcher_normal_resource_value|RESOURCE|consumer_goods|WEIGHT|manufacturing|
+}
+
+upkeep = {
+	trigger = {
+		industrial_jobs_are_catalytic_trigger = yes
+	}
+	food = 2
+	mult = value:time_researcher_normal_resource_value|RESOURCE|consumer_goods|WEIGHT|manufacturing|
+}
+
+upkeep = {
+	energy = 1
+	consumer_goods = 0.5
+	alloys = 0.25
+	mult = value:time_researcher_normal_resource_value|RESOURCE|physics_research|WEIGHT|research|
+}

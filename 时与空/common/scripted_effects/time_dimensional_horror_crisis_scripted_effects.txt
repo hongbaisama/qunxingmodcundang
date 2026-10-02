@@ -1,0 +1,967 @@
+# 任意
+refresh_dimensional_horror_crisis_storm_original_level = {
+	event_target:global_event_country = {
+		set_variable = {
+			which = dimensional_horror_crisis_storm_original_level
+			value = value:dimensional_horror_crisis_storm_original_level
+		}
+	}
+	every_country = {
+		limit = {
+			has_event_chain = dimensional_horror_crisis_chain
+		}
+		reset_event_chain_counter = {
+			event_chain = dimensional_horror_crisis_chain
+			counter = dimensional_horror_crisis_storm_original_level
+		}
+		add_event_chain_counter = {
+			event_chain = dimensional_horror_crisis_chain
+			counter = dimensional_horror_crisis_storm_original_level
+			amount = event_target:global_event_country.dimensional_horror_crisis_storm_original_level
+		}
+	}
+}
+
+# 国家
+create_dimensional_horror_crisis_chain = {
+	# 创建事件链
+	begin_event_chain = {
+		event_chain = dimensional_horror_crisis_chain
+		target = this
+	}
+	# 更新初始计数
+	if = {
+		limit = {
+			event_target:global_event_country = {
+				is_variable_set = dimensional_horror_crisis_storm_original_level
+			}
+		}
+		add_event_chain_counter = {
+			event_chain = dimensional_horror_crisis_chain
+			counter = dimensional_horror_crisis_storm_original_level
+			amount = event_target:global_event_country.dimensional_horror_crisis_storm_original_level
+		}
+	}
+	if = {
+		limit = {
+			event_target:global_event_country = {
+				is_variable_set = black_hole_horror_count
+			}
+		}
+		add_event_chain_counter = {
+			event_chain = dimensional_horror_crisis_chain
+			counter = black_hole_horror_count
+			amount = event_target:global_event_country.black_hole_horror_count
+		}
+	}
+	if = {
+		limit = {
+			event_target:global_event_country = {
+				is_variable_set = dimensional_horror_crisis_affected_system
+			}
+		}
+		add_event_chain_counter = {
+			event_chain = dimensional_horror_crisis_chain
+			counter = dimensional_horror_crisis_affected_system
+			amount = event_target:global_event_country.dimensional_horror_crisis_affected_system
+		}
+	}
+	if = {
+		limit = {
+			event_target:global_event_country = {
+				is_variable_set = dimensional_horror_crisis_erasured_system
+			}
+		}
+		add_event_chain_counter = {
+			event_chain = dimensional_horror_crisis_chain
+			counter = dimensional_horror_crisis_erasured_system
+			amount = event_target:global_event_country.dimensional_horror_crisis_erasured_system
+		}
+	}
+	if = {
+		limit = {
+			event_target:global_event_country = {
+				is_variable_set = dimensional_horror_crisis_sealed_system
+			}
+		}
+		add_event_chain_counter = {
+			event_chain = dimensional_horror_crisis_chain
+			counter = dimensional_horror_crisis_sealed_system
+			amount = event_target:global_event_country.dimensional_horror_crisis_sealed_system
+		}
+	}
+	if = {
+		limit = {
+			event_target:global_event_country = {
+				is_variable_set = dimensional_horror_crisis_kills
+			}
+		}
+		add_event_chain_counter = {
+			event_chain = dimensional_horror_crisis_chain
+			counter = dimensional_horror_crisis_kills_others
+			amount = event_target:global_event_country.dimensional_horror_crisis_kills
+		}
+	}
+	if = {
+		limit = {
+			event_target:global_event_country = {
+				is_variable_set = dimensional_horror_crisis_victims
+			}
+		}
+		add_event_chain_counter = {
+			event_chain = dimensional_horror_crisis_chain
+			counter = dimensional_horror_crisis_victims
+			amount = event_target:global_event_country.dimensional_horror_crisis_victims
+		}
+	}
+	# 开启使命
+	enable_dimensional_horror_crisis_mission = { MISSION = MISSION_DIMENSIONAL_HORROR_CRISIS_SYSTEM_1 }
+	enable_dimensional_horror_crisis_mission = { MISSION = MISSION_DIMENSIONAL_HORROR_CRISIS_SHIP_1 }
+	enable_dimensional_horror_crisis_mission = { MISSION = MISSION_DIMENSIONAL_HORROR_CRISIS_TECHNOLOGY_1 }
+	# 与天灾国家建立通讯
+	event_target:dimensional_horror_crisis_country = {
+		establish_communications_no_message = prev
+	}
+}
+
+# 国家
+create_beyond_infinity_seal_chain = {
+	# 创建事件链
+	begin_event_chain = {
+		event_chain = beyond_infinity_seal_chain
+		target = this
+	}
+	# 更新初始计数
+	if = {
+		limit = {
+			event_target:global_event_country = {
+				is_variable_set = dimensional_horror_crisis_erasured_system
+			}
+		}
+		add_event_chain_counter = {
+			event_chain = beyond_infinity_seal_chain
+			counter = beyond_infinity_seal_requirement
+			amount = event_target:global_event_country.dimensional_horror_crisis_erasured_system
+		}
+	}
+}
+
+# 任意（全部国家生效）
+add_dimensional_horror_crisis_chain_counter = {
+	every_country = {
+		limit = {
+			has_event_chain = dimensional_horror_crisis_chain
+		}
+		add_event_chain_counter = {
+			event_chain = dimensional_horror_crisis_chain
+			counter = $COUNTER$
+			amount = $AMONT|1$
+		}
+	}
+}
+
+# 任意（全部国家生效）
+increase_beyond_infinity_seal_requirement = {
+	if = {
+		limit = {
+			NOT = { has_global_flag = all_erasured_system_is_sealed } # 命运出现后，终焉之魇仍然可以进行终焉抹除，但不再改变事件链计数（因为已经不需要了）
+		}
+		every_country = {
+			limit = {
+				has_event_chain = beyond_infinity_seal_chain
+			}
+			add_event_chain_counter = {
+				event_chain = beyond_infinity_seal_chain
+				counter = beyond_infinity_seal_requirement
+				amount = 1
+			}
+		}
+	}
+}
+
+# 任意（全部国家生效）
+meet_beyond_infinity_seal_requirement = {
+	if = {
+		limit = {
+			NOT = { has_global_flag = all_erasured_system_is_sealed } # 命运出现后，终焉之魇仍然可以进行终焉抹除，但不再改变事件链计数（因为已经不需要了）
+		}
+		every_country = {
+			limit = {
+				has_event_chain = beyond_infinity_seal_chain
+			}
+			add_event_chain_counter = {
+				event_chain = beyond_infinity_seal_chain
+				counter = beyond_infinity_seal_requirement
+				amount = -1
+			}
+		}
+	}
+}
+
+# 国家
+enable_dimensional_horror_crisis_mission = {
+	if = {
+		limit = {
+			has_event_chain = dimensional_horror_crisis_chain
+			has_all_dimensional_horror_crisis_storm_protection_tech = no
+		}
+		enable_mission = {
+			name = $MISSION$
+		}
+	}
+}
+
+# 国家
+add_dimensional_horror_crisis_mission_counter = {
+	if = {
+		limit = {
+			has_event_chain = dimensional_horror_crisis_chain
+			has_all_dimensional_horror_crisis_storm_protection_tech = no
+		}
+		if = {
+			limit = {
+				has_country_flag = mission_dimensional_horror_crisis_$COUNTER$_4_completed
+			}
+			add_mission_counter = {
+				mission = MISSION_DIMENSIONAL_HORROR_CRISIS_$MISSION$_5
+				counter = mission_dimensional_horror_crisis_$COUNTER$
+				amount = 1
+			}
+		}
+		else_if = {
+			limit = {
+				has_country_flag = mission_dimensional_horror_crisis_$COUNTER$_3_completed
+			}
+			add_mission_counter = {
+				mission = MISSION_DIMENSIONAL_HORROR_CRISIS_$MISSION$_4
+				counter = mission_dimensional_horror_crisis_$COUNTER$
+				amount = 1
+			}
+		}
+		else_if = {
+			limit = {
+				has_country_flag = mission_dimensional_horror_crisis_$COUNTER$_2_completed
+			}
+			add_mission_counter = {
+				mission = MISSION_DIMENSIONAL_HORROR_CRISIS_$MISSION$_3
+				counter = mission_dimensional_horror_crisis_$COUNTER$
+				amount = 1
+			}
+		}
+		else_if = {
+			limit = {
+				has_country_flag = mission_dimensional_horror_crisis_$COUNTER$_1_completed
+			}
+			add_mission_counter = {
+				mission = MISSION_DIMENSIONAL_HORROR_CRISIS_$MISSION$_2
+				counter = mission_dimensional_horror_crisis_$COUNTER$
+				amount = 1
+			}
+		}
+		else = {
+			add_mission_counter = {
+				mission = MISSION_DIMENSIONAL_HORROR_CRISIS_$MISSION$_1
+				counter = mission_dimensional_horror_crisis_$COUNTER$
+				amount = 1
+			}
+		}
+	}
+}
+
+# 国家
+randomly_add_dimensional_horror_crisis_storm_protection_tech_option = {
+	if = {
+		limit = {
+			has_all_dimensional_horror_crisis_storm_protection_tech = no
+		}
+		custom_tooltip = randomly_add_dimensional_horror_crisis_storm_protection_tech_option_tooltip
+		hidden_effect = {
+			random_list = {
+				10 = {
+					inline_script = {
+						script = weights/add_dimensional_horror_crisis_storm_protection_tech_option
+						TECH = tech_dimensional_horror_crisis_storm_protection_level_1
+						MISSION = $MISSION$
+					}
+				}
+				10 = {
+					inline_script = {
+						script = weights/add_dimensional_horror_crisis_storm_protection_tech_option
+						TECH = tech_dimensional_horror_crisis_storm_protection_level_2
+						MISSION = $MISSION$
+					}
+				}
+				6 = {
+					inline_script = {
+						script = weights/add_dimensional_horror_crisis_storm_protection_tech_option
+						TECH = tech_dimensional_horror_crisis_storm_protection_level_3
+						MISSION = $MISSION$
+					}
+				}
+				6 = {
+					inline_script = {
+						script = weights/add_dimensional_horror_crisis_storm_protection_tech_option
+						TECH = tech_dimensional_horror_crisis_storm_protection_level_4
+						MISSION = $MISSION$
+					}
+				}
+				2 = {
+					inline_script = {
+						script = weights/add_dimensional_horror_crisis_storm_protection_tech_option
+						TECH = tech_dimensional_horror_crisis_storm_protection_level_5
+						MISSION = $MISSION$
+					}
+				}
+				10 = {
+					modifier = {
+						factor = 0
+						NOR = {
+							has_technology = tech_dimensional_horror_crisis_storm_protection_level_1
+							has_technology = tech_dimensional_horror_crisis_storm_protection_level_3
+						}
+					}
+					inline_script = {
+						script = weights/add_dimensional_horror_crisis_storm_protection_tech_option
+						TECH = tech_dimensional_horror_crisis_storm_protection_building_1
+						MISSION = $MISSION$
+					}
+				}
+				10 = {
+					modifier = {
+						factor = 0
+						NOR = {
+							has_technology = tech_dimensional_horror_crisis_storm_protection_level_1
+							has_technology = tech_dimensional_horror_crisis_storm_protection_level_3
+						}
+					}
+					inline_script = {
+						script = weights/add_dimensional_horror_crisis_storm_protection_tech_option
+						TECH = tech_dimensional_horror_crisis_storm_protection_building_2
+						MISSION = $MISSION$
+					}
+				}
+				6 = {
+					modifier = {
+						factor = 0
+						NOT = { has_technology = tech_dimensional_horror_crisis_storm_protection_level_3 }
+					}
+					inline_script = {
+						script = weights/add_dimensional_horror_crisis_storm_protection_tech_option
+						TECH = tech_dimensional_horror_crisis_storm_protection_building_3
+						MISSION = $MISSION$
+					}
+				}
+				6 = {
+					modifier = {
+						factor = 0
+						NOT = { has_technology = tech_dimensional_horror_crisis_storm_protection_level_3 }
+					}
+					inline_script = {
+						script = weights/add_dimensional_horror_crisis_storm_protection_tech_option
+						TECH = tech_dimensional_horror_crisis_storm_protection_building_4
+						MISSION = $MISSION$
+					}
+				}
+				2 = {
+					modifier = {
+						factor = 0
+						NOT = { has_technology = tech_dimensional_horror_crisis_storm_protection_level_5 }
+					}
+					inline_script = {
+						script = weights/add_dimensional_horror_crisis_storm_protection_tech_option
+						TECH = tech_dimensional_horror_crisis_storm_protection_building_5
+						MISSION = $MISSION$
+					}
+				}
+				10 = {
+					modifier = {
+						factor = 0
+						NOR = {
+							has_technology = tech_dimensional_horror_crisis_storm_protection_level_2
+							has_technology = tech_dimensional_horror_crisis_storm_protection_level_4
+						}
+					}
+					inline_script = {
+						script = weights/add_dimensional_horror_crisis_storm_protection_tech_option
+						TECH = tech_dimensional_horror_crisis_storm_protection_component_1
+						MISSION = $MISSION$
+					}
+				}
+				10 = {
+					modifier = {
+						factor = 0
+						NOR = {
+							has_technology = tech_dimensional_horror_crisis_storm_protection_level_2
+							has_technology = tech_dimensional_horror_crisis_storm_protection_level_4
+						}
+					}
+					inline_script = {
+						script = weights/add_dimensional_horror_crisis_storm_protection_tech_option
+						TECH = tech_dimensional_horror_crisis_storm_protection_component_2
+						MISSION = $MISSION$
+					}
+				}
+				6 = {
+					modifier = {
+						factor = 0
+						NOT = { has_technology = tech_dimensional_horror_crisis_storm_protection_level_4 }
+					}
+					inline_script = {
+						script = weights/add_dimensional_horror_crisis_storm_protection_tech_option
+						TECH = tech_dimensional_horror_crisis_storm_protection_component_3
+						MISSION = $MISSION$
+					}
+				}
+				6 = {
+					modifier = {
+						factor = 0
+						NOT = { has_technology = tech_dimensional_horror_crisis_storm_protection_level_4 }
+					}
+					inline_script = {
+						script = weights/add_dimensional_horror_crisis_storm_protection_tech_option
+						TECH = tech_dimensional_horror_crisis_storm_protection_component_4
+						MISSION = $MISSION$
+					}
+				}
+				2 = {
+					modifier = {
+						factor = 0
+						NOT = { has_technology = tech_dimensional_horror_crisis_storm_protection_level_5 }
+					}
+					inline_script = {
+						script = weights/add_dimensional_horror_crisis_storm_protection_tech_option
+						TECH = tech_dimensional_horror_crisis_storm_protection_component_5
+						MISSION = $MISSION$
+					}
+				}
+			}
+		}
+	}
+}
+
+# 星系
+random_create_dimensional_horror_crisis_storm = {
+	random_list = {
+		1 = {
+			spawn_random_storm = {
+				type = dimensional_horror_crisis_levo_storm
+				cosmic_storm_start_position = this
+				immediate = yes
+			}
+		}
+		1 = {
+			spawn_random_storm = {
+				type = dimensional_horror_crisis_dextro_storm
+				cosmic_storm_start_position = this
+				immediate = yes
+			}
+		}
+	}
+}
+
+# 星系
+dimensional_horror_crisis_setup = {
+	set_global_flag = dimensional_horror_crisis_storm_has_occurred
+	set_crisis_sound = time_dimensional_horror_crisis_stage_1
+	event_target:global_event_country = {
+		set_variable = {
+			which = dimensional_horror_crisis_storm_original_level
+			value = value:dimensional_horror_crisis_storm_original_level
+		}
+		set_variable = {
+			which = dimensional_horror_crisis_affected_system
+			value = 0
+		}
+		set_variable = {
+			which = dimensional_horror_crisis_erasured_system
+			value = 0
+		}
+		set_variable = {
+			which = dimensional_horror_crisis_sealed_system
+			value = 0
+		}
+		set_variable = {
+			which = dimensional_horror_crisis_kills
+			value = 0
+		}
+		set_variable = {
+			which = dimensional_horror_crisis_victims
+			value = 0
+		}
+		set_variable = {
+			which = dimensional_horror_crisis_sealed_erasured_system
+			value = 0
+		}
+	}
+	every_country = {
+		limit = {
+			OR = {
+				is_default_or_player = yes
+				is_fallen_empire = yes
+			}
+		}
+		country_event = { id = time_dimensional_horror_crisis.10 }
+	}
+}
+
+# 星系（通用）
+dimensional_horror_crisis_storm_add = {
+	set_star_flag = storm_system
+	set_global_flag = cosmic_storm_has_occurred
+	if = {
+		limit = {
+			NOT = { has_global_flag = dimensional_horror_crisis_storm_has_occurred }
+		}
+		dimensional_horror_crisis_setup = yes
+	}
+	if = {
+		limit = {
+			exists = owner
+			owner = { has_event_chain = dimensional_horror_crisis_chain }
+		}
+		owner = {
+			add_dimensional_horror_crisis_mission_counter = {
+				MISSION = SYSTEM
+				COUNTER = system
+			}
+		}
+	}
+	every_playable_country = {
+		limit = {
+			# 游牧的方舟/驿站可以积累计数，并且一个星系同时只计一次数
+			is_nomadic = yes
+			prev = {
+				NOT = { is_owned_by = prev }
+				any_fleet_in_system = {
+					is_controlled_by = prevprev
+					OR = {
+						is_arkship_fleet = yes
+						is_waystation_ship = yes
+					}
+				}
+			}
+		}
+		add_dimensional_horror_crisis_mission_counter = {
+			MISSION = SYSTEM
+			COUNTER = system
+		}
+	}
+	if = {
+		limit = {
+			is_dimensional_horror_crisis_inactive_system = no
+		}
+		star = {
+			create_ambient_object = {
+				type = dimensional_horror_crisis_storm
+				location = this
+				use_3d_location = yes
+			}
+			last_created_ambient_object = {
+				set_ambient_object_flag = space_storm_object
+				set_ambient_object_flag = dimensional_horror_crisis_storm_object
+			}
+		}
+	}
+	every_system_planet = {
+		limit = {
+			OR = {
+				has_modifier = dimensional_horror_crisis_storm_aftermath_modifier_severity_1
+				has_modifier = dimensional_horror_crisis_storm_aftermath_modifier_severity_2
+				has_modifier = dimensional_horror_crisis_storm_aftermath_modifier_severity_3
+			}
+		}
+		remove_modifier = dimensional_horror_crisis_storm_aftermath_modifier_severity_1
+		remove_modifier = dimensional_horror_crisis_storm_aftermath_modifier_severity_2
+		remove_modifier = dimensional_horror_crisis_storm_aftermath_modifier_severity_3
+	}
+}
+
+# 星系
+dimensional_horror_crisis_destiny_storm_add = {
+	dimensional_horror_crisis_storm_add = yes
+	random_list = {
+		1 = {
+			create_dimensional_horror_crisis_in_system = { TYPE = Levo }
+		}
+		1 = {
+			create_dimensional_horror_crisis_in_system = { TYPE = Dextro }
+		}
+	}
+}
+
+# 星系
+dimensional_horror_crisis_levo_storm_add = {
+	dimensional_horror_crisis_storm_add = yes
+	create_dimensional_horror_crisis_in_system = { TYPE = Levo }
+}
+
+# 星系
+dimensional_horror_crisis_dextro_storm_add = {
+	dimensional_horror_crisis_storm_add = yes
+	create_dimensional_horror_crisis_in_system = { TYPE = Dextro }
+}
+
+# 星系（通用）
+dimensional_horror_crisis_storm_remove = {
+	remove_storm_visuals_effect = yes
+	remove_star_flag = storm_system
+	# 降低权重
+	set_timed_star_flag = {
+		flag = recent_dimensional_horror_crisis_storm_system
+		days = 720
+	}
+	dimensional_horror_crisis_storm_apply_aftermath_modifier = yes
+	dimensional_horror_crisis_storm_apply_deposits = yes
+}
+
+# 星系
+dimensional_horror_crisis_destiny_storm_remove = {
+	dimensional_horror_crisis_storm_remove = yes
+}
+
+# 星系
+dimensional_horror_crisis_levo_storm_remove = {
+	dimensional_horror_crisis_storm_remove = yes
+}
+
+# 星系
+dimensional_horror_crisis_dextro_storm_remove = {
+	dimensional_horror_crisis_storm_remove = yes
+}
+
+# 星系
+dimensional_horror_crisis_storm_apply_aftermath_modifier = {
+	if = {
+		limit = {
+			is_dimensional_horror_crisis_inactive_system = no
+		}
+		every_system_planet = {
+			limit = {
+				is_colonizable_or_colony = yes
+			}
+			random_list = {
+				1 = {
+					modifier = {
+						factor = 0
+						OR = {
+							has_modifier = dimensional_horror_crisis_storm_aftermath_modifier_severity_2
+							has_modifier = dimensional_horror_crisis_storm_aftermath_modifier_severity_3
+						}
+					}
+					modifier = {
+						factor = 0
+						has_global_flag = greatest_dimensional_horror_crisis
+					}
+					remove_modifier = dimensional_horror_crisis_storm_aftermath_modifier_severity_1
+					add_modifier = {
+						modifier = dimensional_horror_crisis_storm_aftermath_modifier_severity_1
+						years = 5
+						multiplier = value:dimensional_horror_crisis_storm_planet_modifier
+					}
+				}
+				1 = {
+					modifier = {
+						factor = 0
+						has_modifier = dimensional_horror_crisis_storm_aftermath_modifier_severity_3
+					}
+					modifier = {
+						factor = 2
+						has_global_flag = great_dimensional_horror_crisis
+					}
+					remove_modifier = dimensional_horror_crisis_storm_aftermath_modifier_severity_1
+					remove_modifier = dimensional_horror_crisis_storm_aftermath_modifier_severity_2
+					add_modifier = {
+						modifier = dimensional_horror_crisis_storm_aftermath_modifier_severity_2
+						years = 5
+						multiplier = value:dimensional_horror_crisis_storm_planet_modifier
+					}
+				}
+				1 = {
+					modifier = {
+						factor = 2
+						has_global_flag = great_dimensional_horror_crisis
+					}
+					modifier = {
+						factor = 2
+						has_global_flag = greatest_dimensional_horror_crisis
+					}
+					remove_modifier = dimensional_horror_crisis_storm_aftermath_modifier_severity_1
+					remove_modifier = dimensional_horror_crisis_storm_aftermath_modifier_severity_2
+					remove_modifier = dimensional_horror_crisis_storm_aftermath_modifier_severity_3
+					add_modifier = {
+						modifier = dimensional_horror_crisis_storm_aftermath_modifier_severity_3
+						years = 5
+						multiplier = value:dimensional_horror_crisis_storm_planet_modifier
+					}
+				}
+			}
+			if = {
+				limit = {
+					is_colony = yes
+				}
+				owner = {
+					create_message = {
+						type = DIMENSIONAL_HORROR_CRISIS_STORM_AFTERMATH
+						localization = MESSAGE_DIMENSIONAL_HORROR_CRISIS_STORM_AFTERMATH_DESC
+						days = @toast_important_message_days
+						target = prev
+						variable = {
+							type = name
+							localization = PLANET
+							scope = prev
+						}
+						custom_message_text = dimensional_horror_crisis_storm_aftermath_custom_desc
+					}
+				}
+			}
+		}
+	}
+}
+
+# 星系
+dimensional_horror_crisis_storm_apply_deposits = {
+	every_system_planet = {
+		limit = {
+			is_colonizable_or_colony = yes
+		}
+		random_list = {
+			1 = {
+				inline_script = {
+					script = weights/add_dimensional_horror_crisis_storm_deposit
+					DEPOSIT = d_dimensional_horror_crisis_physics
+				}
+			}
+			1 = {
+				inline_script = {
+					script = weights/add_dimensional_horror_crisis_storm_deposit
+					DEPOSIT = d_dimensional_horror_crisis_society
+				}
+			}
+			1 = {
+				inline_script = {
+					script = weights/add_dimensional_horror_crisis_storm_deposit
+					DEPOSIT = d_dimensional_horror_crisis_engineering
+				}
+			}
+			1 = {
+				inline_script = {
+					script = weights/add_dimensional_horror_crisis_storm_deposit
+					DEPOSIT = d_dimensional_horror_crisis_sr_dark_matter
+				}
+			}
+			1 = {
+				inline_script = {
+					script = weights/add_dimensional_horror_crisis_storm_deposit
+					DEPOSIT = d_dimensional_horror_crisis_sr_zro
+				}
+			}
+			1 = {
+				inline_script = {
+					script = weights/add_dimensional_horror_crisis_storm_deposit
+					DEPOSIT = d_dimensional_horror_crisis_sr_living_metal
+				}
+			}
+			1 = {
+				inline_script = {
+					script = weights/add_dimensional_horror_crisis_storm_deposit
+					DEPOSIT = d_dimensional_horror_crisis_nanites
+				}
+			}
+			1 = {
+				inline_script = {
+					script = weights/add_dimensional_horror_crisis_storm_deposit
+					DEPOSIT = d_dimensional_horror_crisis_astral_threads
+				}
+			}
+		}
+	}
+}
+
+# 星系
+create_dimensional_horror_crisis_in_system = {
+	if = {
+		limit = {
+			is_dimensional_horror_crisis_inactive_system = no
+		}
+		# 数据计算
+		if = {
+			limit = {
+				is_dimensional_horror_crisis_affected_system = no
+			}
+			set_star_flag = dimensional_horror_crisis_affected
+			event_target:global_event_country = {
+				change_variable = {
+					which = dimensional_horror_crisis_affected_system
+					value = 1
+				}
+			}
+			add_dimensional_horror_crisis_chain_counter = { COUNTER = dimensional_horror_crisis_affected_system }
+		}
+		# 终焉之魇
+		if = {
+			limit = {
+				exists = star
+				star = {
+					NOR = {
+						is_origin_time_planet_class = yes
+						is_time_white_hole_planet_class = yes
+					}
+				}
+				NOT = {
+					any_fleet_in_system = {
+						is_special_dimensional_horror = yes
+					}
+				}
+			}
+			star = {
+				save_event_target_as = dimensional_horror_crisis_star
+			}
+			# 星系改造
+			if = {
+				limit = {
+					NOR = {
+						has_star_flag = dimensional_horror_crisis_changed
+						star = {
+							OR = {
+								has_carrier_flag = dimensional_horror_crisis_changed
+								can_not_be_changed_by_akx_worm = yes # 设定上与时虫无关，单纯把这条script_trigger拿来用了
+								AND = {
+									is_same_value = event_target:akx_star
+									is_time_black_hole_planet_class = yes
+								}
+							}
+						}
+					}
+				}
+				star = {
+					time_destroy_colony = yes
+					set_planet_size = 30
+					change_pc = pc_black_hole
+					reset_planet = yes
+					clear_deposits_and_orbital_station = yes
+					clear_planet_modifiers = yes
+					prevent_anomaly = yes
+					set_name = "NAME_Akx_Time_Erasured"
+					set_carrier_flag = dimensional_horror_crisis_changed
+				}
+				if = {
+					limit = {
+						is_time_black_hole_or_white_hole_star_class = no
+					}
+					set_star_class = sc_black_hole
+					# 清除戴森云、戴森球、奇迹球并返还建造次数
+					worm_clear_dyson_sphere = yes
+				}
+				# 避免因为修改星系类型导致星球图片还原
+				star = {
+					set_carrier_flag = exist_dimensional_horrorling_object
+					set_planet_entity = {
+						picture = pc_horror_black_hole
+					}
+				}
+				set_star_flag = dimensional_horror_crisis_changed
+			}
+			# 生成舰船
+			if = {
+				limit = {
+					exists = event_target:dimensional_horror_crisis_star
+					event_target:dimensional_horror_crisis_star = { is_time_black_hole_planet_class = yes }
+				}
+				create_fleet = {
+					name = NAME_Dimensional_Horror_Crisis_$TYPE$
+					settings = {
+						can_upgrade = no
+						can_change_composition = no
+						uses_naval_capacity = no
+						can_disband = no
+						spawn_debris = no
+						is_boss = yes
+					}
+					effect = {
+						set_owner = event_target:dimensional_horror_crisis_country
+						create_ship = {
+							name = NAME_Dimensional_Horror_Crisis_$TYPE$
+							design = NAME_Dimensional_Horror_Crisis_Design_$TYPE$
+							prefix = no
+							upgradable = no
+						}
+						set_location = {
+							target = event_target:dimensional_horror_crisis_star
+							distance = 0
+							direction = in_system
+						}
+						if = {
+							limit = {
+								is_time_erasure_system = no
+								can_dimensional_horror_crisis_erasured_system = yes
+							}
+							fleet_event = { id = time_dimensional_horror_crisis.200 days = 150 random = 60 }
+						}
+					}
+				}
+			}
+		}
+	}
+}
+
+# 星球
+dimensional_horror_crisis_storm_pop_killed_effect = {
+	set_variable = {
+		which = dimensional_horror_crisis_storm_pop_killed_percentage
+		value = value:dimensional_horror_crisis_storm_pop_killed_percentage
+	}
+	every_owned_pop_group = {
+		limit = {
+			has_virtual_species_trait = no
+		}
+		kill_pop_group = {
+			pop_group = this
+			percentage = prev.dimensional_horror_crisis_storm_pop_killed_percentage
+		}
+	}
+	multiply_variable = {
+		which = dimensional_horror_crisis_storm_pop_killed_percentage
+		value = 100
+	}
+	owner = {
+		create_message = {
+			type = DIMENSIONAL_HORROR_CRISIS_STORM_POP_KILLED
+			localization = DIMENSIONAL_HORROR_CRISIS_STORM_POP_KILLED_DESC
+			days = @toast_important_message_days
+			target = prev
+			variable = {
+				type = name
+				localization = PLANET
+				scope = prev
+			}
+			variable = {
+				type = variable
+				varname = dimensional_horror_crisis_storm_pop_killed_percentage
+				localization = VALUE
+				scope = prev
+			}
+		}
+	}
+	clear_variable = dimensional_horror_crisis_storm_pop_killed_percentage
+}
+
+# 任意
+finish_dimensional_horror_crisis = {
+	remove_global_flag = dimensional_horror_crisis_storm_has_occurred
+	remove_global_flag = great_dimensional_horror_crisis
+	remove_global_flag = greatest_dimensional_horror_crisis
+	set_global_flag = dimensional_horror_crisis_end
+	stop_crisis_sound = yes
+	every_cosmic_storm = {
+		limit = {
+			is_dimensional_horror_crisis_storm = yes
+		}
+		destroy_cosmic_storm = yes
+	}
+	event_target:dimensional_horror_crisis_country = {
+		every_owned_fleet = {
+			delete_fleet = this
+		}
+		destroy_country = yes
+	}
+}

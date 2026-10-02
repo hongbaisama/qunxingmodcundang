@@ -1,0 +1,18 @@
+beyond_infinity_path = {
+	crisis_currency = "beyond_infinity_time"
+
+	levels = {
+		crisis_beyond_infinity_level_1
+		crisis_beyond_infinity_level_2
+		crisis_beyond_infinity_level_3
+		crisis_beyond_infinity_level_4
+		crisis_beyond_infinity_level_5
+	}
+
+	objectives = {
+		crisobj_beyond_infinity_produced
+		crisobj_beyond_infinity_resolution
+		crisobj_beyond_infinity_gambling
+		crisobj_beyond_infinity_circle
+	}
+}

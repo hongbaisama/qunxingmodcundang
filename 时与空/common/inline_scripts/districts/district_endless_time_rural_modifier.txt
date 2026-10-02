@@ -1,0 +1,7 @@
+triggered_planet_modifier = {
+	time_researcher_$RESOURCE_1$_produces_mult = @district_endless_time_rural_base_produce
+	time_researcher_$RESOURCE_2$_produces_mult = @district_endless_time_rural_base_produce
+	time_researcher_$RESOURCE_3$_produces_mult = @district_endless_time_rural_base_produce
+	district_time_usage_cap = @district_endless_time_rural_base_usage_cap
+	mult = value:district_time_level_value
+}

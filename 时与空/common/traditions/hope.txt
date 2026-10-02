@@ -1,0 +1,180 @@
+tr_hope_adopt = {
+	possible = {
+		has_tradition = tr_time_finish
+		can_adopt_tradition_hope = yes
+	}
+	modifier = {
+		country_physics_research_produces_mult = 0.15
+		country_society_research_produces_mult = 0.15
+		country_engineering_research_produces_mult = 0.15
+		pop_amenities_usage_mult = 0.3
+	}
+	triggered_modifier = {
+		potential = {
+			has_global_flag = dimensional_horror_crisis_storm_has_occurred
+		}
+		dimensional_horror_crisis_storm_planet_modifier = -0.25
+		dimensional_horror_crisis_storm_fleet_modifier = -0.25
+	}
+	on_enabled = {
+		if = {
+			limit = {
+				ap_beyond_infinity_basic_potential = yes
+				has_beyond_infinity_civic = no
+			}
+			custom_tooltip = unlock_ap_beyond_infinity
+		}
+	}
+}
+
+tr_hope_finish = {
+	custom_tooltip_with_modifiers = tr_hope_finish_desc
+	unlocks_agenda = agenda_tradition_hope
+	modifier = {
+		country_unity_produces_mult = 0.15
+		ascension_perks_add = 1
+	}
+	triggered_modifier = {
+		potential = {
+			has_global_flag = dimensional_horror_crisis_storm_has_occurred
+		}
+		dimensional_horror_crisis_storm_planet_modifier = -0.25
+		dimensional_horror_crisis_storm_fleet_modifier = -0.25
+	}
+	on_enabled = {
+		hidden_effect = {
+			set_global_flag = tradition_hope_path # 降低终焉宣告风暴产生频率
+		}
+	}
+}
+
+tr_hope_1 = {
+	possible = {
+		has_technology = tech_time_shield
+	}
+	modifier = {
+		weapon_confuser_protect_chance = 0.05
+		weapon_terrify_protect_chance = 0.05
+		category_horror_time_research_speed_mult = 0.15
+		category_horror_time_draw_chance_mult = 0.15
+		weapon_type_dimensional_horror_weapon_fire_rate_mult = 0.3
+	}
+	triggered_modifier = {
+		potential = {
+			has_global_flag = dimensional_horror_crisis_storm_has_occurred
+		}
+		dimensional_horror_crisis_storm_protection_level = 1
+	}
+	on_enabled = {
+		add_research_option = tech_hope_coils_god
+	}
+	ai_weight = {
+		factor = 0
+	}
+}
+
+tr_hope_2 = {
+	possible = {
+		has_technology = tech_time_armor
+	}
+	modifier = {
+		weapon_confuser_protect_chance = 0.05
+		weapon_terrify_protect_chance = 0.05
+		category_horror_time_research_speed_mult = 0.15
+		category_horror_time_draw_chance_mult = 0.15
+		weapon_type_dimensional_horror_weapon_damage_mult = 0.3
+	}
+	triggered_modifier = {
+		potential = {
+			has_global_flag = dimensional_horror_crisis_storm_has_occurred
+		}
+		dimensional_horror_crisis_storm_protection_level = 1
+	}
+	on_enabled = {
+		add_research_option = tech_hope_hole_pets
+	}
+	ai_weight = {
+		factor = 0
+	}
+}
+
+tr_hope_3 = {
+	possible = {
+		has_technology = tech_time_modifier
+	}
+	modifier = {
+		weapon_confuser_protect_chance = 0.05
+		weapon_terrify_protect_chance = 0.05
+		category_horror_time_research_speed_mult = 0.15
+		category_horror_time_draw_chance_mult = 0.15
+		weapon_type_dimensional_horror_weapon_damage_mult = 0.3
+	}
+	triggered_modifier = {
+		potential = {
+			has_global_flag = dimensional_horror_crisis_storm_has_occurred
+		}
+		dimensional_horror_crisis_storm_protection_level = 1
+	}
+	on_enabled = {
+		add_research_option = tech_hope_worm_mine
+		add_research_option = tech_hope_worm_farm
+	}
+	ai_weight = {
+		factor = 0
+	}
+}
+
+tr_hope_4 = {
+	possible = {
+		has_tradition = tr_hope_1
+		has_tradition = tr_hope_2
+		has_technology = tech_time_beam
+	}
+	modifier = {
+		weapon_confuser_protect_chance = 0.05
+		weapon_terrify_protect_chance = 0.05
+		category_horror_time_research_speed_mult = 0.15
+		category_horror_time_draw_chance_mult = 0.15
+		weapon_type_dimensional_horror_weapon_damage_mult = 0.15
+		weapon_type_dimensional_horror_weapon_fire_rate_mult = 0.15
+		weapon_type_dimensional_horror_speed_mult = 0.3
+	}
+	triggered_modifier = {
+		potential = {
+			has_global_flag = dimensional_horror_crisis_storm_has_occurred
+		}
+		dimensional_horror_crisis_storm_protection_level = 1
+	}
+	on_enabled = {
+		add_research_option = tech_hope_mirrored_syzygy_admiral
+	}
+	ai_weight = {
+		factor = 0
+	}
+}
+
+tr_hope_5 = {
+	possible = {
+		has_tradition = tr_hope_3
+		has_technology = tech_time_trait
+	}
+	modifier = {
+		weapon_confuser_protect_chance = 0.05
+		weapon_terrify_protect_chance = 0.05
+		category_horror_time_research_speed_mult = 0.15
+		category_horror_time_draw_chance_mult = 0.15
+		weapon_type_dimensional_horror_weapon_fire_rate_mult = 0.3
+	}
+	triggered_modifier = {
+		potential = {
+			has_global_flag = dimensional_horror_crisis_storm_has_occurred
+		}
+		dimensional_horror_crisis_storm_protection_level = 1
+	}
+	on_enabled = {
+		add_research_option = tech_hope_messenger_pod
+	}
+	ai_weight = {
+		factor = 0
+	}
+}

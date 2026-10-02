@@ -1,0 +1,1974 @@
+triggered_opinion_time_0_to_1 = {
+	trigger = {
+		if = {
+			limit = {
+				FROM = { is_wonder_country_time_1 = yes }
+			}
+			is_wonder_country_time_0 = yes
+		}
+		else = {
+			always = no
+		}
+	}
+
+	opinion = {
+		base = -100
+	}
+}
+
+triggered_opinion_time_0_to_2 = {
+	trigger = {
+		if = {
+			limit = {
+				FROM = { is_wonder_country_time_2 = yes }
+			}
+			is_wonder_country_time_0 = yes
+		}
+		else = {
+			always = no
+		}
+	}
+
+	opinion = {
+		base = -100
+	}
+}
+
+triggered_opinion_time_1_to_0 = {
+	trigger = {
+		if = {
+			limit = {
+				FROM = { is_wonder_country_time_0 = yes }
+			}
+			is_wonder_country_time_1 = yes
+		}
+		else = {
+			always = no
+		}
+	}
+
+	opinion = {
+		base = -100
+	}
+}
+
+triggered_opinion_time_1_to_2 = {
+	trigger = {
+		if = {
+			limit = {
+				FROM = { is_wonder_country_time_2 = yes }
+			}
+			is_wonder_country_time_1 = yes
+		}
+		else = {
+			always = no
+		}
+	}
+
+	opinion = {
+		base = -100
+	}
+}
+
+triggered_opinion_time_2_to_0 = {
+	trigger = {
+		if = {
+			limit = {
+				FROM = { is_wonder_country_time_0 = yes }
+			}
+			is_wonder_country_time_2 = yes
+		}
+		else = {
+			always = no
+		}
+	}
+
+	opinion = {
+		base = -100
+	}
+}
+
+triggered_opinion_time_2_to_1 = {
+	trigger = {
+		if = {
+			limit = {
+				FROM = { is_wonder_country_time_1 = yes }
+			}
+			is_wonder_country_time_2 = yes
+		}
+		else = {
+			always = no
+		}
+	}
+
+	opinion = {
+		base = -100
+	}
+}
+
+triggered_opinion_wonder_country_1_good = {
+	trigger = {
+		has_country_flag = wonder_country_1
+		FROM = { has_country_flag = worm_tomb_ending }
+	}
+
+	opinion = {
+		base = 500
+	}
+}
+
+triggered_opinion_wonder_country_1_bad = {
+	trigger = {
+		has_country_flag = wonder_country_1
+		FROM = { has_country_flag = attack_worm }
+	}
+
+	opinion = {
+		base = -1500
+	}
+}
+
+triggered_opinion_normal_cybrex = {
+	trigger = {
+		if = {
+			limit = {
+				has_country_flag = normal_wonder_country_35
+			}
+			is_crisis_country = no
+			FROM = {
+				is_homicidal = no
+				can_have_time_opinion = yes
+			}
+		}
+		else = {
+			always = no
+		}
+	}
+
+	opinion = {
+		base = 100
+	}
+}
+
+triggered_opinion_crazy_cybrex = {
+	trigger = {
+		if = {
+			limit = {
+				has_country_flag = crazy_wonder_country_35
+			}
+			is_crisis_country = no
+			FROM = {
+				is_homicidal = no
+				can_have_time_opinion = yes
+			}
+		}
+		else = {
+			always = no
+		}
+	}
+
+	opinion = {
+		base = 200
+	}
+}
+
+triggered_opinion_crisis_cybrex = {
+	trigger = {
+		if = {
+			limit = {
+				is_wonder_country_35 = yes
+			}
+			is_nemesis_crisis_country = yes
+			FROM = { can_have_time_opinion = yes }
+		}
+		else = {
+			always = no
+		}
+	}
+
+	opinion = {
+		base = -1500
+	}
+}
+
+triggered_opinion_time_crisis_to_other = {
+	trigger = {
+		OR = {
+			is_wonder_country_38 = yes
+			is_wonder_country_39 = yes
+			is_wonder_country_40 = yes
+		}
+		FROM = { can_have_time_opinion = yes }
+	}
+
+	opinion = {
+		base = -1500
+	}
+}
+
+triggered_opinion_time_other_to_crisis = {
+	trigger = {
+		can_have_time_opinion = yes
+		FROM = {
+			OR = {
+				is_wonder_country_38 = yes
+				is_wonder_country_39 = yes
+				is_wonder_country_40 = yes
+				AND = {
+					is_wonder_country_35 = yes
+					is_nemesis_crisis_country = yes
+				}
+			}
+		}
+	}
+
+	opinion = {
+		base = -1500
+	}
+}
+
+triggered_opinion_of_origin_time_1 = {
+	trigger = {
+		if = {
+			limit = {
+				can_have_time_opinion = yes
+				FROM = { has_origin_time = yes }
+			}
+			is_spiritualist = yes
+			NOR = {
+				is_wonder_country_time_1 = yes
+				is_wonder_country_time_2 = yes
+				has_origin_time = yes
+			}
+		}
+		else = {
+			always = no
+		}
+	}
+
+	opinion = {
+		base = -50
+	}
+}
+
+triggered_opinion_of_origin_time_2 = {
+	trigger = {
+		if = {
+			limit = {
+				can_have_time_opinion = yes
+				FROM = { has_origin_time = yes }
+			}
+			OR = {
+				AND = {
+					is_xenophobe = yes
+					NOT = { is_same_species = FROM }
+				}
+				is_homicidal = yes
+			}
+			NOR = {
+				is_wonder_country_time_1 = yes
+				is_wonder_country_time_2 = yes
+				has_origin_time = yes
+			}
+		}
+		else = {
+			always = no
+		}
+	}
+
+	opinion = {
+		base = -30
+	}
+}
+
+triggered_opinion_of_origin_time_3 = {
+	trigger = {
+		if = {
+			limit = {
+				can_have_time_opinion = yes
+				FROM = { has_origin_time = yes }
+			}
+			NOR = {
+				is_spiritualist = yes
+				AND = {
+					is_xenophobe = yes
+					NOT = { is_same_species = FROM }
+				}
+				is_homicidal = yes
+				is_xenophile = yes
+				is_materialist = yes
+				is_machine_empire = yes
+				is_wonder_country_time_1 = yes
+				is_wonder_country_time_2 = yes
+				has_origin_time = yes
+			}
+		}
+		else = {
+			always = no
+		}
+	}
+
+	opinion = {
+		base = -10
+	}
+}
+
+
+triggered_opinion_of_origin_time_4 = {
+	trigger = {
+		if = {
+			limit = {
+				can_have_time_opinion = yes
+				FROM = { has_origin_time = yes }
+			}
+			OR = {
+				is_xenophile = yes
+				is_machine_empire = yes
+			}
+			NOR = {
+				is_homicidal = yes
+				has_government = gov_machine_research
+				has_origin_time = yes 
+				is_wonder_country_time_1 = yes
+				is_wonder_country_time_2 = yes
+			}
+		}
+		else = {
+			always = no
+		}
+	}
+
+	opinion = {
+		base = 20
+	}
+}
+
+triggered_opinion_of_origin_time_5 = {
+	trigger = {
+		if = {
+			limit = {
+				can_have_time_opinion = yes
+				FROM = { has_origin_time = yes }
+			}
+			OR = {
+				is_materialist = yes
+				has_government = gov_machine_research
+			}
+			NOR = {
+				has_origin_time = yes 
+				is_wonder_country_time_1 = yes
+				is_wonder_country_time_2 = yes
+			}
+		}
+		else = {
+			always = no
+		}
+	}
+
+	opinion = {
+		base = 40
+	}
+}
+
+triggered_opinion_of_origin_contract_1 = {
+	trigger = {
+		if = {
+			limit = {
+				can_have_time_opinion = yes
+				FROM = { has_origin = origin_contract }
+			}
+			has_ethic = ethic_fanatic_spiritualist
+			NOT = { has_origin = origin_contract }
+		}
+		else = {
+			always = no
+		}
+	}
+
+	opinion = {
+		base = 40
+	}
+}
+
+triggered_opinion_of_origin_contract_2 = {
+	trigger = {
+		if = {
+			limit = {
+				can_have_time_opinion = yes
+				FROM = { has_origin = origin_contract }
+			}
+			has_ethic = ethic_spiritualist
+			NOT = { has_origin = origin_contract }
+		}
+		else = {
+			always = no
+		}
+	}
+
+	opinion = {
+		base = 20
+	}
+}
+
+triggered_opinion_of_origin_contract_3 = {
+	trigger = {
+		if = {
+			limit = {
+				can_have_time_opinion = yes
+				FROM = { has_origin = origin_contract }
+			}
+			has_ethic = ethic_materialist
+			NOT = { has_origin = origin_contract }
+		}
+		else = {
+			always = no
+		}
+	}
+
+	opinion = {
+		base = -20
+	}
+}
+
+
+triggered_opinion_of_origin_contract_4 = {
+	trigger = {
+		if = {
+			limit = {
+				can_have_time_opinion = yes
+				FROM = { has_origin = origin_contract }
+			}
+			has_ethic = ethic_fanatic_materialist
+			NOT = { has_origin = origin_contract }
+		}
+		else = {
+			always = no
+		}
+	}
+
+	opinion = {
+		base = -40
+	}
+}
+
+triggered_opinion_of_origin_gas_colony_1 = {
+	trigger = {
+		if = {
+			limit = {
+				can_have_time_opinion = yes
+				FROM = { has_origin = origin_gas_colony }
+			}
+			is_xenophobe = yes
+			NOT = { has_origin = origin_gas_colony }
+			NOT = { is_same_species = FROM }
+		}
+		else = {
+			always = no
+		}
+	}
+
+	opinion = {
+		base = -30
+	}
+}
+
+triggered_opinion_of_origin_gas_colony_2 = {
+	trigger = {
+		if = {
+			limit = {
+				can_have_time_opinion = yes
+				FROM = { has_origin = origin_gas_colony }
+			}
+			is_xenophile = yes
+			NOT = { has_origin = origin_gas_colony }
+		}
+		else = {
+			always = no
+		}
+	}
+
+	opinion = {
+		base = 30
+	}
+}
+
+triggered_opinion_of_origin_gas_colony_3 = {
+	trigger = {
+		if = {
+			limit = {
+				can_have_time_opinion = yes
+				FROM = { has_origin = origin_gas_colony }
+			}
+			OR = {
+				is_xenophobe = no
+				is_same_species = FROM
+			}
+			is_xenophile = no
+			NOT = { has_origin = origin_gas_colony }
+		}
+		else = {
+			always = no
+		}
+	}
+
+	opinion = {
+		base = 15
+	}
+}
+
+triggered_opinion_of_origin_psionic_1 = {
+	trigger = {
+		if = {
+			limit = {
+				can_have_time_opinion = yes
+				FROM = { has_origin = origin_psionic }
+			}
+			OR = {
+				is_spiritualist = yes
+				has_tradition = tr_psionics_adopt
+				has_tradition = tr_psionics_shroud_adopt
+			}
+			NOT = { has_origin = origin_psionic }
+		}
+		else = {
+			always = no
+		}
+	}
+
+	opinion = {
+		base = 30
+	}
+}
+
+triggered_opinion_of_origin_psionic_2 = {
+	trigger = {
+		if = {
+			limit = {
+				can_have_time_opinion = yes
+				FROM = { has_origin = origin_psionic }
+			}
+			NOR = {
+				is_spiritualist = yes
+				has_tradition = tr_psionics_adopt
+				has_tradition = tr_psionics_shroud_adopt
+			}
+			NOT = { has_origin = origin_psionic }
+		}
+		else = {
+			always = no
+		}
+	}
+
+	opinion = {
+		base = -30
+	}
+}
+
+triggered_opinion_of_origin_nanites_1 = {
+	trigger = {
+		if = {
+			limit = {
+				can_have_time_opinion = yes
+				FROM = {
+					has_origin = origin_nanites
+					NOR = {
+						has_modifier = nanites_attacker
+						has_modifier = nanites_protector
+					}
+				}
+			}
+			OR = {
+				is_materialist = yes
+				is_robot_empire = yes
+			}
+			NOT = { has_origin = origin_nanites }
+		}
+		else = {
+			always = no
+		}
+	}
+
+	opinion = {
+		base = 30
+	}
+}
+
+triggered_opinion_of_origin_nanites_2 = {
+	trigger = {
+		if = {
+			limit = {
+				can_have_time_opinion = yes
+				FROM = {
+					has_origin = origin_nanites
+					NOR = {
+						has_modifier = nanites_attacker
+						has_modifier = nanites_protector
+					}
+				}
+			}
+			is_materialist = no
+			is_robot_empire = no
+			NOT = { has_origin = origin_nanites }
+		}
+		else = {
+			always = no
+		}
+	}
+
+	opinion = {
+		base = -30
+	}
+}
+
+triggered_opinion_of_nanites_attacker = {
+	trigger = {
+		if = {
+			limit = {
+				FROM = { has_modifier = nanites_attacker }
+			}
+			can_have_time_opinion = yes
+			NOT = { has_modifier = nanites_attacker }
+		}
+		else_if = {
+			limit = {
+				has_modifier = nanites_attacker
+			}
+			FROM = {
+				can_have_time_opinion = yes
+				NOT = { has_modifier = nanites_attacker }
+			}
+		}
+		else = {
+			always = no
+		}
+	}
+
+	opinion = {
+		base = -1500
+	}
+}
+
+triggered_opinion_of_nanites_protector = {
+	trigger = {
+		if = {
+			limit = {
+				FROM = { has_modifier = nanites_protector }
+			}
+			can_have_time_opinion = yes
+		}
+		else_if = {
+			limit = {
+				has_modifier = nanites_protector
+			}
+			FROM = { can_have_time_opinion = yes }
+		}
+		else = {
+			always = no
+		}
+	}
+
+	opinion = {
+		base = 500
+	}
+}
+
+triggered_opinion_of_origin_the_matrix = {
+	trigger = {
+		if = {
+			limit = {
+				FROM = { has_origin = origin_the_matrix }
+			}
+			can_have_time_opinion = yes
+			NOT = { has_origin = origin_the_matrix }
+		}
+		else = {
+			always = no
+		}
+	}
+
+	opinion = {
+		base = -50
+	}
+}
+
+# 其它情况
+triggered_opinion_of_bright_pearl_system_1 = {
+	trigger = {
+		if = {
+			limit = {
+				exists = event_target:bright_pearl_system
+			}
+			if = {
+				limit = {
+					event_target:bright_pearl_system = {
+						exists = owner
+						owner = { is_same_value = FROM }
+					}
+				}
+				can_have_time_opinion = yes
+				NOR = {
+					has_subject = FROM
+					has_overlord = FROM
+					is_in_federation_with = FROM
+					is_pacifist = yes
+					is_xenophile = yes
+					is_country_type = fallen_empire
+				}
+			}
+			else = {
+				always = no
+			}
+		}
+		else = {
+			always = no
+		}
+	}
+
+	opinion = {
+		base = -500
+	}
+}
+
+# 宗主、联邦成员、和平、亲外
+triggered_opinion_of_bright_pearl_system_2 = {
+	trigger = {
+		if = {
+			limit = {
+				exists = event_target:bright_pearl_system
+			}
+			if = {
+				limit = {
+					event_target:bright_pearl_system = {
+						exists = owner
+						owner = { is_same_value = FROM }
+					}
+				}
+				can_have_time_opinion = yes
+				OR = {
+					has_subject = FROM
+					is_in_federation_with = FROM
+					has_ethic = ethic_pacifist
+					has_ethic = ethic_xenophile
+				}
+				NOR = {
+					has_overlord = FROM
+					has_ethic = ethic_fanatic_pacifist
+					has_ethic = ethic_fanatic_xenophile
+					is_country_type = fallen_empire
+				}
+			}
+			else = {
+				always = no
+			}
+		}
+		else = {
+			always = no
+		}
+	}
+
+	opinion = {
+		base = -250
+	}
+}
+
+# 附庸、极端和平、极端亲外
+triggered_opinion_of_bright_pearl_system_3 = {
+	trigger = {
+		if = {
+			limit = {
+				exists = event_target:bright_pearl_system
+			}
+			if = {
+				limit = {
+					event_target:bright_pearl_system = {
+						exists = owner
+						owner = { is_same_value = FROM }
+					}
+				}
+				can_have_time_opinion = yes
+				OR = {
+					has_overlord = FROM
+					has_ethic = ethic_fanatic_pacifist
+					has_ethic = ethic_fanatic_xenophile
+				}
+				NOT = { is_country_type = fallen_empire }
+			}
+			else = {
+				always = no
+			}
+		}
+		else = {
+			always = no
+		}
+	}
+
+	opinion = {
+		base = -100
+	}
+}
+
+# 堕落
+triggered_opinion_of_bright_pearl_system_4 = {
+	trigger = {
+		if = {
+			limit = {
+				exists = event_target:bright_pearl_system
+			}
+			if = {
+				limit = {
+					event_target:bright_pearl_system = {
+						exists = owner
+						owner = { is_same_value = FROM }
+					}
+				}
+				is_country_type = fallen_empire
+			}
+			else = {
+				always = no
+			}
+		}
+		else = {
+			always = no
+		}
+	}
+
+	opinion = {
+		base = -50
+	}
+}
+
+triggered_opinion_of_pirate_king = {
+	trigger = {
+		if = {
+			limit = {
+				can_have_time_opinion = yes
+				FROM = { has_origin = origin_pirate_king }
+			}
+			FROM = {
+				any_situation = {
+					is_situation_type = situation_origin_pirate_king
+				}
+			}
+		}
+		else = {
+			always = no
+		}
+	}
+
+	opinion = {
+		base = 0
+		modifier = {
+			add = -10
+			FROM = {
+				any_situation = {
+					is_situation_type = situation_origin_pirate_king
+					current_stage = stage_pirate_king_1
+				}
+			}
+		}
+		modifier = {
+			add = -20
+			FROM = {
+				any_situation = {
+					is_situation_type = situation_origin_pirate_king
+					current_stage = stage_pirate_king_2
+				}
+			}
+		}
+		modifier = {
+			add = -30
+			FROM = {
+				any_situation = {
+					is_situation_type = situation_origin_pirate_king
+					current_stage = stage_pirate_king_3
+				}
+			}
+		}
+		modifier = {
+			add = -50
+			FROM = {
+				any_situation = {
+					is_situation_type = situation_origin_pirate_king
+					current_stage = stage_pirate_king_4
+				}
+			}
+		}
+		modifier = {
+			add = -70
+			FROM = {
+				any_situation = {
+					is_situation_type = situation_origin_pirate_king
+					current_stage = stage_pirate_king_5
+				}
+			}
+		}
+		modifier = {
+			add = -90
+			FROM = {
+				any_situation = {
+					is_situation_type = situation_origin_pirate_king
+					current_stage = stage_pirate_king_6
+				}
+			}
+		}
+		modifier = {
+			add = -110
+			FROM = {
+				any_situation = {
+					is_situation_type = situation_origin_pirate_king
+					current_stage = stage_pirate_king_7
+				}
+			}
+		}
+		modifier = {
+			add = -140
+			FROM = {
+				any_situation = {
+					is_situation_type = situation_origin_pirate_king
+					current_stage = stage_pirate_king_8
+				}
+			}
+		}
+		modifier = {
+			add = -170
+			FROM = {
+				any_situation = {
+					is_situation_type = situation_origin_pirate_king
+					current_stage = stage_pirate_king_9
+				}
+			}
+		}
+		modifier = {
+			add = -200
+			FROM = {
+				OR = {
+					has_modifier = origin_pirate_king_modifier
+					any_situation = {
+						is_situation_type = situation_origin_pirate_king
+						current_stage = stage_pirate_king_10
+					}
+				}
+			}
+		}
+	}
+}
+
+triggered_opinion_of_pirate_king_end = {
+	trigger = {
+		can_have_time_opinion = yes
+		FROM = { has_origin = origin_pirate_king_end }
+	}
+
+	opinion = {
+		base = -300
+	}
+}
+
+triggered_opinion_of_origin_hypocritical_face_0 = {
+	trigger = {
+		if = {
+			limit = {
+				FROM = {
+					has_origin = origin_hypocritical_face
+					is_lost_hypocritical_face = no
+				}
+				can_have_time_opinion = yes
+			}
+			FROM = { is_criminal_syndicate = yes }
+			is_gestalt = no
+			intel = {
+				who = FROM
+				value < 20
+			}
+		}
+		else = {
+			always = no
+		}
+	}
+
+	opinion = {
+		base = 100
+	}
+}
+
+triggered_opinion_of_origin_hypocritical_face_1 = {
+	trigger = {
+		if = {
+			limit = {
+				FROM = {
+					has_origin = origin_hypocritical_face
+					is_lost_hypocritical_face = no
+				}
+				can_have_time_opinion = yes
+			}
+			FROM = { is_criminal_syndicate = yes }
+			is_gestalt = no
+			intel = {
+				who = FROM
+				value >= 20
+			}
+			intel = {
+				who = FROM
+				value < 40
+			}
+		}
+		else = {
+			always = no
+		}
+	}
+
+	opinion = {
+		base = 50
+	}
+}
+
+triggered_opinion_of_origin_hypocritical_face_2 = {
+	trigger = {
+		if = {
+			limit = {
+				FROM = {
+					has_origin = origin_hypocritical_face
+					is_lost_hypocritical_face = no
+				}
+				can_have_time_opinion = yes
+			}
+			FROM = {
+				is_criminal_syndicate = yes
+				check_modifier_value = {
+					modifier = hypocritical_face_building_modifier
+					value < 20
+				}
+			}
+			is_gestalt = no
+			intel = {
+				who = FROM
+				value >= 40
+			}
+		}
+		else = {
+			always = no
+		}
+	}
+
+	opinion = {
+		base = -25
+	}
+}
+
+triggered_opinion_of_origin_hypocritical_face_3 = {
+	trigger = {
+		if = {
+			limit = {
+				FROM = {
+					has_origin = origin_hypocritical_face
+					is_lost_hypocritical_face = no
+				}
+				can_have_time_opinion = yes
+			}
+			FROM = {
+				is_criminal_syndicate = yes
+				check_modifier_value = {
+					modifier = hypocritical_face_building_modifier
+					value >= 20
+				}
+			}
+			is_gestalt = no
+			intel = {
+				who = FROM
+				value >= 40
+			}
+		}
+		else = {
+			always = no
+		}
+	}
+
+	opinion = {
+		base = -75
+	}
+}
+
+triggered_opinion_of_lost_hypocritical_face_1 = {
+	trigger = {
+		if = {
+			limit = {
+				FROM = {
+					has_origin = origin_hypocritical_face
+					is_lost_hypocritical_face = yes
+				}
+				can_have_time_opinion = yes
+			}
+			FROM = {
+				is_criminal_syndicate = yes
+				check_modifier_value = {
+					modifier = hypocritical_face_building_modifier
+					value < 20
+				}
+			}
+			is_gestalt = no
+		}
+		else = {
+			always = no
+		}
+	}
+
+	opinion = {
+		base = -175
+	}
+}
+
+triggered_opinion_of_lost_hypocritical_face_2 = {
+	trigger = {
+		if = {
+			limit = {
+				FROM = {
+					has_origin = origin_hypocritical_face
+					is_lost_hypocritical_face = yes
+				}
+				can_have_time_opinion = yes
+			}
+			FROM = {
+				is_criminal_syndicate = yes
+				check_modifier_value = {
+					modifier = hypocritical_face_building_modifier
+					value >= 20
+				}
+			}
+			is_gestalt = no
+		}
+		else = {
+			always = no
+		}
+	}
+
+	opinion = {
+		base = -275
+	}
+}
+
+triggered_opinion_of_abandoned_to_blessed = {
+	trigger = {
+		has_origin = origin_abandoned_by_god
+		FROM = { has_origin = origin_blessed_by_god }
+	}
+
+	opinion = {
+		base = -500
+	}
+}
+
+triggered_opinion_of_blessed_to_abandoned = {
+	trigger = {
+		has_origin = origin_blessed_by_god
+		FROM = { has_origin = origin_abandoned_by_god }
+	}
+
+	opinion = {
+		base = -500
+	}
+}
+
+triggered_opinion_of_origin_secondhand_country = {
+	trigger = {
+		if = {
+			limit = {
+				can_have_time_opinion = yes
+				FROM = { has_origin = origin_secondhand_country }
+			}
+			NOT = { has_origin = origin_secondhand_country }
+		}
+		else = {
+			always = no
+		}
+	}
+
+	opinion = {
+		base = -25
+		modifier = {
+			add = -25
+			OR = {
+				is_materialist = yes
+				is_robot_empire = yes
+			}
+		}
+	}
+}
+
+triggered_opinion_of_origin_swarm_crisis_1 = {
+	trigger = {
+		if = {
+			limit = {
+				can_have_time_opinion = yes
+				FROM = { has_origin = origin_swarm_crisis }
+			}
+			NOR = {
+				is_homicidal = yes
+				has_origin = origin_swarm_crisis
+			}
+		}
+		else = {
+			always = no
+		}
+	}
+
+	opinion = {
+		base = 20
+	}
+}
+
+triggered_opinion_of_origin_swarm_crisis_2 = {
+	trigger = {
+		has_origin = origin_swarm_crisis
+		FROM = {
+			can_have_time_opinion = yes
+			is_hive_empire = yes
+			NOT = { has_valid_civic = civic_hive_devouring_swarm }
+		}
+	}
+
+	opinion = {
+		base = -50
+	}
+}
+
+triggered_opinion_of_origin_swarm_crisis_3 = {
+	trigger = {
+		has_origin = origin_swarm_crisis
+		FROM = {
+			can_have_time_opinion = yes
+			has_valid_civic = civic_hive_devouring_swarm
+		}
+	}
+
+	opinion = {
+		base = -1000
+	}
+}
+
+triggered_opinion_of_origin_ai_crisis_1 = {
+	trigger = {
+		if = {
+			limit = {
+				can_have_time_opinion = yes
+				FROM = { has_origin = origin_ai_crisis }
+			}
+			OR = {
+				AND = {
+					has_ethic = ethic_fanatic_xenophobe
+					NOT = { is_same_species = FROM }
+				}
+				has_ethic = ethic_fanatic_spiritualist
+			}
+			NOT = { has_origin = origin_ai_crisis }
+		}
+		else = {
+			always = no
+		}
+	}
+
+	opinion = {
+		base = -50
+	}
+}
+
+triggered_opinion_of_origin_ai_crisis_2 = {
+	trigger = {
+		if = {
+			limit = {
+				can_have_time_opinion = yes
+				FROM = { has_origin = origin_ai_crisis }
+			}
+			OR = {
+				AND = {
+					has_ethic = ethic_xenophobe
+					NOT = { is_same_species = FROM }
+				}
+				has_ethic = ethic_spiritualist
+			}
+			NOR = {
+				AND = {
+					has_ethic = ethic_fanatic_xenophobe
+					NOT = { is_same_species = FROM }
+				}
+				has_ethic = ethic_fanatic_spiritualist
+				has_origin = origin_ai_crisis
+			}
+		}
+		else = {
+			always = no
+		}
+	}
+
+	opinion = {
+		base = -25
+	}
+}
+
+triggered_opinion_of_origin_ai_crisis_3 = {
+	trigger = {
+		if = {
+			limit = {
+				can_have_time_opinion = yes
+				FROM = { has_origin = origin_ai_crisis }
+			}
+			NOR = {
+				AND = {
+					is_xenophobe = yes
+					NOT = { is_same_species = FROM }
+				}
+				is_spiritualist = yes
+				is_xenophile = yes
+				is_materialist = yes
+				has_origin = origin_ai_crisis
+			}
+		}
+		else = {
+			always = no
+		}
+	}
+
+	opinion = {
+		base = -15
+	}
+}
+
+triggered_opinion_of_origin_ai_crisis_4 = {
+	trigger = {
+		if = {
+			limit = {
+				can_have_time_opinion = yes
+				FROM = { has_origin = origin_ai_crisis }
+			}
+			OR = {
+				has_ethic = ethic_xenophile
+				has_ethic = ethic_materialist
+			}
+			NOR = {
+				has_ethic = ethic_fanatic_xenophile
+				has_ethic = ethic_fanatic_materialist
+				has_origin = origin_ai_crisis
+			}
+		}
+		else = {
+			always = no
+		}
+	}
+
+	opinion = {
+		base = 20
+	}
+}
+
+triggered_opinion_of_origin_ai_crisis_5 = {
+	trigger = {
+		if = {
+			limit = {
+				can_have_time_opinion = yes
+				FROM = { has_origin = origin_ai_crisis }
+			}
+			OR = {
+				has_ethic = ethic_fanatic_xenophile
+				has_ethic = ethic_fanatic_materialist
+			}
+			NOT = { has_origin = origin_ai_crisis }
+		}
+		else = {
+			always = no
+		}
+	}
+
+	opinion = {
+		base = 40
+	}
+}
+
+triggered_opinion_of_origin_ai_crisis_6 = {
+	trigger = {
+		has_origin = origin_ai_crisis
+		FROM = {
+			can_have_time_opinion = yes
+			has_valid_civic = civic_machine_terminator
+		}
+	}
+
+	opinion = {
+		base = -100
+	}
+}
+
+triggered_opinion_of_origin_exd_crisis_1 = {
+	trigger = {
+		if = {
+			limit = {
+				can_have_time_opinion = yes
+				FROM = { has_origin = origin_exd_crisis }
+			}
+			is_megacorp = yes
+			NOT = { has_origin = origin_exd_crisis }
+		}
+		else = {
+			always = no
+		}
+	}
+
+	opinion = {
+		base = -40
+	}
+}
+
+triggered_opinion_of_origin_exd_crisis_2 = {
+	trigger = {
+		if = {
+			limit = {
+				can_have_time_opinion = yes
+				FROM = { has_origin = origin_exd_crisis }
+			}
+			NOR = {
+				is_megacorp = yes
+				is_materialist = yes
+				has_origin = origin_exd_crisis
+			}
+		}
+		else = {
+			always = no
+		}
+	}
+
+	opinion = {
+		base = -20
+	}
+}
+
+triggered_opinion_of_origin_exd_crisis_3 = {
+	trigger = {
+		if = {
+			limit = {
+				can_have_time_opinion = yes
+				FROM = { has_origin = origin_exd_crisis }
+			}
+			OR = {
+				has_ethic = ethic_materialist
+				is_machine_empire = yes
+			}
+			NOR = {
+				has_government = gov_machine_research
+				has_origin = origin_exd_crisis
+			}
+		}
+		else = {
+			always = no
+		}
+	}
+
+	opinion = {
+		base = 15
+	}
+}
+
+triggered_opinion_of_origin_exd_crisis_4 = {
+	trigger = {
+		if = {
+			limit = {
+				can_have_time_opinion = yes
+				FROM = { has_origin = origin_exd_crisis }
+			}
+			OR = {
+				has_ethic = ethic_fanatic_materialist
+				has_government = gov_machine_research
+			}
+			NOT = { has_origin = origin_exd_crisis }
+		}
+		else = {
+			always = no
+		}
+	}
+
+	opinion = {
+		base = 30
+	}
+}
+
+triggered_opinion_of_origin_synth_queen_crisis = {
+	trigger = {
+		if = {
+			limit = {
+				FROM = { has_origin = origin_synth_queen_crisis }
+			}
+			is_fallen_empire_spiritualist = yes
+		}
+		else = {
+			always = no
+		}
+	}
+
+	opinion = {
+		base = -200
+	}
+}
+
+triggered_opinion_of_origin_fourth_crisis_1 = {
+	trigger = {
+		if = {
+			limit = {
+				can_have_time_opinion = yes
+				FROM = { has_origin = origin_fourth_crisis }
+			}
+			NOT = { has_origin = origin_fourth_crisis }
+		}
+		else = {
+			always = no
+		}
+	}
+
+	opinion = {
+		base = -1500
+	}
+}
+
+triggered_opinion_of_origin_fourth_crisis_2 = {
+	trigger = {
+		if = {
+			limit = {
+				FROM = { can_have_time_opinion = yes }
+				has_origin = origin_fourth_crisis
+			}
+			FROM = {
+				NOT = { has_origin = origin_fourth_crisis }
+			}
+		}
+		else = {
+			always = no
+		}
+	}
+
+	opinion = {
+		base = -1500
+	}
+}
+
+triggered_opinion_of_origin_fourth_crisis_3 = {
+	trigger = {
+		if = {
+			limit = {
+				has_global_flag = fourth_crisis_happened
+			}
+			has_origin = origin_fourth_crisis
+			FROM = { has_origin = origin_fourth_crisis }
+		}
+		else = {
+			always = no
+		}
+	}
+
+	opinion = {
+		base = -1500
+	}
+}
+
+triggered_opinion_of_origin_fourth_crisis_4 = {
+	trigger = {
+		if = {
+			limit = {
+				has_global_flag = fourth_crisis_happened
+			}
+			if = {
+				limit = {
+					can_have_time_opinion = yes
+					FROM = { is_subject = yes }
+				}
+				NOT = { has_origin = origin_fourth_crisis }
+				FROM = {
+					NOT = { has_origin = origin_fourth_crisis }
+					overlord = { has_origin = origin_fourth_crisis }
+				}
+			}
+			else = {
+				always = no
+			}
+		}
+		else = {
+			always = no
+		}
+	}
+
+	opinion = {
+		base = -1500
+	}
+}
+
+triggered_opinion_of_origin_fourth_crisis_5 = {
+	trigger = {
+		if = {
+			limit = {
+				has_global_flag = fourth_crisis_happened
+			}
+			if = {
+				limit = {
+					can_have_time_opinion = yes
+					FROM = { is_overlord = yes }
+				}
+				NOT = { has_origin = origin_fourth_crisis }
+				FROM = {
+					NOT = { has_origin = origin_fourth_crisis }
+					any_subject = { has_origin = origin_fourth_crisis }
+				}
+			}
+			else = {
+				always = no
+			}
+		}
+		else = {
+			always = no
+		}
+	}
+
+	opinion = {
+		base = -1500
+	}
+}
+
+triggered_opinion_of_origin_fourth_crisis_6 = {
+	trigger = {
+		if = {
+			limit = {
+				has_global_flag = fourth_crisis_happened
+			}
+			if = {
+				limit = {
+					can_have_time_opinion = yes
+					FROM = { has_federation = yes }
+				}
+				NOT = { has_origin = origin_fourth_crisis }
+				FROM = {
+					NOT = { has_origin = origin_fourth_crisis }
+					federation = {
+						any_member = { has_origin = origin_fourth_crisis }
+					}
+				}
+			}
+			else = {
+				always = no
+			}
+		}
+		else = {
+			always = no
+		}
+	}
+
+	opinion = {
+		base = -1500
+	}
+}
+
+triggered_opinion_fight_against_fourth_crisis_together = {
+	trigger = {
+		if = {
+			limit = {
+				has_global_flag = fourth_crisis_happened
+			}
+			can_have_time_opinion = yes
+			NOT = { has_origin = origin_fourth_crisis }
+			FROM = {
+				can_have_time_opinion = yes
+				NOT = { has_origin = origin_fourth_crisis }
+				if = {
+					limit = {
+						is_subject = yes
+					}
+					overlord = {
+						NOT = { has_origin = origin_fourth_crisis }
+					}
+				}
+				if = {
+					limit = {
+						is_overlord = yes
+					}
+					NOT = {
+						any_subject = { has_origin = origin_fourth_crisis }
+					}
+				}
+				if = {
+					limit = {
+						has_federation = yes
+					}
+					federation = {
+						NOT = {
+							any_member = { has_origin = origin_fourth_crisis }
+						}
+					}
+				}
+			}
+		}
+		else = {
+			always = no
+		}
+	}
+	
+	opinion = {
+		base = 1500
+	}
+}
+
+triggered_opinion_of_origin_new_country_1 = {
+	trigger = {
+		if = {
+			limit = {
+				can_have_time_opinion = yes
+				FROM = { has_origin = origin_new_country }
+			}
+			is_xenophile = yes
+			NOT = { has_origin = origin_new_country }
+		}
+		else = {
+			always = no
+		}
+	}
+
+	opinion = {
+		base = 50
+	}
+}
+
+triggered_opinion_of_origin_new_country_2 = {
+	trigger = {
+		if = {
+			limit = {
+				can_have_time_opinion = yes
+				FROM = { has_origin = origin_new_country }
+			}
+			is_xenophobe = yes
+			NOT = { has_origin = origin_new_country }
+			NOT = { is_same_species = FROM }
+		}
+		else = {
+			always = no
+		}
+	}
+
+	opinion = {
+		base = -50
+	}
+}
+
+triggered_opinion_of_origin_new_country_3 = {
+	trigger = {
+		if = {
+			limit = {
+				can_have_time_opinion = yes
+				FROM = { has_origin = origin_new_country }
+			}
+			is_xenophile = no
+			OR = {
+				is_xenophobe = no
+				is_same_species = FROM
+			}
+			is_pacifist = yes
+			NOT = { has_origin = origin_new_country }
+		}
+		else = {
+			always = no
+		}
+	}
+
+	opinion = {
+		base = 25
+	}
+}
+
+triggered_opinion_of_origin_new_country_4 = {
+	trigger = {
+		if = {
+			limit = {
+				can_have_time_opinion = yes
+				FROM = { has_origin = origin_new_country }
+			}
+			is_xenophile = no
+			OR = {
+				is_xenophobe = no
+				is_same_species = FROM
+			}
+			is_militarist = yes
+			NOT = { has_origin = origin_new_country }
+		}
+		else = {
+			always = no
+		}
+	}
+
+	opinion = {
+		base = -25
+	}
+}
+
+triggered_opinion_of_origin_new_country_5 = {
+	trigger = {
+		has_origin = origin_new_country
+		NOT = { is_same_species = FROM }
+		FROM = {
+			can_have_time_opinion = yes
+			NOT = { has_origin = origin_new_country }
+		}
+	}
+
+	opinion = {
+		base = -10
+		modifier = {
+			add = -10
+			is_xenophobe = yes
+		}
+	}
+}
+
+triggered_opinion_of_origin_new_country_6 = {
+	trigger = {
+		has_origin = origin_new_country
+		FROM = {
+			can_have_time_opinion = yes
+			has_origin = origin_new_country
+		}
+	}
+
+	opinion = {
+		base = 50
+	}
+}
+
+triggered_opinion_of_origin_new_country_7 = {
+	trigger = {
+		has_origin = origin_new_country
+		is_same_species = FROM
+		FROM = {
+			can_have_time_opinion = yes
+		}
+	}
+
+	opinion = {
+		base = 25
+	}
+}
+
+triggered_opinion_of_dark_forest = {
+	trigger = {
+		if = {
+			limit = {
+				has_global_flag = dark_forest
+			}
+			can_have_time_opinion = yes
+			FROM = { can_have_time_opinion = yes }
+		}
+		else = {
+			always = no
+		}
+	}
+
+	opinion = {
+		base = -1500
+	}
+}
+
+triggered_opinion_of_end_titan = {
+	trigger = {
+		if = {
+			limit = {
+				FROM = { has_country_flag = upgrade_to_end_titan_finished }
+				can_have_time_opinion = yes
+			}
+			exists = event_target:time_titan_fleet
+			event_target:time_titan_fleet = {
+				is_controlled_by = ROOT.FROM
+				leader = { is_syzygy_admiral = yes }
+			}
+		}
+		else = {
+			always = no
+		}
+	}
+
+	opinion = {
+		base = -200
+	}
+}
+
+triggered_opinion_of_resolution_beyond_infinity = {
+	trigger = {
+		if = {
+			limit = {
+				exists = event_target:beyond_infinity_country
+			}
+			if = {
+				limit = {
+					FROM = {
+						is_same_value = event_target:beyond_infinity_country
+						OR = {
+							is_galactic_emperor = yes
+							is_galactic_custodian = yes
+						}
+					}
+					has_resolution_beyond_infinity_level = { LEVEL = 1 }
+					can_have_time_opinion = yes
+				}
+				if = {
+					limit = {
+						has_resolution_beyond_infinity_level = { LEVEL = 2 }
+					}
+					is_galactic_community_member = yes
+				}
+				else = {
+					is_part_of_galactic_council = yes
+				}
+			}
+			else = {
+				always = no
+			}
+		}
+		else = {
+			always = no
+		}
+	}
+
+	opinion = {
+		base = 100
+		modifier = {
+			add = 100
+			if = {
+				limit = {
+					has_resolution_beyond_infinity_level = { LEVEL = 3 }
+				}
+				always = yes
+			}
+			else_if = {
+				limit = {
+					has_resolution_beyond_infinity_level = { LEVEL = 2 }
+				}
+				is_part_of_galactic_council = yes
+			}
+			else = {
+				always = no
+			}
+		}
+	}
+}
+
+
+
+triggered_opinion_of_dimensional_horror_crisis_end = {
+	trigger = {
+		has_global_flag = dimensional_horror_crisis_end
+	}
+
+	opinion = {
+		base = 1500
+	}
+}
+
+opinion_dimension_traveler = {
+	opinion = {
+		base = 1500
+	}
+}
+
+opinion_help_manifold_country = {
+	opinion = {
+		base = 100
+	}
+}

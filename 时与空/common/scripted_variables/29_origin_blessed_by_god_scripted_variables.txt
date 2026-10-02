@@ -1,0 +1,5 @@
+@blessed_by_god_base = 5
+@blessed_by_god_tradition_mult = 0.5
+@blessed_by_god_ascension_mult = 3
+@blessed_by_god_decision_unity_cost = 100
+@blessed_by_god_decision_sr_zro_cost = 10

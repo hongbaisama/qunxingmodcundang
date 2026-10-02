@@ -1,0 +1,6 @@
+triggered_councilor_modifier = {
+	potential = {
+		has_global_flag = dimensional_horror_crisis_storm_has_occurred
+	}
+	dimensional_horror_crisis_storm_protection_level = $COUNT$
+}

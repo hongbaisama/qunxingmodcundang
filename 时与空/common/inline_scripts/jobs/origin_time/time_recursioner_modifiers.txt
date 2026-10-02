@@ -1,0 +1,75 @@
+# 基础
+triggered_planet_modifier = {
+	district_time_usage = 2
+}
+
+# 研究人员部分
+inline_script = "jobs/vanilla/vanilla_researcher_modifiers"
+
+triggered_country_modifier = {
+	country_resource_max_add = 10000
+}
+
+# 生存所需（普政）（该岗位不受劳动力x10/100影响，但人口占用x10/100，故部分岗位修正x10/100）
+triggered_planet_modifier = {
+	potential = {
+		owner = {
+			is_gestalt = no
+			NOT = { has_country_flag = time_soul_virtuality_finished }
+		}
+	}
+	planet_crime_add = -1
+	planet_housing_add = 1000
+}
+
+triggered_planet_modifier = {
+	potential = {
+		owner = {
+			is_gestalt = no
+			has_country_flag = time_soul_virtuality_finished
+		}
+	}
+	planet_crime_add = -1
+	planet_housing_add = 10000
+}
+
+triggered_planet_modifier = {
+	potential = {
+		owner = {
+			is_gestalt = no
+			NOT = { has_valid_civic = civic_dystopian_society }
+			NOT = { has_country_flag = time_soul_virtuality_finished }
+		}
+	}
+	planet_amenities_add = 1000
+	mult = value:scripted_modifier_mult|MODIFIER|pop_job_amenities_mult|
+}
+
+triggered_planet_modifier = {
+	potential = {
+		owner = {
+			is_gestalt = no
+			NOT = { has_valid_civic = civic_dystopian_society }
+			has_country_flag = time_soul_virtuality_finished
+		}
+	}
+	planet_amenities_add = 10000
+	mult = value:scripted_modifier_mult|MODIFIER|pop_job_amenities_mult|
+}
+
+# 生存所需（格式塔）（该岗位不受劳动力x10影响，但人口占用x10，故部分岗位修正x10）
+triggered_planet_modifier = {
+	potential = {
+		owner = { is_gestalt = yes }
+	}
+	planet_crime_no_happiness_add = -1
+	planet_housing_add = 1000
+}
+
+triggered_planet_modifier = {
+	potential = {
+		owner = { is_gestalt = yes }
+	}
+	planet_amenities_no_happiness_add = 1000
+	mult = value:scripted_modifier_mult|MODIFIER|pop_job_amenities_mult|
+}

@@ -1,0 +1,11 @@
+triggered_pop_group_modifier = {
+	key = influential_jobs_bonus_workforce_mult
+	pop_monster_hunter_bonus_workforce_mult = 1
+	mult = value:scripted_modifier_add|MODIFIER|pop_entertainer_bonus_workforce_mult|
+}
+
+triggered_pop_group_modifier = {
+	key = soldier_jobs_bonus_workforce_mult
+	pop_monster_hunter_bonus_workforce_mult = 1
+	mult = value:scripted_modifier_add|MODIFIER|pop_soldier_bonus_workforce_mult|
+}

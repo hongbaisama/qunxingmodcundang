@@ -1,0 +1,80 @@
+part = {
+	location = 0
+	localization = "START_SCREEN_TIME_0"
+
+	trigger = {
+		is_wonder_country_time_0 = yes
+	}
+}
+
+part = {
+	location = 0
+	localization = "START_SCREEN_TIME_1"
+
+	trigger = {
+		is_wonder_country_time_1 = yes
+	}
+}
+
+part = {
+	location = 0
+	localization = "START_SCREEN_TIME_2"
+
+	trigger = {
+		is_wonder_country_time_2 = yes
+	}
+}
+
+part = {
+	location = 0
+	localization = "START_SCREEN_TIME_3"
+
+	trigger = {
+		is_wonder_country_time_3 = yes
+	}
+}
+
+part = {
+	location = 0
+	localization = "START_SCREEN_WONDER_COUNTRY_38"
+
+	trigger = {
+		is_wonder_country_38 = yes
+	}
+}
+
+part = {
+	location = 0
+	localization = "START_SCREEN_WONDER_COUNTRY_39"
+
+	trigger = {
+		is_wonder_country_39 = yes
+	}
+}
+
+part = {
+	location = 0
+	localization = "START_SCREEN_WONDER_COUNTRY_40"
+
+	trigger = {
+		is_wonder_country_40 = yes
+	}
+}
+
+part = {
+	location = 0
+	localization = "START_SCREEN_WONDER_COUNTRY_SYNTH_QUEEN"
+
+	trigger = {
+		is_wonder_country_synth_queen = yes
+	}
+}
+
+part = {
+	location = 1
+	localization = "START_SCREEN_WONDER_COUNTRY_91"
+
+	trigger = {
+		is_wonder_country_91 = yes
+	}
+}

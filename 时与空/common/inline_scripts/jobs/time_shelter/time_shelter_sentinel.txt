@@ -1,0 +1,61 @@
+category = $CATEGORY$
+can_be_automated = no
+
+swappable_data = {
+	default = {
+		building_icon = building_forever_cruise_crew_industry
+		icon = knight
+	}
+}
+
+tags = { energy minerals food }
+
+resources = {
+	category = planet_time_shelter_sentinels
+	produces = {
+		energy = 6
+		minerals = 4
+		food = 6
+		mult = value:time_shelter_output_value
+	}
+	upkeep = {
+		alloys = 1.25
+	}
+}
+
+triggered_planet_modifier = {
+	potential = {
+		has_time_shelter_modifier = { MODIFIER = time_shelter_sentinel_produce_planet_pops_upkeep_mult }
+	}
+	planet_pops_upkeep_mult = 1
+	mult = value:time_shelter_modifier_output_value|MODIFIER|time_shelter_sentinel_produce_planet_pops_upkeep_mult|
+}
+
+triggered_planet_modifier = {
+	potential = {
+		has_time_shelter_modifier = { MODIFIER = time_shelter_sentinel_produce_planet_structures_cost_mult }
+	}
+	planet_structures_cost_mult = 1
+	mult = value:time_shelter_modifier_output_value|MODIFIER|time_shelter_sentinel_produce_planet_structures_cost_mult|
+}
+
+triggered_planet_modifier = {
+	potential = {
+		has_time_shelter_modifier = { MODIFIER = time_shelter_sentinel_produce_logistic_growth_mult }
+	}
+	logistic_growth_mult = 1
+	mult = value:time_shelter_modifier_output_value|MODIFIER|time_shelter_sentinel_produce_logistic_growth_mult|
+}
+
+triggered_planet_modifier = {
+	potential = {
+		has_time_shelter_modifier = { MODIFIER = time_shelter_sentinel_produce_bonus_pop_growth_mult }
+	}
+	bonus_pop_growth_mult = 1
+	mult = value:time_shelter_modifier_output_value|MODIFIER|time_shelter_sentinel_produce_bonus_pop_growth_mult|
+}
+
+weight = {
+	weight = $WEIGHT$
+	mult = 100
+}

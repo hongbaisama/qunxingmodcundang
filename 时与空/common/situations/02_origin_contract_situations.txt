@@ -1,0 +1,447 @@
+# 喰煞VS月窠
+situation_origin_contract_eater_vs_cradle = {
+	fail_icon_frame = GFX_situation_outcome_frame_red
+	fail_icon = GFX_situation_outcome_eater
+	complete_icon_frame = GFX_situation_outcome_frame_green
+	complete_icon = GFX_situation_outcome_cradle
+	picture = {
+		trigger = {
+			current_stage = stage_origin_contract_eater_2
+		}
+		picture = GFX_time_vs_red_full
+	}
+	picture = {
+		trigger = {
+			current_stage = stage_origin_contract_eater_1
+		}
+		picture = GFX_time_vs_red
+	}
+	picture = {
+		trigger = {
+			current_stage = stage_origin_contract_whisperers
+		}
+		picture = GFX_time_vs_nature
+	}
+	picture = {
+		trigger = {
+			current_stage = stage_origin_contract_cradle_1
+		}
+		picture = GFX_time_vs_blue
+	}
+	picture = {
+		trigger = {
+			current_stage = stage_origin_contract_cradle_2
+		}
+		picture = GFX_time_vs_blue_full
+	}
+	situation_log_category = empire_concerns
+	
+	category = neutral
+	progress_direction = bidirectional
+	complete_category = positive
+	fail_category = negative
+	
+	initial_progress = 500
+	
+	stages = {
+		stage_origin_contract_eater_2 = {
+			icon = GFX_situation_stage_origin_contract_eater
+			icon_background = GFX_situation_stage_frame_blue
+			custom_tooltip = stage_unknown_effects
+			end = 200
+			triggered_modifier = {
+				origin_contract_eater_produces_mult = 1
+				origin_contract_cradle_produces_mult = -1
+			}
+			triggered_modifier = {
+				starbase_shipyard_build_speed_mult = 0.2
+				starbase_shipyard_build_cost_mult = -0.1
+				mult = value:situation_origin_contract_value|BASE|2|
+			}
+			triggered_modifier = {
+				diplo_weight_mult = 0.2
+				diplo_action_acceptance_add = 10
+				mult = value:situation_origin_contract_value|BASE|0|
+			}
+		}
+		stage_origin_contract_eater_1 = {
+			icon = GFX_situation_stage_origin_contract_eater
+			icon_background = GFX_situation_stage_frame_blue
+			custom_tooltip = stage_unknown_effects
+			end = 400
+			triggered_modifier = {
+				origin_contract_eater_produces_mult = 0.5
+				origin_contract_cradle_produces_mult = -0.5
+			}
+			triggered_modifier = {
+				starbase_shipyard_build_speed_mult = 0.2
+				starbase_shipyard_build_cost_mult = -0.1
+				mult = value:situation_origin_contract_value|BASE|1.5|
+			}
+			triggered_modifier = {
+				diplo_weight_mult = 0.2
+				diplo_action_acceptance_add = 10
+				mult = value:situation_origin_contract_value|BASE|0.5|
+			}
+		}
+		stage_origin_contract_whisperers = {
+			icon = GFX_situation_stage_origin_contract_whisperers
+			icon_background = GFX_situation_stage_frame_blue
+			custom_tooltip = stage_unknown_effects
+			end = 600
+			triggered_modifier = {
+				starbase_shipyard_build_speed_mult = 0.2
+				starbase_shipyard_build_cost_mult = -0.1
+				mult = value:situation_origin_contract_value|BASE|1|
+			}
+			triggered_modifier = {
+				diplo_weight_mult = 0.2
+				diplo_action_acceptance_add = 10
+				mult = value:situation_origin_contract_value|BASE|1|
+			}
+		}
+		stage_origin_contract_cradle_1 = {
+			icon = GFX_situation_stage_origin_contract_cradle
+			icon_background = GFX_situation_stage_frame_blue
+			custom_tooltip = stage_unknown_effects
+			end = 800
+			triggered_modifier = {
+				origin_contract_eater_produces_mult = -0.5
+				origin_contract_cradle_produces_mult = 0.5
+			}
+			triggered_modifier = {
+				starbase_shipyard_build_speed_mult = 0.2
+				starbase_shipyard_build_cost_mult = -0.1
+				mult = value:situation_origin_contract_value|BASE|0.5|
+			}
+			triggered_modifier = {
+				diplo_weight_mult = 0.2
+				diplo_action_acceptance_add = 10
+				mult = value:situation_origin_contract_value|BASE|1.5|
+			}
+		}
+		stage_origin_contract_cradle_2 = {
+			icon = GFX_situation_stage_origin_contract_cradle
+			icon_background = GFX_situation_stage_frame_blue
+			custom_tooltip = stage_unknown_effects
+			end = 1000
+			triggered_modifier = {
+				origin_contract_eater_produces_mult = -1
+				origin_contract_cradle_produces_mult = 1
+			}
+			triggered_modifier = {
+				starbase_shipyard_build_speed_mult = 0.2
+				starbase_shipyard_build_cost_mult = -0.1
+				mult = value:situation_origin_contract_value|BASE|0|
+			}
+			triggered_modifier = {
+				diplo_weight_mult = 0.2
+				diplo_action_acceptance_add = 10
+				mult = value:situation_origin_contract_value|BASE|2|
+			}
+		}
+	}
+	
+	on_fail = {
+		custom_tooltip = situation_origin_contract_eater_win
+		hidden_effect = {
+			situation_event = { id = contract.100 }
+		}
+	}
+	
+	on_progress_complete = {
+		custom_tooltip = situation_origin_contract_cradle_win
+		hidden_effect = {
+			situation_event = { id = contract.200 }
+		}
+	}
+	
+	approach = {
+		name = approach_origin_contract_whisperers
+		icon = GFX_situation_approach_shrug
+		icon_background = GFX_situation_approach_bg_green
+		default = yes
+	}
+	
+	monthly_progress = {
+		base = 0
+		modifier = {
+			desc = mod_origin_contract_eater_attunement
+			subtract = owner.modifier:origin_contract_eater_attunement
+		}
+		modifier = {
+			desc = mod_origin_contract_cradle_attunement
+			add = owner.modifier:origin_contract_cradle_attunement
+		}
+		
+		modifier = {
+			desc = origin_contract_attunement_for_eater
+			factor = owner.value:origin_contract_attunement_progress_factor|PATRON|the_eater_of_worlds|
+			owner = {
+				NOT = { has_country_flag = the_eater_of_worlds_betrayal }
+			}
+			check_variable_arithmetic = {
+				which = owner.modifier:origin_contract_eater_attunement
+				value > owner.modifier:origin_contract_cradle_attunement
+			}
+		}
+		modifier = {
+			desc = origin_contract_attunement_for_eater_by_whisperers
+			factor = owner.value:origin_contract_attunement_progress_factor|PATRON|whisperers_in_the_void|
+			owner = {
+				has_country_flag = the_eater_of_worlds_betrayal
+			}
+			check_variable_arithmetic = {
+				which = owner.modifier:origin_contract_eater_attunement
+				value > owner.modifier:origin_contract_cradle_attunement
+			}
+		}
+		
+		modifier = {
+			desc = origin_contract_attunement_for_cradle
+			factor = owner.value:origin_contract_attunement_progress_factor|PATRON|the_cradle_of_souls|
+			owner = {
+				NOT = { has_country_flag = the_cradle_of_souls_betrayal }
+			}
+			check_variable_arithmetic = {
+				which = owner.modifier:origin_contract_eater_attunement
+				value < owner.modifier:origin_contract_cradle_attunement
+			}
+		}
+		modifier = {
+			desc = origin_contract_attunement_for_cradle_by_whisperers
+			factor = owner.value:origin_contract_attunement_progress_factor|PATRON|whisperers_in_the_void|
+			owner = {
+				has_country_flag = the_cradle_of_souls_betrayal
+			}
+			check_variable_arithmetic = {
+				which = owner.modifier:origin_contract_eater_attunement
+				value < owner.modifier:origin_contract_cradle_attunement
+			}
+		}
+	}
+}
+
+# 器具VS织缕
+situation_origin_contract_instrument_vs_composer = {
+	fail_icon_frame = GFX_situation_outcome_frame_red
+	fail_icon = GFX_situation_outcome_instrument
+	complete_icon_frame = GFX_situation_outcome_frame_green
+	complete_icon = GFX_situation_outcome_composer
+	picture = {
+		trigger = {
+			current_stage = stage_origin_contract_instrument_2
+		}
+		picture = GFX_time_vs_red_full
+	}
+	picture = {
+		trigger = {
+			current_stage = stage_origin_contract_instrument_1
+		}
+		picture = GFX_time_vs_red
+	}
+	picture = {
+		trigger = {
+			current_stage = stage_origin_contract_whisperers
+		}
+		picture = GFX_time_vs_nature
+	}
+	picture = {
+		trigger = {
+			current_stage = stage_origin_contract_composer_1
+		}
+		picture = GFX_time_vs_blue
+	}
+	picture = {
+		trigger = {
+			current_stage = stage_origin_contract_composer_2
+		}
+		picture = GFX_time_vs_blue_full
+	}
+	situation_log_category = empire_concerns
+	
+	category = neutral
+	progress_direction = bidirectional
+	complete_category = positive
+	fail_category = negative
+	
+	initial_progress = 500
+	
+	stages = {
+		stage_origin_contract_instrument_2 = {
+			icon = GFX_situation_stage_origin_contract_instrument
+			icon_background = GFX_situation_stage_frame_blue
+			custom_tooltip = stage_unknown_effects
+			end = 200
+			triggered_modifier = {
+				origin_contract_instrument_produces_mult = 1
+				origin_contract_composer_produces_mult = -1
+			}
+			triggered_modifier = {
+				planet_jobs_produces_mult = 0.2
+				planet_jobs_upkeep_mult = -0.1
+				mult = value:situation_origin_contract_value|BASE|2|
+			}
+			triggered_modifier = {
+				planet_pops_upkeep_mult = -0.2
+				empire_size_pops_mult = -0.1
+				mult = value:situation_origin_contract_value|BASE|0|
+			}
+		}
+		stage_origin_contract_instrument_1 = {
+			icon = GFX_situation_stage_origin_contract_instrument
+			icon_background = GFX_situation_stage_frame_blue
+			custom_tooltip = stage_unknown_effects
+			end = 400
+			triggered_modifier = {
+				origin_contract_instrument_produces_mult = 0.5
+				origin_contract_composer_produces_mult = -0.5
+			}
+			triggered_modifier = {
+				planet_jobs_produces_mult = 0.2
+				planet_jobs_upkeep_mult = -0.1
+				mult = value:situation_origin_contract_value|BASE|1.5|
+			}
+			triggered_modifier = {
+				planet_pops_upkeep_mult = -0.2
+				empire_size_pops_mult = -0.1
+				mult = value:situation_origin_contract_value|BASE|0.5|
+			}
+		}
+		stage_origin_contract_whisperers = {
+			icon = GFX_situation_stage_origin_contract_whisperers
+			icon_background = GFX_situation_stage_frame_blue
+			custom_tooltip = stage_unknown_effects
+			end = 600
+			triggered_modifier = {
+				planet_jobs_produces_mult = 0.2
+				planet_jobs_upkeep_mult = -0.1
+				mult = value:situation_origin_contract_value|BASE|1|
+			}
+			triggered_modifier = {
+				planet_pops_upkeep_mult = -0.2
+				empire_size_pops_mult = -0.1
+				mult = value:situation_origin_contract_value|BASE|1|
+			}
+		}
+		stage_origin_contract_composer_1 = {
+			icon = GFX_situation_stage_origin_contract_composer
+			icon_background = GFX_situation_stage_frame_blue
+			custom_tooltip = stage_unknown_effects
+			end = 800
+			triggered_modifier = {
+				origin_contract_instrument_produces_mult = -0.5
+				origin_contract_composer_produces_mult = 0.5
+			}
+			triggered_modifier = {
+				planet_jobs_produces_mult = 0.2
+				planet_jobs_upkeep_mult = -0.1
+				mult = value:situation_origin_contract_value|BASE|0.5|
+			}
+			triggered_modifier = {
+				planet_pops_upkeep_mult = -0.2
+				empire_size_pops_mult = -0.1
+				mult = value:situation_origin_contract_value|BASE|1.5|
+			}
+		}
+		stage_origin_contract_composer_2 = {
+			icon = GFX_situation_stage_origin_contract_composer
+			icon_background = GFX_situation_stage_frame_blue
+			custom_tooltip = stage_unknown_effects
+			end = 1000
+			triggered_modifier = {
+				origin_contract_instrument_produces_mult = -1
+				origin_contract_composer_produces_mult = 1
+			}
+			triggered_modifier = {
+				planet_jobs_produces_mult = 0.2
+				planet_jobs_upkeep_mult = -0.1
+				mult = value:situation_origin_contract_value|BASE|0|
+			}
+			triggered_modifier = {
+				planet_pops_upkeep_mult = -0.2
+				empire_size_pops_mult = -0.1
+				mult = value:situation_origin_contract_value|BASE|2|
+			}
+		}
+	}
+	
+	on_fail = {
+		custom_tooltip = situation_origin_contract_instrument_win
+		hidden_effect = {
+			situation_event = { id = contract.300 }
+		}
+	}
+	
+	on_progress_complete = {
+		custom_tooltip = situation_origin_contract_composer_win
+		hidden_effect = {
+			situation_event = { id = contract.400 }
+		}
+	}
+	
+	approach = {
+		name = approach_origin_contract_whisperers
+		icon = GFX_situation_approach_shrug
+		icon_background = GFX_situation_approach_bg_green
+		default = yes
+	}
+	
+	monthly_progress = {
+		base = 0
+		modifier = {
+			desc = mod_origin_contract_instrument_attunement
+			subtract = owner.modifier:origin_contract_instrument_attunement
+		}
+		modifier = {
+			desc = mod_origin_contract_composer_attunement
+			add = owner.modifier:origin_contract_composer_attunement
+		}
+		
+		modifier = {
+			desc = origin_contract_attunement_for_instrument
+			factor = owner.value:origin_contract_attunement_progress_factor|PATRON|the_instrument_of_desire|
+			owner = {
+				NOT = { has_country_flag = the_instrument_of_desire_betrayal }
+			}
+			check_variable_arithmetic = {
+				which = owner.modifier:origin_contract_instrument_attunement
+				value > owner.modifier:origin_contract_composer_attunement
+			}
+		}
+		modifier = {
+			desc = origin_contract_attunement_for_instrument_by_whisperers
+			factor = owner.value:origin_contract_attunement_progress_factor|PATRON|whisperers_in_the_void|
+			owner = {
+				has_country_flag = the_instrument_of_desire_betrayal
+			}
+			check_variable_arithmetic = {
+				which = owner.modifier:origin_contract_instrument_attunement
+				value > owner.modifier:origin_contract_composer_attunement
+			}
+		}
+		
+		modifier = {
+			desc = origin_contract_attunement_for_composer
+			factor = owner.value:origin_contract_attunement_progress_factor|PATRON|the_composer_of_strands|
+			owner = {
+				NOT = { has_country_flag = the_composer_of_strands_betrayal }
+			}
+			check_variable_arithmetic = {
+				which = owner.modifier:origin_contract_instrument_attunement
+				value < owner.modifier:origin_contract_composer_attunement
+			}
+		}
+		modifier = {
+			desc = origin_contract_attunement_for_composer_by_whisperers
+			factor = owner.value:origin_contract_attunement_progress_factor|PATRON|whisperers_in_the_void|
+			owner = {
+				has_country_flag = the_composer_of_strands_betrayal
+			}
+			check_variable_arithmetic = {
+				which = owner.modifier:origin_contract_instrument_attunement
+				value < owner.modifier:origin_contract_composer_attunement
+			}
+		}
+	}
+}

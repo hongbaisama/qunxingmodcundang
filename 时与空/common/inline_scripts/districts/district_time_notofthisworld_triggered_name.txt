@@ -1,0 +1,81 @@
+triggered_name = {
+	trigger = {
+		num_districts = {
+			type = district_time_notofthisworld
+			value >= 16
+		}
+		num_zones = {
+			type = zone_time_notofthisworld_rift_sphere
+			value > 0
+		}
+		num_zones = {
+			type = zone_time_notofthisworld_astral_harvesting
+			value > 0
+		}
+	}
+	text = district_time_notofthisworld_max
+}
+
+triggered_name = {
+	trigger = {
+		num_districts = {
+			type = district_time_notofthisworld
+			value >= 8
+		}
+		num_zones = {
+			type = zone_time_notofthisworld_rift_sphere
+			value > 0
+		}
+		num_zones = {
+			type = zone_time_notofthisworld_astral_harvesting
+			value > 0
+		}
+	}
+	text = district_time_notofthisworld_high
+}
+
+triggered_name = {
+	trigger = {
+		calc_true_if = {
+			amount >= 2
+			num_districts = {
+				type = district_time_notofthisworld
+				value >= 4
+			}
+			num_zones = {
+				type = zone_time_notofthisworld_rift_sphere
+				value > 0
+			}
+			num_zones = {
+				type = zone_time_notofthisworld_astral_harvesting
+				value > 0
+			}
+		}
+	}
+	text = district_time_notofthisworld_middle
+}
+
+triggered_name = {
+	trigger = {
+		calc_true_if = {
+			amount >= 1
+			num_districts = {
+				type = district_time_notofthisworld
+				value >= 2
+			}
+			num_zones = {
+				type = zone_time_notofthisworld_rift_sphere
+				value > 0
+			}
+			num_zones = {
+				type = zone_time_notofthisworld_astral_harvesting
+				value > 0
+			}
+		}
+	}
+	text = district_time_notofthisworld_low
+}
+
+triggered_name = {
+	text = district_time_notofthisworld_none
+}

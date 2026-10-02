@@ -1,0 +1,106 @@
+# Root = Pop Group
+# From = Country
+# This = Species
+# NOTE: species_has_happiness is also checked for this
+pop_group_has_random_ethics = {
+	exists = from
+	NOT = {
+		has_citizenship_type = {
+			country = from
+			type = citizenship_organic_trophy
+		}
+	}
+	TIME_RULE_trgr_Has_random_ethics = yes
+}
+
+# Root = Pop Group
+# From = Country
+# This = Species
+species_has_happiness = {
+	if = {
+		limit = {
+			TIME_RULE_trgr_Force_has_happiness = no
+		}
+		NOR = {
+			AND = {
+				has_trait = trait_machine_unit
+				exists = from
+				from = { is_machine_empire = yes }
+			}
+			has_trait = trait_hive_mind
+			can_think = no
+			AND = {
+				has_trait = trait_mechanical
+				OR = {
+					NOT = { exists = from }
+					from = { is_machine_empire = yes }
+					from = { NOT = { has_technology = tech_synthetic_workers } }
+					from = { has_policy_flag = ai_outlawed }
+				}
+			}
+			AND = {
+				has_trait = trait_cybernetic
+				exists = from
+				from = {
+					OR = {
+						AND = {
+							is_machine_empire = yes
+							has_civic = civic_machine_assimilator # Assimilator empire
+						}
+						AND = {
+							is_democratic_authority = yes
+							has_country_flag = cyber_collectivist
+						}
+					}
+				}
+			}
+		}
+	}
+}
+
+# This = colony
+# Checked before can_pop_auto_migrate to save performance
+can_colony_auto_migrate = {
+	hidden_trigger = {
+		is_colony = yes
+	}
+	custom_tooltip = {
+		fail_text = AUTO_MIGRATE_CULTURE_SHOCK
+		NOT = { has_modifier = planet_culture_shock }
+	}
+	custom_tooltip = {
+		fail_text = AUTO_MIGRATE_COLONY_TOO_NEW
+		OR = {
+			AND = {
+				is_under_colonization = no
+				colony_age > 60
+			}
+			is_capital = yes # Don't break Doomsday!
+		}
+	}
+	custom_tooltip = {
+		fail_text = AUTO_MIGRATE_ONLY_HAS_ONE_POP
+		sapient_pop_amount > 100
+	}
+	hidden_trigger = {
+		exists = owner
+		owner = {
+			OR = {
+				is_country_type = default
+				is_country_type = awakened_fallen_empire
+			}
+		}
+	}
+	TIME_RULE_trgr_Can_planet_auto_migrate = yes
+}
+
+# This = colony
+can_colony_receive_auto_migration = {
+	NOR = {
+		planet_devastation >= 10
+		has_modifier = planet_culture_shock
+		is_doomsday_planet = yes
+		is_planet_class = pc_cosmogenesis_world
+	}
+	TIME_RULE_trgr_Can_planet_receive_auto_migrate = yes
+}

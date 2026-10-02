@@ -1,0 +1,98 @@
+inline_script = {
+	script = trait/subtitle/council_$COUNCIL$
+	RARITY = $RARITY$
+	CLASS = $CLASS$
+}
+icon = {
+	layer = {
+		icon = "GFX_trait_bg"
+		color = "trait_bg_default"
+	}
+	inline_script = trait/icon_element/rarity_$RARITY$
+	layer = {
+		icon = "GFX_leader_trait_efficient"
+		color = "trait_icon_default"
+		visible = {
+			has_leader_flag = care_economy
+		}
+	}
+	layer = {
+		icon = "GFX_leader_trait_capitalist"
+		color = "trait_icon_default"
+		visible = {
+			has_leader_flag = care_trade
+		}
+	}
+	layer = {
+		icon = "GFX_leader_trait_embezzler"
+		color = "trait_icon_default"
+		visible = {
+			has_leader_flag = care_energy
+		}
+	}
+	layer = {
+		icon = "GFX_leader_trait_custom_AI_assistant"
+		color = "trait_icon_default"
+		visible = {
+			has_leader_flag = care_research
+		}
+	}
+	layer = {
+		icon = "GFX_leader_trait_conscripter"
+		color = "trait_icon_default"
+		visible = {
+			has_leader_flag = care_unity
+		}
+	}
+	layer = {
+		icon = "GFX_leader_trait_cartographer"
+		color = "trait_icon_default"
+		visible = {
+			has_leader_flag = care_housing
+		}
+	}
+	layer = {
+		icon = "GFX_leader_trait_champion_of_the_people"
+		color = "trait_icon_default"
+		visible = {
+			has_leader_flag = care_amenities
+		}
+	}
+	layer = {
+		icon = "GFX_leader_trait_clone_soldier_descendant"
+		color = "trait_icon_default"
+		visible = {
+			has_leader_flag = care_growth
+			owner_main_species = { is_robotic = no }
+		}
+	}
+	layer = {
+		icon = "GFX_leader_trait_assembler"
+		color = "trait_icon_default"
+		visible = {
+			has_leader_flag = care_growth
+			owner_main_species = { is_robotic = yes }
+		}
+	}
+	layer = {
+		icon = "GFX_leader_trait_industrial_focus"
+		color = "trait_icon_default"
+		visible = {
+			has_leader_flag = care_alloys
+		}
+	}
+	layer = {
+		icon = "GFX_leader_trait_industrialist"
+		color = "trait_icon_default"
+		visible = {
+			has_leader_flag = care_minerals
+		}
+	}
+	inline_script = {
+		script = trait/icon_element/council_$COUNCIL$
+		CLASS = $CLASS$
+	}
+	inline_script = trait/icon_element/tier_$TIER$
+}
+leader_trait_rarity = $RARITY$
+sorting_priority = @trait_sorting_priority_$RARITY$_$COUNCIL$_$TIER$

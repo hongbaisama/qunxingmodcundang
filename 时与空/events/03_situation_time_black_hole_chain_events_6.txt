@@ -1,0 +1,368 @@
+
+namespace = time
+
+situation_event = {
+	id = time.260
+	title = time.260.name
+	desc = time.260.desc
+	picture = GFX_evt_city_planet
+	show_sound = event_celebration
+	location = event_target:time_home_planet
+	situation = this
+	
+	is_triggered_only = yes
+	
+	trigger = {
+	}
+	
+	immediate = {
+		time_ethic_win = { ETHIC = pacifist }
+	}
+	
+	option = {
+		name = time.260.a
+	}
+}
+
+situation_event = {
+	id = time.261
+	title = time.261.name
+	desc = time.261.desc
+	picture = GFX_evt_friendly_infiltration
+	show_sound = event_factions
+	location = event_target:time_home_planet
+	situation = event_target:situation_time_militarist_vs_pacifist
+	
+	is_triggered_only = yes
+	
+	trigger = {
+		exists = event_target:situation_time_militarist_vs_pacifist
+	}
+	
+	immediate = {
+		set_timed_situation_flag = {
+			flag = time_261_triggered
+			days = @time_ethic_random_situation_event_cooldown_middle
+		}
+	}
+	
+	abort_trigger = {
+		has_situation_flag = abort_time_ethic_random_situation_event
+	}
+	
+	abort_effect = {
+		target = {
+			shift_random_pop_time_ethic = {
+				ETHIC = pacifist
+				PERCENTAGE = @time_ethic_shift_percentage_middle
+			}
+		}
+		refresh_time_ethic_power_variable = yes
+	}
+	
+	option = {
+		name = time.211.a
+		target = {
+			custom_tooltip = time_change_pop_ethic_pacifist
+			hidden_effect = {
+				shift_random_pop_time_ethic = {
+					ETHIC = pacifist
+					PERCENTAGE = @time_ethic_shift_percentage_middle
+				}
+			}
+		}
+		hidden_effect = {
+			refresh_time_ethic_power_variable = yes
+		}
+	}
+	
+	option = {
+		name = time.211.b
+		allow = {
+			owner = {
+				has_resource = {
+					type = influence
+					amount >= 75
+				}
+			}
+		}
+		owner = {
+			add_resource = { influence = -75 }
+		}
+	}
+}
+
+situation_event = {
+	id = time.262
+	title = time.262.name
+	desc = time.262.desc
+	picture = GFX_evt_friendly_infiltration
+	show_sound = event_factions
+	location = event_target:time_home_planet
+	situation = event_target:situation_time_militarist_vs_pacifist
+	
+	is_triggered_only = yes
+	
+	trigger = {
+		exists = event_target:situation_time_militarist_vs_pacifist
+	}
+	
+	immediate = {
+		set_timed_situation_flag = {
+			flag = time_262_triggered
+			days = @time_ethic_random_situation_event_cooldown_short
+		}
+	}
+	
+	abort_trigger = {
+		has_situation_flag = abort_time_ethic_random_situation_event
+	}
+	
+	abort_effect = {
+		target = {
+			shift_random_pop_time_ethic = {
+				ETHIC = pacifist
+				PERCENTAGE = @time_ethic_shift_percentage_low
+			}
+		}
+		refresh_time_ethic_power_variable = yes
+	}
+	
+	option = {
+		name = time.212.a
+		target = {
+			custom_tooltip = time_change_pop_ethic_pacifist
+			hidden_effect = {
+				shift_random_pop_time_ethic = {
+					ETHIC = pacifist
+					PERCENTAGE = @time_ethic_shift_percentage_low
+				}
+			}
+		}
+		hidden_effect = {
+			refresh_time_ethic_power_variable = yes
+		}
+	}
+	
+	option = {
+		name = time.212.b
+		allow = {
+			owner = {
+				has_resource = {
+					type = influence
+					amount >= 50
+				}
+			}
+		}
+		owner = {
+			add_resource = { influence = -50 }
+		}
+	}
+}
+
+situation_event = {
+	id = time.263
+	title = time.263.name
+	desc = time.263.desc
+	picture = GFX_evt_friendly_infiltration
+	show_sound = event_factions
+	location = event_target:time_home_planet
+	situation = event_target:situation_time_militarist_vs_pacifist
+	
+	is_triggered_only = yes
+	
+	trigger = {
+		exists = event_target:situation_time_militarist_vs_pacifist
+		owner = { is_pacifist = no }
+	}
+	
+	immediate = {
+		set_timed_situation_flag = {
+			flag = time_263_triggered
+			days = @time_ethic_random_situation_event_cooldown_very_long
+		}
+	}
+	
+	abort_trigger = {
+		has_situation_flag = abort_time_ethic_random_situation_event
+	}
+	
+	abort_effect = {
+		target = {
+			add_modifier = {
+				modifier = origin_time_coup
+				days = @time_ethic_random_situation_event_cooldown_long
+			}
+			shift_random_pop_time_ethic = {
+				ETHIC = pacifist
+				PERCENTAGE = @time_ethic_shift_percentage_high
+			}
+		}
+		refresh_time_ethic_power_variable = yes
+	}
+	
+	option = {
+		name = time.213.a
+		target = {
+			custom_tooltip = time_change_pop_ethic_pacifist
+			add_modifier = {
+				modifier = origin_time_coup
+				days = @time_ethic_random_situation_event_cooldown_long
+			}
+			hidden_effect = {
+				shift_random_pop_time_ethic = {
+					ETHIC = pacifist
+					PERCENTAGE = @time_ethic_shift_percentage_high
+				}
+			}
+		}
+		hidden_effect = {
+			refresh_time_ethic_power_variable = yes
+		}
+	}
+	
+	option = {
+		name = time.213.b
+		allow = {
+			owner = {
+				has_resource = {
+					type = influence
+					amount >= 100
+				}
+			}
+		}
+		owner = {
+			add_resource = { influence = -100 }
+		}
+		target = {
+			add_modifier = {
+				modifier = origin_time_coup
+				days = @time_ethic_random_situation_event_cooldown_very_long
+			}
+		}
+	}
+}
+
+situation_event = {
+	id = time.264
+	title = time.264.name
+	desc = time.264.desc
+	picture = GFX_evt_friendly_infiltration
+	show_sound = event_factions
+	location = event_target:time_home_planet
+	situation = event_target:situation_time_militarist_vs_pacifist
+	
+	is_triggered_only = yes
+	
+	trigger = {
+		exists = event_target:situation_time_militarist_vs_pacifist
+		owner = { is_pacifist = no }
+	}
+	
+	immediate = {
+		set_timed_situation_flag = {
+			flag = time_264_triggered
+			days = @time_ethic_random_situation_event_cooldown_long
+		}
+		set_timed_situation_flag = {
+			flag = time_planet_devastation_event
+			days = @time_ethic_random_situation_event_cooldown_long
+		}
+	}
+	
+	abort_trigger = {
+		has_situation_flag = abort_time_ethic_random_situation_event
+	}
+	
+	abort_effect = {
+		target = {
+			add_planet_devastation = 25
+		}
+	}
+	
+	option = {
+		name = time.214.a
+		target = {
+			add_planet_devastation = 25
+		}
+	}
+	
+	option = {
+		name = time.214.b
+		allow = {
+			owner = {
+				has_resource = {
+					type = influence
+					amount >= 50
+				}
+			}
+		}
+		owner = {
+			add_resource = { influence = -50 }
+		}
+		target = {
+			add_planet_devastation = 10
+		}
+	}
+}
+
+situation_event = {
+	id = time.265
+	title = time.265.name
+	desc = time.265.desc
+	picture = GFX_evt_friendly_infiltration
+	show_sound = event_factions
+	location = event_target:time_home_planet
+	situation = event_target:situation_time_militarist_vs_pacifist
+	
+	is_triggered_only = yes
+	
+	trigger = {
+		exists = event_target:situation_time_militarist_vs_pacifist
+	}
+	
+	immediate = {
+		set_timed_situation_flag = {
+			flag = time_265_triggered
+			days = @time_ethic_random_situation_event_cooldown_middle
+		}
+	}
+	
+	abort_trigger = {
+		has_situation_flag = abort_time_ethic_random_situation_event
+	}
+	
+	abort_effect = {
+		target = {
+			add_modifier = {
+				modifier = origin_time_pacifist_attraction
+				days = @time_ethic_random_situation_event_cooldown_middle
+			}
+		}
+	}
+	
+	option = {
+		name = time.215.a
+		target = {
+			add_modifier = {
+				modifier = origin_time_pacifist_attraction
+				days = @time_ethic_random_situation_event_cooldown_middle
+			}
+		}
+	}
+	
+	option = {
+		name = time.215.b
+		allow = {
+			owner = {
+				has_resource = {
+					type = influence
+					amount >= 50
+				}
+			}
+		}
+		owner = {
+			add_resource = { influence = -50 }
+		}
+	}
+}

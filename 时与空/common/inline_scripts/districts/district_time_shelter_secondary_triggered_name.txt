@@ -1,0 +1,3 @@
+triggered_name = {
+	text = district_time_shelter_secondary
+}

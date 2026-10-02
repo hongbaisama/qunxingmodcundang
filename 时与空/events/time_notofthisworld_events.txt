@@ -1,0 +1,51 @@
+namespace = time_notofthisworld
+
+event = {
+	id = time_notofthisworld.1
+	hide_window = yes
+	is_triggered_only = yes
+
+	immediate = {
+		random_list = {
+			1 = {
+				event_target:horizonsignal_spawn_system_1 = {
+					save_event_target_as = time_notofthisworld_system
+				}
+			}
+			1 = {
+				event_target:horizonsignal_spawn_system_2 = {
+					save_event_target_as = time_notofthisworld_system
+				}
+			}
+			1 = {
+				event_target:horizonsignal_spawn_system_3 = {
+					save_event_target_as = time_notofthisworld_system
+				}
+			}
+			1 = {
+				event_target:horizonsignal_spawn_system_4 = {
+					save_event_target_as = time_notofthisworld_system
+				}
+			}
+		}
+		event_target:time_notofthisworld_system = {
+			set_star_flag = time_notofthisworld_system
+			spawn_planet = {
+				name = "NAME_time_notofthisworld"
+				class = pc_time_notofthisworld
+				orbit_distance = 60
+				size = 1
+				deposit_blockers = none
+				modifiers = none
+				init_effect = {
+					prevent_anomaly = yes
+					# 必须重新设置星球模型才能正常显示，原因不明
+					set_planet_entity = {
+						entity = astral_scar_entity
+					}
+					add_time_special_deposit_keep_on_terraform = { DEPOSIT = d_portal_research_zone }
+				}
+			}
+		}
+	}
+}

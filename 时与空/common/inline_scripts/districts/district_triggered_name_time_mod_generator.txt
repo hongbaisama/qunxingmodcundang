@@ -1,0 +1,23 @@
+triggered_name = {
+	trigger = {
+		num_zones = {
+			type = zone_$TYPE$_energy_physics
+			value > 0
+		}
+	}
+	text = district_$TYPE$_generator_2
+}
+
+triggered_name = {
+	trigger = {
+		num_zones = {
+			type = zone_$TYPE$_energy
+			value > 0
+		}
+	}
+	text = district_$TYPE$_generator_1
+}
+
+triggered_name = {
+	text = district_$TYPE$_generator_0
+}

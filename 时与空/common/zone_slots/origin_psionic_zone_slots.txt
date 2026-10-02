@@ -1,0 +1,72 @@
+slot_psionic_energy = {
+	included_zone_sets = {
+		zone_psionic_energy
+	}
+	
+	exclude = {
+	}
+	
+	unlock = { # planet scope
+		custom_tooltip = {
+			fail_text = zone_unavailable_tech_power_hub_1
+			exists = owner
+			owner = {
+				has_tech_or_functional_civic = {
+					TECH = tech_power_hub_1
+				}
+			}
+		}
+	}
+}
+
+slot_psionic_minerals = {
+	included_zone_sets = {
+		zone_psionic_minerals
+	}
+	
+	exclude = {
+	}
+	
+	unlock = { # planet scope
+		custom_tooltip = {
+			fail_text = zone_unavailable_tech_mineral_purification_1
+			exists = owner
+			owner = {
+				has_tech_or_functional_civic = {
+					TECH = tech_mineral_purification_1
+				}
+			}
+		}
+	}
+}
+
+slot_psionic_food = {
+	included_zone_sets = {
+		zone_psionic_food
+	}
+	
+	exclude = {
+	}
+	
+	unlock = { # planet scope
+		custom_tooltip = {
+			fail_text = zone_unavailable_tech_food_processing_1
+			OR = {
+				AND = {
+					exists = owner
+					owner = {
+						has_valid_civic = civic_agrarian_idyll
+					}
+				}
+				AND = {
+					exists = owner
+					owner = {
+						has_tech_or_functional_civic = {
+							TECH = tech_food_processing_1
+						}
+					}
+				}
+			}
+		}
+	}
+}

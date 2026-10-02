@@ -1,0 +1,16 @@
+species_potential_add = {
+	hidden_trigger = { exists = from }
+	from = { has_origin = origin_fourth_crisis }
+}
+species_possible_merge_add = {
+	hidden_trigger = { exists = from }
+	from = { has_origin = origin_fourth_crisis }
+}
+species_possible_remove = {
+	hidden_trigger = { exists = from }
+	from = { has_origin = origin_fourth_crisis }
+}
+species_possible_merge_remove = {
+	hidden_trigger = { exists = from }
+	from = { has_origin = origin_fourth_crisis }
+}

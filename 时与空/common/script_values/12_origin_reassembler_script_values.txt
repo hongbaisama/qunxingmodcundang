@@ -1,0 +1,44 @@
+# 本次再组装人口占可再组装人口数的百分比
+new_reassembler_percentage = {
+	base = 0
+	add = local_pop_amount
+	# 重组传统
+	modifier = {
+		multiply = 2
+		owner = { has_tradition = tr_origin_reassembler_finish }
+	}
+	complex_trigger_modifier = {
+		trigger = count_owned_pop_amount
+		parameters = {
+			limit = {
+				is_same_species = event_target:reassembler_pop_group
+				can_be_reassembled = yes
+			}
+		}
+		mult = 1
+		mode = divide
+		min_value = 1
+	}
+}
+
+# 过量再组装的人口（没有足够的可再组装人口）
+new_reassembler_over_amount = {
+	base = 0
+	add = local_pop_amount
+	# 重组传统
+	modifier = {
+		multiply = 2
+		owner = { has_tradition = tr_origin_reassembler_finish }
+	}
+	complex_trigger_modifier = {
+		trigger = count_owned_pop_amount
+		parameters = {
+			limit = {
+				is_same_species = event_target:reassembler_pop_group
+				can_be_reassembled = yes
+			}
+		}
+		mult = 1
+		mode = subtract
+	}
+}

@@ -1,0 +1,108 @@
+civic_coils_god = {
+	modification = no
+	ai_playable = { always = no }
+	potential = {
+		country_type = { value = primitive }
+		civics = { value = civic_coils_god }
+	}
+	possible = {
+		ethics = {
+			OR = {
+				text = civic_tooltip_spiritualist
+				value = ethic_spiritualist
+				value = ethic_fanatic_spiritualist
+			}
+		}
+	}
+	modifier = {
+		planet_jobs_unity_produces_mult = 3.14
+		pop_ethic_spiritualist_attraction_mult = 3.14
+		job_primitive_priest_add = 314159
+		country_government_civic_points_add = 1
+	}
+	random_weight = { base = 0 }
+	ai_weight = { base = 0 }
+}
+
+civic_coils_god_ftl = {
+	icon = "gfx/interface/icons/governments/civics/civic_coils_god.dds"
+	modification = no
+	ai_playable = { always = no }
+	potential = {
+		country_type = {
+			NOT = { value = primitive }
+		}
+		civics = { value = civic_coils_god_ftl }
+	}
+	possible = {
+		ethics = {
+			OR = {
+				text = civic_tooltip_spiritualist
+				value = ethic_spiritualist
+				value = ethic_fanatic_spiritualist
+			}
+		}
+	}
+	modifier = {
+		planet_jobs_unity_produces_mult = 3.14
+		pop_ethic_spiritualist_attraction_mult = 3.14
+		job_bureaucrat_add = 314159
+		country_government_civic_points_add = 1
+	}
+	random_weight = { base = 0 }
+	ai_weight = { base = 0 }
+}
+
+civic_parallel_sky_1 = {
+	icon = "gfx/interface/icons/governments/civics/civic_technocracy.dds"
+	modification = no
+	ai_playable = { always = no }
+	potential = {
+		country_type = { value = parallel_sky }
+		civics = { value = civic_parallel_sky_1 }
+	}
+	possible = {
+	}
+	modifier = {
+		army_damage_taken_mult = -0.25
+		army_collateral_damage_mult = 0.5
+	}
+	random_weight = { base = 0 }
+	ai_weight = { base = 0 }
+}
+
+civic_parallel_sky_2 = {
+	icon = "gfx/interface/icons/governments/civics/civic_warrior_culture.dds"
+	modification = no
+	ai_playable = { always = no }
+	potential = {
+		country_type = { value = parallel_sky }
+		civics = { value = civic_parallel_sky_2 }
+	}
+	possible = {
+	}
+	modifier = {
+		army_health = 0.5
+		army_damage_mult = 0.5
+	}
+	random_weight = { base = 0 }
+	ai_weight = { base = 0 }
+}
+
+civic_parallel_sky_3 = {
+	icon = "gfx/interface/icons/governments/civics/civic_exalted_priesthood.dds"
+	modification = no
+	ai_playable = { always = no }
+	potential = {
+		country_type = { value = parallel_sky }
+		civics = { value = civic_parallel_sky_3 }
+	}
+	possible = {
+	}
+	modifier = {
+		army_morale_damage_taken_mult = -0.25
+		army_morale_damage_mult = 0.5
+	}
+	random_weight = { base = 0 }
+	ai_weight = { base = 0 }
+}

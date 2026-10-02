@@ -1,0 +1,163 @@
+time_shelter_visitor = {
+	inline_script = {
+		script = jobs/time_shelter/time_shelter_visitor
+		CATEGORY = civilian
+	}
+}
+
+time_shelter_visitor_drone = {
+	possible_precalc = can_fill_drone_job
+	inline_script = {
+		script = jobs/time_shelter/time_shelter_visitor
+		CATEGORY = maintenance_drone
+	}
+}
+
+time_shelter_visitor_unemployment = {
+	inline_script = {
+		script = jobs/time_shelter/time_shelter_visitor_unemployment
+		CATEGORY = civilian
+		GESTALT = no
+	}
+}
+
+time_shelter_visitor_unemployment_drone = {
+	possible_precalc = can_fill_drone_job
+	inline_script = {
+		script = jobs/time_shelter/time_shelter_visitor_unemployment
+		CATEGORY = maintenance_drone
+		GESTALT = yes
+	}
+}
+
+time_shelter_sentinel = {
+	possible_precalc = can_fill_specialist_job
+	possible = { complex_specialist_job_check_trigger = yes }
+	possible_pre_triggers = {
+		has_owner = yes
+		is_being_purged = no
+		is_being_assimilated = no
+		is_sapient = yes
+	}
+	inline_script = {
+		script = jobs/time_shelter/time_shelter_sentinel
+		CATEGORY = specialist
+		WEIGHT = @specialist_job_weight
+	}
+}
+
+time_shelter_sentinel_drone = {
+	possible_precalc = can_fill_drone_job
+	possible = { can_think = yes }
+	possible_pre_triggers = {
+		has_owner = yes
+		is_enslaved = no
+		is_being_purged = no
+		is_being_assimilated = no
+		is_sapient = yes
+	}
+	inline_script = {
+		script = jobs/time_shelter/time_shelter_sentinel
+		CATEGORY = complex_drone
+		WEIGHT = @complex_drone_job_weight
+	}
+}
+
+time_shelter_artisan = {
+	possible_precalc = can_fill_specialist_job
+	possible = { complex_specialist_job_check_trigger = yes }
+	possible_pre_triggers = {
+		has_owner = yes
+		is_being_purged = no
+		is_being_assimilated = no
+		is_sapient = yes
+	}
+	inline_script = {
+		script = jobs/time_shelter/time_shelter_artisan
+		CATEGORY = specialist
+		WEIGHT = @specialist_job_weight
+	}
+}
+
+time_shelter_artisan_drone = {
+	possible_precalc = can_fill_drone_job
+	possible = { can_think = yes }
+	possible_pre_triggers = {
+		has_owner = yes
+		is_enslaved = no
+		is_being_purged = no
+		is_being_assimilated = no
+		is_sapient = yes
+	}
+	inline_script = {
+		script = jobs/time_shelter/time_shelter_artisan
+		CATEGORY = complex_drone
+		WEIGHT = @complex_drone_job_weight
+	}
+}
+
+time_shelter_elder = {
+	possible_precalc = can_fill_specialist_job
+	possible = { complex_specialist_job_check_trigger = yes }
+	possible_pre_triggers = {
+		has_owner = yes
+		is_being_purged = no
+		is_being_assimilated = no
+		is_sapient = yes
+	}
+	inline_script = {
+		script = jobs/time_shelter/time_shelter_elder
+		CATEGORY = specialist
+		WEIGHT = @specialist_job_weight
+	}
+}
+
+time_shelter_elder_drone = {
+	possible_precalc = can_fill_drone_job
+	possible = { can_think = yes }
+	possible_pre_triggers = {
+		has_owner = yes
+		is_enslaved = no
+		is_being_purged = no
+		is_being_assimilated = no
+		is_sapient = yes
+	}
+	inline_script = {
+		script = jobs/time_shelter/time_shelter_elder
+		CATEGORY = complex_drone
+		WEIGHT = @complex_drone_job_weight
+	}
+}
+
+time_shelter_watcher = {
+	possible_precalc = can_fill_specialist_job
+	possible = { complex_specialist_job_check_trigger = yes }
+	possible_pre_triggers = {
+		has_owner = yes
+		is_being_purged = no
+		is_being_assimilated = no
+		is_sapient = yes
+	}
+	inline_script = {
+		script = jobs/time_shelter/time_shelter_watcher
+		CATEGORY = specialist
+		WEIGHT = @specialist_job_weight
+	}
+}
+
+time_shelter_watcher_drone = {
+	possible_precalc = can_fill_drone_job
+	possible = { can_think = yes }
+	possible_pre_triggers = {
+		has_owner = yes
+		is_enslaved = no
+		is_being_purged = no
+		is_being_assimilated = no
+		is_sapient = yes
+	}
+	inline_script = {
+		script = jobs/time_shelter/time_shelter_watcher
+		CATEGORY = complex_drone
+		WEIGHT = @complex_drone_job_weight
+	}
+}

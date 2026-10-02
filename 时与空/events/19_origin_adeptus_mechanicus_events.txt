@@ -1,0 +1,230 @@
+
+namespace = origin_adeptus_mechanicus
+
+country_event = {
+	id = origin_adeptus_mechanicus.1
+	is_triggered_only = yes
+	hide_window = yes
+
+	trigger = {
+		has_origin = origin_adeptus_mechanicus
+	}
+	
+	immediate = {
+		give_technology = { tech = "tech_robotic_workers" message = no }
+		if = {
+			limit = {
+				NOT = { exists = event_target:global_robot_parent_species }
+			}
+			create_global_robot_parent_species = yes
+		}
+		create_species = {
+			name = "NAME_Adeptus_Mechanicus_Species"
+			class = ROBOT
+			portrait = random
+			homeworld = root.capital_scope
+			traits = {
+				trait = trait_mechanical
+				trait = trait_origin_adeptus_mechanicus
+			}
+			effect = {
+				set_synth_or_robot_portrait_effect = yes
+				set_species_identity = event_target:global_robot_parent_species
+				set_species_flag = mechanical_species@prev
+				set_species_flag = adeptus_mechanicus_of@prev
+				save_event_target_as = adeptus_mechanicus_species
+			}
+		}
+		event_target:adeptus_mechanicus_species = {
+			set_citizenship_type = {
+				country = root
+				type = citizenship_adeptus_mechanicus
+				cooldown = yes
+			}
+			set_living_standard = {
+				country = root
+				type = living_standard_adeptus_mechanicus
+				cooldown = yes
+			}
+			if = {
+				limit = {
+					has_global_flag = active_better_ascension_traits
+				}
+				change_species_characteristics = { add_trait = trait_identity_none }
+			}
+		}
+		set_built_species = event_target:adeptus_mechanicus_species
+		capital_scope = {
+			add_building = building_robot_assembly_plant
+			if = {
+				limit = {
+					has_zone = {
+						zone = zone_habitat_research_unity
+					}
+				}
+				add_building = {
+					zone = zone_habitat_research_unity
+					building = building_adeptus_mechanicus_1
+				}
+			}
+			else = {
+				add_building = {
+					zone = zone_research_unity
+					building = building_adeptus_mechanicus_1
+				}
+			}
+			validate_and_repair_planet_buildings_and_districts = yes
+			while = {
+				count = 15
+				if = {
+					limit = {
+						any_owned_pop_group = {
+							is_same_species = root.owner_main_species
+							pop_group_size >= 100
+						}
+					}
+					weighted_random_owned_pop_group = {
+						limit = {
+							is_same_species = root.owner_main_species
+							pop_group_size >= 100
+						}
+						kill_pop_group = {
+							pop_group = this
+							amount = 100
+						}
+					}
+				}
+				else_if = {
+					limit = {
+						count_owned_pop_group = {
+							limit = {
+								is_same_species = root.owner_main_species
+								pop_group_size >= 50
+							}
+							count >= 2
+						}
+					}
+					weighted_random_owned_pop_group = {
+						limit = {
+							is_same_species = root.owner_main_species
+							pop_group_size >= 50
+						}
+						kill_pop_group = {
+							pop_group = this
+							amount = 50
+						}
+					}
+					weighted_random_owned_pop_group = {
+						limit = {
+							is_same_species = root.owner_main_species
+							pop_group_size >= 50
+						}
+						kill_pop_group = {
+							pop_group = this
+							amount = 50
+						}
+					}
+				}
+				else = {
+					weighted_random_owned_pop_group = {
+						limit = {
+							is_same_species = root.owner_main_species
+						}
+						kill_pop_group = {
+							pop_group = this
+							amount = 50
+						}
+					}
+					weighted_random_owned_pop_group = {
+						limit = {
+							is_same_species = root.owner_main_species
+						}
+						kill_pop_group = {
+							pop_group = this
+							amount = 50
+						}
+					}
+				}
+			}
+			create_pop_group = {
+				species = event_target:adeptus_mechanicus_species
+				size = 1500
+				category = adeptus_mechanicus
+				ethos = {
+					ethic = ethic_spiritualist
+				}
+			}
+		}
+	}
+}
+
+# 机械人口固定机神造物公民权和灵魂教化生活标准
+pop_group_event = {
+	id = origin_adeptus_mechanicus.10
+	is_triggered_only = yes
+	hide_window = yes
+
+	trigger = {
+		if = {
+			limit = {
+				owner = { has_origin = origin_adeptus_mechanicus }
+			}
+			if = {
+				limit = {
+					is_robot_pop_group = yes
+				}
+				has_all_adeptus_mechanicus_species_right = no
+				OR = {
+					species = { has_species_flag = adeptus_mechanicus_of@prev.owner }
+					owner = { is_xenophobe = no } # 排外机仆（X）
+				}
+			}
+			else = {
+				always = no
+			}
+		}
+		else = {
+			always = no
+		}
+	}
+	
+	immediate = {
+		set_adeptus_mechanicus_species_right = yes
+	}
+}
+
+# 机械人口固定机神造物公民权和灵魂教化生活标准
+carrier_event = {
+	id = origin_adeptus_mechanicus.20
+	is_triggered_only = yes
+	hide_window = yes
+
+	trigger = {
+		owner = { has_origin = origin_adeptus_mechanicus }
+	}
+	
+	immediate = {
+		if = {
+			limit = {
+				owner = { is_xenophobe = yes }
+			}
+			every_owned_pop_group = {
+				limit = {
+					is_robot_pop_group = yes
+					species = { has_species_flag = adeptus_mechanicus_of@prev.owner }
+					has_all_adeptus_mechanicus_species_right = no
+				}
+				set_adeptus_mechanicus_species_right = yes
+			}
+		}
+		else = {
+			every_owned_pop_group = {
+				limit = {
+					is_robot_pop_group = yes
+					has_all_adeptus_mechanicus_species_right = no
+				}
+				set_adeptus_mechanicus_species_right = yes
+			}
+		}
+	}
+}

@@ -1,0 +1,3421 @@
+origin_pc_hive = {
+	is_origin = yes
+	icon = "gfx/interface/icons/origins/origin_pc_hive.dds"
+	picture = GFX_origin_pc_hive
+
+	starting_colony = pc_hive
+	habitability_preference = pc_hive
+	preferred_planet_class_neighbor = no
+
+	playable = {
+	}
+
+	possible = {
+		is_nomadic = no
+		authority = { value = auth_hive_mind }
+		civics = {
+			NOR = {
+				value = civic_hive_idyllic_bloom
+				value = civic_environmental_architects_hive
+			}
+			NOR = {
+				text = civic_tooltip_not_guided
+				value = civic_guided_sapience
+				value = civic_corporate_guided_sapience
+				value = civic_hive_guided_sapience
+				value = civic_machine_guided_sapience
+			}
+		}
+		graphical_culture = {
+			OR = {
+				text = graphical_culture_tooltip_biological
+				value = biogenesis_01
+				value = biogenesis_02
+			}
+		}
+		preferred_planet_class = {
+			NOT = {
+				text = does_not_have_volcanic_homeworld
+				value = pc_volcanic
+			}
+		}
+	}
+	
+	modifier = {
+	}
+
+	description = "origin_tooltip_pc_hive_effects"
+	negative_description = "origin_tooltip_pc_hive_negative_effects"
+	flags = { custom_start_screen forbid_embark }
+
+	advanced_start = yes
+
+	random_weight = {
+		base = 5
+	}
+}
+
+origin_contract = {
+	is_origin = yes
+	icon = "gfx/interface/icons/origins/origin_contract.dds"
+	picture = GFX_origin_contract
+
+	playable = {
+		has_shroud_dlc = yes
+	}
+
+	possible = {
+		ethics = {
+			value = ethic_fanatic_spiritualist
+			NOT = { value = ethic_gestalt_consciousness }
+		}
+		civics = {
+			NOR = {
+				value = civic_natural_design
+				value = civic_augmentation_bazaars
+			}
+			NOR = {
+				text = civic_tooltip_not_chosen
+				value = civic_chosen
+				value = civic_hive_chosen
+				value = civic_machine_chosen
+				value = civic_corporate_chosen
+			}
+		}
+	}
+
+	description = "origin_tooltip_contract_effects"
+	negative_description = "origin_tooltip_contract_negative_effects"
+	flags = { custom_start_screen }
+	
+	modifier = {
+		attunement_mult = 0.5
+		add_attunement_whisperers_in_the_void = @civic_attunement2
+		whisperers_in_the_void_monthly_attunement_add = 12
+	}
+
+	advanced_start = yes
+	max_once_global = yes
+	
+	random_weight = {
+		base = 5
+	}
+}
+
+origin_time = {
+	is_origin = yes
+	icon = "gfx/interface/icons/origins/origin_time.dds"
+	picture = GFX_origin_time
+
+	starting_colony = pc_time
+	habitability_preference = pc_time
+	preferred_planet_class_neighbor = no
+	initializers = { time_starting_init time_sol_starting_init time_core_starting_init }
+
+	soft_traits = {
+		trait = trait_time
+	}
+	
+	playable = {
+		has_astral_planes_dlc = yes
+	}
+	
+	ai_playable = { always = no }
+
+	possible = {
+		is_nomadic = no
+		species_archetype = {
+			NOT = { value = MACHINE }
+		}
+		ethics = {
+			OR = {
+				text = civic_tooltip_materialist
+				value = ethic_materialist
+				value = ethic_fanatic_materialist
+			}
+			NOT = { value = ethic_gestalt_consciousness }
+		}
+		civics = {
+			OR = {
+				value = civic_dark_consortium
+				value = civic_corporate_dark_consortium
+			}
+			NOR = {
+				text = civic_tooltip_not_guided
+				value = civic_guided_sapience
+				value = civic_corporate_guided_sapience
+				value = civic_hive_guided_sapience
+				value = civic_machine_guided_sapience
+			}
+			NOR = {
+				text = civic_tooltip_not_tankbound
+				value = civic_tankbound
+				value = civic_tankbound_corporate
+			}
+			NOR = {
+				value = civic_idyllic_bloom
+				value = civic_anglers
+				value = civic_corporate_anglers
+				value = civic_relentless_industrialists
+				value = civic_corporate_relentless_industrialists
+				value = civic_environmental_architects
+				value = civic_environmental_architects_megacorp
+				value = civic_beastmasters
+				value = civic_corporate_beastmasters
+			}
+		}
+		preferred_planet_class = {
+			NOT = {
+				text = does_not_have_volcanic_homeworld
+				value = pc_volcanic
+			}
+		}
+	}
+	
+	modifier = {
+		time_researcher_max_weight = 4
+		refugee_attraction = -0.5
+	}
+
+	description = "origin_tooltip_time_effects"
+	negative_description = "origin_tooltip_time_negative_effects"
+	flags = { custom_start_screen forbid_embark }
+
+	advanced_start = yes
+	max_once_global = yes
+	blocks_random_machine_empire_generation	= yes
+	
+	random_weight = {
+		base = 0
+	}
+}
+
+origin_time_end = {
+	is_origin = yes
+	icon = "gfx/interface/icons/origins/origin_time.dds"
+	picture = GFX_origin_time
+
+	starting_colony = pc_time
+	habitability_preference = pc_time
+	preferred_planet_class_neighbor = no
+	initializers = { time_starting_init time_sol_starting_init time_core_starting_init }
+
+	soft_traits = {
+		trait = trait_time
+	}
+	
+	ai_playable = { always = no }
+
+	potential = {
+		origin = { value = origin_time_end }
+	}
+	
+	modifier = {
+		time_researcher_max_weight = 4.5
+		refugee_attraction = -0.5
+	}
+
+	description = "origin_tooltip_time_end_effects"
+	negative_description = "origin_tooltip_time_negative_effects"
+	flags = { custom_start_screen forbid_embark }
+
+	advanced_start = yes
+	max_once_global = yes
+	blocks_random_machine_empire_generation	= yes
+	
+	random_weight = {
+		base = 0
+	}
+}
+
+origin_time_end_bad = {
+	is_origin = yes
+	icon = "gfx/interface/icons/origins/origin_time.dds"
+	picture = GFX_origin_time
+
+	starting_colony = pc_time
+	habitability_preference = pc_time
+	preferred_planet_class_neighbor = no
+	initializers = { time_starting_init time_sol_starting_init time_core_starting_init }
+
+	soft_traits = {
+		trait = trait_time
+	}
+	
+	ai_playable = { always = no }
+
+	potential = {
+		origin = { value = origin_time_end_bad }
+	}
+	
+	modifier = {
+		time_researcher_max_weight = 4.5
+		refugee_attraction = -0.5
+	}
+
+	description = "origin_tooltip_time_end_bad_effects"
+	negative_description = "origin_tooltip_time_negative_effects"
+	flags = { custom_start_screen forbid_embark }
+
+	advanced_start = yes
+	max_once_global = yes
+	blocks_random_machine_empire_generation	= yes
+	
+	random_weight = {
+		base = 0
+	}
+}
+
+origin_time_beginning = {
+	is_origin = yes
+	icon = "gfx/interface/icons/origins/origin_time.dds"
+	picture = GFX_origin_time
+
+	starting_colony = pc_time
+	habitability_preference = pc_time
+	preferred_planet_class_neighbor = no
+	initializers = { time_starting_init time_sol_starting_init time_core_starting_init }
+
+	soft_traits = {
+		trait = trait_time
+	}
+	
+	ai_playable = { always = no }
+
+	potential = {
+		origin = { value = origin_time_beginning }
+	}
+	
+	modifier = {
+		time_researcher_max_weight = 5
+		refugee_attraction = -0.5
+	}
+
+	description = "origin_tooltip_time_beginning_effects"
+	negative_description = "origin_tooltip_time_negative_effects"
+	flags = { custom_start_screen forbid_embark }
+
+	advanced_start = yes
+	max_once_global = yes
+	blocks_random_machine_empire_generation	= yes
+	
+	random_weight = {
+		base = 0
+	}
+}
+
+origin_time_beginning_bad = {
+	is_origin = yes
+	icon = "gfx/interface/icons/origins/origin_time.dds"
+	picture = GFX_origin_time
+
+	starting_colony = pc_time
+	habitability_preference = pc_time
+	preferred_planet_class_neighbor = no
+	initializers = { time_starting_init time_sol_starting_init time_core_starting_init }
+
+	soft_traits = {
+		trait = trait_time
+	}
+	
+	ai_playable = { always = no }
+
+	potential = {
+		origin = { value = origin_time_beginning_bad }
+	}
+	
+	modifier = {
+		time_researcher_max_weight = 5
+		refugee_attraction = -0.5
+	}
+
+	description = "origin_tooltip_time_beginning_bad_effects"
+	negative_description = "origin_tooltip_time_negative_effects"
+	flags = { custom_start_screen forbid_embark }
+
+	advanced_start = yes
+	max_once_global = yes
+	blocks_random_machine_empire_generation	= yes
+	
+	random_weight = {
+		base = 0
+	}
+}
+
+origin_timesingularity = {
+	is_origin = yes
+	icon = "gfx/interface/icons/origins/origin_time.dds"
+	picture = GFX_origin_time
+
+	starting_colony = pc_time
+	habitability_preference = pc_time
+	preferred_planet_class_neighbor = no
+	initializers = { time_starting_init time_sol_starting_init time_core_starting_init }
+
+	soft_traits = {
+		trait = trait_time
+	}
+	
+	ai_playable = { always = no }
+
+	potential = {
+		origin = { value = origin_timesingularity }
+	}
+	
+	modifier = {
+		time_researcher_max_weight = 5.5
+		refugee_attraction = -0.5
+	}
+
+	description = "origin_tooltip_timesingularity_effects"
+	negative_description = "origin_tooltip_time_negative_effects"
+	flags = { custom_start_screen forbid_embark }
+
+	advanced_start = yes
+	max_once_global = yes
+	blocks_random_machine_empire_generation	= yes
+	
+	random_weight = {
+		base = 0
+	}
+}
+
+origin_timesingularity_bad = {
+	is_origin = yes
+	icon = "gfx/interface/icons/origins/origin_time.dds"
+	picture = GFX_origin_time
+
+	starting_colony = pc_time
+	habitability_preference = pc_time
+	preferred_planet_class_neighbor = no
+	initializers = { time_starting_init time_sol_starting_init time_core_starting_init }
+
+	soft_traits = {
+		trait = trait_time
+	}
+	
+	ai_playable = { always = no }
+
+	potential = {
+		origin = { value = origin_timesingularity_bad }
+	}
+	
+	modifier = {
+		time_researcher_max_weight = 5.5
+		refugee_attraction = -0.5
+	}
+
+	description = "origin_tooltip_timesingularity_bad_effects"
+	negative_description = "origin_tooltip_time_negative_effects"
+	flags = { custom_start_screen forbid_embark }
+
+	advanced_start = yes
+	max_once_global = yes
+	blocks_random_machine_empire_generation	= yes
+	
+	random_weight = {
+		base = 0
+	}
+}
+
+origin_endless_time_virtuality = {
+	is_origin = yes
+	icon = "gfx/interface/icons/origins/origin_endless_time.dds"
+	picture = GFX_origin_time
+
+	starting_colony = pc_endless_time
+	habitability_preference = pc_endless_time
+	preferred_planet_class_neighbor = no
+	initializers = { time_starting_init time_sol_starting_init time_core_starting_init }
+
+	traits = {
+		trait = trait_time_soul_virtuality
+	}
+	
+	ai_playable = { always = no }
+
+	potential = {
+		origin = { value = origin_endless_time_virtuality }
+	}
+	
+	modifier = {
+		time_researcher_max_weight = 6
+		refugee_attraction = -0.5
+	}
+
+	description = "origin_tooltip_endless_time_virtuality_effects"
+	flags = { custom_start_screen forbid_embark }
+
+	advanced_start = yes
+	max_once_global = yes
+	blocks_random_machine_empire_generation	= yes
+	
+	random_weight = {
+		base = 0
+	}
+}
+
+origin_endless_time_synthetic = {
+	is_origin = yes
+	icon = "gfx/interface/icons/origins/origin_endless_time.dds"
+	picture = GFX_origin_time
+
+	starting_colony = pc_endless_time
+	habitability_preference = pc_endless_time
+	preferred_planet_class_neighbor = no
+	initializers = { time_starting_init time_sol_starting_init time_core_starting_init }
+
+	traits = {
+		trait = trait_time_soul_synthetic
+	}
+	
+	ai_playable = { always = no }
+
+	potential = {
+		origin = { value = origin_endless_time_synthetic }
+	}
+	
+	modifier = {
+		time_researcher_max_weight = 6
+		refugee_attraction = -0.5
+	}
+
+	description = "origin_tooltip_endless_time_synthetic_effects"
+	flags = { custom_start_screen forbid_embark }
+
+	advanced_start = yes
+	max_once_global = yes
+	blocks_random_machine_empire_generation	= yes
+	
+	random_weight = {
+		base = 0
+	}
+}
+
+origin_endless_time_cybernetic = {
+	is_origin = yes
+	icon = "gfx/interface/icons/origins/origin_endless_time.dds"
+	picture = GFX_origin_time
+
+	starting_colony = pc_endless_time
+	habitability_preference = pc_endless_time
+	preferred_planet_class_neighbor = no
+	initializers = { time_starting_init time_sol_starting_init time_core_starting_init }
+
+	traits = {
+		trait = trait_time_soul_cybernetic
+	}
+	
+	ai_playable = { always = no }
+
+	potential = {
+		origin = { value = origin_endless_time_cybernetic }
+	}
+	
+	modifier = {
+		time_researcher_max_weight = 6
+		refugee_attraction = -0.5
+	}
+
+	description = "origin_tooltip_endless_time_cybernetic_effects"
+	flags = { custom_start_screen forbid_embark }
+
+	advanced_start = yes
+	max_once_global = yes
+	blocks_random_machine_empire_generation	= yes
+	
+	random_weight = {
+		base = 0
+	}
+}
+
+origin_endless_time_genetic = {
+	is_origin = yes
+	icon = "gfx/interface/icons/origins/origin_endless_time.dds"
+	picture = GFX_origin_time
+
+	starting_colony = pc_endless_time
+	habitability_preference = pc_endless_time
+	preferred_planet_class_neighbor = no
+	initializers = { time_starting_init time_sol_starting_init time_core_starting_init }
+
+	traits = {
+		trait = trait_time_soul_genetic
+	}
+	
+	ai_playable = { always = no }
+
+	potential = {
+		origin = { value = origin_endless_time_genetic }
+	}
+	
+	modifier = {
+		time_researcher_max_weight = 6
+		refugee_attraction = -0.5
+	}
+
+	description = "origin_tooltip_endless_time_genetic_effects"
+	flags = { custom_start_screen forbid_embark }
+
+	advanced_start = yes
+	max_once_global = yes
+	blocks_random_machine_empire_generation	= yes
+	
+	random_weight = {
+		base = 0
+	}
+}
+
+origin_endless_time_psionic = {
+	is_origin = yes
+	icon = "gfx/interface/icons/origins/origin_endless_time.dds"
+	picture = GFX_origin_time
+
+	starting_colony = pc_endless_time
+	habitability_preference = pc_endless_time
+	preferred_planet_class_neighbor = no
+	initializers = { time_starting_init time_sol_starting_init time_core_starting_init }
+
+	traits = {
+		trait = trait_time_soul_psionic
+	}
+	
+	ai_playable = { always = no }
+
+	potential = {
+		origin = { value = origin_endless_time_psionic }
+	}
+	
+	modifier = {
+		time_researcher_max_weight = 6
+		refugee_attraction = -0.5
+	}
+
+	description = "origin_tooltip_endless_time_psionic_effects"
+	flags = { custom_start_screen forbid_embark }
+
+	advanced_start = yes
+	max_once_global = yes
+	blocks_random_machine_empire_generation	= yes
+	
+	random_weight = {
+		base = 0
+	}
+}
+
+origin_gas_colony = {
+	is_origin = yes
+	icon = "gfx/interface/icons/origins/origin_gas_colony.dds"
+	picture = GFX_origin_gas_colony
+
+	starting_colony = pc_gas_colony
+	habitability_preference = pc_gas_colony
+	preferred_planet_class_neighbor = no
+
+	traits = {
+		trait = trait_origin_gas_colony
+	}
+
+	possible = {
+		is_nomadic = no
+		species_archetype = {
+			NOT = { value = MACHINE }
+		}
+		civics = {
+			NOR = {
+				value = civic_idyllic_bloom
+				value = civic_hive_idyllic_bloom
+				value = civic_anglers
+				value = civic_corporate_anglers
+				value = civic_relentless_industrialists
+				value = civic_corporate_relentless_industrialists
+				value = civic_environmental_architects
+				value = civic_environmental_architects_megacorp
+				value = civic_beastmasters
+				value = civic_corporate_beastmasters
+				value = civic_hive_beastmasters
+			}
+			NOR = {
+				text = civic_tooltip_not_guided
+				value = civic_guided_sapience
+				value = civic_corporate_guided_sapience
+				value = civic_hive_guided_sapience
+				value = civic_machine_guided_sapience
+			}
+		}
+		preferred_planet_class = {
+			NOT = {
+				text = does_not_have_volcanic_homeworld
+				value = pc_volcanic
+			}
+		}
+	}
+	
+	modifier = {
+		refugee_attraction = -1
+	}
+
+	description = "origin_tooltip_gas_colony_effects"
+	negative_description = "origin_tooltip_gas_colony_negative_effects"
+	flags = { custom_start_screen forbid_embark }
+	
+	swap_type = {
+		description = "origin_tooltip_gas_colony_effects"
+		negative_description = "origin_tooltip_gas_colony_negative_effects"
+		
+		modifier = {
+			refugee_attraction = -1
+			job_gas_technician_automated_workforce_mult = 1
+			job_gas_miner_automated_workforce_mult = 1
+			job_gas_farmer_automated_workforce_mult = 1
+		}
+
+		trigger = {
+			is_tankbound_empire = yes
+		}
+	}
+
+	advanced_start = yes
+	max_once_global = yes
+	blocks_random_machine_empire_generation	= yes
+	
+	random_weight = {
+		base = 0
+	}
+}
+
+origin_psionic = {
+	is_origin = yes
+	icon = "gfx/interface/icons/origins/origin_psionic.dds"
+	picture = GFX_origin_psionic
+
+	starting_colony = pc_psionic
+	habitability_preference = pc_psionic
+	preferred_planet_class_neighbor = no
+
+	traits = {
+		trait = trait_origin_psionic
+	}
+
+	playable = {
+		has_nemesis = yes
+	}
+
+	possible = {
+		is_nomadic = no
+		species_archetype = {
+			NOT = { value = MACHINE }
+		}
+		ethics = {
+			value = ethic_fanatic_spiritualist
+			NOR = {
+				value = ethic_xenophile
+				value = ethic_fanatic_xenophile
+				value = ethic_pacifist
+				value = ethic_fanatic_pacifist
+				value = ethic_gestalt_consciousness
+			}
+		}
+		civics = {
+			NOR = {
+				value = civic_idyllic_bloom
+				value = civic_anglers
+				value = civic_corporate_anglers
+				value = civic_relentless_industrialists
+				value = civic_corporate_relentless_industrialists
+				value = civic_natural_design
+				value = civic_augmentation_bazaars
+				value = civic_environmental_architects
+				value = civic_beastmasters
+				value = civic_corporate_beastmasters
+			}
+			NOR = {
+				text = civic_tooltip_not_guided
+				value = civic_guided_sapience
+				value = civic_corporate_guided_sapience
+				value = civic_hive_guided_sapience
+				value = civic_machine_guided_sapience
+			}
+			NOR = {
+				text = civic_tooltip_not_chosen
+				value = civic_chosen
+				value = civic_hive_chosen
+				value = civic_machine_chosen
+				value = civic_corporate_chosen
+			}
+		}
+		preferred_planet_class = {
+			NOT = {
+				text = does_not_have_volcanic_homeworld
+				value = pc_volcanic
+			}
+		}
+	}
+	
+	modifier = {
+		refugee_attraction = -1
+		psionic_aura_effectiveness_mult = 0.25
+		psionic_aura_intensity_mult = 0.25
+		psionic_aura_resistance_mult = 0.5
+	}
+
+	description = "origin_tooltip_psionic_effects"
+	negative_description = "origin_tooltip_psionic_negative_effects"
+	flags = { custom_start_screen forbid_embark }
+	
+	swap_type = {
+		description = "origin_tooltip_psionic_effects"
+		negative_description = "origin_tooltip_psionic_negative_effects"
+		
+		modifier = {
+			refugee_attraction = -1
+			psionic_aura_effectiveness_mult = 0.25
+			psionic_aura_intensity_mult = 0.25
+			psionic_aura_resistance_mult = 0.5
+			job_psionic_technician_automated_workforce_mult = 1
+			job_psionic_miner_automated_workforce_mult = 1
+			job_psionic_farmer_automated_workforce_mult = 1
+		}
+
+		trigger = {
+			is_tankbound_empire = yes
+		}
+	}
+
+	advanced_start = yes
+	max_once_global = yes
+	blocks_random_machine_empire_generation	= yes
+	
+	random_weight = {
+		base = 0
+	}
+}
+
+origin_nanites = {
+	is_origin = yes
+	icon = "gfx/interface/icons/origins/origin_nanites.dds"
+	picture = GFX_origin_nanites
+
+	starting_colony = pc_nanites
+	habitability_preference = pc_nanites
+	preferred_planet_class_neighbor = no
+	initializers = { nanites_starting_init nanites_sol_starting_init }
+
+	traits = {
+		trait = trait_origin_nanites
+	}
+
+	playable = {
+		has_distar = yes
+		has_nemesis = yes
+		has_machine_age_dlc = yes
+	}
+
+	possible = {
+		is_nomadic = no
+		authority = { value = auth_machine_intelligence }
+		civics = {
+			NOR = {
+				value = civic_machine_servitor
+				value = civic_machine_assimilator
+				value = civic_environmental_architects_machine
+				value = civic_machine_beastmasters
+			}
+			NOR = {
+				text = civic_tooltip_not_guided
+				value = civic_guided_sapience
+				value = civic_corporate_guided_sapience
+				value = civic_hive_guided_sapience
+				value = civic_machine_guided_sapience
+			}
+			NOR = { 
+				text = civic_tooltip_not_entropy_drinkers
+				value = civic_entropy_drinkers
+				value = civic_entropy_drinkers_machine
+				value = civic_entropy_drinkers_hive_mind
+				value = civic_entropy_drinkers_corporate
+			}
+			NOR = {
+				text = civic_tooltip_not_chosen
+				value = civic_chosen
+				value = civic_hive_chosen
+				value = civic_machine_chosen
+				value = civic_corporate_chosen
+			}
+		}
+		graphical_culture = {
+			NOR = {
+				text = graphical_culture_tooltip_not_biological
+				value = biogenesis_01
+				value = biogenesis_02
+			}
+		}
+		preferred_planet_class = {
+			NOT = {
+				text = does_not_have_volcanic_homeworld
+				value = pc_volcanic
+			}
+		}
+	}
+	
+	modifier = {
+		refugee_attraction = -1
+	}
+
+	description = "origin_tooltip_nanites_effects"
+	negative_description = "origin_tooltip_nanites_negative_effects"
+	flags = { custom_start_screen forbid_embark }
+
+	advanced_start = yes
+	max_once_global = yes
+	
+	random_weight = {
+		base = 0
+	}
+}
+
+origin_praise_the_sun = {
+	is_origin = yes
+	icon = "gfx/interface/icons/origins/origin_praise_the_sun.dds"
+	picture = GFX_origin_praise_the_sun
+	
+	initializers = { sol_system_initializer }
+
+	playable = {
+	}
+
+	possible = {
+		is_nomadic = no
+	}
+	
+	modifier = {
+		generator_district_amenities_add = 200
+		planet_structures_energy_upkeep_mult = -0.1
+		planet_pops_energy_upkeep_mult = -0.1
+	}
+
+	description = "origin_tooltip_praise_the_sun_effects"
+	flags = { custom_start_screen }
+
+	advanced_start = yes
+
+	random_weight = {
+		base = 5
+	}
+}
+
+origin_parallel_sky = {
+	is_origin = yes
+	icon = "gfx/interface/icons/origins/origin_parallel_sky.dds"
+	picture = GFX_origin_parallel_sky
+
+	playable = {
+	}
+
+	possible = {
+		is_nomadic = no
+		species_archetype = {
+			NOT = { value = MACHINE }
+		}
+		ethics = {
+			NOT = { value = ethic_gestalt_consciousness }
+		}
+		civics = {
+			NOR = {
+				value = civic_environmental_architects
+				value = civic_environmental_architects_megacorp
+			}
+		}
+	}
+	
+	modifier = {
+		add_attunement_the_cradle_of_souls = @civic_attunement1
+	}
+	hide_modifiers = yes
+
+	description = "origin_tooltip_parallel_sky_effects"
+	flags = { custom_start_screen }
+
+	advanced_start = yes
+	max_once_global = yes
+	blocks_random_machine_empire_generation	= yes
+
+	random_weight = {
+		base = 2
+	}
+}
+
+origin_under_the_haze = {
+	is_origin = yes
+	icon = "gfx/interface/icons/origins/origin_under_the_haze.dds"
+	picture = GFX_origin_under_the_haze
+
+	playable = {
+	}
+
+	possible = {
+		is_nomadic = no
+		species_archetype = {
+			NOT = { value = MACHINE }
+		}
+		ethics = {
+			NOR = {
+				value = ethic_gestalt_consciousness
+				value = ethic_spiritualist
+				value = ethic_fanatic_spiritualist
+			}
+		}
+	}
+	
+	modifier = {
+		add_attunement_whisperers_in_the_void = @civic_attunement1
+	}
+	hide_modifiers = yes
+
+	negative_description = "origin_tooltip_under_the_haze_negative_effects"
+	flags = { custom_start_screen }
+
+	advanced_start = yes
+	max_once_global = yes
+	blocks_random_machine_empire_generation	= yes
+
+	random_weight = {
+		base = 2
+	}
+}
+
+origin_tao_of_ninghe = {
+	is_origin = yes
+	icon = "gfx/interface/icons/origins/origin_tao_of_ninghe.dds"
+	picture = GFX_origin_tao_of_ninghe
+
+	playable = {
+	}
+
+	possible = {
+		is_nomadic = no
+		ethics = {
+			OR = {
+				text = civic_tooltip_pacifist
+				value = ethic_pacifist
+				value = ethic_fanatic_pacifist
+			}
+		}
+	}
+
+	description = "origin_tooltip_tao_of_ninghe_effects"
+	flags = { custom_start_screen forbid_embark }
+
+	advanced_start = yes
+
+	random_weight = {
+		base = 5
+	}
+}
+
+origin_the_matrix = {
+	is_origin = yes
+	icon = "gfx/interface/icons/origins/origin_the_matrix.dds"
+	picture = GFX_origin_the_matrix
+	
+	starting_colony = pc_time_ruin_cosmogenesis_world
+	habitability_preference = pc_time_ruin_cosmogenesis_world
+	preferred_planet_class_neighbor = no
+
+	playable = {
+		has_machine_age_dlc = yes
+	}
+
+	possible = {
+		is_nomadic = no
+		species_archetype = {
+			NOT = { value = MACHINE }
+		}
+		ethics = {
+			OR = {
+				text = civic_tooltip_xenophobe
+				value = ethic_xenophobe
+				value = ethic_fanatic_xenophobe
+			}
+		}
+		civics = {
+			NOR = {
+				value = civic_environmental_architects
+				value = civic_environmental_architects_megacorp
+			}
+		}
+		graphical_culture = {
+			NOR = {
+				text = graphical_culture_tooltip_not_biological
+				value = biogenesis_01
+				value = biogenesis_02
+			}
+		}
+		preferred_planet_class = {
+			NOT = {
+				text = does_not_have_volcanic_homeworld
+				value = pc_volcanic
+			}
+		}
+	}
+	
+	modifier = {
+		refugee_attraction = -0.5
+	}
+	
+	description = "origin_tooltip_the_matrix_effects"
+	negative_description = "origin_tooltip_the_matrix_negative_effects"
+	flags = { custom_start_screen }
+
+	advanced_start = no
+	max_once_global = yes
+
+	random_weight = {
+		base = 5
+	}
+}
+
+origin_reassembler = {
+	is_origin = yes
+	icon = "gfx/interface/icons/origins/origin_reassembler.dds"
+	picture = GFX_origin_reassembler
+	
+	traits = {
+		trait = trait_reassembler
+	}
+
+	playable = {
+		has_machine_age_dlc = yes
+	}
+
+	possible = {
+		species_archetype = {
+			value = MACHINE
+		}
+		civics = {
+			NOR = { 
+				text = civic_tooltip_not_entropy_drinkers
+				value = civic_entropy_drinkers
+				value = civic_entropy_drinkers_machine
+				value = civic_entropy_drinkers_hive_mind
+				value = civic_entropy_drinkers_corporate
+			}
+			NOR = {
+				text = civic_tooltip_not_chosen
+				value = civic_chosen
+				value = civic_hive_chosen
+				value = civic_machine_chosen
+				value = civic_corporate_chosen
+			}
+		}
+		graphical_culture = {
+			NOR = {
+				text = graphical_culture_tooltip_not_biological
+				value = biogenesis_01
+				value = biogenesis_02
+			}
+		}
+	}
+	
+	modifier = {
+		modify_species_cost_mult = -0.25
+		MACHINE_species_trait_picks_add = 1
+	}
+
+	description = "origin_tooltip_reassembler_effects"
+	flags = { custom_start_screen }
+
+	advanced_start = yes
+
+	random_weight = {
+		base = 5
+	}
+}
+
+origin_colossus = {
+	is_origin = yes
+	icon = "gfx/interface/icons/origins/origin_colossus.dds"
+	picture = GFX_origin_colossus
+
+	playable = {
+		has_apocalypse_dlc = yes
+	}
+
+	possible = {
+		is_nomadic = no
+		ethics = {
+			OR = {
+				text = civic_tooltip_militarist
+				value = ethic_militarist
+				value = ethic_fanatic_militarist
+			}
+		}
+	}
+	
+	modifier = {
+		add_attunement_the_eater_of_worlds = @civic_attunement1
+	}
+	hide_modifiers = yes
+
+	description = "origin_tooltip_colossus_effects"
+	flags = { custom_start_screen forbid_embark }
+
+	advanced_start = yes
+	max_once_global = yes
+
+	random_weight = {
+		base = 2
+	}
+}
+
+origin_manifesti = {
+	is_origin = yes
+	icon = "gfx/interface/icons/origins/origin_manifesti.dds"
+	picture = GFX_origin_manifesti
+	
+	starting_colony = pc_city
+	habitability_preference = pc_city
+	preferred_planet_class_neighbor = no
+
+	playable = {
+		has_megacorp = yes
+	}
+
+	possible = {
+		is_nomadic = no
+		species_archetype = {
+			NOT = { value = MACHINE }
+		}
+		ethics = {
+			OR = {
+				text = civic_tooltip_egalitarian
+				value = ethic_egalitarian
+				value = ethic_fanatic_egalitarian
+			}
+		}
+		civics = {
+			OR = {
+				value = civic_pleasure_seekers
+				value = civic_corporate_hedonism
+			}
+		}
+		preferred_planet_class = {
+			NOT = {
+				text = does_not_have_volcanic_homeworld
+				value = pc_volcanic
+			}
+		}
+	}
+	
+	modifier = {
+		refugee_attraction = 0.5
+		job_entertainer_per_pop = 0.1
+		planet_entertainers_unity_produces_add = 0.5
+		planet_civilians_unity_produces_add = 0.25
+		planet_entertainers_upkeep_mult = -0.5
+		pop_amenities_usage_mult = 9
+		pop_bonus_workforce_mult = -1
+		influential_jobs_bonus_workforce_mult = 1
+		pop_cat_civilian_bonus_workforce_mult = 1
+		add_attunement_the_instrument_of_desire = @civic_attunement2
+	}
+
+	description = "origin_tooltip_manifesti_effects"
+	negative_description = "origin_tooltip_manifesti_negative_effects"
+	flags = { custom_start_screen forbid_embark }
+
+	advanced_start = yes
+	max_once_global = yes
+	blocks_random_machine_empire_generation	= yes
+
+	random_weight = {
+		base = 5
+	}
+}
+
+origin_manifesti_dream_1 = {
+	is_origin = yes
+	icon = "gfx/interface/icons/origins/origin_manifesti_dream_end.dds"
+	picture = GFX_origin_manifesti
+	
+	starting_colony = pc_city
+	habitability_preference = pc_city
+	preferred_planet_class_neighbor = no
+
+	playable = {
+	}
+	
+	ai_playable = { always = no }
+
+	potential = {
+		origin = { value = origin_manifesti_dream_1 }
+	}
+	
+	modifier = {
+		refugee_attraction = -0.5
+		country_produces_mult = -1
+		bonus_automated_workforce_mult = -1
+		ship_weapon_damage = -1
+		ship_fire_rate_mult = -1
+		country_naval_cap_mult = -1
+		pop_amenities_usage_mult = 4
+		add_attunement_the_instrument_of_desire = @civic_attunement2
+	}
+
+	description = "origin_tooltip_manifesti_dream_1_effects"
+
+	advanced_start = yes
+	max_once_global = yes
+
+	random_weight = {
+		base = 0
+	}
+}
+
+origin_manifesti_dream_2 = {
+	is_origin = yes
+	icon = "gfx/interface/icons/origins/origin_manifesti_dream_end.dds"
+	picture = GFX_origin_manifesti
+	
+	starting_colony = pc_city
+	habitability_preference = pc_city
+	preferred_planet_class_neighbor = no
+
+	playable = {
+	}
+	
+	ai_playable = { always = no }
+
+	potential = {
+		origin = { value = origin_manifesti_dream_2 }
+	}
+	
+	modifier = {
+		all_technology_research_speed = 1
+		pop_amenities_usage_mult = 1
+		add_attunement_whisperers_in_the_void = @civic_attunement1
+	}
+
+	description = "origin_tooltip_manifesti_dream_2_effects"
+
+	advanced_start = yes
+	max_once_global = yes
+
+	random_weight = {
+		base = 0
+	}
+}
+
+origin_manifesti_dream_end = {
+	is_origin = yes
+	icon = "gfx/interface/icons/origins/origin_manifesti_dream_end.dds"
+	picture = GFX_origin_manifesti
+	
+	starting_colony = pc_city
+	habitability_preference = pc_city
+	preferred_planet_class_neighbor = no
+
+	playable = {
+	}
+	
+	ai_playable = { always = no }
+
+	potential = {
+		origin = { value = origin_manifesti_dream_end }
+	}
+	
+	modifier = {
+		country_produces_mult = 0.5
+		bonus_automated_workforce_mult = 0.5
+		ship_weapon_damage = 0.5
+		ship_fire_rate_mult = 0.5
+		country_naval_cap_mult = 0.5
+		pop_amenities_usage_mult = 1
+		add_attunement_whisperers_in_the_void = @civic_attunement1
+	}
+
+	description = "origin_tooltip_manifesti_dream_end_effects"
+
+	advanced_start = yes
+	max_once_global = yes
+
+	random_weight = {
+		base = 0
+	}
+}
+
+origin_voidspawn = {
+	is_origin = yes
+	icon = "gfx/interface/icons/origins/origin_voidspawn.dds"
+	picture = GFX_origin_voidspawn
+	
+	starting_colony = pc_desert
+	habitability_preference = pc_desert
+
+	playable = {
+		has_distar = yes
+	}
+
+	possible = {
+		is_nomadic = no
+		civics = {
+			NOR = {
+				value = civic_environmental_architects
+				value = civic_environmental_architects_megacorp
+				value = civic_environmental_architects_hive
+				value = civic_environmental_architects_machine
+			}
+		}
+	}
+	
+	modifier = {
+		add_attunement_the_composer_of_strands = @civic_attunement1
+	}
+	hide_modifiers = yes
+
+	negative_description = "origin_tooltip_voidspawn_negative_effects"
+	flags = { custom_start_screen }
+
+	advanced_start = yes
+	max_once_global = yes
+
+	random_weight = {
+		base = 2
+	}
+}
+
+origin_bright_pearl = {
+	is_origin = yes
+	icon = "gfx/interface/icons/origins/origin_bright_pearl.dds"
+	picture = GFX_origin_bright_pearl
+	
+	starting_colony = pc_relic
+	habitability_preference = pc_relic
+	preferred_planet_class_neighbor = no
+	initializers = { bright_pearl_starting_init }
+
+	playable = {
+	}
+
+	possible = {
+		is_nomadic = no
+		civics = {
+			NOR = {
+				value = civic_environmental_architects
+				value = civic_environmental_architects_megacorp
+				value = civic_environmental_architects_hive
+				value = civic_environmental_architects_machine
+			}
+		}
+		preferred_planet_class = {
+			NOT = {
+				text = does_not_have_volcanic_homeworld
+				value = pc_volcanic
+			}
+		}
+	}
+	
+	modifier = {
+		refugee_attraction = 0.5
+		megastructures_cost_mult = -0.5
+		megastructures_produces_mult = 0.5
+		megastructure_build_speed_add = 1
+	}
+
+	description = "origin_tooltip_bright_pearl_effects"
+	negative_description = "origin_tooltip_bright_pearl_negative_effects"
+	flags = { custom_start_screen }
+
+	advanced_start = yes
+	max_once_global = yes
+
+	random_weight = {
+		base = 2
+	}
+}
+
+origin_pirate_king = {
+	is_origin = yes
+	icon = "gfx/interface/icons/origins/origin_pirate_king.dds"
+	picture = GFX_origin_pirate_king
+	
+	traits = {
+		trait = trait_origin_pirate_king
+	}
+
+	playable = {
+	}
+
+	possible = {
+		is_nomadic = no
+		ethics = {
+			OR = {
+				text = civic_tooltip_xenophobe
+				value = ethic_xenophobe
+				value = ethic_fanatic_xenophobe
+			}
+		}
+		civics = {
+			OR = {
+				value = civic_barbaric_despoilers
+				value = civic_crusader_spirit_corporate
+			}
+		}
+		graphical_culture = {
+			NOR = {
+				text = graphical_culture_tooltip_not_biological
+				value = biogenesis_01
+				value = biogenesis_02
+			}
+		}
+	}
+	
+	modifier = {
+		first_contact_speed_mult = 0.5
+		country_war_exhaustion_mult = -0.25
+		country_claim_influence_cost_mult = -0.25
+		planet_jobs_produces_mult = -0.25
+		refugee_attraction = -0.25
+		country_starbase_influence_cost_mult = 1
+		add_attunement_the_eater_of_worlds = @civic_attunement1
+	}
+
+	description = "origin_tooltip_pirate_king_effects"
+	negative_description = "origin_tooltip_pirate_king_negative_effects"
+	flags = { custom_start_screen forbid_embark }
+	
+	advanced_start = yes
+	max_once_global = yes
+
+	random_weight = {
+		base = 5
+	}
+}
+
+origin_pirate_king_end = {
+	is_origin = yes
+	icon = "gfx/interface/icons/origins/origin_pirate_king_end.dds"
+	picture = GFX_origin_pirate_king
+
+	playable = {
+	}
+	
+	ai_playable = { always = no }
+	
+	potential = {
+		origin = { value = origin_pirate_king_end }
+	}
+
+	possible = {
+	}
+	
+	modifier = {
+		first_contact_speed_mult = 0.5
+		ship_weapon_damage = 1.5
+		ship_fire_rate_mult = 1.5
+		country_war_exhaustion_mult = -0.5
+		country_claim_influence_cost_mult = -0.5
+		planet_jobs_produces_mult = -0.25
+		refugee_attraction = -0.5
+		country_starbase_influence_cost_mult = 1
+		add_attunement_the_eater_of_worlds = @civic_attunement2
+	}
+
+	description = "origin_tooltip_pirate_king_end_effects"
+	negative_description = "origin_tooltip_pirate_king_end_negative_effects"
+	
+	advanced_start = yes
+	max_once_global = yes
+
+	random_weight = {
+		base = 0
+	}
+}
+
+origin_no_water_no_fish = {
+	is_origin = yes
+	icon = "gfx/interface/icons/origins/origin_no_water_no_fish.dds"
+	picture = GFX_origin_no_water_no_fish
+
+	playable = {
+	}
+
+	possible = {
+		is_nomadic = no
+		ethics = {
+			OR = {
+				text = civic_tooltip_authoritarian
+				value = ethic_authoritarian
+				value = ethic_fanatic_authoritarian
+			}
+		}
+		civics = {
+			OR = {
+				value = civic_relentless_industrialists
+				value = civic_corporate_relentless_industrialists
+			}
+		}
+	}
+	
+	modifier = {
+		planet_technician_produces_mult = 0.5
+		planet_miners_produces_mult = 0.5
+		planet_farmers_produces_mult = 0.5
+		technician_jobs_bonus_workforce_mult = 0.5
+		miner_jobs_bonus_workforce_mult = 0.5
+		farmer_jobs_bonus_workforce_mult = 0.5
+		add_attunement_the_instrument_of_desire = @civic_attunement1
+	}
+
+	description = "origin_tooltip_no_water_no_fish_effects"
+	negative_description = "origin_tooltip_no_water_no_fish_negative_effects"
+	flags = { custom_start_screen forbid_embark }
+	
+	advanced_start = yes
+
+	random_weight = {
+		base = 5
+	}
+}
+
+origin_adeptus_mechanicus = {
+	is_origin = yes
+	icon = "gfx/interface/icons/origins/origin_adeptus_mechanicus.dds"
+	picture = GFX_origin_adeptus_mechanicus
+
+	playable = {
+	}
+
+	possible = {
+		species_archetype = {
+			NOT = { value = MACHINE }
+		}
+		ethics = {
+			OR = {
+				text = civic_tooltip_spiritualist
+				value = ethic_spiritualist
+				value = ethic_fanatic_spiritualist
+			}
+			NOT = { value = ethic_gestalt_consciousness }
+		}
+		civics = {
+			NOR = {
+				text = civic_tooltip_not_tankbound
+				value = civic_tankbound
+				value = civic_tankbound_corporate
+			}
+		}
+	}
+	
+	modifier = {
+		faction_approval = 0.1
+		add_attunement_the_cradle_of_souls = @civic_attunement1
+	}
+	hide_modifiers = yes
+
+	description = "origin_tooltip_adeptus_mechanicus_effects"
+	negative_description = "origin_tooltip_adeptus_mechanicus_negative_effects"
+	flags = { custom_start_screen }
+
+	advanced_start = yes
+	blocks_random_machine_empire_generation	= yes
+
+	random_weight = {
+		base = 5
+	}
+}
+
+origin_hypocritical_face = {
+	is_origin = yes
+	icon = "gfx/interface/icons/origins/origin_hypocritical_face.dds"
+	picture = GFX_origin_hypocritical_face
+
+	playable = {
+		has_megacorp = yes
+	}
+
+	possible = {
+		authority = { value = auth_corporate }
+		civics = { value = civic_criminal_heritage }
+	}
+	
+	modifier = {
+		refugee_attraction = 0.25
+		counter_intel_gain_speed = -0.25
+		country_counter_espionage_mult = 0.25
+		intel_encryption_add = 1
+		add_attunement_whisperers_in_the_void = @civic_attunement1
+	}
+
+	description = "origin_tooltip_hypocritical_face_effects"
+	flags = { custom_start_screen }
+
+	advanced_start = yes
+
+	random_weight = {
+		base = 5
+	}
+}
+
+origin_noah_ark = {
+	is_origin = yes
+	icon = "gfx/interface/icons/origins/origin_noah_ark.dds"
+	picture = GFX_origin_noah_ark
+	
+	initializers = { origin_noah_ark_starting_init origin_noah_ark_sol_starting_init }
+
+	playable = {
+	}
+
+	possible = {
+		is_nomadic = no
+		species_archetype = {
+			NOT = { value = MACHINE }
+		}
+		civics = {
+			OR = {
+				value = civic_idyllic_bloom
+				value = civic_hive_idyllic_bloom
+			}
+			NOR = {
+				value = civic_eager_explorers
+				value = civic_hive_stargazers
+				value = civic_environmental_architects
+				value = civic_environmental_architects_hive
+			}
+		}
+	}
+	
+	modifier = {
+		add_attunement_the_composer_of_strands = @civic_attunement1
+	}
+	hide_modifiers = yes
+
+	description = "origin_tooltip_noah_ark_effects"
+	negative_description = "origin_tooltip_noah_ark_negative_effects"
+	flags = { custom_start_screen forbid_embark }
+
+	advanced_start = no
+	max_once_global = yes
+	blocks_random_machine_empire_generation	= yes
+
+	random_weight = {
+		base = 2
+	}
+}
+
+origin_monster_hunter = {
+	is_origin = yes
+	icon = "gfx/interface/icons/origins/origin_monster_hunter.dds"
+	picture = GFX_origin_monster_hunter
+	
+	traits = {
+		trait = trait_origin_monster_hunter
+	}
+
+	playable = {
+		has_leviathans = yes
+	}
+
+	possible = {
+		ethics = {
+			NOR = {
+				value = ethic_xenophile
+				value = ethic_fanatic_xenophile
+			}
+		}
+		civics = { value = civic_warrior_culture }
+	}
+	
+	modifier = {
+		ship_damage_against_space_fauna_mult = 0.25
+		ship_damage_against_boss_mult = 0.25
+		add_attunement_the_eater_of_worlds = @civic_attunement1
+	}
+
+	description = "origin_tooltip_monster_hunter_effects"
+	flags = { custom_start_screen }
+
+	advanced_start = yes
+
+	random_weight = {
+		base = 10
+	}
+}
+
+origin_curator_artist_and_me = {
+	is_origin = yes
+	icon = "gfx/interface/icons/origins/origin_curator_artist_and_me.dds"
+	picture = GFX_origin_curator_artist_and_me
+
+	playable = {
+		has_leviathans = yes
+	}
+
+	possible = {
+		is_nomadic = no
+		ethics = {
+			NOR = {
+				value = ethic_xenophobe
+				value = ethic_fanatic_xenophobe
+			}
+		}
+		civics = {
+			NOR = {
+				text = civic_tooltip_not_genocidal
+				value = civic_fanatic_purifiers
+				value = civic_hive_devouring_swarm
+				value = civic_machine_terminator
+				value = civic_scorched_earth
+				value = civic_hive_scorched_earth
+			}
+		}
+	}
+	
+	modifier = {
+		add_attunement_the_cradle_of_souls = @civic_attunement1
+	}
+	hide_modifiers = yes
+
+	description = "origin_tooltip_curator_artist_and_me_effects"
+	flags = { custom_start_screen }
+
+	advanced_start = yes
+	max_once_global = yes
+
+	random_weight = {
+		base = 5
+	}
+}
+
+origin_ever_changing = {
+	is_origin = yes
+	icon = "gfx/interface/icons/origins/origin_ever_changing.dds"
+	picture = GFX_origin_ever_changing
+
+	playable = {
+	}
+
+	possible = {
+		is_nomadic = no
+		civics = {
+			NOR = {
+				value = civic_environmental_architects
+				value = civic_environmental_architects_megacorp
+				value = civic_environmental_architects_hive
+				value = civic_environmental_architects_machine
+			}
+		}
+	}
+	
+	modifier = {
+		add_attunement_whisperers_in_the_void = @civic_attunement2
+	}
+	hide_modifiers = yes
+
+	negative_description = "origin_tooltip_ever_changing_negative_effects"
+	flags = { custom_start_screen }
+
+	advanced_start = yes
+	max_once_global = yes
+
+	random_weight = {
+		base = 5
+	}
+}
+
+origin_knowledge_from_alien = {
+	is_origin = yes
+	icon = "gfx/interface/icons/origins/origin_knowledge_from_alien.dds"
+	picture = GFX_origin_knowledge_from_alien
+
+	playable = {
+		has_paragon_dlc = yes
+	}
+
+	possible = {
+		ethics = {
+			OR = {
+				text = civic_tooltip_xenophile
+				value = ethic_xenophile
+				value = ethic_fanatic_xenophile
+			}
+			NOT = { value = ethic_gestalt_consciousness }
+		}
+	}
+	
+	modifier = {
+		refugee_attraction = 0.5
+		country_leader_pool_size = -2
+		external_leader_pool_add = 1
+		country_leader_cap_add = 1
+		add_attunement_the_cradle_of_souls = @civic_attunement1
+	}
+
+	description = "origin_tooltip_knowledge_from_alien_effects"
+	flags = { custom_start_screen }
+
+	advanced_start = yes
+	max_once_global = yes
+
+	random_weight = {
+		base = 5
+	}
+}
+
+origin_born_in_the_purple = {
+	is_origin = yes
+	icon = "gfx/interface/icons/origins/origin_born_in_the_purple.dds"
+	picture = GFX_origin_born_in_the_purple
+
+	playable = {
+		has_paragon_dlc = yes
+	}
+
+	possible = {
+		species_archetype = {
+			NOT = { value = MACHINE }
+		}
+		authority = { value = auth_imperial }
+	}
+	
+	modifier = {
+		add_attunement_the_instrument_of_desire = @civic_attunement1
+	}
+	hide_modifiers = yes
+
+	description = "origin_tooltip_born_in_the_purple_effects"
+	flags = { custom_start_screen }
+
+	advanced_start = yes
+	max_once_global = yes
+	blocks_random_machine_empire_generation	= yes
+
+	random_weight = {
+		base = 5
+	}
+}
+
+origin_corrupt_brain = {
+	is_origin = yes
+	icon = "gfx/interface/icons/origins/origin_corrupt_brain.dds"
+	picture = GFX_origin_corrupt_brain
+
+	playable = {
+	}
+
+	possible = {
+		ethics = { value = ethic_gestalt_consciousness }
+		civics = {
+			NOT = { value = civic_hive_natural_design }
+		}
+	}
+	
+	modifier = {
+		pop_amenities_usage_mult = -1
+	}
+	
+	description = "origin_tooltip_corrupt_brain_effects"
+	negative_description = "origin_tooltip_corrupt_brain_negative_effects"
+	flags = { custom_start_screen }
+
+	advanced_start = yes
+	max_once_global = yes
+
+	random_weight = {
+		base = 5
+	}
+}
+
+origin_corrupt_brain_end = {
+	is_origin = yes
+	icon = "gfx/interface/icons/origins/origin_corrupt_brain.dds"
+	picture = GFX_origin_corrupt_brain
+
+	playable = {
+	}
+	
+	ai_playable = { always = no }
+	
+	potential = {
+		origin = { value = origin_corrupt_brain_end }
+	}
+
+	possible = {
+	}
+	
+	modifier = {
+		pop_amenities_usage_mult = -1
+		planet_jobs_produces_mult = -1
+	}
+
+	negative_description = "origin_tooltip_corrupt_brain_end_negative_effects"
+
+	advanced_start = yes
+	max_once_global = yes
+
+	random_weight = {
+		base = 0
+	}
+}
+
+origin_pure_brain = {
+	is_origin = yes
+	icon = "gfx/interface/icons/origins/origin_pure_brain.dds"
+	picture = GFX_origin_corrupt_brain
+
+	playable = {
+	}
+	
+	ai_playable = { always = no }
+	
+	potential = {
+		origin = { value = origin_pure_brain }
+	}
+
+	possible = {
+	}
+	
+	modifier = {
+		pop_amenities_usage_mult = -0.5
+	}
+
+	description = "origin_tooltip_pure_brain_effects"
+
+	advanced_start = yes
+	max_once_global = yes
+
+	random_weight = {
+		base = 0
+	}
+}
+
+origin_pure_brain_true = {
+	is_origin = yes
+	icon = "gfx/interface/icons/origins/origin_pure_brain.dds"
+	picture = GFX_origin_corrupt_brain
+
+	playable = {
+	}
+	
+	ai_playable = { always = no }
+	
+	potential = {
+		origin = { value = origin_pure_brain_true }
+	}
+
+	possible = {
+	}
+	
+	modifier = {
+		pop_amenities_usage_mult = -0.5
+	}
+
+	description = "origin_tooltip_pure_brain_true_effects"
+
+	advanced_start = yes
+	max_once_global = yes
+
+	random_weight = {
+		base = 0
+	}
+}
+
+origin_legendary_worship = {
+	is_origin = yes
+	icon = "gfx/interface/icons/origins/origin_legendary_worship.dds"
+	picture = GFX_origin_legendary_worship
+
+	playable = {
+		has_paragon_dlc = yes
+	}
+
+	possible = {
+		ethics = {
+			NOT = { value = ethic_gestalt_consciousness }
+		}
+		civics = {
+			value = civic_heroic_tales
+		}
+	}
+	
+	modifier = {
+		promotes_renowned_chance = 0.4
+		promotes_legendary_chance = 0.2
+		promotes_renowned_cap = 2
+		promotes_legendary_cap = 1
+		leader_initial_skill = 1
+	}
+
+	description = "origin_tooltip_legendary_worship_effects"
+	negative_description = "origin_tooltip_legendary_worship_negative_effects"
+	flags = { custom_start_screen }
+
+	advanced_start = yes
+	max_once_global = yes
+
+	random_weight = {
+		base = 5
+	}
+}
+
+origin_blessed_by_god = {
+	is_origin = yes
+	icon = "gfx/interface/icons/origins/origin_blessed_by_god.dds"
+	picture = GFX_origin_blessed_by_god
+	
+	initializers = { origin_blessed_by_god_starting_init origin_blessed_by_god_sol_starting_init }
+
+	playable = {
+		has_nemesis = yes
+	}
+
+	possible = {
+		is_nomadic = no
+		species_archetype = {
+			NOT = { value = MACHINE }
+		}
+		ethics = {
+			OR = {
+				text = civic_tooltip_spiritualist
+				value = ethic_spiritualist
+				value = ethic_fanatic_spiritualist
+			}
+			NOT = { value = ethic_gestalt_consciousness }
+		}
+		civics = {
+			NOR = {
+				value = civic_natural_design
+				value = civic_augmentation_bazaars
+			}
+			NOR = {
+				text = civic_tooltip_not_chosen
+				value = civic_chosen
+				value = civic_hive_chosen
+				value = civic_machine_chosen
+				value = civic_corporate_chosen
+			}
+		}
+	}
+	
+	modifier = {
+		attunement_mult = 0.25
+		psionic_aura_effectiveness_mult = 0.25
+		psionic_aura_intensity_mult = 0.25
+		leader_lifespan_mult = -0.25 # 神明隐藏的诅咒
+		all_technology_research_speed = -100
+		country_physics_research_produces_mult = -100
+		country_society_research_produces_mult = -100
+		country_engineering_research_produces_mult = -100
+		subject_tax_physics_research_produces_mult = -100
+		subject_tax_society_research_produces_mult = -100
+		subject_tax_engineering_research_produces_mult = -100
+		pop_ethic_spiritualist_attraction_mult = 100
+	}
+	hide_modifiers = yes
+
+	description = "origin_tooltip_blessed_by_god_effects"
+	negative_description = "origin_tooltip_blessed_by_god_negative_effects"
+	flags = { custom_start_screen forbid_embark }
+
+	advanced_start = yes
+	max_once_global = yes
+	blocks_random_machine_empire_generation	= yes
+
+	random_weight = {
+		base = 5
+	}
+}
+
+origin_abandoned_by_god = {
+	is_origin = yes
+	icon = "gfx/interface/icons/origins/origin_abandoned_by_god.dds"
+	picture = GFX_origin_abandoned_by_god
+	
+	initializers = { origin_abandoned_by_god_starting_init origin_abandoned_by_god_sol_starting_init }
+
+	playable = {
+		has_nemesis = yes
+	}
+
+	possible = {
+		is_nomadic = no
+		species_archetype = {
+			NOT = { value = MACHINE }
+		}
+		ethics = {
+			NOR = {
+				value = ethic_gestalt_consciousness
+				value = ethic_spiritualist
+				value = ethic_fanatic_spiritualist
+			}
+		}
+		civics = {
+			NOR = { 
+				text = civic_tooltip_not_entropy_drinkers
+				value = civic_entropy_drinkers
+				value = civic_entropy_drinkers_machine
+				value = civic_entropy_drinkers_hive_mind
+				value = civic_entropy_drinkers_corporate
+			}
+			NOR = {
+				text = civic_tooltip_not_chosen
+				value = civic_chosen
+				value = civic_hive_chosen
+				value = civic_machine_chosen
+				value = civic_corporate_chosen
+			}
+			NOT = { value = civic_natural_design }
+		}
+	}
+	
+	modifier = {
+		refugee_attraction = -0.25
+		psionic_aura_resistance_mult = 0.5
+		leader_starting_age_mult = -0.5
+		country_unity_produces_mult = -100
+		country_unity_upkeep_mult = -100
+		subject_tax_unity_produces_mult = -100
+		pop_ethic_spiritualist_attraction_mult = -100
+	}
+	hide_modifiers = yes
+
+	description = "origin_tooltip_abandoned_by_god_effects"
+	negative_description = "origin_tooltip_abandoned_by_god_negative_effects"
+	flags = { custom_start_screen forbid_embark }
+
+	advanced_start = yes
+	max_once_global = yes
+	blocks_random_machine_empire_generation	= yes
+
+	random_weight = {
+		base = 5
+	}
+}
+
+origin_equinox_seal = {
+	is_origin = yes
+	icon = "gfx/interface/icons/origins/origin_equinox_seal.dds"
+	picture = GFX_origin_equinox_seal
+
+	initializers = { origin_equinox_seal_starting_init origin_equinox_seal_sol_starting_init }
+
+	playable = {
+		has_astral_planes_dlc = yes
+	}
+
+	possible = {
+		is_nomadic = no
+		species_archetype = {
+			NOT = { value = MACHINE }
+		}
+	}
+	
+	modifier = {
+		leader_lifespan_mult = -0.25
+	}
+	
+	description = "origin_tooltip_equinox_seal_effects"
+	negative_description = "origin_tooltip_equinox_seal_negative_effects"
+	flags = { custom_start_screen }
+
+	advanced_start = yes
+	max_once_global = yes
+	blocks_random_machine_empire_generation	= yes
+
+	random_weight = {
+		base = 5
+	}
+}
+
+origin_equinox_glimpse = {
+	is_origin = yes
+	icon = "gfx/interface/icons/origins/origin_equinox_seal.dds"
+	picture = GFX_origin_equinox_seal
+
+	initializers = { origin_equinox_seal_starting_init origin_equinox_seal_sol_starting_init }
+
+	playable = {
+	}
+	
+	ai_playable = { always = no }
+	
+	potential = {
+		origin = { value = origin_equinox_glimpse }
+	}
+
+	possible = {
+	}
+	
+	modifier = {
+		physics_tech_cost_mult = -0.1
+		society_tech_cost_mult = -0.1
+		engineering_tech_cost_mult = -0.1
+		tradition_cost_mult = -0.1
+	}
+	
+	description = "origin_tooltip_equinox_seal_effects"
+	flags = { custom_start_screen }
+
+	advanced_start = yes
+	max_once_global = yes
+
+	random_weight = {
+		base = 0
+	}
+}
+
+origin_secondhand_country = {
+	is_origin = yes
+	icon = "gfx/interface/icons/origins/origin_secondhand_country.dds"
+	picture = GFX_origin_secondhand_country
+
+	playable = {
+		has_machine_age_dlc = yes
+	}
+
+	possible = {
+		species_archetype = {
+			value = MACHINE
+		}
+		graphical_culture = {
+			NOR = {
+				text = graphical_culture_tooltip_not_biological
+				value = biogenesis_01
+				value = biogenesis_02
+			}
+		}
+	}
+	
+	modifier = {
+		scavenge_debris_mult = 0.1
+		starbase_shipyard_artificial_build_speed_mult = 0.1
+		starbase_shipyard_artificial_build_cost_mult = -0.1
+		ships_upkeep_mult = 0.25
+		ships_logistics_mult = 0.25
+		country_trade_fee = -0.1
+		country_trade_produces_mult = -0.25
+		country_trust_cap_add = -25
+		add_attunement_the_composer_of_strands = @civic_attunement1
+	}
+	
+	description = "origin_tooltip_secondhand_country_effects"
+	flags = { custom_start_screen }
+	
+	advanced_start = yes
+
+	random_weight = {
+		base = 5
+	}
+}
+
+origin_wishing_well = {
+	is_origin = yes
+	icon = "gfx/interface/icons/origins/origin_wishing_well.dds"
+	picture = GFX_origin_wishing_well
+
+	playable = {
+	}
+
+	possible = {
+		is_nomadic = no
+		ethics = {
+			OR = {
+				text = civic_tooltip_spiritualist
+				value = ethic_spiritualist
+				value = ethic_fanatic_spiritualist
+			}
+			NOT = { value = ethic_gestalt_consciousness }
+		}
+	}
+	
+	modifier = {
+		pop_ethic_spiritualist_attraction_mult = 1
+		add_attunement_the_instrument_of_desire = @civic_attunement2
+	}
+	hide_modifiers = yes
+	
+	description = "origin_tooltip_wishing_well_effects"
+	flags = { forbid_embark }
+	
+	advanced_start = yes
+	max_once_global = yes
+
+	random_weight = {
+		base = 5
+	}
+}
+
+origin_reckoning_arrived = {
+	is_origin = yes
+	icon = "gfx/interface/icons/origins/origin_reckoning_arrived.dds"
+	picture = GFX_origin_reckoning_arrived
+
+	initializers = { origin_reckoning_arrived_starting_init origin_reckoning_arrived_sol_starting_init }
+
+	soft_traits = {
+		trait = trait_psionic
+	}
+
+	playable = {
+		has_shroud_dlc = yes
+	}
+
+	possible = {
+		is_nomadic = yes
+		ethics = {
+			OR = {
+				text = civic_tooltip_spiritualist
+				value = ethic_spiritualist
+				value = ethic_fanatic_spiritualist
+			}
+			NOT = { value = ethic_gestalt_consciousness }
+		}
+		civics = {
+			NOR = {
+				value = civic_natural_design
+				value = civic_augmentation_bazaars
+			}
+			NOR = {
+				text = civic_tooltip_not_chosen
+				value = civic_chosen
+				value = civic_hive_chosen
+				value = civic_machine_chosen
+				value = civic_corporate_chosen
+			}
+		}
+	}
+	
+	modifier = {
+		refugee_attraction = -0.5
+	}
+	
+	description = "origin_tooltip_reckoning_arrived_effects"
+	negative_description = "origin_tooltip_reckoning_arrived_negative_effects"
+	flags = { custom_start_screen }
+	
+	advanced_start = yes
+	max_once_global = yes
+
+	random_weight = {
+		base = 0
+	}
+}
+
+origin_black_hole = {
+	is_origin = yes
+	icon = "gfx/interface/icons/origins/origin_black_hole.dds"
+	picture = GFX_origin_black_hole
+
+	initializers = { origin_black_hole_starting_init origin_black_hole_sol_starting_init }
+
+	traits = {
+		trait = trait_origin_black_hole
+	}
+
+	playable = {
+	}
+
+	possible = {
+		is_nomadic = no
+	}
+	
+	modifier = {
+		country_physics_tech_research_speed = 0.5
+		country_society_tech_research_speed = -0.2
+		country_engineering_tech_research_speed = -0.2
+	}
+
+	description = "origin_tooltip_black_hole_effects"
+	flags = { custom_start_screen }
+
+	advanced_start = yes
+
+	random_weight = {
+		base = 10
+	}
+}
+
+origin_pulsar = {
+	is_origin = yes
+	icon = "gfx/interface/icons/origins/origin_pulsar.dds"
+	picture = GFX_origin_pulsar
+
+	initializers = { origin_pulsar_starting_init origin_pulsar_sol_starting_init }
+
+	traits = {
+		trait = trait_origin_pulsar
+	}
+
+	playable = {
+	}
+
+	possible = {
+		is_nomadic = no
+	}
+	
+	modifier = {
+		country_physics_tech_research_speed = -0.2
+		country_society_tech_research_speed = 0.5
+		country_engineering_tech_research_speed = -0.2
+	}
+
+	description = "origin_tooltip_pulsar_effects"
+	flags = { custom_start_screen }
+
+	advanced_start = yes
+
+	random_weight = {
+		base = 10
+	}
+}
+
+origin_neutron_star = {
+	is_origin = yes
+	icon = "gfx/interface/icons/origins/origin_neutron_star.dds"
+	picture = GFX_origin_neutron_star
+
+	initializers = { origin_neutron_star_starting_init origin_neutron_star_sol_starting_init }
+
+	traits = {
+		trait = trait_origin_neutron_star
+	}
+
+	playable = {
+	}
+
+	possible = {
+		is_nomadic = no
+	}
+	
+	modifier = {
+		country_physics_tech_research_speed = -0.2
+		country_society_tech_research_speed = -0.2
+		country_engineering_tech_research_speed = 0.5
+	}
+
+	description = "origin_tooltip_neutron_star_effects"
+	flags = { custom_start_screen }
+
+	advanced_start = yes
+
+	random_weight = {
+		base = 10
+	}
+}
+
+origin_white_hole = {
+	is_origin = yes
+	icon = "gfx/interface/icons/origins/origin_white_hole.dds"
+	picture = GFX_origin_white_hole
+
+	initializers = { origin_white_hole_starting_init origin_white_hole_sol_starting_init }
+
+	playable = {
+	}
+
+	possible = {
+		is_nomadic = no
+		civics = {
+			NOR = {
+				text = civic_tooltip_not_genocidal
+				value = civic_fanatic_purifiers
+				value = civic_hive_devouring_swarm
+				value = civic_machine_terminator
+				value = civic_scorched_earth
+				value = civic_hive_scorched_earth
+			}
+		}
+	}
+
+	description = "origin_tooltip_white_hole_effects"
+	negative_description = "origin_tooltip_white_hole_negative_effects"
+	flags = { custom_start_screen }
+
+	advanced_start = yes
+	max_once_global = yes
+
+	random_weight = {
+		base = 0
+	}
+}
+
+origin_dyson_sphere = {
+	is_origin = yes
+	icon = "gfx/interface/icons/origins/origin_dyson_sphere.dds"
+	picture = GFX_origin_dyson_sphere
+
+	playable = {
+	}
+
+	possible = {
+		is_nomadic = no
+	}
+	
+	modifier = {
+		country_energy_cost_mult = -0.1
+		country_energy_upkeep_mult = -0.1
+		country_energy_produces_mult = 0.2
+	}
+
+	description = "origin_tooltip_dyson_sphere_effects"
+
+	advanced_start = yes
+	max_once_global = yes
+
+	random_weight = {
+		base = 2
+	}
+}
+
+origin_matter_decompressor = {
+	is_origin = yes
+	icon = "gfx/interface/icons/origins/origin_matter_decompressor.dds"
+	picture = GFX_origin_matter_decompressor
+
+	playable = {
+	}
+
+	possible = {
+		is_nomadic = no
+	}
+	
+	modifier = {
+		country_minerals_cost_mult = -0.1
+		country_minerals_upkeep_mult = -0.1
+		country_minerals_produces_mult = 0.2
+	}
+
+	description = "origin_tooltip_matter_decompressor_effects"
+
+	advanced_start = yes
+	max_once_global = yes
+
+	random_weight = {
+		base = 2
+	}
+}
+
+origin_strategic_coordination_center_1 = {
+	is_origin = yes
+	icon = "gfx/interface/icons/origins/origin_strategic_coordination_center.dds"
+	picture = GFX_origin_strategic_coordination_center
+
+	initializers = { origin_strategic_coordination_center_starting_init origin_strategic_coordination_center_sol_starting_init }
+	
+	potential = {
+		ethics = {
+			NOT = { value = ethic_gestalt_consciousness }
+		}
+	}
+	
+	possible = {
+		is_nomadic = no
+		ethics = {
+			OR = {
+				text = civic_tooltip_xenophobe
+				value = ethic_xenophobe
+				value = ethic_fanatic_xenophobe
+			}
+		}
+	}
+	
+	modifier = {
+		country_claim_influence_cost_mult = -0.1
+		command_limit_mult = 0.1
+		country_naval_cap_mult = 0.1
+		add_attunement_the_eater_of_worlds = @civic_attunement1
+	}
+
+	description = "origin_tooltip_strategic_coordination_center_effects"
+
+	advanced_start = yes
+	max_once_global = yes
+
+	random_weight = {
+		base = 2
+	}
+}
+
+origin_spy_orb_1 = {
+	is_origin = yes
+	icon = "gfx/interface/icons/origins/origin_spy_orb.dds"
+	picture = GFX_origin_spy_orb
+
+	initializers = { origin_spy_orb_starting_init origin_spy_orb_sol_starting_init }
+	
+	potential = {
+		ethics = {
+			NOT = { value = ethic_gestalt_consciousness }
+		}
+	}
+	
+	possible = {
+		is_nomadic = no
+		ethics = { 
+			OR = {
+				text = civic_tooltip_authoritarian
+				value = ethic_authoritarian
+				value = ethic_fanatic_authoritarian
+			}
+		}
+	}
+	
+	modifier = {
+		intel_decryption_add = 1
+		planet_stability_add = 10
+		add_base_country_intel = 10
+		add_attunement_the_instrument_of_desire = @civic_attunement1
+	}
+
+	description = "origin_tooltip_spy_orb_effects"
+
+	advanced_start = yes
+	max_once_global = yes
+
+	random_weight = {
+		base = 2
+	}
+}
+
+origin_mega_shipyard_1 = {
+	is_origin = yes
+	icon = "gfx/interface/icons/origins/origin_mega_shipyard.dds"
+	picture = GFX_origin_mega_shipyard
+
+	initializers = { origin_mega_shipyard_starting_init origin_mega_shipyard_sol_starting_init }
+	
+	potential = {
+		ethics = {
+			NOT = { value = ethic_gestalt_consciousness }
+		}
+	}
+	
+	possible = {
+		is_nomadic = no
+		ethics = {
+			OR = {
+				text = civic_tooltip_militarist
+				value = ethic_militarist
+				value = ethic_fanatic_militarist
+			}
+		}
+	}
+	
+	modifier = {
+		starbase_shipyard_build_cost_mult = -0.1
+		starbase_shipyard_build_speed_mult = 0.1
+		starbase_upgrade_speed_mult = 0.1
+		add_attunement_the_eater_of_worlds = @civic_attunement1
+	}
+
+	description = "origin_tooltip_mega_shipyard_effects"
+
+	advanced_start = yes
+	max_once_global = yes
+
+	random_weight = {
+		base = 2
+	}
+}
+
+origin_think_tank_1 = {
+	is_origin = yes
+	icon = "gfx/interface/icons/origins/origin_think_tank.dds"
+	picture = GFX_origin_think_tank
+
+	initializers = { origin_think_tank_starting_init origin_think_tank_sol_starting_init }
+	
+	potential = {
+		ethics = {
+			NOT = { value = ethic_gestalt_consciousness }
+		}
+	}
+	
+	possible = {
+		is_nomadic = no
+		ethics = {
+			OR = {
+				text = civic_tooltip_materialist
+				value = ethic_materialist
+				value = ethic_fanatic_materialist
+			}
+		}
+	}
+	
+	modifier = {
+		ship_archaeological_site_clues_add = 1
+		ship_astral_rift_clues_add = 1
+		all_technology_research_speed = 0.1
+		add_attunement_whisperers_in_the_void = @civic_attunement1
+	}
+
+	description = "origin_tooltip_think_tank_effects"
+
+	advanced_start = yes
+	max_once_global = yes
+
+	random_weight = {
+		base = 2
+	}
+}
+
+origin_interstellar_assembly_1 = {
+	is_origin = yes
+	icon = "gfx/interface/icons/origins/origin_interstellar_assembly.dds"
+	picture = GFX_origin_interstellar_assembly
+
+	initializers = { origin_interstellar_assembly_starting_init origin_interstellar_assembly_sol_starting_init }
+	
+	potential = {
+		ethics = {
+			NOT = { value = ethic_gestalt_consciousness }
+		}
+	}
+	
+	possible = {
+		is_nomadic = no
+		ethics = {
+			OR = {
+				text = civic_tooltip_xenophile_or_pacifist
+				value = ethic_xenophile
+				value = ethic_fanatic_xenophile
+				value = ethic_pacifist
+				value = ethic_fanatic_pacifist
+			}
+		}
+	}
+	
+	modifier = {
+		envoys_add = 1
+		diplo_action_acceptance_add = 10
+		diplo_weight_mult = 0.1
+		add_attunement_the_cradle_of_souls = @civic_attunement1
+	}
+
+	description = "origin_tooltip_interstellar_assembly_effects"
+
+	advanced_start = yes
+	max_once_global = yes
+
+	random_weight = {
+		base = 2
+	}
+}
+
+origin_mega_art_installation_1 = {
+	is_origin = yes
+	icon = "gfx/interface/icons/origins/origin_mega_art_installation.dds"
+	picture = GFX_origin_mega_art_installation
+
+	initializers = { origin_mega_art_installation_starting_init origin_mega_art_installation_sol_starting_init }
+	
+	potential = {
+		ethics = {
+			NOT = { value = ethic_gestalt_consciousness }
+		}
+	}
+	
+	possible = {
+		is_nomadic = no
+		ethics = {
+			OR = {
+				text = civic_tooltip_spiritualist_or_egalitarian
+				value = ethic_spiritualist
+				value = ethic_fanatic_spiritualist
+				value = ethic_egalitarian
+				value = ethic_fanatic_egalitarian
+			}
+		}
+	}
+	
+	modifier = {
+		empire_size_pops_mult = -0.1
+		country_unity_produces_mult = 0.1
+		planet_amenities_mult = 0.1
+		add_attunement_the_cradle_of_souls = @civic_attunement1
+	}
+
+	description = "origin_tooltip_mega_art_installation_effects"
+
+	advanced_start = yes
+	max_once_global = yes
+
+	random_weight = {
+		base = 2
+	}
+}
+
+origin_strategic_coordination_center_2 = {
+	is_origin = yes
+	icon = "gfx/interface/icons/origins/origin_strategic_coordination_center.dds"
+	picture = GFX_origin_strategic_coordination_center
+
+	initializers = { origin_strategic_coordination_center_starting_init origin_strategic_coordination_center_sol_starting_init }
+	
+	potential = {
+		ethics = {
+			value = ethic_gestalt_consciousness
+		}
+	}
+	
+	possible = {
+		is_nomadic = no
+		civics = {
+			OR = {
+				value = civic_hive_strength_of_legions
+				value = civic_hive_divided_attention
+				value = civic_hive_sovereign_guardianship
+				value = civic_hive_cordyceptic_drones
+				value = civic_machine_warbots
+				value = civic_machine_factory_overclock
+				value = civic_machine_sovereign_guardianship
+				value = civic_machine_tactical_algorithms
+			}
+		}
+	}
+	
+	modifier = {
+		country_claim_influence_cost_mult = -0.1
+		command_limit_mult = 0.1
+		country_naval_cap_mult = 0.1
+		add_attunement_the_eater_of_worlds = @civic_attunement1
+	}
+
+	description = "origin_tooltip_strategic_coordination_center_effects"
+
+	advanced_start = yes
+	max_once_global = yes
+
+	random_weight = {
+		base = 2
+	}
+}
+
+origin_spy_orb_2 = {
+	is_origin = yes
+	icon = "gfx/interface/icons/origins/origin_spy_orb.dds"
+	picture = GFX_origin_spy_orb
+
+	initializers = { origin_spy_orb_starting_init origin_spy_orb_sol_starting_init }
+	
+	potential = {
+		ethics = {
+			value = ethic_gestalt_consciousness
+		}
+	}
+	
+	possible = {
+		is_nomadic = no
+		civics = {
+			OR = {
+				value = civic_hive_subspace_ephapse
+				value = civic_hive_one_mind
+				value = civic_hive_subsumed_will
+				value = civic_hive_hyperspace_specialty
+				value = civic_machine_spybots
+				value = civic_machine_ota_updates
+				value = civic_machine_maintenance_protocols
+				value = civic_machine_hyperspace_specialty
+			}
+		}
+	}
+	
+	modifier = {
+		intel_decryption_add = 1
+		planet_stability_add = 10
+		add_base_country_intel = 10
+		add_attunement_the_instrument_of_desire = @civic_attunement1
+	}
+
+	description = "origin_tooltip_spy_orb_effects"
+
+	advanced_start = yes
+	max_once_global = yes
+
+	random_weight = {
+		base = 2
+	}
+}
+
+origin_mega_shipyard_2 = {
+	is_origin = yes
+	icon = "gfx/interface/icons/origins/origin_mega_shipyard.dds"
+	picture = GFX_origin_mega_shipyard
+
+	initializers = { origin_mega_shipyard_starting_init origin_mega_shipyard_sol_starting_init }
+	
+	potential = {
+		ethics = {
+			value = ethic_gestalt_consciousness
+		}
+	}
+	
+	possible = {
+		is_nomadic = no
+		civics = {
+			OR = {
+				value = civic_hive_devouring_swarm
+				value = civic_hive_scorched_earth
+				value = civic_hive_idyllic_bloom
+				value = civic_hive_toxic_baths
+				value = civic_hive_catalytic_processing
+				value = civic_machine_terminator
+				value = civic_machine_replication
+				value = civic_machine_toxic_baths
+				value = civic_machine_catalytic_processing
+			}
+		}
+	}
+	
+	modifier = {
+		starbase_shipyard_build_cost_mult = -0.1
+		starbase_shipyard_build_speed_mult = 0.1
+		starbase_upgrade_speed_mult = 0.1
+		add_attunement_the_eater_of_worlds = @civic_attunement1
+	}
+
+	description = "origin_tooltip_mega_shipyard_effects"
+
+	advanced_start = yes
+	max_once_global = yes
+
+	random_weight = {
+		base = 2
+	}
+}
+
+origin_think_tank_2 = {
+	is_origin = yes
+	icon = "gfx/interface/icons/origins/origin_think_tank.dds"
+	picture = GFX_origin_think_tank
+
+	initializers = { origin_think_tank_starting_init origin_think_tank_sol_starting_init }
+	
+	potential = {
+		ethics = {
+			value = ethic_gestalt_consciousness
+		}
+	}
+	
+	possible = {
+		is_nomadic = no
+		civics = {
+			OR = {
+				value = civic_hive_natural_neural_network
+				value = civic_hive_pooled_knowledge
+				value = civic_hive_stargazers
+				value = civic_memory_vault_hive
+				value = civic_machine_introspective
+				value = civic_machine_predictive_analysis
+				value = civic_machine_exploration_protocol
+				value = civic_memory_vault_machine
+			}
+		}
+	}
+	
+	modifier = {
+		ship_archaeological_site_clues_add = 1
+		ship_astral_rift_clues_add = 1
+		all_technology_research_speed = 0.1
+		add_attunement_whisperers_in_the_void = @civic_attunement1
+	}
+
+	description = "origin_tooltip_think_tank_effects"
+
+	advanced_start = yes
+	max_once_global = yes
+
+	random_weight = {
+		base = 2
+	}
+}
+
+origin_interstellar_assembly_2 = {
+	is_origin = yes
+	icon = "gfx/interface/icons/origins/origin_interstellar_assembly.dds"
+	picture = GFX_origin_interstellar_assembly
+
+	initializers = { origin_interstellar_assembly_starting_init origin_interstellar_assembly_sol_starting_init }
+	
+	potential = {
+		ethics = {
+			value = ethic_gestalt_consciousness
+		}
+	}
+	
+	possible = {
+		is_nomadic = no
+		civics = {
+			OR = {
+				value = civic_hive_empath
+				value = civic_hive_upkeep_twister
+				value = civic_void_hive
+				value = civic_hive_natural_design
+				value = civic_machine_diplomatic_protocols
+				value = civic_machine_upkeep_twister
+				value = civic_machine_assimilator
+				value = civic_machine_obsessional_directive
+			}
+		}
+	}
+	
+	modifier = {
+		envoys_add = 1
+		diplo_action_acceptance_add = 10
+		diplo_weight_mult = 0.1
+		add_attunement_the_cradle_of_souls = @civic_attunement1
+	}
+
+	description = "origin_tooltip_interstellar_assembly_effects"
+
+	advanced_start = yes
+	max_once_global = yes
+
+	random_weight = {
+		base = 2
+	}
+}
+
+origin_mega_art_installation_2 = {
+	is_origin = yes
+	icon = "gfx/interface/icons/origins/origin_mega_art_installation.dds"
+	picture = GFX_origin_mega_art_installation
+
+	initializers = { origin_mega_art_installation_starting_init origin_mega_art_installation_sol_starting_init }
+	
+	potential = {
+		ethics = {
+			value = ethic_gestalt_consciousness
+		}
+	}
+	
+	possible = {
+		is_nomadic = no
+		civics = {
+			OR = {
+				value = civic_hive_ascetic
+				value = civic_hive_memorialist
+				value = civic_hive_ascensionists
+				value = civic_hive_guided_sapience
+				value = civic_machine_servitor
+				value = civic_machine_memorialist
+				value = civic_machine_ascensionists
+				value = civic_machine_guided_sapience
+			}
+		}
+	}
+	
+	modifier = {
+		empire_size_pops_mult = -0.1
+		country_unity_produces_mult = 0.1
+		planet_amenities_mult = 0.1
+		add_attunement_the_cradle_of_souls = @civic_attunement1
+	}
+
+	description = "origin_tooltip_mega_art_installation_effects"
+
+	advanced_start = yes
+	max_once_global = yes
+
+	random_weight = {
+		base = 2
+	}
+}
+
+origin_we_are_not_one = {
+	is_origin = yes
+	icon = "gfx/interface/icons/origins/origin_we_are_not_one.dds"
+	picture = GFX_origin_we_are_not_one
+	
+	ai_playable = { always = no }
+
+	possible = {
+		is_nomadic = no
+		authority = { value = auth_democratic }
+	}
+	
+	modifier = {
+		country_election_cost_mult = 10000
+		leaders_cost_mult = 100
+		country_leader_pool_size = -10
+		external_leader_pool_add = -10
+		leader_trait_selection_options_add = 10
+		species_leader_exp_gain = 1
+		election_term_years_mult = -0.5
+		add_attunement_whisperers_in_the_void = @civic_attunement1
+	}
+	hide_modifiers = yes
+
+	description = "origin_tooltip_we_are_not_one_effects"
+	negative_description = "origin_tooltip_we_are_not_one_negative_effects"
+	flags = { forbid_embark }
+
+	advanced_start = yes
+	max_once_global = yes
+	
+	random_weight = {
+		base = 0
+	}
+}
+
+origin_swarm_crisis = {
+	is_origin = yes
+	icon = "gfx/interface/icons/origins/origin_swarm_crisis.dds"
+	picture = GFX_origin_swarm_crisis
+	
+	ai_playable = { always = no }
+
+	possible = {
+		ethics = {
+			NOT = { value = ethic_gestalt_consciousness }
+		}
+		species_archetype = {
+			NOT = { value = MACHINE }
+		}
+		civics = {
+			NOR = {
+				text = civic_tooltip_not_genocidal
+				value = civic_fanatic_purifiers
+				value = civic_scorched_earth
+			}
+		}
+		graphical_culture = {
+			NOR = {
+				text = graphical_culture_tooltip_not_biological
+				value = biogenesis_01
+				value = biogenesis_02
+			}
+		}
+	}
+
+	description = "origin_tooltip_swarm_crisis_effects"
+	negative_description = "origin_tooltip_swarm_crisis_negative_effects"
+	flags = { custom_start_screen }
+
+	advanced_start = yes
+	max_once_global = yes
+	
+	random_weight = {
+		base = 0
+	}
+}
+
+origin_ai_crisis = {
+	is_origin = yes
+	icon = "gfx/interface/icons/origins/origin_ai_crisis.dds"
+	picture = GFX_origin_ai_crisis
+	
+	playable = {
+	}
+	
+	ai_playable = { always = no }
+
+	possible = {
+		species_archetype = {
+			value = MACHINE
+		}
+		civics = {
+			NOR = {
+				text = civic_tooltip_not_genocidal
+				value = civic_fanatic_purifiers
+				value = civic_machine_terminator
+				value = civic_scorched_earth
+			}
+		}
+	}
+
+	description = "origin_tooltip_ai_crisis_effects"
+	negative_description = "origin_tooltip_ai_crisis_negative_effects"
+	flags = { custom_start_screen }
+
+	advanced_start = yes
+	max_once_global = yes
+	
+	random_weight = {
+		base = 0
+	}
+}
+
+origin_exd_crisis = {
+	is_origin = yes
+	icon = "gfx/interface/icons/origins/origin_exd_crisis.dds"
+	picture = GFX_origin_exd_crisis
+	
+	playable = {
+		has_megacorp = yes
+	}
+	
+	ai_playable = { always = no }
+
+	possible = {
+		authority = { value = auth_corporate }
+	}
+
+	description = "origin_tooltip_exd_crisis_effects"
+	negative_description = "origin_tooltip_exd_crisis_negative_effects"
+	flags = { custom_start_screen }
+
+	advanced_start = yes
+	max_once_global = yes
+	
+	random_weight = {
+		base = 0
+	}
+}
+
+origin_synth_queen_crisis = {
+	is_origin = yes
+	icon = "gfx/interface/icons/origins/origin_synth_queen_crisis.dds"
+	picture = GFX_origin_synth_queen_crisis
+	
+	playable = {
+		has_machine_age_dlc = yes
+	}
+	
+	ai_playable = { always = no }
+
+	possible = {
+		is_nomadic = no
+		ethics = {
+			OR = {
+				text = civic_tooltip_spiritualist
+				value = ethic_spiritualist
+				value = ethic_fanatic_spiritualist
+			}
+		}
+		civics = {
+			NOR = {
+				text = civic_tooltip_not_genocidal
+				value = civic_fanatic_purifiers
+				value = civic_scorched_earth
+			}
+		}
+	}
+
+	description = "origin_tooltip_synth_queen_crisis_effects"
+	negative_description = "origin_tooltip_synth_queen_crisis_negative_effects"
+	flags = { custom_start_screen }
+
+	advanced_start = yes
+	max_once_global = yes
+	
+	random_weight = {
+		base = 0
+	}
+}
+
+origin_fourth_crisis = {
+	is_origin = yes
+	icon = "gfx/interface/icons/origins/origin_fourth_crisis.dds"
+	picture = GFX_origin_fourth_crisis
+	
+	playable = {
+		has_nemesis = yes
+	}
+	
+	ai_playable = { always = no }
+
+	possible = {
+		ethics = {
+			NOR = {
+				value = ethic_xenophile
+				value = ethic_fanatic_xenophile
+				value = ethic_pacifist
+				value = ethic_fanatic_pacifist
+			}
+		}
+		civics = {
+			NOT = { value = civic_machine_servitor }
+		}
+	}
+	
+	modifier = {
+		councilor_skill_add = 5
+		country_government_civic_points_add = 3
+		BIOLOGICAL_species_trait_points_add = 4
+		BIOLOGICAL_species_trait_picks_add = 2
+		ROBOT_species_trait_points_add = 4
+		ROBOT_species_trait_picks_add = 2
+		MACHINE_species_trait_points_add = 4
+		MACHINE_species_trait_picks_add = 2
+		country_cost_mult = -0.25
+		country_upkeep_mult = -0.25
+		ships_logistics_mult = -0.25
+		diplo_weight_mult = -100
+		envoy_improve_relations_mult = -100
+		country_trade_attractiveness = -100
+		diplo_action_acceptance_add = -10000
+		country_trust_cap_add = -10000
+	}
+	hide_modifiers = yes
+
+	description = "origin_tooltip_fourth_crisis_effects"
+	negative_description = "origin_tooltip_fourth_crisis_negative_effects"
+	flags = { custom_start_screen }
+
+	advanced_start = yes
+	max_once_global = yes
+	
+	random_weight = {
+		base = 0
+	}
+}
+
+origin_new_country = {
+	is_origin = yes
+	icon = "gfx/interface/icons/origins/origin_new_country.dds"
+	picture = GFX_origin_new_country
+	
+	ai_playable = { always = no }
+
+	possible = {
+	}
+	
+	modifier = {
+		refugee_attraction = 0.25
+		envoy_improve_relations_mult = 1
+		country_trust_growth = 0.5
+		diplo_action_acceptance_add = 10
+		envoys_add = 1
+	}
+	hide_modifiers = yes
+
+	description = "origin_tooltip_new_country_effects"
+	negative_description = "origin_tooltip_new_country_negative_effects"
+	flags = { custom_start_screen }
+
+	advanced_start = no
+	max_once_global = yes
+	
+	random_weight = {
+		base = 0
+	}
+}
+
+origin_dark_forest = {
+	is_origin = yes
+	icon = "gfx/interface/icons/origins/origin_dark_forest.dds"
+	picture = GFX_origin_dark_forest
+	
+	ai_playable = { always = no }
+
+	possible = {
+		ethics = {
+			NOR = {
+				value = ethic_xenophile
+				value = ethic_fanatic_xenophile
+			}
+		}
+	}
+	
+	negative_description = "origin_tooltip_dark_forest_negative_effects"
+	flags = { custom_start_screen }
+
+	advanced_start = yes
+	max_once_global = yes
+	
+	random_weight = {
+		base = 0
+	}
+}

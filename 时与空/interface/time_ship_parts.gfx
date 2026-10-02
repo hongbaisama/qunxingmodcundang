@@ -1,0 +1,203 @@
+spriteTypes = {
+	spriteType = {
+		name = "GFX_ship_part_horror_shield"
+		texturefile = "gfx/interface/icons/ship_parts/ship_part_horror_shield.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_ship_part_horror_armor"
+		texturefile = "gfx/interface/icons/ship_parts/ship_part_horror_armor.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_ship_part_horror_beam"
+		texturefile = "gfx/interface/icons/ship_parts/ship_part_horror_beam.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_ship_part_bio_horror_beam"
+		texturefile = "gfx/interface/icons/ship_parts/ship_part_dimensional_horror_beam.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_ship_part_horror_accelerator"
+		texturefile = "gfx/interface/icons/ship_parts/ship_part_horror_accelerator.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_ship_part_bio_horror_accelerator"
+		texturefile = "gfx/interface/icons/ship_parts/ship_part_dimensional_horror_accelerator.dds"
+	}
+	
+	
+	
+	spriteType = {
+		name = "GFX_ship_part_time_shield"
+		texturefile = "gfx/interface/icons/ship_parts/ship_part_time_shield.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_ship_part_time_armor"
+		texturefile = "gfx/interface/icons/ship_parts/ship_part_time_armor.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_ship_part_time_beam"
+		texturefile = "gfx/interface/icons/ship_parts/ship_part_time_beam.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_ship_part_bio_time_beam"
+		texturefile = "gfx/interface/icons/ship_parts/ship_part_dimensional_horror_primary_beam.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_ship_part_time_accelerator"
+		texturefile = "gfx/interface/icons/ship_parts/ship_part_time_accelerator.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_ship_part_bio_time_accelerator"
+		texturefile = "gfx/interface/icons/ship_parts/ship_part_dimensional_horror_primary_accelerator.dds"
+	}
+	
+	
+	
+	spriteType = {
+		name = "GFX_ship_part_end_shield"
+		texturefile = "gfx/interface/icons/ship_parts/ship_part_end_shield.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_ship_part_end_armor"
+		texturefile = "gfx/interface/icons/ship_parts/ship_part_end_armor.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_ship_part_end_beam"
+		texturefile = "gfx/interface/icons/ship_parts/ship_part_end_beam.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_ship_part_bio_end_beam"
+		texturefile = "gfx/interface/icons/ship_parts/ship_part_bio_end_beam.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_ship_part_end_accelerator"
+		texturefile = "gfx/interface/icons/ship_parts/ship_part_end_accelerator.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_ship_part_bio_end_accelerator"
+		texturefile = "gfx/interface/icons/ship_parts/ship_part_bio_end_accelerator.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_ship_part_dimension_end_beam"
+		texturefile = "gfx/interface/icons/ship_parts/ship_part_dimension_end_beam.dds"
+	}
+	
+	
+	
+	spriteType = {
+		name = "GFX_ship_part_hope_hull"
+		texturefile = "gfx/interface/icons/ship_parts/ship_part_hope_hull.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_ship_part_hope_beam"
+		texturefile = "gfx/interface/icons/ship_parts/ship_part_hope_beam.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_ship_part_bio_hope_beam"
+		texturefile = "gfx/interface/icons/ship_parts/ship_part_bio_hope_beam.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_ship_part_hope_accelerator"
+		texturefile = "gfx/interface/icons/ship_parts/ship_part_hope_accelerator.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_ship_part_bio_hope_accelerator"
+		texturefile = "gfx/interface/icons/ship_parts/ship_part_bio_hope_accelerator.dds"
+	}
+	
+	
+	
+	spriteType = {
+		name = "GFX_ship_part_beyond_infinity_reactor"
+		texturefile = "gfx/interface/icons/ship_parts/ship_part_beyond_infinity_reactor.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_ship_part_beyond_infinity_drive"
+		texturefile = "gfx/interface/icons/ship_parts/ship_part_beyond_infinity_drive.dds"
+	}
+	
+	
+	
+	spriteType = {
+		name = "GFX_ship_part_dimensional_horror_primary_beam"
+		texturefile = "gfx/interface/icons/ship_parts/ship_part_dimensional_horror_primary_beam.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_ship_part_dimensional_horror_primary_accelerator"
+		texturefile = "gfx/interface/icons/ship_parts/ship_part_dimensional_horror_primary_accelerator.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_ship_part_dimensional_horror_beam"
+		texturefile = "gfx/interface/icons/ship_parts/ship_part_dimensional_horror_beam.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_ship_part_dimensional_horror_accelerator"
+		texturefile = "gfx/interface/icons/ship_parts/ship_part_dimensional_horror_accelerator.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_ship_part_dimensional_horror_pd_energy"
+		texturefile = "gfx/interface/icons/ship_parts/ship_part_dimensional_horror_pd_energy.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_ship_part_dimensional_horror_pd_kinetic"
+		texturefile = "gfx/interface/icons/ship_parts/ship_part_dimensional_horror_pd_kinetic.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_ship_part_dimensional_horror_strike_craft_energy"
+		texturefile = "gfx/interface/icons/ship_parts/ship_part_dimensional_horror_strike_craft_energy.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_ship_part_dimensional_horror_strike_craft_kinetic"
+		texturefile = "gfx/interface/icons/ship_parts/ship_part_dimensional_horror_strike_craft_kinetic.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_ship_part_aura_horror"
+		texturefile = "gfx/interface/icons/ship_parts/ship_part_aura_horror.dds"
+	}
+	
+	
+	
+	spriteType = {
+		name = "GFX_ship_part_combat_computer_horror"
+		texturefile = "gfx/interface/icons/ship_parts/ship_part_combat_computer_horror.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_ship_part_time_titan_thruster"
+		texturefile = "gfx/interface/icons/ship_parts/ship_part_time_titan_thruster.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_ship_part_time_titan_sensor"
+		texturefile = "gfx/interface/icons/ship_parts/ship_part_time_titan_sensor.dds"
+	}
+}

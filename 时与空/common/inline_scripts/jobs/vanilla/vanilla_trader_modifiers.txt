@@ -1,0 +1,43 @@
+triggered_planet_modifier = {
+	potential = {
+		trader_is_subterranean = yes
+		owner? = { NOT = { has_valid_civic = civic_dystopian_society } }
+	}
+	planet_amenities_add = 300
+	mult = value:scripted_modifier_mult|MODIFIER|pop_job_amenities_mult|
+}
+
+triggered_planet_modifier = {
+	potential = {
+		owner? = {
+			has_tradition = tr_mercantile_commercial_enterprise
+			NOT = {
+				has_valid_civic = civic_dystopian_society
+			}
+		}
+	}
+	planet_amenities_add = 200
+	mult = value:scripted_modifier_mult|MODIFIER|pop_job_amenities_mult|
+}
+
+triggered_planet_modifier = {
+	potential = {
+		colony.orbital_defence.starbase? = {
+			has_starbase_building = ring_trade_hub
+		}
+		owner? = { NOT = { has_valid_civic = civic_dystopian_society } }
+	}
+	planet_amenities_add = 100
+	mult = value:scripted_modifier_mult|MODIFIER|pop_job_amenities_mult|
+}
+
+triggered_planet_modifier = {
+	potential = {
+		starbase? = {
+			has_starbase_building = arkship_trade_hub
+		}
+		owner? = { NOT = { has_valid_civic = civic_dystopian_society } }
+	}
+	planet_amenities_add = 100
+	mult = value:scripted_modifier_mult|MODIFIER|pop_job_amenities_mult|
+}

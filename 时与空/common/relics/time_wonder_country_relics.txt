@@ -1,0 +1,233 @@
+r_time_wonder_country_prethoryn_queen = {
+	activation_duration = @triumph_duration
+	portrait = "GFX_relic_prethoryn_queen"
+	sound = "relic_activation_prethoryn_blood_queen"
+
+	resources = {
+		category = relics
+		# Activation cost
+		cost = {
+			food = 10000
+		}
+	}
+	
+	can_be_stolen = no
+
+	ai_weight = {
+		weight = 100
+	}
+
+	triggered_country_modifier = {
+		potential = {
+			always = yes
+		}
+		country_society_tech_research_speed = 0.5
+	}
+	
+	triggered_country_modifier = {
+		potential = {
+			always = yes
+		}
+		weapon_swarm_weapon_fire_rate_mult = 0.05
+		mult = brood_usage
+	}
+
+	score = 5000
+
+	active_effect = {
+		custom_tooltip = relic_queen_spawn
+		custom_tooltip = relic_triumph_cooldown
+		hidden_effect = {
+			add_modifier = {
+				modifier = "relic_activation_cooldown"
+				days = @triumph_duration
+			}
+			country_event = { id = crisis.250 }
+		}
+	}
+
+	# Possible check for activation
+	possible = {
+		inline_script = {
+			script = relics/activation_checks
+			RELIC = r_time_wonder_country_prethoryn_queen
+		}
+	}
+}
+
+r_time_wonder_country_contingency_core = {
+	activation_duration = @triumph_duration
+	portrait = "GFX_relic_contingency_core"
+	sound = "relic_activation_isolated_contingency_core"
+
+	resources = {
+		category = relics
+		# Activation cost
+		cost = {
+			unity = @activation_cost
+		}
+	}
+	
+	can_be_stolen = no
+
+	ai_weight = {
+		weight = 100
+	}
+
+	triggered_country_modifier = {
+		potential = {
+			always = yes
+		}
+		planet_pop_assembly_mult = 1.00
+		show_only_custom_tooltip = no
+		custom_tooltip = relic_contingecy_core
+	}
+
+	score = 5000
+
+	active_effect = {
+		add_modifier = {
+			modifier = "contingency_calculation"
+			days = @triumph_duration
+		}
+		custom_tooltip = relic_triumph_cooldown
+		hidden_effect = {
+			add_modifier = {
+				modifier = "relic_activation_cooldown"
+				days = @triumph_duration
+			}
+		}
+	}
+
+	# Possible check for activation
+	possible = {
+		inline_script = {
+			script = relics/activation_checks
+			RELIC = r_time_wonder_country_contingency_core
+		}
+	}
+}
+
+r_time_wonder_country_unbidden_warlock = {
+	activation_duration = @triumph_duration
+	portrait = "GFX_relic_unbidden_warlock"
+	sound = "relic_activation_extradimensional_warlock"
+
+	resources = {
+		category = relics
+		# Activation cost
+		cost = {
+			unity = @activation_cost
+		}
+	}
+	
+	can_be_stolen = no
+
+	ai_weight = {
+		weight = 10
+		modifier = {
+			factor = 30
+			is_at_war = yes
+		}
+		modifier = {
+			factor = 0
+			NOR = {
+				has_technology = tech_jump_drive_1
+				has_technology = tech_psi_jump_drive_1
+			}
+		}
+	}
+
+	triggered_country_modifier = {
+		potential = {
+			always = yes
+		}
+		ship_speed_mult = 0.30
+		ship_weapon_range_mult = 0.30
+	}
+
+	score = 5000
+
+	active_effect = {
+		add_modifier = {
+			modifier = "unbidden_ritual"
+			days = @triumph_duration
+		}
+		custom_tooltip = relic_triumph_cooldown
+		hidden_effect = {
+			add_modifier = {
+				modifier = "relic_activation_cooldown"
+				days = @triumph_duration
+			}
+		}
+	}
+
+	# Possible check for activation
+	possible = {
+		inline_script = {
+			script = relics/activation_checks
+			RELIC = r_time_wonder_country_unbidden_warlock
+		}
+	}
+}
+
+r_time_wonder_country_cetanas_heart = {
+	activation_duration = @triumph_duration
+	portrait = "GFX_relic_cetanas_heart"
+	sound = "relic_activation_isolated_contingency_core"
+
+	resources = {
+		category = relics
+		# Activation cost
+		cost = {
+			unity = @activation_cost
+			nanites = 500
+		}
+	}
+	
+	can_be_stolen = no
+
+	ai_weight = {
+		weight = 100
+	}
+
+	triggered_country_modifier = {
+		potential = {
+			always = yes
+		}
+		planetary_ascension_cost_mult = -0.5
+	}
+
+	score = 5000
+
+	active_effect = {
+		if = {
+			limit = { is_hive_empire = no }
+			custom_tooltip = relic_cetanas_heart_active
+		}
+		else_if = {
+			limit = { is_hive_empire = yes }
+			add_modifier = {
+				modifier = "cetanas_heart_hive_modifier"
+				days = @triumph_duration
+			}
+		}
+
+		custom_tooltip = relic_triumph_cooldown
+		hidden_effect = {
+			add_modifier = {
+				modifier = "relic_activation_cooldown"
+				days = @triumph_duration
+			}
+			country_event = { id = crisis.10015 }
+		}
+	}
+
+	# Possible check for activation
+	possible = {
+		inline_script = {
+			script = relics/activation_checks
+			RELIC = r_time_wonder_country_cetanas_heart
+		}
+	}
+}

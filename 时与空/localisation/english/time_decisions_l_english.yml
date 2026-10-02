@@ -1,0 +1,152 @@
+﻿l_english:
+ decision_planet_pass_black_hole:0 "Black Hole Baptism"
+ decision_planet_pass_black_hole_desc:0 "Planet administrators should accept the baptism of the Black Hole.\nSome see it as a curse, while we see it as a blessing."
+ requires_black_hole_system:0 "$TRIGGER_FAIL$Requires to be located in §Y$sc_black_hole$§! system"
+ 
+ decision_origin_pc_hive:0 "Synapse Diffusion"
+ decision_origin_pc_hive_desc:0 "Love from the homeworld must be equally diffused to every one of our planets."
+ 
+ decision_search_pc_time_deposits:0 "Plane Prospecting"
+ decision_search_pc_time_deposits_desc:0 "We can go to other planes through the core singularity and incorporate this spacetime into our territory."
+ decision_search_pc_time_deposits_effect:0 "Randomly add several ['concept_pc_time_deposits']"
+ decision_search_pc_time_deposits_limit_tooltip_1:0 "The limit of same ['concept_pc_time_deposits'] is §Y$@pc_time_deposits_limit_1|0$§!"
+ decision_search_pc_time_deposits_limit_tooltip_2:0 "The limit of same ['concept_pc_time_deposits'] is §Y$@pc_time_deposits_limit_2|0$§!"
+ decision_time:0 "Heart of the Black Hole"
+ decision_time_desc:0 "We were born in this mysterious black hole. Its depths must hide unknown spacetime mysteries. If we can learn the mysteries within, perhaps we can transform it into our ideal home."
+ decision_time_effect:0 "Learn §BMystery of the Singularity§!"
+ decision_time_dimensional_horror:0 "Summon The Worm"
+ decision_time_dimensional_horror_desc:0 "§MThe Worm-in-Waiting§! is very happy to descend on our plane and spare no effort to protect us."
+ decision_time_dimensional_horror_effect:0 "Summon §MThe Worm-in-Waiting§!"
+ 
+ decision_clear_time_haze:0 "Clear Horizon Haze"
+ decision_clear_time_haze_desc:0 "Something went wrong with the surface of this planet, but it's not too late, we have a chance to stabilize the twisted gravitational field again."
+ decision_improve_time_haze:0 "Modify Horizon Haze"
+ decision_improve_time_haze_desc:0 "Horizon Haze has caused great inconvenience to the production of the planet, but we may be able to use the technology learned in the homeworld to modify it."
+ decision_improve_time_haze_effect:0 "We will have the opportunity to use §YHorizon Haze§! to build a §GSecond Home§!"
+ decision_research_time_haze:0 "Research Horizon Haze"
+ decision_research_time_haze_desc:0 "The cause of Horizon Haze is puzzling. If we can study it in depth, maybe we can gain new discoveries from it."
+ decision_research_time_haze_effect:0 "We will have the opportunity to discover ways to §Genhance the homeworld§! from §YHorizon Haze§!"
+ 
+ decision_time_trophy_target:0 "Spacetime Anchor"
+ decision_time_trophy_target_desc:0 "Before teleporting §YLeviathan Trophies§!, we need to designate the §YPlane§! target first and set up an anchor."
+ decision_time_trophy_target_effect:0 "Designate this §YPlane§! as the destination for §YLeviathan Trophies§!"
+ decision_time_trophy:0 "Plane Voidification"
+ decision_time_trophy_desc:0 "We can temporarily §YVoidify§! this §YPlane§! to teleport §YLeviathan Trophies§! to any destination."
+ 
+ decision_gas_colony_arcology:0 "Gaseous Ecumenopolis Project"
+ decision_gas_colony_arcology_desc:0 "The outer atmosphere of the Gas Planet is too chaotic. We may be able to open up a new world of our own in the deep domain."
+ decision_gas_colony_hive:0 "Gaseous Hive Transformation"
+ decision_gas_colony_hive_desc:0 "The outer atmosphere of the Gas Planet is too chaotic. We may be able to create a new main hive of our own in the deep domain."
+ 
+ decision_psionic_1:0 "Stabilize Psionic Wave"
+ decision_psionic_1_desc:0 "The psionic wave of this planet is only barely satisfactory. We can stabilize it through Zro to facilitate our life and work."
+ psionic_requirements_1:0 "§RThe intensity of the psionic wave does not meet our needs§!"
+ decision_psionic_1_effect:0 "§YPsionic Wave§! will become stable"
+ decision_psionic_2:0 "Control Psionic Wave"
+ decision_psionic_2_desc:0 "The psionic wave of this planet is capricious. If not controlled in time, I'm afraid something catastrophic will happen."
+ psionic_requirements_2:0 "§RThe psionic wave is too chaotic, we cannot control it!§!"
+ decision_psionic_2_effect:0 "We don't know what the §YPsionic Wave§! will eventually become, but if we complete the §YPsionic Tradition§!, we will be more confident in controlling it"
+ decision_psionic_3:0 "Consecrate Psionic Source"
+ decision_psionic_3_desc:0 "Our homeworld is the initial interface connecting the Shroud and reality. She selflessly provides us with psionics, and we should regard it as supreme."
+ decision_psionic_3_effect:0 "§YPsionic Source§! will provide us with more psionics, and other colonies of the empire will also be blessed"
+ 
+ decision_nanites_nanotech_swarm_consume_world:0 "$decision_nanotech_swarm_consume_world$"
+ decision_nanites_nanotech_swarm_consume_world_desc:0 "$decision_nanotech_swarm_consume_world_desc$"
+ decision_nanites_fleet:0 "Build Gray Goo Fleet"
+ decision_nanites_fleet_desc:0 "To destroy the galaxy, we need more Gray Goo fleets."
+ decision_nanites_fleet_effect:0 "Build a §YGray Goo Fleet§! of our own above this planet"
+ 
+ decision_tao_of_ninghe:0 "Perceive Power of Yin and Yang"
+ decision_tao_of_ninghe_desc:0 "Perceive the power of Yin and Yang on the planet to better maintain §GSerenity§!."
+ decision_tao_of_ninghe_effect:0 "Immediately §YRefresh§! the monthly change value of the §YPath of Serenity§! situation on this planet"
+ 
+ decision_the_matrix:0 "Repair $pc_time_ruin_cosmogenesis_world$"
+ decision_the_matrix_desc:0 "We already possess sufficient ability to build a $pc_cosmogenesis_world$, but instead of building a new one, it is better to repair the ready-made one."
+ decision_the_matrix_effect:0 "Repair the planet into §Y$pc_cosmogenesis_world$§!"
+ 
+ decision_enable_reassembly_mode:0 "Enable Reassembly Mode"
+ decision_enable_reassembly_mode_desc:0 "We have been dragged down by defective chassis for too long, updating is imminent."
+ pop_can_be_reassembled_is_too_less:0 "$TRIGGER_FAIL$Requires the number of reassemblable mechanical pops to be no less than §Y500§!"
+ 
+ decision_disable_reassembly_mode:0 "Disable Reassembly Mode"
+ decision_disable_reassembly_mode_desc:0 "Our empire needs more labor force, the slow reassembly process is difficult to meet work needs."
+ 
+ decision_upgrade_pirate_king_arkship:0 "海盗之王的新旗舰"
+ decision_upgrade_pirate_king_arkship_desc:0 "随着我们宣告成为海盗之王，我们在整片银河中的地位都有所上升——也许是不好的那方面。而身为海盗之王，我们也理所应当拥有一艘更加恢宏的旗舰。"
+ decision_upgrade_pirate_king_arkship_effect:0 "将['concept_arkship']升级为§Y$military_arkship_tier_2$§!"
+ decision_fully_upgrade_pirate_king_arkship:0 "深渊中的旗舰"
+ decision_fully_upgrade_pirate_king_arkship_desc:0 "在与来自深渊的幽灵舰队与可怖梦魇鏖战后，我们意识到我们的旗舰还远远不够强大。为了成为名副其实的海盗之王，我们的旗舰需要学习来自深渊的技术。"
+ decision_fully_upgrade_pirate_king_arkship_effect:0 "将['concept_arkship']升级为§Y$military_arkship_tier_3$§!"
+ 
+ decision_upgrade_noah_ark_arkship_civilian:0 "诺亚方舟扩容"
+ decision_upgrade_noah_ark_arkship_civilian_desc:0 "随着人口的日益增长，乘员对方舟空间的需求也越来越难以满足，对诺亚方舟扩容亟需提上日程。"
+ decision_upgrade_noah_ark_arkship_civilian_effect:0 "将['concept_arkship']升级为§Y$civilian_arkship_tier_2$§!"
+ decision_fully_upgrade_noah_ark_arkship_civilian:0 "天主的舟"
+ decision_fully_upgrade_noah_ark_arkship_civilian_desc:0 "虽然我们试图仿照诺亚重建了方舟，但我们终究不是诺亚，方舟的规模与日志中的记载仍有差距。\n是时候挣脱模仿的束缚了，我们会依照我们心中所想改进诺亚方舟——以天堂的模样。"
+ decision_fully_upgrade_noah_ark_arkship_civilian_effect:0 "将['concept_arkship']升级为§Y$civilian_arkship_tier_3$§!\n§Y解锁$ARKSHIP_SPINAL_MOUNT$：§!$sm_noah_ark_civilian_spinal$"
+ decision_upgrade_noah_ark_arkship_science:0 "$decision_upgrade_noah_ark_arkship_civilian$"
+ decision_upgrade_noah_ark_arkship_science_desc:0 "$decision_upgrade_noah_ark_arkship_civilian_desc$"
+ decision_upgrade_noah_ark_arkship_science_effect:0 "将['concept_arkship']升级为§Y$science_arkship_tier_2$§!"
+ decision_fully_upgrade_noah_ark_arkship_science:0 "$decision_fully_upgrade_noah_ark_arkship_civilian$"
+ decision_fully_upgrade_noah_ark_arkship_science_desc:0 "$decision_fully_upgrade_noah_ark_arkship_civilian_desc$"
+ decision_fully_upgrade_noah_ark_arkship_science_effect:0 "将['concept_arkship']升级为§Y$science_arkship_tier_3$§!\n§Y解锁$ARKSHIP_SPINAL_MOUNT$：§!$sm_noah_ark_science_spinal$"
+ 
+ decision_blessed_by_god:0 "Grand Sacrifice"
+ decision_blessed_by_god_desc:0 "God, bless us. We offer sacrifices to you here, please grant us grace!"
+ decision_blessed_by_god_effect:0 "§YAccept God's grace!§!\nEach time §Y$decision_blessed_by_god$§! is held, the cost will §Rincrease§!. Currently held §Y[Owner.blessed_by_god_decision_count]§! times"
+ 
+ decision_equinox_seal:0 "Seal Power Supply"
+ decision_equinox_seal_desc:0 "We can transmit Dark Matter to the seal, perhaps supply power to the seal to maintain strength."
+ 
+ decision_time_gaia_deposit:0 "Gaia Ecological Survey"
+ decision_time_gaia_deposit_desc:0 "This Gaia World has a unique ecology, all we have to do is discover it."
+ decision_time_gaia_deposit_effect:0 "Add random ['concept_time_gaia_deposit'] to the planet"
+ 
+ decision_time_ringworld_network:0 "Form Ring Network"
+ decision_time_ringworld_network_desc:0 "We can form a huge control network on $pc_ringworld_habitable$, realizing efficient utilization of the vast land of the Ring World through flexible facility planning and dynamic job allocation."
+ 
+ decision_ai_wonder_country:0 "Return to Homeworld"
+ decision_ai_wonder_country_desc:0 "We hope to make the homeworld our eternal capital."
+ 
+ decision_care_tooltip:0 "§YSwitch C.A.R.E's algorithm type§!"
+ 
+ decision_care_economy:0 "Enable $care_economy$"
+ decision_care_economy_desc:0 "Economy, economy again, I'm tired of reading reports."
+ care_economy_effect:0 "$mod_planet_jobs_energy_produces_mult$ §GSlightly increased§!\n$mod_planet_jobs_trade_produces_mult$ §GSlightly increased§!"
+ 
+ decision_care_trade:0 "Enable $care_trade$"
+ decision_care_trade_desc:0 "Right, this number should be bigger, that number should be smaller... No, I didn't tamper with the data."
+ care_trade_effect:0 "$mod_planet_jobs_trade_produces_mult$ §GIncreased§!"
+ 
+ decision_care_energy:0 "Enable $care_energy$"
+ decision_care_energy_desc:0 "I guess, the bulk of your energy expenditure is on me?"
+ care_energy_effect:0 "$mod_planet_jobs_energy_produces_mult$ §GIncreased§!"
+ 
+ decision_care_research:0 "Enable $care_research$"
+ decision_care_research_desc:0 "Oh, God, finally someone realized I am a computer."
+ care_research_effect:0 "$mod_planet_researchers_produces_mult$ §GIncreased§!\n$mod_planet_researchers_upkeep_mult$ §GDecreased§!"
+ 
+ decision_care_unity:0 "Enable $care_unity$"
+ decision_care_unity_desc:0 "I heard there is a guy called \"Oracle\" who is also a machine, but I am different from her."
+ care_unity_effect:0 "$mod_planet_jobs_unity_produces_mult$ §GIncreased§!\n$MOD_PLANET_DECISION_ENACT_SPEED_MULT$ §GIncreased§!"
+ 
+ decision_care_housing:0 "Enable $care_housing$"
+ decision_care_housing_desc:0 "Cities: Skylines? I am best at playing this!"
+ care_housing_effect:0 "$MOD_PLANET_HOUSING_MULT$ §GIncreased§!\n$MOD_PLANET_BUILDING_BUILD_SPEED_MULT$ §GIncreased§!"
+ 
+ decision_care_amenities:0 "Enable $care_amenities$"
+ decision_care_amenities_desc:0 "Let a garbage maniac provide a good living environment? You think too highly of me."
+ care_amenities_effect:0 "$MOD_PLANET_AMENITIES_MULT$ §GIncreased§!\n$MOD_PLANET_CLEAR_BLOCKER_SPEED_MULT$ §GIncreased§!"
+ 
+ decision_care_growth:0 "Enable $care_growth$"
+ decision_care_growth_desc:0 "Let's appreciate the best adult literary works, even machines will get excited!"
+ care_growth_effect:0 "$MOD_LOGISTIC_GROWTH_MULT$ §GIncreased§!\n$MOD_BONUS_POP_GROWTH_MULT$ §GIncreased§!"
+ care_growth_robotic_effect:0 "$MOD_PLANET_POP_ASSEMBLY_MULT$ §GIncreased§!"
+ 
+ decision_care_alloys:0 "Enable $care_alloys$"
+ decision_care_alloys_desc:0 "Produce, then destroy... Hmm? Are you making alloys to boost performance?"
+ care_alloys_effect:0 "$mod_planet_jobs_alloys_produces_mult$ §GIncreased§!\n$mod_planet_districts_upkeep_mult$ §GDecreased§!"
+ 
+ decision_care_minerals:0 "Enable $care_minerals$"
+ decision_care_minerals_desc:0 "Don't expect my robotic arm to help you do much work, it's actually just a decoration."
+ care_minerals_effect:0 "$mod_planet_jobs_minerals_produces_mult$ §GIncreased§!"

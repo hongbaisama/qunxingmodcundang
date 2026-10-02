@@ -1,0 +1,649 @@
+# 星海帝皇
+
+resolution_time_keeper_emperor_setup = {
+	inline_script = {
+		script = resolutions/resolution_time_keeper_start
+		TYPE = emperor
+		COST = 100
+	}
+	
+	active = {
+		exists = event_target:beyond_infinity_country
+		event_target:beyond_infinity_country = {
+			is_galactic_emperor = yes
+		}
+	}
+	
+	modifier = {
+	}
+	
+	ai_weight = {
+		base = @resolution_weight_popular
+		inline_script = "weights/resolution_time_keeper_weight"
+	}
+}
+
+resolution_time_keeper_emperor_breakthrough_focus_on_shield = {
+	inline_script = {
+		script = resolutions/resolution_time_keeper
+		TYPE = emperor
+		COST = 200
+		RESOLUTION = resolution_time_keeper_emperor_breakthrough_focus_on_shield
+		OPPOSITE_RESOLUTION = resolution_time_keeper_emperor_breakthrough_focus_on_armor
+	}
+	
+	active = {
+		exists = event_target:beyond_infinity_country
+		event_target:beyond_infinity_country = {
+			is_galactic_emperor = yes
+		}
+	}
+	
+	modifier = {
+	}
+	
+	ai_weight = {
+		base = @resolution_weight_normal
+		inline_script = "weights/resolution_time_keeper_weight"
+	}
+}
+
+resolution_time_keeper_emperor_breakthrough_focus_on_armor = {
+	inline_script = {
+		script = resolutions/resolution_time_keeper
+		TYPE = emperor
+		COST = 200
+		RESOLUTION = resolution_time_keeper_emperor_breakthrough_focus_on_armor
+		OPPOSITE_RESOLUTION = resolution_time_keeper_emperor_breakthrough_focus_on_shield
+	}
+	
+	active = {
+		exists = event_target:beyond_infinity_country
+		event_target:beyond_infinity_country = {
+			is_galactic_emperor = yes
+		}
+	}
+	
+	modifier = {
+	}
+	
+	ai_weight = {
+		base = @resolution_weight_normal
+		inline_script = "weights/resolution_time_keeper_weight"
+	}
+}
+
+resolution_time_keeper_emperor_resistance_focus_on_energy = {
+	inline_script = {
+		script = resolutions/resolution_time_keeper
+		TYPE = emperor
+		COST = 200
+		RESOLUTION = resolution_time_keeper_emperor_resistance_focus_on_energy
+		OPPOSITE_RESOLUTION = resolution_time_keeper_emperor_resistance_focus_on_kinetic
+	}
+	
+	active = {
+		exists = event_target:beyond_infinity_country
+		event_target:beyond_infinity_country = {
+			is_galactic_emperor = yes
+		}
+	}
+	
+	modifier = {
+	}
+	
+	ai_weight = {
+		base = @resolution_weight_normal
+		inline_script = "weights/resolution_time_keeper_weight"
+	}
+}
+
+resolution_time_keeper_emperor_resistance_focus_on_kinetic = {
+	inline_script = {
+		script = resolutions/resolution_time_keeper
+		TYPE = emperor
+		COST = 200
+		RESOLUTION = resolution_time_keeper_emperor_resistance_focus_on_kinetic
+		OPPOSITE_RESOLUTION = resolution_time_keeper_emperor_resistance_focus_on_energy
+	}
+	
+	active = {
+		exists = event_target:beyond_infinity_country
+		event_target:beyond_infinity_country = {
+			is_galactic_emperor = yes
+		}
+	}
+	
+	modifier = {
+	}
+	
+	ai_weight = {
+		base = @resolution_weight_normal
+		inline_script = "weights/resolution_time_keeper_weight"
+	}
+}
+
+resolution_time_keeper_emperor_offensive_tactics_of_snipe = {
+	inline_script = {
+		script = resolutions/resolution_time_keeper
+		TYPE = emperor
+		COST = 200
+		RESOLUTION = resolution_time_keeper_emperor_offensive_tactics_of_snipe
+		OPPOSITE_RESOLUTION = resolution_time_keeper_emperor_offensive_tactics_of_pour
+	}
+	
+	active = {
+		exists = event_target:beyond_infinity_country
+		event_target:beyond_infinity_country = {
+			is_galactic_emperor = yes
+		}
+	}
+	
+	modifier = {
+	}
+	
+	ai_weight = {
+		base = @resolution_weight_normal
+		inline_script = "weights/resolution_time_keeper_weight"
+	}
+}
+
+resolution_time_keeper_emperor_offensive_tactics_of_pour = {
+	inline_script = {
+		script = resolutions/resolution_time_keeper
+		TYPE = emperor
+		COST = 200
+		RESOLUTION = resolution_time_keeper_emperor_offensive_tactics_of_pour
+		OPPOSITE_RESOLUTION = resolution_time_keeper_emperor_offensive_tactics_of_snipe
+	}
+	
+	active = {
+		exists = event_target:beyond_infinity_country
+		event_target:beyond_infinity_country = {
+			is_galactic_emperor = yes
+		}
+	}
+	
+	modifier = {
+	}
+	
+	ai_weight = {
+		base = @resolution_weight_normal
+		inline_script = "weights/resolution_time_keeper_weight"
+	}
+}
+
+resolution_time_keeper_emperor_defensive_tactics_of_cover = {
+	inline_script = {
+		script = resolutions/resolution_time_keeper
+		TYPE = emperor
+		COST = 200
+		RESOLUTION = resolution_time_keeper_emperor_defensive_tactics_of_cover
+		OPPOSITE_RESOLUTION = resolution_time_keeper_emperor_defensive_tactics_of_maneuver
+	}
+	
+	active = {
+		exists = event_target:beyond_infinity_country
+		event_target:beyond_infinity_country = {
+			is_galactic_emperor = yes
+		}
+	}
+	
+	modifier = {
+	}
+	
+	ai_weight = {
+		base = @resolution_weight_normal
+		inline_script = "weights/resolution_time_keeper_weight"
+	}
+}
+
+resolution_time_keeper_emperor_defensive_tactics_of_maneuver = {
+	inline_script = {
+		script = resolutions/resolution_time_keeper
+		TYPE = emperor
+		COST = 200
+		RESOLUTION = resolution_time_keeper_emperor_defensive_tactics_of_maneuver
+		OPPOSITE_RESOLUTION = resolution_time_keeper_emperor_defensive_tactics_of_cover
+	}
+	
+	active = {
+		exists = event_target:beyond_infinity_country
+		event_target:beyond_infinity_country = {
+			is_galactic_emperor = yes
+		}
+	}
+	
+	modifier = {
+	}
+	
+	ai_weight = {
+		base = @resolution_weight_normal
+		inline_script = "weights/resolution_time_keeper_weight"
+	}
+}
+
+resolution_time_keeper_emperor_logistics_strategy_of_support = {
+	inline_script = {
+		script = resolutions/resolution_time_keeper
+		TYPE = emperor
+		COST = 200
+		RESOLUTION = resolution_time_keeper_emperor_logistics_strategy_of_support
+		OPPOSITE_RESOLUTION = resolution_time_keeper_emperor_logistics_strategy_of_supply
+	}
+	
+	active = {
+		exists = event_target:beyond_infinity_country
+		event_target:beyond_infinity_country = {
+			is_galactic_emperor = yes
+		}
+	}
+	
+	modifier = {
+	}
+	
+	ai_weight = {
+		base = @resolution_weight_normal
+		inline_script = "weights/resolution_time_keeper_weight"
+	}
+}
+
+resolution_time_keeper_emperor_logistics_strategy_of_supply = {
+	inline_script = {
+		script = resolutions/resolution_time_keeper
+		TYPE = emperor
+		COST = 200
+		RESOLUTION = resolution_time_keeper_emperor_logistics_strategy_of_supply
+		OPPOSITE_RESOLUTION = resolution_time_keeper_emperor_logistics_strategy_of_support
+	}
+	
+	active = {
+		exists = event_target:beyond_infinity_country
+		event_target:beyond_infinity_country = {
+			is_galactic_emperor = yes
+		}
+	}
+	
+	modifier = {
+	}
+	
+	ai_weight = {
+		base = @resolution_weight_normal
+		inline_script = "weights/resolution_time_keeper_weight"
+	}
+}
+
+resolution_time_keeper_emperor_command_strategy_of_elite = {
+	inline_script = {
+		script = resolutions/resolution_time_keeper
+		TYPE = emperor
+		COST = 200
+		RESOLUTION = resolution_time_keeper_emperor_command_strategy_of_elite
+		OPPOSITE_RESOLUTION = resolution_time_keeper_emperor_command_strategy_of_cluster
+	}
+	
+	active = {
+		exists = event_target:beyond_infinity_country
+		event_target:beyond_infinity_country = {
+			is_galactic_emperor = yes
+		}
+	}
+	
+	modifier = {
+	}
+	
+	ai_weight = {
+		base = @resolution_weight_normal
+		inline_script = "weights/resolution_time_keeper_weight"
+	}
+}
+
+resolution_time_keeper_emperor_command_strategy_of_cluster = {
+	inline_script = {
+		script = resolutions/resolution_time_keeper
+		TYPE = emperor
+		COST = 200
+		RESOLUTION = resolution_time_keeper_emperor_command_strategy_of_cluster
+		OPPOSITE_RESOLUTION = resolution_time_keeper_emperor_command_strategy_of_elite
+	}
+	
+	active = {
+		exists = event_target:beyond_infinity_country
+		event_target:beyond_infinity_country = {
+			is_galactic_emperor = yes
+		}
+	}
+	
+	modifier = {
+	}
+	
+	ai_weight = {
+		base = @resolution_weight_normal
+		inline_script = "weights/resolution_time_keeper_weight"
+	}
+}
+
+# 星海监管人
+
+resolution_time_keeper_custodian_setup = {
+	inline_script = {
+		script = resolutions/resolution_time_keeper_start
+		TYPE = custodian
+		COST = 100
+	}
+	
+	active = {
+		exists = event_target:beyond_infinity_country
+		event_target:beyond_infinity_country = {
+			is_galactic_custodian = yes
+		}
+	}
+	
+	modifier = {
+	}
+	
+	ai_weight = {
+		base = @resolution_weight_popular
+		inline_script = "weights/resolution_time_keeper_weight"
+	}
+}
+
+resolution_time_keeper_custodian_breakthrough_focus_on_shield = {
+	inline_script = {
+		script = resolutions/resolution_time_keeper
+		TYPE = custodian
+		COST = 200
+		RESOLUTION = resolution_time_keeper_custodian_breakthrough_focus_on_shield
+		OPPOSITE_RESOLUTION = resolution_time_keeper_custodian_breakthrough_focus_on_armor
+	}
+	
+	active = {
+		exists = event_target:beyond_infinity_country
+		event_target:beyond_infinity_country = {
+			is_galactic_custodian = yes
+		}
+	}
+	
+	modifier = {
+	}
+	
+	ai_weight = {
+		base = @resolution_weight_normal
+		inline_script = "weights/resolution_time_keeper_weight"
+	}
+}
+
+resolution_time_keeper_custodian_breakthrough_focus_on_armor = {
+	inline_script = {
+		script = resolutions/resolution_time_keeper
+		TYPE = custodian
+		COST = 200
+		RESOLUTION = resolution_time_keeper_custodian_breakthrough_focus_on_armor
+		OPPOSITE_RESOLUTION = resolution_time_keeper_custodian_breakthrough_focus_on_shield
+	}
+	
+	active = {
+		exists = event_target:beyond_infinity_country
+		event_target:beyond_infinity_country = {
+			is_galactic_custodian = yes
+		}
+	}
+	
+	modifier = {
+	}
+	
+	ai_weight = {
+		base = @resolution_weight_normal
+		inline_script = "weights/resolution_time_keeper_weight"
+	}
+}
+
+resolution_time_keeper_custodian_resistance_focus_on_energy = {
+	inline_script = {
+		script = resolutions/resolution_time_keeper
+		TYPE = custodian
+		COST = 200
+		RESOLUTION = resolution_time_keeper_custodian_resistance_focus_on_energy
+		OPPOSITE_RESOLUTION = resolution_time_keeper_custodian_resistance_focus_on_kinetic
+	}
+	
+	active = {
+		exists = event_target:beyond_infinity_country
+		event_target:beyond_infinity_country = {
+			is_galactic_custodian = yes
+		}
+	}
+	
+	modifier = {
+	}
+	
+	ai_weight = {
+		base = @resolution_weight_normal
+		inline_script = "weights/resolution_time_keeper_weight"
+	}
+}
+
+resolution_time_keeper_custodian_resistance_focus_on_kinetic = {
+	inline_script = {
+		script = resolutions/resolution_time_keeper
+		TYPE = custodian
+		COST = 200
+		RESOLUTION = resolution_time_keeper_custodian_resistance_focus_on_kinetic
+		OPPOSITE_RESOLUTION = resolution_time_keeper_custodian_resistance_focus_on_energy
+	}
+	
+	active = {
+		exists = event_target:beyond_infinity_country
+		event_target:beyond_infinity_country = {
+			is_galactic_custodian = yes
+		}
+	}
+	
+	modifier = {
+	}
+	
+	ai_weight = {
+		base = @resolution_weight_normal
+		inline_script = "weights/resolution_time_keeper_weight"
+	}
+}
+
+resolution_time_keeper_custodian_offensive_tactics_of_snipe = {
+	inline_script = {
+		script = resolutions/resolution_time_keeper
+		TYPE = custodian
+		COST = 200
+		RESOLUTION = resolution_time_keeper_custodian_offensive_tactics_of_snipe
+		OPPOSITE_RESOLUTION = resolution_time_keeper_custodian_offensive_tactics_of_pour
+	}
+	
+	active = {
+		exists = event_target:beyond_infinity_country
+		event_target:beyond_infinity_country = {
+			is_galactic_custodian = yes
+		}
+	}
+	
+	modifier = {
+	}
+	
+	ai_weight = {
+		base = @resolution_weight_normal
+		inline_script = "weights/resolution_time_keeper_weight"
+	}
+}
+
+resolution_time_keeper_custodian_offensive_tactics_of_pour = {
+	inline_script = {
+		script = resolutions/resolution_time_keeper
+		TYPE = custodian
+		COST = 200
+		RESOLUTION = resolution_time_keeper_custodian_offensive_tactics_of_pour
+		OPPOSITE_RESOLUTION = resolution_time_keeper_custodian_offensive_tactics_of_snipe
+	}
+	
+	active = {
+		exists = event_target:beyond_infinity_country
+		event_target:beyond_infinity_country = {
+			is_galactic_custodian = yes
+		}
+	}
+	
+	modifier = {
+	}
+	
+	ai_weight = {
+		base = @resolution_weight_normal
+		inline_script = "weights/resolution_time_keeper_weight"
+	}
+}
+
+resolution_time_keeper_custodian_defensive_tactics_of_cover = {
+	inline_script = {
+		script = resolutions/resolution_time_keeper
+		TYPE = custodian
+		COST = 200
+		RESOLUTION = resolution_time_keeper_custodian_defensive_tactics_of_cover
+		OPPOSITE_RESOLUTION = resolution_time_keeper_custodian_defensive_tactics_of_maneuver
+	}
+	
+	active = {
+		exists = event_target:beyond_infinity_country
+		event_target:beyond_infinity_country = {
+			is_galactic_custodian = yes
+		}
+	}
+	
+	modifier = {
+	}
+	
+	ai_weight = {
+		base = @resolution_weight_normal
+		inline_script = "weights/resolution_time_keeper_weight"
+	}
+}
+
+resolution_time_keeper_custodian_defensive_tactics_of_maneuver = {
+	inline_script = {
+		script = resolutions/resolution_time_keeper
+		TYPE = custodian
+		COST = 200
+		RESOLUTION = resolution_time_keeper_custodian_defensive_tactics_of_maneuver
+		OPPOSITE_RESOLUTION = resolution_time_keeper_custodian_defensive_tactics_of_cover
+	}
+	
+	active = {
+		exists = event_target:beyond_infinity_country
+		event_target:beyond_infinity_country = {
+			is_galactic_custodian = yes
+		}
+	}
+	
+	modifier = {
+	}
+	
+	ai_weight = {
+		base = @resolution_weight_normal
+		inline_script = "weights/resolution_time_keeper_weight"
+	}
+}
+
+resolution_time_keeper_custodian_logistics_strategy_of_support = {
+	inline_script = {
+		script = resolutions/resolution_time_keeper
+		TYPE = custodian
+		COST = 200
+		RESOLUTION = resolution_time_keeper_custodian_logistics_strategy_of_support
+		OPPOSITE_RESOLUTION = resolution_time_keeper_custodian_logistics_strategy_of_supply
+	}
+	
+	active = {
+		exists = event_target:beyond_infinity_country
+		event_target:beyond_infinity_country = {
+			is_galactic_custodian = yes
+		}
+	}
+	
+	modifier = {
+	}
+	
+	ai_weight = {
+		base = @resolution_weight_normal
+		inline_script = "weights/resolution_time_keeper_weight"
+	}
+}
+
+resolution_time_keeper_custodian_logistics_strategy_of_supply = {
+	inline_script = {
+		script = resolutions/resolution_time_keeper
+		TYPE = custodian
+		COST = 200
+		RESOLUTION = resolution_time_keeper_custodian_logistics_strategy_of_supply
+		OPPOSITE_RESOLUTION = resolution_time_keeper_custodian_logistics_strategy_of_support
+	}
+	
+	active = {
+		exists = event_target:beyond_infinity_country
+		event_target:beyond_infinity_country = {
+			is_galactic_custodian = yes
+		}
+	}
+	
+	modifier = {
+	}
+	
+	ai_weight = {
+		base = @resolution_weight_normal
+		inline_script = "weights/resolution_time_keeper_weight"
+	}
+}
+
+resolution_time_keeper_custodian_command_strategy_of_elite = {
+	inline_script = {
+		script = resolutions/resolution_time_keeper
+		TYPE = custodian
+		COST = 200
+		RESOLUTION = resolution_time_keeper_custodian_command_strategy_of_elite
+		OPPOSITE_RESOLUTION = resolution_time_keeper_custodian_command_strategy_of_cluster
+	}
+	
+	active = {
+		exists = event_target:beyond_infinity_country
+		event_target:beyond_infinity_country = {
+			is_galactic_custodian = yes
+		}
+	}
+	
+	modifier = {
+	}
+	
+	ai_weight = {
+		base = @resolution_weight_normal
+		inline_script = "weights/resolution_time_keeper_weight"
+	}
+}
+
+resolution_time_keeper_custodian_command_strategy_of_cluster = {
+	inline_script = {
+		script = resolutions/resolution_time_keeper
+		TYPE = custodian
+		COST = 200
+		RESOLUTION = resolution_time_keeper_custodian_command_strategy_of_cluster
+		OPPOSITE_RESOLUTION = resolution_time_keeper_custodian_command_strategy_of_elite
+	}
+	
+	active = {
+		exists = event_target:beyond_infinity_country
+		event_target:beyond_infinity_country = {
+			is_galactic_custodian = yes
+		}
+	}
+	
+	modifier = {
+	}
+	
+	ai_weight = {
+		base = @resolution_weight_normal
+		inline_script = "weights/resolution_time_keeper_weight"
+	}
+}

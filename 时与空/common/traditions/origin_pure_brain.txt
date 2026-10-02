@@ -1,0 +1,184 @@
+tr_origin_pure_brain_adopt = {
+	unlocks_agenda = agenda_tradition_origin_pure_brain
+	modifier = {
+		leader_trait_selection_options_add = 1
+		planet_amenities_no_happiness_mult = 0.25
+	}
+}
+
+tr_origin_pure_brain_finish = {
+	modifier = {
+		negative_traits_leader = -1
+		planet_crime_no_happiness_mult = -0.25
+		ascension_perks_add = 1
+	}
+}
+
+tr_origin_pure_brain_growth = {
+	modifier = {
+		councilor_gestalt_growth_exp_gain = 0.5
+	}
+	on_enabled = {
+		custom_tooltip = tr_origin_pure_brain_growth_desc
+	}
+	
+	tradition_swap = {
+		name = tr_origin_pure_brain_growth_machine
+		inherit_effects = yes
+		inherit_icon = yes
+		trigger = {
+			is_machine_empire = yes
+		}
+		modifier = {
+			councilor_gestalt_growth_exp_gain = 0.5
+		}
+		weight = {
+			factor = 1
+		}
+	}
+	
+	ai_weight = {
+		factor = 1000
+	}
+}
+
+tr_origin_pure_brain_regulatory = {
+	modifier = {
+		councilor_gestalt_regulatory_exp_gain = 0.5
+	}
+	on_enabled = {
+		custom_tooltip = tr_origin_pure_brain_regulatory_desc
+	}
+	
+	tradition_swap = {
+		name = tr_origin_pure_brain_regulatory_machine
+		inherit_effects = yes
+		inherit_icon = yes
+		trigger = {
+			is_machine_empire = yes
+		}
+		modifier = {
+			councilor_gestalt_regulatory_exp_gain = 0.5
+		}
+		weight = {
+			factor = 1
+		}
+	}
+	
+	ai_weight = {
+		factor = 1000
+	}
+}
+
+tr_origin_pure_brain_cognitive = {
+	possible = {
+		has_tradition = tr_origin_pure_brain_growth
+	}
+	modifier = {
+		councilor_gestalt_cognitive_exp_gain = 0.5
+	}
+	on_enabled = {
+		custom_tooltip = tr_origin_pure_brain_cognitive_desc
+	}
+	
+	tradition_swap = {
+		name = tr_origin_pure_brain_cognitive_machine
+		inherit_effects = yes
+		inherit_icon = yes
+		trigger = {
+			is_machine_empire = yes
+		}
+		modifier = {
+			councilor_gestalt_cognitive_exp_gain = 0.5
+		}
+		weight = {
+			factor = 1
+		}
+	}
+	
+	ai_weight = {
+		factor = 1000
+	}
+}
+
+tr_origin_pure_brain_legion = {
+	possible = {
+		has_tradition = tr_origin_pure_brain_regulatory
+	}
+	modifier = {
+		councilor_gestalt_legion_exp_gain = 0.5
+	}
+	on_enabled = {
+		custom_tooltip = tr_origin_pure_brain_legion_desc
+	}
+	
+	tradition_swap = {
+		name = tr_origin_pure_brain_legion_machine
+		inherit_effects = yes
+		inherit_icon = yes
+		trigger = {
+			is_machine_empire = yes
+			NOT = { has_valid_civic = civic_machine_servitor }
+		}
+		modifier = {
+			councilor_gestalt_legion_exp_gain = 0.5
+		}
+		weight = {
+			factor = 1
+		}
+	}
+	
+	tradition_swap = {
+		name = tr_origin_pure_brain_legion_servitor
+		inherit_effects = yes
+		inherit_icon = yes
+		trigger = {
+			is_machine_empire = yes
+			has_valid_civic = civic_machine_servitor
+		}
+		modifier = {
+			councilor_gestalt_legion_exp_gain = 0.5
+		}
+		weight = {
+			factor = 10
+		}
+	}
+	
+	ai_weight = {
+		factor = 1000
+	}
+}
+
+tr_origin_pure_brain_ruler = {
+	possible = {
+		has_tradition = tr_origin_pure_brain_cognitive
+		has_tradition = tr_origin_pure_brain_legion
+	}
+	modifier = {
+		councilor_ruler_hive_mind_exp_gain = 0.5
+	}
+	on_enabled = {
+		custom_tooltip = tr_origin_pure_brain_ruler_desc
+	}
+	
+	tradition_swap = {
+		name = tr_origin_pure_brain_ruler_machine
+		inherit_icon = yes
+		trigger = {
+			is_machine_empire = yes
+		}
+		modifier = {
+			councilor_ruler_machine_intelligence_exp_gain = 0.5
+		}
+		on_enabled = {
+			custom_tooltip = tr_origin_pure_brain_ruler_machine_desc
+		}
+		weight = {
+			factor = 1
+		}
+	}
+	
+	ai_weight = {
+		factor = 1000
+	}
+}

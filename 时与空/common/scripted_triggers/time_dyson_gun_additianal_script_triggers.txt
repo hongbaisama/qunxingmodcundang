@@ -1,0 +1,116 @@
+# 星系
+time_dyson_gun_additianal_trigger = {
+	custom_tooltip = {
+		fail_text = "no_dimensional_horror_in_system"
+		solar_system = {
+			NOR = {
+				has_star_flag = worm_black_hole
+				any_fleet_in_system = {
+					OR = {
+						is_dimensional_horror_ship_size = yes
+						is_time_titan_ship_size = yes
+					}
+				}
+			}
+		}
+	}
+	custom_tooltip = {
+		fail_text = "system_immune_to_dyson_gun"
+		solar_system = {
+			NOR = {
+				has_star_flag = immune_to_dyson_gun
+				has_star_flag = cannot_be_hit_by_aow_starfall_spear
+				any_system_planet = {
+					OR = {
+						has_planet_flag = immune_to_dyson_gun
+						has_planet_flag = cannot_be_hit_by_aow_starfall_spear
+					}
+				}
+				any_fleet_in_system = {
+					OR = {
+						has_fleet_flag = immune_to_dyson_gun
+						has_fleet_flag = cannot_be_hit_by_aow_starfall_spear
+					}
+				}
+			}
+		}
+	}
+	solar_system = {
+		custom_tooltip = {
+			fail_text = spth_requires_no_jamming_system
+			NOT = { has_star_flag = touhou_signal_jammer_tower_jamming_system }
+		}
+		custom_tooltip = {
+			fail_text = spth_requires_no_kamikakushi_system
+			NOR = {
+				has_star_flag = spth_kamikaushi_system_special
+				has_star_flag = spth_kamikaushi_crisis_gate_1
+				has_star_flag = spth_kamikaushi_crisis_gate_2
+				has_star_flag = spth_kamikaushi_crisis_gate_3
+			}
+		}
+		custom_tooltip = {
+			fail_text = spth_requires_no_lunar_system
+			NOR = {
+				has_star_flag = spth_story_lunar_capital_aethon
+				has_star_flag = spth_story_lunar_capital_union_system
+				has_star_flag = spth_story_lunar_capital_cluster34
+				has_star_flag = spth_story_lunar_capital_toyohime
+				has_star_flag = spth_lunar_capital_psi_sub_gate_in_system
+			}
+		}
+		custom_tooltip = {
+			fail_text = spth_requires_no_touhou_system
+			NOT = { has_star_flag = spth_system }
+		}
+		custom_tooltip = {
+			fail_text = spth_requires_no_contingency_system
+			NOT = {
+				any_system_planet = {
+					is_planet_class = pc_ai
+					exists = owner
+					owner = { is_country_type = ai_empire }
+				}
+			}
+		}
+		custom_tooltip = {
+			fail_text = spth_requires_no_exd_system
+			NOT = {
+				any_fleet_in_system = { is_ship_size = dimensional_portal_ed }
+			}
+		}
+		custom_tooltip = {
+			fail_text = spth_requires_no_zeta_crisis_system
+			NOT = {
+				any_fleet_in_system = {
+					OR = {
+						is_ship_size = ag_zeta_crisis_portal
+						is_ship_size = ag_zeta_crisis_psionic_storm
+						is_ship_size = ag_zeta_crisis_psionic_singularity
+					}
+				}
+			}
+		}
+		custom_tooltip = {
+			fail_text = spth_requires_no_ancient_system
+			ag_is_ancient_system = no
+		}
+		custom_tooltip = {
+			fail_text = spth_requires_no_roz_outland_system
+			NOT = { has_star_flag = roz_outland_system }
+		}
+		custom_tooltip = {
+			fail_text = spth_requires_no_roz_abyss_system
+			NOT = { has_star_flag = roz_abyss_fleet_outpost_system }
+		}
+		custom_tooltip = {
+			fail_text = spth_requires_no_special_system
+			NOR = {
+				has_star_flag = spth_no_star_killer_target_system
+				has_star_flag = ag_no_star_killer_target_system
+				has_star_flag = kuat_cannot_be_hit_by_starkillerbase
+				has_star_flag = cannot_be_hit_by_aow_starfall_spear
+			}
+		}
+	}
+}

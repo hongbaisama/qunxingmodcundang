@@ -1,0 +1,22 @@
+@d_wishing_well_basic_resource_produce = 2.5
+@d_wishing_well_advanced_resource_produce = 1.25
+@d_wishing_well_research_resource_produce = 1.25
+@d_wishing_well_strategic_resource_produce = 0.25
+@d_wishing_well_rare_resource_produce = 0.1
+@d_wishing_well_exceptional_resource_produce = 0.05
+@d_wishing_well_trade_upkeep = 5
+
+@d_wishing_well_double_interval_year = 10
+@d_wishing_well_double_interval_origin_factor = 0.5
+@d_wishing_well_double_interval_origin_factor_for_text = -0.5	# 用于起源文本
+@d_wishing_well_double_interval_difficulty_6_ai_factor = 1.2
+@d_wishing_well_double_interval_difficulty_5_ai_factor = 1.4
+@d_wishing_well_double_interval_difficulty_4_ai_factor = 1.6
+@d_wishing_well_double_interval_difficulty_3_ai_factor = 1.8
+@d_wishing_well_double_interval_difficulty_default_ai_factor = 2
+@d_wishing_well_double_interval_subject_ai_factor = 1.5
+
+@d_wishing_well_max_pow = 25
+@d_wishing_well_max_ai_pow = 20
+
+@d_wishing_well_resource_ascension_perks_factor = 0.25

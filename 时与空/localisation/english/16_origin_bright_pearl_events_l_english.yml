@@ -1,0 +1,5 @@
+﻿l_english:
+ ORIGIN_BRIGHT_PEARL_CHAIN_title:0 "Resplendent Pearl"
+ ORIGIN_BRIGHT_PEARL_CHAIN_desc:0 "That was once the brightest star in the galaxy.\n\nAlthough once extinguished, its brilliance remains, attracting the eyes of every civilization competing in the sea of stars."
+ bright_pearl_point:0 "$ORIGIN_BRIGHT_PEARL_CHAIN_title$"
+ bright_pearl_point_desc:0 "$ORIGIN_BRIGHT_PEARL_CHAIN_desc$"

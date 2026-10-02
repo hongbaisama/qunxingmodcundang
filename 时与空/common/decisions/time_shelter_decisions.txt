@@ -1,0 +1,57 @@
+decision_open_time_titan_main_menu = {
+	important = yes
+	owned_planets_only = yes
+	sound = event_activating_unknown_technology
+	icon = decision_engineering_research
+	
+	prerequisites = {
+	}
+	
+	enactment_time = 0
+	
+	potential = {
+		is_planet_class = pc_time_shelter
+	}
+	
+	effect = {
+		custom_tooltip = open_time_titan_main_menu_activity_key
+		hidden_effect = {
+			fleet = {
+				fleet_event = { id = time_akx.20000 }
+			}
+		}
+	}
+	
+	ai_weight = {
+		weight = 0
+	}
+}
+
+decision_start_time_titan_pass_black_hole = {
+	important = yes
+	owned_planets_only = yes
+	sound = event_alien_signal
+	icon = decision_time_trophy
+	
+	prerequisites = {
+	}
+	
+	enactment_time = 0
+	
+	potential = {
+		is_planet_class = pc_time_shelter
+	}
+	
+	effect = {
+		custom_tooltip = start_time_titan_pass_black_hole_activity_key
+		hidden_effect = {
+			fleet = {
+				fleet_event = { id = time_akx.20010 }
+			}
+		}
+	}
+	
+	ai_weight = {
+		weight = 0
+	}
+}

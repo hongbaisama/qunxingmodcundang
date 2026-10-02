@@ -1,0 +1,1201 @@
+################################################################
+# 1层（技能）
+################################################################
+dimension_traveler_skill_$CLASS$_1_5 = {
+	potential = {
+		can_active_dimension_traveler_skill = {
+			CLASS = $CLASS$
+			TIER = 1
+			NUM = 5
+		}
+	}
+	
+	allow = {
+		allow_active_dimension_traveler_skill = {
+			CLASS = $CLASS$
+			TIER = 1
+			NUM = 5
+			COUNT = 1
+		}
+	}
+	
+	effect = {
+		choose_dimension_traveler_skill = {
+			CLASS = $CLASS$
+			TIER = 1
+			NUM = 5
+			COUNT = 1
+		}
+	}
+}
+actived_dimension_traveler_skill_$CLASS$_1_5 = {
+	potential = {
+		show_actived_dimension_traveler_skill = {
+			CLASS = $CLASS$
+			TIER = 1
+			NUM = 5
+		}
+	}
+	
+	effect = {
+		actived_dimension_traveler_skill_effect = {
+			CLASS = $CLASS$
+			TIER = 1
+			NUM = 5
+			COUNT = 1
+		}
+	}
+}
+################################################################
+# 2层（技能）
+################################################################
+dimension_traveler_skill_$CLASS$_2_4 = {
+	potential = {
+		can_active_dimension_traveler_skill = {
+			CLASS = $CLASS$
+			TIER = 2
+			NUM = 4
+			LOCKED = yes
+		}
+	}
+	
+	allow = {
+		allow_active_dimension_traveler_skill = {
+			CLASS = $CLASS$
+			TIER = 2
+			NUM = 4
+			COUNT = 1
+		}
+	}
+	
+	effect = {
+		choose_dimension_traveler_skill = {
+			CLASS = $CLASS$
+			TIER = 2
+			NUM = 4
+			COUNT = 1
+		}
+	}
+}
+actived_dimension_traveler_skill_$CLASS$_2_4 = {
+	potential = {
+		show_actived_dimension_traveler_skill = {
+			CLASS = $CLASS$
+			TIER = 2
+			NUM = 4
+		}
+	}
+	
+	effect = {
+		actived_dimension_traveler_skill_effect = {
+			CLASS = $CLASS$
+			TIER = 2
+			NUM = 4
+			COUNT = 1
+		}
+	}
+}
+
+dimension_traveler_skill_$CLASS$_2_6 = {
+	potential = {
+		can_active_dimension_traveler_skill = {
+			CLASS = $CLASS$
+			TIER = 2
+			NUM = 6
+			LOCKED = yes
+		}
+	}
+	
+	allow = {
+		allow_active_dimension_traveler_skill = {
+			CLASS = $CLASS$
+			TIER = 2
+			NUM = 6
+			COUNT = 1
+		}
+	}
+	
+	effect = {
+		choose_dimension_traveler_skill = {
+			CLASS = $CLASS$
+			TIER = 2
+			NUM = 6
+			COUNT = 1
+		}
+	}
+}
+actived_dimension_traveler_skill_$CLASS$_2_6 = {
+	potential = {
+		show_actived_dimension_traveler_skill = {
+			CLASS = $CLASS$
+			TIER = 2
+			NUM = 6
+		}
+	}
+	
+	effect = {
+		actived_dimension_traveler_skill_effect = {
+			CLASS = $CLASS$
+			TIER = 2
+			NUM = 6
+			COUNT = 1
+		}
+	}
+}
+################################################################
+# 3层（技能）
+################################################################
+dimension_traveler_skill_$CLASS$_3_3 = {
+	potential = {
+		can_active_dimension_traveler_skill = {
+			CLASS = $CLASS$
+			TIER = 3
+			NUM = 3
+			LOCKED = yes
+		}
+	}
+	
+	allow = {
+		allow_active_dimension_traveler_skill = {
+			CLASS = $CLASS$
+			TIER = 3
+			NUM = 3
+			COUNT = 2
+		}
+	}
+	
+	effect = {
+		choose_dimension_traveler_skill = {
+			CLASS = $CLASS$
+			TIER = 3
+			NUM = 3
+			COUNT = 2
+		}
+	}
+}
+actived_dimension_traveler_skill_$CLASS$_3_3 = {
+	potential = {
+		show_actived_dimension_traveler_skill = {
+			CLASS = $CLASS$
+			TIER = 3
+			NUM = 3
+		}
+	}
+	
+	effect = {
+		actived_dimension_traveler_skill_effect = {
+			CLASS = $CLASS$
+			TIER = 3
+			NUM = 3
+			COUNT = 2
+		}
+	}
+}
+
+dimension_traveler_skill_$CLASS$_3_5 = {
+	potential = {
+		can_active_dimension_traveler_skill = {
+			CLASS = $CLASS$
+			TIER = 3
+			NUM = 5
+			LOCKED = yes
+		}
+	}
+	
+	allow = {
+		allow_active_dimension_traveler_skill = {
+			CLASS = $CLASS$
+			TIER = 3
+			NUM = 5
+			COUNT = 2
+		}
+	}
+	
+	effect = {
+		choose_dimension_traveler_skill = {
+			CLASS = $CLASS$
+			TIER = 3
+			NUM = 5
+			COUNT = 2
+		}
+	}
+}
+actived_dimension_traveler_skill_$CLASS$_3_5 = {
+	potential = {
+		show_actived_dimension_traveler_skill = {
+			CLASS = $CLASS$
+			TIER = 3
+			NUM = 5
+		}
+	}
+	
+	effect = {
+		actived_dimension_traveler_skill_effect = {
+			CLASS = $CLASS$
+			TIER = 3
+			NUM = 5
+			COUNT = 2
+		}
+	}
+}
+
+dimension_traveler_skill_$CLASS$_3_7 = {
+	potential = {
+		can_active_dimension_traveler_skill = {
+			CLASS = $CLASS$
+			TIER = 3
+			NUM = 7
+			LOCKED = yes
+		}
+	}
+	
+	allow = {
+		allow_active_dimension_traveler_skill = {
+			CLASS = $CLASS$
+			TIER = 3
+			NUM = 7
+			COUNT = 2
+		}
+	}
+	
+	effect = {
+		choose_dimension_traveler_skill = {
+			CLASS = $CLASS$
+			TIER = 3
+			NUM = 7
+			COUNT = 2
+		}
+	}
+}
+actived_dimension_traveler_skill_$CLASS$_3_7 = {
+	potential = {
+		show_actived_dimension_traveler_skill = {
+			CLASS = $CLASS$
+			TIER = 3
+			NUM = 7
+		}
+	}
+	
+	effect = {
+		actived_dimension_traveler_skill_effect = {
+			CLASS = $CLASS$
+			TIER = 3
+			NUM = 7
+			COUNT = 2
+		}
+	}
+}
+################################################################
+# 4层（技能）
+################################################################
+dimension_traveler_skill_$CLASS$_4_2 = {
+	potential = {
+		can_active_dimension_traveler_skill = {
+			CLASS = $CLASS$
+			TIER = 4
+			NUM = 2
+			LOCKED = yes
+		}
+	}
+	
+	allow = {
+		allow_active_dimension_traveler_skill = {
+			CLASS = $CLASS$
+			TIER = 4
+			NUM = 2
+			COUNT = 2
+		}
+	}
+	
+	effect = {
+		choose_dimension_traveler_skill = {
+			CLASS = $CLASS$
+			TIER = 4
+			NUM = 2
+			COUNT = 2
+		}
+	}
+}
+actived_dimension_traveler_skill_$CLASS$_4_2 = {
+	potential = {
+		show_actived_dimension_traveler_skill = {
+			CLASS = $CLASS$
+			TIER = 4
+			NUM = 2
+		}
+	}
+	
+	effect = {
+		actived_dimension_traveler_skill_effect = {
+			CLASS = $CLASS$
+			TIER = 4
+			NUM = 2
+			COUNT = 2
+		}
+	}
+}
+
+dimension_traveler_skill_$CLASS$_4_4 = {
+	potential = {
+		can_active_dimension_traveler_skill = {
+			CLASS = $CLASS$
+			TIER = 4
+			NUM = 4
+			LOCKED = yes
+		}
+	}
+	
+	allow = {
+		allow_active_dimension_traveler_skill = {
+			CLASS = $CLASS$
+			TIER = 4
+			NUM = 4
+			COUNT = 2
+		}
+	}
+	
+	effect = {
+		choose_dimension_traveler_skill = {
+			CLASS = $CLASS$
+			TIER = 4
+			NUM = 4
+			COUNT = 2
+		}
+	}
+}
+actived_dimension_traveler_skill_$CLASS$_4_4 = {
+	potential = {
+		show_actived_dimension_traveler_skill = {
+			CLASS = $CLASS$
+			TIER = 4
+			NUM = 4
+		}
+	}
+	
+	effect = {
+		actived_dimension_traveler_skill_effect = {
+			CLASS = $CLASS$
+			TIER = 4
+			NUM = 4
+			COUNT = 2
+		}
+	}
+}
+
+dimension_traveler_skill_$CLASS$_4_6 = {
+	potential = {
+		can_active_dimension_traveler_skill = {
+			CLASS = $CLASS$
+			TIER = 4
+			NUM = 6
+			LOCKED = yes
+		}
+	}
+	
+	allow = {
+		allow_active_dimension_traveler_skill = {
+			CLASS = $CLASS$
+			TIER = 4
+			NUM = 6
+			COUNT = 2
+		}
+	}
+	
+	effect = {
+		choose_dimension_traveler_skill = {
+			CLASS = $CLASS$
+			TIER = 4
+			NUM = 6
+			COUNT = 2
+		}
+	}
+}
+actived_dimension_traveler_skill_$CLASS$_4_6 = {
+	potential = {
+		show_actived_dimension_traveler_skill = {
+			CLASS = $CLASS$
+			TIER = 4
+			NUM = 6
+		}
+	}
+	
+	effect = {
+		actived_dimension_traveler_skill_effect = {
+			CLASS = $CLASS$
+			TIER = 4
+			NUM = 6
+			COUNT = 2
+		}
+	}
+}
+
+dimension_traveler_skill_$CLASS$_4_8 = {
+	potential = {
+		can_active_dimension_traveler_skill = {
+			CLASS = $CLASS$
+			TIER = 4
+			NUM = 8
+			LOCKED = yes
+		}
+	}
+	
+	allow = {
+		allow_active_dimension_traveler_skill = {
+			CLASS = $CLASS$
+			TIER = 4
+			NUM = 8
+			COUNT = 2
+		}
+	}
+	
+	effect = {
+		choose_dimension_traveler_skill = {
+			CLASS = $CLASS$
+			TIER = 4
+			NUM = 8
+			COUNT = 2
+		}
+	}
+}
+actived_dimension_traveler_skill_$CLASS$_4_8 = {
+	potential = {
+		show_actived_dimension_traveler_skill = {
+			CLASS = $CLASS$
+			TIER = 4
+			NUM = 8
+		}
+	}
+	
+	effect = {
+		actived_dimension_traveler_skill_effect = {
+			CLASS = $CLASS$
+			TIER = 4
+			NUM = 8
+			COUNT = 2
+		}
+	}
+}
+################################################################
+# 5层（内阁）
+################################################################
+dimension_traveler_skill_$CLASS$_5_1 = {
+	potential = {
+		can_active_dimension_traveler_skill = {
+			CLASS = $CLASS$
+			TIER = 5
+			NUM = 1
+			LOCKED = yes
+		}
+		can_active_dimension_traveler_council_skill = yes
+	}
+	
+	allow = {
+		allow_active_dimension_traveler_skill = {
+			CLASS = $CLASS$
+			TIER = 5
+			NUM = 1
+			COUNT = 3
+		}
+	}
+	
+	effect = {
+		choose_dimension_traveler_skill = {
+			CLASS = $CLASS$
+			TIER = 5
+			NUM = 1
+			COUNT = 3
+		}
+	}
+}
+actived_dimension_traveler_skill_$CLASS$_5_1 = {
+	potential = {
+		show_actived_dimension_traveler_skill = {
+			CLASS = $CLASS$
+			TIER = 5
+			NUM = 1
+		}
+		can_active_dimension_traveler_council_skill = yes
+	}
+	
+	effect = {
+		actived_dimension_traveler_skill_effect = {
+			CLASS = $CLASS$
+			TIER = 5
+			NUM = 1
+			COUNT = 3
+		}
+	}
+}
+
+dimension_traveler_skill_$CLASS$_5_3 = {
+	potential = {
+		can_active_dimension_traveler_skill = {
+			CLASS = $CLASS$
+			TIER = 5
+			NUM = 3
+			LOCKED = yes
+		}
+		can_active_dimension_traveler_council_skill = yes
+	}
+	
+	allow = {
+		allow_active_dimension_traveler_skill = {
+			CLASS = $CLASS$
+			TIER = 5
+			NUM = 3
+			COUNT = 3
+		}
+	}
+	
+	effect = {
+		choose_dimension_traveler_skill = {
+			CLASS = $CLASS$
+			TIER = 5
+			NUM = 3
+			COUNT = 3
+		}
+	}
+}
+actived_dimension_traveler_skill_$CLASS$_5_3 = {
+	potential = {
+		show_actived_dimension_traveler_skill = {
+			CLASS = $CLASS$
+			TIER = 5
+			NUM = 3
+		}
+		can_active_dimension_traveler_council_skill = yes
+	}
+	
+	effect = {
+		actived_dimension_traveler_skill_effect = {
+			CLASS = $CLASS$
+			TIER = 5
+			NUM = 3
+			COUNT = 3
+		}
+	}
+}
+
+dimension_traveler_skill_$CLASS$_5_5 = {
+	potential = {
+		can_active_dimension_traveler_skill = {
+			CLASS = $CLASS$
+			TIER = 5
+			NUM = 5
+			LOCKED = yes
+		}
+		can_active_dimension_traveler_core_skill = yes
+	}
+	
+	allow = {
+		allow_active_dimension_traveler_skill = {
+			CLASS = $CLASS$
+			TIER = 5
+			NUM = 5
+			COUNT = 4
+		}
+	}
+	
+	effect = {
+		choose_dimension_traveler_skill = {
+			CLASS = $CLASS$
+			TIER = 5
+			NUM = 5
+			COUNT = 4
+		}
+	}
+}
+actived_dimension_traveler_skill_$CLASS$_5_5 = {
+	potential = {
+		show_actived_dimension_traveler_skill = {
+			CLASS = $CLASS$
+			TIER = 5
+			NUM = 5
+		}
+		can_active_dimension_traveler_core_skill = yes
+	}
+	
+	effect = {
+		actived_dimension_traveler_skill_effect = {
+			CLASS = $CLASS$
+			TIER = 5
+			NUM = 5
+			COUNT = 4
+		}
+	}
+}
+
+dimension_traveler_skill_$CLASS$_5_7 = {
+	potential = {
+		can_active_dimension_traveler_skill = {
+			CLASS = $CLASS$
+			TIER = 5
+			NUM = 7
+			LOCKED = yes
+		}
+		can_active_dimension_traveler_council_skill = yes
+	}
+	
+	allow = {
+		allow_active_dimension_traveler_skill = {
+			CLASS = $CLASS$
+			TIER = 5
+			NUM = 7
+			COUNT = 3
+		}
+	}
+	
+	effect = {
+		choose_dimension_traveler_skill = {
+			CLASS = $CLASS$
+			TIER = 5
+			NUM = 7
+			COUNT = 3
+		}
+	}
+}
+actived_dimension_traveler_skill_$CLASS$_5_7 = {
+	potential = {
+		show_actived_dimension_traveler_skill = {
+			CLASS = $CLASS$
+			TIER = 5
+			NUM = 7
+		}
+		can_active_dimension_traveler_council_skill = yes
+	}
+	
+	effect = {
+		actived_dimension_traveler_skill_effect = {
+			CLASS = $CLASS$
+			TIER = 5
+			NUM = 7
+			COUNT = 3
+		}
+	}
+}
+
+dimension_traveler_skill_$CLASS$_5_9 = {
+	potential = {
+		can_active_dimension_traveler_skill = {
+			CLASS = $CLASS$
+			TIER = 5
+			NUM = 9
+			LOCKED = yes
+		}
+		can_active_dimension_traveler_council_skill = yes
+	}
+	
+	allow = {
+		allow_active_dimension_traveler_skill = {
+			CLASS = $CLASS$
+			TIER = 5
+			NUM = 9
+			COUNT = 3
+		}
+	}
+	
+	effect = {
+		choose_dimension_traveler_skill = {
+			CLASS = $CLASS$
+			TIER = 5
+			NUM = 9
+			COUNT = 3
+		}
+	}
+}
+actived_dimension_traveler_skill_$CLASS$_5_9 = {
+	potential = {
+		show_actived_dimension_traveler_skill = {
+			CLASS = $CLASS$
+			TIER = 5
+			NUM = 9
+		}
+		can_active_dimension_traveler_council_skill = yes
+	}
+	
+	effect = {
+		actived_dimension_traveler_skill_effect = {
+			CLASS = $CLASS$
+			TIER = 5
+			NUM = 9
+			COUNT = 3
+		}
+	}
+}
+################################################################
+# 6层（技能）
+################################################################
+dimension_traveler_skill_$CLASS$_6_2 = {
+	potential = {
+		can_active_dimension_traveler_skill = {
+			CLASS = $CLASS$
+			TIER = 6
+			NUM = 2
+			LOCKED = yes
+		}
+	}
+	
+	allow = {
+		allow_active_dimension_traveler_skill = {
+			CLASS = $CLASS$
+			TIER = 6
+			NUM = 2
+			COUNT = 2
+		}
+	}
+	
+	effect = {
+		choose_dimension_traveler_skill = {
+			CLASS = $CLASS$
+			TIER = 6
+			NUM = 2
+			COUNT = 2
+		}
+	}
+}
+actived_dimension_traveler_skill_$CLASS$_6_2 = {
+	potential = {
+		show_actived_dimension_traveler_skill = {
+			CLASS = $CLASS$
+			TIER = 6
+			NUM = 2
+		}
+	}
+	
+	effect = {
+		actived_dimension_traveler_skill_effect = {
+			CLASS = $CLASS$
+			TIER = 6
+			NUM = 2
+			COUNT = 2
+		}
+	}
+}
+
+dimension_traveler_skill_$CLASS$_6_4 = {
+	potential = {
+		can_active_dimension_traveler_skill = {
+			CLASS = $CLASS$
+			TIER = 6
+			NUM = 4
+			LOCKED = yes
+		}
+	}
+	
+	allow = {
+		allow_active_dimension_traveler_skill = {
+			CLASS = $CLASS$
+			TIER = 6
+			NUM = 4
+			COUNT = 2
+		}
+	}
+	
+	effect = {
+		choose_dimension_traveler_skill = {
+			CLASS = $CLASS$
+			TIER = 6
+			NUM = 4
+			COUNT = 2
+		}
+	}
+}
+actived_dimension_traveler_skill_$CLASS$_6_4 = {
+	potential = {
+		show_actived_dimension_traveler_skill = {
+			CLASS = $CLASS$
+			TIER = 6
+			NUM = 4
+		}
+	}
+	
+	effect = {
+		actived_dimension_traveler_skill_effect = {
+			CLASS = $CLASS$
+			TIER = 6
+			NUM = 4
+			COUNT = 2
+		}
+	}
+}
+
+dimension_traveler_skill_$CLASS$_6_6 = {
+	potential = {
+		can_active_dimension_traveler_skill = {
+			CLASS = $CLASS$
+			TIER = 6
+			NUM = 6
+			LOCKED = yes
+		}
+	}
+	
+	allow = {
+		allow_active_dimension_traveler_skill = {
+			CLASS = $CLASS$
+			TIER = 6
+			NUM = 6
+			COUNT = 2
+		}
+	}
+	
+	effect = {
+		choose_dimension_traveler_skill = {
+			CLASS = $CLASS$
+			TIER = 6
+			NUM = 6
+			COUNT = 2
+		}
+	}
+}
+actived_dimension_traveler_skill_$CLASS$_6_6 = {
+	potential = {
+		show_actived_dimension_traveler_skill = {
+			CLASS = $CLASS$
+			TIER = 6
+			NUM = 6
+		}
+	}
+	
+	effect = {
+		actived_dimension_traveler_skill_effect = {
+			CLASS = $CLASS$
+			TIER = 6
+			NUM = 6
+			COUNT = 2
+		}
+	}
+}
+
+dimension_traveler_skill_$CLASS$_6_8 = {
+	potential = {
+		can_active_dimension_traveler_skill = {
+			CLASS = $CLASS$
+			TIER = 6
+			NUM = 8
+			LOCKED = yes
+		}
+	}
+	
+	allow = {
+		allow_active_dimension_traveler_skill = {
+			CLASS = $CLASS$
+			TIER = 6
+			NUM = 8
+			COUNT = 2
+		}
+	}
+	
+	effect = {
+		choose_dimension_traveler_skill = {
+			CLASS = $CLASS$
+			TIER = 6
+			NUM = 8
+			COUNT = 2
+		}
+	}
+}
+actived_dimension_traveler_skill_$CLASS$_6_8 = {
+	potential = {
+		show_actived_dimension_traveler_skill = {
+			CLASS = $CLASS$
+			TIER = 6
+			NUM = 8
+		}
+	}
+	
+	effect = {
+		actived_dimension_traveler_skill_effect = {
+			CLASS = $CLASS$
+			TIER = 6
+			NUM = 8
+			COUNT = 2
+		}
+	}
+}
+################################################################
+# 7层（技能）
+################################################################
+dimension_traveler_skill_$CLASS$_7_3 = {
+	potential = {
+		can_active_dimension_traveler_skill = {
+			CLASS = $CLASS$
+			TIER = 7
+			NUM = 3
+			LOCKED = yes
+		}
+	}
+	
+	allow = {
+		allow_active_dimension_traveler_skill = {
+			CLASS = $CLASS$
+			TIER = 7
+			NUM = 3
+			COUNT = 2
+		}
+	}
+	
+	effect = {
+		choose_dimension_traveler_skill = {
+			CLASS = $CLASS$
+			TIER = 7
+			NUM = 3
+			COUNT = 2
+		}
+	}
+}
+actived_dimension_traveler_skill_$CLASS$_7_3 = {
+	potential = {
+		show_actived_dimension_traveler_skill = {
+			CLASS = $CLASS$
+			TIER = 7
+			NUM = 3
+		}
+	}
+	
+	effect = {
+		actived_dimension_traveler_skill_effect = {
+			CLASS = $CLASS$
+			TIER = 7
+			NUM = 3
+			COUNT = 2
+		}
+	}
+}
+
+dimension_traveler_skill_$CLASS$_7_5 = {
+	potential = {
+		can_active_dimension_traveler_skill = {
+			CLASS = $CLASS$
+			TIER = 7
+			NUM = 5
+			LOCKED = yes
+		}
+	}
+	
+	allow = {
+		allow_active_dimension_traveler_skill = {
+			CLASS = $CLASS$
+			TIER = 7
+			NUM = 5
+			COUNT = 2
+		}
+	}
+	
+	effect = {
+		choose_dimension_traveler_skill = {
+			CLASS = $CLASS$
+			TIER = 7
+			NUM = 5
+			COUNT = 2
+		}
+	}
+}
+actived_dimension_traveler_skill_$CLASS$_7_5 = {
+	potential = {
+		show_actived_dimension_traveler_skill = {
+			CLASS = $CLASS$
+			TIER = 7
+			NUM = 5
+		}
+	}
+	
+	effect = {
+		actived_dimension_traveler_skill_effect = {
+			CLASS = $CLASS$
+			TIER = 7
+			NUM = 5
+			COUNT = 2
+		}
+	}
+}
+
+dimension_traveler_skill_$CLASS$_7_7 = {
+	potential = {
+		can_active_dimension_traveler_skill = {
+			CLASS = $CLASS$
+			TIER = 7
+			NUM = 7
+			LOCKED = yes
+		}
+	}
+	
+	allow = {
+		allow_active_dimension_traveler_skill = {
+			CLASS = $CLASS$
+			TIER = 7
+			NUM = 7
+			COUNT = 2
+		}
+	}
+	
+	effect = {
+		choose_dimension_traveler_skill = {
+			CLASS = $CLASS$
+			TIER = 7
+			NUM = 7
+			COUNT = 2
+		}
+	}
+}
+actived_dimension_traveler_skill_$CLASS$_7_7 = {
+	potential = {
+		show_actived_dimension_traveler_skill = {
+			CLASS = $CLASS$
+			TIER = 7
+			NUM = 7
+		}
+	}
+	
+	effect = {
+		actived_dimension_traveler_skill_effect = {
+			CLASS = $CLASS$
+			TIER = 7
+			NUM = 7
+			COUNT = 2
+		}
+	}
+}
+################################################################
+# 8层（技能）
+################################################################
+dimension_traveler_skill_$CLASS$_8_4 = {
+	potential = {
+		can_active_dimension_traveler_skill = {
+			CLASS = $CLASS$
+			TIER = 8
+			NUM = 4
+			LOCKED = yes
+		}
+	}
+	
+	allow = {
+		allow_active_dimension_traveler_skill = {
+			CLASS = $CLASS$
+			TIER = 8
+			NUM = 4
+			COUNT = 1
+		}
+	}
+	
+	effect = {
+		choose_dimension_traveler_skill = {
+			CLASS = $CLASS$
+			TIER = 8
+			NUM = 4
+			COUNT = 1
+		}
+	}
+}
+actived_dimension_traveler_skill_$CLASS$_8_4 = {
+	potential = {
+		show_actived_dimension_traveler_skill = {
+			CLASS = $CLASS$
+			TIER = 8
+			NUM = 4
+		}
+	}
+	
+	effect = {
+		actived_dimension_traveler_skill_effect = {
+			CLASS = $CLASS$
+			TIER = 8
+			NUM = 4
+			COUNT = 1
+		}
+	}
+}
+
+dimension_traveler_skill_$CLASS$_8_6 = {
+	potential = {
+		can_active_dimension_traveler_skill = {
+			CLASS = $CLASS$
+			TIER = 8
+			NUM = 6
+			LOCKED = yes
+		}
+	}
+	
+	allow = {
+		allow_active_dimension_traveler_skill = {
+			CLASS = $CLASS$
+			TIER = 8
+			NUM = 6
+			COUNT = 1
+		}
+	}
+	
+	effect = {
+		choose_dimension_traveler_skill = {
+			CLASS = $CLASS$
+			TIER = 8
+			NUM = 6
+			COUNT = 1
+		}
+	}
+}
+actived_dimension_traveler_skill_$CLASS$_8_6 = {
+	potential = {
+		show_actived_dimension_traveler_skill = {
+			CLASS = $CLASS$
+			TIER = 8
+			NUM = 6
+		}
+	}
+	
+	effect = {
+		actived_dimension_traveler_skill_effect = {
+			CLASS = $CLASS$
+			TIER = 8
+			NUM = 6
+			COUNT = 1
+		}
+	}
+}
+################################################################
+# 9层（技能）
+################################################################
+dimension_traveler_skill_$CLASS$_9_5 = {
+	potential = {
+		can_active_dimension_traveler_skill = {
+			CLASS = $CLASS$
+			TIER = 9
+			NUM = 5
+		}
+	}
+	
+	allow = {
+		allow_active_dimension_traveler_skill = {
+			CLASS = $CLASS$
+			TIER = 9
+			NUM = 5
+			COUNT = 1
+		}
+	}
+	
+	effect = {
+		choose_dimension_traveler_skill = {
+			CLASS = $CLASS$
+			TIER = 9
+			NUM = 5
+			COUNT = 1
+		}
+	}
+}
+actived_dimension_traveler_skill_$CLASS$_9_5 = {
+	potential = {
+		show_actived_dimension_traveler_skill = {
+			CLASS = $CLASS$
+			TIER = 9
+			NUM = 5
+		}
+	}
+	
+	effect = {
+		actived_dimension_traveler_skill_effect = {
+			CLASS = $CLASS$
+			TIER = 9
+			NUM = 5
+			COUNT = 1
+		}
+	}
+}

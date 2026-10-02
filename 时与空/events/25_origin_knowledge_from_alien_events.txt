@@ -1,0 +1,1184 @@
+namespace = origin_knowledge_from_alien
+
+country_event = {
+	id = origin_knowledge_from_alien.1
+	is_triggered_only = yes
+	hide_window = yes
+
+	trigger = {
+		has_origin = origin_knowledge_from_alien
+		NOT = { has_country_flag = origin_knowledge_from_alien_1_triggered }
+	}
+	
+	immediate = {
+		set_country_flag = origin_knowledge_from_alien_1_triggered
+		every_owned_leader = {
+			limit = {
+				is_ruler = no
+			}
+			kill_leader = { show_notification = no }
+		}
+		give_technology = { tech = "tech_xeno_linguistics" message = no }
+		capital_scope = {
+			starbase = {
+				set_starbase_building = {
+					slot = 2
+					building = recruitment_office
+				}
+			}
+		}
+		# 行政官4
+		random_list = {
+			1 = {
+				modifier = {
+					factor = 0
+					has_global_flag = xenophobe_leader_1
+				}
+				set_global_flag = xenophobe_leader_1
+				ethic_leader_creator = {
+					SPECIES_CLASS = random_non_machine
+					LEADER_PORTRAIT = par_renown_04 #xenophobe_leader_gov
+					CLASS = official
+					TIER = leader_tier_renowned
+					NAME = NAME_xenophobe1
+					LEVEL = 4
+					GENDER = male
+					IMMORTAL = no
+					ETHIC = xenophobe
+					DESC = xenophobe1
+					CATCH_PHRASE = xenophobe1_catch_phrase
+				}
+				last_created_leader = {
+					add_trait = {
+						trait = subclass_official_governor
+						consume_selection = yes
+					}
+					add_trait = {
+						trait = leader_trait_galvanizer
+						consume_selection = yes
+					}
+					add_trait = {
+						trait = leader_trait_polluter
+						consume_selection = yes
+					}
+					add_trait = {
+						trait = leader_trait_forge_focus
+						consume_selection = yes
+					}
+					add_trait = {
+						trait = leader_trait_distribution_lines
+						consume_selection = yes
+					}
+					set_age = 40
+				}
+				ethic_leader_hire_effect = {
+					GLOBAL_EVENT_TARGET = renowned_xenophobe1
+				}
+			}
+			1 = {
+				modifier = {
+					factor = 0
+					has_global_flag = spiritualist_leader_1
+				}
+				set_global_flag = spiritualist_leader_1
+				ethic_leader_creator = {
+					SPECIES_CLASS = random_non_machine
+					LEADER_PORTRAIT = par_renown_15 #spiritualist_leader_gov
+					CLASS = official
+					TIER = leader_tier_renowned
+					NAME = NAME_spiritualist1
+					LEVEL = 4
+					GENDER = male
+					IMMORTAL = no
+					ETHIC = spiritualist
+					DESC = spiritualist1
+					CATCH_PHRASE = spiritualist1_catch_phrase
+				}
+				last_created_leader = {
+					add_trait = {
+						trait = subclass_official_economy_councilor
+						consume_selection = yes
+					}
+					add_trait = {
+						trait = leader_trait_shroud_preacher
+						consume_selection = yes
+					}
+					add_trait = {
+						trait = leader_trait_irenic
+						consume_selection = yes
+					}
+					add_trait = {
+						trait = leader_trait_cultural_focus
+						consume_selection = yes
+					}
+					add_trait = {
+						trait = leader_trait_reformer
+						consume_selection = yes
+					}
+					add_trait = {
+						trait = leader_trait_psionic
+					}
+					set_age = 48
+				}
+				ethic_leader_hire_effect = {
+					GLOBAL_EVENT_TARGET = renowned_spiritualist1
+				}
+			}
+			1 = {
+				modifier = {
+					factor = 0
+					has_global_flag = pacifist_leader_2
+				}
+				set_global_flag = pacifist_leader_2
+				ethic_leader_creator = {
+					SPECIES_CLASS = random_non_machine
+					LEADER_PORTRAIT = par_renown_10 #pacifist_leader_gov
+					CLASS = official
+					TIER = leader_tier_renowned
+					NAME = NAME_pacifist2
+					LEVEL = 4
+					GENDER = female
+					IMMORTAL = no
+					ETHIC = pacifist
+					DESC = pacifist2
+					CATCH_PHRASE = pacifist2_catch_phrase
+				}
+				last_created_leader = {
+					add_trait = {
+						trait = subclass_official_diplomacy_councilor
+						consume_selection = yes
+					}
+					add_trait = {
+						trait = leader_trait_master_diplomat
+						consume_selection = yes
+					}
+					add_trait = {
+						trait = leader_trait_lavish_lifestyle
+						consume_selection = yes
+					}
+					add_trait = {
+						trait = trait_ruler_deep_connections
+						consume_selection = yes
+					}
+					add_trait = {
+						trait = leader_trait_courtroom_training
+						consume_selection = yes
+					}
+					set_age = 30
+				}
+				ethic_leader_hire_effect = {
+					GLOBAL_EVENT_TARGET = renowned_pacifist2
+				}
+			}
+			1 = {
+				modifier = {
+					factor = 0
+					has_global_flag = authoritarian_leader_1
+				}
+				set_global_flag = authoritarian_leader_1
+				ethic_leader_creator = {
+					SPECIES_CLASS = random_non_machine
+					LEADER_PORTRAIT = par_renown_14 #authoritarian_leader_gen
+					CLASS = official
+					TIER = leader_tier_renowned
+					NAME = NAME_authoritarian1
+					LEVEL = 4
+					GENDER = female
+					IMMORTAL = no
+					ETHIC = authoritarian
+					DESC = authoritarian1
+					CATCH_PHRASE = authoritarian1_catch_phrase
+				}
+				last_created_leader = {
+					add_trait = {
+						trait = subclass_official_diplomacy_councilor
+						consume_selection = yes
+					}
+					add_trait = {
+						trait = leader_trait_spymaster
+						consume_selection = yes
+					}
+					add_trait = {
+						trait = leader_trait_tyrannical
+						consume_selection = yes
+					}
+					add_trait = {
+						trait = leader_trait_spycraft
+						consume_selection = yes
+					}
+					add_trait = {
+						trait = trait_ruler_eye_for_talent
+						consume_selection = yes
+					}
+					set_age = 36
+				}
+				ethic_leader_hire_effect = {
+					GLOBAL_EVENT_TARGET = renowned_authoritarian1
+				}
+			}
+		}
+		# 科学官4
+		random_list = {
+			1 = {
+				modifier = {
+					factor = 0
+					has_global_flag = xenophile_leader_2
+				}
+				set_global_flag = xenophile_leader_2
+				ethic_leader_creator = {
+					SPECIES_CLASS = random_non_machine
+					LEADER_PORTRAIT = par_renown_11 #xenophile_leader_sci
+					CLASS = scientist
+					TIER = leader_tier_renowned
+					NAME = NAME_xenophile2
+					LEVEL = 4
+					GENDER = female
+					IMMORTAL = no
+					ETHIC = xenophile
+					DESC = xenophile2
+					CATCH_PHRASE = xenophile2_catch_phrase
+				}
+				last_created_leader = {
+					add_trait = {
+						trait = subclass_scientist_explorer
+						consume_selection = yes
+					}
+					add_trait = {
+						trait = leader_trait_adventurous_spirit_2
+						consume_selection = yes
+					}
+					add_trait = {
+						trait = leader_trait_excessive
+						consume_selection = yes
+					}
+					add_trait = {
+						trait = leader_trait_xeno_cataloger
+						consume_selection = yes
+					}
+					add_trait = {
+						trait = leader_trait_prospector_2
+						consume_selection = yes
+					}
+					set_age = 32
+				}
+				ethic_leader_hire_effect = {
+					GLOBAL_EVENT_TARGET = renowned_xenophile2
+				}
+			}
+			1 = {
+				modifier = {
+					factor = 0
+					has_global_flag = spiritualist_leader_2
+				}
+				set_global_flag = spiritualist_leader_2
+				ethic_leader_creator = {
+					SPECIES_CLASS = random_non_machine
+					LEADER_PORTRAIT = par_renown_16 #spiritualist_leader_sci
+					CLASS = scientist
+					TIER = leader_tier_renowned
+					NAME = NAME_spiritualist2
+					LEVEL = 4
+					GENDER = male
+					IMMORTAL = no
+					ETHIC = spiritualist
+					DESC = spiritualist2
+					CATCH_PHRASE = spiritualist2_catch_phrase
+				}
+				last_created_leader = {
+					add_trait = {
+						trait = subclass_scientist_scholar
+						consume_selection = yes
+					}
+					add_trait = {
+						trait = leader_trait_midas_touch
+						consume_selection = yes
+					}
+					add_trait = {
+						trait = leader_trait_opinionated
+						consume_selection = yes
+					}
+					add_trait = {
+						trait = leader_trait_archaeologist_2
+						consume_selection = yes
+					}
+					add_trait = {
+						trait = leader_trait_academic_dig_site_expert
+						consume_selection = yes
+					}
+					add_trait = {
+						trait = leader_trait_resilient
+						consume_selection = yes
+					}
+					set_age = 80
+				}
+				ethic_leader_hire_effect = {
+					GLOBAL_EVENT_TARGET = renowned_spiritualist2
+				}
+			}
+			1 = {
+				modifier = {
+					factor = 0
+					has_global_flag = egalitarian_leader_2
+				}
+				set_global_flag = egalitarian_leader_2
+				ethic_leader_creator = {
+					SPECIES_CLASS = random_non_machine
+					LEADER_PORTRAIT = par_renown_05 #egalitarian_leader_sci
+					CLASS = scientist
+					TIER = leader_tier_renowned
+					NAME = NAME_egalitarian2
+					LEVEL = 4
+					GENDER = female
+					IMMORTAL = no
+					ETHIC = egalitarian
+					DESC = egalitarian2
+					CATCH_PHRASE = egalitarian2_catch_phrase
+				}
+				last_created_leader = {
+					add_trait = {
+						trait = subclass_scientist_councilor
+						consume_selection = yes
+					}
+					add_trait = {
+						trait = leader_trait_knowledge_for_the_masses
+						consume_selection = yes
+					}
+					add_trait = {
+						trait = leader_trait_gullible
+						consume_selection = yes
+					}
+					add_trait = {
+						trait = leader_trait_spark_of_genius
+						consume_selection = yes
+					}
+					add_trait = {
+						trait = leader_trait_gorky
+						consume_selection = yes
+					}
+					set_age = 22
+				}
+				ethic_leader_hire_effect = {
+					GLOBAL_EVENT_TARGET = renowned_egalitarian2
+				}
+			}
+			1 = {
+				modifier = {
+					factor = 0
+					has_global_flag = materialist_leader_2
+				}
+				set_global_flag = materialist_leader_2
+				ethic_leader_creator = {
+					SPECIES_CLASS = random_non_machine
+					LEADER_PORTRAIT = par_renown_07 #materialist_leader_sci
+					CLASS = scientist
+					TIER = leader_tier_renowned
+					NAME = NAME_materialist2
+					LEVEL = 5
+					GENDER = male
+					IMMORTAL = no
+					ETHIC = materialist
+					DESC = materialist2
+					CATCH_PHRASE = materialist2_catch_phrase
+				}
+				last_created_leader = {
+					add_trait = {
+						trait = subclass_scientist_councilor
+						consume_selection = yes
+					}
+					add_trait = {
+						trait = leader_trait_brilliant_shipwright
+						consume_selection = yes
+					}
+					add_trait = {
+						trait = leader_trait_substance_abuser
+						consume_selection = yes
+					}
+					add_trait = {
+						trait = leader_trait_salvager
+						consume_selection = yes
+					}
+					add_trait = {
+						trait = leader_trait_master_salvager
+						consume_selection = yes
+					}
+					add_trait = {
+						trait = leader_trait_expertise_materials
+						consume_selection = yes
+					}
+					set_age = 40
+				}
+				ethic_leader_hire_effect = {
+					GLOBAL_EVENT_TARGET = renowned_materialist2
+				}
+			}
+		}
+		# 指挥官（外派）5
+		random_list = {
+			1 = {
+				modifier = {
+					factor = 0
+					has_global_flag = xenophile_leader_1
+				}
+				set_global_flag = xenophile_leader_1
+				ethic_leader_creator = { 
+					SPECIES_CLASS = random_non_machine # Species class, for animation purposes, example: MAM4
+					LEADER_PORTRAIT = par_renown_12 # xenophile_leader_gen # Leader portrait
+					CLASS = commander
+					TIER = leader_tier_renowned
+					NAME = NAME_xenophile1
+					LEVEL = 4
+					GENDER = male
+					IMMORTAL = no
+					ETHIC = xenophile
+					DESC = xenophile1
+					CATCH_PHRASE = xenophile1_catch_phrase
+				}
+				last_created_leader = {
+					add_trait = {
+						trait = subclass_commander_admiral
+						consume_selection = yes
+					}
+					add_trait = {
+						trait = leader_trait_guerilla_tactics
+						consume_selection = yes
+					}
+					add_trait = {
+						trait = leader_trait_slipshod
+						consume_selection = yes
+					}
+					add_trait = {
+						trait = leader_trait_trickster
+						consume_selection = yes
+					}
+					add_trait = {
+						trait = leader_trait_corsair
+						consume_selection = yes
+					}
+					set_age = 33
+				}
+				ethic_leader_hire_effect = {
+					GLOBAL_EVENT_TARGET = renowned_xenophile1
+				}
+				create_fleet = {
+					name = "LYSANDER_FLEET_NAME"
+					effect = {
+						set_owner = prev
+						create_ship = {
+							design = NAME_Reaver
+							graphical_culture = "pirate_01"
+							name = NAME_First_Pillager
+							prefix = no
+						}
+						create_ship = {
+							design = NAME_Dagger
+							graphical_culture = "reptilian_01"
+							name = NAME_Second_Pillager
+							prefix = no
+						}
+						create_ship = {
+							design = NAME_Dagger
+							graphical_culture = "reptilian_01"
+							name = NAME_Third_Pillager
+							prefix = no
+						}
+						set_location = {
+							target = prev.capital_scope
+							distance = 10
+							angle = random
+						}
+						assign_leader = event_target:renowned_xenophile1
+						set_fleet_stance = passive
+					}
+				}
+			}
+			1 = {
+				modifier = {
+					factor = 0
+					has_global_flag = materialist_leader_1
+				}
+				set_global_flag = materialist_leader_1
+				ethic_leader_creator = {
+					SPECIES_CLASS = random_non_machine
+					LEADER_PORTRAIT = par_renown_08 #materialist_leader_adm
+					CLASS = commander
+					TIER = leader_tier_renowned
+					NAME = NAME_materialist1
+					LEVEL = 4
+					GENDER = male
+					IMMORTAL = yes
+					ETHIC = materialist
+					DESC = materialist1
+					CATCH_PHRASE = materialist1_catch_phrase
+				}
+				last_created_leader = {
+					add_trait = {
+						trait = subclass_commander_admiral
+						consume_selection = yes
+					}
+					add_trait = {
+						trait = leader_trait_destiny_engineer
+						consume_selection = yes
+					}
+					add_trait = {
+						trait = leader_trait_micromanager
+						consume_selection = yes
+					}
+					add_trait = {
+						trait = leader_trait_rocketry_specialization
+						consume_selection = yes
+					}
+					add_trait = {
+						trait = leader_trait_scout
+						consume_selection = yes
+					}
+					add_trait = {
+						trait = leader_trait_synthetic
+					}
+				}
+				ethic_leader_hire_effect = {
+					GLOBAL_EVENT_TARGET = renowned_materialist1
+				}
+			}
+			1 = {
+				modifier = {
+					factor = 0
+					has_global_flag = militarist_leader_2
+				}
+				set_global_flag = militarist_leader_2
+				ethic_leader_creator = {
+					SPECIES_CLASS = random_non_machine
+					LEADER_PORTRAIT = par_renown_02 #militarist_leader_gen
+					CLASS = commander
+					TIER = leader_tier_renowned
+					NAME = NAME_militarist2
+					LEVEL = 4
+					GENDER = female
+					IMMORTAL = no
+					ETHIC = militarist
+					DESC = militarist2
+					CATCH_PHRASE = militarist2_catch_phrase
+				}
+				last_created_leader = {
+					add_trait = {
+						trait = subclass_commander_general
+						consume_selection = yes
+					}
+					add_trait = {
+						trait = leader_trait_tzrynn_tithe
+						consume_selection = yes
+					}
+					add_trait = {
+						trait = leader_trait_disorganized
+						consume_selection = yes
+					}
+					add_trait = {
+						trait = leader_trait_butcher
+						consume_selection = yes
+					}
+					add_trait = {
+						trait = leader_trait_interrogator
+						consume_selection = yes
+					}
+					set_age = 28
+				}
+				ethic_leader_hire_effect = {
+					GLOBAL_EVENT_TARGET = renowned_militarist2
+				}
+			}
+			1 = {
+				modifier = {
+					factor = 0
+					has_global_flag = egalitarian_leader_1
+				}
+				set_global_flag = egalitarian_leader_1
+				ethic_leader_creator = {
+					SPECIES_CLASS = random_non_machine
+					LEADER_PORTRAIT = par_renown_06 #egalitarian_leader_gen
+					CLASS = commander
+					TIER = leader_tier_renowned
+					NAME = NAME_egalitarian1
+					LEVEL = 4
+					GENDER = indeterminable
+					IMMORTAL = no
+					ETHIC = egalitarian
+					DESC = egalitarian1
+					CATCH_PHRASE = egalitarian1_catch_phrase
+				}
+				last_created_leader = {
+					add_trait = {
+						trait = subclass_commander_general
+						consume_selection = yes
+					}
+					add_trait = {
+						trait = leader_trait_supreme_warrior
+						consume_selection = yes
+					}
+					add_trait = {
+						trait = leader_trait_reclusive
+						consume_selection = yes
+					}
+					add_trait = {
+						trait = leader_trait_guardian
+						consume_selection = yes
+					}
+					add_trait = {
+						trait = leader_trait_heavy_hitter
+						consume_selection = yes
+					}
+					add_trait = {
+						trait = leader_trait_cyborg
+					}
+					set_age = 30
+				}
+				ethic_leader_hire_effect = {
+					GLOBAL_EVENT_TARGET = renowned_egalitarian1
+				}
+			}
+			1 = {
+				modifier = {
+					factor = 0
+					has_global_flag = authoritarian_leader_2
+				}
+				set_global_flag = authoritarian_leader_2
+				ethic_leader_creator = {
+					SPECIES_CLASS = random_non_machine
+					LEADER_PORTRAIT = par_renown_13 #authoritarian_leader_gov
+					CLASS = commander
+					TIER = leader_tier_renowned
+					NAME = NAME_authoritarian2
+					LEVEL = 4
+					GENDER = male
+					IMMORTAL = no
+					ETHIC = authoritarian
+					DESC = authoritarian2
+					CATCH_PHRASE = authoritarian2_catch_phrase
+				}
+				last_created_leader = {
+					add_trait = {
+						trait = subclass_commander_governor
+						consume_selection = yes
+					}
+					add_trait = {
+						trait = leader_trait_arbiter
+						consume_selection = yes
+					}
+					add_trait = {
+						trait = leader_trait_sadistic
+						consume_selection = yes
+					}
+					add_trait = {
+						trait = leader_trait_iron_fist_2
+						consume_selection = yes
+					}
+					add_trait = {
+						trait = leader_trait_private_mines_2
+						consume_selection = yes
+					}
+					set_age = 39
+				}
+				ethic_leader_hire_effect = {
+					GLOBAL_EVENT_TARGET = renowned_authoritarian2
+				}
+			}
+		}
+		# 指挥官（内阁）3
+		random_list = {
+			1 = {
+				modifier = {
+					factor = 0
+					has_global_flag = militarist_leader_1
+				}
+				set_global_flag = militarist_leader_1
+				ethic_leader_creator = {
+					SPECIES_CLASS = random_non_machine
+					LEADER_PORTRAIT = par_renown_01 # militarist_leader_adm
+					CLASS = commander
+					TIER = leader_tier_renowned
+					NAME = NAME_militarist1
+					LEVEL = 4
+					GENDER = male
+					IMMORTAL = no
+					ETHIC = militarist
+					DESC = militarist1
+					CATCH_PHRASE = militarist1_catch_phrase
+				}
+				last_created_leader = {
+					add_trait = {
+						trait = subclass_commander_councilor
+						consume_selection = yes
+					}
+					add_trait = {
+						trait = leader_trait_military_overseer
+						consume_selection = yes
+					}
+					add_trait = {
+						trait = leader_trait_melancholic
+						consume_selection = yes
+					}
+					add_trait = {
+						trait = leader_trait_fleet_organizer
+						consume_selection = yes
+					}
+					add_trait = {
+						trait = leader_trait_artillerist
+						consume_selection = yes
+					}
+					set_age = 45
+				}
+				ethic_leader_hire_effect = {
+					GLOBAL_EVENT_TARGET = renowned_militarist1
+				}
+			}
+			1 = {
+				modifier = {
+					factor = 0
+					has_global_flag = pacifist_leader_1
+				}
+				set_global_flag = pacifist_leader_1
+				ethic_leader_creator = {
+					SPECIES_CLASS = random_non_machine
+					LEADER_PORTRAIT = par_renown_09 #pacifist_leader_adm
+					CLASS = commander
+					TIER = leader_tier_renowned
+					NAME = NAME_pacifist1
+					LEVEL = 4
+					GENDER = male
+					IMMORTAL = no
+					ETHIC = pacifist
+					DESC = pacifist1
+					CATCH_PHRASE = pacifist1_catch_phrase
+				}
+				last_created_leader = {
+					add_trait = {
+						trait = subclass_commander_councilor
+						consume_selection = yes
+					}
+					add_trait = {
+						trait = leader_trait_peacekeeper
+						consume_selection = yes
+					}
+					add_trait = {
+						trait = leader_trait_lethargic
+						consume_selection = yes
+					}
+					add_trait = {
+						trait = leader_trait_resilient
+						consume_selection = yes
+					}
+					add_trait = {
+						trait = leader_trait_martinet
+						consume_selection = yes
+					}
+					set_age = 65
+					save_event_target_as = par_renown_09
+				}
+				ethic_leader_hire_effect = {
+					GLOBAL_EVENT_TARGET = renowned_pacifist1
+				}
+			}
+			1 = {
+				modifier = {
+					factor = 0
+					has_global_flag = xenophobe_leader_2
+				}
+				set_global_flag = xenophobe_leader_2
+				ethic_leader_creator = {
+					SPECIES_CLASS = random_non_machine
+					LEADER_PORTRAIT = par_renown_03 #xenophobe_leader_gen
+					CLASS = commander
+					TIER = leader_tier_renowned
+					NAME = NAME_xenophobe2
+					LEVEL = 4
+					GENDER = indeterminable
+					IMMORTAL = yes
+					ETHIC = xenophobe
+					DESC = xenophobe2
+					CATCH_PHRASE = xenophobe2_catch_phrase
+				}
+				last_created_leader = {
+					add_trait = {
+						trait = subclass_commander_councilor
+						consume_selection = yes
+					}
+					add_trait = {
+						trait = leader_trait_aturion_organizer
+						consume_selection = yes
+					}
+					add_trait = {
+						trait = leader_trait_intolerant
+						consume_selection = yes
+					}
+					add_trait = {
+						trait = trait_ruler_logistic_understanding
+						consume_selection = yes
+					}
+					add_trait = {
+						trait = trait_ruler_recruiter
+						consume_selection = yes
+					}
+					add_trait = {
+						trait = leader_trait_synthetic
+					}
+				}
+				ethic_leader_hire_effect = {
+					GLOBAL_EVENT_TARGET = renowned_xenophobe2
+				}
+			}
+		}
+		every_owned_leader = {
+			limit = {
+				is_ruler = no
+				is_leader_tier = leader_tier_renowned
+			}
+			gain_leader_trait_inborn_renowned = yes
+			remove_leader_flag = is_in_recruit_window
+			add_timed_trait = {
+				trait = leader_trait_knowledge_from_alien
+				years = 10
+			}
+		}
+		# 科研船
+		if = {
+			limit = {
+				any_owned_leader = {
+					is_idle = yes
+					OR = {
+						has_trait = subclass_scientist_explorer
+						has_trait = subclass_scientist_scholar
+					}
+				}
+			}
+			random_owned_leader = {
+				limit = {
+					is_idle = yes
+					OR = {
+						has_trait = subclass_scientist_explorer
+						has_trait = subclass_scientist_scholar
+					}
+				}
+				save_event_target_as = explorer
+			}
+		}
+		else = {
+			random_owned_leader = {
+				limit = {
+					is_idle = yes
+					leader_class = scientist
+				}
+				save_event_target_as = explorer
+			}
+		}
+		if = {
+			limit = {
+				exists = event_target:explorer
+			}
+			random_owned_fleet = {
+				limit = {
+					is_ship_class = shipclass_science_ship
+					NOT = { exists = leader }
+				}
+				assign_leader = event_target:explorer
+			}
+		}
+		# 舰队
+		if = {
+			limit = {
+				any_owned_leader = {
+					is_idle = yes
+					has_trait = subclass_commander_admiral
+				}
+			}
+			random_owned_leader = {
+				limit = {
+					is_idle = yes
+					has_trait = subclass_commander_admiral
+				}
+				save_event_target_as = admiral
+			}
+		}
+		else_if = {
+			limit = {
+				any_owned_leader = {
+					is_idle = yes
+					has_trait = subclass_commander_councilor
+				}
+			}
+			random_owned_leader = {
+				limit = {
+					is_idle = yes
+					has_trait = subclass_commander_councilor
+				}
+				save_event_target_as = admiral
+			}
+		}
+		if = {
+			limit = {
+				exists = event_target:admiral
+			}
+			random_owned_fleet = {
+				limit = {
+					OR = {
+						is_ship_class = shipclass_military
+						is_arkship_fleet = yes
+					}
+					NOT = { exists = leader }
+				}
+				assign_leader = event_target:admiral
+			}
+		}
+		# 陆军
+		if = {
+			limit = {
+				any_owned_leader = {
+					is_idle = yes
+					has_trait = subclass_commander_general
+				}
+			}
+			random_owned_leader = {
+				limit = {
+					is_idle = yes
+					has_trait = subclass_commander_general
+				}
+				save_event_target_as = general
+			}
+		}
+		else_if = {
+			limit = {
+				any_owned_leader = {
+					is_idle = yes
+					has_trait = subclass_commander_councilor
+				}
+			}
+			random_owned_leader = {
+				limit = {
+					is_idle = yes
+					has_trait = subclass_commander_councilor
+				}
+				save_event_target_as = general
+			}
+		}
+		if = {
+			limit = {
+				exists = event_target:general
+				root = { is_nomadic = no }
+			}
+			capital_scope = {
+				random_planet_army = {
+					assign_leader = event_target:general
+				}
+			}
+		}
+		# 星球
+		if = {
+			limit = {
+				any_owned_leader = {
+					is_idle = yes
+					has_governor_subclass = yes
+				}
+			}
+			random_owned_leader = {
+				limit = {
+					is_idle = yes
+					has_governor_subclass = yes
+				}
+				save_event_target_as = governor
+			}
+		}
+		else_if = {
+			limit = {
+				any_owned_leader = {
+					is_idle = yes
+					leader_class = official
+				}
+			}
+			random_owned_leader = {
+				limit = {
+					is_idle = yes
+					leader_class = official
+				}
+				save_event_target_as = governor
+			}
+		}
+		else = {
+			random_owned_leader = {
+				limit = {
+					is_idle = yes
+				}
+				save_event_target_as = governor
+			}
+		}
+		if = {
+			limit = {
+				exists = event_target:governor
+			}
+			capital_scope = {
+				assign_leader = event_target:governor
+			}
+		}
+		# 国务卿
+		if = {
+			limit = {
+				any_owned_leader = {
+					is_ruler = no
+					OR = {
+						has_trait = subclass_official_economy_councilor
+						has_trait = subclass_official_diplomacy_councilor
+					}
+				}
+			}
+			random_owned_leader = {
+				limit = {
+					is_ruler = no
+					OR = {
+						has_trait = subclass_official_economy_councilor
+						has_trait = subclass_official_diplomacy_councilor
+					}
+				}
+				if = {
+					limit = {
+						root = { is_nomadic = no }
+					}
+					set_council_position = councilor_state
+				}
+				else = {
+					set_council_position = councilor_state_nomadic
+				}
+			}
+		}
+		else = {
+			random_owned_leader = {
+				limit = {
+					is_ruler = no
+					leader_class = official
+				}
+				if = {
+					limit = {
+						root = { is_nomadic = no }
+					}
+					set_council_position = councilor_state
+				}
+				else = {
+					set_council_position = councilor_state_nomadic
+				}
+			}
+		}
+		# 首席科学家
+		if = {
+			limit = {
+				any_owned_leader = {
+					is_ruler = no
+					has_trait = subclass_scientist_councilor
+				}
+			}
+			random_owned_leader = {
+				limit = {
+					is_ruler = no
+					has_trait = subclass_scientist_councilor
+				}
+				if = {
+					limit = {
+						root = { is_nomadic = no }
+					}
+					set_council_position = councilor_research
+				}
+				else = {
+					set_council_position = councilor_research_nomadic
+				}
+			}
+		}
+		else = {
+			random_owned_leader = {
+				limit = {
+					is_ruler = no
+					leader_class = scientist
+				}
+				if = {
+					limit = {
+						root = { is_nomadic = no }
+					}
+					set_council_position = councilor_research
+				}
+				else = {
+					set_council_position = councilor_research_nomadic
+				}
+			}
+		}
+		# 国防部长
+		if = {
+			limit = {
+				any_owned_leader = {
+					is_ruler = no
+					has_trait = subclass_commander_councilor
+				}
+			}
+			random_owned_leader = {
+				limit = {
+					is_ruler = no
+					has_trait = subclass_commander_councilor
+				}
+				if = {
+					limit = {
+						root = { is_nomadic = no }
+					}
+					set_council_position = councilor_defense
+				}
+				else = {
+					set_council_position = councilor_defense_nomadic
+				}
+			}
+		}
+		else = {
+			random_owned_leader = {
+				limit = {
+					is_ruler = no
+					leader_class = commander
+				}
+				if = {
+					limit = {
+						root = { is_nomadic = no }
+					}
+					set_council_position = councilor_defense
+				}
+				else = {
+					set_council_position = councilor_defense_nomadic
+				}
+			}
+		}
+		# 领袖刷新思潮（原版bug，开局创建的领袖思潮不正确）
+		country_event = { id = origin_knowledge_from_alien.2 days = 1 }
+	}
+}
+
+country_event = {
+	id = origin_knowledge_from_alien.2
+	is_triggered_only = yes
+	hide_window = yes
+
+	trigger = {
+		has_origin = origin_knowledge_from_alien
+	}
+	
+	immediate = {
+		every_owned_leader = {
+			switch = {
+				trigger = has_leader_flag
+				renowned_pacifist1 = { change_background_ethic = ethic_pacifist }
+				renowned_pacifist2 = { change_background_ethic = ethic_pacifist }
+				renowned_militarist1 = { change_background_ethic = ethic_militarist }
+				renowned_militarist2 = { change_background_ethic = ethic_militarist }
+				renowned_xenophile1 = { change_background_ethic = ethic_xenophile }
+				renowned_xenophile2 = { change_background_ethic = ethic_xenophile }
+				renowned_xenophobe1 = { change_background_ethic = ethic_xenophobe }
+				renowned_xenophobe2 = { change_background_ethic = ethic_xenophobe }
+				renowned_egalitarian1 = { change_background_ethic = ethic_egalitarian }
+				renowned_egalitarian2 = { change_background_ethic = ethic_egalitarian }
+				renowned_authoritarian1 = { change_background_ethic = ethic_authoritarian }
+				renowned_authoritarian2 = { change_background_ethic = ethic_authoritarian }
+				renowned_spiritualist1 = { change_background_ethic = ethic_spiritualist }
+				renowned_spiritualist2 = { change_background_ethic = ethic_spiritualist }
+				renowned_materialist1 = { change_background_ethic = ethic_materialist }
+				renowned_materialist2 = { change_background_ethic = ethic_materialist }
+			}
+		}
+	}
+}

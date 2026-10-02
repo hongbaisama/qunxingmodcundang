@@ -1,0 +1,51 @@
+horror_mutation_beam = {
+	type = offensive
+	icon = "GFX_ship_part_dimensional_horror_beam"
+	ship_components = {
+		small = "HORROR_MUTATION_BEAM_SMALL"
+		medium = "HORROR_MUTATION_BEAM_MEDIUM"
+		large = "HORROR_MUTATION_BEAM_LARGE"
+		extra_large = "HORROR_MUTATION_BEAM_EXTRA_LARGE"
+	}
+
+	is_unique = yes
+}
+
+horror_mutation_accelerator = {
+	type = offensive
+	icon = "GFX_ship_part_dimensional_horror_accelerator"
+	ship_components = {
+		small = "HORROR_MUTATION_ACCELERATOR_SMALL"
+		medium = "HORROR_MUTATION_ACCELERATOR_MEDIUM"
+		large = "HORROR_MUTATION_ACCELERATOR_LARGE"
+		extra_large = "HORROR_MUTATION_ACCELERATOR_EXTRA_LARGE"
+	}
+
+	is_unique = yes
+}
+
+horror_mutation_shield = {
+	type = defensive
+	icon = "GFX_ship_part_horror_shield"
+	ship_components = {
+		small = "HORROR_MUTATION_SHIELD_SMALL"
+		medium = "HORROR_MUTATION_SHIELD_MEDIUM"
+		large = "HORROR_MUTATION_SHIELD_LARGE"
+		extra_large = "HORROR_MUTATION_SHIELD_EXTRA_LARGE"
+	}
+
+	is_unique = yes
+}
+
+horror_mutation_armor = {
+	type = defensive
+	icon = "GFX_ship_part_horror_armor"
+	ship_components = {
+		small = "HORROR_MUTATION_ARMOR_SMALL"
+		medium = "HORROR_MUTATION_ARMOR_MEDIUM"
+		large = "HORROR_MUTATION_ARMOR_LARGE"
+		extra_large = "HORROR_MUTATION_ARMOR_EXTRA_LARGE"
+	}
+
+	is_unique = yes
+}

@@ -1,0 +1,8 @@
+# 星界丝缕维护费（10/15）
+triggered_self_modifier = {
+	potential = {
+		leader_class = $CLASS$
+	}
+	leader_$CLASS$s_astral_threads_upkeep_add = 0.2
+	mult = value:dimension_traveler_destiny_upkeep_value
+}

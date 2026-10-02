@@ -1,0 +1,20 @@
+dimension_traveler_special = {
+	species_class = DIMENSION_TRAVELER_SPECIAL
+
+	portraits = {
+		"dimension_traveler_portrait"
+		"dimension_traveler_smile_portrait"
+		"dimension_traveler_normal_portrait"
+		"dimension_traveler_official_portrait"
+		"dimension_traveler_scientist_portrait"
+		"dimension_traveler_commander_portrait"
+	}
+}
+
+dimension_traveler_normal = {
+	species_class = DIMENSION_TRAVELER_NORMAL
+
+	portraits = {
+		"dimension_traveler_mam"
+	}
+}

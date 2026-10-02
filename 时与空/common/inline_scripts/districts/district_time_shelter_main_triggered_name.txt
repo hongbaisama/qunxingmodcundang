@@ -1,0 +1,155 @@
+triggered_name = {
+	trigger = {
+		check_variable_arithmetic = {
+			which = value:time_shelter_maintenance_value
+			value >= 1.5
+		}
+		calc_true_if = {
+			amount >= 7
+			check_variable_arithmetic = {
+				which = value:time_shelter_maintenance_value
+				value >= 0.5
+			}
+			check_variable_arithmetic = {
+				which = value:time_shelter_maintenance_value
+				value >= 1
+			}
+			check_variable_arithmetic = {
+				which = value:time_shelter_maintenance_value
+				value >= 1.5
+			}
+			check_variable_arithmetic = {
+				which = value:time_shelter_maintenance_value
+				value >= 2
+			}
+			capital_tier >= 3
+			capital_tier >= 4
+			num_districts = {
+				type = any
+				value >= 10
+			}
+			num_districts = {
+				type = any
+				value >= 20
+			}
+		}
+	}
+	text = district_time_shelter_main_max
+}
+
+triggered_name = {
+	trigger = {
+		check_variable_arithmetic = {
+			which = value:time_shelter_maintenance_value
+			value >= 1
+		}
+		calc_true_if = {
+			amount >= 5
+			check_variable_arithmetic = {
+				which = value:time_shelter_maintenance_value
+				value >= 0.5
+			}
+			check_variable_arithmetic = {
+				which = value:time_shelter_maintenance_value
+				value >= 1
+			}
+			check_variable_arithmetic = {
+				which = value:time_shelter_maintenance_value
+				value >= 1.5
+			}
+			check_variable_arithmetic = {
+				which = value:time_shelter_maintenance_value
+				value >= 2
+			}
+			capital_tier >= 3
+			capital_tier >= 4
+			num_districts = {
+				type = any
+				value >= 10
+			}
+			num_districts = {
+				type = any
+				value >= 20
+			}
+		}
+	}
+	text = district_time_shelter_main_high
+}
+
+triggered_name = {
+	trigger = {
+		check_variable_arithmetic = {
+			which = value:time_shelter_maintenance_value
+			value >= 0.5
+		}
+		calc_true_if = {
+			amount >= 3
+			check_variable_arithmetic = {
+				which = value:time_shelter_maintenance_value
+				value >= 0.5
+			}
+			check_variable_arithmetic = {
+				which = value:time_shelter_maintenance_value
+				value >= 1
+			}
+			check_variable_arithmetic = {
+				which = value:time_shelter_maintenance_value
+				value >= 1.5
+			}
+			check_variable_arithmetic = {
+				which = value:time_shelter_maintenance_value
+				value >= 2
+			}
+			capital_tier >= 3
+			capital_tier >= 4
+			num_districts = {
+				type = any
+				value >= 10
+			}
+			num_districts = {
+				type = any
+				value >= 20
+			}
+		}
+	}
+	text = district_time_shelter_main_middle
+}
+
+triggered_name = {
+	trigger = {
+		calc_true_if = {
+			amount >= 1
+			check_variable_arithmetic = {
+				which = value:time_shelter_maintenance_value
+				value >= 0.5
+			}
+			check_variable_arithmetic = {
+				which = value:time_shelter_maintenance_value
+				value >= 1
+			}
+			check_variable_arithmetic = {
+				which = value:time_shelter_maintenance_value
+				value >= 1.5
+			}
+			check_variable_arithmetic = {
+				which = value:time_shelter_maintenance_value
+				value >= 2
+			}
+			capital_tier >= 3
+			capital_tier >= 4
+			num_districts = {
+				type = any
+				value >= 10
+			}
+			num_districts = {
+				type = any
+				value >= 20
+			}
+		}
+	}
+	text = district_time_shelter_main_low
+}
+
+triggered_name = {
+	text = district_time_shelter_main_none
+}

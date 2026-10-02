@@ -1,0 +1,518 @@
+
+namespace = shroud
+
+# Stage Events
+# Mind over Matter
+country_event = {
+	id = shroud.2750
+	title = shroud.2750.name
+	show_sound = event_mind_over_matter
+	is_triggered_only = yes
+
+	desc = {
+		trigger = {
+			if = {
+				limit = {
+					has_origin = origin_contract
+				}
+				text = shroud.2750.desc_p1.contract
+			}
+			else_if = {
+				limit = {
+					has_origin = origin_psionic
+				}
+				text = shroud.2750.desc_p1.psionic
+			}
+			else_if = {
+				limit = {
+					founder_species_is_machine = yes
+				}
+				text = shroud.2750.desc_p1_machine
+			}
+			else_if = {
+				limit = {
+					founder_species_is_machine = no
+					is_gestalt = yes
+				}
+				text = shroud.2750.desc_p1_hive_mind
+			}
+			else_if = {
+				limit = {
+					has_origin = origin_unplugged
+				}
+				text = shroud.2750.desc_p1_unplugged
+			}
+			else = {
+				text = shroud.2750.desc_p1
+			}
+			text = newline
+			if = {
+				limit = {
+					has_origin = origin_contract
+				}
+				text = shroud.2750.desc_p2.contract
+			}
+			else_if = {
+				limit = {
+					has_origin = origin_psionic
+				}
+				text = shroud.2750.desc_p2.psionic
+			}
+			else_if = {
+				limit = {
+					has_origin = origin_unplugged
+				}
+				text = shroud.2750.desc_p2_unplugged
+			}
+			else = {
+				text = shroud.2750.desc_p2
+			}
+			text = newline
+			if = {
+				limit = {
+					has_origin = origin_contract
+				}
+				text = shroud.2750.desc_p3.contract
+			}
+			else_if = {
+				limit = {
+					has_origin = origin_psionic
+				}
+				text = shroud.2750.desc_p3.psionic
+			}
+			else = {
+				text = shroud.2750.desc_p3
+			}
+		}
+	}
+
+	picture = {
+		trigger = {
+			is_hive_empire = yes
+		}
+		picture = GFX_evt_shroud_psionic_hive_mind
+	}
+	picture = {
+		trigger = {
+			founder_species_is_machine = yes
+		}
+		picture = GFX_evt_machine_sapience
+	}
+	picture = {
+		trigger = {
+			is_hive_empire = no
+			founder_species_is_machine = no
+		}
+		picture = GFX_evt_psionics
+	}
+
+	trigger = {
+		is_psionic = yes
+		NOT = { has_origin = origin_reckoning_arrived }
+	}
+
+	immediate = {
+		mind_over_matter_immediate = yes
+		start_situation = {
+			type = situation_breach_shroud
+			target = root
+		}
+		if = {
+			limit = { has_origin = origin_contract }
+			origin_contract_whisperers_in_the_void_replace_patron = yes # 必须在国家解锁虚境面板后，执行替换超主的effect才生效
+		}
+	}
+
+	option = {
+		name = shroud.2750.a
+		trigger = {
+			NOR = {
+				has_origin = origin_shroudwalker_apprentice
+				has_origin = origin_contract
+				has_origin = origin_psionic
+			}
+		}
+		tooltip = {
+			modify_species = {
+				species = this
+				add_trait = trait_latent_psionic
+			}
+		}
+	}
+
+	option = {
+		name = shroud.2750.a
+		trigger = {
+			has_origin = origin_shroudwalker_apprentice
+		}
+	}
+
+	option = {
+		name = shroud.2750.a.contract
+		trigger = {
+			has_origin = origin_contract
+		}
+		tooltip = {
+			modify_species = {
+				species = this
+				add_trait = trait_latent_psionic
+			}
+		}
+	}
+
+	option = {
+		name = utopia.2600.psionic
+		trigger = {
+			has_origin = origin_psionic
+		}
+		custom_tooltip = unlock_decision_psionic_1
+		set_country_flag = unlock_decision_psionic_1
+		tooltip = {
+			modify_species = {
+				species = this
+				add_trait = trait_latent_psionic
+			}
+		}
+	}
+
+	after = {
+		custom_tooltip = shroud.2750.a.tt
+		hidden_effect = {
+			open_shroud_tab = yes
+		}
+	}
+}
+
+# The Great Awakening
+situation_event = {
+	id = shroud.2780
+	title = shroud.2780.name
+	show_sound = {
+		trigger = { owner = { is_robot_empire = yes } }
+		sound = event_psionic_robot
+	}
+	show_sound = {
+		trigger = { owner = { is_robot_empire = no } }
+		sound = event_psionic
+	}
+	is_triggered_only = yes
+
+	situation = this
+
+	desc = {
+		trigger = {
+			if = {
+				limit = {
+					owner = { has_origin = origin_contract }
+				}
+				text = shroud.2780.desc_p1.contract
+			}
+			else_if = {
+				limit = {
+					owner = { has_origin = origin_psionic }
+				}
+				text = shroud.2780.desc_p1.psionic
+			}
+			else_if = {
+				limit = {
+					owner = {
+						OR = {
+							is_gestalt = yes
+							founder_species_is_machine = yes
+						}
+					}
+				}
+				if = {
+					limit = {
+						owner = {
+							has_tradition = tr_psionics_shroud_great_awakening
+						}
+					}
+					text = shroud.2780.desc_1_gestalt_machine_trad
+				}
+				else = {
+					text = shroud.2780.desc_1_gestalt_machine
+				}
+			}
+			else = {
+				if = {
+					limit = {
+						owner = {
+							has_tradition = tr_psionics_shroud_great_awakening
+						}
+					}
+					text = shroud.2780.desc_1_trad
+				}
+				else = {
+					text = shroud.2780.desc_1
+				}
+			}
+			text = newline
+			if = {
+				limit = {
+					owner = { has_origin = origin_contract }
+				}
+				text = shroud.2780.desc_p2.contract
+			}
+			else_if = {
+				limit = {
+					owner = { has_origin = origin_psionic }
+				}
+				text = shroud.2780.desc_p2.psionic
+			}
+			else_if = {
+				limit = {
+					owner = {
+						OR = {
+							AND = {
+								has_ascension_perk = ap_become_the_crisis
+								OR = {
+									has_crisis_level = crisis_level_4
+									has_crisis_level = crisis_level_5
+								}
+							}
+							is_chosen_empire = yes
+						}
+					}
+				}
+				text = shroud.2780.desc_2_crisis
+			}
+			else = {
+				text = shroud.2780.desc_2
+			}
+			text = newline
+			if = {
+				limit = {
+					owner = { has_origin = origin_contract }
+				}
+				text = shroud.2780.desc_p3.contract
+			}
+			else_if = {
+				limit = {
+					owner = { has_origin = origin_psionic }
+				}
+				text = shroud.2780.desc_p3.psionic
+			}
+			else_if = {
+				limit = {
+					owner = {
+						is_chosen_empire = yes
+					}
+				}
+				text = shroud.2780.desc_3_chosen
+			}
+			else = {
+				text = shroud.2780.desc_3
+			}
+		}
+	}
+
+	picture = {
+		trigger = {
+			owner = {
+				is_hive_empire = yes
+			}
+		}
+		picture = GFX_evt_shroud_psionic_hive_mind
+	}
+	picture = {
+		trigger = {
+			owner = {
+				founder_species_is_machine = yes
+			}
+		}
+		picture = GFX_evt_machine_sapience
+	}
+	picture = {
+		trigger = {
+			owner = {
+				is_hive_empire = no
+				founder_species_is_machine = no
+			}
+		}
+		picture = GFX_evt_psionics
+	}
+
+	immediate = {
+		owner = {
+			if = {
+				limit = { has_tradition = tr_psionics_shroud_great_awakening }
+				turn_main_species_to_psionic = yes
+				update_node_portraits_if_gestalt_effect = yes
+				update_every_leader_from_psionic_countries = yes
+				refresh_portraits = character
+			}
+		}
+	}
+	
+	after = {
+		if = {
+			limit = {
+				owner = {
+					has_tradition = tr_psionics_shroud_great_awakening
+				}
+			}
+			custom_tooltip = shroud.2780.a_tt_trad
+		}
+		else = {
+			custom_tooltip = shroud.2780.a_tt
+		}
+	}
+
+	option = {
+		name = {
+			trigger = {
+				if = {
+					limit = {
+						owner = {
+							has_tradition = tr_psionics_shroud_great_awakening
+						}
+					}
+					text = shroud.2780.a_trad
+				}
+				else = {
+					text = shroud.2780.a
+				}
+			}
+		}
+		trigger = {
+			owner = {
+				NOR = {
+					has_origin = origin_contract
+					has_origin = origin_psionic
+				}
+			}
+		}
+	}
+
+	option = {
+		name = "shroud.2780.a.contract"
+		trigger = {
+			owner = { has_origin = origin_contract }
+		}
+	}
+
+	option = {
+		name = "utopia.2650.psionic"
+		trigger = {
+			owner = { has_origin = origin_psionic }
+		}
+		owner = {
+			custom_tooltip = unlock_decision_psionic_2
+			set_country_flag = unlock_decision_psionic_2
+		}
+	}
+}
+
+# Breach the Shroud
+situation_event = {
+	id = shroud.2800
+	title = shroud.2800.name
+	desc = {
+		text = shroud.2800.desc
+		trigger = {
+			owner = {
+				NOR = {
+					has_origin = origin_contract
+					has_origin = origin_psionic
+				}
+			}
+		}
+	}
+	desc = {
+		text = shroud.2800.desc.contract
+		trigger = {
+			owner = { has_origin = origin_contract }
+		}
+	}
+	desc = {
+		text = psionic.4.desc
+		trigger = {
+			owner = { has_origin = origin_psionic }
+		}
+	}
+	picture = GFX_evt_shroudwalker_enclave
+	show_sound = {
+		trigger = { owner = { is_robot_empire = yes } }
+		sound = event_psionic_robot
+	}
+	show_sound = {
+		trigger = { owner = { is_robot_empire = no } }
+		sound = event_psionic
+	}
+	is_triggered_only = yes
+
+	situation = this
+
+	immediate = {
+		random_country = {
+			limit = {
+				is_country_type = shroud
+				has_country_flag = animator_of_clay_country_flag
+			}
+			save_event_target_as = the_animator_of_clay
+		}
+	}
+
+	option = {
+		name = shroud.2800.a
+		trigger = {
+			owner = {
+				NOR = {
+					has_origin = origin_contract
+					has_origin = origin_psionic
+				}
+			}
+		}
+		custom_tooltip = situation_breach_shroud_finish_effects
+		owner = {
+			if = {
+				limit = {
+					has_origin = origin_shroud_forged
+				}
+				custom_tooltip = situation_breach_shroud_finish_animator_contact
+				establish_communications = event_target:the_animator_of_clay
+			}
+		}
+	}
+
+	option = {
+		name = shroud.2800.a.contract
+		trigger = {
+			owner = { has_origin = origin_contract }
+		}
+		custom_tooltip = situation_breach_shroud_finish_effects
+		owner = { origin_contract_accept_covenant_with_whisperers_in_the_void = yes }
+	}
+
+	option = {
+		name = psionic.4.a
+		trigger = {
+			owner = { has_origin = origin_psionic }
+		}
+		custom_tooltip = situation_breach_shroud_finish_effects
+		owner = { time_active_nemesis = yes }
+	}
+
+	after = {
+		hidden_effect = {
+			owner = {
+				if = {
+					limit = {
+						has_origin = origin_shroud_forged
+					}
+					set_patron_first_contact_state = { patron = the_animator_of_clay state = completed }
+					country_event = {
+						id = shroud.2810
+					}
+				}
+				else = {
+					breach_shroud = yes
+				}
+				set_country_flag = psionic_traditions_unlocked
+				open_shroud_tab = yes
+			}
+		}
+		destroy_situation = this
+	}
+}

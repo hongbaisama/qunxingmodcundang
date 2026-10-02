@@ -1,0 +1,958 @@
+# 圆环之子
+leader_trait_ruler_time = {
+	immortal_leaders = yes
+	replace_traits = { "leader_trait_time_soul" }
+	# 不受监管人/帝皇增强
+	inline_script = {
+		script = trait/time_trait_icon_for_origin_time
+		CLASS = leader
+		ICON = "GFX_leader_trait_ruler_time"
+		RARITY = common
+		TIER = none
+		PRIORITY = 1000
+	}
+	inline_script = {
+		script = traits/ruler_time_trait_modifiers
+		BASE = 1
+	}
+	custom_tooltip_with_modifiers = leader_trait_ruler_time_tooltip
+	on_gained_effect = {
+		if = {
+			limit = {
+				is_origin_time_ruler = yes
+				owner = { has_origin_time = yes }
+			}
+			set_leader_flag = immune_to_negative_traits
+			set_leader_flag = leader_death_events_blocked
+			change_background_job = origin_time_ruler
+			change_background_ethic = ethic_materialist
+		}
+		else = {
+			remove_trait = leader_trait_ruler_time
+		}
+	}
+	leader_class = all
+	initial = no
+	randomized = no
+}
+
+leader_trait_ruler_time_owner = {
+	immortal_leaders = yes
+	replace_traits = { "leader_trait_ruler_time" }
+	inline_script = {
+		script = trait/time_trait_icon_for_origin_time
+		CLASS = leader
+		ICON = "GFX_leader_trait_ruler_time_owner"
+		RARITY = veteran
+		TIER = none
+		PRIORITY = 1000
+	}
+	inline_script = {
+		script = traits/ruler_time_trait_modifiers
+		BASE = 1.5
+	}
+	# 飞升
+	triggered_councilor_modifier = {
+		potential = {
+			can_ruler_time_trait_active = yes
+		}
+		district_time_usage_cap_mult = @ruler_time_owner_trait_extra_modifier
+		col_time_mult = @ruler_time_owner_trait_extra_modifier
+		mult = value:num_ruler_time_trait_value
+	}
+	# 监管人
+	triggered_councilor_modifier = {
+		potential = {
+			is_ruler = yes
+			owner = { is_galactic_custodian = yes }
+		}
+		diplo_weight_mult = @ruler_time_owner_trait_extra_modifier
+		mult = value:num_ruler_time_trait_value
+	}
+	# 帝皇
+	triggered_councilor_modifier = {
+		potential = {
+			is_ruler = yes
+			owner = { is_galactic_emperor = yes }
+			NOT = { has_global_flag = flag_MECR_activated }
+		}
+		country_subject_acceptance_add = @ruler_time_owner_trait_extra_modifier_acceptance
+		mult = value:num_ruler_time_trait_value
+	}
+	# 帝皇
+	triggered_councilor_modifier = {
+		potential = {
+			is_ruler = yes
+			owner = { is_galactic_emperor = yes }
+			has_global_flag = flag_MECR_activated # 共同体议案拓展
+		}
+		imperial_authority_monthly_get = @ruler_time_owner_trait_extra_modifier_imperial_authority
+		mult = value:num_ruler_time_trait_value
+	}
+	custom_tooltip_with_modifiers = leader_trait_ruler_time_tooltip_special
+	on_gained_effect = {
+		if = {
+			limit = {
+				is_origin_time_ruler = yes
+				owner = { has_origin_time = yes }
+			}
+			# 晋升著名
+			become_renowned_without_promotion = yes
+		}
+		else = {
+			remove_trait = leader_trait_ruler_time_owner
+		}
+	}
+	leader_class = all
+	initial = no
+	randomized = no
+}
+
+leader_trait_ruler_time_king = {
+	immortal_leaders = yes
+	replace_traits = { "leader_trait_ruler_time_owner" }
+	inline_script = {
+		script = trait/time_trait_icon_for_origin_time
+		CLASS = leader
+		ICON = "GFX_leader_trait_ruler_time_king"
+		RARITY = paragon
+		TIER = none
+		PRIORITY = 1000
+	}
+	inline_script = {
+		script = traits/ruler_time_trait_modifiers
+		BASE = 2
+	}
+	# 飞升
+	triggered_councilor_modifier = {
+		potential = {
+			can_ruler_time_trait_active = yes
+		}
+		district_time_usage_cap_mult = @ruler_time_king_trait_extra_modifier
+		col_time_mult = @ruler_time_king_trait_extra_modifier
+		mult = value:num_ruler_time_trait_value
+	}
+	# 监管人
+	triggered_councilor_modifier = {
+		potential = {
+			is_ruler = yes
+			owner = { is_galactic_custodian = yes }
+		}
+		diplo_weight_mult = @ruler_time_king_trait_extra_modifier
+		mult = value:num_ruler_time_trait_value
+	}
+	# 帝皇
+	triggered_councilor_modifier = {
+		potential = {
+			is_ruler = yes
+			owner = { is_galactic_emperor = yes }
+			NOT = { has_global_flag = flag_MECR_activated }
+		}
+		country_subject_acceptance_add = @ruler_time_king_trait_extra_modifier_acceptance
+		mult = value:num_ruler_time_trait_value
+	}
+	# 帝皇
+	triggered_councilor_modifier = {
+		potential = {
+			is_ruler = yes
+			owner = { is_galactic_emperor = yes }
+			has_global_flag = flag_MECR_activated # 共同体议案拓展
+		}
+		imperial_authority_monthly_get = @ruler_time_king_trait_extra_modifier_imperial_authority
+		mult = value:num_ruler_time_trait_value
+	}
+	custom_tooltip_with_modifiers = leader_trait_ruler_time_tooltip_special
+	on_gained_effect = {
+		if = {
+			limit = {
+				is_origin_time_ruler = yes
+				owner = { has_origin_time = yes }
+			}
+			# 知识宝库增加计数
+			owner = { change_paragon_memory_vault = yes }
+			# 晋升传奇
+			become_legendary_without_promotion = yes
+			# Timeline First Leader with Destiny Trait
+			owner = {
+				country_event = { id = timeline.50 }
+			}
+		}
+		else = {
+			remove_trait = leader_trait_ruler_time_king
+		}
+	}
+	leader_class = all
+	initial = no
+	randomized = no
+}
+
+# 位面调谐者
+leader_trait_origin_time = {
+	leader_trait_type = destiny
+	inline_script = {
+		script = trait/time_trait_icon_for_ruler
+		CLASS = leader
+		ICON = "GFX_leader_trait_pass_black_hole_pirate_king"
+		RARITY = paragon
+		TIER = none
+		PRIORITY = @trait_sorting_priority_paragon_yes_none
+	}
+	on_gained_effect = {
+		owner = {
+			country_event = { id = timeline.50 } # Timeline First Leader with Destiny Trait
+		}
+	}
+	leader_potential_add = {
+		is_ruler_or_heir = yes
+		is_time_soul_leader = yes
+		has_council_subclass = yes
+		owner = { has_origin_time = yes }
+	}
+	triggered_councilor_modifier = {
+		potential = {
+			is_ruler = yes
+			has_trait = subclass_official_diplomacy_councilor
+		}
+		time_researcher_unity_weight = 0.025
+		time_researcher_max_weight = 0.025
+		mult = value:num_time_ruler_skill
+	}
+	triggered_councilor_modifier = {
+		potential = {
+			is_ruler = yes
+			has_trait = subclass_official_economy_councilor
+		}
+		time_researcher_resource_weight = 0.025
+		time_researcher_max_weight = 0.025
+		mult = value:num_time_ruler_skill
+	}
+	triggered_councilor_modifier = {
+		potential = {
+			is_ruler = yes
+			has_trait = subclass_scientist_councilor
+		}
+		time_researcher_research_weight = 0.025
+		time_researcher_max_weight = 0.025
+		mult = value:num_time_ruler_skill
+	}
+	triggered_councilor_modifier = {
+		potential = {
+			is_ruler = yes
+			has_trait = subclass_commander_councilor
+		}
+		time_researcher_manufacturing_weight = 0.025
+		time_researcher_max_weight = 0.025
+		mult = value:num_time_ruler_skill
+	}
+	# 圆环之子无需以暗物质维护费作为代价
+	triggered_self_modifier = {
+		potential = {
+			if = {
+				limit = { leader_class = official }
+				is_ruler = yes
+				is_origin_time_ruler = no
+			}
+			else = {
+				always = no
+			}
+		}
+		leader_officials_sr_dark_matter_upkeep_add = 1
+		mult = trigger:has_base_skill
+	}
+	triggered_self_modifier = {
+		potential = {
+			if = {
+				limit = { leader_class = scientist }
+				is_ruler = yes
+				is_origin_time_ruler = no
+			}
+			else = {
+				always = no
+			}
+		}
+		leader_scientists_sr_dark_matter_upkeep_add = 1
+		mult = trigger:has_base_skill
+	}
+	triggered_self_modifier = {
+		potential = {
+			if = {
+				limit = { leader_class = commander }
+				is_ruler = yes
+				is_origin_time_ruler = no
+			}
+			else = {
+				always = no
+			}
+		}
+		leader_commanders_sr_dark_matter_upkeep_add = 1
+		mult = trigger:has_base_skill
+	}
+	custom_tooltip_with_modifiers = time_trait_for_ruler_tooltip
+	leader_class = all
+	selectable_weight = 10000
+}
+
+# 时空血脉
+trait_time = {
+	inline_script = "trait/cost/trait_time_cost"
+	icon = "gfx/interface/icons/traits/leader_trait_ruler_time.dds"
+	initial = no
+	randomized = no
+	hidden = yes
+	opposites = { "trait_time_1" "trait_time_2" "trait_time_soul_virtuality" "trait_time_soul_synthetic" "trait_time_soul_cybernetic" "trait_time_soul_genetic" "trait_time_soul_psionic" }
+	inline_script = "trait/modification_condition/time_origin_basic_trait"
+	inline_script = "trait/allowed_archetypes/time_archetypes"
+	localized_tags = {
+		SPECIES_TRAIT_ORIGIN_TIME
+	}
+	tags = { organic machine positive pop_output habitability upkeep leader special }
+	sorting_priority = 25
+	custom_tooltip_with_modifiers = trait_time_effect
+	inline_script = {
+		script = traits/species_trait_leader_skill_mult
+		TYPE = leader
+		MULT = 0.1
+	}
+	modifier = {
+		time_researcher_jobs_bonus_workforce_mult = 0.25
+		leader_lifespan_mult = 0.25
+		habitability_ceil_uncapped_add = -0.25
+		habitability_ceil_add = -0.25
+		logistic_growth_mult = -0.5
+		bonus_pop_growth_mult = -0.5
+		planet_pop_assembly_mult = -0.5
+	}
+	inline_script = "traits/trait_time_workforce_and_usage_modifiers"
+	inline_script = "traits/trait_time_inherited_modifiers"
+	resources = {
+		category = planet_pops
+		upkeep = {
+			sr_dark_matter = 0.01
+		}
+	}
+	slave_cost = {
+		trade = 2500
+		sr_dark_matter = 250
+	}
+	assembly_score = {
+		modifier = {
+			add = 2
+		}
+	}
+}
+
+# 时空记忆
+trait_time_1 = {
+	inline_script = "trait/cost/trait_time_cost"
+	icon = "gfx/interface/icons/traits/leader_trait_ruler_time.dds"
+	initial = yes
+	randomized = no
+	hidden = yes
+	opposites = { "trait_time" "trait_time_2" "trait_time_soul_virtuality" "trait_time_soul_synthetic" "trait_time_soul_cybernetic" "trait_time_soul_genetic" "trait_time_soul_psionic" }
+	inline_script = "trait/modification_condition/time_origin_basic_trait"
+	allowed_archetypes = {
+	}
+	archetype_override = {
+		hidden_trigger = {
+			from = { is_wonder_country_time_1 = yes }
+		}
+	}
+	localized_tags = {
+		SPECIES_TRAIT_ORIGIN_TIME
+	}
+	tags = { organic positive pop_output habitability leader special }
+	sorting_priority = 25
+	custom_tooltip_with_modifiers = trait_time_workforce_and_usage_effect
+	inline_script = {
+		script = traits/species_trait_leader_skill_mult
+		TYPE = leader
+		MULT = 0.1
+	}
+	modifier = {
+		biologist_jobs_bonus_workforce_mult = 0.25
+		bureaucrat_jobs_bonus_workforce_mult = 0.25
+		leader_lifespan_mult = 0.25
+		habitability_ceil_uncapped_add = -0.25
+		habitability_ceil_add = -0.25
+		logistic_growth_mult = -0.5
+		bonus_pop_growth_mult = -0.5
+		planet_pop_assembly_mult = -0.5
+	}
+	triggered_planet_growth_habitability_modifier = {
+		potential = {
+			has_modifier = time_1_planet_modifier
+		}
+		pop_environment_tolerance = 0.25
+		habitability_ceil_uncapped_add = 0.25
+		habitability_ceil_add = 0.25
+	}
+	inline_script = "traits/trait_time_workforce_and_usage_modifiers"
+	inline_script = "traits/trait_time_inherited_modifiers"
+	slave_cost = {
+		trade = 2500
+		sr_dark_matter = 250
+	}
+	assembly_score = {
+		modifier = {
+			add = 2
+		}
+	}
+}
+
+# 时空回路
+trait_time_2 = {
+	inline_script = "trait/cost/trait_time_cost"
+	icon = "gfx/interface/icons/traits/leader_trait_ruler_time.dds"
+	initial = yes
+	randomized = no
+	hidden = yes
+	opposites = { "trait_time" "trait_time_1" "trait_time_soul_virtuality" "trait_time_soul_synthetic" "trait_time_soul_cybernetic" "trait_time_soul_genetic" "trait_time_soul_psionic" }
+	inline_script = "trait/modification_condition/time_origin_basic_trait"
+	allowed_archetypes = {
+	}
+	archetype_override = {
+		hidden_trigger = {
+			from = { is_wonder_country_time_2 = yes }
+		}
+	}
+	localized_tags = {
+		SPECIES_TRAIT_ORIGIN_TIME
+	}
+	tags = { machine positive pop_output habitability leader special }
+	sorting_priority = 25
+	custom_tooltip_with_modifiers = trait_time_workforce_and_usage_effect
+	inline_script = {
+		script = traits/species_trait_leader_skill_mult
+		TYPE = leader
+		MULT = 0.1
+	}
+	modifier = {
+		physicist_jobs_bonus_workforce_mult = 0.25
+		engineer_jobs_bonus_workforce_mult = 0.25
+		leader_lifespan_mult = 0.25
+		habitability_ceil_uncapped_add = -0.25
+		habitability_ceil_add = -0.25
+		logistic_growth_mult = -0.5
+		bonus_pop_growth_mult = -0.5
+		planet_pop_assembly_mult = -0.5
+	}
+	triggered_planet_growth_habitability_modifier = {
+		potential = {
+			has_modifier = time_2_planet_modifier
+		}
+		pop_environment_tolerance = 0.25
+		habitability_ceil_uncapped_add = 0.25
+		habitability_ceil_add = 0.25
+	}
+	inline_script = "traits/trait_time_workforce_and_usage_modifiers"
+	inline_script = "traits/trait_time_inherited_modifiers"
+	slave_cost = {
+		trade = 2500
+		sr_dark_matter = 250
+	}
+	assembly_score = {
+		modifier = {
+			add = 2
+		}
+	}
+}
+
+# 奇点之心（虚拟）
+trait_time_soul_virtuality = {
+	inline_script = "trait/cost/trait_time_soul_cost"
+	icon = "gfx/interface/icons/traits/leader_trait_ruler_time_king.dds"
+	initial = no
+	randomized = no
+	hidden = yes
+	immortal_leaders = yes
+	improves_leaders = yes
+	opposites = { "trait_time" "trait_time_1" "trait_time_2" "trait_time_soul_synthetic" "trait_time_soul_cybernetic" "trait_time_soul_genetic" "trait_time_soul_psionic" }
+	inline_script = "trait/modification_condition/time_origin_basic_trait"
+	allowed_archetypes = { ROBOT }
+	localized_tags = {
+		SPECIES_TRAIT_ORIGIN_TIME
+		SPECIES_TRAIT_ORIGIN_TIME_SOUL
+	}
+	tags = { machine synthetic positive pop_output pop_growth empire_size upkeep leader special }
+	sorting_priority = 25
+	custom_tooltip = trait_time_soul_virtuality_effect
+	inline_script = {
+		script = traits/species_trait_leader_skill_mult
+		TYPE = leader
+		MULT = 0.2
+	}
+	triggered_planet_growth_habitability_modifier = {
+		planet_pop_assembly_mult = 0.25
+		mult = value:trait_time_soul_virtuality_value
+	}
+	triggered_pop_group_modifier = {
+		pop_bonus_workforce_mult = 0.25
+		pop_housing_usage_mult = -0.25
+		species_empire_size_mult = -0.25
+		mult = value:trait_time_soul_virtuality_value
+	}
+	inline_script = "traits/trait_time_virtuality_workforce_and_usage_modifiers"
+	inline_script = "traits/trait_time_inherited_modifiers"
+	resources = {
+		category = planet_pops
+		upkeep = {
+			sr_dark_matter = 0.02
+		}
+	}
+	slave_cost = {
+		trade = 5000
+		sr_dark_matter = 500
+	}
+}
+
+# 奇点之心（合成）
+trait_time_soul_synthetic = {
+	inline_script = "trait/cost/trait_time_soul_cost"
+	icon = "gfx/interface/icons/traits/leader_trait_ruler_time_king.dds"
+	initial = no
+	randomized = no
+	hidden = yes
+	immortal_leaders = yes
+	improves_leaders = yes
+	opposites = { "trait_time" "trait_time_1" "trait_time_2" "trait_time_soul_virtuality" "trait_time_soul_cybernetic" "trait_time_soul_genetic" "trait_time_soul_psionic" }
+	inline_script = "trait/modification_condition/time_origin_basic_trait"
+	allowed_archetypes = { ROBOT }
+	localized_tags = {
+		SPECIES_TRAIT_ORIGIN_TIME
+		SPECIES_TRAIT_ORIGIN_TIME_SOUL
+	}
+	tags = { machine synthetic positive pop_output pop_growth amenities housing upkeep leader special }
+	sorting_priority = 25
+	custom_tooltip = trait_time_soul_synthetic_effect
+	inline_script = {
+		script = traits/species_trait_leader_skill_mult
+		TYPE = leader
+		MULT = 0.2
+	}
+	triggered_planet_growth_habitability_modifier = {
+		planet_pop_assembly_mult = 0.25
+		mult = value:trait_time_soul_synthetic_value
+	}
+	triggered_pop_group_modifier = {
+		pop_bonus_workforce_mult = 0.25
+		pop_amenities_usage_mult = -0.25
+		planet_pops_upkeep_mult = -0.25
+		mult = value:trait_time_soul_synthetic_value
+	}
+	inline_script = "traits/trait_time_workforce_and_usage_modifiers"
+	inline_script = "traits/trait_time_inherited_modifiers"
+	resources = {
+		category = planet_pops
+		upkeep = {
+			sr_dark_matter = 0.02
+		}
+	}
+	slave_cost = {
+		trade = 5000
+		sr_dark_matter = 500
+	}
+}
+
+# 奇点之心（义体）
+trait_time_soul_cybernetic = {
+	inline_script = "trait/cost/trait_time_soul_cost"
+	icon = "gfx/interface/icons/traits/leader_trait_ruler_time_king.dds"
+	initial = no
+	randomized = no
+	hidden = yes
+	immortal_leaders = yes
+	improves_leaders = yes
+	opposites = { "trait_time" "trait_time_1" "trait_time_2" "trait_time_soul_virtuality" "trait_time_soul_synthetic" "trait_time_soul_genetic" "trait_time_soul_psionic" }
+	inline_script = "trait/modification_condition/time_origin_basic_trait"
+	inline_script = "trait/allowed_archetypes/time_archetypes_no_robotic"
+	localized_tags = {
+		SPECIES_TRAIT_ORIGIN_TIME
+		SPECIES_TRAIT_ORIGIN_TIME_SOUL
+	}
+	tags = { organic cybernetic positive pop_output habitability housing upkeep leader special }
+	sorting_priority = 25
+	custom_tooltip = trait_time_soul_cybernetic_effect
+	inline_script = {
+		script = traits/species_trait_leader_skill_mult
+		TYPE = leader
+		MULT = 0.2
+	}
+	triggered_planet_growth_habitability_modifier = {
+		habitability_ceil_add = 0.25
+		habitability_floor_add = 0.25
+		mult = from.value:trait_time_soul_cybernetic_value
+	}
+	triggered_pop_group_modifier = {
+		pop_bonus_workforce_mult = 0.25
+		pop_housing_usage_mult = -0.25
+		planet_pops_upkeep_mult = -0.25
+		mult = value:trait_time_soul_cybernetic_value
+	}
+	inline_script = "traits/trait_time_workforce_and_usage_modifiers"
+	inline_script = "traits/trait_time_inherited_modifiers"
+	resources = {
+		category = planet_pops
+		upkeep = {
+			sr_dark_matter = 0.02
+		}
+	}
+	slave_cost = {
+		trade = 5000
+		sr_dark_matter = 500
+	}
+	assembly_score = {
+		modifier = {
+			add = 5
+		}
+	}
+}
+
+# 奇点之心（基因）
+trait_time_soul_genetic = {
+	inline_script = "trait/cost/trait_time_soul_cost"
+	icon = "gfx/interface/icons/traits/leader_trait_ruler_time_king.dds"
+	initial = no
+	randomized = no
+	hidden = yes
+	immortal_leaders = yes
+	improves_leaders = yes
+	opposites = { "trait_time" "trait_time_1" "trait_time_2" "trait_time_soul_virtuality" "trait_time_soul_synthetic" "trait_time_soul_cybernetic" "trait_time_soul_psionic" }
+	inline_script = "trait/modification_condition/time_origin_basic_trait"
+	inline_script = "trait/allowed_archetypes/time_archetypes_no_robotic"
+	localized_tags = {
+		SPECIES_TRAIT_ORIGIN_TIME
+		SPECIES_TRAIT_ORIGIN_TIME_SOUL
+	}
+	tags = { organic genetic_ascension positive pop_output pop_growth amenities empire_size upkeep leader special }
+	sorting_priority = 25
+	custom_tooltip = trait_time_soul_genetic_effect
+	inline_script = {
+		script = traits/species_trait_leader_skill_mult
+		TYPE = leader
+		MULT = 0.2
+	}
+	triggered_planet_growth_habitability_modifier = {
+		logistic_growth_mult = 0.25
+		bonus_pop_growth_mult = 0.25
+		mult = value:trait_time_soul_genetic_value
+	}
+	triggered_pop_group_modifier = {
+		pop_bonus_workforce_mult = 0.25
+		pop_amenities_usage_mult = -0.25
+		species_empire_size_mult = -0.25
+		mult = value:trait_time_soul_genetic_value
+	}
+	inline_script = "traits/trait_time_workforce_and_usage_modifiers"
+	inline_script = "traits/trait_time_inherited_modifiers"
+	resources = {
+		category = planet_pops
+		upkeep = {
+			sr_dark_matter = 0.02
+		}
+	}
+	slave_cost = {
+		trade = 5000
+		sr_dark_matter = 500
+	}
+	assembly_score = {
+		modifier = {
+			add = 5
+		}
+	}
+}
+
+# 奇点之心（灵能）
+trait_time_soul_psionic = {
+	inline_script = "trait/cost/trait_time_soul_cost"
+	icon = "gfx/interface/icons/traits/leader_trait_ruler_time_king.dds"
+	initial = no
+	randomized = no
+	hidden = yes
+	immortal_leaders = yes
+	improves_leaders = yes
+	opposites = { "trait_time" "trait_time_1" "trait_time_2" "trait_time_soul_virtuality" "trait_time_soul_synthetic" "trait_time_soul_cybernetic" "trait_time_soul_genetic" }
+	inline_script = "trait/modification_condition/time_origin_basic_trait"
+	inline_script = "trait/allowed_archetypes/time_archetypes_no_robotic"
+	localized_tags = {
+		SPECIES_TRAIT_ORIGIN_TIME
+		SPECIES_TRAIT_ORIGIN_TIME_SOUL
+	}
+	tags = { organic psionic positive pop_output pop_growth habitability amenities housing empire_size upkeep leader special }
+	sorting_priority = 25
+	custom_tooltip = trait_time_soul_psionic_effect
+	inline_script = {
+		script = traits/species_trait_leader_skill_mult
+		TYPE = leader
+		MULT = 0.2
+	}
+	triggered_planet_growth_habitability_modifier = {
+		logistic_growth_mult = 0.25
+		bonus_pop_growth_mult = 0.25
+		pop_environment_tolerance = 0.25
+		mult = fromfrom.value:trait_time_soul_psionic_value|PATRON|the_composer_of_strands|
+	}
+	triggered_pop_group_modifier = {
+		foundry_jobs_bonus_workforce_mult = 0.5
+		enforcer_jobs_bonus_workforce_mult = 0.5
+		soldier_jobs_bonus_workforce_mult = 0.5
+		mult = value:trait_time_soul_psionic_value|PATRON|the_eater_of_worlds|
+	}
+	triggered_pop_group_modifier = {
+		bureaucrat_jobs_bonus_workforce_mult = 0.5
+		trader_jobs_bonus_workforce_mult = 0.5
+		species_empire_size_mult = -0.25
+		mult = value:trait_time_soul_psionic_value|PATRON|the_cradle_of_souls|
+	}
+	triggered_pop_group_modifier = {
+		influential_jobs_bonus_workforce_mult = 0.5
+		artisan_jobs_bonus_workforce_mult = 0.5
+		worker_and_simple_drone_cat_bonus_workforce_mult = 0.5
+		mult = value:trait_time_soul_psionic_value|PATRON|the_instrument_of_desire|
+	}
+	triggered_pop_group_modifier = {
+		researcher_jobs_bonus_workforce_mult = 0.5
+		pop_amenities_usage_mult = -0.25
+		pop_housing_usage_mult = -0.25
+		mult = value:trait_time_soul_psionic_value|PATRON|whisperers_in_the_void|
+	}
+	triggered_pop_group_modifier = {
+		potential = {
+			owner = { has_covenant = end_of_the_cycle }
+		}
+		pop_bonus_workforce_mult = 0.25
+	}
+	inline_script = "traits/trait_time_workforce_and_usage_modifiers"
+	inline_script = "traits/trait_time_inherited_modifiers"
+	resources = {
+		category = planet_pops
+		upkeep = {
+			sr_dark_matter = 0.02
+		}
+	}
+	slave_cost = {
+		trade = 5000
+		sr_dark_matter = 500
+	}
+	assembly_score = {
+		modifier = {
+			add = 5
+		}
+	}
+}
+
+# 奇点之心（领袖）
+leader_trait_time_soul = {
+	immortal_leaders = yes
+	inline_script = {
+		script = trait/time_trait_icon
+		CLASS = leader
+		ICON = "GFX_leader_trait_ruler_time_owner_without_animation"
+		RARITY = common
+		COUNCIL = triggered
+		TIER = none
+		PRIORITY = @trait_sorting_priority_common_triggered_none
+	}
+	# 统治者
+	triggered_councilor_modifier = {
+		potential = {
+			is_ruler = yes
+		}
+		district_time_usage_cap_mult = 0.01
+		col_time_mult = 0.01
+		mult = value:num_time_ruler_skill
+	}
+	# 行政官
+	triggered_planet_modifier = {
+		potential = {
+			is_ruler = no
+			leader_class = official
+			if = {
+				limit = { exists = colony }
+				colony = { is_origin_time_planet_class = yes }
+			}
+			else = {
+				always = no
+			}
+		}
+		time_researcher_food_produces_mult = 0.02
+		time_researcher_consumer_goods_produces_mult = 0.02
+		time_researcher_unity_produces_mult = 0.02
+		mult = value:num_time_leader_skill
+	}
+	triggered_planet_modifier = {
+		potential = {
+			is_ruler = no
+			leader_class = official
+			if = {
+				limit = { exists = colony }
+				colony = { is_origin_time_planet_class = no }
+			}
+			else = {
+				always = yes
+			}
+		}
+		country_food_produces_mult = 0.02
+		country_consumer_goods_produces_mult = 0.02
+		country_unity_produces_mult = 0.02
+		mult = value:num_time_leader_skill
+	}
+	triggered_sector_modifier = {
+		potential = {
+			is_ruler = no
+			leader_class = official
+		}
+		country_food_produces_mult = 0.01
+		country_consumer_goods_produces_mult = 0.01
+		country_unity_produces_mult = 0.01
+		mult = value:num_time_leader_skill
+	}
+	triggered_galcom_modifier = {
+		potential = {
+			is_ruler = no
+			leader_class = official
+		}
+		country_trust_growth = 0.02
+		mult = value:num_time_leader_skill
+	}
+	triggered_federation_modifier = {
+		potential = {
+			is_ruler = no
+			leader_class = official
+		}
+		federation_experience_add = 0.2
+		mult = value:num_time_leader_skill
+	}
+	# 科学官
+	triggered_planet_modifier = {
+		potential = {
+			is_ruler = no
+			leader_class = scientist
+			if = {
+				limit = { exists = colony }
+				colony = { is_origin_time_planet_class = yes }
+			}
+			else = {
+				always = no
+			}
+		}
+		time_researcher_physics_research_produces_mult = 0.02
+		time_researcher_society_research_produces_mult = 0.02
+		time_researcher_engineering_research_produces_mult = 0.02
+		mult = value:num_time_leader_skill
+	}
+	triggered_planet_modifier = {
+		potential = {
+			is_ruler = no
+			leader_class = scientist
+			if = {
+				limit = { exists = colony }
+				colony = { is_origin_time_planet_class = no }
+			}
+			else = {
+				always = yes
+			}
+		}
+		country_physics_research_produces_mult = 0.02
+		country_society_research_produces_mult = 0.02
+		country_engineering_research_produces_mult = 0.02
+		mult = value:num_time_leader_skill
+	}
+	triggered_sector_modifier = {
+		potential = {
+			is_ruler = no
+			leader_class = scientist
+		}
+		country_physics_research_produces_mult = 0.01
+		country_society_research_produces_mult = 0.01
+		country_engineering_research_produces_mult = 0.01
+		mult = value:num_time_leader_skill
+	}
+	triggered_modifier = {
+		potential = {
+			is_ruler = no
+			leader_class = scientist
+		}
+		ship_archaeological_site_clues_add = 0.2
+		ship_astral_rift_clues_add = 0.2
+		mult = value:num_time_leader_skill
+	}
+	# 指挥官
+	triggered_planet_modifier = {
+		potential = {
+			is_ruler = no
+			leader_class = commander
+			if = {
+				limit = { exists = colony }
+				colony = { is_origin_time_planet_class = yes }
+			}
+			else = {
+				always = no
+			}
+		}
+		time_researcher_energy_produces_mult = 0.02
+		time_researcher_minerals_produces_mult = 0.02
+		time_researcher_alloys_produces_mult = 0.02
+		mult = value:num_time_leader_skill
+	}
+	triggered_planet_modifier = {
+		potential = {
+			is_ruler = no
+			leader_class = commander
+			if = {
+				limit = { exists = colony }
+				colony = { is_origin_time_planet_class = no }
+			}
+			else = {
+				always = yes
+			}
+		}
+		country_energy_produces_mult = 0.02
+		country_minerals_produces_mult = 0.02
+		country_alloys_produces_mult = 0.02
+		mult = value:num_time_leader_skill
+	}
+	triggered_sector_modifier = {
+		potential = {
+			is_ruler = no
+			leader_class = commander
+		}
+		country_energy_produces_mult = 0.01
+		country_minerals_produces_mult = 0.01
+		country_alloys_produces_mult = 0.01
+		mult = value:num_time_leader_skill
+	}
+	triggered_fleet_modifier = {
+		potential = {
+			is_ruler = no
+			leader_class = commander
+		}
+		ship_shield_penetration_add = 0.02
+		ship_armor_penetration_add = 0.02
+		mult = value:num_time_leader_skill
+	}
+	triggered_self_modifier = {
+		potential = {
+			is_ruler = no
+			leader_class = commander
+		}
+		planet_combat_width_add = 0.2
+		mult = value:num_time_leader_skill
+	}
+	on_gained_effect = {
+		if = {
+			limit = {
+				species = { is_time_soul_species = yes }
+			}
+			set_leader_flag = leader_death_events_blocked
+			# 晋升著名
+			become_renowned_without_promotion = yes
+		}
+		else = {
+			remove_trait = leader_trait_time_soul
+		}
+	}
+	leader_class = all
+	initial = no
+	randomized = no
+	notify_on_gained = no
+}

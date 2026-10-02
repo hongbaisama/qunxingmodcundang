@@ -1,0 +1,77 @@
+﻿l_simp_chinese:
+ # 特质
+ concept_dimension_traveler_leader_trait_subclass: "§d安心院§!"
+ concept_dimension_traveler_leader_trait_destiny: "§d安洁莉娜§!"
+ concept_dimension_traveler_leader_trait_destiny_gestalt: "§d因果节点§!"
+ concept_dimension_traveler_leader_trait_other: "§v界旅者特质§!"
+ concept_dimension_traveler_leader_trait: "界旅者特质"
+ concept_dimension_traveler_leader_trait_desc: "这是§H时与空§!模组界旅者专属的§c领袖特质§!。\n\n此类特质的加成数值一般与界旅者的§Y$MOD_LEADER_SKILL_ADD$§!有关，并受['concept_messenger_network_cyan']等因素增强。"
+ 
+ concept_trait_dimension_traveler: "$trait_dimension_traveler$"
+ 
+ # 政策
+ concept_horror_dimension_traveler: "£mod_black_hole §M圆环使者§!"
+ concept_normal_dimension_traveler: "£mod_black_hole §B位面旅者§!"
+ concept_policy_dimension_traveler: "£mod_col_time_mult §R界旅者的命运§!"
+ concept_policy_dimension_traveler_desc: "这代表着§Y界旅者§!对待§M负相能力§!的态度，也意味着§Y界旅者§!最终走向的§H命运结局§!（尽管那是遥不可及的未来，或者过去）。\n\n如果选择接纳§M时之螶的橄榄枝§!，§Y界旅者§!的专属特质将得到大幅§G增强§!，但将§R无法§!获取经验。\n\n如果选择坚定§B自己的道路§!，§Y界旅者§!将不会承受任何额外§G增益§!或§R减益§!。"
+ 
+ # 信使网络
+ concept_messenger_network_white: "§W£akx_messenger 信使网络完善度§!"
+ concept_messenger_network_cyan: "§C£akx_messenger 信使网络完善度§!"
+ concept_messenger_network: "信使网络"
+ concept_messenger_network_desc: "信使们在时空中穿行，建立起了复杂而又全面的航道网络，这有利于§Y界旅者§!充分发挥自己的能力。\n\n更何况，其它的信使都在为帝国不辞辛劳地努力着，她又怎么忍心置身事外呢？\n\n每§Y1%§!信使网络完善度将使§Y信使岗位§!的基础产出§G+1%§!，使§Y信使岗位§!的修正产出§G+0.5%§!，并使§Y界旅者§!的专属特质效果§G+0.25%§!。"
+ 
+ # 星辰记忆
+ concept_dimension_traveler_skill_point_usage: "星辰记忆占用"
+ concept_dimension_traveler_skill_point_cap: "星辰记忆容量"
+ concept_dimension_traveler_skill_point_white: "§W星辰记忆§!"
+ concept_dimension_traveler_skill_point_red: "§R星辰记忆§!"
+ concept_dimension_traveler_skill_point_orange: "§H星辰记忆§!"
+ concept_dimension_traveler_skill_point_yellow: "§Y星辰记忆§!"
+ concept_dimension_traveler_skill_point_green: "§G星辰记忆§!"
+ concept_dimension_traveler_skill_point: "星辰记忆"
+ concept_dimension_traveler_skill_point_desc: "§Y界旅者§!穿梭于不同的时空，在各个宇宙中游历的记忆会为她提供很大的帮助。\n\n界旅者每级将获得§G3§!点§C星辰记忆§!（会因达成§Y某些条件§!而增加），可以增强她作为不同类型领袖的能力。"
+ 
+ # 来自异世
+ concept_dimension_traveler_base: "§M来自异世§!"
+ concept_dimension_traveler_base_desc: "这是来自另一个世界的£strategic 资源映像，却可以在我们的宇宙中被正常复现。\n\n根据每月£strategic §Y资源§!总收入获得一定§Y百分比§!的§G额外§!收入，资源种类取决于不同的§H思潮§!和§R政体§!。"
+ 
+ concept_dimension_traveler_base_energy_produces_add_white: "§W£akx_messenger 来自异世的$energy_with_icon$投影§!"
+ concept_dimension_traveler_base_energy_produces_add: "来自异世的$energy_with_icon$投影"
+ concept_dimension_traveler_base_energy_produces_add_desc: "这是来自另一个世界的$r_energy$投影，却可以在我们的宇宙中被正常使用。\n\n根据每月$r_energy$总收入获得一定§Y百分比§!的§G额外§!收入，该项资源取决于§H$ethic_xenophile$§!与§R$auth_machine_intelligence$§!。"
+ 
+ concept_dimension_traveler_base_minerals_produces_add_white: "§W£akx_messenger 来自异世的$minerals_with_icon$投影§!"
+ concept_dimension_traveler_base_minerals_produces_add: "来自异世的$minerals_with_icon$投影"
+ concept_dimension_traveler_base_minerals_produces_add_desc: "这是来自另一个世界的$r_minerals$投影，却可以在我们的宇宙中被正常使用。\n\n根据每月$r_minerals$总收入获得一定§Y百分比§!的§G额外§!收入，该项资源取决于§H$ethic_xenophobe$§!与§R$auth_hive_mind$§!。"
+ 
+ concept_dimension_traveler_base_food_produces_add_white: "§W£akx_messenger 来自异世的$food_with_icon$投影§!"
+ concept_dimension_traveler_base_food_produces_add: "来自异世的$food_with_icon$投影"
+ concept_dimension_traveler_base_food_produces_add_desc: "这是来自另一个世界的$r_food$投影，却可以在我们的宇宙中被正常使用。\n\n根据每月$r_food$总收入获得一定§Y百分比§!的§G额外§!收入，该项资源取决于§H$ethic_pacifist$§!与§R$auth_hive_mind$§!。"
+ 
+ concept_dimension_traveler_base_consumer_goods_produces_add_white: "§W£akx_messenger 来自异世的$consumer_goods_with_icon$碎片§!"
+ concept_dimension_traveler_base_consumer_goods_produces_add: "来自异世的$consumer_goods_with_icon$碎片"
+ concept_dimension_traveler_base_consumer_goods_produces_add_desc: "这是来自另一个世界的$r_consumer_goods$碎片，却可以在我们的宇宙中被正常合成。\n\n根据每月$r_consumer_goods$总收入获得一定§Y百分比§!的§G额外§!收入，该项资源取决于§H$ethic_egalitarian$§!。"
+ 
+ concept_dimension_traveler_base_alloys_produces_add_white: "§W£akx_messenger 来自异世的$alloys_with_icon$碎片§!"
+ concept_dimension_traveler_base_alloys_produces_add: "来自异世的$alloys_with_icon$碎片"
+ concept_dimension_traveler_base_alloys_produces_add_desc: "这是来自另一个世界的$r_alloys$碎片，却可以在我们的宇宙中被正常合成。\n\n根据每月$r_alloys$总收入获得一定§Y百分比§!的§G额外§!收入，该项资源取决于§H$ethic_militarist$§!与§R$auth_machine_intelligence$§!。"
+ 
+ concept_dimension_traveler_base_influence_produces_add_white: "§W£akx_messenger 来自异世的£influence $influence$干涉§!"
+ concept_dimension_traveler_base_influence_produces_add: "来自异世的£influence $influence$干涉"
+ concept_dimension_traveler_base_influence_produces_add_desc: "这是来自另一个世界的$r_influence$干涉，却可以在我们的宇宙中被正常掌控。\n\n根据每月$r_influence$总收入获得一定§Y百分比§!的§G额外§!收入，该项资源取决于§H$ethic_authoritarian$§!。"
+ 
+ concept_dimension_traveler_base_unity_produces_add_white: "§W£akx_messenger 来自异世的$unity_with_icon$干涉§!"
+ concept_dimension_traveler_base_unity_produces_add: "来自异世的$unity_with_icon$干涉"
+ concept_dimension_traveler_base_unity_produces_add_desc: "这是来自另一个世界的$r_unity$干涉，却可以在我们的宇宙中被正常掌控。\n\n根据每月$r_unity$总收入获得一定§Y百分比§!的§G额外§!收入，该项资源取决于§H$ethic_spiritualist$§!与§R$auth_hive_mind$§!。"
+ 
+ concept_dimension_traveler_base_physics_research_produces_add_white: "§W£akx_messenger 来自异世的$physics_research_with_icon$信息§!"
+ concept_dimension_traveler_base_physics_research_produces_add: "来自异世的$physics_research_with_icon$信息"
+ concept_dimension_traveler_base_physics_research_produces_add_desc: "这是来自另一个世界的$r_physics$信息，却可以在我们的宇宙中被正常解读。\n\n根据每月$r_physics$总收入获得一定§Y百分比§!的§G额外§!收入，该项资源取决于§H$ethic_materialist$§!与§R$auth_machine_intelligence$§!。"
+ 
+ concept_dimension_traveler_base_society_research_produces_add_white: "§W£akx_messenger 来自异世的$society_research_with_icon$信息§!"
+ concept_dimension_traveler_base_society_research_produces_add: "来自异世的$society_research_with_icon$信息"
+ concept_dimension_traveler_base_society_research_produces_add_desc: "这是来自另一个世界的$r_society$信息，却可以在我们的宇宙中被正常解读。\n\n根据每月$r_society$总收入获得一定§Y百分比§!的§G额外§!收入，该项资源取决于§H$ethic_materialist$§!与§R$auth_machine_intelligence$§!。"
+ 
+ concept_dimension_traveler_base_engineering_research_produces_add_white: "§W£akx_messenger 来自异世的$engineering_research_with_icon$信息§!"
+ concept_dimension_traveler_base_engineering_research_produces_add: "来自异世的$engineering_research_with_icon$信息"
+ concept_dimension_traveler_base_engineering_research_produces_add_desc: "这是来自另一个世界的$r_engineering$信息，却可以在我们的宇宙中被正常解读。\n\n根据每月$r_engineering$总收入获得一定§Y百分比§!的§G额外§!收入，该项资源取决于§H$ethic_materialist$§!与§R$auth_machine_intelligence$§!。"

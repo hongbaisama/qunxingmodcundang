@@ -1,0 +1,478 @@
+white_hole_recycle_bin = {
+	name = {
+		trigger = {
+			use_white_hole_recycle_bin_rare = yes
+		}
+		text = sm_white_hole_recycle_bin_rare
+	}
+	name = {
+		trigger = {
+			use_white_hole_recycle_bin_research = yes
+		}
+		text = sm_white_hole_recycle_bin_research
+	}
+	name = {
+		trigger = {
+			use_white_hole_recycle_bin_minerals = yes
+		}
+		text = sm_white_hole_recycle_bin_minerals
+	}
+	name = {
+		trigger = {
+			use_white_hole_recycle_bin_default = yes
+		}
+		text = sm_white_hole_recycle_bin
+	}
+	
+	desc = {
+		trigger = {
+			use_white_hole_recycle_bin_rare = yes
+		}
+		text = sm_white_hole_recycle_bin_rare_desc
+	}
+	desc = {
+		trigger = {
+			use_white_hole_recycle_bin_research = yes
+		}
+		text = sm_white_hole_recycle_bin_research_desc
+	}
+	desc = {
+		trigger = {
+			use_white_hole_recycle_bin_minerals = yes
+		}
+		text = sm_white_hole_recycle_bin_minerals_desc
+	}
+	desc = {
+		trigger = {
+			use_white_hole_recycle_bin_default = yes
+		}
+		text = sm_white_hole_recycle_bin_desc
+	}
+	
+	icon = {
+		trigger = {
+			use_white_hole_recycle_bin_rare = yes
+		}
+		text = "GFX_white_hole_recycle_bin_rare"
+	}
+	icon = {
+		trigger = {
+			use_white_hole_recycle_bin_research = yes
+		}
+		text = "GFX_white_hole_recycle_bin_research"
+	}
+	icon = {
+		trigger = {
+			use_white_hole_recycle_bin_minerals = yes
+		}
+		text = "GFX_white_hole_recycle_bin_minerals"
+	}
+	icon = {
+		trigger = {
+			use_white_hole_recycle_bin_default = yes
+		}
+		text = "GFX_orbitalring_shield_generator"
+	}
+	
+	construction_days = 360
+	category = sm_economy_cat
+
+	potential = {
+		exists = owner
+		is_normal_starbase = yes
+		star = { is_star_class = sc_time_white_hole }
+	}
+
+	possible = {
+		custom_tooltip = {
+			fail_text = "requires_starport"
+			has_starbase_size >= starbase_starport
+		}
+	}
+
+	resources = {
+		category = starbase_buildings
+		cost = {
+			alloys = 100
+		}
+		produces = {
+			trigger = {
+				star = { has_deposit = d_minerals_10 }
+			}
+			minerals = 20
+		}
+		produces = {
+			trigger = {
+				star = { has_deposit = d_physics_10 }
+			}
+			physics_research = 20
+		}
+		produces = {
+			trigger = {
+				star = { has_deposit = d_society_10 }
+			}
+			society_research = 20
+		}
+		produces = {
+			trigger = {
+				star = { has_deposit = d_engineering_10 }
+			}
+			engineering_research = 20
+		}
+		produces = {
+			trigger = {
+				star = { has_deposit = d_dark_matter_deposit_10 }
+				owner = { has_technology = tech_mine_dark_matter }
+			}
+			sr_dark_matter = 20
+		}
+		produces = {
+			trigger = {
+				star = { has_deposit = d_zro_deposit_5 }
+				owner = { has_technology = tech_mine_zro }
+			}
+			sr_zro = 10
+		}
+		produces = {
+			trigger = {
+				star = { has_deposit = d_astral_threads_deposit_3 }
+				owner = { has_technology = tech_astral_harvesting }
+			}
+			astral_threads = 6
+		}
+		
+		upkeep = {
+			energy = 2
+		}
+		upkeep = {
+			trigger = {
+				star = { has_deposit = d_dark_matter_deposit_10 }
+				owner = { has_technology = tech_mine_dark_matter }
+			}
+			energy = 1
+		}
+		upkeep = {
+			trigger = {
+				star = { has_deposit = d_zro_deposit_5 }
+				owner = { has_technology = tech_mine_zro }
+			}
+			energy = 1
+		}
+		upkeep = {
+			trigger = {
+				star = { has_deposit = d_astral_threads_deposit_3 }
+				owner = { has_technology = tech_astral_harvesting }
+			}
+			energy = 1
+		}
+	}
+	
+	system_modifier = {
+		custom_tooltip = white_hole_recycle_bin_effect
+	}
+	
+	on_finished = {
+		if = {
+			limit = {
+				solar_system = {
+					NOT = { has_modifier = white_hole_recycle_bin_modifier }
+				}
+			}
+			solar_system = {
+				add_modifier = {
+					modifier = white_hole_recycle_bin_modifier
+					days = -1
+				}
+			}
+		}
+	}
+
+	on_destroyed = {
+		solar_system = {
+			remove_modifier = white_hole_recycle_bin_modifier
+		}
+	}
+
+	ai_weight = {
+		weight = 200
+	}
+}
+
+noah_ark = {
+	icon = "GFX_orbitalring_module_habitation"
+	construction_days = 360
+	category = sm_colony_cat
+
+	potential = {
+		exists = owner
+		owner = { has_technology = tech_noah_ark }
+		is_normal_starbase = yes
+	}
+	
+	possible = {
+		custom_tooltip = {
+			fail_text = "requires_starport"
+			has_starbase_size >= starbase_starport
+		}
+		custom_tooltip = {
+			fail_text = "requires_colonized_planet"
+			solar_system = {
+				any_system_planet_colony = {
+					is_owned_by = from
+				}
+			}
+		}
+	}
+	
+	triggered_system_modifier = {
+		potential = {
+			owner = { 
+				NOT = { has_ascension_perk = ap_archaeoengineers }
+			}
+		}
+		planet_jobs_unity_produces_mult = 0.1
+		planet_jobs_produces_mult = 0.1
+	}
+	
+	triggered_system_modifier = {
+		potential = {
+			owner = { 
+				has_ascension_perk = ap_archaeoengineers
+			}
+		}
+		planet_jobs_unity_produces_mult = 0.15
+		planet_jobs_produces_mult = 0.15
+	}
+	
+	resources = {
+		category = starbase_buildings
+		cost = {
+			alloys = 200
+			minor_artifacts = @minor_artifacts_cost_xl
+		}
+		upkeep = {
+			energy = 5
+		}
+	}
+	
+	show_in_tech = "tech_noah_ark"
+	
+	ai_weight = {
+		weight = 200
+	}
+}
+
+akx_hyperspace_specialty = {
+	icon = "GFX_spaceport_module_navigators_guild"
+	construction_days = 360
+	category = sm_utility_cat
+
+	potential = {
+		exists = owner
+		owner = {
+			is_hyperspace_specialty_empire = yes
+			has_country_flag = unlock_akx_hyperspace_specialty_starbase_building
+		}
+		OR = {
+			is_normal_starbase = yes
+			is_space_citadel = yes
+		}
+	}
+	
+	possible = {
+		custom_tooltip = {
+			fail_text = "requires_starport"
+			OR = {
+				has_starbase_size >= starbase_starport
+				is_space_citadel = yes
+			}
+		}
+		owner = {
+			has_technology = tech_sensors_2
+		}
+		NOR = {
+			has_starbase_building = listening_post
+			has_starbase_building = dark_matter_listening_post
+		}
+	}
+	
+	triggered_station_modifier = {
+		potential = {
+			NOR = {
+				has_starbase_building = listening_post
+				has_starbase_building = dark_matter_listening_post
+			}
+		}
+		ship_sensor_range_add = 3
+		ship_hyperlane_range_add = 6
+	}
+
+	triggered_station_modifier = {
+		potential = {
+			hidden_trigger = { exists = this }
+			exists = owner
+			owner = {
+				has_technology = tech_unusual_senses
+			}
+			NOR = {
+				has_starbase_building = listening_post
+				has_starbase_building = dark_matter_listening_post
+			}
+		}
+		custom_tooltip = sm_listening_post_unusual_senses_desc
+		ship_cloaking_detection_add = 1
+		ship_sensor_range_add = 1
+		mult = value:unusual_senses_mult
+	}
+	
+	triggered_station_modifier = {
+		potential = {
+			hidden_trigger = { exists = this }
+			exists = owner
+			owner = {
+				is_galactic_community_member = yes
+			}
+			galcom_has_astral_studies_network_or_greater_trigger = yes
+			NOR = {
+				has_starbase_building = listening_post
+				has_starbase_building = dark_matter_listening_post
+			}
+		}
+
+		ship_sensor_range_add = 1
+		ship_hyperlane_range_add = 1
+	}
+
+	triggered_station_modifier = {
+		potential = {
+			hidden_trigger = { exists = this }
+			exists = owner
+			owner = {
+				has_civic = civic_hive_subspace_ephapse
+				has_first_contact_dlc = yes
+			}
+			NOR = {
+				has_starbase_building = listening_post
+				has_starbase_building = dark_matter_listening_post
+			}
+		}
+
+		ship_cloaking_detection_add = 1
+	}
+	
+	# 以上修正在拥有监听哨站或暗物质监听哨站时失效
+	
+	triggered_station_modifier = {
+		potential = {
+			OR = {
+				has_starbase_building = listening_post
+				has_starbase_building = dark_matter_listening_post
+			}
+		}
+		ship_sensor_range_add = 1
+		ship_hyperlane_range_add = 2
+	}
+	
+	# 以上修正在拥有监听哨站或暗物质监听哨站时用于补全修正
+	
+	# 增强
+	
+	triggered_system_modifier = {
+		# Gives some Stability per "Hyperspace Specialty" Councilor level.
+		potential = {
+			owner = {
+				is_gestalt = no
+				is_hyperspace_specialty_empire = yes
+				has_country_flag = unlock_akx_hyperspace_specialty_starbase_building
+			}
+			OR = {
+				has_councilor = { COUNCILOR = "councilor_hyperspace_specialty" }
+				has_councilor = { COUNCILOR = "councilor_hyperspace_specialty_corporate" }
+			}
+		}
+		planet_stability_add = @councilor_hyperspace_specialty_warp_fluctuator_stability
+		mult = value:councilor_level_combo|COUNCILOR_1|councilor_hyperspace_specialty|COUNCILOR_2|councilor_hyperspace_specialty_corporate|
+	}
+	
+	triggered_system_modifier = {
+		# Gives some Stability per "Hyperspace Specialty" Councilor level.
+		potential = {
+			owner = {
+				is_gestalt = yes
+				is_hyperspace_specialty_empire = yes
+				has_country_flag = unlock_akx_hyperspace_specialty_starbase_building
+			}
+		}
+		planet_stability_add = 10
+	}
+	
+	# 升级
+	
+	triggered_system_modifier = {
+		# Gives some Stability per "Hyperspace Specialty" Councilor level.
+		potential = {
+			owner = {
+				is_gestalt = no
+				is_hyperspace_specialty_empire = yes
+				has_country_flag = upgrade_akx_hyperspace_specialty_starbase_building
+			}
+			OR = {
+				has_councilor = { COUNCILOR = "councilor_hyperspace_specialty" }
+				has_councilor = { COUNCILOR = "councilor_hyperspace_specialty_corporate" }
+			}
+		}
+		planet_crime_add = -2
+		mult = value:councilor_level_combo|COUNCILOR_1|councilor_hyperspace_specialty|COUNCILOR_2|councilor_hyperspace_specialty_corporate|
+	}
+	
+	triggered_system_modifier = {
+		# Gives some Stability per "Hyperspace Specialty" Councilor level.
+		potential = {
+			owner = {
+				is_gestalt = yes
+				is_hyperspace_specialty_empire = yes
+				has_country_flag = upgrade_akx_hyperspace_specialty_starbase_building
+			}
+		}
+		planet_crime_no_happiness_add = -20
+	}
+	
+	# 文本
+	
+	triggered_system_modifier = {
+		potential = {
+			owner = {
+				is_gestalt = no
+				is_hyperspace_specialty_empire = yes
+				has_country_flag = unlock_akx_hyperspace_specialty_starbase_building
+				NOT = { has_country_flag = upgrade_akx_hyperspace_specialty_starbase_building }
+			}
+		}
+		custom_tooltip = akx_hyperspace_specialty_effect
+	}
+	
+	triggered_system_modifier = {
+		potential = {
+			owner = {
+				is_gestalt = no
+				is_hyperspace_specialty_empire = yes
+				has_country_flag = upgrade_akx_hyperspace_specialty_starbase_building
+			}
+		}
+		custom_tooltip = akx_hyperspace_specialty_upgrade_effect
+	}
+	
+	resources = {
+		category = starbase_buildings
+		cost = {
+			alloys = 100
+		}
+		upkeep = {
+			energy = 2
+		}
+	}
+	
+	ai_weight = {
+		weight = 200
+	}
+}

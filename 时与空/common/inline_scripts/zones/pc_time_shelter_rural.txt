@@ -1,0 +1,68 @@
+base_buildtime = @zone_time_shelter_buildtime
+
+planet_limit = { base = 1 }
+
+potential = {
+	is_planet_class = pc_time_shelter
+}
+
+unlock = {
+	is_planet_class = pc_time_shelter
+}
+
+resources = {
+	category = planet_zones
+	cost = {
+		sr_dark_matter = @zone_time_shelter_cost
+	}
+}
+
+planet_modifier = {
+	zone_building_slots_add = @time_mod_zone_max_buildings
+	planet_building_capacity_add = 1
+}
+
+triggered_planet_modifier = {
+	potential = {
+		exists = owner
+		owner = { is_gestalt = no }
+	}
+	job_$JOB$_per_pop = 0.005
+}
+
+triggered_planet_modifier = {
+	potential = {
+		exists = owner
+		owner = { is_gestalt = yes }
+	}
+	job_$JOB$_drone_per_pop = 0.005
+}
+
+triggered_district_planet_modifier = {
+	potential = {
+		exists = owner
+		owner = { is_gestalt = no }
+	}
+	job_$JOB$_add = @zone_time_shelter_rural_job
+	mult = value:district_time_shelter_secondary_job_value|MODIFIER|$MODIFIER$|
+}
+
+triggered_district_planet_modifier = {
+	potential = {
+		exists = owner
+		owner = { is_gestalt = yes }
+	}
+	job_$JOB$_drone_add = @zone_time_shelter_rural_job
+	mult = value:district_time_shelter_secondary_job_value|MODIFIER|$MODIFIER$|
+}
+
+triggered_desc = {
+	text = district_time_shelter_effect
+}
+
+zone_sets = {
+	time_shelter_secondary
+}
+
+ai_weight_coefficient = 10
+ai_priority = 100

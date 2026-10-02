@@ -1,0 +1,17 @@
+cost = {
+	base = 0
+	modifier = {
+		add = 2
+		has_country_flag = beyond_infinity_trait_time
+	}
+	modifier = {
+		add = 5
+		NOR = {
+			has_origin_time = yes
+			is_wonder_country_time_0 = yes
+			is_wonder_country_time_1 = yes
+			is_wonder_country_time_2 = yes
+			has_country_flag = beyond_infinity_trait_time
+		}
+	}
+}

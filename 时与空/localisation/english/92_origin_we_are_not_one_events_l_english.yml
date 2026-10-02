@@ -1,0 +1,13 @@
+﻿l_english:
+ origin_we_are_not_one.5.name:0 "Rule Introduction"
+ origin_we_are_not_one.5.desc:0 "Each player chooses a leader to §Yrename§! and §Yplay§!, all content related to this leader (including events) takes the §Hhighest priority§! of the will of §Ythat player§! (except when §G£ruler£Ruler§! arranges council position and work for this leader).\n\nDifferent professions, holding different council positions have different ['concept_origin_we_are_not_one_job']. You can check your ['concept_origin_we_are_not_one_job'] in the leader's §Yexclusive trait§!. You can arrange your leader to any planet/science ship/fleet/army without a leader§!, but this also means you lose control of the original position. As a regular leader, you cannot choose your own council position, because this belongs to ['concept_origin_we_are_not_one_ruler'].\n\nMOD is not omnipotent. This origin only provides a rule framework, specific operations of players cannot be limited, and can only rely on everyone to §Yconsciously§! abide by the agreement.\n\nRules are dead, people are alive. In the judgment of some specific situations, everyone can §Ynegotiate on their own§!, without sticking to the rule reference given by this origin. You can even completely ignore the origin rules, but instead formulate better and more complete rules §Yby everyone§!.\n\nBefore starting the game, please adjust the §Ylifespan limit§! of all leaders:"
+ origin_we_are_not_one.5.subtract.5:0 "§R-50 Years§!"
+ origin_we_are_not_one.5.subtract.1:0 "§R-10 Years§!"
+ origin_we_are_not_one.5.add.1:0 "§G+10 Years§!"
+ origin_we_are_not_one.5.add.5:0 "§G+50 Years§!"
+ origin_we_are_not_one.5.immortal.yes:0 "§MImmortal§!"
+ origin_we_are_not_one.5.immortal.no:0 "§RCancel Immortal§!"
+ origin_we_are_not_one.5.done:0 "§HDone§!"
+ 
+ WE_ARE_NOT_ONE_HABITAT_PLANET_NAME: "[solar_system.GetName] Habitat Complex"
+ WE_ARE_NOT_ONE_TARGET_ORBITAL_NAME: "[target_planet.GetName] Orbital Station"

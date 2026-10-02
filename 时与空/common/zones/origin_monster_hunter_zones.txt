@@ -1,0 +1,132 @@
+zone_monster_hunter = {
+	inline_script = {
+		script = zones/shared_monster_hunter_zone
+		AMOUNT = @scaling_district_1_job
+		BUILDING_SLOT = @time_mod_zone_max_buildings
+	}
+	
+	zone_sets = {
+		urban
+		habitat_urban
+		ark_urban
+		resort
+	}
+
+	inline_script = {
+		script = zones/shared_city_non_urban_zone_modifiers
+	}
+	
+	convert_to = {
+		zone_monster_hunter_ark
+		zone_monster_hunter_arcology
+		zone_monster_hunter_ring_world
+		zone_monster_hunter_resort
+	}
+}
+
+zone_monster_hunter_ark = {
+	inline_script = {
+		script = zones/shared_monster_hunter_zone
+		AMOUNT = @doubled_scaling_district_1_job
+		BUILDING_SLOT = @time_mod_zone_max_buildings
+	}
+	
+	zone_sets = {
+		ark_military
+	}
+	
+	convert_to = {
+		zone_monster_hunter
+		zone_monster_hunter_arcology
+		zone_monster_hunter_ring_world
+		zone_monster_hunter_resort
+	}
+}
+
+zone_monster_hunter_arcology = {
+	inline_script = {
+		script = zones/shared_monster_hunter_zone
+		AMOUNT = @doubled_scaling_district_1_job
+		BUILDING_SLOT = @time_mod_zone_max_buildings
+	}
+	
+	swap_type = district_arcology_monster_hunter
+	swap_type_weight = 5
+	
+	zone_sets = {
+		arcology
+	}
+
+	inline_script = {
+		script = zones/shared_arcology_zone_modifiers
+	}
+	
+	convert_to = {
+		zone_monster_hunter
+		zone_monster_hunter_ark
+		zone_monster_hunter_ring_world
+		zone_monster_hunter_resort
+	}
+}
+
+zone_monster_hunter_ring_world = {
+	inline_script = {
+		script = zones/shared_monster_hunter_zone
+		AMOUNT = @doubled_scaling_district_1_job
+		BUILDING_SLOT = @time_mod_zone_max_buildings
+	}
+	
+	swap_type = district_ring_world_monster_hunter
+	swap_type_weight = 5
+	
+	zone_sets = {
+		ring_world
+	}
+
+	inline_script = {
+		script = zones/shared_ring_world_zone_modifiers
+	}
+	
+	convert_to = {
+		zone_monster_hunter
+		zone_monster_hunter_ark
+		zone_monster_hunter_arcology
+		zone_monster_hunter_resort
+	}
+}
+
+zone_monster_hunter_resort = {
+	inline_script = {
+		script = zones/shared_monster_hunter_zone
+		AMOUNT = @doubled_scaling_district_1_job
+		BUILDING_SLOT = 1
+	}
+	
+	max_buildings = 1
+	
+	empire_limit = {
+		base = 1
+	}
+	
+	planet_limit = {
+		base = 1
+	}
+	
+	swap_type = district_resort_monster_hunter
+	swap_type_weight = 5
+	
+	zone_sets = {
+		resort_attraction
+	}
+
+	inline_script = {
+		script = zones/shared_city_non_urban_zone_modifiers
+	}
+	
+	convert_to = {
+		zone_monster_hunter
+		zone_monster_hunter_ark
+		zone_monster_hunter_arcology
+		zone_monster_hunter_ring_world
+	}
+}

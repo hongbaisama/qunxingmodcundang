@@ -1,0 +1,68 @@
+base_buildtime = 360
+
+potential = {
+	is_origin_time_planet_class = yes
+	hidden_trigger = { exists = owner }
+	owner = { unlock_pc_time_structures = yes }
+}
+
+unlock = {
+	hidden_trigger = { exists = owner }
+	owner = { has_technology = tech_time_blocker_1 }
+}
+
+resources = {
+	category = planet_zones
+	cost = {
+		energy = 500
+		minerals = 500
+		food = 500
+		consumer_goods = 250
+		alloys = 250
+		sr_dark_matter = 25
+	}
+	upkeep = {
+		trigger = {
+			is_planet_class = pc_time
+		}
+		rare_crystals = 0.5
+		exotic_gases = 0.5
+		volatile_motes = 0.5
+		mult = value:num_district_time
+	}
+	upkeep = {
+		trigger = {
+			is_planet_class = pc_endless_time
+		}
+		rare_crystals = 0.05
+		exotic_gases = 0.05
+		volatile_motes = 0.05
+		mult = value:num_time_recursioner
+	}
+}
+
+planet_modifier = {
+	zone_building_slots_add = @time_mod_zone_max_buildings
+	planet_clear_blocker_speed_mult = 0.25
+	planet_building_build_speed_mult = 0.25
+	planet_decision_enact_speed_mult = 0.25
+	terraform_speed_mult = 0.25
+}
+
+triggered_district_planet_modifier = {
+	potential = {
+		is_planet_class = pc_time
+	}
+	district_time_usage_cap = @zone_time_base_usage_cap
+	mult = value:district_time_level_value
+}
+
+triggered_district_planet_modifier = {
+	potential = {
+		is_planet_class = pc_endless_time
+	}
+	district_time_usage_cap = @zone_endless_time_base_usage_cap
+	mult = value:district_time_level_value
+}
+
+ai_priority = 5

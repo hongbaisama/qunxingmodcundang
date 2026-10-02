@@ -1,0 +1,85 @@
+slot_time_ruin_cosmogenesis_world_main = {
+	start = zone_time_ruin_cosmogenesis_world_main
+	
+	included_zone_sets = {
+		zone_time_ruin_cosmogenesis_world_main
+	}
+	
+	potential = {
+		is_planet_class = pc_time_ruin_cosmogenesis_world
+	}
+
+	unlock = {
+		is_planet_class = pc_time_ruin_cosmogenesis_world
+	}
+}
+
+slot_time_ruin_cosmogenesis_world_01 = {
+	included_zone_sets = {
+		zone_time_ruin_cosmogenesis_world
+	}
+	
+	potential = {
+		is_planet_class = pc_time_ruin_cosmogenesis_world
+	}
+
+	unlock = {
+		is_planet_class = pc_time_ruin_cosmogenesis_world
+	}
+}
+
+slot_time_ruin_cosmogenesis_world_02 = {
+	included_zone_sets = {
+		zone_time_ruin_cosmogenesis_world
+	}
+	
+	potential = {
+		is_planet_class = pc_time_ruin_cosmogenesis_world
+	}
+
+	unlock = {
+		is_planet_class = pc_time_ruin_cosmogenesis_world
+	}
+}
+
+slot_time_ruin_cosmogenesis_world_secondary_1 = {
+	included_zone_sets = {
+		zone_time_ruin_cosmogenesis_world_secondary_1
+	}
+	
+	potential = {
+		is_planet_class = pc_time_ruin_cosmogenesis_world
+	}
+
+	unlock = {
+		is_planet_class = pc_time_ruin_cosmogenesis_world
+	}
+}
+
+slot_time_ruin_cosmogenesis_world_secondary_2 = {
+	included_zone_sets = {
+		zone_time_ruin_cosmogenesis_world_secondary_2
+	}
+	
+	potential = {
+		is_planet_class = pc_time_ruin_cosmogenesis_world
+	}
+
+	unlock = {
+		is_planet_class = pc_time_ruin_cosmogenesis_world
+	}
+}
+
+slot_time_ruin_cosmogenesis_world_secondary_3 = {
+	included_zone_sets = {
+		zone_time_ruin_cosmogenesis_world_secondary_3
+	}
+	
+	potential = {
+		is_planet_class = pc_time_ruin_cosmogenesis_world
+	}
+
+	unlock = {
+		is_planet_class = pc_time_ruin_cosmogenesis_world
+	}
+}

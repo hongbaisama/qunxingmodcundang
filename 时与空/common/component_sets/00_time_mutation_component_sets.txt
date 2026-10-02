@@ -1,0 +1,27 @@
+component_set = {
+	key = "HORROR_MUTATION_BEAM"
+
+	icon = "GFX_ship_part_dimensional_horror_beam"
+	is_space_fauna_component_set = yes
+}
+
+component_set = {
+	key = "HORROR_MUTATION_ACCELERATOR"
+
+	icon = "GFX_ship_part_dimensional_horror_accelerator"
+	is_space_fauna_component_set = yes
+}
+
+component_set = {
+	key = "HORROR_MUTATION_SHIELD"
+
+	icon = "GFX_ship_part_horror_shield"
+	is_space_fauna_component_set = yes
+}
+
+component_set = {
+	key = "HORROR_MUTATION_ARMOR"
+
+	icon = "GFX_ship_part_horror_armor"
+	is_space_fauna_component_set = yes
+}

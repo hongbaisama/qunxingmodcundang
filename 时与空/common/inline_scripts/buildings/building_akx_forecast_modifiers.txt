@@ -1,0 +1,114 @@
+country_modifier = {
+	building_akx_forecast_decay = 1
+	ship_astral_rift_speed_mult = 0.05
+}
+
+# 修正
+triggered_planet_modifier = {
+	planet_structures_cost_mult = @time_tradition_building_modifier_negative_$LEVEL$
+	planet_structures_upkeep_mult = @time_tradition_building_modifier_negative_$LEVEL$
+	mult = value:num_tradition_akx_building_base_value|MODIFIER|building_akx_forecast_decay|
+}
+
+triggered_planet_modifier = {
+	potential = {
+		exists = owner
+		owner = { has_country_flag = choose_horror_focus_b }
+	}
+	planet_jobs_upkeep_mult = @time_tradition_building_modifier_negative_$LEVEL$
+	planet_pops_upkeep_mult = @time_tradition_building_modifier_negative_$LEVEL$
+	mult = value:num_tradition_akx_building_base_value|MODIFIER|building_akx_forecast_decay|
+}
+
+# 岗位（普政）
+triggered_planet_modifier = {
+	potential = {
+		exists = owner
+		owner = { is_gestalt = no }
+	}
+	job_bureaucrat_per_pop = @time_tradition_building_job_$LEVEL$
+	planet_bureaucrats_unity_produces_add = @time_tradition_building_produce_add_$LEVEL$
+	planet_bureaucrats_consumer_goods_upkeep_add = @time_tradition_building_upkeep_add_$LEVEL$
+	mult = value:num_tradition_akx_building_base_value|MODIFIER|building_akx_forecast_decay|
+}
+
+# 岗位（蜂巢）
+triggered_planet_modifier = {
+	potential = {
+		exists = owner
+		owner = { is_hive_empire = yes }
+	}
+	job_coordinator_per_pop = @time_tradition_building_job_$LEVEL$
+	planet_bureaucrats_unity_produces_add = @time_tradition_building_produce_add_$LEVEL$
+	planet_bureaucrats_minerals_upkeep_add = @time_tradition_building_upkeep_hive_add_$LEVEL$
+	mult = value:num_tradition_akx_building_base_value|MODIFIER|building_akx_forecast_decay|
+}
+
+# 岗位（智械）
+triggered_planet_modifier = {
+	potential = {
+		exists = owner
+		owner = { is_machine_empire = yes }
+	}
+	job_coordinator_per_pop = @time_tradition_building_job_$LEVEL$
+	planet_bureaucrats_unity_produces_add = @time_tradition_building_produce_add_$LEVEL$
+	planet_bureaucrats_energy_upkeep_add = @time_tradition_building_upkeep_machine_add_$LEVEL$
+	mult = value:num_tradition_akx_building_base_value|MODIFIER|building_akx_forecast_decay|
+}
+
+# 额外
+triggered_planet_modifier = {
+	potential = {
+		exists = owner
+		owner = {
+			is_gestalt = no
+			has_ascension_perk = ap_horror
+		}
+	}
+	planet_physicists_unity_produces_add = @time_tradition_building_produce_add_$LEVEL$
+	planet_physicists_consumer_goods_upkeep_add = @time_tradition_building_upkeep_add_$LEVEL$
+	planet_biologists_unity_produces_add = @time_tradition_building_produce_add_$LEVEL$
+	planet_biologists_consumer_goods_upkeep_add = @time_tradition_building_upkeep_add_$LEVEL$
+	planet_engineers_unity_produces_add = @time_tradition_building_produce_add_$LEVEL$
+	planet_engineers_consumer_goods_upkeep_add = @time_tradition_building_upkeep_add_$LEVEL$
+	mult = value:num_tradition_akx_building_extra_value|MODIFIER|building_akx_forecast_decay|
+}
+
+triggered_planet_modifier = {
+	potential = {
+		exists = owner
+		owner = {
+			is_hive_empire = yes
+			has_ascension_perk = ap_horror
+		}
+	}
+	planet_physicists_unity_produces_add = @time_tradition_building_produce_add_$LEVEL$
+	planet_physicists_minerals_upkeep_add = @time_tradition_building_upkeep_hive_add_$LEVEL$
+	planet_biologists_unity_produces_add = @time_tradition_building_produce_add_$LEVEL$
+	planet_biologists_minerals_upkeep_add = @time_tradition_building_upkeep_hive_add_$LEVEL$
+	planet_engineers_unity_produces_add = @time_tradition_building_produce_add_$LEVEL$
+	planet_engineers_minerals_upkeep_add = @time_tradition_building_upkeep_hive_add_$LEVEL$
+	mult = value:num_tradition_akx_building_extra_value|MODIFIER|building_akx_forecast_decay|
+}
+
+triggered_planet_modifier = {
+	potential = {
+		exists = owner
+		owner = {
+			is_machine_empire = yes
+			has_ascension_perk = ap_horror
+		}
+	}
+	planet_physicists_unity_produces_add = @time_tradition_building_produce_add_$LEVEL$
+	planet_physicists_energy_upkeep_add = @time_tradition_building_upkeep_machine_add_$LEVEL$
+	planet_biologists_unity_produces_add = @time_tradition_building_produce_add_$LEVEL$
+	planet_biologists_energy_upkeep_add = @time_tradition_building_upkeep_machine_add_$LEVEL$
+	planet_engineers_unity_produces_add = @time_tradition_building_produce_add_$LEVEL$
+	planet_engineers_energy_upkeep_add = @time_tradition_building_upkeep_machine_add_$LEVEL$
+	mult = value:num_tradition_akx_building_extra_value|MODIFIER|building_akx_forecast_decay|
+}
+
+ai_resource_production = {
+	unity = @time_tradition_building_ai_resource_production_$LEVEL$
+	mult = value:num_tradition_akx_building_base_value|MODIFIER|building_akx_forecast_decay|
+}

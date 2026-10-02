@@ -1,0 +1,648 @@
+@base_cost = 300
+@city_cost = 500
+@rural_district_ai_coefficient = 0.75
+
+district_gas_city = {
+	overlay_icon = GFX_district_government
+	base_buildtime = 480
+	exempt_from_ai_planet_specialization = yes
+
+	zone_slots = {
+		slot_city_government
+		slot_city_01
+		slot_city_02
+	}
+
+	show_on_uncolonized = {
+		exists = from
+		from = { is_regular_empire = yes }
+		is_planet_class = pc_gas_colony
+		is_special_colony_type = no
+	}
+
+	potential = {
+		exists = owner
+		owner = {
+			OR = {
+				is_regular_empire = yes
+				AND = {
+					is_country_type = primitive
+					is_hive_empire = no
+				}
+			}
+		}
+		is_planet_class = pc_gas_colony
+		is_special_colony_type = no
+		NAND = {
+			is_capital = yes
+			owner = {
+				has_menace_perk = menp_behemoth_mind_meld
+			}
+		}
+	}
+
+	allow = {
+		is_special_colony_type = no
+	}
+
+	conversion_ratio = 1
+	convert_to = {
+		district_gas_nexus
+		district_gas_hive
+		district_crashed_slaver_ship
+		district_arcology_housing
+		district_rw_city
+		district_city
+		district_nexus
+		district_hive
+		district_prison
+		district_craglands
+		district_mindlink
+		district_crashed_slaver_ship
+		district_resort
+		district_slave
+		district_ark_city
+	}
+
+	resources = {
+		category = planet_districts_cities
+		cost = {
+			minerals = @city_cost
+			volatile_motes = 25
+			rare_crystals = 25
+			exotic_gases = 25
+			trigger = {
+				NOT = { has_modifier = wooden_planet }
+			}
+		}
+		cost = {
+			food = @city_cost
+			volatile_motes = 25
+			rare_crystals = 25
+			exotic_gases = 25
+			trigger = {
+				has_modifier = wooden_planet
+			}
+		}
+		upkeep = {
+			energy = 2
+			trigger = {
+				NOT = { has_modifier = wooden_planet }
+			}
+		}
+		upkeep = {
+			food = 2
+			trigger = {
+				has_modifier = wooden_planet
+			}
+		}
+	}
+
+	inline_script = {
+		script = districts/time_district_city_modifier
+	}
+	
+	inline_script = {
+		script = districts/district_triggered_name_urban
+	}
+	
+	inline_script = {
+		script = districts/ai_urban_district_extra_weighting
+	}
+}
+
+district_gas_hive = {
+	icon = district_gas_city
+	overlay_icon = GFX_district_government
+	base_buildtime = 480
+	exempt_from_ai_planet_specialization = yes
+
+	zone_slots = {
+		slot_city_government
+		slot_city_01
+		slot_city_02
+	}
+
+	show_on_uncolonized = {
+		from = { is_hive_empire = yes }
+		is_planet_class = pc_gas_colony
+	}
+
+	potential = {
+		exists = owner
+		owner = { is_hive_empire = yes }
+		is_planet_class = pc_gas_colony
+		NAND = {
+			is_capital = yes
+			owner = {
+				has_menace_perk = menp_behemoth_mind_meld
+			}
+		}
+	}
+
+	allow = {
+		NOT = { has_modifier = resort_colony }
+	}
+
+	conversion_ratio = 1
+	convert_to = {
+		district_gas_nexus
+		district_gas_city
+		district_crashed_slaver_ship
+		district_arcology_housing
+		district_rw_city
+		district_city
+		district_nexus
+		district_hive
+		district_prison
+		district_craglands
+		district_mindlink
+		district_crashed_slaver_ship
+		district_resort
+		district_slave
+		district_ark_city
+	}
+
+	resources = {
+		category = planet_districts_cities
+		cost = {
+			minerals = @city_cost
+			volatile_motes = 25
+			rare_crystals = 25
+			exotic_gases = 25
+			trigger = {
+				NOT = { has_modifier = wooden_planet }
+			}
+		}
+		cost = {
+			food = @city_cost
+			volatile_motes = 25
+			rare_crystals = 25
+			exotic_gases = 25
+			trigger = {
+				has_modifier = wooden_planet
+			}
+		}
+		upkeep = {
+			energy = 2
+			trigger = {
+				NOT = { has_modifier = wooden_planet }
+			}
+		}
+		upkeep = {
+			food = 2
+			trigger = {
+				has_modifier = wooden_planet
+			}
+		}
+	}
+
+	inline_script = {
+		script = districts/time_district_hive_modifier
+	}
+
+	inline_script = {
+		script = districts/district_triggered_name_hive
+	}
+	
+	inline_script = {
+		script = districts/ai_urban_district_extra_weighting
+	}
+}
+
+district_gas_nexus = {
+	icon = district_gas_city
+	overlay_icon = GFX_district_government
+	base_buildtime = 480
+	exempt_from_ai_planet_specialization = yes
+
+	zone_slots = {
+		slot_city_government
+		slot_city_01
+		slot_city_02
+	}
+
+	show_on_uncolonized = {
+		from = { is_machine_empire = yes }
+		is_planet_class = pc_gas_colony
+	}
+
+	potential = {
+		exists = owner
+		owner = { is_machine_empire = yes }
+		is_planet_class = pc_gas_colony
+		NAND = {
+			is_capital = yes
+			owner = {
+				has_menace_perk = menp_behemoth_mind_meld
+			}
+		}
+	}
+
+	allow = {
+		NOT = { has_modifier = resort_colony }
+	}
+
+	conversion_ratio = 1
+	convert_to = {
+		district_gas_city
+		district_gas_hive
+		district_crashed_slaver_ship
+		district_arcology_housing
+		district_rw_city
+		district_city
+		district_nexus
+		district_hive
+		district_prison
+		district_craglands
+		district_mindlink
+		district_crashed_slaver_ship
+		district_resort
+		district_slave
+		district_ark_city
+	}
+
+	resources = {
+		category = planet_districts_cities
+		cost = {
+			minerals = @city_cost
+			volatile_motes = 25
+			rare_crystals = 25
+			exotic_gases = 25
+			trigger = {
+				NOT = { has_modifier = wooden_planet }
+			}
+		}
+		cost = {
+			food = @city_cost
+			volatile_motes = 25
+			rare_crystals = 25
+			exotic_gases = 25
+			trigger = {
+				has_modifier = wooden_planet
+			}
+		}
+		upkeep = {
+			energy = 2
+			trigger = {
+				NOT = { has_modifier = wooden_planet }
+			}
+		}
+		upkeep = {
+			food = 2
+			trigger = {
+				has_modifier = wooden_planet
+			}
+		}
+	}
+
+	inline_script = {
+		script = districts/time_district_nexus_modifier
+	}
+
+	inline_script = {
+		script = districts/district_triggered_name_machine
+	}
+	
+	inline_script = {
+		script = districts/ai_urban_district_extra_weighting
+	}
+}
+
+district_gas_generator = {
+	icon = district_generator
+	overlay_icon = GFX_district_energy
+	base_buildtime = 240
+	expansion_planner = yes
+	shared_capacity_modifier = district_generator
+	is_uncapped = {
+		is_pc_gas_colony_district_uncapped = yes
+	}
+
+	min_for_deposits_on_planet = 3
+	max_for_deposits_on_planet = 15
+
+	zone_slots = {
+		slot_gas_energy
+	}
+
+	show_on_uncolonized = {
+		is_planet_class = pc_gas_colony
+		NOT = { has_modifier = resort_colony }
+	}
+
+	potential = {
+		is_planet_class = pc_gas_colony
+		NOT = { has_modifier = resort_colony }
+	}
+
+	conversion_ratio = 1
+	convert_to = {
+		district_generator
+		district_photosynthesis_fields
+		district_arcology_urban_1
+		district_nexus_1
+		district_hive_1
+		district_ark_generator
+	}
+
+	resources = {
+		category = planet_districts_generator
+		cost = {
+			minerals = @base_cost
+			volatile_motes = 50
+		}
+		upkeep = {
+			energy = 1
+		}
+	}
+
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { is_gestalt = no }
+		}
+		job_gas_technician_add = @base_rural_district_jobs
+	}
+
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { is_gestalt = yes }
+		}
+		job_gas_technician_drone_add = @base_rural_district_jobs
+	}
+	
+	inline_script = {
+		script = districts/time_district_generator_modifier
+	}
+	
+	inline_script = {
+		script = districts/district_triggered_name_time_mod_generator
+		TYPE = gas
+	}
+
+	prerequisites = {
+		tech_mine_volatile_motes
+	}
+	
+	show_tech_unlock_if = {
+		any_owned_colony = {
+			is_planet_class = pc_gas_colony
+		}
+	}
+
+	ai_weight_coefficient = @rural_district_ai_coefficient
+}
+
+district_gas_mining = {
+	icon = district_mining
+	overlay_icon = GFX_district_minerals
+	base_buildtime = 240
+	expansion_planner = yes
+	shared_capacity_modifier = district_mining
+	is_uncapped = {
+		is_pc_gas_colony_district_uncapped = yes
+	}
+
+	min_for_deposits_on_planet = 1
+	max_for_deposits_on_planet = 15
+
+	zone_slots = {
+		slot_gas_minerals
+	}
+
+	show_on_uncolonized = {
+		is_planet_class = pc_gas_colony
+		NOT = { has_modifier = resort_colony }
+	}
+
+	potential = {
+		is_planet_class = pc_gas_colony
+		NOT = { has_modifier = resort_colony }
+	}
+
+	conversion_ratio = 1
+	convert_to = {
+		district_mining
+		district_hollow_mountains
+		district_arcology_urban_2
+		district_nexus_2
+		district_hive_2
+		district_ark_military
+		district_ark_forever_cruise
+	}
+
+	resources = {
+		category = planet_districts_mining
+		cost = {
+			minerals = @base_cost
+			rare_crystals = 50
+		}
+		upkeep = {
+			energy = 1
+		}
+	}
+
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { is_gestalt = no }
+		}
+		job_gas_miner_add = @base_rural_district_jobs
+	}
+
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { is_gestalt = yes }
+		}
+		job_gas_mining_drone_add = @base_rural_district_jobs
+	}
+	
+	inline_script = {
+		script = districts/time_district_mining_modifier
+	}
+	
+	inline_script = {
+		script = districts/district_triggered_name_time_mod_mining
+		TYPE = gas
+	}
+
+	prerequisites = {
+		tech_mine_rare_crystals
+	}
+	
+	show_tech_unlock_if = {
+		any_owned_colony = {
+			is_planet_class = pc_gas_colony
+		}
+	}
+
+	ai_weight_coefficient = @rural_district_ai_coefficient
+}
+
+district_gas_farming = {
+	icon = district_farming
+	overlay_icon = GFX_district_food
+	base_buildtime = 240
+	expansion_planner = yes
+	shared_capacity_modifier = district_farming
+	is_uncapped = {
+		is_pc_gas_colony_district_uncapped = yes
+	}
+
+	min_for_deposits_on_planet = 3
+	max_for_deposits_on_planet = 15
+
+	zone_slots = {
+		slot_gas_food
+	}
+
+	show_on_uncolonized = {
+		is_planet_class = pc_gas_colony
+		NOT = { has_modifier = resort_colony }
+	}
+
+	potential = {
+		is_planet_class = pc_gas_colony
+		NOT = { has_modifier = resort_colony }
+	}
+
+	conversion_ratio = 1
+	convert_to = {
+		district_farming
+		district_orchard_forests
+		district_arcology_urban_3
+		district_nexus_3
+		district_hive_3
+		district_ark_basic
+	}
+
+	resources = {
+		category = planet_districts_farming
+		cost = {
+			minerals = @base_cost
+			exotic_gases = 50
+			trigger = {
+				NOT = { has_modifier = wooden_planet }
+			}
+		}
+		cost = {
+			food = @base_cost
+			exotic_gases = 50
+			trigger = {
+				has_modifier = wooden_planet
+			}
+		}
+		upkeep = {
+			energy = 1
+		}
+	}
+
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { is_gestalt = no }
+		}
+		job_gas_farmer_add = @base_rural_district_jobs
+	}
+
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { is_gestalt = yes }
+		}
+		job_gas_agri_drone_add = @base_rural_district_jobs
+	}
+	
+	inline_script = {
+		script = districts/time_district_farming_modifier
+	}
+	
+	inline_script = {
+		script = districts/district_triggered_name_time_mod_farming
+		TYPE = gas
+	}
+
+	prerequisites = {
+		tech_mine_exotic_gases
+	}
+	
+	show_tech_unlock_if = {
+		any_owned_colony = {
+			is_planet_class = pc_gas_colony
+		}
+	}
+
+	ai_weight_coefficient = @rural_district_ai_coefficient
+}
+
+district_gas_generator_physics = {
+	icon = district_generator
+	overlay_icon = GFX_district_physics
+	gridbox = district_arcology_research
+
+	zone_slots = {
+		slot_empty
+	}
+
+	show_on_uncolonized = {
+		always = no
+	}
+
+	potential = {
+		always = no
+	}
+
+	inline_script = {
+		script = districts/district_triggered_name_time_mod_generator
+		TYPE = gas
+	}
+}
+
+district_gas_mining_engineering = {
+	icon = district_mining
+	overlay_icon = GFX_district_engineering
+	gridbox = district_arcology_research
+
+	zone_slots = {
+		slot_empty
+	}
+
+	show_on_uncolonized = {
+		always = no
+	}
+
+	potential = {
+		always = no
+	}
+
+	inline_script = {
+		script = districts/district_triggered_name_time_mod_mining
+		TYPE = gas
+	}
+}
+
+district_gas_farming_society = {
+	icon = district_farming
+	overlay_icon = GFX_district_society
+	gridbox = district_arcology_research
+
+	zone_slots = {
+		slot_empty
+	}
+
+	show_on_uncolonized = {
+		always = no
+	}
+
+	potential = {
+		always = no
+	}
+
+	inline_script = {
+		script = districts/district_triggered_name_time_mod_farming
+		TYPE = gas
+	}
+}

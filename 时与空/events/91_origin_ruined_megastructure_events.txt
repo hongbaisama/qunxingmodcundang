@@ -1,0 +1,351 @@
+
+namespace = origin_ruined_megastructure
+
+country_event = {
+	id = origin_ruined_megastructure.1
+	title = origin_ruined_megastructure.name
+	desc = origin_ruined_megastructure.desc
+	picture = GFX_evt_strategic_coordination_center
+	show_sound = event_mystic_reveal
+	location = FROM
+	
+	is_triggered_only = yes
+	
+	trigger = {
+		NOT = { has_country_flag = origin_ruined_megastructure_1_triggered }
+		OR = {
+			has_origin = origin_strategic_coordination_center_1
+			has_origin = origin_strategic_coordination_center_2
+		}
+		From = {
+			has_megastructure_flag = origin_strategic_coordination_center
+			NOT = { has_megastructure_flag = ruined_megastructure_event_triggered }
+		}
+	}
+	
+	immediate = {
+		set_country_flag = origin_ruined_megastructure_1_triggered
+		From = {
+			set_megastructure_flag = ruined_megastructure_event_triggered
+		}
+	}
+	
+	option = {
+		name = origin_ruined_megastructure.a
+		trigger = {
+			OR = {
+				has_origin = origin_strategic_coordination_center_1
+				has_origin = origin_strategic_coordination_center_2
+			}
+		}
+		add_modifier = {
+			modifier = origin_strategic_coordination_center_modifier
+			days = -1
+		}
+		add_research_option = tech_strategic_coordination
+		add_tech_progress = {
+			tech = tech_strategic_coordination
+			progress = 0.50
+		}
+	}
+}
+
+country_event = {
+	id = origin_ruined_megastructure.2
+	title = origin_ruined_megastructure.name
+	desc = origin_ruined_megastructure.desc
+	picture = GFX_evt_spy_orb
+	show_sound = event_mystic_reveal
+	location = FROM
+	
+	is_triggered_only = yes
+	
+	trigger = {
+		NOT = { has_country_flag = origin_ruined_megastructure_2_triggered }
+		OR = {
+			has_origin = origin_spy_orb_1
+			has_origin = origin_spy_orb_2
+		}
+		From = {
+			has_megastructure_flag = origin_spy_orb
+			NOT = { has_megastructure_flag = ruined_megastructure_event_triggered }
+		}
+	}
+	
+	immediate = {
+		set_country_flag = origin_ruined_megastructure_2_triggered
+		From = {
+			set_megastructure_flag = ruined_megastructure_event_triggered
+		}
+	}
+	
+	option = {
+		name = origin_ruined_megastructure.a
+		trigger = {
+			OR = {
+				has_origin = origin_spy_orb_1
+				has_origin = origin_spy_orb_2
+			}
+		}
+		add_modifier = {
+			modifier = origin_spy_orb_modifier
+			days = -1
+		}
+		add_research_option = tech_sentry_array
+		add_tech_progress = {
+			tech = tech_sentry_array
+			progress = 0.50
+		}
+	}
+}
+
+country_event = {
+	id = origin_ruined_megastructure.3
+	title = origin_ruined_megastructure.name
+	desc = origin_ruined_megastructure.desc
+	picture = GFX_evt_megashipyard
+	show_sound = event_mystic_reveal
+	location = FROM
+	
+	is_triggered_only = yes
+	
+	trigger = {
+		NOT = { has_country_flag = origin_ruined_megastructure_3_triggered }
+		OR = {
+			has_origin = origin_mega_shipyard_1
+			has_origin = origin_mega_shipyard_2
+		}
+		From = {
+			has_megastructure_flag = origin_mega_shipyard
+			NOT = { has_megastructure_flag = ruined_megastructure_event_triggered }
+		}
+	}
+	
+	immediate = {
+		set_country_flag = origin_ruined_megastructure_3_triggered
+		From = {
+			set_megastructure_flag = ruined_megastructure_event_triggered
+		}
+	}
+	
+	option = {
+		name = origin_ruined_megastructure.a
+		trigger = {
+			OR = {
+				has_origin = origin_mega_shipyard_1
+				has_origin = origin_mega_shipyard_2
+			}
+		}
+		add_modifier = {
+			modifier = origin_mega_shipyard_modifier
+			days = -1
+		}
+		add_research_option = tech_mega_shipyard
+		add_tech_progress = {
+			tech = tech_mega_shipyard
+			progress = 0.50
+		}
+	}
+}
+
+country_event = {
+	id = origin_ruined_megastructure.4
+	title = origin_ruined_megastructure.name
+	desc = origin_ruined_megastructure.desc
+	picture = GFX_evt_think_tank
+	show_sound = event_mystic_reveal
+	location = FROM
+	
+	is_triggered_only = yes
+	
+	trigger = {
+		NOT = { has_country_flag = origin_ruined_megastructure_4_triggered }
+		OR = {
+			has_origin = origin_think_tank_1
+			has_origin = origin_think_tank_2
+		}
+		From = {
+			has_megastructure_flag = origin_think_tank
+			NOT = { has_megastructure_flag = ruined_megastructure_event_triggered }
+		}
+	}
+	
+	immediate = {
+		set_country_flag = origin_ruined_megastructure_4_triggered
+		From = {
+			set_megastructure_flag = ruined_megastructure_event_triggered
+		}
+	}
+	
+	option = {
+		name = origin_ruined_megastructure.a
+		trigger = {
+			OR = {
+				has_origin = origin_think_tank_1
+				has_origin = origin_think_tank_2
+			}
+		}
+		add_modifier = {
+			modifier = origin_think_tank_modifier
+			days = -1
+		}
+		add_research_option = tech_science_nexus
+		add_tech_progress = {
+			tech = tech_science_nexus
+			progress = 0.50
+		}
+	}
+}
+
+country_event = {
+	id = origin_ruined_megastructure.5
+	title = origin_ruined_megastructure.name
+	desc = origin_ruined_megastructure.desc
+	picture = GFX_evt_interstellar_assembly
+	show_sound = event_mystic_reveal
+	location = FROM
+	
+	is_triggered_only = yes
+	
+	trigger = {
+		NOT = { has_country_flag = origin_ruined_megastructure_5_triggered }
+		OR = {
+			has_origin = origin_interstellar_assembly_1
+			has_origin = origin_interstellar_assembly_2
+		}
+		From = {
+			has_megastructure_flag = origin_interstellar_assembly
+			NOT = { has_megastructure_flag = ruined_megastructure_event_triggered }
+		}
+	}
+	
+	immediate = {
+		set_country_flag = origin_ruined_megastructure_5_triggered
+		From = {
+			set_megastructure_flag = ruined_megastructure_event_triggered
+		}
+	}
+	
+	option = {
+		name = origin_ruined_megastructure.a
+		trigger = {
+			OR = {
+				has_origin = origin_interstellar_assembly_1
+				has_origin = origin_interstellar_assembly_2
+			}
+		}
+		add_modifier = {
+			modifier = origin_interstellar_assembly_modifier
+			days = -1
+		}
+		add_research_option = tech_interstellar_assembly
+		add_tech_progress = {
+			tech = tech_interstellar_assembly
+			progress = 0.50
+		}
+	}
+}
+
+country_event = {
+	id = origin_ruined_megastructure.6
+	title = origin_ruined_megastructure.name
+	desc = origin_ruined_megastructure.desc
+	picture = GFX_evt_mega_art_installation
+	show_sound = event_mystic_reveal
+	location = FROM
+	
+	is_triggered_only = yes
+	
+	trigger = {
+		NOT = { has_country_flag = origin_ruined_megastructure_6_triggered }
+		OR = {
+			has_origin = origin_mega_art_installation_1
+			has_origin = origin_mega_art_installation_2
+		}
+		From = {
+			has_megastructure_flag = origin_mega_art_installation
+			NOT = { has_megastructure_flag = ruined_megastructure_event_triggered }
+		}
+	}
+	
+	immediate = {
+		set_country_flag = origin_ruined_megastructure_6_triggered
+		From = {
+			set_megastructure_flag = ruined_megastructure_event_triggered
+		}
+	}
+	
+	option = {
+		name = origin_ruined_megastructure.a
+		trigger = {
+			OR = {
+				has_origin = origin_mega_art_installation_1
+				has_origin = origin_mega_art_installation_2
+			}
+		}
+		add_modifier = {
+			modifier = origin_mega_art_installation_modifier
+			days = -1
+		}
+		add_research_option = tech_mega_art
+		add_tech_progress = {
+			tech = tech_mega_art
+			progress = 0.50
+		}
+	}
+}
+
+country_event = {
+	id = origin_ruined_megastructure.10
+	is_triggered_only = yes
+	hide_window = yes
+
+	trigger = {
+		From = { has_megastructure_flag = bright_pearl_ring_world_ruined }
+	}
+	
+	immediate = {
+		FromFrom = {
+			every_system_planet = {
+				limit = {
+					OR = {
+						is_planet_class = pc_ringworld_tech
+						is_planet_class = pc_ringworld_seam
+						is_planet_class = pc_ringworld_habitable
+					}
+					is_colony = no
+					is_under_colonization = no
+				}
+				set_name = NAME_origin_bright_pearl_0
+			}
+		}
+	}
+}
+
+country_event = {
+	id = origin_ruined_megastructure.11
+	is_triggered_only = yes
+	hide_window = yes
+
+	trigger = {
+		From = { has_megastructure_flag = bright_pearl_orbital_ring_ruined }
+	}
+	
+	immediate = {
+		FromFrom = {
+			every_system_planet = {
+				limit = {
+					has_carrier_flag = bright_pearl_orbital_ring_planet
+				}
+				orbital_defence = {
+					starbase = {
+						fleet = {
+							set_name = NAME_origin_bright_pearl_10
+							every_owned_ship = { set_name = NAME_origin_bright_pearl_10 }
+						}
+					}
+				}
+			}
+		}
+	}
+}

@@ -1,0 +1,31 @@
+spriteTypes = {
+	spriteType = {
+		name = "GFX_resolution_beyond_infinity_emperor"
+		texturefile = "gfx/interface/icons/resolutions/resolution_beyond_infinity_emperor.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_resolution_beyond_infinity_emperor_repeal"
+		texturefile = "gfx/interface/icons/resolutions/resolution_beyond_infinity_emperor_repeal.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_resolution_beyond_infinity_custodian"
+		texturefile = "gfx/interface/icons/resolutions/resolution_beyond_infinity_custodian.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_resolution_beyond_infinity_custodian_repeal"
+		texturefile = "gfx/interface/icons/resolutions/resolution_beyond_infinity_custodian_repeal.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_resolution_time_keeper_emperor"
+		texturefile = "gfx/interface/icons/resolutions/resolution_time_keeper_emperor.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_resolution_time_keeper_custodian"
+		texturefile = "gfx/interface/icons/resolutions/resolution_time_keeper_custodian.dds"
+	}
+}

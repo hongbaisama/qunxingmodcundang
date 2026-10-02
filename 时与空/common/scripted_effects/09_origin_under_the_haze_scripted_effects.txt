@@ -1,0 +1,57 @@
+# 舰队
+create_under_the_haze_ship_1 = {
+	if = {
+		limit = {
+			root.owner = { country_uses_bio_ships = no }
+		}
+		while = {
+			count = $COUNT$
+			create_ship = {
+				name = NAME_Under_The_Haze_Ship_1
+				design = NAME_Under_The_Haze_Design_1
+				prefix = no
+				upgradable = no
+			}
+		}
+	}
+	else = {
+		while = {
+			count = $COUNT$
+			create_ship = {
+				name = NAME_Under_The_Haze_Ship_1
+				design = NAME_Under_The_Haze_Bio_Design_1
+				prefix = no
+				upgradable = no
+			}
+		}
+	}
+}
+
+# 舰队
+create_under_the_haze_ship_2 = {
+	if = {
+		limit = {
+			root.owner = { country_uses_bio_ships = no }
+		}
+		while = {
+			count = $COUNT$
+			create_ship = {
+				name = NAME_Under_The_Haze_Ship_2
+				design = NAME_Under_The_Haze_Design_2
+				prefix = no
+				upgradable = no
+			}
+		}
+	}
+	else = {
+		while = {
+			count = $COUNT$
+			create_ship = {
+				name = NAME_Under_The_Haze_Ship_2
+				design = NAME_Under_The_Haze_Bio_Design_2
+				prefix = no
+				upgradable = no
+			}
+		}
+	}
+}

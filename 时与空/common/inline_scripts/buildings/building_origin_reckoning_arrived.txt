@@ -1,0 +1,48 @@
+icon = building_$TYPE$
+base_buildtime = @b3_time
+
+category = government
+
+empire_limit = {
+	base = 1
+}
+
+potential = {
+	exists = owner
+	owner = {
+		has_origin = origin_reckoning_arrived
+		has_country_flag = unlock_tech_reckoning_arrived_$TYPE$
+	}
+	is_special_colony_type = no
+}
+
+allow = {
+	has_major_upgraded_capital = yes
+}
+
+resources = {
+	category = planet_buildings
+	inline_script = {
+		script = buildings/nomadic_cost_switcher
+		REGULAR_RESOURCE = minerals
+		NOMADIC_RESOURCE = alloys
+		COST = @b3_minerals
+		NOMADIC_COST_MULT = @nomadic_minerals_to_strategic_ratio
+	}
+	cost = {
+		sr_zro = @b2_rare_cost
+	}
+	upkeep = {
+		energy = @b3_upkeep
+		sr_zro = @b2_rare_upkeep
+	}
+}
+
+inline_script = {
+	script = jobs/telepaths_add
+	AMOUNT = 100
+}
+
+custom_tooltip = building_reckoning_arrived_sanctum_effect
+
+prerequisites = { tech_reckoning_arrived_$TYPE$ }

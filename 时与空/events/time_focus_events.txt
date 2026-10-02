@@ -1,0 +1,448 @@
+namespace = time_focus
+
+ship_event = {
+	id = time_focus.1
+	is_triggered_only = yes
+	hide_window = yes
+	
+	trigger = {
+		if = {
+			limit = {
+				From = { is_time_black_hole_planet_class = yes }
+			}
+			exists = owner
+			owner = {
+				NOT = { has_country_flag = horror_focus_1_finished }
+			}
+		}
+		else = {
+			always = no
+		}
+	}
+	
+	immediate = {
+		owner = {
+			set_country_flag = horror_focus_1_finished
+		}
+	}
+}
+
+ship_event = {
+	id = time_focus.2
+	hide_window = yes
+	is_triggered_only = yes
+
+	trigger = {
+		if = {
+			limit = {
+				From = { is_time_black_hole_star_class = yes }
+			}
+			FromFrom = {
+				is_default_or_player = yes
+			}
+		}
+		else = {
+			always = no
+		}
+	}
+	
+	immediate = {
+		FromFrom = {
+			change_variable = {
+				which = horror_focus_2_finished
+				value = 1
+			}
+		}
+	}
+}
+
+fleet_event = {
+	id = time_focus.3
+	hide_window = yes
+	is_triggered_only = yes
+
+	trigger = {
+		if = {
+			limit = {
+				exists = owner
+				owner = {
+					is_default_or_player = yes
+					NOT = { has_country_flag = time_focus_3_triggered }
+				}
+			}
+			From = {
+				OR = {
+					# 存在位面之魇
+					any_fleet_in_system = {
+						is_dimensional_horror_ship_size_with_voidworms = yes
+					}
+					# 位面之魇野怪星系（进入星系后才生成位面之魇）
+					AND = {
+						has_star_flag = guardians_horror_system
+						NOT = { has_star_flag = guardians_horror_slain }
+					}
+				}
+			}
+		}
+		else = {
+			always = no
+		}
+	}
+	
+	immediate = {
+		owner = {
+			set_country_flag = time_focus_3_triggered
+			if = {
+				limit = {
+					NOT = { has_country_flag = horror_focus_3_finished }
+				}
+				set_country_flag = horror_focus_3_finished
+			}
+		}
+		create_timeline_first_meet_dimensional_horror = yes
+	}
+}
+
+country_event = {
+	id = time_focus.10
+	title = time_focus.10.name
+	desc = {
+		text = time_focus.10.desc.1
+		trigger = {
+			NOT = { has_tradition = tr_horror_adopt }
+		}
+	}
+	desc = {
+		text = time_focus.10.desc.2
+		trigger = {
+			has_tradition = tr_horror_adopt
+		}
+	}
+	picture = GFX_evt_dimensional_horror
+	show_sound = event_activating_unknown_technology
+	
+	is_triggered_only = yes
+
+	trigger = {
+	}
+
+	immediate = {
+	}
+
+	option = {
+		name = time_focus.10.a
+		trigger = {
+			OR = {
+				is_materialist = yes # 显示思潮图标
+				always = yes
+			}
+		}
+		allow = {
+			is_spiritualist = no
+		}
+		set_country_flag = choose_horror_focus_a
+		set_country_flag = unlock_tech_horror_3_a_1
+		custom_tooltip = time_focus.10.tooltip
+		add_research_option = tech_horror_3_a_1
+	}
+
+	option = {
+		name = time_focus.10.b
+		trigger = {
+			OR = {
+				is_spiritualist = yes # 显示思潮图标
+				always = yes
+			}
+		}
+		allow = {
+			is_materialist = no
+		}
+		set_country_flag = choose_horror_focus_b
+		set_country_flag = unlock_tech_horror_3_b_1
+		custom_tooltip = time_focus.10.tooltip
+		add_research_option = tech_horror_3_b_1
+	}
+}
+
+ship_event = {
+	id = time_focus.15
+	hide_window = yes
+	is_triggered_only = yes
+
+	trigger = {
+		if = {
+			limit = {
+				owner = {
+					is_default_or_player = yes
+					has_technology = tech_horror_beam
+					NOT = { has_country_flag = horror_focus_15_finished }
+				}
+			}
+			if = {
+				limit = {
+					is_ship_category = voidworm
+				}
+				OR = {
+					has_component = HORROR_MUTATION_BEAM_SMALL
+					has_component = HORROR_MUTATION_BEAM_MEDIUM
+					has_component = HORROR_MUTATION_BEAM_LARGE
+					has_component = HORROR_MUTATION_BEAM_EXTRA_LARGE
+					has_component = HORROR_MUTATION_ACCELERATOR_SMALL
+					has_component = HORROR_MUTATION_ACCELERATOR_MEDIUM
+					has_component = HORROR_MUTATION_ACCELERATOR_LARGE
+					has_component = HORROR_MUTATION_ACCELERATOR_EXTRA_LARGE
+				}
+			}
+			else_if = {
+				limit = {
+					OR = {
+						is_ship_class = shipclass_military
+						is_ship_class = shipclass_starbase
+					}
+				}
+				if = {
+					limit = {
+						owner = { country_uses_bio_ships = yes }
+					}
+					OR = {
+						has_component = BIO_HORROR_BEAM
+						has_component = BIO_HORROR_ACCELERATOR
+						has_component = BIO_TIME_BEAM
+						has_component = BIO_TIME_ACCELERATOR
+						has_component = BIO_END_BEAM
+						has_component = BIO_END_ACCELERATOR
+						has_component = BIO_HOPE_BEAM
+						has_component = BIO_HOPE_ACCELERATOR
+						has_component = DIMENSIONAL_HORROR_STRIKE_CRAFT_ENERGY
+						has_component = DIMENSIONAL_HORROR_STRIKE_CRAFT_KINETIC
+					}
+				}
+				else = {
+					OR = {
+						has_component = HORROR_BEAM
+						has_component = HORROR_ACCELERATOR
+						has_component = TIME_BEAM
+						has_component = TIME_ACCELERATOR
+						has_component = END_BEAM
+						has_component = END_ACCELERATOR
+						has_component = HOPE_BEAM
+						has_component = HOPE_ACCELERATOR
+						has_component = DIMENSIONAL_HORROR_STRIKE_CRAFT_ENERGY
+						has_component = DIMENSIONAL_HORROR_STRIKE_CRAFT_KINETIC
+					}
+				}
+			}
+			else = {
+				always = no
+			}
+		}
+		else = {
+			always = no
+		}
+	}
+	
+	immediate = {
+		owner = {
+			set_country_flag = horror_focus_15_finished
+		}
+	}
+}
+
+country_event = {
+	id = time_focus.16
+	hide_window = yes
+	is_triggered_only = yes
+
+	trigger = {
+		FromFrom = { is_dimensional_horror_ship_size = yes }
+	}
+	
+	immediate = {
+		From = {
+			set_country_flag = horror_focus_16_finished
+		}
+	}
+}
+
+country_event = {
+	id = time_focus.24
+	hide_window = yes
+	is_triggered_only = yes
+
+	trigger = {
+		if = {
+			limit = {
+				NOT = { has_country_flag = horror_focus_24_finished }
+			}
+			From = {
+				if = {
+					limit = {
+						is_same_species = root.owner_main_species
+					}
+					has_tech_time_trait = yes
+				}
+				else = {
+					always = no
+				}
+			}
+		}
+		else = {
+			always = no
+		}
+	}
+	
+	immediate = {
+		set_country_flag = horror_focus_24_finished
+	}
+}
+
+# 特殊起源星球建设区划完成原版任务
+carrier_event = {
+	id = time_focus.100
+	hide_window = yes
+	is_triggered_only = yes
+	
+	trigger = {
+		if = {
+			limit = {
+				OR = {
+					is_origin_time_planet_class = yes
+					is_time_mod_normal_origin_planet = yes
+					is_planet_class = pc_time_ruin_cosmogenesis_world
+				}
+			}
+			owner = {
+				if = {
+					limit = {
+						is_gestalt = no
+					}
+					NAND = {
+						has_country_flag = built_city_district
+						has_country_flag = built_generator_district
+						has_country_flag = built_mining_district
+						has_country_flag = built_farming_district
+					}
+				}
+				else_if = {
+					limit = {
+						is_machine_empire = yes
+					}
+					NAND = {
+						has_country_flag = built_nexus_district
+						has_country_flag = built_generator_district
+						has_country_flag = built_mining_district
+						has_country_flag = built_farming_district
+					}
+				}
+				else_if = {
+					limit = {
+						is_hive_empire = yes
+					}
+					NAND = {
+						has_country_flag = built_hive_district
+						has_country_flag = built_generator_district
+						has_country_flag = built_mining_district
+						has_country_flag = built_farming_district
+					}
+				}
+			}
+		}
+		else = {
+			always = no
+		}
+	}
+	
+	immediate = {
+		owner = {
+			if = {
+				limit = {
+					NOT = { has_country_flag = built_city_district }
+					prev = {
+						OR = {
+							last_district_changed = district_time
+							last_district_changed = district_gas_city
+							last_district_changed = district_psionic_city
+							last_district_changed = district_nanites_city
+							last_district_changed = district_time_ruin_cosmogenesis_world_main
+						}
+					}
+				}
+				set_country_flag = built_city_district
+			}
+			if = {
+				limit = {
+					NOT = { has_country_flag = built_hive_district }
+					prev = {
+						OR = {
+							last_district_changed = district_time
+							last_district_changed = district_gas_hive
+							last_district_changed = district_psionic_hive
+							last_district_changed = district_nanites_hive
+							last_district_changed = district_time_ruin_cosmogenesis_world_main
+						}
+					}
+				}
+				set_country_flag = built_hive_district
+			}
+			if = {
+				limit = {
+					NOT = { has_country_flag = built_nexus_district }
+					prev = {
+						OR = {
+							last_district_changed = district_time
+							last_district_changed = district_gas_nexus
+							last_district_changed = district_psionic_nexus
+							last_district_changed = district_nanites_nexus
+							last_district_changed = district_time_ruin_cosmogenesis_world_main
+						}
+					}
+				}
+				set_country_flag = built_nexus_district
+			}
+			if = {
+				limit = {
+					NOT = { has_country_flag = built_generator_district }
+					prev = {
+						OR = {
+							last_district_changed = district_time_physics
+							last_district_changed = district_gas_generator
+							last_district_changed = district_psionic_generator
+							last_district_changed = district_nanites_generator
+							last_district_changed = district_time_ruin_cosmogenesis_world_secondary_1
+						}
+					}
+				}
+				set_country_flag = built_generator_district
+			}
+			if = {
+				limit = {
+					NOT = { has_country_flag = built_mining_district }
+					prev = {
+						OR = {
+							last_district_changed = district_time_engineering
+							last_district_changed = district_gas_mining
+							last_district_changed = district_psionic_mining
+							last_district_changed = district_nanites_mining
+							last_district_changed = district_time_ruin_cosmogenesis_world_secondary_2
+						}
+					}
+				}
+				set_country_flag = built_mining_district
+			}
+			if = {
+				limit = {
+					NOT = { has_country_flag = built_farming_district }
+					prev = {
+						OR = {
+							last_district_changed = district_time_society
+							last_district_changed = district_gas_farming
+							last_district_changed = district_psionic_farming
+							last_district_changed = district_time_ruin_cosmogenesis_world_secondary_3
+						}
+					}
+				}
+				set_country_flag = built_farming_district
+			}
+		}
+	}
+}

@@ -1,0 +1,22 @@
+tradition_hope = {
+	tree_template = "tree_21_11"
+	adoption_bonus = "tr_hope_adopt"
+	finish_bonus = "tr_hope_finish"
+	traditions = {
+		"tr_hope_1"
+		"tr_hope_2"
+		"tr_hope_3"
+		"tr_hope_4"
+		"tr_hope_5"
+	}
+
+	potential = {
+		is_ai = no
+		has_country_flag = unlock_tradition_hope
+		NOT = { has_tradition = tr_end_adopt }
+	}
+
+	ai_weight = {
+		factor = 0
+	}
+}

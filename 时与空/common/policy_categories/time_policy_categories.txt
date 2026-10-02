@@ -1,0 +1,2 @@
+origin_time = { icon = "col_time_capital" }
+akx = { icon = "time_black_hole" }

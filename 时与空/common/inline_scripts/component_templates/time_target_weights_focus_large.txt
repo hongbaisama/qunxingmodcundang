@@ -1,0 +1,21 @@
+target_weights = {
+	star_eater = 5
+	juggernaut = 4
+	colossus = 4
+	titan = 3
+	cosmo_crisis_titan = 3
+	massive_ship_fallen_empire = 3
+	bio_titan = 3
+	battleship = 2
+	offspring_battleship = 2
+	ember_battleship = 2
+	cosmo_crisis_battlecruiser = 2
+	large_ship_fallen_empire = 2
+	stinger_stage_1 = 2
+	stinger_stage_2 = 2
+	stinger_stage_3 = 2
+	offspring_stinger_stage_1 = 2
+	offspring_stinger_stage_2 = 2
+	offspring_stinger_stage_3 = 2
+	large_fallen_stinger = 2
+}

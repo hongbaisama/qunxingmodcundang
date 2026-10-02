@@ -1,0 +1,45 @@
+beyond_infinity_seal = {
+	category = akx
+	potential = {
+		has_event_chain = beyond_infinity_seal_chain
+	}
+	
+	allow = {
+	}
+	
+	option = {
+		name = beyond_infinity_seal_for_affected
+		
+		valid = {
+		}
+
+		policy_flags = {
+			beyond_infinity_seal_for_affected
+		}
+		
+		on_enabled = {
+		}
+		
+		AI_weight = {
+			factor = 0
+		}
+	}
+	
+	option = {
+		name = beyond_infinity_seal_for_erasured
+		
+		valid = {
+		}
+
+		policy_flags = {
+			beyond_infinity_seal_for_erasured
+		}
+		
+		on_enabled = {
+		}
+		
+		AI_weight = {
+			factor = 1
+		}
+	}
+}

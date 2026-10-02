@@ -1,0 +1,65 @@
+empire_limit = {
+	base = 1
+	modifier = {
+		mult = value:fallen_empire_building_cap_value_0|BUILDING|$BUILDING$|FLAG|$FLAG$|
+		exists = owner
+		owner = {
+			NOR = {
+				is_fallen_empire = yes
+				has_technology = $TECH$
+			}
+		}
+	}
+	modifier = {
+		mult = -1
+		exists = owner
+		owner = {
+			OR = {
+				is_fallen_empire = yes
+				has_technology = $TECH$
+			}
+		}
+	}
+}
+
+planet_limit = {
+	base = 1
+	modifier = {
+		mult = value:fallen_empire_building_cap_value_0|BUILDING|$BUILDING$|FLAG|$FLAG$|
+		exists = owner
+		owner = {
+			NOR = {
+				is_fallen_empire = yes
+				has_technology = $TECH$
+			}
+		}
+	}
+	modifier = {
+		mult = value:fallen_empire_building_cap_value_1
+		exists = owner
+		owner = {
+			OR = {
+				is_fallen_empire = yes
+				has_technology = $TECH$
+			}
+		}
+		check_variable_arithmetic = {
+			which = @$BUILDING$_type
+			value = 1
+		}
+	}
+	modifier = {
+		mult = value:fallen_empire_building_cap_value_2
+		exists = owner
+		owner = {
+			OR = {
+				is_fallen_empire = yes
+				has_technology = $TECH$
+			}
+		}
+		check_variable_arithmetic = {
+			which = @$BUILDING$_type
+			value = 2
+		}
+	}
+}

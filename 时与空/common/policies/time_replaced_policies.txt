@@ -1,0 +1,277 @@
+artificial_intelligence_policy = {
+	category = society
+	potential = {
+		NOT = { has_ethic = ethic_gestalt_consciousness }
+		OR = {
+			has_origin = origin_adeptus_mechanicus # 时与空新增
+			has_origin = origin_synthetic_fertility
+			can_set_ai_policy = yes
+			has_country_flag = synthetic_empire
+			is_individual_machine = yes
+		}
+	}
+
+	option = {
+		name = "ai_outlawed"
+
+		potential = {
+			is_individual_machine = no
+		}
+		valid = {
+			NOR = {
+				is_materialist = yes
+				has_origin = origin_adeptus_mechanicus # 时与空新增
+				has_origin = origin_synthetic_fertility
+				custom_tooltip = {
+					success_text = is_a_synthetic_empire
+					has_country_flag = synthetic_empire
+				}
+				is_individual_machine = yes
+			}
+		}
+
+		policy_flags = {
+			ai_outlawed
+		}
+
+		in_breach_of = {
+			{
+				key = resolution_galacticstudies_advanced_xenostudies
+			}
+			{
+				key = resolution_galacticstudies_ethical_guideline_refactoring
+			}
+			{
+				key = resolution_galacticstudies_extradimensional_experimentation
+			}
+		}
+
+		AI_weight = {
+			modifier = {
+				factor = 0
+				is_materialist = yes
+			}
+			modifier = {
+				factor = 5
+				is_spiritualist = yes
+				NOT = { has_origin = origin_cybernetic_creed }
+			}
+			modifier = {
+				factor = 0.1
+				has_valid_ai_personality = yes
+				is_ai = yes
+				is_galactic_community_member = yes
+				OR = {
+					is_active_resolution = "resolution_galacticstudies_advanced_xenostudies"
+					is_active_resolution = "resolution_galacticstudies_ethical_guideline_refactoring"
+					is_active_resolution = "resolution_galacticstudies_extradimensional_experimentation"
+				}
+			}
+		}
+	}
+
+	option = {
+		name = "ai_servitude"
+
+		potential = {
+			is_individual_machine = no
+		}
+
+		valid = {
+			NOR = {
+				has_origin = origin_adeptus_mechanicus # 时与空新增
+				has_origin = origin_synthetic_fertility
+			}
+			custom_tooltip = {
+				fail_text = is_a_synthetic_empire_fail
+				NOT = { has_country_flag = synthetic_empire }
+			}
+			is_individual_machine = no
+		}
+
+		policy_flags = {
+			ai_servitude
+		}
+
+		AI_weight = {
+			modifier = {
+				factor = 5
+				has_valid_ai_personality = yes
+				has_ai_personality_behaviour = robot_exploiter
+			}
+			modifier = {
+				factor = 2
+				has_valid_ai_personality = yes
+				has_ai_personality_behaviour = robot_liberator
+			}
+			modifier = {
+				factor = 0
+				is_spiritualist = yes
+				NOT = { has_origin = origin_cybernetic_creed }
+				NOT = {
+					has_valid_ai_personality = yes
+					is_ai = yes
+					is_galactic_community_member = yes
+					OR = {
+						is_active_resolution = "resolution_galacticstudies_advanced_xenostudies"
+						is_active_resolution = "resolution_galacticstudies_ethical_guideline_refactoring"
+						is_active_resolution = "resolution_galacticstudies_extradimensional_experimentation"
+					}
+				}
+			}
+		}
+	}
+
+	option = {
+		name = "ai_full_rights"
+
+		valid = {
+			if = {
+				limit = {
+					NOT = { has_origin = origin_adeptus_mechanicus } # 时与空新增
+				}
+				OR = {
+					custom_tooltip = {
+						fail_text = is_a_synthetic_empire
+						has_country_flag = synthetic_empire
+					}
+					if = {
+						limit = {
+							NOT = { has_origin = origin_cybernetic_creed }
+						}
+						is_spiritualist = no
+					}
+					is_individual_machine = yes
+				}
+				NOT = { has_policy_flag = robots_outlawed }
+			}
+		}
+
+		policy_flags = {
+			ai_full_rights
+		}
+
+		in_breach_of = {
+			{
+				key = resolution_divinity_a_defined_purpose
+			}
+		}
+
+		modifier = {}
+
+		AI_weight = {
+			modifier = {
+				factor = 0.5
+				is_materialist = no
+				NOR = {
+					is_synthetic_empire = yes
+					has_technology = tech_synthetic_workers
+				}
+			}
+			modifier = {
+				factor = 5
+				has_valid_ai_personality = yes
+				has_ai_personality_behaviour = robot_liberator
+			}
+			modifier = {
+				factor = 0
+				is_spiritualist = yes
+				NOT = { has_origin = origin_cybernetic_creed }
+				NOT = { has_origin = origin_adeptus_mechanicus } # 时与空新增
+			}
+		}
+	}
+}
+
+robot_pop_policy = {
+	category = society
+	potential = {
+		OR = {
+			NOR = {
+				has_ethic = ethic_gestalt_consciousness
+				is_individual_machine = yes
+			}
+			has_origin = origin_nomadic_purger
+		}
+	}
+
+	option = {
+		name = "robot_pops_outlawed"
+
+		valid = {
+			OR = {
+				has_origin = origin_nomadic_purger
+				AND = {
+					is_materialist = no
+					NOR = {
+						has_origin = origin_adeptus_mechanicus # 时与空新增
+						has_origin = origin_synthetic_fertility
+						has_policy_flag = ai_full_rights
+					}
+					is_individual_machine = no
+				}
+			}
+		}
+
+		policy_flags = {
+			robots_outlawed
+		}
+
+		on_enabled = {
+			hidden_effect = {
+				every_owned_species = {
+					limit = { is_robotic_species = yes }
+					set_citizenship_type = {
+						type = citizenship_purge
+						country = root
+					}
+				}
+			}
+		}
+
+		AI_weight = {
+			factor = 1
+			modifier = {
+				factor = 10
+				has_valid_ai_personality = yes
+				NOR = {
+					has_ai_personality_behaviour = robot_exploiter
+					has_ai_personality_behaviour = robot_liberator
+				}
+			}
+			modifier = {
+				factor = 10
+				has_ethic = "ethic_fanatic_spiritualist"
+			}
+		}
+	}
+
+	option = {
+		name = "robot_pops_allowed"
+
+		potential = {
+			NOT = { has_origin = origin_nomadic_purger }
+		}
+
+		policy_flags = {
+			robots_allowed
+		}
+
+		on_enabled = {
+			hidden_effect = {
+				country_event = {
+					id = action.56 # Failsafe if you don't have a robot species to assemble.
+				}
+			}
+		}
+
+		AI_weight = {
+			factor = 2
+			modifier = {
+				factor = 0
+				has_ethic = "ethic_fanatic_spiritualist"
+				NOT = { has_origin = origin_adeptus_mechanicus } # 时与空新增
+			}
+		}
+	}
+}

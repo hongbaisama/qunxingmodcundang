@@ -1,0 +1,361 @@
+agenda_tradition_horror = {
+	agenda_cost = value:agenda_tradition_horror_time_cost|BASE|13000|MIN|1300|
+	allow = {
+		has_tradition = tr_horror_finish
+	}
+	potential = {
+		has_tradition = tr_horror_adopt
+		NOT = { has_tradition = tr_time_finish }
+	}
+	modifier = {
+		country_produces_mult = 0.05
+		country_cost_mult = -0.025
+		country_upkeep_mult = -0.025
+	}
+	finish_modifier = agenda_tradition_horror_finish
+	effect = {
+	}
+}
+
+agenda_tradition_time = {
+	agenda_cost = value:agenda_tradition_horror_time_cost|BASE|13000|MIN|1300|
+	allow = {
+		has_tradition = tr_time_finish
+	}
+	potential = {
+		has_tradition = tr_time_adopt
+		NOR = {
+			has_tradition = tr_end_finish
+			has_tradition = tr_hope_finish
+		}
+	}
+	modifier = {
+		country_produces_mult = 0.1
+		country_cost_mult = -0.05
+		country_upkeep_mult = -0.05
+	}
+	finish_modifier = agenda_tradition_time_finish
+	effect = {
+		hidden_effect = {
+			remove_modifier = agenda_tradition_horror_finish
+		}
+	}
+}
+
+agenda_tradition_end = {
+	agenda_cost = value:agenda_tradition_horror_time_cost|BASE|13000|MIN|1300|
+	allow = {
+		has_tradition = tr_end_finish
+	}
+	potential = {
+		has_tradition = tr_end_adopt
+	}
+	modifier = {
+		country_produces_mult = 0.2
+		country_cost_mult = -0.1
+		country_upkeep_mult = -0.1
+	}
+	finish_modifier = agenda_tradition_end_finish
+	effect = {
+		hidden_effect = {
+			remove_modifier = agenda_tradition_horror_finish
+			remove_modifier = agenda_tradition_time_finish
+		}
+	}
+}
+
+agenda_tradition_hope = {
+	agenda_cost = value:agenda_tradition_horror_time_cost|BASE|13000|MIN|1300|
+	allow = {
+		has_tradition = tr_hope_finish
+	}
+	potential = {
+		has_tradition = tr_hope_adopt
+	}
+	modifier = {
+		planet_stability_mult = 0.1
+		country_produces_mult = 0.1
+		country_cost_mult = -0.05
+		country_upkeep_mult = -0.05
+	}
+	finish_modifier = agenda_tradition_hope_finish
+	effect = {
+		hidden_effect = {
+			remove_modifier = agenda_tradition_horror_finish
+			remove_modifier = agenda_tradition_time_finish
+		}
+	}
+}
+
+agenda_tradition_origin_time = {
+	agenda_cost = 7000
+	allow = {
+		has_tradition = tr_origin_time_adopt
+	}
+	potential = {
+		has_origin_time = yes
+		any_owned_colony = {
+			has_carrier_flag = time_home_planet_of@root
+			OR = {
+				has_deposit = d_time
+				has_deposit = d_endless_time
+			}
+		}
+	}
+	modifier = {
+		time_researcher_produces_mult = 0.1
+		district_time_usage_cap_mult = 0.1
+		col_time_mult = 0.1
+	}
+	finish_modifier = agenda_tradition_origin_time_finish
+	effect = {
+	}
+}
+
+agenda_tradition_origin_tao_of_ninghe = {
+	agenda_cost = 7000
+	allow = {
+		has_tradition = tr_origin_tao_of_ninghe_adopt
+	}
+	potential = {
+		has_origin = origin_tao_of_ninghe
+	}
+	modifier = {
+		yin_mult_modifier = -0.1
+		yang_mult_modifier = -0.1
+	}
+	finish_modifier = agenda_tradition_origin_tao_of_ninghe_finish
+	effect = {
+	}
+}
+
+agenda_tradition_origin_reassembler = {
+	agenda_cost = 7000
+	allow = {
+		has_tradition = tr_origin_reassembler_adopt
+	}
+	potential = {
+		has_origin = origin_reassembler
+	}
+	modifier = {
+		reassembler_bonus_workforce_mult = 0.05
+	}
+	finish_modifier = agenda_tradition_origin_reassembler_finish
+	effect = {
+	}
+}
+
+agenda_tradition_origin_pure_brain = {
+	agenda_cost = 7000
+	allow = {
+		has_tradition = tr_origin_pure_brain_adopt
+	}
+	potential = {
+		OR = {
+			has_origin = origin_pure_brain
+			has_origin = origin_pure_brain_true
+		}
+	}
+	modifier = {
+		planet_stability_add = 2.5
+	}
+	finish_modifier = agenda_tradition_origin_pure_brain_finish
+	effect = {
+		custom_tooltip = council_agenda_agenda_gestalt_purge_traits_effect_desc
+		every_owned_leader = {
+			if = {
+				# Remove Exp per Trait being removed.
+				limit = {
+					is_councilor = yes
+					num_leader_traits = {
+						value > 0
+						negative = yes						# Tiers don't matter in this check.
+					}
+				}
+				hidden_effect = {
+					add_experience = value:purge_traits_exp_change_total					# -300 per trait, not counting tiers.
+					# Restore pending traits and tiers, so they'll come back eventually. But a 10% chance to reduce their numbers.
+					change_variable = {
+						which = leader_pending_negative_traits_unmodified
+						value = value:leader_num_negative_leader_trait_tiers
+					}
+					random = {
+						chance = 10
+						subtract_variable = {
+							which = leader_pending_negative_traits_unmodified
+							value = 1
+						}
+					}
+				}
+				remove_trait = all_negative
+			}
+		}
+	}
+}
+
+agenda_time_soul = {
+	agenda_cost = value:agenda_tradition_horror_time_cost|BASE|10000|MIN|1000|
+
+	potential = {
+		has_ascension_perk = ap_origin_time
+		has_origin_time_ruler = yes
+		NOT = { has_country_flag = agenda_time_soul_finished }
+	}
+
+	allow = {
+		custom_tooltip = {
+			fail_text = "agenda_time_soul_requires_trait_time"
+			owner_main_species = {
+				has_trait = trait_time
+			}
+		}
+		if = {
+			limit = {
+				has_tradition = tr_synthetics_finish
+			}
+			if = {
+				limit = {
+					has_country_flag = synth_virtual
+				}
+				custom_tooltip = {
+					fail_text = "agenda_time_soul_requires_virtual_species"
+					owner_main_species = {
+						has_virtual_species_trait = yes
+					}
+				}
+			}
+			else = {
+				custom_tooltip = {
+					fail_text = "agenda_time_soul_requires_robotic_species"
+					owner_main_species = {
+						is_robotic = yes
+					}
+				}
+			}
+		}
+		else = {
+			custom_tooltip = {
+				fail_text = "agenda_time_soul_requires_organic_species"
+				owner_main_species = {
+					is_robotic = no
+				}
+			}
+		}
+		if = {
+			limit = {
+				is_auth_time_democratic = yes
+			}
+			event_target:origin_time_ruler = { is_councilor = yes }
+		}
+		else = {
+			event_target:origin_time_ruler = { is_ruler = yes }
+		}
+	}
+
+	effect = {
+		switch = {
+			trigger = has_tradition
+			tr_synthetics_finish = {
+				switch = {
+					trigger = has_country_flag
+					synth_virtual = {
+						custom_tooltip = council_agenda_agenda_time_soul_effect_virtuality
+					}
+					synth_physical = {
+						custom_tooltip = council_agenda_agenda_time_soul_effect_synthetic
+					}
+					default = {
+						custom_tooltip = council_agenda_agenda_time_soul_effect_synthetic
+					}
+				}
+			}
+			tr_cybernetics_finish = {
+				custom_tooltip = council_agenda_agenda_time_soul_effect_cybernetic
+			}
+			tr_psionics_finish = {
+				custom_tooltip = council_agenda_agenda_time_soul_effect_psionic
+			}
+			tr_psionics_shroud_finish = {
+				custom_tooltip = council_agenda_agenda_time_soul_effect_psionic
+			}
+			default = {
+				if = {
+					limit = {
+						OR = {
+							has_tradition = tr_genetics_finish
+							has_tradition = tr_purity_finish
+							has_tradition = tr_cloning_finish
+							has_tradition = tr_mutation_finish
+						}
+					}
+					custom_tooltip = council_agenda_agenda_time_soul_effect_genetic
+				}
+			}
+		}
+		hidden_effect = {
+			set_country_flag = agenda_time_soul_finished
+			create_timeline_agenda_time_soul = yes
+			switch = {
+				trigger = has_tradition
+				tr_synthetics_finish = {
+					switch = {
+						trigger = has_country_flag
+						synth_virtual = {
+							agenda_time_soul_effect = {
+								TYPE = virtuality
+								ROBOTIC = yes
+							}
+						}
+						synth_physical = {
+							agenda_time_soul_effect = {
+								TYPE = synthetic
+								ROBOTIC = yes
+							}
+						}
+						default = {
+							agenda_time_soul_effect = {
+								TYPE = synthetic
+								ROBOTIC = yes
+							}
+						}
+					}
+				}
+				tr_cybernetics_finish = {
+					agenda_time_soul_effect = {
+						TYPE = cybernetic
+						ROBOTIC = no
+					}
+				}
+				tr_psionics_finish = {
+					agenda_time_soul_effect = {
+						TYPE = psionic
+						ROBOTIC = no
+					}
+				}
+				tr_psionics_shroud_finish = {
+					agenda_time_soul_effect = {
+						TYPE = psionic
+						ROBOTIC = no
+					}
+				}
+				default = {
+					if = {
+						limit = {
+							OR = {
+								has_tradition = tr_genetics_finish
+								has_tradition = tr_purity_finish
+								has_tradition = tr_cloning_finish
+								has_tradition = tr_mutation_finish
+							}
+						}
+						agenda_time_soul_effect = {
+							TYPE = genetic
+							ROBOTIC = no
+						}
+					}
+				}
+			}
+			time_change_leader_species_for_country = yes
+		}
+	}
+}

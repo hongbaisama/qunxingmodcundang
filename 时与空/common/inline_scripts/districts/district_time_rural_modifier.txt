@@ -1,0 +1,29 @@
+# 通用
+planet_modifier = {
+	building_time_mult = -0.01
+}
+
+triggered_planet_modifier = {
+	planet_housing_add = @district_time_rural_base_housing
+	mult = value:district_time_level_value
+}
+
+# 普政
+triggered_planet_modifier = {
+	potential = {
+		exists = owner
+		owner = { is_gestalt = no }
+	}
+	job_$JOB$_add = @district_time_rural_base_job
+	mult = value:district_time_job_value|MODIFIER|job_$JOB$_mult|
+}
+
+# 格式塔
+triggered_planet_modifier = {
+	potential = {
+		exists = owner
+		owner = { is_gestalt = yes }
+	}
+	job_$JOB$_drone_add = @district_time_rural_base_job
+	mult = value:district_time_job_value|MODIFIER|job_$JOB$_mult|
+}

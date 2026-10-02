@@ -1,0 +1,68 @@
+tr_origin_tao_of_ninghe_adopt = {
+	possible = {
+		has_tradition = tr_harmony_finish
+	}
+	unlocks_agenda = agenda_tradition_origin_tao_of_ninghe
+	modifier = {
+		yin_mult_modifier = -0.25
+		yang_mult_modifier = -0.25
+	}
+}
+
+tr_origin_tao_of_ninghe_finish = {
+	modifier = {
+		ascension_perks_add = 1
+	}
+	on_enabled = {
+		custom_tooltip = tr_origin_tao_of_ninghe_finish_desc
+	}
+}
+
+tr_origin_tao_of_ninghe_building_yin = {
+	custom_tooltip = tr_origin_tao_of_ninghe_building_yin_desc
+	ai_weight = {
+		factor = 1000
+	}
+}
+
+tr_origin_tao_of_ninghe_building_yang = {
+	custom_tooltip = tr_origin_tao_of_ninghe_building_yang_desc
+	ai_weight = {
+		factor = 1000
+	}
+}
+
+tr_origin_tao_of_ninghe_situations = {
+	custom_tooltip = tr_origin_tao_of_ninghe_situations_desc
+	possible = {
+		has_tradition = tr_origin_tao_of_ninghe_building_yin
+		has_tradition = tr_origin_tao_of_ninghe_building_yang
+	}
+	ai_weight = {
+		factor = 1000
+	}
+}
+
+tr_origin_tao_of_ninghe_pure_yin = {
+	possible = {
+		has_tradition = tr_origin_tao_of_ninghe_situations
+	}
+	modifier = {
+		pure_yin_mult_modifier = 0.25
+	}
+	ai_weight = {
+		factor = 1000
+	}
+}
+
+tr_origin_tao_of_ninghe_pure_yang = {
+	possible = {
+		has_tradition = tr_origin_tao_of_ninghe_situations
+	}
+	modifier = {
+		pure_yang_mult_modifier = 0.25
+	}
+	ai_weight = {
+		factor = 1000
+	}
+}

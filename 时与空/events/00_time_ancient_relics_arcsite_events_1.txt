@@ -1,0 +1,38 @@
+namespace = ancrel
+
+country_event = { #Ferrophage Cure
+	id = ancrel.2066
+	title = "ancrel.2066.name"
+	desc = "ancrel.2066.desc"
+	location = event_target:mechanocalibrator_planet
+
+	diplomatic = yes
+
+	is_triggered_only = yes
+
+	picture_event_data = {
+		portrait = event_target:mechanocalibrator_ai
+		room = personality_hegemonic_imperialists_room
+		planet_background = event_target:mechanocalibrator_planet
+	}
+
+	option = {
+		name = "ancrel.2066.a"
+		if = {
+			limit = {
+				NOT = { has_relic = r_the_defragmentor }
+			}
+			add_relic = r_the_defragmentor
+		}
+		event_target:mechanocalibrator_planet = {
+			add_modifier = { modifier = pm_planetary_mechanocalibrator }
+		}
+	}
+	
+	option = {
+		name = "ancrel.2066.b"
+		hidden_effect = {
+			country_event = { id = time_care.1 }
+		}
+	}
+}

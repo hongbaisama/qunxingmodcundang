@@ -1,0 +1,140 @@
+defined_text = {
+	name = GetWeAreNotOneClassName
+	random = no
+	text = {
+		trigger = {
+			is_ruler = yes
+		}
+		localization_key = councilor_ruler
+	}
+	text = {
+		trigger = {
+			is_councilor_type = councilor_state
+		}
+		localization_key = councilor_state
+	}
+	text = {
+		trigger = {
+			is_councilor_type = councilor_research
+		}
+		localization_key = councilor_research
+	}
+	text = {
+		trigger = {
+			is_councilor_type = councilor_defense
+		}
+		localization_key = councilor_defense
+	}
+	text = {
+		trigger = {
+			leader_class = official
+		}
+		localization_key = official
+	}
+	text = {
+		trigger = {
+			leader_class = scientist
+		}
+		localization_key = scientist
+	}
+	text = {
+		trigger = {
+			leader_class = commander
+		}
+		localization_key = commander
+	}
+}
+
+defined_text = {
+	name = GetWeAreNotOneClassDesc
+	random = no
+	text = {
+		trigger = {
+			is_ruler = yes
+		}
+		localization_key = leader_trait_we_are_not_one_desc_ruler
+	}
+	text = {
+		trigger = {
+			is_councilor_type = councilor_state
+		}
+		localization_key = leader_trait_we_are_not_one_desc_state
+	}
+	text = {
+		trigger = {
+			is_councilor_type = councilor_research
+		}
+		localization_key = leader_trait_we_are_not_one_desc_research
+	}
+	text = {
+		trigger = {
+			is_councilor_type = councilor_defense
+		}
+		localization_key = leader_trait_we_are_not_one_desc_defense
+	}
+	text = {
+		trigger = {
+			leader_class = official
+		}
+		localization_key = leader_trait_we_are_not_one_desc_official
+	}
+	text = {
+		trigger = {
+			leader_class = scientist
+		}
+		localization_key = leader_trait_we_are_not_one_desc_scientist
+	}
+	text = {
+		trigger = {
+			leader_class = commander
+		}
+		localization_key = leader_trait_we_are_not_one_desc_commander
+	}
+}
+
+defined_text = {
+	name = GetWeAreNotOneClassTooltip
+	random = no
+	text = {
+		trigger = {
+			is_ruler = yes
+		}
+		localization_key = leader_trait_we_are_not_one_tooltip_ruler
+	}
+	text = {
+		trigger = {
+			is_councilor_type = councilor_state
+		}
+		localization_key = leader_trait_we_are_not_one_tooltip_state
+	}
+	text = {
+		trigger = {
+			is_councilor_type = councilor_research
+		}
+		localization_key = leader_trait_we_are_not_one_tooltip_research
+	}
+	text = {
+		trigger = {
+			is_councilor_type = councilor_defense
+		}
+		localization_key = leader_trait_we_are_not_one_tooltip_defense
+	}
+	text = {
+		trigger = {
+			leader_class = official
+		}
+		localization_key = leader_trait_we_are_not_one_tooltip_official
+	}
+	text = {
+		trigger = {
+			leader_class = scientist
+		}
+		localization_key = leader_trait_we_are_not_one_tooltip_scientist
+	}
+	text = {
+		trigger = {
+			leader_class = commander
+		}
+		localization_key = leader_trait_we_are_not_one_tooltip_commander
+	}
+}

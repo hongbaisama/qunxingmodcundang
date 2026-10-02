@@ -1,0 +1,14 @@
+﻿l_english:
+ origin_blessed_by_god.2.name:0 "Grand Sacrifice Completed"
+ origin_blessed_by_god.2.desc_1:0 "The annual Grand Sacrifice came to an end, and everyone was immersed in the joy of the festival. The god received the gift we offered and generously bestowed wisdom and technology upon us."
+ origin_blessed_by_god.2.desc_2:0 "The annual Grand Sacrifice came to an end, and everyone was immersed in the joy of the festival. Our attempt to understand the Shroud deeply made the god very happy, and He waved his hand to help us complete the breakthrough we could not achieve alone."
+ origin_blessed_by_god.2.a:0 "May the god be immortal."
+ origin_blessed_by_god.2.b:0 "Look, our primitive friends just discovered fire."
+ 
+ origin_blessed_by_god.10.name:0 "God's Lie"
+ origin_blessed_by_god.10.desc:0 "The so-called favor is just a huge lie.\n\nJust as we happily accepted the god's grace and prepared to embrace psionics to explore the Shroud, the god took everything away from us without warning. All our territories were devoured by the Shroud, leaving only our homeworld and us ignorant on the homeworld.\n\nIs our sacrifice not perfect enough? Is the gift we offered not rich enough? Is our pious heart not enthusiastic enough? Is our missionary behavior not sincere enough? Is it us... Neither, just because we are too weak, we are just foolish playthings in the hands of the god, from beginning to end.\n\nAfter the god ate us up, He left us dismissively. Maybe He is full? Maybe He forgot? Maybe He misses old feelings? Maybe He is humiliating us? The reason is unknown.\n\nHowever, the god left us a glimmer of hope. We will use our remaining strength to punch the god in the face and make the god pay the due price."
+ origin_blessed_by_god.10.a:0 "We will not be abandoned by anyone again."
+ 
+ origin_blessed_by_god.20.name:0 "Horizon Signal"
+ origin_blessed_by_god.20.desc:0 "Shortly after we were abandoned by the god, the Black Hole in the §Y[horizonsignal_system.GetName]§! system sent us a signal again.\n\nWe don't know how it reached our capital across countless systems, but according to historical records, since we blocked this signal, the Black Hole has been sending weak signals to us until today.\n\nThinking back, the past god hated this string of signals very much. Is there any secret hidden in it? Or is this just bait thrown by another false god?"
+ origin_blessed_by_god.20.a:0 "Analyze Horizon Signal."

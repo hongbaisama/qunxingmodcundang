@@ -1,0 +1,671 @@
+########################
+# 自带飞升路线
+########################
+
+# 国家（自带基飞）
+auto_genetics_ascension = {
+	OR = {
+		has_country_flag = organic_syncretic_evolution_country
+		has_origin = origin_tree_of_life
+		has_country_flag = auto_genetics_ascension # MOD接口
+	}
+}
+
+# 国家（自带普政义飞）
+auto_cybernetics_ascension = {
+	OR = {
+		has_origin = origin_cybernetic_creed
+		has_country_flag = auto_cybernetics_ascension # MOD接口
+	}
+}
+
+# 国家（自带蜂巢义飞）
+auto_cybernetics_ascension_hive = {
+	OR = {
+		has_country_flag = auto_cybernetics_ascension # MOD接口
+	}
+}
+
+# 国家（自带智械义飞）
+auto_cybernetics_ascension_machine = {
+	OR = {
+		AND = {
+			has_origin = origin_reassembler
+			has_civic = civic_machine_assimilator
+		}
+		has_country_flag = auto_cybernetics_ascension # MOD接口
+	}
+}
+
+# 国家（自带灵飞）
+auto_psionics_ascension = {
+	OR = {
+		has_origin = origin_shroudwalker_apprentice
+		has_origin = origin_endbringers
+		has_origin = origin_contract
+		has_country_flag = ratling_country
+		AND = {
+			has_origin = origin_shroud_forged
+			has_country_flag = finish_shroud_forged_liberation_flag
+		}
+		has_country_flag = auto_psionics_ascension # MOD接口
+	}
+}
+
+# 国家（自带普政机飞）
+auto_synthetics_ascension = {
+	OR = {
+		has_origin = origin_mechanists
+		has_origin = origin_synthetic_fertility
+		has_country_flag = auto_synthetics_ascension # MOD接口
+	}
+}
+
+# 国家（自带智械机飞）
+auto_synthetics_ascension_machine = {
+	OR = {
+		AND = {
+			has_origin = origin_reassembler
+			NOT = { has_civic = civic_machine_assimilator }
+		}
+		has_country_flag = auto_synthetics_ascension # MOD接口
+	}
+}
+
+########################
+# 禁用飞升路线
+########################
+
+# 国家（禁用基飞）
+forbid_genetics_ascension = {
+	OR = {
+		is_robot_empire = yes
+		is_individual_machine = yes
+		is_natural_design_empire = yes
+		has_country_flag = forbid_genetics_ascension # MOD接口
+		check_modifier_value = {
+			modifier = block_ap_engineered_evolution
+			value > 0
+		}
+		if = {
+			limit = {
+				NOT = { has_global_flag = time_ascension_paths }
+			}
+			is_cyborg_empire = yes #锁义飞
+		}
+		else = {
+			always = no
+		}
+	}
+}
+
+# 国家（禁用普政义飞）
+forbid_cybernetics_ascension = {
+	OR = {
+		is_gestalt = yes
+		is_individual_machine = yes
+		is_natural_design_empire = yes
+		is_species_class = JourneyofElaina # 魔女之旅
+		is_species_class = WV_MAGIC_PUPPET # 魔女之旅
+		has_country_flag = forbid_cybernetics_ascension # MOD接口
+		check_modifier_value = {
+			modifier = block_ap_the_flesh_is_weak
+			value > 0
+		}
+		AND = {
+			has_origin = origin_unplugged
+			OR = {
+				has_country_flag = is_decyberized
+				has_country_flag = is_cyberized
+			}
+		}
+		owner_species = { has_trait = trait_unplugged_decyberized }
+	}
+}
+
+# 国家（禁用蜂巢义飞）
+forbid_cybernetics_ascension_hive = {
+	OR = {
+		is_hive_empire = no
+		is_natural_design_empire = yes
+		has_country_flag = forbid_cybernetics_ascension # MOD接口
+		check_modifier_value = {
+			modifier = block_ap_the_flesh_is_weak
+			value > 0
+		}
+	}
+}
+
+# 国家（禁用智械义飞）
+forbid_cybernetics_ascension_machine = {
+	OR = {
+		NOT = { has_civic = civic_machine_assimilator }
+		has_country_flag = forbid_cybernetics_ascension # MOD接口
+		check_modifier_value = {
+			modifier = block_ap_the_flesh_is_weak
+			value > 0
+		}
+	}
+}
+
+# 国家（禁用灵飞）
+forbid_psionics_ascension = {
+	OR = {
+		if = {
+			limit = {
+				has_shroud_dlc = no
+			}
+			NAND = {
+				is_gestalt = no
+				OR = {
+					is_mechanical_empire = no
+					has_country_flag = halleberry_out # 魔女之旅
+				}
+				OR = {
+					is_cyborg_empire = no
+					AND = {
+						has_origin = origin_unplugged
+						NOT = { has_country_flag = is_cyberized }
+					}
+				}
+				is_individual_machine = no
+			}
+		}
+		else = {
+			always = no
+		}
+		if = {
+			limit = { has_origin = origin_shroud_forged }
+			has_country_flag = finish_shroud_forged_control_flag
+		}
+		else = {
+			always = no
+		}
+		is_natural_design_empire = yes
+		has_origin = origin_mindwardens # 禁灵飞
+		has_origin = origin_abandoned_by_god # 禁灵飞
+		has_country_flag = forbid_psionics_ascension # MOD接口
+		check_modifier_value = {
+			modifier = block_ap_mind_over_matter
+			value > 0
+		}
+	}
+}
+
+# 国家（禁用普政机飞）
+forbid_synthetics_ascension = {
+	OR = {
+		is_gestalt = yes
+		is_mechanical_empire = yes
+		is_individual_machine = yes
+		is_natural_design_empire = yes
+		is_galvanic_empire = yes
+		is_species_class = JourneyofElaina # 魔女之旅
+		is_species_class = WV_MAGIC_PUPPET # 魔女之旅
+		has_wg_and_uf_special_authority = yes #舰R
+		has_tradition = tr_cybernetics_adopt # 禁机飞
+		has_origin = origin_gas_colony # 禁机飞
+		has_origin = origin_adeptus_mechanicus # 禁机飞
+		owner_species = { has_trait = trait_unplugged_decyberized } # 禁机飞
+		has_country_flag = forbid_synthetics_ascension # MOD接口
+		check_modifier_value = {
+			modifier = block_ap_synthetic_evolution
+			value > 0
+		}
+	}
+}
+
+# 国家（禁用智械机飞）
+forbid_synthetics_ascension_machine = {
+	OR = {
+		is_machine_or_individual_machine_empire = no
+		is_natural_design_empire = yes
+		has_country_flag = forbid_synthetics_ascension # MOD接口
+		check_modifier_value = {
+			modifier = block_ap_synthetic_evolution
+			value > 0
+		}
+	}
+}
+
+########################
+# 限定飞升路线
+########################
+
+# 国家（限定基飞）
+force_genetics_ascension = {
+	OR = {
+		has_origin = origin_evolutionary_predators
+		has_origin = origin_wilderness
+		has_country_flag = force_genetics_ascension # MOD接口
+	}
+}
+
+# 国家（限定义飞）
+force_cybernetics_ascension = {
+	OR = {
+		has_civic = civic_augmentation_bazaars
+		has_country_flag = force_cybernetics_ascension # MOD接口
+	}
+}
+
+# 国家（限定灵飞）
+force_psionics_ascension = {
+	OR = {
+		# 即使理念因思潮转变失效，也不应允许选择其它飞升
+		has_civic = civic_chosen
+		has_civic = civic_hive_chosen
+		has_civic = civic_machine_chosen
+		has_civic = civic_corporate_chosen
+		is_entropy_drinkers_empire = yes
+		has_origin = origin_psionic
+		has_origin = origin_blessed_by_god
+		has_country_flag = force_psionics_ascension # MOD接口
+	}
+}
+
+# 国家（限定机飞）
+force_synthetics_ascension = {
+	OR = {
+		has_country_flag = force_synthetics_ascension # MOD接口
+	}
+}
+
+# 国家（对基飞路线有限定）
+force_any_genetics_ascension = {
+	OR = {
+		force_purity_ascension = yes
+		force_cloning_ascension = yes
+		force_mutation_ascension = yes
+	}
+}
+
+# 国家（限定纯净）
+force_purity_ascension = {
+	OR = {
+		has_origin = origin_wilderness
+		has_origin = origin_tree_of_life
+		has_country_flag = force_purity_ascension # MOD接口
+	}
+}
+
+# 国家（限定克隆）
+force_cloning_ascension = {
+	OR = {
+		# 虽然原版公告写了研究克隆潜能项目不再禁用非克隆路线，但原版事件条件判断和克隆潜能项目文本未完全更改，且我个人更倾向于克隆潜能项目锁定为克隆路线，故不做修改
+		AND = {
+			has_origin = origin_clone_army
+			has_country_flag = clone_army_full_potential
+		}
+		has_country_flag = force_cloning_ascension # MOD接口
+	}
+}
+
+# 国家（限定变异）
+force_mutation_ascension = {
+	OR = {
+		has_origin = origin_evolutionary_predators
+		has_origin = origin_syncretic_evolution
+		has_country_flag = force_mutation_ascension # MOD接口
+	}
+}
+
+# 国家（对机飞路线有限定）
+force_any_synthetics_ascension_machine = {
+	OR = {
+		force_nanotech_ascension = yes
+		force_modularity_ascension = yes
+		force_virtuality_ascension = yes
+	}
+}
+
+# 国家（限定纳米）
+force_nanotech_ascension = {
+	OR = {
+		has_origin = origin_nanites
+		has_country_flag = force_nanotech_ascension # MOD接口
+	}
+}
+
+# 国家（限定模块）
+force_modularity_ascension = {
+	OR = {
+		has_origin = origin_reassembler
+		has_country_flag = force_modularity_ascension # MOD接口
+	}
+}
+
+# 国家（限定虚拟）
+force_virtuality_ascension = {
+	OR = {
+		has_country_flag = force_virtuality_ascension # MOD接口
+	}
+}
+
+########################
+# 飞升天赋的potential
+########################
+
+# 国家（基飞）
+ap_engineered_evolution_potential = {
+	if = {
+		limit = {
+			NOT = { has_global_flag = time_ascension_paths }
+		}
+		auto_cybernetics_ascension = no
+		force_cybernetics_ascension = no
+		auto_psionics_ascension = no
+		force_psionics_ascension = no
+	}
+	auto_synthetics_ascension = no
+	force_synthetics_ascension = no
+	
+	auto_genetics_ascension = no
+	forbid_genetics_ascension = no
+	NOT = { has_ascension_perk = ap_engineered_evolution }
+}
+
+# 国家（有机义飞）
+ap_the_flesh_is_weak_potential = {
+	if = {
+		limit = {
+			NOT = { has_global_flag = time_ascension_paths }
+		}
+		auto_genetics_ascension = no
+		force_genetics_ascension = no
+		auto_psionics_ascension = no
+		force_psionics_ascension = no
+	}
+	auto_synthetics_ascension = no
+	force_synthetics_ascension = no
+	
+	auto_cybernetics_ascension = no
+	forbid_cybernetics_ascension = no
+	NOT = { has_ascension_perk = ap_the_flesh_is_weak }
+}
+
+# 国家（蜂巢义飞）
+ap_organo_machine_interfacing_potential = {
+	if = {
+		limit = {
+			NOT = { has_global_flag = time_ascension_paths }
+		}
+		auto_genetics_ascension = no
+		force_genetics_ascension = no
+		auto_psionics_ascension = no
+		force_psionics_ascension = no
+	}
+	
+	auto_cybernetics_ascension_hive = no
+	forbid_cybernetics_ascension_hive = no
+	NOT = { has_ascension_perk = ap_organo_machine_interfacing }
+}
+
+# 国家（同化义飞）
+ap_organo_machine_interfacing_assimilator_potential = {
+	if = {
+		limit = {
+			NOT = { has_global_flag = time_ascension_paths }
+		}
+		auto_psionics_ascension = no
+		force_psionics_ascension = no
+		auto_synthetics_ascension_machine = no
+		force_synthetics_ascension = no
+	}
+	
+	auto_cybernetics_ascension_machine = no
+	forbid_cybernetics_ascension_machine = no
+	NOT = { has_ascension_perk = ap_organo_machine_interfacing_assimilator }
+}
+
+# 国家（有机机飞）
+ap_synthetic_evolution_potential = {
+	if = {
+		limit = {
+			NOT = { has_global_flag = time_ascension_paths }
+		}
+		auto_psionics_ascension = no
+		force_psionics_ascension = no
+	}
+	auto_genetics_ascension = no
+	force_genetics_ascension = no
+	auto_cybernetics_ascension = no
+	force_cybernetics_ascension = no
+	
+	auto_synthetics_ascension = no
+	forbid_synthetics_ascension = no
+	NOT = { has_ascension_perk = ap_synthetic_evolution }
+}
+
+# 国家（灵飞）
+ap_mind_over_matter_potential = {
+	if = {
+		limit = {
+			NOT = { has_global_flag = time_ascension_paths }
+		}
+		auto_genetics_ascension = no
+		force_genetics_ascension = no
+		auto_cybernetics_ascension = no
+		auto_cybernetics_ascension_hive = no
+		auto_cybernetics_ascension_machine = no
+		force_cybernetics_ascension = no
+		auto_synthetics_ascension = no
+		auto_synthetics_ascension_machine = no
+		force_synthetics_ascension = no
+	}
+	
+	auto_psionics_ascension = no
+	forbid_psionics_ascension = no
+	NOT = { has_ascension_perk = ap_mind_over_matter }
+}
+
+# 国家（智械机飞）
+ap_synthetic_age_potential = {
+	if = {
+		limit = {
+			NOT = { has_global_flag = time_ascension_paths }
+		}
+		auto_cybernetics_ascension_machine = no
+		force_cybernetics_ascension = no
+		auto_psionics_ascension = no
+		force_psionics_ascension = no
+	}
+	
+	auto_synthetics_ascension_machine = no
+	forbid_synthetics_ascension_machine = no
+	NOT = { has_ascension_perk = ap_synthetic_age }
+}
+
+########################
+# 禁用野望
+########################
+
+# 国家（星河卫士）
+forbid_defender_of_the_galaxy = {
+	OR = {
+		is_unfriendly = yes
+		is_player_crisis = yes
+		is_potential_crisis_country = yes
+		is_defender_of_the_galaxy_country = yes
+		has_global_flag = dark_forest
+		has_country_flag = unlock_tradition_end
+		has_beyond_infinity_civic = yes
+		has_country_flag = forbid_defender_of_the_galaxy # MOD接口
+		check_modifier_value = {
+			modifier = block_ap_defender_of_the_galaxy
+			value > 0
+		}
+		check_modifier_value = {
+			modifier = block_any_other_crisis_path
+			value > 0
+		}
+	}
+}
+
+# 国家（全部灾飞）
+forbid_all_crisis_progression = {
+	OR = {
+		is_player_crisis = yes
+		has_ascension_perk = ap_beyond_infinity
+		is_defender_of_the_galaxy_country = yes
+		has_origin = origin_slavers # No crisis for MSI
+		has_origin = origin_endbringers # No additional crisis for Endbringers
+		has_country_flag = unlock_tradition_hope
+		has_country_flag = normal_wonder_country_35
+		has_modifier = nanites_protector
+		has_beyond_infinity_civic = yes
+		has_country_flag = forbid_all_crisis_progression # MOD接口
+		check_modifier_value = {
+			modifier = block_any_other_crisis_path
+			value > 0
+		}
+	}
+}
+
+# 国家（星海天罚）
+forbid_become_the_crisis = {
+	OR = {
+		forbid_all_crisis_progression = yes
+		is_wilderness_empire = yes
+		has_origin = origin_contract
+		has_origin = origin_white_hole
+		is_wonder_country_38 = yes
+		is_wonder_country_96 = yes
+		is_wonder_country_synth_queen = yes
+		has_country_flag = forbid_become_the_crisis # MOD接口
+		check_modifier_value = {
+			modifier = block_ap_become_the_crisis
+			value > 0
+		}
+	}
+}
+
+# 国家（宇宙创生）
+forbid_cosmogenesis = {
+	OR = {
+		forbid_all_crisis_progression = yes
+		is_wilderness_empire = yes
+		has_country_flag = crazy_wonder_country_35
+		is_wonder_country_38 = yes
+		is_wonder_country_39 = yes
+		is_wonder_country_40 = yes
+		is_wonder_country_96 = yes
+		has_country_flag = forbid_cosmogenesis # MOD接口
+		check_modifier_value = {
+			modifier = block_ap_cosmogenesis
+			value > 0
+		}
+	}
+}
+
+# 国家（巨兽之怒）
+forbid_behemoths = {
+	OR = {
+		forbid_all_crisis_progression = yes
+		has_country_flag = crazy_wonder_country_35
+		is_wonder_country_39 = yes
+		is_wonder_country_40 = yes
+		is_wonder_country_96 = yes
+		is_wonder_country_synth_queen = yes
+		has_country_flag = forbid_behemoths # MOD接口
+		check_modifier_value = {
+			modifier = block_ap_behemoths
+			value > 0
+		}
+	}
+}
+
+# 国家（星系热症）
+forbid_galactic_hyperthermia = {
+	OR = {
+		forbid_all_crisis_progression = yes
+		is_wilderness_empire = yes
+		has_country_flag = crazy_wonder_country_35
+		is_wonder_country_38 = yes
+		is_wonder_country_39 = yes
+		is_wonder_country_40 = yes
+		is_wonder_country_synth_queen = yes
+		has_country_flag = forbid_galactic_hyperthermia # MOD接口
+		check_modifier_value = {
+			modifier = block_ap_galactic_hyperthermia
+			value > 0
+		}
+	}
+}
+
+# 国家（星海天罚）
+possible_allow_become_the_crisis = {
+	if = {
+		limit = {
+			has_country_flag = worm_tomb_ending
+		}
+		custom_tooltip = {
+			fail_text = "akx_worm_forbid_become_the_crisis"
+			OR = {
+				has_origin = origin_psionic
+				has_origin = origin_nanites
+				has_origin = origin_blessed_by_god
+				has_origin = origin_abandoned_by_god
+				has_country_flag = crazy_wonder_country_35
+				is_wonder_country_39 = yes
+				is_wonder_country_40 = yes
+			}
+		}
+	}
+}
+
+# 国家（全部灾飞）
+possible_allow_any_crisis_progression = {
+	custom_tooltip = {
+		fail_text = "requires_not_psionic"
+		NOT = { has_origin = origin_psionic }
+	}
+	custom_tooltip = {
+		fail_text = "requires_not_nanites"
+		NOT = { has_origin = origin_nanites }
+	}
+	custom_tooltip = {
+		fail_text = "requires_not_manifesti"
+		NOT = { has_origin = origin_manifesti }
+	}
+	custom_tooltip = {
+		fail_text = "requires_not_blessed_by_god"
+		NOT = { has_origin = origin_blessed_by_god }
+	}
+	custom_tooltip = {
+		fail_text = "requires_not_abandoned_by_god"
+		NOT = { has_origin = origin_abandoned_by_god }
+	}
+}
+
+########################
+# 堕落建筑
+########################
+
+# 国家
+unlock_fallen_empire_basic_building = {
+	# 文灾飞已在科技权重本身判断，超越无限直接给科技选项
+	OR = {
+		has_ascension_perk = ap_enigmatic_engineering
+		has_country_flag = unlock_fallen_empire_basic_building
+		has_country_flag = unlock_fallen_empire_advanced_building
+	}
+}
+
+# 国家
+unlock_fallen_empire_advanced_building = {
+	OR = {
+		has_ascension_perk = ap_cosmogenesis
+		has_country_flag = menp_beyond_infinity_cosmo_buildings_1
+		has_country_flag = unlock_fallen_empire_advanced_building
+	}
+}
+
+# 国家
+unlock_fallen_empire_advanced_building_check_perk = {
+	OR = {
+		has_crisis_perk = menp_$PERK$
+		has_country_flag = menp_beyond_infinity_$PERK$
+		has_country_flag = unlock_fallen_empire_advanced_building
+	}
+}

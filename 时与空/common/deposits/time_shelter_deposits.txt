@@ -1,0 +1,180 @@
+################################################################
+# 障碍
+################################################################
+
+@blocker_high = 10
+@blocker_low = 5
+@ranger_small_production = 0.5
+@ranger_large_production = 1
+@evopred_large_blocker_progress = 40
+@evopred_small_blocker_progress = 20
+
+d_time_shelter_chaos = {
+	time = 360
+
+	is_for_colonizable = yes
+	category = deposit_cat_blockers
+	
+	use_weights_for_blocker_swap_types = no
+
+	resources = {
+		category = deposit_blockers
+		cost = {
+			sr_dark_matter = 100
+		}
+	}
+
+	potential = {
+		always = no
+	}
+
+	planet_modifier = {
+		planet_max_districts_add = -2
+	}
+	
+	on_cleared = {
+		if = {
+			limit = {
+				NOT = { has_deposit = d_time_shelter_chaos_core }
+			}
+			random = {
+				chance = 50
+				add_deposit = d_time_shelter_chaos_derivative
+			}
+		}
+	}
+
+	drop_weight = {
+		weight = 0
+	}
+
+	ai_weight = {
+		weight = 0
+	}
+}
+
+d_time_shelter_chaos_derivative = {
+	time = 360
+
+	is_for_colonizable = yes
+	category = deposit_cat_blockers
+
+	icon = d_time_shelter_chaos
+	
+	use_weights_for_blocker_swap_types = no
+
+	resources = {
+		category = deposit_blockers
+		cost = {
+			sr_dark_matter = 100
+		}
+	}
+
+	potential = {
+		always = no
+	}
+
+	planet_modifier = {
+		planet_max_districts_add = -1
+	}
+	
+	on_cleared = {
+		if = {
+			limit = {
+				NOT = { has_deposit = d_time_shelter_chaos_core }
+			}
+			random = {
+				chance = 50
+				add_deposit = d_time_shelter_chaos_secondary_derivative
+			}
+		}
+	}
+
+	drop_weight = {
+		weight = 0
+	}
+
+	ai_weight = {
+		weight = 0
+	}
+}
+
+d_time_shelter_chaos_secondary_derivative = {
+	time = 360
+
+	is_for_colonizable = yes
+	category = deposit_cat_blockers
+
+	icon = d_time_shelter_chaos
+	
+	use_weights_for_blocker_swap_types = no
+
+	resources = {
+		category = deposit_blockers
+		cost = {
+			sr_dark_matter = 100
+		}
+	}
+
+	potential = {
+		always = no
+	}
+
+	planet_modifier = {
+	}
+	
+	on_cleared = {
+		if = {
+			limit = {
+				NOT = { has_deposit = d_time_shelter_chaos_core }
+			}
+			random = {
+				chance = 50
+				add_deposit = d_time_shelter_chaos_core
+			}
+		}
+	}
+
+	drop_weight = {
+		weight = 0
+	}
+
+	ai_weight = {
+		weight = 0
+	}
+}
+
+d_time_shelter_chaos_core = {
+	time = 360
+
+	is_for_colonizable = yes
+	category = deposit_cat_rare
+
+	icon = d_time_shelter_chaos
+	
+	resources = {
+		category = planet_deposits
+	}
+
+	potential = {
+		always = no
+	}
+
+	planet_modifier = {
+		planet_districts_time_shelter_main_sr_dark_matter_upkeep_add = @district_time_shelter_main_upkeep_half
+		planet_districts_time_shelter_secondary_sr_dark_matter_upkeep_add = @district_time_shelter_secondary_upkeep_half
+	}
+
+	triggered_planet_modifier = {
+		planet_max_districts_add = 0.5
+		mult = trigger:planet_size
+	}
+
+	drop_weight = {
+		weight = 0
+	}
+
+	ai_weight = {
+		weight = 0
+	}
+}

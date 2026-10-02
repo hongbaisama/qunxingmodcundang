@@ -1,0 +1,96 @@
+################################################################
+# 障碍
+################################################################
+
+@blocker_high = 10
+@blocker_low = 5
+@ranger_small_production = 0.5
+@ranger_large_production = 1
+@evopred_large_blocker_progress = 40
+@evopred_small_blocker_progress = 20
+
+d_noah_ark = {
+	is_for_colonizable = yes
+	
+	category = deposit_cat_rare_blocker
+	
+	icon = d_station_cargo
+	
+	custom_tooltip = d_noah_ark_effect
+	
+	resources = {
+		category = planet_deposits
+		produces = {
+			trigger = {
+				years_passed <= 20
+			}
+			energy = 20
+			minerals = 20
+			food = 20
+			alloys = 10
+			consumer_goods = 10
+		}
+	}
+	
+	planet_modifier = {
+		planet_max_districts_add = -3
+	}
+	
+	potential = {
+		always = no
+	}
+	
+	can_be_cleared = { always = no }
+	
+	on_cleared = {
+		owner = {
+			add_resource = {
+				energy = 240
+				minerals = 240
+				food = 240
+				alloys = 120
+				consumer_goods = 120
+				mult = value:noah_ark_blocker_value
+			}
+		}
+		hidden_effect = {
+			add_time_special_deposit_keep_on_terraform = { DEPOSIT = d_noah_ark_vestige }
+		}
+	}
+	
+	drop_weight = {
+		weight = 0
+	}
+}
+
+################################################################
+# 地块
+################################################################
+
+d_noah_ark_vestige = {
+	is_for_colonizable = yes
+	category = deposit_cat_rare
+	
+	icon = d_station_cargo
+	
+	custom_tooltip = d_noah_ark_vestige_effect
+	
+	triggered_planet_modifier = {
+		planet_jobs_unity_produces_mult = 0.1
+	}
+	
+	triggered_planet_modifier = {
+		potential = {
+			owner = { has_country_flag = unlock_tech_noah_ark }
+		}
+		planet_jobs_unity_produces_mult = 0.1
+	}
+
+	potential = {
+		always = no
+	}
+	
+	drop_weight = {
+		weight = 0
+	}
+}

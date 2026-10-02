@@ -1,0 +1,436 @@
+zone_psionic_energy = {
+	icon = GFX_district_specialization_energy
+	base_buildtime = @zone_buildtime
+	resources = {
+		category = planet_zones
+		inline_script = {
+			script = buildings/nomadic_cost_switcher
+			REGULAR_RESOURCE = minerals
+			NOMADIC_RESOURCE = alloys
+			COST = @zone_cost
+			NOMADIC_COST_MULT = 0.5
+		}
+	}
+
+	potential = { # planet scope
+		is_planet_class = pc_psionic
+	}
+
+	unlock = { # planet scope
+	}
+	
+	zone_sets = {
+		zone_psionic_energy
+	}
+
+	included_building_sets = {
+		generator
+		fallen_empire_generator
+		generator_automation
+	}
+
+	triggered_district_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { is_gestalt = no }
+		}
+		job_psionic_technician_add = @scaling_district_1_job
+		mult = value:district_psionic_value
+	}
+
+	triggered_district_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { is_gestalt = yes }
+		}
+		job_psionic_technician_drone_add = @scaling_district_1_job
+		mult = value:district_psionic_value
+	}
+
+	planet_modifier = {
+		zone_building_slots_add = @time_mod_zone_max_buildings
+	}
+
+	convert_to = {
+	}
+	
+	ai_priority = 5
+}
+
+zone_psionic_energy_physics = {
+	icon = GFX_district_specialization_physics
+	base_buildtime = @zone_buildtime
+
+	swap_type = district_psionic_generator_physics
+	swap_type_weight = 5
+	
+	resources = {
+		category = planet_zones
+		inline_script = {
+			script = buildings/nomadic_cost_switcher
+			REGULAR_RESOURCE = minerals
+			NOMADIC_RESOURCE = alloys
+			COST = @zone_cost
+			NOMADIC_COST_MULT = 0.5
+		}
+	}
+
+	potential = { # planet scope
+		is_planet_class = pc_psionic
+		hidden_trigger = { exists = owner }
+		owner = { is_ai = no }	# AI isn't great at handling these
+	}
+
+	unlock = { # planet scope
+		hidden_trigger = { exists = owner }
+		owner = { has_technology = tech_physics_2 }
+	}
+	
+	zone_sets = {
+		zone_psionic_energy
+	}
+
+	included_building_sets = {
+		generator
+		physics
+		fallen_empire_generator
+		generator_automation
+	}
+
+	triggered_district_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { is_gestalt = no }
+		}
+		job_psionic_technician_add = @scaling_district_2_jobs
+		mult = value:district_psionic_value
+	}
+
+	triggered_district_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { is_gestalt = yes }
+		}
+		job_psionic_technician_drone_add = @scaling_district_2_jobs
+		mult = value:district_psionic_value
+	}
+	
+	triggered_district_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { is_gestalt = no }
+		}
+		job_physicist_add = @scaling_district_2_jobs
+		mult = value:district_psionic_value
+	}
+
+	triggered_district_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { is_gestalt = yes }
+		}
+		job_calculator_physicist_add = @scaling_district_2_jobs
+		mult = value:district_psionic_value
+	}
+
+	planet_modifier = {
+		zone_building_slots_add = @time_mod_zone_max_buildings
+	}
+
+	convert_to = {
+	}
+	
+	ai_priority = 13
+}
+
+zone_psionic_minerals = {
+	icon = GFX_district_specialization_minerals
+	base_buildtime = @zone_buildtime
+	resources = {
+		category = planet_zones
+		inline_script = {
+			script = buildings/nomadic_cost_switcher
+			REGULAR_RESOURCE = minerals
+			NOMADIC_RESOURCE = alloys
+			COST = @zone_cost
+			NOMADIC_COST_MULT = 0.5
+		}
+	}
+
+	potential = { # planet scope
+		is_planet_class = pc_psionic
+	}
+
+	unlock = { # planet scope
+	}
+	
+	zone_sets = {
+		zone_psionic_minerals
+	}
+
+	included_building_sets = {
+		mining
+		fallen_empire_mining
+		mining_automation
+	}
+
+	triggered_district_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { is_gestalt = no }
+		}
+		job_psionic_miner_add = @scaling_district_1_job
+		mult = value:district_psionic_value
+	}
+
+	triggered_district_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { is_gestalt = yes }
+		}
+		job_psionic_mining_drone_add = @scaling_district_1_job
+		mult = value:district_psionic_value
+	}
+
+	planet_modifier = {
+		zone_building_slots_add = @time_mod_zone_max_buildings
+	}
+
+	convert_to = {
+	}
+	
+	ai_priority = 5
+}
+
+zone_psionic_minerals_engineering = {
+	icon = GFX_district_specialization_engineering
+	base_buildtime = @zone_buildtime
+
+	swap_type = district_psionic_mining_engineering
+	swap_type_weight = 5
+	
+	resources = {
+		category = planet_zones
+		inline_script = {
+			script = buildings/nomadic_cost_switcher
+			REGULAR_RESOURCE = minerals
+			NOMADIC_RESOURCE = alloys
+			COST = @zone_cost
+			NOMADIC_COST_MULT = 0.5
+		}
+	}
+
+	potential = { # planet scope
+		is_planet_class = pc_psionic
+		hidden_trigger = { exists = owner }
+		owner = { is_ai = no }	# AI isn't great at handling these
+	}
+
+	unlock = { # planet scope
+		hidden_trigger = { exists = owner }
+		owner = { has_technology = tech_engineering_2 }
+	}
+	
+	zone_sets = {
+		zone_psionic_minerals
+	}
+
+	included_building_sets = {
+		mining
+		engineering
+		fallen_empire_mining
+		mining_automation
+	}
+
+	triggered_district_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { is_gestalt = no }
+		}
+		job_psionic_miner_add = @scaling_district_2_jobs
+		mult = value:district_psionic_value
+	}
+
+	triggered_district_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { is_gestalt = yes }
+		}
+		job_psionic_mining_drone_add = @scaling_district_2_jobs
+		mult = value:district_psionic_value
+	}
+
+	triggered_district_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { is_gestalt = no }
+		}
+		job_engineer_add = @scaling_district_2_jobs
+		mult = value:district_psionic_value
+	}
+
+	triggered_district_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { is_gestalt = yes }
+		}
+		job_calculator_engineer_add = @scaling_district_2_jobs
+		mult = value:district_psionic_value
+	}
+
+	planet_modifier = {
+		zone_building_slots_add = @time_mod_zone_max_buildings
+	}
+
+	convert_to = {
+	}
+	
+	ai_priority = 13
+}
+
+zone_psionic_food = {
+	icon = GFX_district_specialization_food
+	base_buildtime = @zone_buildtime
+	resources = {
+		category = planet_zones
+		inline_script = {
+			script = buildings/nomadic_cost_switcher
+			REGULAR_RESOURCE = minerals
+			NOMADIC_RESOURCE = alloys
+			COST = @zone_cost
+			NOMADIC_COST_MULT = 0.5
+		}
+	}
+
+	potential = { # planet scope
+		is_planet_class = pc_psionic
+	}
+
+	unlock = { # planet scope
+	}
+	
+	zone_sets = {
+		zone_psionic_food
+	}
+
+	included_building_sets = {
+		farming
+		hydroponics
+		fallen_empire_farming
+		farming_automation
+	}
+
+	triggered_district_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { is_gestalt = no }
+		}
+		job_psionic_farmer_add = @scaling_district_1_job
+		mult = value:district_psionic_value
+	}
+
+	triggered_district_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { is_gestalt = yes }
+		}
+		job_psionic_agri_drone_add = @scaling_district_1_job
+		mult = value:district_psionic_value
+	}
+
+	planet_modifier = {
+		zone_building_slots_add = @time_mod_zone_max_buildings
+	}
+
+	convert_to = {
+	}
+	
+	ai_priority = 5
+}
+
+zone_psionic_food_biology = {
+	icon = GFX_district_specialization_society
+	base_buildtime = @zone_buildtime
+
+	swap_type = district_psionic_farming_society
+	swap_type_weight = 5
+	
+	resources = {
+		category = planet_zones
+		inline_script = {
+			script = buildings/nomadic_cost_switcher
+			REGULAR_RESOURCE = minerals
+			NOMADIC_RESOURCE = alloys
+			COST = @zone_cost
+			NOMADIC_COST_MULT = 0.5
+		}
+	}
+
+	potential = { # planet scope
+		is_planet_class = pc_psionic
+		hidden_trigger = { exists = owner }
+		owner = { is_ai = no }	# AI isn't great at handling these
+	}
+
+	unlock = { # planet scope
+		hidden_trigger = { exists = owner }
+		owner = { has_technology = tech_society_2 }
+	}
+	
+	zone_sets = {
+		zone_psionic_food
+	}
+
+	included_building_sets = {
+		farming
+		hydroponics
+		society
+		fallen_empire_farming
+		farming_automation
+	}
+
+	triggered_district_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { is_gestalt = no }
+		}
+		job_psionic_farmer_add = @scaling_district_2_jobs
+		mult = value:district_psionic_value
+	}
+
+	triggered_district_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { is_gestalt = yes }
+		}
+		job_psionic_agri_drone_add = @scaling_district_2_jobs
+		mult = value:district_psionic_value
+	}
+
+	triggered_district_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { is_gestalt = no }
+		}
+		job_biologist_add = @scaling_district_2_jobs
+		mult = value:district_psionic_value
+	}
+
+	triggered_district_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { is_gestalt = yes }
+		}
+		job_calculator_biologist_add = @scaling_district_2_jobs
+		mult = value:district_psionic_value
+	}
+
+	planet_modifier = {
+		zone_building_slots_add = @time_mod_zone_max_buildings
+	}
+
+	convert_to = {
+	}
+	
+	ai_priority = 13
+}

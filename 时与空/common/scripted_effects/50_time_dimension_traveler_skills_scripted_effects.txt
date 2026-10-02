@@ -1,0 +1,492 @@
+# 国家
+refresh_dimension_traveler_skill_point = {
+	if = {
+		limit = {
+			NOT = { is_variable_set = used_dimension_traveler_skill_point }
+		}
+		set_variable = {
+			which = used_dimension_traveler_skill_point
+			value = 0
+		}
+	}
+	if = {
+		limit = {
+			NOT = { is_variable_set = used_dimension_traveler_skill_point_official }
+		}
+		set_variable = {
+			which = used_dimension_traveler_skill_point_official
+			value = 0
+		}
+	}
+	if = {
+		limit = {
+			NOT = { is_variable_set = used_dimension_traveler_skill_point_scientist }
+		}
+		set_variable = {
+			which = used_dimension_traveler_skill_point_scientist
+			value = 0
+		}
+	}
+	if = {
+		limit = {
+			NOT = { is_variable_set = used_dimension_traveler_skill_point_commander }
+		}
+		set_variable = {
+			which = used_dimension_traveler_skill_point_commander
+			value = 0
+		}
+	}
+	set_variable = {
+		which = all_dimension_traveler_skill_point
+		value = value:all_dimension_traveler_skill_point
+	}
+	set_variable = {
+		which = available_dimension_traveler_skill_point
+		value = value:available_dimension_traveler_skill_point
+	}
+	set_variable = {
+		which = used_dimension_traveler_skill_point_official_councilor
+		value = value:used_dimension_traveler_skill_point_class_councilor|CLASS|official|
+	}
+	set_variable = {
+		which = used_dimension_traveler_skill_point_scientist_councilor
+		value = value:used_dimension_traveler_skill_point_class_councilor|CLASS|scientist|
+	}
+	set_variable = {
+		which = used_dimension_traveler_skill_point_commander_councilor
+		value = value:used_dimension_traveler_skill_point_class_councilor|CLASS|commander|
+	}
+	set_variable = {
+		which = used_dimension_traveler_skill_point_official_normal
+		value = value:used_dimension_traveler_skill_point_class_normal|CLASS|official|
+	}
+	set_variable = {
+		which = used_dimension_traveler_skill_point_scientist_normal
+		value = value:used_dimension_traveler_skill_point_class_normal|CLASS|scientist|
+	}
+	set_variable = {
+		which = used_dimension_traveler_skill_point_commander_normal
+		value = value:used_dimension_traveler_skill_point_class_normal|CLASS|commander|
+	}
+}
+
+# 国家
+refresh_dimension_traveler_skill_flag = {
+	clear_dimension_traveler_skill_flag = yes
+	switch = {
+		trigger = has_country_flag
+		dimension_traveler_official_active = {
+			set_country_flag = show_dimension_traveler_official_skill
+		}
+		dimension_traveler_scientist_active = {
+			set_country_flag = show_dimension_traveler_scientist_skill
+		}
+		dimension_traveler_commander_active = {
+			set_country_flag = show_dimension_traveler_commander_skill
+		}
+	}
+}
+
+# 国家
+clear_dimension_traveler_skill_flag = {
+	remove_country_flag = show_dimension_traveler_official_skill
+	remove_country_flag = show_dimension_traveler_scientist_skill
+	remove_country_flag = show_dimension_traveler_commander_skill
+}
+
+# 国家（已激活）
+actived_dimension_traveler_skill_effect = {
+	custom_tooltip = dimension_traveler_skill_$CLASS$_$TIER$_$NUM$_effect
+	custom_tooltip = has_cost_dimension_traveler_skill_point_$COUNT$
+}
+
+# 任意（未激活）（第1层函数）
+# TIER为层数（1~9），NUM为每层序号（1~9）
+choose_dimension_traveler_skill = {
+	custom_tooltip = dimension_traveler_skill_$CLASS$_$TIER$_$NUM$_effect
+	custom_tooltip = cost_dimension_traveler_skill_point_$COUNT$
+	# 为了美观，不给玩家显示跳到国家域的过程
+	tooltip = {
+		add_resource = {
+			sr_dark_matter = @dimension_traveler_skill_sr_dark_matter_cost_$COUNT$
+			astral_threads = @dimension_traveler_skill_astral_threads_cost_$COUNT$
+		}
+	}
+	hidden_effect = {
+		event_target:dimension_traveler_owner = {
+			change_variable = {
+				which = used_dimension_traveler_skill_point
+				value = $COUNT$
+			}
+			change_variable = {
+				which = used_dimension_traveler_skill_point_$CLASS$
+				value = $COUNT$
+			}
+			add_resource = {
+				sr_dark_matter = @dimension_traveler_skill_sr_dark_matter_cost_$COUNT$
+				astral_threads = @dimension_traveler_skill_astral_threads_cost_$COUNT$
+			}
+			set_country_flag = dimension_traveler_skill_$CLASS$_$TIER$_$NUM$
+			refresh_dimension_traveler_skill_point = yes
+			# 解锁新技能
+			set_variable = {
+				which = dimension_traveler_skill_tier
+				value = $TIER$
+			}
+			set_variable = {
+				which = dimension_traveler_skill_num
+				value = $NUM$
+			}
+			if = {
+				limit = {
+					check_variable = {
+						which = dimension_traveler_skill_tier
+						value < 5
+					}
+				}
+				change_variable = {
+					which = dimension_traveler_skill_tier
+					value = 1
+				}
+				change_variable = {
+					which = dimension_traveler_skill_num
+					value = 1
+				}
+				choose_dimension_traveler_skill_for_tier = { CLASS = $CLASS$ }
+				subtract_variable = {
+					which = dimension_traveler_skill_num
+					value = 2
+				}
+				choose_dimension_traveler_skill_for_tier = { CLASS = $CLASS$ }
+			}
+			else_if = {
+				limit = {
+					check_variable = {
+						which = dimension_traveler_skill_tier
+						value > 5
+					}
+				}
+				subtract_variable = {
+					which = dimension_traveler_skill_tier
+					value = 1
+				}
+				change_variable = {
+					which = dimension_traveler_skill_num
+					value = 1
+				}
+				choose_dimension_traveler_skill_for_tier = { CLASS = $CLASS$ }
+				subtract_variable = {
+					which = dimension_traveler_skill_num
+					value = 2
+				}
+				choose_dimension_traveler_skill_for_tier = { CLASS = $CLASS$ }
+			}
+			clear_variable = dimension_traveler_skill_tier
+			clear_variable = dimension_traveler_skill_num
+		}
+	}
+}
+
+# 国家（第2层函数）
+choose_dimension_traveler_skill_for_tier = {
+	if = {
+		limit = {
+			check_variable = {
+				which = dimension_traveler_skill_tier
+				value = 2
+			}
+		}
+		choose_dimension_traveler_skill_for_num = {
+			CLASS = $CLASS$
+			TIER = 2
+		}
+	}
+	else_if = {
+		limit = {
+			check_variable = {
+				which = dimension_traveler_skill_tier
+				value = 3
+			}
+		}
+		choose_dimension_traveler_skill_for_num = {
+			CLASS = $CLASS$
+			TIER = 3
+		}
+	}
+	else_if = {
+		limit = {
+			check_variable = {
+				which = dimension_traveler_skill_tier
+				value = 4
+			}
+		}
+		choose_dimension_traveler_skill_for_num = {
+			CLASS = $CLASS$
+			TIER = 4
+		}
+	}
+	else_if = {
+		limit = {
+			check_variable = {
+				which = dimension_traveler_skill_tier
+				value = 5
+			}
+		}
+		choose_dimension_traveler_skill_for_num = {
+			CLASS = $CLASS$
+			TIER = 5
+		}
+	}
+	else_if = {
+		limit = {
+			check_variable = {
+				which = dimension_traveler_skill_tier
+				value = 6
+			}
+		}
+		choose_dimension_traveler_skill_for_num = {
+			CLASS = $CLASS$
+			TIER = 6
+		}
+	}
+	else_if = {
+		limit = {
+			check_variable = {
+				which = dimension_traveler_skill_tier
+				value = 7
+			}
+		}
+		choose_dimension_traveler_skill_for_num = {
+			CLASS = $CLASS$
+			TIER = 7
+		}
+	}
+	else_if = {
+		limit = {
+			check_variable = {
+				which = dimension_traveler_skill_tier
+				value = 8
+			}
+		}
+		choose_dimension_traveler_skill_for_num = {
+			CLASS = $CLASS$
+			TIER = 8
+		}
+	}
+}
+
+# 国家（第3层函数）
+choose_dimension_traveler_skill_for_num = {
+	if = {
+		limit = {
+			check_variable = {
+				which = dimension_traveler_skill_num
+				value = 1
+			}
+		}
+		unlock_dimension_traveler_skill = {
+			CLASS = $CLASS$
+			TIER = $TIER$
+			NUM = 1
+		}
+	}
+	else_if = {
+		limit = {
+			check_variable = {
+				which = dimension_traveler_skill_num
+				value = 2
+			}
+		}
+		unlock_dimension_traveler_skill = {
+			CLASS = $CLASS$
+			TIER = $TIER$
+			NUM = 2
+		}
+	}
+	else_if = {
+		limit = {
+			check_variable = {
+				which = dimension_traveler_skill_num
+				value = 3
+			}
+		}
+		unlock_dimension_traveler_skill = {
+			CLASS = $CLASS$
+			TIER = $TIER$
+			NUM = 3
+		}
+	}
+	else_if = {
+		limit = {
+			check_variable = {
+				which = dimension_traveler_skill_num
+				value = 4
+			}
+		}
+		unlock_dimension_traveler_skill = {
+			CLASS = $CLASS$
+			TIER = $TIER$
+			NUM = 4
+		}
+	}
+	else_if = {
+		limit = {
+			check_variable = {
+				which = dimension_traveler_skill_num
+				value = 5
+			}
+		}
+		unlock_dimension_traveler_skill = {
+			CLASS = $CLASS$
+			TIER = $TIER$
+			NUM = 5
+		}
+	}
+	else_if = {
+		limit = {
+			check_variable = {
+				which = dimension_traveler_skill_num
+				value = 6
+			}
+		}
+		unlock_dimension_traveler_skill = {
+			CLASS = $CLASS$
+			TIER = $TIER$
+			NUM = 6
+		}
+	}
+	else_if = {
+		limit = {
+			check_variable = {
+				which = dimension_traveler_skill_num
+				value = 7
+			}
+		}
+		unlock_dimension_traveler_skill = {
+			CLASS = $CLASS$
+			TIER = $TIER$
+			NUM = 7
+		}
+	}
+	else_if = {
+		limit = {
+			check_variable = {
+				which = dimension_traveler_skill_num
+				value = 8
+			}
+		}
+		unlock_dimension_traveler_skill = {
+			CLASS = $CLASS$
+			TIER = $TIER$
+			NUM = 8
+		}
+	}
+	else_if = {
+		limit = {
+			check_variable = {
+				which = dimension_traveler_skill_num
+				value = 9
+			}
+		}
+		unlock_dimension_traveler_skill = {
+			CLASS = $CLASS$
+			TIER = $TIER$
+			NUM = 9
+		}
+	}
+}
+
+# 国家（第4层函数）
+unlock_dimension_traveler_skill = {
+	set_country_flag = unlock_dimension_traveler_skill_$CLASS$_$TIER$_$NUM$
+}
+
+# 领袖
+dimension_traveler_skill_commander_4_2_effect = {
+	random = {
+		chance = value:dimension_traveler_skill_commander_4_2_chance
+		# 防御军
+		dimension_traveler_skill_commander_4_2_copy_army = { TYPE = defense_army }
+		dimension_traveler_skill_commander_4_2_copy_army = { TYPE = undead_defense_army }
+		dimension_traveler_skill_commander_4_2_copy_army = { TYPE = robotic_defense_army }
+		dimension_traveler_skill_commander_4_2_copy_army = { TYPE = machine_defense }
+		dimension_traveler_skill_commander_4_2_copy_army = { TYPE = offspring_defense }
+		dimension_traveler_skill_commander_4_2_copy_army = { TYPE = wilderness_pre_sapient_defence_army }
+		dimension_traveler_skill_commander_4_2_copy_army = { TYPE = fanatic_guardian }
+		dimension_traveler_skill_commander_4_2_copy_army = { TYPE = machine_fanatic_guardian }
+		dimension_traveler_skill_commander_4_2_copy_army = { TYPE = individual_machine_defense }
+		dimension_traveler_skill_commander_4_2_copy_army = { TYPE = origin_monster_hunter_defense_army }
+		# 占领军
+		dimension_traveler_skill_commander_4_2_copy_army = { TYPE = occupation_army }
+		dimension_traveler_skill_commander_4_2_copy_army = { TYPE = robotic_occupation_army }
+		dimension_traveler_skill_commander_4_2_copy_army = { TYPE = machine_occupation_army }
+		dimension_traveler_skill_commander_4_2_copy_army = { TYPE = individual_machine_occupation_army }
+		# 进攻军
+		dimension_traveler_skill_commander_4_2_copy_army = { TYPE = assault_army }
+		dimension_traveler_skill_commander_4_2_copy_army = { TYPE = slave_army }
+		dimension_traveler_skill_commander_4_2_copy_army = { TYPE = clone_army }
+		dimension_traveler_skill_commander_4_2_copy_army = { TYPE = robotic_army }
+		dimension_traveler_skill_commander_4_2_copy_army = { TYPE = psionic_army }
+		dimension_traveler_skill_commander_4_2_copy_army = { TYPE = xenomorph_army }
+		dimension_traveler_skill_commander_4_2_copy_army = { TYPE = gene_warrior_army }
+		dimension_traveler_skill_commander_4_2_copy_army = { TYPE = wilderness_pre_sapient_assault_army }
+		dimension_traveler_skill_commander_4_2_copy_army = { TYPE = abomination_army }
+		dimension_traveler_skill_commander_4_2_copy_army = { TYPE = machine_assault_1 }
+		dimension_traveler_skill_commander_4_2_copy_army = { TYPE = machine_assault_2 }
+		dimension_traveler_skill_commander_4_2_copy_army = { TYPE = machine_assault_3 }
+		dimension_traveler_skill_commander_4_2_copy_army = { TYPE = undead_army }
+		dimension_traveler_skill_commander_4_2_copy_army = { TYPE = warpling_army }
+		dimension_traveler_skill_commander_4_2_copy_army = { TYPE = flamestorm_troopers_army }
+		dimension_traveler_skill_commander_4_2_copy_army = { TYPE = individual_machine_assault_1 }
+		dimension_traveler_skill_commander_4_2_copy_army = { TYPE = individual_machine_assault_2 }
+		dimension_traveler_skill_commander_4_2_copy_army = { TYPE = individual_machine_assault_3 }
+		dimension_traveler_skill_commander_4_2_copy_army = { TYPE = perfected_clone_army }
+		dimension_traveler_skill_commander_4_2_copy_army = { TYPE = under_the_haze_army_1 }
+		dimension_traveler_skill_commander_4_2_copy_army = { TYPE = under_the_haze_army_2 }
+		dimension_traveler_skill_commander_4_2_copy_army = { TYPE = origin_time_army }
+		dimension_traveler_skill_commander_4_2_copy_army = { TYPE = origin_monster_hunter_army }
+		# 事件军
+		dimension_traveler_skill_commander_4_2_copy_army = { TYPE = titanic_assault_army }
+		dimension_traveler_skill_commander_4_2_copy_army = { TYPE = titanic_azizian_assault_army }
+		dimension_traveler_skill_commander_4_2_copy_army = { TYPE = titanic_guardian_army }
+		dimension_traveler_skill_commander_4_2_copy_army = { TYPE = shroud_army }
+		dimension_traveler_skill_commander_4_2_copy_army = { TYPE = gray_army }
+		dimension_traveler_skill_commander_4_2_copy_army = { TYPE = sentinel_army }
+		dimension_traveler_skill_commander_4_2_copy_army = { TYPE = cybrex_warform }
+		dimension_traveler_skill_commander_4_2_copy_army = { TYPE = imperial_legion }
+		dimension_traveler_skill_commander_4_2_copy_army = { TYPE = giant_undead_army }
+		dimension_traveler_skill_commander_4_2_copy_army = { TYPE = mercenary_army }
+		dimension_traveler_skill_commander_4_2_copy_army = { TYPE = mecha_army }
+		dimension_traveler_skill_commander_4_2_copy_army = { TYPE = fruitful_army }
+		dimension_traveler_skill_commander_4_2_copy_army = { TYPE = behemoth_army }
+		dimension_traveler_skill_commander_4_2_copy_army = { TYPE = mindwarden_army }
+	}
+}
+
+dimension_traveler_skill_commander_4_2_copy_army = {
+	if = {
+		limit = {
+			root.from = { army_type = $TYPE$ }
+		}
+		if = {
+			limit = {
+				root.from = { exists = species }
+			}
+			root.fromfromfrom = {
+				create_army = {
+					owner = root
+					type = $TYPE$
+					species = root.from.species
+				}
+			}
+		}
+		else = {
+			root.fromfromfrom = {
+				create_army = {
+					owner = root
+					type = $TYPE$
+				}
+			}
+		}
+	}
+}

@@ -1,0 +1,465 @@
+# 国家
+gain_origin_pirate_king_reward = {
+	# 赏金
+	if = {
+		limit = {
+			OR = {
+				NOT = { exists = event_target:pirate_king_situation }
+				event_target:pirate_king_situation = {
+					current_situation_approach = approach_origin_pirate_king_default
+				}
+			}
+		}
+		add_resource = {
+			energy = $energy|0$
+			minerals = $minerals|0$
+			food = $food|0$
+			alloys = $alloys|0$
+			consumer_goods = $consumer_goods|0$
+			physics_research = $physics_research|0$
+			society_research = $society_research|0$
+			engineering_research = $engineering_research|0$
+			unity = $unity|0$
+			sr_dark_matter = $sr_dark_matter|0$
+			astral_threads = $astral_threads|0$
+			nanites = $nanites|0$
+			mult = value:pirate_king_situation_resource_value
+		}
+	}
+	# 恶名
+	if = {
+		limit = {
+			exists = event_target:pirate_king_situation
+		}
+		event_target:pirate_king_situation = {
+			if = {
+				limit = {
+					current_situation_approach = approach_origin_pirate_king_default
+				}
+				add_situation_progress = value:pirate_king_situation_progress_value|PROGRESS|$progress$|
+			}
+			else = {
+				add_situation_progress = value:pirate_king_situation_progress_value|PROGRESS|$progress$|MULT|2|
+			}
+		}
+	}
+}
+
+# 领袖
+gain_leader_trait_origin_pirate = {
+	switch = {
+		trigger = leader_class
+		official = {
+			add_trait = {
+				trait = leader_trait_origin_pirate_king_official
+				show_message = no
+			}
+		}
+		scientist = {
+			add_trait = {
+				trait = leader_trait_origin_pirate_king_scientist
+				show_message = no
+			}
+		}
+		commander = {
+			add_trait = {
+				trait = leader_trait_origin_pirate_king_commander
+				show_message = no
+			}
+		}
+	}
+}
+
+# 局势
+choose_pirate_king_hostile_fleet_location = {
+	# 优先选择“黑珍珠号”所在星系
+	if = {
+		limit = {
+			exists = event_target:pirate_king_arkship
+			event_target:pirate_king_arkship = { exists = solar_system }
+		}
+		event_target:pirate_king_arkship = {
+			solar_system = {
+				save_event_target_as = pirate_king_hostile_fleet_system
+				random_system_planet = {
+					save_event_target_as = pirate_king_hostile_fleet_location
+				}
+			}
+		}
+	}
+	# “黑珍珠号”不存在星系域时（航道中/失踪）的保底位置
+	else = {
+		owner = {
+			random_system_within_border = {
+				save_event_target_as = pirate_king_hostile_fleet_system
+				random_system_planet = {
+					save_event_target_as = pirate_king_hostile_fleet_location
+				}
+			}
+		}
+	}
+}
+
+# 任意（root的owner应为国家）
+create_pirate_king_end_species = {
+	if = {
+		limit = {
+			root.owner = {
+				has_origin_pirate_king = yes
+				owner_main_species = { is_archetype = MACHINE }
+			}
+		}
+		create_species = {
+			name = "NAME_Pirate_King_Species"
+			class = MACHINE
+			portrait = nec_machine
+			traits = {
+				ideal_planet_class = pc_ark
+				trait = trait_machine_unit
+				trait = trait_origin_pirate_king_end
+				trait = trait_robot_history_warbot
+				trait = trait_robot_enhanced_memory
+				trait = trait_robot_integrated_weaponry
+				trait = trait_robot_quarrelsome
+				trait = trait_robot_high_maintenance
+			}
+			immortal = yes
+			effect = {
+				save_global_event_target_as = pirate_king_end_species
+			}
+		}
+	}
+	else = {
+		create_species = {
+			name = "NAME_Pirate_King_Species"
+			class = NECROID
+			portrait = random
+			traits = {
+				ideal_planet_class = pc_ark
+				trait = trait_organic
+				trait = trait_origin_pirate_king_end
+				trait = trait_genetic_memory
+				trait = trait_spare_organs
+				trait = trait_acidic_vascularity
+				trait = trait_quarrelsome
+				trait = trait_brittle
+			}
+			immortal = yes
+			effect = {
+				save_global_event_target_as = pirate_king_end_species
+			}
+		}
+	}
+	if = {
+		limit = {
+			root.owner = { has_origin_pirate_king = yes }
+		}
+		root.owner = {
+			owner_main_species = {
+				event_target:pirate_king_end_species = {
+					set_species_identity = prev
+				}
+			}
+		}
+	}
+}
+
+# 国家
+create_pirate_king_leader = {
+	create_leader = {
+		class = commander
+		species = event_target:pirate_king_end_species
+		name = "NAME_Pirate_King_Leader"
+		gender = male
+		randomize_traits = no
+		event_leader = yes
+		skill = 1
+		immortal = yes
+		background_ethic = ethic_xenophobe
+		background_planet = event_target:pirate_king_black_hole
+		custom_catch_phrase = pirate_king_leader_catch_phrase
+		custom_description = pirate_king_leader_backstory
+		set_age = 1453
+		traits = {
+			trait = subclass_commander_admiral
+			trait = leader_trait_pass_black_hole_pirate_king
+			trait = leader_trait_mercenary_warrior
+		}
+		effect = {
+			set_skill = 10
+			freeze_leader_age = no
+			save_global_event_target_as = pirate_king_leader
+		}
+	}
+}
+
+# 国家
+create_pirate_king_leader_final = {
+	create_leader = {
+		class = commander
+		species = event_target:pirate_king_end_species
+		name = "NAME_Pirate_King_Leader"
+		gender = male
+		randomize_traits = no
+		event_leader = yes
+		skill = 1
+		immortal = yes
+		background_ethic = ethic_xenophobe
+		background_planet = event_target:pirate_king_black_hole
+		custom_catch_phrase = pirate_king_leader_catch_phrase
+		custom_description = pirate_king_leader_backstory
+		set_age = 1453
+		traits = {
+			trait = subclass_commander_admiral
+			trait = leader_trait_pass_black_hole_pirate_king
+			trait = leader_trait_mercenary_warrior
+			trait = leader_trait_wrecker_2
+			trait = leader_trait_artillerist_2
+			trait = leader_trait_unyielding
+			trait = leader_trait_aggressive
+		}
+		effect = {
+			set_skill = 10
+			freeze_leader_age = no
+			set_leader_flag = pirate_king_end
+			change_background_job = pirate_king # 最后一次才显示
+			save_global_event_target_as = pirate_king_leader
+		}
+	}
+}
+
+# 国家
+create_pirate_king_leader_phantom = {
+	clone_leader = {
+		target = event_target:pirate_king_leader
+		effect = {
+			set_name = NAME_Pirate_King_Leader_Phantom
+			save_global_event_target_as = pirate_king_leader_phantom
+		}
+	}
+}
+
+# 国家
+create_pirate_king_end_flagship = {
+	create_fleet = {
+		name = "NAME_Pirate_King_Fleet_4"
+		settings = {
+			can_change_composition = no
+			uses_naval_capacity = no
+			spawn_debris = no
+		}
+		effect = {
+			set_owner = prev
+			create_ship = {
+				name = "NAME_Pirate_King_End_Arkship"
+				design = "NAME_Pirate_King_End_Arkship_Design"
+				graphical_culture = "military_arkship"
+				prefix = no
+				effect = {
+					set_ship_flag = pirate_king_end_arkship
+					set_disable_at_health = -1
+					add_modifier = {
+						modifier = pirate_king_arkship_modifier
+						days = -1
+					}
+					colony = {
+						add_district = district_ark_generator
+						add_district = district_ark_basic
+						add_district = district_ark_military
+					}
+					starbase = {
+						set_starbase_module = {
+							slot = 1
+							module = arkship_mass_driver_battery
+						}
+						set_starbase_module = {
+							slot = 3
+							module = arkship_mass_driver_battery
+						}
+						set_starbase_module = {
+							slot = 5
+							module = arkship_mass_driver_battery
+						}
+						set_starbase_module = {
+							slot = 2
+							module = arkship_laser_battery
+						}
+						set_starbase_module = {
+							slot = 4
+							module = arkship_laser_battery
+						}
+						set_starbase_module = {
+							slot = 6
+							module = arkship_laser_battery
+						}
+						set_starbase_module = {
+							slot = 7
+							module = pirate_king_arkship_spinal_devastator_mount
+						}
+						set_starbase_building = {
+							slot = 1
+							building = arkship_armor
+						}
+						set_starbase_building = {
+							slot = 3
+							building = arkship_armor
+						}
+						set_starbase_building = {
+							slot = 5
+							building = arkship_armor
+						}
+						set_starbase_building = {
+							slot = 7
+							building = arkship_armor
+						}
+						set_starbase_building = {
+							slot = 2
+							building = arkship_shield
+						}
+						set_starbase_building = {
+							slot = 4
+							building = arkship_shield
+						}
+						set_starbase_building = {
+							slot = 6
+							building = arkship_shield
+						}
+						set_starbase_building = {
+							slot = 8
+							building = arkship_shield
+						}
+					}
+				}
+			}
+			set_location = {
+				target = event_target:pirate_king_black_hole
+				distance = 20
+				angle = random
+				direction = out_system
+			}
+			save_global_event_target_as = pirate_king_flagship
+			assign_leader = event_target:pirate_king_leader
+		}
+	}
+}
+
+# 国家
+create_pirate_king_end_fleet = {
+	create_fleet = {
+		name = "NAME_Pirate_King_Fleet_4"
+		settings = {
+			can_upgrade = no
+			can_change_composition = no
+			uses_naval_capacity = no
+		}
+		effect = {
+			set_owner = prev
+			while = {
+				count = $MARAUDER_CORVETTE$
+				create_ship = {
+					name = "NAME_Pirate_King_Ship_4"
+					design = "NAME_Outrider"
+					graphical_culture = "pirate_01"
+					prefix = no
+					upgradable = no
+				}
+			}
+			while = {
+				count = $MARAUDER_DESTROYER$
+				create_ship = {
+					name = "NAME_Pirate_King_Ship_3"
+					design = "NAME_Lancer"
+					graphical_culture = "pirate_01"
+					prefix = no
+					upgradable = no
+				}
+			}
+			while = {
+				count = $MARAUDER_CRUISER$
+				create_ship = {
+					name = "NAME_Pirate_King_Ship_2"
+					design = "NAME_Void_Champion"
+					graphical_culture = "pirate_01"
+					prefix = no
+					upgradable = no
+				}
+			}
+			while = {
+				count = $MARAUDER_GALLEON$
+				create_ship = {
+					name = "NAME_Pirate_King_Ship_1"
+					design = "NAME_Ancestral_Glory"
+					graphical_culture = "pirate_01"
+					prefix = no
+					upgradable = no
+				}
+			}
+			set_location = {
+				target = event_target:pirate_king_black_hole
+				distance = 20
+				angle = random
+				direction = out_system
+			}
+			save_global_event_target_as = pirate_king_fleet
+			assign_leader = event_target:pirate_king_leader_phantom
+		}
+	}
+}
+
+# 任意
+create_pirate_king_end_horror_country = {
+	create_country = {
+		name = "NAME_Pirate_King_End_Horror_Country"
+		type = guardian_horror
+		flag={
+			icon={
+				category="pirate"
+				file="pirate_12.dds"
+			}
+			background={
+				category="backgrounds"
+				file="flag_BG_34.dds"
+			}
+			colors={
+				"black"
+				"dark_purple"
+				"null"
+				"null"
+			}
+		}
+		auto_delete = no
+		effect = {
+			save_global_event_target_as = pirate_king_end_horror_country
+			add_modifier = {
+				modifier = pirate_king_end_monster
+				days = -1
+			}
+		}
+	}
+	create_fleet = {
+		name = "NAME_Pirate_King_Monster"
+		settings = {
+			can_upgrade = no
+			can_change_composition = no
+			can_change_leader = no
+			uses_naval_capacity = no
+			spawn_debris = no
+			is_boss = yes
+		}
+		effect = {
+			set_owner = event_target:pirate_king_end_horror_country
+			create_ship = {
+				name = "NAME_Pirate_King_Monster"
+				design = "NAME_Pirate_King_Monster"
+				prefix = no
+				upgradable = no
+			}
+			set_location = {
+				target = event_target:pirate_king_black_hole
+				distance = 0
+				direction = in_system
+			}
+			save_global_event_target_as = pirate_king_monster
+		}
+	}
+}

@@ -1,0 +1,37 @@
+inline_script = {
+	script = jobs/origin_time/time_order_base
+	ETHIC = $ETHIC$
+}
+
+resources = {
+	category = planet_$JOB$s
+	produces = {
+		$RESOURCE$ = $AMONT$
+		mult = value:time_order_normal_resource_value|RESOURCE|$RESOURCE$|WEIGHT|$WEIGHT$|ETHIC|$ETHIC$|
+	}
+	inline_script = {
+		script = jobs/origin_time/time_order_base_resources
+		ETHIC = $ETHIC$
+	}
+}
+
+triggered_country_modifier = {
+	potential = {
+		owner_main_species = { is_robotic = no }
+	}
+	BIOLOGICAL_species_trait_picks_add = 0.5
+	mult = value:time_order_modifier_value|ETHIC|$ETHIC$|
+}
+
+triggered_country_modifier = {
+	potential = {
+		owner_main_species = { is_robotic = yes }
+	}
+	ROBOT_species_trait_picks_add = 0.5
+	mult = value:time_order_modifier_value|ETHIC|$ETHIC$|
+}
+
+triggered_country_modifier = {
+	$MODIFIER$ = @time_order_modifier
+	mult = value:time_order_modifier_value|ETHIC|$ETHIC$|
+}

@@ -1,0 +1,354 @@
+#################
+# 负相奥秘
+#################
+
+ap_horror = {
+	on_enabled = {
+		custom_tooltip = ap_horror_effect
+		hidden_effect = {
+			if = {
+				limit = {
+					has_country_flag = worm_tomb_ending
+				}
+				country_event = { id = time.10 }
+				create_timeline_active_ap_horror = yes
+			}
+			if = {
+				limit = {
+					is_dimension_traveler_owner = yes
+					dimension_traveler_is_by_our_side = yes
+				}
+				country_event = { id = dimension_traveler.500 }
+			}
+		}
+	}
+	
+	modifier = {
+		planetary_ascension_effect_mult = 0.25
+		planetary_ascension_cost_mult = -0.1
+		tradition_cost_mult = -0.1
+	}
+	
+	possible = {
+		custom_tooltip = {
+			fail_text = "requires_ascension_perks_4"
+			num_ascension_perks > 3
+		}
+		custom_tooltip = {
+			fail_text = "requires_capital_akx_star"
+			capital_star = {
+				is_same_value = event_target:akx_star
+			}
+		}
+		custom_tooltip = {
+			fail_text = "requires_capital_building_akx_worm_3"
+			capital_scope = {
+				OR = {
+					has_active_building = building_akx_worm_3
+					has_active_building = building_wonder_akx_worm_3
+				}
+			}
+		}
+		custom_tooltip = {
+			fail_text = "requires_more_tradition_horror"
+			has_tradition = tr_horror_finish
+		}
+	}
+	
+	potential = {
+		has_country_flag = worm_tomb_ending
+		has_country_flag = unlock_ap_horror
+		is_nomadic = no
+		is_homicidal = no
+		is_wilderness_empire = no
+		NOT = { has_ascension_perk = ap_horror }
+		NOT = { has_country_flag = akx_off_cource }
+	}
+	
+	ai_weight = {
+		factor = 0
+	}
+}
+
+#################
+# 时空因果
+#################
+
+ap_time = {
+	on_enabled = {
+		if = {
+			limit = {
+				has_ascension_perk = ap_time
+			}
+			custom_tooltip = ap_time_effect
+		}
+		else = {
+			custom_tooltip = ap_time_potential_effect
+		}
+		hidden_effect = {
+			if = {
+				limit = {
+					has_country_flag = worm_tomb_ending
+				}
+				country_event = { id = time.600 }
+				create_timeline_active_ap_time = yes
+			}
+			if = {
+				limit = {
+					is_dimension_traveler_owner = yes
+					dimension_traveler_is_by_our_side = yes
+				}
+				country_event = { id = dimension_traveler.510 }
+			}
+		}
+	}
+	
+	modifier = {
+		planetary_ascension_effect_mult = 0.25
+		planetary_ascension_cost_mult = -0.1
+		tradition_cost_mult = -0.1
+	}
+	
+	possible = {
+		custom_tooltip = {
+			fail_text = "requires_ascension_perks_8"
+			num_ascension_perks > 7
+		}
+		custom_tooltip = {
+			fail_text = "requires_capital_akx_star"
+			capital_star = {
+				is_same_value = event_target:akx_star
+			}
+		}
+		custom_tooltip = {
+			fail_text = "requires_capital_building_akx_worm_3"
+			capital_scope = {
+				OR = {
+					has_active_building = building_akx_worm_3
+					has_active_building = building_wonder_akx_worm_3
+				}
+			}
+		}
+		custom_tooltip = {
+			fail_text = "requires_more_tradition_time"
+			has_tradition = tr_time_finish
+		}
+	}
+	
+	potential = {
+		has_country_flag = worm_tomb_ending
+		has_country_flag = unlock_ap_time
+		is_nomadic = no
+		is_homicidal = no
+		is_wilderness_empire = no
+		NOT = { has_ascension_perk = ap_time }
+		NOT = { has_country_flag = akx_off_cource }
+	}
+	
+	ai_weight = {
+		factor = 0
+	}
+}
+
+#################
+# 超越无限
+#################
+
+ap_beyond_infinity = {
+	on_enabled = {
+		if = {
+			limit = {
+				has_ascension_perk = ap_beyond_infinity
+			}
+			custom_tooltip = ap_beyond_infinity_effect
+		}
+		else = {
+			custom_tooltip = ap_beyond_infinity_potential_effect
+		}
+		hidden_effect = {
+			set_country_flag = is_player_crisis
+			if = {
+				limit = {
+					has_country_flag = dimension_traveler_end
+				}
+				save_global_event_target_as = beyond_infinity_country
+				country_event = { id = beyond_infinity.500 }
+				create_timeline_active_ap_beyond_infinity = yes
+			}
+		}
+	}
+	
+	possible = {
+		if = {
+			limit = {
+				has_beyond_infinity_civic = no
+			}
+			custom_tooltip = {
+				fail_text = "requires_ascension_perks_12"
+				num_ascension_perks > 11
+			}
+		}
+		custom_tooltip = {
+			fail_text = "requires_independence"
+			is_subject = no
+		}
+		custom_tooltip = {
+			dimension_traveler_is_by_our_side = yes
+			fail_text = dimension_traveler_is_returning
+		}
+		if = {
+			limit = {
+				has_beyond_infinity_civic = yes
+			}
+			has_ascension_perk = ap_time
+		}
+		else_if = {
+			limit = {
+				has_tradition = tr_end_adopt
+			}
+			custom_tooltip = {
+				fail_text = "requires_more_tradition_end"
+				has_tradition = tr_end_finish
+			}
+		}
+		else = {
+			custom_tooltip = {
+				fail_text = "requires_more_tradition_hope"
+				has_tradition = tr_hope_finish
+			}
+		}
+	}
+	
+	potential = {
+		ap_beyond_infinity_potential = yes
+	}
+	
+	ai_weight = {
+		factor = 0
+	}
+}
+
+#################
+# 奇点之心
+#################
+
+ap_origin_time = {
+	on_enabled = {
+		if = {
+			limit = {
+				has_ascension_perk = ap_origin_time
+			}
+			custom_tooltip = ap_origin_time_effect
+		}
+		else = {
+			custom_tooltip = ap_origin_time_potential_effect
+		}
+	}
+	
+	possible = {
+		has_ascension_perk = ap_time
+		custom_tooltip = {
+			fail_text = "requires_four_ascension_paths"
+			OR = {
+				has_tradition = tr_psionics_finish
+				has_tradition = tr_psionics_shroud_finish
+				has_tradition = tr_genetics_finish
+				has_tradition = tr_purity_finish
+				has_tradition = tr_cloning_finish
+				has_tradition = tr_mutation_finish
+				AND = {
+					has_tradition = tr_cybernetics_finish
+					has_country_flag = cybernetics_traditions_unlocked
+				}
+				AND = {
+					has_tradition = tr_synthetics_finish
+					OR = {
+						has_country_flag = synth_virtual
+						has_country_flag = synth_physical
+						has_machine_age_dlc = no
+					}
+				}
+			}
+		}
+	}
+
+	potential = {
+		has_origin_time = yes
+		has_country_flag = decision_time_finished
+		has_origin_time_ruler = yes
+		NOT = { has_ascension_perk = ap_origin_time }
+	}
+
+	ai_weight = {
+		factor = 0
+	}
+}
+
+#################
+# 气体人征途
+#################
+
+ap_origin_gas_colony = {
+	on_enabled = {
+		custom_tooltip = ap_origin_gas_colony_effect
+	}
+	
+	modifier = {
+		terraform_speed_mult = 0.25
+		terraforming_cost_mult = -0.25
+	}
+	
+	possible = {
+		custom_tooltip = {
+			fail_text = "requires_technology_tech_climate_restoration"
+			has_technology = tech_climate_restoration
+		}
+		custom_tooltip = {
+			fail_text = "requires_ascension_perks_1"
+			num_ascension_perks > 0
+		}
+	}
+
+	potential = {
+		has_origin = origin_gas_colony
+		has_country_flag = baldarak_event_finished
+	}
+
+	ai_weight = {
+		factor = 100
+	}
+}
+
+#################
+# 纳米星环
+#################
+
+ap_nanites_ring = {
+	on_enabled = {
+		custom_tooltip = ap_nanites_ring_effect
+	}
+	
+	modifier = {
+		megastructure_build_speed_mult = 0.5
+	}
+	
+	possible = {
+		has_technology = tech_orbital_ring_tier_1
+		custom_tooltip = {
+			fail_text = "requires_ascension_perks_3"
+			num_ascension_perks > 2
+		}
+	}
+
+	potential = {
+		has_origin = origin_nanites
+		OR = {
+			has_modifier = nanites_attacker
+			has_modifier = nanites_protector
+		}
+	}
+
+	ai_weight = {
+		factor = 100
+	}
+}

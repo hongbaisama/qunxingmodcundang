@@ -1,0 +1,806 @@
+namespace = origin_corrupt_brain
+
+country_event = {
+	id = origin_corrupt_brain.1
+	is_triggered_only = yes
+	hide_window = yes
+
+	trigger = {
+		has_origin = origin_corrupt_brain
+	}
+	
+	immediate = {
+		ruler = {
+			add_trait = {
+				trait = leader_trait_corrupt_brain
+				show_message = no
+			}
+		}
+		every_owned_leader = {
+			limit = {
+				is_gestalt_node = yes
+			}
+			add_trait = {
+				trait = leader_trait_corrupt_node
+				show_message = no
+			}
+		}
+		refresh_corrupt_brain_value = yes
+		start_situation = {
+			type = situation_origin_corrupt_brain
+			target = root
+			effect = {
+				set_situation_approach = approach_origin_corrupt_brain_default
+			}
+		}
+		country_event = { id = origin_corrupt_brain.5 days = 29 }
+	}
+}
+
+# 格式塔节点补特质
+country_event = {
+	id = origin_corrupt_brain.2
+	is_triggered_only = yes
+	hide_window = yes
+
+	trigger = {
+		OR = {
+			has_origin = origin_corrupt_brain
+			has_origin = origin_corrupt_brain_end
+			has_origin = origin_pure_brain
+			has_origin = origin_pure_brain_true
+		}
+	}
+	
+	immediate = {
+		from = {
+			leader_event = { id = origin_corrupt_brain.3 days = 1 } #格式塔节点领袖在被创建时还不位于节点位置，等一天再执行效果
+		}
+	}
+}
+
+leader_event = {
+	id = origin_corrupt_brain.3
+	is_triggered_only = yes
+	hide_window = yes
+	
+	trigger = {
+		OR = {
+			is_ruler = yes
+			is_gestalt_node = yes
+		}
+	}
+	
+	immediate = {
+		if = {
+			limit = {
+				owner = {
+					OR = {
+						has_origin = origin_pure_brain
+						has_origin = origin_pure_brain_true
+					}
+				}
+			}
+			if = {
+				limit = {
+					is_ruler = yes
+				}
+				add_trait = {
+					trait = leader_trait_pure_brain
+					show_message = no
+				}
+			}
+			else = {
+				add_trait = {
+					trait = leader_trait_pure_node
+					show_message = no
+				}
+			}
+		}
+		else = {
+			if = {
+				limit = {
+					is_ruler = yes
+				}
+				add_trait = {
+					trait = leader_trait_corrupt_brain
+					show_message = no
+				}
+			}
+			else = {
+				add_trait = {
+					trait = leader_trait_corrupt_node
+					show_message = no
+				}
+			}
+		}
+		owner = {
+			refresh_corrupt_brain_value = yes
+		}
+	}
+}
+
+country_event = {
+	id = origin_corrupt_brain.5
+	is_triggered_only = yes
+	hide_window = yes
+
+	trigger = {
+	}
+	
+	immediate = {
+		refresh_corrupt_brain_value = yes
+		country_event = { id = origin_corrupt_brain.5 days = 30 }
+	}
+}
+
+country_event = {
+	id = origin_corrupt_brain.6
+	title = origin_corrupt_brain.6.name
+	desc = origin_corrupt_brain.6.desc
+	picture = GFX_evt_spymaster
+	
+	is_triggered_only = yes
+
+	trigger = {
+		if = {
+			limit = {
+				has_origin = origin_corrupt_brain
+			}
+			if = {
+				limit = {
+					OR = {
+						last_increased_tech = tech_corrupt_brain_hive_1
+						last_increased_tech = tech_corrupt_brain_hive_2
+						last_increased_tech = tech_corrupt_brain_hive_3
+						last_increased_tech = tech_corrupt_brain_machine_1
+						last_increased_tech = tech_corrupt_brain_machine_2
+						last_increased_tech = tech_corrupt_brain_machine_3
+					}
+				}
+				NOR = {
+					has_technology = tech_node_culling_3
+					has_technology = tech_node_reformatting_3
+				}
+			}
+			else = {
+				always = no
+			}
+		}
+		else = {
+			always = no
+		}
+	}
+	
+	immediate = {
+		every_owned_leader = {
+			limit = {
+				is_gestalt_node = yes
+			}
+			remove_all_negative_traits = yes
+		}
+		refresh_corrupt_brain_value = yes
+	}
+	
+	after = {
+		tooltip = {
+			every_owned_leader = {
+				limit = {
+					is_gestalt_node = yes
+				}
+				remove_all_negative_traits = yes
+			}
+		}
+	}
+	
+	option = {
+		name = origin_corrupt_brain.6.a
+		trigger = {
+			is_hive_empire = yes
+		}
+		random_situation = {
+			limit = {
+				is_situation_type = situation_origin_corrupt_brain
+			}
+			add_situation_progress = value:corrupt_brain_situation_progress_value|PROGRESS|2000|
+		}
+		if = {
+			limit = {
+				has_technology = tech_node_culling_2
+			}
+			add_tech_option_or_research_effect = {
+				TECH = tech_node_culling_3
+				PROGRESS = 0.25
+				CATEGORY = society_research
+			}
+		}
+		else_if = {
+			limit = {
+				has_technology = tech_node_culling_1
+			}
+			add_tech_option_or_research_effect = {
+				TECH = tech_node_culling_2
+				PROGRESS = 0.25
+				CATEGORY = society_research
+			}
+		}
+		else = {
+			add_tech_option_or_research_effect = {
+				TECH = tech_node_culling_1
+				PROGRESS = 0.25
+				CATEGORY = society_research
+			}
+		}
+	}
+	
+	option = {
+		name = origin_corrupt_brain.6.a
+		trigger = {
+			is_machine_empire = yes
+		}
+		random_situation = {
+			limit = {
+				is_situation_type = situation_origin_corrupt_brain
+			}
+			add_situation_progress = value:corrupt_brain_situation_progress_value|PROGRESS|2000|
+		}
+		if = {
+			limit = {
+				has_technology = tech_node_reformatting_2
+			}
+			add_tech_option_or_research_effect = {
+				TECH = tech_node_reformatting_3
+				PROGRESS = 0.25
+				CATEGORY = society_research
+			}
+		}
+		else_if = {
+			limit = {
+				has_technology = tech_node_reformatting_1
+			}
+			add_tech_option_or_research_effect = {
+				TECH = tech_node_reformatting_2
+				PROGRESS = 0.25
+				CATEGORY = society_research
+			}
+		}
+		else = {
+			add_tech_option_or_research_effect = {
+				TECH = tech_node_reformatting_1
+				PROGRESS = 0.25
+				CATEGORY = society_research
+			}
+		}
+	}
+}
+
+country_event = {
+	id = origin_corrupt_brain.7
+	title = origin_corrupt_brain.7.name
+	desc = origin_corrupt_brain.7.desc
+	picture = GFX_evt_spymaster
+	
+	is_triggered_only = yes
+
+	trigger = {
+		if = {
+			limit = {
+				has_origin = origin_corrupt_brain
+			}
+			if = {
+				limit = {
+					OR = {
+						last_increased_tech = tech_node_culling_3
+						last_increased_tech = tech_node_reformatting_3
+					}
+				}
+				has_tech_corrupt_brain = no
+			}
+			else = {
+				OR = {
+					last_increased_tech = tech_node_culling_1
+					last_increased_tech = tech_node_culling_2
+					last_increased_tech = tech_node_reformatting_1
+					last_increased_tech = tech_node_reformatting_2
+				}
+			}
+		}
+		else = {
+			always = no
+		}
+	}
+	
+	immediate = {
+	}
+	
+	option = {
+		name = origin_corrupt_brain.7.a
+		trigger = {
+			is_hive_empire = yes
+		}
+		if = {
+			limit = {
+				last_increased_tech = tech_node_culling_1
+			}
+			random_situation = {
+				limit = {
+					is_situation_type = situation_origin_corrupt_brain
+				}
+				add_situation_progress = value:corrupt_brain_situation_progress_value|PROGRESS|500|
+			}
+			add_tech_option_or_research_effect = {
+				TECH = tech_node_culling_2
+				PROGRESS = 0.25
+				CATEGORY = society_research
+			}
+		}
+		else_if = {
+			limit = {
+				last_increased_tech = tech_node_culling_2
+			}
+			random_situation = {
+				limit = {
+					is_situation_type = situation_origin_corrupt_brain
+				}
+				add_situation_progress = value:corrupt_brain_situation_progress_value|PROGRESS|1000|
+			}
+			add_tech_option_or_research_effect = {
+				TECH = tech_node_culling_3
+				PROGRESS = 0.25
+				CATEGORY = society_research
+			}
+		}
+		else_if = {
+			limit = {
+				last_increased_tech = tech_node_culling_3
+			}
+			random_situation = {
+				limit = {
+					is_situation_type = situation_origin_corrupt_brain
+				}
+				add_situation_progress = value:corrupt_brain_situation_progress_value|PROGRESS|2000|
+			}
+			if = {
+				limit = {
+					OR = {
+						has_tradition = tr_genetics_adopt
+						has_tradition = tr_purity_adopt
+						has_tradition = tr_cloning_adopt
+						has_tradition = tr_mutation_adopt
+					}
+				}
+				add_tech_option_or_research_effect = {
+					TECH = tech_corrupt_brain_hive_1
+					PROGRESS = 0.25
+					CATEGORY = society_research
+				}
+			}
+			else_if = {
+				limit = {
+					has_tradition = tr_cybernetics_adopt
+				}
+				add_tech_option_or_research_effect = {
+					TECH = tech_corrupt_brain_hive_2
+					PROGRESS = 0.25
+					CATEGORY = engineering_research
+				}
+			}
+			else_if = {
+				limit = {
+					has_tradition = tr_psionics_shroud_adopt
+				}
+				add_tech_option_or_research_effect = {
+					TECH = tech_corrupt_brain_hive_3
+					PROGRESS = 0.25
+					CATEGORY = society_research
+				}
+			}
+			else = {
+				add_monthly_resource_mult = {
+					resource = unity
+					value = @tier3unityreward
+					min = @tier3unitymin
+					max = @tier3unitymax
+				}
+			}
+		}
+	}
+	
+	option = {
+		name = origin_corrupt_brain.7.a
+		trigger = {
+			is_machine_empire = yes
+		}
+		if = {
+			limit = {
+				last_increased_tech = tech_node_reformatting_1
+			}
+			random_situation = {
+				limit = {
+					is_situation_type = situation_origin_corrupt_brain
+				}
+				add_situation_progress = value:corrupt_brain_situation_progress_value|PROGRESS|500|
+			}
+			add_tech_option_or_research_effect = {
+				TECH = tech_node_reformatting_2
+				PROGRESS = 0.25
+				CATEGORY = society_research
+			}
+		}
+		else_if = {
+			limit = {
+				last_increased_tech = tech_node_reformatting_2
+			}
+			random_situation = {
+				limit = {
+					is_situation_type = situation_origin_corrupt_brain
+				}
+				add_situation_progress = value:corrupt_brain_situation_progress_value|PROGRESS|1000|
+			}
+			add_tech_option_or_research_effect = {
+				TECH = tech_node_reformatting_3
+				PROGRESS = 0.25
+				CATEGORY = society_research
+			}
+		}
+		else_if = {
+			limit = {
+				last_increased_tech = tech_node_reformatting_3
+			}
+			random_situation = {
+				limit = {
+					is_situation_type = situation_origin_corrupt_brain
+				}
+				add_situation_progress = value:corrupt_brain_situation_progress_value|PROGRESS|2000|
+			}
+			if = {
+				limit = {
+					OR = {
+						has_tradition = tr_synthetics_adopt
+						has_tradition = tr_nanotech_adopt
+						has_tradition = tr_modularity_adopt
+						has_tradition = tr_virtuality_adopt
+					}
+				}
+				add_tech_option_or_research_effect = {
+					TECH = tech_corrupt_brain_machine_1
+					PROGRESS = 0.25
+					CATEGORY = physics_research
+				}
+			}
+			else_if = {
+				limit = {
+					has_tradition = tr_cybernetics_assimilator_adopt
+				}
+				add_tech_option_or_research_effect = {
+					TECH = tech_corrupt_brain_machine_2
+					PROGRESS = 0.25
+					CATEGORY = engineering_research
+				}
+			}
+			else_if = {
+				limit = {
+					has_tradition = tr_psionics_shroud_adopt
+				}
+				add_tech_option_or_research_effect = {
+					TECH = tech_corrupt_brain_machine_3
+					PROGRESS = 0.25
+					CATEGORY = society_research
+				}
+			}
+			else = {
+				add_monthly_resource_mult = {
+					resource = unity
+					value = @tier3unityreward
+					min = @tier3unitymin
+					max = @tier3unitymax
+				}
+			}
+		}
+	}
+}
+
+country_event = {
+	id = origin_corrupt_brain.8
+	title = origin_corrupt_brain.8.name
+	desc = origin_corrupt_brain.8.desc
+	picture = GFX_evt_spymaster
+	
+	is_triggered_only = yes
+
+	trigger = {
+		if = {
+			limit = {
+				has_origin = origin_corrupt_brain
+			}
+			has_tech_corrupt_brain = yes
+			OR = {
+				has_technology = tech_node_culling_3
+				has_technology = tech_node_reformatting_3
+			}
+		}
+		else = {
+			always = no
+		}
+	}
+	
+	immediate = {
+		set_origin = origin_pure_brain_true
+		ruler = {
+			remove_all_negative_traits = yes
+			remove_trait = leader_trait_corrupt_brain
+			add_trait = {
+				trait = leader_trait_pure_brain
+				show_message = no
+			}
+		}
+		every_owned_leader = {
+			limit = {
+				is_gestalt_node = yes
+			}
+			remove_all_negative_traits = yes
+			remove_trait = leader_trait_corrupt_node
+			add_trait = {
+				trait = leader_trait_pure_node
+				show_message = no
+			}
+		}
+		random_situation = {
+			limit = {
+				is_situation_type = situation_origin_corrupt_brain
+			}
+			destroy_situation = this
+		}
+	}
+	
+	option = {
+		name = origin_corrupt_brain.8.a
+		tooltip = {
+			set_origin = origin_pure_brain_true
+		}
+	}
+}
+
+situation_event = {
+	id = origin_corrupt_brain.11
+	title = origin_corrupt_brain.11.name
+	desc = origin_corrupt_brain.11.desc
+	picture = GFX_evt_spymaster
+	show_sound = event_yellow_alert
+	situation = this
+	
+	is_triggered_only = yes
+
+	trigger = {
+	}
+
+	immediate = {
+		owner = {
+			ruler = {
+				add_trait = {
+					trait = random_negative
+				}
+			}
+			every_owned_leader = {
+				limit = {
+					is_gestalt_node = yes
+				}
+				add_trait = {
+					trait = random_negative
+				}
+			}
+			refresh_corrupt_brain_value = yes
+		}
+	}
+	
+	after = {
+	}
+	
+	option = {
+		name = origin_corrupt_brain.11.a
+	}
+}
+
+situation_event = {
+	id = origin_corrupt_brain.12
+	title = origin_corrupt_brain.12.name
+	desc = origin_corrupt_brain.12.desc
+	picture = GFX_evt_spymaster
+	show_sound = event_yellow_alert
+	situation = this
+	
+	is_triggered_only = yes
+
+	trigger = {
+	}
+
+	immediate = {
+		owner = {
+			ruler = {
+				add_trait = {
+					trait = random_negative
+				}
+			}
+			every_owned_leader = {
+				limit = {
+					is_gestalt_node = yes
+				}
+				add_trait = {
+					trait = random_negative
+				}
+			}
+			refresh_corrupt_brain_value = yes
+		}
+	}
+	
+	after = {
+	}
+	
+	option = {
+		name = origin_corrupt_brain.12.a
+	}
+}
+
+situation_event = {
+	id = origin_corrupt_brain.13
+	title = origin_corrupt_brain.13.name
+	desc = origin_corrupt_brain.13.desc
+	picture = GFX_evt_spymaster
+	show_sound = event_yellow_alert
+	situation = this
+	
+	is_triggered_only = yes
+
+	trigger = {
+	}
+
+	immediate = {
+		owner = {
+			ruler = {
+				add_trait = {
+					trait = random_negative
+				}
+			}
+			every_owned_leader = {
+				limit = {
+					is_gestalt_node = yes
+				}
+				add_trait = {
+					trait = random_negative
+				}
+			}
+			refresh_corrupt_brain_value = yes
+		}
+	}
+	
+	after = {
+	}
+	
+	option = {
+		name = origin_corrupt_brain.13.a
+	}
+}
+
+situation_event = {
+	id = origin_corrupt_brain.14
+	title = origin_corrupt_brain.14.name
+	desc = origin_corrupt_brain.14.desc
+	picture = GFX_evt_spymaster
+	show_sound = event_yellow_alert
+	situation = this
+	
+	is_triggered_only = yes
+
+	trigger = {
+	}
+
+	immediate = {
+		owner = {
+			ruler = {
+				add_trait = {
+					trait = random_negative
+				}
+			}
+			every_owned_leader = {
+				limit = {
+					is_gestalt_node = yes
+				}
+				add_trait = {
+					trait = random_negative
+				}
+			}
+			refresh_corrupt_brain_value = yes
+		}
+	}
+	
+	after = {
+	}
+	
+	option = {
+		name = origin_corrupt_brain.14.a
+	}
+}
+
+situation_event = {
+	id = origin_corrupt_brain.15
+	title = origin_corrupt_brain.15.name
+	desc = {
+		text = origin_corrupt_brain.15.desc_1
+		trigger = {
+			owner = { has_tech_corrupt_brain = yes }
+		}
+	}
+	desc = {
+		text = origin_corrupt_brain.15.desc_2
+		trigger = {
+			owner = { has_tech_corrupt_brain = no }
+		}
+	}
+	picture = GFX_evt_spymaster
+	show_sound = event_red_alert
+	situation = this
+	
+	is_triggered_only = yes
+
+	trigger = {
+	}
+
+	immediate = {
+		owner = {
+			if = {
+				limit = {
+					has_tech_corrupt_brain = yes
+				}
+				set_origin = origin_pure_brain
+				ruler = {
+					remove_all_negative_traits = yes
+					remove_trait = leader_trait_corrupt_brain
+					add_trait = {
+						trait = leader_trait_pure_brain
+						show_message = no
+					}
+				}
+				every_owned_leader = {
+					limit = {
+						is_gestalt_node = yes
+					}
+					remove_all_negative_traits = yes
+					remove_trait = leader_trait_corrupt_node
+					add_trait = {
+						trait = leader_trait_pure_node
+						show_message = no
+					}
+				}
+			}
+			else = {
+				set_origin = origin_corrupt_brain_end
+			}
+		}
+	}
+	
+	after = {
+		hidden_effect = {
+			destroy_situation = this
+		}
+	}
+	
+	option = {
+		name = origin_corrupt_brain.15.a
+		trigger = {
+			owner = { has_tech_corrupt_brain = yes }
+		}
+		tooltip = {
+			owner = { set_origin = origin_pure_brain }
+		}
+	}
+	
+	option = {
+		name = origin_corrupt_brain.15.b
+		trigger = {
+			owner = { has_tech_corrupt_brain = no }
+		}
+		tooltip = {
+			owner = { set_origin = origin_corrupt_brain_end }
+		}
+	}
+}

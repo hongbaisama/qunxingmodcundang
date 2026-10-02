@@ -1,0 +1,551 @@
+# 低维适应体
+trait_akx_low_dimensional_adaptor = {
+	inline_script = "traits/tech_time_trait_cost"
+	category = horror
+	icon = "gfx/interface/icons/traits/trait_akx_low_dimensional_adaptor.dds"
+	opposites = { "trait_akx_high_dimensional_extender" }
+	initial = no
+	randomized = no
+	inline_script = "trait/modification_condition/tech_time_trait_organic"
+	inline_script = "trait/allowed_archetypes/time_archetypes_no_robotic"
+	localized_tags = {
+		SPECIES_TRAIT_TECH_TIME_TRAIT
+	}
+	tags = { organic cybernetic psionic genetic_ascension positive pop_output leader upkeep special }
+	sorting_priority = 9
+	custom_tooltip = trait_akx_low_dimensional_adaptor_effect
+	inline_script = {
+		script = traits/low_dimensional_adaptor_or_high_dimensional_extender_modifiers
+		LOW = positive
+		HIGH = negative
+	}
+	modifier = {
+		scientist_skill_add = 2
+	}
+	inline_script = {
+		script = traits/tech_time_trait_same_effect
+	}
+	slave_cost = {
+		trade = 500
+	}
+	assembly_score = {
+		base = 2
+	}
+}
+
+# 低维模拟组件
+trait_akx_low_dimensional_adaptor_robot = {
+	inline_script = "traits/tech_time_trait_cost"
+	category = horror
+	icon = "gfx/interface/icons/traits/trait_akx_low_dimensional_adaptor_robot.dds"
+	opposites = { "trait_akx_high_dimensional_extender_robot" }
+	initial = no
+	randomized = no
+	inline_script = "trait/modification_condition/tech_time_trait_robotic"
+	inline_script = "trait/allowed_archetypes/time_archetypes_robotic"
+	localized_tags = {
+		SPECIES_TRAIT_TECH_TIME_TRAIT
+	}
+	tags = { machine synthetic modularity positive pop_output leader upkeep special }
+	sorting_priority = 9
+	custom_tooltip = trait_akx_low_dimensional_adaptor_effect
+	inline_script = {
+		script = traits/low_dimensional_adaptor_or_high_dimensional_extender_modifiers
+		LOW = positive
+		HIGH = negative
+	}
+	modifier = {
+		scientist_skill_add = 2
+	}
+	inline_script = {
+		script = traits/tech_time_trait_same_effect
+	}
+	slave_cost = {
+		trade = 500
+	}
+	assembly_score = {
+		base = 2
+	}
+}
+
+# 高维延展体
+trait_akx_high_dimensional_extender = {
+	inline_script = "traits/tech_time_trait_cost"
+	category = horror
+	icon = "gfx/interface/icons/traits/trait_akx_high_dimensional_extender.dds"
+	opposites = { "trait_akx_low_dimensional_adaptor" }
+	initial = no
+	randomized = no
+	inline_script = "trait/modification_condition/tech_time_trait_organic"
+	inline_script = "trait/allowed_archetypes/time_archetypes_no_robotic"
+	localized_tags = {
+		SPECIES_TRAIT_TECH_TIME_TRAIT
+	}
+	tags = { organic cybernetic psionic genetic_ascension positive pop_output leader upkeep special }
+	sorting_priority = 9
+	custom_tooltip = trait_akx_high_dimensional_extender_effect
+	inline_script = {
+		script = traits/low_dimensional_adaptor_or_high_dimensional_extender_modifiers
+		LOW = negative
+		HIGH = positive
+	}
+	modifier = {
+		scientist_skill_add = 2
+	}
+	inline_script = {
+		script = traits/tech_time_trait_same_effect
+	}
+	slave_cost = {
+		trade = 500
+	}
+	assembly_score = {
+		base = 2
+	}
+}
+
+# 高维演算组件
+trait_akx_high_dimensional_extender_robot = {
+	inline_script = "traits/tech_time_trait_cost"
+	category = horror
+	icon = "gfx/interface/icons/traits/trait_akx_high_dimensional_extender_robot.dds"
+	opposites = { "trait_akx_low_dimensional_adaptor_robot" }
+	initial = no
+	randomized = no
+	inline_script = "trait/modification_condition/tech_time_trait_robotic"
+	inline_script = "trait/allowed_archetypes/time_archetypes_robotic"
+	localized_tags = {
+		SPECIES_TRAIT_TECH_TIME_TRAIT
+	}
+	tags = { machine synthetic modularity positive pop_output leader upkeep special }
+	sorting_priority = 9
+	custom_tooltip = trait_akx_high_dimensional_extender_effect
+	inline_script = {
+		script = traits/low_dimensional_adaptor_or_high_dimensional_extender_modifiers
+		LOW = negative
+		HIGH = positive
+	}
+	modifier = {
+		scientist_skill_add = 2
+	}
+	inline_script = {
+		script = traits/tech_time_trait_same_effect
+	}
+	slave_cost = {
+		trade = 500
+	}
+	assembly_score = {
+		base = 2
+	}
+}
+
+
+
+# 空间实体
+trait_akx_spatial_entity = {
+	inline_script = "traits/tech_time_trait_cost"
+	category = horror
+	icon = "gfx/interface/icons/traits/trait_akx_spatial_entity.dds"
+	opposites = { "trait_akx_time_incorporeality" }
+	initial = no
+	randomized = no
+	inline_script = "trait/modification_condition/tech_time_trait_organic"
+	inline_script = "trait/allowed_archetypes/time_archetypes_no_robotic"
+	localized_tags = {
+		SPECIES_TRAIT_TECH_TIME_TRAIT
+	}
+	tags = { organic cybernetic psionic genetic_ascension positive army leader upkeep special }
+	sorting_priority = 9
+	custom_tooltip_with_modifiers = trait_time_trait_effect
+	modifier = {
+		army_damage_mult = 1
+		army_morale_damage_mult = 1
+		army_damage_taken_mult = 0.5
+		army_morale_damage_taken_mult = 0.5
+		commander_skill_add = 2
+	}
+	inline_script = {
+		script = traits/tech_time_trait_same_effect
+	}
+	slave_cost = {
+		trade = 500
+	}
+	assembly_score = {
+		base = 2
+	}
+}
+
+# 空间超频器
+trait_akx_spatial_entity_robot = {
+	inline_script = "traits/tech_time_trait_cost"
+	category = horror
+	icon = "gfx/interface/icons/traits/trait_akx_spatial_entity_robot.dds"
+	opposites = { "trait_akx_time_incorporeality_robot" }
+	initial = no
+	randomized = no
+	inline_script = "trait/modification_condition/tech_time_trait_robotic"
+	inline_script = "trait/allowed_archetypes/time_archetypes_robotic"
+	localized_tags = {
+		SPECIES_TRAIT_TECH_TIME_TRAIT
+	}
+	tags = { machine synthetic modularity positive army leader upkeep special }
+	sorting_priority = 9
+	custom_tooltip_with_modifiers = trait_time_trait_effect
+	modifier = {
+		army_damage_mult = 1
+		army_morale_damage_mult = 1
+		army_damage_taken_mult = 0.5
+		army_morale_damage_taken_mult = 0.5
+		commander_skill_add = 2
+	}
+	inline_script = {
+		script = traits/tech_time_trait_same_effect
+	}
+	slave_cost = {
+		trade = 500
+	}
+	assembly_score = {
+		base = 2
+	}
+}
+
+# 时间虚体
+trait_akx_time_incorporeality = {
+	inline_script = "traits/tech_time_trait_cost"
+	category = horror
+	icon = "gfx/interface/icons/traits/trait_akx_time_incorporeality.dds"
+	opposites = { "trait_akx_spatial_entity" }
+	initial = no
+	randomized = no
+	inline_script = "trait/modification_condition/tech_time_trait_organic"
+	inline_script = "trait/allowed_archetypes/time_archetypes_no_robotic"
+	localized_tags = {
+		SPECIES_TRAIT_TECH_TIME_TRAIT
+	}
+	tags = { organic cybernetic psionic genetic_ascension positive army leader upkeep special }
+	sorting_priority = 9
+	custom_tooltip_with_modifiers = trait_time_trait_effect
+	modifier = {
+		army_damage_taken_mult = -0.5
+		army_morale_damage_taken_mult = -0.5
+		army_damage_mult = -1
+		army_morale_damage_mult = -1
+		commander_skill_add = 2
+	}
+	inline_script = {
+		script = traits/tech_time_trait_same_effect
+	}
+	slave_cost = {
+		trade = 500
+	}
+	assembly_score = {
+		base = 2
+	}
+}
+
+# 时间振荡器
+trait_akx_time_incorporeality_robot = {
+	inline_script = "traits/tech_time_trait_cost"
+	category = horror
+	icon = "gfx/interface/icons/traits/trait_akx_time_incorporeality_robot.dds"
+	opposites = { "trait_akx_spatial_entity_robot" }
+	initial = no
+	randomized = no
+	inline_script = "trait/modification_condition/tech_time_trait_robotic"
+	inline_script = "trait/allowed_archetypes/time_archetypes_robotic"
+	localized_tags = {
+		SPECIES_TRAIT_TECH_TIME_TRAIT
+	}
+	tags = { machine synthetic modularity positive army leader upkeep special }
+	sorting_priority = 9
+	custom_tooltip_with_modifiers = trait_time_trait_effect
+	modifier = {
+		army_damage_taken_mult = -0.5
+		army_morale_damage_taken_mult = -0.5
+		army_damage_mult = -1
+		army_morale_damage_mult = -1
+		commander_skill_add = 2
+	}
+	inline_script = {
+		script = traits/tech_time_trait_same_effect
+	}
+	slave_cost = {
+		trade = 500
+	}
+	assembly_score = {
+		base = 2
+	}
+}
+
+
+
+# 浓缩者
+trait_akx_concentrator = {
+	inline_script = "traits/tech_time_trait_cost"
+	category = horror
+	icon = "gfx/interface/icons/traits/trait_akx_concentrator.dds"
+	opposites = { "trait_akx_diffuser" }
+	initial = no
+	randomized = no
+	inline_script = "trait/modification_condition/tech_time_trait_organic"
+	inline_script = "trait/allowed_archetypes/time_archetypes_no_robotic"
+	localized_tags = {
+		SPECIES_TRAIT_TECH_TIME_TRAIT
+	}
+	tags = { organic cybernetic psionic genetic_ascension positive habitability pop_growth leader upkeep special }
+	sorting_priority = 9
+	custom_tooltip_with_modifiers = trait_time_trait_effect
+	modifier = {
+		habitability_ceil_add = 0.5
+		habitability_floor_add = 0.5
+		logistic_growth_mult = -0.5
+		bonus_pop_growth_mult = -0.5
+		leader_skill_add = 1
+	}
+	inline_script = {
+		script = traits/tech_time_trait_same_effect
+	}
+	slave_cost = {
+		trade = 500
+	}
+	assembly_score = {
+		base = 2
+	}
+}
+
+# 浓缩机体
+trait_akx_concentrator_robot = {
+	inline_script = "traits/tech_time_trait_cost"
+	category = horror
+	icon = "gfx/interface/icons/traits/trait_akx_concentrator_robot.dds"
+	opposites = { "trait_akx_diffuser_robot" }
+	initial = no
+	randomized = no
+	inline_script = "trait/modification_condition/tech_time_trait_robotic"
+	inline_script = "trait/allowed_archetypes/time_archetypes_robotic"
+	localized_tags = {
+		SPECIES_TRAIT_TECH_TIME_TRAIT
+	}
+	tags = { machine synthetic modularity positive habitability pop_growth leader upkeep special }
+	sorting_priority = 9
+	custom_tooltip_with_modifiers = trait_time_trait_effect
+	modifier = {
+		habitability_ceil_add = 0.5
+		habitability_floor_add = 0.5
+		planet_pop_assembly_mult = -0.5
+		leader_skill_add = 1
+	}
+	inline_script = {
+		script = traits/tech_time_trait_same_effect
+	}
+	slave_cost = {
+		trade = 500
+	}
+	assembly_score = {
+		base = 2
+	}
+}
+
+# 扩散者
+trait_akx_diffuser = {
+	inline_script = "traits/tech_time_trait_cost"
+	category = horror
+	icon = "gfx/interface/icons/traits/trait_akx_diffuser.dds"
+	opposites = { "trait_akx_concentrator" }
+	initial = no
+	randomized = no
+	inline_script = "trait/modification_condition/tech_time_trait_organic"
+	inline_script = "trait/allowed_archetypes/time_archetypes_no_robotic"
+	localized_tags = {
+		SPECIES_TRAIT_TECH_TIME_TRAIT
+	}
+	tags = { organic cybernetic psionic genetic_ascension positive habitability pop_growth leader upkeep special }
+	sorting_priority = 9
+	custom_tooltip_with_modifiers = trait_time_trait_effect
+	modifier = {
+		logistic_growth_mult = 0.5
+		bonus_pop_growth_mult = 0.5
+		habitability_ceil_add = -0.5
+		habitability_floor_add = -0.5
+		leader_skill_add = 1
+	}
+	inline_script = {
+		script = traits/tech_time_trait_same_effect
+	}
+	slave_cost = {
+		trade = 500
+	}
+	assembly_score = {
+		base = 2
+	}
+}
+
+# 扩散机体
+trait_akx_diffuser_robot = {
+	inline_script = "traits/tech_time_trait_cost"
+	category = horror
+	icon = "gfx/interface/icons/traits/trait_akx_diffuser_robot.dds"
+	opposites = { "trait_akx_concentrator_robot" }
+	initial = no
+	randomized = no
+	inline_script = "trait/modification_condition/tech_time_trait_robotic"
+	inline_script = "trait/allowed_archetypes/time_archetypes_robotic"
+	localized_tags = {
+		SPECIES_TRAIT_TECH_TIME_TRAIT
+	}
+	tags = { machine synthetic modularity positive habitability pop_growth leader upkeep special }
+	sorting_priority = 9
+	custom_tooltip_with_modifiers = trait_time_trait_effect
+	modifier = {
+		planet_pop_assembly_mult = 0.5
+		habitability_ceil_add = -0.5
+		habitability_floor_add = -0.5
+		leader_skill_add = 1
+	}
+	inline_script = {
+		script = traits/tech_time_trait_same_effect
+	}
+	slave_cost = {
+		trade = 500
+	}
+	assembly_score = {
+		base = 2
+	}
+}
+
+
+
+# 心灵辐射者
+trait_akx_spiritual_radiator = {
+	inline_script = "traits/tech_time_trait_cost"
+	category = horror
+	icon = "gfx/interface/icons/traits/trait_akx_spiritual_radiator.dds"
+	opposites = { "trait_akx_body_folder" }
+	initial = no
+	randomized = no
+	inline_script = "trait/modification_condition/tech_time_trait_organic"
+	inline_script = "trait/allowed_archetypes/time_archetypes_no_robotic"
+	localized_tags = {
+		SPECIES_TRAIT_TECH_TIME_TRAIT
+	}
+	tags = { organic cybernetic psionic genetic_ascension positive amenities housing empire_size leader upkeep special }
+	sorting_priority = 9
+	custom_tooltip_with_modifiers = trait_time_trait_effect
+	modifier = {
+		pop_amenities_usage_mult = -0.5
+		species_empire_size_mult = -0.5
+		pop_housing_usage_mult = 0.5
+		planet_pops_upkeep_mult = 0.5
+		official_skill_add = 2
+	}
+	inline_script = {
+		script = traits/tech_time_trait_same_effect
+	}
+	slave_cost = {
+		trade = 500
+	}
+	assembly_score = {
+		base = 2
+	}
+}
+
+# 心灵辐射单元
+trait_akx_spiritual_radiator_robot = {
+	inline_script = "traits/tech_time_trait_cost"
+	category = horror
+	icon = "gfx/interface/icons/traits/trait_akx_spiritual_radiator_robot.dds"
+	opposites = { "trait_akx_body_folder_robot" }
+	initial = no
+	randomized = no
+	inline_script = "trait/modification_condition/tech_time_trait_robotic"
+	inline_script = "trait/allowed_archetypes/time_archetypes_robotic"
+	localized_tags = {
+		SPECIES_TRAIT_TECH_TIME_TRAIT
+	}
+	tags = { machine synthetic modularity positive amenities housing empire_size leader upkeep special }
+	sorting_priority = 9
+	custom_tooltip_with_modifiers = trait_time_trait_effect
+	modifier = {
+		pop_amenities_usage_mult = -0.5
+		species_empire_size_mult = -0.5
+		pop_housing_usage_mult = 0.5
+		planet_pops_upkeep_mult = 0.5
+		official_skill_add = 2
+	}
+	inline_script = {
+		script = traits/tech_time_trait_same_effect
+	}
+	slave_cost = {
+		trade = 500
+	}
+	assembly_score = {
+		base = 2
+	}
+}
+
+# 躯壳折叠者
+trait_akx_body_folder = {
+	inline_script = "traits/tech_time_trait_cost"
+	category = horror
+	icon = "gfx/interface/icons/traits/trait_akx_body_folder.dds"
+	opposites = { "trait_akx_spiritual_radiator" }
+	initial = no
+	randomized = no
+	inline_script = "trait/modification_condition/tech_time_trait_organic"
+	inline_script = "trait/allowed_archetypes/time_archetypes_no_robotic"
+	localized_tags = {
+		SPECIES_TRAIT_TECH_TIME_TRAIT
+	}
+	tags = { organic cybernetic psionic genetic_ascension positive amenities housing empire_size leader upkeep special }
+	sorting_priority = 9
+	custom_tooltip_with_modifiers = trait_time_trait_effect
+	modifier = {
+		pop_housing_usage_mult = -0.5
+		planet_pops_upkeep_mult = -0.5
+		pop_amenities_usage_mult = 0.5
+		species_empire_size_mult = 0.5
+		official_skill_add = 2
+	}
+	inline_script = {
+		script = traits/tech_time_trait_same_effect
+	}
+	slave_cost = {
+		trade = 500
+	}
+	assembly_score = {
+		base = 2
+	}
+}
+
+# 躯壳折叠单元
+trait_akx_body_folder_robot = {
+	inline_script = "traits/tech_time_trait_cost"
+	category = horror
+	icon = "gfx/interface/icons/traits/trait_akx_body_folder_robot.dds"
+	opposites = { "trait_akx_spiritual_radiator_robot" }
+	initial = no
+	randomized = no
+	inline_script = "trait/modification_condition/tech_time_trait_robotic"
+	inline_script = "trait/allowed_archetypes/time_archetypes_robotic"
+	localized_tags = {
+		SPECIES_TRAIT_TECH_TIME_TRAIT
+	}
+	tags = { machine synthetic modularity positive amenities housing empire_size leader upkeep special }
+	sorting_priority = 9
+	custom_tooltip_with_modifiers = trait_time_trait_effect
+	modifier = {
+		pop_housing_usage_mult = -0.5
+		planet_pops_upkeep_mult = -0.5
+		pop_amenities_usage_mult = 0.5
+		species_empire_size_mult = 0.5
+		official_skill_add = 2
+	}
+	inline_script = {
+		script = traits/tech_time_trait_same_effect
+	}
+	slave_cost = {
+		trade = 500
+	}
+	assembly_score = {
+		base = 2
+	}
+}

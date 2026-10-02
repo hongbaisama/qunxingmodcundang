@@ -1,0 +1,67 @@
+zone_pirate_king_military = {
+	icon = GFX_district_specialization_forever_cruise_city_mixed
+	base_buildtime = @zone_buildtime
+	
+	potential = {
+		carrier_is_type = ship
+		ship = { has_ship_flag = pirate_king_arkship }
+	}
+
+	unlock = {
+		carrier_is_type = ship
+		ship = { has_ship_flag = pirate_king_arkship }
+	}
+
+	resources = {
+		category = planet_zones
+		inline_script = {
+			script = buildings/nomadic_cost_switcher
+			REGULAR_RESOURCE = minerals
+			NOMADIC_RESOURCE = alloys
+			COST = @zone_cost
+			NOMADIC_COST_MULT = 0.5
+		}
+	}
+
+	planet_modifier = {
+		zone_building_slots_add = @time_mod_zone_max_buildings
+	}
+	
+	triggered_country_modifier = {
+		pirate_king_reward_gain = 0.01
+		mult = value:zone_pirate_king_military_soldier_value
+	}
+	
+	triggered_country_modifier = {
+		starbase_shipyard_build_speed_mult = 0.01
+		mult = value:zone_pirate_king_military_foundry_value
+	}
+	
+	inline_script = {
+		script = jobs/zone_soldiers_add
+		AMOUNT = @scaling_district_1_job
+	}
+	
+	inline_script = {
+		script = jobs/zone_foundry_add
+		AMOUNT = @scaling_district_1_job
+		AMOUNT2 = @scaling_district_1_job
+	}
+	
+	triggered_desc = {
+		text = zone_pirate_king_military_tt
+	}
+	
+	zone_sets = {
+		ark_military
+	}
+	
+	included_building_sets = {
+		fortress
+		industrial
+		foundry
+	}
+	
+	ai_weight_coefficient = 10
+	ai_priority = 100
+}

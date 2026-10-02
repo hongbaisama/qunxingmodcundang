@@ -1,0 +1,77 @@
+﻿l_english:
+ # 特质
+ concept_dimension_traveler_leader_trait_subclass: "§dAjimu§!"
+ concept_dimension_traveler_leader_trait_destiny: "§dAngelina§!"
+ concept_dimension_traveler_leader_trait_destiny_gestalt: "§dCausal Node§!"
+ concept_dimension_traveler_leader_trait_other: "§vDimension Traveler Trait§!"
+ concept_dimension_traveler_leader_trait: "Dimension Traveler Trait"
+ concept_dimension_traveler_leader_trait_desc: "This is a §cLeader Trait§! exclusive to the Dimension Traveler in the §HTime and Space§! mod.\n\nThe bonus values of such traits are generally related to the Dimension Traveler's §Y$MOD_LEADER_SKILL_ADD$§!, and enhanced by factors such as ['concept_messenger_network_cyan']."
+ 
+ concept_trait_dimension_traveler: "$trait_dimension_traveler$"
+ 
+ # 政策
+ concept_horror_dimension_traveler: "£mod_black_hole£§MMessenger of the Loop§!"
+ concept_normal_dimension_traveler: "£mod_black_hole£§BPlane Traveler§!"
+ concept_policy_dimension_traveler: "£mod_col_time_mult£§RFate of Dimension Traveler§!"
+ concept_policy_dimension_traveler_desc: "This represents the attitude of the §YDimension Traveler§! towards §MInverse Phase Abilities§!, and also means the §HFate Ending§! the §YDimension Traveler§! eventually moves towards (although that is a distant future, or past).\n\nIf choosing to accept the §Molive branch of The Worm-in-Waiting§!, the §YDimension Traveler§!'s exclusive traits will be greatly §Genhanced§!, but will be §Runable§! to gain experience.\n\nIf choosing to be firm on §Bher own path§!, the §YDimension Traveler§! will not bear any extra §Gbuffs§! or §Rdebuffs§!."
+ 
+ # 信使网络
+ concept_messenger_network_white: "§W£akx_messenger£Messenger Network Completion§!"
+ concept_messenger_network_cyan: "§C£akx_messenger£Messenger Network Completion§!"
+ concept_messenger_network: "Messenger Network"
+ concept_messenger_network_desc: "Messengers shuttle through spacetime, establishing a complex and comprehensive lane network, which is conducive to the §YDimension Traveler§! fully exerting her abilities.\n\nMoreover, other messengers are working tirelessly for the empire, how can she bear to stay out of it?\n\nEach §Y1%§! Messenger Network Completion will increase the base output of §YMessenger Jobs§! §G+1%§!, increase the modifier output of §YMessenger Jobs§! §G+0.5%§!, and increase §YDimension Traveler§! Exclusive Trait Effect §G+0.25%§!."
+ 
+ # 星辰记忆
+ concept_dimension_traveler_skill_point_usage: "Star Memory Usage"
+ concept_dimension_traveler_skill_point_cap: "Star Memory Capacity"
+ concept_dimension_traveler_skill_point_white: "§WStar Memory§!"
+ concept_dimension_traveler_skill_point_red: "§RStar Memory§!"
+ concept_dimension_traveler_skill_point_orange: "§HStar Memory§!"
+ concept_dimension_traveler_skill_point_yellow: "§YStar Memory§!"
+ concept_dimension_traveler_skill_point_green: "§GStar Memory§!"
+ concept_dimension_traveler_skill_point: "Star Memory"
+ concept_dimension_traveler_skill_point_desc: "The §YDimension Traveler§! shuttles through different spacetimes. The memories of traveling in various universes will provide her with great help.\n\nThe Dimension Traveler will gain §G3§! points of §CStar Memory§! per level (will increase due to achieving §Ycertain conditions§!), which can enhance her ability as different types of leaders."
+ 
+ # 来自异世
+ concept_dimension_traveler_base: "§MFrom Another World§!"
+ concept_dimension_traveler_base_desc: "This is a £strategic£resource projection from another world, but can be reproduced normally in our universe.\n\nGain a certain §Ypercentage§! of §Gextra§! income based on total monthly £strategic£§YResource§! income. Resource type depends on different §HEthics§! and §RGovernments§!."
+ 
+ concept_dimension_traveler_base_energy_produces_add_white: "§W£akx_messenger£$energy_with_icon$ Projection from Another World§!"
+ concept_dimension_traveler_base_energy_produces_add: "$energy_with_icon$ Projection from Another World"
+ concept_dimension_traveler_base_energy_produces_add_desc: "This is a $r_energy$ projection from another world, but can be used normally in our universe.\n\nGain a certain §Ypercentage§! of §Gextra§! income based on total monthly $r_energy$ income. This resource depends on §H$ethic_xenophile$§! and §R$auth_machine_intelligence$§!."
+ 
+ concept_dimension_traveler_base_minerals_produces_add_white: "§W£akx_messenger£$minerals_with_icon$ Projection from Another World§!"
+ concept_dimension_traveler_base_minerals_produces_add: "$minerals_with_icon$ Projection from Another World"
+ concept_dimension_traveler_base_minerals_produces_add_desc: "This is a $r_minerals$ projection from another world, but can be used normally in our universe.\n\nGain a certain §Ypercentage§! of §Gextra§! income based on total monthly $r_minerals$ income. This resource depends on §H$ethic_xenophobe$§! and §R$auth_hive_mind$§!."
+ 
+ concept_dimension_traveler_base_food_produces_add_white: "§W£akx_messenger£$food_with_icon$ Projection from Another World§!"
+ concept_dimension_traveler_base_food_produces_add: "$food_with_icon$ Projection from Another World"
+ concept_dimension_traveler_base_food_produces_add_desc: "This is a $r_food$ projection from another world, but can be used normally in our universe.\n\nGain a certain §Ypercentage§! of §Gextra§! income based on total monthly $r_food$ income. This resource depends on §H$ethic_pacifist$§! and §R$auth_hive_mind$§!."
+ 
+ concept_dimension_traveler_base_consumer_goods_produces_add_white: "§W£akx_messenger£$consumer_goods_with_icon$ Fragment from Another World§!"
+ concept_dimension_traveler_base_consumer_goods_produces_add: "$consumer_goods_with_icon$ Fragment from Another World"
+ concept_dimension_traveler_base_consumer_goods_produces_add_desc: "This is a $r_consumer_goods$ fragment from another world, but can be synthesized normally in our universe.\n\nGain a certain §Ypercentage§! of §Gextra§! income based on total monthly $r_consumer_goods$ income. This resource depends on §H$ethic_egalitarian$§!."
+ 
+ concept_dimension_traveler_base_alloys_produces_add_white: "§W£akx_messenger£$alloys_with_icon$ Fragment from Another World§!"
+ concept_dimension_traveler_base_alloys_produces_add: "$alloys_with_icon$ Fragment from Another World"
+ concept_dimension_traveler_base_alloys_produces_add_desc: "This is a $r_alloys$ fragment from another world, but can be synthesized normally in our universe.\n\nGain a certain §Ypercentage§! of §Gextra§! income based on total monthly $r_alloys$ income. This resource depends on §H$ethic_militarist$§! and §R$auth_machine_intelligence$§!."
+ 
+ concept_dimension_traveler_base_influence_produces_add_white: "§W£akx_messenger££influence£$influence$ Interference from Another World§!"
+ concept_dimension_traveler_base_influence_produces_add: "£influence£$influence$ Interference from Another World"
+ concept_dimension_traveler_base_influence_produces_add_desc: "This is a $r_influence$ interference from another world, but can be controlled normally in our universe.\n\nGain a certain §Ypercentage§! of §Gextra§! income based on total monthly $r_influence$ income. This resource depends on §H$ethic_authoritarian$§!."
+ 
+ concept_dimension_traveler_base_unity_produces_add_white: "§W£akx_messenger£$unity_with_icon$ Interference from Another World§!"
+ concept_dimension_traveler_base_unity_produces_add: "$unity_with_icon$ Interference from Another World"
+ concept_dimension_traveler_base_unity_produces_add_desc: "This is a $r_unity$ interference from another world, but can be controlled normally in our universe.\n\nGain a certain §Ypercentage§! of §Gextra§! income based on total monthly $r_unity$ income. This resource depends on §H$ethic_spiritualist$§! and §R$auth_hive_mind$§!."
+ 
+ concept_dimension_traveler_base_physics_research_produces_add_white: "§W£akx_messenger£$physics_research_with_icon$ Information from Another World§!"
+ concept_dimension_traveler_base_physics_research_produces_add: "$physics_research_with_icon$ Information from Another World"
+ concept_dimension_traveler_base_physics_research_produces_add_desc: "This is a $r_physics$ information from another world, but can be interpreted normally in our universe.\n\nGain a certain §Ypercentage§! of §Gextra§! income based on total monthly $r_physics$ income. This resource depends on §H$ethic_materialist$§! and §R$auth_machine_intelligence$§!."
+ 
+ concept_dimension_traveler_base_society_research_produces_add_white: "§W£akx_messenger£$society_research_with_icon$ Information from Another World§!"
+ concept_dimension_traveler_base_society_research_produces_add: "$society_research_with_icon$ Information from Another World"
+ concept_dimension_traveler_base_society_research_produces_add_desc: "This is a $r_society$ information from another world, but can be interpreted normally in our universe.\n\nGain a certain §Ypercentage§! of §Gextra§! income based on total monthly $r_society$ income. This resource depends on §H$ethic_materialist$§! and §R$auth_machine_intelligence$§!."
+ 
+ concept_dimension_traveler_base_engineering_research_produces_add_white: "§W£akx_messenger£$engineering_research_with_icon$ Information from Another World§!"
+ concept_dimension_traveler_base_engineering_research_produces_add: "$engineering_research_with_icon$ Information from Another World"
+ concept_dimension_traveler_base_engineering_research_produces_add_desc: "This is a $r_engineering$ information from another world, but can be interpreted normally in our universe.\n\nGain a certain §Ypercentage§! of §Gextra§! income based on total monthly $r_engineering$ income. This resource depends on §H$ethic_materialist$§! and §R$auth_machine_intelligence$§!."

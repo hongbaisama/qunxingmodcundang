@@ -1,0 +1,4 @@
+defined_text = {
+	name = GetTheMatrixBlockerPopValue
+	value = value:the_matrix_blocker_value
+}

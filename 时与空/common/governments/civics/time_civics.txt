@@ -1,0 +1,864 @@
+# 繁星向往
+civic_starry_yearning = {
+	description = "civic_tooltip_starry_yearning_effects"
+	potential = {
+		ethics = { NOT = { value = ethic_gestalt_consciousness } }
+		authority = { NOT = { value = auth_corporate } }
+	}
+	possible = {
+		ethics = {
+			OR = {
+				text = civic_tooltip_materialist
+				value = ethic_materialist
+				value = ethic_fanatic_materialist
+			}
+		}
+		civics = {
+			NOT = { value = civic_starry_yearning_corporate }
+		}
+	}
+	modifier = {
+		country_starbase_influence_cost_mult = -0.1
+		empire_size_systems_mult = -0.25
+		planet_physicists_unity_produces_add = 1
+		planet_biologists_unity_produces_add = 1
+		planet_engineers_unity_produces_add = 1
+		planet_researchers_upkeep_mult = 0.25
+		add_attunement_the_instrument_of_desire = @civic_attunement1
+	}
+	random_weight = { base = @civic_uncommon_random_weight }
+	ai_weight = {
+		base = @ai_civic_uncommon_base_weight
+		modifier = {
+			factor = @ai_civic_personality_match_factor
+			OR = {
+				has_ai_personality = erudite_explorers
+				has_ai_personality = ruthless_capitalists
+			}
+		}
+		modifier = {
+			factor = @ai_civic_personality_mismatch_factor
+			OR = {
+				has_ai_personality = harmonious_hierarchy
+				has_ai_personality = democratic_crusaders
+				has_ai_personality = evangelising_zealots
+				has_ai_personality = spiritual_seekers
+			}
+		}
+	}
+}
+
+civic_starry_yearning_corporate = {
+	description = "civic_tooltip_starry_yearning_corporate_effects"
+	potential = {
+		OR = {
+			authority = { value = auth_corporate }
+			civics = { value = civic_galactic_sovereign_megacorp }
+		}
+	}
+	possible = {
+		ethics = {
+			OR = {
+				text = civic_tooltip_materialist
+				value = ethic_materialist
+				value = ethic_fanatic_materialist
+			}
+		}
+		civics = {
+			NOT = { value = civic_starry_yearning }
+		}
+	}
+	modifier = {
+		country_starbase_influence_cost_mult = -0.1
+		empire_size_systems_mult = -0.25
+		planet_physicists_trade_produces_add = 2
+		planet_biologists_trade_produces_add = 2
+		planet_engineers_trade_produces_add = 2
+		planet_researchers_upkeep_mult = 0.25
+		add_attunement_the_instrument_of_desire = @civic_attunement1
+	}
+	random_weight = { base = @civic_uncommon_random_weight }
+	ai_weight = { base = @ai_civic_uncommon_base_weight }
+}
+
+# 超频艺术
+civic_overclocking_art = {
+	description = "civic_tooltip_overclocking_art_effects"
+	potential = {
+		ethics = { NOT = { value = ethic_gestalt_consciousness } }
+		authority = { NOT = { value = auth_corporate } }
+		species_archetype = { NOT = { value = MACHINE } }
+	}
+	possible = {
+		ethics = {
+			OR = {
+				text = civic_tooltip_materialist
+				value = ethic_materialist
+				value = ethic_fanatic_materialist
+			}
+		}
+		civics = {
+			NOT = { value = civic_overclocking_art_corporate }
+		}
+	}
+	modifier = {
+		ROBOT_species_trait_points_add = 2
+		ROBOT_species_trait_picks_add = -1
+		planet_pop_assembly_reduction = -0.1
+		planet_pop_assemblers_upkeep_mult = 0.25
+		add_attunement_the_instrument_of_desire = @civic_attunement1
+	}
+	modification = {
+		moddable_conditions_custom_tooltip = CIVIC_NOT_MODDABLE_ONLY_REMOVE
+		add = {
+			has_technology = tech_robotic_workers
+		}
+		remove = {
+			custom_tooltip = {
+				fail_text = CIVIC_LOCKED
+				NOT = { has_country_flag = civic_overclocking_art_locked }
+			}
+		}
+	}
+	alternate_civic_version = civic_overclocking_art_corporate
+	random_weight = { base = @civic_rare_random_weight }
+	ai_weight = {
+		base = @ai_civic_rare_base_weight
+		modifier = {
+			factor = @ai_civic_personality_match_factor
+			OR = {
+				has_ai_personality = erudite_explorers
+				has_ai_personality = ruthless_capitalists
+			}
+		}
+		modifier = {
+			factor = @ai_civic_personality_mismatch_factor
+			OR = {
+				has_ai_personality = harmonious_hierarchy
+				has_ai_personality = democratic_crusaders
+				has_ai_personality = evangelising_zealots
+				has_ai_personality = spiritual_seekers
+			}
+		}
+	}
+}
+
+civic_overclocking_art_corporate = {
+	description = "civic_tooltip_overclocking_art_corporate_effects"
+	potential = {
+		OR = {
+			authority = { value = auth_corporate }
+			civics = { value = civic_galactic_sovereign_megacorp }
+		}
+		species_archetype = { NOT = { value = MACHINE } }
+	}
+	possible = {
+		ethics = {
+			OR = {
+				text = civic_tooltip_materialist
+				value = ethic_materialist
+				value = ethic_fanatic_materialist
+			}
+		}
+		civics = {
+			NOT = { value = civic_overclocking_art }
+		}
+	}
+	modifier = {
+		ROBOT_species_trait_points_add = 2
+		ROBOT_species_trait_picks_add = -1
+		planet_pop_assembly_reduction = -0.1
+		planet_pop_assemblers_upkeep_mult = 0.25
+		add_attunement_the_instrument_of_desire = @civic_attunement1
+	}
+	modification = {
+		moddable_conditions_custom_tooltip = CIVIC_NOT_MODDABLE_ONLY_REMOVE
+		add = {
+			has_technology = tech_robotic_workers
+		}
+		remove = {
+			custom_tooltip = {
+				fail_text = CIVIC_LOCKED
+				NOT = { has_country_flag = civic_overclocking_art_locked }
+			}
+		}
+	}
+	alternate_civic_version = civic_overclocking_art
+	random_weight = { base = @civic_rare_random_weight }
+	ai_weight = { base = @ai_civic_rare_base_weight }
+}
+
+civic_overclocking_art_machine = {
+	description = "civic_tooltip_overclocking_art_machine_effects"
+	potential = {
+		authority = { value = auth_machine_intelligence }
+	}
+	modifier = {
+		councilor_gestalt_cognitive_exp_gain = @gestalt_civic_node_xp_rate
+		MACHINE_species_trait_points_add = 2
+		MACHINE_species_trait_picks_add = -1
+		planet_pop_assembly_reduction = -0.1
+		planet_pop_assemblers_upkeep_mult = 0.25
+		add_attunement_the_instrument_of_desire = @civic_attunement1
+	}
+	random_weight = { base = @civic_rare_random_weight }
+	ai_weight = { base = @ai_civic_rare_base_weight }
+}
+
+civic_overclocking_art_individual_machine = {
+	icon = "gfx/interface/icons/governments/civics/civic_overclocking_art.dds"
+	description = "civic_tooltip_overclocking_art_machine_effects"
+	potential = {
+		species_archetype = { value = MACHINE }
+		authority = {
+			NOT = { value = auth_machine_intelligence }
+			NOT = { value = auth_corporate }
+		}
+	}
+	possible = {
+		ethics = {
+			OR = {
+				text = civic_tooltip_materialist
+				value = ethic_materialist
+				value = ethic_fanatic_materialist
+			}
+		}
+		civics = {
+			NOT = { value = civic_overclocking_art_individual_machine_corporate }
+		}
+	}
+	modifier = {
+		MACHINE_species_trait_points_add = 2
+		MACHINE_species_trait_picks_add = -1
+		planet_pop_assembly_reduction = -0.1
+		planet_pop_assemblers_upkeep_mult = 0.25
+		add_attunement_the_instrument_of_desire = @civic_attunement1
+	}
+	alternate_civic_version = civic_overclocking_art_individual_machine_corporate
+	random_weight = { base = @civic_rare_random_weight }
+	ai_weight = {
+		base = @ai_civic_rare_base_weight
+		modifier = {
+			factor = @ai_civic_personality_match_factor
+			OR = {
+				has_ai_personality = erudite_explorers
+				has_ai_personality = ruthless_capitalists
+			}
+		}
+		modifier = {
+			factor = @ai_civic_personality_mismatch_factor
+			OR = {
+				has_ai_personality = harmonious_hierarchy
+				has_ai_personality = democratic_crusaders
+				has_ai_personality = evangelising_zealots
+				has_ai_personality = spiritual_seekers
+			}
+		}
+	}
+}
+
+civic_overclocking_art_individual_machine_corporate = {
+	icon = "gfx/interface/icons/governments/civics/civic_overclocking_art_corporate.dds"
+	description = "civic_tooltip_overclocking_art_machine_effects"
+	potential = {
+		species_archetype = { value = MACHINE }
+		authority = { NOT = { value = auth_machine_intelligence } }
+		OR = {
+			authority = { value = auth_corporate }
+			civics = { value = civic_galactic_sovereign_megacorp }
+		}
+	}
+	possible = {
+		ethics = {
+			OR = {
+				text = civic_tooltip_materialist
+				value = ethic_materialist
+				value = ethic_fanatic_materialist
+			}
+		}
+		civics = {
+			NOT = { value = civic_overclocking_art_individual_machine }
+		}
+	}
+	modifier = {
+		MACHINE_species_trait_points_add = 2
+		MACHINE_species_trait_picks_add = -1
+		planet_pop_assembly_reduction = -0.1
+		planet_pop_assemblers_upkeep_mult = 0.25
+		add_attunement_the_instrument_of_desire = @civic_attunement1
+	}
+	alternate_civic_version = civic_overclocking_art_individual_machine
+	random_weight = { base = @civic_rare_random_weight }
+	ai_weight = { base = @ai_civic_rare_base_weight }
+}
+
+# 起源理念
+civic_origin_gas_colony = {
+	description = "civic_tooltip_origin_gas_colony_effects"
+	potential = {
+		origin = { value = origin_gas_colony }
+		ethics = {
+			NOT = { value = ethic_gestalt_consciousness }
+		}
+		authority = {
+			NOT = { value = auth_corporate }
+		}
+		species_archetype = {
+			NOT = { value = MACHINE }
+		}
+	}
+	possible = {
+	}
+	modification = {
+		add = {
+			has_civic = civic_origin_gas_colony_corporate
+		}
+		remove = {
+			always = no
+		}
+	}
+	alternate_civic_version = civic_origin_gas_colony_corporate
+	random_weight = { base = 10 }
+	ai_weight = { base = 10 }
+}
+
+civic_origin_gas_colony_corporate = {
+	description = "civic_tooltip_origin_gas_colony_effects"
+	potential = {
+		origin = { value = origin_gas_colony }
+		authority = { value = auth_corporate }
+		species_archetype = {
+			NOT = { value = MACHINE }
+		}
+	}
+	possible = {
+	}
+	modification = {
+		add = {
+			has_civic = civic_origin_gas_colony
+		}
+		remove = {
+			always = no
+		}
+	}
+	alternate_civic_version = civic_origin_gas_colony
+	random_weight = { base = 10 }
+	ai_weight = { base = 10 }
+}
+
+civic_origin_gas_colony_gestalt = {
+	description = "civic_tooltip_origin_gas_colony_gestalt_effects"
+	modification = no
+	potential = {
+		origin = { value = origin_gas_colony }
+		authority = { value = auth_hive_mind }
+		species_archetype = {
+			NOT = { value = MACHINE }
+		}
+	}
+	possible = {
+	}
+	modifier = {
+		councilor_gestalt_legion_exp_gain = @gestalt_civic_node_xp_rate
+	}
+	random_weight = { base = 10 }
+	ai_weight = { base = 10 }
+}
+
+civic_origin_psionic = {
+	description = "civic_tooltip_origin_psionic_effects"
+	modification = no
+	potential = {
+		origin = { value = origin_psionic }
+	}
+	possible = {
+		ethics = {
+			OR = {
+				text = civic_tooltip_spiritualist
+				value = ethic_spiritualist
+				value = ethic_fanatic_spiritualist
+			}
+		}
+	}
+	random_weight = { base = 10 }
+	ai_weight = { base = 10 }
+}
+
+civic_origin_nanites = {
+	description = "civic_tooltip_origin_nanites_effects"
+	modification = no
+	potential = {
+		origin = { value = origin_nanites }
+		authority = { value = auth_machine_intelligence }
+	}
+	possible = {
+		civics = {
+			NOR = {
+				value = civic_machine_servitor
+				value = civic_machine_assimilator
+			}
+		}
+	}
+	modifier = {
+		councilor_gestalt_growth_exp_gain = @gestalt_civic_node_xp_rate
+	}
+	random_weight = { base = 10 }
+	ai_weight = { base = 10 }
+}
+
+civic_origin_black_hole = {
+	description = "civic_tooltip_origin_black_hole_effects"
+	modification = no
+	potential = {
+		origin = { value = origin_black_hole }
+		ethics = {
+			NOT = { value = ethic_gestalt_consciousness }
+		}
+	}
+	possible = {
+	}
+	random_weight = { base = 10 }
+	ai_weight = { base = 10 }
+}
+
+civic_origin_black_hole_gestalt = {
+	icon = "gfx/interface/icons/governments/civics/civic_origin_black_hole.dds"
+	description = "civic_tooltip_origin_black_hole_effects"
+	modification = no
+	potential = {
+		origin = { value = origin_black_hole }
+		ethics = {
+			value = ethic_gestalt_consciousness
+		}
+	}
+	possible = {
+	}
+	modifier = {
+		planet_physicists_minerals_produces_add = 1
+		country_physics_research_produces_mult = 0.1
+		councilor_gestalt_cognitive_exp_gain = @gestalt_civic_node_xp_rate
+	}
+	random_weight = { base = 10 }
+	ai_weight = { base = 10 }
+}
+
+civic_origin_pulsar = {
+	description = "civic_tooltip_origin_pulsar_effects"
+	modification = no
+	potential = {
+		origin = { value = origin_pulsar }
+		ethics = {
+			NOT = { value = ethic_gestalt_consciousness }
+		}
+	}
+	possible = {
+	}
+	random_weight = { base = 10 }
+	ai_weight = { base = 10 }
+}
+
+civic_origin_pulsar_gestalt = {
+	icon = "gfx/interface/icons/governments/civics/civic_origin_pulsar.dds"
+	description = "civic_tooltip_origin_pulsar_effects"
+	modification = no
+	potential = {
+		origin = { value = origin_pulsar }
+		ethics = {
+			value = ethic_gestalt_consciousness
+		}
+	}
+	possible = {
+	}
+	modifier = {
+		planet_biologists_unity_produces_add = 0.5
+		country_society_research_produces_mult = 0.1
+		councilor_gestalt_cognitive_exp_gain = @gestalt_civic_node_xp_rate
+	}
+	random_weight = { base = 10 }
+	ai_weight = { base = 10 }
+}
+
+civic_origin_neutron_star = {
+	description = "civic_tooltip_origin_neutron_star_effects"
+	modification = no
+	potential = {
+		origin = { value = origin_neutron_star }
+		ethics = {
+			NOT = { value = ethic_gestalt_consciousness }
+		}
+	}
+	possible = {
+	}
+	random_weight = { base = 10 }
+	ai_weight = { base = 10 }
+}
+
+civic_origin_neutron_star_gestalt = {
+	icon = "gfx/interface/icons/governments/civics/civic_origin_neutron_star.dds"
+	description = "civic_tooltip_origin_neutron_star_effects"
+	modification = no
+	potential = {
+		origin = { value = origin_neutron_star }
+		ethics = {
+			value = ethic_gestalt_consciousness
+		}
+	}
+	possible = {
+	}
+	modifier = {
+		planet_engineers_alloys_produces_add = 0.5
+		country_engineering_research_produces_mult = 0.1
+		councilor_gestalt_cognitive_exp_gain = @gestalt_civic_node_xp_rate
+	}
+	random_weight = { base = 10 }
+	ai_weight = { base = 10 }
+}
+
+civic_origin_white_hole = {
+	description = "civic_tooltip_origin_white_hole_effects"
+	modification = no
+	ai_playable = { always = no }
+	potential = {
+		origin = { value = origin_white_hole }
+		civics = { value = civic_origin_white_hole }
+		ethics = {
+			NOT = { value = ethic_gestalt_consciousness }
+		}
+	}
+	possible = {
+	}
+	modifier = {
+		country_government_civic_points_add = 1
+	}
+	random_weight = { base = 0 }
+	ai_weight = { base = 0 }
+}
+
+civic_origin_white_hole_gestalt = {
+	icon = "gfx/interface/icons/governments/civics/civic_origin_white_hole.dds"
+	description = "civic_tooltip_origin_white_hole_effects"
+	modification = no
+	ai_playable = { always = no }
+	potential = {
+		origin = { value = origin_white_hole }
+		civics = { value = civic_origin_white_hole_gestalt }
+		ethics = {
+			value = ethic_gestalt_consciousness
+		}
+	}
+	possible = {
+	}
+	modifier = {
+		country_government_civic_points_add = 1
+		empire_size_mult = -0.1
+		planet_crime_no_happiness_mult = -0.2
+		planet_amenities_no_happiness_mult = 0.2
+		aesthetic_wonder_specimens_produces_mult = 0.2
+	}
+	random_weight = { base = 0 }
+	ai_weight = { base = 0 }
+}
+
+civic_origin_ruin_megastructure = {
+	description = "civic_tooltip_origin_ruin_megastructure_effects"
+	potential = {
+		origin = {
+			OR = {
+				value = origin_shattered_ring
+				value = origin_star_slingshot
+				value = origin_arc_welders
+				value = origin_starlit_citadel
+				value = origin_bright_pearl
+				value = origin_dyson_sphere
+				value = origin_matter_decompressor
+				value = origin_strategic_coordination_center_1
+				value = origin_spy_orb_1
+				value = origin_mega_shipyard_1
+				value = origin_think_tank_1
+				value = origin_interstellar_assembly_1
+				value = origin_mega_art_installation_1
+				value = origin_strategic_coordination_center_2
+				value = origin_spy_orb_2
+				value = origin_mega_shipyard_2
+				value = origin_think_tank_2
+				value = origin_interstellar_assembly_2
+				value = origin_mega_art_installation_2
+			}
+		}
+		ethics = {
+			NOT = { value = ethic_gestalt_consciousness }
+		}
+		authority = {
+			NOT = { value = auth_corporate }
+		}
+	}
+	possible = {
+	}
+	modifier = {
+		megastructure_build_speed_mult = 0.5
+		country_megastructure_build_cap_add = 1
+	}
+	modification = {
+		add = {
+			has_civic = civic_origin_ruin_megastructure_corporate
+		}
+		remove = {
+			always = no
+		}
+	}
+	alternate_civic_version = civic_origin_ruin_megastructure_corporate
+	random_weight = { base = 10 }
+	ai_weight = { base = 10 }
+}
+
+civic_origin_ruin_megastructure_corporate = {
+	description = "civic_tooltip_origin_ruin_megastructure_effects"
+	potential = {
+		origin = {
+			OR = {
+				value = origin_shattered_ring
+				value = origin_star_slingshot
+				value = origin_arc_welders
+				value = origin_starlit_citadel
+				value = origin_bright_pearl
+				value = origin_dyson_sphere
+				value = origin_matter_decompressor
+				value = origin_strategic_coordination_center_1
+				value = origin_spy_orb_1
+				value = origin_mega_shipyard_1
+				value = origin_think_tank_1
+				value = origin_interstellar_assembly_1
+				value = origin_mega_art_installation_1
+				value = origin_strategic_coordination_center_2
+				value = origin_spy_orb_2
+				value = origin_mega_shipyard_2
+				value = origin_think_tank_2
+				value = origin_interstellar_assembly_2
+				value = origin_mega_art_installation_2
+			}
+		}
+		authority = { value = auth_corporate }
+	}
+	possible = {
+	}
+	modifier = {
+		megastructure_build_speed_mult = 0.5
+		country_megastructure_build_cap_add = 1
+	}
+	modification = {
+		add = {
+			has_civic = civic_origin_ruin_megastructure
+		}
+		remove = {
+			always = no
+		}
+	}
+	alternate_civic_version = civic_origin_ruin_megastructure
+	random_weight = { base = 10 }
+	ai_weight = { base = 10 }
+}
+
+civic_origin_ruin_megastructure_hive = {
+	description = "civic_tooltip_origin_ruin_megastructure_effects"
+	modification = no
+	potential = {
+		origin = {
+			OR = {
+				value = origin_shattered_ring
+				value = origin_star_slingshot
+				value = origin_arc_welders
+				value = origin_starlit_citadel
+				value = origin_bright_pearl
+				value = origin_dyson_sphere
+				value = origin_matter_decompressor
+				value = origin_strategic_coordination_center_1
+				value = origin_spy_orb_1
+				value = origin_mega_shipyard_1
+				value = origin_think_tank_1
+				value = origin_interstellar_assembly_1
+				value = origin_mega_art_installation_1
+				value = origin_strategic_coordination_center_2
+				value = origin_spy_orb_2
+				value = origin_mega_shipyard_2
+				value = origin_think_tank_2
+				value = origin_interstellar_assembly_2
+				value = origin_mega_art_installation_2
+			}
+		}
+		authority = { value = auth_hive_mind }
+	}
+	possible = {
+	}
+	modifier = {
+		megastructure_build_speed_mult = 0.5
+		country_megastructure_build_cap_add = 1
+		councilor_gestalt_growth_exp_gain = @gestalt_civic_node_xp_rate
+	}
+	random_weight = { base = 10 }
+	ai_weight = { base = 10 }
+}
+
+civic_origin_ruin_megastructure_machine = {
+	description = "civic_tooltip_origin_ruin_megastructure_effects"
+	modification = no
+	potential = {
+		origin = {
+			OR = {
+				value = origin_shattered_ring
+				value = origin_star_slingshot
+				value = origin_arc_welders
+				value = origin_starlit_citadel
+				value = origin_bright_pearl
+				value = origin_dyson_sphere
+				value = origin_matter_decompressor
+				value = origin_strategic_coordination_center_1
+				value = origin_spy_orb_1
+				value = origin_mega_shipyard_1
+				value = origin_think_tank_1
+				value = origin_interstellar_assembly_1
+				value = origin_mega_art_installation_1
+				value = origin_strategic_coordination_center_2
+				value = origin_spy_orb_2
+				value = origin_mega_shipyard_2
+				value = origin_think_tank_2
+				value = origin_interstellar_assembly_2
+				value = origin_mega_art_installation_2
+			}
+		}
+		authority = { value = auth_machine_intelligence }
+	}
+	possible = {
+	}
+	modifier = {
+		megastructure_build_speed_mult = 0.5
+		country_megastructure_build_cap_add = 1
+		councilor_gestalt_growth_exp_gain = @gestalt_civic_node_xp_rate
+	}
+	random_weight = { base = 10 }
+	ai_weight = { base = 10 }
+}
+
+civic_origin_life_seeded = {
+	description = "civic_tooltip_origin_life_seeded_effects"
+	potential = {
+		origin = { value = origin_life_seeded }
+		ethics = {
+			NOT = { value = ethic_gestalt_consciousness }
+		}
+		authority = {
+			NOT = { value = auth_corporate }
+		}
+	}
+	possible = {
+	}
+	modifier = {
+		terraform_speed_mult = 0.25
+		terraforming_cost_mult = -0.25
+	}
+	modification = {
+		add = {
+			has_civic = civic_origin_life_seeded_corporate
+		}
+		remove = {
+			always = no
+		}
+	}
+	alternate_civic_version = civic_origin_life_seeded_corporate
+	random_weight = { base = 10 }
+	ai_weight = { base = 10 }
+}
+
+civic_origin_life_seeded_corporate = {
+	description = "civic_tooltip_origin_life_seeded_effects"
+	potential = {
+		origin = { value = origin_life_seeded }
+		authority = { value = auth_corporate }
+	}
+	possible = {
+	}
+	modifier = {
+		terraform_speed_mult = 0.25
+		terraforming_cost_mult = -0.25
+	}
+	modification = {
+		add = {
+			has_civic = civic_origin_life_seeded
+		}
+		remove = {
+			always = no
+		}
+	}
+	alternate_civic_version = civic_origin_life_seeded
+	random_weight = { base = 10 }
+	ai_weight = { base = 10 }
+}
+
+civic_origin_life_seeded_hive = {
+	description = "civic_tooltip_origin_life_seeded_effects"
+	modification = no
+	potential = {
+		origin = { value = origin_life_seeded }
+		authority = { value = auth_hive_mind }
+	}
+	possible = {
+	}
+	modifier = {
+		terraform_speed_mult = 0.25
+		terraforming_cost_mult = -0.25
+		councilor_gestalt_regulatory_exp_gain = @gestalt_civic_node_xp_rate
+	}
+	random_weight = { base = 10 }
+	ai_weight = { base = 10 }
+}
+
+civic_origin_life_seeded_machine = {
+	description = "civic_tooltip_origin_life_seeded_effects"
+	modification = no
+	potential = {
+		origin = { value = origin_life_seeded }
+		authority = { value = auth_machine_intelligence }
+	}
+	possible = {
+	}
+	modifier = {
+		terraform_speed_mult = 0.25
+		terraforming_cost_mult = -0.25
+		councilor_gestalt_regulatory_exp_gain = @gestalt_civic_node_xp_rate
+	}
+	random_weight = { base = 10 }
+	ai_weight = { base = 10 }
+}
+
+civic_origin_pc_hive = {
+	description = "civic_tooltip_origin_pc_hive_effects"
+	modification = no
+	potential = {
+		origin = { value = origin_pc_hive }
+	}
+	possible = {
+	}
+	modifier = {
+		terraform_speed_mult = 0.25
+		terraforming_cost_mult = -0.25
+		councilor_gestalt_regulatory_exp_gain = @gestalt_civic_node_xp_rate
+	}
+	random_weight = { base = 10 }
+	ai_weight = { base = 10 }
+}
+
+civic_origin_machine = {
+	description = "civic_tooltip_origin_machine_effects"
+	modification = no
+	potential = {
+		origin = { value = origin_machine }
+	}
+	possible = {
+	}
+	modifier = {
+		terraform_speed_mult = 0.25
+		terraforming_cost_mult = -0.25
+		councilor_gestalt_regulatory_exp_gain = @gestalt_civic_node_xp_rate
+	}
+	random_weight = { base = 10 }
+	ai_weight = { base = 10 }
+}

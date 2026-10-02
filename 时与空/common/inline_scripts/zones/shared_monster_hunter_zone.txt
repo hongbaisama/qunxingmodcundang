@@ -1,0 +1,73 @@
+icon = GFX_district_specialization_monster_hunter
+
+base_buildtime = @zone_buildtime
+
+potential = {
+	hidden_trigger = { exists = owner }
+	owner = { has_origin = origin_monster_hunter }
+}
+
+unlock = {
+	hidden_trigger = { exists = owner }
+	owner = { has_valid_civic = civic_warrior_culture }
+}
+
+resources = {
+	category = planet_zones
+	inline_script = {
+		script = buildings/nomadic_cost_switcher
+		REGULAR_RESOURCE = minerals
+		NOMADIC_RESOURCE = alloys
+		COST = @zone_cost
+		NOMADIC_COST_MULT = 0.5
+	}
+}
+
+planet_modifier = {
+	zone_building_slots_add = $BUILDING_SLOT$
+}
+
+inline_script = {
+	script = jobs/zone_monster_hunter_add
+	AMOUNT = $AMOUNT$
+}
+
+included_building_sets = {
+	monster_hunter
+	fortress
+	foundry
+}
+
+ai_resource_production = {
+	unity = 5
+	consumer_goods = 5
+}
+
+ai_resource_production = {
+	food = 5
+	trigger = {
+		owner = {
+			is_lithoid_empire = no
+			is_robot_empire = no
+		}
+	}
+}
+
+ai_resource_production = {
+	minerals = 5
+	trigger = {
+		owner = {
+			is_lithoid_empire = yes
+			is_robot_empire = no
+		}
+	}
+}
+
+ai_resource_production = {
+	energy = 5
+	trigger = {
+		owner = { is_robot_empire = yes }
+	}
+}
+
+ai_priority = 10

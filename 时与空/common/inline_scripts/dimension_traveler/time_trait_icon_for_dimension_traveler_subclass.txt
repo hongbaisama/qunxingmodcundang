@@ -1,0 +1,71 @@
+custom_subtitle = subclass_$CLASS$_dimension_traveler_subtitle
+icon = {
+	layer = {
+		icon = "GFX_leader_subclass_$CLASS$_dimension_traveler_small"
+		visible = {
+			OR = {
+				NOT = { is_variable_set = local_size_option }
+				check_variable = {
+					which = local_size_option
+					value = 0
+				}
+			}
+		}
+	}
+	layer = {
+		icon = "GFX_leader_subclass_$CLASS$_dimension_traveler_medium"
+		visible = {
+			check_variable = {
+				which = local_size_option
+				value = 1
+			}
+		}
+	}
+	layer = {
+		icon = "GFX_leader_subclass_$CLASS$_dimension_traveler_large"
+		visible = {
+			check_variable = {
+				which = local_size_option
+				value = 2
+			}
+		}
+	}
+}
+sorting_priority = $PRIORITY$
+# 星辰记忆（招募界面）
+triggered_self_modifier = {
+	potential = {
+		has_leader_flag = is_in_recruit_window
+	}
+	dimension_traveler_skill_point = 3
+}
+# 星辰记忆
+triggered_self_modifier = {
+	dimension_traveler_skill_point = 1
+	mult = owner.value:subclass_dimension_traveler_skill_point_value
+}
+# 界旅者老练级维护费
+inline_script = {
+	script = dimension_traveler/subclass_dimension_traveler_upkeep
+	CLASS = $CLASS$
+}
+# 终焉宣告防护
+inline_script = {
+	script = traits/dimensional_horror_crisis_storm_protection_$CLASS$_trait
+	COUNT = -0.5
+}
+# 防伪
+on_gained_effect = {
+	if = {
+		limit = {
+			can_gain_dimension_traveler_trait = no
+		}
+		remove_dimension_traveler_trait = yes
+	}
+	else = {
+		# 晋升著名
+		become_renowned_without_promotion = yes
+	}
+}
+# 禁止交易
+trade_acceptance_weight = -10000

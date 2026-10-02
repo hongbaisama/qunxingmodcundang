@@ -1,0 +1,5 @@
+stime_titan = {
+	potential = {
+		is_time_titan_starbase = yes
+	}
+}

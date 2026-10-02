@@ -1,0 +1,182 @@
+random = no
+text = {
+	trigger = {
+		time_titan_has_upgrade_or_more = {
+			TYPE = $TYPE$
+			LEVEL = 20
+		}
+	}
+	localization_key = time_titan_level_20_icon
+}
+text = {
+	trigger = {
+		time_titan_has_upgrade = {
+			TYPE = $TYPE$
+			LEVEL = 19
+		}
+	}
+	localization_key = time_titan_level_19_icon
+}
+text = {
+	trigger = {
+		time_titan_has_upgrade = {
+			TYPE = $TYPE$
+			LEVEL = 18
+		}
+	}
+	localization_key = time_titan_level_18_icon
+}
+text = {
+	trigger = {
+		time_titan_has_upgrade = {
+			TYPE = $TYPE$
+			LEVEL = 17
+		}
+	}
+	localization_key = time_titan_level_17_icon
+}
+text = {
+	trigger = {
+		time_titan_has_upgrade = {
+			TYPE = $TYPE$
+			LEVEL = 16
+		}
+	}
+	localization_key = time_titan_level_16_icon
+}
+text = {
+	trigger = {
+		time_titan_has_upgrade = {
+			TYPE = $TYPE$
+			LEVEL = 15
+		}
+	}
+	localization_key = time_titan_level_15_icon
+}
+text = {
+	trigger = {
+		time_titan_has_upgrade = {
+			TYPE = $TYPE$
+			LEVEL = 14
+		}
+	}
+	localization_key = time_titan_level_14_icon
+}
+text = {
+	trigger = {
+		time_titan_has_upgrade = {
+			TYPE = $TYPE$
+			LEVEL = 13
+		}
+	}
+	localization_key = time_titan_level_13_icon
+}
+text = {
+	trigger = {
+		time_titan_has_upgrade = {
+			TYPE = $TYPE$
+			LEVEL = 12
+		}
+	}
+	localization_key = time_titan_level_12_icon
+}
+text = {
+	trigger = {
+		time_titan_has_upgrade = {
+			TYPE = $TYPE$
+			LEVEL = 11
+		}
+	}
+	localization_key = time_titan_level_11_icon
+}
+text = {
+	trigger = {
+		time_titan_has_upgrade = {
+			TYPE = $TYPE$
+			LEVEL = 10
+		}
+	}
+	localization_key = time_titan_level_10_icon
+}
+text = {
+	trigger = {
+		time_titan_has_upgrade = {
+			TYPE = $TYPE$
+			LEVEL = 9
+		}
+	}
+	localization_key = time_titan_level_9_icon
+}
+text = {
+	trigger = {
+		time_titan_has_upgrade = {
+			TYPE = $TYPE$
+			LEVEL = 8
+		}
+	}
+	localization_key = time_titan_level_8_icon
+}
+text = {
+	trigger = {
+		time_titan_has_upgrade = {
+			TYPE = $TYPE$
+			LEVEL = 7
+		}
+	}
+	localization_key = time_titan_level_7_icon
+}
+text = {
+	trigger = {
+		time_titan_has_upgrade = {
+			TYPE = $TYPE$
+			LEVEL = 6
+		}
+	}
+	localization_key = time_titan_level_6_icon
+}
+text = {
+	trigger = {
+		time_titan_has_upgrade = {
+			TYPE = $TYPE$
+			LEVEL = 5
+		}
+	}
+	localization_key = time_titan_level_5_icon
+}
+text = {
+	trigger = {
+		time_titan_has_upgrade = {
+			TYPE = $TYPE$
+			LEVEL = 4
+		}
+	}
+	localization_key = time_titan_level_4_icon
+}
+text = {
+	trigger = {
+		time_titan_has_upgrade = {
+			TYPE = $TYPE$
+			LEVEL = 3
+		}
+	}
+	localization_key = time_titan_level_3_icon
+}
+text = {
+	trigger = {
+		time_titan_has_upgrade = {
+			TYPE = $TYPE$
+			LEVEL = 2
+		}
+	}
+	localization_key = time_titan_level_2_icon
+}
+text = {
+	trigger = {
+		time_titan_has_upgrade = {
+			TYPE = $TYPE$
+			LEVEL = 1
+		}
+	}
+	localization_key = time_titan_level_1_icon
+}
+default = time_titan_level_0_icon

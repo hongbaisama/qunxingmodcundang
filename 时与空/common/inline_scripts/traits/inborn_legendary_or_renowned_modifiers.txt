@@ -1,0 +1,195 @@
+# 传奇崇拜
+triggered_self_modifier = {
+	potential = {
+		owner = { has_origin = origin_legendary_worship }
+	}
+	custom_tooltip = improve_councilor_origin_legendary_worship_$TYPE$_effect
+}
+# 帝国代表
+triggered_galcom_modifier = {
+	potential = {
+		has_trait = subclass_official_delegate
+		is_ruler = no
+	}
+	diplo_weight_mult = @inborn_$TYPE$_modifier
+	country_trust_growth = @inborn_$TYPE$_modifier
+	mult = value:leader_trait_inborn_legendary_or_renowned_value
+}
+# 产业专员（默认）
+triggered_planet_modifier = {
+	potential = {
+		if = {
+			limit = {
+				leader_class = official
+			}
+			NOR = {
+				has_trait = subclass_official_delegate
+				has_trait = subclass_official_diplomacy_councilor
+				has_trait = subclass_official_economy_councilor
+				is_ruler = yes
+			}
+		}
+		else = {
+			always = no
+		}
+	}
+	planet_jobs_specialist_produces_mult = @inborn_$TYPE$_modifier
+	planet_building_build_speed_mult = @inborn_$TYPE$_modifier
+	mult = value:leader_trait_inborn_legendary_or_renowned_value
+}
+# 外交使节
+triggered_councilor_modifier = {
+	potential = {
+		has_trait = subclass_official_diplomacy_councilor
+	}
+	intel_gain_speed = @inborn_$TYPE$_modifier_council
+	spy_network_daily_value_mult = @inborn_$TYPE$_modifier_council
+	mult = value:leader_trait_inborn_legendary_or_renowned_value
+}
+# 国务顾问
+triggered_councilor_modifier = {
+	potential = {
+		if = {
+			limit = {
+				leader_class = official
+			}
+			OR = {
+				has_trait = subclass_official_economy_councilor
+				AND = {
+					is_ruler = yes
+					NOT = { has_trait = subclass_official_diplomacy_councilor }
+				}
+			}
+		}
+		else = {
+			always = no
+		}
+	}
+	country_trade_produces_mult = @inborn_$TYPE$_modifier_council
+	council_agenda_progress_speed = @inborn_$TYPE$_modifier_council
+	mult = value:leader_trait_inborn_legendary_or_renowned_value
+}
+# 探索者
+triggered_modifier = {
+	potential = {
+		has_trait = subclass_scientist_explorer
+		is_ruler = no
+	}
+	science_ship_survey_speed = @inborn_$TYPE$_modifier
+	ship_anomaly_generation_chance_mult = @inborn_$TYPE$_modifier
+	mult = value:leader_trait_inborn_legendary_or_renowned_value
+}
+# 前沿学者
+triggered_modifier = {
+	potential = {
+		has_trait = subclass_scientist_scholar
+		is_ruler = no
+	}
+	ship_archaeological_site_excavation_speed_mult = @inborn_$TYPE$_modifier
+	ship_astral_rift_speed_mult = @inborn_$TYPE$_modifier
+	mult = value:leader_trait_inborn_legendary_or_renowned_value
+}
+# 分析专员（默认）
+triggered_planet_modifier = {
+	potential = {
+		if = {
+			limit = {
+				leader_class = scientist
+			}
+			NOR = {
+				has_trait = subclass_scientist_explorer
+				has_trait = subclass_scientist_scholar
+				has_trait = subclass_scientist_councilor
+				is_ruler = yes
+			}
+		}
+		else = {
+			always = no
+		}
+	}
+	planet_researchers_produces_mult = @inborn_$TYPE$_modifier
+	planet_decision_enact_speed_mult = @inborn_$TYPE$_modifier
+	mult = value:leader_trait_inborn_legendary_or_renowned_value
+}
+# 统计学家
+triggered_councilor_modifier = {
+	potential = {
+		if = {
+			limit = {
+				leader_class = scientist
+			}
+			OR = {
+				has_trait = subclass_scientist_councilor
+				is_ruler = yes
+			}
+		}
+		else = {
+			always = no
+		}
+	}
+	all_technology_research_speed = @inborn_$TYPE$_modifier_council
+	council_agenda_finishing_effect_duration_mult = @inborn_$TYPE$_modifier_council
+	mult = value:leader_trait_inborn_legendary_or_renowned_value
+}
+# 舰队司令
+triggered_fleet_modifier = {
+	potential = {
+		has_trait = subclass_commander_admiral
+		is_ruler = no
+	}
+	weapon_confuser_protect_chance = @inborn_$TYPE$_modifier
+	weapon_terrify_protect_chance = @inborn_$TYPE$_modifier
+	mult = value:leader_trait_inborn_legendary_or_renowned_value
+}
+# 陆军司令
+triggered_army_modifier = {
+	potential = {
+		has_trait = subclass_commander_general
+		is_ruler = no
+	}
+	army_damage_mult = @inborn_$TYPE$_modifier
+	ship_orbital_bombardment_mult = @inborn_$TYPE$_modifier
+	mult = value:leader_trait_inborn_legendary_or_renowned_value
+}
+# 督管专员（默认）
+triggered_planet_modifier = {
+	potential = {
+		if = {
+			limit = {
+				leader_class = commander
+			}
+			NOR = {
+				has_trait = subclass_commander_admiral
+				has_trait = subclass_commander_general
+				has_trait = subclass_commander_councilor
+				is_ruler = yes
+			}
+		}
+		else = {
+			always = no
+		}
+	}
+	planet_jobs_worker_produces_mult = @inborn_$TYPE$_modifier
+	planet_clear_blocker_speed_mult = @inborn_$TYPE$_modifier
+	mult = value:leader_trait_inborn_legendary_or_renowned_value
+}
+# 战略家
+triggered_councilor_modifier = {
+	potential = {
+		if = {
+			limit = {
+				leader_class = commander
+			}
+			OR = {
+				has_trait = subclass_commander_councilor
+				is_ruler = yes
+			}
+		}
+		else = {
+			always = no
+		}
+	}
+	ship_shield_damage_mult = @inborn_$TYPE$_modifier_council
+	ship_armor_damage_mult = @inborn_$TYPE$_modifier_council
+	mult = value:leader_trait_inborn_legendary_or_renowned_value
+}

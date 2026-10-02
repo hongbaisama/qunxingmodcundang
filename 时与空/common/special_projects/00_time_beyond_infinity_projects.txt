@@ -1,0 +1,496 @@
+################################################################
+# 星海天罚
+################################################################
+
+# Regular
+special_project = {
+	key = "BEYOND_INFINITY_CRISIS_SPECIAL_PROJECT_1"
+	cost = 3000
+	days_to_research = 0
+	tech_department = society_technology
+	picture = GFX_evt_alien_propaganda
+	icon = "gfx/interface/icons/situation_log/situation_log_beyond_infinity.dds"
+	event_chain = beyond_infinity_chain
+	location = no
+
+	event_scope = country_event
+
+	requirements = {
+	}
+
+	on_success = {
+		country_event = { id = beyond_infinity.1100 }
+	}
+
+	on_fail = {
+	}
+}
+
+# Machine Intelligence
+special_project = {
+	key = "BEYOND_INFINITY_CRISIS_SPECIAL_PROJECT_MACH_1"
+	cost = 3000
+	days_to_research = 0
+	tech_department = society_technology
+	picture = GFX_evt_glitchy_matrix
+	icon = "gfx/interface/icons/situation_log/situation_log_beyond_infinity.dds"
+	event_chain = beyond_infinity_chain
+	location = no
+
+	event_scope = country_event
+
+	requirements = {
+	}
+
+	on_success = {
+		country_event = { id = beyond_infinity.1100 }
+	}
+
+	on_fail = {
+	}
+}
+
+# Hivemind
+special_project = {
+	key = "BEYOND_INFINITY_CRISIS_SPECIAL_PROJECT_HIVE_1"
+	cost = 3000
+	days_to_research = 0
+	tech_department = society_technology
+	picture = GFX_evt_glitchy_matrix
+	icon = "gfx/interface/icons/situation_log/situation_log_beyond_infinity.dds"
+	event_chain = beyond_infinity_chain
+	location = no
+
+	event_scope = country_event
+
+	requirements = {
+	}
+
+	on_success = {
+		country_event = { id = beyond_infinity.1100 }
+	}
+
+	on_fail = {
+	}
+}
+
+# Regular
+special_project = {
+	key = "BEYOND_INFINITY_CRISIS_SPECIAL_PROJECT_2"
+	cost = 6000
+	days_to_research = 0
+	tech_department = physics_technology
+	picture = GFX_evt_physics_research
+	icon = "gfx/interface/icons/situation_log/situation_log_beyond_infinity.dds"
+	event_chain = beyond_infinity_chain
+	location = no
+
+	event_scope = country_event
+
+	requirements = {
+	}
+
+	on_success = {
+		country_event = { id = beyond_infinity.1200 }
+	}
+
+	on_fail = {
+	}
+}
+
+# Machine Intelligence
+special_project = {
+	key = "BEYOND_INFINITY_CRISIS_SPECIAL_PROJECT_MACH_2"
+	cost = 6000
+	days_to_research = 0
+	tech_department = physics_technology
+	picture = GFX_evt_physics_research
+	icon = "gfx/interface/icons/situation_log/situation_log_beyond_infinity.dds"
+	event_chain = beyond_infinity_chain
+	location = no
+
+	event_scope = country_event
+
+	requirements = {
+	}
+
+	on_success = {
+		country_event = { id = beyond_infinity.1200 }
+	}
+
+	on_fail = {
+	}
+}
+
+# Hivemind
+special_project = {
+	key = "BEYOND_INFINITY_CRISIS_SPECIAL_PROJECT_HIVE_2"
+	cost = 6000
+	days_to_research = 0
+	tech_department = physics_technology
+	picture = GFX_evt_physics_research
+	icon = "gfx/interface/icons/situation_log/situation_log_beyond_infinity.dds"
+	event_chain = beyond_infinity_chain
+	location = no
+
+	event_scope = country_event
+
+	requirements = {
+	}
+
+	on_success = {
+		country_event = { id = beyond_infinity.1200 }
+	}
+
+	on_fail = {
+	}
+}
+
+# Regular
+special_project = {
+	key = "BEYOND_INFINITY_CRISIS_SPECIAL_PROJECT_3"
+	cost = 12000
+	days_to_research = 0
+	tech_department = society_technology
+	picture = GFX_evt_psionics
+	icon = "gfx/interface/icons/situation_log/situation_log_beyond_infinity.dds"
+	event_chain = beyond_infinity_chain
+	location = no
+
+	event_scope = country_event
+
+	requirements = {
+	}
+
+	on_success = {
+		country_event = { id = beyond_infinity.1300 }
+	}
+
+	on_fail = {
+	}
+}
+
+# Machine Intelligence
+special_project = {
+	key = "BEYOND_INFINITY_CRISIS_SPECIAL_PROJECT_MACH_3"
+	cost = 12000
+	days_to_research = 0
+	tech_department = society_technology
+	picture = GFX_evt_ai_planet
+	icon = "gfx/interface/icons/situation_log/situation_log_beyond_infinity.dds"
+	event_chain = beyond_infinity_chain
+	location = no
+
+	event_scope = country_event
+
+	requirements = {
+	}
+
+	on_success = {
+		country_event = { id = beyond_infinity.1300 }
+	}
+
+	on_fail = {
+	}
+}
+
+# Hivemind
+special_project = {
+	key = "BEYOND_INFINITY_CRISIS_SPECIAL_PROJECT_HIVE_3"
+	cost = 12000
+	days_to_research = 0
+	tech_department = society_technology
+	picture = GFX_evt_ai_planet
+	icon = "gfx/interface/icons/situation_log/situation_log_beyond_infinity.dds"
+	event_chain = beyond_infinity_chain
+	location = no
+
+	event_scope = country_event
+
+	requirements = {
+	}
+
+	on_success = {
+		country_event = { id = beyond_infinity.1300 }
+	}
+
+	on_fail = {
+	}
+}
+
+# Regular
+special_project = {
+	key = "BEYOND_INFINITY_CRISIS_SPECIAL_PROJECT_4"
+	cost = 20000
+	days_to_research = 0
+	tech_department = engineering_technology
+	picture = GFX_evt_planet_beam
+	icon = "gfx/interface/icons/situation_log/situation_log_beyond_infinity.dds"
+	event_chain = beyond_infinity_chain
+	location = no
+
+	event_scope = country_event
+
+	requirements = {
+	}
+
+	on_success = {
+		country_event = { id = beyond_infinity.1400 }
+	}
+
+	on_fail = {
+	}
+}
+
+# Machine Intelligence
+special_project = {
+	key = "BEYOND_INFINITY_CRISIS_SPECIAL_PROJECT_MACH_4"
+	cost = 20000
+	days_to_research = 0
+	tech_department = engineering_technology
+	picture = GFX_evt_planet_beam
+	icon = "gfx/interface/icons/situation_log/situation_log_beyond_infinity.dds"
+	event_chain = beyond_infinity_chain
+	location = no
+
+	event_scope = country_event
+
+	requirements = {
+	}
+
+	on_success = {
+		country_event = { id = beyond_infinity.1400 }
+	}
+
+	on_fail = {
+	}
+}
+
+# Hivemind
+special_project = {
+	key = "BEYOND_INFINITY_CRISIS_SPECIAL_PROJECT_HIVE_4"
+	cost = 20000
+	days_to_research = 0
+	tech_department = engineering_technology
+	picture = GFX_evt_planet_beam
+	icon = "gfx/interface/icons/situation_log/situation_log_beyond_infinity.dds"
+	event_chain = beyond_infinity_chain
+	location = no
+
+	event_scope = country_event
+
+	requirements = {
+	}
+
+	on_success = {
+		country_event = { id = beyond_infinity.1400 }
+	}
+
+	on_fail = {
+	}
+}
+
+################################################################
+# 命运赌局
+################################################################
+
+special_project = {
+	key = "BEYOND_INFINITY_GAMBLING_PHYSICS_PROJECT"
+	cost = 500000
+	days_to_research = 0
+	tech_department = physics_technology
+	picture = GFX_evt_clocks
+	icon = "gfx/interface/icons/situation_log/situation_log_beyond_infinity.dds"
+	event_chain = beyond_infinity_chain
+	location = no
+
+	event_scope = country_event
+
+	requirements = {
+	}
+
+	on_success = {
+		country_event = { id = beyond_infinity.4100 }
+	}
+
+	on_fail = {
+	}
+}
+
+special_project = {
+	key = "BEYOND_INFINITY_GAMBLING_SOCIETY_PROJECT"
+	cost = 500000
+	days_to_research = 0
+	tech_department = society_technology
+	picture = GFX_evt_vortex
+	icon = "gfx/interface/icons/situation_log/situation_log_beyond_infinity.dds"
+	event_chain = beyond_infinity_chain
+	location = no
+
+	event_scope = country_event
+
+	requirements = {
+	}
+
+	on_success = {
+		country_event = { id = beyond_infinity.4200 }
+	}
+
+	on_fail = {
+	}
+}
+
+special_project = {
+	key = "BEYOND_INFINITY_GAMBLING_ENGINEERING_PROJECT"
+	cost = 500000
+	days_to_research = 0
+	tech_department = engineering_technology
+	picture = GFX_evt_supernova
+	icon = "gfx/interface/icons/situation_log/situation_log_beyond_infinity.dds"
+	event_chain = beyond_infinity_chain
+	location = no
+
+	event_scope = country_event
+
+	requirements = {
+	}
+
+	on_success = {
+		country_event = { id = beyond_infinity.4300 }
+	}
+
+	on_fail = {
+	}
+}
+
+################################################################
+# 终焉封印
+################################################################
+
+special_project = {
+	key = "BEYOND_INFINITY_SEAL_PROJECT"
+	cost = 0
+	days_to_research = 30
+	tech_department = physics_technology
+	picture = GFX_dimensional_horror_crisis_storm
+	icon = "gfx/interface/icons/situation_log/situation_log_astral_rift.dds"
+	event_chain = beyond_infinity_seal_chain
+
+	event_scope = ship_event
+
+	requirements = {
+		shipclass_science_ship = 1
+		leader = scientist
+		skill = 10
+	}
+
+	on_success = {
+		FROM = {
+			save_event_target_as = dimensional_horror_crisis_sealed_star
+			solar_system = { save_event_target_as = dimensional_horror_crisis_sealed_system }
+		}
+		ship_event = { id = time_dimensional_horror_crisis.500 }
+	}
+}
+
+################################################################
+# 五段
+################################################################
+
+special_project = {
+	key = "BEYOND_INFINITY_TIME_MACHINE_PROJECT"
+	cost = 1000000
+	days_to_research = 0
+	tech_department = physics_technology
+	picture = GFX_evt_clocks
+	icon = "gfx/interface/icons/situation_log/situation_log_beyond_infinity.dds"
+	event_chain = beyond_infinity_chain
+	location = no
+
+	event_scope = country_event
+
+	requirements = {
+	}
+
+	on_success = {
+		country_event = { id = beyond_infinity.5010 }
+	}
+
+	on_fail = {
+	}
+}
+
+special_project = {
+	key = "BEYOND_INFINITY_CIRCLE_NEXUS_PROJECT"
+	cost = 1000000
+	days_to_research = 0
+	tech_department = society_technology
+	picture = GFX_evt_vortex
+	icon = "gfx/interface/icons/situation_log/situation_log_beyond_infinity.dds"
+	event_chain = beyond_infinity_chain
+	location = no
+
+	event_scope = country_event
+
+	requirements = {
+	}
+
+	on_success = {
+		country_event = { id = beyond_infinity.5020 }
+	}
+
+	on_fail = {
+	}
+}
+
+special_project = {
+	key = "BEYOND_INFINITY_DIMENSION_ENGINE_PROJECT"
+	cost = 1000000
+	days_to_research = 0
+	tech_department = engineering_technology
+	picture = GFX_evt_supernova
+	icon = "gfx/interface/icons/situation_log/situation_log_beyond_infinity.dds"
+	event_chain = beyond_infinity_chain
+	location = no
+
+	event_scope = country_event
+
+	requirements = {
+	}
+
+	on_success = {
+		country_event = { id = beyond_infinity.5030 }
+	}
+
+	on_fail = {
+	}
+}
+
+################################################################
+# 命运之陨
+################################################################
+
+special_project = {
+	key = "BEYOND_INFINITY_DIMENSIONAL_HORROR_CRISIS_END_PROJECT"
+	cost = 0
+	days_to_research = 90
+	tech_department = physics_technology
+	picture = GFX_evt_dimensional_horror
+	icon = "gfx/interface/icons/situation_log/situation_log_beyond_infinity.dds"
+	event_chain = beyond_infinity_chain
+	
+	event_scope = ship_event
+	
+	requirements = {
+		shipclass_science_ship = 1
+		leader = scientist
+		has_trait = subclass_scientist_dimension_traveler
+	}
+	
+	on_success = {
+		ship_event = { id = beyond_infinity.5700 }
+	}
+	
+	on_fail = {
+	}
+}

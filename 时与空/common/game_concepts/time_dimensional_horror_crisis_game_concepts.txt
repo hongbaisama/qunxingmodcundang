@@ -1,0 +1,138 @@
+concept_dimensional_horror_crisis_storm_tooltip = {
+	icon = "gfx/interface/icons/message/message_storm_gravity_visible.dds"
+	tooltip_override = "cosmic_storm:dimensional_horror_crisis_storm"
+}
+
+concept_dimensional_horror_crisis_storm = {
+	icon = "gfx/interface/icons/concepts/dimensional_horror_crisis/dimensional_horror_crisis_levo.dds"
+	alias = {
+		concept_dimensional_horror_crisis_storm_yellow
+		concept_dimensional_horror_crisis_storm_affected
+		concept_dimensional_horror_crisis_storm_affected_yellow
+	}
+	databank = {
+		category = db_dimensional_horror_crisis
+		icon = "gfx/interface/icons/concepts/dimensional_horror_crisis/dimensional_horror_crisis_levo.dds"
+		picture = "GFX_dimensional_horror_crisis_storm"
+	}
+}
+
+concept_dimensional_horror_crisis_storm_levo = {
+	icon = "gfx/interface/icons/concepts/dimensional_horror_crisis/dimensional_horror_crisis_levo.dds"
+	alias = {
+		concept_dimensional_horror_crisis_storm_levo_short
+	}
+	databank = {
+		category = db_dimensional_horror_crisis
+		icon = "gfx/interface/icons/concepts/dimensional_horror_crisis/dimensional_horror_crisis_levo.dds"
+		picture = "GFX_dimensional_horror_crisis_storm"
+	}
+}
+
+concept_dimensional_horror_crisis_storm_dextro = {
+	icon = "gfx/interface/icons/concepts/dimensional_horror_crisis/dimensional_horror_crisis_dextro.dds"
+	alias = {
+		concept_dimensional_horror_crisis_storm_dextro_short
+	}
+	databank = {
+		category = db_dimensional_horror_crisis
+		icon = "gfx/interface/icons/concepts/dimensional_horror_crisis/dimensional_horror_crisis_dextro.dds"
+		picture = "GFX_dimensional_horror_crisis_storm"
+	}
+}
+
+concept_dimensional_horror_crisis_ship = {
+	icon = "gfx/interface/icons/concepts/dimensional_horror_crisis/dimensional_horror_crisis_levo.dds"
+	alias = {
+		concept_dimensional_horror_crisis_ship_green
+		concept_dimensional_horror_crisis_ship_orange
+	}
+	databank = {
+		category = db_dimensional_horror_crisis
+		icon = "gfx/interface/icons/concepts/dimensional_horror_crisis/dimensional_horror_crisis_levo.dds"
+		picture = "GFX_evt_dimensional_horror"
+	}
+}
+
+concept_dimensional_horror_crisis_ship_levo = {
+	icon = "gfx/interface/icons/concepts/dimensional_horror_crisis/dimensional_horror_crisis_levo.dds"
+	alias = {
+		concept_dimensional_horror_crisis_ship_levo_short
+	}
+	databank = {
+		category = db_dimensional_horror_crisis
+		icon = "gfx/interface/icons/concepts/dimensional_horror_crisis/dimensional_horror_crisis_levo.dds"
+		picture = "GFX_evt_dimensional_horror"
+	}
+}
+
+concept_dimensional_horror_crisis_ship_dextro = {
+	icon = "gfx/interface/icons/concepts/dimensional_horror_crisis/dimensional_horror_crisis_dextro.dds"
+	alias = {
+		concept_dimensional_horror_crisis_ship_dextro_short
+	}
+	databank = {
+		category = db_dimensional_horror_crisis
+		icon = "gfx/interface/icons/concepts/dimensional_horror_crisis/dimensional_horror_crisis_dextro.dds"
+		picture = "GFX_evt_dimensional_horror"
+	}
+}
+
+concept_dimensional_horror_crisis_erasure = {
+	icon = "gfx/interface/icons/concepts/dimensional_horror_crisis/dimensional_horror_crisis_levo.dds"
+	alias = {
+		concept_dimensional_horror_crisis_erasure_red
+		concept_dimensional_horror_crisis_erasured
+		concept_dimensional_horror_crisis_erasured_orange
+		concept_dimensional_horror_crisis_erasured_yellow
+	}
+	databank = {
+		category = db_dimensional_horror_crisis
+		icon = "gfx/interface/icons/concepts/dimensional_horror_crisis/dimensional_horror_crisis_levo.dds"
+		picture = "GFX_dimensional_horror_crisis_storm"
+	}
+}
+
+concept_dimensional_horror_crisis_seal = {
+	icon = "gfx/interface/icons/concepts/dimensional_horror_crisis/dimensional_horror_crisis_dextro.dds"
+	alias = {
+		concept_dimensional_horror_crisis_seal_red
+		concept_dimensional_horror_crisis_seal_purple
+		concept_dimensional_horror_crisis_seal_purple_short
+		concept_dimensional_horror_crisis_seal_orange
+		concept_dimensional_horror_crisis_seal_orange_short
+		concept_dimensional_horror_crisis_seal_yellow
+		concept_dimensional_horror_crisis_sealed_yellow
+	}
+	databank = {
+		category = db_dimensional_horror_crisis
+		icon = "gfx/interface/icons/concepts/dimensional_horror_crisis/dimensional_horror_crisis_dextro.dds"
+		picture = "GFX_dimensional_horror_crisis_storm"
+	}
+}
+
+concept_dimensional_horror_crisis_storm_original_level = {
+	icon = "gfx/interface/icons/modifiers/mod_country_storm_repelling_add.dds"
+	alias = {
+		concept_dimensional_horror_crisis_storm_original_level_cyan
+		concept_dimensional_horror_crisis_storm_original_level_short
+	}
+	databank = {
+		category = db_dimensional_horror_crisis
+		icon = "gfx/interface/icons/modifiers/mod_country_storm_repelling_add.dds"
+		picture = "GFX_dimensional_horror_crisis_storm"
+	}
+}
+
+concept_dimensional_horror_crisis_storm_protection_level = {
+	icon = "gfx/interface/icons/modifiers/mod_country_storm_attraction_add.dds"
+	alias = {
+		concept_dimensional_horror_crisis_storm_protection_level_white
+		concept_dimensional_horror_crisis_storm_protection_level_short
+	}
+	databank = {
+		category = db_dimensional_horror_crisis
+		icon = "gfx/interface/icons/modifiers/mod_country_storm_attraction_add.dds"
+		picture = "GFX_dimensional_horror_crisis_storm"
+	}
+}

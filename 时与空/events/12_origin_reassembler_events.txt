@@ -1,0 +1,167 @@
+
+namespace = origin_reassembler
+
+country_event = {
+	id = origin_reassembler.1
+	is_triggered_only = yes
+	hide_window = yes
+
+	trigger = {
+		has_origin = origin_reassembler
+	}
+	
+	immediate = {
+		give_technology = { tech = "tech_powered_exoskeletons" message = no }
+		if = {
+			limit = {
+				NOT = { has_civic = civic_machine_assimilator }
+			}
+			add_research_option = tech_robomodding_m
+			add_research_option = tech_binary_motivators
+			add_tech_progress = {
+				tech = tech_robomodding_m
+				progress = 0.25
+			}
+		}
+		else = {
+			add_research_option = tech_integrated_cybernetics
+			add_tech_progress = {
+				tech = tech_integrated_cybernetics
+				progress = 0.25
+			}
+		}
+		owner_main_species = {
+			modify_species = {
+				species = this
+				remove_trait = trait_reassembler
+				change_scoped_species = no
+				effect = {
+					save_event_target_as = origin_reassembler_target_species
+				}
+			}
+		}
+		capital_scope = {
+			create_pop_group = {
+				species = event_target:origin_reassembler_target_species
+				size = 0
+				effect = {
+					save_event_target_as = origin_reassembler_target_pop_group
+				}
+			}
+			every_owned_pop_group = {
+				limit = {
+					is_same_species = root.owner_main_species
+					has_trait = trait_reassembler
+				}
+				transfer_pop_amount = {
+					source = this
+					target = event_target:origin_reassembler_target_pop_group
+					percentage = 0.6
+				}
+			}
+		}
+	}
+}
+
+# 再组装
+carrier_event = {
+	id = origin_reassembler.2
+	is_triggered_only = yes
+	hide_window = yes
+
+	trigger = {
+		FromFrom = { has_trait = trait_reassembler }
+	}
+	
+	immediate = {
+		FromFrom = {
+			save_event_target_as = reassembler_pop_group
+			# 重组传统
+			if = {
+				limit = {
+					root.owner = { has_tradition = tr_origin_reassembler_finish }
+				}
+				add_pop_amount = root.local_pop_amount
+			}
+		}
+		set_variable = {
+			which = new_reassembler_percentage
+			value = value:new_reassembler_percentage
+		}
+		if = {
+			limit = {
+				check_variable = {
+					which = new_reassembler_percentage
+					value <= 1
+				}
+			}
+			# 进行再组装转化
+			every_owned_pop_group = {
+				limit = {
+					is_same_species = event_target:reassembler_pop_group
+					can_be_reassembled = yes
+				}
+				kill_pop_group = {
+					pop_group = this
+					percentage = root.new_reassembler_percentage
+				}
+			}
+		}
+		else = {
+			# 过量再组装人口删除（需比下一步早）
+			FromFrom = {
+				kill_pop_group = {
+					pop_group = this
+					amount = root.value:new_reassembler_over_amount
+				}
+			}
+			# 进行再组装转化
+			every_owned_pop_group = {
+				limit = {
+					is_same_species = event_target:reassembler_pop_group
+					can_be_reassembled = yes
+				}
+				kill_all_pop = yes
+			}
+		}
+		clear_variable = new_reassembler_percentage
+	}
+}
+
+country_event = {
+	id = origin_reassembler.3
+	title = origin_reassembler.3.name
+	desc = origin_reassembler.3.desc
+	picture = GFX_evt_cybernetics
+	show_sound = event_activating_unknown_technology
+	
+	is_triggered_only = yes
+
+	trigger = {
+		if = {
+			limit = {
+				has_origin = origin_reassembler
+				has_machine_age_dlc = yes
+				NOT = { has_country_flag = origin_reassembler_3_triggered }
+			}
+			has_technology = tech_robomodding_m
+			has_technology = tech_binary_motivators
+			NOT = { has_civic = civic_machine_assimilator }
+		}
+		else = {
+			always = no
+		}
+	}
+	
+	immediate = {
+		set_country_flag = origin_reassembler_3_triggered
+	}
+	
+	option = {
+		name = origin_reassembler.3.a
+		start_situation = {
+			type = situation_transformation
+			target = root
+		}
+	}
+}

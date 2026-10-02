@@ -1,0 +1,18 @@
+species_potential_add = {
+	hidden_trigger = { exists = from }
+	from = { has_origin = origin_syncretic_evolution }
+	OR = {
+		has_trait = trait_syncretic_proles
+		has_trait = trait_nerve_stapled
+	}
+}
+species_possible_merge_add = {
+	hidden_trigger = { exists = from }
+	from = { has_origin = origin_syncretic_evolution }
+}
+species_possible_remove = {
+	can_remove_beneficial_genetic_traits = yes
+}
+species_possible_merge_remove = {
+	can_remove_beneficial_genetic_traits = yes
+}

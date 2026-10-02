@@ -1,0 +1,50 @@
+r_worm_scales = {
+	activation_duration = @triumph_duration
+	portrait = "GFX_relic_worm_scales"
+	sound = "relic_activation_scales_of_the_worm"
+
+	resources = {
+		category = relics
+		# Activation cost
+		cost = {
+			unity = @activation_cost
+		}
+	}
+	
+	can_be_stolen = no
+
+	ai_weight = {
+		weight = 100
+	}
+
+	triggered_country_modifier = {
+		physics_tech_cost_mult = -0.1
+		society_tech_cost_mult = -0.1
+		engineering_tech_cost_mult = -0.1
+		ship_damage_reduction_add = 25
+	}
+
+	score = 1000
+
+	active_effect = {
+		add_modifier = {
+			modifier = "worm_scales"
+			days = @triumph_duration
+		}
+		custom_tooltip = relic_triumph_cooldown
+		hidden_effect = {
+			add_modifier = {
+				modifier = "relic_activation_cooldown"
+				days = @triumph_duration
+			}
+		}
+	}
+
+	# Possible check for activation
+	possible = {
+		inline_script = {
+			script = relics/activation_checks
+			RELIC = r_worm_scales
+		}
+	}
+}

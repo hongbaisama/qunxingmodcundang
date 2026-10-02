@@ -1,0 +1,88 @@
+﻿l_simp_chinese:
+ origin_tooltip_mechanists_effects:0 "—['concept_robots', £mod_planet_jobs_robotic_produces_mult $ROBOT$]£pop §I人口§!：800$TABBED_NEW_LINE$—机械特质：['concept_adaptive_frames']\n—母星：['concept_robot_assembly_plant',£building $building_robot_assembly_plant$]\n—$ADDITIONAL_TECHNOLOGIES_STRING$$TABBED_NEW_LINE$—['concept_powered_exoskeletons', £engineering_research $tech_powered_exoskeletons$]$TABBED_NEW_LINE$—['concept_robotic_workers', £engineering_research $tech_robotic_workers$]$TABBED_NEW_LINE$—£engineering ['technology:tech_droid_workers']$TABBED_NEW_LINE$—£physics ['technology:tech_administrative_ai']$TABBED_NEW_LINE$—£physics ['technology:tech_self_aware_logic']\n—$GUARANTEED_RESEARCH_OPTION_STRING$$TABBED_NEW_LINE$—['concept_robomodding', £engineering_research $tech_robomodding$]$TABBED_NEW_LINE$—£engineering ['technology:tech_synthetic_workers']$TABBED_NEW_LINE$—£physics ['technology:tech_sapient_ai']\n—自动踏上['concept_synthetic_ascension']路线"
+ origin_tooltip_syncretic_evolution_effects:0 "—具有['concept_syncretic_proles']特质的£pop §I有机人口§!：1.2K\n—为['concept_syncretic_proles']物种解锁['concept_syncretic_evolution_traits']\n—若初始物种不是§I机械物种§!：\n$t$—$ADDITIONAL_TECHNOLOGIES_STRING$$TABBED_NEW_LINE$$t$—£society ['technology:tech_genome_mapping']$TABBED_NEW_LINE$$t$—£society ['technology:tech_cloning']$TABBED_NEW_LINE$$t$—£society ['technology:tech_frontier_health']\n$t$—$GUARANTEED_RESEARCH_OPTION_STRING$$TABBED_NEW_LINE$$t$—£society ['technology:tech_gene_tailoring']$TABBED_NEW_LINE$$t$—£society ['technology:tech_gene_expressions']\n$t$—研究特定§Y科技§!后自动踏上['concept_mutation_ascension']路线"
+ origin_tooltip_post_apocalyptic_effects:0 "—$HOMEWORLD$['concept_pc_nuked']$NEW_LINE$—$SPECIES_TRAITS$['concept_survivor']\n—可以将某些星球环境改造为['concept_pc_nuked']"
+ origin_tooltip_post_apocalyptic_machines_effects: "—$HOMEWORLD$['concept_pc_nuked']$NEW_LINE$—$SPECIES_TRAITS$['concept_robot_survivor']\n—可以将某些星球环境改造为['concept_pc_nuked']"
+ origin_tooltip_hegemon_effects:0 "—['concept_hegemony_federation']['concept_federation']的主席，也是初始['concept_federation']成员的宗主$federation_origin_end$"
+ origin_tooltip_tree_effects: "—$HOMEWORLD$['concept_tree_of_life']$NEW_LINE$—已殖民行星：['concept_tree_of_life_sapling']行星特征$NEW_LINE$—缺乏§Y生命之树幼苗§!的殖民地：['concept_transplant_tree_of_life']行星决议$NEW_LINE$—在附属国殖民地上$AVAILABLE_HOLDINGS$['concept_tree_of_life_holding', £building£$holding_tree_of_life_sapling$]\n—$ADDITIONAL_TECHNOLOGIES_STRING$$TABBED_NEW_LINE$—£society ['technology:tech_genome_mapping']$TABBED_NEW_LINE$—£society ['technology:tech_cloning']$TABBED_NEW_LINE$—£society ['technology:tech_colonization_2']\n—$GUARANTEED_RESEARCH_OPTION_STRING$$TABBED_NEW_LINE$—£society ['technology:tech_gene_tailoring']$TABBED_NEW_LINE$—£society ['technology:tech_gene_expressions']\n—研究特定§Y科技§!后自动踏上['concept_purity_ascension']路线"
+ origin_tooltip_wilderness_effects: "—物种特质：['trait:trait_wilderness']\n—将所有£building£['concept_buildings']、£district£['concept_districts']以及£zone£['concept_district_specialization']替换为专属版本\n—将殖民船殖民替换为['concept_terraforming']\n——解锁新资源：£biomass£['concept_biomass']\n—母星$TABBED_NEW_LINE$—规模：£planetsize£18$TABBED_NEW_LINE$—['concept_scorched_plains', £blocker£$d_scorched_plains$]\n—['concept_time_gaia_deposit']提供§G额外加成§!"
+ 
+ concept_survivor: "$trait_survivor$"
+ concept_survivor_desc: "—$mod_pc_nuked_habitability$：§G+70%§!\n—$MOD_LEADER_AGE$：§G+10年§!\n—$survivor_trait_tooltip$\n\n§L$trait_survivor_desc$§!"
+ 
+ concept_tree_of_life: "$d_tree_of_life_home$"
+ concept_tree_of_life_desc: "—国家$mod_BIOLOGICAL_species_trait_points_add$:§G+1§!\n—$mod_district_farming_max_add$:§G+2§!\n—$MOD_PLANET_AMENITIES_NO_HAPPINESS_ADD$:§G+200§!\n—$MOD_PLANET_HOUSING_ADD$:§G+200§!\n—每$pop_group_unit$£pop 人口导致:\n$tt$—$mod_district_farming_max_add$:§G+0.05§!\n$tt$—$MOD_PLANET_AMENITIES_NO_HAPPINESS_ADD$:§G+5§!\n$tt$—$MOD_PLANET_HOUSING_ADD$:§G+5§!\n$tt$—$MOD_LOGISTIC_GROWTH_MULT$:§G+1%§!\n$tt$—$mod_planet_jobs_food_produces_mult$:§G+1%§!\n$tt$—$mod_planet_jobs_society_research_produces_mult$:§G+1%§!\n$tt$—$mod_planet_pops_upkeep_mult$:§R+1%§!\n—$pc_gaia$上的每$pop_group_unit$$job_agri_drone_plural_with_icon$、$job_brain_drone_biologist_plural_with_icon$与$job_spawning_drone_plural_with_icon$导致:\n$tt$—$mod_organic_pop_bonus_workforce_mult$:§G+0.25%§!（最大§G+25%§!）\n—$d_tree_of_life_tooltip$\n—维护费:1$i_food$/£pop \n\n§L$d_tree_of_life_home_desc$§!"
+ concept_tree_of_life_sapling: "$d_tree_of_life_colony$"
+ concept_tree_of_life_sapling_desc: "—国家$mod_BIOLOGICAL_species_trait_points_add$:§G+0.25§!\n—$mod_district_farming_max_add$:§G+1§!\n—$MOD_PLANET_AMENITIES_NO_HAPPINESS_ADD$:§G+100§!\n—$MOD_PLANET_HOUSING_ADD$:§G+100§!\n—每$pop_group_unit$£pop 人口导致:\n$tt$—$mod_district_farming_max_add$:§G+0.025§!\n$tt$—$MOD_PLANET_AMENITIES_NO_HAPPINESS_ADD$:§G+2.5§!\n$tt$—$MOD_PLANET_HOUSING_ADD$:§G+2.5§!\n$tt$—$MOD_LOGISTIC_GROWTH_MULT$:§G+0.5%§!\n$tt$—$mod_planet_jobs_food_produces_mult$:§G+0.5%§!\n$tt$—$mod_planet_jobs_society_research_produces_mult$:§G+0.5%§!\n$tt$—$mod_planet_pops_upkeep_mult$:§R+0.5%§!\n—$pc_gaia$上的每$pop_group_unit$$job_agri_drone_plural_with_icon$、$job_brain_drone_biologist_plural_with_icon$与$job_spawning_drone_plural_with_icon$导致:\n$tt$—$mod_organic_pop_bonus_workforce_mult$:§G+0.125%§!（最大§G+12.5%§!）\n—$d_tree_of_life_tooltip$\n—维护费:0.5$i_food$/£pop \n\n§L$d_tree_of_life_colony_desc$§!"
+ 
+ building_akx_worm_1:0 "螺旋发电池"
+ building_akx_worm_1_desc:0 "$akx_worm_1_picture$应用某些完全超脱常理的物理学技术，我们可以显著提高星球的电量产出。这一技术据说牵扯到鬼魅夜行和坠落的梦境。"
+ building_akx_worm_2:0 "圆环学院"
+ building_akx_worm_2_desc:0 "$akx_worm_2_picture$圆环的指导鼓励直觉、服从和感官体验。"
+ building_akx_worm_3:0 "欧米伽同调装置"
+ building_akx_worm_3_desc:0 "$akx_worm_3_picture$这个物体的表面直指天穹。它的内部构造却无法用任何探测或绘图技术观测。当然，我们都知道里面有什么。"
+ 
+ akx.9210.desc:0 "[GetAkx9210Desc]"
+ akx.9220.desc:0 "[GetAkx9220Desc]"
+ 
+ planet_automation_worm: "£tradition_end 视界信号"
+ planet_automation_worm_desc: "允许建设§H$zone_akx_worm$§!、§H$building_akx_worm_1$§!、§H$building_akx_worm_2$§!和§H$building_akx_worm_3$§!。"
+ 
+ allow_gaia: "允许我们将行星环境改造为§Y盖亚星球§!\n['concept_time_gaia_deposit']效果增强"
+ 
+ crisis.7516.desc.worm: "[GetCrisis7516DescWorm]"
+ 
+ mod_leader_commanders_physics_research_produces_add: "£commander $commander$产出的£physics_research $physics_research$"
+ mod_leader_officials_physics_research_produces_add: "£official $official$产出的£physics_research $physics_research$"
+ mod_leader_scientists_physics_research_produces_add: "£scientist $scientist$产出的£physics_research $physics_research$"
+ mod_leader_commanders_society_research_produces_add: "£commander $commander$产出的£society_research $society_research$"
+ mod_leader_officials_society_research_produces_add: "£official $official$产出的£society_research $society_research$"
+ mod_leader_scientists_society_research_produces_add: "£scientist $scientist$产出的£society_research $society_research$"
+ mod_leader_commanders_engineering_research_produces_add: "£commander $commander$产出的£engineering_research $engineering_research$"
+ mod_leader_officials_engineering_research_produces_add: "£official $official$产出的£engineering_research $engineering_research$"
+ mod_leader_scientists_engineering_research_produces_add: "£scientist $scientist$产出的£engineering_research $engineering_research$"
+ mod_leader_commanders_sr_dark_matter_produces_add: "£commander $commander$产出的£sr_dark_matter $sr_dark_matter$"
+ mod_leader_officials_sr_dark_matter_produces_add: "£official $official$产出的£sr_dark_matter $sr_dark_matter$"
+ mod_leader_scientists_sr_dark_matter_produces_add: "£scientist $scientist$产出的£sr_dark_matter $sr_dark_matter$"
+ mod_leader_commanders_astral_threads_produces_add: "£commander $commander$产出的£astral_threads $astral_threads$"
+ mod_leader_officials_astral_threads_produces_add: "£official $official$产出的£astral_threads $astral_threads$"
+ mod_leader_scientists_astral_threads_produces_add: "£scientist $scientist$产出的£astral_threads $astral_threads$"
+ 
+ ################################################################
+ # 原版优化
+ ################################################################
+ 
+ # 新的格式已经没救了，只能这么凑合一下了（$pop_group_unit$只能删去，否则语序永远不对）
+ produced_per_pop_group_unit: "$produced_from$"
+ upkeep_per_pop_group_unit: "$upkeep_for$"
+ 
+ # 百分比再生修正自带一个百分号，显示的10%再生，实际上是万分之10，即0.1%再生
+ MOD_SHIP_HULL_REGEN_ADD_PERC: "每百日船体再生"
+ MOD_SHIP_HULL_REGEN_ADD_STATIC: "每日船体再生"
+ MOD_SHIP_ARMOR_REGEN_ADD_PERC: "每百日装甲再生"
+ MOD_SHIP_ARMOR_REGEN_ADD_STATIC: "每日装甲再生"
+ MOD_SHIP_SHIELD_REGEN_ADD_PERC: "每百日护盾再生"
+ MOD_SHIP_SHIELD_REGEN_ADD_STATIC: "每日护盾再生"
+ 
+ MOD_ESPIONAGE_OPERATION_COST_ADD: "行动所需的渗透"
+ 
+ leader_trait: "§c领袖特质§!\n[Root.GetClassTexticon][Root.GetClass]类别"
+ official_trait: "§c领袖特质§!\n£official $official$类别"
+ scientist_trait: "§c领袖特质§!\n£scientist $scientist$类别"
+ commander_trait: "§c领袖特质§!\n£commander $commander$类别"
+ 
+ veteran_leader_trait: "§v老练领袖特质§!\n[Root.GetClassTexticon][Root.GetClass]类别"
+ veteran_official_trait: "§v老练领袖特质§!\n£official $official$类别"
+ veteran_scientist_trait: "§v老练领袖特质§!\n£scientist $scientist$类别"
+ veteran_commander_trait: "§v老练领袖特质§!\n£commander $commander$类别"
+ 
+ paragon_leader_trait: "§d命定特质§!\n[Root.GetClassTexticon][Root.GetClass]类别"
+ paragon_official_trait: "§d命定特质§!\n£official $official$类别"
+ paragon_scientist_trait: "§d命定特质§!\n£scientist $scientist$类别"
+ paragon_commander_trait: "§d命定特质§!\n£commander $commander$类别"
+ 
+ official_subclass: "£official §v$veteran_class$§!"
+ scientist_subclass: "£scientist §v$veteran_class$§!"
+ commander_subclass: "£commander §v$veteran_class$§!"
+ 
+ DESTINY_SELECTION:0 "命定之择"

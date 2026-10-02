@@ -1,0 +1,7 @@
+ap_category_akx_horror = {
+	ascension_perks = {
+		"ap_horror"
+		"ap_time"
+		"ap_beyond_infinity"
+	}
+}

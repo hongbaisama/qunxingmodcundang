@@ -1,0 +1,145 @@
+tr_end_adopt = {
+	possible = {
+		has_tradition = tr_time_finish
+		can_adopt_tradition_end = yes
+	}
+	modifier = {
+		country_physics_research_produces_mult = 0.15
+		country_society_research_produces_mult = 0.15
+		country_engineering_research_produces_mult = 0.15
+		pop_amenities_usage_mult = 0.3
+	}
+	triggered_modifier = {
+		potential = {
+			# 奇观拓展-坠星天矛
+			has_country_flag = AOW_flag_CNTR_policy_starfall_spear_has_been_set
+		}
+		starfall_spear_cooldown_mult = -0.2
+	}
+	on_enabled = {
+		if = {
+			limit = {
+				OR = {
+					has_ascension_perk = ap_beyond_infinity
+					is_defender_of_the_galaxy_country = no
+				}
+			}
+			upgrade_r_time = { LEVEL = 5 }
+		}
+		if = {
+			limit = {
+				ap_beyond_infinity_basic_potential = yes
+				has_beyond_infinity_civic = no
+			}
+			custom_tooltip = unlock_ap_beyond_infinity
+		}
+	}
+}
+
+tr_end_finish = {
+	custom_tooltip = tr_end_finish_desc
+	unlocks_agenda = agenda_tradition_end
+	modifier = {
+		country_unity_produces_mult = 0.15
+		ascension_perks_add = 1
+	}
+	on_enabled = {
+		hidden_effect = {
+			country_event = { id = time.505 }
+		}
+	}
+}
+
+tr_end_1 = {
+	possible = {
+		has_technology = tech_time_shield
+	}
+	modifier = {
+		category_horror_time_research_speed_mult = 0.15
+		category_horror_time_draw_chance_mult = 0.15
+		weapon_type_dimensional_horror_weapon_fire_rate_mult = 0.3
+	}
+	on_enabled = {
+		add_research_option = tech_end_1_a_1
+		add_research_option = tech_end_1_b_1
+	}
+	ai_weight = {
+		factor = 0
+	}
+}
+
+tr_end_2 = {
+	possible = {
+		has_technology = tech_time_armor
+	}
+	modifier = {
+		category_horror_time_research_speed_mult = 0.15
+		category_horror_time_draw_chance_mult = 0.15
+		weapon_type_dimensional_horror_weapon_damage_mult = 0.3
+	}
+	on_enabled = {
+		add_research_option = tech_end_2_a_1
+		add_research_option = tech_end_2_b_1
+	}
+	ai_weight = {
+		factor = 0
+	}
+}
+
+tr_end_3 = {
+	possible = {
+		has_technology = tech_time_modifier
+	}
+	modifier = {
+		category_horror_time_research_speed_mult = 0.15
+		category_horror_time_draw_chance_mult = 0.15
+		weapon_type_dimensional_horror_weapon_damage_mult = 0.3
+	}
+	on_enabled = {
+		add_research_option = tech_end_3_a_1
+		add_research_option = tech_end_3_b_1
+	}
+	ai_weight = {
+		factor = 0
+	}
+}
+
+tr_end_4 = {
+	possible = {
+		has_tradition = tr_end_1
+		has_tradition = tr_end_2
+		has_technology = tech_time_beam
+	}
+	modifier = {
+		category_horror_time_research_speed_mult = 0.15
+		category_horror_time_draw_chance_mult = 0.15
+		weapon_type_dimensional_horror_weapon_damage_mult = 0.15
+		weapon_type_dimensional_horror_weapon_fire_rate_mult = 0.15
+		weapon_type_dimensional_horror_speed_mult = 0.3
+	}
+	on_enabled = {
+		add_research_option = tech_end_4_a_1
+		add_research_option = tech_end_4_b_1
+	}
+	ai_weight = {
+		factor = 0
+	}
+}
+
+tr_end_5 = {
+	possible = {
+		has_tradition = tr_end_3
+		has_technology = tech_time_trait
+	}
+	modifier = {
+		category_horror_time_research_speed_mult = 0.15
+		category_horror_time_draw_chance_mult = 0.15
+		weapon_type_dimensional_horror_weapon_fire_rate_mult = 0.3
+	}
+	on_enabled = {
+		add_research_option = tech_end_dimension
+	}
+	ai_weight = {
+		factor = 0
+	}
+}

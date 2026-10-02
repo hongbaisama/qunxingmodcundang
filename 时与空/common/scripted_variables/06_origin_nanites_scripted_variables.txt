@@ -1,0 +1,1 @@
+@nanites_logistics_drone_network_value_factor = 2

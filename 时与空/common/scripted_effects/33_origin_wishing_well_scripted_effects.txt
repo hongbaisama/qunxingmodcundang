@@ -1,0 +1,39 @@
+# 国家
+add_lost_wishing_well_modifier = {
+	if = {
+		limit = {
+			is_gestalt = no
+		}
+		add_modifier = {
+			modifier = lost_wishing_well_modifier
+			days = -1
+			multiplier = value:lost_wishing_well_modifier_value
+		}
+	}
+	else = {
+		add_modifier = {
+			modifier = lost_wishing_well_gestalt_modifier
+			days = -1
+			multiplier = value:lost_wishing_well_modifier_value
+		}
+	}
+}
+
+# 国家
+remove_lost_wishing_well_modifier = {
+	remove_modifier = lost_wishing_well_modifier
+	remove_modifier = lost_wishing_well_gestalt_modifier
+}
+
+# 国家
+remove_lost_wishing_well_modifier_for_tooltip = {
+	if = {
+		limit = {
+			is_gestalt = no
+		}
+		remove_modifier = lost_wishing_well_modifier
+	}
+	else = {
+		remove_modifier = lost_wishing_well_gestalt_modifier
+	}
+}

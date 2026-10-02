@@ -1,0 +1,131 @@
+ship_section_template = {
+	key = "BEYOND_INFINITY_COLOSSUS_CORE"
+	ship_size = colossus
+	fits_on_slot = ship
+	entity = "colossus_ship_entity"
+	icon = "GFX_ship_part_core_mid"
+	
+	prerequisites = { tech_beyond_infinity_colossus }
+	
+	modifier = {
+		ship_hull_mult = 0.5
+	}
+	
+	ship_modifier = {
+		ship_weapon_range_mult = 0.2
+		strike_craft_regeneration_mult = 0.2
+		ship_accuracy_mult = 0.2
+		ship_tracking_mult = 0.2
+		ship_damage_reduction_mult = 0.2
+	}
+
+	component_slot = {
+		name = "PLANET_KILLER_GUN_01"
+		template = "invisible_planet_killer_fixed"
+		locatorname = "planet_killer_gun_01"
+	}
+	
+	component_slot = {
+		name = "TITANIC_01"
+		template = "invisible_titanic_fixed"
+		locatorname = "planet_killer_gun_01"
+	}
+	
+	component_slot = {
+		name = "EXTRA_LARGE_01"
+		template = "invisible_extra_large_fixed"
+		locatorname = "planet_killer_gun_01"
+	}
+	
+	component_slot = {
+		name = "EXTRA_LARGE_02"
+		template = "invisible_extra_large_fixed"
+		locatorname = "planet_killer_gun_01"
+	}
+	
+	component_slot = {
+		name = "TORPEDO_01"
+		template = "medium_missile_turret"
+		locatorname = "planet_killer_gun_01"
+	}
+	
+	component_slot = {
+		name = "TORPEDO_02"
+		template = "medium_missile_turret"
+		locatorname = "planet_killer_gun_01"
+	}
+	
+	component_slot = {
+		name = "TORPEDO_03"
+		template = "medium_missile_turret"
+		locatorname = "planet_killer_gun_01"
+	}
+	
+	component_slot = {
+		name = "TORPEDO_04"
+		template = "medium_missile_turret"
+		locatorname = "planet_killer_gun_01"
+	}
+	
+	component_slot = {
+		name = "STRIKE_CRAFT_01"
+		template = "large_strike_craft"
+		locatorname = "planet_killer_gun_01"
+	}
+	
+	component_slot = {
+		name = "STRIKE_CRAFT_02"
+		template = "large_strike_craft"
+		locatorname = "planet_killer_gun_01"
+	}
+	
+	component_slot = {
+		name = "STRIKE_CRAFT_03"
+		template = "large_strike_craft"
+		locatorname = "planet_killer_gun_01"
+	}
+	
+	component_slot = {
+		name = "STRIKE_CRAFT_04"
+		template = "large_strike_craft"
+		locatorname = "planet_killer_gun_01"
+	}
+	
+	component_slot = {
+		name = "POINT_DEFENCE_01"
+		template = "point_defence_turret"
+		locatorname = "planet_killer_gun_01"
+	}
+	
+	component_slot = {
+		name = "POINT_DEFENCE_02"
+		template = "point_defence_turret"
+		locatorname = "planet_killer_gun_01"
+	}
+	
+	component_slot = {
+		name = "POINT_DEFENCE_03"
+		template = "point_defence_turret"
+		locatorname = "planet_killer_gun_01"
+	}
+	
+	component_slot = {
+		name = "POINT_DEFENCE_04"
+		template = "point_defence_turret"
+		locatorname = "planet_killer_gun_01"
+	}
+	
+	large_utility_slots = 18
+	aux_utility_slots = 12
+
+	ai_weight = {
+		factor = 100
+	}
+
+	resources = {
+		category = ship_sections
+		cost = {
+			alloys = @section_cost_beyond_infinity_colossus
+		}
+	}
+}

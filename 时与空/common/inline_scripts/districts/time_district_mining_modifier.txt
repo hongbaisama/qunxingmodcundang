@@ -1,0 +1,30 @@
+planet_modifier = {
+	planet_housing_add = 200
+}
+
+triggered_planet_modifier = {
+	potential = {
+		exists = owner
+		owner = {
+			has_valid_civic = civic_agrarian_idyll
+		}
+	}
+	modifier = {
+		planet_housing_add = 300
+	}
+}
+
+triggered_planet_modifier = {
+	potential = {
+		exists = owner
+		owner = { is_gestalt = yes }
+	}
+	modifier = {
+		planet_housing_add = 100
+	}
+}
+
+inline_script = {
+	script = districts/time_district_script_modifier
+	DISTRICT = mining
+}

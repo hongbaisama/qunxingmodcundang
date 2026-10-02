@@ -1,0 +1,316 @@
+################################################################
+# 荒野之心
+################################################################
+
+d_heart_of_wilderness = {
+	is_for_colonizable = yes
+	
+	category = deposit_cat_rare
+
+	icon = d_spawning_complex_blocker
+	
+	custom_tooltip = d_heart_of_wilderness_effect
+	custom_tooltip_short = d_heart_of_wilderness_effect_short
+	
+	triggered_planet_modifier = {
+		potential = {
+			is_planet_class = pc_gaia
+			is_capital = yes
+			exists = owner
+			owner = { is_wilderness_empire = yes }
+		}
+		planet_max_districts_add = 0.5
+		mult = trigger:planet_size
+	}
+	
+	triggered_planet_modifier = {
+		potential = {
+			is_planet_class = pc_gaia
+			is_capital = yes
+			exists = owner
+			owner = { is_wilderness_empire = yes }
+		}
+		job_max_workforce_mult = 0.5
+		planet_jobs_produces_mult = 0.25
+		planet_jobs_upkeep_mult = -0.125
+		planet_structures_cost_mult = -0.125
+		planet_structures_upkeep_mult = -0.125
+		mult = value:d_time_gaia_modifier_value
+	}
+	
+	potential = {
+		is_planet_class = pc_gaia
+	}
+	
+	drop_weight = {
+		weight = 0
+	}
+}
+
+################################################################
+# 盖亚增强
+################################################################
+
+d_time_gaia_energy = {
+	is_for_colonizable = yes
+	
+	category = deposit_cat_rare
+
+	icon = d_forceful_winds
+	
+	custom_tooltip = time_gaia_deposit_tooltip
+	
+	triggered_planet_modifier = {
+		potential = {
+			is_planet_class = pc_gaia
+		}
+		district_generator_max_add = 5 # 保底
+		district_generator_max_mult = 0.5
+		mult = value:d_time_gaia_modifier_value
+	}
+	
+	triggered_planet_modifier = {
+		potential = {
+			is_planet_class = pc_gaia
+		}
+		country_energy_produces_mult = 0.02
+		country_physics_research_produces_mult = 0.01
+		mult = trigger:planet_size
+	}
+	
+	triggered_planet_modifier = {
+		potential = {
+			is_planet_class = pc_gaia
+			exists = owner
+			owner = { has_ascension_perk = ap_world_shaper }
+		}
+		planet_technician_energy_produces_add = 2
+		planet_technician_physics_research_produces_add = 1
+		planet_technician_volatile_motes_produces_add = 0.5
+	}
+	
+	triggered_planet_modifier = {
+		potential = {
+			is_planet_class = pc_gaia
+			exists = owner
+			owner = { is_gestalt = no }
+		}
+		job_technician_max_workforce_mult = 0.5
+		mult = value:d_time_gaia_modifier_value
+	}
+	
+	triggered_planet_modifier = {
+		potential = {
+			is_planet_class = pc_gaia
+			exists = owner
+			owner = { is_gestalt = yes }
+		}
+		job_technician_drone_max_workforce_mult = 0.5
+		mult = value:d_time_gaia_modifier_value
+	}
+	
+	triggered_planet_modifier = {
+		potential = {
+			is_planet_class = pc_gaia
+			exists = owner
+			owner = { is_wilderness_empire = yes }
+		}
+		job_calculator_physicist_max_workforce_mult = 0.5
+		job_logistics_drone_max_workforce_mult = 0.5
+		mult = value:d_time_gaia_modifier_value
+	}
+	
+	potential = {
+		is_planet_class = pc_gaia
+	}
+	
+	drop_weight = {
+		weight = 0
+	}
+}
+
+d_time_gaia_minerals = {
+	is_for_colonizable = yes
+	
+	category = deposit_cat_rare
+
+	icon = d_crystal_forest
+	
+	custom_tooltip = time_gaia_deposit_tooltip
+	
+	triggered_planet_modifier = {
+		potential = {
+			is_planet_class = pc_gaia
+		}
+		district_mining_max_add = 5 # 保底
+		district_mining_max_mult = 0.5
+		mult = value:d_time_gaia_modifier_value
+	}
+	
+	triggered_planet_modifier = {
+		potential = {
+			is_planet_class = pc_gaia
+		}
+		country_minerals_produces_mult = 0.02
+		country_engineering_research_produces_mult = 0.01
+		mult = trigger:planet_size
+	}
+	
+	triggered_planet_modifier = {
+		potential = {
+			is_planet_class = pc_gaia
+			exists = owner
+			owner = { has_ascension_perk = ap_world_shaper }
+		}
+		planet_miners_minerals_produces_add = 2
+		planet_miners_engineering_research_produces_add = 1
+		planet_miners_rare_crystals_produces_add = 0.5
+	}
+	
+	triggered_planet_modifier = {
+		potential = {
+			is_planet_class = pc_gaia
+			exists = owner
+			owner = { is_gestalt = no }
+		}
+		job_miner_max_workforce_mult = 0.5
+		mult = value:d_time_gaia_modifier_value
+	}
+	
+	triggered_planet_modifier = {
+		potential = {
+			is_planet_class = pc_gaia
+			exists = owner
+			owner = { is_gestalt = yes }
+		}
+		job_mining_drone_max_workforce_mult = 0.5
+		mult = value:d_time_gaia_modifier_value
+	}
+	
+	triggered_planet_modifier = {
+		potential = {
+			is_planet_class = pc_gaia
+			exists = owner
+			owner = { is_wilderness_empire = yes }
+		}
+		job_calculator_engineer_max_workforce_mult = 0.5
+		job_fabricator_max_workforce_mult = 0.5
+		mult = value:d_time_gaia_modifier_value
+	}
+	
+	potential = {
+		is_planet_class = pc_gaia
+	}
+	
+	drop_weight = {
+		weight = 0
+	}
+}
+
+d_time_gaia_food = {
+	is_for_colonizable = yes
+	
+	category = deposit_cat_rare
+
+	icon = d_time_food
+	
+	custom_tooltip = time_gaia_deposit_tooltip
+	
+	triggered_planet_modifier = {
+		potential = {
+			is_planet_class = pc_gaia
+		}
+		district_farming_max_add = 5 # 保底
+		district_farming_max_mult = 0.5
+		mult = value:d_time_gaia_modifier_value
+	}
+	
+	triggered_planet_modifier = {
+		potential = {
+			is_planet_class = pc_gaia
+		}
+		country_food_produces_mult = 0.02
+		country_society_research_produces_mult = 0.01
+		mult = trigger:planet_size
+	}
+	
+	triggered_planet_modifier = {
+		potential = {
+			is_planet_class = pc_gaia
+			exists = owner
+			owner = { has_ascension_perk = ap_world_shaper }
+		}
+		planet_farmers_food_produces_add = 2
+		planet_farmers_society_research_produces_add = 1
+		planet_farmers_exotic_gases_produces_add = 0.5
+	}
+	
+	triggered_planet_modifier = {
+		potential = {
+			is_planet_class = pc_gaia
+			exists = owner
+			owner = { is_gestalt = no }
+		}
+		job_farmer_max_workforce_mult = 0.5
+		mult = value:d_time_gaia_modifier_value
+	}
+	
+	triggered_planet_modifier = {
+		potential = {
+			is_planet_class = pc_gaia
+			exists = owner
+			owner = { is_gestalt = yes }
+		}
+		job_agri_drone_max_workforce_mult = 0.5
+		mult = value:d_time_gaia_modifier_value
+	}
+	
+	triggered_planet_modifier = {
+		potential = {
+			is_planet_class = pc_gaia
+			exists = owner
+			owner = { is_wilderness_empire = yes }
+		}
+		job_calculator_biologist_max_workforce_mult = 0.5
+		job_coordinator_max_workforce_mult = 0.5
+		mult = value:d_time_gaia_modifier_value
+	}
+	
+	potential = {
+		is_planet_class = pc_gaia
+	}
+	
+	drop_weight = {
+		weight = 0
+	}
+}
+
+################################################################
+# 环形世界增强
+################################################################
+
+d_time_ringworld_network = {
+	is_for_colonizable = yes
+	
+	category = deposit_cat_rare
+	
+	custom_tooltip = d_time_ringworld_network_effect
+	
+	triggered_planet_modifier = {
+		potential = {
+			is_planet_class = pc_ringworld_habitable
+		}
+		planet_building_capacity_add = 0.5
+		job_max_workforce_mult = 0.125
+		planet_structures_upkeep_mult = 0.25
+		mult = value:d_time_ring_network_value
+	}
+	
+	potential = {
+		is_planet_class = pc_ringworld_habitable
+	}
+	
+	drop_weight = {
+		weight = 0
+	}
+}

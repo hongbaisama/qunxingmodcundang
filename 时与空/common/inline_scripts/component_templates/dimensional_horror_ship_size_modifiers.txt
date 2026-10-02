@@ -1,0 +1,7 @@
+triggered_ship_modifier = {
+	potential = {
+		is_dimensional_horror_ship_size_with_voidworms = yes
+	}
+	ship_damage_reduction_mult = 1
+	mult = value:dimensional_horror_ship_size_bonus
+}

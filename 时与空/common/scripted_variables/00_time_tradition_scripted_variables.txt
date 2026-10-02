@@ -1,0 +1,195 @@
+@base_r_horror_matter_cost = 1000
+@base_r_time_cost = 500
+
+@base_horror_tech_weight = 10
+@base_time_tech_weight = 5
+@base_hope_tech_weight = 3.75
+@base_end_tech_weight = 2.5
+
+@base_horror_tech_cost = 12500
+@base_time_tech_cost = 25000
+@base_hope_tech_cost = 37500
+@base_end_tech_cost = 50000
+@beyond_infinity_tech_cost_1 = 100000
+@beyond_infinity_tech_cost_2 = 200000
+@beyond_infinity_tech_cost_3 = 300000
+@beyond_infinity_tech_cost_4 = 400000
+@beyond_infinity_tech_cost_5 = 500000
+
+@dimensional_pd_beam_debuff_chance_3 = 100
+@dimensional_pd_beam_debuff_chance_2 = 75
+@dimensional_pd_beam_debuff_chance_1 = 50
+@dimensional_pd_beam_debuff_days = 5
+@dimensional_pd_beam_debuff_days_max = 10
+@horror_beam_debuff_chance_3 = 200
+@horror_beam_debuff_chance_2 = 150
+@horror_beam_debuff_chance_1 = 100
+@horror_beam_debuff_days = 5
+@horror_beam_debuff_days_max = 10
+@time_beam_debuff_chance_3 = 400
+@time_beam_debuff_chance_2 = 300
+@time_beam_debuff_chance_1 = 200
+@time_beam_debuff_days = 10
+@time_beam_debuff_days_max = 20
+@end_beam_debuff_chance_3 = 800
+@end_beam_debuff_chance_2 = 600
+@end_beam_debuff_chance_1 = 400
+@end_beam_debuff_days = 20
+@end_beam_debuff_days_max = 40
+@dimension_end_beam_debuff_chance_3 = 1600
+@dimension_end_beam_debuff_chance_2 = 1200
+@dimension_end_beam_debuff_chance_1 = 800
+@dimension_end_beam_debuff_days = 20
+@dimension_end_beam_debuff_days_max = 40
+@horror_weapon_bio_ships_no = 1
+@horror_weapon_bio_ships_yes = 0.5
+
+@horror_beam_injected_modifier_days_no = 10
+@horror_beam_injected_modifier_days_yes = 5
+@time_beam_injected_modifier_days_no = 20
+@time_beam_injected_modifier_days_yes = 10
+@end_beam_injected_modifier_days_no = 40
+@end_beam_injected_modifier_days_yes = 20
+
+@time_beam_aoe_damage_no = 100
+@time_beam_aoe_damage_yes = 50
+@time_beam_aoe_range = 20
+@end_beam_aoe_damage_no = 500
+@end_beam_aoe_damage_yes = 250
+@end_beam_aoe_range = 40
+@dimension_end_beam_aoe_damage = 1000
+@dimension_end_beam_aoe_range = 50
+@hope_beam_aoe_range = 40
+
+@time_tradition_building_job_1 = 0.0125
+@time_tradition_building_job_2 = 0.025
+@time_tradition_building_job_3 = 0.05
+@time_tradition_building_modifier_positive_1 = 0.25
+@time_tradition_building_modifier_positive_2 = 0.5
+@time_tradition_building_modifier_positive_3 = 1
+@time_tradition_building_modifier_negative_1 = -0.125
+@time_tradition_building_modifier_negative_2 = -0.25
+@time_tradition_building_modifier_negative_3 = -0.5
+@time_tradition_building_produce_add_1 = 1.5
+@time_tradition_building_produce_add_2 = 3
+@time_tradition_building_produce_add_3 = 6
+@time_tradition_building_upkeep_add_1 = 0.75
+@time_tradition_building_upkeep_add_2 = 1.5
+@time_tradition_building_upkeep_add_3 = 3
+@time_tradition_building_upkeep_hive_add_1 = 2
+@time_tradition_building_upkeep_hive_add_2 = 4
+@time_tradition_building_upkeep_hive_add_3 = 8
+@time_tradition_building_upkeep_machine_add_1 = 1.5
+@time_tradition_building_upkeep_machine_add_2 = 3
+@time_tradition_building_upkeep_machine_add_3 = 6
+@time_tradition_building_ai_resource_production_1 = 10
+@time_tradition_building_ai_resource_production_2 = 20
+@time_tradition_building_ai_resource_production_3 = 40
+
+@deposit_end_messenger_job = 0.005
+@deposit_future_messenger_job = 0.0125
+@deposit_gestalt_messenger_job = 0.0125
+
+@building_beyond_infinity_end_job_base_1 = 100
+@building_beyond_infinity_end_job_base_2 = 200
+@building_beyond_infinity_end_job_1 = 0.0025
+@building_beyond_infinity_end_job_2 = 0.005
+@building_tower_of_infinity_job = 0.025
+
+@leader_trait_horror_focus_planet_modifier_1 = 0.1
+@leader_trait_horror_focus_planet_high_1 = 0.2
+@leader_trait_horror_focus_planet_middle_1 = 0.04
+@leader_trait_horror_focus_planet_low_1 = 0.02
+@leader_trait_horror_focus_sector_modifier_1 = 0.05
+@leader_trait_horror_focus_sector_high_1 = 0.1
+@leader_trait_horror_focus_sector_middle_1 = 0.02
+@leader_trait_horror_focus_sector_low_1 = 0.01
+
+@leader_trait_horror_focus_planet_modifier_2 = 0.2
+@leader_trait_horror_focus_planet_high_2 = 0.4
+@leader_trait_horror_focus_planet_middle_2 = 0.08
+@leader_trait_horror_focus_planet_low_2 = 0.04
+@leader_trait_horror_focus_sector_modifier_2 = 0.1
+@leader_trait_horror_focus_sector_high_2 = 0.2
+@leader_trait_horror_focus_sector_middle_2 = 0.04
+@leader_trait_horror_focus_sector_low_2 = 0.02
+
+@leader_trait_horror_focus_planet_modifier_3 = 0.35
+@leader_trait_horror_focus_planet_high_3 = 0.7
+@leader_trait_horror_focus_planet_middle_3 = 0.14
+@leader_trait_horror_focus_planet_low_3 = 0.07
+@leader_trait_horror_focus_sector_modifier_3 = 0.175
+@leader_trait_horror_focus_sector_high_3 = 0.35
+@leader_trait_horror_focus_sector_middle_3 = 0.07
+@leader_trait_horror_focus_sector_low_3 = 0.035
+
+@low_dimensional_adaptor_or_high_dimensional_extender_positive = 0.25
+@low_dimensional_adaptor_or_high_dimensional_extender_negative = -0.25
+
+@time_power_S8 = -70
+@time_power_M8 = -140
+@time_power_L8 = -280
+
+# 花费：似乎无明显规律？
+# 维护费：L=2M=4S，@time_shield_l_t8_upkeep_energy = @m_t7_upkeep_energy，@time_shield_l_t8_upkeep_alloys = @time_m_t8_upkeep_alloys
+@time_shield_s_t8_cost = 62
+@time_shield_s_t8_upkeep_energy = 0.57
+@time_shield_s_t8_upkeep_alloys = 0.171
+
+@time_shield_m_t8_cost = 156
+@time_shield_m_t8_upkeep_energy = 1.14
+@time_shield_m_t8_upkeep_alloys = 0.342
+
+@time_shield_l_t8_cost = 392
+@time_shield_l_t8_upkeep_energy = 2.28
+@time_shield_l_t8_upkeep_alloys = 0.684
+
+# S盾：+25+35+45+55+65+75+85，M盾与L盾也存在相似规律
+@time_shield_S8 = 485
+@time_shield_M8 = 1455
+@time_shield_L8 = 4365
+
+# 对应盾量/200
+@time_regen_S8 = 2.425
+@time_regen_M8 = 7.275
+@time_regen_L8 = 21.825
+
+# 维护费：L=2M=4S
+@time_s_t8_cost = 120
+@time_s_t8_upkeep_energy = 1.71
+@time_s_t8_upkeep_alloys = 0.342
+
+@time_m_t8_cost = 300
+@time_m_t8_upkeep_energy = 3.42
+@time_m_t8_upkeep_alloys = 0.684
+
+@time_l_t8_cost = 750
+@time_l_t8_upkeep_energy = 6.84
+@time_l_t8_upkeep_alloys = 1.368
+
+# S甲：+25+35+45+55+65+75+85，M甲与L甲也存在相似规律
+@time_armor_S8 = 485
+@time_armor_M8 = 1455
+@time_armor_L8 = 4365
+
+@time_utility_X6 = 5000
+@time_utility_regen_X6 = 50
+@time_utility_X7 = 7500
+@time_utility_regen_X7 = 75
+@time_utility_X8 = 10000
+@time_utility_regen_X8 = 100
+
+@time_extra_modifier_S6 = 0.02
+@time_extra_modifier_M6 = 0.03
+@time_extra_modifier_L6 = 0.05
+@time_extra_modifier_X6 = 0.1
+
+@time_extra_modifier_S7 = 0.03
+@time_extra_modifier_M7 = 0.045
+@time_extra_modifier_L7 = 0.075
+@time_extra_modifier_X7 = 0.15
+
+@time_extra_modifier_S8 = 0.04
+@time_extra_modifier_M8 = 0.06
+@time_extra_modifier_L8 = 0.1
+@time_extra_modifier_X8 = 0.2

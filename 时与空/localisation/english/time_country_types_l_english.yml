@@ -1,0 +1,32 @@
+﻿l_english:
+ dimension_traveler_commander:0 "Dimension Traveler"
+ dimension_traveler_scientist:0 "Dimension Traveler"
+ dimension_traveler_official:0 "Dimension Traveler"
+ 
+ under_the_haze_commander:0 "Haze Commander"
+ under_the_haze_scientist:0 "Haze Scientist"
+ under_the_haze_official:0 "Haze Official"
+ 
+ parallel_sky_commander:0 "Parallel Commander"
+ parallel_sky_scientist:0 "Parallel Scientist"
+ parallel_sky_official:0 "Parallel Official"
+ 
+ origin_colossus_commander:0 "Sword of Damocles AI"
+ origin_colossus_scientist:0 "Sword of Damocles AI"
+ origin_colossus_official:0 "Sword of Damocles AI"
+ 
+ origin_pirate_king_commander:0 "Pirate Boatswain"
+ origin_pirate_king_scientist:0 "Pirate Observer"
+ origin_pirate_king_official:0 "Pirate Helmsman"
+ 
+ origin_pirate_king_end_commander:0 "§MGhost Boatswain§!"
+ origin_pirate_king_end_scientist:0 "§MGhost Observer§!"
+ origin_pirate_king_end_official:0 "§MGhost Helmsman§!"
+ 
+ time_wanderer_commander:0 "Wandering Singularity"
+ time_wanderer_scientist:0 "Wandering Singularity"
+ time_wanderer_official:0 "Wandering Singularity"
+ 
+ dimensional_horror_crisis_commander:0 "Nightmare of the End"
+ dimensional_horror_crisis_scientist:0 "Nightmare of the End"
+ dimensional_horror_crisis_official:0 "Nightmare of the End"

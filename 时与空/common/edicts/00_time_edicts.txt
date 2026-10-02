@@ -1,0 +1,457 @@
+defective_time_machine_edict = {
+	length = 1
+	icon = "GFX_edict_type_policy"
+
+	modifier = {
+	}
+
+	potential = {
+		OR = {
+			AND = {
+				has_time_machine_civic = yes
+				has_global_flag = time_machine_is_defective
+			}
+			AND = {
+				is_ai = no
+				has_global_flag = greatest_dimensional_horror_crisis
+			}
+		}
+		NOT = { has_global_flag = enable_defective_time_machine_edict }
+	}
+	
+	effect = {
+		custom_tooltip = "defective_time_machine_edict_effect"
+		hidden_effect = {
+			set_global_flag = enable_defective_time_machine_edict
+			date_distortion = no
+		}
+	}
+	
+	ai_weight = {
+		weight = 0
+	}
+}
+
+akx_hear_the_truth_in_the_morning = {
+	length = -1
+	icon = "GFX_edict_type_policy"
+
+	resources = {
+		category = edicts
+		cost = {
+			sr_dark_matter = 5
+			multiplier = value:akx_dark_consortium_edict_cost
+		}
+		upkeep = {
+			sr_dark_matter = 5
+			multiplier = value:akx_dark_consortium_edict_cost
+		}
+	}
+
+	potential = {
+		is_dark_consortium_empire = yes
+		has_country_flag = unlock_akx_dark_consortium_edict
+	}
+
+	triggered_country_modifier = {
+		all_technology_research_speed = 0.2
+		planet_researchers_produces_mult = 0.2
+		planetary_ascension_effect_mult = 0.2
+		planet_jobs_upkeep_mult = 0.2
+		leader_lifespan_mult = -0.2
+		multiplier = value:akx_dark_consortium_edict_value
+	}
+}
+
+akx_die_at_night_after_truth = {
+	length = -1
+	icon = "GFX_edict_type_policy"
+
+	resources = {
+		category = edicts
+		cost = {
+			sr_dark_matter = 5
+			multiplier = value:akx_dark_consortium_edict_cost
+		}
+		upkeep = {
+			sr_dark_matter = 5
+			multiplier = value:akx_dark_consortium_edict_cost
+		}
+	}
+
+	potential = {
+		is_dark_consortium_empire = yes
+		has_country_flag = unlock_akx_dark_consortium_edict
+	}
+
+	triggered_country_modifier = {
+		ship_weapon_damage = 0.2
+		ship_fire_rate_mult = 0.2
+		ship_weapon_range_mult = 0.2
+		ships_upkeep_mult = 0.2
+		leader_lifespan_mult = -0.2
+		multiplier = value:akx_dark_consortium_edict_value
+	}
+}
+
+akx_live_without_regret = {
+	length = -1
+	icon = "GFX_edict_type_policy"
+
+	resources = {
+		category = edicts
+		cost = {
+			sr_dark_matter = 5
+			multiplier = value:akx_dark_consortium_edict_cost
+		}
+		upkeep = {
+			sr_dark_matter = 5
+			multiplier = value:akx_dark_consortium_edict_cost
+		}
+	}
+
+	potential = {
+		is_dark_consortium_empire = yes
+		has_country_flag = unlock_akx_dark_consortium_edict
+	}
+
+	triggered_country_modifier = {
+		species_empire_size_mult = -0.2
+		pop_amenities_usage_mult = -0.2
+		pop_housing_usage_mult = -0.2
+		planet_structures_upkeep_mult = 0.2
+		leader_lifespan_mult = -0.2
+		multiplier = value:akx_dark_consortium_edict_value
+	}
+}
+
+akx_shorten_r_time_cooldown = {
+	length = -1
+	icon = "GFX_edict_type_policy"
+	
+	edict_lock_in_months = 240
+
+	resources = {
+		category = edicts
+		cost = {
+			sr_dark_matter = 200
+			multiplier = value:edict_size_effect
+		}
+		upkeep = {
+			sr_dark_matter = 20
+			multiplier = value:edict_size_effect
+		}
+	}
+
+	potential = {
+		is_dark_consortium_empire = yes
+		has_country_flag = unlock_hidden_akx_dark_consortium_edict
+		has_relic = r_time
+	}
+
+	effect = {
+		custom_tooltip = akx_shorten_r_time_cooldown_effect
+		if = {
+			limit = {
+				has_country_flag = unlock_akx_dark_consortium_edict
+			}
+			custom_tooltip = improve_akx_dark_consortium_edict_effect
+		}
+	}
+}
+
+origin_gas_colony_edict_volatile_motes = {
+	length = -1
+	icon = "GFX_edict_type_time"
+	resources = {
+		category = rare_edicts
+		cost = {
+			volatile_motes = 3
+			multiplier = value:edict_size_effect
+		}
+		upkeep = {
+			volatile_motes = 3
+			multiplier = value:edict_size_effect
+		}
+	}
+
+	triggered_country_modifier = {
+		planet_technician_energy_produces_mult = 0.25
+		planet_physicists_physics_research_produces_add = 0.25
+		planet_physicists_volatile_motes_upkeep_add = 0.25
+		multiplier = value:origin_gas_colony_edict_value
+	}
+
+	potential = {
+		has_origin = origin_gas_colony
+	}
+
+	ai_weight = {
+		weight = 0
+		modifier = {
+			weight = @EdictHighPrio
+			has_monthly_income = { resource = volatile_motes value > 3 }
+		}
+	}
+}
+
+origin_gas_colony_edict_rare_crystals = {
+	length = -1
+	icon = "GFX_edict_type_time"
+	resources = {
+		category = rare_edicts
+		cost = {
+			rare_crystals = 3
+			multiplier = value:edict_size_effect
+		}
+		upkeep = {
+			rare_crystals = 3
+			multiplier = value:edict_size_effect
+		}
+	}
+
+	triggered_country_modifier = {
+		planet_miners_minerals_produces_mult = 0.25
+		planet_engineers_engineering_research_produces_add = 0.25
+		planet_engineers_rare_crystals_upkeep_add = 0.25
+		multiplier = value:origin_gas_colony_edict_value
+	}
+
+	potential = {
+		has_origin = origin_gas_colony
+	}
+
+	ai_weight = {
+		weight = 0
+		modifier = {
+			weight = @EdictHighPrio
+			has_monthly_income = { resource = rare_crystals value > 3 }
+		}
+	}
+}
+
+origin_gas_colony_edict_exotic_gases = {
+	length = -1
+	icon = "GFX_edict_type_time"
+	resources = {
+		category = rare_edicts
+		cost = {
+			exotic_gases = 3
+			multiplier = value:edict_size_effect
+		}
+		upkeep = {
+			exotic_gases = 3
+			multiplier = value:edict_size_effect
+		}
+	}
+
+	triggered_country_modifier = {
+		planet_farmers_food_produces_mult = 0.25
+		planet_biologists_society_research_produces_add = 0.25
+		planet_biologists_exotic_gases_upkeep_add = 0.25
+		multiplier = value:origin_gas_colony_edict_value
+	}
+
+	potential = {
+		has_origin = origin_gas_colony
+	}
+
+	ai_weight = {
+		weight = 0
+		modifier = {
+			weight = @EdictHighPrio
+			has_monthly_income = { resource = exotic_gases value > 3 }
+		}
+	}
+}
+
+origin_psionic_edict = {
+	length = -1
+	icon = "GFX_edict_type_time"
+	resources = {
+		category = rare_edicts
+		cost = {
+			sr_zro = 5
+			multiplier = value:edict_size_effect
+		}
+		upkeep = {
+			sr_zro = 5
+			multiplier = value:edict_size_effect
+		}
+	}
+
+	triggered_country_modifier = {
+		pop_happiness = 0.15
+		planet_jobs_specialist_produces_mult = 0.15
+		planet_bureaucrats_unity_produces_add = 0.5
+		planet_bureaucrats_sr_zro_upkeep_add = 0.1
+		multiplier = value:origin_psionic_edict_value
+	}
+
+	potential = {
+		has_origin = origin_psionic
+	}
+
+	ai_weight = {
+		weight = 0
+		modifier = {
+			weight = @EdictHighPrio
+			has_monthly_income = { resource = sr_zro value > 5 }
+		}
+	}
+}
+
+origin_nanites_edict = {
+	length = -1
+	icon = "GFX_edict_type_time"
+	resources = {
+		category = rare_edicts
+		cost = {
+			nanites = 2.5
+			multiplier = value:edict_size_effect
+		}
+		upkeep = {
+			nanites = 2.5
+			multiplier = value:edict_size_effect
+		}
+	}
+
+	triggered_country_modifier = {
+		planet_jobs_produces_mult = 0.1
+		physics_tech_cost_mult = -0.05
+		society_tech_cost_mult = -0.05
+		engineering_tech_cost_mult = -0.05
+		multiplier = value:origin_nanites_edict_value
+	}
+
+	potential = {
+		has_origin = origin_nanites
+	}
+
+	ai_weight = {
+		weight = 0
+		modifier = {
+			weight = @EdictHighPrio
+			has_monthly_income = { resource = nanites value > 2 }
+		}
+	}
+}
+
+secondhand_country_edict = {
+	length = -1
+	icon = "GFX_edict_type_policy"
+	
+	edict_lock_in_months = 60
+	
+	resources = {
+		category = edicts_unscaled
+		cost = {
+			unity = 1
+			multiplier = value:consequences_cost
+		}
+		upkeep = {
+			unity = 1
+			multiplier = value:consequences_cost
+		}
+	}
+
+	modifier = {
+		custom_tooltip = edict_secondhand_country_edict_effect
+		show_only_custom_tooltip = no
+		planet_pops_robotics_upkeep_mult = 1
+	}
+
+	potential = {
+		has_origin = origin_secondhand_country
+	}
+	
+	ai_weight = {
+		weight = 0
+	}
+}
+
+ruler_pass_black_hole_edict = {
+	length = 1
+	icon = "GFX_trait_origin_black_hole"
+	resources = {
+		category = edicts_unscaled
+		cost = {
+			sr_dark_matter = 500
+		}
+	}
+
+	modifier = {
+	}
+
+	potential = {
+		if = {
+			limit = {
+				has_technology = tech_end_trait
+			}
+			ruler = {
+				has_pass_black_hole = no
+				OR = {
+					has_any_subclass = yes
+					is_dimension_traveler = yes
+				}
+			}
+		}
+		else = {
+			always = no
+		}
+	}
+	
+	allow = {
+		custom_tooltip = {
+			fail_text = "requires_black_hole_system_within_border"
+			any_system_within_border = {
+				is_time_black_hole_star_class = yes
+			}
+		}
+	}
+	
+	effect = {
+		ruler = {
+			leader_pass_black_hole = yes
+		}
+		if = {
+			limit = {
+				is_gestalt = yes
+			}
+			every_owned_leader = {
+				limit = {
+					is_gestalt_node = yes
+					has_pass_black_hole = no
+				}
+				leader_pass_black_hole = yes
+			}
+		}
+	}
+	
+	ai_weight = {
+		weight = 10
+	}
+}
+
+time_help_edict = {
+	length = 1
+	icon = "GFX_text_tradition_end"
+
+	modifier = {
+	}
+
+	potential = {
+		is_ai = no
+	}
+	
+	effect = {
+		custom_tooltip = "time_help_edict_effect"
+		hidden_effect = {
+			country_event = { id = time_help.0 }
+		}
+	}
+	
+	ai_weight = {
+		weight = 0
+	}
+}

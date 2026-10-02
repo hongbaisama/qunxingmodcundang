@@ -1,0 +1,123 @@
+# 任意
+refresh_time_wanderer = {
+	set_timed_global_flag = {
+		flag = refresh_time_wanderer
+		days = 1
+	}
+	if = {
+		limit = {
+			any_system = {
+				is_time_black_hole_star_class = yes
+				NOR = {
+					has_star_flag = time_system # 避免神秘奇点初始星系被选中
+					AND = {
+						exists = event_target:time_wanderer_system
+						is_same_value = event_target:time_wanderer_system
+					}
+				}
+			}
+		}
+		random_system = {
+			limit = {
+				is_time_black_hole_star_class = yes
+				NOR = {
+					has_star_flag = time_system # 避免神秘奇点初始星系被选中
+					AND = {
+						exists = event_target:time_wanderer_system
+						is_same_value = event_target:time_wanderer_system
+					}
+				}
+			}
+			choose_as_time_wanderer_system = yes
+		}
+	}
+	else = {
+		random_system = {
+			limit = {
+				NOR = {
+					has_star_flag = time_system # 避免神秘奇点初始星系被选中
+					AND = {
+						exists = event_target:time_wanderer_system
+						is_same_value = event_target:time_wanderer_system
+					}
+				}
+			}
+			choose_as_time_wanderer_system = yes
+		}
+	}
+}
+
+# 星系
+choose_as_time_wanderer_system = {
+	if = {
+		limit = {
+			exists = event_target:time_wanderer_system
+		}
+		event_target:time_wanderer_system = {
+			remove_modifier = time_wanderer_system_modifier
+		}
+		clear_global_event_target = time_wanderer_system
+		# 移除星系修正的同时也要移除星球修正
+		if = {
+			limit = {
+				exists = event_target:time_wanderer_planet
+			}
+			event_target:time_wanderer_planet = {
+				remove_modifier = time_wanderer_planet_modifier
+			}
+			clear_global_event_target = time_wanderer_planet
+		}
+		if = {
+			limit = {
+				has_global_flag = refresh_time_wanderer
+			}
+			# 设置为新位置
+			system_event = { id = time_wanderer.2 }
+		}
+		else = {
+			# 需要时间移动
+			system_event = { id = time_wanderer.2 days = 180 random = 180 }
+		}
+	}
+	else = {
+		# 设置为新位置
+		system_event = { id = time_wanderer.2 }
+	}
+}
+
+# 星球
+choose_as_time_wanderer_planet = {
+	if = {
+		limit = {
+			exists = event_target:time_wanderer_planet
+		}
+		event_target:time_wanderer_planet = {
+			remove_modifier = time_wanderer_planet_modifier
+		}
+		clear_global_event_target = time_wanderer_planet
+		if = {
+			limit = {
+				has_global_flag = refresh_time_wanderer
+			}
+			# 设置为新位置
+			carrier_event = { id = time_wanderer.3 }
+		}
+		else = {
+			# 需要时间移动（同星系内耗时较短）
+			carrier_event = { id = time_wanderer.3 days = 60 random = 60 }
+		}
+	}
+	else = {
+		if = {
+			limit = {
+				has_global_flag = refresh_time_wanderer
+			}
+			# 设置为新位置
+			carrier_event = { id = time_wanderer.3 }
+		}
+		else = {
+			# 需要时间移动（跨星系耗时较长）
+			carrier_event = { id = time_wanderer.3 days = 90 random = 90 }
+		}
+	}
+}

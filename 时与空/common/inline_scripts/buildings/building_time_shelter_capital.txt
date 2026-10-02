@@ -1,0 +1,36 @@
+capital = yes
+can_build = no
+can_demolish = no
+can_be_ruined = no
+can_be_disabled = no
+position_priority = 0
+capital_tier = $CAPITAL_TIER$
+base_buildtime = @time_titan_buildtime_$LEVEL$
+
+category = government
+
+building_sets = { zone_time_shelter_main_government }
+
+resources = {
+	category = planet_buildings
+	cost = {
+		sr_dark_matter = @time_titan_sr_dark_matter_cost_$LEVEL$
+		influence = @time_titan_influence_cost_$LEVEL$
+	}
+	upkeep = {
+		sr_dark_matter = @time_titan_sr_dark_matter_upkeep_$LEVEL$
+		astral_threads = @time_titan_astral_threads_upkeep_$LEVEL$
+	}
+}
+
+prerequisites = {
+	tech_akx_worm_3
+}
+
+show_tech_unlock_if = {
+	always = no
+}
+
+triggered_desc = {
+	text = building_time_shelter_capital_effect
+}

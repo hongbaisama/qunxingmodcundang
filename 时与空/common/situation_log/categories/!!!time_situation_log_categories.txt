@@ -1,0 +1,6 @@
+horizonsignal = {
+	collapsible = no
+	priority = 0
+	localization = horizonsignal
+	icon = "GFX_category_horizonsignal"
+}

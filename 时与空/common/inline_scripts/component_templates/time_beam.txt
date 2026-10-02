@@ -1,0 +1,105 @@
+key = $KEY$
+size = extra_large
+type = instant
+prio_projectile = yes
+
+icon = $ICON$
+icon_frame = 1
+projectile_gfx = "time_beam"
+
+power = -300
+
+firing_arc = 30.0
+min_range = 15
+damage = { min = 1.00 max = 999.00 }
+windup = { min = 10.00 max = 20.00 }
+hull_damage = 1.50
+shield_damage = 0.75
+shield_penetration = 0.50
+armor_damage = 3.00
+armor_penetration = 1.25
+total_fire_time = $COOLDOWN$
+range = $RANGE$
+accuracy = 0.80
+tracking = 0.30
+size_damage_factor = 0.04
+military_power_multiplier = 2
+collateral_damage = @time_beam_aoe_damage_$BIO_SHIPS$
+collateral_range = @time_beam_aoe_range
+
+on_hit = {
+	horror_weapon_on_hit_aoe_effect = {
+		TYPE = time
+		DEBUFF = terrify
+		BIO_SHIPS = $BIO_SHIPS$
+	}
+}
+
+injected_modifier = {
+	modifier = {
+		modifier = time_beam_modifier
+		days = @time_beam_injected_modifier_days_$BIO_SHIPS$
+	}
+	stack_info = {			#A ship can only be affected by one injected modifier of a certain id. If multiple modifiers have the same ID the one with the highest priority will be applied.
+		id = time_beam_modifier
+		priority = 1
+	}
+}
+
+tags = { weapon_type_dimensional_horror weapon_type_energy weapon_role_artillery x_slot }
+ai_tags = { weapon_role_anti_hull weapon_role_anti_armor weapon_role_artillery artillery }
+
+inline_script = {
+	script = component_templates/time_target_weights_focus_large
+}
+
+custom_tooltip = time_beam_effect
+
+triggered_ship_modifier = {
+	potential = {
+		active_ap_horror_bonus = { SCOPE = owner }
+	}
+	ship_armor_penetration_mult = 0.1
+}
+
+triggered_ship_modifier = {
+	potential = {
+		active_ap_time_bonus = { SCOPE = owner }
+	}
+	ship_armor_penetration_mult = 0.2
+}
+
+prerequisites = { tech_time_beam }
+component_set = $KEY$
+
+potential = {
+	from = {
+		country_uses_bio_ships = $BIO_SHIPS$
+		has_tradition = tr_time_4
+	}
+}
+
+show_tech_unlock_if = {
+	country_uses_bio_ships = $BIO_SHIPS$
+}
+
+resources = {
+	category = ship_components
+	cost = {
+		alloys = @xl_t7_cost
+		sr_dark_matter = 6
+	}
+	upkeep = {
+		$UPKEEP$ = @xl_t7_upkeep_energy
+		alloys = @xl_t7_upkeep_alloys
+	}
+}
+
+ai_weight = {
+	weight = 100
+	modifier = {
+		factor = 0.0
+		no_resource_for_component = { RESOURCE = sr_dark_matter }
+		is_ai = yes
+	}
+}

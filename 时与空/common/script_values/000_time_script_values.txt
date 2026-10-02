@@ -1,0 +1,269 @@
+# 载体
+num_time_normal_resources_value = {
+	base = 0
+	add = colony.value:num_time_pop_value
+}
+
+# 载体
+num_time_rare_resources_value = {
+	base = 5
+	add = colony.value:num_time_pop_value|MULT|0.025|
+}
+
+# 任意
+num_time_councilor_level = {
+	base = 0
+	complex_trigger_modifier = {
+		trigger = get_councilor_level
+		trigger_scope = owner
+		parameters = {
+			type = $TYPE$
+		}
+		mult = $MULT|1$
+		mode = add
+	}
+}
+
+# 局势
+time_situation_progress_value = {
+	base = $TARGET$
+	subtract = trigger:situation_progress
+	min = 0
+}
+
+# 星球
+time_zone_job_value = {
+	base = 1
+	# 居住站岗位
+	modifier = {
+		multiply = owner.value:hab_void_dweller_jobs
+		exists = owner
+		planet_is_habitat_equivalent = yes
+	}
+	# 方舟岗位
+	modifier = {
+		add = 1
+		exists = owner
+		owner = { is_nomadic = yes }
+	}
+	# 3倍岗位
+	modifier = {
+		add = 2
+		planet_is_ecu_equivalent = yes
+	}
+	# 5倍岗位
+	modifier = {
+		add = 4
+		planet_is_ring_world_equivalent = yes
+	}
+	# 10倍岗位
+	modifier = {
+		add = 9
+		AOW_trgr_PLNT_is_starcage_world = yes
+	}
+	[[MULT]
+		multiply = $MULT$
+	]
+}
+
+# 星球
+d_tree_of_life_base_value = {
+	base = $BASE|0$
+	add = value:num_time_pop_value|MULT|$MULT$|
+	modifier = {
+		multiply = 1.2
+		exists = owner
+		owner = { has_tradition = tr_purity_finish }
+	}
+}
+
+# 星球
+d_tree_of_life_gaia_value = {
+	base = 0
+	add = value:num_jobs_workforce_value|JOB|agri_drone|
+	add = value:num_jobs_workforce_value|JOB|calculator_biologist|
+	add = value:num_jobs_workforce_value|JOB|spawning_drone|
+	max = 100
+	modifier = {
+		multiply = 1.2
+		exists = owner
+		owner = { has_tradition = tr_purity_finish }
+	}
+	multiply = 0.01 # 每100岗位提供1%效果
+}
+
+# 星球
+d_tree_of_life_resources_value = {
+	base = 0
+	add = value:num_time_normal_resources_value
+	modifier = {
+		multiply = 1.2
+		exists = owner
+		owner = { has_tradition = tr_purity_finish }
+	}
+}
+
+# 星球
+d_time_gaia_modifier_value = {
+	base = 1
+	modifier = {
+		add = 1
+		exists = owner
+		owner = { has_ascension_perk = ap_world_shaper }
+	}
+}
+
+# 星球
+d_time_ring_network_value = {
+	base = 0
+	complex_trigger_modifier = {
+		trigger = count_system_planet
+		trigger_scope = solar_system
+		parameters = {
+			limit = {
+				is_planet_class = pc_ringworld_habitable
+				has_deposit = d_time_ringworld_network
+				is_colony = yes
+				is_owned_by = root.owner
+			}
+		}
+		mult = 1
+		mode = add
+	}
+	min = 1
+	max = 4
+	modifier = {
+		multiply = 2
+		exists = owner
+		owner = {
+			OR = {
+				has_technology = tech_ring_world
+				is_fallen_empire = yes
+			}
+		}
+	}
+}
+
+fallen_empire_building_cap_value_0 = {
+	base = 0
+	modifier = {
+		add = owner.value:fe_building_cap|BUILDING|$BUILDING$|
+		owner = { has_country_flag = $FLAG$ }
+	}
+	modifier = {
+		add = 1
+		owner = { has_origin_manifesti = yes }
+	}
+}
+
+fallen_empire_building_cap_value_1 = {
+	base = 3
+	modifier = {
+		set = 6
+		owner = { unlock_fallen_empire_basic_building = yes }
+	}
+	modifier = {
+		set = -1
+		owner = { unlock_fallen_empire_advanced_building = yes }
+	}
+	modifier = {
+		set = -1
+		owner = { is_fallen_empire = yes }
+	}
+}
+
+fallen_empire_building_cap_value_2 = {
+	base = 1
+	modifier = {
+		set = 3
+		owner = { unlock_fallen_empire_basic_building = yes }
+	}
+	modifier = {
+		set = 6
+		owner = { unlock_fallen_empire_advanced_building = yes }
+	}
+	modifier = {
+		set = -1
+		owner = { is_fallen_empire = yes }
+	}
+}
+
+building_civic_overclocking_art_modifier_value = {
+	base = 1
+	modifier = {
+		multiply = 2
+		exists = owner
+		owner = { has_origin = origin_mechanists }
+	}
+}
+
+building_civic_overclocking_art_bonus_workforce_value = {
+	base = 0
+	add = value:num_jobs_workforce_value|JOB|engineer|
+	add = value:num_jobs_workforce_value|JOB|calculator_engineer|
+	max = 100
+	modifier = {
+		multiply = 2
+		exists = owner
+		owner = { has_origin = origin_mechanists }
+	}
+	multiply = 0.01 # 每100岗位提供1%效果
+}
+
+trait_wilderness_growth_value = {
+	base = 1
+	complex_trigger_modifier = {
+		trigger = count_owned_workforce
+		parameters = {
+			limit = {
+				NOT = { has_job_type = wilderness_maintenance_drone }
+				OR = {
+					has_job_category = complex_drone
+					has_job_category = simple_drone
+				}
+			}
+		}
+		mode = mult
+	}
+	complex_trigger_modifier = {
+		trigger = count_owned_workforce
+		parameters = {
+			limit = {
+				has_job_type = wilderness_maintenance_drone
+			}
+		}
+		mode = divide
+		min_value = 1
+	}
+	min = 0.25
+	max = 4
+}
+
+trait_wilderness_workforce_value = {
+	base = 1
+	complex_trigger_modifier = {
+		trigger = count_owned_workforce
+		parameters = {
+			limit = {
+				has_job_type = wilderness_maintenance_drone
+			}
+		}
+		mode = mult
+	}
+	complex_trigger_modifier = {
+		trigger = count_owned_workforce
+		parameters = {
+			limit = {
+				NOT = { has_job_type = wilderness_maintenance_drone }
+				OR = {
+					has_job_category = complex_drone
+					has_job_category = simple_drone
+				}
+			}
+		}
+		mode = divide
+		min_value = 1
+	}
+	min = 0.25
+	max = 4
+}

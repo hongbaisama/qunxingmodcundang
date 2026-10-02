@@ -1,0 +1,52 @@
+icon = GFX_district_specialization_adeptus_mechanicus
+
+base_buildtime = @zone_buildtime
+
+potential = {
+	hidden_trigger = { exists = owner }
+	owner = { has_origin = origin_adeptus_mechanicus }
+}
+
+unlock = {
+	hidden_trigger = { exists = owner }
+	owner = {
+		has_origin = origin_adeptus_mechanicus
+		is_spiritualist = yes
+	}
+}
+
+resources = {
+	category = planet_zones
+	inline_script = {
+		script = buildings/nomadic_cost_switcher
+		REGULAR_RESOURCE = minerals
+		NOMADIC_RESOURCE = alloys
+		COST = @zone_cost
+		NOMADIC_COST_MULT = 0.5
+	}
+}
+
+planet_modifier = {
+	zone_building_slots_add = $BUILDING_SLOT$
+}
+
+inline_script = {
+	script = jobs/zone_adeptus_mechanicus_add
+	AMOUNT = $AMOUNT$
+}
+
+included_building_sets = {
+	unity
+	adeptus_mechanicus
+	origin
+}
+
+ai_resource_production = {
+	unity = 15
+
+	trigger = {
+		has_any_unity_zone = yes
+	}
+}
+
+ai_priority = 10

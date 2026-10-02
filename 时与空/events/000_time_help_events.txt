@@ -1,0 +1,1091 @@
+namespace = time_help
+
+country_event = {
+	id = time_help.0
+	title = time_help.0.name
+	desc = time_help.0.desc
+
+	diplomatic = yes
+	force_open = yes
+
+	picture_event_data = {
+		room = no_video_feed_room
+	}
+
+	is_triggered_only = yes
+	
+	trigger = {
+	}
+	
+	immediate = {
+	}
+
+	option = {
+		name = time_help.0.a
+		hidden_effect = {
+			country_event = { id = time_help.1 }
+		}
+	}
+	
+	option = {
+		name = time_help.0.b
+		hidden_effect = {
+			country_event = { id = time_help.100 }
+		}
+	}
+	
+	option = {
+		name = time_help.0.c
+		trigger = {
+			is_gestalt = no
+		}
+		hidden_effect = {
+			country_event = { id = time_help.200 }
+		}
+	}
+	
+	option = {
+		name = time_help.0.other
+		hidden_effect = {
+			country_event = { id = time_help.850 }
+		}
+	}
+	
+	option = {
+		name = time_help.0.music
+		hidden_effect = {
+			country_event = { id = time_help.900 }
+		}
+	}
+	
+	option = {
+		name = time_help.0.ascension_paths
+		hidden_effect = {
+			country_event = { id = time_help.950 }
+		}
+	}
+	
+	option = {
+		name = time_help.0.donation
+		hidden_effect = {
+			country_event = { id = time_help.1000 }
+		}
+	}
+	
+	option = {
+		name = time_help.exit
+		default_hide_option = yes
+	}
+}
+
+country_event = {
+	id = time_help.1
+	title = time_help.1.name
+	desc = time_help.1.desc
+
+	diplomatic = yes
+	force_open = yes
+
+	picture_event_data = {
+		room = no_video_feed_room
+	}
+
+	is_triggered_only = yes
+	
+	trigger = {
+	}
+	
+	immediate = {
+	}
+
+	option = {
+		name = {
+			text = time_help.1.a
+			trigger = {
+				has_country_flag = first_meet_white_hole
+			}
+		}
+		name = {
+			text = time_help.hidden
+			trigger = {
+				NOT = {
+					has_country_flag = first_meet_white_hole
+				}
+			}
+		}
+		allow = {
+			custom_tooltip = {
+				fail_text = "time_help.1.a.tooltip"
+				has_country_flag = first_meet_white_hole
+			}
+		}
+		hidden_effect = {
+			country_event = { id = time_help.11 }
+		}
+	}
+	
+	option = {
+		name = {
+			text = time_help.1.b
+			trigger = {
+				OR = {
+					has_country_flag = dimension_traveler_black_hole_end
+					has_country_flag = dimension_traveler_end
+				}
+			}
+		}
+		name = {
+			text = time_help.hidden
+			trigger = {
+				NOR = {
+					has_country_flag = dimension_traveler_black_hole_end
+					has_country_flag = dimension_traveler_end
+				}
+			}
+		}
+		allow = {
+			custom_tooltip = {
+				fail_text = "time_help.1.b.tooltip"
+				OR = {
+					has_country_flag = dimension_traveler_black_hole_end
+					has_country_flag = dimension_traveler_end
+				}
+			}
+		}
+		hidden_effect = {
+			country_event = { id = time_help.12 }
+		}
+	}
+	
+	option = {
+		name = {
+			text = time_help.1.c
+			trigger = {
+				is_dimension_traveler_owner = yes
+			}
+		}
+		name = {
+			text = time_help.hidden
+			trigger = {
+				NOT = {
+					is_dimension_traveler_owner = yes
+				}
+			}
+		}
+		allow = {
+			custom_tooltip = {
+				fail_text = "time_help.1.c.tooltip"
+				is_dimension_traveler_owner = yes
+			}
+		}
+		hidden_effect = {
+			country_event = { id = time_help.13 }
+		}
+	}
+	
+	option = {
+		name = {
+			text = time_help.1.d
+			trigger = {
+				unlock_dimension_traveler_destiny_trait = yes
+			}
+		}
+		name = {
+			text = time_help.hidden
+			trigger = {
+				unlock_dimension_traveler_destiny_trait = no
+			}
+		}
+		allow = {
+			custom_tooltip = {
+				fail_text = "time_help.1.d.tooltip"
+				unlock_dimension_traveler_destiny_trait = yes
+			}
+		}
+		hidden_effect = {
+			country_event = { id = time_help.14 }
+		}
+	}
+	
+	option = {
+		name = time_help.back
+		hidden_effect = {
+			country_event = { id = time_help.0 }
+		}
+	}
+	
+	option = {
+		name = time_help.exit
+		default_hide_option = yes
+	}
+}
+
+country_event = {
+	id = time_help.11
+	title = time_help.11.name
+	desc = time_help.11.desc
+
+	diplomatic = yes
+	force_open = yes
+
+	picture_event_data = {
+		room = no_video_feed_room
+	}
+
+	is_triggered_only = yes
+	
+	trigger = {
+	}
+	
+	immediate = {
+	}
+	
+	option = {
+		name = time_help.back
+		hidden_effect = {
+			country_event = { id = time_help.1 }
+		}
+	}
+	
+	option = {
+		name = time_help.exit
+		default_hide_option = yes
+	}
+}
+
+country_event = {
+	id = time_help.12
+	title = time_help.12.name
+	desc = time_help.12.desc
+
+	diplomatic = yes
+	force_open = yes
+
+	picture_event_data = {
+		room = no_video_feed_room
+	}
+
+	is_triggered_only = yes
+	
+	trigger = {
+	}
+	
+	immediate = {
+	}
+	
+	option = {
+		name = time_help.back
+		hidden_effect = {
+			country_event = { id = time_help.1 }
+		}
+	}
+	
+	option = {
+		name = time_help.exit
+		default_hide_option = yes
+	}
+}
+
+country_event = {
+	id = time_help.13
+	title = time_help.13.name
+	desc = time_help.13.desc
+
+	diplomatic = yes
+	force_open = yes
+
+	picture_event_data = {
+		room = no_video_feed_room
+	}
+
+	is_triggered_only = yes
+	
+	trigger = {
+	}
+	
+	immediate = {
+	}
+	
+	option = {
+		name = time_help.back
+		hidden_effect = {
+			country_event = { id = time_help.1 }
+		}
+	}
+	
+	option = {
+		name = time_help.exit
+		default_hide_option = yes
+	}
+}
+
+country_event = {
+	id = time_help.14
+	title = time_help.14.name
+	desc = time_help.14.desc
+
+	diplomatic = yes
+	force_open = yes
+
+	picture_event_data = {
+		room = no_video_feed_room
+	}
+
+	is_triggered_only = yes
+	
+	trigger = {
+	}
+	
+	immediate = {
+	}
+	
+	option = {
+		name = {
+			text = time_help.dimension_traveler.hide
+			trigger = {
+				OR = {
+					has_country_flag = unlock_time_help_dimension_traveler_hide
+					has_country_flag = dimension_traveler_end
+				}
+			}
+		}
+		name = {
+			text = time_help.hidden
+			trigger = {
+				NOR = {
+					has_country_flag = unlock_time_help_dimension_traveler_hide
+					has_country_flag = dimension_traveler_end
+				}
+			}
+		}
+		response_text = time_help.dimension_traveler.hide.response
+		is_dialog_only = yes
+		allow = {
+			custom_tooltip = {
+				fail_text = "time_help.dimension_traveler.hide.tooltip"
+				OR = {
+					has_country_flag = unlock_time_help_dimension_traveler_hide
+					has_country_flag = dimension_traveler_end
+				}
+			}
+		}
+	}
+	
+	option = {
+		name = time_help.back
+		hidden_effect = {
+			country_event = { id = time_help.1 }
+		}
+	}
+	
+	option = {
+		name = time_help.exit
+		default_hide_option = yes
+	}
+}
+
+country_event = {
+	id = time_help.100
+	title = time_help.100.name
+	desc = time_help.100.desc
+
+	diplomatic = yes
+	force_open = yes
+
+	picture_event_data = {
+		room = no_video_feed_room
+	}
+
+	is_triggered_only = yes
+	
+	trigger = {
+	}
+	
+	immediate = {
+	}
+	
+	option = {
+		name = time_help.100.a
+		allow = {
+			has_origin_time = yes
+		}
+		hidden_effect = {
+			country_event = { id = time_help.101 }
+		}
+	}
+	
+	option = {
+		name = time_help.100.b
+		allow = {
+			has_origin = origin_gas_colony
+		}
+		hidden_effect = {
+			country_event = { id = time_help.102 }
+		}
+	}
+	
+	option = {
+		name = time_help.100.c
+		allow = {
+			has_origin = origin_psionic
+		}
+		hidden_effect = {
+			country_event = { id = time_help.103 }
+		}
+	}
+	
+	option = {
+		name = time_help.100.d
+		allow = {
+			has_origin = origin_nanites
+		}
+		hidden_effect = {
+			country_event = { id = time_help.104 }
+		}
+	}
+	
+	option = {
+		name = time_help.100.e
+		allow = {
+			has_origin = origin_noah_ark
+		}
+		hidden_effect = {
+			country_event = { id = time_help.105 }
+		}
+	}
+	
+	option = {
+		name = time_help.back
+		hidden_effect = {
+			country_event = { id = time_help.0 }
+		}
+	}
+	
+	option = {
+		name = time_help.exit
+		default_hide_option = yes
+	}
+}
+
+country_event = {
+	id = time_help.101
+	title = time_help.101.name
+	desc = time_help.101.desc
+
+	diplomatic = yes
+	force_open = yes
+
+	picture_event_data = {
+		room = no_video_feed_room
+	}
+
+	is_triggered_only = yes
+	
+	trigger = {
+	}
+	
+	immediate = {
+	}
+	
+	option = {
+		name = time_help.back
+		hidden_effect = {
+			country_event = { id = time_help.100 }
+		}
+	}
+	
+	option = {
+		name = time_help.exit
+		default_hide_option = yes
+	}
+}
+
+country_event = {
+	id = time_help.102
+	title = time_help.102.name
+	desc = time_help.102.desc
+
+	diplomatic = yes
+	force_open = yes
+
+	picture_event_data = {
+		room = no_video_feed_room
+	}
+
+	is_triggered_only = yes
+	
+	trigger = {
+	}
+	
+	immediate = {
+	}
+	
+	option = {
+		name = time_help.back
+		hidden_effect = {
+			country_event = { id = time_help.100 }
+		}
+	}
+	
+	option = {
+		name = time_help.exit
+		default_hide_option = yes
+	}
+}
+
+country_event = {
+	id = time_help.103
+	title = time_help.103.name
+	desc = time_help.103.desc
+
+	diplomatic = yes
+	force_open = yes
+
+	picture_event_data = {
+		room = no_video_feed_room
+	}
+
+	is_triggered_only = yes
+	
+	trigger = {
+	}
+	
+	immediate = {
+	}
+	
+	option = {
+		name = time_help.back
+		hidden_effect = {
+			country_event = { id = time_help.100 }
+		}
+	}
+	
+	option = {
+		name = time_help.exit
+		default_hide_option = yes
+	}
+}
+
+country_event = {
+	id = time_help.104
+	title = time_help.104.name
+	desc = time_help.104.desc
+
+	diplomatic = yes
+	force_open = yes
+
+	picture_event_data = {
+		room = no_video_feed_room
+	}
+
+	is_triggered_only = yes
+	
+	trigger = {
+	}
+	
+	immediate = {
+	}
+	
+	option = {
+		name = time_help.back
+		hidden_effect = {
+			country_event = { id = time_help.100 }
+		}
+	}
+	
+	option = {
+		name = time_help.exit
+		default_hide_option = yes
+	}
+}
+
+country_event = {
+	id = time_help.105
+	title = time_help.105.name
+	desc = time_help.105.desc
+
+	diplomatic = yes
+	force_open = yes
+
+	picture_event_data = {
+		room = no_video_feed_room
+	}
+
+	is_triggered_only = yes
+	
+	trigger = {
+	}
+	
+	immediate = {
+	}
+	
+	option = {
+		name = time_help.back
+		hidden_effect = {
+			country_event = { id = time_help.100 }
+		}
+	}
+	
+	option = {
+		name = time_help.exit
+		default_hide_option = yes
+	}
+}
+
+country_event = {
+	id = time_help.200
+	title = time_help.200.name
+	desc = time_help.200.desc
+
+	diplomatic = yes
+	force_open = yes
+
+	picture_event_data = {
+		room = no_video_feed_room
+	}
+
+	is_triggered_only = yes
+	
+	trigger = {
+	}
+	
+	immediate = {
+	}
+	
+	option = {
+		inline_script = {
+			script = options/switch_time_event_councilor_state_option
+			COUNCILOR = councilor_tradition_hope
+		}
+		trigger = {
+			has_tradition = tr_hope_finish
+		}
+	}
+	
+	option = {
+		inline_script = {
+			script = options/switch_time_event_councilor_state_option
+			COUNCILOR = councilor_akx_waiting_world
+		}
+		trigger = {
+			has_country_flag = manifold_country_end
+		}
+	}
+	
+	option = {
+		inline_script = {
+			script = options/switch_time_event_councilor_state_option
+			COUNCILOR = councilor_akx_end_messenger
+		}
+		trigger = {
+			has_country_flag = time_akx_messenger_end_1
+			is_dimension_traveler_owner = yes
+		}
+	}
+	
+	option = {
+		inline_script = {
+			script = options/switch_time_event_councilor_state_option
+			COUNCILOR = councilor_akx_future_messenger
+		}
+		trigger = {
+			has_country_flag = time_akx_messenger_end_2
+			is_dimension_traveler_owner = yes
+		}
+	}
+	
+	option = {
+		inline_script = {
+			script = options/switch_time_event_councilor_state_option
+			COUNCILOR = councilor_akx_syzygy_admiral
+		}
+		trigger = {
+			OR = {
+				has_country_flag = time_akx_syzygy_admiral_end_2
+				has_country_flag = time_akx_syzygy_admiral_end_3
+			}
+		}
+	}
+	
+	option = {
+		inline_script = {
+			script = options/switch_time_event_councilor_state_option
+			COUNCILOR = councilor_akx_coils_god
+		}
+		trigger = {
+			OR = {
+				has_country_flag = time_akx_coils_god_end_1
+				has_country_flag = time_akx_coils_god_end_2
+			}
+		}
+	}
+	
+	option = {
+		inline_script = {
+			script = options/switch_time_event_councilor_state_option
+			COUNCILOR = councilor_akx_hole_pets
+		}
+		trigger = {
+			OR = {
+				has_country_flag = time_akx_hole_pets_end_1
+				has_country_flag = time_akx_hole_pets_end_2
+				has_country_flag = time_akx_hole_pets_end_3
+			}
+		}
+	}
+	
+	option = {
+		inline_script = {
+			script = options/switch_time_event_councilor_state_option
+			COUNCILOR = councilor_time_hotel_1
+		}
+		trigger = {
+			has_modifier = time_hotel_modifier_1
+		}
+	}
+	
+	option = {
+		inline_script = {
+			script = options/switch_time_event_councilor_state_option
+			COUNCILOR = councilor_time_hotel_2
+		}
+		trigger = {
+			has_modifier = time_hotel_modifier_2
+		}
+	}
+	
+	option = {
+		inline_script = {
+			script = options/switch_time_event_councilor_state_option
+			COUNCILOR = councilor_akx_pirate_king
+		}
+		trigger = {
+			OR = {
+				has_country_flag = time_akx_pirate_king_end_1
+				has_country_flag = time_akx_pirate_king_end_2
+			}
+		}
+	}
+	
+	option = {
+		name = time_help.back
+		hidden_effect = {
+			country_event = { id = time_help.0 }
+		}
+	}
+	
+	option = {
+		name = time_help.exit
+		default_hide_option = yes
+	}
+}
+
+country_event = {
+	id = time_help.850
+	title = time_help.850.name
+	desc = time_help.850.desc
+
+	diplomatic = yes
+	force_open = yes
+
+	picture_event_data = {
+		room = no_video_feed_room
+	}
+
+	is_triggered_only = yes
+	
+	trigger = {
+	}
+	
+	immediate = {
+		random_owned_species = {
+			limit = {
+				is_same_species = root.owner_main_species
+				root = { is_default_species = prev }
+			}
+			save_event_target_as = target_dominant_species
+		}
+	}
+	
+	option = {
+		name = time_help.850.a
+		allow = {
+			if = {
+				limit = {
+					exists = event_target:target_dominant_species
+				}
+				custom_tooltip = {
+					fail_text = "time_help.850.a.allow.1"
+					event_target:target_dominant_species = {
+						NOT = { is_same_value = root.owner_main_species }
+					}
+				}
+				custom_tooltip = {
+					fail_text = "time_help.850.a.allow.2"
+					event_target:target_dominant_species = {
+						is_same_species = root.owner_main_species
+						is_same_species_class = root.owner_main_species
+					}
+				}
+				custom_tooltip = {
+					fail_text = "time_help.850.a.allow.3"
+					check_variable_arithmetic = {
+						which = value:time_help_850_pop_amount_value
+						value >= 0
+					}
+				}
+			}
+			else = {
+				custom_tooltip = {
+					fail_text = "time_help.850.a.allow.0"
+					always = no
+				}
+			}
+		}
+		custom_tooltip = time_help.850.a.tooltip
+		change_dominant_species = {
+			species = event_target:target_dominant_species
+		}
+		hidden_effect = {
+			time_change_leader_species_for_country = yes
+			country_event = { id = time_help.850 }
+		}
+	}
+	
+	option = {
+		name = time_help.850.b
+		custom_tooltip = time_help.850.b.tooltip
+		hidden_effect = {
+			time_change_leader_species_for_country = yes
+			country_event = { id = time_help.850 }
+		}
+	}
+	
+	option = {
+		name = time_help.850.c
+		trigger = {
+			has_technology = tech_end_dimension
+		}
+		custom_tooltip = time_help.850.c.tooltip
+		hidden_effect = {
+			create_pass_black_hole = yes
+			country_event = { id = time_help.850 }
+		}
+	}
+	
+	option = {
+		name = time_help.850.d
+		trigger = {
+			has_event_chain = beyond_infinity_seal_chain
+			NOT = { has_global_flag = all_erasured_system_is_sealed }
+		}
+		custom_tooltip = time_help.850.d.tooltip
+		hidden_effect = {
+			every_system = {
+				limit = {
+					OR = {
+						is_dimensional_horror_crisis_erasured_system = yes
+						has_star_flag = exists_beyond_infinity_seal_project_for@root
+					}
+					is_dimensional_horror_crisis_sealed_system = no # 未被封印
+				}
+				# 刷新旧有项目
+				if = {
+					limit = {
+						has_star_flag = exists_beyond_infinity_seal_project_for@root # 已有封印项目
+					}
+					star = {
+						save_event_target_as = beyond_infinity_seal_project_old_target
+					}
+					root = {
+						abort_special_project = {
+							type = BEYOND_INFINITY_SEAL_PROJECT
+							location = event_target:beyond_infinity_seal_project_old_target
+						}
+					}
+				}
+				# 激活封印项目
+				set_star_flag = exists_beyond_infinity_seal_project_for@root
+				save_event_target_as = beyond_infinity_seal_project_target
+				star = {
+					enable_special_project = {
+						name = BEYOND_INFINITY_SEAL_PROJECT
+						location = this
+						owner = root
+					}
+				}
+			}
+			country_event = { id = time_help.850 }
+		}
+	}
+	
+	option = {
+		name = time_help.back
+		hidden_effect = {
+			country_event = { id = time_help.0 }
+		}
+	}
+	
+	option = {
+		name = time_help.exit
+		default_hide_option = yes
+	}
+}
+
+country_event = {
+	id = time_help.900
+	title = time_help.900.name
+	desc = time_help.900.desc
+
+	diplomatic = yes
+	force_open = yes
+
+	picture_event_data = {
+		room = no_video_feed_room
+	}
+
+	is_triggered_only = yes
+	
+	trigger = {
+	}
+	
+	immediate = {
+	}
+	
+	option = {
+		name = time_help.900.a
+		sound = time_dimension_traveler
+		hidden_effect = {
+			country_event = { id = time_help.900 }
+		}
+	}
+	
+	option = {
+		name = time_help.900.b
+		sound = time_dimension_traveler_end
+		hidden_effect = {
+			country_event = { id = time_help.900 }
+		}
+	}
+	
+	option = {
+		name = time_help.900.c
+		sound = time_dimension_traveler_true
+		hidden_effect = {
+			country_event = { id = time_help.900 }
+		}
+	}
+	
+	option = {
+		name = time_help.900.d
+		sound = time_dimension_traveler_true_end
+		hidden_effect = {
+			country_event = { id = time_help.900 }
+		}
+	}
+	
+	option = {
+		name = time_help.900.e
+		sound = shou_zan_song_zhe
+		hidden_effect = {
+			country_event = { id = time_help.900 }
+		}
+	}
+	
+	option = {
+		name = time_help.back
+		hidden_effect = {
+			country_event = { id = time_help.0 }
+		}
+	}
+	
+	option = {
+		name = time_help.exit
+		default_hide_option = yes
+	}
+}
+
+country_event = {
+	id = time_help.950
+	title = time_help.950.name
+	desc = time_help.950.desc
+	
+	diplomatic = yes
+	force_open = yes
+
+	picture_event_data = {
+		room = no_video_feed_room
+	}
+
+	is_triggered_only = yes
+	
+	trigger = {
+	}
+	
+	immediate = {
+	}
+	
+	option = {
+		name = time_help.ascension_paths.on
+		trigger = {
+			NOT = { has_global_flag = time_ascension_paths }
+		}
+		custom_tooltip = time_help.ascension_paths.on.tooltip
+		hidden_effect = {
+			set_global_flag = time_ascension_paths
+			country_event = { id = time_help.950 }
+		}
+	}
+	
+	option = {
+		name = time_help.ascension_paths.off
+		trigger = {
+			has_global_flag = time_ascension_paths
+		}
+		custom_tooltip = time_help.ascension_paths.off.tooltip
+		hidden_effect = {
+			remove_global_flag = time_ascension_paths
+			country_event = { id = time_help.950 }
+		}
+	}
+	
+	option = {
+		name = time_help.back
+		hidden_effect = {
+			country_event = { id = time_help.0 }
+		}
+	}
+	
+	option = {
+		name = time_help.exit
+		default_hide_option = yes
+	}
+}
+
+country_event = {
+	id = time_help.1000
+	title = time_help.1000.name
+	desc = time_help.1000.desc
+	picture = GFX_time_donation
+	show_sound = event_activating_unknown_technology
+	
+	is_triggered_only = yes
+	
+	trigger = {
+	}
+	
+	immediate = {
+	}
+	
+	option = {
+		name = time_help.back
+		hidden_effect = {
+			country_event = { id = time_help.0 }
+		}
+	}
+	
+	option = {
+		name = time_help.exit
+		default_hide_option = yes
+	}
+}

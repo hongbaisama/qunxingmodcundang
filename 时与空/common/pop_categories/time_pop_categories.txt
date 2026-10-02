@@ -1,0 +1,125 @@
+adeptus_mechanicus = {
+	rank = 5
+	change_job_threshold = 1.25
+	
+	weight = {
+		weight = 100
+	}
+
+	# scope: pop to be resettled
+	allow_resettlement = {
+		always = yes
+	}
+
+	inline_script = "pop_categories/resettlement_costs"
+	
+	resettlement_cost = {
+		trigger = {
+			owner = {
+				NOT = { has_valid_civic = civic_corvee_system }
+			}
+		}
+		unity = 25
+	}
+	
+	# Triggered Modifiers
+	inline_script = "pop_categories/social_classes_triggered_modifiers"
+	inline_script = "pop_categories/social_classes_triggered_modifiers_no_happiness"
+
+	pop_group_modifier = {
+		pop_political_power = 10
+		pop_housing_usage_base = 1
+		pop_amenities_usage_base = 1
+	}
+
+	resources = {
+		category = pop_category_adeptus_mechanicus
+		# Living Standard Trait Output
+		inline_script = "pop_categories/living_standard_specialist_production"
+
+		inline_script = "pop_categories/indentured_assets_slave_produce"
+
+		produces = {
+			trigger = {
+				is_spiritualist = yes
+				owner = { has_valid_civic = civic_gospel_of_the_masses }
+			}
+			trade = @trade_value_prosperity_gospel
+		}
+
+		produces = {
+			trigger = {
+				colony = {
+					has_modifier = pm_gaseous_fauna
+				}
+			}
+			exotic_gases = @gaseous_fauna_exotic_gases_production
+		}
+	}
+	
+	triggered_pop_group_modifier = {
+		potential = {
+			happiness <= 0.25
+		}
+		pop_bonus_workforce_mult = -1
+	}
+
+	triggered_pop_group_modifier = {
+		potential = {
+			always = yes
+		}
+		pop_housing_usage_add = -1
+	}
+
+	triggered_pop_group_modifier = {
+		potential = {
+			OR = {
+				is_unemployed = yes
+				is_pop_category = adeptus_mechanicus_unemployment
+			}
+		}
+		pop_happiness = -0.80
+	}
+}
+
+adeptus_mechanicus_unemployment = {
+	is_unemployment_job = yes
+	rank = 5
+
+	display_category = adeptus_mechanicus
+
+	weight = {
+		weight = 50
+	}
+
+	# scope: pop to be resettled
+	allow_resettlement = {
+		always = yes
+	}
+
+	inline_script = "pop_categories/resettlement_costs"
+	
+	resettlement_cost = {
+		trigger = {
+			owner = {
+				NOT = { has_valid_civic = civic_corvee_system }
+			}
+		}
+		unity = 25
+	}
+
+	# Triggered Modifiers
+	inline_script = "pop_categories/social_classes_triggered_modifiers"
+	inline_script = "pop_categories/social_classes_triggered_modifiers_no_happiness"
+
+	pop_group_modifier = {
+		pop_political_power = 10
+		pop_housing_usage_base = 1
+		pop_amenities_usage_base = 1
+		pop_happiness = -0.80
+	}
+
+	resources = {
+		category = pop_category_bio_trophy
+	}
+}

@@ -1,0 +1,180 @@
+namespace = origin_abandoned_by_god
+
+country_event = {
+	id = origin_abandoned_by_god.1
+	is_triggered_only = yes
+	hide_window = yes
+
+	trigger = {
+		has_origin = origin_abandoned_by_god
+	}
+	
+	immediate = {
+		give_technology = { tech = tech_mine_dark_matter message = no }
+		every_owned_leader = {
+			add_trait = {
+				trait = leader_trait_abandoned_by_god
+				show_message = no
+			}
+			set_age = value:abandoned_by_god_initial_age
+		}
+		every_pool_leader = {
+			add_trait = {
+				trait = leader_trait_abandoned_by_god
+				show_message = no
+			}
+			set_age = value:abandoned_by_god_initial_age
+		}
+		every_envoy = {
+			add_trait = {
+				trait = leader_trait_abandoned_by_god
+				show_message = no
+			}
+			set_age = value:abandoned_by_god_initial_age
+		}
+		capital_scope = {
+			set_carrier_flag = exists_building_abandoned_by_god
+			add_building = building_abandoned_by_god
+			add_zone = {
+				district = district_city
+				zone = zone_research
+				zone_slot = 1
+				replace = yes
+			}
+			validate_and_repair_planet_buildings_and_districts = yes
+			solar_system = {
+				every_system_planet = {
+					limit = {
+						has_carrier_flag = blessed_by_god_planet
+					}
+					create_research_station = { owner = root }
+				}
+				random_system_planet = {
+					limit = {
+						has_carrier_flag = abandoned_by_god_home_planet
+					}
+					root = {
+						owner_species = {
+							set_species_homeworld = prevprev
+						}
+					}
+				}
+			}
+		}
+	}
+}
+
+country_event = {
+	id = origin_abandoned_by_god.2
+	is_triggered_only = yes
+	hide_window = yes
+
+	trigger = {
+		has_origin = origin_abandoned_by_god
+	}
+	
+	immediate = {
+		if = {
+			limit = {
+				last_increased_tech = tech_psionic_theory
+			}
+			country_event = { id = origin_abandoned_by_god.4 }
+		}
+		add_resource = {
+			unity = 1
+			mult = value:abandoned_by_god_value
+		}
+	}
+}
+
+country_event = {
+	id = origin_abandoned_by_god.3
+	is_triggered_only = yes
+	hide_window = yes
+
+	trigger = {
+		has_origin = origin_abandoned_by_god
+	}
+	
+	immediate = {
+		from = {
+			add_trait = {
+				trait = leader_trait_abandoned_by_god
+				show_message = no
+			}
+		}
+	}
+}
+
+country_event = {
+	id = origin_abandoned_by_god.4
+	title = origin_abandoned_by_god.4.name
+	desc = origin_abandoned_by_god.4.desc
+	picture = GFX_evt_zro_5
+	show_sound = event_mystic_reveal_light
+	
+	is_triggered_only = yes
+
+	trigger = {
+		has_origin = origin_abandoned_by_god
+	}
+	
+	immediate = {
+		create_timeline_origin_abandoned_by_god_active_nemesis = yes
+		time_active_nemesis = yes
+	}
+	
+	option = {
+		name = origin_abandoned_by_god.4.a
+		tooltip = {
+			add_ascension_perk = ap_become_the_crisis
+		}
+	}
+}
+
+# 神弃之族特殊地块保护机制
+carrier_event = {
+	id = origin_abandoned_by_god.10
+	is_triggered_only = yes
+	hide_window = yes
+	
+	trigger = {
+		has_carrier_flag = abandoned_by_god_home_planet
+	}
+	
+	immediate = {
+		carrier_event = { id = origin_abandoned_by_god.11 days = 1 } # 隔一天，因为有的事件是先改变星球类型，再删除地块
+	}
+}
+
+# 恢复神弃之族特殊地块
+carrier_event = {
+	id = origin_abandoned_by_god.11
+	is_triggered_only = yes
+	hide_window = yes
+	
+	trigger = {
+		NAND = {
+			has_deposit = d_abandoned_by_god_home_planet
+			has_modifier = origin_abandoned_by_god_home_planet
+		}
+	}
+	
+	immediate = {
+		if = {
+			limit = {
+				NOT = { has_deposit = d_abandoned_by_god_home_planet }
+			}
+			add_time_special_deposit_keep_on_terraform = { DEPOSIT = d_abandoned_by_god_home_planet }
+		}
+		if = {
+			limit = {
+				NOT = { has_modifier = origin_abandoned_by_god_home_planet }
+			}
+			add_modifier = {
+				modifier = origin_abandoned_by_god_home_planet
+				days = -1
+			}
+		}
+	}
+}

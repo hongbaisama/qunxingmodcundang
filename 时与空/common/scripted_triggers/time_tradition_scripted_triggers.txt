@@ -1,0 +1,535 @@
+# 星球
+decision_time_trophy_trigger = {
+	if = {
+		limit = {
+			has_modifier = $TROPHY$
+		}
+		event_target:time_trophy_target@owner = {
+			NOT = { has_modifier = $TROPHY$ }
+		}
+	}
+	else = {
+		always = no
+	}
+}
+
+# 星球
+decision_time_trophy_horror_trigger = {
+	if = {
+		limit = {
+			has_modifier = horror_stabilized
+		}
+		event_target:time_trophy_target@owner = {
+			has_horror_trophy = no
+		}
+	}
+	else = {
+		always = no
+	}
+}
+
+# 星球
+has_horror_trophy = {
+	OR = {
+		has_modifier = horror_study_trophy
+		has_modifier = horror_deify_trophy
+		has_modifier = horror_study_trophy2
+		has_modifier = horror_deify_trophy2
+		has_modifier = horror_too_late
+		has_modifier = horror_stabilized
+		has_modifier = time_horror
+		has_deposit = d_time_horror
+	}
+}
+
+# 领袖
+has_horror_time_knowledge = {
+	OR = {
+		has_trait = leader_trait_horror_secret
+		has_trait = leader_trait_horror_secret_gestalt
+		has_trait = leader_trait_dimension_traveler_horror_secret
+		has_trait = leader_trait_dimension_traveler_horror_secret_true
+		has_trait = leader_trait_dimension_traveler_horror_secret_self
+		has_trait = leader_trait_dimension_traveler_horror_secret_gestalt
+		has_trait = leader_trait_dimension_traveler_horror_secret_true_gestalt
+		has_trait = leader_trait_dimension_traveler_brief
+		is_time_soul_leader = yes
+		has_trait = leader_trait_equinox_seal
+		has_pass_black_hole = yes
+		has_trait_tier1or2or3 = { TRAIT = leader_trait_horror_focus }
+		has_trait_tier1or2or3 = { TRAIT = leader_trait_expertise_horror_time }
+		has_trait_tier1or2or3 = { TRAIT = leader_trait_dimensional_horror_weapon_specialization }
+	}
+}
+
+# 物种/人口组
+has_akx_species_trait = {
+	OR = {
+		has_akx_messenger = yes
+		has_akx_waiting_world = yes
+		has_tech_time_trait = yes
+	}
+}
+
+# 物种/人口组
+has_tech_time_trait = {
+	OR = {
+		has_akx_low_dimensional_adaptor = yes
+		has_akx_high_dimensional_extender = yes
+		has_akx_spatial_entity = yes
+		has_akx_time_incorporeality = yes
+		has_akx_concentrator = yes
+		has_akx_diffuser = yes
+		has_akx_spiritual_radiator = yes
+		has_akx_body_folder = yes
+	}
+}
+
+# 物种/人口组
+has_akx_low_dimensional_adaptor = {
+	OR = {
+		has_trait = trait_akx_low_dimensional_adaptor
+		has_trait = trait_akx_low_dimensional_adaptor_robot
+	}
+}
+
+# 物种/人口组
+has_akx_high_dimensional_extender = {
+	OR = {
+		has_trait = trait_akx_high_dimensional_extender
+		has_trait = trait_akx_high_dimensional_extender_robot
+	}
+}
+
+# 物种/人口组
+has_akx_spatial_entity = {
+	OR = {
+		has_trait = trait_akx_spatial_entity
+		has_trait = trait_akx_spatial_entity_robot
+	}
+}
+
+# 物种/人口组
+has_akx_time_incorporeality = {
+	OR = {
+		has_trait = trait_akx_time_incorporeality
+		has_trait = trait_akx_time_incorporeality_robot
+	}
+}
+
+# 物种/人口组
+has_akx_concentrator = {
+	OR = {
+		has_trait = trait_akx_concentrator
+		has_trait = trait_akx_concentrator_robot
+	}
+}
+
+# 物种/人口组
+has_akx_diffuser = {
+	OR = {
+		has_trait = trait_akx_diffuser
+		has_trait = trait_akx_diffuser_robot
+	}
+}
+
+# 物种/人口组
+has_akx_spiritual_radiator = {
+	OR = {
+		has_trait = trait_akx_spiritual_radiator
+		has_trait = trait_akx_spiritual_radiator_robot
+	}
+}
+
+# 物种/人口组
+has_akx_body_folder = {
+	OR = {
+		has_trait = trait_akx_body_folder
+		has_trait = trait_akx_body_folder_robot
+	}
+}
+
+# 物种/人口组
+has_akx_messenger = {
+	OR = {
+		has_trait = trait_akx_messenger
+		has_trait = trait_dimension_traveler
+	}
+}
+
+# 物种/人口组
+has_akx_waiting_world = {
+	OR = {
+		has_trait = trait_akx_waiting_world
+		has_trait = trait_akx_waiting_world_robot
+	}
+}
+
+# 领袖
+has_pass_black_hole = {
+	OR = {
+		has_trait = leader_trait_pass_black_hole
+		has_trait = leader_trait_pass_black_hole_pirate_king
+	}
+}
+
+# 领袖
+can_approach_black_hole = {
+	OR = {
+		has_horror_time_knowledge = yes
+		species = {
+			OR = {
+				is_origin_time_species = yes
+				has_trait = trait_origin_black_hole
+				has_akx_species_trait = yes
+			}
+		}
+	}
+}
+
+# 国家
+can_add_tech_time_trait_organic = {
+	if = {
+		limit = {
+			is_machine_empire = yes
+		}
+		has_tradition = tr_cybernetics_assimilator_integrated_anatomy
+	}
+	else_if = {
+		limit = {
+			has_biogenesis_dlc = yes
+			has_shroud_dlc = yes
+		}
+		OR = {
+			has_tradition = tr_purity_exemplary_genetics
+			has_tradition = tr_cloning_somatic_synthesization
+			has_tradition = tr_mutation_unnatural_selection
+			has_tradition = tr_cybernetics_integrated_anatomy
+			has_tradition = tr_psionics_shroud_great_awakening
+		}
+	}
+	else_if = {
+		limit = {
+			has_biogenesis_dlc = yes
+		}
+		OR = {
+			has_tradition = tr_purity_exemplary_genetics
+			has_tradition = tr_cloning_somatic_synthesization
+			has_tradition = tr_mutation_unnatural_selection
+			has_tradition = tr_cybernetics_integrated_anatomy
+			has_tradition = tr_psionics_psionic_assimilation
+		}
+	}
+	else_if = {
+		limit = {
+			has_shroud_dlc = yes
+		}
+		OR = {
+			has_tradition = tr_genetics_enhanced_expression
+			has_tradition = tr_cybernetics_integrated_anatomy
+			has_tradition = tr_psionics_shroud_great_awakening
+		}
+	}
+	else = {
+		OR = {
+			has_tradition = tr_genetics_enhanced_expression
+			has_tradition = tr_cybernetics_integrated_anatomy
+			has_tradition = tr_psionics_psionic_assimilation
+		}
+	}
+}
+
+# 国家
+can_add_tech_time_trait_robotic = {
+	if = {
+		limit = {
+			has_machine_age_dlc = yes
+			has_shroud_dlc = yes
+			is_machine_or_individual_machine_empire = yes
+		}
+		OR = {
+			has_tradition = tr_modularity_5
+			has_tradition = tr_virtuality_1
+			has_tradition = tr_nanotech_2
+			has_tradition = tr_psionics_shroud_great_awakening
+		}
+	}
+	else_if = {
+		limit = {
+			has_machine_age_dlc = yes
+			is_machine_or_individual_machine_empire = yes
+		}
+		OR = {
+			has_tradition = tr_modularity_5
+			has_tradition = tr_virtuality_1
+			has_tradition = tr_nanotech_2
+		}
+	}
+	else_if = {
+		limit = {
+			has_shroud_dlc = yes
+		}
+		OR = {
+			has_tradition = tr_synthetics_prefabricated_components
+			has_tradition = tr_psionics_shroud_great_awakening
+		}
+	}
+	else = {
+		has_tradition = tr_synthetics_prefabricated_components
+	}
+}
+
+# 领袖
+has_finished_all_ap_horror_project = {
+	has_leader_flag = leader_finish_ap_horror_project_time
+	has_leader_flag = leader_finish_ap_horror_project_circle
+	has_leader_flag = leader_finish_ap_horror_project_dimension
+}
+
+# 国家
+last_increased_tech_is_dangerous_horror_tech = {
+	OR = {
+		last_increased_tech = tech_horror_shield
+		last_increased_tech = tech_horror_armor
+		last_increased_tech = tech_horror_modifier
+		last_increased_tech = tech_horror_beam
+		last_increased_tech = tech_horror_trait
+	}
+}
+
+# 国家
+last_increased_tech_is_dangerous_time_tech = {
+	OR = {
+		last_increased_tech = tech_time_shield
+		last_increased_tech = tech_time_armor
+		last_increased_tech = tech_time_modifier
+		last_increased_tech = tech_time_beam
+		last_increased_tech = tech_time_trait
+	}
+}
+
+# 国家
+last_increased_tech_is_dangerous_end_tech = {
+	OR = {
+		last_increased_tech = tech_end_shield
+		last_increased_tech = tech_end_armor
+		last_increased_tech = tech_end_modifier
+		last_increased_tech = tech_end_beam
+		last_increased_tech = tech_end_trait
+	}
+}
+
+# 国家
+r_time_is_active = {
+	OR = {
+		has_modifier = r_time_modifier_1
+		has_modifier = r_time_modifier_2
+		has_modifier = r_time_modifier_3
+		has_modifier = r_time_modifier_4
+		has_modifier = r_time_modifier_5
+		has_modifier = r_time_modifier_6
+		has_modifier = r_time_modifier_7
+		has_modifier = r_time_modifier_8
+		has_modifier = r_time_modifier_9
+		has_modifier = r_time_modifier_10
+	}
+}
+
+# 局势
+can_stop_situation_ap_time = {
+	if = {
+		limit = {
+			# 防止先选放弃再灾飞被卡住
+			NOT = { has_situation_flag = stop_situation_ap_time }
+		}
+		custom_tooltip = {
+			fail_text = "can_not_stop_situation_ap_time"
+			owner = {
+				is_homicidal = no
+				is_crisis_country = no
+			}
+		}
+	}
+}
+
+# 国家
+can_adopt_tradition_hope = {
+	custom_tooltip = {
+		fail_text = "can_not_stop_situation_ap_time"
+		is_homicidal = no
+		is_crisis_country = no
+	}
+}
+
+# 局势
+can_finish_situation_ap_time = {
+	if = {
+		limit = {
+			# 灭绝政体和灾飞无论如何都允许选择继续，防止事件卡住
+			owner = {
+				is_homicidal = no
+				is_crisis_country = no
+			}
+		}
+		custom_tooltip = {
+			fail_text = "can_not_finish_situation_ap_time"
+			owner = {
+				OR = {
+					has_ascension_perk = ap_beyond_infinity
+					is_defender_of_the_galaxy_country = no
+				}
+			}
+		}
+	}
+}
+
+# 国家
+can_adopt_tradition_end = {
+	if = {
+		limit = {
+			# 灭绝政体和灾飞无论如何都允许选择继续，防止事件卡住
+			is_homicidal = no
+			is_crisis_country = no
+		}
+		custom_tooltip = {
+			fail_text = "can_not_finish_situation_ap_time"
+			OR = {
+				has_ascension_perk = ap_beyond_infinity
+				is_defender_of_the_galaxy_country = no
+			}
+		}
+	}
+}
+
+# 船只/舰队
+can_use_dimensional_horror_component_templates = {
+	OR = {
+		is_time_titan_ship_size = yes
+		is_dimensional_horror_ship_size_with_voidworms = yes
+	}
+}
+
+# 船只/舰队
+is_dimensional_horror_ship_size_with_voidworms = {
+	OR = {
+		is_ship_size = dimensional_horror_voidworms
+		is_ship_size = dimensional_horror
+		is_ship_size = dimensional_horror_crisis
+		is_ship_size = dimensional_horror_destiny
+		is_ship_size = dimensional_horror_end
+	}
+}
+
+# 船只/舰队
+is_dimensional_horror_ship_size = {
+	OR = {
+		is_ship_size = dimensional_horror
+		is_ship_size = dimensional_horror_crisis
+		is_ship_size = dimensional_horror_destiny
+		is_ship_size = dimensional_horror_end
+	}
+}
+
+# 船只/舰队
+is_dimensional_horror_crisis_ship_size = {
+	OR = {
+		is_ship_size = dimensional_horror_crisis
+		is_ship_size = dimensional_horror_destiny
+	}
+}
+
+# 船只/舰队
+is_special_dimensional_horror = {
+	OR = {
+		is_ship_size = dimensional_horror_crisis
+		is_ship_size = dimensional_horror_destiny
+		is_ship_size = dimensional_horror_end
+	}
+}
+
+# 船只/舰队
+is_ultra_dimensional_horror = {
+	OR = {
+		AND = {
+			exists = event_target:dimensional_horror_crisis_destiny_fleet
+			fleet = { is_same_value = event_target:dimensional_horror_crisis_destiny_fleet }
+		}
+		is_ship_size = dimensional_horror_end
+	}
+}
+
+# 船只
+active_ap_horror_bonus = {
+	OR = {
+		is_dimensional_horror_ship_size_with_voidworms = yes
+		$SCOPE$ = {
+			OR = {
+				has_ascension_perk = ap_horror
+				AND = {
+					NOT = { has_country_flag = worm_tomb_ending }
+					has_tradition = tr_time_adopt
+				}
+			}
+		}
+	}
+}
+
+# 船只
+active_ap_time_bonus = {
+	OR = {
+		is_dimensional_horror_ship_size = yes
+		$SCOPE$ = { has_ascension_perk = ap_time }
+	}
+}
+
+# 船只
+active_horror_weapon_debuff = {
+	if = {
+		limit = {
+			is_dimensional_horror_ship_size_with_voidworms = yes
+		}
+		always = yes
+	}
+	else = {
+		exists = owner
+		owner = { has_technology = tech_horror_focus_1 }
+	}
+}
+
+# 船只
+active_advanced_horror_weapon_debuff = {
+	if = {
+		limit = {
+			is_dimensional_horror_ship_size = yes
+		}
+		always = yes
+	}
+	else = {
+		exists = owner
+		owner = {
+			if = {
+				limit = {
+					has_country_flag = worm_tomb_ending
+				}
+				has_ascension_perk = ap_horror
+			}
+			else = {
+				has_tradition = tr_time_adopt
+			}
+		}
+	}
+}
+
+# 船只
+active_best_horror_weapon_debuff = {
+	if = {
+		limit = {
+			is_special_dimensional_horror = yes
+		}
+		always = yes
+	}
+	else = {
+		exists = owner
+		owner = { has_ascension_perk = ap_time }
+	}
+}

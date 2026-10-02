@@ -1,0 +1,105 @@
+@blocker_high = 10
+@blocker_low = 5
+@ranger_small_production = 0.5
+@ranger_large_production = 1
+@evopred_large_blocker_progress = 40
+@evopred_small_blocker_progress = 20
+
+d_the_matrix_blocker = {
+	time = 90
+
+	is_for_colonizable = yes
+	category = deposit_cat_blockers
+	
+	custom_tooltip = d_the_matrix_blocker_effect
+
+	resources = {
+		category = deposit_blockers
+		cost = {
+			energy = 200
+		}
+		cost = {
+			trigger = {
+				owner = { has_origin = origin_the_matrix }
+				NOT = { has_carrier_flag = d_the_matrix_blocker_for_lithoid }
+			}
+			food = 1
+			mult = value:the_matrix_blocker_value
+		}
+		cost = {
+			trigger = {
+				owner = { has_origin = origin_the_matrix }
+				has_carrier_flag = d_the_matrix_blocker_for_lithoid
+			}
+			minerals = 1
+			mult = value:the_matrix_blocker_value
+		}
+		upkeep = {
+			trigger = {
+				NOT = { has_carrier_flag = d_the_matrix_blocker_for_lithoid }
+			}
+			food = 0.01
+			mult = value:the_matrix_blocker_value
+		}
+		upkeep = {
+			trigger = {
+				has_carrier_flag = d_the_matrix_blocker_for_lithoid
+			}
+			minerals = 0.01
+			mult = value:the_matrix_blocker_value
+		}
+		produces = {
+			physics_research = 0.02
+			society_research = 0.02
+			engineering_research = 0.02
+			unity = 0.02
+			mult = value:the_matrix_blocker_value
+		}
+	}
+
+	potential = {
+		always = no
+	}
+	
+	planet_modifier = {
+		planet_max_districts_add = -0.2
+	}
+
+	on_cleared = {
+		if = {
+			limit = {
+				owner = { has_origin = origin_the_matrix }
+				owner_main_species = { is_robotic = no }
+			}
+			custom_tooltip = d_the_matrix_blocker_clear_effect
+			hidden_effect = {
+				create_pop_group = {
+					species = owner_main_species
+					size = value:the_matrix_blocker_value
+				}
+				if = {
+					limit = {
+						check_variable_arithmetic = {
+							which = value:the_matrix_blocker_value
+							value > 0
+						}
+					}
+					owner = {
+						create_message = {
+							type = SAVE_THE_MATRIX_POP
+							localization = SAVE_THE_MATRIX_POP_DESC
+							days = 30
+							target = root
+						}
+					}
+				}
+			}
+		}
+	}
+
+	drop_weight = {
+		weight = 0
+	}
+
+	inline_script = deposits/ai_weight_pop_creating_blocker
+}

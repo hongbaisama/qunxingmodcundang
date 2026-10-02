@@ -1,0 +1,15 @@
+triggered_planet_modifier = {
+	potential = {
+		exists = owner
+		owner = { is_gestalt = no }
+	}
+	job_$JOB_1$_per_pop = @building_tower_of_infinity_job
+}
+
+triggered_planet_modifier = {
+	potential = {
+		exists = owner
+		owner = { is_gestalt = yes }
+	}
+	job_$JOB_2$_per_pop = @building_tower_of_infinity_job
+}

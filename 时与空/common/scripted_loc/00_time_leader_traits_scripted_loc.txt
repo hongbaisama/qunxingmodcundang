@@ -1,0 +1,342 @@
+defined_text = {
+	name = GetTimeTraitForRulerTooltip
+	random = no
+	text = {
+		trigger = {
+			is_ruler = yes
+		}
+		localization_key = time_trait_for_ruler_enabled
+	}
+	default = time_trait_for_ruler_disabled
+}
+
+defined_text = {
+	name = GetTimeTraitForRulerTooltipSpecial
+	random = no
+	text = {
+		trigger = {
+			is_ruler = yes
+			owner = { is_galactic_emperor = yes }
+		}
+		localization_key = time_trait_for_ruler_enabled_emperor
+	}
+	text = {
+		trigger = {
+			is_ruler = yes
+			owner = { is_galactic_custodian = yes }
+		}
+		localization_key = time_trait_for_ruler_enabled_custodian
+	}
+	text = {
+		trigger = {
+			is_ruler = yes
+		}
+		localization_key = time_trait_for_ruler_enabled
+	}
+	default = time_trait_for_ruler_disabled
+}
+
+# 来自深渊
+defined_text = {
+	name = GetPassBlackHoleSubtitle
+	random = no
+	text = {
+		trigger = {
+			has_council_subclass = yes
+		}
+		localization_key = paragon_councilor_trait
+	}
+	default = paragon_triggered_class_trait
+}
+
+# 负相生物（普政）
+defined_text = {
+	name = GetHorrorSecretSubtitle
+	random = no
+	text = {
+		trigger = {
+			check_variable_arithmetic = {
+				which = value:num_finished_ap_horror_project_value
+				value = 3
+			}
+		}
+		localization_key = paragon_councilor_trait
+	}
+	text = {
+		trigger = {
+			check_variable_arithmetic = {
+				which = value:num_finished_ap_horror_project_value
+				value = 2
+			}
+		}
+		localization_key = veteran_councilor_trait
+	}
+	default = councilor_trait
+}
+
+# 负相生物（格式塔）
+defined_text = {
+	name = GetHorrorSecretGestaltSubtitle
+	random = no
+	text = {
+		trigger = {
+			check_variable_arithmetic = {
+				which = value:num_finished_ap_horror_project_value
+				value = 3
+			}
+		}
+		localization_key = paragon_triggered_class_trait
+	}
+	text = {
+		trigger = {
+			check_variable_arithmetic = {
+				which = value:num_finished_ap_horror_project_value
+				value = 2
+			}
+		}
+		localization_key = veteran_triggered_class_trait
+	}
+	default = triggered_class_trait
+}
+
+# 内阁老练或普通老练
+defined_text = {
+	name = GetCouncilorOrClassVeteranSubtitle
+	random = no
+	text = {
+		trigger = {
+			owner = { is_gestalt = no }
+		}
+		localization_key = veteran_councilor_trait
+	}
+	default = veteran_triggered_class_trait
+}
+
+# 命定的传奇/天生的英杰
+defined_text = {
+	name = GetLegendaryOrRenownedSubtitle
+	random = no
+	text = {
+		trigger = {
+			OR = {
+				has_council_subclass = yes
+				is_ruler = yes
+			}
+		}
+		localization_key = paragon_councilor_trait
+	}
+	default = paragon_triggered_class_trait
+}
+
+# 彼岸封印
+defined_text = {
+	name = GetEquinoxSealSubtitle
+	random = no
+	text = {
+		trigger = {
+			OR = {
+				is_ruler = yes
+				is_gestalt_node = yes
+			}
+		}
+		localization_key = negative_yes_trait
+	}
+	default = negative_no_trait
+}
+
+# 负相奥秘
+defined_text = {
+	name = GetLeaderTraitHorrorSecretName
+	random = no
+	text = {
+		trigger = {
+			has_finished_all_ap_horror_project = yes
+		}
+		localization_key = horror_secret
+	}
+	text = {
+		trigger = {
+			has_leader_flag = leader_finish_ap_horror_project_time
+			has_leader_flag = leader_finish_ap_horror_project_circle
+		}
+		localization_key = time_circle_secret
+	}
+	text = {
+		trigger = {
+			has_leader_flag = leader_finish_ap_horror_project_circle
+			has_leader_flag = leader_finish_ap_horror_project_dimension
+		}
+		localization_key = circle_dimension_secret
+	}
+	text = {
+		trigger = {
+			has_leader_flag = leader_finish_ap_horror_project_dimension
+			has_leader_flag = leader_finish_ap_horror_project_time
+		}
+		localization_key = dimension_time_secret
+	}
+	text = {
+		trigger = {
+			has_leader_flag = leader_finish_ap_horror_project_time
+		}
+		localization_key = time_secret
+	}
+	text = {
+		trigger = {
+			has_leader_flag = leader_finish_ap_horror_project_circle
+		}
+		localization_key = circle_secret
+	}
+	text = {
+		trigger = {
+			has_leader_flag = leader_finish_ap_horror_project_dimension
+		}
+		localization_key = dimension_secret
+	}
+}
+
+defined_text = {
+	name = GetLeaderTraitHorrorSecretDesc
+	random = no
+	text = {
+		trigger = {
+			has_finished_all_ap_horror_project = yes
+		}
+		localization_key = horror_secret_desc
+	}
+	text = {
+		trigger = {
+			has_leader_flag = leader_finish_ap_horror_project_time
+			has_leader_flag = leader_finish_ap_horror_project_circle
+		}
+		localization_key = time_circle_secret_desc
+	}
+	text = {
+		trigger = {
+			has_leader_flag = leader_finish_ap_horror_project_circle
+			has_leader_flag = leader_finish_ap_horror_project_dimension
+		}
+		localization_key = circle_dimension_secret_desc
+	}
+	text = {
+		trigger = {
+			has_leader_flag = leader_finish_ap_horror_project_dimension
+			has_leader_flag = leader_finish_ap_horror_project_time
+		}
+		localization_key = dimension_time_secret_desc
+	}
+	text = {
+		trigger = {
+			has_leader_flag = leader_finish_ap_horror_project_time
+		}
+		localization_key = time_secret_desc
+	}
+	text = {
+		trigger = {
+			has_leader_flag = leader_finish_ap_horror_project_circle
+		}
+		localization_key = circle_secret_desc
+	}
+	text = {
+		trigger = {
+			has_leader_flag = leader_finish_ap_horror_project_dimension
+		}
+		localization_key = dimension_secret_desc
+	}
+}
+
+# C.A.R.E
+defined_text = {
+	name = GetTraitPlanetaryMechanocalibratorDesc
+	text = {
+		trigger = {
+			has_leader_flag = care_economy
+		}
+		localization_key = care_economy
+	}
+	text = {
+		trigger = {
+			has_leader_flag = care_trade
+		}
+		localization_key = care_trade
+	}
+	text = {
+		trigger = {
+			has_leader_flag = care_energy
+		}
+		localization_key = care_energy
+	}
+	text = {
+		trigger = {
+			has_leader_flag = care_research
+		}
+		localization_key = care_research
+	}
+	text = {
+		trigger = {
+			has_leader_flag = care_unity
+		}
+		localization_key = care_unity
+	}
+	text = {
+		trigger = {
+			has_leader_flag = care_housing
+		}
+		localization_key = care_housing
+	}
+	text = {
+		trigger = {
+			has_leader_flag = care_amenities
+		}
+		localization_key = care_amenities
+	}
+	text = {
+		trigger = {
+			has_leader_flag = care_growth
+		}
+		localization_key = care_growth
+	}
+	text = {
+		trigger = {
+			has_leader_flag = care_alloys
+		}
+		localization_key = care_alloys
+	}
+	text = {
+		trigger = {
+			has_leader_flag = care_minerals
+		}
+		localization_key = care_minerals
+	}
+	default = care_none
+}
+
+# 镜中倒影
+defined_text = {
+	name = GetTraitMirrorImageDesc
+	random = no
+	text = {
+		trigger = {
+			is_dimension_traveler = yes
+		}
+		localization_key = leader_trait_mirror_image_desc_1
+	}
+	text = {
+		trigger = {
+			has_leader_flag = exists_mirror_image_leader
+		}
+		localization_key = leader_trait_mirror_image_desc_2
+	}
+	text = {
+		trigger = {
+			exists_mirror_image_leader = yes
+		}
+		localization_key = leader_trait_mirror_image_desc_3
+	}
+	text = {
+		trigger = {
+			exists_mirror_image_leader = no
+		}
+		localization_key = leader_trait_mirror_image_desc_4
+	}
+}

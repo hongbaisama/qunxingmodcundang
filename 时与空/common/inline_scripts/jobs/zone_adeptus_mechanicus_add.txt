@@ -1,0 +1,12 @@
+triggered_district_planet_modifier = {
+	potential = {
+		OR = {
+			is_special_colony_type = no
+			has_modifier = resort_colony
+		}
+		exists = owner
+		owner = { has_origin = origin_adeptus_mechanicus }
+	}
+	job_adeptus_mechanicus_add = $AMOUNT$
+	mult = value:time_zone_job_value|MULT|5|
+}

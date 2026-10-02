@@ -1,0 +1,30 @@
+from = $CLASS$
+to = pc_psionic
+
+resources = {
+	category = terraforming
+
+	cost = {
+		sr_zro = 250
+	}
+}
+
+duration = 900
+
+condition = {
+	has_technology = tech_terrestrial_sculpting
+}
+
+potential = {
+	has_origin = origin_psionic
+}
+
+effect = {
+	from = {
+		carrier_event = { id = psionic.100 }
+	}
+}
+
+ai_weight = {
+	weight = 50
+}

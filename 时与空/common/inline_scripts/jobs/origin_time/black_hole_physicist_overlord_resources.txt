@@ -1,0 +1,10 @@
+overlord_resources = {
+	category = planet_requisitioned_research
+	produces = {
+		trigger = {
+			colony = { has_carrier_flag = has_science_ministry }
+		}
+		physics_research = 1
+		mult = value:time_researcher_normal_resource_value|RESOURCE|physics_research|WEIGHT|research|
+	}
+}

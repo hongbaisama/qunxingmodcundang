@@ -1,0 +1,11 @@
+﻿l_english:
+ new_country.0.name:0 "Emerging Empire: §RSource§!"
+ new_country.0.desc:0 "Detected a country using §REmerging Empire§! origin (countries other than this country obtain massive technology, resources) in this game.\n\nIf you do not want it to take effect, please choose to disable this origin (the country will not trigger origin events and will switch to §YProsperous Unification§! origin)."
+ new_country.0.a:0 "§REnable this origin.§!"
+ new_country.0.b:0 "§GDisable this origin.§!"
+ new_country.1.name:0 "Emerging Empire: §YOpen Eyes§!"
+ new_country.1.desc:0 "At the moment of stepping into the galaxy, we opened our eyes.\n\nAccording to our latest research results, there are multiple cosmic civilizations in the galaxy, and their technological level far exceeds our imagination. No matter from which aspect analyzed, our country is not enough to contend with them. Therefore, for the development of the empire, we must do something and act cautiously."
+ new_country.1.a:0 "Opening eyes is just the first step."
+ new_country.2.name:0 "Emerging Empire: §YObserve§!"
+ new_country.2.desc:0 "The universe banquet is about to end, at this time, a guest arrived late.\n\nAccording to our latest observation results, an emerging empire appeared in the galaxy. Although they are not worth mentioning to us, their powerful emerging power cannot be underestimated."
+ new_country.2.a:0 "Continue observing."

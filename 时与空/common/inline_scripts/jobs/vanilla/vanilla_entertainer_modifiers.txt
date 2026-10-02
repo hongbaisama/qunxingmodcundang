@@ -1,0 +1,21 @@
+triggered_planet_modifier = {
+	potential = {
+		owner? = { NOT = { has_valid_civic = civic_dystopian_society } }
+	}
+	planet_amenities_add = 1250
+	mult = value:scripted_modifier_mult|MODIFIER|pop_job_amenities_mult|
+}
+
+triggered_country_modifier = {
+	potential = {
+		entertainer_is_duelist_trigger = yes
+	}
+	country_naval_cap_add = 2
+}
+
+triggered_planet_modifier = {
+	potential = {
+		owner? = { has_modifier = exploitation_accord }
+	}
+	planet_jobs_produces_mult = @accord_exploitation_resources_from_jobs
+}

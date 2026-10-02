@@ -1,0 +1,36 @@
+icon = GFX_district_specialization_time_ruin_cosmogenesis_world
+
+base_buildtime = 250
+
+potential = {
+	is_planet_class = pc_time_ruin_cosmogenesis_world
+}
+
+unlock = {
+}
+
+resources = {
+	category = planet_zones
+	cost = {
+		minerals = 300
+		alloys = 100
+	}
+	upkeep = {
+		energy = 10
+	}
+}
+
+planet_modifier = {
+	zone_building_slots_add = @time_mod_zone_max_buildings
+}
+
+district_planet_modifier = {
+	planet_housing_add = $AMOUNT$
+}
+
+included_building_sets = {
+	time_ruin_cosmogenesis_world
+}
+
+ai_weight_coefficient = 10
+ai_priority = 100

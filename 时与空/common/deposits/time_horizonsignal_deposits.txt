@@ -1,0 +1,317 @@
+################################################################
+# 时空馈赠
+################################################################
+
+d_time_horror = {
+	is_for_colonizable = yes
+	
+	category = deposit_cat_rare
+	
+	custom_tooltip = d_time_horror_effect
+	
+	resources = {
+		category = planet_deposits
+	}
+	
+	triggered_planet_modifier = {
+		potential = {
+			is_capital = yes
+		}
+		country_unity_produces_mult = 0.5
+		country_physics_research_produces_mult = 0.5
+		country_society_research_produces_mult = 0.5
+		country_engineering_research_produces_mult = 0.5
+		pop_amenities_usage_mult = 0.5
+		mult = value:d_time_horror_value
+	}
+	
+	triggered_planet_modifier = {
+		potential = {
+			is_capital = no
+		}
+		planet_jobs_unity_produces_mult = 0.5
+		planet_jobs_physics_research_produces_mult = 0.5
+		planet_jobs_society_research_produces_mult = 0.5
+		planet_jobs_engineering_research_produces_mult = 0.5
+	}
+	
+	potential = {
+		always = no
+	}
+	
+	drop_weight = {
+		weight = 0
+	}
+}
+
+################################################################
+# 时虫主恒星
+################################################################
+
+d_akx_dark_matter = {
+	is_for_colonizable = yes
+	
+	category = deposit_cat_rare
+	
+	resources = {
+		category = planet_deposits
+		produces = {
+			physics_research = 10
+			society_research = 10
+			engineering_research = 10
+			sr_dark_matter = 10
+		}
+	}
+	
+	planet_modifier = {
+		planet_physicists_physics_research_produces_add = 0.5
+		planet_physicists_sr_dark_matter_produces_add = 0.1
+		planet_biologists_society_research_produces_add = 0.5
+		planet_biologists_sr_dark_matter_produces_add = 0.1
+		planet_engineers_engineering_research_produces_add = 0.5
+		planet_engineers_sr_dark_matter_produces_add = 0.1
+	}
+	
+	potential = {
+		always = no
+	}
+	
+	drop_weight = {
+		weight = 0
+	}
+}
+
+d_akx_dark_matter_special = {
+	is_for_colonizable = yes
+	
+	category = deposit_cat_rare
+	
+	icon = d_akx_dark_matter
+	
+	resources = {
+		category = planet_deposits
+		produces = {
+			physics_research = 20
+			society_research = 20
+			engineering_research = 20
+			sr_dark_matter = 20
+		}
+	}
+	
+	planet_modifier = {
+		planet_physicists_physics_research_produces_add = 1
+		planet_physicists_sr_dark_matter_produces_add = 0.2
+		planet_biologists_society_research_produces_add = 1
+		planet_biologists_sr_dark_matter_produces_add = 0.2
+		planet_engineers_engineering_research_produces_add = 1
+		planet_engineers_sr_dark_matter_produces_add = 0.2
+	}
+	
+	potential = {
+		always = no
+	}
+	
+	drop_weight = {
+		weight = 0
+	}
+}
+
+################################################################
+# 彼岸之门
+################################################################
+
+d_akx_messenger_closed = {
+	is_for_colonizable = yes
+	
+	category = deposit_cat_rare
+	
+	resources = {
+		category = planet_buildings
+	}
+	
+	custom_tooltip = d_akx_messenger_closed_effect
+	
+	planet_modifier = {
+		planet_max_districts_add = -3
+	}
+	
+	potential = {
+		always = no
+	}
+	
+	drop_weight = {
+		weight = 0
+	}
+}
+
+d_akx_messenger = {
+	is_for_colonizable = yes
+	
+	category = deposit_cat_rare
+	
+	resources = {
+		category = planet_buildings
+		upkeep = {
+			trigger = {
+				has_carrier_flag = end_messenger_1
+			}
+			volatile_motes = 2.5
+			rare_crystals = 2.5
+			exotic_gases = 2.5
+		}
+		upkeep = {
+			trigger = {
+				has_carrier_flag = future_messenger_1
+			}
+			volatile_motes = 2.5
+			rare_crystals = 2.5
+			exotic_gases = 2.5
+		}
+		upkeep = {
+			trigger = {
+				has_carrier_flag = end_messenger_2
+			}
+			volatile_motes = 2.5
+			rare_crystals = 2.5
+			exotic_gases = 2.5
+		}
+		upkeep = {
+			trigger = {
+				has_carrier_flag = future_messenger_2
+			}
+			volatile_motes = 2.5
+			rare_crystals = 2.5
+			exotic_gases = 2.5
+		}
+		upkeep = {
+			trigger = {
+				OR = {
+					has_carrier_flag = end_messenger_3
+					has_carrier_flag = future_messenger_3
+				}
+			}
+			volatile_motes = 5
+			rare_crystals = 5
+			exotic_gases = 5
+		}
+	}
+	
+	custom_tooltip = d_akx_messenger_effect
+
+	inline_script = "deposits/d_akx_messenger_modifiers"
+	
+	# 终末信使
+	triggered_planet_modifier = {
+		potential = {
+			has_carrier_flag = end_messenger_1
+			exists = owner
+			owner = { is_gestalt = no }
+		}
+		job_end_messenger_per_pop = @deposit_end_messenger_job
+		mult = value:num_akx_messenger_job_per_pop_value|TYPE|end|
+	}
+
+	# 未来信使
+	triggered_planet_modifier = {
+		potential = {
+			has_carrier_flag = future_messenger_1
+			exists = owner
+			owner = { is_gestalt = no }
+		}
+		job_future_messenger_per_pop = @deposit_future_messenger_job
+		mult = value:num_akx_messenger_job_per_pop_value|TYPE|future|
+	}
+	
+	potential = {
+		always = no
+	}
+	
+	drop_weight = {
+		weight = 0
+	}
+}
+
+d_akx_gestalt_messenger_closed = {
+	is_for_colonizable = yes
+	
+	category = deposit_cat_rare
+	
+	icon = d_akx_messenger_closed
+	
+	resources = {
+		category = planet_buildings
+	}
+	
+	custom_tooltip = d_akx_gestalt_messenger_closed_effect
+	
+	planet_modifier = {
+		planet_max_districts_add = -3
+	}
+	
+	potential = {
+		always = no
+	}
+	
+	drop_weight = {
+		weight = 0
+	}
+}
+
+d_akx_gestalt_messenger = {
+	is_for_colonizable = yes
+	
+	category = deposit_cat_rare
+	
+	icon = d_akx_messenger
+	
+	resources = {
+		category = planet_buildings
+		upkeep = {
+			trigger = {
+				has_carrier_flag = gestalt_messenger_1
+			}
+			volatile_motes = 2.5
+			rare_crystals = 2.5
+			exotic_gases = 2.5
+		}
+		upkeep = {
+			trigger = {
+				has_carrier_flag = gestalt_messenger_2
+			}
+			volatile_motes = 2.5
+			rare_crystals = 2.5
+			exotic_gases = 2.5
+		}
+		upkeep = {
+			trigger = {
+				has_carrier_flag = gestalt_messenger_3
+			}
+			volatile_motes = 5
+			rare_crystals = 5
+			exotic_gases = 5
+		}
+	}
+	
+	custom_tooltip = d_akx_gestalt_messenger_effect
+
+	inline_script = "deposits/d_akx_messenger_modifiers"
+	
+	# 信使子个体
+	triggered_planet_modifier = {
+		potential = {
+			has_carrier_flag = gestalt_messenger_1
+			exists = owner
+			owner = { is_gestalt = yes }
+		}
+		job_gestalt_messenger_per_pop = @deposit_gestalt_messenger_job
+		mult = value:num_akx_messenger_job_per_pop_value|TYPE|gestalt|
+	}
+	
+	potential = {
+		always = no
+	}
+	
+	drop_weight = {
+		weight = 0
+	}
+}

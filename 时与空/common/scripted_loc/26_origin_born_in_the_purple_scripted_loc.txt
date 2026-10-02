@@ -1,0 +1,123 @@
+# 特质描述
+defined_text = {
+	name = GetTraitBornInThePurpleDesc
+	text = {
+		trigger = {
+			is_ruler = yes
+			owner = { is_imperial_authority = yes }
+			species = {
+				OR = {
+					is_species_class = ROBOT
+					is_species_class = MACHINE
+				}
+			}
+		}
+		localization_key = leader_trait_born_in_the_purple_desc_robot_ruler
+	}
+	text = {
+		trigger = {
+			is_heir = yes
+			owner = { is_imperial_authority = yes }
+			species = {
+				OR = {
+					is_species_class = ROBOT
+					is_species_class = MACHINE
+				}
+			}
+		}
+		localization_key = leader_trait_born_in_the_purple_desc_robot_heir
+	}
+	text = {
+		trigger = {
+			is_ruler = yes
+			owner = { is_imperial_authority = yes }
+			species = {
+				NOR = {
+					is_species_class = ROBOT
+					is_species_class = MACHINE
+				}
+			}
+		}
+		localization_key = leader_trait_born_in_the_purple_desc_normal_ruler
+	}
+	text = {
+		trigger = {
+			is_heir = yes
+			owner = { is_imperial_authority = yes }
+			species = {
+				NOR = {
+					is_species_class = ROBOT
+					is_species_class = MACHINE
+				}
+			}
+		}
+		localization_key = leader_trait_born_in_the_purple_desc_normal_heir
+	}
+	text = {
+		trigger = {
+			OR = {
+				is_ruler = yes
+				is_heir = yes
+			}
+			owner = { is_imperial_authority = no }
+		}
+		localization_key = leader_trait_born_in_the_purple_desc_no_imperial
+	}
+	default = leader_trait_born_in_the_purple_desc_default
+}
+
+# 特质效果
+defined_text = {
+	name = GetTraitBornInThePurpleTooltip
+	text = {
+		trigger = {
+			is_ruler = yes
+			owner = { is_imperial_authority = yes }
+		}
+		localization_key = leader_trait_born_in_the_purple_tooltip_ruler
+	}
+	text = {
+		trigger = {
+			is_heir = yes
+			owner = { is_imperial_authority = yes }
+		}
+		localization_key = leader_trait_born_in_the_purple_tooltip_heir
+	}
+	text = {
+		trigger = {
+			OR = {
+				is_ruler = yes
+				is_heir = yes
+			}
+			owner = { is_imperial_authority = no }
+		}
+		localization_key = leader_trait_born_in_the_purple_tooltip_no_imperial
+	}
+	default = leader_trait_born_in_the_purple_tooltip_default
+}
+
+# 星海监管人和星海帝皇有额外加成
+defined_text = {
+	name = GetTraitBornInThePurpleTooltipRuler
+	text = {
+		trigger = {
+			owner = {
+				is_galactic_custodian = no
+				is_galactic_emperor = no
+			}
+		}
+		localization_key = leader_trait_born_in_the_purple_tooltip_ruler_normal
+	}
+	text = {
+		trigger = {
+			owner = { is_galactic_custodian = yes }
+		}
+		localization_key = leader_trait_born_in_the_purple_tooltip_ruler_custodian
+	}
+	text = {
+		trigger = {
+			owner = { is_galactic_emperor = yes }
+		}
+		localization_key = leader_trait_born_in_the_purple_tooltip_ruler_emperor
+	}
+}

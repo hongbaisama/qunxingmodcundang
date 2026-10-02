@@ -1,0 +1,7 @@
+cost = {
+	base = 3
+	modifier = {
+		subtract = 1
+		has_technology = tech_horror_focus_2
+	}
+}

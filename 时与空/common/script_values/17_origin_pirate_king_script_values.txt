@@ -1,0 +1,59 @@
+pirate_king_reward_value = {
+	base = 1
+	add = modifier:origin_pirate_king_reward_gain
+	modifier = {
+		multiply = 0.5
+		has_origin = origin_pirate_king
+		has_country_flag = pirate_king_arkship_destroyed
+	}
+	min = 0
+}
+
+pirate_king_situation_resource_value = {
+	base = 1
+	multiply = root.FromFromFrom.trigger:ship_size_multiplier
+	multiply = 0.2 # 4.3舰船大小增加
+	multiply = value:pirate_king_reward_value
+	[[MULT]
+		multiply = $MULT$
+	]
+}
+
+pirate_king_situation_progress_value = {
+	base = $PROGRESS|0$
+	multiply = root.FromFromFrom.trigger:ship_size_multiplier
+	multiply = 0.2 # 4.3舰船大小增加
+	multiply = owner.value:pirate_king_reward_value
+	[[MULT]
+		multiply = $MULT$
+	]
+}
+
+pirate_king_arkship_crime_value = {
+	base = 0
+	add = colony.trigger:planet_crime
+	multiply = 0.01
+	min = 0
+	max = 1
+}
+
+pirate_king_arkship_crime_and_pop_value = {
+	base = 0
+	add = colony.trigger:planet_crime
+	multiply = 0.01
+	min = 0
+	max = 1
+	multiply = colony.value:num_time_normal_resources_value
+}
+
+zone_pirate_king_military_soldier_value = {
+	base = 0
+	add = value:num_jobs_workforce_value|JOB|soldier|
+	add = value:num_jobs_workforce_value|JOB|warrior_drone|
+}
+
+zone_pirate_king_military_foundry_value = {
+	base = 0
+	add = value:num_jobs_workforce_value|JOB|foundry|
+	add = value:num_jobs_workforce_value|JOB|fabricator|
+}

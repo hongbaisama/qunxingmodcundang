@@ -1,0 +1,142 @@
+﻿l_english:
+ # 旅者
+ dimension_traveler_song_of_nature: "Song of Nature"
+ dimension_traveler_song_of_nature_desc_short: "A piece of music played by the White Hole"
+ dimension_traveler_song_of_nature_desc_details: "\nThe sounds of nature from the White Hole pour out our past and future."
+ 
+ dimension_traveler_photo_booth: "Couple Photo Sticker"
+ dimension_traveler_photo_booth_desc_short: "A souvenir received when saying goodbye to the traveler"
+ dimension_traveler_photo_booth_desc_details: "\nA couple photo sticker, but one party is wearing a hood."
+ 
+ dimension_traveler_compressed_candy: "Lime Flavored Compressed Candy"
+ dimension_traveler_compressed_candy_desc_short: "A souvenir left after parting with the traveler forever"
+ dimension_traveler_compressed_candy_desc_details: "\nThe night under the starry sky is as lonely as the twinkling ruins."
+ 
+ dimension_traveler_moisturizing_lipstick: "Lime Flavored Moisturizing Lipstick"
+ dimension_traveler_moisturizing_lipstick_desc_short: "A souvenir received when saying goodbye to the traveler"
+ dimension_traveler_moisturizing_lipstick_desc_details: "\nThe wind in the wilderness is as dry as the city at night."
+ 
+ # 视界信号
+ akx_horizonsignal_love_poem: "Horizon Love Poem"
+ akx_horizonsignal_love_poem_desc_short: "A love poem from the Black Hole"
+ akx_horizonsignal_love_poem_desc_details: "\n\"Black Hole, that dark secret place deep in the universe,\nSwallowing light, but hiding unknown feelings.\nIn the endless void, it slowly chants,\nA strange love poem about gravity and love.\n\nAt the edge of the Black Hole, time gently twists,\nLike my longing for you, lingering and complex.\nYour eyes, deep as the abyss of the Black Hole,\nAttract me, making me unable to escape this gravitational field of love.\n\nThe boundary of the Black Hole is a forbidden place that light cannot touch,\nBut in my heart, it reflects your gentle silhouette.\nYour existence is the brightest star in my heart,\nEven if swallowed, I am willing to turn into dust by your side.\n\nThe gravity of the Black Hole pulls the warp and weft of spacetime,\nLike my desire for you, spanning hundreds of millions of light-years.\nIn this boundless universe, you are my only home,\nEven if I fall into the abyss, I want to embrace you tightly.\n\nDeep in the Black Hole, perhaps there is another universe hidden,\nIs there also you and me there, spending gentle time together?\nIn this endless darkness, you are my only light,\nIlluminating the road ahead of me, until the end of eternity.\n\nBlack Hole, you are the most mysterious existence in the universe,\nAnd also the deepest love in my heart.\nEven if bound by your gravity, I am willing,\nBecause in this abyss of love, I found my true self.\""
+ 
+ akx_time_and_stone: "Time and Stone"
+ akx_time_and_stone_desc_short: "Inscriptions carved to serve the \"Time Worm\" or §HThe Worm-in-Waiting§!"
+ akx_time_and_stone_desc_details: "\nMost inscriptions are rhythmic and poetic, praying for the arrival of The Worm-in-Waiting-or, if read backwards-its departure.\nThere is also a section describing the \"operation of the universe\" and referencing advanced field equations."
+ 
+ akx_pi_based_computer: "Pi-Based Computer"
+ akx_pi_based_computer_desc_short: "Computer based on Pi"
+ akx_pi_based_computer_desc_details: "\nA computer removed from the Rift Sphere. Its impact from the rift has not diminished even outside the rift.\nThe unique base of this computer is completely incompatible with our conventional programming system, but it can play an unexpected role when dealing with problems related to the Inverse Plane."
+ 
+ akx_pass_black_hole: "Black Hole Traversal"
+ akx_pass_black_hole_desc_short: "Records of alien science ships shuttling between Black Hole systems"
+ akx_pass_black_hole_desc_details: "\nPerhaps in the distant past, we also had such experiences."
+ 
+ akx_ouroboros: "Ouroboros"
+ akx_ouroboros_desc_short: "Sacrificial pattern on the altar at the top of the tower"
+ akx_ouroboros_desc_details: "\nAn Ouroboros snake, seeming to imply some kind of experience or encounter."
+ 
+ akx_klein_tower: "Klein Tower"
+ akx_klein_tower_desc_short: "A tower connected head to tail"
+ akx_klein_tower_desc_details: "\nMoving towards the bottom of the tower, but eventually leaving from the top-this is not a tower at all, but a circle."
+ 
+ akx_out_of_0_and_1: "Out of 0 and 1"
+ akx_out_of_0_and_1_desc_short: "Wallfacer §MPlayer§!, I am your Wallbreaker"
+ akx_out_of_0_and_1_desc_details: "\n01100110\n01101001\n01101110\n01100100\n00100000\n01111001\n01101111\n01110101" # find you
+ 
+ # 时螶之界
+ akx_the_quality_of_light: "Quality of Light"
+ akx_the_quality_of_light_desc_short: "Last scene on the Realm of the Worm-in-Waiting"
+ akx_the_quality_of_light_desc_details: "\nThe fluctuation of solar radiation in the system has the characteristics of a quasi-supernova-accompanied by some \"flash events\", the light in the atmosphere seems to accumulate inexplicably and then be released on the surface of §Y[event_target:waiting_world.GetName]§! in colorful forms.\nThis is indeed valuable special data, but this does not clarify the fate of the colonists."
+ 
+ akx_everyone_is: "Everyone Is"
+ akx_everyone_is_desc_short: "Weird scene on the Realm of the Worm-in-Waiting"
+ akx_everyone_is_desc_details: "\n§Y[event_target:waiting_world.GetName]§! once had mysterious population growth. Although the current population number is consistent with our expectations, some information seems to have problems, or... or there is information that our government officials cannot explain either.\nIn the report, none of these personnel existed in our initial records. Every initial colonist disappeared. It looks like every resident was completely replaced by strangers."
+ 
+ akx_the_limit_of_light: "Limit of Light"
+ akx_the_limit_of_light_desc_short: "Strange scene on the Realm of the Worm-in-Waiting"
+ akx_the_limit_of_light_desc_details: "\nOn §Y[event_target:waiting_world.GetName]§!, even light struggles to break free from the planet's gravity."
+ 
+ akx_the_wrong_path_dead: "Lost Souls"
+ akx_the_wrong_path_dead_desc_short: "Strange scene on the Realm of the Worm-in-Waiting"
+ akx_the_wrong_path_dead_desc_details: "\nOn §Y[event_target:waiting_world.GetName]§!, the boundary between life and death becomes blurred here."
+ 
+ akx_transparent_world: "Transparent Heart"
+ akx_transparent_world_desc_short: "Strange scene on the Realm of the Worm-in-Waiting"
+ akx_transparent_world_desc_details: "\nOn §Y[event_target:waiting_world.GetName]§!, the bodies of residents are gradually becoming transparent."
+ 
+ akx_utawarerumono: "The Utawarerumono"
+ akx_utawarerumono_desc_short: "Strange scene on the Realm of the Worm-in-Waiting"
+ akx_utawarerumono_desc_details: "\nOn §Y[event_target:waiting_world.GetName]§!, the nightmare is guiding §Y$NAME_Rising_Manifold$§! to the Beyond."
+ 
+ # 信使
+ akx_messenger: "Messenger"
+ akx_messenger_desc_short: "Crew remains inside the spiral pod"
+ akx_messenger_desc_details: "\n§HWhat has been will be again; what will be has been§!-this may be the last message the \"Messenger\" passed to us."
+ 
+ akx_elegy_of_disaster: "Elegy of Calamity"
+ akx_elegy_of_disaster_desc_short: "Messengers from the End brought the elegy of calamity"
+ akx_elegy_of_disaster_desc_details: "\nThe future became dark, and the result of everything stems from the discovery of Horrific Inverse Mass-top Science Officers researched Horrific Inverse Mass and found it possesses some weird properties. Using Horrific Inverse Mass, people can distort spacetime and planes to a certain extent, and go to the infinite past to plunder abundant resources. It is precisely the disappearance of resources that caused the cosmic cycle to completely derail and made world damage a reality."
+ 
+ akx_paean_of_hope: "Hymn of Hope"
+ akx_paean_of_hope_desc_short: "Messengers from the future brought the hymn of hope"
+ akx_paean_of_hope_desc_details: "\nThe future became bright, and the cause of everything lies in the discovery of Horrific Inverse Mass-top Science Officers researched Horrific Inverse Mass and found it possesses some wonderful properties. Using Horrific Inverse Mass, people can distort spacetime and planes to a certain extent, and go to the infinite past to gather abundant resources. It is precisely the influx of resources that allowed galactic civilization to completely break away from competition and made galactic unification possible."
+ 
+ akx_answer_of_riddle: "Riddle Answer"
+ akx_answer_of_riddle_desc_short: "I am the answer, but what is the question"
+ akx_answer_of_riddle_desc_details: "\nThe calculations in the parallel world seem to be going very smoothly. The Messenger Network sent us a steady stream of data, which might be the so-called riddle answers. However, they didn't tell us, or rather, they didn't know, what the question to these answers was. We don't know the question, so we can't use the answer."
+ 
+ # 命中相会
+ akx_debris_of_syzygy: "Wreckage of \"Syzygy\""
+ akx_debris_of_syzygy_desc_short: "Burial objects from the future"
+ akx_debris_of_syzygy_desc_details: "\n$akx.9340.desc$"
+ 
+ akx_darkness_over_depth: "\"Deep Darkness\""
+ akx_darkness_over_depth_desc_short: "Glutton from the End"
+ akx_darkness_over_depth_desc_details: "\nA mass of deep darkness, unable to judge whether it has life or consciousness.\nMovement speed is affected by external factors, extremely aggressive, and will slowly assimilate almost all substances it touches.\nFears high temperature, has the highest activity near absolute zero.\nDanger Level: §RExtreme§!. Should be strictly contained by high temperature vacuum isolation."
+ 
+ # 神之圆环
+ akx_coils_rituals: "Loop Rituals"
+ akx_coils_rituals_desc_short: "Mysterious rituals of primitive civilization on §Y[event_target:coils_planet.GetName]§!"
+ akx_coils_rituals_desc_details: "\nPrimitive mechanical clocks are considered sacred objects, but after running for a year, they will be ritually destroyed. Worm-like and snake-like objects on the planet are protected from harm. Time, the priests of the God of the Loop say, is a maze. \"What has been will be again; what will be has been.\" They chant this in their prayers."
+ 
+ akx_the_other_shore: "\"The Beyond\""
+ akx_the_other_shore_desc_short: "A momentary glimpse of \"The Beyond\""
+ akx_the_other_shore_desc_details: "\nScenes of disasters occurring on countless §Y[event_target:new_coils_planet.GetName]§! s fill the entire space, as if countless parallel universes were superimposed at this moment.\nThe ritual ended, and all residents on the planet disappeared in an instant, as if they never existed."
+ 
+ # 圣仆
+ akx_brief: "\"The Excerptors\""
+ akx_brief_desc_short: "The last mission of the Sanctified Servant, and a new beginning for the Excerptors"
+ akx_brief_desc_details: "\n[GetAkxBriefDescDetails]"
+ akx_brief_desc_details_default: "Did the creators named The Excerptors return? There are no traces of intelligent life in the star system. But the probe found thermophilic life forms orbiting the Black Hole in low orbit, enjoying the radiation emitted by the Black Hole. Our Science Officer stated that there were no such creatures around the Black Hole before. Although there is no evidence of their intelligence level, maybe these creatures are distant descendants of the high-tech sphere creators, or ancestors of the creators."
+ akx_brief_desc_details_time: "Did the creators named The Excerptors return? There are no traces of intelligent life in the star system. But the probe found that the radiation data of the Black Hole fluctuated significantly, and various indicators were gradually approaching a familiar celestial body. Finally, §Y$NAME_Gargantua$§! turned into a §HSpacetime Black Hole§!-our homeworld where we survived for hundreds of millions of years.\n\nWas our homeworld also formed like this initially? Is there any relationship between us and The Excerptors? Was all this designed by §HThe Worm-in-Waiting§!? We don't know the answer. Perhaps we will never find the answer, or perhaps we are the answer itself."
+ 
+ akx_black_hole_compression: "Black Hole Compression"
+ akx_black_hole_compression_desc_short: "$NAME_Gargantua$--$NAME_Pantagruel$"
+ akx_black_hole_compression_desc_details: "\n[GetAkxBlackHoleCompressionDescDetails]"
+ akx_black_hole_compression_desc_details_default: "§Y[event_target:hole_pets.GetName]§! has been compressed to the extent that it cannot be further compressed.\nThis once huge Black Hole has now become an extremely tiny singularity. Perhaps this is its dead end."
+ akx_black_hole_compression_desc_details_white_hole: "§Y[event_target:hole_pets.GetName]§! has been compressed to the extent that it cannot be further compressed.\nThe singularity disappeared instantly after offering the final secret, but suddenly expanded in a trance. A White Hole was born under our witness, just as we were born under the witness of a White Hole."
+ akx_black_hole_compression_desc_details_time: "§Y[event_target:hole_pets.GetName]§! has been compressed to the extent that it cannot be further compressed.\nThis once huge Black Hole has now become an extremely tiny singularity. Perhaps this is its end."
+ 
+ # 时光旅馆
+ akx_wake_up: "Just Woken From a Dream"
+ akx_wake_up_desc_short: "A confession of a repentant"
+ akx_wake_up_desc_details: "\nAll this is like a dream, a dream unforgettable for a lifetime.\nWoke up, only to find that the dream had long become reality."
+ 
+ # 来自深渊
+ akx_rainbow_sea: "\"Rainbow Sea\""
+ akx_rainbow_sea_desc_short: "Treasure map of $NAME_Pirate_King_Leader$"
+ akx_rainbow_sea_desc_details: "\n[GetAkxRainbowSeaDescDetails]"
+ akx_rainbow_sea_desc_details_default: "A damaged treasure map with coordinates of multiple systems drawn. A series of paths eventually point to one destination-\"§YRainbow Sea§!\"."
+ akx_rainbow_sea_desc_details_pirate_king: "A damaged treasure map with coordinates of multiple systems drawn. A series of paths eventually point to one destination-\"§YRainbow Sea§!\".\n\"§YRainbow Sea§!\" is the mysterious treasure hiding place that generations of pirates among our ancestors were obsessed with and yearned for. It is said to be full of endless wealth, power and strength. However, all pirates who tried to find \"§YRainbow Sea§!\" did not return, including the most famous Pirate King."
+ akx_rainbow_sea_desc_details_pirate_king_true: "A damaged treasure map with coordinates of multiple systems drawn. A series of paths eventually point to one destination-\"§YRainbow Sea§!\".\nRegrettably, \"§YRainbow Sea§!\" is a scam, and as §HPirate Kings§!, we will give severe punishment to the despicable scammers."
+ 
+ # 诺亚方舟
+ time_way_to_heaven: "Direction of Paradise"
+ time_way_to_heaven_desc_short: "Navigation log of Noah's Ark"
+ time_way_to_heaven_desc_details: "\nWe originally lived in a paradise, but the god was dissatisfied with the crimes of the creatures in paradise and sent down divine punishment. The mighty celestial flood instantly submerged this pure land and killed all creatures.\n\nBut fortunately, this civilization named Noah built an ark in advance and avoided the flood disaster. And they were not limited to saving themselves, but also brought many other creatures, including us. However, the flight journey was too far, and the vast majority of creatures died during the voyage, leaving only us to arrive at the destination alone.\n\nHowever, Noah's behavior is not meaningless, because we are still alive. We will live tenaciously with Noah's will. We have found the direction of paradise-§Y[event_target:noah_ark_home_planet.GetName]§!, and we also hope to restore her to the paradise of the past."
+ 
+ time_hymn_of_heaven: "Hymn of Paradise"
+ time_hymn_of_heaven_desc_short: "Hymn of Paradise dedicated to the god of the past"
+ time_hymn_of_heaven_desc_details: "\nThe civilization named \"Noah\" that built Noah's Ark was the god who enlightened the primitive creatures on this planet. Noah civilization lived in harmony with primitive creatures on this pure land. Noah civilization provided advanced technology, and primitive creatures also expressed gratitude for this in their own way. However, this peaceful life was broken by the invader civilization. They possessed higher technology and stronger fleets, crushed all ships of the Noah civilization with overwhelming superiority, and occupied all planets of the Noah civilization. However, they experienced tenacious resistance from primitive creatures and Noah remnants when taking over this planet, so impatient, they decided to use Colossus weapons to directly destroy this paradise.\n\nThe remaining Noah civilization exhausted the last resources to build several escape ships to escape, but their friendship with primitive creatures was deep. They did not hesitate to overload to evacuate with primitive partners. The invader civilization's firepower was too strong. In the end, only one ark successfully passed through the encirclement, but the invader civilization also used special weapons to cut off all hyperlanes of this system to the outside. The last ark had to be forced to hide on a planet in the system.\n\nThis is the history of Noah's Ark, this is the truth hidden under paradise."

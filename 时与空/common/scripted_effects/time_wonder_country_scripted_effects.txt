@@ -1,0 +1,273 @@
+# 星球
+generate_time_0_bonus = {
+	owner = {
+		add_resource = {
+			energy = 3700
+			minerals = 3700
+			food = 2700
+			consumer_goods = 1450
+			alloys = 1450
+			volatile_motes = 450
+			rare_crystals = 450
+			exotic_gases = 450
+			sr_dark_matter = 225
+		}
+	}
+	
+	add_modifier = { modifier = "planet_luxuries_boost" days = 3600 }
+	while = {
+		count = 3
+		random_deposit = {
+			limit = {
+				is_deposit_type = d_time_blocker_0
+			}
+			clear_blocker = yes
+		}
+		random_deposit = {
+			limit = {
+				is_deposit_type = d_time_blocker_1
+			}
+			clear_blocker = yes
+		}
+	}
+	
+	make_district_time_level_up = yes
+	while = {
+		count = 2
+		add_district = district_time
+		add_district = district_time_physics
+		add_district = district_time_society
+		add_district = district_time_engineering
+	}
+	
+	while = {
+		limit = { pop_amount < 700 }
+		create_pop_group = {
+			species = owner_main_species
+			ethos = random
+		}
+	}
+}
+
+# 星球
+generate_time_1_bonus = {
+	owner = {
+		add_resource = {
+			energy = 4000
+			minerals = 4000
+			food = 3000
+			consumer_goods = 1500
+			alloys = 1500
+			unity = 1500
+		}
+	}
+	
+	every_deposit = {
+		limit = {
+			is_blocker = yes
+		}
+		clear_blocker = yes
+	}
+	
+	while = {
+		count = 5
+		add_district_and_planet_size_if_needed_effect = {
+			district = district_city
+		}
+	}
+	
+	while = {
+		limit = { pop_amount < 7000 }
+		create_pop_group = {
+			species = owner_main_species
+			ethos = random
+		}
+	}
+}
+
+# 星球
+generate_time_2_bonus = {
+	owner = {
+		add_resource = {
+			energy = 6000
+			minerals = 6000
+			alloys = 2500
+			unity = 1500
+		}
+	}
+	
+	every_deposit = {
+		limit = {
+			is_blocker = yes
+		}
+		clear_blocker = yes
+	}
+	
+	while = {
+		count = 5
+		add_district_and_planet_size_if_needed_effect = {
+			district = district_city
+		}
+	}
+	
+	while = {
+		limit = { pop_amount < 7000 }
+		create_pop_group = {
+			species = owner_main_species
+			ethos = random
+		}
+	}
+}
+
+# 国家
+set_wonder_country_human_species_identity = {
+	# 首都非母星的国家物种设置母星
+	capital_scope = {
+		every_playable_country = {
+			limit = {
+				OR = {
+					has_country_flag = human_2
+					has_country_flag = human_3
+				}
+				NOT = { has_country_flag = wonder_country_human_species_identity_is_setted }
+			}
+			set_country_flag = wonder_country_human_species_identity_is_setted
+			owner_main_species = {
+				set_species_homeworld = prevprev
+				set_species_identity = event_target:wonder_country_human_species
+			}
+		}
+	}
+	# 首都为母星的国家物种仅设置同物种
+	every_playable_country = {
+		limit = {
+			OR = {
+				has_country_flag = human_1
+				# 副物种
+				has_country_flag = wonder_country_5
+				has_country_flag = wonder_country_9
+			}
+			NOT = { has_country_flag = wonder_country_human_species_identity_is_setted }
+			NOT = { is_same_value = prev }
+		}
+		if = {
+			limit = {
+				has_country_flag = human_1
+			}
+			owner_main_species = {
+				set_species_identity = event_target:wonder_country_human_species
+			}
+		}
+		else = {
+			random_owned_species = {
+				limit = { species_portrait = human }
+				set_species_identity = event_target:wonder_country_human_species
+			}
+		}
+	}
+}
+
+# 领袖
+wonder_country_35_species_leader_effect = {
+	change_leader_portrait = ai_crisis_2
+	if = {
+		limit = {
+			leader_class = commander
+		}
+		add_trait = {
+			trait = leader_trait_cybrex
+			show_message = no
+		}
+	}
+}
+
+# 领袖
+wonder_country_38_species_leader_effect = {
+	change_leader_portrait = swarm
+	if = {
+		limit = {
+			leader_class = commander
+			NOR = {
+				has_trait = leader_trait_hive_affinity
+				has_trait = leader_trait_void_swimmer
+			}
+		}
+		random_list = {
+			1 = {
+				add_trait = {
+					trait = leader_trait_hive_affinity
+					show_message = no
+				}
+			}
+			3 = {
+				add_trait = {
+					trait = leader_trait_void_swimmer
+					show_message = no
+				}
+			}
+		}
+	}
+}
+
+# 领袖
+wonder_country_39_species_leader_effect = {
+	change_leader_portrait = ai_crisis_1
+}
+
+# 领袖
+wonder_country_40_species_leader_effect = {
+	change_leader_portrait = exd3
+	if = {
+		limit = {
+			leader_class = commander
+			NOR = {
+				has_trait = leader_trait_ethereal
+				has_trait = leader_trait_dimensional_stutter
+			}
+		}
+		random_list = {
+			1 = {
+				add_trait = {
+					trait = leader_trait_ethereal
+					show_message = no
+				}
+			}
+			1 = {
+				add_trait = {
+					trait = leader_trait_dimensional_stutter
+					show_message = no
+				}
+			}
+		}
+	}
+}
+
+# 领袖
+wonder_country_synth_queen_species_leader_effect = {
+	random_list = {
+		1 = {
+			change_leader_portrait = cetana_mammalian
+		}
+		1 = {
+			change_leader_portrait = cetana_reptilian
+		}
+		1 = {
+			change_leader_portrait = cetana_robot
+		}
+		1 = {
+			change_leader_portrait = cetana_aquatic
+		}
+		1 = {
+			change_leader_portrait = cetana_lithoid
+		}
+		1 = {
+			change_leader_portrait = cetana_plantoid
+		}
+		1 = {
+			change_leader_portrait = cetana_molluscoid
+		}
+		1 = {
+			change_leader_portrait = cetana_avian
+		}
+	}
+}

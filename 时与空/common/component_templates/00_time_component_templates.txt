@@ -1,0 +1,835 @@
+####################
+# 微型奇点
+####################
+
+utility_component_template = {
+	inline_script = {
+		script = component_templates/time_microsingularity
+		TYPE = TIME_MICROSINGULARITY
+		TIME = -360
+	}
+	
+	potential = {
+		can_use_dimensional_horror_component_templates = yes
+	}
+}
+
+# 护卫舰/雷击舰
+utility_component_template = {
+	inline_script = {
+		script = component_templates/time_microsingularity
+		TYPE = TIME_MICROSINGULARITY_1
+		TIME = -15
+	}
+	
+	prerequisites = { "tech_time_microsingularity" }
+	
+	potential = {
+		OR = {
+			ship_size_multiplier <= 5
+			is_ship_size = frigate
+		}
+		from = { has_modifier = time_hotel_modifier_2 }
+	}
+	
+	ship_limit = 1
+}
+
+# 驱逐舰
+utility_component_template = {
+	inline_script = {
+		script = component_templates/time_microsingularity
+		TYPE = TIME_MICROSINGULARITY_2
+		TIME = -15
+	}
+	
+	prerequisites = { "tech_time_microsingularity" }
+	
+	show_tech_unlock_if = {
+		always = no
+	}
+	
+	potential = {
+		ship_size_multiplier > 5
+		ship_size_multiplier <= 10
+		NOT = { is_ship_size = frigate }
+		from = { has_modifier = time_hotel_modifier_2 }
+	}
+	
+	ship_limit = 2
+}
+
+# 巡洋舰
+utility_component_template = {
+	inline_script = {
+		script = component_templates/time_microsingularity
+		TYPE = TIME_MICROSINGULARITY_3
+		TIME = -20
+	}
+	
+	prerequisites = { "tech_time_microsingularity" }
+	
+	show_tech_unlock_if = {
+		always = no
+	}
+	
+	potential = {
+		ship_size_multiplier > 10
+		ship_size_multiplier <= 20
+		from = { has_modifier = time_hotel_modifier_2 }
+	}
+	
+	ship_limit = 3
+}
+
+# 战列舰
+utility_component_template = {
+	inline_script = {
+		script = component_templates/time_microsingularity
+		TYPE = TIME_MICROSINGULARITY_4
+		TIME = -30
+	}
+	
+	prerequisites = { "tech_time_microsingularity" }
+	
+	show_tech_unlock_if = {
+		always = no
+	}
+	
+	potential = {
+		ship_size_multiplier > 20
+		ship_size_multiplier <= 40
+		from = { has_modifier = time_hotel_modifier_2 }
+	}
+	
+	ship_limit = 4
+}
+
+# 泰坦
+utility_component_template = {
+	inline_script = {
+		script = component_templates/time_microsingularity
+		TYPE = TIME_MICROSINGULARITY_5
+		TIME = -90
+	}
+	
+	prerequisites = { "tech_time_microsingularity" }
+	
+	show_tech_unlock_if = {
+		always = no
+	}
+	
+	potential = {
+		ship_size_multiplier > 40
+		ship_size_multiplier <= 80
+		from = { has_modifier = time_hotel_modifier_2 }
+	}
+	
+	ship_limit = 5
+}
+
+# 主宰/巨像
+utility_component_template = {
+	inline_script = {
+		script = component_templates/time_microsingularity
+		TYPE = TIME_MICROSINGULARITY_6
+		TIME = -150
+	}
+	
+	prerequisites = { "tech_time_microsingularity" }
+	
+	show_tech_unlock_if = {
+		always = no
+	}
+	
+	potential = {
+		ship_size_multiplier > 80
+		from = { has_modifier = time_hotel_modifier_2 }
+	}
+	
+	ship_limit = 6
+}
+
+########################
+# 曲速引擎
+########################
+
+utility_component_template = {
+	key = "TIME_WARP_DRIVE_1"
+	size = small
+	icon = "GFX_ship_part_warp_drive_1"
+	icon_frame = 1
+	power = -10
+	resources = {
+		category = ship_components
+		cost = {
+			alloys = 5
+		}
+	}
+	ftl = no
+	jumpdrive = yes
+	
+	modifier = {
+		ship_cloaking_strength_add = 1
+	}
+
+	ship_modifier = {
+		ship_disengage_opportunities_add = 1
+		ship_jumpdrive_cooldown_mult = -0.5
+		ship_ftl_jumpdrive_range_mult = -0.5
+	}
+
+	prerequisites = { "tech_time_warp_drive_1" }
+	component_set = "ftl_components"
+	upgrades_to = "TIME_WARP_DRIVE_2"
+	ai_weight = {
+		weight = 1
+	}
+}
+
+utility_component_template = {
+	key = "TIME_WARP_DRIVE_2"
+	size = small
+	icon = "GFX_ship_part_warp_drive_2"
+	icon_frame = 1
+	power = -15
+	resources = {
+		category = ship_components
+		cost = {
+			alloys = 10
+		}
+	}
+	ftl = no
+	jumpdrive = yes
+	
+	modifier = {
+		ship_cloaking_strength_add = 2
+	}
+
+	ship_modifier = {
+		ship_disengage_opportunities_add = 1
+		ship_jumpdrive_cooldown_mult = -0.65
+		ship_ftl_jumpdrive_range_mult = -0.5
+	}
+
+	prerequisites = { "tech_time_warp_drive_2" }
+	component_set = "ftl_components"
+	upgrades_to = "TIME_WARP_DRIVE_3"
+	ai_weight = {
+		weight = 2
+	}
+}
+
+utility_component_template = {
+	key = "TIME_WARP_DRIVE_3"
+	size = small
+	icon = "GFX_ship_part_warp_drive_3"
+	icon_frame = 1
+	power = -20
+	resources = {
+		category = ship_components
+		cost = {
+			alloys = 15
+		}
+	}
+	ftl = no
+	jumpdrive = yes
+	
+	modifier = {
+		ship_cloaking_strength_add = 3
+	}
+
+	ship_modifier = {
+		ship_disengage_opportunities_add = 1
+		ship_jumpdrive_cooldown_mult = -0.8
+		ship_ftl_jumpdrive_range_mult = -0.5
+	}
+
+	prerequisites = { "tech_time_warp_drive_3" }
+	component_set = "ftl_components"
+	ai_weight = {
+		weight = 3
+	}
+}
+
+utility_component_template = {
+	key = "TIME_WARP_DRIVE_HORROR"
+	hidden = yes
+	size = small
+	icon = "GFX_ship_part_beyond_infinity_drive"
+	icon_frame = 1
+	power = -50
+	ftl = no
+	jumpdrive = yes
+	
+	scripted_action = { start_time_titan_pass_black_hole activate_time_titan_cloaking deactivate_time_titan_cloaking }
+	
+	modifier = {
+		ship_cloaking_strength_add = 5
+	}
+
+	ship_modifier = {
+		ship_disengage_opportunities_add = 2
+		ship_jumpdrive_cooldown_mult = -1
+		ship_ftl_jumpdrive_range_mult = -0.5
+	}
+	
+	custom_tooltip = time_warp_drive_horror_effect
+	
+	triggered_ship_modifier = {
+		potential = {
+			active_ap_horror_bonus = { SCOPE = owner }
+		}
+		ship_disengage_chance_mult = 0.5
+	}
+	
+	triggered_ship_modifier = {
+		potential = {
+			active_ap_time_bonus = { SCOPE = owner }
+		}
+		ship_emergency_ftl_mult = -1
+		ship_emergency_ftl_min_days_mult = -1
+	}
+	
+	triggered_ship_modifier = {
+		potential = {
+			owner = { has_technology = tech_beyond_infinity_drive }
+		}
+		ship_disengage_opportunities_add = 3
+		ship_ftl_jumpdrive_range_mult = 2.5
+	}
+	
+	triggered_ship_design_modifier = {
+		potential = {
+			from = { has_technology = tech_beyond_infinity_drive }
+		}
+		ship_base_speed_mult = 2
+	}
+
+	component_set = "ftl_components"
+}
+
+########################
+# 曲速光环
+########################
+
+utility_component_template = {
+	key = "WARP_AURA"
+	size = medium
+	hidden = yes
+	icon = "GFX_ship_part_aura_targeting_grid"
+	icon_frame = 1
+	power = 0
+	
+	component_set = "ship_aura_components"
+	
+	hostile_aura = {
+		name = "hostile_aura_warp"
+		system_wide = yes
+		apply_on = ships
+		
+		limit = {
+			# 防止断事件链
+			is_in_combat = yes
+			# 对同级无效
+			NOR = {
+				has_warp_aura_level = { LEVEL = 1 }
+				has_horror_aura_level = { LEVEL = 1 }
+				has_horror_crisis_aura_level = { LEVEL = 1 }
+				has_component = TIME_WARP_DRIVE_HORROR
+			}
+		}
+
+		stack_info = {
+			id = hostile_warp_aura
+			priority = 1
+		}
+
+		modifier = {
+			ship_speed_reduction = 0.1
+			ship_shield_reduction = 0.1
+			ship_armor_reduction = 0.1
+			weapon_type_strike_craft_speed_mult = -0.1
+			ship_evasion_mult = -0.1
+			ship_ftl_jumpdrive_range_mult = -0.2
+			ship_jumpdrive_cooldown_mult = 0.2
+			ship_windup_mult = 0.2
+			ship_winddown_mult = 0.2
+			ship_disengage_chance_reduction = 0.2
+			ship_emergency_ftl_mult = 0.2
+			ship_emergency_ftl_min_days_mult = 0.2
+			ship_disengage_opportunities_add = -1
+		}
+		
+		damage_per_day = {
+			accuracy = 1
+			damage = { min = 1 max = 49 }
+			hull_damage = 1
+			armor_damage = 0.5
+			shield_damage = 0.5
+			armor_penetration = 0.5
+			shield_penetration = 0.5
+			size_damage_factor = 0.01
+		}
+
+		graphics = {
+			area_effect = {
+				entity = "circle_area_entity"
+				dynamic_scale = yes
+			}
+			ship_effect = {
+				entity = "ship_aura_negative_entity"
+				dynamic_scale = no
+			}
+		}
+	}
+}
+
+utility_component_template = {
+	key = "SPECIAL_WARP_AURA"
+	size = medium
+	hidden = yes
+	icon = "GFX_ship_part_aura_snare"
+	icon_frame = 1
+	power = 0
+	
+	component_set = "ship_aura_components"
+	
+	hostile_aura = {
+		name = "hostile_aura_warp"
+		system_wide = yes
+		apply_on = ships
+		
+		limit = {
+			# 防止断事件链
+			is_in_combat = yes
+			# 对同级无效
+			NOR = {
+				has_warp_aura_level = { LEVEL = 2 }
+				has_horror_aura_level = { LEVEL = 1 }
+				has_horror_crisis_aura_level = { LEVEL = 1 }
+				has_component = TIME_WARP_DRIVE_HORROR
+			}
+		}
+
+		stack_info = {
+			id = hostile_warp_aura
+			priority = 2
+		}
+
+		modifier = {
+			ship_speed_reduction = 0.25
+			ship_shield_reduction = 0.25
+			ship_armor_reduction = 0.25
+			weapon_type_strike_craft_speed_mult = -0.25
+			ship_evasion_mult = -0.25
+			ship_ftl_jumpdrive_range_mult = -0.5
+			ship_jumpdrive_cooldown_mult = 0.5
+			ship_windup_mult = 0.5
+			ship_winddown_mult = 0.5
+			ship_disengage_chance_reduction = 0.5
+			ship_emergency_ftl_mult = 0.5
+			ship_emergency_ftl_min_days_mult = 0.5
+			ship_disengage_opportunities_add = -2.5
+		}
+		
+		damage_per_day = {
+			accuracy = 1
+			damage = { min = 1 max = 99 }
+			hull_damage = 1
+			armor_damage = 0.5
+			shield_damage = 0.5
+			armor_penetration = 1
+			shield_penetration = 1
+			size_damage_factor = 0.02
+		}
+
+		graphics = {
+			area_effect = {
+				entity = "circle_area_entity"
+				dynamic_scale = yes
+			}
+			ship_effect = {
+				entity = "ship_aura_negative_entity"
+				dynamic_scale = no
+			}
+		}
+	}
+}
+
+utility_component_template = {
+	key = "DIMENSIONAL_WARP_AURA"
+	size = medium
+	hidden = yes
+	icon = "GFX_ship_part_aura_snare"
+	icon_frame = 1
+	power = 0
+	
+	component_set = "ship_aura_components"
+	
+	inline_script = {
+		script = component_templates/dimensional_horror_ship_size_modifiers
+	}
+	
+	hostile_aura = {
+		name = "hostile_aura_warp"
+		system_wide = yes
+		apply_on = ships
+		
+		limit = {
+			# 防止断事件链
+			is_in_combat = yes
+			# 对同级无效
+			NOR = {
+				has_warp_aura_level = { LEVEL = 3 }
+				has_horror_aura_level = { LEVEL = 2 }
+				has_component = TIME_WARP_DRIVE_HORROR
+			}
+		}
+
+		stack_info = {
+			id = hostile_warp_aura
+			priority = 3
+		}
+
+		modifier = {
+			ship_speed_reduction = 0.5
+			ship_shield_reduction = 0.5
+			ship_armor_reduction = 0.5
+			weapon_type_strike_craft_speed_mult = -0.5
+			ship_damage_reduction_mult = -0.5
+			ship_evasion_mult = -0.5
+			ship_ftl_jumpdrive_range_mult = -1
+			ship_jumpdrive_cooldown_mult = 1
+			ship_windup_mult = 1
+			ship_winddown_mult = 1
+			ship_disengage_chance_reduction = 1
+			ship_emergency_ftl_mult = 1
+			ship_emergency_ftl_min_days_mult = 1
+			ship_disengage_opportunities_add = -5
+		}
+		
+		damage_per_day = {
+			accuracy = 1
+			damage = { min = 1 max = 199 }
+			hull_damage = 1.5
+			armor_damage = 1
+			shield_damage = 1
+			armor_penetration = 1
+			shield_penetration = 1
+			size_damage_factor = 0.04
+		}
+
+		graphics = {
+			area_effect = {
+				entity = "circle_area_entity"
+				dynamic_scale = yes
+			}
+			ship_effect = {
+				entity = "dimensional_horror_aura_entity"
+				dynamic_scale = no
+			}
+		}
+	}
+}
+
+########################
+# 潜时意志
+########################
+
+utility_component_template = {
+	key = "COMBAT_COMPUTER_ORIGIN_COLOSSUS"
+	hidden = yes
+	size = small
+	icon = "GFX_ship_part_computer_artillery_sapient"
+	icon_frame = 1
+	power = -25
+	ship_behavior = "colossus"
+
+	component_set = "combat_computers"
+	
+	ship_modifier = {
+		ship_fire_rate_mult = 0.20
+		ship_weapon_range_mult = 0.20
+		ship_tracking_add = 10
+	}
+	
+	custom_tooltip = combat_computer_origin_colossus_effect
+	
+	triggered_ship_modifier = {
+		potential = {
+			active_ap_horror_bonus = { SCOPE = owner }
+		}
+		ship_weapon_damage = 0.20
+	}
+	
+	triggered_ship_modifier = {
+		potential = {
+			active_ap_time_bonus = { SCOPE = owner }
+		}
+		ship_hull_damage_mult = 0.20
+	}
+}
+
+########################
+# 命中相会
+########################
+
+utility_component_template = {
+	key = "COMBAT_COMPUTER_HORROR"
+	hidden = yes
+	size = small
+	icon = "GFX_ship_part_combat_computer_horror"
+	icon_frame = 1
+	power = -50
+	ship_behavior = "time_titan"
+
+	component_set = "combat_computers"
+	
+	scripted_action = { open_time_titan_main_menu time_titan_end_shelter }
+	
+	modifier = {
+		ship_speed_mult = 0.25 # 命中注定相会特质的效果
+	}
+	
+	# 武器区
+	
+	triggered_ship_modifier = {
+		potential = {
+			time_titan_is_fine = yes
+		}
+		ship_hull_damage_mult = 0.05
+		ship_armor_damage_mult = 0.05
+		ship_shield_damage_mult = 0.05
+		t_slot_weapon_damage_mult = 0.05
+		t_slot_weapon_fire_rate_mult = 0.05
+		x_slot_weapon_damage_mult = 0.05
+		x_slot_weapon_fire_rate_mult = 0.05
+		mult = value:time_titan_level|TYPE|primary|
+	}
+	
+	triggered_ship_modifier = {
+		potential = {
+			time_titan_is_fine = yes
+		}
+		ship_armor_penetration_mult = 0.05
+		ship_shield_penetration_mult = 0.05
+		l_slot_weapon_damage_mult = 0.05
+		l_slot_weapon_fire_rate_mult = 0.05
+		m_slot_weapon_damage_mult = 0.05
+		m_slot_weapon_fire_rate_mult = 0.05
+		s_slot_weapon_damage_mult = 0.05
+		s_slot_weapon_fire_rate_mult = 0.05
+		mult = value:time_titan_level|TYPE|normal|
+	}
+	
+	triggered_ship_modifier = {
+		potential = {
+			time_titan_is_fine = yes
+		}
+		ship_accuracy_mult = 0.05
+		ship_tracking_mult = 0.05
+		ship_engagement_range_mult = 0.05
+		weapon_type_point_defense_weapon_damage_mult = 0.05
+		weapon_type_point_defense_weapon_fire_rate_mult = 0.05
+		weapon_type_strike_craft_weapon_damage_mult = 0.05
+		weapon_type_strike_craft_weapon_fire_rate_mult = 0.05
+		weapon_type_strike_craft_speed_mult = 0.05
+		mult = value:time_titan_level|TYPE|subsidiary|
+	}
+	
+	# 核心区
+	
+	triggered_ship_modifier = {
+		potential = {
+			time_titan_is_fine = yes
+		}
+		ship_weapon_damage = 0.05
+		ship_weapon_range_mult = 0.05
+		mult = value:time_titan_level|TYPE|power|
+	}
+	
+	triggered_ship_modifier = {
+		potential = {
+			time_titan_is_fine = yes
+		}
+		ship_fire_rate_mult = 0.05
+		ship_evasion_mult = 0.05
+		mult = value:time_titan_level|TYPE|sapient|
+	}
+	
+	triggered_ship_modifier = {
+		potential = {
+			time_titan_is_fine = yes
+		}
+		ship_speed_mult = 0.05
+		ship_ftl_jumpdrive_range_mult = 0.05
+		mult = value:time_titan_level|TYPE|drive|
+	}
+	
+	# 防御区
+	
+	triggered_ship_modifier = {
+		potential = {
+			time_titan_is_fine = yes
+		}
+		ship_hull_mult = 0.05
+		ship_hull_regen_add_perc = 0.05
+		ship_damage_reduction_mult = 0.025
+		mult = value:time_titan_level|TYPE|hull|
+	}
+	
+	triggered_ship_modifier = {
+		potential = {
+			time_titan_is_fine = yes
+		}
+		ship_armor_mult = 0.05
+		ship_armor_regen_add_perc = 0.05
+		ship_armor_hardening_add = 0.05
+		mult = value:time_titan_level|TYPE|armor|
+	}
+	
+	triggered_ship_modifier = {
+		potential = {
+			time_titan_is_fine = yes
+		}
+		ship_shield_mult = 0.05
+		ship_shield_regen_add_perc = 0.05
+		ship_shield_hardening_add = 0.05
+		mult = value:time_titan_level|TYPE|shield|
+	}
+	
+	# 诅咒
+	
+	triggered_ship_modifier = {
+		potential = {
+			time_titan_is_fine = no
+		}
+		ship_ftl_jumpdrive_range_mult = -0.5
+		ship_weapon_damage = -1
+		ship_fire_rate_mult = -1
+		ship_weapon_range_mult = -1
+		ship_accuracy_mult = -1
+		ship_tracking_mult = -1
+		ship_evasion_mult = -1
+		weapon_type_strike_craft_speed_mult = -1
+		ship_speed_reduction = 1
+		ship_shield_regen_mult = -2
+		ship_armor_regen_mult = -2
+		ship_hull_regen_mult = -2
+		ship_shield_reduction = 2
+		ship_armor_reduction = 2
+	}
+	
+	ai_tags = {
+		gunship_stealth
+		explosive_stealth
+		carrier_stealth
+		screen_stealth
+		artillery_stealth
+		brawler_stealth
+		energy_torpedoes_stealth
+	}
+}
+
+########################
+# 因果推进器
+########################
+
+utility_component_template = {
+	key = "TIME_TITAN_SHIP_THRUSTER"
+	hidden = yes
+	size = small
+	icon = "GFX_ship_part_time_titan_thruster"
+	icon_frame = 1
+	power = -500
+
+	component_set = "thruster_components"
+	
+	modifier = {
+		ship_base_speed_mult = 2
+		ship_evasion_add = 10
+		ship_cloaking_strength_add = 5
+	}
+}
+
+########################
+# 视界传感器
+########################
+
+utility_component_template = {
+	key = "TIME_TITAN_SENSOR"
+	hidden = yes
+	size = medium
+	icon = "GFX_ship_part_time_titan_sensor"
+	icon_frame = 1
+	power = -50
+
+	component_set = "sensor_components"
+	
+	sensor_range = 5
+	hyperlane_range = 6
+
+	ship_modifier = {
+		ship_accuracy_add = 20
+		ship_tracking_add = 20
+		ship_cloaking_detection_add = 10
+	}
+}
+
+########################
+# 纳米守卫者
+########################
+
+utility_component_template = {
+	key = "STARBASE_AURA_NANITES_PROTECTOR"
+	size = medium
+	icon = "GFX_ship_part_ship_part_nanite_repair_system"
+	icon_frame = 1
+	power = 0
+
+	class_restriction = { shipclass_starbase }
+	
+	hostile_aura = {
+		name = "hostile_aura_starbase_nanites_protector"
+		system_wide = yes
+
+		stack_info = {
+			id = hostile_nanites_protector_aura
+			priority = 10
+		}
+
+		modifier = {
+			ship_armor_reduction = 1.0
+		}
+
+		graphics = {
+			ship_effect = {
+				entity = "ship_aura_negative_entity"
+				dynamic_scale = no
+			}
+		}
+	}
+	
+	friendly_aura = {
+		name = "friendly_aura_starbase_nanites_protector"
+		system_wide = yes
+
+		stack_info = {
+			id = friendly_nanites_protector_aura
+			priority = 10
+		}
+
+		modifier = {
+			ship_hull_regen_add_perc = 0.25
+			ship_armor_regen_add_perc = 0.5
+		}
+
+		graphics = {
+			ship_effect = {
+				entity = "ship_aura_positive_entity"
+				dynamic_scale = no
+			}
+		}
+	}
+}

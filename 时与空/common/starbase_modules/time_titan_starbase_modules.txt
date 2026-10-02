@@ -1,0 +1,399 @@
+time_titan_end_beam = {
+	icon = "GFX_time_titan_end_beam"
+	section = "TIME_TITAN_MODULE_1T"
+	construction_days = @time_titan_starbase_module_buildtime_spinal_mount
+	starbase_type = arkship
+	category = sm_spinal_cat
+
+	starbase_limit = {
+		base = 1
+	}
+
+	potential = {
+		is_time_titan_starbase = yes
+		owner? = {
+			has_technology = tech_end_beam
+			has_country_flag = upgrade_to_end_titan_finished
+		}
+	}
+
+	show_in_tech = "tech_end_beam"
+
+	show_tech_unlock_if = {
+		has_country_flag = gain_time_titan
+		has_country_flag = upgrade_to_end_titan_finished
+	}
+
+	fits_on_slots = { spinal_mount_1 }
+
+	resources = {
+		category = starbase_arkship_upgrades
+		cost = {
+			alloys = @time_titan_starbase_module_alloys_cost_spinal_mount
+			sr_dark_matter = @time_titan_starbase_module_sr_dark_matter_cost_spinal_mount
+			unity = @time_titan_starbase_module_unity_cost_spinal_mount
+		}
+
+		upkeep = {
+			energy = @time_titan_starbase_module_energy_upkeep_spinal_mount
+			sr_dark_matter = @time_titan_starbase_module_sr_dark_matter_upkeep_spinal_mount
+		}
+	}
+
+	component_set = END_BEAM
+	show_component_tooltips = yes
+	custom_tooltip_with_modifiers = sm_time_titan_end_beam_tt
+
+	ai_weight = {
+		weight = 1000
+		modifier = {
+			factor = 2
+			ai_owner_prefers_energy_weapons = yes
+		}
+	}
+}
+
+time_titan_end_accelerator = {
+	icon = "GFX_time_titan_end_accelerator"
+	section = "TIME_TITAN_MODULE_1T"
+	construction_days = @time_titan_starbase_module_buildtime_spinal_mount
+	starbase_type = arkship
+	category = sm_spinal_cat
+
+	starbase_limit = {
+		base = 1
+	}
+
+	potential = {
+		is_time_titan_starbase = yes
+		owner? = {
+			has_technology = tech_end_beam
+			has_country_flag = upgrade_to_end_titan_finished
+		}
+	}
+
+	show_in_tech = "tech_end_beam"
+
+	show_tech_unlock_if = {
+		has_country_flag = gain_time_titan
+		has_country_flag = upgrade_to_end_titan_finished
+	}
+
+	fits_on_slots = { spinal_mount_1 }
+
+	resources = {
+		category = starbase_arkship_upgrades
+		cost = {
+			alloys = @time_titan_starbase_module_alloys_cost_spinal_mount
+			sr_dark_matter = @time_titan_starbase_module_sr_dark_matter_cost_spinal_mount
+			unity = @time_titan_starbase_module_unity_cost_spinal_mount
+		}
+
+		upkeep = {
+			energy = @time_titan_starbase_module_energy_upkeep_spinal_mount
+			sr_dark_matter = @time_titan_starbase_module_sr_dark_matter_upkeep_spinal_mount
+		}
+	}
+
+	component_set = END_ACCELERATOR
+	show_component_tooltips = yes
+	custom_tooltip_with_modifiers = sm_time_titan_end_accelerator_tt
+
+	ai_weight = {
+		weight = 1000
+		modifier = {
+			factor = 2
+			ai_owner_prefers_kinetic_weapons = yes
+		}
+	}
+}
+
+time_titan_hope_beam = {
+	icon = "GFX_time_titan_hope_beam"
+	section = "TIME_TITAN_MODULE_1T"
+	construction_days = @time_titan_starbase_module_buildtime_spinal_mount
+	starbase_type = arkship
+	category = sm_spinal_cat
+
+	starbase_limit = {
+		base = 1
+	}
+
+	potential = {
+		is_time_titan_starbase = yes
+		owner? = {
+			has_technology = tech_hope_beam
+			has_technology = tech_hope_time_titan
+		}
+	}
+
+	show_in_tech = "tech_hope_beam"
+
+	show_tech_unlock_if = {
+		has_country_flag = gain_time_titan
+		has_technology = tech_hope_time_titan
+	}
+
+	fits_on_slots = { spinal_mount_1 }
+
+	resources = {
+		category = starbase_arkship_upgrades
+		cost = {
+			alloys = @time_titan_starbase_module_alloys_cost_spinal_mount
+			sr_dark_matter = @time_titan_starbase_module_sr_dark_matter_cost_spinal_mount
+			unity = @time_titan_starbase_module_unity_cost_spinal_mount
+		}
+
+		upkeep = {
+			energy = @time_titan_starbase_module_energy_upkeep_spinal_mount
+			sr_dark_matter = @time_titan_starbase_module_sr_dark_matter_upkeep_spinal_mount
+		}
+	}
+
+	component_set = HOPE_BEAM
+	show_component_tooltips = yes
+	custom_tooltip_with_modifiers = sm_time_titan_hope_beam_tt
+
+	ai_weight = {
+		weight = 1000
+		modifier = {
+			factor = 2
+			ai_owner_prefers_energy_weapons = yes
+		}
+	}
+}
+
+time_titan_hope_accelerator = {
+	icon = "GFX_time_titan_hope_accelerator"
+	section = "TIME_TITAN_MODULE_1T"
+	construction_days = @time_titan_starbase_module_buildtime_spinal_mount
+	starbase_type = arkship
+	category = sm_spinal_cat
+
+	starbase_limit = {
+		base = 1
+	}
+
+	potential = {
+		is_time_titan_starbase = yes
+		owner? = {
+			has_technology = tech_hope_beam
+			has_technology = tech_hope_time_titan
+		}
+	}
+
+	show_in_tech = "tech_hope_beam"
+
+	show_tech_unlock_if = {
+		has_country_flag = gain_time_titan
+		has_technology = tech_hope_time_titan
+	}
+
+	fits_on_slots = { spinal_mount_1 }
+
+	resources = {
+		category = starbase_arkship_upgrades
+		cost = {
+			alloys = @time_titan_starbase_module_alloys_cost_spinal_mount
+			sr_dark_matter = @time_titan_starbase_module_sr_dark_matter_cost_spinal_mount
+			unity = @time_titan_starbase_module_unity_cost_spinal_mount
+		}
+
+		upkeep = {
+			energy = @time_titan_starbase_module_energy_upkeep_spinal_mount
+			sr_dark_matter = @time_titan_starbase_module_sr_dark_matter_upkeep_spinal_mount
+		}
+	}
+
+	component_set = HOPE_ACCELERATOR
+	show_component_tooltips = yes
+	custom_tooltip_with_modifiers = sm_time_titan_hope_accelerator_tt
+
+	ai_weight = {
+		weight = 1000
+		modifier = {
+			factor = 2
+			ai_owner_prefers_kinetic_weapons = yes
+		}
+	}
+}
+
+time_titan_time_beam = {
+	icon = "GFX_time_titan_time_beam"
+	section = "TIME_TITAN_MODULE_1X"
+	construction_days = @time_titan_starbase_module_buildtime_5
+	starbase_type = arkship
+	category = sm_energy_cat
+
+	starbase_limit = {
+		base = 1
+	}
+
+	potential = {
+		is_time_titan_starbase = yes
+		owner? = {
+			has_technology = tech_time_beam
+			has_country_flag = upgrade_to_time_titan_finished
+		}
+	}
+
+	show_in_tech = "tech_time_beam"
+
+	show_tech_unlock_if = {
+		has_country_flag = gain_time_titan
+		has_country_flag = upgrade_to_time_titan_finished
+	}
+
+	cannot_fit_on_slots = { spinal_mount_1 }
+
+	resources = {
+		category = starbase_arkship_upgrades
+		cost = {
+			alloys = @time_titan_starbase_module_alloys_cost_5
+			sr_dark_matter = @time_titan_starbase_module_sr_dark_matter_cost_5
+		}
+	}
+
+	component_set = TIME_BEAM
+	show_component_tooltips = yes
+	custom_tooltip_with_modifiers = sm_time_titan_time_beam_tt
+
+	ai_weight = {
+		weight = 500
+		modifier = {
+			factor = 2
+			ai_owner_prefers_energy_weapons = yes
+		}
+	}
+}
+
+time_titan_time_accelerator = {
+	icon = "GFX_time_titan_time_accelerator"
+	section = "TIME_TITAN_MODULE_1X"
+	construction_days = @time_titan_starbase_module_buildtime_5
+	starbase_type = arkship
+	category = sm_projectile_cat
+
+	starbase_limit = {
+		base = 1
+	}
+
+	potential = {
+		is_time_titan_starbase = yes
+		owner? = {
+			has_technology = tech_time_beam
+			has_country_flag = upgrade_to_time_titan_finished
+		}
+	}
+
+	show_in_tech = "tech_time_beam"
+
+	show_tech_unlock_if = {
+		has_country_flag = gain_time_titan
+		has_country_flag = upgrade_to_time_titan_finished
+	}
+
+	cannot_fit_on_slots = { spinal_mount_1 }
+
+	resources = {
+		category = starbase_arkship_upgrades
+		cost = {
+			alloys = @time_titan_starbase_module_alloys_cost_5
+			sr_dark_matter = @time_titan_starbase_module_sr_dark_matter_cost_5
+		}
+	}
+
+	component_set = TIME_ACCELERATOR
+	show_component_tooltips = yes
+	custom_tooltip_with_modifiers = sm_time_titan_time_accelerator_tt
+
+	ai_weight = {
+		weight = 500
+		modifier = {
+			factor = 2
+			ai_owner_prefers_kinetic_weapons = yes
+		}
+	}
+}
+
+time_titan_horror_beam = {
+	icon = "GFX_time_titan_horror_beam"
+	section = "TIME_TITAN_MODULE_2L"
+	construction_days = @time_titan_starbase_module_buildtime_2
+	starbase_type = arkship
+	category = sm_energy_cat
+
+	potential = {
+		is_time_titan_starbase = yes
+		owner? = { has_technology = tech_horror_beam }
+	}
+
+	show_in_tech = "tech_horror_beam"
+
+	show_tech_unlock_if = {
+		has_country_flag = gain_time_titan
+	}
+
+	cannot_fit_on_slots = { spinal_mount_1 }
+
+	resources = {
+		category = starbase_arkship_upgrades
+		cost = {
+			alloys = @time_titan_starbase_module_alloys_cost_2
+			sr_dark_matter = @time_titan_starbase_module_sr_dark_matter_cost_2
+		}
+	}
+
+	component_set = HORROR_BEAM
+	show_component_tooltips = yes
+	custom_tooltip_with_modifiers = sm_time_titan_horror_beam_tt
+
+	ai_weight = {
+		weight = 100
+		modifier = {
+			factor = 2
+			ai_owner_prefers_energy_weapons = yes
+		}
+	}
+}
+
+time_titan_horror_accelerator = {
+	icon = "GFX_time_titan_horror_accelerator"
+	section = "TIME_TITAN_MODULE_2L"
+	construction_days = @time_titan_starbase_module_buildtime_2
+	starbase_type = arkship
+	category = sm_projectile_cat
+
+	potential = {
+		is_time_titan_starbase = yes
+		owner? = { has_technology = tech_horror_beam }
+	}
+
+	show_in_tech = "tech_horror_beam"
+
+	show_tech_unlock_if = {
+		has_country_flag = gain_time_titan
+	}
+
+	cannot_fit_on_slots = { spinal_mount_1 }
+
+	resources = {
+		category = starbase_arkship_upgrades
+		cost = {
+			alloys = @time_titan_starbase_module_alloys_cost_2
+			sr_dark_matter = @time_titan_starbase_module_sr_dark_matter_cost_2
+		}
+	}
+
+	component_set = HORROR_ACCELERATOR
+	show_component_tooltips = yes
+	custom_tooltip_with_modifiers = sm_time_titan_horror_accelerator_tt
+
+	ai_weight = {
+		weight = 100
+		modifier = {
+			factor = 2
+			ai_owner_prefers_kinetic_weapons = yes
+		}
+	}
+}

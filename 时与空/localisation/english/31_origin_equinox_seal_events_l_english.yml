@@ -1,0 +1,62 @@
+﻿l_english:
+ origin_equinox_glimpse:0 "Glimpse of the Beyond"
+ origin_equinox_glimpse_desc:0 "['concept_story_origin_text']\nThis civilization was once plagued by nightmares, but the nightmare from the Beyond has slumbered in the seal."
+ 
+ astral_rift_equinox_seal:0 "Seal of the Beyond"
+ add_equinox_seal_clue:0 "§Y$astral_rift_equinox_seal$§! Clue Gained: §G+1§!"
+ 
+ NAME_equinox_seal_sleeper:0 "§MLucid Sleeper§!"
+ 
+ origin_equinox_seal.3.name:0 "Fall of Nightmare"
+ origin_equinox_seal.3.desc.1:0 "We failed to successfully seal the §YLucid Sleeper§! and paid a painful price for it. But now, we have expelled It from this plane. Although we don't know how much damage was caused to It, It may no longer treat this universe as a comfortable hunting ground."
+ origin_equinox_seal.3.desc.2:0 "This Nightmare was once released from the loosened seal, and we paid a painful price for it. But our brave and fearless battle still successfully expelled It. Now no seal is needed anymore."
+ origin_equinox_seal.3.desc.3:0 "We don't know the origin of this Nightmare of the Plane, but our brave and fearless battle successfully expelled It. Now no seal is needed anymore."
+ origin_equinox_seal.3.a:0 "The dream woke up."
+ 
+ origin_equinox_seal.4.name:0 "Dream Dissipates"
+ origin_equinox_seal.4.desc:0 "The §YLucid Sleeper§! who once bestowed us great power was expelled by §Y[From.GetName]§!'s fleet. No matter how reluctant to leave the dream, we can only face the cold reality."
+ origin_equinox_seal.4.a:0 "At least the nightmare is over."
+ origin_equinox_seal.4.a.tooltip:0 "All leaders lose ['concept_leader_trait_equinox_seal'] trait"
+ 
+ origin_equinox_seal.5.name:0 "Nightmare Awakening"
+ origin_equinox_seal.5.desc:0 "Too late, the seal has completely loosened, the nightmare from the Beyond easily broke free from the shackles, and the nightmare descended in §Y[equinox_seal_system.GetName]§!."
+ origin_equinox_seal.5.a:0 "The nightmare is coming..."
+ 
+ origin_equinox_seal.6.name:0 "Nightmare Descends"
+ origin_equinox_seal.6.desc:0 "For some reason, §Y[equinox_seal_system.GetName]§! was suddenly completely destroyed, and a terrible Nightmare of the Plane emerged from the Black Hole."
+ origin_equinox_seal.6.a:0 "What a disaster!"
+ 
+ origin_equinox_seal.9.name:0 "Dark Matter Fluctuation"
+ origin_equinox_seal.9.desc.1:0 "When our ship entered the §Y[equinox_seal_system.GetName]§! system, the crew discovered a weird Nightmare of the Plane.\n\nThis Nightmare of the Plane is surrounded by unpredictable Dark Matter fluctuations, and It is obviously not very friendly."
+ origin_equinox_seal.9.desc.2:0 "When our ship entered the §Y[equinox_seal_system.GetName]§! system, the crew monitored Dark Matter fluctuations from the central Black Hole.\n\nTo be precise, this fluctuation comes from that strange Astral Rift. Some crew members think this rift leads to hell, and some think it is a seal."
+ origin_equinox_seal.9.a:0 "Activate weapon energy, prepare for battle!"
+ origin_equinox_seal.9.b:0 "I have a bad premonition."
+ 
+ origin_equinox_seal.11.name:0 "The Beyond"
+ origin_equinox_seal.11.desc.default:0 "Our Rift Sphere successfully dived into the Astral Rift, but its internal physical laws are vastly different from the outside. Our Science Officer made great efforts to barely master the new control method.\n\nThe Astral Rift seems to be a void, without any reference object to determine the direction of the Rift Sphere's movement. Only the information transmitted by the Rift Sphere indicates that it is still working normally. Our Science Officer believes that they are already within the event horizon.\n\nIn any case, this is our first step to the Beyond."
+ origin_equinox_seal.11.a:0 "We opened the door to the Beyond."
+ 
+ origin_equinox_seal.12.name:0 "Daydream"
+ origin_equinox_seal.12.desc.default:0 "All crew members on the Rift Sphere coincidentally acquired narcolepsy.\n\nThey will fall asleep uncontrollably at any moment, and even almost caused a catastrophe several times. However, after a period of time, the sleeping crew members will wake up from the dream, obviously, this is another nightmare. To avoid falling asleep at critical moments, the crew rescheduled the timetable, rotating shifts every hour, and resting members must sleep regardless of whether they are sleepy or not. In addition, the number of members in each rotation is very large. As long as not all members are asleep, clear people can wake up other crew members to ensure the task proceeds.\n\nHowever, the chaotic schedule makes it difficult for the crew to adapt. This is not a long-term solution."
+ origin_equinox_seal.12.a:0 "Not only self-willpower is needed, but also some external help."
+ 
+ origin_equinox_seal.13.name:0 "Lucid Dream"
+ origin_equinox_seal.13.desc.default:0 "The crew's narcolepsy was suddenly all cured. To be precise, not cured, but disappeared spontaneously.\n\nHowever, Science Officer §Y[Leader.GetName]§! soon discovered the anomaly: narcolepsy actually still exists, just that the sleeping crew members think they are awake and behave consistently with normality.\n\nIn the state of lucid dreaming, crew members will be unable to distinguish between reality and dream, and mistakenly execute responses to dreams in reality feedback, ranging from equipment damage to casualties. What is more worrying is that before the crew makes weird moves, no one can confirm whether he is sleeping, nor can they wake up the crew who think they are awake.\n\nThis phenomenon intensified with the deepening of the Rift Sphere, and our researchers have begun to worry about the unknown ahead."
+ origin_equinox_seal.13.a:0 "No one can use things in a dream to prove whether they are in a dream."
+ 
+ origin_equinox_seal.14.name:0 "Nightmare"
+ origin_equinox_seal.14.desc.default:0 "All crew members have permanently fallen into lucid dreams. The returns they sent are difficult to verify the authenticity, even this matter itself.\n\nHowever, in the gibberish of Science Officer §Y[Leader.GetName]§!, we still analyzed some potentially valuable information: the spaceship arrived deep in the Beyond, the surrounding scenes are fickle and difficult, and in this twisted spacetime, a huge pitch-black creature is welcoming our arrival.\n\nThis creature called §YLucid Sleeper§! by the crew spoke: §C\"Glad you can come here. This is a dream, and also reality. This is my territory. Your dreams are delicious, your will is tempting. I am very interested in you, have been interested for a long time.\"§!\n\n§C\"I like you, like you so much that I wish to eat you up immediately.\"§! The Nightmare of the Plane opened Its huge limbs and held the Rift Sphere in Its arms, §C\"This hateful and sad seal will soon come to an end. Quick, quick, untie it, I will let you understand the true meaning of dreams.\"§!\n\nWe outside the rift were shocked by this horrifying rhetoric and couldn't think, but the crew in the Rift Sphere showed no fear, smiling and waiting for our reply, it seems they have already decided.\n\n§C\"I love you too much, so I promise, I will share the dream with you, and also grant you strange abilities you have never mastered through the dream, and the price is merely the ownership of your dreams. This is a perfect deal, you have no reason to refuse. Quick, quick, lift this seal, embrace the reality of dreams!\"§!"
+ origin_equinox_seal.14.desc.unseal:0 "$origin_equinox_seal.14.desc.default$\n\nWe followed the will of the §YLucid Sleeper§!, uncovered this fragile seal, and offered our dreams.\n\n§RWhat will He bring us?§!"
+ origin_equinox_seal.14.desc.seal:0 "$origin_equinox_seal.14.desc.default$\n\nScience Officer §Y[Leader.GetName]§! and some crew members were successfully awakened by us, however, there are still many sleeping crew members hindering our actions.\n\nAlthough we don't even know how to reinforce the seal, we must complete it as soon as possible. The §YLucid Sleeper§! won't give us too much time."
+ origin_equinox_seal.14.unseal:0 "Truly... a... tempting... deal..."
+ origin_equinox_seal.14.unseal.tooltip:0 "All leaders gain ['concept_leader_trait_equinox_seal'] trait"
+ origin_equinox_seal.14.seal:0 "Stop dreaming, find a way to reinforce the seal!"
+ origin_equinox_seal.14.seal.tooltip:0 "Unlock §Y$decision_equinox_seal$§! decision and §Y$tech_equinox_seal$§! technology to obtain clues about §Y$astral_rift_equinox_seal$§!\n§RWe don't have many chances for trial and error, too many failures may cause the seal to be completely destroyed!§!"
+ 
+ origin_equinox_seal.15.name:0 "Seal"
+ origin_equinox_seal.15.desc.default:0 "Finally, with our unremitting efforts, the seal has been reinforced. The §YLucid Sleeper§! probably won't be able to exert any influence on us for a long time.\n\nBut strangely, during this long sealing process, He never exerted any direct interference on us, merely persuading us to change our minds with extremely bewitching words. We don't know the reason why the §YLucid Sleeper§! did this. Maybe His influence is not as powerful as we imagined, or maybe He really loves us and hopes to make us change our minds in a peaceful way.\n\nBut anyway, it's all over. Science Officer §Y[Leader.GetName]§! also took the opportunity to collect some substances in the dream, which might allow us to glimpse a corner of the Beyond again."
+ origin_equinox_seal.15.a:0 "The dream should wake up."
+ 
+ origin_equinox_seal.20.name:0 "Horizon Signal"
+ origin_equinox_seal.20.desc:0 "Shortly after we completed the seal, the Black Hole in the §Y[horizonsignal_system.GetName]§! system sent us a signal again.\n\nWe don't know how it reached our capital across countless systems, but according to historical records, since we blocked this signal, the Black Hole has been sending weak signals to us until today.\n\nWe don't know what the other party intends, but He might be the next §YLucid Sleeper§!."
+ origin_equinox_seal.20.a:0 "Analyze Horizon Signal."

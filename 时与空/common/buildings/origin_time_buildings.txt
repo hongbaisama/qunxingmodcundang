@@ -1,0 +1,233 @@
+building_zone_time_energy = {
+	inline_script = {
+		script = buildings/building_zone_time
+		CATEGORY = resource
+		ZONE = zone_time_physics
+		RESOURCE = energy
+		UPKEEP = exotic_gases
+		TECH = tech_power_hub_1
+	}
+	
+	upgrades = {
+		building_zone_time_energy_advanced
+	}
+}
+
+building_zone_time_energy_advanced = {
+	inline_script = {
+		script = buildings/building_zone_time_advanced
+		CATEGORY = resource
+		ZONE = zone_time_physics
+		RESOURCE = energy
+		UPKEEP = exotic_gases
+		TECH = tech_power_hub_2
+	}
+}
+
+building_zone_time_minerals = {
+	inline_script = {
+		script = buildings/building_zone_time
+		CATEGORY = resource
+		ZONE = zone_time_engineering
+		RESOURCE = minerals
+		UPKEEP = volatile_motes
+		TECH = tech_mineral_purification_1
+	}
+	
+	upgrades = {
+		building_zone_time_minerals_advanced
+	}
+}
+
+building_zone_time_minerals_advanced = {
+	inline_script = {
+		script = buildings/building_zone_time_advanced
+		CATEGORY = resource
+		ZONE = zone_time_engineering
+		RESOURCE = minerals
+		UPKEEP = volatile_motes
+		TECH = tech_mineral_purification_2
+	}
+}
+
+building_zone_time_food = {
+	inline_script = {
+		script = buildings/building_zone_time
+		CATEGORY = resource
+		ZONE = zone_time_society
+		RESOURCE = food
+		UPKEEP = exotic_gases
+		TECH = tech_food_processing_1
+	}
+	
+	upgrades = {
+		building_zone_time_food_advanced
+	}
+}
+
+building_zone_time_food_advanced = {
+	inline_script = {
+		script = buildings/building_zone_time_advanced
+		CATEGORY = resource
+		ZONE = zone_time_society
+		RESOURCE = food
+		UPKEEP = exotic_gases
+		TECH = tech_food_processing_2
+	}
+}
+
+building_zone_time_consumer_goods = {
+	inline_script = {
+		script = buildings/building_zone_time
+		CATEGORY = manufacturing
+		ZONE = zone_time_physics
+		RESOURCE = consumer_goods
+		UPKEEP = rare_crystals
+		TECH = tech_luxuries_1
+	}
+	
+	upgrades = {
+		building_zone_time_consumer_goods_advanced
+	}
+}
+
+building_zone_time_consumer_goods_advanced = {
+	inline_script = {
+		script = buildings/building_zone_time_advanced
+		CATEGORY = manufacturing
+		ZONE = zone_time_physics
+		RESOURCE = consumer_goods
+		UPKEEP = rare_crystals
+		TECH = tech_luxuries_2
+	}
+}
+
+building_zone_time_alloys = {
+	inline_script = {
+		script = buildings/building_zone_time
+		CATEGORY = manufacturing
+		ZONE = zone_time_engineering
+		RESOURCE = alloys
+		UPKEEP = volatile_motes
+		TECH = tech_alloys_1
+	}
+	
+	upgrades = {
+		building_zone_time_alloys_advanced
+	}
+}
+
+building_zone_time_alloys_advanced = {
+	inline_script = {
+		script = buildings/building_zone_time_advanced
+		CATEGORY = manufacturing
+		ZONE = zone_time_engineering
+		RESOURCE = alloys
+		UPKEEP = volatile_motes
+		TECH = tech_alloys_2
+	}
+}
+
+building_zone_time_unity = {
+	inline_script = {
+		script = buildings/building_zone_time
+		CATEGORY = unity
+		ZONE = zone_time_society
+		RESOURCE = unity
+		UPKEEP = rare_crystals
+		TECH = tech_adaptive_bureaucracy
+	}
+	
+	upgrades = {
+		building_zone_time_unity_advanced
+	}
+}
+
+building_zone_time_unity_advanced = {
+	inline_script = {
+		script = buildings/building_zone_time_advanced
+		CATEGORY = unity
+		ZONE = zone_time_society
+		RESOURCE = unity
+		UPKEEP = rare_crystals
+		TECH = tech_effective_bureaucracy
+	}
+}
+
+building_zone_time_physics_research = {
+	inline_script = {
+		script = buildings/building_zone_time
+		CATEGORY = research
+		ZONE = zone_time_physics
+		RESOURCE = physics_research
+		UPKEEP = volatile_motes
+		TECH = tech_physics_1
+	}
+	
+	upgrades = {
+		building_zone_time_physics_research_advanced
+	}
+}
+
+building_zone_time_physics_research_advanced = {
+	inline_script = {
+		script = buildings/building_zone_time_advanced
+		CATEGORY = research
+		ZONE = zone_time_physics
+		RESOURCE = physics_research
+		UPKEEP = volatile_motes
+		TECH = tech_physics_2
+	}
+}
+
+building_zone_time_society_research = {
+	inline_script = {
+		script = buildings/building_zone_time
+		CATEGORY = research
+		ZONE = zone_time_society
+		RESOURCE = society_research
+		UPKEEP = exotic_gases
+		TECH = tech_society_1
+	}
+	
+	upgrades = {
+		building_zone_time_society_research_advanced
+	}
+}
+
+building_zone_time_society_research_advanced = {
+	inline_script = {
+		script = buildings/building_zone_time_advanced
+		CATEGORY = research
+		ZONE = zone_time_society
+		RESOURCE = society_research
+		UPKEEP = exotic_gases
+		TECH = tech_society_2
+	}
+}
+
+building_zone_time_engineering_research = {
+	inline_script = {
+		script = buildings/building_zone_time
+		CATEGORY = research
+		ZONE = zone_time_engineering
+		RESOURCE = engineering_research
+		UPKEEP = rare_crystals
+		TECH = tech_engineering_1
+	}
+	
+	upgrades = {
+		building_zone_time_engineering_research_advanced
+	}
+}
+
+building_zone_time_engineering_research_advanced = {
+	inline_script = {
+		script = buildings/building_zone_time_advanced
+		CATEGORY = research
+		ZONE = zone_time_engineering
+		RESOURCE = engineering_research
+		UPKEEP = rare_crystals
+		TECH = tech_engineering_2
+	}
+}

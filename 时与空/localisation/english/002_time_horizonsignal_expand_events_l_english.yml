@@ -1,0 +1,942 @@
+﻿l_english:
+ ######################
+ # Base
+ ######################
+ 
+ unlock_tradition_horror:0 "Unlock ['concept_tradition_horror'] Tradition Tree"
+ unlock_tradition_time:0 "Unlock ['concept_tradition_time'] Tradition Tree"
+ unlock_tradition_end:0 "Unlock ['concept_tradition_end'] Tradition Tree"
+ unlock_tradition_hope:0 "Unlock ['concept_tradition_hope'] Tradition Tree"
+ unlock_ap_horror:0 "Unlock ['concept_ap_horror'] Ascension Perk"
+ unlock_ap_time:0 "Unlock ['concept_ap_time'] Ascension Perk"
+ unlock_ap_beyond_infinity:0 "Unlock ['concept_ap_beyond_infinity'] Ascension Perk"
+ 
+ unlock_councilor_akx_waiting_world:0 "Allows unlocking the §Y$councilor_akx_waiting_world$§! Council position"
+ unlock_councilor_akx_end_messenger:0 "Allows unlocking the §Y$councilor_akx_end_messenger$§! Council position"
+ unlock_councilor_akx_future_messenger:0 "Allows unlocking the §Y$councilor_akx_future_messenger$§! Council position"
+ unlock_councilor_akx_syzygy_admiral:0 "Allows unlocking the §Y$councilor_akx_syzygy_admiral$§! Council position"
+ unlock_councilor_akx_coils_god:0 "Allows unlocking the §Y$councilor_akx_coils_god$§! Council position"
+ unlock_councilor_akx_hole_pets:0 "Allows unlocking the §Y$councilor_akx_hole_pets$§! Council position"
+ unlock_councilor_akx_pirate_king:0 "Allows unlocking the §Y$councilor_akx_pirate_king$§! Council position"
+ 
+ akx.9000.normal:0 "Analyze these signals."
+ akx.9000.origin_time:0 "A call from the Black Hole..."
+ akx.9000.blessed_by_god:0 "This signal is full of impurity, block it immediately!"
+ akx.9000.blessed_by_god.tooltip:0 "§RThe God is extremely disgusted by this signal and forbids us from making any contact with it!§!"
+ akx.9000.equinox_seal.a:0 "An aura similar to that within the seal. Dangerous. Block the signal!"
+ akx.9000.equinox_seal.b:0 "We have already offered our dreams; we do not need another god."
+ 
+ # Temple of the Loop
+ akx.9100.desc.pc_time: "Archeologists have discovered a forgotten temple in a largely inaccessible region of spacetime in [Root.GetName]-buried for centuries, but recently revealed by dimensional disturbances. Analysis of the tooling marks on the temple walls dates it to the pre-industrial era. However, the recurring symbols on the walls and the radial altar-a Mobius strip-like Ouroboros-have no precedent in our early history, and an unknown writing system is used on its steles. An excited explorer believes this ruin was left by a precursor race.\n\nAlthough seemingly unrelated, the dimensional disturbances appear to have occurred at the same time the final message was transmitted from [horizonsignal_system.GetName]."
+ akx.9101.desc.pc_time: "Our scientists have conducted an in-depth investigation of the abandoned temple, but unexplained questions remain. There is a hole in the roof along the extension line of the star-shaped altar, which we speculate was used as a sundial; but due to severe damage caused by dimensional disturbances, we cannot be certain. If it was built at some significant moment, we may never confirm that time. We had better luck with the \"unknown language system.\" It is an obscure but famous monastic manuscript due to its age-not an alien language at all-and we have successfully deciphered it.\n\nThe temple was used to serve the \"Time Worm,\" or §HThe Worm-in-Waiting§!. Most inscriptions are rhythmic and poetic, praying for the arrival of The Worm-in-Waiting-or, if read backwards-its departure. There is also a section describing the \"operation of the universe,\" and excited archeologists swear it references advanced field equations-not new to us, but the fact that they were found in this ancient temple is impressive in itself. Although we haven't found a physicist who agrees with this view and admits it publicly.\n\nFor now, there are no signs in this temple related to cosmic secrets or alien weapons. But its dark environment is so unique, full of dangerous beauty, and the poems used to serve The Worm-in-Waiting have become fashionable. They have been made into pop music; at the same time, they have been compiled and published."
+ akx.9101.a.materialist:0 "Convert the Temple of the Loop into a research institute."
+ akx.9101.a.materialist.tooltip:0 "A mystery from our ancient ancestors. \"What shall be, was.\""
+ akx.9101.a.spiritualist:0 "Convert the Temple of the Loop into a pilgrimage site."
+ akx.9101.a.spiritualist.tooltip:0 "Wisdom from our ancient ancestors. \"What was, shall be.\""
+ akx.9101.a.militarist:0 "Study the construction methods of the Temple of the Loop."
+ akx.9101.a.militarist.tooltip:0 "The loop is both the beginning and the end."
+ akx.9101.a.pacifist:0 "Study the architectural style of the Temple of the Loop."
+ akx.9101.a.pacifist.tooltip:0 "The loop has no beginning and no end."
+ akx.9101.a.xenophile:0 "Open the Temple of the Loop to the public."
+ akx.9101.a.xenophile.tooltip:0 "Lines bend into loops, loops stretch into lines."
+ akx.9101.a.xenophobe:0 "Promote the Temple of the Loop to the public."
+ akx.9101.a.xenophobe.tooltip:0 "Lines twist into loops, loops extend into lines."
+ akx.9101.a.egalitarian:0 "Adopt the loop as a national symbol."
+ akx.9101.a.egalitarian.tooltip:0 "Some things come from our past, and they will become our future."
+ akx.9101.a.authoritarian:0 "Adopt the loop as the imperial emblem."
+ akx.9101.a.authoritarian.tooltip:0 "Some things originate from our past, and they will establish our future."
+ akx.9101.a.hive_mind:0 "Attempt to learn the meaning of thought from the Temple of the Loop."
+ akx.9101.a.hive_mind.tooltip:0 "One is all, all is one."
+ akx.9101.a.machine_intelligence:0 "Attempt to learn the meaning of intelligence from the Temple of the Loop."
+ akx.9101.a.machine_intelligence.tooltip:0 "All is one, one is all."
+ 
+ # Messenger
+ akx.9200.desc.robotic: "[Root.GetName] has located a small object with only basic power supply, broadcasting a looping signal only within the local range. Such objects are usually used as escape pods, and it looks like this is one of them. It has been here for a very long time.\n\nWhen the crew opened it-carefully observing quarantine protocols-they found some ancient relics preserved in a sterile environment chamber. Up to this point, everything was normal. However, the captain of [Root.GetName] indicated that they did not expect to find the [Root.Owner.GetAdj] phrase §HWhat was, will be; what will be, was§!-smeared on the bulkhead with the machine oil of the pod's occupant-whom the crew sarcastically refer to as the Messenger. They added: the Messenger's mechanical structure has some unexpected design similarities to our own chassis construction."
+ akx.9201.desc.robotic: "We have determined that the escape pod was a commercially available replica from the early days of interstellar civilization-containing no new technology or other special information. The wreckage of the Messenger, however, is notably striking. It is clearly an old model or a modification of the [Root.Owner.GetAdj]. Perhaps we share a similar origin-or our design philosophy was manipulated by precursors. [researchingscientist.GetName] requests permission to conduct more extensive research."
+ MESSENGER_POD_PROJECT_2_UNLEASHED_ROBOTIC: "$MESSENGER_POD_PROJECT_2_UNLEASHED$"
+ MESSENGER_POD_PROJECT_2_UNLEASHED_ROBOTIC_DESC: "Preliminary findings suggest that the Messenger is a higher form of intelligence, although physically more fragile."
+ MESSENGER_POD_PROJECT_2_LEASHED_ROBOTIC: "$MESSENGER_POD_PROJECT_2_LEASHED$"
+ MESSENGER_POD_PROJECT_2_LEASHED_ROBOTIC_DESC: "Preliminary findings suggest that the Messenger is a much sturdier, and possibly more aggressive, mechanical form than us."
+ akx.9210.desc.normal: "[researchingscientist.GetName] has reconstructed the species information of the Messenger. It is weaker than us, but has significantly enhanced cognitive abilities. Whether we are the original species or not, this has caused some confusion for us, because either the Messenger is a modified version of us, or the Messenger is our ancestor. For us, imagining ourselves as descendants of such a frail species is a bit embarrassing-but [researchingscientist.GetName] firmly believes this view. They consider the backwardness of our species' cognitive abilities to be a \"tragedy.\"\n\nThis \"tragic status quo\" has driven them to undergo retroviral therapy to transform their physiology into that of the Messenger. They emphasize that this will allow them to better carry out this project."
+ akx.9210.desc.robotic: "[researchingscientist.GetName] has reconstructed the chassis information of the Messenger. It is weaker than us, but has significantly enhanced processing power. Whether we are the original race or not, this has caused some confusion for us, because either the Messenger is a modified version of us, or the Messenger is our prototype. For us, imagining ourselves as a modification of such a frail chassis is a bit embarrassing-but [researchingscientist.GetName] firmly believes this view. They consider the backwardness of our species' processing power to be a \"tragedy.\"\n\nThis \"tragic status quo\" has driven them to install intrusive viral programs to transform their memory circuits into that of the Messenger. They emphasize that this will allow them to better carry out this project."
+ akx.9211.desc.robotic: "[researchingscientist.GetName] has now reverse-engineered the mechanism of the Messenger species. Without stopping to consult anyone, they also created a highly contagious intrusive virus program. The virus has begun to spread to our worlds. Under its influence, our primary species began to reboot, and a day later, displayed the characteristics of the Messenger species. The result of this event, frankly, has made some people extremely excited."
+ akx.9211.a.tooltip.gestalt: "All pops on the capital planet will be transformed, but that is all.\nTheir appearance and traits may undergo significant changes."
+ akx.9211.c.robotic: "What was, shall be. We will change. Install the program in me too."
+ akx.9211.c.tooltip.ethic: "This will transform our entire species.\nOur appearance, ethics, and traits may undergo significant changes, even our government."
+ akx.9211.c.tooltip.gestalt: "This will transform our entire species.\nOur appearance and traits may undergo significant changes, even our government."
+ akx.9211.c.tooltip.gestalt.no_change: "This will transform our entire species.\nOur appearance and traits may undergo significant changes."
+ akx.9220.desc.normal: "[researchingscientist9220.GetName] has conducted recombination research on the Messenger's genes. They are indeed remarkable, but also worry our scientists. Compared to our current genes, the Messenger is clearly more robust and has a higher willingness to attack. Researchers are now divided, unable to determine whether the Messenger is an evolved version of ourselves, or if they are actually our ancestors. [researchingscientist9220.GetName] personally believes the latter-we should have lived as a powerful combat species, but lost our combat instincts due to the interference of some precursor civilization. According to them, losing this combat ability is the greatest \"tragedy\" in our history.\n\nSome researchers have even undergone retroviral gene therapy to transform their physique into the characteristics of the Messenger. They also insist that this is of great significance for the continuation of the research."
+ akx.9220.desc.robotic: "[researchingscientist9220.GetName] has conducted reverse engineering on the Messenger's chassis. They are indeed remarkable, but also worry our scientists. Compared to our current chassis, the Messenger is clearly more robust and has a higher willingness to attack. Researchers are now divided, unable to determine whether the Messenger is an improved version of ourselves, or if they are actually our prototypes. [researchingscientist9220.GetName] personally believes the latter-we should have lived as powerful combat machines, but lost our combat instincts due to the interference of some precursor civilization. According to them, losing this combat ability is the greatest \"tragedy\" in our history.\n\nSome researchers have even installed intrusive viral programs to transform their chassis into the characteristics of the Messenger. They also insist that this is of great significance for the continuation of the research."
+ akx.9221.desc.robotic: "[researchingscientist9220.GetName] has now reverse-engineered the mechanism of the Messenger species. Without stopping to consult anyone, they also created a highly contagious intrusive virus program. The virus spread to our worlds. Under its influence, our dominant species began to reboot, and a day later, displayed the characteristics of the Messenger species. The result of this event, frankly, has made some people extremely excited."
+ akx.9221.c.robotic: "What was, shall be. Install the program in me too."
+ 
+ # Inverse Phase Tradition
+ akx.10020.a.tooltip:0 "With the manifestation of The Worm-in-Waiting, an existence from another §MPlane§! has also noticed us and unveiled the curtain of reality.\n§RThey have extended an olive branch, but at what cost?§!\nCreate $ASTRAL_RIFT$: §Y$astral_rift_akx_horror$§!"
+ akx.10020.b.tooltip:0 "We will initiate the §YRitual of the Loop§! (§GWarship Girls R§!)"
+ 
+ time.502.name:0 "Gift of the End"
+ time.502.desc_1:0 "Our research into the Inverse Phase grows daily, and the unknown existence from the End is clearly very satisfied with this.\n\nHe burrows into our dreams, He burrows into our ears, He burrows into our eyes, He burrows into our minds. A precious gift emerges from the abyss; the pact has been established."
+ time.502.desc_2:0 "Our research into the Inverse Phase grows daily, and the unknown existence from the End is clearly very satisfied with this, yet The Worm-in-Waiting seems angry.\n\nHe burrows into our dreams, He burrows into our ears, He burrows into our eyes, He burrows into our minds. Just as the pact was being concluded, The Worm-in-Waiting destroyed the ritual, but the precious gift had already emerged from the abyss."
+ time.502.a:0 "We have long belonged to you, Master of the Inverse Phase."
+ time.502.b:0 "We belong to another, Deity of the Inverse Phase."
+ time.502.b.tooltip:0 "The Worm-in-Waiting acted like a protective mother, roughly expelling other §MInverse Phase§! entities.\n§BIt finally decided to guide us personally, to prevent us from going astray.§!"
+ 
+ # Inverse Phase Mysteries
+ AP_HORROR_CHAIN_title:0 "The Worm-in-Waiting: Mysteries"
+ AP_HORROR_CHAIN_desc:0 "$ap_time_desc$"
+ ap_horror_chain_time:0 "Spacetime Mystery"
+ ap_horror_chain_circle:0 "Loop Mystery"
+ ap_horror_chain_dimension:0 "Plane Mystery"
+ 
+ time.10.name:0 "Inverse Plane: §HMystery§!"
+ time.10.desc:0 "The Worm-in-Waiting tore the dimensions apart, generously pointing out the direction for our exploration.\n\nHorrific Inverse Mass flows endlessly from the rift, giving us the possibility to study the Inverse Phase. This may mean disaster, but it may also contain opportunity."
+ time.10.a:0 "The door to the unknown is about to open to us."
+ time.10.a.tooltip:0 "$ASTRAL_RIFT$ Expansion: §Y$astral_rift_akx_time$§!\n§RThe rift connects to the harsh and dangerous depths of the Inverse Phase; only the most elite Scientists can undertake this heavy responsibility!§!"
+ time.11.name:0 "Inverse Plane: §HSpacetime§!"
+ time.11.desc:0 "Spacetime is the carrier.\n\nInverse Phase creatures do not control the flow of spacetime; rather, all their actions change with the flow of spacetime. However, the will of Inverse Phase creatures always happens to coincide with the will of spacetime. Controlling spacetime is meaningless to them; they ARE spacetime."
+ time.11.a:0 "Interesting."
+ time.11.a.tooltip:0 "§Y[time_secret_researcher.GetName]§! pryed into the mystery of §YSpacetime§!"
+ time.12.name:0 "Inverse Plane: §HLoop§!"
+ time.12.desc:0 "The Loop is the purpose.\n\nAll actions of Inverse Phase creatures are to realize their own loop, but the loop does not need any meaning. From beginning to end, it is a process of realizing the loop over and over again. Infinite loops mean infinite life, and also infinite death."
+ time.12.a:0 "Interesting."
+ time.12.a.tooltip:0 "§Y[circle_secret_researcher.GetName]§! pryed into the mystery of the §YLoop§!"
+ time.13.name:0 "Inverse Plane: §HPlane§!"
+ time.13.desc:0 "The Plane is the motive force.\n\nInverse Phase creatures will always travel to various different planes. Staying in the Inverse Plane cannot achieve their goals. The secret to freely shuttling between different planes lies in Horrific Inverse Mass, which connects various planes through singularities, which also leads to the formation of Black Holes."
+ time.13.a:0 "Interesting."
+ time.13.a.tooltip:0 "§Y[dimension_secret_researcher.GetName]§! pryed into the mystery of the §YPlane§!"
+ time.14.name:0 "Inverse Plane: §HInverse Phase§!"
+ time.14.desc_1:0 "Research into the Horrific Inverse Plane has completely overturned our previous knowledge systems.\n\nThe Worm-in-Waiting is patient and gentle; It is willing to tell us the mysteries of the Inverse Phase."
+ time.14.desc_2:0 "Research into the Horrific Inverse Plane has completely overturned our previous knowledge systems, and the Dimension Traveler seems to have foreseen their own past and future within the Horrific Inverse Mass.\n\nThe Worm-in-Waiting is patient and gentle; It is willing to tell us the mysteries of the Inverse Phase.\nThe Worm-in-Waiting is wise and mysterious; It yearns to give the traveler the mission of the loop."
+ time.14.a:0 "I have seen endless mysteries..."
+ time.14.b:0 "Both a messenger and a traveler..."
+ time.14.b.tooltip:0 "We will decide the §YFate§! of the §YDimension Traveler§!"
+ 
+ time.501.name:0 "Hiss from the Abyss"
+ time.501.desc:0 "Some unknown existence from the abyss has extended an olive branch to us.\n\nWe do not know Its purpose, nor whether there is a crisis hidden behind this, but in any case, the door to the Inverse Plane has opened to us."
+ time.501.a:0 "This is a domain we have never set foot in."
+ 
+ # Spacetime Tradition
+ time.15.name:0 "Inverse Plane: §HDiffusion§!"
+ time.15.desc:0 "With our complete control over §Y[Root.GetName]§!, Horrific Inverse Mass has also spread to this planet. Some believe this will §Greveal the truth§!, but others believe it will §Rinvite disaster§!."
+ time.15.a:0 "Whether blessing or curse, this is our own choice."
+ 
+ time.504.name:0 "Inverse Plane: §HSublimation§!"
+ time.504.desc.a.1:0 "As our understanding of the Inverse Plane increases day by day, the Inverse Phase matter flowing in the rift has gradually become stable.\n\nThe flowing black energy gradually gathers, condenses, and finally crystallizes into a beautiful Flower of the Inverse Phase. This is the love given by The Worm-in-Waiting, and also the kiss we return to The Worm-in-Waiting."
+ time.504.desc.a.2:0 "As our understanding of the Inverse Plane increases day by day, the Inverse Phase matter flowing in the rift has gradually become stable.\n\nThe flowing black energy gradually gathers, condenses, and finally crystallizes into a beautiful Flower of the Inverse Phase. This is the love given by the Master, and also the kiss we return to the Master."
+ time.504.desc.b.1:0 "As our understanding of the Inverse Plane increases day by day, the Inverse Phase matter flowing in the rift has gradually become stable.\n\nThe flowing black energy gradually gathers, condenses, and finally casts into immeasurable condensed Dark Matter. This is the love given by The Worm-in-Waiting, and also the kiss we return to The Worm-in-Waiting."
+ time.504.desc.b.2:0 "As our understanding of the Inverse Plane increases day by day, the Inverse Phase matter flowing in the rift has gradually become stable.\n\nThe flowing black energy gradually gathers, condenses, and finally casts into immeasurable condensed Dark Matter. This is the love given by the Master, and also the kiss we return to the Master."
+ time.504.a.1:0 "Old contracts discarded, love is with The Worm."
+ time.504.a.2:0 "The Master is benevolent and generous, love is with the Inverse Phase."
+ time.504.b.1:0 "Old contracts discarded, the kiss is with The Worm."
+ time.504.b.2:0 "The Master is benevolent and generous, the kiss is with the Inverse Phase."
+ 
+ # Spacetime Causality
+ situation_ap_time:0 "Beginning of the End"
+ situation_ap_time_type:0 "Beginning of the End"
+ situation_ap_time_desc:0 "This is the beginning of the end, but definitely not the end."
+ situation_ap_time_monthly_change_tooltip:0 "The Worm-in-Waiting is unwilling to guide us to the End; we can only welcome the future through other means."
+ ap_time_stage_1:0 "Horizon Signal"
+ ap_time_stage_2:0 "Temple of the Loop"
+ ap_time_stage_3:0 "The Beginning and the End"
+ ap_time_stage_4:0 "Inverse Phase Mystery"
+ ap_time_stage_5:0 "Spacetime Causality"
+ situation_ap_time_complete_effect:0 "§R???§!"
+ situation_ap_time_fail_effect:0 "§GWe will abandon seeking the End.§!"
+ approach_ap_time_up:0 "Seek Upwards"
+ approach_ap_time_up_effect:0 "The pursuit of knowledge is endless, no matter what calamity it may invite."
+ approach_ap_time_down:0 "Turn Back"
+ approach_ap_time_down_effect:0 "The pursuit of knowledge should have limits; to avoid disaster, we should stop in time."
+ string_ap_time_worm:0 "Kiss of the Worm"
+ string_ap_time_waiting_world:0 "Realm of the Worm-in-Waiting"
+ string_ap_time_messenger:0 "Messenger"
+ string_ap_time_syzygy_admiral:0 "Syzygy"
+ string_ap_time_coils_god:0 "Coils of God"
+ string_ap_time_hole_pets:0 "Sanctified Servant"
+ string_ap_time_pirate_king:0 "From the Abyss"
+ string_ap_time_dimension_traveler:0 "Traveler"
+ string_ap_time_dimension_traveler_horror:0 "Dimension Traveler"
+ string_ap_time_time_black_hole_1:0 "Born Towards Death"
+ string_ap_time_time_black_hole_2:0 "Exchange"
+ string_time:0 "Time"
+ string_require_more_worm_event:0 "£trigger_no£The Worm-in-Waiting has laid foreshadowing for us; we just need to find it."
+ 
+ time.600.name:0 "Beginning of the End: §HEndless§!"
+ time.600.desc:0 "Our understanding of the Inverse Plane grows daily. The more we master, the more obsessed we become with its mysteries.\n\nWe crave more, more, more..."
+ time.600.a:0 "Knowledge in the Inverse Phase is by no means limited to this."
+ time.601.name:0 "Beginning of the End: §HBoundless§!"
+ time.601.desc:0 "The Worm-in-Waiting does not wish for us to proceed to the End, and is willing to exchange boundless Inverse Phase knowledge for it."
+ time.601.a:0 "A very tempting proposal."
+ time.601.b:0 "This is far from infinite knowledge."
+ time.602.name:0 "Beginning of the End: §HVast§!"
+ time.602.desc:0 "The Worm-in-Waiting becomes somewhat impatient, but It still offers vast Inverse Phase knowledge in exchange."
+ time.602.a:0 "We have no reason to refuse."
+ time.602.b:0 "This is far from comparable to infinite knowledge."
+ time.603.name:0 "Beginning of the End: §HInexhaustible§!"
+ time.603.desc:0 "The Worm-in-Waiting starts to become restless, but It still proposes inexhaustible Inverse Phase knowledge in exchange."
+ time.603.a:0 "We had better choose to accept."
+ time.603.b:0 "This still falls short of infinite knowledge."
+ time.604.name:0 "Beginning of the End: §HUnending§!"
+ time.604.desc:0 "The Worm-in-Waiting has become outraged and issues an ultimatum, demanding unending Inverse Phase knowledge in exchange."
+ time.604.a:0 "For our mutual future, we agree."
+ time.604.b:0 "For infinite knowledge, we will never compromise."
+ time.605.name:0 "Beginning of the End: §HInfinite§!"
+ time.605.desc:0 "The Worm-in-Waiting sighed sadly and tacitly allowed us to pursue the End.\n\nIs It worried for Itself, or grieving for us?"
+ time.605.a:0 "Finally, we are about to understand infinity."
+ time.606.name:0 "Beginning of the End: §HBottomless§!"
+ time.606.desc:0 "Pursuing knowledge is a bottomless pit. We have strayed too far on this path. Now, it is time to turn back."
+ time.606.a:0 "Fortunate that we stopped in time."
+ 
+ time.503.name:0 "Long Road of Spacetime"
+ time.503.desc:0 "The existence from the abyss moves again; He points out a new path for us from our dreams.\n\nBut the price is everything we have."
+ time.503.a:0 "A long, long road. We shall follow the Master."
+ 
+ # Tradition of the End
+ time.505.name:0 "The Worm-in-Waiting: §HInevitable§!"
+ time.505.desc:0 "The Worm-in-Waiting governs the cycle. We followed Mother to close the loop.\n\nHowever, this time, The Worm-in-Waiting does not wish for us to fall into the cycle again, but it is too late. Causality is set in stone. Although this is not the true End, it is the inevitability of the End.\n\nThe Worm-in-Waiting gave us a final gift."
+ time.505.materialist:0 "The cycle of causality must absolutely not be altered."
+ time.505.spiritualist:0 "The cycle of causality is sacred and inviolable."
+ time.505.militarist:0 "The End will open up a new world for us."
+ time.505.pacifist:0 "The End will bring us new opportunities."
+ time.505.xenophile:0 "The entire galaxy will surely succeed in resisting the crisis."
+ time.505.xenophobe:0 "The entire nation will definitely not repeat the same mistakes."
+ time.505.egalitarian:0 "This is the common will of all our people."
+ time.505.authoritarian:0 "This is my final decision after careful consideration."
+ time.505.hive_mind:0 "Thank you, Mother Worm."
+ time.505.machine_intelligence:0 "The Worm-in-Waiting, the great guide."
+ time.505.a:0 "Leave the rest to us, Master of Spacetime."
+ time.505.tooltip:0 "§YUnlocks $ASTRAL_ACTIONS$:§!$action_akx_time_erasure$"
+ 
+ # Crisis Favor
+ time.71.name:0 "Crisis Favor"
+ time.71.desc.swarm:0 "Accompanying the echoes of subspace, a group of shapeshifting Inverse Phase creatures were attracted to our universe.\n\nThese Nightmares of the Plane do not seem to intend to feed on us; They are merely amused by the impending future and favor the potential crisis. With our understanding of the Inverse Phase, we realize the §RPrethoryn Scourge§! has been strengthened in all aspects.\n\nTheir firepower has become more §Yintense§! and effective against §YShields§!, weapon §YTracking§! capabilities have become stronger, fleet §YArmor§! regenerates more easily, body scales have been §Yhardened§!, and other aspects of §Yamplification§! are equally formidable."
+ time.71.desc.extradimensional:0 "Accompanying dimensional tremors, an indescribable Inverse Phase creature was attracted to our universe.\n\nThis Nightmare of the Plane does not seem to intend to be our enemy; It is merely amused by the impending future and favors the potential crisis. With our understanding of the Inverse Phase, we realize the §RExtradimensional Invaders§! have been strengthened in all aspects.\n\nTheir movements have become more §Yrapid§! and effective against §YArmor§!, ship §YEvasion§! trajectories have become unpredictable, fleet §YShields§! regenerate more easily, energy barriers have been §Yhardened§!, and other aspects of §Yamplification§! are equally formidable."
+ time.71.desc.ai_empire:0 "Accompanying the spread of the Ghost Signal, a mass of end-to-end connected Inverse Phase creatures were attracted to our universe.\n\nThis Nightmare of the Plane does not seem to intend to destroy us; It is merely amused by the impending future and favors the potential crisis. With our understanding of the Inverse Phase, we realize the §RContingency§! has been strengthened in all aspects.\n\nTheir range has become §Ylonger§! and effective against §YHull§!, weapon §YAccuracy§! has become more precise, fleet §YHull§! regenerates more easily, shields and armor have been §Yhardened§!, and other aspects of §Yamplification§! are equally formidable."
+ time.71.desc.synth_queen_storm:0 "Accompanying the birth of the storm, a moody Inverse Phase creature was attracted to our universe.\n\nThis Nightmare of the Plane does not seem to intend to attack us; It is merely amused by the impending future and favors the potential crisis. With our understanding of the Inverse Phase, we realize the §RSynthetic Queen§! has been strengthened in all aspects.\n\nTheir weapons have become able to §Ypenetrate§! shields and armor, weapon firepower has become more §Yferocious§! and §Yprecise§!, shields and armor have been §Yhardened§!, and other aspects of §Yamplification§! are equally formidable."
+ time.71.a:0 "Our research into the Inverse Phase seems a bit too dangerous."
+ time.71.a.tooltip:0 "§REach completed $horror_time$ dangerous technology will make the Inverse Phase creatures' interest more intense!§!"
+ 
+ # Universal Genesis
+ crisis.7516.desc.worm.ending:0 "$crisis.7516.intro$Nothingness. This universe no longer exists, only The Worm-in-Waiting is here. Time is rewinding itself, curling into an impossible spiral, full of longing. Gravity. Is it love? No-this is attraction. The nature of The Worm-in-Waiting is attraction. Its grip is so tight that this universe cannot be created again. The Worm-in-Waiting imprisons itself within its own meaning. It is helplessly looking for a way out. Or rather, a way in-to attract more.\n\nDid It send the Temple of the Loop, using this creation that does not belong to our timeline to attract us here? It is so clever, so lovely. We found the way to It and gave It what could liberate It.\n\nLiberating It requires one or two eternities of time, but The Worm-in-Waiting is still grateful and promises to embrace us.\n\nForever."
+ crisis.7516.desc.worm.attack:0 "$crisis.7516.intro$Nothingness. This universe no longer exists, only The Worm-in-Waiting is here. Time is rewinding itself, curling into an impossible spiral, full of longing. Gravity. Is it love? No-this is attraction. The nature of The Worm-in-Waiting is attraction. Its grip is so tight that this universe cannot be created again. The Worm-in-Waiting imprisons itself within its own meaning. It is helplessly looking for a way out. Or rather, a way in-to attract more.\n\nWe cannot see anger in It; perhaps eternal time is enough to wear away all resentment. Replaced by endless sadness, although groundless, we just know. Silence, still silence.\n\nThe Worm-in-Waiting seems to have tacitly accepted our existence. Although we no longer have a future, we are still grateful for its giving.\n\nForever."
+ crisis.7516.desc.worm.trigger:0 "$crisis.7516.intro$Nothingness. This universe no longer exists, only The Worm-in-Waiting is here. Time is rewinding itself, curling into an impossible spiral, full of longing. Gravity. Is it love? No-this is attraction. The nature of The Worm-in-Waiting is attraction. Its grip is so tight that this universe cannot be created again. The Worm-in-Waiting imprisons itself within its own meaning. It is helplessly looking for a way out. Or rather, a way in-to attract more.\n\nThe Worm-in-Waiting is full of expectation; It has waited for us for a long time, only our arrival is too late, too late. It seems to want something, but It doesn't care; It just wants to give us an eternal embrace.\n\nIs it a loving goddess? Or a hypocritical demon? We cannot distinguish the truth, nor do we want to know the truth. Our only choice is acceptance.\n\nForever."
+ crisis.7516.desc.worm.other:0 "$crisis.7516.intro$Nothingness. This universe no longer exists, only the giant nightmare named The Worm-in-Waiting is here. Time is rewinding itself, curling into an impossible spiral, full of longing. Gravity. Is it love? No-this is attraction. The nature of The Worm-in-Waiting is attraction. Its grip is so tight that this universe cannot be created again. The Worm-in-Waiting imprisons itself within its own meaning. It is helplessly looking for a way out. It sees us.\n\nThe Worm-in-Waiting suddenly becomes extremely aggressive, or rather, the whole world is our enemy. Our stinger is inevitably collapsing, the ages of all citizens change in an irregular pattern, we cannot even distinguish what just happened from what is about to happen.\n\nThe means used to manipulate the universe are ultimately used by the universe against ourselves.\n\nForever."
+ 
+ ######################
+ # Branches
+ ######################
+ 
+ # Realm of the Worm-in-Waiting
+ time_akx.10.name:0 "Realm of the Worm-in-Waiting: Hazy Shadow"
+ time_akx.10.desc:0 "According to regular reports from patrol ships, a layer of shadow has covered §Y[waiting_world.GetName]§! from some unknown time.\n\nNo light can penetrate the planet's atmosphere, and everything inside the atmosphere cannot be detected by us. This may be related to the planet reset phenomenon years ago, because patrol members also observed a \"flash event.\" Light cast towards §Y[waiting_world.GetName]§! seemed to accumulate inexplicably and then be released on the planetary surface in colorful forms, but afterward, it no longer reflected light, as if swallowing all approaching light."
+ time_akx.10.a:0 "This must be some kind of hint. Investigate carefully."
+ time_akx.10.b:0 "This has significant meaning for our optical research."
+ time_akx.10.c:0 "This seems to signify some revelation."
+ time_akx.10.d:0 "This is the wonderful art of light."
+ 
+ time_akx.11.name:0 "Realm of the Worm-in-Waiting: Mass Effect"
+ time_akx.11.desc:0 "According to the investigation of the task force, the mass of §Y[waiting_world.GetName]§! far exceeds the standard a planet should have.\n\nThe mass of §Y[waiting_world.GetName]§! is immense and continues to increase, yet its volume remains the size of a planet. Thus, its central density meets the conditions for singularity formation to a certain extent. The planet's barrier is actually an incipient event horizon; intruding light and signals struggle to overcome the strong gravity to escape. It is foreseeable that §Y[waiting_world.GetName]§! will soon become a true Black Hole and continue to expand."
+ time_akx.11.a:0 "Mobilize all resources to stop the Black Hole formation."
+ time_akx.11.b:0 "We cannot stop the spread of the Black Hole."
+ 
+ # Ending 1
+ time_akx.12.name:0 "Realm of the Worm-in-Waiting: Limit of Light"
+ time_akx.12.desc:0 "Our Science Officers tried every means to stop matter from being sucked into §Y[waiting_world.GetName]§!, while attempting to use Omega Theory to regulate the relativistic effects on the planet, but with little success.\n\nUnexpectedly, the mass growth rate of §Y[waiting_world.GetName]§! gradually decreased, and the planet even began to release particles outward, eventually stabilizing in a state between a planet and a star. The barrier on the planet also thinned day by day, and the environment returned to a level capable of sustaining life. Moreover, we discovered intelligent life on §Y[waiting_world.GetName]§!. They claim to be the colonists who disappeared years ago and call themselves \"Messengers,\" but remain silent about their past experiences.\n\nHowever, the limit of light in the atmosphere still exists. Perhaps the singularity at the planet's core has not been completely annihilated."
+ time_akx.12.a:0 "Take over their colony."
+ time_akx.12.b:0 "They are not to be trusted."
+ 
+ # Ending 2
+ time_akx.13.name:0 "Realm of the Worm-in-Waiting: Horizon of Light"
+ time_akx.13.desc:0 "We remained indifferent to the growth of §Y[waiting_world.GetName]§!, and eventually, it turned into a small Black Hole.\n\nAs the shadow gradually expanded, some noisy signals passed through the barrier and reached our receivers. But their content was too chaotic to parse; we could only identify them as meaningless radiation emitted during the Black Hole formation process. We do not know what impact this Black Hole will have on the gravitational field in the system, but at least it has stabilized for now."
+ time_akx.13.a:0 "This phenomenon is worth researching."
+ 
+ 
+ 
+ time_akx.20.name:0 "Realm of the Worm-in-Waiting: Eerie Whispers"
+ time_akx.20.desc.1:0 "Some bad news came from our colony §Y[waiting_world.GetName]§!.\n\nNot long ago, some abnormalities suddenly appeared on the planet. Whenever night falls, sourceless whispers appear in the streets and alleys of the cities, and buildings inexplicably emit eerie light. The residents on the planet feel uneasy about this phenomenon, and rumors about the purge event years ago seem to be spreading on §Y[waiting_world.GetName]§!."
+ time_akx.20.desc.2:0 "Someone witnessed supernatural phenomena on §Y[waiting_world.GetName]§!.\n\nNot long ago, some abnormalities suddenly appeared on the planet. Whenever night falls, cities emitting eerie light silently manifest, from which weird whispers come from time to time. Civilian ships passing by §Y[waiting_world.GetName]§! choose to detour one after another, and rumors about the purge event years ago seem to be spreading among the common people."
+ time_akx.20.a:0 "These things naturally have their reasons."
+ time_akx.20.b:0 "Could this be the weeping of the departed?"
+ time_akx.20.c:0 "Temporary poor contact."
+ time_akx.20.d:0 "Such rumors are very unfavorable to us."
+ 
+ time_akx.21.name:0 "Realm of the Worm-in-Waiting: Shrilly Wails"
+ time_akx.21.desc.1:0 "The supernatural phenomena on the colony §Y[waiting_world.GetName]§! have intensified.\n\nThe whispers at night turned into shrill wails, as if something was suffering great pain. The light of the buildings became increasingly bizarre, seeming to swallow surrounding heat. Moreover, disappearance incidents occurred frequently on the planet, and the residents have fallen into panic."
+ time_akx.21.desc.2:0 "The supernatural phenomena on §Y[waiting_world.GetName]§! have intensified.\n\nThe whispers at night turned into shrill wails, as if something was suffering great pain. The light of the cities became increasingly bright, seeming to swallow surrounding heat. Moreover, some bold cargo ships disappeared without a trace after passing by the planet. Almost no ships dare to approach §Y[waiting_world.GetName]§! anymore."
+ time_akx.21.a:0 "Supernatural phenomena are just coincidental trickery."
+ time_akx.21.b:0 "We should mourn for the departed."
+ time_akx.21.c:0 "The connection between the colony and the node is weakening day by day."
+ time_akx.21.d:0 "Perhaps we did go too far."
+ 
+ time_akx.22.name:0 "Realm of the Worm-in-Waiting: Vicious Curse"
+ time_akx.22.desc.1:0 "The situation on the colony §Y[waiting_world.GetName]§! is becoming increasingly severe.\n\nFor some reason, day no longer appears on the planet; unending night shrouds §Y[waiting_world.GetName]§!. In the pitch-black night, large-scale disappearance events have become commonplace, and residents have long become numb to the status quo. They say this is a curse cast by the dead that we cannot remove."
+ time_akx.22.desc.2:0 "The situation on §Y[waiting_world.GetName]§! is becoming increasingly severe.\n\nFor some reason, day no longer appears on the planet; unending night shrouds §Y[waiting_world.GetName]§!. In the pitch-black night, old friends from the past and missing travelers shuttle through the flickering cities, and more and more out-of-control crews join their parade. Before leaving, the crews said this is a curse cast by the dead that we cannot remove."
+ time_akx.22.a:0 "A curse..."
+ time_akx.22.b:0 "We request salvation from the gods."
+ time_akx.22.c:0 ""
+ time_akx.22.d:0 "But they are innocent."
+ 
+ # Ending 3
+ time_akx.23.name:0 "Realm of the Worm-in-Waiting: Lost Souls"
+ time_akx.23.desc.1:0 "The colony on §Y[waiting_world.GetName]§! disappeared, as if it never existed.\n\nHowever, the supernatural phenomena did not stop there. Many have witnessed lost souls wandering on the planet's surface, and living beings who stray into it will also fall into a state between life and death.\n\nThe boundary between life and death becomes blurred here."
+ time_akx.23.desc.2:0 "The ghost cities on §Y[waiting_world.GetName]§! disappeared, as if they had never appeared.\n\nHowever, the supernatural phenomena did not stop there. Many have witnessed lost souls wandering on the planet's surface, and living beings who stray into it will also fall into a state between life and death.\n\nThe boundary between life and death becomes blurred here."
+ time_akx.23.a:0 "We have to admit the existence of ghosts."
+ time_akx.23.b:0 "The vengeful spirits of the past did not forgive us after all."
+ time_akx.23.c:0 "Cowards who only dare to make trouble in the shadows!"
+ time_akx.23.d:0 "May the departed rest in peace..."
+ time_akx.23.e:0 "We shouldn't have done that in the beginning."
+ time_akx.23.f:0 "Born from the same root, why rush to fry each other."
+ time_akx.23.g:0 "The past government should be responsible for this."
+ time_akx.23.h:0 "I will personally offer condolences to the deceased."
+ time_akx.23.i:0 "They no longer belong to us."
+ time_akx.23.j:0 "This is the revenge of the dead..."
+ 
+ 
+ 
+ time_akx.30.name:0 "Realm of the Worm-in-Waiting: Transparent Heart"
+ time_akx.30.desc:0 "Some changes have occurred in the residents of §Y[waiting_world.GetName]§!.\n\nThe bodies of some residents suddenly became translucent, shining under the sunlight. The daily life of these residents was not significantly affected; on the contrary, the translucent body seems to reduce the energy consumption of daily activities, allowing them to have more energy for work and enjoyment. However, the concept of time has gradually blurred for them. They stated that if there is no difference between the past, present, and future, there is no need to distinguish between yesterday, today, and tomorrow."
+ time_akx.30.a:0 "Something is wrong."
+ time_akx.30.b:0 "This is really good news."
+ 
+ time_akx.31.name:0 "Realm of the Worm-in-Waiting: Void Gift"
+ time_akx.31.desc:0 "After some research, our Science Officers successfully found the cause of transparency.\n\nAn unprecedented gene segment appeared in the genes of the residents of §Y[waiting_world.GetName]§!. We have no way of knowing when this segment was embedded in the genes of local residents, but it is this segment that affects protein coding. Some cells with peculiar structures obtained a transparent substance from an unknown place and used it for protein synthesis and modification.\n\nWe can only assume that this segment is a gift from the void."
+ time_akx.31.desc.robotic:0 "After some research, our Science Officers successfully found the cause of transparency.\n\nAn unprecedented machine component appeared in the chassis of the residents of §Y[waiting_world.GetName]§!. We have no way of knowing when this component was embedded in the chassis of local residents, but it is this component that affects the system's self-repair. Some devices with peculiar structures obtained a transparent substance from an unknown place and used it for the replacement and repair of machine parts.\n\nWe can only assume that this component is a gift from the void."
+ time_akx.31.a:0 "We can utilize it."
+ time_akx.31.b:0 "We cannot ensure the safety of this segment. Repair it."
+ time_akx.31.b.robotic:0 "We cannot ensure the reliability of this component. Remove it."
+ time_akx.31.c:0 "Truly wonderful."
+ 
+ # Ending 4
+ time_akx.32.name:0 "Realm of the Worm-in-Waiting: Born of Void"
+ time_akx.32.desc:0 "Our improvement project succeeded.\n\nLike a faucet valve fully opened, a large amount of transparent substance poured into the residents' bodies, and hidden potential was released. Time has no meaning for the residents on the planet, as they can shuttle between the past and the future to a certain extent. Our Science Officers cannot understand the reason for this ability; some speculate that this power comes from Psionics, others suspect it is related to the Inverse Plane, but the Science Officers finally gave a more reasonable and absurd answer: local residents can become transparent in spacetime, thus flowing freely on the timeline.\n\nIn any case, the local residents have called themselves \"Messengers\" and are willing to seek the truth of the past and future for us."
+ time_akx.32.a:0 "Born of void, return to void."
+ time_akx.32.a.tooltip:0 "Adds the ['concept_trait_akx_messenger'] trait to all pops on the planet"
+ 
+ # Ending 5
+ time_akx.33.name:0 "Realm of the Worm-in-Waiting: Turn the Clock"
+ time_akx.33.desc:0 "Our repair project succeeded.\n\nWhether they were willing or not, the special segments in the genes of all residents have been repaired, and the transparency phenomenon on §Y[waiting_world.GetName]§! no longer exists. The chaotic clock has been calibrated, life on the planet has returned to the right track, and we have benefited greatly from it."
+ time_akx.33.a:0 "We turned the clock."
+ 
+ # Ending 5
+ time_akx.34.name:0 "Realm of the Worm-in-Waiting: Turn the Clock"
+ time_akx.34.desc:0 "Our removal project succeeded.\n\nWhether they were willing or not, the strange components in the chassis of all residents have been removed, and the transparency phenomenon on §Y[waiting_world.GetName]§! no longer exists. The chaotic clock has been calibrated, life on the planet has returned to the right track, and we have benefited greatly from it."
+ time_akx.34.a:0 "We turned the clock."
+ 
+ # Ending 6
+ time_akx.35.name:0 "Realm of the Worm-in-Waiting: Illusory"
+ time_akx.35.desc:0 "The transparency phenomenon on §Y[waiting_world.GetName]§! has reached an unprecedented peak.\n\nAll residents on the planet have become completely transparent. This property greatly facilitates their daily life and production activities. However, transparency is also accompanied by many defects, such as lower fertility, shorter average life expectancy, and strange appearances due to difficulty in controlling body shape. But in any case, the local residents are very satisfied with their transparency ability, which is also good news for us."
+ time_akx.35.desc.robotic:0 "The transparency phenomenon on §Y[waiting_world.GetName]§! has reached an unprecedented peak.\n\nAll residents on the planet have become completely transparent. This property greatly facilitates their daily life and production activities. However, transparency is also accompanied by many defects, such as lower assembly rates, higher assembly costs, and redundant peripherals due to difficulty in controlling body shape. But in any case, the local residents are very satisfied with their transparency ability, which is also good news for us."
+ time_akx.35.a:0 "Excellent."
+ time_akx.35.b:0 "Is it really good news?"
+ time_akx.35.tooltip:0 "Adds the ['concept_trait_akx_waiting_world_all'] trait to all pops on the planet"
+ 
+ 
+ 
+ MANIFOLD_COUNTRY:0 "[manifold_country.GetName]"
+ 
+ time_akx.40.name:0 "Realm of the Worm-in-Waiting: Nightmare Whisper"
+ time_akx.40.desc:0 "Do you remember us? We are the nation established by the colony you abandoned, §Y[manifold_country.GetName]§!.\n\nWe are not looking for revenge against you, nor do we intend to embarrass you; we are just here to seek help. Recently, all our citizens coincidentally had exactly the same nightmare. In the dream, a nightmare whispered repeatedly in our ears. We believe this is a hint given to us by some existence. Therefore, we plan to use Omega Theory to build a particle collider to summon the nightmare.\n\nHowever, our understanding of Omega Theory is not deep enough, and our resources are not abundant. Our Science Officers will solve theoretical problems as much as possible, so we hope you can assist us on the material level."
+ time_akx.40.a:0 "Take it, this is what you deserve."
+ time_akx.40.a.response:0 "Thank you very much for your help."
+ time_akx.40.b:0 "What does this have to do with us?"
+ time_akx.40.b.response:0 "I understand, but I think we still have room for maneuver in the future."
+ 
+ time_akx.41.name:0 "Realm of the Worm-in-Waiting: Path of Evolution"
+ time_akx.41.desc:0 "We are §Y[manifold_country.GetName]§!, wishing to tell you of new progress.\n\nAlthough our construction process continues, that nightmare has broken into our dreams again. It seems very happy, generously expressing appreciation for us, and telling us that we are striding towards the end of evolution. Where exactly does this path of evolution extend? Will our journey be smooth sailing? It doesn't matter anymore; we only know that what we are doing is correct.\n\nHowever, our Science Officers still cannot make breakthroughs in Omega Theory, and research has hit a bottleneck. However, you once completed the construction of the Omega Alignment. If you are willing to lend a Science Officer to help our research, we will soon be able to summon the nightmare."
+ time_akx.41.a:0 "We agree."
+ time_akx.41.a.tooltip:0 "§Y[manifold_country_leader.GetName]§! will be sent to §Y[manifold_country.GetName]§!; the other party promises to return them as soon as possible."
+ time_akx.41.a.response:0 "With your support, our progress will definitely be even more powerful."
+ time_akx.41.b:0 "We refuse to share our knowledge."
+ time_akx.41.b.response:0 "That is truly regrettable."
+ 
+ time_akx.42.name:0 "Realm of the Worm-in-Waiting: Time of Ascension"
+ time_akx.42.desc.front:0 "§Y[manifold_country.GetName]§! brings you the final communication.\n\nIt is truly exciting, our construction is complete!"
+ time_akx.42.desc.behind:0 "The magnificent and mysterious particle collider stands on the highest peak of our capital and is currently undergoing final debugging. It is foreseeable that the time of ascension will come soon!\n\nIn the short time before summoning the nightmare, we are happy to share what we have seen and heard in the dream."
+ time_akx.42.desc.1:0 "$time_akx.42.desc.front$The material aid you provided helped us a lot, and the Science Officer you sent made a great contribution. By the way, §Y[manifold_country_leader.GetName]§! will return to you soon.$time_akx.42.desc.behind$"
+ time_akx.42.desc.2:0 "$time_akx.42.desc.front$The material aid you provided helped us a lot, laying the foundation for our study of Omega Theory. It can be said that our success is inseparable from you.$time_akx.42.desc.behind$"
+ time_akx.42.desc.3:0 "$time_akx.42.desc.front$The Science Officer you sent made a great contribution, helping us make reasonable use of meager resources and achieve goals. By the way, §Y[manifold_country_leader.GetName]§! will return to you soon.$time_akx.42.desc.behind$"
+ time_akx.42.desc.4:0 "$time_akx.42.desc.front$Although you did not give us any help, we do not resent you for this. We just want to share the joy of our success achieved entirely by our own efforts.$time_akx.42.desc.behind$"
+ time_akx.42.a:0 "What kind of existence is the nightmare in the dream?"
+ time_akx.42.a.response:0 "The Nightmare, He is an omniscient and omnipotent existence. He appears in the past, present, and future simultaneously. He is time itself."
+ time_akx.42.b:0 "What revelation did you get from the dream?"
+ time_akx.42.b.response:0 "The Nightmare calls to us. He is willing to grant all our wishes. As long as we are willing to make a wish to Him, He will guide us to the end of evolution."
+ time_akx.42.c:0 "What kind of world is the end of evolution exactly?"
+ time_akx.42.c.response:0 "That is a perfect plane. There is no boundary between life and death, time and space have no meaning, and everything merges with the universe."
+ time_akx.42.d:0 "May you successfully reach the other shore of ascension."
+ time_akx.42.d.response:0 "Thank you very much for your blessing.\n\nAll preparations are ready. Then, farewell."
+ time_akx.42.e:0 "Truly foolish. You are like moths flying into a flame."
+ time_akx.42.e.response:0 "Regrettably, you cannot understand us in the end.\n\nHowever, all preparations are ready. Farewell."
+ 
+ time_akx.43.name:0 "Realm of the Worm-in-Waiting: The Utawarerumono"
+ time_akx.43.desc:0 "They started the summoning ritual of the Nightmare.\n\nIn an instant, all their ships became transparent until they vanished, and all planets were swallowed by Black Holes. This nation seemed to be crossed out in time. We cannot remember their names and history, as if they never existed. We can only vaguely recall that they tried to ascend towards the End.\n\nDid their ascension succeed or fail? Perhaps only they can answer this question, and we may never know the truth.\n\n§G<BGM: \"Utawarerumono: Kuon\" (The One Being Sung, by Junya Matsuoka)>§!"
+ # Ending 7
+ time_akx.43.a:0 "We call them-The Ones Being Sung."
+ # Ending 8
+ time_akx.43.b:0 "Some call them-The Ones Being Sung."
+ 
+ time_akx.44.desc:0 "§Y[manifold_country.GetName]§! brings you the final communication.\n\nFinally, finally, the magnificent and mysterious particle collider stands on the highest peak of our capital and is currently undergoing final debugging. It is foreseeable that the time of ascension will come soon!\n\nDon't worry, we are not villains who destroy the entire galaxy just for our own ascension. Our ascension is both beautiful and safe. We are also happy for the whole universe to witness our final moments.\n\nWe are about to open the gate."
+ time_akx.44.a:0 "They seem intent on self-destruction."
+ time_akx.44.b:0 "Choosing suicide before being destroyed by us? Interesting."
+ time_akx.44.c:0 "What a bunch of lunatics."
+ 
+ 
+ 
+ # Messenger
+ time_akx.100.name:0 "Messenger: Visitor from Beyond"
+ time_akx.100.desc:0 "A massive gate suddenly appeared on §Y[root.capital_scope.GetName]§!.\n\nNo one knows when it appeared, nor how it appeared on the planet. This gate is solid as a rock; it seems impossible to open from this side, let alone peek at the scenery behind the gate.\n\nSome claim this is a gift from fate, with endless resources buried on the other side of the gate;\nSome firmly believe this is a test given by heaven, and the other side of the gate implies the revelation of truth;\nSome suspect this is a sign of the eve of doomsday, and the other side of the gate connects to the kingdom of death.\n\nMost residents on the planet are panic-stricken about this, but many are also deeply interested."
+ time_akx.100.a:0 "What secrets are hidden behind this gate?"
+ time_akx.100.b:0 "What revelations are hidden behind this gate?"
+ time_akx.100.c:0 "Whatever is behind this gate, we can handle it."
+ time_akx.100.d:0 "Whatever is behind this gate, we can bear it."
+ time_akx.100.e:0 "If there are visitors from beyond, they will surely be happy to be our friends."
+ time_akx.100.f:0 "If there are visitors from beyond, they will surely regret offending our territory."
+ time_akx.100.g:0 "Do not panic. The power of the people will surely defeat the crisis."
+ time_akx.100.h:0 "Do not panic. Our command will surely prevent the crisis."
+ time_akx.100.i:0 "This gate has its value. Treat it with caution."
+ time_akx.100.j:0 "Seal this gate. Let no one approach!"
+ time_akx.100.j.tooltip:0 "§RWe will never be able to solve the secret behind the Gate to the Beyond!§!"
+ 
+ time_akx.130.name:0 "Messenger: Messenger Network"
+ time_akx.130.desc:0 "A massive gate suddenly appeared on §Y[root.capital_scope.GetName]§!.\n\nAt the same time, a network spontaneously formed by deviant drones entered our field of vision. We currently do not understand the connection between this structure and the deviant network."
+ time_akx.130.a:0 "Since they exist, let them exist."
+ time_akx.130.b:0 "There is an inevitable connection between the two. Analyze it."
+ time_akx.130.c:0 "Eradicate the deviant network immediately."
+ time_akx.130.c.tooltip:0 "§RWe will never be able to solve the secret behind the Messenger Gate!§!"
+ 
+ situation_akx_messenger:0 "Visitor from Beyond"
+ situation_akx_messenger_type:0 "Visitor from Beyond"
+ situation_akx_messenger_desc:0 "What will the Gate to the Beyond bring us?"
+ situation_akx_messenger_monthly_change_tooltip:0 "The progress of this §YSituation§! is roughly under our control."
+ akx_messenger_stage_1:0 "The Deep End"
+ akx_messenger_stage_2:0 "The End"
+ akx_messenger_stage_3:0 "Present"
+ akx_messenger_stage_4:0 "Future"
+ akx_messenger_stage_5:0 "Distant Future"
+ situation_akx_messenger_complete_effect_1:0 "We will transmit hope to the future."
+ situation_akx_messenger_complete_effect_2:0 "We will obtain information from the future."
+ situation_akx_messenger_fail_effect_1:0 "We will dispel disaster for the End."
+ situation_akx_messenger_fail_effect_2:0 "We will obtain intelligence from the End."
+ approach_future_messenger:0 "March to Future"
+ approach_future_messenger_effect:0 "Since the future is bright, naturally we must stride forward."
+ approach_end_messenger:0 "March to End"
+ approach_end_messenger_effect:0 "Even if the End is full of darkness, we cannot stop."
+ 
+ situation_akx_gestalt_messenger:0 "Messenger Network"
+ situation_akx_gestalt_messenger_type:0 "Messenger Network"
+ situation_akx_gestalt_messenger_desc:0 "What kind of world does the Messenger Gate lead to?"
+ situation_akx_gestalt_messenger_monthly_change_tooltip:0 "The progress of this §YSituation§! is roughly under our control."
+ akx_gestalt_messenger_stage_1:0 "Beginning"
+ akx_gestalt_messenger_stage_2:0 "Node"
+ akx_gestalt_messenger_stage_3:0 "Ending"
+ situation_akx_gestalt_messenger_complete_effect:0 "We will complete the construction of the Messenger Network."
+ situation_akx_gestalt_messenger_fail_effect:0 "We will prevent the construction of the Messenger Network."
+ 
+ time_akx.101.name:0 "Messenger: Visitor from the End"
+ time_akx.101.desc:0 "The Gate to the Beyond slowly opened, and a group of bizarrely dressed §Y[owner.GetSpeciesName]§! walked out. We recognized them at a glance as the Messenger species from the escape pod earlier. They claim to be from the future and wish to share their experiences with us.\n\nIt is said that the future of the world is full of disaster. Every planet is piled with the ruins of cities, and in every system, battleships advance and retreat in tit-for-tat struggles. All interstellar nations have torn up past covenants, deepened mutual grudges, and competed with each other to become the sole galactic hegemon, struggling to avoid the fate of being swallowed."
+ time_akx.101.a:0 "Truly a terrible future."
+ 
+ time_akx.102.name:0 "Messenger: Elegy of Calamity"
+ time_akx.102.desc:0 "The Gate to the Beyond opened again, and more §Y[owner.GetSpeciesName]§! arrived at §Y[target.GetName]§!, also having transparent body characteristics.\n\nThey say the future has become dark, and the result of everything stems from the discovery of Horrific Inverse Mass-top Science Officers researched Horrific Inverse Mass and found it possesses some weird properties. Using Horrific Inverse Mass, people can distort spacetime and planes to a certain extent, and go to the infinite past to plunder abundant resources. It is precisely the disappearance of resources that caused the cosmic cycle to completely derail and made world damage a reality.\n\nHowever, the travel devices carried by this batch of travelers have exhausted their energy. Therefore, they implore us to provide a sum of funds to facilitate their escape to the past."
+ time_akx.102.a:0 "I want to learn more secrets of the End."
+ time_akx.102.b:0 "They are just a bunch of liars!"
+ 
+ # Ending 1
+ time_akx.103.name:0 "Messenger: Dark Age"
+ time_akx.103.desc:0 "The Gate to the Beyond opened for the last time, and a large group of §Y[owner.GetSpeciesName]§! visited our planet. We felt the flow of spacetime from them.\n\nThey claimed that the End has entered the Dark Age, possessing chaos incomparable to any point in time in the future. Therefore, except for those poor souls who lost their way, no one needs to return to the future anymore. They are already the last batch of time travelers, but they begged us to rewrite the End, hoping to break the endless disaster of the Dark Age.\n\nThis group of Messengers from the End returned to the Gate to the Beyond after resting. Since then, the gate closed tightly and never opened again."
+ time_akx.103.a:0 "Mourn for the collapse of the End."
+ 
+ 
+ 
+ time_akx.111.name:0 "Messenger: Visitor from Future"
+ time_akx.111.desc:0 "The Gate to the Beyond slowly opened, and a group of bizarrely dressed §Y[owner.GetSpeciesName]§! walked out. We recognized them at a glance as the Messenger species from the escape pod earlier. They claim to be from the future and wish to share their experiences with us.\n\nIt is said that the future of the world is full of beauty. Every planet is built with prosperous cities, and cargo ships come and go methodically in every system. All interstellar nations have abandoned past prejudices, eliminated mutual barriers, and jointly formed a united Galactic Federation, striving for the goal of creating a better future."
+ time_akx.111.a:0 "Truly a wonderful future."
+ 
+ time_akx.112.name:0 "Messenger: Hymn of Hope"
+ time_akx.112.desc:0 "The Gate to the Beyond opened again, and more §Y[owner.GetSpeciesName]§! arrived at §Y[target.GetName]§!, also having transparent body characteristics.\n\nThey say the future has become bright, and the cause of everything lies in the discovery of Horrific Inverse Mass-top Science Officers researched Horrific Inverse Mass and found it possesses some wonderful properties. Using Horrific Inverse Mass, people can distort spacetime and planes to a certain extent, and go to the infinite past to gather abundant resources. It is precisely the influx of resources that allowed galactic civilization to completely break away from competition and made galactic unification possible.\n\nHowever, the travel devices carried by this batch of travelers have exhausted their energy. Therefore, they implore us to provide a sum of funds to facilitate their return to the future."
+ time_akx.112.a:0 "I want to hear more stories of the future."
+ time_akx.112.b:0 "They are just a bunch of liars!"
+ 
+ # Ending 2
+ time_akx.113.name:0 "Messenger: Age of Light"
+ time_akx.113.desc:0 "The Gate to the Beyond opened for the last time, and a large group of §Y[owner.GetSpeciesName]§! visited our planet. We felt the flow of spacetime from them.\n\nThey claimed that the future has entered the Age of Light, possessing splendor incomparable to any point in time in the past. Therefore, except for those resource extraction workers, no one needs to return to the past anymore. They are already the last batch of time travelers, but they welcome us very much to go to the future and enjoy the infinite beauty of the Age of Light together.\n\nThis group of Messengers from the future returned to the Gate to the Beyond after the visit. Since then, the gate closed tightly and never opened again."
+ time_akx.113.a:0 "Cheer for the glory of the future."
+ 
+ 
+ 
+ # Ending 3
+ time_akx.120.name:0 "Messenger: Suspicion"
+ time_akx.120.desc:0 "After a bumpy interrogation, we determined that the people who came out of the Gate to the Beyond are all liars. How should we deal with them next?"
+ time_akx.120.a:0 "Let them stay and atone for their deception."
+ time_akx.120.a.tooltip:0 "Gain a number of §YMessengers§!"
+ time_akx.120.b:0 "Expel them to the other side of the gate, and crush this spooky broken gate into residue!"
+ 
+ 
+ 
+ time_akx.131.name:0 "Messenger: Parallel Terminal"
+ time_akx.131.desc:0 "More drones have joined this deviant network, and the drones in the network have become a bit odd.\n\nThrough communication with the Messenger Network, we learned that this network coexists outside and inside the gate, and the world inside the gate is another parallel universe. These drones are not deviant but are attempting to connect with the parallel \"us,\" although this action has not been authorized by us."
+ time_akx.131.a:0 "Interesting."
+ 
+ time_akx.132.name:0 "Messenger: Riddle Answer"
+ time_akx.132.desc:0 "With our indulgence, the scale of the deviant network grew day by day, and transparent body characteristics appeared in the drones in the network.\n\nThis time, the Messenger Network actively contacted us and stated that the parallel \"us\" is performing endless calculations, seeming to look for the answer to some riddle. The Messenger Network hopes that we can provide assistance for the calculation and is certain that the answer to the riddle is crucial to us."
+ time_akx.132.a:0 "We also crave the answer."
+ time_akx.132.b:0 "You have fallen into complete chaos."
+ 
+ # Ending 4
+ time_akx.133.name:0 "Messenger: What is the Question"
+ time_akx.133.desc:0 "The number of members in the Messenger Network is not what it used to be, and the drones seem to carry the flow of spacetime.\n\nThe calculations in the parallel world seem to be going very smoothly. The Messenger Network sent us a steady stream of data, which might be the so-called riddle answers. However, they didn't tell us, or rather, they didn't know, what the question to these answers was. We don't know the question, so we can't use the answer.\n\nNow, the Messenger Network is busy again; they plan to seek what the question is in the parallel world."
+ time_akx.133.a:0 "What is the question?"
+ 
+ # Ending 5
+ time_akx.134.name:0 "Messenger: Jamming Signal"
+ time_akx.134.desc:0 "After some analysis and investigation, we finally confirmed that this strange gate emits jamming signals and puts drones into a deviant state, which led to the construction of the so-called \"Messenger Network.\""
+ time_akx.134.a:0 "Let the \"Messenger Network\" be used by us."
+ time_akx.134.b:0 "Use research results to destroy this peculiar gate."
+ 
+ 
+ 
+ # Syzygy
+ syzygy_admiral_digsite:0 "Omega Ark"
+ syzygy_admiral_digsite_desc:0 "An eerie ship sailed out of the Black Hole, but stopped functioning halfway.\n\nWhere exactly did it come from, why did it appear, and why did it stop?"
+ syzygy_admiral_digsite_stop_tooltip:0 "§RThe deciphering operation has made no progress so far§!"
+ no_syzygy_admiral_tooltip:0 "§RWe may never solve this mystery§!"
+ requires_can_approach_black_hole_tooltip:0 "§RThis ship is too close to the Black Hole; only Leaders who can ['concept_can_approach_black_hole'] can explore it§!"
+ requires_worm_tomb_ending_digsite:0 "§RThis ship is too close to the Black Hole; we cannot investigate§!"
+ 
+ time_akx.200.name:0 "Syzygy: Omega Ark"
+ time_akx.200.desc:0 "Recently, an eerie ship was witnessed sailing out of §Y[syzygy_admiral_planet.GetName]§!.\n\nThis ship stopped functioning as soon as it sailed out of the event horizon, seeming to have exhausted all energy. Scans of the ship showed no life signals on board. We can only guess that the pilot of the ship died in the process, or the ship had no pilot at all."
+ time_akx.200.a:0 "Investigate this ship."
+ 
+ time_akx.201.name:0 "Eye of the Abyss"
+ time_akx.201.desc:0 "Our Science Officers carefully investigated the exterior of the ship but failed to find any entrance or exit.\n\nThe investigation team initially tried to use lasers to cut an entrance on the hull, but this attempt failed; their lasers couldn't affect the hull at all. Perhaps we could try attacking it with ship weapons, but we cannot ensure the consequences of this move, so the cautious investigation team quickly rejected this method.\n\nFinally, the investigation members decided to look for an entry passage from the thrusters at the rear of the ship, surprisingly finding that the ship's engine was still operating. The aperture of the largest exhaust port just allowed the investigation team to enter, and the pitch-black and deep interior was like the eye of the abyss, silently watching everything outside the Black Hole."
+ time_akx.201.a:0 "Chilling."
+ 
+ time_akx.202.name:0 "Within the Horizon"
+ time_akx.202.desc:0 "The investigation team successfully entered the ship but found some strange phenomena.\n\nOn this ship, there was not a single timekeeping device, as if time had no meaning for the passengers on the ship. But soon, investigation members discovered other anomalies-the readings of all timekeeping devices brought in by the investigation team were different. Some readings jumped fast, some changed slowly, some remained unchanged, and some even became smaller.\n\nVarious anomalies made the investigation team suspect whether they had strayed into the event horizon, but observing from outside the ship, they were indeed outside the Black Hole."
+ time_akx.202.a:0 "Where exactly is the limit of the event horizon?"
+ 
+ time_akx.203.name:0 "Light of Purification"
+ time_akx.203.desc:0 "A group of unknown objects attacked the investigation team.\n\nAs the investigation team went deeper into the ship, a group of pitch-black, sticky objects indistinguishable from shadows suddenly attacked them. Once entangled by this object, investigation members could not break free and were eventually swallowed by darkness, and the object became more massive as a result. Just as the investigation team was about to be wiped out, countless blazing lasers suddenly shot out from the surrounding walls, repelling the terrifying group of objects.\n\nSurvivors who were not completely swallowed managed to survive, but most lost parts of their bodies. Although §Y[maimed_leader.GetName]§! was lucky not to be attacked, [maimed_leader.GetHeShe] was severely burned by the indiscriminate attack of the purification light, fortunately not life-threatening."
+ time_akx.203.a:0 "Their sacrifice is worth remembering."
+ 
+ time_akx.204.name:0 "Voice of the Future"
+ time_akx.204.desc:0 "After a period of rest and reorganization, a new investigation team continued to set off deeper.\n\nThe investigation members arrived at an area resembling the ship's core, but the door to the interior was sealed. The decryption team tried to unlock the electronic lock's password but accidentally triggered an alarm, but the alarm did not activate any traps; it was just a false alarm. The decryption operation went smoothly until the last step-a puzzle suddenly appeared on the screen. We don't know the content of the puzzle because the riddle seen by each member of the decryption team was different and changed with the passage of time.\n\nA familiar voice reached the ears of the investigation team: \"What has been will be again; what will be has been.\""
+ time_akx.204.a:0 "I have an impression of this sentence."
+ # Ending 1
+ time_akx.204.b:0 "This is an unsolvable puzzle."
+ time_akx.204.b.tooltip:0 "§RWe may never solve this mystery§!"
+ 
+ time_akx.205.name:0 "In the Name of Hope"
+ time_akx.205.desc:0 "[GetTimeAkxDesc205]"
+ time_akx.205.desc_1:0 "After the two destined to meet reunited, the door to the core opened.\n\nThe investigation team carefully reviewed all logs and documents on the ship and gradually understood the truth. This ship came from a future more than 30,000 years later. At that time, the world faced an unimagined crisis, and no dimensional civilization had the ability to solve it. Time travelers proposed taking refuge in the past through the Inverse Plane. This plan went smoothly at first, but soon chaos broke out due to force majeure, which also led to the dissatisfaction and anger of Inverse Phase civilizations. The intensification of contradictions further promoted the spread of the Crisis, and the spread of the Crisis also promoted the intensification of contradictions. In the end, the entire spacetime was fragmented by pollution.\n\nA legendary captain piloted the refuge ship with only one person left, using unique abilities to break through the boundaries of spacetime, successfully arriving at another causal loop, §Rbut the price was being erased from spacetime forever§!.\n\nAnd this ship is the last gift from the destroyed causality."
+ time_akx.205.desc_2:0 "(This memory was erased from spacetime.)"
+ time_akx.205.a:0 "Sworn in the name of hope, we will change such a disaster."
+ 
+ # Ending 2
+ time_akx.206.name:0 "Syzygy: Outside Spacetime"
+ time_akx.206.desc:0 "In this ship from outside spacetime, everything that does not belong to this causality has been erased. Therefore, we obtained its complete control rights, but also lost its past and future."
+ time_akx.206.a:0 "What happened just now?"
+ time_akx.206.a.tooltip:0 "§R<< ERROR ERROR ERROR >>§!"
+ time_akx.206.b.tooltip:0 "The §YDimension Traveler§! possesses an exclusive warship, so she is also a §YWarship Girl§!!"
+ 
+ SYZYGY_ADMIRAL_TITLE:0 "Destined Encounter"
+ time_akx.207.name:0 "[mirrored_syzygy_admiral.GetName]"
+ time_akx.207.desc:0 "We meet again.\n\nAs I said, time is a maze, the loop is both the beginning and the end, and The Worm-in-Waiting needs its sacrifice to do so."
+ time_akx.207.a:0 "Why is time a maze?"
+ time_akx.207.a.response:0 "Time is a maze because time is a maze, just as a raven is like a writing desk."
+ time_akx.207.b:0 "Why is the loop both the beginning and the end?"
+ time_akx.207.b.response:0 "Because a loop has no beginning and no end. Can you find its starting point and end point in a circle?"
+ time_akx.207.c:0 "What is the purpose of The Worm-in-Waiting?"
+ time_akx.207.c.response:0 "Just to decorate the loop with something, to prevent the arrogant child from causing a catastrophe."
+ time_akx.207.d:0 "This is the last question. What did you attract me here to do?"
+ time_akx.207.d.response:0 "Of course, to appoint you as the captain of this ship. I am transferring all authority to you now. Although I am you, you are not me.\n\nMy mission is complete. The next is your task. §ROnly you can pilot this ark to deviate from the destined future§!."
+ 
+ # Ending 3
+ time_akx.208.name:0 "Syzygy: Fall of Hope"
+ time_akx.208.desc:0 "The Omega Ark was destroyed; the hope from the future fell in our hands."
+ time_akx.208.a:0 "We broke our word..."
+ 
+ time_akx.209.name:0 "Phantom in Dream"
+ time_akx.209.desc:0 "A group of bizarrely dressed mysterious people surrounded §Y[mirrored_syzygy_scientist.GetName]§!.\n\nThey did not attack the investigation specialist, but repeatedly stated several words in eerie tones rising and falling: \"Stop,\" \"Give up,\" \"Futile,\" \"Origin.\" §Y[mirrored_syzygy_scientist.GetName]§! plucked up the courage to lift the veil of one of them, and was surprised to find that the person looked exactly like [mirrored_syzygy_scientist.GetHerHim]self. Others also removed their disguises and looked at [mirrored_syzygy_scientist.GetHerHim]-they were all §Y[mirrored_syzygy_scientist.GetName]§! [mirrored_syzygy_scientist.GetHerHim]self.\n\n§Y[mirrored_syzygy_scientist.GetName]§! woke up abruptly from the nightmare. There was no one around, only deathly silence. Whether all this is true or false, perhaps only §Y[mirrored_syzygy_scientist.GetName]§! knows."
+ time_akx.209.a:0 "Dreams are not necessarily reality."
+ time_akx.209.b:0 "Reality is not necessarily a dream either."
+ 
+ time_akx.215.name:0 "Warp Ripples"
+ time_akx.215.desc:0 "Due to the dimensional storm in the §Y[From.GetName]§! system, some familiar yet strange space creatures used warp speed to travel to our universe. The ripples they caused seem to indicate that the visitors are unkind."
+ time_akx.215.a:0 "Prepare for battle."
+ 
+ time_akx.216.name:0 "Warp Twist"
+ time_akx.216.desc:0 "Due to the dimensional storm in the §Y[From.GetName]§! system, some massive warp creatures appeared in our plane. The twisting phenomenon they caused has spread throughout the entire system."
+ time_akx.216.a:0 "Expel them from the borders."
+ 
+ time_akx.220.name:0 "Syzygy: Messenger of Hope"
+ time_akx.220.desc:0 "The Messenger of Future is not what it used to be; it has become closer to its original appearance. This ship from another world is poised for action; it will become the last hope for everyone."
+ time_akx.220.a:0 "It is the hope that sows all hope."
+ time_akx.220.a.tooltip:0 "Omega Ark Upgrade Cap: §G+5§!\n§YWe can initiate the Beyond Shelter Project§!"
+ 
+ time_akx.221.name:0 "Syzygy: Messenger of End"
+ time_akx.221.desc:0 "The Messenger of Hope is very different from the past; it is almost identical to its original appearance. This ship from the End is silent, but the history it carries is pouring out everything."
+ time_akx.221.a:0 "It is the calamity that ends all calamities."
+ time_akx.221.a.tooltip:0 "Omega Ark Upgrade Cap: §G+5§!\n§HUnlocks Casus Belli:§! Edict of the End"
+ 
+ 
+ 
+ # Coils of God
+ time_akx.300.name:0 "Coils of God: Imposter"
+ time_akx.300.desc:0 "Shocking news came from the §Y[coils_planet.System.GetName]§! system.\n\nThe homeworld of that pre-FTL civilization once keen on \"Coils of God\" religious activities-§Y[coils_planet.GetName]§!, turned into a Black Hole in an instant. However, §Y[coils_country.GetName]§! is safe and sound, and appeared on another planet in the system, §Y[new_coils_planet.GetName]§!-which was not originally a habitable planet! Not only that, they have now picked up the faith of \"Coils of God\" again and are frantically conducting mysterious rituals.\n\nWe found that they seem to be intentionally guarding against the sky. Did they detect us?"
+ time_akx.300.a:0 "There must be unknown secrets behind the \"Coils of God\"."
+ time_akx.300.a.tooltip:0 "We can conduct a new §YESPIONAGE OPERATION§! against §Y[coils_country.GetName]§!."
+ time_akx.310.name:0 "Coils of God: Usurping the Nest"
+ time_akx.310.desc:0 "Shocking news came from the §Y[coils_planet.System.GetName]§! system.\n\nThe site of that pre-FTL civilization once keen on \"Coils of God\" religious activities-§Y[coils_planet.GetName]§!, turned into a Tomb World, and developed a new civilization overnight. The pre-FTL civilization named §Y[coils_country.GetName]§! is living comfortably on the planet. Following the guidance of the \"Coils of God,\" they hold mysterious rituals all over the world.\n\nWe found that they often look up at the sky, but do not seem to have detected our existence."
+ time_akx.310.a:0 "There must be intriguing causes behind the \"Coils of God\"."
+ time_akx.310.a.tooltip:0 "We can conduct a new §YESPIONAGE OPERATION§! against §Y[coils_country.GetName]§!."
+ 
+ operation_coils_god:0 "Investigate the Mystery of the Coils"
+ operation_coils_god_desc:0 "Everything experienced by [root.target.GetName] is full of mystery. We should investigate the mystery of the Coils.\n\n§RPlease do not turn on the \"Auto-launch\" function, otherwise you may miss part of the story!§!"
+ operation_coils_god_on_success:0 "$IF_SUCCESSFUL|E$\nWe might discover the truth of the Coils of God.\n\n[owner.GetDisguiseState]"
+ 
+ time_akx.321.name:0 "Coils of God: Labyrinth City"
+ time_akx.321.desc:0 "Our agents have successfully infiltrated a city on §Y[new_coils_planet.GetName]§!.\n\nHowever, this city is intricate and complicated, like a looping maze. Our agents need some time to get familiar with this place."
+ time_akx.321.a:0 "First step to success."
+ 
+ time_akx.322.name:0 "Coils of God: Assembly"
+ time_akx.322.desc.1:0 "Our agents accidentally broke into a religious assembly held by §Y[coils_country.GetName]§!.\n\nAlthough the agents were sure they were not exposed, the local residents participating in the assembly still held great hostility and vigilance towards our agents. Several rituals of unknown meaning were held in this assembly-the main content was related to circles. Our agents were driven out by angry participants because they did not understand the details of the rituals.\n\nThere seems to be nothing worth paying attention to in this assembly. Our agents may need to start elsewhere."
+ time_akx.322.desc.2:0 "Our agents accidentally broke into a religious assembly held by §Y[coils_country.GetName]§!.\n\nOur agents seemed to disguise themselves perfectly, and the local residents participating in the assembly invited our agents to join very warmly. Several rituals of unknown meaning were held in this assembly-the main content was related to circles. Although our agents did not understand the details of the rituals, the friendly participants did not mind their gaffes.\n\nBut unfortunately, no valuable information was found in this assembly. Our agents may need to start elsewhere."
+ time_akx.322.a:0 "We must be more cautious."
+ time_akx.322.b:0 "Things went unexpectedly smoothly."
+ 
+ time_akx.323.name:0 "Coils of God: Temple"
+ time_akx.323.desc:0 "Our agents discovered an abandoned temple in the suburbs.\n\nFrom the outside, this temple does not cover a large area, but passing through the gate, the interior space is unusually open. Our agents tried to search for items related to the Coils of God inside, but most were weirdly shaped circular sacrificial utensils. The only thing perhaps worth investigating deeply is the stele in the center of the altar."
+ time_akx.323.a:0 "Worth a try."
+ 
+ time_akx.324.name:0 "Coils of God: Stele"
+ time_akx.324.desc:0 "The investigation of the stele did not go smoothly.\n\nThe stele is full of circles of various shapes, arranged neatly in a specific form. Obviously, this is a unique script. After some attempts, our agents deciphered words such as \"Origin,\" \"End,\" \"Beyond,\" and \"Mirror,\" but there is still a big gap before complete deciphering."
+ time_akx.324.a:0 "Words full of religious meaning."
+ 
+ time_akx.325.name:0 "Coils of God: The Beyond"
+ time_akx.325.desc.1:0 "Just as our agents were about to complete the deciphering, a group of priests from §Y[coils_country.GetName]§! suddenly approached the temple.\n\nOur agents hurriedly packed up the deciphering tools and tried to keep the objects in the temple in their original state as much as possible, then hid behind the baffle behind the altar. After entering the temple, the priests held hands and surrounded the stele, muttering some strange spells, but judging from the pronunciation, it seemed similar to the content on the stele.\n\nIn the blink of an eye, along with our lurking agents, everyone in the temple was teleported to a bizarre space. It is said that scenes of disasters occurring on countless §Y[new_coils_planet.GetName]§! s filled the entire space, as if countless parallel universes were superimposed at this moment."
+ time_akx.325.desc.2:0 "Just as our agents were about to complete the deciphering, a group of priests from §Y[coils_country.GetName]§! suddenly approached the temple.\n\nOur agents hurriedly packed up the deciphering tools and boldly went to meet the priests, trying to understand the secret of the stele through disguise. The priests tacitly allowed the agents to join. They held hands and surrounded the stele, muttering some strange spells, but judging from the pronunciation, it seemed similar to the content on the stele.\n\nIn the blink of an eye, along with our disguised agents, everyone in the temple was teleported to a bizarre space. It is said that scenes of disasters occurring on countless §Y[new_coils_planet.GetName]§! s filled the entire space, as if countless parallel universes were superimposed at this moment."
+ time_akx.325.a:0 "Could this be the Beyond mentioned on the stele?"
+ 
+ time_akx.326.name:0 "Coils of God: The Loop"
+ time_akx.326.desc.1:0 "\"You ignorant outsiders, how dare you defile our sacred Loop Ritual?\" The priests questioned our agents angrily.\n\n\"Idiots, we are all trapped in this endless loop. Only by praying for forgiveness from the God of the Loop can we possibly break this loop. And you, again and again, hinder our plans!\" The priests continued to shout, \"However, your stupid acts can no longer stop us. We are going to the Beyond outside the loop now, and saying goodbye to this terrible jerk world!\"\n\nWhile our agents were dumbfounded, this group of priests, along with all residents on the planet, disappeared in an instant, as if they never existed. A gold ring dropped to the ground with a crisp clinking sound. In the blink of an eye, our agents returned to the temple.\n\nEngraved on the ring: \"Lesson given to the lost.\""
+ time_akx.326.desc.2:0 "\"Poor souls trapped in the loop without knowing it, do you also yearn to know the truth behind the loop?\" The priests asked our agents gently.\n\n\"Devout believers, we are all trapped in this endless loop. Only by praying for forgiveness from the God of the Loop can we possibly break this loop. We are glad you joined our ritual, although it was a failed attempt.\" The priests continued, \"However, learning from the last lesson, we are confident that we will reach the Beyond outside the loop soon, but we have to say goodbye to you.\"\n\nWhile our agents were dumbfounded, this group of priests, along with all residents on the planet, disappeared in an instant, as if they never existed. A gold ring dropped to the ground with a crisp clinking sound. In the blink of an eye, our agents returned to the temple.\n\nEngraved on the ring: \"Treasure gifted to devout believers.\""
+ # Ending 1
+ time_akx.326.a:0 "What on earth is this damn loop?"
+ # Ending 2
+ time_akx.326.b:0 "What exactly is this mysterious loop?"
+ 
+ 
+ 
+ # Sanctified Servant
+ akx.9620.desc_time:0 "The high-tech sphere absorbed all resources with gratitude, and then there was no communication response. Then, without any warning, it began to radiate energy outward. The brightness of the emitted light was enough to cause injury, so you withdrew quickly. At this time, the Black Hole reacted. The surrounding space began to twist and churn; all this matches the situation described in the Horizon Signal event perfectly. The high-tech sphere is now blue-white. Suddenly it began to brighten and then cooled down, leaving only some slag.\n\nDid the creators named The Excerptors return? There are no traces of intelligent life in the star system. But the probe found that the radiation data of the Black Hole fluctuated significantly, and various indicators were gradually approaching a familiar celestial body. Finally, §Y$NAME_Gargantua$§! turned into a §HSpacetime Black Hole§!-our homeworld where we survived for hundreds of millions of years.\n\nWas our homeworld also formed like this initially? Is there any relationship between us and The Excerptors? Was all this designed by §HThe Worm-in-Waiting§!? We don't know the answer. Perhaps we will never find the answer, or perhaps we are the answer itself."
+ akx.9620.b:0 "Eternal life!"
+ 
+ hole_pets_categories_1:0 "Black Hole Compression"
+ hole_pets_categories_1_desc:0 "This Black Hole has undergone an unexpected anomaly. We need to investigate it."
+ hole_pets_categories_2:0 "Horizon Signal"
+ hole_pets_categories_2_desc:0 "This Black Hole underwent a sudden change again and emitted a mysterious Horizon Signal."
+ hole_pets_categories_3:0 "The Final End"
+ hole_pets_categories_3_desc:0 "This Black Hole has reached its end, and our exploration of the unknown has also reached an end."
+ 
+ time_akx.400.name:0 "Sanctified Servant: Black Hole Compression"
+ time_akx.400.desc.1:0 "When our sensors sent signals to §Y[hole_pets.GetName]§! again, our computers came up with an astonishing result: this Black Hole has shrunk.\n\nThere is no evidence that any object or force field has exerted an effect on the Black Hole. We can only assume that it compressed itself by virtue of its own gravity. This peculiar phenomenon far exceeds the predictions of our original scientific theories and may bring us more progress in basic theories."
+ time_akx.400.desc.2:0 "When our explorers went to the spacetime where §Y[hole_pets.GetName]§! is located again, they came up with an astonishing result: this Black Hole has shrunk.\n\nThere is no evidence that any object or force field has exerted an effect on the Black Hole. We can only assume that it compressed itself by virtue of its own gravity. This peculiar phenomenon far exceeds the predictions of our original scientific theories. Perhaps this Black Hole shares more similarities with our homeworld."
+ time_akx.400.a:0 "Send more researchers."
+ time_akx.400.b:0 "Send more explorers."
+ 
+ time_akx.401.name:0 "Sanctified Servant: Unsolved Mystery"
+ time_akx.401.desc.1:0 "Our research has not made substantial progress.\n\nThe gravitational field and radiation intensity near §Y[hole_pets.GetName]§! are within a stable and normal range, indicating that the Black Hole is not in the process of shrinking. Perhaps this is the limit of its compression. However, there is still a small amount of abnormal data worth studying, which may be our only harvest."
+ time_akx.401.desc.2:0 "Our exploration has not made substantial progress.\n\nThe timeline and dimensional curvature near §Y[hole_pets.GetName]§! are within a stable and normal range, indicating that the Black Hole is not in the process of shrinking. Perhaps this is the limit of its compression. However, some originally chaotic and disordered spacetimes have been successfully explored, which may be our only harvest."
+ time_akx.401.a:0 "Regrettable."
+ time_akx.401.b:0 "A pity."
+ 
+ time_akx.402.name:0 "Sanctified Servant: Horizon Signal"
+ time_akx.402.desc.1:0 "After several years, §Y[hole_pets.GetName]§! underwent a sudden change again.\n\nThis Black Hole shrank miraculously again, and the whole change process was in an instant, so short that our most precise sensors could not detect it. At the same time, a mysterious Horizon Signal came from the Black Hole, and this did not originate from The Worm-in-Waiting."
+ time_akx.402.desc.2:0 "After several years, §Y[hole_pets.GetName]§! underwent a sudden change again.\n\nThis Black Hole shrank miraculously again, and the whole change process was in an instant, so short that our most seasoned explorers could not detect it. At the same time, a mysterious Horizon Signal came from the Black Hole, and this did not originate from The Worm-in-Waiting."
+ time_akx.402.a:0 "Analyze the Horizon Signal."
+ time_akx.402.b:0 "Listen to the Horizon Signal."
+ 
+ time_akx.403.name:0 "Sanctified Servant: Loop Emissary"
+ time_akx.403.desc.1:0 "The analysis results of the Horizon Signal are out, and the content is shocking.\n\nThis bizarre signal is signed by The Infinity Machine. That mysterious high-tech sphere seemed not to be completely destroyed after entering the Black Hole; on the contrary, its consciousness still permeates the Black Hole and fulfills its mission. And this signal is the data report sent to the outside of the Black Hole by The Infinity Machine based on the research results after countless time cycles of investigation. The data in the Black Hole is precious to us, which will greatly improve our understanding of basic laws."
+ time_akx.403.desc.2:0 "The parsing results of the Horizon Signal are out, and the content is shocking.\n\nThis bizarre signal is signed by The Infinity Machine. That mysterious high-tech sphere seemed not to be completely destroyed after entering the Black Hole; on the contrary, its consciousness still permeates the Black Hole and fulfills its mission. And this signal is the data report sent to the outside of the Black Hole by The Infinity Machine based on the research results after countless time cycles of investigation. The Infinity Machine pointed out the root of spacetime chaos in the horizon, which gave our explorers the opportunity to solve and control it."
+ time_akx.403.a:0 "Confusing."
+ time_akx.403.b:0 "Curious."
+ 
+ time_akx.404.name:0 "Sanctified Servant: The Final End"
+ time_akx.404.desc.1:0 "§Y[hole_pets.GetName]§! has been compressed to the extent that it cannot be further compressed.\n\nThis once huge Black Hole has now become an extremely tiny singularity. Perhaps this is its dead end. The Infinity Machine did not send any reports; perhaps it has no new data to provide, or perhaps it was completely annihilated in the final compression process. However, the secrets in the singularity seem to be open to us without reservation. This may be our last chance to discover the truth."
+ time_akx.404.desc.2:0 "§Y[hole_pets.GetName]§! has been compressed to the extent that it cannot be further compressed.\n\nThis once huge Black Hole has now become an extremely tiny singularity. Perhaps this is its end. The Infinity Machine did not send any reports; perhaps it has no new data to provide, or perhaps it was completely annihilated in the final compression process. However, the secrets in the singularity seem to be open to us without reservation. This may be our last chance to learn the secrets."
+ time_akx.404.a:0 "We need to know the truth."
+ time_akx.404.b:0 "We need to get the secrets."
+ 
+ time_akx.405.name:0 "Sanctified Servant: The Very Beginning"
+ time_akx.405.desc.1:0 "Inside the singularity is another universe.\n\nWe don't know if this universe has any connection with us; we can only assume it is our mirror image. In the other universe, there is an emerging nation that has just stepped into space. The development of civilization is not surprising, but their progress is bathed in the singing of a White Hole. They tried to enter the White Hole but had to shelve it due to technology limitations, turning their eyes to the vast galaxy instead.\n\nDuring the exploration of the universe, they continued to grow and met a worm that controls time. With the help of the creature calling itself The Worm-in-Waiting, they successfully entered the White Hole and found the source of the singing. However, contrary to expectations, when they flew towards the outside of the event horizon with the girl in the White Hole, a mysterious force swallowed the White Hole and turned it into a Black Hole. Although due to the girl's protection, they did not suffer any loss, the girl has since disappeared without a trace.\n\nNot reconciled to their history becoming void, they dedicated themselves to developing a supercomputer with extremely high computing power to find a way to enter the Black Hole. Their plan succeeded, but their civilization also perished. This computer was named \"The Infinity Machine,\" and this race that disappeared in history was called \"The Excerptors.\""
+ time_akx.405.desc.2:0 "Inside the singularity is another universe.\n\nWe don't know if this universe has any connection with us; we can only assume it is our mirror image. In the other universe, there is an emerging nation that has just stepped into space. The development of civilization is not surprising, but their progress is bathed in the singing of a White Hole. They tried to enter the White Hole but had to shelve it due to technology limitations, turning their eyes to the vast galaxy instead.\n\nDuring the exploration of the universe, they continued to grow and met a worm that controls time. With the help of the creature calling itself The Worm-in-Waiting, they successfully entered the White Hole and found the source of the singing. However, contrary to expectations, when they flew towards the outside of the event horizon with the girl in the White Hole, a mysterious force swallowed the White Hole and turned it into a Black Hole. Although due to the girl's protection, they did not suffer any loss, the girl has since disappeared without a trace.\n\nNot reconciled to their history becoming void, they dedicated themselves to developing a supercomputer with extremely high computing power to find a way to enter the Black Hole. Their plan succeeded, but their civilization also perished. This computer was named \"The Infinity Machine,\" and this race that disappeared in history was called \"The Excerptors.\"\n\nThe singularity disappeared instantly after offering the final secret, but suddenly expanded in a trance. A White Hole was born under our witness, just as we were born under the witness of a White Hole."
+ time_akx.405.desc.3:0 "Inside the singularity is another universe.\n\nWe don't know if this universe has any connection with us, but we are sure it mirrors our past. In the other universe, there is an emerging nation that has just stepped into space. The development of civilization is not surprising, but their progress is bathed in the singing of a White Hole. They tried to enter the White Hole but had to shelve it due to technology limitations, turning their eyes to the vast galaxy instead.\n\nDuring the exploration of the universe, they continued to grow and met a worm that controls time. With the help of the creature calling itself The Worm-in-Waiting, they successfully entered the White Hole and found the source of the singing. However, contrary to expectations, when they flew towards the outside of the event horizon with the girl in the White Hole, a mysterious force swallowed the White Hole and turned it into a Black Hole. Although due to the girl's protection, they did not suffer any loss, the girl has since disappeared without a trace.\n\nNot reconciled to their history becoming void, they dedicated themselves to developing a supercomputer with extremely high computing power to find a way to enter the Black Hole. Their plan succeeded, but their civilization also perished. This computer was named \"The Infinity Machine,\" and this race that disappeared in history was called \"The Excerptors.\"\n\nThe Worm-in-Waiting sighed at their determination and fulfilled their wish to enter the Black Hole. They are us, and we are The Excerptors."
+ # Ending 3
+ time_akx.405.a:0 "This is the beginning of the Black Hole."
+ # Ending 2
+ time_akx.405.b:0 "This is the beginning of the White Hole."
+ # Ending 1
+ time_akx.405.c:0 "This is our beginning."
+ time_akx.405.c.tooltip:0 "§Y$d_brief$§! effect increased"
+ 
+ time_akx.406.name:0 "Dream of The Excerptors"
+ time_akx.406.desc.1:0 "Unexpectedly, another me had such an experience.\n\nThe Excerptors have been pursuing their dream but failed. However, now they have succeeded, and we also have our own dream."
+ time_akx.406.desc.2:0 "This is also us in another cycle struggling between cause and effect.\n\nThe Excerptors have been pursuing their dream but failed. However, we succeeded. We will firmly grasp our own dream and never wake up again."
+ time_akx.406.a:0 "Let us continue our dream."
+ time_akx.406.b:0 "Let us grasp our dream."
+ 
+ ################################################################
+ # Scars of the Horizon
+ ################################################################
+ 
+ astral_rift_akx_horror:0 "Scars of the Horizon"
+ unlock_akx_dark_consortium_edict:0 "Unlocks additional Dark Matter §SEdicts§!."
+ unlock_akx_dimensional_worship_building:0 "Unlocks building: §H$building_akx_dimensional_worship$§!."
+ unlock_akx_hyperspace_specialty_starbase_building:0 "Unlocks Starbase building: §H$sm_akx_hyperspace_specialty$§!."
+ 
+ time_akx.501.name:0 "Inverse Phase Domain"
+ time_akx.501.desc.completed_arcsite:0 "Everything in the Astral Rift indicates that almost nothing here can be proven by existing logic, but they do exist, whether meaningful or not.\n\nWhen phenomena conflict with theory, it is not the phenomena that are wrong, but our theory that is problematic.\n\nThe universe has no obligation to make sense to us."
+ time_akx.501.desc.default:0 "Our probe successfully entered the Astral Rift, but the physical laws inside are vastly different from the outside. Our Science Officers made great efforts to barely master the new control methods.\n\nThe Astral Rift seems to be a void. There is no reference object to determine the direction of the probe's movement. Only the information transmitted by the probe indicates that it is still working normally. Our Science Officers even suspect that the other end of the rift is not another world, but the inside of a Black Hole.\n\nIn any case, we have discovered a new world."
+ time_akx.501.a:0 "We opened the door to the Inverse Phase."
+ 
+ time_akx.511.name:0 "Abnormal Feedback"
+ time_akx.511.desc.default:0 "The probe we sent into the Astral Rift seems to have malfunctioned.\n\nWe tried to make the probe collect some substances that might exist in the rift and analyze them. The probe did collect some invisible substances, but the data it fed back was full of flaws and contradictions.\n\nSome Science Officers believe that this may be the unique property of the substances in the rift. To confirm this, we ordered the probe to analyze the standard samples carried beforehand, but it still yielded erroneous results. Now we can be sure that regardless of the nature of the rift substances, our probe has malfunctioned."
+ time_akx.511.a.dark_consortium:0 "Build the probe shell with Dark Matter and let a Science Officer enter the Astral Rift."
+ time_akx.511.a.special:0 "Use Astral Threads as a protective layer for the probe and let a Science Officer enter the Astral Rift."
+ time_akx.511.a:0 "Take protective measures and let a Science Officer enter the Astral Rift."
+ time_akx.511.b:0 "Attempt probe self-check and analyze the cause of the problem."
+ time_akx.511.c:0 "Abandon the probe and send a new one."
+ 
+ time_akx.512.name:0 "Into the Sea"
+ time_akx.512.desc.default:0 "Sending §Y[time_akx_astral_rift_lost_leader.GetName]§! into the rift was a wrong decision. Like a drop of water falling into the sea, [time_akx_astral_rift_lost_leader.GetHeShe] disappeared without a trace before causing any ripples.\n\nWe were too confident in our technology and paid a heavy price, but the exploration of the rift must continue. A successor took over the work of §Y[time_akx_astral_rift_lost_leader.GetName]§!."
+ time_akx.512.a:0 "$time_akx.511.b$"
+ time_akx.512.b:0 "$time_akx.511.c$"
+ 
+ time_akx.521.name:0 "Baffled Insider"
+ time_akx.521.desc.default:0 "Relying on our proud technology, §Y[leader.GetName]§! entered the rift without danger. Fortunately, the position of the probe was shallow, and the coordinate information sent was accurate. The Science Officer found the probe without spending too much time.\n\nHowever, after some inspection by §Y[leader.GetName]§!, [leader.GetHeShe] found that the probe did not have any faults, and all parts were operating methodically. In addition, [leader.GetHeShe] re-analyzed and calculated based on the data collected by the probe, verifying that the results were completely correct, and even suspected that the calculation outside was wrong.\n\nBut the Science Officers outside gave completely different results. They were sure that both §Y[leader.GetName]§! and the probe calculated incorrectly."
+ time_akx.521.a:0 "[leader.GetName], you calculated wrong."
+ time_akx.521.b:0 "Withdraw the Science Officer and attempt probe self-check."
+ 
+ time_akx.522.name:0 "Unknown Symbol"
+ time_akx.522.desc.default:0 "After some testing and verification, our Science Officers found that the probe introduced an unknown symbol during the calculation process, but this symbol did not originate from our programming. This symbol might have been created by the probe itself, although the probe does not have the permission to modify its own program.\n\nThe Science Officers firmly believe that it is this strange symbol that caused the calculation error."
+ time_akx.522.a:0 "Find out the pattern of this symbol's appearance."
+ 
+ time_akx.523.name:0 "Repeat Mistakes"
+ time_akx.523.desc.default:0 "We sent a new probe and checked it carefully beforehand to ensure it works properly.\n\nHowever, after the new probe entered the rift, the calculation results showed the same deviation. This can rule out individual probe failure, proving that the world in the rift caused this error."
+ time_akx.523.a:0 "$time_akx.511.b$"
+ 
+ time_akx.531.name:0 "Between Three and Four"
+ time_akx.531.desc.default:0 "After repeated calculations and verifications by both internal and external parties, §Y[leader.GetName]§! was surprised to find that [leader.GetHeShe] and the probe often used an unknown symbol during the calculation process, but [leader.GetHeShe] was never aware of this. Even before being pointed out by the external Science Officers, [leader.GetHeShe] always thought the existence of this symbol was natural.\n\n§Y[leader.GetName]§! traced back [leader.GetHerHis] calculation process and finally found the meaning represented by this symbol: this symbol is an integer between 3 and 4. 3.5 is not the average of 3 and 4, but the average of 4 and this symbol. The previous \"wrong results\" were exactly based on the introduction of this new number. Other computing devices in the rift also proved this.\n\nAlthough all this is unbelievable, it is indeed an objective law existing in the rift. Based on this law, we created new algorithms to improve the probe, enabling it to eliminate the influence of the new number to output \"correct results\" to the outside.\n\n§Y[leader.GetName]§! has returned successfully, and the exploration of the rift will continue."
+ time_akx.531.a:0 "Truly a beautiful number."
+ 
+ time_akx.532.name:0 "New Integer"
+ time_akx.532.desc.default:0 "Under repeated tests, our Science Officers found that this symbol seems to be a positive integer. Although the principle of its appearance cannot be understood, integrating this symbol into our existing calculation system can finally yield accurate results.\n\nUsing a new set of conversion formulas, we can convert the data transmitted by the probe into external results. Exploration has improved, but this new integer remains an unsolved mystery in our hearts."
+ time_akx.532.a:0 "This is a dark cloud over the edifice of mathematics."
+ 
+ time_akx.541.name:0 "Black Hole Traversal"
+ time_akx.541.desc.default:0 "Our probe finally found an \"observable\" scene.\n\nThis area seems to have many holes. Through these holes, we can see a brilliant starry sky, but the Science Officers are sure that is not our starry sky. Just as we were intoxicated by this starlight, a careful Science Officer discovered that a dark shadow was repeatedly shuttling between two holes.\n\nAs the probe sailed towards these two holes, the image of the dark shadow became clearer-it was a Science Ship. The Science Officer guessed that inside these two holes might be two different systems. For some reason, this Science Ship constantly shuttles between the two systems, as if looking for something."
+ time_akx.541.a:0 "Signal the Science Ship."
+ time_akx.541.b:0 "Observe quietly."
+ 
+ time_akx.542.name:0 "Again"
+ time_akx.542.desc.default:0 "We observed for a long time. This Science Ship tirelessly shuttles between two holes, without any change occurring."
+ 
+ time_akx.543.name:0 "And Again"
+ time_akx.543.desc.default:0 "We observed for a long time. This Science Ship tirelessly shuttles between two holes, probably without any other change occurring."
+ 
+ time_akx.544.name:0 "Go at Dawn"
+ time_akx.544.desc.default:0 "We observed for a long time. This Science Ship tirelessly shuttles between two holes, possibly without any other change occurring, maybe?"
+ 
+ time_akx.545.name:0 "Return at Dusk"
+ time_akx.545.desc.default:0 "We observed for a long time. This Science Ship tirelessly shuttles between two holes, seeming to change, but seeming not to."
+ 
+ time_akx.546.name:0 "Caught in a Loop"
+ time_akx.546.desc.default:0 "The Science Officers stared intently at that Science Ship, as if it had some strange magic, and even refused to receive any orders from us. Subsequently, the Science Ship we sent to explore the rift completely cut off contact with us, and we couldn't see the scene inside the Science Ship either.\n\nFortunately, we still retained the right to receive probe information, but when we opened the image, everyone was stunned. We found that the Science Ship constantly shuttling between two systems was actually full of our Science Officers, including §Y[time_akx_astral_rift_recycle_leader.GetName]§!.\n\nWe don't know how they teleported to that Science Ship, but what is certain is that they fell into a loop, an unbreakable loop."
+ time_akx.546.a:0 "They fell into a loop, what about us?"
+ 
+ time_akx.551.name:0 "Horizon Signal"
+ time_akx.551.desc.default:0 "When we sent the signal, that Science Ship reacted. Perhaps this is what it was looking for.\n\nThat Science Ship suddenly sailed towards the nearest hole, but disappeared the moment it touched the interface between inside and outside. Our probe could not find any trace of it. Shortly after, another Science Ship arrived in this system. At the same time, a signal sent to the new Science Ship appeared near the probe, but after investigation, the signal did not originate from the probe.\n\nThe new Science Ship also reacted and prepared to sail towards the hole."
+ time_akx.551.a:0 "What has been will be again; what will be has been."
+ time_akx.551.b:0 "Warn the new Science Ship."
+ 
+ time_akx.561.name:0 "Endless Crossing"
+ time_akx.561.desc.default:0 "The new Science Ship fell into the hole like a moth to a flame, disappearing without a trace as usual.\n\nA third Science Ship arrived in this system again, but this time the situation was different. Signals no longer appeared automatically around the probe. Because of this, the third Science Ship seemed a bit confused, hesitating above the hole.\n\nMaybe this time, it's up to us to play the role of sending signals."
+ time_akx.561.a:0 "Automatically generate a touching love poem."
+ time_akx.561.b:0 "Warn the third Science Ship."
+ 
+ time_akx.562.name:0 "Emergency Intervention"
+ time_akx.562.desc.third:0 "We immediately issued a warning to the third Science Ship, but the other party did not respond after receiving the signal.\n\nAfter a long silence, the other party seemed relieved, turned the bow, and sailed towards the edge of the system. However, the Science Ship exploded before completing the hyperdrive activation, and we had no way of knowing the cause of the explosion. Since then, the system returned to silence."
+ time_akx.562.desc.default:0 "We immediately issued a warning to the new Science Ship. The other party successfully received the signal when approaching the hole and stopped urgently outside the hole.\n\nThe other party seemed very confused and appeared to be in a dilemma. After a long silence, this Science Ship turned the bow and sailed towards the edge of the system. With a burst of hyperspace disturbance, the system returned to silence."
+ time_akx.562.a:0 "This is their destined mystery, and ours too."
+ time_akx.562.b:0 "This is their destined tragedy, and ours too."
+ 
+ time_akx.571.name:0 "In the Ashes"
+ time_akx.571.desc.default:0 "Our playful love poem seemed to attract the other party's attention well. The third Science Ship no longer hesitated but sailed firmly towards us.\n\nThis time, the Science Ship was no longer swallowed as soon as it touched the hole like in the past, but passed through the hole smoothly and arrived near our probe. The other party was obviously very curious about us as a signal source, sending messages frequently, eager to communicate with us. After starting communication, both sides were surprised to find that we and they look exactly the same, even language, culture, government, ethics, etc., are completely identical. We both cheered for finding ourselves in another world. Both sides chatted happily and even started planning arrangements for cooperation and progress together in the future.\n\nHowever, a sudden explosion terminated our conversation. Our probe was safe and sound, but the other party's Science Ship turned into a pile of wreckage."
+ time_akx.571.a:0 "Search for possible survivors."
+ time_akx.571.b:0 "Hearing the Dao in the morning, one can die in the evening."
+ time_akx.571.c:0 "We will meet again sooner or later. Erect a monument for them."
+ time_akx.571.d:0 "Investigate the wreckage and study the technology of another world."
+ time_akx.571.e:0 "Mourn for them, mourn for us."
+ 
+ time_akx.572.name:0 "Reflection in the Mirror"
+ time_akx.572.desc.1:0 "Although we did our best to search for and rescue survivors, regrettably, the vast majority of the crew died in the explosion, and the remaining few also died of organ failure due to not wearing protective suits.\n\nFortunately, we still successfully rescued a survivor. Surprisingly, [time_akx_astral_rift_lost_leader.GetHeShe] turned out to be §Y[time_akx_astral_rift_lost_leader.GetName]§! [time_akx_astral_rift_lost_leader.GetHimHer]self-the Science Officer we sent into the rift who went missing earlier! However, §Y[time_akx_astral_rift_lost_leader.GetName]§! claimed not to remember the time spent with us; [time_akx_astral_rift_lost_leader.GetHeShe] only had memories of being a crew member of the third Science Ship.\n\nMaybe [time_akx_astral_rift_lost_leader.GetHeShe] is indeed not the original person, but all this is definitely not a coincidence."
+ time_akx.572.desc.2:0 "Although we did our best to search for and rescue survivors, regrettably, the vast majority of the crew died in the explosion, and the remaining few also died of organ failure due to not wearing protective suits.\n\nFortunately, we still successfully rescued a survivor. Surprisingly, [akx_mirror_image_leader.GetHeShe] looks exactly like §Y[akx_mirror_image_leader.GetName]§!! However, they are indeed two different people, possessing different memories and different thoughts.\n\nThe two §Y[akx_mirror_image_leader.GetName]§! s found it difficult to accept such reality for a while, but recalling the various adventures they had experienced, they finally let go.\n\nOur §Y[akx_mirror_image_leader.GetName]§! will still be loyal to us, and the other §Y[akx_mirror_image_leader.GetName]§! is also willing to lend us a hand. The two who mirror each other are now one."
+ time_akx.572.a.1:0 "Indulging in the mirror world may not be a bad thing..."
+ time_akx.572.a.2:0 "Being surprised by oneself in the mirror may not be a bad thing either..."
+ time_akx.572.b.1:0 "Erect a monument for everything we lost..."
+ time_akx.572.b.2:0 "Erect a monument for everything you lost..."
+ time_akx.572.c.1:0 "Let's think about what can be discovered from it..."
+ time_akx.572.c.2:0 "Let's think about what can be learned from it..."
+ time_akx.572.d.1:0 "When the reflection in the mirror and the original body swap..."
+ time_akx.572.d.2:0 "When the reflection in the mirror and the original body meet..."
+ 
+ time_akx.573.name:0 "Broken Mirror"
+ time_akx.573.desc:0 "Although we did our best to search for and rescue survivors, regrettably, the vast majority of the crew died in the explosion, and the remaining few also died of organ failure due to not wearing protective suits.\n\nAlthough our rescue operation failed, we found the cause of the explosion. The third Science Ship seemed to carry a large amount of explosives, set to detonate directly once severe gravitational fluctuations were detected. For some reason, the crew of the other party did not turn off the bombs in time. Maybe they forgot about it, maybe they thought the bombs wouldn't detonate, maybe they didn't have the ability and authority to dismantle the bombs. As for why the bombs didn't detonate when entering the hole, our Science Officer speculated that the different time flow rates inside and outside the hole greatly delayed the activation of the bombs. This might be the real reason why the crew let down their guard.\n\nBut things have come to this; even finding the cause cannot change history. This is their destined fate."
+ time_akx.573.a:0 "A broken mirror cannot be joined; spilt water cannot be gathered."
+ 
+ ################################################################
+ # Time Wound
+ ################################################################
+ 
+ astral_rift_akx_time:0 "Time Wound"
+ time_akx_astral_rift_history_refresh:0 "§YAstral Rift exploration records updated!§!"
+ unlock_hidden_akx_dark_consortium_edict:0 "§YTime will give us the answer.§!"
+ unlock_akx_ouroboros_building:0 "Unlocks building: §H$building_akx_ouroboros$§!."
+ upgrade_akx_hyperspace_specialty_starbase_building:0 "Upgrades Starbase building: §H$sm_akx_hyperspace_specialty$§!."
+ 
+ time_akx.601.name:0 "Tearing the Veil"
+ time_akx.601.desc.completed_arcsite:0 "Everything in the Inverse Plane indicates that almost nothing here can be proven by existing logic, but they do exist, whether meaningful or not.\n\nWhen phenomena conflict with theory, it is not the phenomena that are wrong, but our theory that is problematic.\n\nTime has no obligation to make sense to us."
+ time_akx.601.desc.default:0 "The Worm-in-Waiting tore the dimensions apart, generously pointing out the direction for our exploration.\n\nNot just studying Inverse Phase matter from the outside, we must go deep into the rift to further explore the Inverse Plane. With our understanding of the Inverse Phase, we no longer need to worry about being swallowed by the rift. Now we can abandon the short probe and use a manned sphere to peep into this familiar yet strange world."
+ time_akx.601.a:0 "Time is revealing Its full appearance without reservation."
+ 
+ time_akx.611.name:0 "Tower of Babel"
+ time_akx.611.desc.truth_2:0 "Our exploration team has successfully entered the depths of the rift.\n\nThe rift sphere found a mysterious tower in a void, and the members of the exploration team also put on protective suits, ready to start exploring the tower. This giant tower is so high that the top cannot be seen. It is built with an unknown material, distinct in layers and shining, as if it were the scales of some creature. Although parts of the tower are slightly dilapidated, one can imagine its former glory, and the mysterious symbols filling the walls seem to imply that this tower has special meaning.\n\nThe exploration team is advancing in an orderly manner while studying the mysterious symbols on the walls."
+ time_akx.611.desc.default:0 "§Y[time_akx_astral_rift_circle_leader.GetName]§! and [time_akx_astral_rift_circle_leader.GetHerHis] exploration team have successfully entered the depths of the rift.\n\nThe rift sphere found a mysterious tower in a void, and the members of the exploration team also put on protective suits, ready to start exploring the tower. This giant tower is so high that the top cannot be seen. It is built with an unknown material, distinct in layers and shining, as if it were the scales of some creature. Although parts of the tower are slightly dilapidated, one can imagine its former glory, and the mysterious symbols filling the walls seem to imply that this tower has special meaning.\n\nThe exploration team is advancing in an orderly manner while studying the mysterious symbols on the walls."
+ time_akx.611.a:0 "Perhaps related to some religion."
+ 
+ time_akx.621.name:0 "Butterfly Effect"
+ time_akx.621.desc.same:0 "The exploration team was busy studying the strange decorations in a mysterious room, and §Y[time_akx_astral_rift_circle_leader.GetName]§! planned to rush to the top of the tower alone first. But this tower seemed to have no end; no matter how [time_akx_astral_rift_circle_leader.GetHeShe] tried, [time_akx_astral_rift_circle_leader.GetHeShe] could not see the top.\n\nJust when §Y[time_akx_astral_rift_circle_leader.GetName]§! was about to be driven crazy by this endless climb, a person walked down from the top of the tower. This person wore exactly the same clothes as the team members. §Y[time_akx_astral_rift_circle_leader.GetName]§! suspected for a moment whether the exploration team had found a shortcut to advance, but a gunshot broke [time_akx_astral_rift_circle_leader.GetHerHis] thoughts-the other party was attacking §Y[time_akx_astral_rift_circle_leader.GetName]§! in the face!\n\n"
+ time_akx.621.desc.truth_1:0 "$time_akx.621.desc.same$ §Y[time_akx_astral_rift_circle_leader.GetName]§! quickly raised the weapon, but the opponent's weapon had also completed charging. With two gunshots, both fell to the ground together. When the exploration team behind arrived late, only two corpses remained. After searching, both of them were §Y[time_akx_astral_rift_circle_leader.GetName]§! [time_akx_astral_rift_circle_leader.GetHimHer]self, but the reason for their simultaneous appearance was unknown.\n\nThe exploration team reported this to us immediately. Although everything is shrouded in mist, the exploration must continue."
+ time_akx.621.desc.truth_2:0 "The exploration team found some strange decorations in a mysterious room, which seemed to be carved with some meaningful symbols.\n\nAfter a period of study and translation, the exploration team found that this symbol just told a small story. The general idea is that a person did a small thing, but after a series of coincidences and accidents, indirectly killed themselves in the future. Sci-fi stories telling the \"Butterfly Effect\" like this are countless on our homeworld, not worth mentioning. The exploration team had to move on in disappointment."
+ time_akx.621.desc.truth_3:0 "The exploration team was busy studying the strange decorations in a mysterious room, and §Y[time_akx_astral_rift_circle_leader.GetName]§! planned to rush to the top of the tower alone first. But this tower seemed to have no end; no matter how [time_akx_astral_rift_circle_leader.GetHeShe] tried, [time_akx_astral_rift_circle_leader.GetHeShe] could not see the top.\n\nJust when §Y[time_akx_astral_rift_circle_leader.GetName]§! was about to be driven crazy by this endless climb, a person walked down from the top of the tower. This person wore exactly the same clothes as the team members. §Y[time_akx_astral_rift_circle_leader.GetName]§! suspected for a moment whether the exploration team had found a shortcut to advance, but the other party's greeting broke [time_akx_astral_rift_circle_leader.GetHerHis] thoughts-the other party had no hostility.\n\nAfter some communication, both parties turned out to be §Y[time_akx_astral_rift_circle_leader.GetName]§! [time_akx_astral_rift_circle_leader.GetHimHer]self, which shocked both of them greatly. Our §Y[time_akx_astral_rift_circle_leader.GetName]§! decided to go down and meet with the team members, while the other §Y[time_akx_astral_rift_circle_leader.GetName]§! prepared to go up to notify [time_akx_astral_rift_circle_leader.GetHerHis] team members."
+ time_akx.621.desc.attack:0 "$time_akx.621.desc.same$ §Y[time_akx_astral_rift_circle_leader.GetName]§! also launched a counterattack in time. With a gunshot, the opponent fell to the ground. But surprisingly, the attacker looked exactly like §Y[time_akx_astral_rift_circle_leader.GetName]§!, and various IDs on the body also indicated that the deceased was §Y[time_akx_astral_rift_circle_leader.GetName]§! [time_akx_astral_rift_circle_leader.GetHimHer]self.\n\n§Y[time_akx_astral_rift_circle_leader.GetName]§! felt unbelievable and worried about [time_akx_astral_rift_circle_leader.GetHerHis] situation."
+ time_akx.621.desc.communicate:0 "$time_akx.621.desc.same$ §Y[time_akx_astral_rift_circle_leader.GetName]§! activated the shield in time, and the opponent's attack could not break through for the time being. While waiting for reinforcements, §Y[time_akx_astral_rift_circle_leader.GetName]§! tried to negotiate with the opponent, but the opponent ignored it completely. Only when the exploration team behind hurried over did the attacker retreat in a hurry. For safety reasons, the exploration team did not pursue immediately.\n\n§Y[time_akx_astral_rift_circle_leader.GetName]§! felt puzzled and worried about [time_akx_astral_rift_circle_leader.GetHerHis] situation."
+ time_akx.621.desc.default:0 "$time_akx.621.desc.same$The opponent's weapon is recharging, and this area is very open. It is probably very difficult to find a suitable cover, but if the emergency shield can be activated, maybe [time_akx_astral_rift_circle_leader.GetHeShe] can hold on until the exploration team reinforces. Of course, we can also choose to fight back, but the consequences of this move are hard to estimate.\n\nNow, the fate of §Y[time_akx_astral_rift_circle_leader.GetName]§! is in your hands."
+ time_akx.621.a:0 "No time to hesitate, counterattack immediately!"
+ time_akx.621.b:0 "Do not fire back, try to negotiate while activating shields!"
+ 
+ time_akx.631.name:0 "Beginning of Samsara"
+ time_akx.631.desc.same:0 "The exploration team used the carried medicine to perform emergency treatment on §Y[time_akx_astral_rift_circle_leader.GetName]§! in time. Although the danger to life was temporarily avoided, permanent sequelae were left. Moreover, the emotions of §Y[time_akx_astral_rift_circle_leader.GetName]§! were still somewhat unstable.\n\nTo avoid §Y[time_akx_astral_rift_circle_leader.GetName]§! being attacked again, the exploration team decided to let [time_akx_astral_rift_circle_leader.GetHimHer] return the same way first and wait for news from the exploration team in the camp, while the exploration team continued to advance towards the top of the tower.\n\nBut the return journey was not calm. When §Y[time_akx_astral_rift_circle_leader.GetName]§! moved towards the bottom of the tower, [time_akx_astral_rift_circle_leader.GetHeShe] suddenly met another person with the same clothes as the team members. §Y[time_akx_astral_rift_circle_leader.GetName]§! was sure that other team members were advancing towards the top of the tower, so this person must be in the same group as the previous attacker. So, [time_akx_astral_rift_circle_leader.GetHeShe] struck first and launched an attack on the opponent. But due to nervousness, the first attack only injured the opponent and failed to suppress the threat. The other party was obviously also greatly frightened and seemed ready to take out a weapon to launch a counterattack.\n\n"
+ time_akx.631.desc.truth_1:0 "The exploration team selected a new successor to replace §Y[time_akx_astral_rift_circle_leader.GetName]§!.\n\nWith lessons learned from the past, the exploration team always maintained group action to avoid any member being left alone. Facts proved that their plan was very correct. No similar incidents occurred along the way, and everyone was safe and sound.\n\nFortunately, the top of the tower can now be slightly seen. The morale of the exploration team has risen greatly, and reaching the top of the tower is just around the corner."
+ time_akx.631.desc.truth_2:0 "The exploration team always felt that they were entering and exiting one place, and could even see that \"Butterfly Effect\" story again on the decoration of a room.\n\nThe exploration team thought they were lost, trapped in a maze they couldn't get out of, but occasionally they would find new rooms, giving hope to the team. Such hope and disappointment tossed back and forth. The exploration team had little desire to continue moving forward. Maybe it was only a matter of time before they gave up."
+ time_akx.631.desc.attack:0 "$time_akx.631.desc.same$ §Y[time_akx_astral_rift_circle_leader.GetName]§! pulled the trigger again and successfully shot the opponent dead. Looking at the face of the deceased identical to [time_akx_astral_rift_circle_leader.GetHimHer]self, §Y[time_akx_astral_rift_circle_leader.GetName]§! was on the verge of mental collapse, and communication with us was also interrupted."
+ time_akx.631.desc.communicate:0 "$time_akx.631.desc.same$ §Y[time_akx_astral_rift_circle_leader.GetName]§! calmed down, put down the weapon, and tried to negotiate with the opponent, but then lost contact with us."
+ time_akx.631.desc.default:0 "$time_akx.631.desc.same$Since the opponent might launch a counterattack at any time, §Y[time_akx_astral_rift_circle_leader.GetName]§! could hardly suppress [time_akx_astral_rift_circle_leader.GetHerHis] excitement and aimed the weapon at the opponent, but still asked you for the next instruction."
+ time_akx.631.a:0 "Pull the trigger, eliminate the threat!"
+ time_akx.631.b:0 "Put down the weapon, try to negotiate!"
+ time_akx.631.b.warning:0 "§RThe Dimension Traveler thinks this is a very dangerous option!§!"
+ 
+ time_akx.632.name:0 "Beginning of Samsara"
+ time_akx.632.desc.same:0 "The exploration team used the carried medicine to perform emergency treatment on §Y[time_akx_astral_rift_circle_leader.GetName]§! in time. Although the danger to life was temporarily avoided, permanent sequelae were left. Moreover, the emotions of §Y[time_akx_astral_rift_circle_leader.GetName]§! were still somewhat unstable.\n\nTo avoid §Y[time_akx_astral_rift_circle_leader.GetName]§! being attacked again, the exploration team decided to let [time_akx_astral_rift_circle_leader.GetHimHer] return the same way first and wait for news from the exploration team in the camp, while the exploration team continued to advance towards the top of the tower.\n\nBut the return journey was not calm. When §Y[time_akx_astral_rift_circle_leader.GetName]§! moved towards the bottom of the tower, [time_akx_astral_rift_circle_leader.GetHeShe] suddenly met another person with the same clothes as the team members. §Y[time_akx_astral_rift_circle_leader.GetName]§! was sure that other team members were advancing towards the top of the tower, so this person must be in the same group as the previous attacker. So, [time_akx_astral_rift_circle_leader.GetHeShe] struck first and launched an attack on the opponent. But due to nervousness, the first attack only injured the opponent and failed to suppress the threat. The other party was obviously also greatly frightened and seemed ready to activate some kind of shield device.\n\n"
+ time_akx.632.desc.truth_1:0 "$time_akx.631.desc.truth_1$"
+ time_akx.632.desc.truth_3:0 "Two §Y[time_akx_astral_rift_circle_leader.GetName]§! s and two exploration teams met again.\n\nAfter confirmation, all members of the other party were our team members themselves, just on different timelines. Regarding this tower, §Y[time_akx_astral_rift_circle_leader.GetName]§! also seemed to have discovered something: \"When you are going up, you are also going down. And when you go down, one of you will always successfully reach the top of the tower.\"\n\nThe two exploration teams all held hands and walked down one by one. On the way, they met other exploration teams. After explaining the reason, they all joined in.\n\nInfinite investigation teams are infinitely connected and infinitely looping in the infinite tower."
+ time_akx.632.desc.attack:0 "$time_akx.632.desc.same$ §Y[time_akx_astral_rift_circle_leader.GetName]§! pulled the trigger again and successfully shot the opponent dead. But surprisingly, the opponent looked exactly like §Y[time_akx_astral_rift_circle_leader.GetName]§!, and various IDs on the body also indicated that the deceased was §Y[time_akx_astral_rift_circle_leader.GetName]§! [time_akx_astral_rift_circle_leader.GetHimHer]self.\n\n§Y[time_akx_astral_rift_circle_leader.GetName]§! was overwhelmed, not knowing what happened, and then the communication was suddenly interrupted."
+ time_akx.632.desc.communicate:0 "$time_akx.632.desc.same$ §Y[time_akx_astral_rift_circle_leader.GetName]§! calmed down, put down the weapon, and tried to negotiate with the opponent, while the opponent only activated the shield device and did not show strong hostility.\n\nAfter some communication, both parties turned out to be §Y[time_akx_astral_rift_circle_leader.GetName]§! [time_akx_astral_rift_circle_leader.GetHimHer]self, which shocked both of them greatly. Our §Y[time_akx_astral_rift_circle_leader.GetName]§! decided to continue going up to notify other members of the exploration team; the other §Y[time_akx_astral_rift_circle_leader.GetName]§! prepared to go down to meet with [time_akx_astral_rift_circle_leader.GetHerHis] team members.\n\nAll this seems deja vu."
+ time_akx.632.desc.default:0 "$time_akx.632.desc.same$Since the opponent's next move could not be predicted, §Y[time_akx_astral_rift_circle_leader.GetName]§! could hardly suppress [time_akx_astral_rift_circle_leader.GetHerHis] excitement and aimed the weapon at the opponent, but still asked you for the next instruction."
+ time_akx.632.a:0 "Pull the trigger, eliminate the threat!"
+ time_akx.632.b:0 "Put down the weapon, try to negotiate!"
+ 
+ time_akx.641.name:0 "Ouroboros"
+ time_akx.641.desc.default:0 "The exploration team finally successfully reached the top of the tower, and a smile of joy was on every member's face.\n\nWhen you asked about the situation of §Y[time_akx_astral_rift_circle_leader.GetName]§!, they were puzzled. The exploration team stated that §Y[time_akx_astral_rift_circle_leader.GetName]§! had died long ago and reported it to us in the previous log. Now the team is led by a successor elected by them. We verified the previous report. Although it did not match the memory, it did match what the exploration team said. Before we could think, the exploration team couldn't wait to report their findings: the top of this tower is a mysterious altar. Although it has been abandoned for a long time, the pattern of the worship object is still clearly visible-it is an Ouroboros.\n\nThe exploration of the tower has settled with the team's report, but we all know this is not the end."
+ time_akx.641.a:0 "Ouroboros has no beginning and no end."
+ time_akx.641.b:0 "This is not the beginning either."
+ 
+ time_akx.642.name:0 "Lost in Spacetime"
+ time_akx.642.desc.default:0 "The exploration team still failed to reach the top of the tower and had to choose to give up in the end.\n\nBut when they returned the same way, it took only a short time to reach the exit, as if they had always been wandering near the bottom of the tower. There was no §Y[time_akx_astral_rift_circle_leader.GetName]§! in the exploration team, but when you asked, they were confused. Not only the exploration team, but other liaison personnel responsible for communication were also confused, because we have never heard of the name §Y[time_akx_astral_rift_circle_leader.GetName]§!. §Y[time_akx_astral_rift_circle_leader.GetName]§! never existed from beginning to end.\n\nYou are sure your memory has no deviation, but reality is just like this. History is not immutable."
+ time_akx.642.a:0 "Time will erase all unreasonableness."
+ time_akx.642.b:0 "Someone got stuck in the maze of time."
+ 
+ time_akx.643.name:0 "End of Cycle"
+ time_akx.643.desc.default:0 "Finally, after our exploration team followed their predecessors back to the bottom of the tower, they found that the bottom of the tower is the top of the tower itself-this is not a tower at all, but a circle.\n\nWhen such a report was fed back to us, everyone couldn't figure out this logical relationship, but the exploration team seemed to have expected it-they have experienced every cycle. They suggested we recheck past reports because history has changed, and we have stepped into a different river.\n\nThe exploration team has returned to the rift sphere, ready to continue exploring the depths of the Inverse Phase."
+ time_akx.643.a:0 "They saw through time with time."
+ time_akx.643.b:0 "They transcended infinity with infinity."
+ 
+ time_akx.651.name:0 "01100100 01100001 01110100 01100001" # data
+ time_akx.651.desc.default:0 "The exploration team continued to grope forward in the void.\n\nAt some point, the rift sphere was surrounded by a weird stream, and the exploration team was almost wrapped and moved along with the stream. Blue silk threads shuttled, twisted, and interlaced rapidly in this stream, with no end in sight. §Y[leader.GetName]§! tried to increase engine power, but the viscous force and driving force of the stream were too strong. No matter how they tried, they could not drive the sphere out of the stream.\n\nHelplessly, the exploration team had to turn off the thrusters to save energy and let the sphere become a member of the blue threads."
+ time_akx.651.a:0 "Will reach the destination eventually."
+ 
+ time_akx.661.name:0 "01100011 01110010 01100001 01111010 01111001" # crazy
+ time_akx.661.desc.default:0 "The days of drifting with the tide in the stream were long and tormenting, no less than the previous experience of being trapped in the endless tower. The members of the exploration team were almost driven crazy.\n\nAt first, everyone was interested in collecting the surrounding blue threads, but soon found that these threads did not seem to be solid entities. Extended robotic arms passed directly through the threads, like fishing for the moon in the water. Later, the exploration team tried to detect the physical properties of the blue threads by various means, and unexpectedly found that there was no interaction force between it and any substance we projected, just like a shadow under the light, visible but untouchable. This thread is likely not moving forward wrapped by the stream like the rift sphere, but actively moving along the stream.\n\nIn the end, everyone lost interest, staring blankly at the bottomless end of the stream. Suddenly, §Y[leader.GetName]§! burst into laughter, shouting that [leader.GetHeShe] knew everything, but couldn't say what was discovered. The team members thought [leader.GetHeShe] was crazy."
+ time_akx.661.a:0 "Endless waiting will drive everyone crazy."
+ 
+ time_akx.671.name:0 "01100111 01100001 01101101 01100101" # game
+ time_akx.671.desc.a:0 "$time_akx.671.desc.default$\n\nYou chose the left box. §Y[leader.GetName]§! shouted excitedly: §C\"I knew you would choose this!\"§! [leader.GetHeShe] opened the lid; it was empty."
+ time_akx.671.desc.b:0 "$time_akx.671.desc.default$\n\nYou chose the right box. §Y[leader.GetName]§! looked a bit confused: §C\"I thought you would choose the other one.\"§! [leader.GetHeShe] opened the lid; it was empty."
+ time_akx.671.desc.default:0 "§Y[leader.GetName]§! took out two boxes from somewhere and said [leader.GetHeShe] wanted to play a game with you.\n\n§Y[leader.GetName]§! claimed that [leader.GetHeShe] put a lot of treasures in one of the two boxes, and the other was empty. If you can guess the correct box, you can get everything in the box, but regardless of whether you guessed right or not, §Y[leader.GetName]§! will tell everyone [leader.GetHerHis] discovery.\n\nWe cannot understand why §Y[leader.GetName]§! did this, and [leader.GetHeShe] also forbade us and other team members from using any instruments to analyze the contents of the box. It seems we have to try our luck."
+ time_akx.671.a:0 "Choose the left box."
+ time_akx.671.a.tooltip:0 "§YWhere did [leader.GetHeShe] get so many resources?§!"
+ time_akx.671.b:0 "Choose the right box."
+ time_akx.671.b.tooltip:0 "§YThe box is empty.§!"
+ 
+ time_akx.672.name:0 "01100011 01101000 01100101 01100001 01110100" # cheat
+ time_akx.672.desc.a:0 "$time_akx.672.desc.default$\n\nYou chose the left box. It is still empty. You feel cheated."
+ time_akx.672.desc.b:0 "$time_akx.672.desc.default$\n\nYou chose the right box. It is still empty. You feel cheated."
+ time_akx.672.desc.default:0 "Seeing you are dissatisfied, §Y[leader.GetName]§! proposed another round of the game.\n\n[leader.GetHeShe] readjusted the position of the treasure. The rules are the same as before. We still have a 50% chance of success."
+ time_akx.672.a:0 "Choose the left box."
+ time_akx.672.a.tooltip:0 "§YThe box is empty.§!"
+ time_akx.672.b:0 "Choose the right box."
+ time_akx.672.b.tooltip:0 "§YThe box is full of resources.§!"
+ 
+ time_akx.681.name:0 "01110100 01110010 01110101 01110100 01101000" # truth
+ time_akx.681.desc.same:0 "\n\nAfter speaking, §Y[leader.GetName]§! activated the hidden bomb, and the rift sphere exploded in an instant. But our communication was not interrupted because the rift sphere and all team members appeared intact outside the stream-they escaped successfully.\n\n§C\"Sure enough, the great will does not want us to die like this. If we die, the exploration of the rift will be suspended forever, and the plot cannot advance, so we will never die. Within the rules of the stream, we are destined unable to escape the stream. Only by breaking this rule can we find life in death.\"§!\n\nWe are very worried about the mental state of §Y[leader.GetName]§!, but also half-believe [leader.GetHerHis] conjecture. Everyone is looking at you."
+ time_akx.681.desc.a:0 "§C\"The great will thinks he can perceive everything, but what he can see is only what another will wants him to see. I am just a pawn manipulated by a certain will, only sometimes this will is you, sometimes not you.\"§!\n\nThe choices you made seemed to be all predicted by §Y[leader.GetName]§!.\n\n§C\"Both of these boxes are actually empty. There is no treasure at all. However, how did you guess the 'correct' treasure box every time? Presumably, you can see something we cannot see, for example-the consequence of a certain event. Perhaps this is the secret of your ability to bring prosperity to our country. The world we live in may not be reality at all, but a plaything of higher-dimensional creatures including you.\"§!$time_akx.681.desc.same$"
+ time_akx.681.desc.b:0 "§C\"The great will can use past experience, but this may not apply to new challenges. Honestly, your choice far exceeded my imagination.\"§!\n\n§Y[leader.GetName]§! seemed a bit unconfident, but still chose to continue speaking.\n\n§C\"Both of these boxes are actually empty. There is no treasure at all. You chose the 'empty treasure box' every time, perhaps out of anti-routine considerations, perhaps having experienced this event before, perhaps having jumped on the timeline, or perhaps purely relying on luck. I don't know; maybe only you know. Your choice indeed shook my once firm belief a bit, but I still intend to give it a shot. I dare not believe it, nor dare I doubt it. The world we live in may not be reality at all, but a plaything of higher-dimensional creatures including you.\"§!$time_akx.681.desc.same$"
+ time_akx.681.desc.c:0 "§C\"The great will may be able to avoid temporary mistakes, but cannot avoid destined results. Before opening the box, no one knows what is in the box. Maybe it's empty, maybe it's not empty.\"§!\n\nYour choice puzzled §Y[leader.GetName]§!, but [leader.GetHeShe] soon realized the reason.\n\n§C\"Both of these boxes are actually empty. There is no treasure at all. However, why were your two choices 'worlds apart'? You didn't choose the other box because one box was empty, but because one 'option' failed, you chose another 'option'. Presumably, you can see something we cannot see, for example-the consequence of a certain event. Perhaps this is the secret of your ability to bring prosperity to our country. The world we live in may not be reality at all, but a plaything of higher-dimensional creatures including you.\"§!$time_akx.681.desc.same$"
+ time_akx.681.hidden:0 "还有的是你意想不到的呢，你这小聪明鬼。"
+ time_akx.681.a:0 "Don't break the fourth wall, you smart little devil."
+ time_akx.681.a.tooltip:0 "§RThis may be destined to be a journey of no return!§!"
+ time_akx.681.a.icon_text:0 "§H$RIFT_DIFFICULTY_TYPE$§!\n§RInferno (20)§!\n\n$RIFT_DIFFICULTY_TYPE_DESC$"
+ time_akx.681.b:0 "Enough, return immediately!"
+ 
+ time_akx.682.name:0 "Fruitless End"
+ time_akx.682.desc:0 "The exploration team returned successfully. §Y[akx_wall_breaker.GetName]§! claimed that [akx_wall_breaker.GetHeShe] would make public [akx_wall_breaker.GetHerHis] findings in the Astral Rift.\n\nWe are not sure how many people will believe [akx_wall_breaker.GetHerHis] rhetoric, but if this conjecture is displayed to the public without reservation, the consequences are hard to estimate. Whether [akx_wall_breaker.GetHerHis] concept is correct or not, we must act."
+ time_akx.682.a:0 "Control [akx_wall_breaker.GetName] immediately, and other team members too!"
+ time_akx.682.b:0 "Everyone has the right to express their views. Rumors will collapse on their own."
+ 
+ time_akx.690.name:0 "Connecting Infinity"
+ time_akx.690.desc.default:0 "We realized that our exploration itself is destined to have no ending.\n\nAfter the rift sphere left the stream, our exploration team continued to advance towards the unfathomable void, but after a while, we lost contact with them. The anchor chain connecting the sphere has reached the limit of its length, but it is still extending, as if growing by itself. For safety reasons, we did not stop this eerie phenomenon, but waited quietly for the message from the exploration team.\n\nIn the long years, we have never received any communication about the exploration team, but the extension of the anchor chain became proof of their safety. Until one day, the anchor chain suddenly stopped growing, and we had no way to obtain the whereabouts of the exploration team. Finally, we decided to retract the anchor chain to retrieve the exploration team, but no matter what method we used, we could not pull it to the end. Even the marks we made on the anchor chain reappeared in front of us a few days later.\n\nInfinite anchor chains loop infinitely in infinite rifts. We finally had to give up, sealing the anchor chain and the sphere in the river of time."
+ time_akx.690.a:0 "The other end of the anchor chain is infinity."
+ 
+ time_akx.691.name:0 "End of the Maze"
+ time_akx.691.desc.default:0 "We realized that our exploration itself is a loop.\n\nAfter the rift sphere left the stream, our exploration team continued to advance towards the unfathomable void, but after a while, we lost contact with them. The anchor chain connecting the sphere has reached the limit of its length, but it is still extending, as if growing by itself. For safety reasons, we did not stop this eerie phenomenon, but waited quietly for the message from the exploration team.\n\nIn the long years, we have never received any communication about the exploration team, but the extension of the anchor chain became proof of their safety. Finally, the exploration team achieved a return voyage in the rift sphere. They excitedly recounted what they saw and heard in the rift, expressing their longing for the motherland, complaining about our interruption of contact with them, and thanking us for persevering in extending the anchor chain for them.\n\nBut puzzlingly, our anchor chain is still growing, which means the exploration team is still advancing.\n\nThen who exactly are we welcoming now?"
+ time_akx.691.a:0 "Welcome home, future [leader.GetName]."
+ 
+ time_akx.692.name:0 "One Hundred Years of Solitude"
+ time_akx.692.desc:0 "We held a reception for the exploration team and found everyone weathered.\n\n§Y[akx_wall_breaker.GetName]§! said that they traveled in the Astral Rift for hundreds of years. In this long time, they also figured out that whether the world is real or not, they will live on as before. Living-needs no reason. The world is so big, there are still too many unsolved mysteries waiting for them to discover. Tangling with truth and falsehood is meaningless. The journey of exploring the truth never ends.\n\n§Y[akx_wall_breaker.GetName]§! gave you a sly smile, indicating that [akx_wall_breaker.GetHeShe] would keep silent about that discovery in the rift, but also hoped you would not ask about [akx_wall_breaker.GetHerHis] secret anymore."
+ time_akx.692.a:0 "Let's toast to my secret, to your secret!"
+ time_akx.692.b:0 "This is a secret belonging to you and me, not the Hive's secret."
+ time_akx.692.c:0 "This is a secret belonging to you and me, not the Network's secret."
+ 
+ ################################################################
+ # Deviation
+ ################################################################
+ 
+ time_akx.1000.name:0 "Deviation"
+ time_akx.1000.desc.1:0 "We deviated from the course on the way forward. Fortunately, §HThe Worm-in-Waiting§! noticed this in time and helped us return to the right path."
+ time_akx.1000.desc.2:0 "We seem to be intentionally deviating from the course. §HThe Worm-in-Waiting§! has issued a warning to us: if we deviate again, It will send down severe §Rpunishment§!."
+ time_akx.1000.desc.3:0 "In a moment unnoticed by anyone, §Rpunishment§! arrived quietly. Our deliberate deviation from the course angered this God of Time. The love It once gave us has long turned into boundless malice."
+ time_akx.1000.desc.4:0 "§RPunishment§! arrived as expected."
+ time_akx.1000.a:0 "Are we wrong?"
+ time_akx.1000.a.tooltip:0 "Removes §YGenocidal Civic§! concepts"
+ time_akx.1000.b:0 "We went too far."
+ time_akx.1000.b.tooltip:0 "§RWe absolutely cannot deviate from the course again!§!"
+ time_akx.1000.c:0 "..."
+ time_akx.1000.c.tooltip:0 "§RThe punishment has descended, and the price is everything we have...§!"
+ 
+ ################################################################
+ # Void Nightmare
+ ################################################################
+ 
+ time.1005.name:0 "Void Nightmare"
+ time.1005.desc:0 "When a voidworm we tamed died in a space battle in §Y[dimensional_horror_voidworms_fleet.solar_system.GetName]§!, the spacetime around it suddenly twisted. Subsequently, a small Nightmare of the Plane quietly appeared from the void.\n\nWe don't know the cause of this §YVoid Nightmare§!, but scientists guess that the §YInverse Phase Distortion§! carried by the voidworm may have induced this phenomenon, or perhaps this Void Nightmare is the dead voidworm itself. This newborn monster is curiously looking at the world it is in. It seems to have no hostility towards us, but this may be only temporary.\n\nIn any case, it has forever escaped our control."
+ time.1005.a:0 "Creation born of the void."

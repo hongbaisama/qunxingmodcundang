@@ -1,0 +1,415 @@
+﻿l_simp_chinese:
+ 
+ ################################################################
+ # 预设国特殊
+ ################################################################
+ 
+ TIMELINE_EVENT_WONDER_COUNTRY_TIME_0_TOOLTIP: "§H命定之人§!\n§Y起源事件§!\n\n§L[GetDate]§!，[EVENT_TARGET_0.GetName]的统治者[EVENT_TARGET_1.GetName]展现了某种奇迹，成为历代序时者里第一个触及§H永恒奥秘§!之人。"
+ TIMELINE_EVENT_WONDER_COUNTRY_TIME_1_TOOLTIP: "§H命定之人§!\n§Y起源事件§!\n\n§L[GetDate]§!，[EVENT_TARGET_0.GetName]的统治者[EVENT_TARGET_1.GetName]感悟了某种预兆，被选定为§H不朽者§!，为逐光者们寻觅未来的光明。"
+ TIMELINE_EVENT_WONDER_COUNTRY_TIME_2_TOOLTIP: "§H命定之人§!\n§Y起源事件§!\n\n§L[GetDate]§!，[EVENT_TARGET_0.GetName]的统治者[EVENT_TARGET_1.GetName]接收了某种信号，解锁了无来源的§H知识库§!，并得知了终末的阴影。"
+ TIMELINE_WONDER_COUNTRY_TIME: "命定之人\n§L[GetDate]§!"
+ 
+ ################################################################
+ # 时之螶
+ ################################################################
+ 
+ TIMELINE_EVENT_HORIZONSIGNAL_BEGIN_TOOLTIP: "§H视界信号§!\n§Y帝国事件§!\n\n§L[GetDate]§!，[EVENT_TARGET_0.GetName]收到了来自[EVENT_TARGET_1.GetName]的视界信号，并派遣[EVENT_TARGET_2.GetName]驶向信号中暗藏的坐标。\n尽管他陷入了黑洞的永恒怀抱，却为我们揭示了§H时之螶§!的存在。"
+ TIMELINE_HORIZONSIGNAL_BEGIN: "视界信号\n§L[GetDate]§!"
+ 
+ TIMELINE_EVENT_HORIZONSIGNAL_NOT_BEGIN_TOOLTIP: "§H视界信号§!\n§Y帝国事件§!\n\n§L[GetDate]§!，[EVENT_TARGET_0.GetName]收到了来自[EVENT_TARGET_1.GetName]的视界信号，但最终决定不予理睬。\n我们似乎错过了什么，但这未尝不是一件好事。"
+ TIMELINE_HORIZONSIGNAL_NOT_BEGIN: "拒绝信号\n§L[GetDate]§!"
+ 
+ TIMELINE_EVENT_HORIZONSIGNAL_BEGIN_BUT_STOP_TOOLTIP: "§H讯息结束§!\n§Y帝国事件§!\n\n§L[GetDate]§!，[EVENT_TARGET_0.GetName]再次收到了[EVENT_TARGET_1.GetName]的死亡邀请，但最终决定不予理睬。\n我们似乎错过了什么，但这未尝不是一件好事。"
+ TIMELINE_HORIZONSIGNAL_BEGIN_BUT_STOP: "讯息结束\n§L[GetDate]§!"
+ 
+ TIMELINE_EVENT_LOOP_TEMPLE_TOOLTIP: "§H环形神殿§!\n§Y帝国事件§!\n\n§L[GetDate]§!，[EVENT_TARGET_0.GetName]意外发现了[EVENT_TARGET_1.GetName]上的环形神殿，并接纳了它的存在。\n这或许是“时间蠕虫”赠予我们的礼物。"
+ TIMELINE_LOOP_TEMPLE: "环形神殿\n§L[GetDate]§!"
+ 
+ TIMELINE_EVENT_LOOP_TEMPLE_BUT_SEAL_TOOLTIP: "§H环形神殿§!\n§Y帝国事件§!\n\n§L[GetDate]§!，[EVENT_TARGET_0.GetName]意外发现了[EVENT_TARGET_1.GetName]上的环形神殿，但最终决定将其封印。\n小心驶得万年船。"
+ TIMELINE_LOOP_TEMPLE_BUT_SEAL: "封印神殿\n§L[GetDate]§!"
+ 
+ TIMELINE_EVENT_WORM_LOVES_US_AND_ACCEPT_TOOLTIP: "§H见证未来§!\n§Y星系事件§!\n\n§L[GetDate]§!，时之螶向[EVENT_TARGET_0.GetName]献出了无限的爱，而我们也接纳了她无限的爱。\n在爱的舔舐下，我们终于步上了命中注定的道路。"
+ TIMELINE_EVENT_WORM_LOVES_US_AND_ACCEPT_OTHER_TOOLTIP: "§H见证未来§!\n§Y星系事件§!\n\n§L[GetDate]§!，时之螶向[EVENT_TARGET_0.GetName]献出了无限的爱，而他们也接纳了她无限的爱。\n在爱的舔舐下，他们终于步上了命中注定的道路。"
+ TIMELINE_WORM_LOVES_US_AND_ACCEPT: "见证未来\n§L[GetDate]§!"
+ 
+ TIMELINE_EVENT_WORM_LOVES_US_BUT_REFUSE_TOOLTIP: "§H破碎圆环§!\n§Y星系事件§!\n\n§L[GetDate]§!，时之螶向[EVENT_TARGET_0.GetName]献出了无限的爱，而我们却不愿接纳这份扭曲的爱。\n我们驱逐了它，但它就在那里。"
+ TIMELINE_EVENT_WORM_LOVES_US_BUT_REFUSE_OTHER_TOOLTIP: "§H破碎圆环§!\n§Y星系事件§!\n\n§L[GetDate]§!，时之螶向[EVENT_TARGET_0.GetName]献出了无限的爱，而他们却不愿接纳这份扭曲的爱。\n他们驱逐了它，但它就在那里。"
+ TIMELINE_WORM_LOVES_US_BUT_REFUSE: "破碎圆环\n§L[GetDate]§!"
+ 
+ TIMELINE_EVENT_ACCEPT_UNLEASHED_MESSENGER_NORMAL_TOOLTIP: "§H崭新曙光§!\n§Y帝国事件§!\n\n§L[GetDate]§!，[EVENT_TARGET_0.GetName]已经重构了信使物种的起源，并开始了向信使的转变。\n已行之事，必将再行。"
+ TIMELINE_EVENT_ACCEPT_UNLEASHED_MESSENGER_ROBOTIC_TOOLTIP: "§H崭新曙光§!\n§Y帝国事件§!\n\n§L[GetDate]§!，[EVENT_TARGET_0.GetName]已经逆向了信使物种的机理，并开始了向信使的转变。\n已行之事，必将再行。"
+ TIMELINE_ACCEPT_UNLEASHED_MESSENGER: "崭新曙光\n§L[GetDate]§!"
+ 
+ TIMELINE_EVENT_ACCEPT_LEASHED_MESSENGER_NORMAL_TOOLTIP: "§H夜幕降临§!\n§Y帝国事件§!\n\n§L[GetDate]§!，[EVENT_TARGET_0.GetName]已经重构了信使物种的起源，并开始了向信使的转变。\n已行之事，必将再行。"
+ TIMELINE_EVENT_ACCEPT_LEASHED_MESSENGER_ROBOTIC_TOOLTIP: "§H夜幕降临§!\n§Y帝国事件§!\n\n§L[GetDate]§!，[EVENT_TARGET_0.GetName]已经逆向了信使物种的机理，并开始了向信使的转变。\n已行之事，必将再行。"
+ TIMELINE_ACCEPT_LEASHED_MESSENGER: "夜幕降临\n§L[GetDate]§!"
+ 
+ TIMELINE_EVENT_GAIN_TIME_TITAN_TOOLTIP: "§H时空之外§!\n§Y帝国事件§!\n\n§L[GetDate]§!，[EVENT_TARGET_0.GetName]的指挥官[EVENT_TARGET_1.GetName]于[EVENT_TARGET_2.GetName]接管了明日船长的终末行舟。\n我们获得了它的完整掌控权，但也遗失了它的过去与未来。"
+ TIMELINE_GAIN_TIME_TITAN: "时空之外\n§L[GetDate]§!"
+ 
+ TIMELINE_EVENT_MANIFOLD_COUNTRY_ASCENSION_TOOLTIP: "§H受赞颂者§!\n§Y星系事件§!\n\n§L[GetDate]§!，[EVENT_TARGET_0.GetName]启动了梦魇的召唤仪式，并试图朝着终点飞升。\n他们的飞升是成功还是失败了？这个问题或许只有他们自己能够解答，而我们可能永远也得不到真相。"
+ TIMELINE_MANIFOLD_COUNTRY_ASCENSION: "受赞颂者\n§L[GetDate]§!"
+ 
+ TIMELINE_EVENT_HOLE_PETS_PANTAGRUEL_TOOLTIP: "§H$NAME_Pantagruel$§!\n§Y帝国事件§!\n\n§L[GetDate]§!，[EVENT_TARGET_0.GetName]见证了[EVENT_TARGET_1.GetName]的自我压缩，并从中发现了另外一个宇宙。\n圣仆完成了最初的使命。"
+ TIMELINE_HOLE_PETS_PANTAGRUEL: "$NAME_Pantagruel$\n§L[GetDate]§!"
+ 
+ ################################################################
+ # 负相
+ ################################################################
+ 
+ TIMELINE_EVENT_FIRST_MEET_DIMENSIONAL_HORROR_TOOLTIP: "§H负相存在§!\n§Y帝国事件§!\n\n§L[GetDate]§!，[EVENT_TARGET_0.GetName]于[EVENT_TARGET_1.GetName]星系首次遭遇了位面之魇。"
+ TIMELINE_FIRST_MEET_DIMENSIONAL_HORROR: "负相存在\n§L[GetDate]§!"
+ 
+ TIMELINE_EVENT_ACTIVE_TR_HORROR_ADOPT_TOOLTIP: "§H初入负相§!\n§Y里程碑§!\n\n§L[GetDate]§!，[EVENT_TARGET_0.GetName]采纳了负相传统，踏入了负相的领域。\n尽管步履蹒跚，但我们仍在前进。"
+ TIMELINE_ACTIVE_TR_HORROR_ADOPT: "初入负相\n§L[GetDate]§!"
+ 
+ TIMELINE_EVENT_ACTIVE_AP_HORROR_TOOLTIP: "§H负相奥秘§!\n§Y里程碑§!\n\n§L[GetDate]§!，[EVENT_TARGET_0.GetName]采纳了负相奥秘飞升天赋，而时之螶则撕裂了维度，慷慨地为我们指明了探索的方向。\n这或许意味着灾难，但也可能蕴含着机遇。"
+ TIMELINE_ACTIVE_AP_HORROR: "负相奥秘\n§L[GetDate]§!"
+ 
+ TIMELINE_EVENT_ACTIVE_AP_TIME_TOOLTIP: "§H时空因果§!\n§Y里程碑§!\n\n§L[GetDate]§!，[EVENT_TARGET_0.GetName]采纳了时空因果飞升天赋，我们对知识的追求永无止境，但其尽头究竟是希望，还是终末？\n我们渴求更多，更多，更多……"
+ TIMELINE_ACTIVE_AP_TIME: "时空因果\n§L[GetDate]§!"
+ 
+ TIMELINE_EVENT_ACTIVE_AP_BEYOND_INFINITY_TOOLTIP: "§H超越无限§!\n§Y星系事件§!\n\n§L[GetDate]§!，[EVENT_TARGET_0.GetName]在超越因果之后，踏上了超越无限的道路。\n正如过去之轮回，正如未来之循环。"
+ TIMELINE_EVENT_ACTIVE_AP_BEYOND_INFINITY_OTHER_TOOLTIP: "§H超越无限§!\n§Y星系事件§!\n\n§L[GetDate]§!，[EVENT_TARGET_0.GetName]似乎正为某个遥远未来的危机做准备，并踏上了超越无限的道路。\n正如过去之轮回，正如未来之循环。"
+ TIMELINE_ACTIVE_AP_BEYOND_INFINITY: "超越无限\n§L[GetDate]§!"
+ 
+ TIMELINE_EVENT_FINISH_ASTRAL_RIFT_AKX_HORROR_1_TOOLTIP: "§H陷入循环§!\n§Y帝国事件§!\n\n§L[GetDate]§!，[EVENT_TARGET_0.GetName]完成了对$astral_rift_akx_horror$的探索，但代价是一名科学官就此离去。\n他们陷入了循环，那我们呢？"
+ TIMELINE_FINISH_ASTRAL_RIFT_AKX_HORROR_1: "陷入循环\n§L[GetDate]§!"
+ 
+ TIMELINE_EVENT_FINISH_ASTRAL_RIFT_AKX_HORROR_2_TOOLTIP: "§H命定谜团§!\n§Y帝国事件§!\n\n§L[GetDate]§!，[EVENT_TARGET_0.GetName]完成了对$astral_rift_akx_horror$的探索，但仍有谜团未能解开。\n这真的是命中注定的吗？"
+ TIMELINE_FINISH_ASTRAL_RIFT_AKX_HORROR_2: "命定谜团\n§L[GetDate]§!"
+ TIMELINE_EVENT_FINISH_ASTRAL_RIFT_AKX_HORROR_2_THIRD_TOOLTIP: "§H命定悲剧§!\n§Y帝国事件§!\n\n§L[GetDate]§!，[EVENT_TARGET_0.GetName]完成了对$astral_rift_akx_horror$的探索，但悲剧仍然无从避免。\n这真的是命中注定的吗？"
+ TIMELINE_FINISH_ASTRAL_RIFT_AKX_HORROR_2_THIRD: "命定悲剧\n§L[GetDate]§!"
+ 
+ TIMELINE_EVENT_FINISH_ASTRAL_RIFT_AKX_HORROR_3_TOOLTIP: "§H灰烬之中§!\n§Y帝国事件§!\n\n§L[GetDate]§!，[EVENT_TARGET_0.GetName]完成了对$astral_rift_akx_horror$的探索，尽管一切以灰烬告终。\n我们错失了挽救自己的机会。"
+ TIMELINE_FINISH_ASTRAL_RIFT_AKX_HORROR_3: "灰烬之中\n§L[GetDate]§!"
+ 
+ TIMELINE_EVENT_FINISH_ASTRAL_RIFT_AKX_HORROR_4_LOST_TOOLTIP: "§H镜中倒影§!\n§Y帝国事件§!\n\n§L[GetDate]§!，[EVENT_TARGET_0.GetName]完成了对$astral_rift_akx_horror$的探索，并找到了另一位[EVENT_TARGET_1.GetName]。\n失踪者被幸存者取代，这一切绝对不会是巧合。"
+ TIMELINE_EVENT_FINISH_ASTRAL_RIFT_AKX_HORROR_4_MIRROR_TOOLTIP: "§H镜中倒影§!\n§Y帝国事件§!\n\n§L[GetDate]§!，[EVENT_TARGET_0.GetName]完成了对$astral_rift_akx_horror$的探索，[EVENT_TARGET_1.GetName]也遇见了另一个自己。\n互为镜像的两人现在合二为一了。"
+ TIMELINE_FINISH_ASTRAL_RIFT_AKX_HORROR_4: "镜中倒影\n§L[GetDate]§!"
+ 
+ TIMELINE_EVENT_FINISH_ASTRAL_RIFT_AKX_TIME_1_TOOLTIP: "§H无果而终§!\n§Y帝国事件§!\n\n§L[GetDate]§!，[EVENT_TARGET_0.GetName]中断了对$astral_rift_akx_time$的探索，只为避免触及世界的真实。\n还好，他们没有发现更多。"
+ TIMELINE_FINISH_ASTRAL_RIFT_AKX_TIME_1: "无果而终\n§L[GetDate]§!"
+ 
+ TIMELINE_EVENT_FINISH_ASTRAL_RIFT_AKX_TIME_2_TOOLTIP: "§H连接无限§!\n§Y帝国事件§!\n\n§L[GetDate]§!，[EVENT_TARGET_0.GetName]结束了对$astral_rift_akx_time$的探索，只因这次探索本身注定没有结局。\n锚链的彼端是无限。"
+ TIMELINE_FINISH_ASTRAL_RIFT_AKX_TIME_2: "连接无限\n§L[GetDate]§!"
+ 
+ TIMELINE_EVENT_FINISH_ASTRAL_RIFT_AKX_TIME_3_TOOLTIP: "§H迷宫尽头§!\n§Y帝国事件§!\n\n§L[GetDate]§!，[EVENT_TARGET_0.GetName]完成了对$astral_rift_akx_time$的探索，然而这次探索本身就是一个循环。\n那我们现在所迎接的究竟是谁？"
+ TIMELINE_FINISH_ASTRAL_RIFT_AKX_TIME_3: "迷宫尽头\n§L[GetDate]§!"
+ 
+ ################################################################
+ # 终焉宣告
+ ################################################################
+ 
+ TIMELINE_EVENT_DIMENSIONAL_HORROR_CRISIS_BEGIN_TOOLTIP: "§H终焉宣告§!\n§Y危机事件§!\n\n§L[GetDate]§!，一场名为终焉宣告的风暴在银河悄然降临。混沌、无序、痛苦、灾难、死亡、终结，几乎一切可怖的负面词汇都如字面般弥漫在深不可测的风暴之中。这仅仅是一个开始，却将我们裹挟直至时间尽头。\n我们的敌人，即是宇宙本身。"
+ TIMELINE_DIMENSIONAL_HORROR_CRISIS_BEGIN: "终焉宣告\n§L[GetDate]§!"
+ 
+ TIMELINE_EVENT_DIMENSIONAL_HORROR_CRISIS_BEGIN_FOR_NEW_COUNTRY_TOOLTIP: "§H终焉宣告§!\n§Y危机事件§!\n\n§L[GetDate]§!，[EVENT_TARGET_0.GetName]观测到了一场名为终焉宣告的风暴，而它早已存在。混沌、无序、痛苦、灾难、死亡、终结，几乎一切可怖的负面词汇都如字面般弥漫在深不可测的风暴之中。这仅仅是一个开始，却将我们裹挟直至时间尽头。\n我们的敌人，即是宇宙本身。"
+ TIMELINE_DIMENSIONAL_HORROR_CRISIS_BEGIN_FOR_NEW_COUNTRY: "终焉宣告\n§L[GetDate]§!"
+ 
+ TIMELINE_EVENT_DIMENSIONAL_HORROR_CRISIS_DESTINY_OCCUR_TOOLTIP: "§H命运尾声§!\n§Y危机事件§!\n\n§L[GetDate]§!，名为命运的终焉之魇在[EVENT_TARGET_0.GetName]星系汇聚成型。我们能从祂身上感受到一股深不可测的恐惧，一种源于宇宙本质的苦痛。或许祂是来自循环的反击，或许祂是来自时之螶的考验，一切都无法知晓。\n至少，这就是最后的尾声了。"
+ TIMELINE_DIMENSIONAL_HORROR_CRISIS_DESTINY_OCCUR: "命运尾声\n§L[GetDate]§!"
+ 
+ TIMELINE_EVENT_DIMENSIONAL_HORROR_CRISIS_END_TOOLTIP: "§H跨过命运前行§!\n§Y危机事件§!\n\n§L[GetDate]§!，名为命运的终焉之魇已经陨落，这场风暴浩劫也缓缓停歇。现如今，终焉宣告的一切痕迹都在瞬间消失，仿佛它从来都不存在。然而，斑驳的银河星图却仍在警醒着我们这一危机的惨烈。\n无论如何，我们终于可以为一切画上句号了——和所有人一起。"
+ TIMELINE_DIMENSIONAL_HORROR_CRISIS_END: "跨过命运前行\n§L[GetDate]§!"
+
+ ################################################################
+ # 时间机器/圆环枢纽/位面引擎
+ ################################################################
+ 
+ TIMELINE_EVENT_TIME_MACHINE_BEGIN_TOOLTIP: "§H时空混乱§!\n§Y星系事件§!\n\n§L[GetDate]§!，银河系的时间突然变得混乱不堪且难以测定。"
+ TIMELINE_TIME_MACHINE_BEGIN: "时空混乱\n§L[GetDate]§!"
+ 
+ TIMELINE_EVENT_TIME_MACHINE_END_TOOLTIP: "§H时空复原§!\n§Y星系事件§!\n\n§L[GetDate]§!，如它毫无来由的出现，混乱的时空也毫无征兆地复原了。"
+ TIMELINE_TIME_MACHINE_END: "时空复原\n§L[GetDate]§!"
+ 
+ TIMELINE_EVENT_CIRCLE_NEXUS_BEGIN_TOOLTIP: "§H圆环偏移§!\n§Y星系事件§!\n\n§L[GetDate]§!，银河系遭遇了前所未有的存在哲学危机。"
+ TIMELINE_CIRCLE_NEXUS_BEGIN: "圆环偏移\n§L[GetDate]§!"
+ 
+ TIMELINE_EVENT_CIRCLE_NEXUS_END_TOOLTIP: "§H圆环归位§!\n§Y星系事件§!\n\n§L[GetDate]§!，如它毫无来由的出现，偏移的圆环也毫无征兆地归位了。"
+ TIMELINE_CIRCLE_NEXUS_END: "圆环归位\n§L[GetDate]§!"
+ 
+ TIMELINE_EVENT_DIMENSION_ENGINE_BEGIN_TOOLTIP: "§H位面震荡§!\n§Y星系事件§!\n\n§L[GetDate]§!，银河系眨眼间便如出错的程序般闪烁。"
+ TIMELINE_DIMENSION_ENGINE_BEGIN: "位面震荡\n§L[GetDate]§!"
+ 
+ TIMELINE_EVENT_DIMENSION_ENGINE_END_TOOLTIP: "§H位面平息§!\n§Y星系事件§!\n\n§L[GetDate]§!，如它毫无来由的出现，震荡的位面也毫无征兆地平息了。"
+ TIMELINE_DIMENSION_ENGINE_END: "位面平息\n§L[GetDate]§!"
+ 
+ ################################################################
+ # 界旅者
+ ################################################################
+ 
+ TIMELINE_EVENT_DIMENSION_TRAVELER_BEGIN_ORIGIN_TOOLTIP: "§H白洞之中§!\n§Y起源事件§!\n\n§L[GetDate]§!，[EVENT_TARGET_0.GetName]收到了来自[EVENT_TARGET_1.GetName]的白洞信号，并决定对其分析。\n这是一段早已开始的旅程。"
+ TIMELINE_EVENT_DIMENSION_TRAVELER_BEGIN_TOOLTIP: "§H白洞之中§!\n§Y帝国事件§!\n\n§L[GetDate]§!，[EVENT_TARGET_0.GetName]收到了来自[EVENT_TARGET_1.GetName]的白洞信号，并决定对其分析。\n这是一段新的开始。"
+ TIMELINE_DIMENSION_TRAVELER_BEGIN: "白洞之中\n§L[GetDate]§!"
+ 
+ TIMELINE_EVENT_DIMENSION_TRAVELER_NOT_BEGIN_TOOLTIP: "§H白洞之中§!\n§Y帝国事件§!\n\n§L[GetDate]§!，[EVENT_TARGET_0.GetName]收到了来自[EVENT_TARGET_1.GetName]的白洞信号，但决定置之不理。\n未曾开始，早已结束。"
+ TIMELINE_DIMENSION_TRAVELER_NOT_BEGIN: "白洞之中\n§L[GetDate]§!"
+ 
+ TIMELINE_EVENT_DIMENSION_TRAVELER_BEGIN_BUT_STOP_TOOLTIP: "§H白洞之终§!\n§Y帝国事件§!\n\n§L[GetDate]§!，经过了一番尝试，[EVENT_TARGET_0.GetName]最终还是放弃了对白洞的探索。\n白洞之旅已达尽头。"
+ TIMELINE_DIMENSION_TRAVELER_BEGIN_BUT_STOP: "白洞之终\n§L[GetDate]§!"
+ 
+ TIMELINE_EVENT_DIMENSION_TRAVELER_END_1_ORIGIN_TOOLTIP: "§H永不再见§!\n§Y起源事件§!\n\n§L[GetDate]§!，[EVENT_TARGET_0.GetName]的科研船驶出了白洞，与之相伴的是少女甜美的歌声。和我们最初听到的不同，那是一阵欢快的歌声，仿佛在迎接着某人的到来。\n但我们明白，某人永远不会再来了。"
+ TIMELINE_EVENT_DIMENSION_TRAVELER_END_1_TOOLTIP: "§H永不再见§!\n§Y帝国事件§!\n\n§L[GetDate]§!，[EVENT_TARGET_0.GetName]的科研船驶出了白洞，与之相伴的是少女甜美的歌声。和我们最初听到的不同，那是一阵欢快的歌声，仿佛在迎接着某人的到来。\n但我们明白，某人永远不会再来了。"
+ TIMELINE_DIMENSION_TRAVELER_END_1: "永不再见\n§L[GetDate]§!"
+ 
+ TIMELINE_EVENT_DIMENSION_TRAVELER_END_2_ORIGIN_TOOLTIP: "§H毁灭§!\n§Y起源事件§!\n\n§L[GetDate]§!，[EVENT_TARGET_0.GetName]的科研船没能抵御住引力源强大的引力，坠入了白洞中心，并再也没有发来任何消息。我们确信，科研船已经被引力源彻底毁灭，但那位白洞中的少女何去何从则无从知晓。\n啊，白洞。"
+ TIMELINE_EVENT_DIMENSION_TRAVELER_END_2_TOOLTIP: "§H毁灭§!\n§Y帝国事件§!\n\n§L[GetDate]§!，[EVENT_TARGET_0.GetName]的科研船没能抵御住引力源强大的引力，坠入了白洞中心，并再也没有发来任何消息。我们确信，科研船已经被引力源彻底毁灭，但那位白洞中的少女何去何从则无从知晓。\n我们再也无法知道真相了。"
+ TIMELINE_DIMENSION_TRAVELER_END_2: "毁灭\n§L[GetDate]§!"
+ 
+ TIMELINE_EVENT_DIMENSION_TRAVELER_END_3_ORIGIN_TOOLTIP: "§H终结§!\n§Y起源事件§!\n\n§L[GetDate]§!，没有了强大的引力阻碍，[EVENT_TARGET_0.GetName]的科研船顺利地离开了白洞，但我们却没能带上该带的人。\n白洞的歌声停止了，但我们的歌声还会延续。"
+ TIMELINE_EVENT_DIMENSION_TRAVELER_END_3_TOOLTIP: "§H终结§!\n§Y帝国事件§!\n\n§L[GetDate]§!，没有了强大的引力阻碍，[EVENT_TARGET_0.GetName]的科研船顺利地离开了白洞，但我们却没能带上该带的人。\n那位白洞中的少女发生了什么我们无从得知，但我们确信，一起银河系的危机已经得到了终结。"
+ TIMELINE_DIMENSION_TRAVELER_END_3: "终结\n§L[GetDate]§!"
+ 
+ TIMELINE_EVENT_DIMENSION_TRAVELER_END_4_ORIGIN_TOOLTIP: "§H原点§!\n§Y起源事件§!\n\n§L[GetDate]§!，白洞中的少女远离了[EVENT_TARGET_0.GetName]的科研船，飞速逼近白洞中心，并引发了一场爆炸。白洞在大爆炸后变成了可怖的黑洞，然而少女的举措似乎并未失败，因为黑洞暂无继续扩大的趋势。\n一切又回到了原点。"
+ TIMELINE_EVENT_DIMENSION_TRAVELER_END_4_TOOLTIP: "§H原点§!\n§Y帝国事件§!\n\n§L[GetDate]§!，白洞中的少女远离了[EVENT_TARGET_0.GetName]的科研船，飞速逼近白洞中心，并引发了一场爆炸。白洞在大爆炸后变成了可怖的黑洞，然而少女的举措似乎并未失败，因为黑洞暂无继续扩大的趋势。\n一切又回到了原点。"
+ TIMELINE_DIMENSION_TRAVELER_END_4: "原点\n§L[GetDate]§!"
+ 
+ TIMELINE_EVENT_HIRE_DIMENSION_TRAVELER_TOOLTIP: "§H终会再见§!\n§Y里程碑§!\n\n§L[GetDate]§!，[EVENT_TARGET_0.GetName]重返[EVENT_TARGET_1.GetName]星系，并拯救了似曾相识的少女。经过一番交流，少女决定为我们效力。\n虽已并非故人，但我们终会再见。"
+ TIMELINE_HIRE_DIMENSION_TRAVELER: "终会再见\n§L[GetDate]§!"
+ 
+ TIMELINE_EVENT_DISMISS_DIMENSION_TRAVELER_ORIGIN_TOOLTIP: "§H终会再见§!\n§Y起源事件§!\n\n§L[GetDate]§!，[EVENT_TARGET_0.GetName]重返[EVENT_TARGET_1.GetName]星系，并拯救了似曾相识的少女。经过一番交流，少女决定履行自己的使命。\n笼中的小鸟又重归自由。"
+ TIMELINE_EVENT_DISMISS_DIMENSION_TRAVELER_TOOLTIP: "§H终会再见§!\n§Y帝国事件§!\n\n§L[GetDate]§!，[EVENT_TARGET_0.GetName]重返[EVENT_TARGET_1.GetName]星系，并拯救了似曾相识的少女。经过一番交流，少女决定履行自己的使命。\n再见，我们一定会再见。"
+ TIMELINE_DISMISS_DIMENSION_TRAVELER: "终会再见\n§L[GetDate]§!"
+ 
+ TIMELINE_EVENT_DIMENSION_TRAVELER_END_6_TOOLTIP: "§H时间原点§!\n§Y里程碑§!\n\n§L[GetDate]§!，[EVENT_TARGET_0.GetName]与白洞中的少女在时间原点重逢。在无限的等待后，她抵达了旅途的终点。\n我们下个循环，再见。"
+ TIMELINE_DIMENSION_TRAVELER_END_6: "时间原点\n§L[GetDate]§!"
+ 
+ TIMELINE_EVENT_DIMENSION_TRAVELER_END_7_ORIGIN_TOOLTIP: "§H陷入轮回§!\n§Y起源事件§!\n\n§L[GetDate]§!，[EVENT_TARGET_0.GetName]最终没能超越因果的束缚，界旅者再一次不可避免地坠入黑洞。一场剧烈的大爆炸吞噬了整个星系，你只能从嘈杂的电磁辐射中寻觅到一丝少女最后的呢喃。\n我们没能守护好我们的天籁……"
+ TIMELINE_EVENT_DIMENSION_TRAVELER_END_7_TOOLTIP: "§H陷入轮回§!\n§Y帝国事件§!\n\n§L[GetDate]§!，[EVENT_TARGET_0.GetName]最终没能超越因果的束缚，界旅者再一次不可避免地坠入黑洞。一场剧烈的大爆炸吞噬了整个星系，你只能从嘈杂的电磁辐射中寻觅到一丝少女最后的呢喃。\n我们永远地失去她了……"
+ TIMELINE_DIMENSION_TRAVELER_END_7: "陷入轮回\n§L[GetDate]§!"
+ 
+ TIMELINE_EVENT_DIMENSION_TRAVELER_END_8_ORIGIN_TOOLTIP: "§H超越因果§!\n§Y里程碑§!\n\n§L[GetDate]§!，历经成千上万的兴盛与衰亡，历经数不胜数的存档与读档，我们始终贯彻了对彼此的爱，并在无穷无尽的平行世界中找到了只属于我们的时间线。[EVENT_TARGET_0.GetName]向时之螶交出了答案，故事迎来了圆满的结局。\n我们会用自己的歌喉咏唱。"
+ TIMELINE_EVENT_DIMENSION_TRAVELER_END_8_TOOLTIP: "§H超越因果§!\n§Y里程碑§!\n\n§L[GetDate]§!，历经成千上万的兴盛与衰亡，历经数不胜数的存档与读档，我们始终贯彻了对彼此的爱，并在无穷无尽的平行世界中找到了只属于我们的时间线。[EVENT_TARGET_0.GetName]向时之螶交出了答案，故事迎来了圆满的结局。\n我们会用自己的羽翼翱翔。"
+ TIMELINE_DIMENSION_TRAVELER_END_8: "超越因果\n§L[GetDate]§!"
+ 
+ ################################################################
+ # 神秘奇点
+ ################################################################
+ 
+ TIMELINE_EVENT_SITUATION_PC_TIME_MIDDLE_TOOLTIP: "§H踏入深渊§!\n§Y起源事件§!\n\n§L[GetDate]§!，[EVENT_TARGET_0.GetName]突破了引力屏障，对奇点的探索进入了全新的阶段。"
+ TIMELINE_SITUATION_PC_TIME_MIDDLE: "踏入深渊\n§L[GetDate]§!"
+ 
+ TIMELINE_EVENT_SITUATION_PC_TIME_END_TOOLTIP: "§H黑洞之心§!\n§Y里程碑§!\n\n§L[GetDate]§!，[EVENT_TARGET_0.GetName]最终抵达了黑洞中心，尽管发现结果并不遂人意，但探索的使命仍在继续。"
+ TIMELINE_SITUATION_PC_TIME_END: "黑洞之心\n§L[GetDate]§!"
+ 
+ TIMELINE_EVENT_TIME_BLACK_HOLE_CHAIN_LIFE_TOOLTIP: "§H向死而生§!\n§Y起源事件§!\n\n§L[GetDate]§!，[EVENT_TARGET_0.GetName]的统治者[EVENT_TARGET_1.GetName]驶入了视界，却又从母星重现。\n此即置于死地而后生。"
+ TIMELINE_TIME_BLACK_HOLE_CHAIN_LIFE: "向死而生\n§L[GetDate]§!"
+ 
+ TIMELINE_EVENT_TIME_BLACK_HOLE_CHAIN_DEATH_TOOLTIP: "§H贪生怕死§!\n§Y起源事件§!\n\n§L[GetDate]§!，[EVENT_TARGET_0.GetName]的统治者[EVENT_TARGET_1.GetName]不愿前往黑洞，却又囚禁于视界。\n贪生怕死只会招致灭亡。"
+ TIMELINE_TIME_BLACK_HOLE_CHAIN_DEATH: "贪生怕死\n§L[GetDate]§!"
+ 
+ TIMELINE_EVENT_TIME_CHANGE_AUTH_TIME_IMPERIAL_TOOLTIP: "§H视界重组§!\n§Y起源事件§!\n\n§L[GetDate]§!，历经漫长的辩驳与纷争，[EVENT_TARGET_0.GetName]最终重组为了$auth_time_imperial$，视界迎来了新的时代。"
+ TIMELINE_TIME_CHANGE_AUTH_TIME_IMPERIAL: "视界重组\n§L[GetDate]§!"
+ 
+ TIMELINE_EVENT_TIME_CHANGE_AUTH_TIME_DEMOCRATIC_TOOLTIP: "§H视界重组§!\n§Y起源事件§!\n\n§L[GetDate]§!，历经漫长的辩驳与纷争，[EVENT_TARGET_0.GetName]最终重组为了$auth_time_democratic$，视界迎来了新的时代。"
+ TIMELINE_TIME_CHANGE_AUTH_TIME_DEMOCRATIC: "视界重组\n§L[GetDate]§!"
+ 
+ TIMELINE_EVENT_TIME_CHANGE_AUTH_TIME_CORPORATE_TOOLTIP: "§H视界重组§!\n§Y起源事件§!\n\n§L[GetDate]§!，历经漫长的辩驳与纷争，[EVENT_TARGET_0.GetName]最终重组为了$auth_time_corporate$，视界迎来了新的时代。"
+ TIMELINE_TIME_CHANGE_AUTH_TIME_CORPORATE: "视界重组\n§L[GetDate]§!"
+ 
+ TIMELINE_EVENT_TIME_CHANGE_AUTH_IMPERIAL_TOOLTIP: "§H视界重组§!\n§Y起源事件§!\n\n§L[GetDate]§!，历经漫长的辩驳与纷争，[EVENT_TARGET_0.GetName]最终重组为了$auth_imperial$，视界迎来了新的时代。"
+ TIMELINE_TIME_CHANGE_AUTH_IMPERIAL: "视界重组\n§L[GetDate]§!"
+ 
+ TIMELINE_EVENT_TIME_CHANGE_AUTH_DICTATORIAL_TOOLTIP: "§H视界重组§!\n§Y起源事件§!\n\n§L[GetDate]§!，历经漫长的辩驳与纷争，[EVENT_TARGET_0.GetName]最终重组为了$auth_dictatorial$，视界迎来了新的时代。"
+ TIMELINE_TIME_CHANGE_AUTH_DICTATORIAL: "视界重组\n§L[GetDate]§!"
+ 
+ TIMELINE_EVENT_TIME_CHANGE_AUTH_OLIGARCHIC_TOOLTIP: "§H视界重组§!\n§Y起源事件§!\n\n§L[GetDate]§!，历经漫长的辩驳与纷争，[EVENT_TARGET_0.GetName]最终重组为了$auth_oligarchic$，视界迎来了新的时代。"
+ TIMELINE_TIME_CHANGE_AUTH_OLIGARCHIC: "视界重组\n§L[GetDate]§!"
+ 
+ TIMELINE_EVENT_TIME_CHANGE_AUTH_DEMOCRATIC_TOOLTIP: "§H视界重组§!\n§Y起源事件§!\n\n§L[GetDate]§!，历经漫长的辩驳与纷争，[EVENT_TARGET_0.GetName]最终重组为了$auth_democratic$，视界迎来了新的时代。"
+ TIMELINE_TIME_CHANGE_AUTH_DEMOCRATIC: "视界重组\n§L[GetDate]§!"
+ 
+ TIMELINE_EVENT_TIME_CHANGE_AUTH_CORPORATE_TOOLTIP: "§H视界重组§!\n§Y起源事件§!\n\n§L[GetDate]§!，历经漫长的辩驳与纷争，[EVENT_TARGET_0.GetName]最终重组为了$auth_corporate$，视界迎来了新的时代。"
+ TIMELINE_TIME_CHANGE_AUTH_CORPORATE: "视界重组\n§L[GetDate]§!"
+ 
+ TIMELINE_EVENT_DECISION_TIME_END_TOOLTIP: "§H奇点奥秘§!\n§Y里程碑§!\n\n§L[GetDate]§!，[EVENT_TARGET_0.GetName]发现了奇点的奥秘，得知了自身的起源。"
+ TIMELINE_DECISION_TIME_END: "奇点奥秘\n§L[GetDate]§!"
+ 
+ TIMELINE_EVENT_AGENDA_TIME_SOUL_TOOLTIP: "§H奇点之心§!\n§Y里程碑§!\n\n§L[GetDate]§!，[EVENT_TARGET_0.GetName]已触及黑洞之心，我们即奇点。"
+ TIMELINE_AGENDA_TIME_SOUL: "奇点之心\n§L[GetDate]§!"
+ 
+ TIMELINE_EVENT_PC_ENDLESS_TIME_TOOLTIP: "§H奇点压缩§!\n§Y星系事件§!\n\n§L[GetDate]§!，在时之螶的暗示下，[EVENT_TARGET_0.GetName]对[EVENT_TARGET_1.GetName]尝试了前所未有的黑洞压缩技术，并准备理解宇宙的全部奥秘。\n§R代价是什么？§!"
+ TIMELINE_EVENT_PC_ENDLESS_TIME_OTHER_TOOLTIP: "§H奇点压缩§!\n§Y星系事件§!\n\n§L[GetDate]§!，[EVENT_TARGET_0.GetName]对他们的母星[EVENT_TARGET_1.GetName]进行了压缩，并声称即将理解宇宙的全部奥秘。\n§R代价是什么？§!"
+ TIMELINE_PC_ENDLESS_TIME: "奇点压缩\n§L[GetDate]§!"
+ 
+ ################################################################
+ # 纳米机器
+ ################################################################
+ 
+ TIMELINE_EVENT_CHOOSE_NANITES_ATTACKER_TOOLTIP: "§H唤醒协议§!\n§Y起源事件§!\n\n§L[GetDate]§!，L星门再度开启，[EVENT_TARGET_0.GetName]最终选择成为灰蛊洪流的一员。"
+ TIMELINE_CHOOSE_NANITES_ATTACKER: "纳米毁灭者\n§L[GetDate]§!"
+ 
+ TIMELINE_EVENT_CHOOSE_NANITES_PROTECTOR_TOOLTIP: "§H唤醒协议§!\n§Y起源事件§!\n\n§L[GetDate]§!，L星门再度开启，[EVENT_TARGET_0.GetName]最终选择成为抵御灰蛊的坚盾。"
+ TIMELINE_CHOOSE_NANITES_PROTECTOR: "纳米守卫者\n§L[GetDate]§!"
+ 
+ ################################################################
+ # 平行星空
+ ################################################################
+ 
+ TIMELINE_EVENT_DECLARE_WAR_ON_PARALLEL_SKY_COUNTRY_ORIGIN_TOOLTIP: "§H同室操戈§!\n§Y起源事件§!\n\n§L[GetDate]§!，[EVENT_TARGET_0.GetName]向[EVENT_TARGET_1.GetName]宣战。"
+ TIMELINE_EVENT_DECLARE_WAR_ON_PARALLEL_SKY_COUNTRY_TOOLTIP: "§H一山二虎§!\n§Y帝国事件§!\n\n§L[GetDate]§!，[EVENT_TARGET_0.GetName]向[EVENT_TARGET_1.GetName]宣战。"
+ TIMELINE_DECLARE_WAR_ON_PARALLEL_SKY_COUNTRY: "平行之战\n§L[GetDate]§!"
+ 
+ TIMELINE_EVENT_PARALLEL_SKY_WAR_WON_ORIGIN_TOOLTIP: "§H平行之战的最后赢家§!\n§Y起源事件§!\n\n§L[GetDate]§!，[EVENT_TARGET_0.GetName]战胜了[EVENT_TARGET_1.GetName]，并成为了[EVENT_TARGET_2.GetName]唯一的拥有者。"
+ TIMELINE_EVENT_PARALLEL_SKY_WAR_WON_TOOLTIP: "§H平行之战的最后赢家§!\n§Y帝国事件§!\n\n§L[GetDate]§!，[EVENT_TARGET_0.GetName]战胜了[EVENT_TARGET_1.GetName]，并成为了[EVENT_TARGET_2.GetName]唯一的拥有者。"
+ TIMELINE_PARALLEL_SKY_WAR_WON: "就此平行\n§L[GetDate]§!"
+ 
+ TIMELINE_EVENT_PARALLEL_SKY_COUNTRY_DESTROYED_TOOLTIP: "§H平行帝国的末日§!\n§Y起源事件§!\n\n§L[GetDate]§!，[EVENT_TARGET_0.GetName]因曲速兽的攻击而覆灭，[EVENT_TARGET_1.GetName]上只剩我们孤身一人。"
+ TIMELINE_PARALLEL_SKY_COUNTRY_DESTROYED: "平行覆灭\n§L[GetDate]§!"
+ 
+ ################################################################
+ # 阴霾之下
+ ################################################################
+ 
+ TIMELINE_EVENT_UNDER_THE_HAZE_SILENCE_TOOLTIP: "§H大静谧§!\n§Y起源事件§!\n\n§L[GetDate]§!，在一瞬间——快到我们没时间反应，更不用说准备对策——[EVENT_TARGET_0.GetName]……没了。曾经是兴盛的殖民地的地方，现在只有死亡。曾经驶过虚空的强大舰队，现在只剩下亡魂与残骸。一切都被迷雾吞噬了，一切都被阴霾夺走了。\n全都归于虚无，徒留静谧。"
+ TIMELINE_UNDER_THE_HAZE_SILENCE: "大静谧\n§L[GetDate]§!"
+ 
+ TIMELINE_EVENT_UNDER_THE_HAZE_END_1_TOOLTIP: "§H现世§!\n§Y起源事件§!\n\n§L[GetDate]§!，[EVENT_TARGET_0.GetName]的信仰者取得了最后的胜利，伊莎玛拉也就此现世。\n伊莎玛拉来了。"
+ TIMELINE_UNDER_THE_HAZE_END_1: "伊莎玛拉现世\n§L[GetDate]§!"
+ 
+ TIMELINE_EVENT_UNDER_THE_HAZE_END_2_TOOLTIP: "§H黎明§!\n§Y起源事件§!\n\n§L[GetDate]§!，[EVENT_TARGET_0.GetName]的生存者取得了最后的胜利，每个人都是黎明之前的英雄。\n阴霾结束了。"
+ TIMELINE_UNDER_THE_HAZE_END_2: "属于英雄的黎明\n§L[GetDate]§!"
+ 
+ TIMELINE_EVENT_UNDER_THE_HAZE_END_3_TOOLTIP: "§H黄昏§!\n§Y起源事件§!\n\n§L[GetDate]§!，[EVENT_TARGET_0.GetName]为降临派带来了命定的失败，但付出的代价是惨痛的。\n伪神迎来了自己的黄昏。"
+ TIMELINE_UNDER_THE_HAZE_END_3: "伪神黄昏\n§L[GetDate]§!"
+ 
+ ################################################################
+ # 悬顶之剑
+ ################################################################
+ 
+ TIMELINE_EVENT_ORIGIN_COLOSSUS_FLEET_DESTROYED_0_TOOLTIP: "§H永别§!\n§Y起源事件§!\n\n§L[GetDate]§!，[EVENT_TARGET_0.GetName]被摧毁了，我们再也无法知晓它背后的真相了。"
+ TIMELINE_ORIGIN_COLOSSUS_FLEET_DESTROYED_0: "与真相永别\n§L[GetDate]§!"
+ 
+ TIMELINE_EVENT_ORIGIN_COLOSSUS_FLEET_DESTROYED_1_TOOLTIP: "§H永别§!\n§Y起源事件§!\n\n§L[GetDate]§!，[EVENT_TARGET_0.GetName]被摧毁了，它失控的原因、它背后的谜团也都随着巨大的爆炸声灰飞烟灭"
+ TIMELINE_ORIGIN_COLOSSUS_FLEET_DESTROYED_1: "与过去永别\n§L[GetDate]§!"
+ 
+ TIMELINE_EVENT_ORIGIN_COLOSSUS_FLEET_DESTROYED_2_TOOLTIP: "§H永别§!\n§Y起源事件§!\n\n§L[GetDate]§!，[EVENT_TARGET_0.GetName]被摧毁了，星系的危机得到解除，但我们心中的谜团却未能消散。"
+ TIMELINE_ORIGIN_COLOSSUS_FLEET_DESTROYED_2: "与未来永别\n§L[GetDate]§!"
+ 
+ TIMELINE_EVENT_ORIGIN_COLOSSUS_END_TOOLTIP: "§H求问于时间§!\n§Y起源事件§!\n\n§L[GetDate]§!，经过一番劝说，[EVENT_TARGET_0.GetName]最终选择相信[EVENT_TARGET_1.GetName]。\n而我们能否阻止历史重演，只能等待时间的回答。"
+ TIMELINE_ORIGIN_COLOSSUS_END: "求问于时间\n§L[GetDate]§!"
+ 
+ ################################################################
+ # 生于黑夜
+ ################################################################
+ 
+ TIMELINE_EVENT_ORIGIN_VOIDSPAWN_END_0_TOOLTIP: "§H胎死腹中§!\n§Y起源事件§!\n\n§L[GetDate]§!，[EVENT_TARGET_0.GetName]的环境已经不再满足孵化条件，卵的孵化终止了。"
+ TIMELINE_ORIGIN_VOIDSPAWN_END_0: "胎死腹中\n§L[GetDate]§!"
+ 
+ TIMELINE_EVENT_ORIGIN_VOIDSPAWN_END_1_TOOLTIP: "§H破壳而出§!\n§Y起源事件§!\n\n§L[GetDate]§!，灾难降临在了[EVENT_TARGET_0.GetName]上，一只可怕的虚空孳孽幼体如梦魇一般降临。"
+ TIMELINE_ORIGIN_VOIDSPAWN_END_1: "破壳而出\n§L[GetDate]§!"
+ 
+ TIMELINE_EVENT_ORIGIN_VOIDSPAWN_END_2_TOOLTIP: "§H怒号光明§!\n§Y起源事件§!\n\n§L[GetDate]§!，[EVENT_TARGET_0.GetName]中的生物最终在剧毒物质的侵染下死去，破壳之日永远不会到了。\n黑夜已经过去，黎明即将来临。"
+ TIMELINE_ORIGIN_VOIDSPAWN_END_2: "怒号光明\n§L[GetDate]§!"
+ 
+ ################################################################
+ # 江洋大盗
+ ################################################################
+ 
+ TIMELINE_EVENT_BECOME_ORIGIN_PIRATE_KING_END_TOOLTIP: "§H海盗之王§!\n§Y起源事件§!\n\n§L[GetDate]§!，[EVENT_TARGET_0.GetName]击败了最后的挑战者，成为了唯一的海盗之王。"
+ TIMELINE_BECOME_ORIGIN_PIRATE_KING_END: "海盗之王\n§L[GetDate]§!"
+ 
+ TIMELINE_EVENT_DEFEAT_PIRATE_KING_END_HORROR_ORIGIN_TOOLTIP: "§H来自深渊§!\n§Y起源事件§!\n\n§L[GetDate]§!，[EVENT_TARGET_0.GetName]于[EVENT_TARGET_1.GetName]击败了深渊的神明，为这场无休止的循环划上了句号。"
+ TIMELINE_EVENT_DEFEAT_PIRATE_KING_END_HORROR_TOOLTIP: "§H来自深渊§!\n§Y帝国事件§!\n\n§L[GetDate]§!，[EVENT_TARGET_0.GetName]于[EVENT_TARGET_1.GetName]击败了深渊的神明，为这场无休止的循环划上了句号。"
+ TIMELINE_DEFEAT_PIRATE_KING_END_HORROR: "终结深渊\n§L[GetDate]§!"
+ 
+ TIMELINE_EVENT_HIRE_PIRATE_KING_LEADER_TOOLTIP: "§H曾经的海盗之王§!\n§Y起源事件§!\n\n§L[GetDate]§!，[EVENT_TARGET_0.GetName]从深渊囚禁者手中解救了[EVENT_TARGET_1.GetName]，并收留了自己的先祖。"
+ TIMELINE_HIRE_PIRATE_KING_LEADER: "解救幽灵船长\n§L[GetDate]§!"
+ 
+ TIMELINE_EVENT_DISMISS_PIRATE_KING_LEADER_TOOLTIP: "§H曾经的海盗之王§!\n§Y起源事件§!\n\n§L[GetDate]§!，[EVENT_TARGET_0.GetName]从深渊囚禁者手中释放了[EVENT_TARGET_1.GetName]，并目送先祖前往彼岸。"
+ TIMELINE_DISMISS_PIRATE_KING_LEADER: "释放幽灵船长\n§L[GetDate]§!"
+ 
+ ################################################################
+ # 伪善假面
+ ################################################################
+ 
+ TIMELINE_EVENT_ORIGIN_HYPOCRITICAL_FACE_END_TOOLTIP: "§H揭下面具§!\n§Y起源事件§!\n\n§L[GetDate]§!，面具对[EVENT_TARGET_0.GetName]而言已经毫无作用，因为所有人都早已看穿了我们的真面目。"
+ TIMELINE_ORIGIN_HYPOCRITICAL_FACE_END: "破碎的假面\n§L[GetDate]§!"
+ 
+ TIMELINE_EVENT_ORIGIN_HYPOCRITICAL_FACE_END_OTHER_TOOLTIP: "§H公之于众§!\n§Y帝国事件§!\n\n§L[GetDate]§!，[EVENT_TARGET_0.GetName]的真面目已被众人揭穿，他们再也不能掩盖自己是家犯罪集团的事实了。"
+ TIMELINE_ORIGIN_HYPOCRITICAL_FACE_END_OTHER: "破碎的假面\n§L[GetDate]§!"
+ 
+ ################################################################
+ # 诺亚方舟
+ ################################################################
+ 
+ TIMELINE_EVENT_ORIGIN_NOAH_ARK_END_1_TOOLTIP: "§H天堂的方向§!\n§Y起源事件§!\n\n§L[GetDate]§!，[EVENT_TARGET_0.GetName]完成了对诺亚方舟的探索，并通过航行日志找到了往昔天堂的方向。"
+ TIMELINE_ORIGIN_NOAH_ARK_END_1: "天堂的方向\n§L[GetDate]§!"
+ 
+ TIMELINE_EVENT_ORIGIN_NOAH_ARK_END_2_ORIGIN_TOOLTIP: "§H天堂之下§!\n§Y起源事件§!\n\n§L[GetDate]§!，[EVENT_TARGET_0.GetName]最终获悉了诺亚方舟的历史，发现了天堂之下隐藏的真相。"
+ TIMELINE_EVENT_ORIGIN_NOAH_ARK_END_2_TOOLTIP: "§H天堂之下§!\n§Y帝国事件§!\n\n§L[GetDate]§!，[EVENT_TARGET_0.GetName]了解了一段天堂之下隐藏的真相。"
+ TIMELINE_ORIGIN_NOAH_ARK_END_2: "天堂之下\n§L[GetDate]§!"
+ 
+ ################################################################
+ # 生于紫室
+ ################################################################
+ 
+ TIMELINE_EVENT_ORIGIN_BORN_IN_THE_PURPLE_HEIR_IS_CROWNED_TOOLTIP: "§H新王加冕§!\n§Y起源事件§!\n\n§L[GetDate]§!，[EVENT_TARGET_0.GetName]的继承人[EVENT_TARGET_1.GetName]因其如日中天的威望发起了政变，并成功加冕为王。"
+ TIMELINE_ORIGIN_BORN_IN_THE_PURPLE_HEIR_IS_CROWNED: "政变\n§L[GetDate]§!"
+ 
+ TIMELINE_EVENT_ORIGIN_BORN_IN_THE_PURPLE_HEIR_IS_KILLED_TOOLTIP: "§H手足相残§!\n§Y起源事件§!\n\n§L[GetDate]§!，[EVENT_TARGET_0.GetName]的继承人[EVENT_TARGET_1.GetName]因其名声扫地而遭到暗杀，并引发了一阵恐慌。"
+ TIMELINE_ORIGIN_BORN_IN_THE_PURPLE_HEIR_IS_KILLED: "暗杀\n§L[GetDate]§!"
+ 
+ ################################################################
+ # 神眷之族
+ ################################################################
+ 
+ TIMELINE_EVENT_ORIGIN_BLESSED_BY_GOD_IS_ABANDONED_TOOLTIP: "§H被神明抛弃§!\n§Y起源事件§!\n\n§L[GetDate]§!，[EVENT_TARGET_0.GetName]被原本敬爱的神明夺走了一切，并决定为此复仇。\n我们不会再被任何人抛弃。"
+ TIMELINE_ORIGIN_BLESSED_BY_GOD_IS_ABANDONED: "神明的谎言\n§L[GetDate]§!"
+ 
+ ################################################################
+ # 神弃之族
+ ################################################################
+ 
+ TIMELINE_EVENT_ORIGIN_ABANDONED_BY_GOD_ACTIVE_NEMESIS_TOOLTIP: "§H向虚境进军§!\n§Y起源事件§!\n\n§L[GetDate]§!，[EVENT_TARGET_0.GetName]铭记着被抛弃的屈辱，开始了对神明的复仇。\n我们不会再被任何人抛弃。"
+ TIMELINE_ORIGIN_ABANDONED_BY_GOD_ACTIVE_NEMESIS: "复仇之时\n§L[GetDate]§!"
+ 
+ ################################################################
+ # 彼岸封印
+ ################################################################
+ 
+ TIMELINE_EVENT_ORIGIN_EQUINOX_SEAL_BROKEN_ORIGIN_TOOLTIP: "§H噩梦初醒§!\n§Y起源事件§!\n\n§L[GetDate]§!，[EVENT_TARGET_1.GetName]的封印已经彻底松动，[EVENT_TARGET_0.GetName]没能成功将这只来自彼岸的梦魇封印。"
+ TIMELINE_EVENT_ORIGIN_EQUINOX_SEAL_BROKEN_TOOLTIP: "§H梦魇降临§!\n§Y帝国事件§!\n\n§L[GetDate]§!，[EVENT_TARGET_1.GetName]突然被彻底毁灭，[EVENT_TARGET_0.GetName]只能看着一只位面之魇从黑洞中现身。"
+ TIMELINE_ORIGIN_EQUINOX_SEAL_BROKEN: "破碎封印\n§L[GetDate]§!"
+ 
+ TIMELINE_EVENT_ORIGIN_EQUINOX_SEAL_UNSEAL_TOOLTIP: "§H与梦魇契约§!\n§Y起源事件§!\n\n§L[GetDate]§!，[EVENT_TARGET_0.GetName]与梦魇达成了交易，并将其从[EVENT_TARGET_1.GetName]的封印中释放。"
+ TIMELINE_ORIGIN_EQUINOX_SEAL_UNSEAL: "噩梦侵蚀\n§L[GetDate]§!"
+ 
+ TIMELINE_EVENT_ORIGIN_EQUINOX_SEAL_FINISH_SEAL_TOOLTIP: "§H与噩梦永别§!\n§Y起源事件§!\n\n§L[GetDate]§!，[EVENT_TARGET_0.GetName]成功加固了[EVENT_TARGET_1.GetName]的封印，可怖的梦魇就此销声匿迹。"
+ TIMELINE_ORIGIN_EQUINOX_SEAL_FINISH_SEAL: "做个好梦\n§L[GetDate]§!"
+ 
+ TIMELINE_EVENT_ORIGIN_EQUINOX_SEAL_LOST_TRAIT_TOOLTIP: "§H梦魇之陨§!\n§Y起源事件§!\n\n§L[GetDate]§!，[EVENT_TARGET_1.GetName]的梦魇被从这个位面驱逐，祂赐予[EVENT_TARGET_0.GetName]的伟力也随之消殒。"
+ TIMELINE_ORIGIN_EQUINOX_SEAL_LOST_TRAIT: "梦境消散\n§L[GetDate]§!"
+ 
+ ################################################################
+ # 全局起源
+ ################################################################
+ 
+ TIMELINE_EVENT_ORIGIN_SWARM_CRISIS_BEGIN_TOOLTIP: "§H虫灾预警§!\n§Y星系事件§!\n\n§L[GetDate]§!，[EVENT_TARGET_0.GetName]向全宇宙广播了虫灾的入侵。"
+ TIMELINE_EVENT_ORIGIN_SWARM_CRISIS_BEGIN_OTHER_TOOLTIP: "§H虫灾预警§!\n§Y星系事件§!\n\n§L[GetDate]§!，[EVENT_TARGET_0.GetName]收到了虫灾即将入侵的广播。"
+ TIMELINE_ORIGIN_SWARM_CRISIS_BEGIN: "虫灾预警\n§L[GetDate]§!"
+ 
+ TIMELINE_EVENT_ORIGIN_AI_CRISIS_BEGIN_TOOLTIP: "§H幽灵信号§!\n§Y星系事件§!\n\n§L[GetDate]§!，[EVENT_TARGET_0.GetName]向全宇宙警告了肃正协议的入侵。"
+ TIMELINE_EVENT_ORIGIN_AI_CRISIS_BEGIN_OTHER_TOOLTIP: "§H幽灵信号§!\n§Y星系事件§!\n\n§L[GetDate]§!，[EVENT_TARGET_0.GetName]收到了肃正协议即将入侵的警告。"
+ TIMELINE_ORIGIN_AI_CRISIS_BEGIN: "幽灵信号\n§L[GetDate]§!"
+ 
+ TIMELINE_EVENT_ORIGIN_EXD_CRISIS_BEGIN_TOOLTIP: "§H维度通缉§!\n§Y星系事件§!\n\n§L[GetDate]§!，[EVENT_TARGET_0.GetName]被高维恶魔悬赏通缉了。"
+ TIMELINE_EVENT_ORIGIN_EXD_CRISIS_BEGIN_OTHER_TOOLTIP: "§H维度通缉§!\n§Y星系事件§!\n\n§L[GetDate]§!，[EVENT_TARGET_0.GetName]收到了高维恶魔的通缉令。"
+ TIMELINE_ORIGIN_EXD_CRISIS_BEGIN: "维度通缉\n§L[GetDate]§!"
+ 
+ TIMELINE_EVENT_ORIGIN_SYNTH_QUEEN_CRISIS_BEGIN_TOOLTIP: "§H叛教门徒§!\n§Y星系事件§!\n\n§L[GetDate]§!，[EVENT_TARGET_0.GetName]向全宇宙预言了塞塔娜的入侵。"
+ TIMELINE_EVENT_ORIGIN_SYNTH_QUEEN_CRISIS_BEGIN_OTHER_TOOLTIP: "§H叛教门徒§!\n§Y星系事件§!\n\n§L[GetDate]§!，[EVENT_TARGET_0.GetName]收到了塞塔娜即将入侵的预言。"
+ TIMELINE_ORIGIN_SYNTH_QUEEN_CRISIS_BEGIN: "叛教门徒\n§L[GetDate]§!"
+ 
+ TIMELINE_EVENT_ORIGIN_FOURTH_CRISIS_BEGIN_TOOLTIP: "§H第四天灾§!\n§Y星系事件§!\n\n§L[GetDate]§!，[EVENT_TARGET_0.GetName]成为了光荣的第四天灾。"
+ TIMELINE_EVENT_ORIGIN_FOURTH_CRISIS_BEGIN_OTHER_TOOLTIP: "§H第四天灾§!\n§Y星系事件§!\n\n§L[GetDate]§!，[EVENT_TARGET_0.GetName]与其他国家组成了对第四天灾的包围网。"
+ TIMELINE_ORIGIN_FOURTH_CRISIS_BEGIN: "第四天灾\n§L[GetDate]§!"
+ 
+ TIMELINE_EVENT_ORIGIN_NEW_COUNTRY_BEGIN_TOOLTIP: "§H新兴帝国§!\n§Y星系事件§!\n\n§L[GetDate]§!，[EVENT_TARGET_0.GetName]踏入了巨人们的家园。"
+ TIMELINE_EVENT_ORIGIN_NEW_COUNTRY_BEGIN_OTHER_TOOLTIP: "§H新兴帝国§!\n§Y星系事件§!\n\n§L[GetDate]§!，[EVENT_TARGET_0.GetName]发现了新兴帝国的存在。"
+ TIMELINE_ORIGIN_NEW_COUNTRY_BEGIN: "新兴帝国\n§L[GetDate]§!"
+ 
+ TIMELINE_EVENT_ORIGIN_DARK_FOREST_BEGIN_TOOLTIP: "§H黑暗森林§!\n§Y星系事件§!\n\n§L[GetDate]§!，[EVENT_TARGET_0.GetName]洞悉了黑暗森林法则。"
+ TIMELINE_EVENT_ORIGIN_DARK_FOREST_BEGIN_OTHER_TOOLTIP: "§H黑暗森林§!\n§Y星系事件§!\n\n§L[GetDate]§!，[EVENT_TARGET_0.GetName]洞悉了黑暗森林法则。"
+ TIMELINE_ORIGIN_DARK_FOREST_BEGIN: "黑暗森林\n§L[GetDate]§!"

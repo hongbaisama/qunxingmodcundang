@@ -1,0 +1,1025 @@
+
+namespace = time
+
+fleet_event = {
+	id = time.201
+	title = time.201.name
+	desc = time.201.desc
+	picture = GFX_evt_black_hole
+	show_sound = event_alien_signal
+	location = event_target:time_black_hole
+	trackable = yes
+
+	is_triggered_only = yes
+
+	trigger = {
+		if = {
+			limit = {
+				# 船上有科学家
+				exists = leader
+				leader = { leader_class = scientist }
+			}
+			if = {
+				limit = {
+					exists = owner
+					owner = {
+						is_ai = no
+						has_origin_time = yes # 神秘奇点起源
+						NOT = { has_country_flag = time_201_triggered } # 不可重复触发
+					}
+				}
+				if = {
+					limit = {
+						owner = {
+							has_country_flag = worm_events_available # 可触发时虫事件
+							ruler = { is_origin_time_ruler = yes } # 统治者是圆环之子
+						}
+					}
+					# 是符合条件的黑洞星系
+					from = {
+						is_time_black_hole_star_class = yes
+						star = {
+							is_time_black_hole_planet_class = yes
+							is_origin_time_planet_class = no # 恒星是神秘奇点则不会触发
+						}
+						NOR = {
+							has_star_flag = horizonsignal_system
+							is_same_value = event_target:dimension_traveler_system
+						}
+					}
+				}
+				else = {
+					always = no
+				}
+			}
+			else = {
+				always = no
+			}
+		}
+		else = {
+			always = no
+		}
+	}
+
+	immediate = {
+		owner = { set_country_flag = time_201_triggered }
+		from = {
+			set_star_flag = time_black_hole_system
+			save_global_event_target_as = time_black_hole_system
+			star = { save_global_event_target_as = time_black_hole }
+		}
+	}
+
+	option = {
+		name = time.201.a
+		begin_event_chain = {
+			event_chain = TIME_BLACK_HOLE_CHAIN
+			target = root.owner
+		}
+		event_target:time_black_hole = {
+			enable_special_project = {
+				name = TIME_BLACK_HOLE_PROJECT
+				location = this
+				owner = root.owner
+			}
+		}
+	}
+
+	option = {
+		name = time.201.b
+		owner = {
+			add_monthly_resource_mult = {
+				resource = influence
+				value = @tier2influencereward
+				min = @tier2influencemin
+				max = @tier2influencemax
+			}
+			hidden_effect = {
+				set_country_flag = interrupt_time_black_hole_chain
+			}
+		}
+	}
+}
+
+country_event = {
+	id = time.202
+	title = time.202.name
+	desc = time.202.desc
+	picture = GFX_evt_black_hole
+	show_sound = event_radio_chatter
+	location = event_target:time_black_hole_system
+	event_chain = TIME_BLACK_HOLE_CHAIN
+
+	is_triggered_only = yes
+
+	trigger = {
+		ruler = { is_origin_time_ruler = no }
+	}
+
+	immediate = {
+		set_country_flag = interrupt_time_black_hole_chain
+	}
+
+	option = {
+		name = time.202.a
+		end_event_chain = TIME_BLACK_HOLE_CHAIN
+	}
+}
+
+country_event = {
+	id = time.203
+	title = time.203.name
+	desc = time.203.desc
+	picture = GFX_evt_black_hole
+	show_sound = event_radio_chatter
+	location = event_target:time_black_hole_system
+	event_chain = TIME_BLACK_HOLE_CHAIN
+
+	is_triggered_only = yes
+	
+	event_window_type = leader_story
+	event_picture_background = "GFX_leader_recruitment_bg_legendary_pirate_king"
+	picture_event_data = {
+		portrait = event_target:time_black_hole_leader
+	}
+
+	trigger = {
+		ruler = { is_origin_time_ruler = yes }
+	}
+
+	immediate = {
+		ruler = {
+			save_global_event_target_as = time_black_hole_leader
+		}
+		if = {
+			limit = {
+				any_owned_colony = {
+					has_carrier_flag = time_home_planet_of@root
+				}
+			}
+			random_owned_colony = {
+				limit = {
+					has_carrier_flag = time_home_planet_of@root
+				}
+				save_global_event_target_as = time_home_planet
+			}
+		}
+		else = {
+			random_galaxy_planet = {
+				limit = {
+					has_carrier_flag = time_home_planet_of@root
+				}
+				save_global_event_target_as = time_home_planet
+			}
+		}
+	}
+
+	option = {
+		name = time.203.a
+		start_situation = {
+			type = situation_time_black_hole_chain
+			target = event_target:time_home_planet
+			effect = {
+				set_situation_flag = situation_time_life # 贪生怕死
+				set_situation_approach = approach_default
+				save_global_event_target_as = situation_time_black_hole_chain
+			}
+		}
+		hidden_effect = {
+			country_event = { id = time.205 days = 30 }
+		}
+	}
+
+	option = {
+		name = time.203.b
+		custom_tooltip = time.203.b.tooltip
+		add_modifier = {
+			modifier = timefear
+			days = -1
+		}
+		start_situation = {
+			type = situation_time_black_hole_chain
+			target = event_target:time_home_planet
+			effect = {
+				set_situation_flag = situation_time_death # 向死而生
+				set_situation_approach = approach_default
+				save_global_event_target_as = situation_time_black_hole_chain
+			}
+		}
+		hidden_effect = {
+			set_country_flag = time_black_hole_leader_sent
+			country_event = { id = time.204 days = 30 }
+		}
+	}
+}
+
+country_event = {
+	id = time.204
+	title = time.204.name
+	desc = time.204.desc
+	picture = GFX_evt_chosen_leader
+	show_sound = event_radio_chatter
+	location = event_target:time_home_planet
+	event_chain = TIME_BLACK_HOLE_CHAIN
+
+	is_triggered_only = yes
+	
+	event_window_type = leader_story
+	event_picture_background = "GFX_leader_recruitment_bg_legendary_pirate_king"
+	picture_event_data = {
+		portrait = event_target:time_black_hole_leader
+	}
+
+	trigger = {
+		ruler = { is_origin_time_ruler = yes }
+	}
+
+	immediate = {
+		set_country_flag = time_black_hole_end_1
+		create_timeline_time_black_hole_chain_life = yes
+	}
+
+	option = {
+		name = time.204.a
+		remove_modifier = timefear
+		add_modifier = {
+			modifier = timelife
+			days = 360
+		}
+		event_target:time_black_hole_leader = {
+			add_trait = {
+				trait = leader_trait_ruler_time_owner
+			}
+		}
+		if = {
+			limit = {
+				OR = {
+					has_technology = tech_akx_worm_3
+					NOT = { has_tech_option = tech_akx_worm_3 }
+				}
+			}
+			add_monthly_resource_mult = {
+				resource = physics_research
+				value = @tier2researchreward
+				min = @tier2researchmin
+				max = @tier2researchmax
+			}
+		}
+		else = {
+			add_tech_progress = {
+				tech = tech_akx_worm_3
+				progress = 0.20
+			}
+		}
+	}
+}
+
+country_event = {
+	id = time.205
+	title = time.205.name
+	desc = time.205.desc
+	picture = GFX_evt_shroud_spacemadness
+	show_sound = event_radio_chatter
+	location = event_target:time_black_hole_system
+	event_chain = TIME_BLACK_HOLE_CHAIN
+
+	is_triggered_only = yes
+
+	trigger = {
+		ruler = { is_origin_time_ruler = yes }
+	}
+	
+	event_window_type = leader_story
+	event_picture_background = "GFX_leader_recruitment_bg_legendary_pirate_king"
+	picture_event_data = {
+		portrait = event_target:time_black_hole_leader
+	}
+
+	immediate = {
+		set_country_flag = time_black_hole_end_2
+		create_timeline_time_black_hole_chain_death = yes
+		event_target:time_black_hole_leader = {
+			save_event_target_as = old_time_black_hole_leader
+		}
+		clone_leader = {
+			target = event_target:old_time_black_hole_leader
+			effect = {
+				save_global_event_target_as = time_black_hole_leader
+				exile_leader_as = exiled_time_black_hole_leader
+			}
+		}
+		event_target:old_time_black_hole_leader = {
+			kill_leader = { show_notification = no }
+		}
+	}
+
+	option = {
+		name = time.205.a
+		add_modifier = {
+			modifier = timedeath
+			days = 360
+		}
+		event_target:time_black_hole_leader = {
+			tooltip = {
+				kill_leader = { show_notification = no }
+			}
+		}
+		if = {
+			limit = {
+				OR = {
+					has_technology = tech_akx_worm_3
+					NOT = { has_tech_option = tech_akx_worm_3 }
+				}
+			}
+			add_monthly_resource_mult = {
+				resource = physics_research
+				value = @tier2researchreward
+				min = @tier2researchmin
+				max = @tier2researchmax
+			}
+		}
+		else = {
+			add_tech_progress = {
+				tech = tech_akx_worm_3
+				progress = 0.20
+			}
+		}
+	}
+}
+
+situation_event = {
+	id = time.206
+	title = time.206.name
+	desc = {
+		text = time.206.desc.life
+		trigger = {
+			has_situation_flag = situation_time_life
+		}
+	}
+	desc = {
+		text = time.206.desc.death
+		trigger = {
+			has_situation_flag = situation_time_death
+		}
+	}
+	picture = GFX_evt_one_sided_deal
+	show_sound = event_factions
+	location = event_target:time_home_planet
+	situation = this
+	
+	is_triggered_only = yes
+	
+	trigger = {
+	}
+	
+	immediate = {
+		owner = {
+			start_situation = {
+				type = situation_time_authoritarian_vs_egalitarian
+				target = event_target:time_home_planet
+				effect = {
+					set_situation_approach = approach_time_nature
+					save_global_event_target_as = situation_time_authoritarian_vs_egalitarian
+				}
+			}
+		}
+		target = {
+			shift_random_pop_time_ethic = {
+				ETHIC = authoritarian
+				PERCENTAGE = @time_ethic_shift_percentage_middle
+			}
+			shift_random_pop_time_ethic = {
+				ETHIC = egalitarian
+				PERCENTAGE = @time_ethic_shift_percentage_middle
+			}
+		}
+		refresh_time_ethic_power_variable = yes
+		situation_event = { id = time.290 days = 29 }
+	}
+	
+	option = {
+		name = time.206.a
+		owner = {
+			tooltip = {
+				start_situation = {
+					type = situation_time_authoritarian_vs_egalitarian
+					target = event_target:time_home_planet
+				}
+			}
+		}
+	}
+}
+
+situation_event = {
+	id = time.207
+	title = time.207.name
+	desc = {
+		text = time.207.desc.life
+		trigger = {
+			has_situation_flag = situation_time_life
+		}
+	}
+	desc = {
+		text = time.207.desc.death
+		trigger = {
+			has_situation_flag = situation_time_death
+		}
+	}
+	picture = GFX_evt_two_sided_deal
+	show_sound = event_factions
+	location = event_target:time_home_planet
+	situation = this
+	
+	is_triggered_only = yes
+	
+	trigger = {
+	}
+	
+	immediate = {
+		owner = {
+			start_situation = {
+				type = situation_time_spiritualist_vs_materialist
+				target = event_target:time_home_planet
+				effect = {
+					set_situation_approach = approach_time_nature
+					save_global_event_target_as = situation_time_spiritualist_vs_materialist
+				}
+			}
+		}
+		target = {
+			shift_random_pop_time_ethic = {
+				ETHIC = spiritualist
+				PERCENTAGE = @time_ethic_shift_percentage_middle
+			}
+			shift_random_pop_time_ethic = {
+				ETHIC = materialist
+				PERCENTAGE = @time_ethic_shift_percentage_middle
+			}
+		}
+		refresh_time_ethic_power_variable = yes
+	}
+	
+	option = {
+		name = time.207.a
+		owner = {
+			tooltip = {
+				start_situation = {
+					type = situation_time_spiritualist_vs_materialist
+					target = event_target:time_home_planet
+				}
+			}
+		}
+	}
+}
+
+situation_event = {
+	id = time.208
+	title = time.208.name
+	desc = {
+		text = time.208.desc.life
+		trigger = {
+			has_situation_flag = situation_time_life
+		}
+	}
+	desc = {
+		text = time.208.desc.death
+		trigger = {
+			has_situation_flag = situation_time_death
+		}
+	}
+	picture = GFX_evt_three_sided_deal
+	show_sound = event_factions
+	location = event_target:time_home_planet
+	situation = this
+	
+	is_triggered_only = yes
+	
+	trigger = {
+	}
+	
+	immediate = {
+		owner = {
+			start_situation = {
+				type = situation_time_militarist_vs_pacifist
+				target = event_target:time_home_planet
+				effect = {
+					set_situation_approach = approach_time_nature
+					save_global_event_target_as = situation_time_militarist_vs_pacifist
+				}
+			}
+		}
+		target = {
+			shift_random_pop_time_ethic = {
+				ETHIC = militarist
+				PERCENTAGE = @time_ethic_shift_percentage_middle
+			}
+			shift_random_pop_time_ethic = {
+				ETHIC = pacifist
+				PERCENTAGE = @time_ethic_shift_percentage_middle
+			}
+		}
+		refresh_time_ethic_power_variable = yes
+	}
+	
+	option = {
+		name = time.208.a
+		owner = {
+			tooltip = {
+				start_situation = {
+					type = situation_time_militarist_vs_pacifist
+					target = event_target:time_home_planet
+				}
+			}
+		}
+	}
+}
+
+situation_event = {
+	id = time.209
+	title = time.209.name
+	desc = {
+		text = time.209.desc.life
+		trigger = {
+			has_situation_flag = situation_time_life
+		}
+	}
+	desc = {
+		text = time.209.desc.death
+		trigger = {
+			has_situation_flag = situation_time_death
+		}
+	}
+	picture = GFX_evt_civil_action
+	show_sound = event_factions
+	location = event_target:time_home_planet
+	situation = this
+	
+	is_triggered_only = yes
+	
+	trigger = {
+	}
+	
+	immediate = {
+		owner = {
+			start_situation = {
+				type = situation_time_xenophobe_vs_xenophile
+				target = event_target:time_home_planet
+				effect = {
+					set_situation_approach = approach_time_nature
+					save_global_event_target_as = situation_time_xenophobe_vs_xenophile
+				}
+			}
+		}
+		target = {
+			shift_random_pop_time_ethic = {
+				ETHIC = xenophobe
+				PERCENTAGE = @time_ethic_shift_percentage_middle
+			}
+			shift_random_pop_time_ethic = {
+				ETHIC = xenophile
+				PERCENTAGE = @time_ethic_shift_percentage_middle
+			}
+		}
+		refresh_time_ethic_power_variable = yes
+	}
+	
+	option = {
+		name = time.209.a
+		owner = {
+			tooltip = {
+				start_situation = {
+					type = situation_time_xenophobe_vs_xenophile
+					target = event_target:time_home_planet
+				}
+			}
+		}
+	}
+}
+
+# 每月30日刷新变量
+situation_event = {
+	id = time.290
+	is_triggered_only = yes
+	hide_window = yes
+	
+	immediate = {
+		refresh_time_ethic_power_variable = yes
+		situation_event = { id = time.290 days = 30 }
+		set_timed_situation_flag = {
+			flag = abort_time_ethic_random_situation_event
+			days = 1
+		}
+	}
+}
+
+# 每月随机局势事件
+situation_event = {
+	id = time.291
+	is_triggered_only = yes
+	hide_window = yes
+	
+	trigger = {
+		NOT = { current_stage = stage_time_black_hole_1 }
+	}
+	
+	immediate = {
+		random_list = {
+			# 威权
+			100 = {
+				modifier = {
+					factor = target.value:time_ethic_event_weight|ETHIC|authoritarian|
+					always = yes
+				}
+				modifier = {
+					factor = 2
+					has_situation_flag = situation_time_death
+				}
+				modifier = {
+					factor = 0
+					NOT = { exists = event_target:situation_time_authoritarian_vs_egalitarian }
+				}
+				modifier = {
+					factor = 0
+					can_not_trigger_time_ethic_random_situation_event = {
+						TYPE = 1
+						ETHIC = autocracy
+					}
+				}
+				trigger_time_ethic_random_situation_event = {
+					TYPE = 1
+					ETHIC = autocracy
+				}
+			}
+			# 平等
+			100 = {
+				modifier = {
+					factor = target.value:time_ethic_event_weight|ETHIC|egalitarian|
+					always = yes
+				}
+				modifier = {
+					factor = 2
+					has_situation_flag = situation_time_life
+				}
+				modifier = {
+					factor = 0
+					NOT = { exists = event_target:situation_time_authoritarian_vs_egalitarian }
+				}
+				modifier = {
+					factor = 0
+					can_not_trigger_time_ethic_random_situation_event = {
+						TYPE = 2
+						ETHIC = democracy
+					}
+				}
+				trigger_time_ethic_random_situation_event = {
+					TYPE = 2
+					ETHIC = democracy
+				}
+			}
+			# 唯心
+			100 = {
+				modifier = {
+					factor = target.value:time_ethic_event_weight|ETHIC|spiritualist|
+					always = yes
+				}
+				modifier = {
+					factor = 2
+					has_situation_flag = situation_time_death
+				}
+				modifier = {
+					factor = 0
+					NOT = { exists = event_target:situation_time_spiritualist_vs_materialist }
+				}
+				modifier = {
+					factor = 0
+					can_not_trigger_time_ethic_random_situation_event = {
+						TYPE = 3
+						ETHIC = spiritualist
+					}
+				}
+				trigger_time_ethic_random_situation_event = {
+					TYPE = 3
+					ETHIC = spiritualist
+				}
+			}
+			# 唯物
+			100 = {
+				modifier = {
+					factor = target.value:time_ethic_event_weight|ETHIC|materialist|
+					always = yes
+				}
+				modifier = {
+					factor = 2
+					has_situation_flag = situation_time_life
+				}
+				modifier = {
+					factor = 0
+					NOT = { exists = event_target:situation_time_spiritualist_vs_materialist }
+				}
+				modifier = {
+					factor = 0
+					can_not_trigger_time_ethic_random_situation_event = {
+						TYPE = 4
+						ETHIC = materialist
+					}
+				}
+				trigger_time_ethic_random_situation_event = {
+					TYPE = 4
+					ETHIC = materialist
+				}
+			}
+			# 军国
+			100 = {
+				modifier = {
+					factor = target.value:time_ethic_event_weight|ETHIC|militarist|
+					always = yes
+				}
+				modifier = {
+					factor = 2
+					has_situation_flag = situation_time_death
+				}
+				modifier = {
+					factor = 0
+					NOT = { exists = event_target:situation_time_militarist_vs_pacifist }
+				}
+				modifier = {
+					factor = 0
+					can_not_trigger_time_ethic_random_situation_event = {
+						TYPE = 5
+						ETHIC = militarist
+					}
+				}
+				trigger_time_ethic_random_situation_event = {
+					TYPE = 5
+					ETHIC = militarist
+				}
+			}
+			# 和平
+			100 = {
+				modifier = {
+					factor = target.value:time_ethic_event_weight|ETHIC|pacifist|
+					always = yes
+				}
+				modifier = {
+					factor = 2
+					has_situation_flag = situation_time_life
+				}
+				modifier = {
+					factor = 0
+					NOT = { exists = event_target:situation_time_militarist_vs_pacifist }
+				}
+				modifier = {
+					factor = 0
+					can_not_trigger_time_ethic_random_situation_event = {
+						TYPE = 6
+						ETHIC = pacifist
+					}
+				}
+				trigger_time_ethic_random_situation_event = {
+					TYPE = 6
+					ETHIC = pacifist
+				}
+			}
+			# 排外
+			100 = {
+				modifier = {
+					factor = target.value:time_ethic_event_weight|ETHIC|xenophobe|
+					always = yes
+				}
+				modifier = {
+					factor = 2
+					has_situation_flag = situation_time_death
+				}
+				modifier = {
+					factor = 0
+					NOT = { exists = event_target:situation_time_xenophobe_vs_xenophile }
+				}
+				modifier = {
+					factor = 0
+					can_not_trigger_time_ethic_random_situation_event = {
+						TYPE = 7
+						ETHIC = xenophobe
+					}
+				}
+				trigger_time_ethic_random_situation_event = {
+					TYPE = 7
+					ETHIC = xenophobe
+				}
+			}
+			# 亲外
+			100 = {
+				modifier = {
+					factor = target.value:time_ethic_event_weight|ETHIC|xenophile|
+					always = yes
+				}
+				modifier = {
+					factor = 2
+					has_situation_flag = situation_time_life
+				}
+				modifier = {
+					factor = 0
+					NOT = { exists = event_target:situation_time_xenophobe_vs_xenophile }
+				}
+				modifier = {
+					factor = 0
+					can_not_trigger_time_ethic_random_situation_event = {
+						TYPE = 8
+						ETHIC = xenophile
+					}
+				}
+				trigger_time_ethic_random_situation_event = {
+					TYPE = 8
+					ETHIC = xenophile
+				}
+			}
+			200 = {
+				# 无事发生
+			}
+		}
+	}
+}
+
+situation_event = {
+	id = time.292
+	title = time.292.name
+	desc = time.292.desc
+	picture = GFX_evt_black_hole
+	show_sound = event_alien_signal
+	location = event_target:time_home_planet
+	situation = this
+
+	is_triggered_only = yes
+
+	trigger = {
+	}
+	
+	immediate = {
+		set_situation_locked = yes
+		check_time_ethic_winner = yes
+		choose_time_new_authority = yes
+		if = {
+			limit = {
+				exists = event_target:situation_time_authoritarian_vs_egalitarian
+			}
+			event_target:situation_time_authoritarian_vs_egalitarian = {
+				destroy_situation = this
+			}
+		}
+		if = {
+			limit = {
+				exists = event_target:situation_time_spiritualist_vs_materialist
+			}
+			event_target:situation_time_spiritualist_vs_materialist = {
+				destroy_situation = this
+			}
+		}
+		if = {
+			limit = {
+				exists = event_target:situation_time_militarist_vs_pacifist
+			}
+			event_target:situation_time_militarist_vs_pacifist = {
+				destroy_situation = this
+			}
+		}
+		if = {
+			limit = {
+				exists = event_target:situation_time_xenophobe_vs_xenophile
+			}
+			event_target:situation_time_xenophobe_vs_xenophile = {
+				destroy_situation = this
+			}
+		}
+		set_global_flag = show_councilor_ruler_time_authority_effect # 在概念中强制展示指定内阁效果
+	}
+	
+	after = {
+		hidden_effect = {
+			remove_global_flag = show_councilor_ruler_time_authority_effect
+			owner = {
+				country_event = { id = time.293 days = 30 }
+			}
+		}
+		destroy_situation = this
+	}
+	
+	option = {
+		name = time.292.a
+		trigger = {
+			owner = {
+				OR = {
+					has_authority = auth_imperial
+					has_authority = auth_dictatorial
+					has_authority = auth_corporate
+					has_authority = auth_oligarchic
+					has_authority = auth_democratic
+					always = yes # 为了让对应政体显示选项图标
+				}
+			}
+		}
+		set_time_new_ethic = yes
+		set_time_new_authority = yes
+	}
+	
+	option = {
+		name = time.292.b
+		trigger = {
+			owner = {
+				OR = {
+					has_authority = auth_imperial
+					has_authority = auth_dictatorial
+					has_authority = auth_corporate
+					has_authority = auth_oligarchic
+					has_authority = auth_democratic
+				}
+			}
+		}
+		allow = {
+			owner = {
+				has_resource = {
+					type = influence
+					amount >= root.value:time_keep_government_cost
+				}
+			}
+		}
+		owner = {
+			add_resource = {
+				influence = -1
+				mult = root.value:time_keep_government_cost
+			}
+		}
+	}
+	
+	# 允许无条件保留MOD特殊政体
+	option = {
+		name = time.292.c
+		trigger = {
+			owner = {
+				NOR = {
+					has_authority = auth_imperial
+					has_authority = auth_dictatorial
+					has_authority = auth_corporate
+					has_authority = auth_oligarchic
+					has_authority = auth_democratic
+				}
+			}
+		}
+	}
+}
+
+country_event = {
+	id = time.293
+	title = time.293.name
+	desc = time.293.desc
+	picture = GFX_evt_shroud_whisperers_in_the_void
+	show_sound = event_activating_unknown_technology
+	location = event_target:time_home_planet
+
+	is_triggered_only = yes
+
+	trigger = {
+	}
+
+	immediate = {
+	}
+
+	option = {
+		name = time.293.a
+		event_target:time_home_planet = {
+			custom_tooltip = time_blocker_3_can_be_cleared
+			hidden_effect = {
+				set_carrier_flag = can_clear_d_time_blocker_3
+			}
+		}
+		add_research_option = tech_time_blocker_3
+		end_event_chain = TIME_BLACK_HOLE_CHAIN
+	}
+}
+
+situation_event = {
+	id = time.294
+	title = time.294.name
+	desc = time.294.desc
+	picture = GFX_evt_black_hole
+	show_sound = event_yellow_alert
+	location = event_target:time_home_planet
+	situation = this
+
+	is_triggered_only = yes
+
+	trigger = {
+	}
+
+	immediate = {
+		owner = {
+			set_country_flag = interrupt_time_black_hole_chain
+		}
+	}
+
+	option = {
+		name = time.294.a
+		owner = {
+			end_event_chain = TIME_BLACK_HOLE_CHAIN
+		}
+		destroy_situation = this
+	}
+}

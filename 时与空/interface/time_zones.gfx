@@ -1,0 +1,56 @@
+spriteTypes = {
+	spriteType = {
+		name = "GFX_district_specialization_akx_worm"
+		texturefile = "gfx/interface/icons/districts/district_specialization_icons/district_specialization_akx_worm.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_district_specialization_time"
+		texturefile = "gfx/interface/icons/districts/district_specialization_icons/district_specialization_time.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_district_specialization_time_physics"
+		texturefile = "gfx/interface/icons/districts/district_specialization_icons/district_specialization_time_physics.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_district_specialization_time_society"
+		texturefile = "gfx/interface/icons/districts/district_specialization_icons/district_specialization_time_society.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_district_specialization_time_engineering"
+		texturefile = "gfx/interface/icons/districts/district_specialization_icons/district_specialization_time_engineering.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_district_specialization_praise_the_sun"
+		texturefile = "gfx/interface/icons/districts/district_specialization_icons/district_specialization_praise_the_sun.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_district_specialization_time_ruin_cosmogenesis_world"
+		texturefile = "gfx/interface/icons/districts/district_specialization_icons/district_specialization_time_ruin_cosmogenesis_world.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_district_specialization_adeptus_mechanicus"
+		texturefile = "gfx/interface/icons/districts/district_specialization_icons/district_specialization_adeptus_mechanicus.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_district_specialization_monster_hunter"
+		texturefile = "gfx/interface/icons/districts/district_specialization_icons/district_specialization_monster_hunter.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_district_specialization_time_notofthisworld_rift_sphere"
+		texturefile = "gfx/interface/icons/districts/district_specialization_icons/district_specialization_time_notofthisworld_rift_sphere.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_district_specialization_time_notofthisworld_astral_harvesting"
+		texturefile = "gfx/interface/icons/districts/district_specialization_icons/district_specialization_time_notofthisworld_astral_harvesting.dds"
+	}
+}

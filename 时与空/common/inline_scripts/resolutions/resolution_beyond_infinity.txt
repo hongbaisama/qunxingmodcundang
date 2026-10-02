@@ -1,0 +1,33 @@
+icon = "GFX_resolution_beyond_infinity_$TYPE$"
+
+resources = {
+	category = resolutions
+	cost = {
+		influence = $COST$
+	}
+}
+target = no
+level = $NEW_LEVEL$
+
+effect = {
+	custom_tooltip = resolution_beyond_infinity_$TYPE$_$NEW_LEVEL$_effect
+	hidden_effect = {
+		if = {
+			limit = {
+				NOT = { has_global_flag = skip_refresh_galactic_beyond_infinity_tech_modifier }
+			}
+			event_target:beyond_infinity_country = {
+				refresh_galactic_beyond_infinity_tech_modifier = yes
+			}
+		}
+	}
+}
+
+potential = {
+	is_galactic_$TYPE$ = yes
+	has_crisis_perk = menp_beyond_infinity_crisis
+}
+
+allow = {
+	is_active_resolution = resolution_beyond_infinity_$TYPE$_$OLD_LEVEL$
+}

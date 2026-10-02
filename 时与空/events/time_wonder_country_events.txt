@@ -1,0 +1,1945 @@
+
+namespace = time_wonder
+
+country_event = {
+	id = time_wonder.1
+	is_triggered_only = yes
+	hide_window = yes
+
+	trigger = {
+		is_wonder_country = yes
+		NOT = { has_country_flag = wonder_country_99 } # 终焉教团（相关效果挪至起源事件中，因为是需要玩家确认的全局性起源）
+	}
+
+	immediate = {
+		capital_scope = {
+			add_modifier = {
+				modifier = time_wonder_modifier
+				days = -1
+			}
+		}
+		# 序时者
+		if = {
+			limit = {
+				is_wonder_country_time_0 = yes
+			}
+			add_modifier = {
+				modifier = gov_time_0_modifier
+				days = -1
+			}
+			ruler = {
+				set_leader_flag = leader_death_events_blocked
+				set_immortal = yes
+				set_age = 200
+				if = {
+					limit = {
+						owner = { is_ai = yes }
+					}
+					# AI序时者无法触发时虫事件，故自带著名
+					become_renowned_without_promotion = yes
+				}
+			}
+			every_owned_leader = {
+				limit = {
+					species = { has_trait = trait_wonder_time }
+				}
+				add_trait = {
+					trait = leader_trait_wonder_time
+					show_message = no
+				}
+			}
+			every_pool_leader = {
+				limit = {
+					species = { has_trait = trait_wonder_time }
+				}
+				add_trait = {
+					trait = leader_trait_wonder_time
+					show_message = no
+				}
+			}
+			every_playable_country = {
+				limit = {
+					OR = {
+						is_wonder_country_time_1 = yes
+						is_wonder_country_time_2 = yes
+					}
+				}
+				set_country_flag = special_intro_for@root
+			}
+			owner_main_species = {
+				save_event_target_as = time_0_species
+			}
+			capital_scope = {
+				set_carrier_flag = time_0_planet
+				add_modifier = { modifier = time_0_planet_modifier }
+				every_playable_country = {
+					limit = { is_wonder_country_time_1 = yes }
+					owner_main_species = {
+						set_species_homeworld = prevprev
+						set_species_identity = event_target:time_0_species
+					}
+				}
+				every_playable_country = {
+					limit = { is_wonder_country_time_2 = yes }
+					owner_main_species = {
+						set_species_homeworld = prevprev
+						change_species_characteristics = {
+							remove_trait = trait_dry_planet_preference
+						}
+						change_species_characteristics = {
+							remove_trait = trait_wet_planet_preference
+						}
+						change_species_characteristics = {
+							add_trait = trait_cold_planet_preference
+						}
+						set_species_identity = event_target:time_0_species
+					}
+				}
+			}
+			if = {
+				limit = {
+					has_country_flag = generate_time_0_bonus
+				}
+				generate_time_mod_advanced_system_bonus = yes
+			}
+		}
+		# 逐光者
+		else_if = {
+			limit = {
+				is_wonder_country_time_1 = yes
+			}
+			add_modifier = {
+				modifier = gov_time_1_modifier
+				days = -1
+			}
+			ruler = {
+				set_leader_flag = leader_death_events_blocked
+				set_immortal = yes
+				set_age = 200
+				become_renowned_without_promotion = yes
+			}
+			every_owned_leader = {
+				limit = {
+					species = { has_trait = trait_wonder_time }
+				}
+				add_trait = {
+					trait = leader_trait_wonder_time
+					show_message = no
+				}
+			}
+			every_pool_leader = {
+				limit = {
+					species = { has_trait = trait_wonder_time }
+				}
+				add_trait = {
+					trait = leader_trait_wonder_time
+					show_message = no
+				}
+			}
+			every_playable_country = {
+				limit = {
+					OR = {
+						is_wonder_country_time_0 = yes
+						is_wonder_country_time_2 = yes
+					}
+				}
+				set_country_flag = special_intro_for@root
+			}
+			capital_scope = {
+				set_carrier_flag = time_1_planet
+				add_modifier = { modifier = time_1_planet_modifier }
+				planet = { change_colony_foundation_date = -77888 } # 1800.1.1
+				every_owned_pop_group = {
+					limit = {
+						is_same_species = root.owner_main_species
+					}
+					kill_pop_group = {
+						pop_group = this
+						percentage = 0.6
+					}
+				}
+			}
+			if = {
+				limit = {
+					has_country_flag = generate_time_1_bonus
+				}
+				generate_time_mod_advanced_system_bonus = yes
+			}
+		}
+		# 驱影者
+		else_if = {
+			limit = {
+				is_wonder_country_time_2 = yes
+			}
+			add_modifier = {
+				modifier = gov_time_2_modifier
+				days = -1
+			}
+			ruler = {
+				set_leader_flag = leader_death_events_blocked
+				set_immortal = yes
+				set_age = 200
+				become_renowned_without_promotion = yes
+			}
+			every_owned_leader = {
+				limit = {
+					species = { has_trait = trait_wonder_time }
+				}
+				add_trait = {
+					trait = leader_trait_wonder_time
+					show_message = no
+				}
+			}
+			every_pool_leader = {
+				limit = {
+					species = { has_trait = trait_wonder_time }
+				}
+				add_trait = {
+					trait = leader_trait_wonder_time
+					show_message = no
+				}
+			}
+			every_playable_country = {
+				limit = {
+					OR = {
+						is_wonder_country_time_0 = yes
+						is_wonder_country_time_1 = yes
+					}
+				}
+				set_country_flag = special_intro_for@root
+			}
+			capital_scope = {
+				set_carrier_flag = time_2_planet
+				add_modifier = { modifier = time_2_planet_modifier }
+				planet = { change_colony_foundation_date = 12112 } # 2050.1.1
+				every_owned_pop_group = {
+					limit = {
+						is_same_species = root.owner_main_species
+					}
+					kill_pop_group = {
+						pop_group = this
+						percentage = 0.6
+					}
+				}
+			}
+			if = {
+				limit = {
+					has_country_flag = generate_time_2_bonus
+				}
+				generate_time_mod_advanced_system_bonus = yes
+			}
+		}
+		# 摘录者
+		else_if = {
+			limit = {
+				is_wonder_country_time_3 = yes
+			}
+			add_modifier = {
+				modifier = gov_time_3_modifier
+				days = -1
+			}
+			ruler = {
+				set_leader_flag = leader_death_events_blocked
+				set_immortal = yes
+				become_renowned_without_promotion = yes
+			}
+			every_owned_leader = {
+				limit = {
+					species = { has_trait = trait_wonder_time }
+				}
+				add_trait = {
+					trait = leader_trait_wonder_time
+					show_message = no
+				}
+			}
+			every_pool_leader = {
+				limit = {
+					species = { has_trait = trait_wonder_time }
+				}
+				add_trait = {
+					trait = leader_trait_wonder_time
+					show_message = no
+				}
+			}
+			capital_scope = {
+				set_carrier_flag = time_3_planet
+				add_modifier = { modifier = time_3_planet_modifier }
+				planet = { change_colony_foundation_date = -725888 } # 0.1.1
+			}
+		}
+		
+		# 地球联合国
+		else_if = {
+			limit = {
+				has_country_flag = human_1
+			}
+			if = {
+				limit = {
+					NOT = { has_country_flag = wonder_country_2 }
+				}
+				set_country_flag = wonder_country_2
+			}
+			# 因人联而生成的AI地联变成异星学识起源
+			if = {
+				limit = {
+					is_ai = yes
+					has_origin = origin_default
+				}
+				set_origin = origin_knowledge_from_alien
+				country_event = { id = origin_knowledge_from_alien.1 }
+				every_owned_colony = {
+					remove_modifier = prosp_uni_mod
+				}
+			}
+			# 人类预设国的物种必定视作同一物种并拥有相同母星
+			owner_main_species = {
+				save_event_target_as = wonder_country_human_species
+			}
+			set_wonder_country_human_species_identity = yes
+		}
+		
+		# 人类联邦
+		else_if = {
+			limit = {
+				has_country_flag = human_2
+			}
+			if = {
+				limit = {
+					NOT = { has_country_flag = wonder_country_3 }
+				}
+				set_country_flag = wonder_country_3
+			}
+		}
+		
+		# 刚德森研究船团
+		else_if = {
+			limit = {
+				has_country_flag = human_3
+			}
+			if = {
+				limit = {
+					NOT = { has_country_flag = wonder_country_humans3 }
+				}
+				set_country_flag = wonder_country_humans3
+			}
+		}
+		
+		else_if = {
+			limit = {
+				has_country_flag = wonder_country_x
+			}
+			capital_scope = {
+				set_carrier_flag = wonder_country_x_planet
+			}
+		}
+		else_if = {
+			limit = {
+				has_country_flag = wonder_country_y
+			}
+			capital_scope = {
+				set_carrier_flag = wonder_country_y_planet
+			}
+		}
+		else_if = {
+			limit = {
+				has_country_flag = wonder_country_z
+			}
+			capital_scope = {
+				set_carrier_flag = wonder_country_z_planet
+			}
+		}
+		else_if = {
+			limit = {
+				has_country_flag = wonder_country_1
+			}
+			capital_scope = {
+				set_carrier_flag = wonder_country_1_planet
+			}
+		}
+		else_if = {
+			limit = {
+				has_country_flag = wonder_country_2
+			}
+			capital_scope = {
+				set_carrier_flag = wonder_country_2_planet
+			}
+		}
+		else_if = {
+			limit = {
+				has_country_flag = wonder_country_3
+			}
+			capital_scope = {
+				set_carrier_flag = wonder_country_3_planet
+			}
+		}
+		else_if = {
+			limit = {
+				has_country_flag = wonder_country_humans3
+			}
+			capital_scope = {
+				set_carrier_flag = wonder_country_humans3_planet
+			}
+		}
+		else_if = {
+			limit = {
+				has_country_flag = wonder_country_4
+			}
+			capital_scope = {
+				set_carrier_flag = wonder_country_4_planet
+			}
+		}
+		else_if = {
+			limit = {
+				has_country_flag = wonder_country_5
+			}
+			capital_scope = {
+				set_carrier_flag = wonder_country_5_planet
+			}
+			# 人类预设国的物种必定视作同一物种并拥有相同母星
+			random_owned_species = {
+				limit = { species_portrait = human }
+				save_event_target_as = wonder_country_human_species
+			}
+			set_wonder_country_human_species_identity = yes
+		}
+		else_if = {
+			limit = {
+				has_country_flag = wonder_country_6
+			}
+			capital_scope = {
+				set_carrier_flag = wonder_country_6_planet
+			}
+		}
+		else_if = {
+			limit = {
+				has_country_flag = wonder_country_7
+			}
+			capital_scope = {
+				set_carrier_flag = wonder_country_7_planet
+			}
+		}
+		else_if = {
+			limit = {
+				has_country_flag = wonder_country_8
+			}
+			capital_scope = {
+				set_carrier_flag = wonder_country_8_planet
+			}
+		}
+		else_if = {
+			limit = {
+				has_country_flag = wonder_country_9
+			}
+			capital_scope = {
+				set_carrier_flag = wonder_country_9_planet
+			}
+			# 人类预设国的物种必定视作同一物种并拥有相同母星
+			random_owned_species = {
+				limit = { species_portrait = human }
+				save_event_target_as = wonder_country_human_species
+			}
+			set_wonder_country_human_species_identity = yes
+		}
+		else_if = {
+			limit = {
+				has_country_flag = wonder_country_10
+			}
+			capital_scope = {
+				set_carrier_flag = wonder_country_10_planet
+			}
+		}
+		else_if = {
+			limit = {
+				has_country_flag = wonder_country_11
+			}
+			capital_scope = {
+				set_carrier_flag = wonder_country_11_planet
+			}
+		}
+		else_if = {
+			limit = {
+				has_country_flag = wonder_country_12
+			}
+			capital_scope = {
+				set_carrier_flag = wonder_country_12_planet
+			}
+		}
+		else_if = {
+			limit = {
+				has_country_flag = wonder_country_13
+			}
+			capital_scope = {
+				set_carrier_flag = wonder_country_13_planet
+			}
+		}
+		else_if = {
+			limit = {
+				has_country_flag = wonder_country_14
+			}
+			capital_scope = {
+				set_carrier_flag = wonder_country_14_planet
+			}
+		}
+		else_if = {
+			limit = {
+				has_country_flag = wonder_country_15
+			}
+			capital_scope = {
+				set_carrier_flag = wonder_country_15_planet
+			}
+		}
+		else_if = {
+			limit = {
+				has_country_flag = wonder_country_16
+			}
+			capital_scope = {
+				set_carrier_flag = wonder_country_16_planet
+			}
+		}
+		else_if = {
+			limit = {
+				has_country_flag = wonder_country_17
+			}
+			capital_scope = {
+				set_carrier_flag = wonder_country_17_planet
+			}
+		}
+		else_if = {
+			limit = {
+				has_country_flag = wonder_country_18
+			}
+			capital_scope = {
+				set_carrier_flag = wonder_country_18_planet
+				solar_system = {
+					set_name = PRESCRIPTED_system_name_wonder_country_18
+				}
+			}
+		}
+		else_if = {
+			limit = {
+				has_country_flag = wonder_country_19
+			}
+			capital_scope = {
+				set_carrier_flag = wonder_country_19_planet
+			}
+		}
+		else_if = {
+			limit = {
+				has_country_flag = wonder_country_20
+			}
+			capital_scope = {
+				set_carrier_flag = wonder_country_20_planet
+			}
+		}
+		else_if = {
+			limit = {
+				has_country_flag = wonder_country_21
+			}
+			capital_scope = {
+				set_carrier_flag = wonder_country_21_planet
+			}
+		}
+		else_if = {
+			limit = {
+				has_country_flag = wonder_country_22
+			}
+			capital_scope = {
+				set_carrier_flag = wonder_country_22_planet
+			}
+		}
+		else_if = {
+			limit = {
+				has_country_flag = wonder_country_23
+			}
+			capital_scope = {
+				set_carrier_flag = wonder_country_23_planet
+			}
+		}
+		else_if = {
+			limit = {
+				has_country_flag = wonder_country_24
+			}
+			capital_scope = {
+				set_carrier_flag = wonder_country_24_planet
+			}
+		}
+		else_if = {
+			limit = {
+				has_country_flag = wonder_country_25
+			}
+			capital_scope = {
+				set_carrier_flag = wonder_country_25_planet
+			}
+		}
+		else_if = {
+			limit = {
+				has_country_flag = wonder_country_26
+			}
+			capital_scope = {
+				set_carrier_flag = wonder_country_26_planet
+			}
+		}
+		else_if = {
+			limit = {
+				has_country_flag = wonder_country_27
+			}
+			capital_scope = {
+				set_carrier_flag = wonder_country_27_planet
+			}
+		}
+		else_if = {
+			limit = {
+				has_country_flag = wonder_country_28
+			}
+			capital_scope = {
+				set_carrier_flag = wonder_country_28_planet
+			}
+		}
+		else_if = {
+			limit = {
+				has_country_flag = wonder_country_29
+			}
+			capital_scope = {
+				set_carrier_flag = wonder_country_29_planet
+			}
+		}
+		else_if = {
+			limit = {
+				has_country_flag = wonder_country_30
+			}
+			capital_scope = {
+				set_carrier_flag = wonder_country_30_planet
+			}
+		}
+		# 沃陶姆
+		else_if = {
+			limit = {
+				is_wonder_country_31 = yes
+			}
+			give_technology = { tech = "tech_secrets_vultaum" message = no }
+			capital_scope = {
+				set_carrier_flag = wonder_country_31_planet
+			}
+		}
+		# 尤特
+		else_if = {
+			limit = {
+				is_wonder_country_32 = yes
+			}
+			give_technology = { tech = "tech_secrets_yuht" message = no }
+			capital_scope = {
+				set_carrier_flag = wonder_country_32_planet
+			}
+		}
+		# 第一联盟
+		else_if = {
+			limit = {
+				is_wonder_country_33 = yes
+			}
+			give_technology = { tech = "tech_secrets_league" message = no }
+			capital_scope = {
+				set_carrier_flag = wonder_country_33_planet
+			}
+		}
+		# 伊拉斯
+		else_if = {
+			limit = {
+				is_wonder_country_34 = yes
+			}
+			give_technology = { tech = "tech_secrets_irassian" message = no }
+			capital_scope = {
+				set_carrier_flag = wonder_country_34_planet
+			}
+		}
+		# 赛博勒克斯
+		else_if = {
+			limit = {
+				is_wonder_country_35 = yes
+			}
+			owner_main_species = {
+				set_species_flag = wonder_country_35_species
+				change_species_portrait = ai_crisis_2
+			}
+			every_owned_leader = {
+				limit = {
+					is_gestalt_node = no
+					species = { has_species_flag = wonder_country_35_species }
+				}
+				wonder_country_35_species_leader_effect = yes
+			}
+			every_pool_leader = {
+				limit = {
+					species = { has_species_flag = wonder_country_35_species }
+				}
+				wonder_country_35_species_leader_effect = yes
+			}
+			every_envoy = {
+				limit = {
+					species = { has_species_flag = wonder_country_35_species }
+				}
+				wonder_country_35_species_leader_effect = yes
+			}
+			ruler = {
+				set_leader_flag = leader_death_events_blocked
+				set_immortal = yes
+				become_legendary_without_promotion = yes
+			}
+			give_technology = { tech = "tech_secrets_cybrex" message = no }
+			capital_scope = {
+				set_carrier_flag = wonder_country_35_planet
+			}
+			random_list = {
+				2 = {
+					set_country_flag = normal_wonder_country_35
+				}
+				1 = {
+					set_country_flag = crazy_wonder_country_35
+				}
+			}
+		}
+		# 巴奥
+		else_if = {
+			limit = {
+				is_wonder_country_36 = yes
+			}
+			give_technology = { tech = "tech_secrets_baol" message = no }
+			capital_scope = {
+				set_carrier_flag = wonder_country_36_planet
+			}
+		}
+		# 泽珞族
+		else_if = {
+			limit = {
+				is_wonder_country_37 = yes
+			}
+			give_technology = { tech = "tech_secrets_zroni" message = no }
+			capital_scope = {
+				set_carrier_flag = wonder_country_37_planet
+			}
+		}
+		# 因内特
+		else_if = {
+			limit = {
+				is_wonder_country_inetian = yes
+			}
+			give_technology = { tech = "tech_storm_manipulation" message = no }
+			capital_scope = {
+				set_carrier_flag = wonder_country_inetian_planet
+			}
+		}
+		# 阿达卡利亚
+		else_if = {
+			limit = {
+				is_wonder_country_adakkaria = yes
+			}
+			give_technology = { tech = "tech_storm_manipulation" message = no }
+			capital_scope = {
+				set_carrier_flag = wonder_country_adakkaria_planet
+			}
+		}
+		# 索林原虫
+		else_if = {
+			limit = {
+				is_wonder_country_38 = yes
+			}
+			owner_main_species = {
+				set_species_flag = wonder_country_38_species
+				change_species_portrait = swarm
+				change_species_characteristics = {
+					add_trait = trait_plasmic
+				}
+			}
+			every_owned_leader = {
+				limit = {
+					is_gestalt_node = no
+					species = { has_species_flag = wonder_country_38_species }
+				}
+				wonder_country_38_species_leader_effect = yes
+			}
+			every_pool_leader = {
+				limit = {
+					species = { has_species_flag = wonder_country_38_species }
+				}
+				wonder_country_38_species_leader_effect = yes
+			}
+			every_envoy = {
+				limit = {
+					species = { has_species_flag = wonder_country_38_species }
+				}
+				wonder_country_38_species_leader_effect = yes
+			}
+			add_modifier = {
+				modifier = gov_wonder_country_38_modifier
+				days = -1
+			}
+			ruler = {
+				set_leader_flag = leader_death_events_blocked
+				set_immortal = yes
+				become_legendary_without_promotion = yes
+			}
+			add_relic = r_time_wonder_country_prethoryn_queen
+			set_variable = {
+				which = brood_usage
+				value = 0
+			}
+			give_technology = { tech = "tech_swarm_strike_craft_1" message = no }
+			give_technology = { tech = "tech_scourge_missile_1" message = no }
+			capital_scope = {
+				set_carrier_flag = wonder_country_38_planet
+				solar_system = {
+					star = {
+						create_ambient_object = {
+							type = "swarm_1"
+							location = this
+						}
+					}
+					every_system_planet = {
+						limit = {
+							OR = {
+								can_be_spread_by_origin_pc_hive = yes
+								is_planet_class = pc_toxic
+								is_planet_class = pc_frozen
+								is_planet_class = pc_molten
+							}
+							is_colony = no
+						}
+						change_pc = pc_infested
+					}
+				}
+			}
+		}
+		# 肃正协议
+		else_if = {
+			limit = {
+				is_wonder_country_39 = yes
+			}
+			owner_main_species = {
+				set_species_flag = wonder_country_39_species
+				change_species_portrait = hum_robot_red
+				change_species_characteristics = {
+					add_trait = trait_robot_awoken_01
+				}
+			}
+			every_owned_leader = {
+				limit = {
+					is_gestalt_node = no
+					species = { has_species_flag = wonder_country_39_species }
+				}
+				wonder_country_39_species_leader_effect = yes
+			}
+			every_pool_leader = {
+				limit = {
+					species = { has_species_flag = wonder_country_39_species }
+				}
+				wonder_country_39_species_leader_effect = yes
+			}
+			every_envoy = {
+				limit = {
+					species = { has_species_flag = wonder_country_39_species }
+				}
+				wonder_country_39_species_leader_effect = yes
+			}
+			add_modifier = {
+				modifier = gov_wonder_country_39_modifier
+				days = -1
+			}
+			ruler = {
+				set_leader_flag = leader_death_events_blocked
+				set_immortal = yes
+				become_legendary_without_promotion = yes
+			}
+			add_relic = r_time_wonder_country_contingency_core
+			give_technology = { tech = "tech_energy_lance_2" message = no }
+			give_technology = { tech = "tech_combat_computers_autonomous" message = no }
+			capital_scope = {
+				set_carrier_flag = wonder_country_39_planet
+				solar_system = {
+					star = {
+						create_ambient_object = {
+							type = "contingency_2"
+							location = this
+						}
+					}
+				}
+			}
+		}
+		# 高维恶魔
+		else_if = {
+			limit = {
+				is_wonder_country_40 = yes
+			}
+			owner_main_species = {
+				set_species_flag = wonder_country_40_species
+				change_species_portrait = exd3
+				change_species_characteristics = {
+					add_trait = trait_exd
+				}
+			}
+			every_owned_leader = {
+				limit = {
+					is_gestalt_node = no
+					species = { has_species_flag = wonder_country_40_species }
+				}
+				wonder_country_40_species_leader_effect = yes
+			}
+			every_pool_leader = {
+				limit = {
+					species = { has_species_flag = wonder_country_40_species }
+				}
+				wonder_country_40_species_leader_effect = yes
+			}
+			every_envoy = {
+				limit = {
+					species = { has_species_flag = wonder_country_40_species }
+				}
+				wonder_country_40_species_leader_effect = yes
+			}
+			add_modifier = {
+				modifier = gov_wonder_country_40_modifier
+				days = -1
+			}
+			ruler = {
+				set_leader_flag = leader_death_events_blocked
+				set_immortal = yes
+				become_legendary_without_promotion = yes
+			}
+			add_relic = r_time_wonder_country_unbidden_warlock
+			give_technology = { tech = "tech_extradimensional_weapon_1" message = no }
+			give_technology = { tech = "tech_psi_jump_drive_1" message = no }
+			capital_scope = {
+				set_carrier_flag = wonder_country_40_planet
+				solar_system = {
+					star = {
+						create_ambient_object = {
+							type = "extradimensional_2"
+							location = this
+							use_3d_location = yes
+						}
+					}
+				}
+			}
+		}
+		# 合成女王
+		else_if = {
+			limit = {
+				is_wonder_country_synth_queen = yes
+			}
+			owner_main_species = {
+				set_species_flag = wonder_country_synth_queen_species
+				change_species_portrait = cetana_empty
+				change_species_characteristics = {
+					add_trait = trait_mechanical
+				}
+			}
+			every_owned_leader = {
+				limit = {
+					is_ruler = no
+					is_gestalt_node = no
+					species = { has_species_flag = wonder_country_synth_queen_species }
+				}
+				wonder_country_synth_queen_species_leader_effect = yes
+			}
+			every_pool_leader = {
+				limit = {
+					species = { has_species_flag = wonder_country_synth_queen_species }
+				}
+				wonder_country_synth_queen_species_leader_effect = yes
+			}
+			every_envoy = {
+				limit = {
+					species = { has_species_flag = wonder_country_synth_queen_species }
+				}
+				wonder_country_synth_queen_species_leader_effect = yes
+			}
+			add_modifier = {
+				modifier = gov_wonder_country_synth_queen_modifier
+				days = -1
+			}
+			ruler = {
+				set_leader_flag = leader_death_events_blocked
+				set_immortal = yes
+				set_age = 126872
+				become_legendary_without_promotion = yes
+			}
+			add_relic = r_time_wonder_country_cetanas_heart
+			set_country_flag = synth_queen_knowledge
+			give_technology = { tech = "tech_nanite_repair_system_synth_queen" message = no }
+			give_technology = { tech = "tech_synth_queen_knowledge" message = no }
+			capital_scope = {
+				set_carrier_flag = wonder_country_synth_queen_planet
+				solar_system = {
+					star = {
+						create_ambient_object = {
+							type = "synth_queen_tempest"
+							location = this
+							use_3d_location = yes
+						}
+					}
+				}
+			}
+		}
+		else_if = {
+			limit = {
+				has_country_flag = wonder_country_41
+			}
+			capital_scope = {
+				set_carrier_flag = wonder_country_41_planet
+			}
+		}
+		else_if = {
+			limit = {
+				has_country_flag = wonder_country_42
+			}
+			capital_scope = {
+				set_carrier_flag = wonder_country_42_planet
+			}
+		}
+		else_if = {
+			limit = {
+				has_country_flag = wonder_country_43
+			}
+			capital_scope = {
+				set_carrier_flag = wonder_country_43_planet
+			}
+		}
+		else_if = {
+			limit = {
+				has_country_flag = wonder_country_44
+			}
+			capital_scope = {
+				set_carrier_flag = wonder_country_44_planet
+			}
+		}
+		else_if = {
+			limit = {
+				has_country_flag = wonder_country_45
+			}
+			capital_scope = {
+				set_carrier_flag = wonder_country_45_planet
+				solar_system = {
+					star = {
+						set_name = PRESCRIPTED_star_name_wonder_country_45
+					}
+				}
+			}
+		}
+		# 虚吾伊德
+		else_if = {
+			limit = {
+				has_country_flag = wonder_country_46
+			}
+			capital_scope = {
+				set_carrier_flag = wonder_country_46_planet
+				solar_system = {
+					set_star_class = sc_black_hole
+					star = {
+						change_pc = pc_black_hole
+						clear_deposits_and_orbital_station = yes
+						add_deposit = d_dark_matter_deposit_5
+						set_carrier_flag = shroud_storm_changed # 禁虚境风暴改造
+						set_name = PRESCRIPTED_star_name_wonder_country_46
+					}
+					if = {
+						limit = {
+							has_natural_wormhole = no
+							any_neighbor_system = {
+								has_natural_wormhole = no
+							}
+						}
+						random_neighbor_system = {
+							limit = {
+								has_natural_wormhole = no
+							}
+							prev = { # done this way to ensure we don't spawn "orphan wormholes (wormholes that aren't linked to anything)
+								spawn_natural_wormhole = {
+									bypass_type = wormhole
+									random_pos = no
+									orbit_angle = 360
+								}
+							}
+							spawn_natural_wormhole = {
+								bypass_type = wormhole
+								random_pos = no
+								orbit_angle = 270
+							}
+							link_wormholes = prev
+						}
+						time_remove_neighbor_hyperlane = yes
+						root = {
+							set_country_flag = encountered_first_wormhole
+							add_seen_bypass_type = wormhole
+							give_technology = { tech = tech_wormhole_stabilization message = no }
+						}
+					}
+					else_if = {
+						limit = {
+							has_natural_wormhole = yes
+						}
+						time_remove_neighbor_hyperlane = yes
+						root = {
+							set_country_flag = encountered_first_wormhole
+							add_seen_bypass_type = wormhole
+							give_technology = { tech = tech_wormhole_stabilization message = no }
+						}
+					}
+				}
+			}
+		}
+		else_if = {
+			limit = {
+				has_country_flag = wonder_country_47
+			}
+			capital_scope = {
+				set_carrier_flag = wonder_country_47_planet
+				solar_system = {
+					star = {
+						set_name = PRESCRIPTED_star_name_wonder_country_47
+					}
+				}
+			}
+		}
+		else_if = {
+			limit = {
+				has_country_flag = wonder_country_48
+			}
+			capital_scope = {
+				set_carrier_flag = wonder_country_48_planet
+			}
+		}
+		# 真善美天国
+		else_if = {
+			limit = {
+				is_wonder_country_49 = yes
+			}
+			capital_scope = {
+				set_carrier_flag = wonder_country_49_planet
+			}
+		}
+		else_if = {
+			limit = {
+				has_country_flag = wonder_country_50
+			}
+			capital_scope = {
+				set_carrier_flag = wonder_country_50_planet
+			}
+		}
+		else_if = {
+			limit = {
+				has_country_flag = wonder_country_51
+			}
+			capital_scope = {
+				set_carrier_flag = wonder_country_51_planet
+			}
+			random_owned_species = {
+				limit = {
+					has_trait = trait_wonder_country_91
+					species_portrait = mam15
+				}
+				if = {
+					limit = {
+						any_playable_country = {
+							is_wonder_country_91 = yes
+						}
+					}
+					random_playable_country = {
+						limit = {
+							is_wonder_country_91 = yes
+						}
+						owner_main_species = {
+							save_event_target_as = wonder_country_91_species
+						}
+					}
+					set_species_identity = event_target:wonder_country_91_species
+				}
+			}
+		}
+		# 珊瑚海盗团（江洋大盗修正位置改变）
+		else_if = {
+			limit = {
+				has_country_flag = wonder_country_52
+			}
+			if = {
+				limit = {
+					has_origin = origin_pirate_king
+				}
+				capital_scope = {
+					remove_modifier = time_wonder_modifier
+				}
+				home_planet = {
+					set_carrier_flag = wonder_country_52_planet
+					add_modifier = {
+						modifier = time_wonder_modifier
+						days = -1
+					}
+				}
+			}
+			else = {
+				capital_scope = {
+					set_carrier_flag = wonder_country_52_planet
+				}
+			}
+		}
+		else_if = {
+			limit = {
+				has_country_flag = wonder_country_53
+			}
+			capital_scope = {
+				set_carrier_flag = wonder_country_53_planet
+			}
+		}
+		else_if = {
+			limit = {
+				has_country_flag = wonder_country_54
+			}
+			capital_scope = {
+				set_carrier_flag = wonder_country_54_planet
+				if = {
+					limit = {
+						exists = ship
+					}
+					ship = {
+						set_name = PRESCRIPTED_planet_name_wonder_country_54
+						fleet = { set_name = PRESCRIPTED_fleet_name_wonder_country_54 }
+					}
+				}
+			}
+		}
+		else_if = {
+			limit = {
+				has_country_flag = wonder_country_55
+			}
+			capital_scope = {
+				set_carrier_flag = wonder_country_55_planet
+			}
+		}
+		else_if = {
+			limit = {
+				has_country_flag = wonder_country_56
+			}
+			capital_scope = {
+				set_carrier_flag = wonder_country_56_planet
+			}
+		}
+		else_if = {
+			limit = {
+				has_country_flag = wonder_country_57
+			}
+			capital_scope = {
+				set_carrier_flag = wonder_country_57_planet
+			}
+		}
+		else_if = {
+			limit = {
+				has_country_flag = wonder_country_58
+			}
+			capital_scope = {
+				set_carrier_flag = wonder_country_58_planet
+			}
+		}
+		else_if = {
+			limit = {
+				has_country_flag = wonder_country_59
+			}
+			capital_scope = {
+				set_carrier_flag = wonder_country_59_planet
+			}
+		}
+		else_if = {
+			limit = {
+				has_country_flag = wonder_country_60
+			}
+			capital_scope = {
+				set_carrier_flag = wonder_country_60_planet
+			}
+		}
+		# 恐虐
+		else_if = {
+			limit = {
+				has_country_flag = wonder_country_61
+			}
+			set_country_flag = chosen_one_ruler_event
+			force_add_civic = civic_psionic_sovereign
+			ruler = {
+				set_leader_flag = leader_death_events_blocked
+				set_immortal = yes
+				add_trait = {
+					trait = leader_trait_eater_chosen
+					show_message = no
+				}
+			}
+			capital_scope = {
+				set_carrier_flag = wonder_country_61_planet
+				solar_system = {
+					star = {
+						set_name = PRESCRIPTED_star_name_wonder_country_61
+					}
+				}
+			}
+		}
+		# 色孽
+		else_if = {
+			limit = {
+				has_country_flag = wonder_country_62
+			}
+			set_country_flag = chosen_one_ruler_event
+			force_add_civic = civic_psionic_sovereign
+			ruler = {
+				set_leader_flag = leader_death_events_blocked
+				set_immortal = yes
+				add_trait = {
+					trait = leader_trait_instrument_chosen
+					show_message = no
+				}
+			}
+			capital_scope = {
+				set_carrier_flag = wonder_country_62_planet
+				solar_system = {
+					star = {
+						set_name = PRESCRIPTED_star_name_wonder_country_62
+					}
+				}
+			}
+		}
+		# 奸奇
+		else_if = {
+			limit = {
+				has_country_flag = wonder_country_63
+			}
+			set_country_flag = chosen_one_ruler_event
+			force_add_civic = civic_psionic_sovereign
+			ruler = {
+				set_leader_flag = leader_death_events_blocked
+				set_immortal = yes
+				add_trait = {
+					trait = leader_trait_whisperers_chosen
+					show_message = no
+				}
+			}
+			capital_scope = {
+				set_carrier_flag = wonder_country_63_planet
+				solar_system = {
+					star = {
+						set_name = PRESCRIPTED_star_name_wonder_country_63
+					}
+				}
+			}
+		}
+		# 纳垢
+		else_if = {
+			limit = {
+				has_country_flag = wonder_country_64
+			}
+			set_country_flag = chosen_one_ruler_event
+			force_add_civic = civic_psionic_sovereign
+			ruler = {
+				set_leader_flag = leader_death_events_blocked
+				set_immortal = yes
+				add_trait = {
+					trait = leader_trait_composer_chosen
+					show_message = no
+				}
+			}
+			capital_scope = {
+				set_carrier_flag = wonder_country_64_planet
+				solar_system = {
+					star = {
+						set_name = PRESCRIPTED_star_name_wonder_country_64
+					}
+				}
+			}
+		}
+		# 圆环
+		else_if = {
+			limit = {
+				has_country_flag = wonder_country_65
+			}
+			set_country_flag = chosen_one_ruler_event
+			force_add_civic = civic_psionic_sovereign
+			ruler = {
+				set_leader_flag = leader_death_events_blocked
+				set_immortal = yes
+				add_trait = {
+					trait = leader_trait_chosen
+					show_message = no
+				}
+			}
+			capital_scope = {
+				set_carrier_flag = wonder_country_65_planet
+				solar_system = {
+					star = {
+						set_name = PRESCRIPTED_star_name_wonder_country_65
+					}
+				}
+			}
+		}
+		else_if = {
+			limit = {
+				has_country_flag = wonder_country_66
+			}
+			capital_scope = {
+				set_carrier_flag = wonder_country_66_planet
+			}
+		}
+		else_if = {
+			limit = {
+				has_country_flag = wonder_country_67
+			}
+			capital_scope = {
+				set_carrier_flag = wonder_country_67_planet
+			}
+		}
+		else_if = {
+			limit = {
+				has_country_flag = wonder_country_68
+			}
+			capital_scope = {
+				set_carrier_flag = wonder_country_68_planet
+			}
+			# 人类预设国的物种必定视作同一物种并拥有相同母星
+			owner_main_species = {
+				save_event_target_as = wonder_country_human_species
+			}
+			set_wonder_country_human_species_identity = yes
+		}
+		else_if = {
+			limit = {
+				has_country_flag = wonder_country_69
+			}
+			capital_scope = {
+				set_carrier_flag = wonder_country_69_planet
+				solar_system = {
+					star = {
+						set_name = PRESCRIPTED_star_name_wonder_country_69
+					}
+				}
+			}
+		}
+		else_if = {
+			limit = {
+				has_country_flag = wonder_country_70
+			}
+			capital_scope = {
+				set_carrier_flag = wonder_country_70_planet
+			}
+		}
+		else_if = {
+			limit = {
+				has_country_flag = wonder_country_71
+			}
+			capital_scope = {
+				set_carrier_flag = wonder_country_71_planet
+			}
+		}
+		else_if = {
+			limit = {
+				has_country_flag = wonder_country_72
+			}
+			capital_scope = {
+				set_carrier_flag = wonder_country_72_planet
+			}
+		}
+		else_if = {
+			limit = {
+				has_country_flag = wonder_country_73
+			}
+			capital_scope = {
+				set_carrier_flag = wonder_country_73_planet
+			}
+		}
+		else_if = {
+			limit = {
+				has_country_flag = wonder_country_74
+			}
+			capital_scope = {
+				set_carrier_flag = wonder_country_74_planet
+			}
+		}
+		else_if = {
+			limit = {
+				has_country_flag = wonder_country_75
+			}
+			capital_scope = {
+				set_carrier_flag = wonder_country_75_planet
+			}
+		}
+		else_if = {
+			limit = {
+				has_country_flag = wonder_country_76
+			}
+			capital_scope = {
+				set_carrier_flag = wonder_country_76_planet
+			}
+		}
+		else_if = {
+			limit = {
+				is_wonder_country_77 = yes
+			}
+			capital_scope = {
+				set_carrier_flag = wonder_country_77_planet
+			}
+		}
+		else_if = {
+			limit = {
+				has_country_flag = wonder_country_78
+			}
+			capital_scope = {
+				set_carrier_flag = wonder_country_78_planet
+			}
+		}
+		else_if = {
+			limit = {
+				has_country_flag = wonder_country_79
+			}
+			capital_scope = {
+				set_carrier_flag = wonder_country_79_planet
+			}
+		}
+		else_if = {
+			limit = {
+				has_country_flag = wonder_country_80
+			}
+			capital_scope = {
+				set_carrier_flag = wonder_country_80_planet
+			}
+		}
+		else_if = {
+			limit = {
+				has_country_flag = wonder_country_81
+			}
+			capital_scope = {
+				set_carrier_flag = wonder_country_81_planet
+			}
+		}
+		# 神圣人类帝国
+		else_if = {
+			limit = {
+				has_country_flag = wonder_country_82
+			}
+			capital_scope = {
+				set_carrier_flag = wonder_country_82_planet
+			}
+			# 人类预设国的物种必定视作同一物种并拥有相同母星
+			owner_main_species = {
+				save_event_target_as = wonder_country_human_species
+			}
+			set_wonder_country_human_species_identity = yes
+		}
+		else_if = {
+			limit = {
+				has_country_flag = wonder_country_83
+			}
+			capital_scope = {
+				set_carrier_flag = wonder_country_83_planet
+			}
+		}
+		else_if = {
+			limit = {
+				has_country_flag = wonder_country_84
+			}
+			capital_scope = {
+				set_carrier_flag = wonder_country_84_planet
+			}
+		}
+		else_if = {
+			limit = {
+				has_country_flag = wonder_country_85
+			}
+			capital_scope = {
+				set_carrier_flag = wonder_country_85_planet
+			}
+		}
+		else_if = {
+			limit = {
+				has_country_flag = wonder_country_86
+			}
+			capital_scope = {
+				set_carrier_flag = wonder_country_86_planet
+			}
+		}
+		else_if = {
+			limit = {
+				has_country_flag = wonder_country_87
+			}
+			capital_scope = {
+				set_carrier_flag = wonder_country_87_planet
+			}
+		}
+		else_if = {
+			limit = {
+				has_country_flag = wonder_country_88
+			}
+			capital_scope = {
+				set_carrier_flag = wonder_country_88_planet
+			}
+		}
+		else_if = {
+			limit = {
+				has_country_flag = wonder_country_89
+			}
+			capital_scope = {
+				set_carrier_flag = wonder_country_89_planet
+			}
+		}
+		else_if = {
+			limit = {
+				has_country_flag = wonder_country_90
+			}
+			capital_scope = {
+				set_carrier_flag = wonder_country_90_planet
+			}
+		}
+		else_if = {
+			limit = {
+				is_wonder_country_91 = yes
+			}
+			set_country_flag = wonder_country_91_checked
+			add_modifier = {
+				modifier = gov_wonder_country_91_modifier
+				days = -1
+			}
+			capital_scope = {
+				set_carrier_flag = wonder_country_91_planet
+			}
+		}
+		else_if = {
+			limit = {
+				has_country_flag = wonder_country_92
+			}
+			capital_scope = {
+				set_carrier_flag = wonder_country_92_planet
+			}
+		}
+		else_if = {
+			limit = {
+				has_country_flag = wonder_country_93
+			}
+			capital_scope = {
+				set_carrier_flag = wonder_country_93_planet
+			}
+		}
+		else_if = {
+			limit = {
+				has_country_flag = wonder_country_94
+			}
+			capital_scope = {
+				set_carrier_flag = wonder_country_94_planet
+			}
+		}
+		else_if = {
+			limit = {
+				has_country_flag = wonder_country_95
+			}
+			capital_scope = {
+				set_carrier_flag = wonder_country_95_planet
+			}
+		}
+		else_if = {
+			limit = {
+				is_wonder_country_96 = yes
+			}
+			ruler = {
+				set_leader_flag = leader_death_events_blocked
+				set_immortal = yes
+			}
+			capital_scope = {
+				set_carrier_flag = wonder_country_96_planet
+				solar_system = {
+					star = {
+						set_name = PRESCRIPTED_star_name_wonder_country_96
+					}
+				}
+			}
+		}
+		else_if = {
+			limit = {
+				has_country_flag = wonder_country_97
+			}
+			capital_scope = {
+				set_carrier_flag = wonder_country_97_planet
+			}
+		}
+		else_if = {
+			limit = {
+				has_country_flag = wonder_country_98
+			}
+			ruler = {
+				set_leader_flag = leader_death_events_blocked
+				set_immortal = yes
+			}
+			capital_scope = {
+				set_carrier_flag = wonder_country_98_planet
+				solar_system = {
+					star = {
+						set_name = PRESCRIPTED_star_name_wonder_country_98
+					}
+				}
+			}
+		}
+	}
+}
+
+# 天灾预设国AI中期灾飞
+event = {
+	id = time_wonder.2
+	is_triggered_only = yes
+	hide_window = yes
+
+	trigger = {
+		any_playable_country = {
+			OR = {
+				has_country_flag = normal_wonder_country_35
+				has_country_flag = crazy_wonder_country_35
+				is_wonder_country_38 = yes
+				is_wonder_country_39 = yes
+				is_wonder_country_40 = yes
+				is_wonder_country_96 = yes
+				is_wonder_country_synth_queen = yes
+			}
+			is_crisis_country = no
+			is_ai = yes
+		}
+	}
+	
+	immediate = {
+		every_playable_country = {
+			limit = {
+				OR = {
+					has_country_flag = crazy_wonder_country_35
+					is_wonder_country_39 = yes
+					is_wonder_country_40 = yes
+				}
+				is_crisis_country = no
+				is_ai = yes
+			}
+			time_active_nemesis = yes
+		}
+		every_playable_country = {
+			limit = {
+				is_wonder_country_synth_queen = yes
+				is_crisis_country = no
+				is_ai = yes
+			}
+			time_active_cosmogenesis = yes
+		}
+		every_playable_country = {
+			limit = {
+				is_wonder_country_38 = yes
+				is_crisis_country = no
+				is_ai = yes
+			}
+			time_active_behemoths = yes
+		}
+		every_playable_country = {
+			limit = {
+				is_wonder_country_96 = yes
+				is_crisis_country = no
+				is_ai = yes
+			}
+			time_active_infernals = yes
+		}
+		every_playable_country = {
+			limit = {
+				has_country_flag = normal_wonder_country_35
+				is_crisis_country = no
+				is_ai = yes
+			}
+			time_defender_of_the_galaxy = yes
+		}
+	}
+}
+
+# 肃正协议
+country_event = {
+	id = time_wonder.3
+	is_triggered_only = yes
+	hide_window = yes
+
+	trigger = {
+		is_country_type = ai_empire
+	}
+	
+	immediate = {
+		every_playable_country = {
+			limit = {
+				is_wonder_country_39 = yes
+			}
+			country_event = { id = time_wonder.4 }
+		}
+	}
+}
+
+country_event = {
+	id = time_wonder.4
+	title = "time_wonder.4.name"
+	desc = "time_wonder.4.desc"
+	picture = GFX_evt_contingency_planet
+	show_sound = event_red_alert
+
+	is_triggered_only = yes
+	
+	immediate = {
+		random_country = {
+			limit = { is_country_type = ai_empire }
+			save_event_target_as = AI_crisis
+		}
+	}
+
+	option = {
+		name = time_wonder.4.a
+		custom_tooltip = "time_wonder.4.a.tooltip"
+		time_active_nemesis = yes
+		hidden_effect = {
+			set_country_flag = join_AI_crisis
+			declare_war_to_galaxy = yes
+			event_target:AI_crisis = {
+				set_faction_hostility = {
+					target = root
+					set_hostile = no
+					set_neutral = no
+					set_friendly = yes
+				}
+			}
+		}
+	}
+	
+	option = {
+		name = time_wonder.4.b
+		trigger = {
+			is_ai = no
+		}
+	}
+}
+
+fleet_event = {
+	id = time_wonder.10
+	title = time_wonder.10.name
+	desc = time_wonder.10.desc
+	picture = GFX_evt_black_hole
+	show_sound = event_alien_signal
+	location = event_target:time_wonder_10_planet
+
+	is_triggered_only = yes
+	
+	trigger = {
+		if = {
+			limit = {
+				from = { has_star_flag = primitive_time_system }
+			}
+			exists = owner
+			owner = {
+				NOT = { has_country_flag = time_wonder_10_triggered }
+			}
+		}
+		else = {
+			always = no
+		}
+	}
+
+	immediate = {
+		from = {
+			star = { save_event_target_as = time_wonder_10_planet }
+		}
+		owner = {
+			set_country_flag = time_wonder_10_triggered
+		}
+	}
+
+	option = {
+		name = time_wonder.10.a
+		owner = {
+			add_monthly_resource_mult = {
+				resource = physics_research
+				value = @tier2researchreward
+				min = @tier2researchmin
+				max = @tier2researchmax
+			}
+			add_monthly_resource_mult = {
+				resource = society_research
+				value = @tier2researchreward
+				min = @tier2researchmin
+				max = @tier2researchmax
+			}
+			add_monthly_resource_mult = {
+				resource = engineering_research
+				value = @tier2researchreward
+				min = @tier2researchmin
+				max = @tier2researchmax
+			}
+		}
+	}
+}
+
+# 特殊预设国领袖特质
+country_event = {
+	id = time_wonder.100
+	is_triggered_only = yes
+	hide_window = yes
+	
+	trigger = {
+		from = {
+			is_dimension_traveler = no
+			species = {
+				OR = {
+					has_species_flag = wonder_country_35_species
+					has_species_flag = wonder_country_38_species
+					has_species_flag = wonder_country_39_species
+					has_species_flag = wonder_country_40_species
+					has_species_flag = wonder_country_synth_queen_species
+				}
+			}
+		}
+	}
+	
+	immediate = {
+		if = {
+			limit = {
+				from = {
+					species = { has_species_flag = wonder_country_35_species }
+				}
+			}
+			from = {
+				wonder_country_35_species_leader_effect = yes
+			}
+		}
+		else_if = {
+			limit = {
+				from = {
+					species = { has_species_flag = wonder_country_38_species }
+				}
+			}
+			from = {
+				wonder_country_38_species_leader_effect = yes
+			}
+		}
+		else_if = {
+			limit = {
+				from = {
+					species = { has_species_flag = wonder_country_39_species }
+				}
+			}
+			from = {
+				wonder_country_39_species_leader_effect = yes
+			}
+		}
+		else_if = {
+			limit = {
+				from = {
+					species = { has_species_flag = wonder_country_40_species }
+				}
+			}
+			from = {
+				wonder_country_40_species_leader_effect = yes
+			}
+		}
+		else_if = {
+			limit = {
+				from = {
+					species = { has_species_flag = wonder_country_synth_queen_species }
+				}
+			}
+			from = {
+				wonder_country_synth_queen_species_leader_effect = yes
+			}
+		}
+	}
+}

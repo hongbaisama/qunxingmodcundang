@@ -1,0 +1,152 @@
+dimension_traveler_skill_point_loc_value = {
+	base = $BASE$
+	multiply = value:dimension_traveler_skill_point_level
+}
+
+subclass_dimension_traveler_skill_point_value = {
+	base = 3 # 基础
+	modifier = {
+		add = 3
+		has_civic_origin_white_hole = yes # 天籁之梦
+	}
+	multiply = value:dimension_traveler_skill_point_level
+}
+
+destiny_dimension_traveler_skill_point_value = {
+	base = 0
+	modifier = {
+		add = 2
+		unlock_dimension_traveler_destiny_trait = yes # 命定
+	}
+	modifier = {
+		add = 2
+		has_country_flag = dimension_traveler_end # 隐藏真结局
+	}
+	multiply = value:dimension_traveler_skill_point_level
+}
+
+dimension_traveler_skill_point_level = {
+	base = 0
+	add = this.dimension_traveler_level
+	max = 10
+}
+
+dimension_traveler_skill_point_per_level = {
+	base = 3 # 基础
+	modifier = {
+		add = 3
+		has_civic_origin_white_hole = yes # 天籁之梦
+	}
+	modifier = {
+		add = 2
+		unlock_dimension_traveler_destiny_trait = yes # 命定
+	}
+	modifier = {
+		add = 2
+		has_country_flag = dimension_traveler_end # 隐藏真结局
+	}
+	modifier = {
+		add = 2
+		has_country_flag = dimension_traveler_trait_dimension_traveler_brief # 摘录者之梦
+	}
+	modifier = {
+		add = 2
+		has_country_flag = dimension_traveler_trait_pass_black_hole # 来自深渊
+	}
+	modifier = {
+		add = 1
+		has_country_flag = dimension_traveler_trait_between_three_and_four # 三四之间
+	}
+	modifier = {
+		add = 1
+		has_country_flag = dimension_traveler_trait_mirror_image # 镜中倒影
+	}
+	modifier = {
+		add = 1
+		has_country_flag = dimension_traveler_trait_end_of_circle # 循环之终
+	}
+	modifier = {
+		add = 1
+		has_country_flag = dimension_traveler_trait_wall_breaker # 破壁人
+	}
+}
+
+all_dimension_traveler_skill_point = {
+	base = 1
+	multiply = value:dimension_traveler_skill_point_level
+	multiply = value:dimension_traveler_skill_point_per_level
+	floor = yes
+	max = value:max_all_dimension_traveler_skill_point
+	min = 0
+}
+
+max_all_dimension_traveler_skill_point = {
+	base = 102
+	# 内阁技能
+	modifier = {
+		add = 36
+		unlock_dimension_traveler_destiny_trait = yes
+	}
+	# 反演对称
+	modifier = {
+		add = 12
+		has_country_flag = dimension_traveler_end
+	}
+}
+
+max_dimension_traveler_skill_point_class = {
+	base = 34
+	# 内阁技能
+	modifier = {
+		add = 12
+		unlock_dimension_traveler_destiny_trait = yes
+	}
+	# 反演对称
+	modifier = {
+		add = 4
+		has_country_flag = dimension_traveler_end
+	}
+}
+
+available_dimension_traveler_skill_point = {
+	base = 0
+	add = value:all_dimension_traveler_skill_point
+	subtract = this.used_dimension_traveler_skill_point
+	min = 0
+}
+
+used_dimension_traveler_skill_point_class_councilor = {
+	base = 0
+	modifier = {
+		add = 3
+		has_country_flag = dimension_traveler_skill_$CLASS$_5_1
+	}
+	modifier = {
+		add = 3
+		has_country_flag = dimension_traveler_skill_$CLASS$_5_3
+	}
+	modifier = {
+		add = 4
+		has_country_flag = dimension_traveler_skill_$CLASS$_5_5
+	}
+	modifier = {
+		add = 3
+		has_country_flag = dimension_traveler_skill_$CLASS$_5_7
+	}
+	modifier = {
+		add = 3
+		has_country_flag = dimension_traveler_skill_$CLASS$_5_9
+	}
+}
+
+used_dimension_traveler_skill_point_class_normal = {
+	base = 0
+	add = used_dimension_traveler_skill_point_$CLASS$
+	subtract = used_dimension_traveler_skill_point_$CLASS$_councilor
+}
+
+dimension_traveler_skill_commander_4_2_chance = {
+	base = 100
+	multiply = modifier:dimension_traveler_skill_commander_4_2_modifier
+	max = 100
+}

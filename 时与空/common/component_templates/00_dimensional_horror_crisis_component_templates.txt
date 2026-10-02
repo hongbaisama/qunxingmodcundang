@@ -1,0 +1,188 @@
+utility_component_template = {
+	key = "DIMENSIONAL_HORROR_CRISIS_AUX_1"
+	size = aux
+	icon = "GFX_ship_part_enigmatic_encoder"
+	icon_frame = 1
+	power = -25
+	resources = {
+		category = ship_components
+		cost = {
+			alloys = 25
+			sr_dark_matter = 0.5
+		}
+	}
+	prerequisites = { "tech_dimensional_horror_crisis_storm_protection_component_1" }
+	component_set = "DIMENSIONAL_HORROR_CRISIS_AUX_1"
+	
+	ship_limit = 2
+	
+	modifier = {
+		ship_base_speed_mult = 0.1
+	}
+	
+	ship_modifier = {
+		weapon_confuser_protect_chance = 0.25
+		weapon_terrify_protect_chance = 0.25
+		ship_evasion_mult = 0.1
+		ship_evasion_add = 10
+	}
+	
+	ai_weight = {
+		weight = 10
+		modifier = {
+			factor = 0.0
+			no_resource_for_component = { RESOURCE = sr_dark_matter }
+			is_ai = yes
+		}
+	}
+}
+
+utility_component_template = {
+	key = "DIMENSIONAL_HORROR_CRISIS_AUX_2"
+	size = aux
+	icon = "GFX_ship_part_enigmatic_decoder"
+	icon_frame = 1
+	power = -25
+	resources = {
+		category = ship_components
+		cost = {
+			alloys = 25
+			sr_dark_matter = 0.5
+		}
+	}
+	prerequisites = { "tech_dimensional_horror_crisis_storm_protection_component_2" }
+	component_set = "DIMENSIONAL_HORROR_CRISIS_AUX_2"
+	
+	ship_limit = 2
+	
+	ship_modifier = {
+		weapon_confuser_protect_chance = 0.25
+		weapon_terrify_protect_chance = 0.25
+		ship_emergency_ftl_mult = -0.2
+		ship_emergency_ftl_min_days_mult = -0.2
+		ship_disengage_opportunities_add = 1
+	}
+	
+	ai_weight = {
+		weight = 10
+		modifier = {
+			factor = 0.0
+			no_resource_for_component = { RESOURCE = sr_dark_matter }
+			is_ai = yes
+		}
+	}
+}
+
+utility_component_template = {
+	key = "DIMENSIONAL_HORROR_CRISIS_AUX_3"
+	size = aux
+	icon = "GFX_ship_part_shield_hardener_2"
+	icon_frame = 1
+	power = -50
+	resources = {
+		category = ship_components
+		cost = {
+			alloys = 50
+			sr_dark_matter = 1
+		}
+	}
+	prerequisites = { "tech_dimensional_horror_crisis_storm_protection_component_3" }
+	component_set = "DIMENSIONAL_HORROR_CRISIS_AUX_3"
+	
+	ship_limit = 2
+	
+	modifier = {
+		ship_shield_mult = 0.1
+	}
+	
+	ship_modifier = {
+		weapon_confuser_protect_chance = 0.25
+		weapon_terrify_protect_chance = 0.25
+		ship_shield_regen_mult = 0.2
+	}
+	
+	ai_weight = {
+		weight = 20
+		modifier = {
+			factor = 0.0
+			no_resource_for_component = { RESOURCE = sr_dark_matter }
+			is_ai = yes
+		}
+	}
+}
+
+utility_component_template = {
+	key = "DIMENSIONAL_HORROR_CRISIS_AUX_4"
+	size = aux
+	icon = "GFX_ship_part_armor_hardener_2"
+	icon_frame = 1
+	power = -50
+	resources = {
+		category = ship_components
+		cost = {
+			alloys = 50
+			sr_dark_matter = 1
+		}
+	}
+	prerequisites = { "tech_dimensional_horror_crisis_storm_protection_component_4" }
+	component_set = "DIMENSIONAL_HORROR_CRISIS_AUX_4"
+	
+	ship_limit = 2
+	
+	modifier = {
+		ship_armor_mult = 0.1
+	}
+	
+	ship_modifier = {
+		weapon_confuser_protect_chance = 0.25
+		weapon_terrify_protect_chance = 0.25
+		ship_armor_regen_mult = 0.2
+	}
+	
+	ai_weight = {
+		weight = 20
+		modifier = {
+			factor = 0.0
+			no_resource_for_component = { RESOURCE = sr_dark_matter }
+			is_ai = yes
+		}
+	}
+}
+
+utility_component_template = {
+	key = "DIMENSIONAL_HORROR_CRISIS_AUX_5"
+	size = aux
+	icon = "GFX_ship_part_whisperers_covenant_aux"
+	icon_frame = 1
+	power = -100
+	resources = {
+		category = ship_components
+		cost = {
+			alloys = 100
+			astral_threads = 1
+		}
+	}
+	prerequisites = { "tech_dimensional_horror_crisis_storm_protection_component_5" }
+	component_set = "DIMENSIONAL_HORROR_CRISIS_AUX_5"
+	
+	ship_limit = 1
+	
+	modifier = {
+		ship_hull_mult = 0.1
+	}
+	
+	ship_modifier = {
+		weapon_confuser_protect_chance = 0.5
+		weapon_terrify_protect_chance = 0.5
+		ship_hull_regen_mult = 0.2
+	}
+	
+	ai_weight = {
+		weight = 50
+		modifier = {
+			factor = 0.0
+			no_resource_for_component = { RESOURCE = astral_threads }
+			is_ai = yes
+		}
+	}
+}

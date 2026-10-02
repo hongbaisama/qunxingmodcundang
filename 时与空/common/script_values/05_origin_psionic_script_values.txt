@@ -1,0 +1,17 @@
+num_col_psionic_value = {
+	base = $BASE$
+	multiply = value:num_time_modifier|MODIFIER|col_psionic_mult|
+}
+
+district_psionic_value = {
+	base = 1
+	multiply = value:num_time_modifier|MODIFIER|district_psionic_modifier_mult|
+}
+
+origin_psionic_edict_value = {
+	base = 1
+	modifier = {
+		multiply = 2
+		has_ascension_perk = ap_consecrated_worlds
+	}
+}

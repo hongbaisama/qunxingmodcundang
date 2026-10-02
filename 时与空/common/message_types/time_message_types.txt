@@ -1,0 +1,424 @@
+# 突触扩散
+message_type = {
+	key = "ORIGIN_PC_HIVE_SPREAD"
+	icon = "GFX_message_terraforming"
+	icon_frame = 1
+	
+	name = "ORIGIN_PC_HIVE_SPREAD_TITLE"
+	sound = "pc_infested"
+	ping = "ping_notification_green"
+	
+	category = planets
+}
+
+# 引力旋涡
+message_type = {
+	key = "TIME_BLOCKER_CLEARED"
+	icon = "GFX_message_aborted_project"
+	icon_frame = 1
+	
+	name = "TIME_BLOCKER_CLEARED_TITLE"
+	sound = "event_alien_signal"
+	ping = "ping_notification_green"
+	
+	category = planets
+}
+
+# 位面勘探
+message_type = {
+	key = "SEARCH_PC_TIME_DEPOSITS"
+	icon = "GFX_message_aborted_project"
+	icon_frame = 1
+	
+	name = "SEARCH_PC_TIME_DEPOSITS_TITLE"
+	sound = "event_alien_signal"
+	ping = "ping_notification_green"
+	
+	category = planets
+}
+
+# 解救神经芯片
+message_type = {
+	key = "SAVE_THE_MATRIX_POP"
+	icon = "GFX_message_refugees_arrived"
+	icon_frame = 1
+	
+	name = "SAVE_THE_MATRIX_POP_TITLE"
+	sound = "notification"
+	ping = "ping_notification_green"
+	
+	category = planets
+}
+
+# 藏宝地
+message_type = {
+	key = "PIRATE_KING_BLOCKER_CLEARED"
+	icon = "GFX_message_archeology_complete"
+	icon_frame = 1
+	
+	name = "PIRATE_KING_BLOCKER_CLEARED_TITLE"
+	sound = "archeology_notifications_chapter_complete"
+	ping = "ping_notification_green"
+	
+	category = planets
+}
+
+# 领袖晋升
+message_type = {
+	key = "PROMOTE_TO_RENOWNED_LEADER"
+	icon = "GFX_message_leader_level_up"
+	
+	name = "PROMOTE_TO_RENOWNED_LEADER_TITLE"
+	sound = "notification"
+	ping = "ping_notification_green"
+	
+	default_toast = yes
+	
+	category = leaders
+}
+
+message_type = {
+	key = "PROMOTE_TO_LEGENDARY_LEADER"
+	icon = "GFX_message_leader_level_up"
+	
+	name = "PROMOTE_TO_LEGENDARY_LEADER_TITLE"
+	sound = "notification"
+	ping = "ping_notification_green"
+	
+	default_toast = yes
+	
+	category = leaders
+}
+
+# 大祭祀
+message_type = {
+	key = "CAN_BLESSED_BY_GOD"
+	icon = "GFX_message_beholder_pops_inoculated"
+	
+	name = "CAN_BLESSED_BY_GOD_TITLE"
+	sound = "event_mystic_reveal"
+	ping = "ping_notification_green"
+	
+	default_toast = yes
+	
+	category = planets
+}
+
+# 因果无瑕
+message_type = {
+	key = "DIMENSION_TRAVELER_HORROR_ABORT"
+	icon = "GFX_message_aborted_project"
+	
+	name = "DIMENSION_TRAVELER_HORROR_ABORT_TITLE"
+	sound = "event_alien_signal"
+	ping = "ping_notification_yellow"
+	
+	default_toast = yes
+	
+	category = leaders
+}
+
+# 终末行舟升级完成
+message_type = {
+	key = "FINISH_TIME_TITAN_UPGRADE"
+	icon = "GFX_message_fleet_upgrader_complete"
+	icon_frame = 1
+	
+	name = "FINISH_TIME_TITAN_UPGRADE_TITLE"
+	sound = "advisor_notification_ships_upgraded"
+	sound_is_advisor = yes
+	ping = "ping_notification_green"
+	
+	category = fleets
+}
+
+# 终末行舟无法连续升级
+message_type = {
+	key = "CAN_NOT_AUTO_TIME_TITAN_UPGRADE"
+	icon = "GFX_message_forcibly_remove_cloaking"
+	icon_frame = 2
+	
+	name = "CAN_NOT_AUTO_TIME_TITAN_UPGRADE_TITLE"
+	ping = "ping_notification_yellow"
+	
+	category = fleets
+}
+
+# 终末庇护完成
+message_type = {
+	key = "FINISH_TIME_TITAN_END_SHELTER"
+	icon = "GFX_message_fleet_order_catapult_windup_complete"
+	icon_frame = 1
+	
+	name = "FINISH_TIME_TITAN_END_SHELTER_TITLE"
+	sound = "notification"
+	ping = "ping_notification_green"
+	
+	category = planets
+}
+
+# 界旅者结局
+message_type = {
+	key = "DIMENSION_TRAVELER_END_1"
+	icon = "GFX_message_wormhole_closed"
+	icon_frame = 2
+	
+	name = "DIMENSION_TRAVELER_END_1_TITLE"
+	sound = "event_alien_signal"
+	ping = "ping_notification_yellow"
+	
+	hidden_in_message_settings = yes
+}
+
+message_type = {
+	key = "DIMENSION_TRAVELER_END_2"
+	icon = "GFX_message_wormhole_closed"
+	icon_frame = 2
+	
+	name = "DIMENSION_TRAVELER_END_2_TITLE"
+	sound = "event_alien_signal"
+	ping = "ping_notification_red"
+	
+	hidden_in_message_settings = yes
+}
+
+message_type = {
+	key = "DIMENSION_TRAVELER_END_3"
+	icon = "GFX_message_wormhole_closed"
+	icon_frame = 2
+	
+	name = "DIMENSION_TRAVELER_END_3_TITLE"
+	sound = "event_alien_signal"
+	ping = "ping_notification_yellow"
+	
+	hidden_in_message_settings = yes
+}
+
+message_type = {
+	key = "DIMENSION_TRAVELER_END_4"
+	icon = "GFX_message_wormhole_closed"
+	icon_frame = 2
+	
+	name = "DIMENSION_TRAVELER_END_4_TITLE"
+	sound = "event_alien_signal"
+	ping = "ping_notification_yellow"
+	
+	hidden_in_message_settings = yes
+}
+
+message_type = {
+	key = "DIMENSION_TRAVELER_END_5"
+	icon = "GFX_message_wormhole_closed"
+	icon_frame = 1
+	
+	name = "DIMENSION_TRAVELER_END_5_TITLE"
+	sound = "event_alien_signal"
+	ping = "ping_notification_green"
+	
+	hidden_in_message_settings = yes
+}
+
+message_type = {
+	key = "DIMENSION_TRAVELER_END_HIDE"
+	icon = "GFX_message_wormhole_closed"
+	icon_frame = 1
+	
+	name = "DIMENSION_TRAVELER_END_HIDE_TITLE"
+	sound = "event_activating_unknown_technology"
+	ping = "ping_notification_green"
+	
+	hidden_in_message_settings = yes
+}
+
+message_type = {
+	key = "DIMENSION_TRAVELER_END_BAD"
+	icon = "GFX_message_wormhole_closed"
+	icon_frame = 2
+	
+	name = "DIMENSION_TRAVELER_END_BAD_TITLE"
+	sound = "event_alien_signal"
+	ping = "ping_notification_red"
+	
+	hidden_in_message_settings = yes
+}
+
+message_type = {
+	key = "DIMENSION_TRAVELER_END_TRUE"
+	icon = "GFX_message_wormhole_closed"
+	icon_frame = 1
+	
+	name = "DIMENSION_TRAVELER_END_TRUE_TITLE"
+	sound = "event_activating_unknown_technology"
+	ping = "ping_notification_green"
+	
+	hidden_in_message_settings = yes
+}
+
+# 生命线结局
+message_type = {
+	key = "TIME_LIFELINE_GOOD_END_1"
+	icon = "GFX_message_aborted_project"
+	icon_frame = 1
+	
+	name = "TIME_LIFELINE_GOOD_END_1_TITLE"
+	sound = "event_activating_unknown_technology"
+	ping = "ping_notification_green"
+	
+	hidden_in_message_settings = yes
+}
+
+message_type = {
+	key = "TIME_LIFELINE_GOOD_END_2"
+	icon = "GFX_message_aborted_project"
+	icon_frame = 1
+	
+	name = "TIME_LIFELINE_GOOD_END_2_TITLE"
+	sound = "event_activating_unknown_technology"
+	ping = "ping_notification_green"
+	
+	hidden_in_message_settings = yes
+}
+
+message_type = {
+	key = "TIME_LIFELINE_GOOD_END_3"
+	icon = "GFX_message_aborted_project"
+	icon_frame = 1
+	
+	name = "TIME_LIFELINE_GOOD_END_3_TITLE"
+	sound = "event_activating_unknown_technology"
+	ping = "ping_notification_green"
+	
+	hidden_in_message_settings = yes
+}
+
+message_type = {
+	key = "TIME_LIFELINE_GOOD_END_4"
+	icon = "GFX_message_aborted_project"
+	icon_frame = 1
+	
+	name = "TIME_LIFELINE_GOOD_END_4_TITLE"
+	sound = "event_activating_unknown_technology"
+	ping = "ping_notification_green"
+	
+	hidden_in_message_settings = yes
+}
+
+message_type = {
+	key = "TIME_LIFELINE_NORMAL_END_1"
+	icon = "GFX_message_aborted_project"
+	icon_frame = 1
+	
+	name = "TIME_LIFELINE_NORMAL_END_1_TITLE"
+	sound = "event_alien_signal"
+	ping = "ping_notification_yellow"
+	
+	hidden_in_message_settings = yes
+}
+
+message_type = {
+	key = "TIME_LIFELINE_NORMAL_END_2"
+	icon = "GFX_message_aborted_project"
+	icon_frame = 1
+	
+	name = "TIME_LIFELINE_NORMAL_END_2_TITLE"
+	sound = "event_alien_signal"
+	ping = "ping_notification_yellow"
+	
+	hidden_in_message_settings = yes
+}
+
+message_type = {
+	key = "TIME_LIFELINE_NORMAL_END_3"
+	icon = "GFX_message_aborted_project"
+	icon_frame = 1
+	
+	name = "TIME_LIFELINE_NORMAL_END_3_TITLE"
+	sound = "event_alien_signal"
+	ping = "ping_notification_yellow"
+	
+	hidden_in_message_settings = yes
+}
+
+message_type = {
+	key = "TIME_LIFELINE_NORMAL_END_4"
+	icon = "GFX_message_aborted_project"
+	icon_frame = 1
+	
+	name = "TIME_LIFELINE_NORMAL_END_4_TITLE"
+	sound = "event_alien_signal"
+	ping = "ping_notification_yellow"
+	
+	hidden_in_message_settings = yes
+}
+
+message_type = {
+	key = "TIME_LIFELINE_SPECIAL_END_1"
+	icon = "GFX_message_aborted_project"
+	icon_frame = 2
+	
+	name = "TIME_LIFELINE_SPECIAL_END_1_TITLE"
+	sound = "event_mystic_reveal_light"
+	ping = "ping_notification_red"
+	
+	hidden_in_message_settings = yes
+}
+
+message_type = {
+	key = "TIME_LIFELINE_SPECIAL_END_2"
+	icon = "GFX_message_aborted_project"
+	icon_frame = 2
+	
+	name = "TIME_LIFELINE_SPECIAL_END_2_TITLE"
+	sound = "event_mystic_reveal_light"
+	ping = "ping_notification_red"
+	
+	hidden_in_message_settings = yes
+}
+
+message_type = {
+	key = "TIME_LIFELINE_BAD_END_1"
+	icon = "GFX_message_aborted_project"
+	icon_frame = 2
+	
+	name = "TIME_LIFELINE_BAD_END_1_TITLE"
+	sound = "event_mystic_reveal_light"
+	ping = "ping_notification_red"
+	
+	hidden_in_message_settings = yes
+}
+
+message_type = {
+	key = "TIME_LIFELINE_BAD_END_2"
+	icon = "GFX_message_aborted_project"
+	icon_frame = 2
+	
+	name = "TIME_LIFELINE_BAD_END_2_TITLE"
+	sound = "event_mystic_reveal_light"
+	ping = "ping_notification_red"
+	
+	hidden_in_message_settings = yes
+}
+
+message_type = {
+	key = "TIME_LIFELINE_BAD_END_3"
+	icon = "GFX_message_aborted_project"
+	icon_frame = 2
+	
+	name = "TIME_LIFELINE_BAD_END_3_TITLE"
+	sound = "event_mystic_reveal_light"
+	ping = "ping_notification_red"
+	
+	hidden_in_message_settings = yes
+}
+
+message_type = {
+	key = "TIME_LIFELINE_BAD_END_4"
+	icon = "GFX_message_aborted_project"
+	icon_frame = 2
+	
+	name = "TIME_LIFELINE_BAD_END_4_TITLE"
+	sound = "event_mystic_reveal_light"
+	ping = "ping_notification_red"
+	
+	hidden_in_message_settings = yes
+}

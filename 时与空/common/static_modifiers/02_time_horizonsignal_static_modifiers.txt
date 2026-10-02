@@ -1,0 +1,833 @@
+r_horror_matter_modifier = {
+	all_technology_research_speed = 0.5
+	pop_amenities_usage_mult = 0.5
+	icon = "gfx/interface/icons/planet_modifiers/pm_horror_trophy.dds"
+	icon_frame = 1
+}
+
+r_time_modifier_1 = {
+	physics_tech_cost_mult = -0.025
+	society_tech_cost_mult = -0.025
+	engineering_tech_cost_mult = -0.025
+	tradition_cost_mult = -0.025
+	country_cost_mult = -0.025
+	country_upkeep_mult = -0.025
+	country_produces_mult = 0.05
+	ship_armor_penetration_add = 0.05
+	ship_shield_penetration_add = 0.05
+	country_sr_dark_matter_produces_mult = -0.1
+	planet_stability_add = -10
+	icon = "gfx/interface/icons/planet_modifiers/pm_surreal_visions.dds"
+	icon_frame = 1
+}
+
+r_time_modifier_2 = {
+	physics_tech_cost_mult = -0.05
+	society_tech_cost_mult = -0.05
+	engineering_tech_cost_mult = -0.05
+	tradition_cost_mult = -0.05
+	country_cost_mult = -0.05
+	country_upkeep_mult = -0.05
+	country_produces_mult = 0.1
+	ship_armor_penetration_add = 0.1
+	ship_shield_penetration_add = 0.1
+	country_sr_dark_matter_produces_mult = -0.2
+	planet_stability_add = -20
+	icon = "gfx/interface/icons/planet_modifiers/pm_surreal_visions.dds"
+	icon_frame = 1
+}
+
+r_time_modifier_3 = {
+	physics_tech_cost_mult = -0.075
+	society_tech_cost_mult = -0.075
+	engineering_tech_cost_mult = -0.075
+	tradition_cost_mult = -0.075
+	country_cost_mult = -0.075
+	country_upkeep_mult = -0.075
+	country_produces_mult = 0.15
+	ship_armor_penetration_add = 0.15
+	ship_shield_penetration_add = 0.15
+	country_sr_dark_matter_produces_mult = -0.3
+	planet_stability_add = -30
+	icon = "gfx/interface/icons/planet_modifiers/pm_surreal_visions.dds"
+	icon_frame = 1
+}
+
+r_time_modifier_4 = {
+	physics_tech_cost_mult = -0.1
+	society_tech_cost_mult = -0.1
+	engineering_tech_cost_mult = -0.1
+	tradition_cost_mult = -0.1
+	country_cost_mult = -0.1
+	country_upkeep_mult = -0.1
+	country_produces_mult = 0.2
+	ship_armor_penetration_add = 0.2
+	ship_shield_penetration_add = 0.2
+	country_sr_dark_matter_produces_mult = -0.4
+	planet_stability_add = -40
+	icon = "gfx/interface/icons/planet_modifiers/pm_surreal_visions.dds"
+	icon_frame = 1
+}
+
+r_time_modifier_5 = {
+	physics_tech_cost_mult = -0.125
+	society_tech_cost_mult = -0.125
+	engineering_tech_cost_mult = -0.125
+	tradition_cost_mult = -0.125
+	country_cost_mult = -0.125
+	country_upkeep_mult = -0.125
+	country_produces_mult = 0.25
+	ship_armor_penetration_add = 0.25
+	ship_shield_penetration_add = 0.25
+	country_sr_dark_matter_produces_mult = -0.5
+	planet_stability_add = -50
+	icon = "gfx/interface/icons/planet_modifiers/pm_surreal_visions.dds"
+	icon_frame = 1
+}
+
+r_time_modifier_6 = {
+	physics_tech_cost_mult = -0.15
+	society_tech_cost_mult = -0.15
+	engineering_tech_cost_mult = -0.15
+	tradition_cost_mult = -0.15
+	country_cost_mult = -0.15
+	country_upkeep_mult = -0.15
+	country_produces_mult = 0.3
+	ship_armor_penetration_add = 0.3
+	ship_shield_penetration_add = 0.3
+	country_sr_dark_matter_produces_mult = -0.6
+	planet_stability_add = -60
+	icon = "gfx/interface/icons/planet_modifiers/pm_surreal_visions.dds"
+	icon_frame = 1
+}
+
+r_time_modifier_7 = {
+	physics_tech_cost_mult = -0.175
+	society_tech_cost_mult = -0.175
+	engineering_tech_cost_mult = -0.175
+	tradition_cost_mult = -0.175
+	country_cost_mult = -0.175
+	country_upkeep_mult = -0.175
+	country_produces_mult = 0.35
+	ship_armor_penetration_add = 0.35
+	ship_shield_penetration_add = 0.35
+	country_sr_dark_matter_produces_mult = -0.7
+	planet_stability_add = -70
+	icon = "gfx/interface/icons/planet_modifiers/pm_surreal_visions.dds"
+	icon_frame = 1
+}
+
+r_time_modifier_8 = {
+	physics_tech_cost_mult = -0.2
+	society_tech_cost_mult = -0.2
+	engineering_tech_cost_mult = -0.2
+	tradition_cost_mult = -0.2
+	country_cost_mult = -0.2
+	country_upkeep_mult = -0.2
+	country_produces_mult = 0.4
+	ship_armor_penetration_add = 0.4
+	ship_shield_penetration_add = 0.4
+	country_sr_dark_matter_produces_mult = -0.8
+	planet_stability_add = -80
+	icon = "gfx/interface/icons/planet_modifiers/pm_surreal_visions.dds"
+	icon_frame = 1
+}
+
+r_time_modifier_9 = {
+	physics_tech_cost_mult = -0.225
+	society_tech_cost_mult = -0.225
+	engineering_tech_cost_mult = -0.225
+	tradition_cost_mult = -0.225
+	country_cost_mult = -0.225
+	country_upkeep_mult = -0.225
+	country_produces_mult = 0.45
+	ship_armor_penetration_add = 0.45
+	ship_shield_penetration_add = 0.45
+	country_sr_dark_matter_produces_mult = -0.9
+	planet_stability_add = -90
+	icon = "gfx/interface/icons/planet_modifiers/pm_surreal_visions.dds"
+	icon_frame = 1
+}
+
+r_time_modifier_10 = {
+	physics_tech_cost_mult = -0.25
+	society_tech_cost_mult = -0.25
+	engineering_tech_cost_mult = -0.25
+	tradition_cost_mult = -0.25
+	country_cost_mult = -0.25
+	country_upkeep_mult = -0.25
+	country_produces_mult = 0.5
+	ship_armor_penetration_add = 0.5
+	ship_shield_penetration_add = 0.5
+	country_sr_dark_matter_produces_mult = -1
+	planet_stability_add = -100
+	icon = "gfx/interface/icons/planet_modifiers/pm_surreal_visions.dds"
+	icon_frame = 1
+}
+
+
+
+time_dimensional_horror_modifier = {
+	ship_weapon_damage = 1
+	ship_fire_rate_mult = 1
+	ship_weapon_range_mult = 1
+	ship_hull_damage_mult = 1
+	ship_armor_damage_mult = 1
+	ship_shield_damage_mult = 1
+	ship_armor_penetration_mult = 1
+	ship_shield_penetration_mult = 1
+	ship_accuracy_mult = 1
+	ship_tracking_mult = 1
+	ship_evasion_mult = 1
+	ship_hull_mult = 1
+	ship_armor_mult = 1
+	ship_shield_mult = 1
+	ship_armor_hardening_add = 10
+	ship_shield_hardening_add = 10
+	ship_armor_reduction = -10
+	ship_shield_reduction = -10
+}
+
+time_worm_manifestation = {
+	ship_hull_damage_mult = -0.8
+	ship_armor_damage_mult = -0.8
+	ship_shield_damage_mult = -0.8
+	ship_armor_penetration_mult = -0.8
+	ship_shield_penetration_mult = -0.8
+	ship_armor_mult = -0.8
+	ship_shield_mult = -0.8
+}
+
+
+
+# 旧版兼容，现已被地块替代
+time_horror = {
+	icon = "gfx/interface/icons/planet_modifiers/pm_horror_trophy.dds"
+	icon_frame = 1
+	country_unity_produces_mult = 0.5
+	country_physics_research_produces_mult = 0.5
+	country_society_research_produces_mult = 0.5
+	country_engineering_research_produces_mult = 0.5
+	pop_amenities_usage_mult = 0.5
+}
+
+
+
+time_hotel_modifier_1 = {
+	planet_stability_mult = 0.1
+	planet_crime_mult = -0.5
+	icon = "gfx/interface/icons/planet_modifiers/pm_contingency_sabotage.dds"
+	icon_frame = 1
+}
+
+time_hotel_modifier_2 = {
+	building_time_mult = -0.1
+	starbase_shipyard_build_speed_mult = 0.2
+	planet_decision_enact_speed_mult = 0.2
+	icon = "gfx/interface/icons/planet_modifiers/pm_contingency_sabotage.dds"
+	icon_frame = 1
+}
+
+
+
+time_akx_waiting_world_1 = {
+	country_physics_research_produces_mult = 1
+	country_society_research_produces_mult = 1
+	country_engineering_research_produces_mult = 1
+	country_energy_produces_mult = -1
+	habitability_ceil_uncapped_add = -0.5
+	habitability_ceil_add = -0.5
+	habitability_floor_add = -0.5
+	icon = "gfx/interface/icons/planet_modifiers/pm_faith_in_science.dds"
+	icon_frame = 1
+}
+
+time_akx_waiting_world_2 = {
+	pop_happiness = -0.25
+	planet_amenities_mult = -0.25
+	planet_jobs_produces_mult = -0.25
+	habitability_ceil_uncapped_add = -0.25
+	habitability_ceil_add = -0.25
+	habitability_floor_add = -0.25
+	icon = "gfx/interface/icons/planet_modifiers/pm_city_ruins.dds"
+	icon_frame = 3
+}
+
+time_akx_waiting_world_3 = {
+	planet_bureaucrats_unity_produces_add = 4
+	country_unity_produces_mult = 1
+	pop_happiness = -1
+	planet_amenities_mult = -1
+	planet_jobs_produces_mult = -1
+	habitability_ceil_uncapped_add = -1
+	habitability_ceil_add = -1
+	habitability_floor_add = -1
+	logistic_growth_mult = -1
+	bonus_pop_growth_mult = -1
+	planet_pop_assembly_mult = -1
+	custom_tooltip = time_akx_waiting_world_3_effect
+	show_only_custom_tooltip = no
+	apply_modifier_to_other_planets = time_akx_waiting_world_3_other_planets
+	icon = "gfx/interface/icons/planet_modifiers/pm_city_ruins.dds"
+	icon_frame = 2
+}
+
+time_akx_waiting_world_3_other_planets = {
+	planet_bureaucrats_unity_produces_add = 1
+	country_unity_produces_mult = 0.25
+	pop_happiness = -0.25
+	planet_amenities_mult = -0.25
+	icon = "gfx/interface/icons/planet_modifiers/pm_city_ruins.dds"
+	icon_frame = 2
+}
+
+time_akx_waiting_world_4 = {
+	pop_housing_usage_add = -0.1
+	pop_amenities_usage_add = -0.1
+	icon = "gfx/interface/icons/planet_modifiers/pm_hyper_relays.dds"
+	icon_frame = 1
+}
+
+
+
+lost_time_titan = {
+	pop_happiness = -0.2
+	icon = "gfx/interface/icons/planet_modifiers/pm_dread_trophy.dds"
+	icon_frame = 3
+}
+
+lost_time_titan_gestalt = {
+	planet_amenities_no_happiness_mult = -0.2
+	icon = "gfx/interface/icons/planet_modifiers/pm_dread_trophy.dds"
+	icon_frame = 3
+}
+
+time_titan_modifier = {
+	fleet_mia_time_mult = -1
+	mod_ship_naval_cap_usage_mult = -1
+	icon = "gfx/interface/icons/planet_modifiers/pm_wormhole.dds"
+	icon_frame = 1
+}
+
+time_warp_drive_horror_storm = {
+	ship_speed_reduction = 0.5
+	ship_shield_reduction = 0.5
+	ship_armor_reduction = 0.5
+	ship_evasion_mult = -0.5
+	ship_ftl_jumpdrive_range_mult = -1
+	ship_jumpdrive_cooldown_mult = 1
+	ship_windup_mult = 1
+	ship_winddown_mult = 1
+	ship_disengage_chance_reduction = 1
+	ship_emergency_ftl_mult = 1
+	ship_emergency_ftl_min_days_mult = 1
+	planet_stability_mult = -0.5
+	country_produces_mult = -1
+	icon = "gfx/interface/icons/planet_modifiers/pm_wormhole.dds"
+	icon_frame = 3
+}
+
+time_warp_drive_horror_storm_planet = {
+	planet_stability_mult = -0.5
+	country_produces_mult = -1
+	icon = "gfx/interface/icons/planet_modifiers/pm_wormhole.dds"
+	icon_frame = 3
+}
+
+time_titan_end_shelter_good = {
+	planet_amenities_mult = 0.25
+	pop_happiness = 0.25
+	logistic_growth_mult = 0.25
+	bonus_pop_growth_mult = 0.25
+	planet_pop_assembly_mult = 0.25
+	icon = "gfx/interface/icons/planet_modifiers/pm_wormhole.dds"
+	icon_frame = 1
+}
+
+time_titan_end_shelter_bad = {
+	planet_amenities_mult = -0.25
+	pop_happiness = -0.25
+	logistic_growth_mult = -0.25
+	bonus_pop_growth_mult = -0.25
+	planet_pop_assembly_mult = -0.25
+	icon = "gfx/interface/icons/planet_modifiers/pm_wormhole.dds"
+	icon_frame = 3
+}
+
+
+
+time_akx_messenger = {
+	planet_stability_add = -20
+	pop_happiness = -0.2
+	icon = "gfx/interface/icons/planet_modifiers/pm_wormhole.dds"
+	icon_frame = 3
+}
+
+time_akx_gestalt_messenger = {
+	planet_crime_no_happiness_add = 20
+	planet_amenities_no_happiness_mult = -0.2
+	icon = "gfx/interface/icons/planet_modifiers/pm_wormhole.dds"
+	icon_frame = 3
+}
+
+
+
+time_hole_pets_end = {
+	physics_tech_cost_mult = -0.05
+	society_tech_cost_mult = -0.05
+	engineering_tech_cost_mult = -0.05
+	icon = "gfx/interface/icons/planet_modifiers/pm_assist_research.dds"
+	icon_frame = 1
+}
+
+time_hole_pets_end_special = {
+	physics_tech_cost_mult = -0.05
+	society_tech_cost_mult = -0.05
+	engineering_tech_cost_mult = -0.05
+	tradition_cost_mult = -0.05
+	icon = "gfx/interface/icons/planet_modifiers/pm_assist_research.dds"
+	icon_frame = 1
+}
+
+
+
+kiss_from_worm = {
+	pop_housing_usage_mult = -0.2
+	pop_amenities_usage_mult = -0.2
+	planet_pops_upkeep_mult = -0.2
+	planet_jobs_upkeep_mult = -0.2
+	planet_structures_upkeep_mult = -0.2
+	planetary_ascension_cost_mult = -0.2
+	habitability_ceil_uncapped_add = -0.1
+	habitability_ceil_add = -0.1
+	habitability_floor_add = -0.1
+	icon = "gfx/interface/icons/planet_modifiers/pm_black_hole.dds"
+	icon_frame = 1
+}
+
+last_love_from_worm = {
+	dimensional_horror_crisis_storm_protection_level = 10
+	damage_vs_country_type_dimensional_horror_crisis_mult = 10
+	ship_armor_reduction = -0.5
+	ship_shield_reduction = -0.5
+	ship_armor_hardening_add = 1
+	ship_shield_hardening_add = 1
+	ship_hull_regen_add_perc = 1
+	ship_armor_regen_add_perc = 1
+	ship_shield_regen_add_perc = 1
+	icon = "gfx/interface/icons/planet_modifiers/pm_horror_trophy.dds"
+	icon_frame = 1
+}
+
+
+
+tech_end_5_a_1_modifier = {
+	icon = "gfx/interface/icons/planet_modifiers/pm_horror_trophy.dds"
+	icon_frame = 1
+	ship_cloaking_strength_add = 10
+}
+
+tech_end_5_a_2_modifier = {
+	icon = "gfx/interface/icons/planet_modifiers/pm_horror_trophy.dds"
+	icon_frame = 1
+	ship_evasion_add = 25
+}
+
+tech_end_5_b_1_modifier = {
+	icon = "gfx/interface/icons/planet_modifiers/pm_horror_trophy.dds"
+	icon_frame = 1
+	ship_base_speed_mult = 1
+}
+
+tech_end_5_b_2_modifier = {
+	icon = "gfx/interface/icons/planet_modifiers/pm_horror_trophy.dds"
+	icon_frame = 1
+	ship_tracking_add = 25
+}
+
+tech_end_trait_modifier = {
+	icon = "gfx/interface/icons/planet_modifiers/pm_horror_trophy.dds"
+	icon_frame = 1
+	ship_weapon_damage = 0.25
+	ship_fire_rate_mult = 0.25
+	ship_weapon_range_mult = 0.25
+}
+
+
+
+happy_with_open_loop_temple_materialist = {
+	planet_researchers_produces_mult = 0.1
+	icon = "gfx/interface/icons/planet_modifiers/pm_factory.dds"
+	icon_frame = 1
+}
+
+happy_with_open_loop_temple_spiritualist = {
+	planet_bureaucrats_produces_mult = 0.1
+	icon = "gfx/interface/icons/planet_modifiers/pm_factory.dds"
+	icon_frame = 1
+}
+
+happy_with_open_loop_temple_militarist = {
+	planet_structures_cost_mult = -0.1
+	icon = "gfx/interface/icons/planet_modifiers/pm_factory.dds"
+	icon_frame = 1
+}
+
+happy_with_open_loop_temple_pacifist = {
+	planet_building_build_speed_mult = 0.1
+	icon = "gfx/interface/icons/planet_modifiers/pm_factory.dds"
+	icon_frame = 1
+}
+
+happy_with_open_loop_temple_xenophile = {
+	pop_happiness = 0.1
+	icon = "gfx/interface/icons/planet_modifiers/pm_factory.dds"
+	icon_frame = 1
+}
+
+happy_with_open_loop_temple_xenophobe = {
+	planet_housing_mult = 0.1
+	icon = "gfx/interface/icons/planet_modifiers/pm_factory.dds"
+	icon_frame = 1
+}
+
+happy_with_open_loop_temple_egalitarian = {
+	planet_amenities_mult = 0.1
+	icon = "gfx/interface/icons/planet_modifiers/pm_factory.dds"
+	icon_frame = 1
+}
+
+happy_with_open_loop_temple_authoritarian = {
+	planet_crime_mult = -0.1
+	icon = "gfx/interface/icons/planet_modifiers/pm_factory.dds"
+	icon_frame = 1
+}
+
+happy_with_open_loop_temple_hive_mind = {
+	planet_pops_upkeep_mult = -0.1
+	icon = "gfx/interface/icons/planet_modifiers/pm_factory.dds"
+	icon_frame = 1
+}
+
+happy_with_open_loop_temple_machine_intelligence = {
+	planet_jobs_upkeep_mult = -0.1
+	icon = "gfx/interface/icons/planet_modifiers/pm_factory.dds"
+	icon_frame = 1
+}
+
+
+
+akx_dark_clouds_on_the_mathematical_edifice = {
+	all_technology_research_speed = 0.1
+	pop_happiness = -0.1
+	icon = "gfx/interface/icons/planet_modifiers/pm_glitchy_matrix.dds"
+	icon_frame = 1
+}
+
+akx_dark_clouds_on_the_mathematical_edifice_gestalt = {
+	all_technology_research_speed = 0.1
+	pop_amenities_usage_mult = 0.1
+	icon = "gfx/interface/icons/planet_modifiers/pm_glitchy_matrix.dds"
+	icon_frame = 1
+}
+
+akx_trapped_in_akx_loop = {
+	country_unity_cost_mult = -0.5
+	country_unity_upkeep_mult = -0.5
+	planet_stability_add = -5
+	icon = "gfx/interface/icons/planet_modifiers/pm_unity_symbol.dds"
+	icon_frame = 1
+}
+
+akx_predestined_puzzle = {
+	planet_researchers_produces_mult = 0.25
+	planet_researchers_upkeep_mult = 0.1
+	icon = "gfx/interface/icons/planet_modifiers/pm_black_hole.dds"
+	icon_frame = 1
+}
+
+akx_predestined_tragedy = {
+	country_unity_produces_mult = 0.25
+	pop_happiness = -0.1
+	icon = "gfx/interface/icons/planet_modifiers/pm_black_hole.dds"
+	icon_frame = 1
+}
+
+akx_predestined_tragedy_gestalt = {
+	country_unity_produces_mult = 0.25
+	pop_amenities_usage_mult = 0.1
+	icon = "gfx/interface/icons/planet_modifiers/pm_black_hole.dds"
+	icon_frame = 1
+}
+
+akx_mourn_for_us = {
+	planet_civilians_unity_produces_add = 1
+	planet_civilians_consumer_goods_upkeep_add = 0.25
+	icon = "gfx/interface/icons/planet_modifiers/pm_unity_symbol.dds"
+	icon_frame = 1
+}
+
+akx_mourn_for_us_gestalt = {
+	planet_maintenance_drones_unity_produces_add = 1
+	planet_maintenance_drones_minerals_upkeep_add = 0.5
+	icon = "gfx/interface/icons/planet_modifiers/pm_unity_symbol.dds"
+	icon_frame = 1
+}
+
+akx_broken_mirror = {
+	planet_jobs_produces_mult = 0.1
+	planet_jobs_upkeep_mult = 0.25
+	icon = "gfx/interface/icons/planet_modifiers/pm_ruined_system.dds"
+	icon_frame = 1
+}
+
+akx_lost_in_time = {
+	building_time_mult = -0.1
+	starbase_upgrade_time_mult = -0.1
+	starbase_building_build_time_mult = -0.1
+	starbase_module_build_time_mult = -0.1
+	country_unity_produces_mult = -0.25
+	icon = "gfx/interface/icons/planet_modifiers/pm_contingency_sabotage.dds"
+	icon_frame = 1
+}
+
+
+
+akx_time_erasure_system_modifier = {
+	country_produces_mult = -100
+	icon = "gfx/interface/icons/planet_modifiers/pm_horror_trophy.dds"
+	icon_frame = 3
+}
+
+akx_time_erasure_planet_modifier = {
+	habitability_ceil_uncapped_add = -100
+	habitability_ceil_add = -100
+	habitability_floor_add = -100
+	pop_bonus_workforce_mult = -100
+	bonus_automated_workforce_mult = -100
+	country_produces_mult = -100
+	planet_stability_mult = -100
+	logistic_growth_mult = -100
+	bonus_pop_growth_mult = -100
+	planet_pop_assembly_mult = -100
+	icon = "gfx/interface/icons/planet_modifiers/pm_horror_trophy.dds"
+	icon_frame = 3
+}
+
+
+
+time_wanderer_system_modifier = {
+	ship_disengage_chance_reduction = 0.5
+	ship_emergency_ftl_min_days_mult = 0.5
+	icon = "gfx/interface/icons/planet_modifiers/pm_black_hole.dds"
+	icon_frame = 3
+}
+
+time_wanderer_planet_modifier = {
+	habitability_ceil_uncapped_add = -0.5
+	habitability_ceil_add = -0.5
+	habitability_floor_add = -0.5
+	pop_bonus_workforce_mult = -0.5
+	bonus_automated_workforce_mult = -0.5
+	planet_jobs_produces_mult = -0.5
+	planet_jobs_physics_research_produces_mult = 2
+	planet_jobs_society_research_produces_mult = 2
+	planet_jobs_engineering_research_produces_mult = 2
+	icon = "gfx/interface/icons/planet_modifiers/pm_black_hole.dds"
+	icon_frame = 3
+}
+
+time_wanderer_black_hole_modifier = {
+	habitability_ceil_uncapped_add = -1
+	habitability_ceil_add = -1
+	habitability_floor_add = -1
+	pop_bonus_workforce_mult = -1
+	bonus_automated_workforce_mult = -1
+	planet_jobs_produces_mult = -1
+	logistic_growth_mult = -1
+	bonus_pop_growth_mult = -1
+	planet_pop_assembly_mult = -1
+	icon = "gfx/interface/icons/planet_modifiers/pm_horror_trophy.dds"
+	icon_frame = 3
+}
+
+time_wanderer_modifier = {
+	ship_shield_penetration_add = 0.1
+	ship_armor_penetration_add = 0.1
+	all_technology_research_speed = 0.1
+	icon = "gfx/interface/icons/planet_modifiers/pm_black_hole.dds"
+	icon_frame = 1
+}
+
+time_wanderer_false_modifier = {
+	all_technology_research_speed = 0.1
+	icon = "gfx/interface/icons/planet_modifiers/pm_black_hole.dds"
+	icon_frame = 1
+}
+
+
+
+# 生命线
+time_lifeline_just_a_dream = {
+	country_society_research_produces_mult = 0.25
+	icon = "gfx/interface/icons/planet_modifiers/pm_atmospheric_aphrodisiac.dds"
+	icon_frame = 1
+}
+
+time_lifeline_i_am_sorry = {
+	country_unity_produces_mult = 0.3
+	pop_amenities_usage_mult = 0.15
+	icon = "gfx/interface/icons/planet_modifiers/pm_celestial_tear.dds"
+	icon_frame = 1
+}
+
+# 成功结局
+time_lifeline_traveler_in_dream = {
+	planet_physicists_physics_research_produces_add = 1
+	planet_biologists_society_research_produces_add = 1
+	planet_engineers_engineering_research_produces_add = 1
+	planet_bureaucrats_unity_produces_add = 1
+	planet_physicists_physics_research_upkeep_add = 0.5
+	planet_biologists_society_research_upkeep_add = 0.5
+	planet_engineers_engineering_research_upkeep_add = 0.5
+	planet_bureaucrats_unity_upkeep_add = 0.5
+	icon = "gfx/interface/icons/planet_modifiers/pm_shroud_eaten_population.dds"
+	icon_frame = 1
+}
+
+time_lifeline_rule_of_time = {
+	all_technology_research_speed = 0.25
+	planet_building_build_speed_mult = 0.25
+	planet_decision_enact_speed_mult = 0.25
+	megastructure_build_speed_mult = 0.25
+	starbase_shipyard_build_speed_mult = 0.25
+	ship_base_speed_mult = 0.25
+	country_upkeep_mult = 0.1
+	icon = "gfx/interface/icons/planet_modifiers/pm_time_acceleration.dds"
+	icon_frame = 1
+}
+
+time_lifeline_song_of_circle = {
+	logistic_growth_mult = 0.25
+	bonus_pop_growth_mult = 0.25
+	planet_pop_assembly_mult = 0.25
+	planet_colony_development_speed_mult = 0.25
+	pop_environment_tolerance = 0.25
+	planet_pops_upkeep_mult = 0.5
+	icon = "gfx/interface/icons/planet_modifiers/pm_ancient_clone_vat.dds"
+	icon_frame = 1
+}
+
+time_lifeline_identical_twins = {
+	planet_max_districts_mult = 0.25
+	ship_jumpdrive_cooldown_mult = -0.25
+	ship_ftl_jumpdrive_range_mult = 0.5
+	ship_windup_mult = 1
+	ship_winddown_mult = 1
+	icon = "gfx/interface/icons/planet_modifiers/pm_astralnomical_interest.dds"
+	icon_frame = 1
+}
+
+# 普通结局
+time_lifeline_closed_loop = {
+	country_physics_tech_research_speed = 0.25
+	country_society_tech_research_speed = 0.25
+	icon = "gfx/interface/icons/planet_modifiers/pm_unity_symbol.dds"
+	icon_frame = 1
+}
+
+time_lifeline_civilization_afterglow = {
+	planet_civilians_unity_produces_add = 1
+	planet_civilians_consumer_goods_upkeep_add = 0.25
+	icon = "gfx/interface/icons/planet_modifiers/pm_city_ruins.dds"
+	icon_frame = 1
+}
+
+time_lifeline_civilization_afterglow_gestalt = {
+	planet_maintenance_drones_unity_produces_add = 1
+	planet_maintenance_drones_minerals_upkeep_add = 0.5
+	icon = "gfx/interface/icons/planet_modifiers/pm_city_ruins.dds"
+	icon_frame = 1
+}
+
+time_lifeline_mirror_world = {
+	planet_max_districts_add = 2
+	planet_clear_blocker_speed_mult = 0.25
+	icon = "gfx/interface/icons/planet_modifiers/pm_hollow_planet.dds"
+	icon_frame = 1
+}
+
+# 失败结局
+time_lifeline_my_last_mission = {
+	country_physics_research_produces_mult = 0.15
+	country_society_research_produces_mult = 0.15
+	country_unity_produces_mult = 0.15
+	icon = "gfx/interface/icons/planet_modifiers/pm_unity_symbol.dds"
+	icon_frame = 1
+}
+
+time_lifeline_there_is_no_wonder = {
+	planet_bureaucrats_society_research_produces_add = 0.5
+	pop_happiness = -0.1
+	pop_ethic_spiritualist_attraction_mult = -0.25
+	icon = "gfx/interface/icons/planet_modifiers/pm_contingency_sabotage.dds"
+	icon_frame = 1
+}
+
+time_lifeline_there_is_no_wonder_gestalt = {
+	planet_bureaucrats_society_research_produces_add = 0.5
+	planet_amenities_mult = -0.1
+	icon = "gfx/interface/icons/planet_modifiers/pm_contingency_sabotage.dds"
+	icon_frame = 1
+}
+
+time_lifeline_fly_against_fire = {
+	starbase_shipyard_build_speed_mult = 0.25
+	ship_speed_mult = 0.25
+	ship_disengage_chance_reduction = 0.25
+	ship_disengage_opportunities_add = -1
+	icon = "gfx/interface/icons/planet_modifiers/pm_atmospheric_entry.dds"
+	icon_frame = 1
+}
+
+time_lifeline_finally_be_oblation = {
+	planet_jobs_unity_produces_mult = 0.25
+	pop_ethic_spiritualist_attraction_mult = -0.5
+	planet_stability_add = -5
+	icon = "gfx/interface/icons/planet_modifiers/pm_obelisk_curse.dds"
+	icon_frame = 1
+}
+
+time_lifeline_finally_be_oblation_gestalt = {
+	planet_jobs_unity_produces_mult = 0.25
+	planet_stability_add = -5
+	icon = "gfx/interface/icons/planet_modifiers/pm_obelisk_curse.dds"
+	icon_frame = 1
+}
+
+time_lifeline_finally_be_oblation_spiritualist = {
+	pop_ethic_spiritualist_attraction_mult = 0.5
+	planet_bureaucrats_produces_mult = 0.5
+	planet_bureaucrats_upkeep_mult = 0.5
+	planet_stability_add = -5
+	icon = "gfx/interface/icons/planet_modifiers/pm_obelisk_curse.dds"
+	icon_frame = 1
+}
+
+
+
+white_hole_recycle_bin_modifier = {
+	ship_armor_reduction = -0.5
+	icon = "gfx/interface/icons/planet_modifiers/pm_wormhole.dds"
+	icon_frame = 1
+}
+
+
+
+horror_focus_modifier = {
+	damage_vs_country_type_guardian_horror_mult = 0.5
+	damage_vs_country_type_dimensional_horror_crisis_mult = 0.5
+	custom_tooltip = horror_focus_modifier_effect
+	icon = "gfx/interface/icons/planet_modifiers/pm_horror_trophy.dds"
+	icon_frame = 1
+}

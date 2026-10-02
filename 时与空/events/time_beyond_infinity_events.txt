@@ -1,0 +1,5553 @@
+namespace = beyond_infinity
+
+country_event = {
+	id = beyond_infinity.1
+	is_triggered_only = yes
+	hide_window = yes
+
+	trigger = {
+	}
+	
+	immediate = {
+		if = {
+			limit = {
+				has_time_machine_civic = yes
+			}
+			date_distortion = yes
+			set_global_flag = time_machine_is_defective
+			capital_scope = {
+				add_building = building_defective_time_machine
+				validate_and_repair_planet_buildings_and_districts = yes
+				set_variable = {
+					which = exists_building_time_machine
+					value = 2
+				}
+				carrier_event = { id = beyond_infinity.2 days = 7200 random = 3600 }
+			}
+			every_playable_country = {
+				country_event = { id = beyond_infinity.5 }
+			}
+			every_country = {
+				limit = {
+					NOT = { is_same_value = root }
+				}
+				add_modifier = {
+					modifier = time_machine_is_defective
+					days = -1
+				}
+			}
+		}
+		if = {
+			limit = {
+				has_circle_nexus_civic = yes
+			}
+			set_global_flag = circle_nexus_is_defective
+			capital_scope = {
+				add_building = building_defective_circle_nexus
+				validate_and_repair_planet_buildings_and_districts = yes
+				set_variable = {
+					which = exists_building_circle_nexus
+					value = 2
+				}
+				carrier_event = { id = beyond_infinity.3 days = 7200 random = 3600 }
+			}
+			every_playable_country = {
+				country_event = { id = beyond_infinity.6 }
+			}
+		}
+		if = {
+			limit = {
+				has_dimension_engine_civic = yes
+			}
+			set_global_flag = dimension_engine_is_defective
+			capital_scope = {
+				add_building = building_defective_dimension_engine
+				validate_and_repair_planet_buildings_and_districts = yes
+				set_variable = {
+					which = exists_building_dimension_engine
+					value = 2
+				}
+				carrier_event = { id = beyond_infinity.4 days = 7200 random = 3600 }
+			}
+			every_playable_country = {
+				country_event = { id = beyond_infinity.7 }
+			}
+		}
+	}
+}
+
+carrier_event = {
+	id = beyond_infinity.2
+	title = beyond_infinity.2.name
+	desc = {
+		text = beyond_infinity.2.desc.ruin
+		trigger = {
+			has_building = building_ruin_time_machine
+		}
+	}
+	desc = {
+		text = beyond_infinity.2.desc.repair
+		trigger = {
+			NOT = { has_building = building_ruin_time_machine }
+		}
+	}
+	picture = GFX_evt_clocks
+	show_sound = ap_rift_event_15_time_crystal
+	location = root
+	
+	is_triggered_only = yes
+	
+	trigger = {
+		has_global_flag = time_machine_is_defective
+		has_building_time_machine = yes
+	}
+	
+	immediate = {
+		owner = { create_timeline_time_machine_end = yes }
+		date_distortion = no
+		remove_global_flag = time_machine_is_defective
+		remove_global_flag = enable_defective_time_machine_edict
+		if = {
+			limit = { has_building = building_defective_time_machine }
+			remove_building = building_defective_time_machine
+			add_building = building_ruin_time_machine
+			validate_and_repair_planet_buildings_and_districts = yes
+			set_variable = {
+				which = exists_building_time_machine
+				value = 1
+			}
+		}
+		every_playable_country = {
+			limit = {
+				NOT = { is_same_value = root.owner }
+			}
+			country_event = { id = beyond_infinity.8 }
+		}
+		every_country = {
+			limit = {
+				has_modifier = time_machine_is_defective
+			}
+			remove_modifier = time_machine_is_defective
+		}
+	}
+	
+	option = {
+		name = {
+			text = beyond_infinity.2.a.ruin
+			trigger = {
+				has_building = building_ruin_time_machine
+			}
+		}
+		name = {
+			text = beyond_infinity.2.a.repair
+			trigger = {
+				NOT = { has_building = building_ruin_time_machine }
+			}
+		}
+		custom_tooltip = beyond_infinity.2.tooltip
+		if = {
+			limit = {
+				has_building = building_ruin_time_machine
+			}
+			owner = {
+				add_monthly_resource_mult = {
+					resource = unity
+					value = @tier3unityreward
+					min = @tier3unitymin
+					max = @tier3unitymax
+				}
+			}
+		}
+		else = {
+			owner = {
+				add_monthly_resource_mult = {
+					resource = unity
+					value = @tier5unityreward
+					min = @tier5unitymin
+					max = @tier5unitymax
+				}
+			}
+		}
+	}
+}
+
+carrier_event = {
+	id = beyond_infinity.3
+	title = beyond_infinity.3.name
+	desc = {
+		text = beyond_infinity.3.desc.ruin
+		trigger = {
+			has_building = building_ruin_circle_nexus
+		}
+	}
+	desc = {
+		text = beyond_infinity.3.desc.repair
+		trigger = {
+			NOT = { has_building = building_ruin_circle_nexus }
+		}
+	}
+	picture = GFX_evt_vortex
+	show_sound = ap_rift_event_19_black_obelisk
+	location = root
+	
+	is_triggered_only = yes
+	
+	trigger = {
+		has_global_flag = circle_nexus_is_defective
+		has_building_circle_nexus = yes
+	}
+	
+	immediate = {
+		owner = { create_timeline_circle_nexus_end = yes }
+		remove_global_flag = circle_nexus_is_defective
+		if = {
+			limit = { has_building = building_defective_circle_nexus }
+			remove_building = building_defective_circle_nexus
+			add_building = building_ruin_circle_nexus
+			validate_and_repair_planet_buildings_and_districts = yes
+			set_variable = {
+				which = exists_building_circle_nexus
+				value = 1
+			}
+		}
+		every_playable_country = {
+			limit = {
+				NOT = { is_same_value = root.owner }
+			}
+			country_event = { id = beyond_infinity.9 }
+		}
+	}
+	
+	option = {
+		name = {
+			text = beyond_infinity.3.a.ruin
+			trigger = {
+				has_building = building_ruin_circle_nexus
+			}
+		}
+		name = {
+			text = beyond_infinity.3.a.repair
+			trigger = {
+				NOT = { has_building = building_ruin_circle_nexus }
+			}
+		}
+		custom_tooltip = beyond_infinity.3.tooltip
+		if = {
+			limit = {
+				has_building = building_ruin_circle_nexus
+			}
+			owner = {
+				add_monthly_resource_mult = {
+					resource = unity
+					value = @tier3unityreward
+					min = @tier3unitymin
+					max = @tier3unitymax
+				}
+			}
+		}
+		else = {
+			owner = {
+				add_monthly_resource_mult = {
+					resource = unity
+					value = @tier5unityreward
+					min = @tier5unitymin
+					max = @tier5unitymax
+				}
+			}
+		}
+	}
+}
+
+carrier_event = {
+	id = beyond_infinity.4
+	title = beyond_infinity.4.name
+	desc = {
+		text = beyond_infinity.4.desc.ruin
+		trigger = {
+			has_building = building_ruin_dimension_engine
+		}
+	}
+	desc = {
+		text = beyond_infinity.4.desc.repair
+		trigger = {
+			NOT = { has_building = building_ruin_dimension_engine }
+		}
+	}
+	picture = GFX_evt_supernova
+	show_sound = ap_rift_event_21_dimensional_machine
+	location = root
+	
+	is_triggered_only = yes
+	
+	trigger = {
+		has_global_flag = dimension_engine_is_defective
+		has_building_dimension_engine = yes
+	}
+	
+	immediate = {
+		owner = { create_timeline_dimension_engine_end = yes }
+		remove_global_flag = dimension_engine_is_defective
+		if = {
+			limit = { has_building = building_defective_dimension_engine }
+			remove_building = building_defective_dimension_engine
+			add_building = building_ruin_dimension_engine
+			validate_and_repair_planet_buildings_and_districts = yes
+			set_variable = {
+				which = exists_building_dimension_engine
+				value = 1
+			}
+		}
+		every_playable_country = {
+			limit = {
+				NOT = { is_same_value = root.owner }
+			}
+			country_event = { id = beyond_infinity.10 }
+		}
+	}
+	
+	option = {
+		name = {
+			text = beyond_infinity.4.a.ruin
+			trigger = {
+				has_building = building_ruin_dimension_engine
+			}
+		}
+		name = {
+			text = beyond_infinity.4.a.repair
+			trigger = {
+				NOT = { has_building = building_ruin_dimension_engine }
+			}
+		}
+		custom_tooltip = beyond_infinity.4.tooltip
+		if = {
+			limit = {
+				has_building = building_ruin_dimension_engine
+			}
+			owner = {
+				add_monthly_resource_mult = {
+					resource = unity
+					value = @tier3unityreward
+					min = @tier3unitymin
+					max = @tier3unitymax
+				}
+			}
+		}
+		else = {
+			owner = {
+				add_monthly_resource_mult = {
+					resource = unity
+					value = @tier5unityreward
+					min = @tier5unitymin
+					max = @tier5unitymax
+				}
+			}
+		}
+	}
+}
+
+country_event = {
+	id = beyond_infinity.5
+	title = beyond_infinity.5.name
+	desc = {
+		text = beyond_infinity.5.desc.root
+		trigger = {
+			has_time_machine_civic = yes
+		}
+	}
+	desc = {
+		text = beyond_infinity.5.desc.other
+		trigger = {
+			has_time_machine_civic = no
+		}
+	}
+	picture = GFX_evt_clocks
+	show_sound = ap_rift_event_15_time_crystal
+	
+	is_triggered_only = yes
+	
+	trigger = {
+	}
+	
+	immediate = {
+		create_timeline_time_machine_begin = yes
+	}
+	
+	after = {
+		custom_tooltip = beyond_infinity.5.tooltip
+	}
+	
+	option = {
+		name = beyond_infinity.5.a.root
+		trigger = {
+			has_time_machine_civic = yes
+		}
+	}
+	
+	option = {
+		name = beyond_infinity.5.a.other
+		trigger = {
+			has_time_machine_civic = no
+		}
+	}
+}
+
+country_event = {
+	id = beyond_infinity.6
+	title = beyond_infinity.6.name
+	desc = {
+		text = beyond_infinity.6.desc.root
+		trigger = {
+			has_circle_nexus_civic = yes
+		}
+	}
+	desc = {
+		text = beyond_infinity.6.desc.other
+		trigger = {
+			has_circle_nexus_civic = no
+		}
+	}
+	picture = GFX_evt_vortex
+	show_sound = ap_rift_event_19_black_obelisk
+	
+	is_triggered_only = yes
+	
+	trigger = {
+	}
+	
+	immediate = {
+		create_timeline_circle_nexus_begin = yes
+	}
+	
+	after = {
+		custom_tooltip = beyond_infinity.6.tooltip
+	}
+	
+	option = {
+		name = beyond_infinity.6.a.root
+		trigger = {
+			has_circle_nexus_civic = yes
+		}
+	}
+	
+	option = {
+		name = beyond_infinity.6.a.other
+		trigger = {
+			has_circle_nexus_civic = no
+		}
+	}
+}
+
+country_event = {
+	id = beyond_infinity.7
+	title = beyond_infinity.7.name
+	desc = {
+		text = beyond_infinity.7.desc.root
+		trigger = {
+			has_dimension_engine_civic = yes
+		}
+	}
+	desc = {
+		text = beyond_infinity.7.desc.other
+		trigger = {
+			has_dimension_engine_civic = no
+		}
+	}
+	picture = GFX_evt_supernova
+	show_sound = ap_rift_event_21_dimensional_machine
+	
+	is_triggered_only = yes
+	
+	trigger = {
+	}
+	
+	immediate = {
+		create_timeline_dimension_engine_begin = yes
+	}
+	
+	after = {
+		custom_tooltip = beyond_infinity.7.tooltip
+	}
+	
+	option = {
+		name = beyond_infinity.7.a.root
+		trigger = {
+			has_dimension_engine_civic = yes
+		}
+	}
+	
+	option = {
+		name = beyond_infinity.7.a.other
+		trigger = {
+			has_dimension_engine_civic = no
+		}
+	}
+}
+
+country_event = {
+	id = beyond_infinity.8
+	title = beyond_infinity.8.name
+	desc = beyond_infinity.8.desc
+	picture = GFX_evt_clocks
+	show_sound = ap_rift_event_15_time_crystal
+	
+	is_triggered_only = yes
+	
+	trigger = {
+	}
+	
+	immediate = {
+		create_timeline_time_machine_end = yes
+	}
+	
+	option = {
+		name = beyond_infinity.8.a
+		custom_tooltip = beyond_infinity.2.tooltip
+		add_monthly_resource_mult = {
+			resource = physics_research
+			value = @tier5researchreward
+			min = @tier5researchmin
+			max = @tier5researchmax
+		}
+	}
+}
+
+country_event = {
+	id = beyond_infinity.9
+	title = beyond_infinity.9.name
+	desc = beyond_infinity.9.desc
+	picture = GFX_evt_vortex
+	show_sound = ap_rift_event_19_black_obelisk
+	
+	is_triggered_only = yes
+	
+	trigger = {
+	}
+	
+	immediate = {
+		create_timeline_circle_nexus_end = yes
+	}
+	
+	option = {
+		name = beyond_infinity.9.a
+		custom_tooltip = beyond_infinity.3.tooltip
+		add_monthly_resource_mult = {
+			resource = society_research
+			value = @tier5researchreward
+			min = @tier5researchmin
+			max = @tier5researchmax
+		}
+	}
+}
+
+country_event = {
+	id = beyond_infinity.10
+	title = beyond_infinity.10.name
+	desc = beyond_infinity.10.desc
+	picture = GFX_evt_supernova
+	show_sound = ap_rift_event_21_dimensional_machine
+	
+	is_triggered_only = yes
+	
+	trigger = {
+	}
+	
+	immediate = {
+		create_timeline_dimension_engine_end = yes
+	}
+	
+	option = {
+		name = beyond_infinity.10.a
+		custom_tooltip = beyond_infinity.4.tooltip
+		add_monthly_resource_mult = {
+			resource = engineering_research
+			value = @tier5researchreward
+			min = @tier5researchmin
+			max = @tier5researchmax
+		}
+	}
+}
+
+# 位面引擎失控
+fleet_event = {
+	id = beyond_infinity.11
+	title = beyond_infinity.11.name
+	desc = beyond_infinity.11.desc
+	picture = GFX_evt_unknown_ships
+	show_sound = event_yellow_alert
+	
+	is_triggered_only = yes
+	
+	trigger = {
+		if = {
+			limit = {
+				OR = {
+					has_global_flag = dimension_engine_is_defective
+					has_global_flag = greatest_dimensional_horror_crisis
+				}
+			}
+			can_go_mia = yes
+			is_special_dimensional_horror = no
+			exists = owner
+			owner = {
+				OR = {
+					is_default_or_player = yes
+					is_fallen_empire = yes
+				}
+			}
+		}
+		else = {
+			always = no
+		}
+	}
+	
+	immediate = {
+		set_mia = mia_return_home
+	}
+	
+	option = {
+		name = beyond_infinity.11.a
+		tooltip = {
+			set_mia = mia_return_home
+		}
+	}
+}
+
+# 时空机器失控
+country_event = {
+	id = beyond_infinity.12
+	is_triggered_only = yes
+	hide_window = yes
+
+	trigger = {
+		OR = {
+			has_global_flag = time_machine_is_defective
+			has_global_flag = greatest_dimensional_horror_crisis
+		}
+		NOT = { has_modifier = time_machine_is_defective }
+	}
+	
+	immediate = {
+		add_modifier = {
+			modifier = time_machine_is_defective
+			days = -1
+		}
+	}
+}
+
+# 时空机器存档保险机制
+event = {
+	id = beyond_infinity.13
+	is_triggered_only = yes
+	hide_window = yes
+
+	trigger = {
+		has_global_flag = enable_defective_time_machine_edict
+	}
+	
+	immediate = {
+		remove_global_flag = enable_defective_time_machine_edict
+		if = {
+			limit = {
+				OR = {
+					has_global_flag = time_machine_is_defective
+					has_global_flag = greatest_dimensional_horror_crisis
+				}
+			}
+			date_distortion = yes
+		}
+	}
+}
+
+# 时空机器保护机制
+carrier_event = {
+	id = beyond_infinity.21
+	is_triggered_only = yes
+	hide_window = yes
+
+	trigger = {
+		if = {
+			limit = {
+				is_variable_set = exists_building_time_machine
+			}
+			owner = { unlock_building_time_machine = yes }
+			NOR = {
+				has_building = building_ruin_time_machine
+				has_building = building_defective_time_machine
+				has_building = building_time_machine
+				has_building = building_infinity_time_machine
+				has_building_construction = building_time_machine
+				has_building_construction = building_infinity_time_machine
+			}
+		}
+		else = {
+			always = no
+		}
+	}
+	
+	immediate = {
+		remove_building = building_ruin_time_machine
+		remove_building = building_defective_time_machine
+		remove_building = building_time_machine
+		remove_building = building_infinity_time_machine
+		if = {
+			limit = {
+				check_variable = {
+					which = exists_building_time_machine
+					value = 4
+				}
+			}
+			add_building = building_infinity_time_machine
+		}
+		else_if = {
+			limit = {
+				check_variable = {
+					which = exists_building_time_machine
+					value = 3
+				}
+			}
+			add_building = building_time_machine
+		}
+		else_if = {
+			limit = {
+				check_variable = {
+					which = exists_building_time_machine
+					value = 2
+				}
+			}
+			add_building = building_defective_time_machine
+		}
+		else_if = {
+			limit = {
+				check_variable = {
+					which = exists_building_time_machine
+					value = 1
+				}
+			}
+			add_building = building_ruin_time_machine
+		}
+		validate_and_repair_planet_buildings_and_districts = yes
+	}
+}
+
+# 圆环枢纽保护机制
+carrier_event = {
+	id = beyond_infinity.22
+	is_triggered_only = yes
+	hide_window = yes
+
+	trigger = {
+		if = {
+			limit = {
+				is_variable_set = exists_building_circle_nexus
+			}
+			owner = { unlock_building_circle_nexus = yes }
+			NOR = {
+				has_building = building_ruin_circle_nexus
+				has_building = building_defective_circle_nexus
+				has_building = building_circle_nexus
+				has_building = building_infinity_circle_nexus
+				has_building_construction = building_circle_nexus
+				has_building_construction = building_infinity_circle_nexus
+			}
+		}
+		else = {
+			always = no
+		}
+	}
+	
+	immediate = {
+		remove_building = building_ruin_circle_nexus
+		remove_building = building_defective_circle_nexus
+		remove_building = building_circle_nexus
+		remove_building = building_infinity_circle_nexus
+		if = {
+			limit = {
+				check_variable = {
+					which = exists_building_circle_nexus
+					value = 4
+				}
+			}
+			add_building = building_infinity_circle_nexus
+		}
+		else_if = {
+			limit = {
+				check_variable = {
+					which = exists_building_circle_nexus
+					value = 3
+				}
+			}
+			add_building = building_circle_nexus
+		}
+		else_if = {
+			limit = {
+				check_variable = {
+					which = exists_building_circle_nexus
+					value = 2
+				}
+			}
+			add_building = building_defective_circle_nexus
+		}
+		else_if = {
+			limit = {
+				check_variable = {
+					which = exists_building_circle_nexus
+					value = 1
+				}
+			}
+			add_building = building_ruin_circle_nexus
+		}
+		validate_and_repair_planet_buildings_and_districts = yes
+	}
+}
+
+# 位面引擎保护机制
+carrier_event = {
+	id = beyond_infinity.23
+	is_triggered_only = yes
+	hide_window = yes
+
+	trigger = {
+		if = {
+			limit = {
+				is_variable_set = exists_building_dimension_engine
+			}
+			owner = { unlock_building_dimension_engine = yes }
+			NOR = {
+				has_building = building_ruin_dimension_engine
+				has_building = building_defective_dimension_engine
+				has_building = building_dimension_engine
+				has_building = building_infinity_dimension_engine
+				has_building_construction = building_dimension_engine
+				has_building_construction = building_infinity_dimension_engine
+			}
+		}
+		else = {
+			always = no
+		}
+	}
+	
+	immediate = {
+		remove_building = building_ruin_dimension_engine
+		remove_building = building_defective_dimension_engine
+		remove_building = building_dimension_engine
+		remove_building = building_infinity_dimension_engine
+		if = {
+			limit = {
+				check_variable = {
+					which = exists_building_dimension_engine
+					value = 4
+				}
+			}
+			add_building = building_infinity_dimension_engine
+		}
+		else_if = {
+			limit = {
+				check_variable = {
+					which = exists_building_dimension_engine
+					value = 3
+				}
+			}
+			add_building = building_dimension_engine
+		}
+		else_if = {
+			limit = {
+				check_variable = {
+					which = exists_building_dimension_engine
+					value = 2
+				}
+			}
+			add_building = building_defective_dimension_engine
+		}
+		else_if = {
+			limit = {
+				check_variable = {
+					which = exists_building_dimension_engine
+					value = 1
+				}
+			}
+			add_building = building_ruin_dimension_engine
+		}
+		validate_and_repair_planet_buildings_and_districts = yes
+	}
+}
+
+################################################################
+# 超越无限
+################################################################
+
+# 超越无限循环科技
+country_event = {
+	id = beyond_infinity.100
+	is_triggered_only = yes
+	hide_window = yes
+
+	trigger = {
+		if = {
+			limit = {
+				has_ascension_perk = ap_beyond_infinity
+			}
+			OR = {
+				last_increased_tech = tech_beyond_infinity_physics
+				last_increased_tech = tech_beyond_infinity_society
+				last_increased_tech = tech_beyond_infinity_engineering
+			}
+		}
+		else = {
+			always = no
+		}
+	}
+	
+	immediate = {
+		if = {
+			limit = {
+				last_increased_tech = tech_beyond_infinity_physics
+			}
+			add_beyond_infinity_tech_modifier = {
+				VARIABLE = beyond_infinity_physics_variable
+				MODIFIER = beyond_infinity_physics_modifier
+			}
+		}
+		else_if = {
+			limit = {
+				last_increased_tech = tech_beyond_infinity_society
+			}
+			add_beyond_infinity_tech_modifier = {
+				VARIABLE = beyond_infinity_society_variable
+				MODIFIER = beyond_infinity_society_modifier
+			}
+		}
+		else = {
+			add_beyond_infinity_tech_modifier = {
+				VARIABLE = beyond_infinity_engineering_variable
+				MODIFIER = beyond_infinity_engineering_modifier
+			}
+		}
+		country_event = { id = beyond_infinity.110 days = 1 }
+	}
+}
+
+country_event = {
+	id = beyond_infinity.110
+	is_triggered_only = yes
+	hide_window = yes
+
+	trigger = {
+		# 避免频繁刷新
+		NOT = { has_country_flag = recently_beyond_infinity_110 }
+	}
+	
+	immediate = {
+		set_timed_country_flag = {
+			flag = recently_beyond_infinity_110
+			days = 25
+		}
+		refresh_galactic_beyond_infinity_tech_modifier = yes
+	}
+}
+
+# 时间共鸣与定时者议案变为星海帝国版本
+country_event = {
+	id = beyond_infinity.150
+	is_triggered_only = yes
+	hide_window = yes
+	
+	trigger = {
+		last_resolution_changed = resolution_custodian_form_empire
+	}
+	
+	immediate = {
+		# 时间共鸣
+		if = {
+			limit = {
+				is_active_resolution = resolution_beyond_infinity_custodian_3
+			}
+			cancel_resolution = resolution_beyond_infinity_custodian_1
+			cancel_resolution = resolution_beyond_infinity_custodian_2
+			cancel_resolution = resolution_beyond_infinity_custodian_3
+			set_global_flag = skip_refresh_galactic_beyond_infinity_tech_modifier # 刷新修正仅一次
+			pass_resolution_no_cooldown = resolution_beyond_infinity_emperor_1
+			pass_resolution_no_cooldown = resolution_beyond_infinity_emperor_2
+			remove_global_flag = skip_refresh_galactic_beyond_infinity_tech_modifier # 刷新修正仅一次
+			pass_resolution_no_cooldown = resolution_beyond_infinity_emperor_3
+		}
+		else_if = {
+			limit = {
+				is_active_resolution = resolution_beyond_infinity_custodian_2
+			}
+			cancel_resolution = resolution_beyond_infinity_custodian_1
+			cancel_resolution = resolution_beyond_infinity_custodian_2
+			set_global_flag = skip_refresh_galactic_beyond_infinity_tech_modifier # 刷新修正仅一次
+			pass_resolution_no_cooldown = resolution_beyond_infinity_emperor_1
+			remove_global_flag = skip_refresh_galactic_beyond_infinity_tech_modifier # 刷新修正仅一次
+			pass_resolution_no_cooldown = resolution_beyond_infinity_emperor_2
+		}
+		else_if = {
+			limit = {
+				is_active_resolution = resolution_beyond_infinity_custodian_1
+			}
+			cancel_resolution = resolution_beyond_infinity_custodian_1
+			pass_resolution_no_cooldown = resolution_beyond_infinity_emperor_1
+		}
+		# 定时者
+		resolution_time_keeper_transfer = {
+			OLD = resolution_time_keeper_custodian_setup
+			NEW = resolution_time_keeper_emperor_setup
+		}
+		resolution_time_keeper_transfer = {
+			OLD = resolution_time_keeper_custodian_breakthrough_focus_on_shield
+			NEW = resolution_time_keeper_emperor_breakthrough_focus_on_shield
+		}
+		resolution_time_keeper_transfer = {
+			OLD = resolution_time_keeper_custodian_breakthrough_focus_on_armor
+			NEW = resolution_time_keeper_emperor_breakthrough_focus_on_armor
+		}
+		resolution_time_keeper_transfer = {
+			OLD = resolution_time_keeper_custodian_resistance_focus_on_energy
+			NEW = resolution_time_keeper_emperor_resistance_focus_on_energy
+		}
+		resolution_time_keeper_transfer = {
+			OLD = resolution_time_keeper_custodian_resistance_focus_on_kinetic
+			NEW = resolution_time_keeper_emperor_resistance_focus_on_kinetic
+		}
+		resolution_time_keeper_transfer = {
+			OLD = resolution_time_keeper_custodian_offensive_tactics_of_snipe
+			NEW = resolution_time_keeper_emperor_offensive_tactics_of_snipe
+		}
+		resolution_time_keeper_transfer = {
+			OLD = resolution_time_keeper_custodian_offensive_tactics_of_pour
+			NEW = resolution_time_keeper_emperor_offensive_tactics_of_pour
+		}
+		resolution_time_keeper_transfer = {
+			OLD = resolution_time_keeper_custodian_defensive_tactics_of_cover
+			NEW = resolution_time_keeper_emperor_defensive_tactics_of_cover
+		}
+		resolution_time_keeper_transfer = {
+			OLD = resolution_time_keeper_custodian_defensive_tactics_of_maneuver
+			NEW = resolution_time_keeper_emperor_defensive_tactics_of_maneuver
+		}
+		resolution_time_keeper_transfer = {
+			OLD = resolution_time_keeper_custodian_logistics_strategy_of_support
+			NEW = resolution_time_keeper_emperor_logistics_strategy_of_support
+		}
+		resolution_time_keeper_transfer = {
+			OLD = resolution_time_keeper_custodian_logistics_strategy_of_supply
+			NEW = resolution_time_keeper_emperor_logistics_strategy_of_supply
+		}
+		resolution_time_keeper_transfer = {
+			OLD = resolution_time_keeper_custodian_command_strategy_of_elite
+			NEW = resolution_time_keeper_emperor_command_strategy_of_elite
+		}
+		resolution_time_keeper_transfer = {
+			OLD = resolution_time_keeper_custodian_command_strategy_of_cluster
+			NEW = resolution_time_keeper_emperor_command_strategy_of_cluster
+		}
+	}
+}
+
+# 创造无限
+event = {
+	id = beyond_infinity.200
+	hide_window = yes
+	is_triggered_only = yes
+
+	trigger = {
+		exists = event_target:beyond_infinity_country
+	}
+
+	immediate = {
+		event_target:beyond_infinity_country = {
+			# 创造时间
+			set_variable = {
+				which = crisobj_beyond_infinity_produced_variable
+				value = 0
+			}
+			export_resource_income_to_variable = {
+				resource = beyond_infinity_time
+				variable = crisobj_beyond_infinity_produced_variable
+			}
+			add_resource = {
+				beyond_infinity_time = -1
+				mult = crisobj_beyond_infinity_produced_variable
+			}
+			if = {
+				limit = {
+					can_finish_crisobj_beyond_infinity_produced = yes
+				}
+				complete_crisis_objective = crisobj_beyond_infinity_produced
+				remove_modifier = beyond_infinity_time_saturation
+			}
+			else = {
+				set_variable = {
+					which = crisobj_beyond_infinity_produced_variable
+					value = value:crisobj_beyond_infinity_produce_over_cap_value
+				}
+				if = {
+					limit = {
+						check_variable = {
+							which = crisobj_beyond_infinity_produced_variable
+							value > 0
+						}
+					}
+					complete_crisis_objective = crisobj_beyond_infinity_produced
+				}
+				add_modifier = {
+					modifier = beyond_infinity_time_saturation
+					days = -1
+				}
+			}
+			# 时间共鸣
+			refresh_galactic_beyond_infinity_tech_modifier = yes
+			if = {
+				limit = {
+					OR = {
+						is_galactic_emperor = yes
+						is_galactic_custodian = yes
+					}
+					has_resolution_beyond_infinity_level = { LEVEL = 1 }
+				}
+				set_variable = {
+					which = crisobj_beyond_infinity_resolution_variable
+					value = 0
+				}
+				if = {
+					limit = {
+						has_resolution_beyond_infinity_level = { LEVEL = 2 }
+					}
+					every_galcom_member = {
+						limit = {
+							NOT = { is_same_value = event_target:beyond_infinity_country }
+						}
+						refresh_crisobj_beyond_infinity_resolution_variable = yes
+					}
+				}
+				else = {
+					every_council_member = {
+						limit = {
+							NOT = { is_same_value = event_target:beyond_infinity_country }
+						}
+						refresh_crisobj_beyond_infinity_resolution_variable = yes
+					}
+				}
+				complete_crisis_objective = crisobj_beyond_infinity_resolution
+			}
+		}
+	}
+}
+
+# 悖论螺旋
+country_event = {
+	id = beyond_infinity.300
+	is_triggered_only = yes
+	hide_window = yes
+
+	trigger = {
+		has_crisis_perk = menp_beyond_infinity_project_1
+		last_increased_tech = tech_beyond_infinity_spiral
+	}
+	
+	immediate = {
+		every_country = {
+			limit = {
+				num_owned_colonies > 0
+			}
+			every_owned_colony = {
+				random_list = {
+					2 = {
+						change_variable = {
+							which = beyond_infinity_spiral_variable
+							value = 1
+						}
+					}
+					1 = {
+						subtract_variable = {
+							which = beyond_infinity_spiral_variable
+							value = 1
+						}
+					}
+				}
+				remove_modifier = beyond_infinity_spiral_modifier
+				add_modifier = {
+					modifier = beyond_infinity_spiral_modifier
+					days = -1
+					multiplier = value:beyond_infinity_spiral_modifier_value
+				}
+			}
+		}
+	}
+}
+
+# 定时者
+country_event = {
+	id = beyond_infinity.400
+	is_triggered_only = yes
+	hide_window = yes
+
+	trigger = {
+		is_galactic_community_member = yes
+		has_resolution_time_keeper_setup = yes
+		from = {
+			leader_class = commander
+			NOT = { has_trait = leader_trait_time_keeper }
+		}
+	}
+	
+	immediate = {
+		from = {
+			add_trait = {
+				trait = leader_trait_time_keeper
+				show_message = no
+			}
+		}
+	}
+}
+
+# 采纳飞升
+country_event = {
+	id = beyond_infinity.500
+	title = dimension_traveler.name.3
+	desc = beyond_infinity.500.desc
+	
+	diplomatic_title = DIMENSION_TRAVELER_OFFICE
+	diplomatic = yes
+	force_open = yes
+
+	picture_event_data = {
+		portrait = event_target:dimension_traveler_portrait_leader
+		room = "galactic_custodian_room"
+	}
+
+	is_triggered_only = yes
+	
+	trigger = {
+		forbid_beyond_infinity = no
+	}
+	
+	immediate = {
+		set_dimension_traveler_event_portrait = yes
+		observer_event = { id = beyond_infinity.600 }
+	}
+	
+	option = {
+		name = beyond_infinity.500.a
+		hidden_effect = {
+			country_event = { id = beyond_infinity.501 }
+		}
+	}
+}
+
+country_event = {
+	id = beyond_infinity.501
+	title = dimension_traveler.name.3
+	desc = beyond_infinity.501.desc
+	
+	diplomatic_title = DIMENSION_TRAVELER_OFFICE
+	diplomatic = yes
+	force_open = yes
+
+	picture_event_data = {
+		portrait = event_target:dimension_traveler_portrait_leader
+		room = "galactic_custodian_room"
+	}
+
+	is_triggered_only = yes
+	
+	trigger = {
+		forbid_beyond_infinity = no
+	}
+	
+	immediate = {
+	}
+	
+	option = {
+		name = beyond_infinity.501.a
+		hidden_effect = {
+			country_event = { id = beyond_infinity.502 }
+		}
+	}
+}
+
+country_event = {
+	id = beyond_infinity.502
+	title = dimension_traveler.name.3
+	desc = beyond_infinity.502.desc
+	
+	diplomatic_title = DIMENSION_TRAVELER_OFFICE
+	diplomatic = yes
+	force_open = yes
+
+	picture_event_data = {
+		portrait = event_target:dimension_traveler_portrait_leader
+		room = "galactic_custodian_room"
+	}
+
+	is_triggered_only = yes
+	
+	trigger = {
+		forbid_beyond_infinity = no
+	}
+	
+	immediate = {
+	}
+	
+	option = {
+		name = beyond_infinity.502.a
+		hidden_effect = {
+			country_event = { id = beyond_infinity.503 }
+		}
+	}
+}
+
+country_event = {
+	id = beyond_infinity.503
+	title = dimension_traveler.name.3
+	desc = beyond_infinity.503.desc
+	
+	diplomatic_title = DIMENSION_TRAVELER_OFFICE
+	diplomatic = yes
+	force_open = yes
+
+	picture_event_data = {
+		portrait = event_target:dimension_traveler_portrait_leader
+		room = "galactic_custodian_room"
+	}
+
+	is_triggered_only = yes
+	
+	trigger = {
+		forbid_beyond_infinity = no
+	}
+	
+	immediate = {
+	}
+	
+	option = {
+		name = beyond_infinity.503.a
+		hidden_effect = {
+			country_event = { id = beyond_infinity.504 }
+		}
+	}
+}
+
+country_event = {
+	id = beyond_infinity.504
+	title = dimension_traveler.name.3
+	desc = beyond_infinity.504.desc
+	
+	diplomatic_title = DIMENSION_TRAVELER_OFFICE
+	diplomatic = yes
+	force_open = yes
+
+	picture_event_data = {
+		portrait = event_target:dimension_traveler_portrait_leader
+		room = "galactic_custodian_room"
+	}
+
+	is_triggered_only = yes
+	
+	trigger = {
+		forbid_beyond_infinity = no
+	}
+	
+	immediate = {
+		activate_crisis_progression = beyond_infinity_path
+	}
+	
+	option = {
+		name = beyond_infinity.504.a
+		custom_gui = "enclave_caravaneer_option"
+		begin_event_chain = {
+			event_chain = beyond_infinity_chain
+			target = root
+		}
+		add_research_option = tech_beyond_infinity_physics
+		add_research_option = tech_beyond_infinity_society
+		add_research_option = tech_beyond_infinity_engineering
+		custom_tooltip = can_advance_beyond_infinity_progression
+		hidden_effect = {
+			set_country_flag = unlock_crisis_beyond_infinity_level_1
+		}
+	}
+}
+
+observer_event = {
+	id = beyond_infinity.600
+	title = beyond_infinity.600.name
+	desc = beyond_infinity.600.desc
+	picture = GFX_evt_surreal_visions
+	show_sound = ap_rift_event_3_clock_slowing_down
+	location = from
+
+	is_triggered_only = yes
+
+	option = {
+		name = beyond_infinity.600.a
+	}
+}
+
+# 一段
+country_event = {
+	id = beyond_infinity.1000
+	title = dimension_traveler.name.3
+	desc = beyond_infinity.1000.desc
+	
+	diplomatic_title = DIMENSION_TRAVELER_OFFICE
+	diplomatic = yes
+	force_open = yes
+
+	picture_event_data = {
+		portrait = event_target:dimension_traveler_portrait_leader
+		room = "galactic_custodian_room"
+	}
+
+	is_triggered_only = yes
+	
+	trigger = {
+		forbid_beyond_infinity = no
+	}
+	
+	immediate = {
+		set_dimension_traveler_event_portrait = yes
+		observer_event = { id = beyond_infinity.1600 }
+		add_event_chain_counter = {
+			event_chain = beyond_infinity_chain
+			counter = beyond_infinity_level_reached
+			amount = 1
+		}
+	}
+	
+	option = {
+		name = beyond_infinity.1000.a
+		custom_gui = "enclave_caravaneer_option"
+		tooltip = {
+			add_event_chain_counter = {
+				event_chain = beyond_infinity_chain
+				counter = beyond_infinity_level_reached
+				amount = 1
+			}
+		}
+		custom_tooltip = new_beyond_infinity_perks_tt
+		hidden_effect = {
+			country_event = { id = beyond_infinity.1001 }
+		}
+	}
+}
+
+country_event = {
+	id = beyond_infinity.1001
+	title = dimension_traveler.name.3
+	desc = beyond_infinity.1001.desc
+	
+	diplomatic_title = DIMENSION_TRAVELER_OFFICE
+	diplomatic = yes
+	force_open = yes
+
+	picture_event_data = {
+		portrait = event_target:dimension_traveler_portrait_leader
+		room = "galactic_custodian_room"
+	}
+
+	is_triggered_only = yes
+	
+	trigger = {
+		forbid_beyond_infinity = no
+	}
+	
+	immediate = {
+		add_modifier = {
+			modifier = beyond_infinity_become_the_crisis_modifier_1
+			days = -1
+		}
+		change_variable = {
+			which = menp_beyond_infinity_modifier_1
+			value = 1
+		}
+	}
+	
+	option = {
+		name = beyond_infinity.1001.a
+		response_text = beyond_infinity.1001.a.response
+		if = {
+			limit = {
+				NOT = {
+					has_ethic = ethic_gestalt_consciousness
+				}
+			}
+			enable_special_project = {
+				name = "BEYOND_INFINITY_CRISIS_SPECIAL_PROJECT_1"
+				owner = ROOT
+			}
+		}
+		else_if = {
+			limit = {
+				has_authority = auth_machine_intelligence
+			}
+			enable_special_project = {
+				name = "BEYOND_INFINITY_CRISIS_SPECIAL_PROJECT_MACH_1"
+				owner = ROOT
+			}
+		}
+		else_if = {
+			limit = {
+				has_authority = auth_hive_mind
+			}
+			enable_special_project = {
+				name = "BEYOND_INFINITY_CRISIS_SPECIAL_PROJECT_HIVE_1"
+				owner = ROOT
+			}
+		}
+		tooltip = {
+			add_modifier = {
+				modifier = beyond_infinity_become_the_crisis_modifier_1
+				days = -1
+			}
+		}
+	}
+}
+
+country_event = {
+	id = beyond_infinity.1100
+	title = "crisis.4120.name"
+	desc = {
+		text = crisis.4120.desc
+		trigger = {
+			NOT = {
+				has_ethic = ethic_gestalt_consciousness
+			}
+		}
+	}
+	desc = {
+		text = crisis.4120.mach.desc
+		trigger = {
+			has_authority = auth_machine_intelligence
+		}
+	}
+
+	desc = {
+		text = crisis.4120.hive.desc
+		trigger = {
+			has_authority = auth_hive_mind
+		}
+	}
+	picture = GFX_evt_surreal_visions
+	show_sound = event_necrophage
+	event_chain = beyond_infinity_chain
+
+	is_triggered_only = yes
+	
+	trigger = {
+		forbid_beyond_infinity = no
+	}
+	
+	immediate = {
+		remove_modifier = beyond_infinity_become_the_crisis_modifier_1
+		add_modifier = {
+			modifier = beyond_infinity_become_the_crisis_modifier_2
+			days = -1
+		}
+		change_variable = {
+			which = menp_beyond_infinity_modifier_1
+			value = 1
+		}
+	}
+	
+	after = {
+		tooltip = {
+			add_modifier = {
+				modifier = beyond_infinity_become_the_crisis_modifier_2
+				days = -1
+			}
+		}
+	}
+
+	option = {
+		name = crisis.4120.a
+		trigger = {
+			NOT = {
+				has_ethic = ethic_gestalt_consciousness
+			}
+		}
+		enable_special_project = {
+			name = "BEYOND_INFINITY_CRISIS_SPECIAL_PROJECT_2"
+			owner = ROOT
+		}
+	}
+	option = {
+		name = crisis.4120.mach.a
+		trigger = {
+			has_authority = auth_machine_intelligence
+		}
+		enable_special_project = {
+			name = "BEYOND_INFINITY_CRISIS_SPECIAL_PROJECT_MACH_2"
+			owner = ROOT
+		}
+	}
+	option = {
+		name = FASCINATING
+		trigger = {
+			has_authority = auth_hive_mind
+		}
+		enable_special_project = {
+			name = "BEYOND_INFINITY_CRISIS_SPECIAL_PROJECT_HIVE_2"
+			owner = ROOT
+		}
+	}
+}
+
+country_event = {
+	id = beyond_infinity.1200
+	title = "crisis.4125.name"
+	desc = {
+		text = crisis.4125.desc
+		trigger = {
+			NOT = {
+				has_ethic = ethic_gestalt_consciousness
+			}
+		}
+	}
+	desc = {
+		text = crisis.4125.mach.desc
+		trigger = {
+			has_authority = auth_machine_intelligence
+		}
+	}
+
+	desc = {
+		text = crisis.4125.hive.desc
+		trigger = {
+			has_authority = auth_hive_mind
+		}
+	}
+	picture = GFX_evt_shrouded_planet
+	show_sound = event_necrophage
+	event_chain = beyond_infinity_chain
+
+	is_triggered_only = yes
+	
+	trigger = {
+		forbid_beyond_infinity = no
+	}
+	
+	immediate = {
+		remove_modifier = beyond_infinity_become_the_crisis_modifier_2
+		add_modifier = {
+			modifier = beyond_infinity_become_the_crisis_modifier_3
+			days = -1
+		}
+		change_variable = {
+			which = menp_beyond_infinity_modifier_1
+			value = 1
+		}
+	}
+	
+	after = {
+		tooltip = {
+			add_modifier = {
+				modifier = beyond_infinity_become_the_crisis_modifier_3
+				days = -1
+			}
+		}
+	}
+
+	option = {
+		name = crisis.4125.a
+		trigger = {
+			NOT = {
+				has_ethic = ethic_gestalt_consciousness
+			}
+		}
+		enable_special_project = {
+			name = "BEYOND_INFINITY_CRISIS_SPECIAL_PROJECT_3"
+			owner = ROOT
+		}
+	}
+	option = {
+		name = crisis.4125.mach.a
+		trigger = {
+			has_authority = auth_machine_intelligence
+		}
+		enable_special_project = {
+			name = "BEYOND_INFINITY_CRISIS_SPECIAL_PROJECT_MACH_3"
+			owner = ROOT
+		}
+	}
+	option = {
+		name = crisis.4125.hive.a
+		trigger = {
+			has_authority = auth_hive_mind
+		}
+		enable_special_project = {
+			name = "BEYOND_INFINITY_CRISIS_SPECIAL_PROJECT_HIVE_3"
+			owner = ROOT
+		}
+	}
+}
+
+country_event = {
+	id = beyond_infinity.1300
+	title = "crisis.4130.name"
+	desc = {
+		text = crisis.4130.desc
+		trigger = {
+			NOT = {
+				has_ethic = ethic_gestalt_consciousness
+			}
+		}
+	}
+	desc = {
+		text = crisis.4130.mach.desc
+		trigger = {
+			has_authority = auth_machine_intelligence
+		}
+	}
+
+	desc = {
+		text = crisis.4130.hive.desc
+		trigger = {
+			has_authority = auth_hive_mind
+		}
+	}
+	picture = GFX_evt_physics_research
+	show_sound = event_necrophage
+	event_chain = beyond_infinity_chain
+
+	is_triggered_only = yes
+	
+	trigger = {
+		forbid_beyond_infinity = no
+	}
+	
+	immediate = {
+		remove_modifier = beyond_infinity_become_the_crisis_modifier_3
+		add_modifier = {
+			modifier = beyond_infinity_become_the_crisis_modifier_4
+			days = -1
+		}
+		change_variable = {
+			which = menp_beyond_infinity_modifier_1
+			value = 1
+		}
+	}
+	
+	after = {
+		tooltip = {
+			add_modifier = {
+				modifier = beyond_infinity_become_the_crisis_modifier_4
+				days = -1
+			}
+		}
+	}
+
+	option = {
+		name = crisis.4130.a
+		trigger = {
+			NOT = {
+				has_ethic = ethic_gestalt_consciousness
+			}
+		}
+		enable_special_project = {
+			name = "BEYOND_INFINITY_CRISIS_SPECIAL_PROJECT_4"
+			owner = ROOT
+		}
+	}
+	option = {
+		name = crisis.4130.mach.a
+		trigger = {
+			has_authority = auth_machine_intelligence
+		}
+		enable_special_project = {
+			name = "BEYOND_INFINITY_CRISIS_SPECIAL_PROJECT_MACH_4"
+			owner = ROOT
+		}
+	}
+	option = {
+		name = crisis.4130.hive.a
+		trigger = {
+			has_authority = auth_hive_mind
+		}
+		enable_special_project = {
+			name = "BEYOND_INFINITY_CRISIS_SPECIAL_PROJECT_HIVE_4"
+			owner = ROOT
+		}
+	}
+}
+
+country_event = {
+	id = beyond_infinity.1400
+	title = "crisis.4135.name"
+	desc = {
+		text = crisis.4135.desc
+		trigger = {
+			NOT = {
+				has_ethic = ethic_gestalt_consciousness
+			}
+		}
+	}
+	desc = {
+		text = crisis.4135.mach.desc
+		trigger = {
+			has_authority = auth_machine_intelligence
+		}
+	}
+
+	desc = {
+		text = crisis.4135.hive.desc
+		trigger = {
+			has_authority = auth_hive_mind
+		}
+	}
+	picture = GFX_evt_dyson_sphere
+	show_sound = event_necrophage
+	event_chain = beyond_infinity_chain
+
+	is_triggered_only = yes
+	
+	immediate = {
+		remove_modifier = beyond_infinity_become_the_crisis_modifier_4
+		add_modifier = {
+			modifier = beyond_infinity_become_the_crisis_modifier_5
+			days = -1
+		}
+		change_variable = {
+			which = menp_beyond_infinity_modifier_1
+			value = 1
+		}
+	}
+	
+	after = {
+		tooltip = {
+			add_modifier = {
+				modifier = beyond_infinity_become_the_crisis_modifier_5
+				days = -1
+			}
+		}
+		hidden_effect = {
+			country_event = { id = beyond_infinity.1500 }
+		}
+	}
+
+	option = {
+		name = crisis.4135.a
+		trigger = {
+			NOT = {
+				has_ethic = ethic_gestalt_consciousness
+			}
+		}
+	}
+	option = {
+		name = crisis.4135.mach.a
+		trigger = {
+			has_authority = auth_machine_intelligence
+		}
+	}
+	option = {
+		name = crisis.4135.hive.a
+		trigger = {
+			has_authority = auth_hive_mind
+		}
+	}
+}
+
+country_event = {
+	id = beyond_infinity.1500
+	title = dimension_traveler.name.3
+	desc = beyond_infinity.1500.desc
+	
+	diplomatic_title = DIMENSION_TRAVELER_OFFICE
+	diplomatic = yes
+	force_open = yes
+
+	picture_event_data = {
+		portrait = event_target:dimension_traveler_portrait_leader
+		room = "galactic_custodian_room"
+	}
+
+	is_triggered_only = yes
+	
+	trigger = {
+		forbid_beyond_infinity = no
+	}
+	
+	immediate = {
+		set_dimension_traveler_event_portrait = yes
+	}
+	
+	option = {
+		name = beyond_infinity.1500.a
+		hidden_effect = {
+			country_event = { id = beyond_infinity.1501 }
+		}
+	}
+}
+
+country_event = {
+	id = beyond_infinity.1501
+	title = dimension_traveler.name.3
+	desc = beyond_infinity.1501.desc
+	
+	diplomatic_title = DIMENSION_TRAVELER_OFFICE
+	diplomatic = yes
+	force_open = yes
+
+	picture_event_data = {
+		portrait = event_target:dimension_traveler_portrait_leader
+		room = "galactic_custodian_room"
+	}
+
+	is_triggered_only = yes
+	
+	trigger = {
+		forbid_beyond_infinity = no
+	}
+	
+	immediate = {
+	}
+	
+	option = {
+		name = beyond_infinity.1501.a
+		hidden_effect = {
+			country_event = { id = beyond_infinity.1502 }
+		}
+	}
+}
+
+country_event = {
+	id = beyond_infinity.1502
+	title = dimension_traveler.name.3
+	desc = beyond_infinity.1502.desc
+	
+	diplomatic_title = DIMENSION_TRAVELER_OFFICE
+	diplomatic = yes
+	force_open = yes
+
+	picture_event_data = {
+		portrait = event_target:dimension_traveler_portrait_leader
+		room = "galactic_custodian_room"
+	}
+
+	is_triggered_only = yes
+	
+	trigger = {
+		forbid_beyond_infinity = no
+	}
+	
+	immediate = {
+	}
+	
+	option = {
+		name = beyond_infinity.1502.a
+		response_text = beyond_infinity.1502.a.response
+		custom_tooltip = can_advance_beyond_infinity_progression
+		hidden_effect = {
+			set_country_flag = unlock_crisis_beyond_infinity_level_2
+		}
+	}
+}
+
+observer_event = {
+	id = beyond_infinity.1600
+	title = beyond_infinity.1600.name
+	desc = beyond_infinity.1600.desc
+	picture = GFX_evt_surreal_visions
+	show_sound = ap_rift_event_3_clock_slowing_down
+	location = from
+
+	is_triggered_only = yes
+
+	option = {
+		name = beyond_infinity.1600.a
+	}
+}
+
+# 二段
+country_event = {
+	id = beyond_infinity.2000
+	title = dimension_traveler.name.3
+	desc = beyond_infinity.2000.desc
+	
+	diplomatic_title = DIMENSION_TRAVELER_OFFICE
+	diplomatic = yes
+	force_open = yes
+
+	picture_event_data = {
+		portrait = event_target:dimension_traveler_portrait_leader
+		room = "galactic_custodian_room"
+	}
+
+	is_triggered_only = yes
+	
+	trigger = {
+		forbid_beyond_infinity = no
+	}
+	
+	immediate = {
+		set_dimension_traveler_event_portrait = yes
+		observer_event = { id = beyond_infinity.2600 }
+		add_event_chain_counter = {
+			event_chain = beyond_infinity_chain
+			counter = beyond_infinity_level_reached
+			amount = 1
+		}
+	}
+	
+	option = {
+		name = beyond_infinity.2000.a
+		custom_gui = "enclave_caravaneer_option"
+		tooltip = {
+			add_event_chain_counter = {
+				event_chain = beyond_infinity_chain
+				counter = beyond_infinity_level_reached
+				amount = 1
+			}
+		}
+		custom_tooltip = new_beyond_infinity_perks_tt
+		hidden_effect = {
+			country_event = { id = beyond_infinity.2001 }
+		}
+	}
+}
+
+country_event = {
+	id = beyond_infinity.2001
+	title = dimension_traveler.name.3
+	desc = beyond_infinity.2001.desc
+	
+	diplomatic_title = DIMENSION_TRAVELER_OFFICE
+	diplomatic = yes
+	force_open = yes
+
+	picture_event_data = {
+		portrait = event_target:dimension_traveler_portrait_leader
+		room = "galactic_custodian_room"
+	}
+
+	is_triggered_only = yes
+	
+	trigger = {
+		forbid_beyond_infinity = no
+	}
+	
+	immediate = {
+	}
+	
+	option = {
+		name = beyond_infinity.2001.a
+		hidden_effect = {
+			country_event = { id = beyond_infinity.2002 }
+		}
+	}
+}
+
+country_event = {
+	id = beyond_infinity.2002
+	title = dimension_traveler.name.3
+	desc = beyond_infinity.2002.desc
+	
+	diplomatic_title = DIMENSION_TRAVELER_OFFICE
+	diplomatic = yes
+	force_open = yes
+
+	picture_event_data = {
+		portrait = event_target:dimension_traveler_portrait_leader
+		room = "galactic_custodian_room"
+	}
+
+	is_triggered_only = yes
+	
+	trigger = {
+		forbid_beyond_infinity = no
+	}
+	
+	immediate = {
+	}
+	
+	option = {
+		name = beyond_infinity.2002.a
+		hidden_effect = {
+			country_event = { id = beyond_infinity.2003 }
+		}
+	}
+}
+
+country_event = {
+	id = beyond_infinity.2003
+	title = dimension_traveler.name.3
+	desc = beyond_infinity.2003.desc
+	
+	diplomatic_title = DIMENSION_TRAVELER_OFFICE
+	diplomatic = yes
+	force_open = yes
+
+	picture_event_data = {
+		portrait = event_target:dimension_traveler_portrait_leader
+		room = "galactic_custodian_room"
+	}
+
+	is_triggered_only = yes
+	
+	trigger = {
+		forbid_beyond_infinity = no
+	}
+	
+	immediate = {
+		set_country_flag = menp_beyond_infinity_cosmo_buildings_1
+		add_research_option = tech_fe_dome_1
+		add_research_option = tech_fe_security_1
+		add_research_option = tech_fe_silo_1
+		add_research_option = tech_dark_matter_power_core
+	}
+	
+	option = {
+		name = beyond_infinity.2003.a
+		response_text = beyond_infinity.2003.a.response
+		add_research_option = tech_beyond_infinity_cosmogenesis_crisis_1
+		custom_tooltip = gain_cosmogenesis_tech_1
+	}
+}
+
+country_event = {
+	id = beyond_infinity.2100
+	title = beyond_infinity.2100.name
+	desc = crisis.7105.desc
+	picture = GFX_evt_synaptic_lathe
+	show_sound = event_death_cult
+	event_chain = beyond_infinity_chain
+
+	is_triggered_only = yes
+	
+	trigger = {
+		if = {
+			limit = {
+				last_increased_tech = tech_beyond_infinity_cosmogenesis_crisis_1
+			}
+			has_beyond_infinity_level = { LEVEL = 2 }
+			forbid_beyond_infinity = no
+		}
+		else = {
+			always = no
+		}
+	}
+
+	immediate = {
+		set_country_flag = menp_beyond_infinity_cosmo_buildings_2
+		add_research_option = tech_fe_nourishment_1
+		add_research_option = tech_fe_singularity_1
+		add_research_option = tech_fe_mine_1
+		add_research_option = tech_dark_matter_propulsion
+		add_research_option = tech_enigmatic_decoder
+	}
+
+	option = {
+		name = crisis.7105.a
+		add_research_option = tech_beyond_infinity_cosmogenesis_crisis_2
+		custom_tooltip = gain_cosmogenesis_tech_2
+	}
+}
+
+country_event = {
+	id = beyond_infinity.2200
+	title = beyond_infinity.2200.name
+	desc = crisis.7110.desc
+	picture = GFX_evt_black_hole
+	show_sound = event_death_cult
+	event_chain = beyond_infinity_chain
+
+	is_triggered_only = yes
+	
+	trigger = {
+		if = {
+			limit = {
+				last_increased_tech = tech_beyond_infinity_cosmogenesis_crisis_2
+			}
+			has_beyond_infinity_level = { LEVEL = 2 }
+			forbid_beyond_infinity = no
+		}
+		else = {
+			always = no
+		}
+	}
+
+	immediate = {
+		set_country_flag = menp_beyond_infinity_cosmo_buildings_3
+		add_research_option = tech_fe_fortress_1
+		add_research_option = tech_fe_administration_1
+		add_research_option = tech_fe_market_1
+		add_research_option = tech_dark_matter_deflector
+		add_research_option = tech_enigmatic_encoder
+	}
+
+	option = {
+		name = crisis.7110.a
+		add_research_option = tech_beyond_infinity_cosmogenesis_crisis_3
+		custom_tooltip = gain_cosmogenesis_tech_3
+	}
+}
+
+country_event = {
+	id = beyond_infinity.2300
+	title = beyond_infinity.2300.name
+	desc = crisis.7115.desc
+	picture = GFX_evt_cosmogenesis_crisis
+	show_sound = event_death_cult
+	event_chain = beyond_infinity_chain
+
+	is_triggered_only = yes
+	
+	trigger = {
+		if = {
+			limit = {
+				last_increased_tech = tech_beyond_infinity_cosmogenesis_crisis_3
+			}
+			has_beyond_infinity_level = { LEVEL = 2 }
+			forbid_beyond_infinity = no
+		}
+		else = {
+			always = no
+		}
+	}
+
+	immediate = {
+		set_country_flag = menp_beyond_infinity_cosmo_buildings_4
+		add_research_option = tech_fe_fabricator_1
+		if = {
+			limit = {
+				is_hive_empire = no
+			}
+			add_research_option = tech_fe_assembly_1
+		}
+		if = {
+			limit = {
+				is_machine_empire = no
+			}
+			add_research_option = tech_fe_clinic_1
+		}
+		if = {
+			limit = {
+				is_gestalt = no
+			}
+			add_research_option = tech_fe_entertainment_1
+		}
+		add_research_option = tech_energy_lance_2
+		add_research_option = tech_dragon_armor
+	}
+
+	option = {
+		name = crisis.7115.a
+		add_research_option = tech_beyond_infinity_cosmogenesis_crisis_4
+		custom_tooltip = gain_cosmogenesis_tech_4
+	}
+}
+
+country_event = {
+	id = beyond_infinity.2400
+	title = beyond_infinity.2400.name
+	desc = crisis.7120.desc
+	picture = GFX_evt_cosmogenesis_crisis
+	show_sound = event_death_cult
+	event_chain = beyond_infinity_chain
+
+	is_triggered_only = yes
+	
+	trigger = {
+		if = {
+			limit = {
+				last_increased_tech = tech_beyond_infinity_cosmogenesis_crisis_4
+			}
+			has_beyond_infinity_level = { LEVEL = 2 }
+			forbid_beyond_infinity = no
+		}
+		else = {
+			always = no
+		}
+	}
+
+	immediate = {
+		set_country_flag = menp_beyond_infinity_cosmo_buildings_5
+		add_research_option = tech_fe_affluence_1
+		add_research_option = tech_fe_forge_1
+		add_research_option = tech_fe_lab_1
+		add_research_option = tech_nanite_repair_system
+		add_research_option = tech_nanite_flak_batteries
+		add_research_option = tech_nanite_autocannon
+	}
+
+	option = {
+		name = crisis.7120.a
+		add_research_option = tech_beyond_infinity_cosmogenesis_crisis_5
+		custom_tooltip = gain_cosmogenesis_tech_5
+	}
+}
+
+country_event = {
+	id = beyond_infinity.2500
+	title = dimension_traveler.name.3
+	desc = beyond_infinity.2500.desc
+	
+	diplomatic_title = DIMENSION_TRAVELER_OFFICE
+	diplomatic = yes
+	force_open = yes
+
+	picture_event_data = {
+		portrait = event_target:dimension_traveler_portrait_leader
+		room = "galactic_custodian_room"
+	}
+
+	is_triggered_only = yes
+	
+	trigger = {
+		if = {
+			limit = {
+				last_increased_tech = tech_beyond_infinity_cosmogenesis_crisis_5
+			}
+			has_beyond_infinity_level = { LEVEL = 2 }
+			forbid_beyond_infinity = no
+		}
+		else = {
+			always = no
+		}
+	}
+	
+	immediate = {
+		set_dimension_traveler_event_portrait = yes
+	}
+	
+	option = {
+		name = beyond_infinity.2500.a
+		hidden_effect = {
+			country_event = { id = beyond_infinity.2501 }
+		}
+	}
+}
+
+country_event = {
+	id = beyond_infinity.2501
+	title = dimension_traveler.name.3
+	desc = beyond_infinity.2501.desc
+	
+	diplomatic_title = DIMENSION_TRAVELER_OFFICE
+	diplomatic = yes
+	force_open = yes
+
+	picture_event_data = {
+		portrait = event_target:dimension_traveler_portrait_leader
+		room = "galactic_custodian_room"
+	}
+
+	is_triggered_only = yes
+	
+	trigger = {
+		forbid_beyond_infinity = no
+	}
+	
+	immediate = {
+	}
+	
+	option = {
+		name = beyond_infinity.2501.a
+		hidden_effect = {
+			country_event = { id = beyond_infinity.2502 }
+		}
+	}
+}
+
+country_event = {
+	id = beyond_infinity.2502
+	title = dimension_traveler.name.3
+	desc = beyond_infinity.2502.desc
+	
+	diplomatic_title = DIMENSION_TRAVELER_OFFICE
+	diplomatic = yes
+	force_open = yes
+
+	picture_event_data = {
+		portrait = event_target:dimension_traveler_portrait_leader
+		room = "galactic_custodian_room"
+	}
+
+	is_triggered_only = yes
+	
+	trigger = {
+		forbid_beyond_infinity = no
+	}
+	
+	immediate = {
+	}
+	
+	option = {
+		name = beyond_infinity.2502.a
+		hidden_effect = {
+			country_event = { id = beyond_infinity.2503 }
+		}
+	}
+}
+
+country_event = {
+	id = beyond_infinity.2503
+	title = dimension_traveler.name.3
+	desc = beyond_infinity.2503.desc
+	
+	diplomatic_title = DIMENSION_TRAVELER_OFFICE
+	diplomatic = yes
+	force_open = yes
+
+	picture_event_data = {
+		portrait = event_target:dimension_traveler_portrait_leader
+		room = "galactic_custodian_room"
+	}
+
+	is_triggered_only = yes
+	
+	trigger = {
+		forbid_beyond_infinity = no
+	}
+	
+	immediate = {
+	}
+	
+	option = {
+		name = beyond_infinity.2503.a
+		hidden_effect = {
+			country_event = { id = beyond_infinity.2504 }
+		}
+	}
+}
+
+country_event = {
+	id = beyond_infinity.2504
+	title = "crisis.7515.name"
+	desc = crisis.7515.desc
+	picture = GFX_evt_horizon_needle
+	show_sound = event_airlock
+	event_chain = beyond_infinity_cosmogenesis_planet_pickup_chain
+
+	is_triggered_only = yes
+	
+	trigger = {
+		forbid_beyond_infinity = no
+	}
+	
+	immediate = {
+		begin_event_chain = { event_chain = beyond_infinity_cosmogenesis_planet_pickup_chain target = root }
+	}
+	
+	option = {
+		name = crisis.7515.a
+		hidden_effect = {
+			country_event = { id = beyond_infinity.2505 }
+		}
+	}
+}
+
+country_event = {
+	id = beyond_infinity.2505
+	title = crisis.7516.name
+	desc = crisis.7516.desc.worm.ending
+	picture = GFX_evt_horizon_needle
+	show_sound = event_airlock
+	event_chain = beyond_infinity_cosmogenesis_planet_pickup_chain
+
+	is_triggered_only = yes
+	
+	trigger = {
+		forbid_beyond_infinity = no
+	}
+	
+	immediate = {
+	}
+	
+	option = {
+		name = crisis.7516.a
+		hidden_effect = {
+			country_event = { id = beyond_infinity.2506 }
+		}
+	}
+}
+
+country_event = {
+	id = beyond_infinity.2506
+	title = beyond_infinity.2506.name
+	desc = beyond_infinity.2506.desc
+	picture = GFX_evt_horizon_needle
+	show_sound = event_airlock
+	event_chain = beyond_infinity_cosmogenesis_planet_pickup_chain
+
+	is_triggered_only = yes
+	
+	trigger = {
+		forbid_beyond_infinity = no
+	}
+	
+	immediate = {
+	}
+	
+	option = {
+		name = beyond_infinity.2506.a
+		hidden_effect = {
+			country_event = { id = beyond_infinity.2507 }
+			end_event_chain = beyond_infinity_cosmogenesis_planet_pickup_chain
+		}
+	}
+}
+
+country_event = {
+	id = beyond_infinity.2507
+	title = dimension_traveler.name.3
+	desc = beyond_infinity.2507.desc
+	
+	diplomatic_title = DIMENSION_TRAVELER_OFFICE
+	diplomatic = yes
+	force_open = yes
+
+	picture_event_data = {
+		portrait = event_target:dimension_traveler_portrait_leader
+		room = "galactic_custodian_room"
+	}
+
+	is_triggered_only = yes
+	
+	trigger = {
+		forbid_beyond_infinity = no
+	}
+	
+	immediate = {
+	}
+	
+	option = {
+		name = beyond_infinity.2507.a
+		response_text = beyond_infinity.2507.a.response
+		custom_tooltip = can_advance_beyond_infinity_progression
+		hidden_effect = {
+			set_country_flag = unlock_crisis_beyond_infinity_level_3
+		}
+	}
+}
+
+observer_event = {
+	id = beyond_infinity.2600
+	title = beyond_infinity.2600.name
+	desc = beyond_infinity.2600.desc
+	picture = GFX_evt_surreal_visions
+	show_sound = ap_rift_event_3_clock_slowing_down
+	location = from
+
+	is_triggered_only = yes
+
+	option = {
+		name = beyond_infinity.2600.a
+	}
+}
+
+# 三段
+country_event = {
+	id = beyond_infinity.3000
+	title = dimension_traveler.name.3
+	desc = beyond_infinity.3000.desc
+	
+	diplomatic_title = DIMENSION_TRAVELER_OFFICE
+	diplomatic = yes
+	force_open = yes
+
+	picture_event_data = {
+		portrait = event_target:dimension_traveler_portrait_leader
+		room = "galactic_custodian_room"
+	}
+
+	is_triggered_only = yes
+	
+	trigger = {
+		forbid_beyond_infinity = no
+	}
+	
+	immediate = {
+		set_dimension_traveler_event_portrait = yes
+		observer_event = { id = beyond_infinity.3600 }
+		add_event_chain_counter = {
+			event_chain = beyond_infinity_chain
+			counter = beyond_infinity_level_reached
+			amount = 1
+		}
+	}
+	
+	option = {
+		name = beyond_infinity.3000.a
+		custom_gui = "enclave_caravaneer_option"
+		tooltip = {
+			add_event_chain_counter = {
+				event_chain = beyond_infinity_chain
+				counter = beyond_infinity_level_reached
+				amount = 1
+			}
+		}
+		custom_tooltip = new_beyond_infinity_perks_tt
+		hidden_effect = {
+			country_event = { id = beyond_infinity.3001 }
+		}
+	}
+}
+
+country_event = {
+	id = beyond_infinity.3001
+	title = dimension_traveler.name.3
+	desc = beyond_infinity.3001.desc
+	
+	diplomatic_title = DIMENSION_TRAVELER_OFFICE
+	diplomatic = yes
+	force_open = yes
+
+	picture_event_data = {
+		portrait = event_target:dimension_traveler_portrait_leader
+		room = "galactic_custodian_room"
+	}
+
+	is_triggered_only = yes
+	
+	trigger = {
+		forbid_beyond_infinity = no
+	}
+	
+	immediate = {
+	}
+	
+	option = {
+		name = beyond_infinity.3001.a
+		hidden_effect = {
+			country_event = { id = beyond_infinity.3002 }
+		}
+	}
+}
+
+country_event = {
+	id = beyond_infinity.3002
+	title = dimension_traveler.name.3
+	desc = beyond_infinity.3002.desc
+	
+	diplomatic_title = DIMENSION_TRAVELER_OFFICE
+	diplomatic = yes
+	force_open = yes
+
+	picture_event_data = {
+		portrait = event_target:dimension_traveler_portrait_leader
+		room = "galactic_custodian_room"
+	}
+
+	is_triggered_only = yes
+	
+	trigger = {
+		forbid_beyond_infinity = no
+	}
+	
+	immediate = {
+	}
+	
+	option = {
+		name = beyond_infinity.3002.a
+		hidden_effect = {
+			country_event = { id = beyond_infinity.3003 }
+		}
+	}
+}
+
+country_event = {
+	id = beyond_infinity.3003
+	title = dimension_traveler.name.3
+	desc = beyond_infinity.3003.desc
+	
+	diplomatic_title = DIMENSION_TRAVELER_OFFICE
+	diplomatic = yes
+	force_open = yes
+
+	picture_event_data = {
+		portrait = event_target:dimension_traveler_portrait_leader
+		room = "galactic_custodian_room"
+	}
+
+	is_triggered_only = yes
+	
+	trigger = {
+		forbid_beyond_infinity = no
+	}
+	
+	immediate = {
+	}
+	
+	option = {
+		name = beyond_infinity.3003.a
+		hidden_effect = {
+			country_event = { id = beyond_infinity.3004 }
+		}
+	}
+}
+
+country_event = {
+	id = beyond_infinity.3004
+	title = dimension_traveler.name.3
+	desc = beyond_infinity.3004.desc
+	
+	diplomatic_title = DIMENSION_TRAVELER_OFFICE
+	diplomatic = yes
+	force_open = yes
+
+	picture_event_data = {
+		portrait = event_target:dimension_traveler_portrait_leader
+		room = "galactic_custodian_room"
+	}
+
+	is_triggered_only = yes
+	
+	trigger = {
+		forbid_beyond_infinity = no
+	}
+	
+	immediate = {
+	}
+	
+	option = {
+		name = beyond_infinity.3004.a
+		hidden_effect = {
+			country_event = { id = beyond_infinity.3005 }
+		}
+	}
+}
+
+country_event = {
+	id = beyond_infinity.3005
+	title = dimension_traveler.name.3
+	desc = beyond_infinity.3005.desc
+	
+	diplomatic_title = DIMENSION_TRAVELER_OFFICE
+	diplomatic = yes
+	force_open = yes
+
+	picture_event_data = {
+		portrait = event_target:dimension_traveler_portrait_leader
+		room = "galactic_custodian_room"
+	}
+
+	is_triggered_only = yes
+	
+	trigger = {
+		forbid_beyond_infinity = no
+	}
+	
+	immediate = {
+	}
+	
+	option = {
+		name = {
+			text = beyond_infinity.3005.a.imperial
+			trigger = {
+				has_galactic_emperor = yes
+				is_galactic_community_member = yes
+			}
+		}
+		name = {
+			text = beyond_infinity.3005.a.galcom
+			trigger = {
+				has_galactic_emperor = no
+				is_galactic_community_member = yes
+			}
+		}
+		name = {
+			text = beyond_infinity.3005.a
+			trigger = {
+				OR = {
+					is_galactic_community_formed = no
+					is_galactic_community_member = no
+				}
+			}
+		}
+		hidden_effect = {
+			country_event = { id = beyond_infinity.3006 }
+		}
+	}
+}
+
+country_event = {
+	id = beyond_infinity.3006
+	title = dimension_traveler.name.3
+	desc = {
+		text = beyond_infinity.3006.desc.emperor
+		trigger = {
+			is_galactic_emperor = yes
+		}
+	}
+	desc = {
+		text = beyond_infinity.3006.desc.imperial_member
+		trigger = {
+			has_galactic_emperor = yes
+			is_galactic_emperor = no
+			is_galactic_community_member = yes
+		}
+	}
+	desc = {
+		text = beyond_infinity.3006.desc.not_imperial_member
+		trigger = {
+			has_galactic_emperor = yes
+			is_galactic_community_member = no
+		}
+	}
+	desc = {
+		text = beyond_infinity.3006.desc.custodian
+		trigger = {
+			is_galactic_custodian = yes
+		}
+	}
+	desc = {
+		text = beyond_infinity.3006.desc.galcom_member
+		trigger = {
+			has_galactic_emperor = no
+			is_galactic_custodian = no
+			is_galactic_community_member = yes
+		}
+	}
+	desc = {
+		text = beyond_infinity.3006.desc.not_galcom_member
+		trigger = {
+			has_galactic_emperor = no
+			is_galactic_community_member = no
+			is_galactic_community_formed = yes
+		}
+	}
+	desc = {
+		text = beyond_infinity.3006.desc.no_galcom
+		trigger = {
+			is_galactic_community_formed = no
+		}
+	}
+	
+	diplomatic_title = DIMENSION_TRAVELER_OFFICE
+	diplomatic = yes
+	force_open = yes
+
+	picture_event_data = {
+		portrait = event_target:dimension_traveler_portrait_leader
+		room = "galactic_custodian_room"
+	}
+
+	is_triggered_only = yes
+	
+	trigger = {
+		forbid_beyond_infinity = no
+	}
+	
+	immediate = {
+	}
+	
+	option = {
+		name = beyond_infinity.3006.a
+		hidden_effect = {
+			if = {
+				limit = {
+					owner_main_species = { is_origin_time_species = no }
+				}
+				country_event = { id = beyond_infinity.3050 days = 30 random = 30 }
+			}
+		}
+	}
+}
+
+country_event = {
+	id = beyond_infinity.3050
+	title = beyond_infinity.3050.name
+	desc = beyond_infinity.3050.desc
+	picture = GFX_evt_surreal_visions
+	show_sound = ap_rift_event_3_clock_slowing_down
+
+	is_triggered_only = yes
+	
+	trigger = {
+		owner_main_species = { is_origin_time_species = no }
+	}
+	
+	immediate = {
+		set_country_flag = beyond_infinity_trait_time
+		every_owned_species = {
+			limit = {
+				is_origin_time_species = no
+				is_same_species = root.owner_main_species
+			}
+			change_species_characteristics = { add_trait = trait_time }
+		}
+	}
+
+	option = {
+		name = beyond_infinity.3050.a
+		custom_tooltip = beyond_infinity.3050.a.tooltip
+	}
+}
+
+country_event = {
+	id = beyond_infinity.3100
+	title = dimension_traveler.name.3
+	desc = beyond_infinity.3100.desc
+	
+	diplomatic_title = DIMENSION_TRAVELER_OFFICE
+	diplomatic = yes
+	force_open = yes
+
+	picture_event_data = {
+		portrait = event_target:dimension_traveler_portrait_leader
+		room = "galactic_custodian_room"
+	}
+
+	is_triggered_only = yes
+	
+	trigger = {
+		forbid_beyond_infinity = no
+	}
+	
+	immediate = {
+		set_dimension_traveler_event_portrait = yes
+	}
+	
+	option = {
+		name = beyond_infinity.3100.a
+		hidden_effect = {
+			country_event = { id = beyond_infinity.3101 }
+		}
+	}
+}
+
+country_event = {
+	id = beyond_infinity.3101
+	title = dimension_traveler.name.3
+	desc = beyond_infinity.3101.desc
+	
+	diplomatic_title = DIMENSION_TRAVELER_OFFICE
+	diplomatic = yes
+	force_open = yes
+
+	picture_event_data = {
+		portrait = event_target:dimension_traveler_portrait_leader
+		room = "galactic_custodian_room"
+	}
+
+	is_triggered_only = yes
+	
+	trigger = {
+		forbid_beyond_infinity = no
+	}
+	
+	immediate = {
+	}
+	
+	option = {
+		name = beyond_infinity.3101.a
+		hidden_effect = {
+			country_event = { id = beyond_infinity.3102 }
+		}
+	}
+}
+
+country_event = {
+	id = beyond_infinity.3102
+	title = dimension_traveler.name.3
+	desc = beyond_infinity.3102.desc
+	
+	diplomatic_title = DIMENSION_TRAVELER_OFFICE
+	diplomatic = yes
+	force_open = yes
+
+	picture_event_data = {
+		portrait = event_target:dimension_traveler_portrait_leader
+		room = "galactic_custodian_room"
+	}
+
+	is_triggered_only = yes
+	
+	trigger = {
+		forbid_beyond_infinity = no
+	}
+	
+	immediate = {
+	}
+	
+	option = {
+		name = beyond_infinity.3102.a
+		hidden_effect = {
+			country_event = { id = beyond_infinity.3103 }
+		}
+	}
+}
+
+country_event = {
+	id = beyond_infinity.3103
+	title = dimension_traveler.name.3
+	desc = beyond_infinity.3103.desc
+	
+	diplomatic_title = DIMENSION_TRAVELER_OFFICE
+	diplomatic = yes
+	force_open = yes
+
+	picture_event_data = {
+		portrait = event_target:dimension_traveler_portrait_leader
+		room = "galactic_custodian_room"
+	}
+
+	is_triggered_only = yes
+	
+	trigger = {
+		forbid_beyond_infinity = no
+	}
+	
+	immediate = {
+	}
+	
+	option = {
+		name = beyond_infinity.3103.a
+		hidden_effect = {
+			country_event = { id = beyond_infinity.3104 }
+		}
+	}
+}
+
+country_event = {
+	id = beyond_infinity.3104
+	title = dimension_traveler.name.3
+	desc = beyond_infinity.3104.desc
+	
+	diplomatic_title = DIMENSION_TRAVELER_OFFICE
+	diplomatic = yes
+	force_open = yes
+
+	picture_event_data = {
+		portrait = event_target:dimension_traveler_portrait_leader
+		room = "galactic_custodian_room"
+	}
+
+	is_triggered_only = yes
+	
+	trigger = {
+		forbid_beyond_infinity = no
+	}
+	
+	immediate = {
+	}
+	
+	option = {
+		name = beyond_infinity.3104.a
+		is_dialog_only = yes
+		response_text = beyond_infinity.3104.a.response
+	}
+	
+	option = {
+		name = beyond_infinity.3104.b
+		custom_gui = "enclave_caravaneer_option"
+		hidden_effect = {
+			country_event = { id = beyond_infinity.3105 }
+		}
+	}
+}
+
+country_event = {
+	id = beyond_infinity.3105
+	title = dimension_traveler.name.3
+	desc = beyond_infinity.3105.desc
+	
+	diplomatic_title = DIMENSION_TRAVELER_OFFICE
+	diplomatic = yes
+	force_open = yes
+
+	picture_event_data = {
+		portrait = event_target:dimension_traveler_portrait_leader
+		room = "galactic_custodian_room"
+	}
+
+	is_triggered_only = yes
+	
+	trigger = {
+		forbid_beyond_infinity = no
+	}
+	
+	immediate = {
+	}
+	
+	option = {
+		name = beyond_infinity.3105.a
+		response_text = beyond_infinity.3105.a.response
+		custom_tooltip = can_advance_beyond_infinity_progression
+		hidden_effect = {
+			set_country_flag = unlock_crisis_beyond_infinity_level_4
+			if = {
+				limit = {
+					has_origin_time = no
+				}
+				country_event = { id = beyond_infinity.3150 days = 30 random = 30 }
+			}
+			else_if = {
+				limit = {
+					can_start_situation_origin_time = yes
+				}
+				country_event = { id = beyond_infinity.3160 days = 30 random = 30 }
+			}
+		}
+	}
+}
+
+country_event = {
+	id = beyond_infinity.3150
+	title = beyond_infinity.3150.name
+	desc = beyond_infinity.3150.desc
+	picture = GFX_evt_astral_rift_microverse
+	show_sound = ap_rift_event_3_clock_slowing_down
+	location = event_target:akx_star
+
+	is_triggered_only = yes
+	
+	trigger = {
+		has_origin_time = no
+	}
+	
+	immediate = {
+		event_target:akx_star = {
+			change_pc = pc_time
+			set_planet_size = 30
+			set_carrier_flag = colony_event
+			set_carrier_flag = no_terraform_event
+			set_carrier_flag = cannot_be_hit_by_aow_starfall_spear
+			clear_deposits_and_orbital_station = yes
+			add_time_special_deposit_keep_on_terraform = { DEPOSIT = d_time_beyond_infinity }
+			while = {
+				count = 8
+				add_deposit = d_time_blocker_1
+			}
+			while = {
+				count = 2
+				make_district_time_level_up = yes
+			}
+		}
+	}
+
+	option = {
+		name = beyond_infinity.3150.a
+		tooltip = {
+			event_target:akx_star = {
+				change_pc = pc_time
+			}
+		}
+	}
+}
+
+country_event = {
+	id = beyond_infinity.3160
+	title = beyond_infinity.3160.name
+	desc = beyond_infinity.3160.desc
+	picture = GFX_evt_surreal_visions
+	show_sound = ap_rift_event_3_clock_slowing_down
+	location = event_target:situation_origin_time_planet
+
+	is_triggered_only = yes
+	
+	trigger = {
+		can_start_situation_origin_time = yes
+	}
+	
+	immediate = {
+		random_owned_colony = {
+			limit = {
+				is_planet_class = pc_time
+				has_carrier_flag = time_home_planet_of@root
+			}
+			save_event_target_as = situation_origin_time_planet
+		}
+	}
+
+	option = {
+		name = beyond_infinity.3160.a
+		trigger = {
+			has_origin_time = yes
+		}
+		if = {
+			limit = {
+				is_wonder_country_time_0 = yes
+			}
+			add_research_option = tech_change_pc_time_0
+			# 来自圣仆的启示
+			if = {
+				limit = {
+					has_country_flag = time_akx_hole_pets_end_1
+				}
+				add_tech_progress = {
+					tech = tech_change_pc_time_0
+					progress = 0.5
+				}
+			}
+		}
+		else = {
+			add_research_option = tech_change_pc_time
+			# 来自圣仆的启示
+			if = {
+				limit = {
+					has_country_flag = time_akx_hole_pets_end_1
+				}
+				add_tech_progress = {
+					tech = tech_change_pc_time
+					progress = 0.5
+				}
+			}
+		}
+	}
+}
+
+carrier_event = {
+	id = beyond_infinity.3170
+	title = beyond_infinity.3170.name
+	desc = beyond_infinity.3170.desc
+	picture = GFX_evt_astral_rift_microverse
+	show_sound = event_alien_signal
+	location = root
+	
+	is_triggered_only = yes
+
+	pre_triggers = {
+		has_owner = yes
+	}
+
+	trigger = {
+		is_under_colonization = no
+		is_planet_class = pc_time
+		has_deposit = d_time_beyond_infinity
+		owner = {
+			unlock_pc_time_structures = no
+			has_ascension_perk = ap_beyond_infinity
+		}
+	}
+	
+	immediate = {
+		owner = { set_country_flag = unlock_pc_time_structures }
+	}
+	
+	option = {
+		name = beyond_infinity.3170.a
+		if = {
+			limit = {
+				owner = {
+					NOR = {
+						has_tech_option = tech_time_blocker_1
+						has_technology = tech_time_blocker_1
+					}
+				}
+			}
+			owner = { add_research_option = tech_time_blocker_1 }
+		}
+	}
+}
+
+observer_event = {
+	id = beyond_infinity.3600
+	title = beyond_infinity.3600.name
+	desc = beyond_infinity.3600.desc
+	picture = GFX_evt_surreal_visions
+	show_sound = ap_rift_event_3_clock_slowing_down
+	location = from
+
+	is_triggered_only = yes
+
+	option = {
+		name = beyond_infinity.3600.a
+	}
+}
+
+# 四段
+country_event = {
+	id = beyond_infinity.4000
+	title = dimension_traveler.name.3
+	desc = beyond_infinity.4000.desc
+	
+	diplomatic_title = DIMENSION_TRAVELER_OFFICE
+	diplomatic = yes
+	force_open = yes
+
+	picture_event_data = {
+		portrait = event_target:dimension_traveler_portrait_leader
+		room = "galactic_custodian_room"
+	}
+
+	is_triggered_only = yes
+	
+	trigger = {
+		forbid_beyond_infinity = no
+	}
+	
+	immediate = {
+		set_dimension_traveler_event_portrait = yes
+		observer_event = { id = beyond_infinity.4600 }
+		add_event_chain_counter = {
+			event_chain = beyond_infinity_chain
+			counter = beyond_infinity_level_reached
+			amount = 1
+		}
+	}
+	
+	option = {
+		name = beyond_infinity.4000.a
+		custom_gui = "enclave_caravaneer_option"
+		tooltip = {
+			add_event_chain_counter = {
+				event_chain = beyond_infinity_chain
+				counter = beyond_infinity_level_reached
+				amount = 1
+			}
+		}
+		custom_tooltip = new_beyond_infinity_perks_tt
+		hidden_effect = {
+			country_event = { id = beyond_infinity.4001 }
+		}
+	}
+}
+
+country_event = {
+	id = beyond_infinity.4001
+	title = dimension_traveler.name.3
+	desc = beyond_infinity.4001.desc
+	
+	diplomatic_title = DIMENSION_TRAVELER_OFFICE
+	diplomatic = yes
+	force_open = yes
+
+	picture_event_data = {
+		portrait = event_target:dimension_traveler_portrait_leader
+		room = "galactic_custodian_room"
+	}
+
+	is_triggered_only = yes
+	
+	trigger = {
+		forbid_beyond_infinity = no
+	}
+	
+	immediate = {
+	}
+	
+	option = {
+		name = beyond_infinity.4001.a
+		hidden_effect = {
+			country_event = { id = beyond_infinity.4002 }
+		}
+	}
+}
+
+country_event = {
+	id = beyond_infinity.4002
+	title = dimension_traveler.name.3
+	desc = beyond_infinity.4002.desc
+	
+	diplomatic_title = DIMENSION_TRAVELER_OFFICE
+	diplomatic = yes
+	force_open = yes
+
+	picture_event_data = {
+		portrait = event_target:dimension_traveler_portrait_leader
+		room = "galactic_custodian_room"
+	}
+
+	is_triggered_only = yes
+	
+	trigger = {
+		forbid_beyond_infinity = no
+	}
+	
+	immediate = {
+	}
+	
+	option = {
+		name = beyond_infinity.4002.a
+		hidden_effect = {
+			country_event = { id = beyond_infinity.4003 }
+		}
+	}
+}
+
+country_event = {
+	id = beyond_infinity.4003
+	title = dimension_traveler.name.3
+	desc = beyond_infinity.4003.desc
+	
+	diplomatic_title = DIMENSION_TRAVELER_OFFICE
+	diplomatic = yes
+	force_open = yes
+
+	picture_event_data = {
+		portrait = event_target:dimension_traveler_portrait_leader
+		room = "galactic_custodian_room"
+	}
+
+	is_triggered_only = yes
+	
+	trigger = {
+		forbid_beyond_infinity = no
+	}
+	
+	immediate = {
+	}
+	
+	after = {
+		add_resource = {
+			beyond_infinity_time = -864000
+		}
+		enable_special_project = {
+			name = "BEYOND_INFINITY_GAMBLING_PHYSICS_PROJECT"
+			owner = root
+		}
+		hidden_effect = {
+			set_country_flag = crisobj_beyond_infinity_gambling_active
+			# 要延迟几天等天灾项目激活，才能完成项目
+			country_event = { id = beyond_infinity.4004 days = 2 }
+		}
+	}
+	
+	option = {
+		name = beyond_infinity.4003.materialist
+		response_text = beyond_infinity.4003.response
+		trigger = {
+			is_materialist = yes
+		}
+	}
+	
+	option = {
+		name = beyond_infinity.4003.spiritualist
+		response_text = beyond_infinity.4003.response
+		trigger = {
+			is_spiritualist = yes
+		}
+	}
+	
+	option = {
+		name = beyond_infinity.4003.militarist
+		response_text = beyond_infinity.4003.response
+		trigger = {
+			is_militarist = yes
+		}
+	}
+	
+	option = {
+		name = beyond_infinity.4003.pacifist
+		response_text = beyond_infinity.4003.response
+		trigger = {
+			is_pacifist = yes
+		}
+	}
+	
+	option = {
+		name = beyond_infinity.4003.xenophile
+		response_text = beyond_infinity.4003.response
+		trigger = {
+			is_xenophile = yes
+		}
+	}
+	
+	option = {
+		name = beyond_infinity.4003.xenophobe
+		response_text = beyond_infinity.4003.response
+		trigger = {
+			is_xenophobe = yes
+		}
+	}
+	
+	option = {
+		name = beyond_infinity.4003.egalitarian
+		response_text = beyond_infinity.4003.response
+		trigger = {
+			is_egalitarian = yes
+		}
+	}
+	
+	option = {
+		name = beyond_infinity.4003.authoritarian
+		response_text = beyond_infinity.4003.response
+		trigger = {
+			is_authoritarian = yes
+		}
+	}
+	
+	option = {
+		name = beyond_infinity.4003.hive_mind
+		response_text = beyond_infinity.4003.response
+		trigger = {
+			is_hive_empire = yes
+		}
+	}
+	
+	option = {
+		name = beyond_infinity.4003.machine_intelligence
+		response_text = beyond_infinity.4003.response
+		trigger = {
+			is_machine_empire = yes
+		}
+	}
+	
+	option = {
+		name = beyond_infinity.4003.other
+		response_text = beyond_infinity.4003.response
+		trigger = {
+			is_materialist = no
+			is_spiritualist = no
+			is_militarist = no
+			is_pacifist = no
+			is_xenophile = no
+			is_xenophobe = no
+			is_egalitarian = no
+			is_authoritarian = no
+			is_hive_empire = no
+			is_machine_empire = no
+		}
+	}
+}
+
+country_event = {
+	id = beyond_infinity.4004
+	is_triggered_only = yes
+	hide_window = yes
+
+	trigger = {
+	}
+	
+	immediate = {
+		# 让之前扣除的时间改为天灾项目扣除
+		add_resource = {
+			beyond_infinity_time = 864000
+		}
+		complete_crisis_objective = crisobj_beyond_infinity_gambling
+	}
+}
+
+country_event = {
+	id = beyond_infinity.4100
+	title = beyond_infinity.4100.name
+	desc = beyond_infinity.4100.desc
+	picture = GFX_evt_clocks
+	show_sound = ap_rift_event_3_clock_slowing_down
+
+	is_triggered_only = yes
+	
+	trigger = {
+		forbid_beyond_infinity = no
+	}
+
+	option = {
+		name = beyond_infinity.4100.a
+		enable_special_project = {
+			name = "BEYOND_INFINITY_GAMBLING_SOCIETY_PROJECT"
+			owner = root
+		}
+	}
+}
+
+country_event = {
+	id = beyond_infinity.4200
+	title = beyond_infinity.4200.name
+	desc = beyond_infinity.4200.desc
+	picture = GFX_evt_vortex
+	show_sound = ap_rift_event_10_emp_sound
+
+	is_triggered_only = yes
+	
+	trigger = {
+		forbid_beyond_infinity = no
+	}
+
+	option = {
+		name = beyond_infinity.4200.a
+		enable_special_project = {
+			name = "BEYOND_INFINITY_GAMBLING_ENGINEERING_PROJECT"
+			owner = root
+		}
+	}
+}
+
+country_event = {
+	id = beyond_infinity.4300
+	title = beyond_infinity.4300.name
+	desc = beyond_infinity.4300.desc
+	picture = GFX_evt_supernova
+	show_sound = ap_rift_event_7_white_noise
+
+	is_triggered_only = yes
+	
+	trigger = {
+		forbid_beyond_infinity = no
+	}
+
+	option = {
+		name = beyond_infinity.4300.a
+		hidden_effect = {
+			country_event = { id = beyond_infinity.4400 days = 90 random = 270 }
+		}
+	}
+}
+
+country_event = {
+	id = beyond_infinity.4400
+	title = beyond_infinity.name.unknown
+	desc = beyond_infinity.4400.desc
+	
+	diplomatic_title = BEYOND_INFINITY_UNKNOWN
+	diplomatic = yes
+	force_open = yes
+
+	picture_event_data = {
+		room = "no_video_feed_room"
+	}
+
+	is_triggered_only = yes
+	
+	trigger = {
+		forbid_beyond_infinity = no
+	}
+	
+	immediate = {
+	}
+	
+	option = {
+		name = beyond_infinity.4400.a
+		hidden_effect = {
+			country_event = { id = beyond_infinity.4401 }
+		}
+	}
+}
+
+country_event = {
+	id = beyond_infinity.4401
+	title = beyond_infinity.name.another_cycle
+	desc = beyond_infinity.4401.desc
+	
+	diplomatic_title = BEYOND_INFINITY_ANOTHER_CYCLE
+	diplomatic = yes
+	force_open = yes
+
+	picture_event_data = {
+		room = "no_video_feed_room"
+	}
+
+	is_triggered_only = yes
+	
+	trigger = {
+		forbid_beyond_infinity = no
+	}
+	
+	immediate = {
+	}
+	
+	option = {
+		name = beyond_infinity.4401.a
+		hidden_effect = {
+			country_event = { id = beyond_infinity.4402 }
+		}
+	}
+}
+
+country_event = {
+	id = beyond_infinity.4402
+	title = beyond_infinity.name.another_cycle
+	desc = beyond_infinity.4402.desc
+	
+	diplomatic_title = BEYOND_INFINITY_ANOTHER_CYCLE
+	diplomatic = yes
+	force_open = yes
+
+	picture_event_data = {
+		room = "no_video_feed_room"
+	}
+
+	is_triggered_only = yes
+	
+	trigger = {
+		forbid_beyond_infinity = no
+	}
+	
+	immediate = {
+	}
+	
+	option = {
+		name = beyond_infinity.4402.a
+		hidden_effect = {
+			country_event = { id = beyond_infinity.4403 }
+		}
+	}
+}
+
+country_event = {
+	id = beyond_infinity.4403
+	title = beyond_infinity.name.another_cycle
+	desc = beyond_infinity.4403.desc
+	
+	diplomatic_title = BEYOND_INFINITY_ANOTHER_CYCLE
+	diplomatic = yes
+	force_open = yes
+
+	picture_event_data = {
+		room = "no_video_feed_room"
+	}
+
+	is_triggered_only = yes
+	
+	trigger = {
+		forbid_beyond_infinity = no
+	}
+	
+	immediate = {
+	}
+	
+	option = {
+		name = beyond_infinity.4403.a
+		hidden_effect = {
+			country_event = { id = beyond_infinity.4404 }
+		}
+	}
+}
+
+country_event = {
+	id = beyond_infinity.4404
+	title = beyond_infinity.name.another_cycle
+	desc = beyond_infinity.4404.desc
+	
+	diplomatic_title = BEYOND_INFINITY_ANOTHER_CYCLE
+	diplomatic = yes
+	force_open = yes
+
+	picture_event_data = {
+		room = "no_video_feed_room"
+	}
+
+	is_triggered_only = yes
+	
+	trigger = {
+		forbid_beyond_infinity = no
+	}
+	
+	immediate = {
+	}
+	
+	option = {
+		name = beyond_infinity.4404.a
+		hidden_effect = {
+			country_event = { id = beyond_infinity.4405 }
+		}
+	}
+}
+
+country_event = {
+	id = beyond_infinity.4405
+	title = beyond_infinity.name.another_cycle
+	desc = beyond_infinity.4405.desc
+	
+	diplomatic_title = BEYOND_INFINITY_ANOTHER_CYCLE
+	diplomatic = yes
+	force_open = yes
+
+	picture_event_data = {
+		room = "no_video_feed_room"
+	}
+
+	is_triggered_only = yes
+	
+	trigger = {
+		forbid_beyond_infinity = no
+	}
+	
+	immediate = {
+	}
+	
+	option = {
+		name = beyond_infinity.4405.a
+		hidden_effect = {
+			country_event = { id = beyond_infinity.4406 }
+		}
+	}
+}
+
+country_event = {
+	id = beyond_infinity.4406
+	title = beyond_infinity.name.another_cycle
+	desc = beyond_infinity.4406.desc
+	
+	diplomatic_title = BEYOND_INFINITY_ANOTHER_CYCLE
+	diplomatic = yes
+	force_open = yes
+
+	picture_event_data = {
+		room = "no_video_feed_room"
+	}
+
+	is_triggered_only = yes
+	
+	trigger = {
+		forbid_beyond_infinity = no
+	}
+	
+	immediate = {
+		create_beyond_infinity_seal_chain = yes
+		# 不存在任何被终焉抹除的星系
+		if = {
+			limit = {
+				event_target:global_event_country = {
+					check_variable = {
+						which = dimensional_horror_crisis_erasured_system
+						value <= 0
+					}
+				}
+			}
+			set_global_flag = all_erasured_system_is_sealed
+		}
+	}
+	
+	after = {
+		hidden_effect = {
+			if = {
+				limit = {
+					has_origin_time = no
+				}
+				country_event = { id = beyond_infinity.4450 days = 30 random = 30 }
+			}
+			else = {
+				country_event = { id = beyond_infinity.4460 days = 30 random = 30 }
+			}
+			every_playable_country = {
+				limit = {
+					is_ai = no
+					NOT = { is_same_value = root }
+				}
+				country_event = { id = beyond_infinity.4700 }
+			}
+		}
+	}
+	
+	# 存在被终焉抹除的星系
+	option = {
+		name = beyond_infinity.4406.a
+		response_text = beyond_infinity.4406.a.response
+		trigger = {
+			event_target:global_event_country = {
+				check_variable = {
+					which = dimensional_horror_crisis_erasured_system
+					value > 0
+				}
+			}
+		}
+		tooltip = {
+			begin_event_chain = { event_chain = beyond_infinity_seal_chain target = this }
+		}
+		hidden_effect = {
+			set_global_flag = time_dimensional_horror_crisis_stage_2
+			set_crisis_sound = time_dimensional_horror_crisis_stage_2
+			every_system = {
+				limit = {
+					is_dimensional_horror_crisis_erasured_system = yes
+				}
+				set_star_flag = exists_beyond_infinity_seal_project_for@root
+				save_event_target_as = beyond_infinity_seal_project_target
+				star = {
+					enable_special_project = {
+						name = BEYOND_INFINITY_SEAL_PROJECT
+						location = this
+						owner = root
+					}
+				}
+			}
+		}
+	}
+	
+	# 不存在任何被终焉抹除的星系
+	option = {
+		name = beyond_infinity.4406.b
+		trigger = {
+			event_target:global_event_country = {
+				check_variable = {
+					which = dimensional_horror_crisis_erasured_system
+					value <= 0
+				}
+			}
+		}
+		tooltip = {
+			begin_event_chain = { event_chain = beyond_infinity_seal_chain target = this }
+		}
+		hidden_effect = {
+			set_country_flag = no_dimensional_horror_crisis_erasured_system
+			country_event = { id = beyond_infinity.4500 }
+		}
+	}
+}
+
+country_event = {
+	id = beyond_infinity.4450
+	title = beyond_infinity.4450.name
+	desc = beyond_infinity.4450.desc
+	picture = GFX_evt_surreal_visions
+	show_sound = ap_rift_event_3_clock_slowing_down
+	location = event_target:akx_star
+
+	is_triggered_only = yes
+	
+	trigger = {
+		has_origin_time = no
+	}
+	
+	immediate = {
+		event_target:akx_star = {
+			add_modifier = {
+				modifier = timesingularity
+				days = -1
+			}
+		}
+	}
+
+	option = {
+		name = beyond_infinity.4450.a
+		tooltip = {
+			event_target:akx_star = {
+				add_modifier = {
+					modifier = timesingularity
+					days = -1
+				}
+			}
+		}
+	}
+}
+
+country_event = {
+	id = beyond_infinity.4460
+	title = beyond_infinity.4460.name
+	desc = beyond_infinity.4460.desc
+	picture = GFX_pc_endless_time
+	show_sound = ap_rift_event_3_clock_slowing_down
+	location = event_target:situation_origin_time.target
+	situation = event_target:situation_origin_time
+
+	is_triggered_only = yes
+	
+	trigger = {
+		has_origin_time = yes
+		any_situation = {
+			is_situation_type = situation_origin_time
+		}
+	}
+	
+	immediate = {
+		random_situation = {
+			limit = {
+				is_situation_type = situation_origin_time
+			}
+			save_event_target_as = situation_origin_time
+		}
+		set_country_flag = situation_origin_time_faster
+	}
+
+	option = {
+		name = beyond_infinity.4460.a
+		custom_tooltip = beyond_infinity.4460.a.tooltip
+	}
+}
+
+country_event = {
+	id = beyond_infinity.4500
+	title = beyond_infinity.name.another_cycle
+	desc = {
+		text = beyond_infinity.4500.desc
+		trigger = {
+			NOT = { has_country_flag = no_dimensional_horror_crisis_erasured_system }
+		}
+	}
+	desc = {
+		text = beyond_infinity.4500.desc.special
+		trigger = {
+			has_country_flag = no_dimensional_horror_crisis_erasured_system
+		}
+	}
+	
+	diplomatic_title = BEYOND_INFINITY_ANOTHER_CYCLE
+	diplomatic = yes
+	force_open = yes
+
+	picture_event_data = {
+		room = "no_video_feed_room"
+	}
+
+	is_triggered_only = yes
+	
+	trigger = {
+		forbid_beyond_infinity = no
+	}
+	
+	immediate = {
+	}
+	
+	option = {
+		name = beyond_infinity.4500.a
+		hidden_effect = {
+			country_event = { id = beyond_infinity.4501 }
+		}
+	}
+}
+
+country_event = {
+	id = beyond_infinity.4501
+	title = beyond_infinity.name.another_cycle
+	desc = beyond_infinity.4501.desc
+	
+	diplomatic_title = BEYOND_INFINITY_ANOTHER_CYCLE
+	diplomatic = yes
+	force_open = yes
+
+	picture_event_data = {
+		room = "no_video_feed_room"
+	}
+
+	is_triggered_only = yes
+	
+	trigger = {
+		forbid_beyond_infinity = no
+	}
+	
+	immediate = {
+	}
+	
+	option = {
+		name = beyond_infinity.4501.a
+		hidden_effect = {
+			country_event = { id = beyond_infinity.4502 }
+		}
+	}
+}
+
+country_event = {
+	id = beyond_infinity.4502
+	title = beyond_infinity.name.another_cycle
+	desc = beyond_infinity.4502.desc
+	
+	diplomatic_title = BEYOND_INFINITY_ANOTHER_CYCLE
+	diplomatic = yes
+	force_open = yes
+
+	picture_event_data = {
+		room = "no_video_feed_room"
+	}
+
+	is_triggered_only = yes
+	
+	trigger = {
+		forbid_beyond_infinity = no
+	}
+	
+	immediate = {
+	}
+	
+	option = {
+		name = beyond_infinity.4502.a
+		hidden_effect = {
+			country_event = { id = beyond_infinity.4503 }
+		}
+	}
+}
+
+country_event = {
+	id = beyond_infinity.4503
+	title = dimension_traveler.name.3
+	desc = beyond_infinity.4503.desc
+	
+	diplomatic_title = DIMENSION_TRAVELER_OFFICE
+	diplomatic = yes
+	force_open = yes
+
+	picture_event_data = {
+		portrait = event_target:dimension_traveler_portrait_leader
+		room = "galactic_custodian_room"
+	}
+
+	is_triggered_only = yes
+	
+	trigger = {
+		forbid_beyond_infinity = no
+	}
+	
+	immediate = {
+		set_dimension_traveler_event_portrait = yes
+	}
+	
+	option = {
+		name = beyond_infinity.4503.a
+		hidden_effect = {
+			country_event = { id = beyond_infinity.4504 }
+		}
+	}
+}
+
+country_event = {
+	id = beyond_infinity.4504
+	title = dimension_traveler.name.3
+	desc = beyond_infinity.4504.desc
+	
+	diplomatic_title = DIMENSION_TRAVELER_OFFICE
+	diplomatic = yes
+	force_open = yes
+
+	picture_event_data = {
+		portrait = event_target:dimension_traveler_portrait_leader
+		room = "galactic_custodian_room"
+	}
+
+	is_triggered_only = yes
+	
+	trigger = {
+		forbid_beyond_infinity = no
+	}
+	
+	immediate = {
+	}
+	
+	option = {
+		name = beyond_infinity.4504.a
+		hidden_effect = {
+			country_event = { id = beyond_infinity.4505 }
+		}
+	}
+}
+
+country_event = {
+	id = beyond_infinity.4505
+	title = dimension_traveler.name.3
+	desc = beyond_infinity.4505.desc
+	
+	diplomatic_title = DIMENSION_TRAVELER_OFFICE
+	diplomatic = yes
+	force_open = yes
+
+	picture_event_data = {
+		portrait = event_target:dimension_traveler_portrait_leader
+		room = "galactic_custodian_room"
+	}
+
+	is_triggered_only = yes
+	
+	trigger = {
+		forbid_beyond_infinity = no
+	}
+	
+	immediate = {
+		set_global_flag = allow_beyond_infinity_32768
+		if = {
+			limit = {
+				NOT = { has_global_flag = time_dimensional_horror_crisis_stage_2 }
+			}
+			set_global_flag = time_dimensional_horror_crisis_stage_2
+			set_crisis_sound = time_dimensional_horror_crisis_stage_2
+		}
+		log = "===================================================================================================="
+		log = "不选中任何事物，控制台输入：event beyond_infinity.32768"
+		log = "===================================================================================================="
+	}
+	
+	option = {
+		name = beyond_infinity.4505.a
+		custom_tooltip = beyond_infinity.4505.a.tooltip
+	}
+}
+
+# 超越无限重新打印
+event = {
+	id = beyond_infinity.4510
+	is_triggered_only = yes
+	hide_window = yes
+	
+	trigger = {
+		has_global_flag = allow_beyond_infinity_32768
+		NOT = { has_global_flag = beyond_infinity_32768_triggered }
+	}
+	
+	immediate = {
+		# 重启群星会刷新log文件，因此每次读档都重新打印log
+		log = "===================================================================================================="
+		log = "不选中任何事物，控制台输入：event beyond_infinity.32768"
+		log = "===================================================================================================="
+	}
+}
+
+observer_event = {
+	id = beyond_infinity.4600
+	title = beyond_infinity.4600.name
+	desc = beyond_infinity.4600.desc
+	picture = GFX_evt_surreal_visions
+	show_sound = ap_rift_event_3_clock_slowing_down
+	location = from
+
+	is_triggered_only = yes
+
+	option = {
+		name = beyond_infinity.4600.a
+	}
+}
+
+observer_event = {
+	id = beyond_infinity.4650
+	title = time_dimensional_horror_crisis.500.name
+	desc = beyond_infinity.4650.desc
+	picture = GFX_dimensional_horror_crisis_storm
+	show_sound = ap_rift_event_21_dimensional_machine
+	location = event_target:dimensional_horror_crisis_sealed_system
+
+	is_triggered_only = yes
+
+	option = {
+		name = time_dimensional_horror_crisis.500.a
+		custom_tooltip = time_dimensional_horror_crisis.500.a.tooltip
+	}
+}
+
+country_event = {
+	id = beyond_infinity.4700
+	title = beyond_infinity.4700.name
+	desc = beyond_infinity.4700.desc
+	picture = GFX_dimensional_horror_crisis_storm
+	show_sound = event_activating_unknown_technology
+	event_chain = beyond_infinity_seal_chain
+
+	is_triggered_only = yes
+	
+	immediate = {
+		create_beyond_infinity_seal_chain = yes
+	}
+
+	option = {
+		name = beyond_infinity.4700.a
+		tooltip = {
+			begin_event_chain = { event_chain = beyond_infinity_seal_chain target = this }
+		}
+		hidden_effect = {
+			every_system = {
+				limit = {
+					is_dimensional_horror_crisis_erasured_system = yes
+				}
+				set_star_flag = exists_beyond_infinity_seal_project_for@root
+				save_event_target_as = beyond_infinity_seal_project_target
+				star = {
+					enable_special_project = {
+						name = BEYOND_INFINITY_SEAL_PROJECT
+						location = this
+						owner = root
+					}
+				}
+			}
+		}
+	}
+}
+
+country_event = {
+	id = beyond_infinity.32768
+	hide_window = yes
+	is_triggered_only = yes
+	
+	trigger = {
+	}
+	
+	immediate = {
+		# 只有在合适的时机才能触发效果
+		# 你都看到这了，那也没法拦你了
+		if = {
+			limit = {
+				has_global_flag = allow_beyond_infinity_32768
+				NOT = { has_global_flag = beyond_infinity_32768_triggered }
+			}
+			country_event = { id = beyond_infinity.33333 }
+		}
+	}
+}
+
+country_event = {
+	id = beyond_infinity.33333
+	title = beyond_infinity.33333.name
+	desc = beyond_infinity.33333.desc
+	picture = GFX_evt_astral_rift_clock
+	show_sound = ap_rift_event_3_clock_slowing_down
+	event_chain = beyond_infinity_chain
+
+	is_triggered_only = yes
+	
+	trigger = {
+		has_global_flag = allow_beyond_infinity_32768
+		NOT = { has_global_flag = beyond_infinity_32768_triggered }
+	}
+	
+	immediate = {
+		set_global_flag = beyond_infinity_32768_triggered
+		set_variable_to_random_value = {
+			which = crisobj_beyond_infinity_circle_variable
+			min = 283029120 # 32758年
+			max = 283201920 # 32778年
+			rounded = yes
+		}
+	}
+	
+	after = {
+		add_resource = {
+			beyond_infinity_time = 1
+			mult = crisobj_beyond_infinity_circle_variable
+		}
+		custom_tooltip = can_advance_beyond_infinity_progression
+		hidden_effect = {
+			set_country_flag = unlock_crisis_beyond_infinity_level_5
+			# 要延迟几天等天灾项目激活，才能完成项目
+			country_event = { id = beyond_infinity.33334 days = 2 }
+		}
+	}
+
+	option = {
+		name = beyond_infinity.33333.a
+	}
+}
+
+country_event = {
+	id = beyond_infinity.33334
+	hide_window = yes
+	is_triggered_only = yes
+	
+	immediate = {
+		# 让之前增加的时间改为天灾项目增加
+		add_resource = {
+			beyond_infinity_time = -1
+			mult = crisobj_beyond_infinity_circle_variable
+		}
+		complete_crisis_objective = crisobj_beyond_infinity_circle
+	}
+}
+
+# 五段
+country_event = {
+	id = beyond_infinity.5000
+	title = dimension_traveler.name.3
+	desc = beyond_infinity.5000.desc
+	
+	diplomatic_title = DIMENSION_TRAVELER_OFFICE
+	diplomatic = yes
+	force_open = yes
+
+	picture_event_data = {
+		portrait = event_target:dimension_traveler_portrait_leader
+		room = "galactic_custodian_room"
+	}
+
+	is_triggered_only = yes
+	
+	trigger = {
+		forbid_beyond_infinity = no
+	}
+	
+	immediate = {
+		set_dimension_traveler_event_portrait = yes
+		observer_event = { id = beyond_infinity.5600 }
+		add_event_chain_counter = {
+			event_chain = beyond_infinity_chain
+			counter = beyond_infinity_level_reached
+			amount = 1
+		}
+	}
+	
+	option = {
+		name = beyond_infinity.5000.a
+		is_dialog_only = yes
+		response_text = beyond_infinity.5000.a.response
+	}
+	
+	option = {
+		name = beyond_infinity.5000.b
+		is_dialog_only = yes
+		response_text = beyond_infinity.5000.b.response
+	}
+	
+	option = {
+		name = beyond_infinity.5000.c
+		custom_gui = "enclave_caravaneer_option"
+		tooltip = {
+			add_event_chain_counter = {
+				event_chain = beyond_infinity_chain
+				counter = beyond_infinity_level_reached
+				amount = 1
+			}
+		}
+		custom_tooltip = new_beyond_infinity_perks_tt
+		hidden_effect = {
+			country_event = { id = beyond_infinity.5001 }
+		}
+	}
+}
+
+country_event = {
+	id = beyond_infinity.5001
+	title = dimension_traveler.name.3
+	desc = {
+		text = beyond_infinity.5001.desc.time_machine
+		trigger = {
+			has_time_machine_civic = yes
+		}
+	}
+	desc = {
+		text = beyond_infinity.5001.desc.circle_nexus
+		trigger = {
+			has_circle_nexus_civic = yes
+		}
+	}
+	desc = {
+		text = beyond_infinity.5001.desc.dimension_engine
+		trigger = {
+			has_dimension_engine_civic = yes
+		}
+	}
+	desc = {
+		text = beyond_infinity.5001.desc.normal
+		trigger = {
+			has_beyond_infinity_civic = no
+		}
+	}
+	
+	diplomatic_title = DIMENSION_TRAVELER_OFFICE
+	diplomatic = yes
+	force_open = yes
+
+	picture_event_data = {
+		portrait = event_target:dimension_traveler_portrait_leader
+		room = "galactic_custodian_room"
+	}
+
+	is_triggered_only = yes
+	
+	trigger = {
+		forbid_beyond_infinity = no
+	}
+	
+	immediate = {
+	}
+	
+	after = {
+		hidden_effect = {
+			country_event = { id = beyond_infinity.5002 }
+		}
+	}
+	
+	option = {
+		name = beyond_infinity.5001.civic
+		trigger = {
+			has_beyond_infinity_civic = yes
+		}
+	}
+	
+	option = {
+		name = beyond_infinity.5001.normal
+		trigger = {
+			has_beyond_infinity_civic = no
+		}
+	}
+}
+
+country_event = {
+	id = beyond_infinity.5002
+	title = dimension_traveler.name.3
+	desc = {
+		text = beyond_infinity.5002.desc.civic
+		trigger = {
+			has_beyond_infinity_civic = yes
+		}
+	}
+	desc = {
+		text = beyond_infinity.5002.desc.normal
+		trigger = {
+			has_beyond_infinity_civic = no
+		}
+	}
+	
+	diplomatic_title = DIMENSION_TRAVELER_OFFICE
+	diplomatic = yes
+	force_open = yes
+
+	picture_event_data = {
+		portrait = event_target:dimension_traveler_portrait_leader
+		room = "galactic_custodian_room"
+	}
+
+	is_triggered_only = yes
+	
+	trigger = {
+		forbid_beyond_infinity = no
+	}
+	
+	immediate = {
+		# 让建筑在概念内能正常显示效果
+		set_country_flag = show_beyond_infinity_building_effect
+	}
+	
+	after = {
+		hidden_effect = {
+			remove_country_flag = show_beyond_infinity_building_effect
+		}
+	}
+	
+	option = {
+		name = beyond_infinity.5002.time_machine
+		trigger = {
+			has_time_machine_civic = no
+		}
+		response_text = beyond_infinity.5002.response
+		enable_special_project = {
+			name = "BEYOND_INFINITY_TIME_MACHINE_PROJECT"
+			owner = root
+		}
+	}
+	
+	option = {
+		name = beyond_infinity.5002.circle_nexus
+		trigger = {
+			has_circle_nexus_civic = no
+		}
+		response_text = beyond_infinity.5002.response
+		enable_special_project = {
+			name = "BEYOND_INFINITY_CIRCLE_NEXUS_PROJECT"
+			owner = root
+		}
+	}
+	
+	option = {
+		name = beyond_infinity.5002.dimension_engine
+		trigger = {
+			has_dimension_engine_civic = no
+		}
+		response_text = beyond_infinity.5002.response
+		enable_special_project = {
+			name = "BEYOND_INFINITY_DIMENSION_ENGINE_PROJECT"
+			owner = root
+		}
+	}
+}
+
+country_event = {
+	id = beyond_infinity.5010
+	title = beyond_infinity.5010.name
+	desc = beyond_infinity.5010.desc
+	picture = GFX_evt_clocks
+	show_sound = ap_rift_event_15_time_crystal
+	location = capital_scope
+	
+	is_triggered_only = yes
+	
+	trigger = {
+	}
+	
+	immediate = {
+		set_country_flag = unlock_building_time_machine
+		set_country_flag = unlock_beyond_infinity_end_building
+		capital_scope = {
+			add_building = building_ruin_time_machine
+			validate_and_repair_planet_buildings_and_districts = yes
+			set_variable = {
+				which = exists_building_time_machine
+				value = 1
+			}
+		}
+	}
+	
+	option = {
+		name = beyond_infinity.5010.a
+		custom_tooltip = unlock_building_time_machine
+		capital_scope = {
+			tooltip = {
+				add_building = building_ruin_time_machine
+			}
+			custom_tooltip = beyond_infinity.5010.a.tooltip
+		}
+	}
+}
+
+country_event = {
+	id = beyond_infinity.5020
+	title = beyond_infinity.5020.name
+	desc = beyond_infinity.5020.desc
+	picture = GFX_evt_vortex
+	show_sound = ap_rift_event_19_black_obelisk
+	location = capital_scope
+	
+	is_triggered_only = yes
+	
+	trigger = {
+	}
+	
+	immediate = {
+		set_country_flag = unlock_building_circle_nexus
+		set_country_flag = unlock_beyond_infinity_end_building
+		capital_scope = {
+			add_building = building_ruin_circle_nexus
+			validate_and_repair_planet_buildings_and_districts = yes
+			set_variable = {
+				which = exists_building_circle_nexus
+				value = 1
+			}
+		}
+	}
+	
+	option = {
+		name = beyond_infinity.5020.a
+		custom_tooltip = unlock_building_circle_nexus
+		capital_scope = {
+			tooltip = {
+				add_building = building_ruin_circle_nexus
+			}
+			custom_tooltip = beyond_infinity.5020.a.tooltip
+		}
+	}
+}
+
+country_event = {
+	id = beyond_infinity.5030
+	title = beyond_infinity.5030.name
+	desc = beyond_infinity.5030.desc
+	picture = GFX_evt_supernova
+	show_sound = ap_rift_event_21_dimensional_machine
+	location = capital_scope
+	
+	is_triggered_only = yes
+	
+	trigger = {
+	}
+	
+	immediate = {
+		set_country_flag = unlock_building_dimension_engine
+		set_country_flag = unlock_beyond_infinity_end_building
+		capital_scope = {
+			add_building = building_ruin_dimension_engine
+			validate_and_repair_planet_buildings_and_districts = yes
+			set_variable = {
+				which = exists_building_dimension_engine
+				value = 1
+			}
+		}
+	}
+	
+	option = {
+		name = beyond_infinity.5030.a
+		custom_tooltip = unlock_building_dimension_engine
+		capital_scope = {
+			tooltip = {
+				add_building = building_ruin_dimension_engine
+			}
+			custom_tooltip = beyond_infinity.5030.a.tooltip
+		}
+	}
+}
+
+carrier_event = {
+	id = beyond_infinity.5100
+	title = beyond_infinity.5100.name
+	desc = {
+		text = beyond_infinity.5100.desc.civic
+		trigger = {
+			owner = { has_time_machine_civic = yes }
+		}
+	}
+	desc = {
+		text = beyond_infinity.5100.desc
+		trigger = {
+			owner = { has_time_machine_civic = no }
+		}
+	}
+	picture = GFX_evt_clocks
+	show_sound = ap_rift_event_15_time_crystal
+	location = root
+	
+	is_triggered_only = yes
+	
+	trigger = {
+		event_target:beyond_infinity_country = {
+			has_country_flag = unlock_beyond_infinity_end_building
+		}
+	}
+	
+	immediate = {
+		# 避免玩家在升满级前把星球废弃来使多个建筑升满级
+		event_target:beyond_infinity_country = {
+			remove_country_flag = unlock_beyond_infinity_end_building
+			set_country_flag = time_machine_end
+		}
+	}
+	
+	after = {
+		hidden_effect = {
+			event_target:beyond_infinity_country = {
+				country_event = { id = beyond_infinity.5400 }
+			}
+		}
+	}
+	
+	option = {
+		name = beyond_infinity.5100.a
+	}
+}
+
+carrier_event = {
+	id = beyond_infinity.5200
+	title = beyond_infinity.5200.name
+	desc = {
+		text = beyond_infinity.5200.desc.civic
+		trigger = {
+			owner = { has_circle_nexus_civic = yes }
+		}
+	}
+	desc = {
+		text = beyond_infinity.5200.desc
+		trigger = {
+			owner = { has_circle_nexus_civic = no }
+		}
+	}
+	picture = GFX_evt_vortex
+	show_sound = ap_rift_event_19_black_obelisk
+	location = root
+	
+	is_triggered_only = yes
+	
+	trigger = {
+		event_target:beyond_infinity_country = {
+			has_country_flag = unlock_beyond_infinity_end_building
+		}
+	}
+	
+	immediate = {
+		# 避免玩家在升满级前把星球废弃来使多个建筑升满级
+		event_target:beyond_infinity_country = {
+			remove_country_flag = unlock_beyond_infinity_end_building
+			set_country_flag = circle_nexus_end
+		}
+	}
+	
+	after = {
+		hidden_effect = {
+			event_target:beyond_infinity_country = {
+				country_event = { id = beyond_infinity.5400 }
+			}
+		}
+	}
+	
+	option = {
+		name = beyond_infinity.5200.a
+	}
+}
+
+carrier_event = {
+	id = beyond_infinity.5300
+	title = beyond_infinity.5300.name
+	desc = {
+		text = beyond_infinity.5300.desc.civic
+		trigger = {
+			owner = { has_dimension_engine_civic = yes }
+		}
+	}
+	desc = {
+		text = beyond_infinity.5300.desc
+		trigger = {
+			owner = { has_dimension_engine_civic = no }
+		}
+	}
+	picture = GFX_evt_supernova
+	show_sound = ap_rift_event_21_dimensional_machine
+	location = root
+	
+	is_triggered_only = yes
+	
+	trigger = {
+		event_target:beyond_infinity_country = {
+			has_country_flag = unlock_beyond_infinity_end_building
+		}
+	}
+	
+	immediate = {
+		# 避免玩家在升满级前把星球废弃来使多个建筑升满级
+		event_target:beyond_infinity_country = {
+			remove_country_flag = unlock_beyond_infinity_end_building
+			set_country_flag = dimension_engine_end
+		}
+	}
+	
+	after = {
+		hidden_effect = {
+			event_target:beyond_infinity_country = {
+				country_event = { id = beyond_infinity.5400 }
+			}
+		}
+	}
+	
+	option = {
+		name = beyond_infinity.5300.a
+	}
+}
+
+country_event = {
+	id = beyond_infinity.5400
+	title = dimension_traveler.name.3
+	desc = beyond_infinity.5400.desc
+	
+	diplomatic_title = DIMENSION_TRAVELER_OFFICE
+	diplomatic = yes
+	force_open = yes
+
+	picture_event_data = {
+		portrait = event_target:dimension_traveler_portrait_leader
+		room = "galactic_custodian_room"
+	}
+
+	is_triggered_only = yes
+	
+	trigger = {
+		forbid_beyond_infinity = no
+	}
+	
+	immediate = {
+		set_dimension_traveler_event_portrait = yes
+	}
+	
+	option = {
+		name = beyond_infinity.5400.a
+		hidden_effect = {
+			country_event = { id = beyond_infinity.5401 }
+		}
+	}
+}
+
+country_event = {
+	id = beyond_infinity.5401
+	title = dimension_traveler.name.3
+	desc = beyond_infinity.5401.desc
+	
+	diplomatic_title = DIMENSION_TRAVELER_OFFICE
+	diplomatic = yes
+	force_open = yes
+
+	picture_event_data = {
+		portrait = event_target:dimension_traveler_portrait_leader
+		room = "galactic_custodian_room"
+	}
+
+	is_triggered_only = yes
+	
+	trigger = {
+		forbid_beyond_infinity = no
+	}
+	
+	immediate = {
+	}
+	
+	option = {
+		name = beyond_infinity.5401.a
+		hidden_effect = {
+			country_event = { id = beyond_infinity.5402 }
+		}
+	}
+}
+
+country_event = {
+	id = beyond_infinity.5402
+	title = dimension_traveler.name.3
+	desc = beyond_infinity.5402.desc
+	location = event_target:dimensional_horror_crisis_destiny_system
+	
+	diplomatic_title = DIMENSION_TRAVELER_OFFICE
+	diplomatic = yes
+	force_open = yes
+
+	picture_event_data = {
+		portrait = event_target:dimension_traveler_portrait_leader
+		room = "galactic_custodian_room"
+	}
+
+	is_triggered_only = yes
+	
+	trigger = {
+		forbid_beyond_infinity = no
+	}
+	
+	immediate = {
+		# 优先被封印且被抹除星系
+		if = {
+			limit = {
+				any_system = {
+					is_dimensional_horror_crisis_erasured_system = yes
+					is_dimensional_horror_crisis_sealed_system = yes
+				}
+			}
+			random_system = {
+				limit = {
+					is_dimensional_horror_crisis_erasured_system = yes
+					is_dimensional_horror_crisis_sealed_system = yes
+				}
+				save_global_event_target_as = dimensional_horror_crisis_destiny_system
+				star = { save_global_event_target_as = dimensional_horror_crisis_destiny_star }
+			}
+		}
+		# 其次被封印星系（可能所有星系都未被抹除就达成了条件）
+		else_if = {
+			limit = {
+				any_system = {
+					is_dimensional_horror_crisis_sealed_system = yes
+				}
+			}
+			random_system = {
+				limit = {
+					is_dimensional_horror_crisis_sealed_system = yes
+				}
+				save_global_event_target_as = dimensional_horror_crisis_destiny_system
+				star = { save_global_event_target_as = dimensional_horror_crisis_destiny_star }
+			}
+		}
+		# 最后随机星系（以防万一）
+		else = {
+			random_system = {
+				save_global_event_target_as = dimensional_horror_crisis_destiny_system
+				star = { save_global_event_target_as = dimensional_horror_crisis_destiny_star }
+			}
+		}
+	}
+	
+	option = {
+		name = beyond_infinity.5402.a
+		custom_tooltip = beyond_infinity.5402.a.tooltip
+		hidden_effect = {
+			set_global_flag = greatest_dimensional_horror_crisis
+			set_crisis_sound = time_dimensional_horror_crisis_stage_3
+			date_distortion = yes
+			every_country = {
+				add_modifier = {
+					modifier = time_machine_is_defective
+					days = -1
+				}
+				if = {
+					limit = {
+						OR = {
+							is_default_or_player = yes
+							is_fallen_empire = yes
+						}
+					}
+					create_timeline_dimensional_horror_crisis_destiny_occur = yes
+				}
+			}
+			# 提前清理星系中的终焉之魇，给命运腾地方
+			event_target:dimensional_horror_crisis_destiny_system = {
+				set_name = NAME_Dimensional_Horror_Crisis_Destiny_System
+				every_fleet_in_system = {
+					limit = {
+						is_dimensional_horror_crisis_ship_size = yes
+					}
+					delete_fleet = this
+				}
+			}
+			# 创建命运
+			create_fleet = {
+				name = NAME_Dimensional_Horror_Crisis_Destiny
+				settings = {
+					can_upgrade = no
+					can_change_composition = no
+					uses_naval_capacity = no
+					can_disband = no
+					spawn_debris = no
+					is_ultra_boss = yes
+				}
+				effect = {
+					save_global_event_target_as = dimensional_horror_crisis_destiny_fleet
+					set_owner = event_target:dimensional_horror_crisis_country
+					create_ship = {
+						name = NAME_Dimensional_Horror_Crisis_Destiny
+						design = NAME_Dimensional_Horror_Crisis_Design_Destiny
+						prefix = no
+						upgradable = no
+					}
+					set_location = {
+						target = event_target:dimensional_horror_crisis_destiny_star
+						distance = 0
+						direction = in_system
+					}
+					if = {
+						limit = {
+							is_time_erasure_system = no
+							can_dimensional_horror_crisis_erasured_system = yes
+						}
+						fleet_event = { id = time_dimensional_horror_crisis.200 days = 150 random = 60 }
+					}
+				}
+			}
+			# 创建风暴
+			event_target:dimensional_horror_crisis_destiny_system = {
+				if = {
+					limit = {
+						is_inside_storm = yes
+					}
+					every_cosmic_storm = {
+						limit = {
+							any_system_within_storm = {
+								is_same_value = event_target:dimensional_horror_crisis_destiny_system
+							}
+						}
+						destroy_cosmic_storm = yes
+					}
+				}
+				spawn_random_storm = {
+					type = dimensional_horror_crisis_storm
+					cosmic_storm_start_position = this
+					immediate = yes
+				}
+			}
+			# 兴趣点
+			every_playable_country = {
+				limit = {
+					has_event_chain = beyond_infinity_seal_chain
+				}
+				create_point_of_interest = {
+					id = dimensional_horror_crisis_destiny_point
+					name = dimensional_horror_crisis_destiny_point
+					desc = dimensional_horror_crisis_destiny_point_desc
+					event_chain = beyond_infinity_seal_chain
+					location = event_target:dimensional_horror_crisis_destiny_system
+				}
+				set_visited = event_target:dimensional_horror_crisis_destiny_system
+			}
+			# 二周目隐藏剧情
+			if = {
+				limit = {
+					has_beyond_infinity_civic = yes
+				}
+				country_event = { id = beyond_infinity.5410 days = 3 }
+			}
+		}
+	}
+}
+
+country_event = {
+	id = beyond_infinity.5410
+	title = beyond_infinity.name.worm
+	desc = beyond_infinity.5410.desc
+	
+	diplomatic_title = BEYOND_INFINITY_WORM
+	diplomatic = yes
+	force_open = yes
+
+	picture_event_data = {
+		room = "no_video_feed_room"
+	}
+
+	is_triggered_only = yes
+	
+	trigger = {
+		forbid_beyond_infinity = no
+	}
+	
+	immediate = {
+	}
+	
+	option = {
+		name = beyond_infinity.5410.a
+		hidden_effect = {
+			country_event = { id = beyond_infinity.5411 }
+		}
+	}
+}
+
+country_event = {
+	id = beyond_infinity.5411
+	title = beyond_infinity.name.worm
+	desc = beyond_infinity.5411.desc
+	
+	diplomatic_title = BEYOND_INFINITY_WORM
+	diplomatic = yes
+	force_open = yes
+
+	picture_event_data = {
+		room = "no_video_feed_room"
+	}
+
+	is_triggered_only = yes
+	
+	trigger = {
+		forbid_beyond_infinity = no
+	}
+	
+	immediate = {
+	}
+	
+	option = {
+		name = beyond_infinity.5411.a
+		hidden_effect = {
+			country_event = { id = beyond_infinity.5412 }
+		}
+	}
+}
+
+country_event = {
+	id = beyond_infinity.5412
+	title = beyond_infinity.name.worm
+	desc = beyond_infinity.5412.desc
+	
+	diplomatic_title = BEYOND_INFINITY_WORM
+	diplomatic = yes
+	force_open = yes
+
+	picture_event_data = {
+		room = "no_video_feed_room"
+	}
+
+	is_triggered_only = yes
+	
+	trigger = {
+		forbid_beyond_infinity = no
+	}
+	
+	immediate = {
+	}
+	
+	option = {
+		name = beyond_infinity.5412.a
+		add_modifier = {
+			modifier = last_love_from_worm
+			days = -1
+		}
+	}
+}
+
+country_event = {
+	id = beyond_infinity.5500
+	title = dimension_traveler.name.3
+	desc = beyond_infinity.5500.desc
+	
+	diplomatic_title = DIMENSION_TRAVELER_OFFICE
+	diplomatic = yes
+	force_open = yes
+
+	picture_event_data = {
+		portrait = event_target:dimension_traveler_portrait_leader
+		room = "galactic_custodian_room"
+	}
+
+	is_triggered_only = yes
+	
+	trigger = {
+		forbid_beyond_infinity = no
+	}
+	
+	immediate = {
+		set_dimension_traveler_event_portrait = yes
+	}
+	
+	option = {
+		name = beyond_infinity.5500.a
+		hidden_effect = {
+			country_event = { id = beyond_infinity.5501 }
+		}
+	}
+}
+
+country_event = {
+	id = beyond_infinity.5501
+	title = dimension_traveler.name.3
+	desc = beyond_infinity.5501.desc
+	
+	diplomatic_title = DIMENSION_TRAVELER_OFFICE
+	diplomatic = yes
+	force_open = yes
+
+	picture_event_data = {
+		portrait = event_target:dimension_traveler_portrait_leader
+		room = "galactic_custodian_room"
+	}
+
+	is_triggered_only = yes
+	
+	trigger = {
+		forbid_beyond_infinity = no
+	}
+	
+	immediate = {
+	}
+	
+	option = {
+		name = beyond_infinity.5501.a
+		hidden_effect = {
+			country_event = { id = beyond_infinity.5502 }
+		}
+	}
+}
+
+country_event = {
+	id = beyond_infinity.5502
+	title = dimension_traveler.name.3
+	desc = beyond_infinity.5502.desc
+	
+	diplomatic_title = DIMENSION_TRAVELER_OFFICE
+	diplomatic = yes
+	force_open = yes
+
+	picture_event_data = {
+		portrait = event_target:dimension_traveler_portrait_leader
+		room = "galactic_custodian_room"
+	}
+
+	is_triggered_only = yes
+	
+	trigger = {
+		forbid_beyond_infinity = no
+	}
+	
+	immediate = {
+	}
+	
+	option = {
+		name = beyond_infinity.5502.a
+		add_resource = {
+			beyond_infinity_time = -172800000
+		}
+		enable_special_project = {
+			name = BEYOND_INFINITY_DIMENSIONAL_HORROR_CRISIS_END_PROJECT
+			location = event_target:dimensional_horror_crisis_destiny_star
+			owner = root
+		}
+		hidden_effect = {
+			set_country_flag = crisobj_beyond_infinity_end_active
+			# 要延迟几天等天灾项目激活，才能完成项目
+			country_event = { id = beyond_infinity.5503 days = 2 }
+		}
+	}
+}
+
+country_event = {
+	id = beyond_infinity.5503
+	is_triggered_only = yes
+	hide_window = yes
+
+	trigger = {
+	}
+	
+	immediate = {
+		# 让之前扣除的时间改为天灾项目扣除
+		add_resource = {
+			beyond_infinity_time = 172800000
+		}
+		complete_crisis_objective = crisobj_beyond_infinity_end
+	}
+}
+
+observer_event = {
+	id = beyond_infinity.5600
+	title = beyond_infinity.5600.name
+	desc = beyond_infinity.5600.desc
+	picture = GFX_evt_surreal_visions
+	show_sound = ap_rift_event_3_clock_slowing_down
+	location = from
+
+	is_triggered_only = yes
+
+	option = {
+		name = beyond_infinity.5600.a
+	}
+}
+
+ship_event = {
+	id = beyond_infinity.5700
+	title = beyond_infinity.5700.name
+	desc = beyond_infinity.5700.desc
+	picture = GFX_dimensional_horror_crisis_storm
+	show_sound = ap_rift_event_9_cosmic_calm
+	location = event_target:dimensional_horror_crisis_destiny_star
+	event_chain = beyond_infinity_chain
+
+	is_triggered_only = yes
+	
+	event_window_type = leader_story
+	event_picture_background = "GFX_leader_recruitment_bg_legendary_dimension_traveler"
+	picture_event_data = {
+		portrait = event_target:dimension_traveler_leader
+	}
+	
+	immediate = {
+		finish_dimensional_horror_crisis = yes
+	}
+
+	option = {
+		name = beyond_infinity.5700.a
+		owner = {
+			end_event_chain = dimensional_horror_crisis_chain
+			end_event_chain = beyond_infinity_seal_chain
+			custom_tooltip = menp_beyond_infinity_project_2_end_effect
+		}
+		custom_tooltip = beyond_infinity.5700.a.tooltip
+		hidden_effect = {
+			owner = {
+				win = yes
+				create_timeline_dimensional_horror_crisis_end = yes
+				set_country_flag = dimensional_horror_crisis_end
+				country_event = { id = beyond_infinity.6000 }
+			}
+			every_country = {
+				limit = {
+					NOT = { is_same_value = root.owner }
+					OR = {
+						is_default_or_player = yes
+						is_fallen_empire = yes
+					}
+				}
+				country_event = { id = beyond_infinity.5800 days = 1 random = 29 } # 所有国家在同一天win时，仅显示最后一个触发事件的国家胜利
+			}
+		}
+	}
+}
+
+country_event = {
+	id = beyond_infinity.5800
+	title = beyond_infinity.5700.name
+	desc = beyond_infinity.5800.desc
+	picture = GFX_evt_crisis_defeated
+	show_sound = event_celebration
+	event_chain = dimensional_horror_crisis_chain
+
+	is_triggered_only = yes
+	
+	trigger = {
+	}
+	
+	immediate = {
+		win = yes
+		create_timeline_dimensional_horror_crisis_end = yes
+		if = {
+			limit = {
+				has_civic = civic_fanatic_purifiers
+			}
+			set_country_flag = beyond_infinity_fanatic_purifiers
+			force_remove_civic = civic_fanatic_purifiers
+			force_add_civic = civic_inwards_perfection
+			every_owned_species = {
+				limit = {
+					has_citizenship_type = { type = citizenship_purge country = prev }
+				}
+				set_citizenship_type = { type = citizenship_limited country = prev }
+			}
+		}
+		else_if = {
+			limit = {
+				has_civic = civic_hive_devouring_swarm
+			}
+			set_country_flag = beyond_infinity_hive_devouring_swarm
+			force_remove_civic = civic_hive_devouring_swarm
+			force_add_civic = civic_hive_sovereign_guardianship
+			every_owned_species = {
+				limit = {
+					has_citizenship_type = { type = citizenship_purge country = prev }
+				}
+				set_citizenship_type = { type = citizenship_slavery country = prev }
+			}
+		}
+		else_if = {
+			limit = {
+				has_civic = civic_machine_terminator
+			}
+			set_country_flag = beyond_infinity_machine_terminator
+			force_remove_civic = civic_machine_terminator
+			force_add_civic = civic_machine_sovereign_guardianship
+			every_owned_species = {
+				limit = {
+					is_robotic = no
+				}
+				set_citizenship_type = { type = citizenship_full_machine country = prev }
+			}
+		}
+		else_if = {
+			limit = {
+				has_civic = civic_scorched_earth
+			}
+			set_country_flag = beyond_infinity_scorched_earth
+			force_remove_civic = civic_scorched_earth
+			force_add_civic = civic_inwards_perfection
+			every_owned_species = {
+				limit = {
+					has_citizenship_type = { type = citizenship_purge country = prev }
+				}
+				set_citizenship_type = { type = citizenship_limited country = prev }
+			}
+		}
+		else_if = {
+			limit = {
+				has_civic = civic_hive_scorched_earth
+			}
+			set_country_flag = beyond_infinity_hive_scorched_earth
+			force_remove_civic = civic_hive_scorched_earth
+			force_add_civic = civic_hive_sovereign_guardianship
+			every_owned_species = {
+				limit = {
+					has_citizenship_type = { type = citizenship_purge country = prev }
+				}
+				set_citizenship_type = { type = citizenship_slavery country = prev }
+			}
+		}
+	}
+	
+	after = {
+		hidden_effect = {
+			remove_country_flag = beyond_infinity_fanatic_purifiers
+			remove_country_flag = beyond_infinity_hive_devouring_swarm
+			remove_country_flag = beyond_infinity_machine_terminator
+		}
+	}
+
+	option = {
+		name = beyond_infinity.5700.a
+		end_event_chain = dimensional_horror_crisis_chain
+		if = {
+			limit = {
+				has_event_chain = beyond_infinity_seal_chain
+			}
+			end_event_chain = beyond_infinity_seal_chain
+		}
+		if = {
+			limit = {
+				has_country_flag = beyond_infinity_fanatic_purifiers
+			}
+			tooltip = {
+				force_remove_civic = civic_fanatic_purifiers
+				force_add_civic = civic_inwards_perfection
+			}
+		}
+		else_if = {
+			limit = {
+				has_country_flag = beyond_infinity_hive_devouring_swarm
+			}
+			tooltip = {
+				force_remove_civic = civic_hive_devouring_swarm
+				force_add_civic = civic_hive_sovereign_guardianship
+			}
+		}
+		else_if = {
+			limit = {
+				has_country_flag = beyond_infinity_machine_terminator
+			}
+			tooltip = {
+				force_remove_civic = civic_machine_terminator
+				force_add_civic = civic_machine_sovereign_guardianship
+			}
+		}
+		else_if = {
+			limit = {
+				has_country_flag = beyond_infinity_scorched_earth
+			}
+			tooltip = {
+				force_remove_civic = civic_scorched_earth
+				force_add_civic = civic_inwards_perfection
+			}
+		}
+		else_if = {
+			limit = {
+				has_country_flag = beyond_infinity_hive_scorched_earth
+			}
+			tooltip = {
+				force_remove_civic = civic_hive_scorched_earth
+				force_add_civic = civic_hive_sovereign_guardianship
+			}
+		}
+		custom_tooltip = beyond_infinity.5700.a.tooltip
+	}
+}
+
+country_event = {
+	id = beyond_infinity.6000
+	title = dimension_traveler.name.3
+	desc = beyond_infinity.6000.desc
+	
+	diplomatic_title = DIMENSION_TRAVELER_OFFICE
+	diplomatic = yes
+	force_open = yes
+
+	picture_event_data = {
+		portrait = event_target:dimension_traveler_portrait_leader
+		room = "galactic_custodian_room"
+	}
+
+	is_triggered_only = yes
+	
+	trigger = {
+		forbid_beyond_infinity = no
+	}
+	
+	immediate = {
+		set_dimension_traveler_event_portrait = yes
+	}
+	
+	option = {
+		name = beyond_infinity.6000.a
+		hidden_effect = {
+			country_event = { id = beyond_infinity.6001 }
+		}
+	}
+}
+
+country_event = {
+	id = beyond_infinity.6001
+	title = dimension_traveler.name.3
+	desc = {
+		text = beyond_infinity.6001.desc.time_machine
+		trigger = {
+			has_country_flag = time_machine_end
+		}
+	}
+	desc = {
+		text = beyond_infinity.6001.desc.circle_nexus
+		trigger = {
+			has_country_flag = circle_nexus_end
+		}
+	}
+	desc = {
+		text = beyond_infinity.6001.desc.dimension_engine
+		trigger = {
+			has_country_flag = dimension_engine_end
+		}
+	}
+	
+	diplomatic_title = DIMENSION_TRAVELER_OFFICE
+	diplomatic = yes
+	force_open = yes
+
+	picture_event_data = {
+		portrait = event_target:dimension_traveler_portrait_leader
+		room = "galactic_custodian_room"
+	}
+
+	is_triggered_only = yes
+	
+	trigger = {
+		forbid_beyond_infinity = no
+	}
+	
+	immediate = {
+		set_country_flag = know_beyond_infinity_civic
+	}
+	
+	option = {
+		name = beyond_infinity.6001.a
+		hidden_effect = {
+			country_event = { id = beyond_infinity.6002 }
+		}
+	}
+}
+
+country_event = {
+	id = beyond_infinity.6002
+	title = dimension_traveler.name.3
+	desc = beyond_infinity.6002.desc
+	
+	diplomatic_title = DIMENSION_TRAVELER_OFFICE
+	diplomatic = yes
+	force_open = yes
+
+	picture_event_data = {
+		portrait = event_target:dimension_traveler_portrait_leader
+		room = "galactic_custodian_room"
+	}
+
+	is_triggered_only = yes
+	
+	trigger = {
+		forbid_beyond_infinity = no
+	}
+	
+	immediate = {
+	}
+	
+	option = {
+		name = beyond_infinity.6002.a
+		custom_tooltip = beyond_infinity.6002.a.tooltip
+		win = yes
+	}
+}

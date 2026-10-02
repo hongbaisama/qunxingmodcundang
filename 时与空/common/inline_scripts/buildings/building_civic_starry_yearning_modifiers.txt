@@ -1,0 +1,227 @@
+triggered_planet_modifier = {
+	potential = {
+		solar_system = {
+			any_system_planet = {
+				is_star = yes
+				is_planet_class = pc_b_star
+			}
+		}
+	}
+	planet_engineers_engineering_research_produces_add = 0.75
+	planet_engineers_alloys_produces_add = 0.75
+	planet_engineers_consumer_goods_upkeep_add = 1
+	job_engineer_add = 300
+	mult = $MULT$
+}
+
+triggered_planet_modifier = {
+	potential = {
+		solar_system = {
+			any_system_planet = {
+				is_star = yes
+				is_planet_class = pc_a_star
+			}
+		}
+	}
+	planet_engineers_engineering_research_produces_add = 0.75
+	planet_engineers_consumer_goods_produces_add = 1.5
+	planet_engineers_consumer_goods_upkeep_add = 1
+	job_engineer_add = 300
+	mult = $MULT$
+}
+
+triggered_planet_modifier = {
+	potential = {
+		solar_system = {
+			any_system_planet = {
+				is_star = yes
+				is_planet_class = pc_f_star
+			}
+		}
+	}
+	planet_biologists_society_research_produces_add = 0.75
+	planet_biologists_food_produces_add = 1.5
+	planet_biologists_consumer_goods_upkeep_add = 1
+	job_biologist_add = 300
+	mult = $MULT$
+}
+
+triggered_planet_modifier = {
+	potential = {
+		solar_system = {
+			any_system_planet = {
+				is_star = yes
+				is_planet_class = pc_g_star
+			}
+		}
+	}
+	planet_physicists_physics_research_produces_add = 0.75
+	planet_physicists_energy_produces_add = 1.5
+	planet_physicists_consumer_goods_upkeep_add = 1
+	job_physicist_add = 300
+	mult = $MULT$
+}
+
+triggered_planet_modifier = {
+	potential = {
+		solar_system = {
+			any_system_planet = {
+				is_star = yes
+				is_planet_class = pc_k_star
+			}
+		}
+	}
+	planet_engineers_engineering_research_produces_add = 0.75
+	planet_engineers_minerals_produces_add = 1
+	planet_engineers_consumer_goods_upkeep_add = 1
+	job_engineer_add = 300
+	mult = $MULT$
+}
+
+triggered_planet_modifier = {
+	potential = {
+		solar_system = {
+			any_system_planet = {
+				is_star = yes
+				is_planet_class = pc_m_star
+			}
+		}
+	}
+	planet_engineers_engineering_research_produces_add = 0.75
+	planet_engineers_rare_crystals_produces_add = 0.25
+	planet_engineers_consumer_goods_upkeep_add = 1
+	job_engineer_add = 300
+	mult = $MULT$
+}
+
+triggered_planet_modifier = {
+	potential = {
+		solar_system = {
+			any_system_planet = {
+				is_star = yes
+				is_planet_class = pc_m_giant_star
+			}
+		}
+	}
+	planet_engineers_engineering_research_produces_add = 0.75
+	planet_engineers_sr_living_metal_produces_add = 0.1
+	planet_engineers_consumer_goods_upkeep_add = 1
+	job_engineer_add = 300
+	mult = $MULT$
+}
+
+triggered_planet_modifier = {
+	potential = {
+		solar_system = {
+			any_system_planet = {
+				is_star = yes
+				is_planet_class = pc_t_star
+			}
+		}
+	}
+	planet_physicists_physics_research_produces_add = 0.75
+	planet_physicists_volatile_motes_produces_add = 0.25
+	planet_physicists_consumer_goods_upkeep_add = 1
+	job_physicist_add = 300
+	mult = $MULT$
+}
+
+triggered_planet_modifier = {
+	potential = {
+		solar_system = {
+			any_system_planet = {
+				is_star = yes
+				is_planet_class = pc_pulsar
+			}
+		}
+	}
+	planet_biologists_society_research_produces_add = 0.75
+	planet_biologists_sr_zro_produces_add = 0.1
+	planet_biologists_consumer_goods_upkeep_add = 1
+	job_biologist_add = 300
+	mult = $MULT$
+}
+
+triggered_planet_modifier = {
+	potential = {
+		solar_system = {
+			any_system_planet = {
+				is_star = yes
+				is_time_black_hole_planet_class = yes
+			}
+		}
+	}
+	planet_physicists_physics_research_produces_add = 0.75
+	planet_physicists_sr_dark_matter_produces_add = 0.1
+	planet_physicists_consumer_goods_upkeep_add = 1
+	job_physicist_add = 300
+	mult = $MULT$
+}
+
+triggered_planet_modifier = {
+	potential = {
+		solar_system = {
+			any_system_planet = {
+				is_star = yes
+				is_planet_class = pc_neutron_star
+			}
+		}
+	}
+	planet_engineers_engineering_research_produces_add = 0.75
+	planet_engineers_nanites_produces_add = 0.1
+	planet_engineers_consumer_goods_upkeep_add = 1
+	job_engineer_add = 300
+	mult = $MULT$
+}
+
+triggered_planet_modifier = {
+	potential = {
+		solar_system = {
+			any_system_planet = {
+				is_star = yes
+				is_planet_class = pc_toxoid_star
+			}
+		}
+	}
+	planet_biologists_society_research_produces_add = 0.75
+	planet_biologists_exotic_gases_produces_add = 0.25
+	planet_biologists_consumer_goods_upkeep_add = 1
+	job_biologist_add = 300
+	mult = $MULT$
+}
+
+triggered_planet_modifier = {
+	potential = {
+		solar_system = {
+			any_system_planet = {
+				is_star = yes
+				is_planet_class = pc_rift_star
+			}
+		}
+	}
+	planet_physicists_physics_research_produces_add = 0.75
+	planet_physicists_astral_threads_produces_add = 0.1
+	planet_physicists_consumer_goods_upkeep_add = 1
+	job_physicist_add = 300
+	mult = $MULT$
+}
+
+triggered_planet_modifier = {
+	potential = {
+		solar_system = {
+			any_system_planet = {
+				is_star = yes
+				is_time_white_hole_planet_class = yes
+			}
+		}
+	}
+	planet_biologists_society_research_produces_add = 0.75
+	planet_biologists_minor_artifacts_produces_add = 0.1
+	planet_biologists_consumer_goods_upkeep_add = 1
+	job_biologist_add = 300
+	mult = $MULT$
+}
+	
+triggered_desc = {
+	text = building_civic_starry_yearning_effect
+}

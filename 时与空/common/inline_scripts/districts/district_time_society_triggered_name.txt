@@ -1,0 +1,59 @@
+triggered_name = {
+	trigger = {
+		num_zones = {
+			type = zone_time_society
+			value > 0
+		}
+		calc_true_if = {
+			amount >= 2
+			has_active_building = building_zone_time_food_advanced
+			has_active_building = building_zone_time_unity_advanced
+			has_active_building = building_zone_time_society_research_advanced
+		}
+	}
+	text = district_time_society_max
+}
+
+triggered_name = {
+	trigger = {
+		num_zones = {
+			type = zone_time_society
+			value > 0
+		}
+		OR = {
+			has_active_building = building_zone_time_food_advanced
+			has_active_building = building_zone_time_unity_advanced
+			has_active_building = building_zone_time_society_research_advanced
+		}
+	}
+	text = district_time_society_high
+}
+
+triggered_name = {
+	trigger = {
+		num_zones = {
+			type = zone_time_society
+			value > 0
+		}
+		OR = {
+			has_active_building = building_zone_time_food
+			has_active_building = building_zone_time_unity
+			has_active_building = building_zone_time_society_research
+		}
+	}
+	text = district_time_society_middle
+}
+
+triggered_name = {
+	trigger = {
+		num_zones = {
+			type = zone_time_society
+			value > 0
+		}
+	}
+	text = district_time_society_low
+}
+
+triggered_name = {
+	text = district_time_society_none
+}

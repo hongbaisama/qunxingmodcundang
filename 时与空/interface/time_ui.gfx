@@ -1,0 +1,81 @@
+spriteTypes = {
+	spriteType = {
+		name = "GFX_event_button_dimension_traveler_official"
+		texturefile = "gfx/interface/buttons/button_dimension_traveler_official.dds"
+		effectFile = "gfx/FX/buttonstate_onlydisable.shader"
+		noOfFrames = 3
+		animation = {
+			animationmaskfile = "gfx/interface/buttons/button_452_animated_mask.dds"
+			animationtexturefile = "gfx/interface/buttons/button_452_animated_texture.dds"
+			animationrotation = 180.0
+			animationlooping = yes
+			animationtime = 180.0
+			animationdelay = 0.0
+			animationblendmode = "overlay"       #add, multiply, overlay
+			animationtype = "scrolling"      #scrolling, rotating, pulsing
+			animationrotationoffset = { x = 0.0 y = 0.0 }
+			animationtexturescale = { x = 1.0 y = 1.0 }
+			animationframes = { 1 2 3 }
+		}
+	}
+	
+	spriteType = {
+		name = "GFX_event_button_dimension_traveler_scientist"
+		texturefile = "gfx/interface/buttons/button_dimension_traveler_scientist.dds"
+		effectFile = "gfx/FX/buttonstate_onlydisable.shader"
+		noOfFrames = 3
+		animation = {
+			animationmaskfile = "gfx/interface/buttons/button_452_animated_mask.dds"
+			animationtexturefile = "gfx/interface/buttons/button_452_animated_texture.dds"
+			animationrotation = 180.0
+			animationlooping = yes
+			animationtime = 180.0
+			animationdelay = 0.0
+			animationblendmode = "overlay"       #add, multiply, overlay
+			animationtype = "scrolling"      #scrolling, rotating, pulsing
+			animationrotationoffset = { x = 0.0 y = 0.0 }
+			animationtexturescale = { x = 1.0 y = 1.0 }
+			animationframes = { 1 2 3 }
+		}
+	}
+	
+	spriteType = {
+		name = "GFX_event_button_dimension_traveler_commander"
+		texturefile = "gfx/interface/buttons/button_dimension_traveler_commander.dds"
+		effectFile = "gfx/FX/buttonstate_onlydisable.shader"
+		noOfFrames = 3
+		animation = {
+			animationmaskfile = "gfx/interface/buttons/button_452_animated_mask.dds"
+			animationtexturefile = "gfx/interface/buttons/button_452_animated_texture.dds"
+			animationrotation = 180.0
+			animationlooping = yes
+			animationtime = 180.0
+			animationdelay = 0.0
+			animationblendmode = "overlay"       #add, multiply, overlay
+			animationtype = "scrolling"      #scrolling, rotating, pulsing
+			animationrotationoffset = { x = 0.0 y = 0.0 }
+			animationtexturescale = { x = 1.0 y = 1.0 }
+			animationframes = { 1 2 3 }
+		}
+	}
+	
+	spriteType = {
+		name = "GFX_event_button_dimension_traveler_marry"
+		texturefile = "gfx/interface/buttons/button_dimension_traveler_marry.dds"
+		effectFile = "gfx/FX/buttonstate_onlydisable.shader"
+		noOfFrames = 3
+		animation = {
+			animationmaskfile = "gfx/interface/buttons/button_452_animated_mask.dds"
+			animationtexturefile = "gfx/interface/buttons/button_452_animated_texture.dds"
+			animationrotation = 180.0
+			animationlooping = yes
+			animationtime = 180.0
+			animationdelay = 0.0
+			animationblendmode = "overlay"       #add, multiply, overlay
+			animationtype = "scrolling"      #scrolling, rotating, pulsing
+			animationrotationoffset = { x = 0.0 y = 0.0 }
+			animationtexturescale = { x = 1.0 y = 1.0 }
+			animationframes = { 1 2 3 }
+		}
+	}
+}

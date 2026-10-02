@@ -1,0 +1,50 @@
+defined_text = {
+	name = GetNoahArkHomePlanetModifier
+	text = {
+		trigger = {
+			exists = owner
+			owner = {
+				has_origin = origin_noah_ark
+			}
+		}
+		localization_key = noah_ark_home_planet_modifier_desc_1
+	}
+	text = {
+		trigger = {
+			exists = owner
+			owner = {
+				NOT = { has_origin = origin_noah_ark }
+			}
+		}
+		localization_key = noah_ark_home_planet_modifier_desc_2
+	}
+	default = noah_ark_home_planet_modifier_desc_2
+}
+
+defined_text = {
+	name = GetNoahArkHomePlanetEndModifier
+	text = {
+		trigger = {
+			exists = owner
+			owner = {
+				has_origin = origin_noah_ark
+			}
+		}
+		localization_key = noah_ark_home_planet_end_modifier_desc_1
+	}
+	text = {
+		trigger = {
+			exists = owner
+			owner = {
+				NOT = { has_origin = origin_noah_ark }
+			}
+		}
+		localization_key = noah_ark_home_planet_end_modifier_desc_2
+	}
+	default = noah_ark_home_planet_end_modifier_desc_2
+}
+
+defined_text = {
+	name = GetNoahArkBlockerValue
+	value = value:noah_ark_blocker_value
+}

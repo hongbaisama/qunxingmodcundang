@@ -1,0 +1,43 @@
+namespace = time_specimen
+
+country_event = {
+	id = time_specimen.1
+	is_triggered_only = yes
+	hide_window = yes
+	
+	trigger = {
+	}
+	
+	immediate = {
+		give_specimen = { key = akx_everyone_is origin = akx.9540.name }
+	}
+}
+
+country_event = {
+	id = time_specimen.2
+	is_triggered_only = yes
+	hide_window = yes
+	
+	trigger = {
+		has_specimen = akx_everyone_is
+	}
+	
+	immediate = {
+		remove_specimen = akx_everyone_is
+	}
+}
+
+# 01之外效果刷新
+event = {
+	id = time_specimen.10
+	is_triggered_only = yes
+	hide_window = yes
+	
+	trigger = {
+		akx_out_of_0_and_1_modifier_is_set = yes
+	}
+	
+	immediate = {
+		refresh_akx_out_of_0_and_1_modifier = yes
+	}
+}

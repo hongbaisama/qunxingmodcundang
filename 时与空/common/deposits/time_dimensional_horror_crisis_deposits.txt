@@ -1,0 +1,221 @@
+################################################################
+# 地块
+################################################################
+
+d_dimensional_horror_crisis_physics = {
+	is_for_colonizable = yes
+	category = deposit_cat_rare
+	
+	icon = d_ghostly_canyon
+	
+	planet_modifier = {
+		planet_physicists_physics_research_produces_add = 1
+		planet_physicists_upkeep_mult = 0.25
+		planet_stability_add = -10
+	}
+	
+	country_modifier = {
+		country_physics_tech_research_speed = 0.2
+		command_limit_mult = 0.1
+	}
+
+	potential = {
+		always = no
+	}
+	
+	drop_weight = {
+		weight = 0
+	}
+}
+
+d_dimensional_horror_crisis_society = {
+	is_for_colonizable = yes
+	category = deposit_cat_rare
+	
+	icon = d_city
+	
+	planet_modifier = {
+		planet_biologists_society_research_produces_add = 1
+		planet_biologists_upkeep_mult = 0.25
+		planet_stability_add = -10
+	}
+	
+	country_modifier = {
+		country_society_tech_research_speed = 0.2
+		country_trade_produces_mult = 0.1
+	}
+
+	potential = {
+		always = no
+	}
+	
+	drop_weight = {
+		weight = 0
+	}
+}
+
+d_dimensional_horror_crisis_engineering = {
+	is_for_colonizable = yes
+	category = deposit_cat_rare
+	
+	icon = d_crystal_forest
+	
+	planet_modifier = {
+		planet_engineers_engineering_research_produces_add = 1
+		planet_engineers_upkeep_mult = 0.25
+		planet_stability_add = -10
+	}
+	
+	country_modifier = {
+		country_engineering_tech_research_speed = 0.2
+		starbase_shipyard_build_speed_mult = 0.1
+	}
+
+	potential = {
+		always = no
+	}
+	
+	drop_weight = {
+		weight = 0
+	}
+}
+
+d_dimensional_horror_crisis_sr_dark_matter = {
+	is_for_colonizable = yes
+	category = deposit_cat_rare
+	
+	icon = d_buried_lithoids
+	
+	planet_modifier = {
+		planet_physicists_sr_dark_matter_produces_add = 0.5
+		planet_physicists_upkeep_mult = 0.25
+		planet_stability_add = -10
+	}
+	
+	country_modifier = {
+		ship_hull_damage_mult = 0.1
+		ship_armor_damage_mult = 0.1
+		ship_shield_damage_mult = 0.1
+		robotic_pop_bonus_workforce_mult = 0.1
+	}
+
+	potential = {
+		always = no
+	}
+	
+	drop_weight = {
+		weight = 0
+	}
+}
+
+d_dimensional_horror_crisis_sr_zro = {
+	is_for_colonizable = yes
+	category = deposit_cat_rare
+	
+	icon = d_psionic_region
+	
+	planet_modifier = {
+		planet_biologists_sr_zro_produces_add = 0.5
+		planet_biologists_upkeep_mult = 0.25
+		planet_stability_add = -10
+	}
+	
+	country_modifier = {
+		ship_shield_mult = 0.1
+		ship_shield_hardening_add = 0.1
+		ship_shield_regen_add_perc = 0.2
+		shroud_delve_cooldown = -0.1
+	}
+
+	potential = {
+		always = no
+	}
+	
+	drop_weight = {
+		weight = 0
+	}
+}
+
+d_dimensional_horror_crisis_sr_living_metal = {
+	is_for_colonizable = yes
+	category = deposit_cat_rare
+	
+	icon = d_monument_in_space
+	
+	planet_modifier = {
+		planet_engineers_sr_living_metal_produces_add = 0.5
+		planet_engineers_upkeep_mult = 0.25
+		planet_stability_add = -10
+	}
+	
+	country_modifier = {
+		ship_hull_mult = 0.1
+		ship_hull_regen_add_perc = 0.2
+		megastructure_build_speed_add = 0.2
+	}
+
+	potential = {
+		always = no
+	}
+	
+	drop_weight = {
+		weight = 0
+	}
+}
+
+d_dimensional_horror_crisis_nanites = {
+	is_for_colonizable = yes
+	category = deposit_cat_rare
+	
+	icon = d_rockworm_hive_dig
+	
+	planet_modifier = {
+		planet_engineers_nanites_produces_add = 0.5
+		planet_engineers_upkeep_mult = 0.25
+		planet_stability_add = -10
+	}
+	
+	country_modifier = {
+		ship_armor_mult = 0.1
+		ship_armor_hardening_add = 0.1
+		ship_armor_regen_add_perc = 0.2
+		shipsize_nanite_swarmer_hull_add = 20
+		shipsize_nanite_interdictor_hull_add = 200
+	}
+
+	potential = {
+		always = no
+	}
+	
+	drop_weight = {
+		weight = 0
+	}
+}
+
+d_dimensional_horror_crisis_astral_threads = {
+	is_for_colonizable = yes
+	category = deposit_cat_rare
+	
+	icon = d_huge_tree
+	
+	planet_modifier = {
+		planet_physicists_astral_threads_produces_add = 0.25
+		planet_physicists_upkeep_mult = 0.25
+		planet_stability_add = -10
+	}
+	
+	country_modifier = {
+		ship_armor_penetration_add = 0.1
+		ship_shield_penetration_add = 0.1
+		leader_lifespan_mult = 0.1
+		species_leader_exp_gain = 0.2
+	}
+
+	potential = {
+		always = no
+	}
+	
+	drop_weight = {
+		weight = 0
+	}
+}

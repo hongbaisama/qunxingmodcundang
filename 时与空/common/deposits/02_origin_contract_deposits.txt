@@ -1,0 +1,34 @@
+################################################################
+# 地块
+################################################################
+
+d_origin_contract_zro = {
+	is_for_colonizable = yes
+	
+	category = deposit_cat_rare
+
+	icon = d_aura_blocker
+	
+	resources = {
+		category = planet_deposits
+		produces = {
+			sr_zro = 1
+			mult = value:num_time_rare_resources_value
+		}
+	}
+	
+	planet_modifier = {
+		planet_physicists_physics_research_produces_add = 1
+		planet_biologists_society_research_produces_add = 1
+		planet_engineers_engineering_research_produces_add = 1
+		pop_amenities_usage_mult = 0.5
+	}
+	
+	potential = {
+		always = no
+	}
+	
+	drop_weight = {
+		weight = 0
+	}
+}

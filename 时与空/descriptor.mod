@@ -1,0 +1,12 @@
+version="30.0"
+tags={
+	"Horizonsignal"
+	"Gameplay"
+	"Events"
+	"Origins"
+	"Leaders"
+}
+name="时与空（TimeMod）"
+picture="thumbnail.png"
+supported_version="v4.5.*"
+remote_file_id="2735054420"

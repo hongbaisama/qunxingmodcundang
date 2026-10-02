@@ -1,0 +1,38 @@
+# 基础
+triggered_planet_modifier = {
+	district_time_usage = 1
+}
+
+# 研究人员部分
+inline_script = "jobs/vanilla/vanilla_researcher_modifiers"
+
+triggered_country_modifier = {
+	potential = {
+		exists = owner
+		owner = { has_situation_pc_time = yes }
+	}
+	situation_pc_time_progress_add = 1
+}
+
+# 黑洞之心（普政）
+triggered_planet_modifier = {
+	potential = {
+		colony = { has_modifier = timesingularity }
+		owner = {
+			is_gestalt = no
+			NOT = { has_valid_civic = civic_dystopian_society }
+		}
+	}
+	planet_amenities_add = 100
+	mult = value:scripted_modifier_mult|MODIFIER|pop_job_amenities_mult|
+}
+
+# 黑洞之心（格式塔）
+triggered_planet_modifier = {
+	potential = {
+		colony = { has_modifier = timesingularity }
+		owner = { is_gestalt = yes }
+	}
+	planet_amenities_no_happiness_add = 100
+	mult = value:scripted_modifier_mult|MODIFIER|pop_job_amenities_mult|
+}

@@ -1,0 +1,35 @@
+modifier = {
+	factor = 2
+	is_materialist = yes
+	desc = ethic_materialist
+}
+modifier = {
+	factor = 2
+	is_spiritualist = yes
+	desc = ethic_spiritualist
+}
+modifier = {
+	factor = 2
+	is_pacifist = yes
+	desc = ethic_pacifist
+}
+modifier = {
+	factor = 10
+	is_xenophile = yes
+	desc = ethic_xenophile
+}
+modifier = {
+	factor = 0.5
+	is_xenophobe = yes
+	desc = ethic_xenophobe
+}
+modifier = {
+	factor = 0.5
+	is_authoritarian = yes
+	desc = ethic_authoritarian
+}
+modifier = {
+	factor = 2
+	has_global_flag = dimensional_horror_crisis_storm_has_occurred
+	desc = dimensional_horror_crisis_storm
+}

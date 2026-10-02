@@ -1,0 +1,100 @@
+objectTypes = {
+	# 负相吞噬射线
+	pdxparticle = {
+		name = "horror_beam_hit_effect"
+		type = "horror_beam_hit_effect"
+		
+		scale = 1.0
+	}
+	
+	pdxparticle = {
+		name = "horror_beam_muzzle_effect"
+		type = "horror_beam_muzzle_effect"
+		
+		scale = 1.0
+	}
+	
+	# 时空抹除光束
+	
+	pdxparticle = {
+		name = "time_beam_windup_effect"
+		type = "time_beam_windup_effect"
+		
+		scale = 1.0
+	}
+	
+	pdxparticle = {
+		name = "time_beam_muzzle_windup_effect"
+		type = "time_beam_muzzle_windup_effect"
+		
+		scale = 1.0
+	}
+	
+	pdxparticle = {
+		name = "time_beam_muzzle_effect"
+		type = "time_beam_muzzle_effect"
+		
+		scale = 1.0
+	}
+	
+	pdxparticle = {
+		name = "time_beam_hit_effect"
+		type = "time_beam_hit_effect"
+		
+		scale = 1.0
+	}
+	
+	# 终末湮灭相位
+	
+	pdxparticle = {
+		name = "end_beam_windup_effect"
+		type = "end_beam_windup_effect"
+		
+		scale = 5.0
+	}
+	
+	pdxparticle = {
+		name = "end_beam_muzzle_effect"
+		type = "end_beam_muzzle_effect"
+		
+		scale = 5.0
+	}
+	
+	pdxparticle = {
+		name = "end_beam_hit_effect"
+		type = "end_beam_hit_effect"
+		
+		scale = 2.5
+	}
+	
+	# 希望聚能流股
+	
+	pdxparticle = {
+		name = "hope_beam_windup_effect"
+		type = "hope_beam_windup_effect"
+		
+		scale = 5.0
+	}
+	
+	pdxparticle = {
+		name = "hope_beam_muzzle_effect"
+		type = "hope_beam_muzzle_effect"
+		
+		scale = 5.0
+	}
+	
+	pdxparticle = {
+		name = "hope_beam_hit_effect"
+		type = "hope_beam_hit_effect"
+		
+		scale = 2.5
+	}
+	
+	# 恐怖负相光环
+	
+	pdxparticle = {
+		name = "dimensional_horror_aura_effect"
+		type = "dimensional_horror_aura_effect"
+		scale = 1.0
+	}
+}

@@ -1,0 +1,14 @@
+triggered_planet_modifier = {
+	potential = {
+		technician_is_fuel_chemist_trigger = yes
+	}
+	ship_speed_mult = 0.05
+}
+
+triggered_planet_modifier = {
+	potential = {
+		technician_is_shield_tuner_trigger = yes
+	}
+	ship_shield_mult = 0.02 #move ship bonuses on technician jobs, add a custom tooltip here
+	ship_shield_regen_mult = 0.02
+}

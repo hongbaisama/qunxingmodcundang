@@ -1,0 +1,366 @@
+# 让著名和传奇领袖也能获得特质
+update_leader_after_modification = {
+	if = {
+		limit = {
+#			is_leader_tier = leader_tier_default
+			has_any_chosen_one_leader_trait = no
+		}
+		# Remove all applicable leader traits
+		remove_trait = leader_trait_erudite
+		remove_trait = leader_trait_cyborg
+		remove_trait = leader_trait_limited_cyborg
+		remove_trait = leader_trait_firewalled
+		remove_trait = leader_trait_hacked
+		remove_trait = leader_trait_psionic
+		remove_trait = leader_trait_virtual
+		remove_trait = leader_trait_synthetic
+		# Add the correct leader trait based on the species
+		if = {
+			limit = {
+				is_robotic_species = no
+			}
+			species = {
+				switch = {
+					trigger = has_trait
+					trait_erudite = {
+						prev = {
+							add_trait = {
+								trait = leader_trait_erudite
+								show_message = no
+							}
+						}
+					}
+					trait_cybernetic = {
+						prev = {
+							add_trait = {
+								trait = leader_trait_cyborg
+								show_message = no
+							}
+							if = {
+								limit = {
+									owner = {
+										has_country_flag = firewall_built
+									}
+								}
+								add_trait = {
+									trait = leader_trait_firewalled
+									show_message = no
+								}
+							}
+						}
+					}
+					trait_limited_cybernetic = {
+						prev = {
+							add_trait = {
+								trait = leader_trait_limited_cyborg
+								show_message = no
+							}
+						}
+					}
+					trait_psionic = {
+						prev = {
+							add_trait = {
+								trait = leader_trait_psionic
+								show_message = no
+							}
+						}
+					}
+				}
+			}
+		}
+		if = {
+			limit = {
+				species = {
+					has_trait = trait_robot_psionic
+				}
+			}
+			add_trait = {
+				trait = leader_trait_psionic
+				show_message = no
+			}
+		}
+		else_if = {
+			limit = {
+				species = {
+					has_virtual_species_trait = yes
+				}
+			}
+			add_trait = {
+				trait = leader_trait_virtual
+				show_message = no
+			}
+		}
+		else = {
+			if = {
+				limit = {
+					owner = { has_country_flag = driven_cybernetics }
+				}
+				add_trait = {
+					trait = leader_trait_cyborg
+					show_message = no
+				}
+			}
+			else_if = {
+				limit = {
+					owner = {
+						OR = {
+							has_country_flag = synthetic_empire
+							has_tradition = tr_synthetics_finish
+							has_tradition = tr_modularity_finish
+						}
+					}
+				}
+				add_trait = {
+					trait = leader_trait_synthetic
+					show_message = no
+				}
+			}
+		}
+	}
+}
+
+# 人口组
+make_unleashed_messenger = {
+	if = {
+		limit = { root = { is_species_class = ART } }
+		if = {
+			limit = { NOT = { root = { species_portrait = art11 } } }
+			modify_species = { portrait = art11 }
+		}
+		else = { modify_species = { portrait = art10 } }
+	}
+	else_if = {
+		limit = { root = { is_species_class = MAM } }
+		if = {
+			limit = { NOT = { root = { species_portrait = mam10 } } }
+			modify_species = { portrait = mam10 }
+		}
+		else = { modify_species = { portrait = mam13 } }
+	}
+	else_if = {
+		limit = { root = { is_species_class = FUN } }
+		if = {
+			limit = { NOT = { root = { species_portrait = fun12 } } }
+			modify_species = { portrait = fun12 }
+		}
+		else = { modify_species = { portrait = fun10 } }
+	}
+	else_if = {
+		limit = { root = { is_species_class = HUM } }
+		if = {
+			limit = { NOT = { root = { species_portrait = humanoid_04 } } }
+			modify_species = { portrait = humanoid_04 }
+		}
+		else = { modify_species = { portrait = humanoid_03 } }
+	}
+	else_if = {
+		limit = { root = { is_species_class = MOL } }
+		if = {
+			limit = { NOT = { root = { species_portrait = mol11 } } }
+			modify_species = { portrait = mol11 }
+		}
+		else = { modify_species = { portrait = mol12 } }
+	}
+	else_if = {
+		limit = { root = { is_species_class = PLANT } }
+		if = {
+			limit = { NOT = { root = { species_portrait = pla15 } } }
+			modify_species = { portrait = pla15 }
+		}
+		else = { modify_species = { portrait = pla10 } }
+	}
+	else_if = {
+		limit = { root = { is_species_class = REP } }
+		if = {
+			limit = { NOT = { root = { species_portrait = rep8 } } }
+			modify_species = { portrait = rep8 }
+		}
+		else = { modify_species = { portrait = rep4 } }
+	}
+	else_if = {
+		limit = { root = { is_species_class = AVI } }
+		if = {
+			limit = { NOT = { root = { species_portrait = avi1 } } }
+			modify_species = { portrait = avi1 }
+		}
+		else = { modify_species = { portrait = avi4 } }
+	}
+	else_if = {
+		limit = { root = { is_species_class = LITHOID } }
+		if = {
+			limit = { NOT = { root = { species_portrait = lith10 } } }
+			modify_species = { portrait = lith10 }
+		}
+		else = { modify_species = { portrait = lith4 } }
+	}
+	else_if = {
+		limit = { root = { is_species_class = NECROID } }
+		if = {
+			limit = { NOT = { root = { species_portrait = nec12 } } }
+			modify_species = { portrait = nec12 }
+		}
+		else = { modify_species = { portrait = nec11 } }
+	}
+	else_if = {
+		limit = { root = { is_species_class = AQUATIC } }
+		if = {
+			limit = { NOT = { root = { species_portrait = aqu4 } } }
+			modify_species = { portrait = aqu4 }
+		}
+		else = { modify_species = { portrait = aqu7 } }
+	}
+	else_if = {
+		limit = { root = { is_species_class = TOX } }
+		if = {
+			limit = { NOT = { root = { species_portrait = tox5 } } }
+			modify_species = { portrait = tox5 }
+		}
+		else = { modify_species = { portrait = tox8 } }
+	}
+	else_if = {
+		limit = { root = { is_species_class = INF } }
+		if = {
+			limit = { NOT = { root = { species_portrait = inf6 } } }
+			modify_species = { portrait = inf6 }
+		}
+		else = { modify_species = { portrait = inf4 } }
+	}
+	else_if = {
+		limit = {
+			root = {
+				OR = {
+					is_species_class = ROBOT
+					is_species_class = MACHINE
+				}
+			}
+		}
+		if = {
+			limit = { NOT = { root = { species_portrait = sd_mol_robot } } }
+			modify_species = { portrait = sd_mol_robot }
+		}
+		else = { modify_species = { portrait = cyb_machine } }
+	}
+}
+
+# 人口组
+make_leashed_messenger = {
+	if = {
+		limit = { root = { is_species_class = ART } }
+		if = {
+			limit = { NOT = { root = { species_portrait = art11 } } }
+			modify_species = { portrait = art11 }
+		}
+		else = { modify_species = { portrait = art10 } }
+	}
+	else_if = {
+		limit = { root = { is_species_class = MAM } }
+		if = {
+			limit = { NOT = { root = { species_portrait = mam10 } } }
+			modify_species = { portrait = mam10 }
+		}
+		else = { modify_species = { portrait = mam13 } }
+	}
+	else_if = {
+		limit = { root = { is_species_class = FUN } }
+		if = {
+			limit = { NOT = { root = { species_portrait = fun12 } } }
+			modify_species = { portrait = fun12 }
+		}
+		else = { modify_species = { portrait = fun10 } }
+	}
+	else_if = {
+		limit = { root = { is_species_class = HUM } }
+		if = {
+			limit = { NOT = { root = { species_portrait = humanoid_04 } } }
+			modify_species = { portrait = humanoid_04 }
+		}
+		else = { modify_species = { portrait = humanoid_03 } }
+	}
+	else_if = {
+		limit = { root = { is_species_class = MOL } }
+		if = {
+			limit = { NOT = { root = { species_portrait = mol11 } } }
+			modify_species = { portrait = mol11 }
+		}
+		else = { modify_species = { portrait = mol12 } }
+	}
+	else_if = {
+		limit = { root = { is_species_class = PLANT } }
+		if = {
+			limit = { NOT = { root = { species_portrait = pla15 } } }
+			modify_species = { portrait = pla15 }
+		}
+		else = { modify_species = { portrait = pla10 } }
+	}
+	else_if = {
+		limit = { root = { is_species_class = REP } }
+		if = {
+			limit = { NOT = { root = { species_portrait = rep8 } } }
+			modify_species = { portrait = rep8 }
+		}
+		else = { modify_species = { portrait = rep4 } }
+	}
+	else_if = {
+		limit = { root = { is_species_class = AVI } }
+		if = {
+			limit = { NOT = { root = { species_portrait = avi1 } } }
+			modify_species = { portrait = avi1 }
+		}
+		else = { modify_species = { portrait = avi4 } }
+	}
+	else_if = {
+		limit = { root = { is_species_class = LITHOID } }
+		if = {
+			limit = { NOT = { root = { species_portrait = lith10 } } }
+			modify_species = { portrait = lith10 }
+		}
+		else = { modify_species = { portrait = lith4 } }
+	}
+	else_if = {
+		limit = { root = { is_species_class = NECROID } }
+		if = {
+			limit = { NOT = { root = { species_portrait = nec12 } } }
+			modify_species = { portrait = nec12 }
+		}
+		else = { modify_species = { portrait = nec11 } }
+	}
+	else_if = {
+		limit = { root = { is_species_class = AQUATIC } }
+		if = {
+			limit = { NOT = { root = { species_portrait = aqu4 } } }
+			modify_species = { portrait = aqu4 }
+		}
+		else = { modify_species = { portrait = aqu7 } }
+	}
+	else_if = {
+		limit = { root = { is_species_class = TOX } }
+		if = {
+			limit = { NOT = { root = { species_portrait = tox5 } } }
+			modify_species = { portrait = tox5 }
+		}
+		else = { modify_species = { portrait = tox8 } }
+	}
+	else_if = {
+		limit = { root = { is_species_class = INF } }
+		if = {
+			limit = { NOT = { root = { species_portrait = inf5 } } }
+			modify_species = { portrait = inf5 }
+		}
+		else = { modify_species = { portrait = inf3 } }
+	}
+	else_if = {
+		limit = {
+			root = {
+				OR = {
+					is_species_class = ROBOT
+					is_species_class = MACHINE
+				}
+			}
+		}
+		if = {
+			limit = { NOT = { root = { species_portrait = nec_machine } } }
+			modify_species = { portrait = nec_machine }
+		}
+		else = { modify_species = { portrait = sd_rep_robot } }
+	}
+}

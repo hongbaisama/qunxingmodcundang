@@ -1,0 +1,356 @@
+num_nanites_old_factory_value = {
+	base = 1
+	modifier = {
+		add = 1
+		colony = { has_major_upgraded_capital = yes }
+	}
+	modifier = {
+		add = 1
+		colony = { has_fully_upgraded_capital = yes }
+	}
+	modifier = {
+		add = 1
+		owner = { has_tradition = tr_nanotech_finish }
+	}
+	modifier = {
+		add = 1
+		owner = {
+			OR = {
+				has_modifier = nanites_attacker
+				has_modifier = nanites_protector
+			}
+		}
+	}
+}
+
+num_nanites_old_factory_resources_value = {
+	base = 1
+	multiply = value:num_nanites_old_factory_value
+	multiply = value:num_time_rare_resources_value
+}
+
+district_nanites_value = {
+	base = 1
+	multiply = value:num_time_modifier|MODIFIER|district_nanites_modifier_mult|
+}
+
+origin_nanites_edict_value = {
+	base = 1
+	modifier = {
+		multiply = 2
+		has_tradition = tr_nanotech_finish
+	}
+}
+
+# 纳米星环相关计数
+num_district_nanites_city = {
+	base = 0
+	complex_trigger_modifier = {
+		trigger = num_districts
+		trigger_scope = colony
+		parameters = {
+			type = district_nanites_city
+		}
+		mult = 1
+		mode = add
+	}
+	complex_trigger_modifier = {
+		trigger = num_districts
+		trigger_scope = colony
+		parameters = {
+			type = district_nanites_hive
+		}
+		mult = 1
+		mode = add
+	}
+	complex_trigger_modifier = {
+		trigger = num_districts
+		trigger_scope = colony
+		parameters = {
+			type = district_nanites_nexus
+		}
+		mult = 1
+		mode = add
+	}
+}
+
+num_district_nanites_generator = {
+	base = 0
+	complex_trigger_modifier = {
+		trigger = num_districts
+		trigger_scope = colony
+		parameters = {
+			type = district_nanites_generator
+		}
+		mult = 1
+		mode = add
+	}
+}
+
+num_district_nanites_mining = {
+	base = 0
+	complex_trigger_modifier = {
+		trigger = num_districts
+		trigger_scope = colony
+		parameters = {
+			type = district_nanites_mining
+		}
+		mult = 1
+		mode = add
+	}
+}
+
+num_district_nanites_nexus_secondary = {
+	base = 0
+	complex_trigger_modifier = {
+		trigger = num_districts
+		trigger_scope = colony
+		parameters = {
+			type = district_nanites_nexus_secondary
+		}
+		mult = 1
+		mode = add
+	}
+}
+
+# 能量币
+num_nanites_logistics_drone_energy = {
+	base = 1
+	inline_script = { script = script_values/num_zones	TYPE = zone_energy			MULT = 1	MODE = add }
+	multiply = value:num_district_nanites_generator
+	add = value:num_nanites_logistics_drone_energy_from_secondary
+}
+
+num_nanites_logistics_drone_energy_from_secondary = {
+	base = 0
+	inline_script = { script = script_values/num_zones	TYPE = zone_energy_nexus	MULT = 1	MODE = add }
+	multiply = value:num_district_nanites_nexus_secondary
+}
+
+num_nanites_logistics_drone_energy_network = {
+	base = 0
+	inline_script = { script = script_values/num_buildings	TYPE = building_energy_grid				MULT = 1	MODE = add }
+	inline_script = { script = script_values/num_buildings	TYPE = building_energy_nexus			MULT = 1	MODE = add }
+	inline_script = { script = script_values/num_buildings	TYPE = building_bio_reactor				MULT = 1	MODE = add }
+	inline_script = { script = script_values/num_buildings	TYPE = building_bio_reactor_2			MULT = 1	MODE = add }
+	inline_script = { script = script_values/num_buildings	TYPE = building_class_3_singularity		MULT = 1	MODE = add }
+	inline_script = { script = script_values/num_buildings	TYPE = building_class_4_singularity		MULT = 1	MODE = add }
+	
+	inline_script = { script = script_values/num_buildings	TYPE = building_resource_silo					MULT = 0.5	MODE = add }
+	inline_script = { script = script_values/num_buildings	TYPE = building_fe_silo_1						MULT = 0.5	MODE = add }
+	inline_script = { script = script_values/num_buildings	TYPE = building_fe_silo_2						MULT = 0.5	MODE = add }
+	multiply = @nanites_logistics_drone_network_value_factor
+}
+
+# 矿物
+num_nanites_logistics_drone_minerals = {
+	base = 1
+	inline_script = { script = script_values/num_zones	TYPE = zone_minerals		MULT = 1	MODE = add }
+	multiply = value:num_district_nanites_mining
+	add = value:num_nanites_logistics_drone_minerals_from_secondary
+}
+
+num_nanites_logistics_drone_minerals_from_secondary = {
+	base = 0
+	inline_script = { script = script_values/num_zones	TYPE = zone_minerals_nexus	MULT = 1	MODE = add }
+	multiply = value:num_district_nanites_nexus_secondary
+}
+
+num_nanites_logistics_drone_minerals_network = {
+	base = 0
+	inline_script = { script = script_values/num_buildings	TYPE = building_mineral_purification_plant		MULT = 1	MODE = add }
+	inline_script = { script = script_values/num_buildings	TYPE = building_mineral_purification_hub		MULT = 1	MODE = add }
+	inline_script = { script = script_values/num_buildings	TYPE = building_fe_mine_1						MULT = 1	MODE = add }
+	inline_script = { script = script_values/num_buildings	TYPE = building_fe_mine_2						MULT = 1	MODE = add }
+	
+	inline_script = { script = script_values/num_buildings	TYPE = building_resource_silo					MULT = 0.5	MODE = add }
+	inline_script = { script = script_values/num_buildings	TYPE = building_fe_silo_1						MULT = 0.5	MODE = add }
+	inline_script = { script = script_values/num_buildings	TYPE = building_fe_silo_2						MULT = 0.5	MODE = add }
+	multiply = @nanites_logistics_drone_network_value_factor
+}
+
+# 贸易值
+num_nanites_logistics_drone_trade = {
+	base = 0
+	inline_script = { script = script_values/num_zones	TYPE = zone_trade		MULT = 1	MODE = add }
+	multiply = value:num_district_nanites_city
+	add = value:num_nanites_logistics_drone_trade_from_secondary
+}
+
+num_nanites_logistics_drone_trade_from_secondary = {
+	base = 0
+	inline_script = { script = script_values/num_zones	TYPE = zone_trade_nexus		MULT = 1	MODE = add }
+	multiply = value:num_district_nanites_nexus_secondary
+}
+
+num_nanites_logistics_drone_trade_network = {
+	base = 0
+	add = colony.value:num_time_trade_building
+	multiply = @nanites_logistics_drone_network_value_factor
+}
+
+# 合金
+num_nanites_logistics_drone_alloys = {
+	base = 0
+	inline_script = { script = script_values/num_zones	TYPE = zone_foundry				MULT = 1	MODE = add }
+	inline_script = { script = script_values/num_zones	TYPE = zone_industrial			MULT = 0.5	MODE = add }
+	multiply = value:num_district_nanites_city
+	add = value:num_nanites_logistics_drone_alloys_from_secondary
+}
+
+num_nanites_logistics_drone_alloys_from_secondary = {
+	base = 0
+	inline_script = { script = script_values/num_zones	TYPE = zone_foundry_nexus		MULT = 1	MODE = add }
+	inline_script = { script = script_values/num_zones	TYPE = zone_industrial_nexus	MULT = 0.5	MODE = add }
+	multiply = value:num_district_nanites_nexus_secondary
+}
+
+num_nanites_logistics_drone_alloys_network = {
+	base = 0
+	add = colony.value:num_time_foundry_building
+	multiply = @nanites_logistics_drone_network_value_factor
+}
+
+# 消费品
+num_nanites_logistics_drone_consumer_goods = {
+	base = 0
+	inline_script = { script = script_values/num_zones	TYPE = zone_factory				MULT = 1	MODE = add }
+	inline_script = { script = script_values/num_zones	TYPE = zone_industrial			MULT = 0.5	MODE = add }
+	multiply = value:num_district_nanites_city
+	add = value:num_nanites_logistics_drone_consumer_goods_from_secondary
+}
+
+num_nanites_logistics_drone_consumer_goods_from_secondary = {
+	base = 0
+	inline_script = { script = script_values/num_zones	TYPE = zone_factory_nexus				MULT = 1	MODE = add }
+	inline_script = { script = script_values/num_zones	TYPE = zone_industrial_nexus			MULT = 0.5	MODE = add }
+	multiply = value:num_district_nanites_nexus_secondary
+}
+
+num_nanites_logistics_drone_consumer_goods_network = {
+	base = 0
+	add = colony.value:num_time_factory_building
+	multiply = @nanites_logistics_drone_network_value_factor
+}
+
+# 科研
+num_nanites_logistics_drone_research = {
+	base = 0
+	inline_script = { script = script_values/num_zones	TYPE = zone_research					MULT = 1	MODE = add }
+	inline_script = { script = script_values/num_zones	TYPE = zone_research_physics			MULT = 1	MODE = add }
+	inline_script = { script = script_values/num_zones	TYPE = zone_research_society			MULT = 1	MODE = add }
+	inline_script = { script = script_values/num_zones	TYPE = zone_research_engineering		MULT = 1	MODE = add }
+	inline_script = { script = script_values/num_zones	TYPE = zone_research_unity				MULT = 0.5	MODE = add }
+	inline_script = { script = script_values/num_zones	TYPE = zone_worm_black_hole				MULT = 0.5	MODE = add }
+	multiply = value:num_district_nanites_city
+	add = value:num_nanites_logistics_drone_research_from_secondary
+}
+
+num_nanites_logistics_drone_research_from_secondary = {
+	base = 0
+	inline_script = { script = script_values/num_zones	TYPE = zone_research_nexus				MULT = 1	MODE = add }
+	inline_script = { script = script_values/num_zones	TYPE = zone_research_physics_nexus		MULT = 1	MODE = add }
+	inline_script = { script = script_values/num_zones	TYPE = zone_research_society_nexus		MULT = 1	MODE = add }
+	inline_script = { script = script_values/num_zones	TYPE = zone_research_engineering_nexus	MULT = 1	MODE = add }
+	multiply = value:num_district_nanites_nexus_secondary
+}
+
+num_nanites_logistics_drone_research_network = {
+	base = 0
+	add = colony.value:num_time_research_building
+	multiply = @nanites_logistics_drone_network_value_factor
+}
+
+# 凝聚力
+num_nanites_logistics_drone_unity = {
+	base = 0
+	inline_script = { script = script_values/num_zones	TYPE = zone_unity						MULT = 1	MODE = add }
+	inline_script = { script = script_values/num_zones	TYPE = zone_unity_spiritualist			MULT = 1	MODE = add }
+	inline_script = { script = script_values/num_zones	TYPE = zone_research_unity				MULT = 0.5	MODE = add }
+	inline_script = { script = script_values/num_zones	TYPE = zone_worm_black_hole				MULT = 0.5	MODE = add }
+	multiply = value:num_district_nanites_city
+	add = value:num_nanites_logistics_drone_unity_from_secondary
+}
+
+num_nanites_logistics_drone_unity_from_secondary = {
+	base = 0
+	inline_script = { script = script_values/num_zones	TYPE = zone_unity_nexus					MULT = 1	MODE = add }
+	inline_script = { script = script_values/num_zones	TYPE = zone_unity_spiritualist_nexus	MULT = 1	MODE = add }
+	multiply = value:num_district_nanites_nexus_secondary
+}
+
+num_nanites_logistics_drone_unity_network = {
+	base = 0
+	add = colony.value:num_time_unity_building
+	multiply = @nanites_logistics_drone_network_value_factor
+}
+
+# 异星天然气
+num_nanites_logistics_drone_exotic_gases_network = {
+	base = 0
+	inline_script = { script = script_values/num_buildings	TYPE = building_refinery		MULT = 0.67	MODE = add }
+	# 已经囊括了上述建筑，只需补至1
+	add = colony.value:num_time_refinery_building|MULT|0.33|
+	multiply = @nanites_logistics_drone_network_value_factor
+}
+
+# 易爆微粒
+num_nanites_logistics_drone_volatile_motes_network = {
+	base = 0
+	inline_script = { script = script_values/num_buildings	TYPE = building_chemical_plant	MULT = 0.67	MODE = add }
+	# 已经囊括了上述建筑，只需补至1
+	add = colony.value:num_time_refinery_building|MULT|0.33|
+	multiply = @nanites_logistics_drone_network_value_factor
+}
+
+# 稀有水晶
+num_nanites_logistics_drone_rare_crystals_network = {
+	base = 0
+	inline_script = { script = script_values/num_buildings	TYPE = building_crystal_plant	MULT = 0.67	MODE = add }
+	inline_script = { script = script_values/num_buildings	TYPE = building_crystal_plant_2	MULT = 0.67	MODE = add }
+	# 已经囊括了上述建筑，只需补至1
+	add = colony.value:num_time_refinery_building|MULT|0.33|
+	multiply = @nanites_logistics_drone_network_value_factor
+}
+
+# 住房
+num_nanites_logistics_drone_housing = {
+	base = 1
+	inline_script = { script = script_values/num_zones	TYPE = zone_urban	MULT = 1	MODE = add }
+	multiply = value:num_district_nanites_city
+}
+
+# 舒适度
+num_nanites_logistics_drone_amenities_network = {
+	base = 0
+	inline_script = { script = script_values/num_category_buildings	CATEGORY = amenity		MULT = 1	MODE = add }
+	multiply = @nanites_logistics_drone_network_value_factor
+	multiply = value:scripted_modifier_mult|MODIFIER|pop_job_amenities_mult|
+}
+
+# 反常度
+num_nanites_logistics_drone_crime_network = {
+	base = 0
+	inline_script = { script = script_values/num_category_buildings	CATEGORY = government	MULT = 1	MODE = add }
+	multiply = @nanites_logistics_drone_network_value_factor
+}
+
+# 海军容量
+num_nanites_logistics_drone_naval = {
+	base = 0
+	inline_script = { script = script_values/num_zones	TYPE = zone_fortress		MULT = 1	MODE = add }
+	multiply = value:num_district_nanites_city
+	add = value:num_nanites_logistics_drone_naval_from_secondary
+}
+
+num_nanites_logistics_drone_naval_from_secondary = {
+	base = 0
+	inline_script = { script = script_values/num_zones	TYPE = zone_fortress_nexus	MULT = 1	MODE = add }
+	multiply = value:num_district_nanites_nexus_secondary
+}
+
+num_nanites_logistics_drone_naval_network = {
+	base = 0
+	inline_script = { script = script_values/num_category_buildings	CATEGORY = army	MULT = 1	MODE = add }
+	multiply = @nanites_logistics_drone_network_value_factor
+}

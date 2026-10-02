@@ -1,0 +1,12 @@
+triggered_planet_modifier = {
+	potential = {
+		has_global_flag = dimensional_horror_crisis_storm_has_occurred
+	}
+	dimensional_horror_crisis_storm_planet_modifier = $COUNT$
+}
+triggered_fleet_modifier = {
+	potential = {
+		has_global_flag = dimensional_horror_crisis_storm_has_occurred
+	}
+	dimensional_horror_crisis_storm_fleet_modifier = $COUNT$
+}

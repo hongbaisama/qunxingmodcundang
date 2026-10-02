@@ -1,0 +1,32 @@
+﻿l_simp_chinese:
+ dimension_traveler_commander:0 "界旅者"
+ dimension_traveler_scientist:0 "界旅者"
+ dimension_traveler_official:0 "界旅者"
+ 
+ under_the_haze_commander:0 "阴霾指挥官"
+ under_the_haze_scientist:0 "阴霾科学官"
+ under_the_haze_official:0 "阴霾行政官"
+ 
+ parallel_sky_commander:0 "平行指挥官"
+ parallel_sky_scientist:0 "平行科学官"
+ parallel_sky_official:0 "平行行政官"
+ 
+ origin_colossus_commander:0 "悬顶之剑AI"
+ origin_colossus_scientist:0 "悬顶之剑AI"
+ origin_colossus_official:0 "悬顶之剑AI"
+ 
+ origin_pirate_king_commander:0 "海盗水手长"
+ origin_pirate_king_scientist:0 "海盗观测士"
+ origin_pirate_king_official:0 "海盗掌舵手"
+ 
+ origin_pirate_king_end_commander:0 "§M幽灵水手长§!"
+ origin_pirate_king_end_scientist:0 "§M幽灵观测士§!"
+ origin_pirate_king_end_official:0 "§M幽灵掌舵手§!"
+ 
+ time_wanderer_commander:0 "游荡奇点"
+ time_wanderer_scientist:0 "游荡奇点"
+ time_wanderer_official:0 "游荡奇点"
+ 
+ dimensional_horror_crisis_commander:0 "终焉之魇"
+ dimensional_horror_crisis_scientist:0 "终焉之魇"
+ dimensional_horror_crisis_official:0 "终焉之魇"

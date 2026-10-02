@@ -1,0 +1,203 @@
+spriteTypes = {
+	
+	################################################################
+	# 等级
+	################################################################
+	
+	spriteType = {
+		name = "GFX_crisis_beyond_infinity_level_1_btn"
+ 		texturefile = "gfx/interface/icons/crisis/beyond_infinity_Lvl1_btn.dds"
+  		noOfFrames = 2			
+  	}
+  	spriteType = {
+		name = "GFX_crisis_beyond_infinity_level_2_btn"
+  		texturefile = "gfx/interface/icons/crisis/beyond_infinity_Lvl2_btn.dds"
+  		noOfFrames = 2			
+	}
+   	spriteType = {
+  		name = "GFX_crisis_beyond_infinity_level_3_btn"
+   		texturefile = "gfx/interface/icons/crisis/beyond_infinity_lvl3_btn.dds"
+  		noOfFrames = 2	
+  	}		
+	spriteType = {
+   		name = "GFX_crisis_beyond_infinity_level_4_btn"
+   		texturefile = "gfx/interface/icons/crisis/beyond_infinity_Lvl4_btn.dds"
+  		noOfFrames = 2			
+   	}
+  	spriteType = {
+  		name = "GFX_crisis_beyond_infinity_level_5_btn"
+  		texturefile = "gfx/interface/icons/crisis/beyond_infinity_Lvl5_btn.dds"
+  		noOfFrames = 2			
+  	}
+	
+	spriteType = {
+		name = "GFX_crisis_beyond_infinity_level_1_btn_small"
+		texturefile = "gfx/interface/icons/crisis/beyond_infinity_Lvl1_btn_small.dds"
+		noOfFrames = 2			
+	}
+	spriteType = {
+		name = "GFX_crisis_beyond_infinity_level_2_btn_small"
+		texturefile = "gfx/interface/icons/crisis/beyond_infinity_Lvl2_btn_small.dds"
+		noOfFrames = 2			
+	}
+	 spriteType = {
+		name = "GFX_crisis_beyond_infinity_level_3_btn_small"
+		texturefile = "gfx/interface/icons/crisis/beyond_infinity_lvl3_btn_small.dds"
+		noOfFrames = 2	
+	}		
+	spriteType = {
+		name = "GFX_crisis_beyond_infinity_level_4_btn_small"
+		texturefile = "gfx/interface/icons/crisis/beyond_infinity_Lvl4_btn_small.dds"
+		noOfFrames = 2			
+	}
+	spriteType = {
+		name = "GFX_crisis_beyond_infinity_level_5_btn_small"
+		texturefile = "gfx/interface/icons/crisis/beyond_infinity_Lvl5_btn_small.dds"
+		noOfFrames = 2			
+	}
+	
+	progressbarType = {
+		name = "GFX_beyond_infinity_path_progressbar"
+		color = { 1.0 1.0 1.0 }
+		colorTwo = { 1.0 1.0 1.0 }
+		textureFile1 = "gfx/interface/crisis/beyond_infinity_crisis_progress_bar.dds"
+		textureFile2 = "gfx/interface/crisis/Crisis_progressBar_BG.dds"
+		size = { x = 10 y = 432 }
+		effectFile = "gfx/FX/progress.shader"
+		horizontal = no
+		flipdirection = yes
+	}
+	
+	spriteType = {
+		name = "GFX_beyond_infinity_path_level_boxes"
+		texturefile = "gfx/interface/crisis/Crisis_LevelBoxes.dds"
+		noOfFrames = 2	
+	}
+	
+	spriteType = {
+		name = "GFX_beyond_infinity_path_levels_frame"
+		texturefile = "gfx/interface/crisis/Crisis_Levels_frame.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_beyond_infinity_path_title_box"
+		texturefile = "gfx/interface/crisis/Crisis_Title2.dds"	
+	}
+	
+	corneredTileSpriteType = {
+		name = "GFX_beyond_infinity_path_bg"
+		texturefile = "gfx/interface/crisis/beyond_infinity_CrisisBG.dds"
+		borderSize = { x = 0 y = 0 }
+		effectFile = "gfx/FX/buttonstate_onlydisable.shader"
+	}
+	
+	################################################################
+	# 加成
+	################################################################
+	
+	spriteType = {
+		name = "GFX_menp_beyond_infinity_building_1"
+		texturefile = "gfx/interface/icons/crisis/menp_beyond_infinity_building_1.dds"
+		noOfFrames = 2			
+	}
+	spriteType = {
+		name = "GFX_menp_beyond_infinity_section_1"
+		texturefile = "gfx/interface/icons/crisis/menp_beyond_infinity_section_1.dds"
+		noOfFrames = 2			
+	}
+	spriteType = {
+		name = "GFX_menp_beyond_infinity_component_1"
+		texturefile = "gfx/interface/icons/crisis/menp_beyond_infinity_component_1.dds"
+		noOfFrames = 2			
+	}
+	spriteType = {
+		name = "GFX_menp_beyond_infinity_modifier_1"
+		texturefile = "gfx/interface/icons/crisis/menp_beyond_infinity_modifier_1.dds"
+		noOfFrames = 2			
+	}
+	
+	spriteType = {
+		name = "GFX_menp_beyond_infinity_building_2"
+		texturefile = "gfx/interface/icons/crisis/menp_beyond_infinity_building_2.dds"
+		noOfFrames = 2			
+	}
+	spriteType = {
+		name = "GFX_menp_beyond_infinity_section_2"
+		texturefile = "gfx/interface/icons/crisis/menp_beyond_infinity_section_2.dds"
+		noOfFrames = 2			
+	}
+	spriteType = {
+		name = "GFX_menp_beyond_infinity_component_2"
+		texturefile = "gfx/interface/icons/crisis/menp_beyond_infinity_component_2.dds"
+		noOfFrames = 2			
+	}
+	spriteType = {
+		name = "GFX_menp_beyond_infinity_modifier_2"
+		texturefile = "gfx/interface/icons/crisis/menp_beyond_infinity_modifier_2.dds"
+		noOfFrames = 2			
+	}
+	
+	spriteType = {
+		name = "GFX_menp_beyond_infinity_building_3"
+		texturefile = "gfx/interface/icons/crisis/menp_beyond_infinity_building_3.dds"
+		noOfFrames = 2			
+	}
+	spriteType = {
+		name = "GFX_menp_beyond_infinity_section_3"
+		texturefile = "gfx/interface/icons/crisis/menp_beyond_infinity_section_3.dds"
+		noOfFrames = 2			
+	}
+	spriteType = {
+		name = "GFX_menp_beyond_infinity_component_3"
+		texturefile = "gfx/interface/icons/crisis/menp_beyond_infinity_component_3.dds"
+		noOfFrames = 2			
+	}
+	spriteType = {
+		name = "GFX_menp_beyond_infinity_crisis"
+		texturefile = "gfx/interface/icons/crisis/menp_beyond_infinity_crisis.dds"
+		noOfFrames = 2			
+	}
+	
+	spriteType = {
+		name = "GFX_menp_beyond_infinity_building_4"
+		texturefile = "gfx/interface/icons/crisis/menp_beyond_infinity_building_4.dds"
+		noOfFrames = 2			
+	}
+	spriteType = {
+		name = "GFX_menp_beyond_infinity_section_4"
+		texturefile = "gfx/interface/icons/crisis/menp_beyond_infinity_section_4.dds"
+		noOfFrames = 2			
+	}
+	spriteType = {
+		name = "GFX_menp_beyond_infinity_component_4"
+		texturefile = "gfx/interface/icons/crisis/menp_beyond_infinity_component_4.dds"
+		noOfFrames = 2			
+	}
+	spriteType = {
+		name = "GFX_menp_beyond_infinity_project_1"
+		texturefile = "gfx/interface/icons/crisis/menp_beyond_infinity_project_1.dds"
+		noOfFrames = 2			
+	}
+	
+	spriteType = {
+		name = "GFX_menp_beyond_infinity_building_5"
+		texturefile = "gfx/interface/icons/crisis/menp_beyond_infinity_building_5.dds"
+		noOfFrames = 2			
+	}
+	spriteType = {
+		name = "GFX_menp_beyond_infinity_section_5"
+		texturefile = "gfx/interface/icons/crisis/menp_beyond_infinity_section_5.dds"
+		noOfFrames = 2			
+	}
+	spriteType = {
+		name = "GFX_menp_beyond_infinity_component_5"
+		texturefile = "gfx/interface/icons/crisis/menp_beyond_infinity_component_5.dds"
+		noOfFrames = 2			
+	}
+	spriteType = {
+		name = "GFX_menp_beyond_infinity_project_2"
+		texturefile = "gfx/interface/icons/crisis/menp_beyond_infinity_project_2.dds"
+		noOfFrames = 2			
+	}
+	
+}

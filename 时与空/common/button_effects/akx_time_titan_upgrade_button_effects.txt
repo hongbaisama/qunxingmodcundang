@@ -1,0 +1,44 @@
+inline_script = {
+	script = button_effects/time_titan_upgrade_button_effects
+	TYPE = primary
+}
+
+inline_script = {
+	script = button_effects/time_titan_upgrade_button_effects
+	TYPE = normal
+}
+
+inline_script = {
+	script = button_effects/time_titan_upgrade_button_effects
+	TYPE = subsidiary
+}
+
+inline_script = {
+	script = button_effects/time_titan_upgrade_button_effects
+	TYPE = power
+}
+
+inline_script = {
+	script = button_effects/time_titan_upgrade_button_effects
+	TYPE = sapient
+}
+
+inline_script = {
+	script = button_effects/time_titan_upgrade_button_effects
+	TYPE = drive
+}
+
+inline_script = {
+	script = button_effects/time_titan_upgrade_button_effects
+	TYPE = hull
+}
+
+inline_script = {
+	script = button_effects/time_titan_upgrade_button_effects
+	TYPE = armor
+}
+
+inline_script = {
+	script = button_effects/time_titan_upgrade_button_effects
+	TYPE = shield
+}

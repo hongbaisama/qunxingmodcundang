@@ -1,0 +1,319 @@
+@district_time_ruin_cosmogenesis_world_minerals_cost = 600
+@district_time_ruin_cosmogenesis_world_alloys_cost = 200
+@district_time_ruin_cosmogenesis_world_upkeep = 20
+
+district_time_ruin_cosmogenesis_world_main = {
+	overlay_icon = GFX_district_advanced_logic
+	base_buildtime = 250
+	exempt_from_ai_planet_specialization = yes
+
+	zone_slots = {
+		slot_time_ruin_cosmogenesis_world_main
+		slot_time_ruin_cosmogenesis_world_01
+		slot_time_ruin_cosmogenesis_world_02
+	}
+	
+	show_on_uncolonized = {
+		is_planet_class = pc_time_ruin_cosmogenesis_world
+	}
+	
+	potential = {
+		is_planet_class = pc_time_ruin_cosmogenesis_world
+		NAND = {
+			is_capital = yes
+			owner = {
+				has_menace_perk = menp_behemoth_mind_meld
+			}
+		}
+	}
+
+	conversion_ratio = 1
+	convert_to = {
+		district_cosmogenesis_goverment
+		district_mindlink
+		district_ark_city
+	}
+	
+	resources = {
+		category = planet_districts_cities
+		cost = {
+			minerals = @district_time_ruin_cosmogenesis_world_minerals_cost
+			alloys = @district_time_ruin_cosmogenesis_world_alloys_cost
+		}
+		upkeep = {
+			energy = @district_time_ruin_cosmogenesis_world_upkeep
+		}
+	}
+	
+	planet_modifier = {
+		planet_housing_add = 1500
+	}
+	
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { is_tankbound_empire = yes }
+		}
+		job_production_overseer_add = 300
+	}
+	
+	inline_script = {
+		script = districts/district_time_ruin_cosmogenesis_world_main_triggered_name
+	}
+}
+
+district_time_ruin_cosmogenesis_world_secondary_1 = {
+	icon = district_time_ruin_cosmogenesis_world_secondary
+	overlay_icon = GFX_district_research
+	base_buildtime = 250
+	exempt_from_ai_planet_specialization = yes
+
+	zone_slots = {
+		slot_time_ruin_cosmogenesis_world_secondary_1
+	}
+	
+	show_on_uncolonized = {
+		is_planet_class = pc_time_ruin_cosmogenesis_world
+	}
+	
+	potential = {
+		is_planet_class = pc_time_ruin_cosmogenesis_world
+	}
+
+	conversion_ratio = 1
+	convert_to = {
+		district_ark_generator
+	}
+	
+	resources = {
+		category = planet_districts_cities
+		cost = {
+			minerals = @district_time_ruin_cosmogenesis_world_minerals_cost
+			alloys = @district_time_ruin_cosmogenesis_world_alloys_cost
+		}
+		upkeep = {
+			energy = @district_time_ruin_cosmogenesis_world_upkeep
+		}
+	}
+	
+	planet_modifier = {
+		planet_housing_add = 1500
+	}
+	
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { is_tankbound_empire = yes }
+		}
+		job_production_overseer_add = 300
+	}
+	
+	inline_script = {
+		script = districts/district_time_ruin_cosmogenesis_world_secondary_triggered_name
+		ZONE_0 = zone_time_ruin_cosmogenesis_world_secondary_1
+		ZONE_1 = zone_time_ruin_cosmogenesis_world_secondary_2
+		ZONE_2 = zone_time_ruin_cosmogenesis_world_secondary_3
+	}
+}
+
+district_time_ruin_cosmogenesis_world_secondary_2 = {
+	icon = district_time_ruin_cosmogenesis_world_secondary
+	overlay_icon = GFX_district_research
+	base_buildtime = 250
+	exempt_from_ai_planet_specialization = yes
+
+	zone_slots = {
+		slot_time_ruin_cosmogenesis_world_secondary_2
+	}
+	
+	show_on_uncolonized = {
+		is_planet_class = pc_time_ruin_cosmogenesis_world
+	}
+	
+	potential = {
+		is_planet_class = pc_time_ruin_cosmogenesis_world
+	}
+
+	conversion_ratio = 1
+	convert_to = {
+		district_ark_basic
+	}
+	
+	resources = {
+		category = planet_districts_cities
+		cost = {
+			minerals = @district_time_ruin_cosmogenesis_world_minerals_cost
+			alloys = @district_time_ruin_cosmogenesis_world_alloys_cost
+		}
+		upkeep = {
+			energy = @district_time_ruin_cosmogenesis_world_upkeep
+		}
+	}
+	
+	planet_modifier = {
+		planet_housing_add = 1500
+	}
+	
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { is_tankbound_empire = yes }
+		}
+		job_production_overseer_add = 300
+	}
+	
+	inline_script = {
+		script = districts/district_time_ruin_cosmogenesis_world_secondary_triggered_name
+		ZONE_0 = zone_time_ruin_cosmogenesis_world_secondary_2
+		ZONE_1 = zone_time_ruin_cosmogenesis_world_secondary_1
+		ZONE_2 = zone_time_ruin_cosmogenesis_world_secondary_3
+	}
+}
+
+district_time_ruin_cosmogenesis_world_secondary_3 = {
+	icon = district_time_ruin_cosmogenesis_world_secondary
+	overlay_icon = GFX_district_research
+	base_buildtime = 250
+	exempt_from_ai_planet_specialization = yes
+
+	zone_slots = {
+		slot_time_ruin_cosmogenesis_world_secondary_3
+	}
+	
+	show_on_uncolonized = {
+		is_planet_class = pc_time_ruin_cosmogenesis_world
+	}
+	
+	potential = {
+		is_planet_class = pc_time_ruin_cosmogenesis_world
+	}
+
+	conversion_ratio = 1
+	convert_to = {
+		district_ark_military
+		district_ark_forever_cruise
+	}
+	
+	resources = {
+		category = planet_districts_cities
+		cost = {
+			minerals = @district_time_ruin_cosmogenesis_world_minerals_cost
+			alloys = @district_time_ruin_cosmogenesis_world_alloys_cost
+		}
+		upkeep = {
+			energy = @district_time_ruin_cosmogenesis_world_upkeep
+		}
+	}
+	
+	planet_modifier = {
+		planet_housing_add = 1500
+	}
+	
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { is_tankbound_empire = yes }
+		}
+		job_production_overseer_add = 300
+	}
+	
+	inline_script = {
+		script = districts/district_time_ruin_cosmogenesis_world_secondary_triggered_name
+		ZONE_0 = zone_time_ruin_cosmogenesis_world_secondary_3
+		ZONE_1 = zone_time_ruin_cosmogenesis_world_secondary_1
+		ZONE_2 = zone_time_ruin_cosmogenesis_world_secondary_2
+	}
+}
+
+district_time_ruin_cosmogenesis_world_main_active = {
+	icon = district_time_ruin_cosmogenesis_world_main
+	overlay_icon = GFX_district_advanced_logic
+
+	zone_slots = {
+		slot_empty
+	}
+
+	show_on_uncolonized = {
+		always = no
+	}
+
+	potential = {
+		always = no
+	}
+	
+	inline_script = {
+		script = districts/district_time_ruin_cosmogenesis_world_main_triggered_name
+	}
+}
+
+district_time_ruin_cosmogenesis_world_secondary_1_active = {
+	icon = district_time_ruin_cosmogenesis_world_secondary
+	overlay_icon = GFX_district_research
+
+	zone_slots = {
+		slot_empty
+	}
+
+	show_on_uncolonized = {
+		always = no
+	}
+
+	potential = {
+		always = no
+	}
+	
+	inline_script = {
+		script = districts/district_time_ruin_cosmogenesis_world_secondary_triggered_name
+		ZONE_0 = zone_time_ruin_cosmogenesis_world_secondary_1
+		ZONE_1 = zone_time_ruin_cosmogenesis_world_secondary_2
+		ZONE_2 = zone_time_ruin_cosmogenesis_world_secondary_3
+	}
+}
+
+district_time_ruin_cosmogenesis_world_secondary_2_active = {
+	icon = district_time_ruin_cosmogenesis_world_secondary
+	overlay_icon = GFX_district_research
+
+	zone_slots = {
+		slot_empty
+	}
+
+	show_on_uncolonized = {
+		always = no
+	}
+
+	potential = {
+		always = no
+	}
+	
+	inline_script = {
+		script = districts/district_time_ruin_cosmogenesis_world_secondary_triggered_name
+		ZONE_0 = zone_time_ruin_cosmogenesis_world_secondary_2
+		ZONE_1 = zone_time_ruin_cosmogenesis_world_secondary_1
+		ZONE_2 = zone_time_ruin_cosmogenesis_world_secondary_3
+	}
+}
+
+district_time_ruin_cosmogenesis_world_secondary_3_active = {
+	icon = district_time_ruin_cosmogenesis_world_secondary
+	overlay_icon = GFX_district_research
+
+	zone_slots = {
+		slot_empty
+	}
+
+	show_on_uncolonized = {
+		always = no
+	}
+
+	potential = {
+		always = no
+	}
+	
+	inline_script = {
+		script = districts/district_time_ruin_cosmogenesis_world_secondary_triggered_name
+		ZONE_0 = zone_time_ruin_cosmogenesis_world_secondary_3
+		ZONE_1 = zone_time_ruin_cosmogenesis_world_secondary_1
+		ZONE_2 = zone_time_ruin_cosmogenesis_world_secondary_2
+	}
+}

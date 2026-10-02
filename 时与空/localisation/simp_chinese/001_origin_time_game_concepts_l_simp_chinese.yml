@@ -1,0 +1,236 @@
+﻿l_simp_chinese:
+ # 数据库类型
+ databank_origin_time: "神秘奇点"
+ 
+ # 修正
+ time_researcher_produces_formula: "§H最终基础产出§!=§C初始基础产出§!x['concept_time_researcher_weight_yellow']x(1-['concept_district_time_usage_punishment_red'])x['concept_time_researcher_resources_produces_mult_green']x['concept_time_researcher_produces_mult_green']"
+ 
+ concept_time_researcher_resource_weight_white: "§W£job_time_recursioner 神秘奇点中的£col_time_capital_resource 基础资源搜寻权重§!"
+ concept_time_researcher_resource_weight: "£job_time_recursioner 神秘奇点中的£col_time_capital_resource 基础资源搜寻权重"
+ concept_time_researcher_resource_weight_desc: "这代表着['concept_planet_time_researchers_with_icon']在时空中搜寻$r_energy$、$r_minerals$、$r_food$的倾向，并影响他们的$r_energy$、$r_minerals$、$r_food$基础产出。\n\n这属于['concept_time_researcher_weight']"
+ 
+ concept_time_researcher_manufacturing_weight_white: "§W£job_time_recursioner 神秘奇点中的£col_time_capital_manufacturing 工业资源搜寻权重§!"
+ concept_time_researcher_manufacturing_weight: "£job_time_recursioner 神秘奇点中的£col_time_capital_manufacturing 工业资源搜寻权重"
+ concept_time_researcher_manufacturing_weight_desc: "这代表着['concept_planet_time_researchers_with_icon']在时空中搜寻$r_alloys$、$r_consumer_goods$的倾向，并影响他们的$r_alloys$、$r_consumer_goods$基础产出。\n\n这属于['concept_time_researcher_weight']"
+ 
+ concept_time_researcher_unity_weight_white: "§W£job_time_recursioner 神秘奇点中的£col_time_capital_unity 精神资源搜寻权重§!"
+ concept_time_researcher_unity_weight: "£job_time_recursioner 神秘奇点中的£col_time_capital_unity 精神资源搜寻权重"
+ concept_time_researcher_unity_weight_desc: "这代表着['concept_planet_time_researchers_with_icon']在时空中搜寻$r_unity$的倾向，并影响他们的$r_unity$基础产出。\n\n这属于['concept_time_researcher_weight']"
+ 
+ concept_time_researcher_research_weight_white: "§W£job_time_recursioner 神秘奇点中的£col_time_capital_research 研究资源搜寻权重§!"
+ concept_time_researcher_research_weight: "£job_time_recursioner 神秘奇点中的£col_time_capital_research 研究资源搜寻权重"
+ concept_time_researcher_research_weight_desc: "这代表着['concept_planet_time_researchers_with_icon']在时空中搜寻$r_physics$、$r_society$、$r_engineering$的倾向，并影响他们的$r_physics$、$r_society$、$r_engineering$基础产出。\n\n这属于['concept_time_researcher_weight']"
+ 
+ concept_time_researcher_max_weight_abbreviation: "£col_time_capital 资源搜寻权重上限"
+ concept_time_researcher_max_weight_white: "§W£job_time_recursioner 神秘奇点中的£col_time_capital 资源搜寻权重上限§!"
+ concept_time_researcher_max_weight: "£job_time_recursioner 神秘奇点中的£col_time_capital 资源搜寻权重上限"
+ concept_time_researcher_max_weight_desc: "这代表着['concept_planet_time_researchers_with_icon']可分配给['concept_time_researcher_weight_abbreviation']的能力上限，若分配的权重超出了上限，['concept_planet_time_researchers_with_icon']会因心力交瘁而§R大幅降低§!搜寻效率。\n\n每超过权重上限的§Y1%§!，将使['concept_planet_time_researchers_with_icon']的最终资源产出§R-1.8%§!（至多§R-90%§!）"
+ 
+ concept_time_researcher_weight_usage: "£job_time_recursioner 神秘奇点中的£col_time_capital 资源搜寻权重占用"
+ concept_time_researcher_weight_abbreviation: "£col_time_capital 资源搜寻权重"
+ concept_time_researcher_weight_yellow: "§Y£col_time_capital 资源搜寻权重§!"
+ concept_time_researcher_weight: "£job_time_recursioner 神秘奇点中的£col_time_capital 资源搜寻权重"
+ concept_time_researcher_weight_desc: "这代表着['concept_planet_time_researchers_with_icon']在时空中搜寻特定£strategic §Y资源§!的倾向，并影响他们的£strategic §Y资源§!基础产出。\n\n§H总权重§!不应超过['concept_time_researcher_max_weight_abbreviation']，否则['concept_planet_time_researchers_with_icon']会因心力交瘁而§R大幅降低§!搜寻效率。\n\n$time_researcher_produces_formula$"
+ 
+ concept_time_researcher_energy_produces_mult_white: "§W£job_time_recursioner 神秘奇点中的$energy_with_icon$时空丰度§!"
+ concept_time_researcher_energy_produces_mult: "£job_time_recursioner 神秘奇点中的$energy_with_icon$时空丰度"
+ concept_time_researcher_energy_produces_mult_desc: "这代表着['concept_planet_time_researchers_with_icon']在时空中获取$r_energy$的机会，并影响他们的$r_energy$基础产出。\n\n这属于['concept_time_researcher_resources_produces_mult']"
+ 
+ concept_time_researcher_minerals_produces_mult_white: "§W£job_time_recursioner 神秘奇点中的$minerals_with_icon$时空丰度§!"
+ concept_time_researcher_minerals_produces_mult: "£job_time_recursioner 神秘奇点中的$minerals_with_icon$时空丰度"
+ concept_time_researcher_minerals_produces_mult_desc: "这代表着['concept_planet_time_researchers_with_icon']在时空中获取$r_minerals$的机会，并影响他们的$r_minerals$基础产出。\n\n这属于['concept_time_researcher_resources_produces_mult']"
+ 
+ concept_time_researcher_food_produces_mult_white: "§W£job_time_recursioner 神秘奇点中的$food_with_icon$时空丰度§!"
+ concept_time_researcher_food_produces_mult: "£job_time_recursioner 神秘奇点中的$food_with_icon$时空丰度"
+ concept_time_researcher_food_produces_mult_desc: "这代表着['concept_planet_time_researchers_with_icon']在时空中获取$r_food$的机会，并影响他们的$r_food$基础产出。\n\n这属于['concept_time_researcher_resources_produces_mult']"
+ 
+ concept_time_researcher_consumer_goods_produces_mult_white: "§W£job_time_recursioner 神秘奇点中的$consumer_goods_with_icon$时空丰度§!"
+ concept_time_researcher_consumer_goods_produces_mult: "£job_time_recursioner 神秘奇点中的$consumer_goods_with_icon$时空丰度"
+ concept_time_researcher_consumer_goods_produces_mult_desc: "这代表着['concept_planet_time_researchers_with_icon']在时空中获取$r_consumer_goods$的机会，并影响他们的$r_consumer_goods$基础产出与对应基础维护费。\n\n这属于['concept_time_researcher_resources_produces_mult']"
+ 
+ concept_time_researcher_alloys_produces_mult_white: "§W£job_time_recursioner 神秘奇点中的$alloys_with_icon$时空丰度§!"
+ concept_time_researcher_alloys_produces_mult: "£job_time_recursioner 神秘奇点中的$alloys_with_icon$时空丰度"
+ concept_time_researcher_alloys_produces_mult_desc: "这代表着['concept_planet_time_researchers_with_icon']在时空中获取$r_alloys$的机会，并影响他们的$r_alloys$基础产出与对应基础维护费。\n\n这属于['concept_time_researcher_resources_produces_mult']"
+ 
+ concept_time_researcher_unity_produces_mult_white: "§W£job_time_recursioner 神秘奇点中的$unity_with_icon$时空丰度§!"
+ concept_time_researcher_unity_produces_mult: "£job_time_recursioner 神秘奇点中的$unity_with_icon$时空丰度"
+ concept_time_researcher_unity_produces_mult_desc: "这代表着['concept_planet_time_researchers_with_icon']在时空中获取$r_unity$的机会，并影响他们的$r_unity$基础产出与对应基础维护费。\n\n这属于['concept_time_researcher_resources_produces_mult']"
+ 
+ concept_time_researcher_physics_research_produces_mult_white: "§W£job_time_recursioner 神秘奇点中的$physics_research_with_icon$时空丰度§!"
+ concept_time_researcher_physics_research_produces_mult: "£job_time_recursioner 神秘奇点中的$physics_research_with_icon$时空丰度"
+ concept_time_researcher_physics_research_produces_mult_desc: "这代表着['concept_planet_time_researchers_with_icon']在时空中获取$r_physics$的机会，并影响他们的$r_physics$基础产出与对应基础维护费。\n\n这属于['concept_time_researcher_resources_produces_mult']"
+ 
+ concept_time_researcher_society_research_produces_mult_white: "§W£job_time_recursioner 神秘奇点中的$society_research_with_icon$时空丰度§!"
+ concept_time_researcher_society_research_produces_mult: "£job_time_recursioner 神秘奇点中的$society_research_with_icon$时空丰度"
+ concept_time_researcher_society_research_produces_mult_desc: "这代表着['concept_planet_time_researchers_with_icon']在时空中获取$r_society$的机会，并影响他们的$r_society$基础产出与对应基础维护费。\n\n这属于['concept_time_researcher_resources_produces_mult']"
+ 
+ concept_time_researcher_engineering_research_produces_mult_white: "§W£job_time_recursioner 神秘奇点中的$engineering_research_with_icon$时空丰度§!"
+ concept_time_researcher_engineering_research_produces_mult: "£job_time_recursioner 神秘奇点中的$engineering_research_with_icon$时空丰度"
+ concept_time_researcher_engineering_research_produces_mult_desc: "这代表着['concept_planet_time_researchers_with_icon']在时空中获取$r_engineering$的机会，并影响他们的$r_engineering$基础产出与对应基础维护费。\n\n这属于['concept_time_researcher_resources_produces_mult']"
+ 
+ concept_time_researcher_resources_produces_mult_white: "§W£job_time_recursioner 神秘奇点中的£strategic 资源时空丰度§!"
+ concept_time_researcher_resources_produces_mult_green: "§G£strategic 资源时空丰度§!"
+ concept_time_researcher_resources_produces_mult: "£job_time_recursioner 神秘奇点中的£strategic 资源时空丰度"
+ concept_time_researcher_resources_produces_mult_desc: "这代表着['concept_planet_time_researchers_with_icon']在时空中获取£strategic §Y资源§!的机会，并影响他们的£strategic §Y资源§!基础产出。\n\n$time_researcher_produces_formula$"
+ 
+ concept_time_researcher_produces_mult_white: "§W£job_time_recursioner 神秘奇点中的£mod_time_researcher_produces_mult 时空穿梭效率§!"
+ concept_time_researcher_produces_mult_green: "§G£mod_time_researcher_produces_mult 时空穿梭效率§!"
+ concept_time_researcher_produces_mult_yellow: "§Y£mod_time_researcher_produces_mult 时空穿梭效率§!"
+ concept_time_researcher_produces_mult: "£job_time_recursioner 神秘奇点中的£mod_time_researcher_produces_mult 时空穿梭效率"
+ concept_time_researcher_produces_mult_desc: "这代表着['concept_planet_time_researchers_with_icon']进行时空穿梭的效率，并影响他们的£strategic §Y资源§!基础产出。\n\n$time_researcher_produces_formula$"
+ 
+ concept_district_time_usage_white: "§W£job_time_recursioner 神秘奇点中的£mod_district_time_usage 时空航道占用§!"
+ concept_district_time_usage_short: "£mod_district_time_usage 时空航道占用"
+ concept_district_time_usage: "£job_time_recursioner 神秘奇点中的£mod_district_time_usage 时空航道占用"
+ concept_district_time_usage_desc: "这代表着['concept_planet_time_researchers_with_icon']对时空航道的穿梭占用，占用的航道不应超过航道容量，否则['concept_planet_time_researchers_with_icon']会因航道堵塞而§R大幅降低§!搜寻效率。\n\n['concept_district_time_usage_short']每超过['concept_district_time_usage_cap_short']的§Y1%§!，将使['concept_planet_time_researchers_with_icon']的最终资源产出§R-0.9%§!（至多§R-90%§!），即['concept_district_time_usage_punishment_short']"
+ 
+ concept_district_time_usage_cap_white: "§W£job_time_recursioner 神秘奇点中的£mod_district_time_usage_cap 时空航道容量§!"
+ concept_district_time_usage_cap_mult_white: "§W£job_time_recursioner 神秘奇点中的£mod_district_time_usage_cap_mult 时空航道容量§!"
+ concept_district_time_usage_cap_short: "£mod_district_time_usage_cap 时空航道容量"
+ concept_district_time_usage_cap: "£job_time_recursioner 神秘奇点中的£mod_district_time_usage_cap 时空航道容量"
+ concept_district_time_usage_cap_desc: "这代表着['concept_planet_time_researchers_with_icon']可以使用的时空航道最大容量，若占用的航道超出了航道容量，['concept_planet_time_researchers_with_icon']会因航道堵塞而§R大幅降低§!搜寻效率。\n\n['concept_district_time_usage_short']每超过['concept_district_time_usage_cap_short']的§Y1%§!，将使['concept_planet_time_researchers_with_icon']的最终资源产出§R-0.9%§!（至多§R-90%§!），即['concept_district_time_usage_punishment_short']"
+ 
+ concept_district_time_usage_punishment_red: "§R£mod_district_time_usage 航道超容惩罚§!"
+ concept_district_time_usage_punishment_short: "£mod_district_time_usage 航道超容惩罚"
+ concept_district_time_usage_punishment: "£job_time_recursioner 神秘奇点中的£mod_district_time_usage 航道超容惩罚"
+ concept_district_time_usage_punishment_desc: "这代表着['concept_planet_time_researchers_with_icon']在有限的时空航道中相互阻碍，并降低他们的£strategic §Y资源§!基础产出。\n\n['concept_district_time_usage_short']每超过['concept_district_time_usage_cap_short']的§Y1%§!，将使['concept_planet_time_researchers_with_icon']的最终资源产出§R-0.9%§!（至多§R-90%§!）\n\n$time_researcher_produces_formula$"
+ 
+ concept_col_time_mult_white: "§W£job_time_recursioner 神秘奇点中的£mod_col_time_mult 负相飞升效果§!"
+ concept_col_time_mult_yellow: "§Y£job_time_recursioner 神秘奇点中的£mod_col_time_mult 负相飞升效果§!"
+ concept_col_time_mult: "£job_time_recursioner 神秘奇点中的£mod_col_time_mult 负相飞升效果"
+ concept_col_time_mult_desc: "这代表着£mod_col_time_mult §Y神秘奇点§!迈入负相的飞升程度，并影响作为首都时的专属§Y星球规划§!的基础效果。"
+ 
+ # 政策
+ concept_policy_origin_time_resource: "§G£col_time_capital_resource 生存所需§!"
+ concept_policy_origin_time_manufacturing: "§R£col_time_capital_manufacturing 工业生产§!"
+ concept_policy_origin_time_unity: "§C£col_time_capital_unity 意义感悟§!"
+ concept_policy_origin_time_research: "§B£col_time_capital_research 法则求知§!"
+ concept_policy_origin_time_policy: "£policy 奇点探索政策"
+ concept_policy_origin_time: "£job_time_recursioner 神秘奇点中的£policy 奇点探索政策"
+ concept_policy_origin_time_desc: "这代表着['concept_planet_time_researchers_with_icon']进行奇点探索时所遵循的政策，不同的政策会提供不同的['concept_time_researcher_weight']。"
+ 
+ # 政体
+ concept_auth_time_democratic: "$auth_time_democratic$"
+ concept_auth_time_imperial: "$auth_time_imperial$"
+ concept_auth_time_corporate: "$auth_time_corporate$"
+ concept_auth_endless_time_democratic: "$auth_endless_time_democratic$"
+ concept_auth_endless_time_imperial: "$auth_endless_time_imperial$"
+ concept_auth_endless_time_corporate: "$auth_endless_time_corporate$"
+ 
+ # 特质
+ concept_origin_time_chosen_common: "§c圆环之子§!"
+ concept_origin_time_chosen_veteran: "§v圆环之子§!"
+ concept_origin_time_chosen_paragon: "§d圆环之子§!"
+ concept_origin_time_chosen: "§M圆环之子§!"
+ concept_origin_time_chosen_desc: "§M圆环之子§!是被§H圆环§!选中的人，他对于§Y$origin_time$§!至关重要，其§Y蕴藏的潜能§!与§Y肩负的命运§!也将为帝国带来§Y难以预料§!的影响。"
+ 
+ concept_leader_trait_ruler_time: "$leader_trait_ruler_time$"
+ concept_leader_trait_ruler_time_desc: "$origin_time_chosen_subtitle_common$\n\n$THIS_LEADER_TXT$:\n$t$—$TRAIT_IMMORTAL_LEADERS$\n$h_line$$pc_time_pitcure$§L要在黑洞中生存，没有一位英明的领袖是不行的，这位领袖则是最好的人选。§!\n§G$origin_time$['concept_time_ruler_trait_green']§!"
+ concept_leader_trait_ruler_time_owner: "$leader_trait_ruler_time_owner$"
+ concept_leader_trait_ruler_time_owner_desc: "$origin_time_chosen_subtitle_veteran$\n\n$THIS_LEADER_TXT$:\n$t$—$TRAIT_IMMORTAL_LEADERS$\n$h_line$$origin_time_picture$§L能从纯粹的黑洞中死而复生，这位领袖一定是来自奇点的使者，能向我们传递视界信号背后的信息。§!\n§G$origin_time$['concept_time_ruler_trait_green']§!"
+ concept_leader_trait_ruler_time_king: "$leader_trait_ruler_time_king$"
+ concept_leader_trait_ruler_time_king_desc: "$origin_time_chosen_subtitle_paragon$\n\n$THIS_LEADER_TXT$:\n$t$—$TRAIT_IMMORTAL_LEADERS$\n$h_line$$pc_endless_time_picture$§L随着对奇点研究的日渐深入，这位领袖逐渐掌握了随意扭曲、变换时空的能力，时空已被我们统治。§!\n§G$origin_time$['concept_time_ruler_trait_green']§!"
+ 
+ concept_origin_time_species_trait: "$origin_time$物种特质"
+ concept_origin_time_species_trait_desc: "$concept_origin_time_species_trait$是§Y$origin_time$§!起源专属的物种特质。\n此类特质允许物种在['concept_pc_time']上生存，训练为专属的§Y$origin_time_army_plural$§!陆军，并且无法被添加或移除。"
+ 
+ concept_trait_time: "$trait_time$"
+ concept_time_soul_species_trait: "$trait_time_soul$物种特质"
+ concept_trait_time_soul: "$trait_time_soul$"
+ concept_trait_time_soul_desc: "$trait_time_soul$包括\n—['concept_trait_time_soul_virtuality']§C（虚拟）§!\n—['concept_trait_time_soul_synthetic']§C（合成）§!\n—['concept_trait_time_soul_cybernetic']§C（义体）§!\n—['concept_trait_time_soul_genetic']§C（基因）§!\n—['concept_trait_time_soul_psionic']§C（灵能）§!"
+ concept_trait_time_soul_virtuality: "$trait_time_soul_virtuality$"
+ concept_trait_time_soul_synthetic: "$trait_time_soul_synthetic$"
+ concept_trait_time_soul_cybernetic: "$trait_time_soul_cybernetic$"
+ concept_trait_time_soul_genetic: "$trait_time_soul_genetic$"
+ concept_trait_time_soul_psionic: "$trait_time_soul_psionic$"
+ 
+ # 岗位
+ concept_planet_time_researchers: "$planet_time_researchers$"
+ concept_planet_time_researchers_with_icon: "$planet_time_researchers_with_icon$"
+ concept_planet_time_researchers_with_icon_standard_green: "§E$planet_time_researchers_with_icon$§!"
+ concept_planet_time_researchers_desc: "$concept_planet_time_researchers$是能在时空航道中穿梭并获取资源的一类岗位，同时进行着对神秘奇点的探索。\n\n$concept_planet_time_researchers$包括\n—['concept_black_hole_physicist']\n—['concept_black_hole_biologist']\n—['concept_black_hole_engineer']\n—['concept_time_recursioner']\n—['concept_planet_time_orders']"
+ 
+ concept_planet_time_orders: "$planet_time_orders$"
+ concept_planet_time_orders_with_icon: "$planet_time_orders_with_icon$"
+ concept_planet_time_orders_desc: "$concept_planet_time_orders$是由['concept_building_origin_time_authority']根据获胜思潮提供的一类特殊岗位，能够根据星球人口数产出资源并增强['concept_col_time_mult']。\n\n$concept_planet_time_orders$包括\n—§I$job_hope_guardian_plural_with_icon$§!\n—§I$job_hope_disseminator_plural_with_icon$§!\n—§I$job_eternal_observer_plural_with_icon$§!\n—§I$job_eternal_creator_plural_with_icon$§!\n—§I$job_dimensional_ruler_plural_with_icon$§!\n—§I$job_dimensional_conqueror_plural_with_icon$§!\n—§I$job_original_meditator_plural_with_icon$§!\n—§I$job_original_purifier_plural_with_icon$§!"
+ 
+ concept_black_hole_physicist: "$job_black_hole_physicist_plural$"
+ concept_black_hole_physicist_desc: "[black_hole_physicist.GetNamePlural]是一种产出$i_energy$、$i_consumer_goods$和$i_physics$的复合岗位，并被同时视作§I$job_technician$§!、§I$job_artisan$§!与§I$job_physicist$§!岗位。\n\n转化比例：\n§I无§!→4$i_energy$\n1$i_minerals$+1$i_food$→2$i_consumer_goods$\n1$i_energy$+0.5$i_consumer_goods$+0.25$i_alloys$→2$i_physics$\n\n§L$job_black_hole_physicist_desc$§!"
+ 
+ concept_black_hole_biologist: "$job_black_hole_biologist_plural$"
+ concept_black_hole_biologist_desc: "[black_hole_biologist.GetNamePlural]是一种产出$i_food$、$i_unity$和$i_society$的复合岗位，并被同时视作§I$job_farmer$§!、§I$job_bureaucrat$§!与§I$job_biologist$§!岗位。\n\n转化比例：\n§I无§!→4$i_food$\n0.5$i_consumer_goods$+0.5$i_alloys$→2$i_unity$\n1$i_food$+0.5$i_consumer_goods$+0.25$i_alloys$→2$i_society$\n\n§L$job_black_hole_biologist_desc$§!"
+ 
+ concept_black_hole_engineer: "$job_black_hole_engineer_plural$"
+ concept_black_hole_engineer_desc: "[black_hole_engineer.GetNamePlural]是一种产出$i_minerals$、$i_alloys$和$i_engineering$的复合岗位，并被同时视作§I$job_miner$§!、§I$job_foundry$§!与§I$job_engineer$§!岗位。\n\n转化比例：\n§I无§!→4$i_minerals$\n1$i_energy$+1$i_minerals$→2$i_alloys$\n1$i_minerals$+0.5$i_consumer_goods$+0.25$i_alloys$→2$i_engineering$\n\n§L$job_black_hole_engineer_desc$§!"
+ 
+ concept_time_recursioner: "$job_time_recursioner_plural$"
+ concept_time_recursioner_desc: "[time_recursioner.GetNamePlural]是一种产出$i_energy$、$i_minerals$、$i_food$、$i_consumer_goods$、$i_alloys$、$i_unity$和$i_research$的复合岗位，并被同时视作§I$job_technician$§!、§I$job_miner$§!、§I$job_farmer$§!、§I$job_artisan$§!、§I$job_foundry$§!、§I$job_bureaucrat$§!与§I研究§!岗位。\n\n转化比例：\n§I无§!→2$i_energy$+2$i_minerals$+2$i_food$\n0.5$i_minerals$+0.5$i_food$→1$i_consumer_goods$\n0.5$i_energy$+0.5$i_minerals$→1$i_alloys$\n0.25$i_consumer_goods$+0.25$i_alloys$→1$i_unity$\n0.5$i_energy$+0.25$i_consumer_goods$+0.125$i_alloys$→1$i_physics$\n0.5$i_food$+0.25$i_consumer_goods$+0.125$i_alloys$→1$i_society$\n0.5$i_minerals$+0.25$i_consumer_goods$+0.125$i_alloys$→1$i_engineering$\n\n§L$job_time_recursioner_desc$§!"
+ 
+ # 传统
+ concept_tradition_origin_time: "$tradition_origin_time$"
+ 
+ # 飞升
+ concept_ap_origin_time: "$ap_origin_time$"
+ 
+ # 地块
+ concept_pc_time_deposits: "位面特征"
+ concept_pc_time_deposits_desc: "$concept_pc_time_deposits$是由奇点与其它位面之间的数个裂缝与通道组成的独特星球特征，来自其它位面的丰富资源可以提升['concept_time_researcher_resources_produces_mult']。\n\n同种$concept_pc_time_deposits$数量上限为§Y$@pc_time_deposits_limit_1|0$§!\n\n$concept_pc_time_deposits$包括\n—§I$d_time_energy$§!\n—§I$d_time_minerals$§!\n—§I$d_time_food$§!\n—§I$d_time_alloys$§!\n—§I$d_time_consumer_goods$§!\n—§I$d_time_physics_research$§!\n—§I$d_time_society_research$§!\n—§I$d_time_engineering_research$§!\n—§I$d_time_unity$§!"
+ 
+ # 区域条件
+ concept_zone_time_physics_requires_tech: "$zone_time_physics$解锁科技"
+ concept_zone_time_physics_requires_tech_desc: "解锁$zone_time_physics$需要以下任意科技：\n£physics ['technology:tech_power_hub_1']\n£engineering ['technology:tech_luxuries_1']\n£physics ['technology:tech_physics_1']"
+ 
+ concept_zone_time_society_requires_tech: "$zone_time_society$解锁科技"
+ concept_zone_time_society_requires_tech_desc: "解锁$zone_time_society$需要以下任意科技：\n£society ['technology:tech_food_processing_1']\n£society ['technology:tech_adaptive_bureaucracy']\n£society ['technology:tech_society_1']"
+ 
+ concept_zone_time_engineering_requires_tech: "$zone_time_engineering$解锁科技"
+ concept_zone_time_engineering_requires_tech_desc: "解锁$zone_time_engineering$需要以下任意科技：\n£engineering ['technology:tech_mineral_purification_1']\n£engineering ['technology:tech_alloys_1']\n£engineering ['technology:tech_engineering_1']"
+ 
+ # 建筑
+ concept_building_origin_time_authority: "奇点政府建筑"
+ concept_building_origin_time_authority_desc: "在§Y黑洞呢喃§!中胜出的派系将组建自己的政府，并解锁派系专属的§Y建筑§!与§Y岗位§!。\n\n$concept_building_origin_time_authority$包括\n—['concept_building_hope_parliament']\n—['concept_building_eternal_probe']\n—['concept_building_dimensional_fortress']\n—['concept_building_original_sanctuary']"
+ 
+ concept_building_origin_time_advanced_authority: "高级奇点政府建筑"
+ concept_building_origin_time_advanced_authority_desc: "在§Y黑洞呢喃§!中胜出的派系将组建自己的政府，并解锁派系专属的§Y高级建筑§!与§Y岗位§!。\n\n$concept_building_origin_time_advanced_authority$包括\n—['concept_building_hope_institution']\n—['concept_building_eternal_matrix']\n—['concept_building_dimensional_metropolis']\n—['concept_building_original_palace']"
+ 
+ concept_building_hope_parliament: "$building_hope_parliament$"
+ concept_building_hope_parliament_desc: "—$mod_country_official_cap_add$：§G+2§!\n—$mod_official_skill_add$：§G+2§!\n—$mod_official_exp_gain$：§G+50%§!\n—$mod_job_hope_guardian_add$：§G+1§!\n—$mod_job_hope_disseminator_add$：§G+1§!\n—$building_hope_parliament_effect$\n\n$job_hope_guardian_effect_desc$\n$job_hope_disseminator_effect_desc$\n$h_line$§L$building_egalitarian_and_xenophile_is_winner_desc$§!"
+ 
+ concept_building_hope_institution: "$building_hope_institution$"
+ concept_building_hope_institution_desc: "—$mod_country_official_cap_add$：§G+4§!\n—$mod_official_skill_add$：§G+4§!\n—$mod_official_exp_gain$：§G+100%§!\n—$mod_job_hope_guardian_add$：§G+1§!\n—$mod_job_hope_disseminator_add$：§G+1§!\n—$building_hope_institution_effect$\n\n$job_hope_guardian_effect_desc$\n$job_hope_disseminator_effect_desc$\n$h_line$§L$building_egalitarian_and_xenophile_is_winner_advanced_desc$§!"
+ 
+ concept_building_eternal_probe: "$building_eternal_probe$"
+ concept_building_eternal_probe_desc: "—$mod_country_scientist_cap_add$：§G+2§!\n—$mod_scientist_skill_add$：§G+2§!\n—$mod_scientist_exp_gain$：§G+50%§!\n—$mod_job_eternal_observer_add$：§G+1§!\n—$mod_job_eternal_creator_add$：§G+1§!\n—$building_eternal_probe_effect$\n\n$job_eternal_observer_effect_desc$\n$job_eternal_creator_effect_desc$\n$h_line$§L$building_materialist_and_pacifist_is_winner_desc$§!"
+ 
+ concept_building_eternal_matrix: "$building_eternal_matrix$"
+ concept_building_eternal_matrix_desc: "—$mod_country_scientist_cap_add$：§G+4§!\n—$mod_scientist_skill_add$：§G+4§!\n—$mod_scientist_exp_gain$：§G+100%§!\n—$mod_job_eternal_observer_add$：§G+1§!\n—$mod_job_eternal_creator_add$：§G+1§!\n—$building_eternal_matrix_effect$\n\n$job_eternal_observer_effect_desc$\n$job_eternal_creator_effect_desc$\n$h_line$§L$building_materialist_and_pacifist_is_winner_advanced_desc$§!"
+ 
+ concept_building_dimensional_fortress: "$building_dimensional_fortress$"
+ concept_building_dimensional_fortress_desc: "—$mod_country_commander_cap_add$：§G+2§!\n—$mod_commander_skill_add$：§G+2§!\n—$mod_commander_exp_gain$：§G+50%§!\n—$mod_job_dimensional_ruler_add$：§G+1§!\n—$mod_job_dimensional_conqueror_add$：§G+1§!\n—$building_dimensional_fortress_effect$\n\n$job_dimensional_ruler_effect_desc$\n$job_dimensional_conqueror_effect_desc$\n$h_line$§L$building_authoritarian_and_militarist_is_winner_desc$§!"
+ 
+ concept_building_dimensional_metropolis: "$building_dimensional_metropolis$"
+ concept_building_dimensional_metropolis_desc: "—$mod_country_commander_cap_add$：§G+4§!\n—$mod_commander_skill_add$：§G+4§!\n—$mod_commander_exp_gain$：§G+100%§!\n—$mod_job_dimensional_ruler_add$：§G+1§!\n—$mod_job_dimensional_conqueror_add$：§G+1§!\n—$building_dimensional_metropolis_effect$\n\n$job_dimensional_ruler_effect_desc$\n$job_dimensional_conqueror_effect_desc$\n$h_line$§L$building_authoritarian_and_militarist_is_winner_advanced_desc$§!"
+ 
+ concept_building_original_sanctuary: "$building_original_sanctuary$"
+ concept_building_original_sanctuary_desc: "—$MOD_COUNTRY_LEADER_CAP_ADD$：§G+1§!\n—$MOD_LEADER_SKILL_ADD$：§G+1§!\n—$MOD_LEADER_SPECIES_EXP_GAIN$：§G+25%§!\n—$mod_job_original_meditator_add$：§G+1§!\n—$mod_job_original_purifier_add$：§G+1§!\n—$building_original_sanctuary_effect$\n\n$job_original_meditator_effect_desc$\n$job_original_purifier_effect_desc$\n$h_line$§L$building_spiritualist_and_xenophobe_is_winner_desc$§!"
+ 
+ concept_building_original_palace: "$building_original_palace$"
+ concept_building_original_palace_desc: "—$MOD_COUNTRY_LEADER_CAP_ADD$：§G+2§!\n—$MOD_LEADER_SKILL_ADD$：§G+2§!\n—$MOD_LEADER_SPECIES_EXP_GAIN$：§G+50%§!\n—$mod_job_original_meditator_add$：§G+1§!\n—$mod_job_original_purifier_add$：§G+1§!\n—$building_original_palace_effect$\n\n$job_original_meditator_effect_desc$\n$job_original_purifier_effect_desc$\n$h_line$§L$building_spiritualist_and_xenophobe_is_winner_advanced_desc$§!"
+ 
+ # 事件
+ concept_district_time_level_up_yellow: "§Y我们可以改进时空航道§!"
+ concept_district_time_level_up: "£job_time_recursioner 神秘奇点中的£district 航道改进"
+ concept_district_time_level_up_desc: "这代表着我们对黑洞中生存空间利用能力的进步，神秘奇点中的区划将提供更多的加成。\n\n£district §Y$district_time$§!：\n£housing $MOD_PLANET_HOUSING_ADD$$@district_time_base_housing|0=+$\n$mod_district_time_usage_cap$$@district_time_base_usage_cap|1=+$\n\n£district §Y$district_time_physics$§!：\n£housing $MOD_PLANET_HOUSING_ADD$$@district_time_rural_base_housing|0=+$\n£job_black_hole_physicist $mod_job_black_hole_physicist_add$$@district_time_rural_base_job|0=+$\n\n£district §Y$district_time_society$§!：\n£housing $MOD_PLANET_HOUSING_ADD$$@district_time_rural_base_housing|0=+$\n£job_black_hole_biologist $mod_job_black_hole_biologist_add$$@district_time_rural_base_job|0=+$\n\n£district §Y$district_time_engineering$§!：\n£housing $MOD_PLANET_HOUSING_ADD$$@district_time_rural_base_housing|0=+$\n£job_black_hole_engineer $mod_job_black_hole_engineer_add$$@district_time_rural_base_job|0=+$"
+ 
+ concept_clear_a_time_blocker_0_yellow: "§Y我们可以探明一片时空§!"
+ concept_clear_a_time_blocker_0: "£job_time_recursioner 神秘奇点中的£blocker 时空探明"
+ concept_clear_a_time_blocker_0_desc: "这代表着我们对黑洞中某片未知时空的完全勘探，一处§Y$d_time_blocker_0$§!将被移除，但仍有残余的§Y$d_time_blocker_1$§!需要清理。"
+ 
+ concept_time_blocker_2_can_be_cleared_yellow: "§Y我们可以尝试突破引力屏障§!"
+ concept_time_blocker_2_can_be_cleared: "£job_time_recursioner 神秘奇点中的£blocker 屏障突破"
+ concept_time_blocker_2_can_be_cleared_desc: "这代表着我们对黑洞中心的探索取得了质的飞跃，现在我们将有机会清理§Y$d_time_blocker_2$§!。"
+ 
+ concept_time_blocker_3_can_be_cleared_yellow: "§Y我们可以尝试修补引力陷阱§!"
+ concept_time_blocker_3_can_be_cleared: "£job_time_recursioner 神秘奇点中的£blocker 陷阱修补"
+ concept_time_blocker_3_can_be_cleared_desc: "这代表着我们对黑洞中心的探索取得了质的飞跃，现在我们将有机会清理§Y$d_time_blocker_3$§!。"
+ 

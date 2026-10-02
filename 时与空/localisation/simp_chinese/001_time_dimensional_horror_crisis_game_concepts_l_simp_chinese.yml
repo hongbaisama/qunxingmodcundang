@@ -1,0 +1,58 @@
+﻿l_simp_chinese:
+ databank_dimensional_horror_crisis: "终焉宣告"
+ 
+ concept_dimensional_horror_crisis_storm_tooltip: "终焉宣告"
+ 
+ concept_dimensional_horror_crisis_storm_yellow: "§Y终焉宣告§!"
+ concept_dimensional_horror_crisis_storm_affected: "被影响"
+ concept_dimensional_horror_crisis_storm_affected_yellow: "§Y被影响§!"
+ concept_dimensional_horror_crisis_storm: "终焉宣告"
+ concept_dimensional_horror_crisis_storm_desc: "§H$concept_dimensional_horror_crisis_storm$§!是一种起源未知的宇宙现象，常见形式是某类太空风暴的频繁出现，且这类太空风暴往往伴生着一种特殊的位面之魇——['concept_dimensional_horror_crisis_ship']。\n\n这类太空风暴拥有一种诡异的特性——无论从任何角度观测，其旋转方向都完全一致。我们将这类风暴同样命名为“§H$concept_dimensional_horror_crisis_storm$§!”，并针对其旋转方向分为['concept_dimensional_horror_crisis_storm_levo_short']和['concept_dimensional_horror_crisis_storm_dextro_short']两类。\n\n§H$concept_dimensional_horror_crisis_storm$§!风暴的负面效果与生成频率受§Y$FE_CRISES$§!游戏规则影响，并随着§Y超越无限§!的进展与§Y新生黑洞§!的增多而加剧。\n\n为了解决这场天灾，我们必须将所有['concept_dimensional_horror_crisis_erasured']的星系进行['concept_dimensional_horror_crisis_seal']，只靠击退['concept_dimensional_horror_crisis_ship']的方法则于事无补。"
+ 
+ concept_dimensional_horror_crisis_storm_levo_short: "左旋"
+ concept_dimensional_horror_crisis_storm_levo: "终焉宣告（左旋）"
+ concept_dimensional_horror_crisis_storm_levo_desc: "§H$concept_dimensional_horror_crisis_storm_levo$§!是['concept_dimensional_horror_crisis_storm']风暴的一种，其可以对星球与舰船造成极大的危害，且对§Y护盾§!的破坏尤其严重。\n\n受§H$concept_dimensional_horror_crisis_storm_levo$§!波及的星系可能诱发['concept_dimensional_horror_crisis_ship_levo']的出现，并产生一系列负面影响。"
+ 
+ concept_dimensional_horror_crisis_storm_dextro_short: "右旋"
+ concept_dimensional_horror_crisis_storm_dextro: "终焉宣告（右旋）"
+ concept_dimensional_horror_crisis_storm_dextro_desc: "§H$concept_dimensional_horror_crisis_storm_dextro$§!是['concept_dimensional_horror_crisis_storm']风暴的一种，其可以对星球与舰船造成极大的危害，且对§Y装甲§!的破坏尤其严重。\n\n受§H$concept_dimensional_horror_crisis_storm_dextro$§!波及的星系可能诱发['concept_dimensional_horror_crisis_ship_dextro']的出现，并产生一系列负面影响。"
+ 
+ concept_dimensional_horror_crisis_ship_green: "§G终焉之魇§!"
+ concept_dimensional_horror_crisis_ship_orange: "§H终焉之魇§!"
+ concept_dimensional_horror_crisis_ship: "终焉之魇"
+ concept_dimensional_horror_crisis_ship_desc: "§H$concept_dimensional_horror_crisis_ship$§!是由['concept_dimensional_horror_crisis_storm']风暴诱发的一种特殊的位面之魇，同样分为['concept_dimensional_horror_crisis_ship_levo_short']和['concept_dimensional_horror_crisis_ship_dextro_short']两类。\n\n§H$concept_dimensional_horror_crisis_ship$§!同样会对星系内的舰船产生负面影响，并与['concept_dimensional_horror_crisis_storm']风暴的负面影响叠加。因此，当战斗力不足时，可以等到风暴离开再与§H$concept_dimensional_horror_crisis_ship$§!交战。\n\n§H$concept_dimensional_horror_crisis_ship$§!会对所处星系不断产生影响，若此过程不受阻碍持续数月，该星系中的一切都将从时间中抹去，仅有§H$concept_dimensional_horror_crisis_ship$§!幸免，即['concept_dimensional_horror_crisis_erasure']。这一过程会产生大量黑洞，而§H$concept_dimensional_horror_crisis_ship$§!可以从河系的§Y新生黑洞§!中汲取力量，并增强侵略性和坚韧性，增强幅度受§Y$FE_CRISES$§!游戏规则影响。因此，在战斗力允许的条件下，及时解决§H$concept_dimensional_horror_crisis_ship$§!可以减轻战斗的长期压力，并降低后续['concept_dimensional_horror_crisis_seal']的工作量。"
+ 
+ concept_dimensional_horror_crisis_ship_levo_short: "左旋"
+ concept_dimensional_horror_crisis_ship_levo: "终焉之魇（左旋）"
+ concept_dimensional_horror_crisis_ship_levo_desc: "§H$concept_dimensional_horror_crisis_ship_levo$§!是['concept_dimensional_horror_crisis_ship']的一种，拥有强大的战斗能力与反隐能力，能够引发['concept_confusion']与['concept_terrify']，并可以同时对星系内的所有舰船造成伤害。\n\n§H$concept_dimensional_horror_crisis_ship_levo$§!不具备任何§Y护盾§!，但拥有高额的§Y装甲§!与§Y装甲硬化§!，建议使用克制装甲的§Y能量武器§!与其作战。\n\n§H$concept_dimensional_horror_crisis_ship_levo$§!主要使用克制护盾的§Y动能武器§!，建议配备大量§Y装甲§!以抵御其攻击。\n\n§H$concept_dimensional_horror_crisis_ship_levo$§!位于['concept_dimensional_horror_crisis_storm_levo']时拥有§R100%§!的$MOD_SHIP_DAMAGE_REDUCTION_MULT$（与$FE_DIFFICULTY$有关），常态则拥有§R50%§!的$MOD_SHIP_DAMAGE_REDUCTION_MULT$（与$FE_DIFFICULTY$有关），常规武器难以对其造成伤害。"
+ 
+ concept_dimensional_horror_crisis_ship_dextro_short: "右旋"
+ concept_dimensional_horror_crisis_ship_dextro: "终焉之魇（右旋）"
+ concept_dimensional_horror_crisis_ship_dextro_desc: "§H$concept_dimensional_horror_crisis_ship_dextro$§!是['concept_dimensional_horror_crisis_ship']的一种，拥有强大的战斗能力与反隐能力，能够引发['concept_confusion']与['concept_terrify']，并可以同时对星系内的所有舰船造成伤害。\n\n§H$concept_dimensional_horror_crisis_ship_dextro$§!不具备任何§Y装甲§!，但拥有高额的§Y护盾§!与§Y护盾硬化§!，建议使用克制护盾的§Y动能武器§!与其作战。\n\n§H$concept_dimensional_horror_crisis_ship_dextro$§!主要使用克制装甲的§Y能量武器§!，建议配备大量§Y护盾§!以抵御其攻击。\n\n§H$concept_dimensional_horror_crisis_ship_dextro$§!位于['concept_dimensional_horror_crisis_storm_dextro']时拥有§R100%§!的$MOD_SHIP_DAMAGE_REDUCTION_MULT$（与$FE_DIFFICULTY$有关），常态则拥有§R50%§!的$MOD_SHIP_DAMAGE_REDUCTION_MULT$（与$FE_DIFFICULTY$有关），常规武器难以对其造成伤害。"
+ 
+ concept_dimensional_horror_crisis_erasure_red: "§R终焉抹除§!"
+ concept_dimensional_horror_crisis_erasured: "被抹除"
+ concept_dimensional_horror_crisis_erasured_orange: "§H被抹除§!"
+ concept_dimensional_horror_crisis_erasured_yellow: "§Y被抹除§!"
+ concept_dimensional_horror_crisis_erasure: "终焉抹除"
+ concept_dimensional_horror_crisis_erasure_desc: "§H$concept_dimensional_horror_crisis_erasure$§!是['concept_dimensional_horror_crisis_ship']引发的一种宇宙现象。\n\n当§H$concept_dimensional_horror_crisis_erasure$§!发生时，星系内的所有星球都会变为§H$pc_black_hole$§!，除['concept_dimensional_horror_crisis_ship']外的所有舰船都将被摧毁，且该过程不可逆。\n\n§H$concept_dimensional_horror_crisis_erasure$§!需要在['concept_dimensional_horror_crisis_ship']不被干扰的条件下持续数月时间完成，因此，为了避免此现象的发生，我们最好及时与['concept_dimensional_horror_crisis_ship']交战或者将其击退。"
+ 
+ concept_dimensional_horror_crisis_seal_red: "§R终焉封印§!"
+ concept_dimensional_horror_crisis_seal_purple: "§M终焉封印§!"
+ concept_dimensional_horror_crisis_seal_purple_short: "§M封印§!"
+ concept_dimensional_horror_crisis_seal_orange: "§H终焉封印§!"
+ concept_dimensional_horror_crisis_seal_orange_short: "§H封印§!"
+ concept_dimensional_horror_crisis_seal_yellow: "§Y终焉封印§!"
+ concept_dimensional_horror_crisis_sealed_yellow: "§Y被封印§!"
+ concept_dimensional_horror_crisis_seal: "终焉封印"
+ concept_dimensional_horror_crisis_seal_desc: "§H$concept_dimensional_horror_crisis_seal$§!是使星系免受['concept_dimensional_horror_crisis_storm']影响的途径，也是我们解决这场天灾的唯一手段。\n\n完成§H$concept_dimensional_horror_crisis_seal$§!的星系将不再受到['concept_dimensional_horror_crisis_storm']的任何影响，也不会出现['concept_dimensional_horror_crisis_ship']，对我们而言几乎是绝对的安全区。\n\n为了掌握§H$concept_dimensional_horror_crisis_seal$§!的方法，我们需要在§Y$ap_beyond_infinity$§!上抵达§Y第四级§!无限距离，届时，所有玩家都将启用§H$concept_dimensional_horror_crisis_seal$§!功能。\n\n§Y提示：若封印项目未正确完成并触发事件，可通过$edict_time_help_edict$法令刷新项目。§!"
+ 
+ concept_dimensional_horror_crisis_storm_original_level_cyan: "§C终焉宣告的坍缩等级§!"
+ concept_dimensional_horror_crisis_storm_original_level_short: "坍缩等级"
+ concept_dimensional_horror_crisis_storm_original_level: "终焉宣告坍缩等级"
+ concept_dimensional_horror_crisis_storm_original_level_desc: "§H$concept_dimensional_horror_crisis_storm_original_level$§!代表着银河系朝终焉坍缩的严重程度。\n\n§H$concept_dimensional_horror_crisis_storm_original_level_short$§!越高，['concept_dimensional_horror_crisis_storm']造成的危害与['concept_dimensional_horror_crisis_ship']的战斗力就越强，但我们可以通过提升['concept_dimensional_horror_crisis_storm_protection_level_short']来减轻风暴对我们的影响。\n\n随着['concept_dimensional_horror_crisis_storm']进程的加剧与河系§Y新生黑洞§!的出现，§H$concept_dimensional_horror_crisis_storm_original_level_short$§!会越来越高。"
+ 
+ concept_dimensional_horror_crisis_storm_protection_level_white: "§W终焉宣告抗干扰指数§!"
+ concept_dimensional_horror_crisis_storm_protection_level_short: "抗干扰指数"
+ concept_dimensional_horror_crisis_storm_protection_level: "终焉宣告抗干扰指数"
+ concept_dimensional_horror_crisis_storm_protection_level_desc: "§H$concept_dimensional_horror_crisis_storm_protection_level$§!代表着我们减轻['concept_dimensional_horror_crisis_storm']影响的能力。\n\n§H$concept_dimensional_horror_crisis_storm_protection_level_short$§!越高，就能在['concept_dimensional_horror_crisis_storm']对我们的殖民地与舰船造成危害时抵消更多的['concept_dimensional_horror_crisis_storm_original_level_short']，但§R无法§!将其完全清除。"

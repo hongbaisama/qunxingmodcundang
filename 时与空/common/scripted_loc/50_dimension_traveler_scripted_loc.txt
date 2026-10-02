@@ -1,0 +1,344 @@
+# 因果的转折点
+defined_text = {
+	name = GetDimensionTravelerDesc14
+	text = {
+		trigger = {
+			NOT = { has_global_flag = event_dimension_traveler_true }
+		}
+		localization_key = dimension_traveler.14.desc_1
+	}
+	text = {
+		trigger = {
+			has_global_flag = event_dimension_traveler_true
+		}
+		localization_key = dimension_traveler.14.desc_2
+	}
+}
+
+# 界旅者主界面描述
+defined_text = {
+	name = GetDimensionTravelerMainEventDesc
+	# 基础文本
+	text = {
+		trigger = {
+			dimension_traveler_is_disappointed = no
+			NOR = {
+				has_country_flag = dimension_traveler_official_active
+				has_country_flag = dimension_traveler_scientist_active
+				has_country_flag = dimension_traveler_commander_active
+			}
+		}
+		weight = {
+			base = 20
+		}
+		localization_key = dimension_traveler.60.desc.default
+	}
+	text = {
+		trigger = {
+			dimension_traveler_is_disappointed = no
+			has_country_flag = dimension_traveler_official_active
+		}
+		weight = {
+			base = 3
+		}
+		localization_key = dimension_traveler.60.desc.official
+	}
+	text = {
+		trigger = {
+			dimension_traveler_is_disappointed = no
+			has_country_flag = dimension_traveler_scientist_active
+		}
+		weight = {
+			base = 3
+		}
+		localization_key = dimension_traveler.60.desc.scientist
+	}
+	text = {
+		trigger = {
+			dimension_traveler_is_disappointed = no
+			has_country_flag = dimension_traveler_commander_active
+		}
+		weight = {
+			base = 5
+		}
+		localization_key = dimension_traveler.60.desc.commander
+	}
+	# 随机文本
+	inline_script = {
+		script = dimension_traveler/dimension_traveler_main_event_random_desc
+		TYPE = gray
+		WEIGHT = 2
+	}
+	inline_script = {
+		script = dimension_traveler/dimension_traveler_main_event_random_desc
+		TYPE = special
+		WEIGHT = 5
+	}
+	inline_script = {
+		script = dimension_traveler/dimension_traveler_main_event_random_no_commander_desc
+		TYPE = a
+		WEIGHT = 2
+	}
+	inline_script = {
+		script = dimension_traveler/dimension_traveler_main_event_random_no_commander_desc
+		TYPE = b
+		WEIGHT = 2
+	}
+	inline_script = {
+		script = dimension_traveler/dimension_traveler_main_event_random_no_commander_desc
+		TYPE = c
+		WEIGHT = 2
+	}
+	inline_script = {
+		script = dimension_traveler/dimension_traveler_main_event_random_no_commander_desc
+		TYPE = d
+		WEIGHT = 2
+	}
+	inline_script = {
+		script = dimension_traveler/dimension_traveler_main_event_random_no_commander_desc
+		TYPE = e
+		WEIGHT = 2
+	}
+	inline_script = {
+		script = dimension_traveler/dimension_traveler_main_event_random_no_commander_desc
+		TYPE = f
+		WEIGHT = 2
+	}
+	inline_script = {
+		script = dimension_traveler/dimension_traveler_main_event_random_commander_desc
+		TYPE = g
+		WEIGHT = 2
+	}
+	inline_script = {
+		script = dimension_traveler/dimension_traveler_main_event_random_commander_desc
+		TYPE = h
+		WEIGHT = 2
+	}
+	inline_script = {
+		script = dimension_traveler/dimension_traveler_main_event_random_commander_desc
+		TYPE = i
+		WEIGHT = 2
+	}
+	inline_script = {
+		script = dimension_traveler/dimension_traveler_main_event_random_commander_desc
+		TYPE = j
+		WEIGHT = 2
+	}
+	inline_script = {
+		script = dimension_traveler/dimension_traveler_main_event_random_commander_desc
+		TYPE = k
+		WEIGHT = 2
+	}
+	inline_script = {
+		script = dimension_traveler/dimension_traveler_main_event_random_commander_desc
+		TYPE = l
+		WEIGHT = 2
+	}
+	inline_script = {
+		script = dimension_traveler/dimension_traveler_main_event_random_commander_desc
+		TYPE = m
+		WEIGHT = 2
+	}
+	inline_script = {
+		script = dimension_traveler/dimension_traveler_main_event_random_commander_desc
+		TYPE = n
+		WEIGHT = 2
+	}
+	inline_script = {
+		script = dimension_traveler/dimension_traveler_main_event_random_commander_desc
+		TYPE = o
+		WEIGHT = 2
+	}
+	inline_script = {
+		script = dimension_traveler/dimension_traveler_main_event_random_commander_desc
+		TYPE = p
+		WEIGHT = 2
+	}
+	# 特殊文本
+	text = {
+		trigger = {
+			has_global_flag = dimensional_horror_crisis_storm_has_occurred
+		}
+		weight = {
+			base = 5
+		}
+		localization_key = dimension_traveler.60.desc.dimensional_horror_crisis
+	}
+	text = {
+		trigger = {
+			dimension_traveler_is_disappointed = yes
+		}
+		weight = {
+			base = 100
+		}
+		localization_key = dimension_traveler.60.desc.disappointed
+	}
+}
+
+# 界旅者精英级描述（行政官）
+defined_text = {
+	name = GetSubclassOfficialDimensionTravelerDesc
+	text = {
+		trigger = {
+			owner = { has_policy_flag = horror_dimension_traveler }
+		}
+		localization_key = subclass_official_dimension_traveler_desc_horror
+	}
+	default = subclass_official_dimension_traveler_desc_normal
+}
+
+# 界旅者精英级描述（科学官）
+defined_text = {
+	name = GetSubclassScientistDimensionTravelerDesc
+	text = {
+		trigger = {
+			owner = { has_policy_flag = horror_dimension_traveler }
+		}
+		localization_key = subclass_scientist_dimension_traveler_desc_horror
+	}
+	default = subclass_scientist_dimension_traveler_desc_normal
+}
+
+# 界旅者精英级描述（指挥官）
+defined_text = {
+	name = GetSubclassCommanderDimensionTravelerDesc
+	text = {
+		trigger = {
+			owner = { has_policy_flag = horror_dimension_traveler }
+		}
+		localization_key = subclass_commander_dimension_traveler_desc_horror
+	}
+	default = subclass_commander_dimension_traveler_desc_normal
+}
+
+# 界旅者精英级额外描述（行政官）
+defined_text = {
+	name = GetSubclassOfficialDimensionTravelerTooltip
+	text = {
+		trigger = {
+			owner = { has_policy_flag = horror_dimension_traveler }
+		}
+		localization_key = subclass_official_dimension_traveler_tooltip_horror
+	}
+	default = subclass_official_dimension_traveler_tooltip_normal
+}
+
+# 界旅者精英级额外描述（科学官）
+defined_text = {
+	name = GetSubclassScientistDimensionTravelerTooltip
+	text = {
+		trigger = {
+			owner = { has_policy_flag = horror_dimension_traveler }
+		}
+		localization_key = subclass_scientist_dimension_traveler_tooltip_horror
+	}
+	default = subclass_scientist_dimension_traveler_tooltip_normal
+}
+
+# 界旅者精英级额外描述（指挥官）
+defined_text = {
+	name = GetSubclassCommanderDimensionTravelerTooltip
+	text = {
+		trigger = {
+			owner = { has_policy_flag = horror_dimension_traveler }
+		}
+		localization_key = subclass_commander_dimension_traveler_tooltip_horror
+	}
+	default = subclass_commander_dimension_traveler_tooltip_normal
+}
+
+# 圆环使者政策效果描述
+defined_text = {
+	name = GetHorrorDimensionTravelerPolicyDesc
+	random = no
+	text = {
+		trigger = {
+			is_gestalt = yes
+		}
+		localization_key = horror_dimension_traveler_gestalt_desc
+	}
+	default = horror_dimension_traveler_default_desc
+}
+
+# 因果爆发触发概率
+defined_text = {
+	name = GetDimensionTravelerHorrorSecretChance
+	value = event_target:dimension_traveler_leader.value:dimension_traveler_horror_modifier_chance
+}
+
+# 因果爆发持续时间
+defined_text = {
+	name = GetDimensionTravelerHorrorSecretGood
+	value = event_target:dimension_traveler_leader.value:dimension_traveler_horror_modifier_time_loc|TYPE|good|
+}
+
+# 因果过载持续时间
+defined_text = {
+	name = GetDimensionTravelerHorrorSecretBad
+	value = event_target:dimension_traveler_leader.value:dimension_traveler_horror_modifier_time_loc|TYPE|bad|
+}
+
+# 因果爆发状态
+defined_text = {
+	name = GetDimensionTravelerHorrorModifierState
+	random = no
+	text = {
+		trigger = {
+			event_target:dimension_traveler_owner = { has_dimension_traveler_horror_modifier_good = yes }
+		}
+		localization_key = dimension_traveler_horror_modifier_active
+	}
+	text = {
+		trigger = {
+			event_target:dimension_traveler_owner = { has_country_flag = dimension_traveler_horror_cooldown }
+		}
+		localization_key = dimension_traveler_horror_modifier_cooldown
+	}
+	text = {
+		trigger = {
+			event_target:dimension_traveler_owner = { has_policy_flag = horror_dimension_traveler }
+		}
+		localization_key = dimension_traveler_horror_modifier_unlocked
+	}
+	default = dimension_traveler_horror_modifier_locked
+}
+
+# 命定特质图片
+defined_text = {
+	name = GetDimensionTravelerTraitPicture
+	text = {
+		trigger = {
+			event_target:dimension_traveler_species = {
+				is_species_class = DIMENSION_TRAVELER_SPECIAL
+			}
+		}
+		localization_key = dimension_traveler_trait_picture
+	}
+	default = origin_white_hole_picture
+}
+
+# 格式塔命定状态（本人）
+defined_text = {
+	name = GetDimensionTravelerHorrorSecretSelfEffect
+	text = {
+		trigger = {
+			event_target:dimension_traveler_leader = {
+				is_exploring_astral_rift = no
+			}
+		}
+		localization_key = leader_trait_dimension_traveler_horror_secret_self_effect_yes
+	}
+	default = leader_trait_dimension_traveler_horror_secret_self_effect_no
+}
+
+# 格式塔命定状态（内阁）
+defined_text = {
+	name = GetDimensionTravelerHorrorSecretGestaltEffect
+	text = {
+		trigger = {
+			event_target:dimension_traveler_owner = { active_dimension_traveler_destiny_trait_gestalt = yes }
+		}
+		localization_key = leader_trait_dimension_traveler_horror_secret_gestalt_effect_yes
+	}
+	default = leader_trait_dimension_traveler_horror_secret_gestalt_effect_no
+}

@@ -1,0 +1,20 @@
+# 电
+no_water_no_fish_energy_value = {
+	base = 0
+	add = value:num_jobs_workforce_value|JOB|technician|
+	add = value:num_jobs_workforce_value|JOB|technician_drone|
+}
+
+# 矿
+no_water_no_fish_minerals_value = {
+	base = 0
+	add = value:num_jobs_workforce_value|JOB|miner|
+	add = value:num_jobs_workforce_value|JOB|mining_drone|
+}
+
+# 粮
+no_water_no_fish_food_value = {
+	base = 0
+	add = value:num_jobs_workforce_value|JOB|farmer|
+	add = value:num_jobs_workforce_value|JOB|agri_drone|
+}

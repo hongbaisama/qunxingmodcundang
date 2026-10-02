@@ -1,0 +1,49 @@
+triggered_planet_modifier = {
+	potential = {
+		exists = owner
+		owner = { is_wilderness_empire = no }
+	}
+	modifier = {
+		planet_housing_add = 200
+	}
+}
+
+triggered_planet_modifier = {
+	potential = {
+		exists = owner
+		owner = {
+			has_valid_civic = civic_agrarian_idyll
+		}
+	}
+	modifier = {
+		planet_housing_add = 400
+	}
+}
+
+triggered_planet_modifier = {
+	potential = {
+		exists = owner
+		owner = {
+			has_technology = tech_housing_agrarian_idyll
+			has_valid_civic = civic_agrarian_idyll
+		}
+	}
+	modifier = {
+		planet_housing_add = 200
+	}
+}
+
+triggered_planet_modifier = {
+	potential = {
+		exists = owner
+		owner = { is_gestalt = yes }
+	}
+	modifier = {
+		planet_housing_add = 100
+	}
+}
+
+inline_script = {
+	script = districts/time_district_script_modifier
+	DISTRICT = farming
+}

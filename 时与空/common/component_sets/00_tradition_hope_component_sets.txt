@@ -1,0 +1,41 @@
+component_set = {
+	key = "HOPE_HULL"
+	
+	icon = "GFX_ship_part_hope_hull"
+	icon_frame = 1
+}
+
+component_set = {
+	key = "DIMENSION_HOPE_HULL"
+	
+	icon = "GFX_ship_part_hope_hull"
+	icon_frame = 1
+}
+
+component_set = {
+	key = "HOPE_BEAM"
+	
+	icon = "GFX_ship_part_hope_beam"
+	icon_frame = 1
+}
+
+component_set = {
+	key = "BIO_HOPE_BEAM"
+	
+	icon = "GFX_ship_part_bio_hope_beam"
+	icon_frame = 1
+}
+
+component_set = {
+	key = "HOPE_ACCELERATOR"
+	
+	icon = "GFX_ship_part_hope_accelerator"
+	icon_frame = 1
+}
+
+component_set = {
+	key = "BIO_HOPE_ACCELERATOR"
+	
+	icon = "GFX_ship_part_bio_hope_accelerator"
+	icon_frame = 1
+}

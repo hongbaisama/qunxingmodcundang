@@ -1,0 +1,103 @@
+# 特质
+concept_dimension_traveler_leader_trait = {
+	alias = {
+		concept_dimension_traveler_leader_trait_subclass
+		concept_dimension_traveler_leader_trait_destiny
+		concept_dimension_traveler_leader_trait_destiny_gestalt
+		concept_dimension_traveler_leader_trait_other
+	}
+}
+
+concept_trait_dimension_traveler = {
+	icon = "gfx/interface/icons/traits/trait_dimension_traveler.dds"
+	tooltip_override = "trait:trait_dimension_traveler"
+}
+
+# 政策
+concept_policy_dimension_traveler = {
+	icon = "gfx/interface/icons/traits/trait_dimension_traveler.dds"
+	alias = {
+		concept_horror_dimension_traveler
+		concept_normal_dimension_traveler
+	}
+}
+
+# 信使网络
+concept_messenger_network = {
+	icon = "gfx/interface/icons/traits/trait_akx_messenger.dds"
+	alias = {
+		concept_messenger_network_white
+		concept_messenger_network_cyan
+	}
+}
+
+# 星辰记忆
+concept_dimension_traveler_skill_point = {
+	icon = "gfx/interface/icons/trade_icons/trade_cat_sensor.dds"
+	alias = {
+		concept_dimension_traveler_skill_point_usage
+		concept_dimension_traveler_skill_point_cap
+		concept_dimension_traveler_skill_point_white
+		concept_dimension_traveler_skill_point_red
+		concept_dimension_traveler_skill_point_orange
+		concept_dimension_traveler_skill_point_yellow
+		concept_dimension_traveler_skill_point_green
+	}
+}
+
+# 来自异世
+concept_dimension_traveler_base = {
+	icon = "gfx/interface/icons/traits/trait_akx_messenger.dds"
+	alias = {
+	}
+}
+
+concept_dimension_traveler_base_energy_produces_add = {
+	icon = "gfx/interface/icons/traits/trait_akx_messenger.dds"
+	alias = { concept_dimension_traveler_base_energy_produces_add_white }
+}
+
+concept_dimension_traveler_base_minerals_produces_add = {
+	icon = "gfx/interface/icons/traits/trait_akx_messenger.dds"
+	alias = { concept_dimension_traveler_base_minerals_produces_add_white }
+}
+
+concept_dimension_traveler_base_food_produces_add = {
+	icon = "gfx/interface/icons/traits/trait_akx_messenger.dds"
+	alias = { concept_dimension_traveler_base_food_produces_add_white }
+}
+
+concept_dimension_traveler_base_consumer_goods_produces_add = {
+	icon = "gfx/interface/icons/traits/trait_akx_messenger.dds"
+	alias = { concept_dimension_traveler_base_consumer_goods_produces_add_white }
+}
+
+concept_dimension_traveler_base_alloys_produces_add = {
+	icon = "gfx/interface/icons/traits/trait_akx_messenger.dds"
+	alias = { concept_dimension_traveler_base_alloys_produces_add_white }
+}
+
+concept_dimension_traveler_base_unity_produces_add = {
+	icon = "gfx/interface/icons/traits/trait_akx_messenger.dds"
+	alias = { concept_dimension_traveler_base_unity_produces_add_white }
+}
+
+concept_dimension_traveler_base_physics_research_produces_add = {
+	icon = "gfx/interface/icons/traits/trait_akx_messenger.dds"
+	alias = { concept_dimension_traveler_base_physics_research_produces_add_white }
+}
+
+concept_dimension_traveler_base_society_research_produces_add = {
+	icon = "gfx/interface/icons/traits/trait_akx_messenger.dds"
+	alias = { concept_dimension_traveler_base_society_research_produces_add_white }
+}
+
+concept_dimension_traveler_base_engineering_research_produces_add = {
+	icon = "gfx/interface/icons/traits/trait_akx_messenger.dds"
+	alias = { concept_dimension_traveler_base_engineering_research_produces_add_white }
+}
+
+concept_dimension_traveler_base_influence_produces_add = {
+	icon = "gfx/interface/icons/traits/trait_akx_messenger.dds"
+	alias = { concept_dimension_traveler_base_influence_produces_add_white }
+}

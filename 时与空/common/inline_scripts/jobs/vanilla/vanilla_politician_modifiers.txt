@@ -1,0 +1,73 @@
+triggered_planet_modifier = {
+	potential = {
+		always = yes
+	}
+	planet_amenities_add = 300
+	mult = value:scripted_modifier_mult|MODIFIER|pop_job_amenities_mult|
+}
+
+triggered_planet_modifier = {
+	potential = {
+		OR = {
+			politician_is_fire_oracle = yes
+			politician_is_blazewright = yes
+			politician_is_blazing_harbinger = yes
+			politician_is_radiant_priest = yes
+			politician_is_pyrocrat = yes
+			politician_is_ashbroker = yes
+		}
+	}
+	planet_amenities_add = 400
+	mult = value:scripted_modifier_mult|MODIFIER|pop_job_amenities_mult|
+}
+triggered_planet_modifier = {
+	potential = {
+		politician_is_blazing_harbinger = yes
+	}
+	planet_stability_add = @inf_dancer_stability
+}
+
+## Noble
+triggered_planet_modifier = {
+	potential = {
+		politician_is_noble = yes
+	}
+	planet_stability_add = 0.5
+}
+
+## Superstitious Beliefs
+triggered_planet_modifier = {
+	potential = {
+		OR = {
+			politician_is_superstitious_beliefs_high_priest = yes
+			politician_is_superstitious_beliefs_high_priest_corporate = yes
+		}
+	}
+	planet_stability_add = 0.5
+}
+
+## Technophant
+triggered_planet_modifier = {
+	potential = {
+		owner? = { has_origin = origin_cybernetic_creed }
+	}
+	planet_amenities_add = 200
+	mult = value:scripted_modifier_mult|MODIFIER|pop_job_amenities_mult|
+}
+
+## Planetary Warden
+triggered_planet_modifier = {
+	potential = {
+		has_designation = col_penal
+	}
+	planet_stability_add = 1
+}
+
+## Sacred Path - First Light Guidance
+triggered_planet_modifier = {
+	potential = {
+		politician_is_sacred_path_elite = yes
+		owner? = { has_modifier = first_light_guidance }
+	}
+	planet_stability_add = 0.25
+}

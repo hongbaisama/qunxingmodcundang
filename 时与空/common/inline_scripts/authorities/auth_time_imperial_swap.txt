@@ -1,0 +1,58 @@
+advanced_authority_swap	= {
+	name = "auth_time_imperial"
+	description = "auth_time_imperial_desc"
+	inherit_icon = no
+	inherit_effects = no
+	ruler_council_position = councilor_ruler_time_imperial
+	trigger = {
+		is_scope_valid = yes
+		has_origin_time = yes
+		has_country_flag = unlock_auth_time_imperial
+	}
+	modifier = {
+		custom_tooltip = auth_time_imperial_tt
+		show_only_custom_tooltip = no
+		d_time_minerals_mult = 1
+		d_time_alloys_mult = 1
+		d_time_physics_research_mult = 1
+	}
+	tags = {
+		AUTHORITY_TIME_IMPERIAL
+		AUTHORITY_SUCCESSION_TYPE
+		AUTHORITY_HAS_HEIR
+		AUTH_IMPERIAL_CAPITAL_SYSTEM_BONUS
+	}
+	weight = {
+		base = 100
+	}
+}
+
+advanced_authority_swap	= {
+	name = "auth_endless_time_imperial"
+	description = "auth_endless_time_imperial_desc"
+	inherit_icon = no
+	inherit_effects = no
+	ruler_council_position = councilor_ruler_endless_time_imperial
+	trigger = {
+		is_scope_valid = yes
+		has_origin_time = yes
+		has_country_flag = unlock_auth_time_imperial
+		has_country_flag = unlock_auth_endless_time
+	}
+	modifier = {
+		custom_tooltip = auth_endless_time_imperial_tt
+		show_only_custom_tooltip = no
+		d_time_minerals_mult = 2
+		d_time_alloys_mult = 2
+		d_time_physics_research_mult = 2
+	}
+	tags = {
+		AUTHORITY_TIME_IMPERIAL
+		AUTHORITY_SUCCESSION_TYPE
+		AUTHORITY_HAS_HEIR
+		AUTH_IMPERIAL_CAPITAL_SYSTEM_BONUS
+	}
+	weight = {
+		base = 200
+	}
+}

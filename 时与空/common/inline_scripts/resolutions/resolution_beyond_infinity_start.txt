@@ -1,0 +1,50 @@
+icon = "GFX_resolution_beyond_infinity_$TYPE$"
+
+resources = {
+	category = resolutions
+	cost = {
+		influence = $COST$
+	}
+}
+target = no
+level = 1
+
+effect = {
+	custom_tooltip = resolution_beyond_infinity_$TYPE$_1_effect
+	hidden_effect = {
+		set_global_flag = galactic_community_crisis_fighting
+		event_target:beyond_infinity_country = {
+			if = {
+				limit = {
+					NOT = { is_variable_set = crisobj_beyond_infinity_resolution_variable }
+				}
+				set_variable = {
+					which = crisobj_beyond_infinity_resolution_variable
+					value = 0
+				}
+			}
+			if = {
+				limit = {
+					NOT = { has_global_flag = skip_refresh_galactic_beyond_infinity_tech_modifier }
+				}
+				refresh_galactic_beyond_infinity_tech_modifier = yes
+			}
+		}
+	}
+}
+
+potential = {
+	is_galactic_$TYPE$ = yes
+	has_crisis_perk = menp_beyond_infinity_crisis
+}
+
+allow = {
+	custom_tooltip = {
+		fail_text = resolution_already_active
+		NOR = {
+			is_active_resolution = resolution_beyond_infinity_$TYPE$_1
+			is_active_resolution = resolution_beyond_infinity_$TYPE$_2
+			is_active_resolution = resolution_beyond_infinity_$TYPE$_3
+		}
+	}
+}

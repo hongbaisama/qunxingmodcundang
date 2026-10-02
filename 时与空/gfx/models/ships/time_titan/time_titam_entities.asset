@@ -1,0 +1,272 @@
+entity = {
+	name = "time_titan_empty_section_entity"
+	scale = 1
+
+	locator = { name = "root"	position = {	0	0	0	}	}
+	locator = { name = "core"	position = {	0	0	0	}	}
+	
+	locator = { name = "bow_gun_01"	position = {	0	0	-31	}	}
+	locator = { name = "bow_gun_02"	position = {	0	0	-31	}	}
+	locator = { name = "bow_gun_03"	position = {	0	0	-31	}	}
+	locator = { name = "bow_gun_04"	position = {	0	7	-22	}	}
+	locator = { name = "bow_gun_05"	position = {	0	7	-22	}	}
+	
+	locator = { name = "mid_gun_01"	position = {	0	7	-30	}	}
+	locator = { name = "mid_gun_02"	position = {	0	7	-30	}	}
+	locator = { name = "mid_gun_03"	position = {	0	7	-15	}	}
+	locator = { name = "mid_gun_04"	position = {	0	7	-15	}	}
+	locator = { name = "mid_gun_05"	position = {	0	7	-8	}	}
+	locator = { name = "mid_gun_06"	position = {	0	7	-8	}	}
+	locator = { name = "mid_gun_07"	position = {	0	8	-2	}	}
+	locator = { name = "mid_gun_08"	position = {	0	8	-2	}	}
+	
+	locator = { name = "stern_gun_01"	position = {	7	7	15	}	}
+	locator = { name = "stern_gun_02"	position = {	7	7	15	}	}
+	locator = { name = "stern_gun_03"	position = {	7	7	15	}	}
+	locator = { name = "stern_gun_04"	position = {	-7	7	15	}	}
+	locator = { name = "stern_gun_05"	position = {	-7	7	15	}	}
+	locator = { name = "stern_gun_06"	position = {	-7	7	15	}	}
+	
+	locator = { name = "locator_01"	position = {	12	5	-1	}	rotation = {	-90	0	0	}	}
+	locator = { name = "locator_02"	position = {	17	5	-6	}	rotation = {	-90	0	0	}	}
+	locator = { name = "locator_03"	position = {	17	5	3	}	rotation = {	-90	0	0	}	}
+	locator = { name = "locator_04"	position = {	-12	5	-1	}	rotation = {	-90	0	0	}	}
+	locator = { name = "locator_05"	position = {	-17	5	-6	}	rotation = {	-90	0	0	}	}
+	locator = { name = "locator_06"	position = {	-17	5	3	}	rotation = {	-90	0	0	}	}
+}
+
+entity = {
+	name = "time_titan_module_section_entity"
+	scale = 0.8
+
+	default_state = "idle"
+	state = { name = "idle" animation = "idle"	animation_blend_time = 4 }
+
+	locator = { name = "root"	position = {	0	0	0	}	}
+	
+	attach = { root = "mindwarden_01_battleship_bow_L2_entity" }
+	attach = { root = "mindwarden_01_battleship_mid_L3_entity" }
+	attach = { root = "mindwarden_01_battleship_stern_L1_entity" }
+}
+
+entity = {
+	name = "time_titan_entity"
+	
+	locator = { name = "root"	position = {	0	0	0	}	}
+	locator = { name = "portal_1"	position = {	0	0	25	}	}
+	locator = { name = "portal_2"	position = {	0	0	25	}	rotation = {	0	0	90	}	}
+	locator = { name = "around"	position = {	0	0	20	}	rotation = {	0	90	0	}	}
+	
+	locator = { name = "module_01"		position = {	10	10	-45	}	}
+	locator = { name = "module_02"		position = {	-10	10	-45	}	}
+	locator = { name = "module_03"		position = {	20	15	-25	}	}
+	locator = { name = "module_04"		position = {	-20	15	-25	}	}
+	locator = { name = "module_05"		position = {	30	20	-5	}	}
+	locator = { name = "module_06"		position = {	-30	20	-5	}	}
+	locator = { name = "spinal_mount"	position = {	0	15	-25	}	}
+
+	attach = { root = "time_bow_entity" }
+	attach = { root = "time_mid_entity" }
+	attach = { root = "time_core_entity" }
+	attach = { root = "time_ship_entity" }
+	attach = { root = "time_stern_entity" }
+	attach = { portal_1 = "time_gateway_portal_entity_1" }
+	attach = { portal_2 = "time_gateway_portal_entity_2" }
+	attach = { around = "time_animation_entity" }
+	
+	default_state = "idle"
+	state = { name = "idle" state_time = 1.0 looping = no
+	}
+	state = { name = "wind_up" state_time = 1.0 looping = no
+	}
+	state = { name = "wind_down" state_time = 1.0 looping = no next_state = "idle"
+	}
+
+	scale = 1
+}
+
+entity = {
+	name = "time_bow_entity"
+	
+	locator = { name = "root"	position = {	0	0	0	}	}
+	locator = { name = "bow"	position = {	0	0	-10	}	}
+
+	attach = { bow = "nemesis_01_titan_bow_entity" }
+
+	scale = 1
+}
+
+entity = {
+	name = "time_mid_entity"
+	
+	locator = { name = "root"	position = {	0	0	0	}	}
+	locator = { name = "mid"	position = {	0	0	-20	}	}
+
+	attach = { mid = "nemesis_01_titan_mid_entity" }
+
+	scale = 1
+}
+
+entity = {
+	name = "time_core_entity"
+	
+	locator = { name = "root"	position = {	0	0	0	}	}
+	locator = { name = "core"	position = {	0	0	0	}	}
+	
+	attach = { core = "time_titan_end_shelter_entity" }
+	
+	default_state = "idle"
+	state = { name = "idle" state_time = 1.0 looping = no
+	}
+	state = { name = "wind_up" state_time = 1.0 looping = no
+	}
+	state = { name = "wind_down" state_time = 1.0 looping = no next_state = "idle"
+	}
+
+	scale = 1
+}
+
+entity = {
+	name = "time_ship_entity"
+	
+	locator = { name = "root"		position = {	0	0	0	}	}
+	locator = { name = "ship"		position = {	0	0	0	}	}
+
+	attach = { ship = "nemesis_01_juggernaut_core_section_entity" }
+	
+	scale = 1
+}
+
+entity = {
+	name = "time_stern_entity"
+	
+	locator = { name = "root"	position = {	0	0	0	}	}
+	locator = { name = "stern"	position = {	0	0	10	}	}
+
+	attach = { stern = "nemesis_01_titan_stern_entity" }
+
+	scale = 1
+}
+
+entity = {
+	name = "time_gateway_portal_entity_1"
+	pdxmesh = "gatebuilder_gateway_portal_mesh"
+	
+	get_state_from_parent = no
+	
+	default_state = "idle"
+	state = { name = "idle" state_time = 5 
+		chance = {
+			if_current_state = {
+				"idle" = 100
+				"wind_up" = 100
+				"wind_down" = 100
+			}
+		}
+		event = { time = 0 node = "center" particle = "gatebuilder_gateway_portal_effect" keep_particle = yes trigger_once = yes sound = { soundeffect = "megastructure_gate_way_portal_hum" } }
+	}
+	
+	game_data = {
+		uv_animation_speed 		= -0.05
+		uv_animation_direction 	= { 0.5 1.0 }
+		bloom_factor = 0.8
+	}
+	
+	scale = 0.45
+}
+
+entity = {
+	name = "time_gateway_portal_entity_2"
+	pdxmesh = "gatebuilder_gateway_portal_mesh"
+	
+	get_state_from_parent = no
+	
+	default_state = "idle"
+	state = { name = "idle" state_time = 5 
+		chance = {
+			if_current_state = {
+				"idle" = 100
+				"wind_up" = 100
+				"wind_down" = 100
+			}
+		}
+		event = { time = 0 node = "center" particle = "gatebuilder_gateway_portal_effect" keep_particle = yes trigger_once = yes sound = { soundeffect = "megastructure_gate_way_portal_hum" } }
+	}
+	
+	game_data = {
+		uv_animation_speed 		= -0.05
+		uv_animation_direction 	= { 1.0 0.5 }
+		bloom_factor = 0.8
+	}
+	
+	scale = 0.45
+}
+
+entity = {
+	name = "time_animation_entity"
+	pdxmesh = "nemesis_01_colossus_mesh"
+	
+	get_state_from_parent = no
+
+	default_state = "idle"
+	state = { name = "idle" animation = "open" 
+		chance = {
+			if_current_state = {
+				"idle" = 100
+				"moving" = 100
+				"death" = 100
+				"working" = 100
+				"working_looping" = 100
+				"wind_up" = 100
+				"wind_down" = 100
+			}
+		}
+		event = { time = 0	id = "beam_start" }
+	
+		event = { trigger_once = yes sound = { soundeffect = "amb_star_eater_open_energy" stop_on_state_change = yes } }
+		event = { trigger_once = yes sound = { soundeffect = "amb_nemesis_colossus_idle_hum" } }
+		event = { trigger_once = yes sound = { soundeffect = "amb_nemesis_colossus_idle_distortion" } }
+
+		event = { time = 0 node = "light_locator_01" particle = "ship_light_blue_effect" keep_particle = yes trigger_once = yes }
+		event = { time = 0 node = "light_locator_015" particle = "ship_light_blue_effect" keep_particle = yes trigger_once = yes }
+		event = { time = 0 node = "light_locator_016" particle = "ship_light_blue_effect" keep_particle = yes trigger_once = yes }
+		event = { time = 0 node = "light_locator_017" particle = "ship_light_blue_effect" keep_particle = yes trigger_once = yes }
+		event = { time = 0 node = "light_locator_017" particle = "ship_light_blue_effect" keep_particle = yes trigger_once = yes }
+		event = { time = 0 node = "light_locator_019" particle = "ship_light_blue_effect" keep_particle = yes trigger_once = yes }
+		event = { time = 0 node = "light_locator_020" particle = "ship_light_blue_effect" keep_particle = yes trigger_once = yes }
+		event = { time = 0 node = "light_locator_06" particle = "ship_light_blue_effect" keep_particle = yes trigger_once = yes }
+
+#		event = { time = 0 node = "root" particle = "nemesis_colossus_core_lightning_effect" keep_particle = yes trigger_once = yes }
+		event = { time = 0 node = "L_effect_5" particle = "nemesis_colossus_side_lightning_effect" keep_particle = yes trigger_once = yes }
+		event = { time = 0 node = "R_effect_5" particle = "nemesis_colossus_side_lightning_effect" keep_particle = yes trigger_once = yes }
+	
+		event = { time = 0 node = "L_effect_4" particle = "nemesis_colossus_side_lightning_effect" keep_particle = yes trigger_once = yes }
+		event = { time = 0 node = "R_effect_4" particle = "nemesis_colossus_side_lightning_effect" keep_particle = yes trigger_once = yes }
+		event = { time = 0 node = "L_effect_3" particle = "nemesis_colossus_side_lightning_effect" keep_particle = yes trigger_once = yes }
+		event = { time = 0 node = "R_effect_3" particle = "nemesis_colossus_side_lightning_effect" keep_particle = yes trigger_once = yes }
+		event = { time = 0 node = "L_effect_2" particle = "nemesis_colossus_side_lightning_effect" keep_particle = yes trigger_once = yes }
+		event = { time = 0 node = "R_effect_2" particle = "nemesis_colossus_side_lightning_effect" keep_particle = yes trigger_once = yes }
+
+		event = { time = 0 node = "L_effect_1" particle = "nemesis_colossus_side_lightning_effect" keep_particle = yes trigger_once = yes }
+		event = { time = 0 node = "R_effect_1" particle = "nemesis_colossus_side_lightning_effect" keep_particle = yes trigger_once = yes }		
+	}
+	
+	scale = 1
+}
+
+entity = {
+	name = "time_titan_end_shelter_entity"
+	
+	default_state = "idle"
+	state = { name = "idle" state_time = 1.0 looping = no
+	}
+	state = { name = "wind_up" state_time = 1.0 looping = no
+		start_event = { particle = "warp_wind_up_effect" keep_particle = yes trigger_once = yes sound = { soundeffect = "ftl_warp_charge_up_ship" } }
+	}
+	state = { name = "wind_down" state_time = 1.0 looping = no next_state = "idle"
+		start_event = { particle = "ftl_out_ship_particle" }
+		event = { trigger_once = yes sound = { soundeffect = "ftl_warp_jump_out_ship" } }
+	}
+
+	scale = 75
+}

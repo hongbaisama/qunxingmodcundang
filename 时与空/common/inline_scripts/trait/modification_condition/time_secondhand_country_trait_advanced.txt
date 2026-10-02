@@ -1,0 +1,25 @@
+species_potential_add = {
+	hidden_trigger = { exists = from }
+	from = { has_origin = origin_secondhand_country }
+}
+species_possible_merge_add = {
+	custom_tooltip = {
+		fail_text = "can_not_add_secondhand_country_trait"
+		exists = from
+		from = { has_origin = origin_secondhand_country }
+	}
+}
+species_possible_remove = {
+	custom_tooltip = {
+		fail_text = "can_not_remove_secondhand_country_trait"
+		exists = from
+		from = { has_origin = origin_secondhand_country }
+	}
+}
+species_possible_merge_remove = {
+	custom_tooltip = {
+		fail_text = "can_not_remove_secondhand_country_trait"
+		exists = from
+		from = { has_origin = origin_secondhand_country }
+	}
+}

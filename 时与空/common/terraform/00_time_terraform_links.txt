@@ -1,0 +1,334 @@
+# 气态生物
+terraform_link = {
+	from = pc_gas_giant
+	to = pc_gas_colony
+	
+	resources = {
+		category = terraforming
+
+		cost = {
+			volatile_motes = 1000
+			rare_crystals = 1000
+			exotic_gases = 1000
+		}
+	}
+	
+	duration = 7200
+	
+	condition = {
+		has_technology = tech_climate_restoration
+	}
+
+	potential = {
+		has_origin = origin_gas_colony
+		has_ascension_perk = ap_origin_gas_colony
+		from = {
+			NOT = { has_carrier_flag = prevent_gas_colony_change }
+		}
+	}
+
+	effect = {
+		from = {
+			carrier_event = { id = gas.100 }
+		}
+	}
+	
+	ai_weight = {
+		weight = 0
+	}
+}
+
+# 虚境访客
+terraform_link = {
+	inline_script = {
+		script = terraform/pc_psionic_terraform
+		CLASS = pc_desert
+	}
+}
+
+terraform_link = {
+	inline_script = {
+		script = terraform/pc_psionic_terraform
+		CLASS = pc_tropical
+	}
+}
+
+terraform_link = {
+	inline_script = {
+		script = terraform/pc_psionic_terraform
+		CLASS = pc_arid
+	}
+}
+
+terraform_link = {
+	inline_script = {
+		script = terraform/pc_psionic_terraform
+		CLASS = pc_ocean
+	}
+}
+
+terraform_link = {
+	inline_script = {
+		script = terraform/pc_psionic_terraform
+		CLASS = pc_tundra
+	}
+}
+
+terraform_link = {
+	inline_script = {
+		script = terraform/pc_psionic_terraform
+		CLASS = pc_arctic
+	}
+}
+
+terraform_link = {
+	inline_script = {
+		script = terraform/pc_psionic_terraform
+		CLASS = pc_continental
+	}
+}
+
+terraform_link = {
+	inline_script = {
+		script = terraform/pc_psionic_terraform
+		CLASS = pc_alpine
+	}
+}
+
+terraform_link = {
+	inline_script = {
+		script = terraform/pc_psionic_terraform
+		CLASS = pc_savannah
+	}
+}
+
+terraform_link = {
+	inline_script = {
+		script = terraform/pc_psionic_terraform
+		CLASS = pc_relic
+	}
+}
+
+terraform_link = {
+	inline_script = {
+		script = terraform/pc_psionic_terraform
+		CLASS = pc_city
+	}
+}
+
+terraform_link = {
+	inline_script = {
+		script = terraform/pc_psionic_good_terraform
+		CLASS = pc_gaia
+	}
+}
+
+terraform_link = {
+	inline_script = {
+		script = terraform/pc_psionic_bad_terraform
+		CLASS = pc_nuked
+	}
+}
+
+terraform_link = {
+	inline_script = {
+		script = terraform/pc_psionic_bad_terraform
+		CLASS = pc_hive
+	}
+}
+
+terraform_link = {
+	from = pc_psionic
+	to = pc_nuked
+	
+	resources = {
+		category = terraforming
+
+		cost = {
+			energy = 10000
+		}
+	}
+	
+	duration = 7200
+	
+	condition = {
+		has_technology = tech_climate_restoration
+	}
+
+	potential = {
+		NOT = { has_origin = origin_psionic }
+		from = {
+			NOR = {
+				has_modifier = psionic_origin_best
+				has_modifier = psionic_origin
+				has_modifier = worst_psionic
+			}
+		}
+	}
+	
+	ai_weight = {
+		weight = 10
+	}
+}
+
+# 纳米机器
+terraform_link = {
+	inline_script = {
+		script = terraform/pc_nanites_special_terraform
+		CLASS = pc_gray_goo
+	}
+}
+
+terraform_link = {
+	inline_script = {
+		script = terraform/pc_nanites_terraform
+		CLASS = pc_machine
+	}
+}
+
+terraform_link = {
+	inline_script = {
+		script = terraform/pc_nanites_terraform
+		CLASS = pc_nanotech
+	}
+}
+
+terraform_link = {
+	from = pc_nanites
+	to = pc_nuked
+	
+	resources = {
+		category = terraforming
+
+		cost = {
+			energy = 10000
+		}
+	}
+	
+	duration = 7200
+	
+	condition = {
+		has_technology = tech_climate_restoration
+	}
+
+	potential = {
+		NOT = { has_origin = origin_nanites }
+		from = {
+			NOT = { has_deposit = d_nanites_old_factory }
+		}
+	}
+	
+	ai_weight = {
+		weight = 10
+	}
+}
+
+# 神秘奇点
+terraform_link = {
+	inline_script = {
+		script = terraform/pc_time_special_terraform
+		CLASS = pc_time_replace
+	}
+}
+
+terraform_link = {
+	inline_script = {
+		script = terraform/pc_time_terraform
+		CLASS = pc_black_hole
+	}
+}
+
+# 诺亚方舟
+terraform_link = {
+	from = pc_flood
+	to = pc_ocean
+	
+	resources = {
+		category = terraforming_ocean
+
+		cost = {
+			energy = 10000
+		}
+	}
+	
+	duration = 7200
+	
+	condition = {
+		has_technology = tech_climate_restoration
+	}
+
+	potential = {
+	}
+	
+	effect = {
+		from = { remove_modifier = terraforming_candidate }
+	}
+	
+	ai_weight = {
+		weight = 20
+	}
+}
+
+# 后启示录
+terraform_link = {
+	inline_script = {
+		script = terraform/pc_nuked_terraform
+		CLASS = pc_desert
+	}
+}
+
+terraform_link = {
+	inline_script = {
+		script = terraform/pc_nuked_terraform
+		CLASS = pc_tropical
+	}
+}
+
+terraform_link = {
+	inline_script = {
+		script = terraform/pc_nuked_terraform
+		CLASS = pc_arid
+	}
+}
+
+terraform_link = {
+	inline_script = {
+		script = terraform/pc_nuked_terraform
+		CLASS = pc_ocean
+	}
+}
+
+terraform_link = {
+	inline_script = {
+		script = terraform/pc_nuked_terraform
+		CLASS = pc_tundra
+	}
+}
+
+terraform_link = {
+	inline_script = {
+		script = terraform/pc_nuked_terraform
+		CLASS = pc_arctic
+	}
+}
+
+terraform_link = {
+	inline_script = {
+		script = terraform/pc_nuked_terraform
+		CLASS = pc_continental
+	}
+}
+
+terraform_link = {
+	inline_script = {
+		script = terraform/pc_nuked_terraform
+		CLASS = pc_alpine
+	}
+}
+
+terraform_link = {
+	inline_script = {
+		script = terraform/pc_nuked_terraform
+		CLASS = pc_savannah
+	}
+}
